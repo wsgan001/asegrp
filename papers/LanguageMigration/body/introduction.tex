@@ -1,0 +1,76 @@
+\section{Introduction}
+\label{sec:introduction} In the history of software programming,
+researchers and practitioners created various programming languages.
+In particular, the HOPL\footnote{\url{http://hopl.murdoch.edu.au/}}
+website lists 8512 different languages. Due to various
+considerations such as attracting programmers with various
+backgrounds and achieving better performances on particular
+platforms, a project may be implemented as versions of multiple
+languages. For example, many well-known projects such as
+Lucene\footnote{\url{http://lucene.apache.org/}},
+Db4o\footnote{\url{http://www.db4o.com/}}, and
+WordNet\footnote{\url{http://wordnet.princeton.edu/}} all provide
+versions of multiple languages. For those open source projects, even
+if a project does not provide any versions of multiple languages,
+outside programmers may implement versions of particular languages
+for the project. For example, although WordNet officially does not
+provide a C\# version, Simpson and Crowe developed
+WordNet.Net\footnote{\url{http://opensource.ebswift.com/WordNet.Net/}}
+for C\# programmers. Another example is
+iText\footnote{\url{http://www.lowagie.com/iText/}}. Although it
+provides only a Java version, Kazuya developed
+iText.Net\footnote{\url{http://www.ujihara.jp/iTextdotNET/en/}} for
+C\# programmers. In fact, as pointed out by
+Jones~\cite{jones1998estimating}, about 1/3 of existing software
+projects have versions of multiple languages.
+
+To reduce the effort of programming, a natural way to develop a
+version of a new language for a project is to translate from an
+existing version of the project. To help programmers conduct such
+migration, researchers proposed various
+approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}.
+However, language migration is still quite high risk even with the
+help of those proposed approaches. For example, Terekhov and
+Verhoef~\cite{terekhov2000realities} stated that at least three
+companies went bankrupt and another company lost 50 million dollars
+all because of failed language migration projects.
+
+One main challenge of language migration is to map APIs from one
+language into other languages automatically. It is non-trivial to
+build API mapping as libraries typically provide huge APIs and many
+mapping relations of APIs are not straightforward. Consequently,
+existing
+approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}
+support only a subset of APIs or even ignore the mapping relations
+of APIs. Such a limitation causes many compilation errors in
+migrated projects and limits their applications in practice. In this
+paper, we propose an approach that mines API mapping from API client
+code automatically. As the mined API mapping describes mapping
+relations of APIs, our approach can improve existing language
+migration approaches. This paper makes the following main
+contributions:
+
+\begin{itemize}\vspace*{-1.5ex}
+\item We propose the first approach that mines API mapping of
+different languages from existing client code automatically. The
+mined API mapping describes mapping relations of APIs provided by
+different languages and can aid language migration.\vspace*{-1.5ex}
+\item We
+implemented a tool named MAM based on our approach and conducted an
+experiment on ten projects with both Java and C\# versions. The
+results show that our approach mines various mapping relations with
+reasonable accuracies. \vspace*{-1.5ex}
+\item We further conducted an experiment that migrate five project
+from Java to C\# using the mined API mapping. The results show that
+the mined API mapping reduces the numbers of compile in migrated
+projects.
+\end{itemize}\vspace*{-1.5ex}
+
+
+The remainder of our paper is as follows. Section~\ref{sec:example}
+illustrates our approach using an example. Section~\ref{sec:mapping}
+presents definitions. Section~\ref{sec:approach} presents our
+approach. Section~\ref{sec:experiment} presents our evaluations.
+Section~\ref{sec:discuss} discusses issues of our approach.
+Section~\ref{sec:related} presents the related work.
+Section~\ref{sec:colcusion} concludes.

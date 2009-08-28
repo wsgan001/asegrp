@@ -1,0 +1,523 @@
+
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c!{\vrule width 1pt}c!{\vrule width 1pt}c|c!{\vrule width 1pt}c|c|c|c|}
+ \hline
+\multirow{2}*[-2pt]{\textbf{Project}}&
+\multirow{2}*[-2pt]{\textbf{Source}}
+& \multicolumn{2}{|c|}{\textbf{Java version}} & \multicolumn{2}{|c|}{\textbf{C\# version}} \\\cline{3-6} &  &  \emph{\textbf{\#C}}& \emph{\textbf{\#M}} &\emph{\textbf{\#C}}& \emph{\textbf{\#M}}\\
+\hline
+  neodatis &   SourceForge  & 1298 &   9040 & 464  & 3983     \\
+\hline
+  db4o     &   SourceForge  & 3047 &   17449 & 3051 & 15430     \\
+\hline
+numerics4j &   SourceForge  & 145 &   973   & 87   & 515     \\
+\hline
+  fpml     &   SourceForge  & 143  &   879   & 144  & 1103     \\
+\hline
+  PDFClown &   SourceForge  & 297  &   2239  & 290  & 1393     \\
+\hline
+  OpenFSM &   SourceForge   & 35   &   179   & 36  & 140    \\
+\hline
+binaryNotes &   SourceForge  & 178 &   1590  & 197 & 1047    \\
+\hline
+  lucene   &    Apache      & 1298 &   9040  & 464& 3015    \\
+\hline
+  logging  &    Apache      & 196 &   1572   & 308 & 1474     \\
+\hline
+  hibernate &   hibernate  & 3211 &   25798 & 856 & 2538     \\
+\hline \hline
+  rasp     &   SourceForge  & 320  &   1819  & 557 & 1893     \\
+\hline
+  llrp     &   SourceForge  & 257 &   3833   & 222 & 978   \\
+\hline
+ simmetrics &   SourceForge & 107 &   581    & 63 & 325     \\
+\hline
+  aligner &   SourceForge  & 41    &   232 & 18 & 50     \\
+\hline
+  fit       &   SourceForge  & 95 &   461    & 43 & 281     \\
+\hline
+  \multicolumn{2}{|c|}{Total} &   11668 & 75685  &   6900 & 34165   \\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Subjects} \label{table:subjects}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
+
+
+\section{Experiments}
+\label{sec:experiment} We implemented a tool named MAM based on our
+approach and conducted two experiments on the tool. Our experiments
+focus on two research questions as follows:
+\vspace*{-1.5ex}\begin{enumerate}
+\item How effective can our approach mine various mapping relations of APIs
+(Section~\ref{sec:experiment:mining})? \vspace*{-1.5ex}
+\item How much benefit can the mined mapping relations of APIs offer in aiding language
+migration (Section~\ref{sec:experiment:migration})?\vspace*{-1.5ex}
+\end{enumerate}%\vspace*{-1.5ex}
+
+We choose fifteen open source projects that have both Java versions
+and C\# versions as the subjects of our experiments, and
+Table~\ref{table:subjects} show these subjects. Column ``Project''
+lists names of subjects. Column ``Source'' lists sources of these
+subjects. These subjects come from famous open source societies such
+as SourgeForge\footnote{\url{http://www.sf.net}},
+Apache\footnote{\url{http://www.apache.org/}}, and
+hibernate\footnote{\url{http://www.hibernate.org/}}. Column ``Java
+version'' and Column ``C\# version'' list the two versions from each
+subject. All these versions are the latest versions. For the two
+columns, sub-column ``\emph{\#C}'' lists numbers of classes.
+Sub-column ``\emph{\#M}'' list numbers of methods. We notice that
+Java versions are much larger than C\# versions totally. We
+investigate these projects and find two factors as follows. One is
+that Java versions of some projects are more update-to-data. For
+example, the latest Java version of \emph{numericas4j} is 1.3
+whereas the latest C\# version is 1.2. The other factor is that some
+projects are migrating from Java into C\# in progress. For example,
+the website\footnote{\url{http://wiki.neodatis.org/}} of
+\emph{neodatis} says that \emph{neodatis} is a project in Java and
+is being ported to .Net. This observation further confirms the
+usefulness of our approach as our approach aids migrating from one
+language to other languages. Totally, these projects have 18568
+classes and 109850 methods.
+
+All the experiments were conducted on a PC with an Intel Qual CPU @
+2.83GHz and 1.98M memory running the Windows XP operation system.
+\subsection{Mining API mapping}
+\label{sec:experiment:mining}
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c!{\vrule width 1pt}c|c!{\vrule width 1pt}c|c!{\vrule width 1pt}c|c|c|c!{\vrule width 1pt}c|c|c|c|}
+ \hline
+\multirow{2}*[-2pt]{\textbf{Project}}&
+\multicolumn{2}{|c|}{\textbf{Java version}}
+& \multicolumn{2}{|c|}{\textbf{C\# version}} & \multicolumn{2}{|c|}{\textbf{Aligned}} \\\cline{2-7} &  \emph{\textbf{\%C}}& \emph{\textbf{\%M}}&  \emph{\textbf{\%C}}& \emph{\textbf{\%M}} &\emph{\textbf{\#C}}& \emph{\textbf{\#M}}\\
+\hline
+  neodatis &   44.7\%  &  54.8\% &   100.0\% & 93.6\% & 408  & 3728   \\
+\hline
+  db4o     &   87.8\%  &  65.5\%&    87.6\%  & 74.1\% & 2674  & 11433   \\
+\hline
+  numerics4j & 57.2\%  &  48.6\% & 95.4\%  & 89.9\% &  75  &  174   \\
+\hline
+  fpml       & 93.7\%  &  70.5\% & 93.5\%  & 56.2\% &  134 &  620  \\
+\hline
+  PDFClown   & 86.5\%  &  51.0\% & 88.6\%  & 82.1\% & 257  & 1143  \\
+\hline
+  OpenFSM    & 97.1\%  &  72.1\% &  94.4\% &  92.1\%  & 34   & 129   \\
+\hline
+  binaryNotes & 98.9\%  & 61.1\% &  89.3\% &  92.7\% & 176   & 971  \\
+\hline
+  lucene     &  34.9\%  & 26.6\%&   97.6\% &  79.8\% & 453  & 2406  \\
+\hline
+  logging    &   91.8\% & 18.1\%&   58.4\% & 19.3\% &  180  & 285   \\
+\hline
+  hibernate &   26.4\%  & 1.2\%&    99.1\% & 12.6\% &  848  & 319   \\
+\hline
+  Total &   44.9\% & 28.0\%  &   75\% & 62.1\% & 5239 & 21208 \\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Aligned client code} \label{table:analyzingclient}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
+
+
+
+To evaluate the first research question, we use ten projects from
+Table~\ref{table:subjects} as the subjects for mining API mapping.
+
+
+\textbf{Aligning client code.} We first use our approach to align
+client code based on name similarities. The threshold is set to 0.6.
+We choose a relatively low threshold so that our approach does not
+loose any useful client code.
+
+Table~\ref{table:analyzingclient} shows the results of this step.
+For column ``Aligned'', sub-column ``\emph{\# C}'' lists numbers of
+aligned classes. Sub-column ``\emph{\# M}'' lists numbers of aligned
+methods. For each project of Column ``C\# version'' and Column
+``Java version'', sub-column ``\emph{\%C}'' lists the percent of the
+aligned classes to total classes of corresponding versions.
+Sub-column ``\emph{\%M}'' lists the percent of the aligned methods
+to total methods of corresponding versions. We find that the results
+of Table~\ref{table:analyzingclient} fall into three categories.
+This first category includes \emph{db4o}, \emph{fpml},
+\emph{PDFClown}, \emph{OpenFSM}, and \emph{binaryNotes}. Our
+approach achieves relatively high percents for both Java versions
+and C\# versions. In each of the five project, ``\emph{\%M}'' is
+relatively smaller than ``\emph{\%C}'' for two factors. One is that
+methods of those unaligned classes cannot be aligned and thus are
+counted as unaligned. The other is that Java versions usually have
+many getters and setters and these getters and setters often do not
+have corresponding methods in C\# versions. The second category
+includes \emph{neodatis}, \emph{numerics4j}, and \emph{lucene}. Our
+approach aligns C\# version well but does not aligns Java versions
+so well. We find that \emph{neodatis} and \emph{lucene} are
+migrating from Java to C\# in progress and the Java version of
+\emph{numerics4j} is more update-to-date than its C\# version. As a
+result, some Java classes or methods do not have corresponding
+implementations in C\# versions in these projects and thus are left
+unmapped. The third category includes \emph{logging} and
+\emph{hibernate}. Our approach does not align classes and methods of
+the two projects well. Although both the two projects seem to be
+migrated from existing Java versions, the programmers of the two
+projects do not refer to names of existing Java versions for naming
+entities. For each of the two projects, the percent of aligned
+classes is relatively high, and the percent of aligned methods is
+relatively low. We find that even if our approach aligns a wrong
+class pair, our approach does not aligns methods within the wrong
+pair as the method names of a wrong pair are quite different. The
+result suggests that the low threshold may not introduce many
+negative impacts on the results of API mapping.
+
+For all these projects, our approach does not align all classes and
+all methods. Besides the intuitive factor of naming entities, one
+factor lies in that one functionality may be implemented as a single
+class in one version and is implemented as several classes in the
+other version. Another factor lies in that a Java version and a C\#
+version may have quite different functionalities. We further discuss
+this issue in Section~\ref{sec:discuss}.
+
+In summary, our approach aligns most classes and methods of eight
+projects listed in Table~\ref{table:analyzingclient} using simple
+name similarities. The result confirms that many programmers refer
+to existing versions to name entities of a version under
+development.
+
+
+
+\textbf{Mining API mapping.} We then use our approach to mine
+mapping relations of API classes and API methods.
+
+Table~\ref{table:minedresults} shows the results of this step. For
+Column ``Class'' and Column ``Method'', sub-column ``\emph{Num.}''
+lists numbers of mined mapping relations. The numbers of mined API
+mapping are largely proportional to the sizes of projects as shown
+in Table~\ref{table:subjects} except \emph{logging} and
+\emph{hibernate}. As classes and methods of the two projects are not
+quite well aligned, our approach does not mine many mapping
+relations of APIs from the two projects. For the remaining projects,
+our approach mines many mapping relations of API classes and API
+methods. Sub-column ``\emph{Acc.}'' lists accuracies of mined API
+mapping. For mined API mapping from each project, we manually
+inspect top thirty mined mapping relations of APIs, and these
+accuracies are percents of correct mapping relations. We find that
+our approach achieves high accuracies except \emph{hibernate}.
+Although our approach does not align \emph{logging} quite well
+either, the accuracies of API mapping from \emph{logging} are still
+relatively high. To mine API mapping of classes, our approach
+requires names of classes, methods, and variables are all similar.
+To mine API mapping of methods, our approach requires two built API
+transformation graphs are similar. The two requirements are strict.
+As a result, if the first step does not align client code quite
+well, our approach loses some mapping relations of APIs but does not
+introduce many false mapping relations. In other word, our approach
+is robust to mine accurate API mapping. Sub-column ``\emph{1-1}''
+list the number of one-to-one relations. We find that most mined
+mapping relations are of this kind. Our approach still needs
+improvements to mine those n-to-n mapping relations. We further
+discuss this issue in Section~\ref{sec:discuss}.
+
+
+In summary, our approach mines many mapping relations of APIs
+totally. These mined mapping relations are accurate and cover
+various libraries.
+\begin{table}[t] \centering
+\begin{SmallOut}
+\begin {tabular} {|c!{\vrule width 1pt}c|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c|c|}
+ \hline
+\multirow{2}*[-2pt]{\textbf{Project}}&
+\multicolumn{2}{|c|}{\textbf{Class}}
+& \multicolumn{3}{|c|}{\textbf{Method}}  \\\cline{2-6} &  \emph{\textbf{Num.}}&\emph{\textbf{Acc.}}& \emph{\textbf{Num.}}&  \emph{\textbf{Acc.}}&\emph{\textbf{1-1}} \\
+\hline
+  neodatis   &   526 & 96.7\% &   3517 & 100.0\% & 3506    \\
+\hline
+  db4o       &   3155  & 83.3\% &   10787 & 90.0\% & 10746    \\
+\hline
+  numerics4j &   97  & 83.3\%  &   429 & 83.3\% & 427    \\
+\hline
+  fpml       &   199 & 83.3\% &   508 & 83.3\% & 503    \\
+\hline
+  PDFClown   &   539 & 96.7\% &   514 & 100.0\% & 504    \\
+\hline
+  OpenFSM    &   64  & 86.7\%  &   139 &  73.3\% & 139   \\
+\hline
+  binaryNotes &   287 & 90.0\%  &   671 & 90.0\% & 665     \\
+\hline
+  lucene      &   718 & 90.0\% &   2725 & 90.0\% & 2707    \\
+\hline
+  logging     &   305 & 73.3\%  &   56 & 90.0\% & 53    \\
+\hline
+  hibernate   &   1126 & 66.7\% &   7 & 13.3\% & 7    \\
+\hline
+  Total       &   7016 & 85.0\%  &  19353  & 81.3\% & 19257  \\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Mined API mapping} \label{table:minedresults}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
+
+
+
+\textbf{Comparing with manually built API mapping.} Some translation
+tools such as
+CSharp2Java\footnote{\url{http://j2cstranslator.wiki.sourceforge.net}}
+have manually built files that describe mapping relations of APIs.
+For example, one item from the mapping files of CSharp2Java is as
+follows:
+
+\begin{CodeOut}\vspace*{-1ex}
+\begin{alltt}
+package java.math :: System \{
+  class java.math.BigDecimal :: System:Decimal \{
+    method multiply(BigDecimal)
+       \{ pattern =  Decimal.Multiply(@0, @1); \}
+  \}
+\}
+\end{alltt}
+\end{CodeOut}\vspace*{-1ex}
+
+This item describes mapping relations between \CodeIn{java.math.Big-
+Decimal.multiply()} and \CodeIn{System.Decimal.Multiply()}. The
+pattern string describes mapping relations of inputs. In particular,
+``\CodeIn{@0}'' denotes the related variable, and ``\CodeIn{@1}''
+denotes the first parameter. Based on this item, CSharp2Java
+translates the following code snippet from Java to C\# as follows:
+
+\begin{CodeOut}\vspace*{-1ex}
+\begin{alltt}
+  BigDecimal m = new BigDecimal(1);
+  BigDecimal n = new BigDecimal(2);
+  BigDecimal result = m.multiply(n);
+  ->
+  Decimal m = new Decimal(1);
+  Decimal n = new Decimal(2);
+  Decimal result = Decimal.Multiply(m,n);
+\end{alltt}
+\end{CodeOut}\vspace*{-1ex}
+
+To compare with manually built mapping files of CSharp2Java, we
+translate the mined API mapping with the following strategy.
+
+(1) For each Java class, we translate its mapping relations of
+classes with the highest supports into mapping files as relations of
+packages and classes.
+
+(2) For each Java method, we translate its mapping relations of
+methods with the highest supports into mapping files as relations of
+methods with pattern strings. For 1-to-1 mapping relations of
+methods, this step is automatic as mined mapping relations describe
+mapping relations of corresponding methods and inputs. For n-to-n
+mapping relations of methods, this step is manual as mined mapping
+relations do not include adequate details such as how to deal with
+multiple outputs. For example, the mapping relation of method as
+shown in Figure~\ref{fig:example} has two outputs. We need manually
+combine the two outputs with an \emph{or} operator.
+
+After the preceding translation,we find that some packages overlap
+in the mined mapping files and the mapping files of CSharp2Java. We
+compare mapping relations of APIs within these mapping packages, and
+Table~\ref{table:compare} shows the results. For its sub-columns,
+sub-column ``\emph{P}'' denotes precision. Sub-column ``\emph{R}''
+denotes recall. Sub-column ``\emph{F}'' denotes F-score.
+\emph{Precision}, \emph{Recall}, and \emph{F-score} are defined as
+follows:
+\begin{equation}\label{eq-precison}
+Precison=\frac{true\ positives}{true\ positives+false\ positives}
+\end{equation}
+\begin{equation}\label{eq-recall}
+Recall=\frac{true\ positives}{true\ positives+false\ negatives}
+\end{equation}
+\begin{equation}\label{eq-fscore}
+F\!-\!score=\frac{2\times Precision \times Recall}{Precision+Recall}
+\end{equation}
+
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c|c|}
+ \hline
+\multirow{2}*[-2pt]{\textbf{Package}}&
+\multicolumn{3}{|c|}{\textbf{Class}}
+& \multicolumn{3}{|c|}{\textbf{Method}}  \\\cline{2-7} &  \emph{\textbf{P}}& \emph{\textbf{R}}& \emph{\textbf{F}}& \emph{\textbf{P}}& \emph{\textbf{R}}& \emph{\textbf{F}}\\
+\hline
+  java.io &   78.6\% & 26.8\% &   52.7\% & 93.1\% & 53.2\% & 73.1\%   \\
+\hline
+  java.lang &   82.6\% & 27.9\% &   55.3\% & 93.8\% & 25.4\% & 59.6\%   \\
+\hline
+  java.math &   50.0\% & 50.0\% &   50.0\% & 66.7\% & 15.4\% & 41.0\%   \\
+\hline
+  java.net &   100.0\% & 12.5\% &   56.3\% & 100.0\% & 25.0\% & 62.5\%   \\
+\hline
+  java.sql &   100.0\% & 33.3\% &   66.7\% & 100.0\% & 15.4\% & 57.7\%   \\
+\hline
+  java.text &   50.0\% & 10.0\% &   30.0\% & 50.0\% & 16.7\% & 33.3\%   \\
+\hline
+  java.util &   56.0\% & 25.5\% &   40.7\% & 65.8\% & 12.6\% & 39.2\%   \\
+\hline
+  junit &   100.0\% & 50.0\% &   75.0\% & 92.3\% & 88.9\% & 90.6\%   \\
+\hline
+  orw.w3c &   42.9\% & 33.3\% &   38.1\% & 41.2\% & 25.0\% & 33.1\%   \\
+\hline
+  Total &   68.8\% & 26.4\%  &  47.6\%  & 84.6\% & 28.7\% & 56.7\% \\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Compared results} \label{table:compare}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
+
+
+In the preceding formulae, true positives represent those mapping
+relations that exist in both the mined API mapping and the golden
+standard; false positives represent those transitions that exist in
+the mined API mapping but not in the golden standard; false
+negatives represent those transitions that exist in the golden
+standard but not in the mined API mapping. From the results of
+Table~\ref{table:compare}, our approach achieves a relatively high
+precision and a relatively low recall. We further investigate the
+differences, and we find the impact factors as follows.
+
+(1) The mined mapping files contain correct items that do not exist
+in the mapping files of CSharp2Java. For example, the mined mapping
+files contain a mapping relation between \CodeIn{org.w3c.dom. Attr}
+and \CodeIn{System.Xml.XmlAttribute}, and the mapping relation does
+not exit in the mapping files of CSharp2Java. As these items are
+counted as false positives, this impact factor reduces the
+precisions.
+
+(2) Although we use ten large projects as subjects to mine API
+mapping, these projects do not cover mapping relations of all API
+classes and all API methods. Consequently, our approach does not
+mine mapping relations of the entire API classes and the entire API
+methods. Although as shown in Table~\ref{table:minedresults} our
+approach mines many mapping relations, these mapping relations cover
+many libraries. When we limit mapping relations to the packages as
+shown in Table~\ref{table:compare}, the mined mapping relations are
+actually not so many as expected. On the contrary, the mapping files
+of CSharp2Java are more detailed as they are manually built. This
+impact factor reduces the recalls.
+
+(3) Some API classes and API methods between Java and C\# have
+different behaviors. To hide these behaviors from client code,
+CSharp2Java maps these classes and methods to its implemented
+classes and methods. For example, CSharp2Java maps
+\CodeIn{java.util. Set} to
+\CodeIn{ILOG.J2CsMapping.Collections.ISet}. Our approach did not
+mine these mapping relations as the subjects in
+Table~\ref{table:subjects} do not show such mapping relations. This
+impact factor reduces both the precisions and the recalls.
+
+In summary, compared with the mapping files of CSharp2Java, our
+mined mapping files show a relatively high precisions and relatively
+low recalls. The relatively high precisions show that our mined
+mapping relations are accurate and contain some mapping relations
+that are not covered by CSharp2Java. The relatively low recalls show
+that we need improvements such as introducing more subject projects
+to cover detailed API mapping.
+
+\subsection{Aiding Language Migration}
+\label{sec:experiment:migration} To evaluate the second research
+question, we feed the mined API mapping to the CSharp2Java tool and
+investigate whether these mined API mapping can improve the tool. We
+choose this tool because this tool is a relatively mature project at
+ILOG\footnote{\url{http://www.ilog.com/}} (now IBM) and supports the
+extension of user-defined mapping relations of APIs.
+
+We use CSharp2Java to translate five projects listed in
+Table~\ref{table:subjects} from Java to C\#, and
+Table~\ref{table:errors} shows the results. For each translated C\#
+project, Column ``No MF'' lists the number of compilation errors
+without mapping files. Column ``MF'' lists the number of compilation
+errors with the mapping files of CSharp2Java. Column ``Ext. MF''
+lists the number of compilation errors with extended mapping files.
+We produce these mapping files by combing mined API mapping with the
+existing mapping files of CSharp2Java. Totally, the mapping files of
+CSharp2Java helps reduce 36.6\% compilation errors, and the extended
+mapping files helps further reduces 54.4\% compilation errors. For
+the three columns, sub-column ``\emph{U}'' lists numbers of
+compilation errors that are caused by wrong using statements.
+Sub-column ``\emph{T}'' lists numbers of compilation errors that are
+caused by unsolved classes. Sub-column ``\emph{O}'' lists the
+numbers of compilation errors that are caused by other factors. The
+three types of compilation errors are not independent. For example,
+if a mapping relation maps a class in Java to a wrong class in C\#,
+both ``\emph{U}'' and ``\emph{T}'' decrease as CSharp2Java can
+translate a variable in Java to a variable in C\# whose type is
+resolvable. However, as the translated variable may not provide
+desirable methods, `\emph{O}'' may increase when code use some
+methods of the variable. From the results of
+Table~\ref{table:errors}, we find that API mapping helps reduces
+``\emph{U}'' and ``\emph{T}'' without significant increases of
+``\emph{O}''. In other word, both manually built mapping files and
+our mined mapping files are useful and accurate. As the five
+projects use different libraries, the numbers of translated projects
+are different. In particular, \emph{simmetrics} and \emph{fit} use
+API classes of J2SE that are covered by mapping files. Consequently,
+the translate projects of \emph{simmetrics} and \emph{fit} have no
+``\emph{U}'' and ``\emph{T}'' errors. The \emph{aligner} project
+also mainly uses J2SE, but it uses many API classes and methods from
+\CodeIn{java.awt} for its GUI. The mapping files of CSharp2Java do
+not cover \CodeIn{java.awt}, so the translated project has many
+``\emph{U}'' and ``\emph{T}'' errors. The mined files map
+\CodeIn{java.awt} to \CodeIn{System.Windows.Forms} and thus reduce
+``\emph{U}'' errors. However, the mined files also introduce many
+``\emph{T}'' errors as many classes of the two packages are still
+not mapped. For \emph{rasp} and \emph{llrp}, they both use various
+libraries besides J2SE. Consequently, the translated projects both
+have many ``\emph{U}'' and ``\emph{T}'' errors. In particular,
+\emph{llrp} use
+log4j\footnote{\url{http://logging.apache.org/log4j/}} and
+jdom\footnote{\url{http://www.jdom.org/}}, and the mined mapping
+files contain mapping relations of the two libraries. As a result,
+the mined API mapping helps reduce compilation errors significantly.
+For \emph{rasp}, it uses some libraries such as
+Neethi\footnote{\url{http://ws.apache.org/commons/neethi/}} and
+WSS4J\footnote{\url{http://ws.apache.org/wss4j/}}. Even mined API
+mapping does not cover the two libraries. As a result, the
+translated project of \emph{rasp} contains many ``\emph{U}'' and
+``\emph{T}'' errors.
+
+In summary, the mined API mapping improves existing language
+translation tools such as CSharp2Java. In particular, the mined API
+mapping helps reduce ``\emph{U}'' and ``\emph{T}'' errors in the
+translated projects.
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c|c|c|c|}
+ \hline
+\multirow{2}*[-2pt]{\textbf{Projects}}& \multicolumn{3}{|c|}{\textbf{No MF}}  & \multicolumn{3}{|c|}{\textbf{MF}} & \multicolumn{3}{|c|}{\textbf{Ext. MF}}\\
+\cline{2-10} &  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}&  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}&  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}\\
+ \hline
+  rasp &  405 &   518 &  50  & 173  &  480  &  55  & 103  & 455  &69     \\
+\hline
+  llrp &  1033 &  1292  & 3  &  463  &  1076 &  1  &  6   & 262  & 1    \\
+\hline
+  simmetrics &  164 & 32 &  21 & 0   & 12    & 0   & 0    &  6  & 0    \\
+\hline
+  aligner &  283 &  77 &  8  & 223 & 57 & 9 & 140 & 113 & 9     \\
+\hline
+  fit &  63 & 94 &  17 & 0  & 20 & 7 &  0 & 3 & 7  \\
+\hline
+\multirow{2}*[-2pt]{Total} &1948  & 2016 & 99 & 859 & 1645 & 72 & 249 & 839 & 86\\
+\cline{2-10} &\multicolumn{3}{|c|}{4063} &\multicolumn{3}{|c|}{2576}&\multicolumn{3}{|c|}{1174}\\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{\label{table:errors}Compilation errors}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
+
+\subsection{Threats to Validity}
+\label{sec:experiment:threats} The threat to external validity
+includes the representativeness of the subjects in true practice.
+bla bla...
+
+The threat to external validity includes the representativeness of
+the subjects in true practice. bla bla...
+
+The threat to external validity includes the representativeness of
+the subjects in true practice. bla bla...
+
+The threat to external validity includes the representativeness of
+the subjects in true practice. bla bla...

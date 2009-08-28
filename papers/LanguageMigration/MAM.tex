@@ -1,0 +1,98 @@
+
+%
+%  $Description: Author guidelines and sample document in LaTeX 2.09$
+%
+%  $Author: ienne $
+%  $Date: 1995/09/15 15:20:59 $
+%  $Revision: 1.4 $
+%
+
+\documentclass{sig-alternate}
+\usepackage{url}
+\usepackage{times}
+\usepackage{diagrams}
+\usepackage[all]{xy}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{float}
+\input{macros}
+%\documentstyle[times,art10,twocolumn,latex8]{article}
+
+%-------------------------------------------------------------------------
+% take the % away on next line to produce the final camera-ready version
+\pagestyle{empty}
+
+%-------------------------------------------------------------------------
+\begin{document}
+
+\conferenceinfo{ICSE}{'2010 Cape Town, South Africa}
+\CopyrightYear{2010} % Allows default copyright year (200X) to be over-ridden - IF NEED BE.
+
+\title{Mining API Mapping for Language Migration}
+
+\author{
+Hao Zhong$^{1}$, Suresh Thummalapenta$^4$, Tao Xie$^4$, Lu Zhang$^{2,3}$, Qing Wang$^{1}$\\
+\small{$^1$Laboratory for Internet Software Technologies, Institute of Software, Chinese Academy of Sciences, Beijing, 100190, China}\\
+\small{$^2$Key Laboratory of High Confidence Software Technologies (Peking University), Ministry of Education, China}\\
+\small{$^3$Institute of Software, School of Electronics Engineering and Computer Science, Peking University, China} \\
+\small{$^4$Department of Computer Science, North Carolina State University, Raleigh, NC 27695-8206, USA}\\
+\small{zhonghao@itechs.iscas.ac.cn, \{sthumma,xie\}@csc.ncsu.edu,
+zhanglu@sei.pku.edu.cn, wq@itechs.iscas.ac.cn}}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+In the long history of programming languages, researchers and
+practitioners created various languages such as C\# and Java. These
+languages have their own benefits and thus coexist in various
+projects. To develop projects in multiple languages, programmers
+need various manipulations such as translating projects from one
+language into other languages. Automating this translation process
+can reduce substantial manual effort. However, it is  challenging to
+map APIs of different languages correctly in such automation. In
+this paper, we propose a novel approach that mines API mapping
+automatically. For two languages, our approach needs a set of
+projects with versions in the two languages. From each project, our
+approach analyzes its two versions and mines API mapping of the two
+languages based on API usages exhibited in the two versions. The
+mined API mapping describes mapping relations of APIs in different
+languages and thus aids language migration. Based on our approach,
+we implemented a tool named MAM (\textbf{M}ining \textbf{A}PI
+\textbf{M}apping) and conducted an evaluation of our approach based
+on the tool. The results show that our approach mines various API
+mapping between Java and C\# with reasonable accuracies. The results
+also show that mined API mapping reduces 54.4\% compilation errors
+in translated projects of the CSharp2Java tool as mined API mapping
+contains mapping relations that do not exist in language migration
+tools such as CSharp2Java.
+\end{abstract}
+
+\input{body/introduction}
+\input{body/example}
+\input{body/mapping}
+\input{body/approach}
+\input{body/experiment}
+\input{body/discussion}
+\input{body/related}
+\input{body/conclusion}
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{latex8}  % sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+
+%\balancecolumns % GM June 2007
+% That's all folks!
+
+\end{document}

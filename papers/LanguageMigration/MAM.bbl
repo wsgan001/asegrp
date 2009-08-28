@@ -1,0 +1,92 @@
+\begin{thebibliography}{10}
+
+\bibitem{balaban2005refactoring}
+I.~Balaban, F.~Tip, and R.~Fuhrer.
+\newblock {Refactoring support for class library migration}.
+\newblock In {\em Proc. 20th OOPSLA}, pages 265--279, 2005.
+
+\bibitem{el2006experiment}
+M.~El-Ramly, R.~Eltayeb, and H.~Alla.
+\newblock An experiment in automatic conversion of legacy {Java} programs to
+  {C\#}.
+\newblock In {\em Proc. AICCSA}, pages 1037--1045, 2006.
+
+\bibitem{hainaut2008migration}
+J.~Hainaut, A.~Cleve, J.~Henrard, and J.~Hick.
+\newblock Migration of legacy information systems.
+\newblock {\em Software Evolution}, pages 105--138, 2008.
+
+\bibitem{henkel2005catchup}
+J.~Henkel and A.~Diwan.
+\newblock {CatchUp!: capturing and replaying refactorings to support API
+  evolution}.
+\newblock In {\em Proc. 27th ICSE}, pages 274--283, 2005.
+
+\bibitem{jiang2009automatic}
+L.~Jiang and Z.~Su.
+\newblock {Automatic mining of functionally equivalent code fragments via
+  random testing}.
+\newblock In {\em Proc. the 8th ISSTA}, pages 81--92, 2009.
+
+\bibitem{jones1998estimating}
+T.~Jones.
+\newblock {\em {Estimating software costs}}.
+\newblock McGraw-Hill, Inc. Hightstown, NJ, USA, 1998.
+
+\bibitem{mossienko2003automated}
+M.~Mossienko.
+\newblock {Automated COBOL to Java recycling}.
+\newblock In {\em Proc. 7th CSMR}, pages 40--50, 2003.
+
+\bibitem{orenstein2000quickstudy}
+D.~Orenstein.
+\newblock {QuickStudy: Application Programming Interface (API)}.
+\newblock {\em Computerworld}, 10, 2000.
+
+\bibitem{samet1981experience}
+H.~Samet.
+\newblock {Experience with software conversion}.
+\newblock {\em Software: Practice and Experience}, 11(10), 1981.
+
+\bibitem{terekhov2000realities}
+A.~Terekhov and C.~Verhoef.
+\newblock {The realities of language conversions}.
+\newblock {\em IEEE Software}, pages 111--124, 2000.
+
+\bibitem{thummalapenta07parseweb}
+S.~Thummalapenta and T.~Xie.
+\newblock {PARSEWeb}: A programmer assistant for reusing open source code on
+  the web.
+\newblock In {\em Proc. 22nd ASE}, pages 204--213, November 2007.
+
+\bibitem{thummalapentaase08spotweb}
+S.~Thummalapenta and T.~Xie.
+\newblock {SpotWeb}: Detecting framework hotspots and coldspots via mining open
+  source code on the web.
+\newblock In {\em Proc. 23rd ASE}, 2008.
+
+\bibitem{van1999identifying}
+A.~Van~Deursen, T.~Kuipers, and A.~CWI.
+\newblock {Identifying objects using cluster and concept analysis}.
+\newblock In {\em Proc. 21st ICSE}, pages 246--255, 1999.
+
+\bibitem{waters1988program}
+R.~Waters.
+\newblock {Program translation via abstraction and reimplementation}.
+\newblock {\em IEEE Transactions on Software Engineering}, 14(8):1207--1228,
+  1988.
+
+\bibitem{xing2007api}
+Z.~Xing and E.~Stroulia.
+\newblock {API-evolution support with Diff-CatchUp}.
+\newblock {\em IEEE Transactions on Software Engineering}, 33(12):818--836,
+  2007.
+
+\bibitem{yasumatsu1995spice}
+K.~Yasumatsu and N.~Doi.
+\newblock {SPiCE: a system for translating Smalltalk programs into a C
+  environment}.
+\newblock {\em IEEE Transactions on Software Engineering}, 21(11):902--912,
+  1995.
+
+\end{thebibliography}

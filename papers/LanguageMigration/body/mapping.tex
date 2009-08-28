@@ -1,0 +1,88 @@
+\section{API Mapping}
+\label{sec:mapping}
+
+In this section, we present the definitions of terms used in the
+rest of the paper.
+
+\textbf{API:} \emph{API is the abbreviation of Application
+Programming Interface~\cite{orenstein2000quickstudy}. API is an
+interface that defines the ways to use classes and methods provided
+by libraries or operation systems.}
+
+\textbf{API library:} \emph{API libraries are libraries for
+providing various API classes and API methods for reuse.}
+
+\textbf{Client code:} \emph{Client code is code that uses API
+classes and API methods to implement various functionalities.}
+
+The inputs of our approach are a set of projects that provide
+versions of different languages. The definitions of API libraries
+and client code are relative. For example, Lucene uses
+J2SE\footnote{\url{http://java.sun.com/j2se/1.5.0/}} as a library,
+and Nutch\footnote{\url{http://lucene.apache.org/nutch/}} uses
+Lucene as a library. Lucene is client code for J2SE and is also an
+API library for Nutch. For client code, the source files of API
+libraries are typically not available.
+
+\textbf{Mapping relation:} \emph{Mapping relations are replaceable
+relations among entities defined by two languages. For two entities
+($e_1$ and $e_2$) of two languages ($L_1$ and $L_2$), $e_1$ and
+$e_2$ have a mapping relation if we can translate $e_1$ into $e_2$
+without introducing bugs to translated client code.}
+
+\textbf{Mapping relations of API classes:} \emph{For two API classes
+($c_1$ and $c_2$) of two languages ($L_1$ and $L_2$), $c_1$ and
+$c_2$ have a mapping relation if we can translate a variable whose
+type is $c_1$ into a variable whose type is $c_2$ without
+introducing bugs to translated client code.}
+
+One class ($c_1$) in $L_1$ can be mapped with several classes
+(\emph{e.g.}, $c_2$ and $c_3$) in $L_2$. Here, $c_1$ can be mapped
+with $c_2$ or $c_3$. For example, \CodeIn{java.util.ArrayList} can
+be mapped with either \CodeIn{System. Collections.ArrayList} or
+\CodeIn{System.Collections.Generic. List}. At the same time, $c_1$
+can also be mapped with $c_2$ and $c_3$. For example,
+\CodeIn{java.lang.System} is mapped with \CodeIn{System.DataTime}
+when client code uses the two classes to get the current time and is
+mapped with \CodeIn{System.Environment} when client code uses the
+two classes to get environment settings. In addition, mapped API
+classes may still have different functionalities. For example,
+although \CodeIn{java.lang.String} and \CodeIn{System.String} are
+mapped API classes, the latter has an API method named as
+\CodeIn{insert}, but the former does not have such an API method.
+
+\textbf{Merged API method:} \emph{For two API methods ($m_1$ and
+$m_2$) of a language ($L$), the inputs of $m_1$ and $m_2$ are $I_1$
+and $I_2$, and the outputs of $m_1$ and $m_2$ are $o_1$ and $o_2$.
+If in client code $m_2$ uses output of $m_1$, our approach can merge
+$m_1$ and $m_2$ and produce a merged API method ($m$). The input of
+$m$ is $I_1\cup I_2-o_1$. The output of $m$ is $o_2$.}
+
+The input of an API method includes the related variable and its
+parameters. For example, in Line 2 of Section~\ref{sec:example},
+\CodeIn{file} is the related variable of \CodeIn{exist()}, so
+\CodeIn{file} is the input of \CodeIn{exist()}. The output of an API
+method includes its return value. In Figure~\ref{fig:example},
+\CodeIn{File()} and \CodeIn{exist()} are merged. The input of the
+merged API method is a string for a file name, and the output is a
+boolean value for file existence. A merged API method can be further
+merged with other API methods or merged API methods. A merged API
+method can have multiple inputs and outputs. When we define mapping
+relations of API methods, we use ``API method'' to refer to an API
+method or a merged API method for simplicity.
+
+\textbf{Mapping relations of API methods:} \emph{For two API methods
+($m_1$ and $m_2$) of two languages ($L_1$ and $L_2$), $m_1$ and
+$m_2$ have a mapping relation if we can translate $m_1$ into $m_2$
+without introducing bugs to translated client code.}
+
+Both the two types of mapping relations are useful for language
+translation. In particular, mapping relations of API classes are
+useful to translate variables (\emph{e.g.}, the declared
+\CodeIn{file} in Line 1 of the code snippet shown in
+Section~\ref{sec:example}). Mapping relations of API methods are
+useful to translate of API methods (\emph{e.g.}, the called
+\CodeIn{exist()} in Line 2 of the code snippet shown in
+Section~\ref{sec:example}). Translated API methods take translated
+variables and other inputs such as constants as inputs and implement
+the same functionality by producing the desirable outputs.
