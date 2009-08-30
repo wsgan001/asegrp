@@ -1,88 +1,98 @@
-\section{API Mapping}
+\section{Definitions}
 \label{sec:mapping}
 
-In this section, we present the definitions of terms used in the
-rest of the paper.
+We next present definitions of the terms used in the rest of the paper.
 
-\textbf{API:} \emph{API is the abbreviation of Application
-Programming Interface~\cite{orenstein2000quickstudy}. API is an
-interface that defines the ways to use classes and methods provided
-by libraries or operation systems.}
+\textbf{API:} An Application Programming Interface (API)~\cite{orenstein2000quickstudy}
+is a set of classes and methods provided by frameworks or libraries.
 
-\textbf{API library:} \emph{API libraries are libraries for
-providing various API classes and API methods for reuse.}
+\textbf{API library:} An API library refers to a framework
+or library that provides reusable API classes and methods.
 
-\textbf{Client code:} \emph{Client code is code that uses API
-classes and API methods to implement various functionalities.}
+\textbf{Client code:} Client code refers to the application code
+that reuses or extends API classes and methods provided by API libraries.
+The definitions of API library and Client code are relative to each other. 
+For example, Lucene\footnote{\url{???}} uses J2SE\footnote{\url{http://java.sun.com/j2se/1.5.0/}} 
+as an API library, whereas Nutch\footnote{\url{http://lucene.apache.org/nutch/}} uses
+Lucene as an API library. Therefore, we consider Lucene as Client code and API library
+for the J2SE API library and Nutch, respectively. In general, for Client code, 
+source files of API libraries are often not available.
 
-The inputs of our approach are a set of projects that provide
-versions of different languages. The definitions of API libraries
-and client code are relative. For example, Lucene uses
-J2SE\footnote{\url{http://java.sun.com/j2se/1.5.0/}} as a library,
-and Nutch\footnote{\url{http://lucene.apache.org/nutch/}} uses
-Lucene as a library. Lucene is client code for J2SE and is also an
-API library for Nutch. For client code, the source files of API
-libraries are typically not available.
+\textbf{Mapping relation:} A mapping relation refers to a replaceable
+relation among entities such as API classes or methods defined by two different languages. For example,
+consider two languages $L_1$ and $L_2$, and two entities $e_1$ and $e_2$
+in languages $L_1$ and $L_2$, respectively. We define a mapping relation
+between the entities $e_1$ and $e_2$, if $e_1$ of the Language $L_1$ can
+be translated to $e_2$ of the Language $L_2$ without introducing new defects
+in the translated entity. (@Hao: Should this be something like both entities
+should have the same behavior).
 
-\textbf{Mapping relation:} \emph{Mapping relations are replaceable
-relations among entities defined by two languages. For two entities
-($e_1$ and $e_2$) of two languages ($L_1$ and $L_2$), $e_1$ and
-$e_2$ have a mapping relation if we can translate $e_1$ into $e_2$
-without introducing bugs to translated client code.}
-
-\textbf{Mapping relations of API classes:} \emph{For two API classes
-($c_1$ and $c_2$) of two languages ($L_1$ and $L_2$), $c_1$ and
-$c_2$ have a mapping relation if we can translate a variable whose
-type is $c_1$ into a variable whose type is $c_2$ without
-introducing bugs to translated client code.}
-
-One class ($c_1$) in $L_1$ can be mapped with several classes
-(\emph{e.g.}, $c_2$ and $c_3$) in $L_2$. Here, $c_1$ can be mapped
-with $c_2$ or $c_3$. For example, \CodeIn{java.util.ArrayList} can
-be mapped with either \CodeIn{System. Collections.ArrayList} or
-\CodeIn{System.Collections.Generic. List}. At the same time, $c_1$
-can also be mapped with $c_2$ and $c_3$. For example,
+\textbf{Mapping relation of API classes:} We define a mapping relation between 
+two API classes $c_1$ and $c_2$ of languages $L_1$ and $L_2$, respectively, 
+if the API class $c_1$ of $L_1$ is translated to the API class $c_2$ of $L_2$ 
+without introducing new defects in the translated code. Our mapping
+relation of API classes is many-to-many (@Hao: Please check whether it is many-to-many). For example, 
+the \CodeIn{java.util.ArrayList} class of Java is mapped to either 
+\CodeIn{System.Collections.ArrayList} \textbf{or} \CodeIn{System.Collections.Generic.List} of C\#.
+On the other hand, the \CodeIn{java.lang.System} class of Java is mapped
+to \CodeIn{System.DataTime} \textbf{and} \CodeIn{System.Environment} of C\#
+based on how Client code uses these classes. For example,
 \CodeIn{java.lang.System} is mapped with \CodeIn{System.DataTime}
 when client code uses the two classes to get the current time and is
 mapped with \CodeIn{System.Environment} when client code uses the
-two classes to get environment settings. In addition, mapped API
-classes may still have different functionalities. For example,
-although \CodeIn{java.lang.String} and \CodeIn{System.String} are
-mapped API classes, the latter has an API method named as
-\CodeIn{insert}, but the former does not have such an API method.
+two classes to get environment settings. (@Hao: Could you please revise
+this sentence. I haven't got what this means?).
 
-\textbf{Merged API method:} \emph{For two API methods ($m_1$ and
-$m_2$) of a language ($L$), the inputs of $m_1$ and $m_2$ are $I_1$
-and $I_2$, and the outputs of $m_1$ and $m_2$ are $o_1$ and $o_2$.
-If in client code $m_2$ uses output of $m_1$, our approach can merge
-$m_1$ and $m_2$ and produce a merged API method ($m$). The input of
-$m$ is $I_1\cup I_2-o_1$. The output of $m$ is $o_2$.}
+Furthermore, mapped API classes can have different functionalities in different
+languages. For example, \CodeIn{java.lang.String} of Java is mapped to \CodeIn{System.String} 
+of C\#. However, \CodeIn{System.String} has an API method 
+\CodeIn{insert}, which does not exist in \CodeIn{java.lang.String}.
 
-The input of an API method includes the related variable and its
-parameters. For example, in Line 2 of Section~\ref{sec:example},
-\CodeIn{file} is the related variable of \CodeIn{exist()}, so
-\CodeIn{file} is the input of \CodeIn{exist()}. The output of an API
-method includes its return value. In Figure~\ref{fig:example},
-\CodeIn{File()} and \CodeIn{exist()} are merged. The input of the
-merged API method is a string for a file name, and the output is a
-boolean value for file existence. A merged API method can be further
-merged with other API methods or merged API methods. A merged API
-method can have multiple inputs and outputs. When we define mapping
-relations of API methods, we use ``API method'' to refer to an API
-method or a merged API method for simplicity.
+\textbf{Mapping relation of API methods:} We define a mapping relation
+between two API methods $m_1$ and $m_2$ of languages $L_1$ and $L_2$,
+respectively, if $m_1$ is translated to $m_2$ without introducing defects 
+in the translated code.
 
-\textbf{Mapping relations of API methods:} \emph{For two API methods
-($m_1$ and $m_2$) of two languages ($L_1$ and $L_2$), $m_1$ and
-$m_2$ have a mapping relation if we can translate $m_1$ into $m_2$
-without introducing bugs to translated client code.}
+Both the mapping relations of API classes and methods are required for
+achieving language translation. In particular, mapping relation of API classes is
+required to translate variables such as \CodeIn{file} in Figure~\ref{}.
+Similarly, mapping relation of API methods is
+required to translate API methods such as \CodeIn{exist()} in Figure~\ref{}.
+When an API method is translated from one language to another, the translated
+method accepts the same parameters (both variables and constants) and implement
+the same functionality as the original method.
 
-Both the two types of mapping relations are useful for language
-translation. In particular, mapping relations of API classes are
-useful to translate variables (\emph{e.g.}, the declared
-\CodeIn{file} in Line 1 of the code snippet shown in
-Section~\ref{sec:example}). Mapping relations of API methods are
-useful to translate of API methods (\emph{e.g.}, the called
-\CodeIn{exist()} in Line 2 of the code snippet shown in
-Section~\ref{sec:example}). Translated API methods take translated
-variables and other inputs such as constants as inputs and implement
-the same functionality by producing the desirable outputs.
+\textbf{Merged API method:} A merged API method of $L_1$ refers to an API method
+that is created by merging two other API methods of $L_1$. (@Hao: From my
+understanding, i think that merged API method is within the language. Is that correct?)
+For example, consider two API methods $m_1$ and $m_2$ defined in classes
+$C_1$ and $C_2$ of $L_1$, respectively, with the
+following signatures:
+
+\CodeIn{$m_1$ signature: $o_1$ $C_1$.$m_1$($inp_1^1$, $inp_2^1$, ..., $inp_m^1$)}
+
+\CodeIn{$m_2$ signature: $o_2$ $C_2$.$m_2$($inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
+
+We merge methods $m_1$ and $m_2$ to create a new merged API method $m_{new}$ if the
+output $o_1$ of $m_1$ is used either as a receiver object or a 
+parameter for $m_2$ (i.e., $o_1$ == $C_2$ or $o_1$ == $inp_i^2$)
+in Client code. The signature of the new merged API method $m_{new}$ is 
+shown below:
+
+\CodeIn{$m_{new}$ signature: $o_2$ $m_{new}$($inp_1^1$, $inp_2^1$, ..., $inp_m^1$,$inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
+
+We next present an example for a merged API method using the
+illustrative code example shown in Section~\ref{sec:example}. (@Suresh:
+Insert a figure for the code sample and refer it from here).
+Consider the \CodeIn{file} variable, which is a return variable
+for the constructor and a receiver object for the \CodeIn{exist()} method.
+As the output of one API method is passed as receiver object of
+another API method, we can combine these two methods to create a new
+merged API method $m_{new}$. Figure~\ref{fig:example} shows 
+the $m_{new}$ method \CodeIn{boolean File.exists(string)}. The $m_{new}$
+method accepts a \CodeIn{string} parameter that represents a file name
+and returns a boolean value that describes whether a file exists or not. 
+
+A merged API method can be further merged with other API methods or 
+other merged API methods. For simplicity, we use API method to refer
+to both API method and merged API method in the rest of the paper.
