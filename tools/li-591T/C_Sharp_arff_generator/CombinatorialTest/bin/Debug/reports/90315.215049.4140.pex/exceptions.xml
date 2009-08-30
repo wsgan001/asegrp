@@ -1,0 +1,62 @@
+﻿<frameTree><frameException type="System.NullReferenceException"><frameNode><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line162" method="TCAS.TCASMain(Int32[])" offset="2" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="162"><method assemblyName="CombinatorialTest" name="TCASMain" token="600000e"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<parameter this="true" name="this" position="0"><type spec="Class"><definition assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+</type>
+</parameter>
+<parameter name="argv" position="1"><type spec="SzArray"><elementType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</elementType>
+</type>
+</parameter>
+</method>
+<beforeSource><![CDATA[        [PexMethod]
+        public void TCASMain(int[] argv)
+        {]]></beforeSource>
+<source><![CDATA[            if (argv.Length < 13)]]></source>
+<afterSource><![CDATA[            {
+                return;
+            }]]></afterSource>
+</frame>
+<generatedTestRef idref="t3744978577193"/>
+</frameNode>
+</frameException>
+<frameException type="System.IndexOutOfRangeException"><frameNode><frame value="  at TCAS.ALIM() in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line70" method="TCAS.ALIM()" offset="11" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="70"><method assemblyName="CombinatorialTest" name="ALIM" static="true" token="6000007"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<resultType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</resultType>
+</method>
+<beforeSource><![CDATA[
+        private static int ALIM()
+        {]]></beforeSource>
+<source><![CDATA[            return Positive_RA_Alt_Thresh[Alt_Layer_Value];]]></source>
+<afterSource><![CDATA[        }
+
+        private static int Inhibit_Biased_Climb()]]></afterSource>
+</frame>
+<frameNode><frame value="  at TCAS.Non_Crossing_Biased_Climb() in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line87" method="TCAS.Non_Crossing_Biased_Climb()" offset="32" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="87"><method assemblyName="CombinatorialTest" name="Non_Crossing_Biased_Climb" static="true" token="6000009"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<resultType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Boolean" token="2000077" namespace="System"/>
+</resultType>
+</method>
+<beforeSource><![CDATA[            upward_preferred = Inhibit_Biased_Climb() > Down_Separation;
+            if (upward_preferred)
+            {]]></beforeSource>
+<source><![CDATA[                PexAssume.IsTrue(Down_Separation == ALIM() && result);]]></source>
+<afterSource><![CDATA[                result = !(Own_Below_Threat()) || ((Own_Below_Threat()) && (!(Down_Separation > ALIM()))); /* opertor mutation */
+            }
+            else]]></afterSource>
+</frame>
+<frameNode><frame value="  at TCAS.alt_sep_test() in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line139" method="TCAS.alt_sep_test()" offset="102" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="139"><method assemblyName="CombinatorialTest" name="alt_sep_test" static="true" token="600000d"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<resultType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</resultType>
+</method>
+<beforeSource><![CDATA[
+            if (enabled && ((tcas_equipped && intent_not_known) || !tcas_equipped))
+            {]]></beforeSource>
+<source><![CDATA[                need_upward_RA = Non_Crossing_Biased_Climb() && Own_Below_Threat();]]></source>
+<afterSource><![CDATA[                need_downward_RA = Non_Crossing_Biased_Descend() && Own_Above_Threat();
+                if (need_upward_RA && need_downward_RA)
+                    /* unreachable: requires Own_Below_Threat and Own_Above_Threat]]></afterSource>
+</frame>
+<generatedTestRef idref="t3744978577201"/>
+</frameNode>
+</frameNode>
+</frameNode>
+</frameException>
+</frameTree>

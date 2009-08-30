@@ -1,0 +1,660 @@
+﻿<documents><document src="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" renderPrefix="s0"><chunk hits="-1" domain="unknown"><source><![CDATA[using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Pex.Framework;
+using System.IO;
+
+namespace CombinatorialTest
+{
+    [PexClass]
+    public partial class TCAS
+    {
+
+        /*  -*- Last-Edit:  Fri Jan 29 11:13:27 1993 by Tarak S. Goradia; -*- */
+        /* $Log: tcas.c,v $
+         * Revision 1.2  1993/03/12  19:29:50  foster
+         * Correct logic bug which didn't allow output of 2 - hf
+         * */
+
+        //#include <stdio.h>
+
+        static int OLEV = 600;	/* in feets/minute */
+        static int MAXALTDIFF = 600;		/* max altitude difference in feet */
+        static int MINSEP = 300;          /* min separation in feet */
+        static int NOZCROSS = 100;		/* in feet */
+        /* variables */
+
+        //typedef int bool;
+
+        static int Cur_Vertical_Sep;
+        static bool High_Confidence;
+        static bool Two_of_Three_Reports_Valid;
+
+        static int Own_Tracked_Alt;
+        static int Own_Tracked_Alt_Rate;
+        static int Other_Tracked_Alt;
+
+        static int Alt_Layer_Value;		/* 0, 1, 2, 3 */
+        static int[] Positive_RA_Alt_Thresh = new int[4];
+
+        static int Up_Separation;
+        static int Down_Separation;
+
+        /* state variables */
+        static int Other_RAC;			/* NO_INTENT, DO_NOT_CLIMB, DO_NOT_DESCEND */
+        static int NO_INTENT = 0;
+        static int DO_NOT_CLIMB = 1;
+        static int DO_NOT_DESCEND = 2;
+
+        static int Other_Capability;		/* TCAS_TA, OTHER */
+        static int TCAS_TA = 1;
+        static int OTHER = 2;
+
+        static bool Climb_Inhibit;		/* true/false */
+
+        static int UNRESOLVED = 0;
+        static int UPWARD_RA = 1;
+        static int DOWNWARD_RA = 2;
+
+        private static void initialize()
+        ]]></source>
+</chunk>
+<method name="initialize" type="CombinatorialTest.TCAS" token="6000006" module="CombinatorialTest.exe"><hits><hit index="0" value="1"/>
+<hit index="1" value="1"/>
+<hit index="2" value="1"/>
+<hit index="3" value="1"/>
+<hit index="4" value="1"/>
+<hit index="5" value="1"/>
+<hit index="6" value="1"/>
+<hit index="7" value="1"/>
+<hit index="8" value="1"/>
+<hit index="9" value="1"/>
+<hit index="10" value="1"/>
+<hit index="11" value="1"/>
+<hit index="12" value="1"/>
+</hits>
+<coverage domain="userortestcode" unit="block" covered="1" total="1" coveredRatio="1"/>
+</method>
+<chunk hits="1" offset="0000" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0001" domain="userortestcode"><source><![CDATA[Positive_RA_Alt_Thresh[0] = 400;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="3" offset="000d" domain="userortestcode"><source><![CDATA[Positive_RA_Alt_Thresh[1] = 500;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="3" offset="0019" domain="userortestcode"><source><![CDATA[Positive_RA_Alt_Thresh[2] = 640;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="3" offset="0025" domain="userortestcode"><source><![CDATA[Positive_RA_Alt_Thresh[3] = 740;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+        ]]></source>
+</chunk>
+<chunk hits="3" offset="0031" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+        private static int ALIM()
+        ]]></source>
+</chunk>
+<method name="ALIM" type="CombinatorialTest.TCAS" token="6000007" module="CombinatorialTest.exe"><hits><hit index="0" value="2"/>
+<hit index="1" value="2"/>
+<hit index="2" value="2"/>
+<hit index="4" value="1"/>
+</hits>
+<coverage domain="userortestcode" unit="block" covered="1" total="1" coveredRatio="1"/>
+</method>
+<chunk hits="2" offset="0000" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0001" domain="userortestcode"><source><![CDATA[return Positive_RA_Alt_Thresh[Alt_Layer_Value];]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+        ]]></source>
+</chunk>
+<chunk hits="4" offset="000f" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+        private static int Inhibit_Biased_Climb()
+        ]]></source>
+</chunk>
+<method name="Inhibit_Biased_Climb" type="CombinatorialTest.TCAS" token="6000008" module="CombinatorialTest.exe"><hits><hit index="0" value="2"/>
+<hit index="1" value="2"/>
+<hit index="2" value="2"/>
+</hits>
+<coverage domain="userortestcode" unit="block" covered="3" total="3" coveredRatio="1"/>
+</method>
+<chunk hits="2" offset="0000" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0001" domain="userortestcode"><source><![CDATA[return (Climb_Inhibit ? Up_Separation + NOZCROSS : Up_Separation);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+        ]]></source>
+</chunk>
+<chunk hits="4" offset="001d" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+        private static bool Non_Crossing_Biased_Climb()
+        ]]></source>
+</chunk>
+<method name="Non_Crossing_Biased_Climb" type="CombinatorialTest.TCAS" token="6000009" module="CombinatorialTest.exe"><hits><hit index="0" value="1"/>
+<hit index="1" value="1"/>
+<hit index="2" value="1"/>
+<hit index="11" value="1"/>
+<hit index="12" value="1"/>
+<hit index="13" value="1"/>
+<hit index="14" value="1"/>
+<hit index="15" value="1"/>
+<hit index="19" value="1"/>
+<hit index="21" value="1"/>
+</hits>
+<coverage domain="userortestcode" unit="block" covered="9" total="20" coveredRatio="0.45"/>
+</method>
+<chunk hits="1" offset="0000" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            bool upward_preferred;
+            int upward_crossing_situation;
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0001" domain="userortestcode"><source><![CDATA[bool result=false;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0003" domain="userortestcode"><source><![CDATA[upward_preferred = Inhibit_Biased_Climb() > Down_Separation;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0010" domain="userortestcode"><source><![CDATA[if (upward_preferred)]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="001a" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="1" offset="001b" domain="userortestcode"><source><![CDATA[PexAssume.IsTrue(Down_Separation == ALIM() && result);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="0" offset="0031" domain="userortestcode"><source><![CDATA[result = !(Own_Below_Threat()) || ((Own_Below_Threat()) && (!(Down_Separation > ALIM())));]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[ /* opertor mutation */
+            ]]></source>
+</chunk>
+<chunk hits="0" offset="0055" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            else
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0058" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="1" offset="0059" domain="userortestcode"><source><![CDATA[result = Own_Above_Threat() && (Cur_Vertical_Sep >= MINSEP) && (Up_Separation >= ALIM());]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="007f" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0080" domain="userortestcode"><source><![CDATA[return result;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+        ]]></source>
+</chunk>
+<chunk hits="2" offset="0084" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+        private static bool Non_Crossing_Biased_Descend()
+        ]]></source>
+</chunk>
+<method name="Non_Crossing_Biased_Descend" type="CombinatorialTest.TCAS" token="600000a" module="CombinatorialTest.exe"><hits><hit index="0" value="1"/>
+<hit index="1" value="1"/>
+<hit index="7" value="1"/>
+<hit index="8" value="1"/>
+<hit index="9" value="1"/>
+<hit index="10" value="1"/>
+<hit index="11" value="1"/>
+<hit index="12" value="1"/>
+<hit index="15" value="1"/>
+</hits>
+<coverage domain="userortestcode" unit="block" covered="9" total="16" coveredRatio="0.5625"/>
+</method>
+<chunk hits="1" offset="0000" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            bool upward_preferred;
+            int upward_crossing_situation;
+            bool result;
+
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0001" domain="userortestcode"><source><![CDATA[upward_preferred = Inhibit_Biased_Climb() > Down_Separation;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="000e" domain="userortestcode"><source><![CDATA[if (upward_preferred)]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="0" offset="0018" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="0" offset="0019" domain="userortestcode"><source><![CDATA[result = Own_Below_Threat() && (Cur_Vertical_Sep >= MINSEP) && (Down_Separation >= ALIM());]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="0" offset="003f" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            else
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0042" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="1" offset="0043" domain="userortestcode"><source><![CDATA[result = !(Own_Above_Threat()) || ((Own_Above_Threat()) && (Up_Separation >= ALIM()));]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0067" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0068" domain="userortestcode"><source><![CDATA[return result;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+        ]]></source>
+</chunk>
+<chunk hits="2" offset="006c" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+        private static bool Own_Below_Threat()
+        ]]></source>
+</chunk>
+<method name="Own_Below_Threat" type="CombinatorialTest.TCAS" token="600000b" module="CombinatorialTest.exe"><hits><hit index="0" value="1"/>
+</hits>
+<coverage domain="userortestcode" unit="block" covered="1" total="1" coveredRatio="1"/>
+</method>
+<chunk hits="1" offset="0000" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0001" domain="userortestcode"><source><![CDATA[return (Own_Tracked_Alt < Other_Tracked_Alt);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+        ]]></source>
+</chunk>
+<chunk hits="1" offset="0010" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+        private static bool Own_Above_Threat()
+        ]]></source>
+</chunk>
+<method name="Own_Above_Threat" type="CombinatorialTest.TCAS" token="600000c" module="CombinatorialTest.exe"><hits><hit index="0" value="4"/>
+</hits>
+<coverage domain="userortestcode" unit="block" covered="1" total="1" coveredRatio="1"/>
+</method>
+<chunk hits="4" offset="0000" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="4" offset="0001" domain="userortestcode"><source><![CDATA[return (Other_Tracked_Alt < Own_Tracked_Alt);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+        ]]></source>
+</chunk>
+<chunk hits="4" offset="0010" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+        private static int alt_sep_test()
+        ]]></source>
+</chunk>
+<method name="alt_sep_test" type="CombinatorialTest.TCAS" token="600000d" module="CombinatorialTest.exe"><hits><hit index="0" value="1"/>
+<hit index="1" value="1"/>
+<hit index="2" value="1"/>
+<hit index="3" value="1"/>
+<hit index="4" value="1"/>
+<hit index="5" value="1"/>
+<hit index="6" value="1"/>
+<hit index="7" value="1"/>
+<hit index="8" value="1"/>
+<hit index="9" value="1"/>
+<hit index="10" value="1"/>
+<hit index="11" value="1"/>
+<hit index="12" value="1"/>
+<hit index="13" value="1"/>
+<hit index="17" value="1"/>
+<hit index="18" value="1"/>
+<hit index="19" value="1"/>
+<hit index="20" value="1"/>
+<hit index="21" value="1"/>
+<hit index="22" value="1"/>
+<hit index="23" value="1"/>
+<hit index="24" value="1"/>
+<hit index="25" value="1"/>
+<hit index="26" value="1"/>
+<hit index="27" value="1"/>
+<hit index="28" value="1"/>
+<hit index="29" value="1"/>
+<hit index="30" value="1"/>
+<hit index="31" value="1"/>
+</hits>
+<coverage domain="userortestcode" unit="block" covered="26" total="29" coveredRatio="0.896551724137931"/>
+</method>
+<chunk hits="1" offset="0000" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            bool enabled, tcas_equipped, intent_not_known;
+            bool need_upward_RA, need_downward_RA;
+            int alt_sep;
+
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0001" domain="userortestcode"><source><![CDATA[enabled = High_Confidence && (Own_Tracked_Alt_Rate <= OLEV) && (Cur_Vertical_Sep > MAXALTDIFF);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="3" offset="0024" domain="userortestcode"><source><![CDATA[tcas_equipped = Other_Capability == TCAS_TA;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="3" offset="0031" domain="userortestcode"><source><![CDATA[intent_not_known = Two_of_Three_Reports_Valid && Other_RAC == NO_INTENT;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0048" domain="userortestcode"><source><![CDATA[alt_sep = UNRESOLVED;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="004f" domain="userortestcode"><source><![CDATA[if (enabled && ((tcas_equipped && intent_not_known) || !tcas_equipped))]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0065" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="1" offset="0066" domain="userortestcode"><source><![CDATA[need_upward_RA = Non_Crossing_Biased_Climb() && Own_Below_Threat();]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="2" offset="0076" domain="userortestcode"><source><![CDATA[need_downward_RA = Non_Crossing_Biased_Descend() && Own_Above_Threat();]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="2" offset="0087" domain="userortestcode"><source><![CDATA[if (need_upward_RA && need_downward_RA)]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                    /* unreachable: requires Own_Below_Threat and Own_Above_Threat
+                       to both be true - that requires Own_Tracked_Alt < Other_Tracked_Alt
+                       and Other_Tracked_Alt < Own_Tracked_Alt, which isn't possible */
+                    ]]></source>
+</chunk>
+<chunk hits="0" offset="0098" domain="userortestcode"><source><![CDATA[alt_sep = UNRESOLVED;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                else ]]></source>
+</chunk>
+<chunk hits="1" offset="00a1" domain="userortestcode"><source><![CDATA[if (need_upward_RA)]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="0" offset="00ab" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                    ]]></source>
+</chunk>
+<chunk hits="0" offset="00ac" domain="userortestcode"><source><![CDATA[alt_sep = UPWARD_RA;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[                    
+                ]]></source>
+</chunk>
+<chunk hits="0" offset="00b3" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                else ]]></source>
+</chunk>
+<chunk hits="1" offset="00b6" domain="userortestcode"><source><![CDATA[if (need_downward_RA)]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                    ]]></source>
+</chunk>
+<chunk hits="1" offset="00c1" domain="userortestcode"><source><![CDATA[alt_sep = DOWNWARD_RA;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                else
+                    ]]></source>
+</chunk>
+<chunk hits="1" offset="00ca" domain="userortestcode"><source><![CDATA[alt_sep = UNRESOLVED;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="00d1" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+            ]]></source>
+</chunk>
+<chunk hits="3" offset="00d2" domain="userortestcode"><source><![CDATA[return alt_sep;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+        ]]></source>
+</chunk>
+<chunk hits="3" offset="00d8" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+        [PexMethod]
+        public void TCASMain(int[] argv)
+        ]]></source>
+</chunk>
+<method name="TCASMain" type="CombinatorialTest.TCAS" token="600000e" module="CombinatorialTest.exe"><hits><hit index="0" value="1"/>
+<hit index="1" value="1"/>
+<hit index="2" value="1"/>
+<hit index="3" value="1"/>
+<hit index="4" value="1"/>
+<hit index="5" value="1"/>
+<hit index="6" value="1"/>
+<hit index="7" value="1"/>
+<hit index="8" value="1"/>
+<hit index="9" value="1"/>
+<hit index="10" value="1"/>
+<hit index="11" value="1"/>
+<hit index="12" value="1"/>
+<hit index="13" value="1"/>
+<hit index="14" value="1"/>
+<hit index="15" value="1"/>
+<hit index="16" value="1"/>
+<hit index="17" value="1"/>
+<hit index="18" value="1"/>
+<hit index="19" value="1"/>
+<hit index="20" value="1"/>
+<hit index="21" value="1"/>
+<hit index="22" value="1"/>
+<hit index="23" value="1"/>
+<hit index="24" value="1"/>
+<hit index="25" value="1"/>
+<hit index="26" value="1"/>
+<hit index="27" value="1"/>
+<hit index="28" value="1"/>
+<hit index="29" value="1"/>
+<hit index="30" value="1"/>
+<hit index="31" value="1"/>
+<hit index="32" value="1"/>
+<hit index="33" value="1"/>
+<hit index="34" value="1"/>
+</hits>
+<coverage domain="userortestcode" unit="block" covered="8" total="8" coveredRatio="1"/>
+</method>
+<chunk hits="1" offset="0000" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0001" domain="userortestcode"><source><![CDATA[if (argv.Length < 13)]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="000f" domain="userortestcode"><source><![CDATA[{]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+                ]]></source>
+</chunk>
+<chunk hits="1" offset="0010" domain="userortestcode"><source><![CDATA[return;]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            }
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="0015" domain="userortestcode"><source><![CDATA[initialize();]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="001b" domain="userortestcode"><source><![CDATA[Cur_Vertical_Sep = argv[1];]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0023" domain="userortestcode"><source><![CDATA[High_Confidence = (argv[2] == 1);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="002e" domain="userortestcode"><source><![CDATA[Two_of_Three_Reports_Valid = (argv[3] == 1);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0039" domain="userortestcode"><source><![CDATA[Own_Tracked_Alt = argv[4];]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0041" domain="userortestcode"><source><![CDATA[Own_Tracked_Alt_Rate = argv[5];]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0049" domain="userortestcode"><source><![CDATA[Other_Tracked_Alt = argv[6];]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0051" domain="userortestcode"><source><![CDATA[Alt_Layer_Value = argv[7];]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0059" domain="userortestcode"><source><![CDATA[Up_Separation = argv[8];]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0061" domain="userortestcode"><source><![CDATA[Down_Separation = argv[9];]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="006a" domain="userortestcode"><source><![CDATA[Other_RAC = argv[10];]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0073" domain="userortestcode"><source><![CDATA[Other_Capability = argv[11];]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="007c" domain="userortestcode"><source><![CDATA[Climb_Inhibit = (argv[12] == 1);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+            ]]></source>
+</chunk>
+<chunk hits="2" offset="0088" domain="userortestcode"><source><![CDATA[int result = alt_sep_test();]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="008e" domain="userortestcode"><source><![CDATA[PexStore.Value("PC", PexSymbolicValue.GetPathConditionString());]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+            ]]></source>
+</chunk>
+<chunk hits="1" offset="009e" domain="userortestcode"><source><![CDATA[PexStore.Value("Result", result);]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[     
+            
+            
+        ]]></source>
+</chunk>
+<chunk hits="2" offset="00aa" domain="userortestcode"><source><![CDATA[}]]></source>
+</chunk>
+<chunk hits="-1" domain="unknown"><source><![CDATA[
+
+    }
+}
+]]></source>
+</chunk>
+</document>
+</documents>

@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?><pex creationTime="2009-03-15 21:53:32Z" id="{3089b7a5-a670-4a01-a897-f3310aac0634}" created="2009-03-15 21:53:32Z" pexVersion="0.9.40114.0" xml="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\reports\90315.215332.5696.pex\report.per" html="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\reports\90315.215332.5696.pex\report.html"><environment commandLine="&quot;C:\Program Files\Microsoft Pex\bin\Microsoft.Pex.exe&quot; C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\CombinatorialTest.exe /membernamefilter:M:TCASMain! /methodnamefilter:TCASMain! /namespacefilter:CombinatorialTest! /typefilter:TCAS! /x64failsilently /donotopenreport /reportoutputpath:C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\reports /testframework:VisualStudioUnitTest /testlanguage:cs /testprojectfile:C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\CombinatorialTest.csproj /testprojectnotupdate /testprojectskip" machineName="LI-LAPTOP" osVersion="Microsoft Windows NT 6.0.6001 Service Pack 1" processorCount="2" clrVersion="2.0.50727.3074" user="Nuo"><envVars><envVar name="systemroot" value="C:\Windows"/>
+<envVar name="programdata" value="C:\ProgramData"/>
+<envVar name="clrmonitor_inject_types" value=""/>
+<envVar name="clrmonitor_instrument_namespaces" value="System.Collections,System.Collections.Generic,System.Collections.ObjectModel,System.Collections.Specialized"/>
+<envVar name="computername" value="LI-LAPTOP"/>
+<envVar name="roxiocentral" value="C:\Program Files\Common Files\Roxio Shared\9.0\Roxio Central33\"/>
+<envVar name="tpccommon" value="C:\PROGRA~1\THINKV~1\PrdCtr"/>
+<envVar name="sma" value="C:\Program Files\ThinkVantage\SMA\"/>
+<envVar name="clrmonitor_instrument_assemblies" value="CombinatorialTest,Microsoft.VisualBasic,Microsoft.VisualStudio.QualityTools.UnitTestFramework,System.Core"/>
+<envVar name="appdata" value="C:\Users\Nuo\AppData\Roaming"/>
+<envVar name="tvtpydir" value="C:\Program Files\Common Files\Lenovo\Python24"/>
+<envVar name="clrmonitor_inject_assemblies" value=""/>
+<envVar name="swshare" value="C:\SWSHARE"/>
+<envVar name="userdomain" value="Li-Laptop"/>
+<envVar name="commonprogramfiles" value="C:\Program Files\Common Files"/>
+<envVar name="number_of_processors" value="2"/>
+<envVar name="programfiles" value="C:\Program Files"/>
+<envVar name="sessionname" value="Console"/>
+<envVar name="tmp" value="C:\Users\Nuo\AppData\Local\Temp"/>
+<envVar name="CLRMONITOR_INITIALIZED" value="0xe"/>
+<envVar name="fp_no_host_check" value="NO"/>
+<envVar name="username" value="Nuo"/>
+<envVar name="homedrive" value="C:"/>
+<envVar name="localappdata" value="C:\Users\Nuo\AppData\Local"/>
+<envVar name="visualstudiodir" value="C:\Users\Nuo\Documents\Visual Studio 2008"/>
+<envVar name="public" value="C:\Users\Public"/>
+<envVar name="clrmonitor_protect_all_cctors" value="1"/>
+<envVar name="clrmonitor_instrument_types_exclusions" value=""/>
+<envVar name="systemdrive" value="C:"/>
+<envVar name="processor_architecture" value="x86"/>
+<envVar name="pex_wait_for_server_channel" value="1"/>
+<envVar name="comspec" value="C:\Windows\system32\cmd.exe"/>
+<envVar name="cor_profiler" value="{0582376b-d2ca-455b-a074-875449b752d8}"/>
+<envVar name="tvt" value="C:\Program Files\Lenovo"/>
+<envVar name="pex_instrumentation" value="1"/>
+<envVar name="trace_format_search_path" value="\\NTREL202.ntdev.corp.microsoft.com\4F18C3A5-CA09-4DBD-B6FC-219FDD4C6BE0\TraceFormat"/>
+<envVar name="clrmonitor_instrument_assemblies_exclusions" value=""/>
+<envVar name="rr" value="C:\Program Files\Lenovo\Rescue and Recovery"/>
+<envVar name="path" value="C:\Program Files\IBM\GSK5\lib;C:\Program Files\IBM\SDP\DCI\rpa_prod\tivoli_comp\bin\w32-ix86;C:\Program Files\IBM\SDP\AgentController\bin;C:\Program Files\IBM\SDP/rpt/citrixOCR;C:\texmf\miktex\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files\Diskeeper Corporation\Diskeeper\;C:\Program Files\Common Files\Roxio Shared\DLLShared\;C:\Program Files\Common Files\Roxio Shared\DLLShared\;C:\Program Files\Common Files\Roxio Shared\9.0\DLLShared\;C:\Program Files\Common Files\Lenovo;C:\Program Files\ThinkPad\ConnectUtilities;C:\Program Files\Lenovo\Client Security Solution;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Rational\common;C:\MinGW\bin;C:\Program Files\SSH Communications Security\SSH Secure Shell"/>
+<envVar name="userprofile" value="C:\Users\Nuo"/>
+<envVar name="clrmonitor_instrument_namespaces_exclusions" value=""/>
+<envVar name="processor_identifier" value="x86 Family 6 Model 15 Stepping 11, GenuineIntel"/>
+<envVar name="clrmonitor_substitutions" value="C:\Windows\assembly\GAC_MSIL\Microsoft.ExtendedReflection\0.9.40114.0__76a274db078248c8\Microsoft.ExtendedReflection.dll"/>
+<envVar name="logonserver" value="\\LI-LAPTOP"/>
+<envVar name="processor_revision" value="0f0b"/>
+<envVar name="dfstracingon" value="FALSE"/>
+<envVar name="wecversionforrosebud.cd0" value="2"/>
+<envVar name="pathext" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
+<envVar name="tvtcommon" value="C:\Program Files\Common Files\Lenovo"/>
+<envVar name="homepath" value="\Users\Nuo"/>
+<envVar name="temp" value="C:\Users\Nuo\AppData\Local\Temp"/>
+<envVar name="processor_level" value="6"/>
+<envVar name="clrmonitor_clsid" value="{0582376b-d2ca-455b-a074-875449b752d8}"/>
+<envVar name="allusersprofile" value="C:\ProgramData"/>
+<envVar name="pex_server_channel" value="pex3280"/>
+<envVar name="clrmonitor_instrument_types" value="System.Array,System.Array+ArrayEnumerator,System.Array+FunctorComparer`1,System.Array+SZArrayEnumerator,System.Array+SorterGenericArray,System.Array+SorterObjectArray,System.Boolean,System.Byte,System.Char,System.CharEnumerator,System.ComponentModel.Component,System.ComponentModel.Container,System.ComponentModel.Container+Site,System.Convert,System.Currency,System.DateTime,System.Decimal,System.Diagnostics.Assert,System.Diagnostics.Contracts.Contract,System.Double,System.Globalization.CharUnicodeInfo,System.Globalization.CultureTableRecord,System.Guid,System.IO.Stream,System.IO.StringReader,System.IO.StringWriter,System.Int16,System.Int32,System.Int64,System.Math,System.Nullable,System.Nullable`1,System.SByte,System.SZArrayHelper,System.SZArrayHelper+SZGenericArrayEnumerator`1,System.Single,System.String,System.Text.Encoding,System.TimeSpan,System.UInt16,System.UInt32,System.UInt64,System.Xml.XmlTextWriter,System.Xml.XmlTextWriter+Namespace,System.Xml.XmlTextWriter+NamespaceState,System.Xml.XmlTextWriter+SpecialAttr,System.Xml.XmlTextWriter+State,System.Xml.XmlTextWriter+TagInfo,System.Xml.XmlTextWriter+Token,System.Xml.XmlWriter,__Box`1,__SzArrayHelper`1"/>
+<envVar name="clrmonitor_flags" value=""/>
+<envVar name="clrmonitor_inject_namespaces" value=""/>
+<envVar name="windir" value="C:\Windows"/>
+<envVar name="os" value="Windows_NT"/>
+<envVar name="vs90comntools" value="C:\Program Files\Microsoft Visual Studio 9.0\Common7\Tools\"/>
+</envVars>
+</environment>
+<settings assembly="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\CombinatorialTest.exe" x64failsilently="True" namespacefilter="CombinatorialTest!" typefilter="TCAS!" methodnamefilter="TCASMain!" membernamefilter="M:TCASMain!" reportoutputpath="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\reports" donotopenreport="True" testprojectskip="True" testprojectfile="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\CombinatorialTest.csproj" testlanguage="cs" testprojectnotupdate="True" testframework="VisualStudioUnitTest"/>
+<reflection><previousReport path="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\reports\90315.205323.3668.pex\report.html" created="2009-03-15 20:53:27Z"/>
+<previousReport path="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\reports\90315.205759.2352.pex\report.html" created="2009-03-15 20:58:04Z"/>
+<previousReport path="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\reports\90315.205909.5008.pex\report.html" created="2009-03-15 20:59:14Z"/>
+<previousReport path="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\reports\90315.215004.2632.pex\report.html" created="2009-03-15 21:50:07Z"/>
+<previousReport path="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\reports\90315.215049.4140.pex\report.html" created="2009-03-15 21:50:53Z"/>
+</reflection>
+<assembly name="CombinatorialTest" version="1.0.0.0" fullName="CombinatorialTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" location="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\bin\Debug\CombinatorialTest.exe" fileName="CombinatorialTest.exe"><settings testFramework="VisualStudioUnitTest" testLanguage="cs"/>
+<instrumentationInfo target="assembly" name="CombinatorialTest" level="instrument"/>
+<instrumentationInfo target="assembly" name="System.Core" level="instrument"/>
+<instrumentationInfo target="assembly" name="Microsoft.VisualStudio.QualityTools.UnitTestFramework" level="instrument"/>
+<instrumentationInfo target="assembly" name="Microsoft.VisualBasic" level="instrument"/>
+<instrumentationInfo target="namespace" name="System.Collections" level="instrument"/>
+<instrumentationInfo target="namespace" name="System.Collections.Generic" level="instrument"/>
+<instrumentationInfo target="namespace" name="System.Collections.ObjectModel" level="instrument"/>
+<instrumentationInfo target="namespace" name="System.Collections.Specialized" level="instrument"/>
+<instrumentationInfo target="type" name="System.Xml.XmlWriter" level="instrument"/>
+<instrumentationInfo target="type" name="System.ComponentModel.Component" level="instrument"/>
+<instrumentationInfo target="type" name="System.Xml.XmlTextWriter" level="instrument"/>
+<instrumentationInfo target="type" name="System.Xml.XmlTextWriter+NamespaceState" level="instrument"/>
+<instrumentationInfo target="type" name="System.Xml.XmlTextWriter+TagInfo" level="instrument"/>
+<instrumentationInfo target="type" name="System.Xml.XmlTextWriter+Namespace" level="instrument"/>
+<instrumentationInfo target="type" name="System.Xml.XmlTextWriter+SpecialAttr" level="instrument"/>
+<instrumentationInfo target="type" name="System.Xml.XmlTextWriter+State" level="instrument"/>
+<instrumentationInfo target="type" name="System.Xml.XmlTextWriter+Token" level="instrument"/>
+<instrumentationInfo target="type" name="__SzArrayHelper`1" level="instrument"/>
+<instrumentationInfo target="type" name="__Box`1" level="instrument"/>
+<instrumentationInfo target="type" name="System.Currency" level="instrument"/>
+<instrumentationInfo target="type" name="System.Array" level="instrument"/>
+<instrumentationInfo target="type" name="System.Array+FunctorComparer`1" level="instrument"/>
+<instrumentationInfo target="type" name="System.Array+SorterObjectArray" level="instrument"/>
+<instrumentationInfo target="type" name="System.Array+SorterGenericArray" level="instrument"/>
+<instrumentationInfo target="type" name="System.Array+SZArrayEnumerator" level="instrument"/>
+<instrumentationInfo target="type" name="System.Array+ArrayEnumerator" level="instrument"/>
+<instrumentationInfo target="type" name="System.SZArrayHelper" level="instrument"/>
+<instrumentationInfo target="type" name="System.SZArrayHelper+SZGenericArrayEnumerator`1" level="instrument"/>
+<instrumentationInfo target="type" name="System.CharEnumerator" level="instrument"/>
+<instrumentationInfo target="type" name="System.Globalization.CultureTableRecord" level="instrument"/>
+<instrumentationInfo target="type" name="System.Diagnostics.Contracts.Contract" level="instrument"/>
+<instrumentationInfo target="type" name="System.Diagnostics.Assert" level="instrument"/>
+<instrumentationInfo target="type" name="System.Nullable" level="instrument"/>
+<instrumentationInfo target="type" name="System.Nullable`1" level="instrument"/>
+<instrumentationInfo target="type" name="System.Boolean" level="instrument"/>
+<instrumentationInfo target="type" name="System.Guid" level="instrument"/>
+<instrumentationInfo target="type" name="System.String" level="instrument"/>
+<instrumentationInfo target="type" name="System.Char" level="instrument"/>
+<instrumentationInfo target="type" name="System.Byte" level="instrument"/>
+<instrumentationInfo target="type" name="System.SByte" level="instrument"/>
+<instrumentationInfo target="type" name="System.Int16" level="instrument"/>
+<instrumentationInfo target="type" name="System.Int32" level="instrument"/>
+<instrumentationInfo target="type" name="System.Int64" level="instrument"/>
+<instrumentationInfo target="type" name="System.UInt16" level="instrument"/>
+<instrumentationInfo target="type" name="System.UInt32" level="instrument"/>
+<instrumentationInfo target="type" name="System.UInt64" level="instrument"/>
+<instrumentationInfo target="type" name="System.Decimal" level="instrument"/>
+<instrumentationInfo target="type" name="System.Math" level="instrument"/>
+<instrumentationInfo target="type" name="System.Double" level="instrument"/>
+<instrumentationInfo target="type" name="System.Single" level="instrument"/>
+<instrumentationInfo target="type" name="System.DateTime" level="instrument"/>
+<instrumentationInfo target="type" name="System.TimeSpan" level="instrument"/>
+<instrumentationInfo target="type" name="System.Convert" level="instrument"/>
+<instrumentationInfo target="type" name="System.Globalization.CharUnicodeInfo" level="instrument"/>
+<instrumentationInfo target="type" name="System.IO.Stream" level="instrument"/>
+<instrumentationInfo target="type" name="System.IO.StringWriter" level="instrument"/>
+<instrumentationInfo target="type" name="System.IO.StringReader" level="instrument"/>
+<instrumentationInfo target="type" name="System.Text.Encoding" level="instrument"/>
+<instrumentationInfo target="type" name="System.ComponentModel.Container" level="instrument"/>
+<instrumentationInfo target="type" name="System.ComponentModel.Container+Site" level="instrument"/>
+<fixture name="TCAS" type="CombinatorialTest.TCAS" typeName="TCAS" token="2000003" href="fix\525.html"><type spec="Class"><definition assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+</type>
+<exploration shortName="TCASMain(Int32[])" fullName="CombinatorialTest.TCAS.TCASMain(Int32[])"><settings maxRuns="20" maxRunsWithoutNewTests="2147483647" maxConditions="2147483647"/>
+<log level="message" time="2009-03-15 21:53:32Z" category="progress" message="    0 runs"/>
+<generatedTest id="t3745628764994" index="1" run="1" absCovered="0" absTotal="0" status="exception" failed="true" assemblyName="CombinatorialTest" name="TCASMain01"/>
+<generatedTest id="t3745628764995" index="2" run="2" absCovered="0" absTotal="0" status="normaltermination" assemblyName="CombinatorialTest" name="TCASMain02"/>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Cur_Vertical_Sep" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Cur_Vertical_Sep" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Cur_Vertical_Sep" static="true" token="400000a"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line167" method="TCAS.TCASMain(Int32[])" offset="30" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="167"><beforeSource><![CDATA[                return;
+            }
+            initialize();]]></beforeSource>
+<source><![CDATA[            Cur_Vertical_Sep = argv[1];]]></source>
+<afterSource><![CDATA[            High_Confidence = (argv[2] == 1);
+            Two_of_Three_Reports_Valid = (argv[3] == 1);
+            Own_Tracked_Alt = argv[4];]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.High_Confidence" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="High_Confidence" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="High_Confidence" static="true" token="400000b"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Boolean" token="2000077" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line168" method="TCAS.TCASMain(Int32[])" offset="41" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="168"><beforeSource><![CDATA[            }
+            initialize();
+            Cur_Vertical_Sep = argv[1];]]></beforeSource>
+<source><![CDATA[            High_Confidence = (argv[2] == 1);]]></source>
+<afterSource><![CDATA[            Two_of_Three_Reports_Valid = (argv[3] == 1);
+            Own_Tracked_Alt = argv[4];
+            Own_Tracked_Alt_Rate = argv[5];]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Two_of_Three_Reports_Valid" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Two_of_Three_Reports_Valid" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Two_of_Three_Reports_Valid" static="true" token="400000c"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Boolean" token="2000077" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line169" method="TCAS.TCASMain(Int32[])" offset="52" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="169"><beforeSource><![CDATA[            initialize();
+            Cur_Vertical_Sep = argv[1];
+            High_Confidence = (argv[2] == 1);]]></beforeSource>
+<source><![CDATA[            Two_of_Three_Reports_Valid = (argv[3] == 1);]]></source>
+<afterSource><![CDATA[            Own_Tracked_Alt = argv[4];
+            Own_Tracked_Alt_Rate = argv[5];
+            Other_Tracked_Alt = argv[6];]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Own_Tracked_Alt" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Own_Tracked_Alt" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Own_Tracked_Alt" static="true" token="400000d"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line170" method="TCAS.TCASMain(Int32[])" offset="60" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="170"><beforeSource><![CDATA[            Cur_Vertical_Sep = argv[1];
+            High_Confidence = (argv[2] == 1);
+            Two_of_Three_Reports_Valid = (argv[3] == 1);]]></beforeSource>
+<source><![CDATA[            Own_Tracked_Alt = argv[4];]]></source>
+<afterSource><![CDATA[            Own_Tracked_Alt_Rate = argv[5];
+            Other_Tracked_Alt = argv[6];
+            Alt_Layer_Value = argv[7];]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Own_Tracked_Alt_Rate" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Own_Tracked_Alt_Rate" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Own_Tracked_Alt_Rate" static="true" token="400000e"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line171" method="TCAS.TCASMain(Int32[])" offset="68" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="171"><beforeSource><![CDATA[            High_Confidence = (argv[2] == 1);
+            Two_of_Three_Reports_Valid = (argv[3] == 1);
+            Own_Tracked_Alt = argv[4];]]></beforeSource>
+<source><![CDATA[            Own_Tracked_Alt_Rate = argv[5];]]></source>
+<afterSource><![CDATA[            Other_Tracked_Alt = argv[6];
+            Alt_Layer_Value = argv[7];
+            Up_Separation = argv[8];]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Other_Tracked_Alt" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Other_Tracked_Alt" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Other_Tracked_Alt" static="true" token="400000f"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line172" method="TCAS.TCASMain(Int32[])" offset="76" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="172"><beforeSource><![CDATA[            Two_of_Three_Reports_Valid = (argv[3] == 1);
+            Own_Tracked_Alt = argv[4];
+            Own_Tracked_Alt_Rate = argv[5];]]></beforeSource>
+<source><![CDATA[            Other_Tracked_Alt = argv[6];]]></source>
+<afterSource><![CDATA[            Alt_Layer_Value = argv[7];
+            Up_Separation = argv[8];
+            Down_Separation = argv[9];]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Alt_Layer_Value" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Alt_Layer_Value" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Alt_Layer_Value" static="true" token="4000010"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line173" method="TCAS.TCASMain(Int32[])" offset="84" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="173"><beforeSource><![CDATA[            Own_Tracked_Alt = argv[4];
+            Own_Tracked_Alt_Rate = argv[5];
+            Other_Tracked_Alt = argv[6];]]></beforeSource>
+<source><![CDATA[            Alt_Layer_Value = argv[7];]]></source>
+<afterSource><![CDATA[            Up_Separation = argv[8];
+            Down_Separation = argv[9];
+            Other_RAC = argv[10];]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Up_Separation" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Up_Separation" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Up_Separation" static="true" token="4000012"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line174" method="TCAS.TCASMain(Int32[])" offset="92" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="174"><beforeSource><![CDATA[            Own_Tracked_Alt_Rate = argv[5];
+            Other_Tracked_Alt = argv[6];
+            Alt_Layer_Value = argv[7];]]></beforeSource>
+<source><![CDATA[            Up_Separation = argv[8];]]></source>
+<afterSource><![CDATA[            Down_Separation = argv[9];
+            Other_RAC = argv[10];
+            Other_Capability = argv[11];]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Down_Separation" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Down_Separation" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Down_Separation" static="true" token="4000013"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line175" method="TCAS.TCASMain(Int32[])" offset="101" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="175"><beforeSource><![CDATA[            Other_Tracked_Alt = argv[6];
+            Alt_Layer_Value = argv[7];
+            Up_Separation = argv[8];]]></beforeSource>
+<source><![CDATA[            Down_Separation = argv[9];]]></source>
+<afterSource><![CDATA[            Other_RAC = argv[10];
+            Other_Capability = argv[11];
+            Climb_Inhibit = (argv[12] == 1);]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Other_RAC" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Other_RAC" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Other_RAC" static="true" token="4000014"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line176" method="TCAS.TCASMain(Int32[])" offset="110" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="176"><beforeSource><![CDATA[            Alt_Layer_Value = argv[7];
+            Up_Separation = argv[8];
+            Down_Separation = argv[9];]]></beforeSource>
+<source><![CDATA[            Other_RAC = argv[10];]]></source>
+<afterSource><![CDATA[            Other_Capability = argv[11];
+            Climb_Inhibit = (argv[12] == 1);
+]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Other_Capability" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Other_Capability" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Other_Capability" static="true" token="4000018"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Int32" token="20000c3" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line177" method="TCAS.TCASMain(Int32[])" offset="119" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="177"><beforeSource><![CDATA[            Up_Separation = argv[8];
+            Down_Separation = argv[9];
+            Other_RAC = argv[10];]]></beforeSource>
+<source><![CDATA[            Other_Capability = argv[11];]]></source>
+<afterSource><![CDATA[            Climb_Inhibit = (argv[12] == 1);
+
+            int result = alt_sep_test();]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<staticFieldStore fieldDisplayName="CombinatorialTest.TCAS.Climb_Inhibit" declaringTypeDisplayName="CombinatorialTest.TCAS" fieldShortDisplayName="Climb_Inhibit" wikiTopic="Value Stored In Static Field"><field><definition assemblyName="CombinatorialTest" name="Climb_Inhibit" static="true" token="400001b"><declaringType assemblyName="CombinatorialTest" name="TCAS" token="2000003" namespace="CombinatorialTest"/>
+<fieldType spec="ValueType"><definition assemblyName="mscorlib" valueType="true" name="Boolean" token="2000077" namespace="System"/>
+</fieldType>
+</definition>
+</field>
+<stackTrace><frame value="  at TCAS.TCASMain(Int32[]) in C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs:line178" method="TCAS.TCASMain(Int32[])" offset="131" file="C:\MyWorkspace\li-591T\C_Sharp_arff_generator\CombinatorialTest\TCAS.cs" line="178"><beforeSource><![CDATA[            Down_Separation = argv[9];
+            Other_RAC = argv[10];
+            Other_Capability = argv[11];]]></beforeSource>
+<source><![CDATA[            Climb_Inhibit = (argv[12] == 1);]]></source>
+<afterSource><![CDATA[
+            int result = alt_sep_test();
+            PexStore.Value("PC", PexSymbolicValue.GetPathConditionString());]]></afterSource>
+</frame>
+</stackTrace>
+</staticFieldStore>
+<generatedTest id="t3745628764996" index="3" run="3" absCovered="0" absTotal="0" status="normaltermination" assemblyName="CombinatorialTest" name="TCASMain03"/>
+<generatedTest id="t3745628764997" index="4" run="4" absCovered="0" absTotal="0" status="normaltermination" assemblyName="CombinatorialTest" name="TCASMain04"/>
+<generatedTest id="t3745628764998" index="5" run="5" absCovered="0" absTotal="0" status="normaltermination" assemblyName="CombinatorialTest" name="TCASMain05"/>
+<generatedTest id="t3745628764999" index="6" run="6" absCovered="0" absTotal="0" status="normaltermination" assemblyName="CombinatorialTest" name="TCASMain06"/>
+<generatedTest id="t3745628765000" index="7" run="7" absCovered="0" absTotal="0" status="normaltermination" assemblyName="CombinatorialTest" name="TCASMain07"/>
+<generatedTest id="t3745628765001" index="8" run="9" absCovered="0" absTotal="0" status="normaltermination" assemblyName="CombinatorialTest" name="TCASMain08"/>
+<generatedTest id="t3745628765002" index="9" run="10" absCovered="0" absTotal="0" status="exception" failed="true" assemblyName="CombinatorialTest" name="TCASMain09"/>
+<generatedTest id="t3745628765003" index="10" run="11" absCovered="0" absTotal="0" status="normaltermination" assemblyName="CombinatorialTest" name="TCASMain10"/>
+<generatedTest id="t3745628765004" index="11" run="14" absCovered="0" absTotal="0" status="normaltermination" assemblyName="CombinatorialTest" name="TCASMain11"/>
+<generatedTest id="t3745628765005" index="12" run="15" absCovered="0" absTotal="0" status="normaltermination" assemblyName="CombinatorialTest" name="TCASMain12"/>
+<boundary kind="maxruns" value="20"/>
+<coverage domain="usercodeundertest" unit="block" covered="0" total="0" coveredRatio="0"/>
+<coverage domain="usercodeundertest" unit="methodtouched" covered="0" total="0" coveredRatio="0"/>
+<sourceCoverage xml="cov\e273\cov.xml" html="cov\e273\cov.html"/>
+<result name="TCASMain(Int32[])" state="success" duration="0.765562592452393"/>
+<duration start="2009-03-15 21:53:32Z" end="2009-03-15 21:53:33Z" seconds="0.788"/>
+</exploration>
+<coverage domain="usercodeundertest" unit="block" covered="0" total="0" coveredRatio="0"/>
+<coverage domain="usercodeundertest" unit="methodtouched" covered="0" total="0" coveredRatio="0"/>
+<sourceCoverage xml="cov\t525\cov.xml" html="cov\t525\cov.html"/>
+<duration start="2009-03-15 21:53:32Z" end="2009-03-15 21:53:33Z" seconds="0.833"/>
+</fixture>
+<coverage domain="usercodeundertest" unit="block" covered="0" total="0" coveredRatio="0"/>
+<coverage domain="usercodeundertest" unit="methodtouched" covered="0" total="0" coveredRatio="0"/>
+<sourceCoverage xml="cov\a25952117\cov.xml" html="cov\a25952117\cov.html"/>
+<duration start="2009-03-15 21:53:32Z" end="2009-03-15 21:53:33Z" seconds="0.865"/>
+<frameTreeRef exceptionCount="2"/>
+</assembly>
+<duration start="2009-03-15 21:53:32Z" end="2009-03-15 21:53:33Z" seconds="0.944"/>
+<background/>
+</pex>
