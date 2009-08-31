@@ -1,38 +1,38 @@
 \section{Related Work}
-\label{sec:related} In this section, we introduce related work and
-discuss our contributions.
+\label{sec:related} Our approach is related to previous work on
+language migration and library migration.
 
-\textbf{Language migration.} It is a research topic with a long
-history to migrate projects of one language into other
-languages~\cite{samet1981experience}. To reduce the human effort of
-language migration, researchers propose various approaches to
-automate the
+\textbf{Language migration.} To reduce effort of language
+migration~\cite{samet1981experience}, researchers propose various
+approaches to automate the
 process~\cite{van1999identifying,waters1988program,mossienko2003automated,yasumatsu1995spice,hainaut2008migration}.
-Most of these approaches focus the syntax differences among
+Most of these approaches focus the syntax differences bewteen
 languages. For example, Deursen \emph{et
 al.}~\cite{van1999identifying} propose an approach to identify
-objects in legacy code, and the results are useful to deal with the
-difference  between object-oriented languages and procedural
-languages. As shown by El-Ramly \emph{et
-al.}~\cite{el2006experiment}'s experience report, existing
-approaches and tools support only a subset of APIs, and consequently
-it becomes an important to automate API transformation. Our approach
-mines API mapping among languages to aid language migration,
-complementing the preceding approaches.
+objects in legacy code, and the results are useful to deal with
+differences between object-oriented and procedural languages. As
+shown by El-Ramly \emph{et al.}~\cite{el2006experiment}'s experience
+report, existing approaches and tools support only a subset of APIs,
+and consequently it becomes an important and yet challenging task to
+automate API transformation. Our approach mines API mapping between
+languages to aid language migration, addressing a significant
+problem unaddressed by the previous approaches and complementing
+these approaches.
 
-\textbf{Library migration.} With the evaluation of libraries, some
-APIs may become incompatible. To deal with the problem, some
-approaches have been proposed. In particular, Henkel and
-Diwan~\cite{henkel2005catchup} propose an approach that captures and
-replay API refracturing actions to keep client code updated. Xing
-and Stroulia~\cite{xing2007api} propose an approach that recognizes
-the changes of APIs by comparing the differences of two versions of
-libraries. Balaban \emph{et al.}~\cite{balaban2005refactoring}
-propose an approach to help translate client code when mapping
-relations of libraries are available. Different from these
-approaches, our approach focuses on mapping relations of APIs among
-different languages. In addition, as our approach uses ATGs to mine
-mapping relations of APIs, our approach helps mine mapping relations
-for those API methods whose input orders is changed or whose
+\textbf{Library migration.} With evolution of libraries, some APIs
+may become incompatible across library versions. To deal with the
+problem, some approaches have been proposed. In particular, Henkel
+and Diwan~\cite{henkel2005catchup} propose an approach that captures
+and replays API refactoring actions to keep client code updated.
+Xing and Stroulia~\cite{xing2007api} propose an approach that
+recognizes the changes of APIs by comparing the differences of two
+versions of libraries. Balaban \emph{et
+al.}~\cite{balaban2005refactoring} propose an approach to help
+translate client code when mapping relations of libraries are
+available. Different from these approaches, our approach focuses on
+mapping relations of APIs among different languages. In addition, as
+our approach uses API transformation graphs to mine mapping
+relations of APIs, our approach helps mine mapping relations for
+those API methods whose input orders are changed or whose
 functionalities are split into several methods if our approach is
 applied in library migration.
