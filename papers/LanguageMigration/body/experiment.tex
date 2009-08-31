@@ -214,8 +214,8 @@ introduce many false mapping relations. In other word, our approach
 is robust to mine accurate API mapping. Sub-column ``\emph{1-1}''
 list the number of one-to-one relations. We find that most mined
 mapping relations are of this kind. Our approach still needs
-improvements to mine those n-to-n mapping relations. We further
-discuss this issue in Section~\ref{sec:discuss}.
+improvements to mine those many-to-many mapping relations. We
+further discuss this issue in Section~\ref{sec:discuss}.
 
 
 In summary, our approach mines many mapping relations of APIs
@@ -306,12 +306,12 @@ packages and classes.
 methods with the highest supports into mapping files as relations of
 methods with pattern strings. For 1-to-1 mapping relations of
 methods, this step is automatic as mined mapping relations describe
-mapping relations of corresponding methods and inputs. For n-to-n
-mapping relations of methods, this step is manual as mined mapping
-relations do not include adequate details such as how to deal with
-multiple outputs. For example, the mapping relation of method as
-shown in Figure~\ref{fig:example} has two outputs. We need manually
-combine the two outputs with an \emph{or} operator.
+mapping relations of corresponding methods and inputs. For
+many-to-many mapping relations of methods, this step is manual as
+mined mapping relations do not include adequate details such as how
+to deal with multiple outputs. For example, the mapping relation of
+method as shown in Figure~\ref{fig:example} has two outputs. We need
+manually combine the two outputs with an \emph{or} operator.
 
 After the preceding translation,we find that some packages overlap
 in the mined mapping files and the mapping files of CSharp2Java. We
