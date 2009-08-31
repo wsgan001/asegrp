@@ -1,100 +1,106 @@
 \section{Approach}
 \label{sec:approach}
 
+Our approach accepts a set of projects as data sources and mines
+API mapping between two different languages $L_1$ and $L_2$. 
+As mined API mapping describes mapping relations of APIs between 
+the two languages, this mapping is useful for language migration between the two languages. 
+For each project used as a data source, our approach requires 
+atleast two versions of the project (one version in $L_1$ and
+the other version in $L_2$). Figure~\ref{fig:approach} shows
+the overview of our approach.
 
-Figure~\ref{fig:approach} shows the overview of our approach. To
-mine API mapping of two languages, our approach needs a set of
-projects as data sources. Each project has at least two versions of
-the two languages under consideration. As mined API mapping
-describes mapping relations of APIs for the two languages, it is
-useful to language migration between the two languages. In
-particular, the first step of our approach is to align client code
-from versions of two languages so that the aligned source files
-implement similar functionalities (Section~\ref{sec:approach:acc}).
-The second step is to mine mapping relations of API classes
-(Section~\ref{sec:approach:mappingtypes}). The final step is to mine
-mapping relations of API methods
-(Section~\ref{sec:approach:mappingtypes}).
+First, our approach aligns client code in languages $L_1$ and $L_2$ 
+so that the aligned source files implement similar functionalities 
+(Section~\ref{sec:approach:acc}). Second, our approach mines 
+mapping relations of API classes (Section~\ref{sec:approach:mappingtypes}). 
+Finally, our approach mines mapping relations of API 
+methods (Section~\ref{sec:approach:mappingtypes}) defined by the mapped
+API classes.
+
 \begin{figure}[t]
 \centering
 \includegraphics[scale=1,clip]{figure/approach.eps}\vspace*{-3ex}
  \caption{Overview of our approach}\vspace*{-3.5ex}
  \label{fig:approach}
 \end{figure}
+
+%-------------------------------------------------------------------
 \subsection{Aligning Client Code}
 \label{sec:approach:acc}
 
-Given two versions of a project, the first step of our approach is
-to align classes and methods of the two versions. Two aligned
-classes or methods implement a similar functionality. As they
-implement a similar functionality, APIs used by them may be
-replaceable. For two versions of a project, our approach use name
-similarities of two entities to align classes and methods of the two
-versions. Here, we treat entity names (class/method names) defined
-by the two versions of the project and entity names of third-party
-libraries used by the two versions of the project differently. The
-former often comes from the same programmer or the same team, or
-programmers may refer to existing versions for naming entities such
-as classes, methods, and variables. As a result, for the former,
-using name similarity is often reliable to distinguish their
-functionalities. For two entities, our approach chooses
-Simmetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
-to calculate similarities between their names.
+Initially, our approach accepts two versions of a project (one version in 
+$L_1$ and the other version in $L_2$) and aligns classes and methods
+of the two versions. Aligned classes or methods 
+between the two versions implement a similar functionality. As they
+implement a similar functionality, APIs used by these classes or methods can be
+replaceable.
 
+To align classes and methods of the two versions, our approach uses
+name similarities between entities (such as class names or method names)
+defined by the two versions of the project. In our approach, we have two
+different kinds of entity names: entity names defined by the two versions
+of the project and entity names of third-party libraries used by the two versions of the project.
+The first kind often comes from the same programmer or the same team, or
+programmers may refer to existing versions for naming entities such
+as classes, methods, and variables. Therefore, name similarity is often 
+reliable to distinguish functionalities of the first kind compared to the second
+kind. Our approach uses Simmetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
+to calculate name similarities.
 
 Algorithm~\ref{alg:alignclasses} shows how our approach aligns
-client code classes. The first step of the algorithm is to find
+client code classes. The first step is to find
 candidate class pairs by names. For two sets of classes ($C$ and
-$C'$), the algorithm returns candidate pairs of classes ($M$) with
-the maximum similarity and the similarity must be greater than a
-predefined threshold. Some project may have many classes with the
-same name, so $M$ may contain more than one pair for a class in a
-version. To align those classes, the algorithm uses package names of
-these classes to refine $M$ and returns only one pair with the
+$C'$), the algorithm returns candidate class pairs ($M$) with
+a similarity greater than a given threshold, referred to as \emph{SIM\_THRESHOLD}. 
+As some projects may have many classes with the
+same name, $M$ may contain more than one matching pair for a class in a version. 
+To align those classes, our algorithm uses package names of
+these classes to refine $M$ and returns only one matching pair with the
 maximum similarity\footnote{For C\#, we refer to namespace names for
 package names.}.
 
 In each aligned class pair, our approach further aligns methods
-within the class pair. The algorithm for methods is similar as the
-algorithm for classes but relies on other criteria such parameter
-numbers and names to refine candidate method pairs. These candidates
+within the class pair. The algorithm for methods is similar to the
+algorithm for classes but relies on other criteria such as the number of parameters
+and names of parameters to refine candidate method pairs. These candidates
 may contain more than one method pair due to overloading.
-
 For the example shown in Section~\ref{sec:example}, our approach
-correctly aligns the class named \CodeIn{IndexFiles} and the method
-named \CodeIn{main} in Java to the class named \CodeIn{IndexFiles}
-and the method named as \CodeIn{Main} in that their names are quite
+correctly aligns the class \CodeIn{IndexFiles} and the method
+\CodeIn{main} in Java to the class \CodeIn{IndexFiles}
+and the method \CodeIn{Main} in C\# as their names are quite
 similar.
+%-----------------------------------------------------------------
 \subsection{Mapping API classes}
-\label{sec:approach:mappingtypes} The second step of our approach is
-to mine mapping relations of API classes. As defined in
-Section~\ref{sec:mapping}, mapping relations of API classes are used
+\label{sec:approach:mappingtypes} 
+
+In this step, our approach mines mapping relations of 
+API classes. As defined in Section~\ref{sec:mapping}, mapping relations of API classes are used
 to translate variables. Consequently, our approach mines mapping
 relations of API classes based on how aligned client code declares
-variables (\emph{i.e.}, fields of aligned classes, local variables
-of aligned methods, and parameters of aligned methods). In
+variables such as fields of aligned classes, parameters of aligned methods
+and local variables of aligned methods. In
 particular, for each aligned class pair $\Pair{c_1} {c_2}$, our
-approach analyzes each field pair $\Pair{f_1}{f_2}$) and considers
+approach analyzes each field pair $\Pair{f_1}{f_2}$ and considers
 $\Pair{f_1.type} {f_2.type}$ as one mined mapping relation of API
 classes when the similarity between $f_1.name$ and $f_2.name$ is
-greater than a threshold. Similarly, for each aligned method pair
+greater than \emph{SIM\_THRESHOLD}. Similarly, for each aligned method pair
 $\Pair{m_1} {m_2}$, our approach analyzes each local variable pair
-$\Pair{var_1}{var_2}$ and considers $\langle var_1.type,$ $
+$\Pair{var_1} {var_2}$ and considers $\langle var_1.type,$ $
 var_2.type\rangle$ as one mined mapping relation of API classes when
 the similarity between $var_1.name$ and $var_2.name$ is greater than
 a threshold. Also, our approach analyzes each parameter pair
 $\langle para_1, $ $para_2\rangle$ of $m_1$ and $m_2$, and our
 approach considers $\langle para_1.type,$ $para_2.type\rangle$ as
 one mined mapping relation of API classes when the similarity
-between $para_1.name$ and $para_2.name$ is greater than a threshold.
-Here, the thresholds are the same as Section~\ref{sec:approach:acc}
-in that they are all for names of client code.
+between $para_1.name$ and $para_2.name$ is greater than \emph{SIM\_THRESHOLD}.
 
 For the example shown in Section~\ref{sec:example}, our approach
 mines the mapping relation between \CodeIn{java.io.File} and
-\CodeIn{System.IO.File- Info} based on the matched fields of Line 4
-and Line 9. The mapping relation of API classes helps translate the
-variable declared in Line 1 to the variable declared in Line 16.
+\CodeIn{System.IO.FileInfo} based on the matched fields of Lines 4
+and 9 (Figure~\ref{fig:clientcode}). The mapping relation of API classes helps translate the
+variable declared in Line 1 (Figure~\ref{fig:totranslation}) 
+to the variable declared in Line 16 (Figure~\ref{fig:translatedcode}).
 
 \begin{algorithm}[t]
 \begin{SmallOut}
@@ -126,12 +132,16 @@ variable declared in Line 1 to the variable declared in Line 16.
 %\includegraphics[scale=0.4,clip]{figure/algorithm1.eps}\vspace*{-3ex}
 % \label{alg:1}
 %\end{figure}
+
+%-----------------------------------------------------------
 \subsection{Mapping API methods}
-\label{sec:approach:mappingtypes} The final step of our approach is
-to mine mapping relations of API methods. This step has two major
-sub-steps. First, our approach builds a graph for each client code
+\label{sec:approach:mappingtypes} 
+
+In this step, our approach mines mapping relations of API methods. 
+This step has two major sub-steps. First, our approach builds a graph, referred
+as API transformation graph, for each client code
 method. Second, our approach compares the two graphs of each paired
-client code methods for mapping relations of API methods.
+client code methods for mining mapping relations of API methods.
 
 \begin{figure*}[t]
 \centering
@@ -141,27 +151,53 @@ client code methods for mapping relations of API methods.
 ATGs}\vspace*{-3.5ex}
 \end{figure*}
 
-\subsubsection{API transformation graph} An API transformation graph
-(ATG) of a client code method ($m$) is a directed graph
-($G\Triple{N_{data}}{N_{m}}{E}$). $N_{data}$ is a set of the fields
-of $m$'s declaring class ($F$), the local variable of $m$ ($V$),
-parameters of $m$ ($P_1$), parameters of methods called by
-$m$($P_2$), and return values of all methods ($R$). $N_{m}$ is a set
+
+\subsubsection{API transformation graph} 
+
+An API transformation graph (ATG) of a client code method $m$ is a directed graph
+$G\Triple{N_{data}}{N_{m}}{E}$. $N_{data}$ is a set of the fields $F$
+of $m$'s declaring class, local variables $V$ of $m$,
+parameters $P_1$ of $m$, parameters $P_2$ of methods called by
+$m$, and return values $R$ of all methods. $N_{m}$ is a set
 of methods called by $m$. $E$ is a set of directed edges. An edge
-($d_1\rightarrow d_2$) from a datum ($d_1 \in N_{data}$) to a datum
-($d_2 \in N_{data}$) denotes the data dependency from $d_1$ to
-$d_2$. An edge ($d_1 \rightarrow m_1$) from a datum ($d_1 \in
-N_{data}$)  to a method ($ m_1 \in N_{m}$) denotes $d_1$ is a
-parameter or a receiver of $m_1$. An edge ($m_1 \rightarrow d_1$)
-from a method ($ m_1 \in N_{m}$) to a datum ($d_1 \in N_{data}$)
-denotes $d_1$ is the return value of $m_1$.
+$d_1\rightarrow d_2$ from a datum $d_1 \in N_{data}$ to a datum
+$d_2 \in N_{data}$ denotes the data dependency from $d_1$ to
+$d_2$. An edge $d_1 \rightarrow m_1$ from a datum $d_1 \in
+N_{data}$  to a method $ m_1 \in N_{m}$ denotes $d_1$ is a
+parameter or a related variable of $m_1$. An edge $m_1 \rightarrow
+d_1$ from a method $m_1 \in N_{m}$ to a datum $d_1 \in
+N_{data}$ denotes $d_1$ is the return value of $m_1$.
 
+We propose ATG for two main purposes. The first purpose is to mine mapping
+relations among parameters of mapped API methods. Mining mapping relations
+among parameters of mapped API methods is challenging as often mapped API methods
+can have different number of parameters or different positions among
+parameters. For example, consider the following two mapped API methods:
 
-\subsubsection{Building API transformation graphs} The first sub-step
-builds an ATG for each method. The graph contains details such as
+\begin{CodeOut}
+$m_1$ in Java: BigDecimal java.math.BigDecimal.multiply (BigDecimal $p_1^1$)\\
+\hspace*{0.11in}$m_2$ in C\#: Decimal System.Decimal.Multiply (Decimal $p_1^2$, Decimal $p_2^2$)
+\end{CodeOut}
+
+Method $m_1$ of Java has a receiver variable, say $v_1^1$, of type \CodeIn{BigDecimal}
+and has one parameter $p_1^1$. The mapped method $m_2$ in C\# has
+two parameters $p_1^2$ and $p_2^2$. Using ATGs, our approach
+identifies that $v_1^1$ is mapped to $p_1^2$ and $p_1^1$ is mapped
+to $p_2^2$. As ATG captures parameters of API methods,
+our approach is able to deal with the challenges of mapping parameters. 
+
+The second purpose of ATG is to mine mapping relations of merged API methods. As ATG
+describes data dependencies among inputs and outputs, our approach
+is able to mine mapping relations for merged API methods as shown in
+Figure~\ref{fig:example}. We next describe how our approach builds ATGs and
+uses ATGs for mining mapping relations of API methods.
+
+\subsubsection{Building API transformation graphs (ATG)} 
+
+Our approach builds an ATG for each method $m$. ATG includes information such as
 inputs and outputs for each client code method. In particular, for
-each method, our approach first builds subgraph for its variables,
-API methods, and field accesses according to the rules as follows:
+each method $m$, our approach first builds subgraph for its variables,
+API methods, and field accesses according to the following rules:
 
 %First, programming languages typically provide a huge set of APIs,
 %and it is difficult to build mapping relations for all APIs
@@ -195,133 +231,123 @@ API methods, and field accesses according to the rules as follows:
 %preceding problem,
 
 
+\begin{enumerate}
+\item $\forall$ $f \in F \cup V \cup P_1$, our approach adds a node to the built ATG.
+The reason for considering these variables such as fields in declaring 
+class or local variables in method $m$ used in client code is that
+these variables are useful to analyze data dependencies among API methods.
 
-(1) $f\in F\cup V \cup P_1 \Rightarrow $
-%\restylefloat{figure}
-%\begin{figure}[H]\vspace*{-5ex}
-%\begin{center}
-\includegraphics[scale=0.7,clip]{figure/rule1.eps}%\vspace*{-1.5ex}
-%\end{center}
+\begin{center}
+\includegraphics[scale=0.7,clip]{figure/rule1.eps}
+\end{center}
 
-Our approach adds used variables of a client code method as these
-variables are useful to analyze data dependencies among API methods.
-
-(2) $T_0\ m (T_1 p_1, \ldots, T_n p_n) \Rightarrow $
-%\begin{figure}[h]
+\item $\forall$ API methods of the form ``$T_0\ T.AM (T_1 p_1, \ldots, T_n p_n)$''
+called by method $m$, our approach adds receiver (of type $T$)
+and parameter nodes to the built ATG as shown below.
+Our approach does not add receiver node for static API methods.
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule2.eps}%\vspace*{-1.5ex}
 \end{center}
 
-%\end{figure}
+(@Hao: Please replace $m$ in diagram with $AM$, as $m$ is already used. Also, variable with receiver)
 
-Our approach adds API methods called by a client code method to the
-built graph. For each API method $m$, $T$ is the declaring class of
-$m$. Our approach does not add a receiver nodes for static methods,
-and our approach does not add parameter nodes for methods without
-parameters.
-
-(3) $f.x, f\in F\cup V\Rightarrow $
-%\begin{figure}[h]
+\item $\forall$ $f\in F \cup V$, if $f$ is a non-primitive variable
+of type $T_1$ and a field $x$ of $T_1$ is accessed as $f.x$, our approach
+adds nodes to the built ATG as shown below. As Java often uses getters and 
+setters whereas C\# often use field accesses, our approach treats 
+field accesses as a special type of method calls.
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule3.eps}%\vspace*{-1.5ex}
 \end{center}
 
-As Java often uses getters and setters whereas C\# often use field
-accesses, our approach treats field accesses as a special type of
-method calls. In the preceding sub-graph, $f$ is a variable whose
-type is $T_1$, and $T_0$ is the type of $f.x$.
+\end{enumerate}
 
-
-Our approach further connects the built subgraphs through data
-dependencies among built sub-graphs. In particular, our approach
+Our approach adds additional edges to the built ATG (and sub-graphs inside ATG) 
+representing data dependencies among built sub-graphs. We use the following rules
+for adding additional edges to the built ATG.
+\Comment{In particular, our approach
 analyzes source files of a client code method statement by statement
-and adds edges according to the rules as follows:
+and adds edges according to the rules as follows:}
 
-(4) $x=y, x\in F\cup V\wedge y\in F\cup V \Rightarrow $
+\begin{enumerate}
+\item $\forall$ statements of the form $x = y$, where $x \in F \cup V \wedge y \in F \cup V$,
+our approach adds an edge from $y$ to $x$.
+This edge represents that $x$ is data dependent on $y$.
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule4.eps}%\vspace*{-1.5ex}
 \end{center}
 
-Our approach adds an edge from $y$ to $x$ if $y$ is assigned to $x$.
-The edge denotes the data dependency from $y$ to $x$.
-
-(5) $x=m(), x\in F\cup V \Rightarrow $
+\item $\forall$ statements of the form $x = AM()$, where $x \in F \cup V$, our approach
+adds an edge from $AM$ to $x$ if the return value of $AM$ is assigned to $x$.
+This edge represents that $x$ is data dependent on the return value of $AM$.
 
 %\begin{figure}[h]\vspace*{-1.5ex}
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule5.eps}%\vspace*{-1.5ex}
 \end{center}
 
-Our approach adds an edge from $m$ to $x$ if $m$'s return value is
-assigned to $x$. The edge denotes the data dependency from $m$'s
-return value to $x$.
+(@Hao, please update the diagram from m to AM)
 
-
-(6) $m(x)\Rightarrow$
+\item $\forall$ API methods $AM(x)$ called by method $m$, our approach 
+adds an edge from $x$ to the parameter node of $AM$. This edge 
+represents that the parameter of $AM$ is data dependent on $x$.
 
 %\begin{figure}[h]\vspace*{-1.5ex}
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule6.eps}%\vspace*{-1.5ex}
 \end{center}
 
-Our approach adds an edge from $x$ to $m$'s parameter node if $x$ is
-a parameter of $m$. The edge denotes the data dependency from $x$ to
-$m$'s parameter.
+\item $\forall$ statements of the form $m_2(m_1(x))$, our approach
+adds an edge from the return value node of $m_1$ to the parameter node of $m_2$
+parameter node. This edge represents that the parameter of $m_2$
+is data dependent on the return value of $m_1$.
 
-(7) $m_2(m_1(x))\Rightarrow$
-
-%\begin{figure}[h]\vspace*{-1.5ex}
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule7.eps}%\vspace*{-1.5ex}
 \end{center}
 
-Our approach adds an edge from $m_1$'s return value node to $m_2$'s
-parameter node if $m_1$ is used as a parameter of $m_2$. The edge
-denotes the data dependency from $m_1$'s return value node to
-$m_1$'s parameter.
+\item $\forall$ statements of the form $x.m()$, our approach adds 
+an edge from $x$ to $m$ as $x$ is the receiver object of $m$. 
+This edge represents that the receiver object of $m$ is data 
+dependent on $x$.
 
-
-(8) $x.m()\Rightarrow$
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule8.eps}%\vspace*{-1.5ex}
 \end{center}
 
-Our approach adds an edge from $x$ to $m$ if $x$ is an variable that
-is related to $m$. The edge denotes the data dependency from $x$ to
-$m$'s parameter.
-
-(9) $x=y\ binop\ z\ binop\ \ldots, binop\in \{+,-,*,/\} \Rightarrow
-$
-
+\item $\forall$ statements of the form $ x = y\ op\ z\ op\ \ldots, op \in \{+,-,*,/\}$,
+our approach adds edges from $y$, $z$, and others to $x$, as these
+variables are connected by binary operations and the return value is
+assigned to $x$. The edge denotes the data dependency from $y$, $z$,
+and other variables to $x$. For simplicity, our approach ignores
+\emph{op} info. We discuss the issue in Section~\ref{sec:discuss}.
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule9.eps}%\vspace*{-1.5ex}
 \end{center}
 
-Our approach adds edges from $y$, $z$, and others to $x$ if these
-variables are connected by bin operations and the return value is
-assigned to $x$. The edge denotes the data dependency from $y$, $z$,
-and other variables to $x$. For simplicity, our approach ignores
-\emph{binop} info. We further discuss the issue in
-Section~\ref{sec:discuss}.
+\end{enumerate}
 
-For each client code method, our approach applies the preceding
-rules by statement orders. For each statement, our approach applies
-the rules by depths of built abstract syntax tree from the lower to
-the higher. For the two source files shown in
-Section~\ref{sec:example}, Figure~\ref{fig:graph} (a) shows the
-partial ATG of \CodeIn{IndexFiles.cs}, and Figure~\ref{fig:graph}
-(b) shows the partial ATG of \CodeIn{IndexFiles.java}.
-Figure~\ref{fig:graph} also lists corresponding line numbers of each
-sub-graph. In particular, for Line 4 and Line 9, our approach
-applies Rule 2 and Rule 6 to build corresponding sub-graphs. For
-Line 6 and Line 7, our approach applies Rule 2 and Rule 8 to build
-corresponding sub-graphs. For Line 12 and Line 15, our approach
-applies Rule 2, Rule 3, and Rule 6 to build corresponding
-sub-graphs.
+For each method $m$ in the client code, our approach applies preceding
+rules for each statement from the beginning to the end of $m$. 
+Within each statement, our approach applies these rules based on
+their nesting depth in the abstract syntax tree. For example,
+for the statements of the form $m_2(m_1(x))$, our approach first applies
+these rules on $m_1$ and then on $m_2$.
+
+Figures~\ref{fig:graph}a and ~\ref{fig:graph}b show partial ATGs for 
+C\# (\CodeIn{IndexFiles.cs}) and Java (\CodeIn{IndexFiles.java}) 
+code examples shown in Figure~\ref{fig:clientcode}, respectively.
+Figure~\ref{fig:graph} also shows corresponding line numbers of each
+sub-graph. Our approach applies Rules 2 and 6 for Lines 4 and 9 (Figure~\ref{fig:clientcode}) 
+to build corresponding sub-graphs in the ATG. For
+Lines 6 and 7 (Figure~\ref{fig:clientcode}), our approach applies Rules 2 and 8 to build
+corresponding sub-graphs in the ATG. For Lines 12 and 15 (Figure~\ref{fig:clientcode}), 
+our approach applies Rule 2, 3, and 6 to build corresponding sub-graphs.
+
 \begin{algorithm}[t]
 \begin{SmallOut}
 \label{alg:mapATG} \dontprintsemicolon
@@ -358,7 +384,7 @@ sub-graphs.
 \end{algorithm}
 
 \subsubsection{Comparing API transformation graphs} The
-second sub-step compares each pair of built ATGs for mapping
+second sub-step compares each pair of built ATGs for mining mapping
 relations of API methods. As shown in Figure~\ref{fig:example}, two
 mapped API methods have (1) the same functionality, (2) the mapping
 relations of inputs, and (3) the mapping relations of returns. As
