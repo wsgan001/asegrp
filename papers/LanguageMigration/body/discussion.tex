@@ -33,13 +33,12 @@ search\footnote{\url{http://www.google.com/codesearch}}. We plan to
 leverage those search engines to mine richer API mapping in our
 future work.
 
-\textbf{Ranking mined mapping relations.} One API class or method
-can be mapped to more than one class or method. When comparing with
-CSharp2Java, we choose the formal as the generated mapping files
-since the support of the former is 46 whereas the support of the
-latter is 4. However, in some cases, the API mapping with the
-highest support is not necessarily the best choice. For example,
-\CodeIn{java.util.ArrayList} is mapped to
+\textbf{Ranking mined mapping relations.} When comparing with the
+built mapping files of CSharp2Java, we choose mined mapping
+relations of APIs with the highest supports as generated mapping
+files. However, in some cases, the API mapping with the highest
+support is not necessarily the best choice. For example,
+\CodeIn{java.util. ArrayList} is mapped to
 \CodeIn{System.Collections.ArrayList} based on support values. The
 Java class supports generic programming, whereas the C\# class does
 not. Consequently, the Java class seems to be better mapped to
