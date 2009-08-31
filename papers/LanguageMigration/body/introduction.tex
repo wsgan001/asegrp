@@ -37,9 +37,24 @@ all because of failed language migration projects.
 
 One main challenge of language migration is to map APIs from one
 language into other languages automatically. It is non-trivial to
-build API mapping as libraries typically provide huge APIs and many
-mapping relations of APIs are not straightforward. Consequently,
-existing
+build API mapping due to the following factors. First, APIs are
+typically quite large in size. Second, inputs of API methods often
+are complicated. For example, \CodeIn{java.math.BigDecimal.multiply
+(BigDecimal)} has a receiver ($v_1$) and a parameter ($p_1$);
+\CodeIn{System. Decimal.Multiply(Decimal,Decimal)} has two
+parameters ($p_2$ and $p_3$). Here, $v_1$ is mapped with $p_2$, and
+$p_1$ is mapped with $p_3$. Third, one API method in one language
+may be mapped to more than one API method in other languages. For
+example, \CodeIn{java.util. LinkedList.removeLast()} returns the
+last value, and \CodeIn{System.
+Collections.Generic.LinkedList.RemoveLast()} does not return any
+value. To get that value, C\# programmers need to call more API
+methods, and thus one API method of Java is mapped to serval API
+methods in C\#.
+
+
+As libraries typically provide huge APIs and many mapping relations
+of APIs are not straightforward. Consequently, existing
 approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}
 support only a subset of APIs or even ignore the mapping relations
 of APIs. Such a limitation causes many compilation errors in

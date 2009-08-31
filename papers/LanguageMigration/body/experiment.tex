@@ -413,7 +413,31 @@ mapping relations are accurate and contain some mapping relations
 that are not covered by CSharp2Java. The relatively low recalls show
 that we need improvements such as introducing more subject projects
 to cover detailed API mapping.
-
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c|c|c|c|}
+ \hline
+\multirow{2}*[-2pt]{\textbf{Projects}}& \multicolumn{3}{|c|}{\textbf{No MF}}  & \multicolumn{3}{|c|}{\textbf{MF}} & \multicolumn{3}{|c|}{\textbf{Ext. MF}}\\
+\cline{2-10} &  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}&  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}&  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}\\
+ \hline
+  rasp &  405 &   518 &  50  & 173  &  480  &  55  & 103  & 455  &69     \\
+\hline
+  llrp &  1033 &  1292  & 3  &  463  &  1076 &  1  &  6   & 262  & 1    \\
+\hline
+  simmetrics &  164 & 32 &  21 & 0   & 12    & 0   & 0    &  6  & 0    \\
+\hline
+  aligner &  283 &  77 &  8  & 223 & 57 & 9 & 140 & 113 & 9     \\
+\hline
+  fit &  63 & 94 &  17 & 0  & 20 & 7 &  0 & 3 & 7  \\
+\hline
+\multirow{2}*[-2pt]{Total} &1948  & 2016 & 99 & 859 & 1645 & 72 & 249 & 839 & 86\\
+\cline{2-10} &\multicolumn{3}{|c|}{4063} &\multicolumn{3}{|c|}{2576}&\multicolumn{3}{|c|}{1174}\\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{\label{table:errors}Compilation errors}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
 \subsection{Aiding Language Migration}
 \label{sec:experiment:migration} To evaluate the second research
 question, we feed the mined API mapping to the CSharp2Java tool and
@@ -480,31 +504,7 @@ In summary, the mined API mapping improves existing language
 translation tools such as CSharp2Java. In particular, the mined API
 mapping helps reduce ``\emph{U}'' and ``\emph{T}'' errors in the
 translated projects.
-\begin{table}[t]
-\centering
-\begin{SmallOut}
-\begin {tabular} {|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c|c|c|c|}
- \hline
-\multirow{2}*[-2pt]{\textbf{Projects}}& \multicolumn{3}{|c|}{\textbf{No MF}}  & \multicolumn{3}{|c|}{\textbf{MF}} & \multicolumn{3}{|c|}{\textbf{Ext. MF}}\\
-\cline{2-10} &  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}&  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}&  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}\\
- \hline
-  rasp &  405 &   518 &  50  & 173  &  480  &  55  & 103  & 455  &69     \\
-\hline
-  llrp &  1033 &  1292  & 3  &  463  &  1076 &  1  &  6   & 262  & 1    \\
-\hline
-  simmetrics &  164 & 32 &  21 & 0   & 12    & 0   & 0    &  6  & 0    \\
-\hline
-  aligner &  283 &  77 &  8  & 223 & 57 & 9 & 140 & 113 & 9     \\
-\hline
-  fit &  63 & 94 &  17 & 0  & 20 & 7 &  0 & 3 & 7  \\
-\hline
-\multirow{2}*[-2pt]{Total} &1948  & 2016 & 99 & 859 & 1645 & 72 & 249 & 839 & 86\\
-\cline{2-10} &\multicolumn{3}{|c|}{4063} &\multicolumn{3}{|c|}{2576}&\multicolumn{3}{|c|}{1174}\\
-\hline
-\end{tabular}\vspace*{-2ex}
-\Caption{\label{table:errors}Compilation errors}
-\end{SmallOut}\vspace*{-2ex}
-\end{table}
+
 
 \subsection{Threats to Validity}
 \label{sec:experiment:threats} The threat to external validity

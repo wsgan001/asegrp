@@ -157,19 +157,6 @@ parameter or a receiver of $m_1$. An edge ($m_1 \rightarrow d_1$)
 from a method ($ m_1 \in N_{m}$) to a datum ($d_1 \in N_{data}$)
 denotes $d_1$ is the return value of $m_1$.
 
-We propose ATG for two considerations. One is for mining mapping
-relations of method inputs correctly. The inputs of two API methods
-that satisfy all criteria of mapping relations may have different
-orders and positions. For example, \CodeIn{java.math.BigDecimal.
-multiply(BigDecimal)} has a receiver ($v_1$) and a parameter
-($p_1$); \CodeIn{System.Decimal.Multiply(Decimal, Decimal)} has two
-parameters ($p_2$ and $p_3$). Here, $v_1$ is mapped with $p_2$, and
-$p_1$ is mapped with $p_3$. As ATG describes inputs of API methods,
-our approach is able to deal with the problem of mapping inputs. The
-other is for mining mapping relations of merging API methods. As ATG
-describes data dependencies among inputs and outputs, our approach
-is able to mine mapping relations for merged API methods as shown in
-Figure~\ref{fig:example}.
 
 \subsubsection{Building API transformation graphs} The first sub-step
 builds an ATG for each method. The graph contains details such as
