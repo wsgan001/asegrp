@@ -1,28 +1,23 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: iTutor
-Bundle-SymbolicName: edu.ncsu.csc.ase.itutor;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: lib/asm3.1/asm-3.1.jar,lib/asm3.1/asm-analysis-3.1.jar,lib/asm3.1/asm-commons-3.1.jar,lib/asm3.1/asm-tree-3.1.jar,lib/asm3.1/asm-util-3.1.jar,lib/asm3.1/asm-xml-3.1.jar,.,lib/util-0.1.jar
-Bundle-Activator: edu.ncsu.csc.ase.itutor.Activator
-Export-Package: 
- edu.ncsu.csc.ase.itutor,
- edu.ncsu.csc.ase.itutor.core,
- edu.ncsu.csc.ase.itutor.core.asm,
- edu.ncsu.csc.ase.itutor.core.asm.model,
- edu.ncsu.csc.ase.itutor.core.asm.visitors,
- edu.ncsu.csc.ase.itutor.ui,
- edu.ncsu.csc.ase.itutor.ui.dialogs,
- edu.ncsu.csc.ase.itutor.ui.dnd,
- edu.ncsu.csc.ase.itutor.ui.help,
- edu.ncsu.csc.ase.itutor.ui.i18n,
- edu.ncsu.csc.ase.itutor.ui.perspectives,
- edu.ncsu.csc.ase.itutor.ui.preferences,
- edu.ncsu.csc.ase.itutor.ui.views,
- edu.ncsu.csc.ase.itutor.ui.views.asm,
- edu.ncsu.csc.ase.itutor.ui.views.asm.actions
-Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.jface.text;bundle-version="3.4.0",org.eclipse.jdt;bundle-version="3.4.0",org.eclipse.jdt.core;bundle-version="3.4.0",org.eclipse.core.resources;bundle-version="3.4.0",
- org.eclipse.ui,
- org.eclipse.core.runtime
+Bundle-Name: ITutor Plug-in
+Bundle-SymbolicName: edu.ncsu.csc.ase.itutor; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: edu.ncsu.csc.ase.itutor.ITutorPlugin
+Bundle-Vendor: ASE@NCSU
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text;bundle-version="3.4.0",
+ org.eclipse.jdt;bundle-version="3.4.0",
+ org.eclipse.jdt.core;bundle-version="3.4.0",
+ org.eclipse.core.resources;bundle-version="3.4.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/asm3.1/asm-3.1.jar,
+ lib/asm3.1/asm-analysis-3.1.jar,
+ lib/asm3.1/asm-commons-3.1.jar,
+ lib/asm3.1/asm-tree-3.1.jar,
+ lib/asm3.1/asm-util-3.1.jar,
+ lib/asm3.1/asm-xml-3.1.jar,
+ .,
+ lib/util-0.1.jar
