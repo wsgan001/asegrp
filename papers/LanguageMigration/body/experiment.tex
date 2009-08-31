@@ -1,12 +1,12 @@
-\section{Experiments}
-\label{sec:experiment} We implemented a tool named MAM based on our
-approach and conducted two experiments on the tool. Our experiments
+\section{Evaluations}
+\label{sec:evaluation} We implemented a tool named MAM based on our
+approach and conducted two evaluations on the tool. Our evaluations
 focus on two research questions as follows:
 \vspace*{-1.5ex}\begin{enumerate}
 \item How effective can our approach mine various mapping relations of APIs
-(Section~\ref{sec:experiment:mining})? \vspace*{-1.5ex}
+(Section~\ref{sec:evaluation:mining})? \vspace*{-1.5ex}
 \item How much benefit can the mined mapping relations of APIs offer in aiding language
-migration (Section~\ref{sec:experiment:migration})?\vspace*{-1.5ex}
+migration (Section~\ref{sec:evaluation:migration})?\vspace*{-1.5ex}
 \end{enumerate}%\vspace*{-1.5ex}
 \begin{table}[t]
 \centering
@@ -55,7 +55,7 @@ binaryNotes &   SourceForge  & 178 &   1590  & 197 & 1047    \\
 \end{table}
 
 We choose fifteen open source projects that have both Java versions
-and C\# versions as the subjects of our experiments, and
+and C\# versions as the subjects of our evaluations, and
 Table~\ref{table:subjects} show these subjects. Column ``Project''
 lists names of subjects. Column ``Source'' lists sources of these
 subjects. These subjects come from famous open source societies such
@@ -79,10 +79,10 @@ usefulness of our approach as our approach aids migrating from one
 language to other languages. Totally, these projects have 18,568
 classes and 109,850 methods.
 
-We conducted all the experiments on a PC with an Intel Qual CPU @
+We conducted all the evaluations on a PC with an Intel Qual CPU @
 2.83GHz and 1.98M memory running Windows XP.
 \subsection{Mining API mapping}
-\label{sec:experiment:mining}
+\label{sec:evaluation:mining}
 
 To evaluate the first research question, we use 10 projects from
 Table~\ref{table:subjects} as the subjects for mining API mapping.
@@ -437,7 +437,7 @@ to cover detailed API mapping.
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 \subsection{Aiding Language Migration}
-\label{sec:experiment:migration} To evaluate the second research
+\label{sec:evaluation:migration} To evaluate the second research
 question, we feed the mined API mapping to the CSharp2Java tool and
 investigate whether these mined API mapping can improve the tool's
 effectiveness. We choose this tool because this tool is a relatively
@@ -506,7 +506,7 @@ errors in the translated projects.
 
 
 \subsection{Threats to Validity}
-\label{sec:experiment:threats} The threat to external validity
+\label{sec:evaluation:threats} The threat to external validity
 includes the representativeness of the subjects in true practice.
 bla bla...
 
