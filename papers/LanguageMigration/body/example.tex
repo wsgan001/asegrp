@@ -6,22 +6,12 @@
 \includegraphics[scale=0.8,clip]{figure/dataflow.eps}\vspace*{-3ex}
  \caption
 {\label{fig:dataflow}API methods connected by inputs and
-outputs}\vspace*{-2ex}
+outputs}\vspace*{-3ex}
 \end{figure}
 
 In this section, we use an example to illustrate challenges of
 mining API mapping. Suppose that a programmer need to migrate the
 following code snippet from Java to C\# using a translation tool.
-
-\begin{figure}[t]
-\begin{CodeOut}
-\begin{alltt}
-1  File file = \textbf{new} File("test");
-2    \textbf{if}(file.exists())\{...\}
-\end{alltt}
-\end{CodeOut}\vspace*{-4ex}
-\caption{\label{fig:totranslation} A code example for language migration.}\vspace*{-4ex}
-\end{figure}
 
 The input of the code snippet is a string that denotes the name of a
 file or a directory. The output of the code snippet is a boolean
@@ -58,6 +48,16 @@ programmer then finds the corresponding source file
 are as follows:
 
 \begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+1  File file = \textbf{new} File("test"); 2
+\textbf{if}(file.exists())\{...\}
+\end{alltt}
+\end{CodeOut}\vspace*{-4ex}
+\caption{\label{fig:totranslation} A code example for language
+migration.}%\vspace*{-1ex}
+\end{figure}
+\begin{figure}[t]
 \begin{CodeOut}\vspace*{-2ex}
 \begin{alltt}
                   IndexFiles.java
@@ -86,16 +86,12 @@ are as follows:
     \}
  \}
 \end{alltt}
-\end{CodeOut}\vspace*{-1ex}
-\caption{\label{fig:clientcode} Two versions (Java and C\#) of client code.}\vspace*{-1ex}
+\end{CodeOut}\vspace*{-4ex}
+\caption{\label{fig:clientcode} Two versions (Java and C\#) of
+client code.}\vspace*{-4ex}
 \end{figure}
 
-\begin{figure}[t]
-\centering
-\includegraphics[scale=0.65,clip]{figure/sample.eps}\vspace*{-3ex}
- \caption
-{\label{fig:example}API mapping}\vspace*{-2ex}
-\end{figure}
+
 
 It is time-consuming to find out the two files as the two versions
 of Lucene have more than 1,000 classes totally. Even after the
@@ -137,6 +133,12 @@ inputs of \CodeIn{Sys- tem.IO.Directory.Exist()} and
 \CodeIn{System.IO.File.Exist()} are both their parameters as shown
 in Line 12 and Line 15. The preceding analysis does not consider
 parameters yet.
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.65,clip]{figure/sample.eps}\vspace*{-3ex}
+ \caption
+{\label{fig:example}API mapping}\vspace*{-3ex}
+\end{figure}
 
 In this paper, we propose a novel approach that mines API mapping
 automatically. Figure~\ref{fig:example} show the mined mapping
@@ -154,21 +156,14 @@ and outputs are connected. Consequently, with the mined API mapping,
 a translation tool can automatically translate the preceding code
 snippet into C\# as follows:
 
-\begin{figure}[t]
-\begin{CodeOut}\vspace*{-1ex}
-\begin{alltt}
-16  FileInfo file = \textbf{new} FileInfo("test");
-17  \textbf{if}(System.IO.File.Exist(file.FullName)||
-       System.IO.Directory.Exists(file.FullName))\{...\}
-\end{alltt}
-\end{CodeOut}\vspace*{-1ex}
-\caption{\label{fig:translatedcode} A translated code snippet from Java to C\#.}\vspace*{-1ex}
-\end{figure}
+
 
 In summary, for this example, we find that a programmer need to take
 tedious and error-prone efforts to find and to analyze source files
 from two versions of a project for API mapping. We next present our
 approach to mine API mapping automatically.
+
+
 %Based on the mapping relations, a translation tool can migrate the
 %preceding code snippet automatically. To learn the mapping
 %relations,

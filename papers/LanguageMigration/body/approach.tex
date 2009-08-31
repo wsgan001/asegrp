@@ -96,10 +96,8 @@ mines the mapping relation between \CodeIn{java.io.File} and
 and Line 9. The mapping relation of API classes helps translate the
 variable declared in Line 1 to the variable declared in Line 16.
 
-
 \begin{algorithm}[t]
 \begin{SmallOut}
-
 \dontprintsemicolon
   \KwData{$C$ is the classes of a language; $C'$ is the classes
   of another language}
@@ -118,10 +116,11 @@ variable declared in Line 1 to the variable declared in Line 16.
          $M \leftarrow findCandidateClassPairs(C, C')$\;
      }
  }
- \end{SmallOut}
-
+\end{SmallOut}
 \label{alg:alignclasses} \caption{Align Classes Algorithm}
-\end{algorithm}%\vspace*{-6ex}
+\end{algorithm}
+
+%\vspace*{-6ex}
 %\begin{figure}[t]
 %\centering
 %\includegraphics[scale=0.4,clip]{figure/algorithm1.eps}\vspace*{-3ex}
