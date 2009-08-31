@@ -24,13 +24,12 @@ value that denotes whether the file or the directory exists. To
 achieve this functionality, the code snippet declares a local
 variable whose type is \CodeIn{java.io.File} and calls
 \CodeIn{exists()} of the local variable. Here, as \CodeIn{exists()}
-is called through \CodeIn{file}, we call \CodeIn{file} as a related
-variable of \CodeIn{exists()}. To translate this code snippet, a
-translation tool needs to know mapping relations of API class to
-translate the variable \CodeIn{file} to C\#. In addition, a
-translation tool needs to know how to call API methods to use the
-variable and the input (``\CodeIn{test}'') to produce the exactly
-same output.
+is called through \CodeIn{file}, we call \CodeIn{file} as a receiver
+of \CodeIn{exists()}. To translate this code snippet, a translation
+tool needs to know mapping relations of API class to translate the
+variable \CodeIn{file} to C\#. In addition, a translation tool needs
+to know how to call API methods to use the variable and the input
+(``\CodeIn{test}'') to produce the exactly same output.
 
 As APIs are often large in size, a translation tool often supports
 only a subset of mapping relations of used APIs. Thus, a translation

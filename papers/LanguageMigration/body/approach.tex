@@ -122,15 +122,15 @@ of methods called by $m$. $E$ is a set of directed edges. An edge
 ($d_2 \in N_{data}$) denotes the data dependency from $d_1$ to
 $d_2$. An edge ($d_1 \rightarrow m_1$) from a datum ($d_1 \in
 N_{data}$)  to a method ($ m_1 \in N_{m}$) denotes $d_1$ is a
-parameter or a related variable of $m_1$. An edge ($m_1 \rightarrow
-d_1$) from a method ($ m_1 \in N_{m}$) to a datum ($d_1 \in
-N_{data}$) denotes $d_1$ is the return value of $m_1$.
+parameter or a receiver of $m_1$. An edge ($m_1 \rightarrow d_1$)
+from a method ($ m_1 \in N_{m}$) to a datum ($d_1 \in N_{data}$)
+denotes $d_1$ is the return value of $m_1$.
 
 We propose ATG for two considerations. One is for mining mapping
 relations of method inputs correctly. The inputs of two API methods
 that satisfy all criteria of mapping relations may have different
 orders and positions. For example, \CodeIn{java.math.BigDecimal.
-multiply(BigDecimal)} has a related variable ($v_1$) and a parameter
+multiply(BigDecimal)} has a receiver ($v_1$) and a parameter
 ($p_1$); \CodeIn{System.Decimal.Multiply(Decimal, Decimal)} has two
 parameters ($p_2$ and $p_3$). Here, $v_1$ is mapped with $p_2$, and
 $p_1$ is mapped with $p_3$. As ATG describes inputs of API methods,
@@ -188,11 +188,11 @@ API methods, and field accesses according to the rules as follows:
 %
 %One challenge to mine mapping relations of two API methods lies in
 %how to map their inputs correctly. Here, our approach both the
-%related variable and the parameters of a method as the inputs of a
+%receiver and the parameters of a method as the inputs of a
 %method. Inputs of two API methods may be matched but are not in the
 %same order. For example, as shown in Section~\ref{sec:example},
-%\CodeIn{java.io. File.exist()} has a related variable whereas
-%\CodeIn{System.IO.File.Exist()} has no related variable but a
+%\CodeIn{java.io. File.exist()} has a receiver whereas
+%\CodeIn{System.IO.File.Exist()} has no receiver but a
 %parameter. In addition, parameter orders may be quite different. For
 %example, the parameter order of \CodeIn{org.w3c.
 %dom.Element.getAttributeNS()} is inverse with the parameter order of
@@ -201,7 +201,7 @@ API methods, and field accesses according to the rules as follows:
 
 
 
-(1)$f\in F , V , P_1 \Rightarrow $
+(1) $f\in F\cup V \cup P_1 \Rightarrow $
 %\restylefloat{figure}
 %\begin{figure}[H]\vspace*{-5ex}
 %\begin{center}
@@ -211,7 +211,7 @@ API methods, and field accesses according to the rules as follows:
 Our approach adds used variables of a client code method as these
 variables are useful to analyze data dependencies among API methods.
 
-(2)$T_0\ m (T_1 p_1, \ldots, T_n p_n) \Rightarrow $
+(2) $T_0\ m (T_1 p_1, \ldots, T_n p_n) \Rightarrow $
 %\begin{figure}[h]
 
 \begin{center}
@@ -222,11 +222,11 @@ variables are useful to analyze data dependencies among API methods.
 
 Our approach adds API methods called by a client code method to the
 built graph. For each API method $m$, $T$ is the declaring class of
-$m$. Our approach does not add a related variable nodes for static
-methods, and our approach does not add parameter nodes for methods
-without parameters.
+$m$. Our approach does not add a receiver nodes for static methods,
+and our approach does not add parameter nodes for methods without
+parameters.
 
-(3)$f.x \Rightarrow $
+(3) $f.x, f\in F\cup V\Rightarrow $
 %\begin{figure}[h]
 
 \begin{center}
@@ -244,7 +244,7 @@ dependencies among built sub-graphs. In particular, our approach
 analyzes source files of a client code method statement by statement
 and adds edges according to the rules as follows:
 
-(4)$x=y \Rightarrow $
+(4) $x=y, x\in F\cup V\wedge y\in F\cup V \Rightarrow $
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule4.eps}%\vspace*{-1.5ex}
@@ -253,7 +253,7 @@ and adds edges according to the rules as follows:
 Our approach adds an edge from $y$ to $x$ if $y$ is assigned to $x$.
 The edge denotes the data dependency from $y$ to $x$.
 
-(5)$x=m() \Rightarrow $
+(5) $x=m(), x\in F\cup V \Rightarrow $
 
 %\begin{figure}[h]\vspace*{-1.5ex}
 \begin{center}
@@ -265,7 +265,7 @@ assigned to $x$. The edge denotes the data dependency from $m$'s
 return value to $x$.
 
 
-(6)$m(x)\Rightarrow$
+(6) $m(x)\Rightarrow$
 
 %\begin{figure}[h]\vspace*{-1.5ex}
 \begin{center}
@@ -276,7 +276,7 @@ Our approach adds an edge from $x$ to $m$'s parameter node if $x$ is
 a parameter of $m$. The edge denotes the data dependency from $x$ to
 $m$'s parameter.
 
-(7)$m_2(m_1(x))\Rightarrow$
+(7) $m_2(m_1(x))\Rightarrow$
 
 %\begin{figure}[h]\vspace*{-1.5ex}
 \begin{center}
@@ -289,7 +289,7 @@ denotes the data dependency from $m_1$'s return value node to
 $m_1$'s parameter.
 
 
-(8)$x.m()\Rightarrow$
+(8) $x.m()\Rightarrow$
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule8.eps}%\vspace*{-1.5ex}
 \end{center}
@@ -298,7 +298,8 @@ Our approach adds an edge from $x$ to $m$ if $x$ is an variable that
 is related to $m$. The edge denotes the data dependency from $x$ to
 $m$'s parameter.
 
-(9)$x=y\ binop\ z\ binop\ \ldots, binop\in \{+,-,*,/\} \Rightarrow $
+(9) $x=y\ binop\ z\ binop\ \ldots, binop\in \{+,-,*,/\} \Rightarrow
+$
 
 
 \begin{center}
@@ -310,7 +311,8 @@ variables are connected by bin operations and the return value is
 assigned to $x$. The edge denotes the data dependency from $y$, $z$,
 and other variables to $x$.
 
-For the two source files shown in Section~\ref{sec:example},
+Our approach applies the preceding rules by statement orders. For
+each For the two source files shown in Section~\ref{sec:example},
 Figure~\ref{fig:graph} (a) shows the partial ATG of
 \CodeIn{IndexFiles.cs}, and Figure~\ref{fig:graph} (b) shows the
 partial ATG of \CodeIn{IndexFiles.java}. Figure~\ref{fig:graph} also
@@ -381,9 +383,9 @@ In other word, both $sm$ and $jm$ may be two connected sub-graphs
 ($G_{sm}$ and $G_{jm}$). Our algorithm considers $sm$ and $jm$
 mapped when they satisfy the following criteria:
 
-\emph{inputs}: (1) the total number of $sm$'s related variable and
-parameters equal the total number of $jm$'s related variable and
-parameters; (2) each related variable and each parameter are mapped.
+\emph{inputs}: (1) the total number of $sm$'s receiver and
+parameters equal the total number of $jm$'s receiver and parameters;
+(2) each receiver and each parameter are mapped.
 
 Our algorithm considers two inputs matched if the two inputs connect
 to two matched variables/constants or the two inputs connect to two
@@ -418,11 +420,10 @@ as \CodeIn{index}.
 
 \emph{S2: mapping inputs of API methods.} For each variable pair,
 this step traces to the first connected two API methods and tries to
-map all the parameters and the related variables of the two API
-method. For the preceding example, this step maps the parameter
-named as \CodeIn{filename} to the parameter named as \CodeIn{arg0}
-as they are of the same type and they connect to the mapped
-constants.
+map all the parameters and the receivers of the two API method. For
+the preceding example, this step maps the parameter named as
+\CodeIn{filename} to the parameter named as \CodeIn{arg0} as they
+are of the same type and they connect to the mapped constants.
 
 \emph{S3: mapping outputs of API methods.} After inputs are mapped,
 this step further maps outputs of API methods. If it fails to map
