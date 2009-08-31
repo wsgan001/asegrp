@@ -225,7 +225,9 @@ other words, our approach is robust to mine accurate API mapping.
 In summary, our approach mines a large number of mapping relations
 of APIs totally. These mined mapping relations are accurate and
 cover various libraries.
-\begin{table}[t] \centering
+\begin{table}[t]
+%\flushleft
+\centering
 \begin{SmallOut}
 \begin {tabular} {|c!{\vrule width 1pt}c|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c|c|}
  \hline
@@ -434,7 +436,7 @@ to cover detailed API mapping.
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{\label{table:errors}Compilation errors}
-\end{SmallOut}\vspace*{-2ex}
+\end{SmallOut}\vspace*{-3ex}
 \end{table}
 \subsection{Aiding Language Migration}
 \label{sec:evaluation:migration} To evaluate the second research
@@ -508,13 +510,13 @@ errors in the translated projects.
 \subsection{Threats to Validity}
 \label{sec:evaluation:threats} The threat to external validity
 includes the representativeness of the subjects in true practice.
-bla bla...
-
-The threat to external validity includes the representativeness of
-the subjects in true practice. bla bla...
-
-The threat to external validity includes the representativeness of
-the subjects in true practice. bla bla...
-
-The threat to external validity includes the representativeness of
-the subjects in true practice. bla bla...
+TO... For space These threats could be reduced by more experiments
+on wider types of subjects in future work. The threats to internal
+validity are instrumentation effects that can bias our results.
+Faults in our prototype, the Daikon front end, and the RECON
+instrumenter might cause such effects. To reduce these threats, we
+manually inspected the spectra differences on a dozen of traces for
+each program subject. One threat to construct validity is that our
+experiment makes use of the data traces collected during executions,
+hoping that these precisely capture the internal program states for
+each execution point.

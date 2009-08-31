@@ -49,11 +49,11 @@ to address this issue in future work.
 
 \textbf{Mining more many-to-many mapping relations of API methods.}
 A majority of mined mapping relations of API methods describe
-one-to-one relations. Algorithm~\ref{alg:mapATG} merges the next API
-method with a forward strategy. For the example shown in
-Figure~\ref{fig:n2n}, if the algorithm merges \CodeIn{method1()} and
-\CodeIn{method2()} but fails to find a match, the algorithm tries to
-merge \CodeIn{method3()}. In some cases, a match can be found if the
+one-to-one relations. Algorithm 2 merges the next API method with a
+forward strategy. For the example shown in Figure~\ref{fig:n2n}, if
+the algorithm merges \CodeIn{method1()} and \CodeIn{method2()} but
+fails to find a match, the algorithm tries to merge
+\CodeIn{method3()}. In some cases, a match can be found if the
 algorithm merges \CodeIn{method4()} instead of \CodeIn{method3()}.
 We plan to improve the algorithm to mine more many-to-many relations
 in future work.

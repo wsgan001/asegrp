@@ -379,13 +379,13 @@ two mapped API methods satisfy the preceding three criteria, they
 are replaceable in client code and thus are useful to aid language
 migration.
 
-Algorithm~\ref{alg:mapATG} shows the main steps of comparing ATGs
-for mining mapping relations of API methods. For each method pair
-$\langle m, m'\rangle$, our algorithm first finds matched variable
-pairs and matched constant pairs of $F$, $V$, and $P_1$ of $m$ and
-$m'$. For two variables, our algorithm considers them matched when
-the similarity between two variables is greater than a threshold.
-For constants, our algorithm considers them matched when the two
+Algorithm 2 shows the main steps of comparing ATGs for mining
+mapping relations of API methods. For each method pair $\langle m,
+m'\rangle$, our algorithm first finds matched variable pairs and
+matched constant pairs of $F$, $V$, and $P_1$ of $m$ and $m'$. For
+two variables, our algorithm considers them matched when the
+similarity between two variables is greater than a threshold. For
+constants, our algorithm considers them matched when the two
 constants have exactly the same value. For each variable pair and
 each constant pair, our algorithm finds the first two methods ($jm$
 and $sm$) that use the two variables or the two constants as inputs.
