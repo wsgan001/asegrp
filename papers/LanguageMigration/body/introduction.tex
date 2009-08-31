@@ -29,32 +29,45 @@ version of a new language for a project is to translate from an
 existing version of the project. To help programmers conduct such
 migration, researchers proposed various
 approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}.
-However, language migration is still quite high risk even with the
-help of those proposed approaches. For example, Terekhov and
+However, language migration is still very risk even with the help of
+those proposed approaches. For example, Terekhov and
 Verhoef~\cite{terekhov2000realities} stated that at least three
 companies went bankrupt and another company lost 50 million dollars
 all because of failed language migration projects.
 
 One main challenge of language migration is to map APIs from one
-language into other languages automatically. It is non-trivial to
-build API mapping due to the following factors. First, APIs are
-typically quite large in size. Second, mapping relations of inputs
-are often complicated. For example,
-\CodeIn{java.math.BigDecimal.multi- ply(BigDecimal)} has a receiver
-($v_1$) and a parameter ($p_1$); \CodeIn{System.
-Decimal.Multiply(Decimal,Decimal)} has two parameters ($p_2$ and
-$p_3$). Here, $v_1$ is mapped with $p_2$, and $p_1$ is mapped with
-$p_3$. Third, one API method in one language may be mapped to more
-than one API method in other languages. For example,
-\CodeIn{java.util. LinkedList.removeLast()} returns the last value,
-and \CodeIn{System. Collections.Generic.LinkedList.RemoveLast()}
-does not return any value. To get that value, C\# programmers need
-to call more API methods, and thus one API method of Java is mapped
-to serval API methods in C\#.
+language into other languages. It is non-trivial to build API
+mapping due to the following factors. First, APIs are typically
+quite large in size. Second, mapping relations of inputs can be
+complicated. For example, consider the following two API methods:
+
+\begin{CodeOut}
+$m_1$ in Java: BigDecimal java.math.BigDecimal.multiply (BigDecimal $p_1^1$)\\
+\hspace*{0.11in}$m_2$ in C\#:\ \ \ \  Decimal
+System.Decimal.Multiply (Decimal $p_1^2$, Decimal $p_2^2$)
+\end{CodeOut}
+
+Here, $m_1$ has a receiver, say $v_1^1$, of type \CodeIn{BigDecimal}
+and has one parameter $p_1^1$, and $m_2$ has two parameters $p_1^2$
+and $p_2^2$. Based on the definitions of these inputs, $v_1^1$ is
+mapped to $p_1^2$, and $p_1^1$ is mapped to $p_2^2$. Third, one API
+method in one language may be mapped to more than one API method in
+other languages. For example, consider the following two API
+methods:
+
+\begin{CodeOut}
+$m_3$ in Java: E java.util.LinkedList.removeLast()\\
+\hspace*{0.11in}$m_4$ in C\#: void System.
+Collections.Generic.LinkedList.RemoveLast()
+\end{CodeOut}
+
+Here, $m_3$ returns the last value, and $m_4$ does not return any
+value. To get that value, C\# programmers need to call more API
+methods, and thus one API method of Java is mapped to serval API
+methods in C\#.
 
 
-As libraries typically provide huge APIs and many mapping relations
-of APIs are not straightforward. Consequently, existing
+As a result, existing
 approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}
 support only a subset of APIs or even ignore the mapping relations
 of APIs. Such a limitation causes many compilation errors in
@@ -85,7 +98,7 @@ compilation errors in migrated projects.
 \end{itemize}\vspace*{-1.5ex}
 
 
-The remainder of our paper is as follows. Section~\ref{sec:example}
+The remainder of this paper is as follows. Section~\ref{sec:example}
 illustrates our approach using an example. Section~\ref{sec:mapping}
 presents definitions. Section~\ref{sec:approach} presents our
 approach. Section~\ref{sec:evaluation} presents our evaluations.

@@ -10,7 +10,7 @@ outputs}\vspace*{-3ex}
 \end{figure}
 
 In this section, we use an example to illustrate challenges of
-mining API mapping. Suppose that a programmer need to migrate the
+mining API mapping. Suppose that a programmer needs to migrate the
 following code snippet from Java to C\# using a translation tool.
 
 The input of the code snippet is a string that denotes the name of a
@@ -29,23 +29,22 @@ to know how to call API methods to use the variable and the input
 As APIs are often large in size, a translation tool often supports
 only a subset of mapping relations of used APIs. Thus, a translation
 tool fails to translate the preceding code snippet correctly if the
-translation tool does not support the preceding two API methods.
-Some translation tools provide extensions for the programmer to add
-customized rules for translation. To write a customized rule, a
-programmer needs to know the mapping relation of APIs. Otherwise,
-the programmer may choose to learn the mapping relation of APIs from
-existing samples.
+translation tool does not know how to translate the preceding two
+API methods. Some translation tools provide extensions for the
+programmer to add customized rules for translation. To write a
+customized rule, a programmer needs to know the mapping relation of
+APIs. Otherwise, the programmer may choose to learn the mapping
+relation of APIs from existing samples.
 
 Many projects such as Lucene provide both C\# versions and Java
 versions, and these projects provide various such samples. However,
 it is not straightforward to learn those mapping relations of APIs.
 The programmer needs to find Java source files that implement the
 same functionality with the same input and output. For this example,
-the programmer may find \CodeIn{IndexFiles.java} in the Java version
-of Lucene useful as the file satisfies the preceding criteria. The
-programmer then finds the corresponding source file
-\CodeIn{IndexFiles.cs} from the C\# version of Lucene. The two files
-are as follows:
+the programmer may find that \CodeIn{IndexFiles.java} in the Java
+version of Lucene is a suitable source file. The programmer then
+finds the corresponding source file \CodeIn{IndexFiles.cs} from the
+C\# version of Lucene. The two files are as follows:
 
 \begin{figure}[t]
 \begin{CodeOut}
@@ -103,7 +102,7 @@ comparing Line 1 with Line 4, the programmer knows that
 the programmer analyzes how \CodeIn{index} in Line 4 (Java code) and
 \CodeIn{index} in Line 9 (C\# code) are used in the two source files
 for API mapping of interest so that boolean values are produced for
-the functionality. To achieve so, the programmer chooses to analyze
+the functionality. To achieve so, the programmer may need to analyze
 inputs and outputs of each API method. Figure~\ref{fig:dataflow}
 shows API methods connected by inputs and outputs for the preceding
 two files. In particular, a box denotes an API method, and an
@@ -158,10 +157,10 @@ snippet into C\# as follows:
 
 
 
-In summary, for this example, we find that a programmer need to take
-tedious and error-prone efforts to find and to analyze source files
-from two versions of a project for API mapping. We next present our
-approach to mine API mapping automatically.
+In summary, for this example, we find that a programmer needs to
+take tedious and error-prone efforts to find and to analyze source
+files from two versions of a project for API mapping. We next
+present our approach to mine API mapping automatically.
 
 
 %Based on the mapping relations, a translation tool can migrate the
