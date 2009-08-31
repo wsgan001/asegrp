@@ -38,19 +38,19 @@ all because of failed language migration projects.
 One main challenge of language migration is to map APIs from one
 language into other languages automatically. It is non-trivial to
 build API mapping due to the following factors. First, APIs are
-typically quite large in size. Second, inputs of API methods often
-are complicated. For example, \CodeIn{java.math.BigDecimal.multiply
-(BigDecimal)} has a receiver ($v_1$) and a parameter ($p_1$);
-\CodeIn{System. Decimal.Multiply(Decimal,Decimal)} has two
-parameters ($p_2$ and $p_3$). Here, $v_1$ is mapped with $p_2$, and
-$p_1$ is mapped with $p_3$. Third, one API method in one language
-may be mapped to more than one API method in other languages. For
-example, \CodeIn{java.util. LinkedList.removeLast()} returns the
-last value, and \CodeIn{System.
-Collections.Generic.LinkedList.RemoveLast()} does not return any
-value. To get that value, C\# programmers need to call more API
-methods, and thus one API method of Java is mapped to serval API
-methods in C\#.
+typically quite large in size. Second, mapping relations of inputs
+are often complicated. For example,
+\CodeIn{java.math.BigDecimal.multi- ply(BigDecimal)} has a receiver
+($v_1$) and a parameter ($p_1$); \CodeIn{System.
+Decimal.Multiply(Decimal,Decimal)} has two parameters ($p_2$ and
+$p_3$). Here, $v_1$ is mapped with $p_2$, and $p_1$ is mapped with
+$p_3$. Third, one API method in one language may be mapped to more
+than one API method in other languages. For example,
+\CodeIn{java.util. LinkedList.removeLast()} returns the last value,
+and \CodeIn{System. Collections.Generic.LinkedList.RemoveLast()}
+does not return any value. To get that value, C\# programmers need
+to call more API methods, and thus one API method of Java is mapped
+to serval API methods in C\#.
 
 
 As libraries typically provide huge APIs and many mapping relations
@@ -67,18 +67,21 @@ contributions:
 
 \begin{itemize}\vspace*{-1.5ex}
 \item We propose the first approach that mines API mapping of
-different languages from existing client code automatically. The
-mined API mapping describes mapping relations of APIs provided by
-different languages and can aid language migration.\vspace*{-1.5ex}
+different languages from existing client code automatically. Our
+approach addresses an important and yet challenging problem
+unaddressed by previous work on language migration.\vspace*{-1.5ex}
+\item We propose techniques to build and to compare API
+transformation graphs (ATG). ATGs describe data dependencies among
+inputs and outputs of API methods, so that our approach is able to
+mine complicated mapping relations of inputs and many-to-many
+mapping relations.\vspace*{-1.5ex}
 \item We
-implemented a tool named MAM based on our approach and conducted an
-experiment on ten projects with both Java and C\# versions. The
-results show that our approach mines various mapping relations with
-reasonable accuracies. \vspace*{-1.5ex}
-\item We further conducted an experiment that migrate five project
-from Java to C\# using the mined API mapping. The results show that
-the mined API mapping reduces the numbers of compile in migrated
-projects.
+implemented a tool named MAM based on our approach and conducted two
+experiments on fifteen projects with both Java and C\# versions.
+These projects have 18568 classes and 109850 methods totally. The
+results show that our approach mines 26369 mapping relations of APIs
+with 83.2\% accuracies and the mined API mapping reduces 55.4\%
+compilation errors in migrated projects.
 \end{itemize}\vspace*{-1.5ex}
 
 
