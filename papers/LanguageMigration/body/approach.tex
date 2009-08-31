@@ -96,6 +96,37 @@ mines the mapping relation between \CodeIn{java.io.File} and
 and Line 9. The mapping relation of API classes helps translate the
 variable declared in Line 1 to the variable declared in Line 16.
 
+
+\begin{algorithm}[t]
+\begin{SmallOut}
+
+\dontprintsemicolon
+  \KwData{$C$ is the classes of a language; $C'$ is the classes
+  of another language}
+  \KwResult{$P$ is aligned pairs of classes}
+  \Begin{
+     $M \leftarrow findCandidateClassPairs(C, C')$\;
+     \While{$M.size > 0 $}{
+        \If{$M.size > 1$}{
+            $M \leftarrow refineByPackageNames(M)$\;
+         }
+         \If{$M.size == 1$}{
+                $P.add(M)$\;
+                $C.remove(M[0].c)$\;
+                $C'.remove(M[0].c')$\;
+         }
+         $M \leftarrow findCandidateClassPairs(C, C')$\;
+     }
+ }
+ \end{SmallOut}
+
+\label{alg:alignclasses} \caption{Align Classes Algorithm}
+\end{algorithm}%\vspace*{-6ex}
+%\begin{figure}[t]
+%\centering
+%\includegraphics[scale=0.4,clip]{figure/algorithm1.eps}\vspace*{-3ex}
+% \label{alg:1}
+%\end{figure}
 \subsection{Mapping API methods}
 \label{sec:approach:mappingtypes} The final step of our approach is
 to mine mapping relations of API methods. This step has two major
@@ -161,29 +192,7 @@ API methods, and field accesses according to the rules as follows:
 %and thus one API method of Java is mapped to serval API methods of
 %C\#.
 
-\begin{algorithm}[t]
-\begin{SmallOut}
-\label{alg:alignclasses} \dontprintsemicolon
-  \KwData{$C$ is the classes of a language; $C'$ is the classes
-  of another language}
-  \KwResult{$P$ is aligned pairs of classes}
-  \Begin{
-     $M \leftarrow findCandidateClassPairs(C, C')$\;
-     \While{$M.size > 0 $}{
-        \If{$M.size > 1$}{
-            $M \leftarrow refineByPackageNames(M)$\;
-         }
-         \If{$M.size == 1$}{
-                $P.add(M)$\;
-                $C.remove(M[0].c)$\;
-                $C'.remove(M[0].c')$\;
-         }
-         $M \leftarrow findCandidateClassPairs(C, C')$\;
-     }
- }
- \end{SmallOut}
-\caption{Align Classes Algorithm}
-\end{algorithm}
+
 
 %
 %One challenge to mine mapping relations of two API methods lies in
@@ -309,7 +318,9 @@ $
 Our approach adds edges from $y$, $z$, and others to $x$ if these
 variables are connected by bin operations and the return value is
 assigned to $x$. The edge denotes the data dependency from $y$, $z$,
-and other variables to $x$.
+and other variables to $x$. For simplicity, our approach ignores
+\emph{binop} info. We further discuss the issue in
+Section~\ref{sec:discuss}.
 
 For each client code method, our approach applies the preceding
 rules by statement orders. For each statement, our approach applies
@@ -364,7 +375,7 @@ sub-graphs.
 second sub-step compares each pair of built ATGs for mapping
 relations of API methods. As shown in Figure~\ref{fig:example}, two
 mapped API methods have (1) the same functionality, (2) the mapping
-relations of inputs, and (3) the mapping relations of outputs. As
+relations of inputs, and (3) the mapping relations of returns. As
 two mapped API methods satisfy the preceding three criteria, they
 are replaceable in client code and thus are useful to aid language
 migration.
@@ -374,40 +385,35 @@ for mining mapping relations of API methods. For each method pair
 $\langle m, m'\rangle$, our algorithm first finds matched variable
 pairs and matched constant pairs of $F$, $V$, and $P_1$ of $m$ and
 $m'$. For two variables, our algorithm considers them matched when
-the two variables have similar names. For constants, our algorithm
-considers them matched when the two constants have exactly the same
-value. For each variable pair and each constant pair, our algorithm
-then finds its connected methods and tries to map these methods. If
-a method is mapped, our algorithm replaces the method with its next
-connected method. If a method is not mapped, our algorithm merges
-the next connected method to this method. As our algorithm merges
-some methods, both $sm$ and $jm$ may contain more than one methods.
-In other word, both $sm$ and $jm$ may be two connected sub-graphs
-($G_{sm}$ and $G_{jm}$). Our algorithm considers $sm$ and $jm$
-mapped when they satisfy the following criteria:
+the similarity between two variables is greater than a threshold.
+For constants, our algorithm considers them matched when the two
+constants have exactly the same value. For each variable pair and
+each constant pair, our algorithm finds the first two methods ($jm$
+and $sm$) that use the two variables or the two constants as inputs.
+Our algorithm considers $jm$ and $sm$ mapped when they satisfy the
+following criteria:
 
-\emph{inputs}: (1) the total number of $sm$'s receiver and
-parameters equal the total number of $jm$'s receiver and parameters;
-(2) each receiver and each parameter are mapped.
+\emph{inputs}: (1) the total number of $jm$'s receiver and
+parameters equal the total number of $sm$'s receiver and parameters;
+(2) each receiver and each parameter are mapped. Here, our algorithm
+considers two inputs matched if the two inputs come from two matched
+variables/constants or two outputs of two matched API methods.
 
-Our algorithm considers two inputs matched if the two inputs connect
-to two matched variables/constants or the two inputs connect to two
-outputs of matched API methods.
+\emph{functionalities}: The similarity between the name of $jm$ and
+the name of $sm$ is greater than a threshold.
 
-\emph{functionalities}: $sm$ and $jm$ have a similar functionality,
-and our algorithm requires at least one pair of methods with similar
-names.
+\emph{outputs:} The output of $jm$ and the output of $sm$ are mapped
+API classes.
 
-Our algorithm uses the maximum similarity of method names between
-$G_{sm}$ and $G_{jm}$ as the measure for their functionalities.
+If a method is mapped, our approach replaces the method with its
+next connected method. If a method is not mapped, our approach
+merges the next connected method to this method. As our approach
+merges some methods, both $jm$ and $sm$ may be two merged API
+methods. For two merged API methods, and our algorithm uses the
+maximum similarity of method names between $jm$ and $sm$ as the
+similarity of their functionalities. Our algorithm continues until
+$S$, $SM$, and $JM$ do not change anymore.
 
-\emph{outputs:} $sm$ and $jm$ have mapped outputs.
-
-
-The outputs of API methods have no names, so our algorithm considers
-two outputs as matched when the types of the two outputs are
-matched. Our algorithm continues until $S$, $SM$, and $JM$ do not
-change anymore.
 
 For example, the numbers within circles of Figure~\ref{fig:graph}
 show the main steps to mine the mapping relations of API methods as
