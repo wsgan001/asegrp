@@ -30,26 +30,27 @@ relation between the entities $e_1$ and $e_2$, if $e_1$ of the
 Language $L_1$ can be translated to $e_2$ of the Language $L_2$
 without introducing new defects in the translated code.
 
-\textbf{Mapping relation of API classes:} We define a mapping relation between
-two API classes $c_1$ and $c_2$ of languages $L_1$ and $L_2$, respectively,
-if the API class $c_1$ of $L_1$ is translated to the API class $c_2$ of $L_2$
-without introducing new defects in the translated code. Our mapping
-relation of API classes is many-to-many (@Hao: Please check whether it is many-to-many). For example,
-the \CodeIn{java.util.ArrayList} class of Java is mapped to either
-\CodeIn{System.Collections.ArrayList} \textbf{or} \CodeIn{System.Collections.Generic.List} of C\#.
-On the other hand, the \CodeIn{java.lang.System} class of Java is mapped
-to \CodeIn{System.DataTime} \textbf{and} \CodeIn{System.Environment} of C\#
-based on how Client code uses these classes. For example,
-\CodeIn{java.lang.System} is mapped with \CodeIn{System.DataTime}
-when client code uses the two classes to get the current time and is
-mapped with \CodeIn{System.Environment} when client code uses the
-two classes to get environment settings. (@Hao: Could you please revise
-this sentence. I haven't got what this means?).
+\textbf{Mapping relation of API classes:} We define a mapping
+relation between two API classes $c_1$ and $c_2$ of languages $L_1$
+and $L_2$, respectively, if the API class $c_1$ of $L_1$ is
+translated to the API class $c_2$ of $L_2$ without introducing new
+defects in the translated code. Our mapping relation of API classes
+is many-to-many. For example, the \CodeIn{java.util.ArrayList} class
+of Java is mapped to either \CodeIn{System.Collections.ArrayList}
+\textbf{or} \CodeIn{System.Collections. Generic.List} of C\#,
+whereas the \CodeIn{java.lang.System} class of Java is mapped to
+\CodeIn{System.DataTime} \textbf{and} \CodeIn{System.Environment} of
+C\# based on how client code uses these classes. In particular, when
+client code uses APIs to get the current time,
+\CodeIn{java.lang.Sys- tem} is mapped with \CodeIn{System.DataTime}.
+At the same time, when client code uses APIs to get environment
+settings, \CodeIn{java.lang.Sys- tem} is mapped with
+\CodeIn{System.Environment}.
 \begin{figure}[t]
 \begin{CodeOut}\vspace*{-1ex}
 \begin{alltt}
-16  FileInfo file = \textbf{new} FileInfo("test"); 17
-\textbf{if}(System.IO.File.Exist(file.FullName)||
+16  FileInfo file = \textbf{new} FileInfo("test");
+17   \textbf{if}(System.IO.File.Exist(file.FullName)||
        System.IO.Directory.Exists(file.FullName))\{...\}
 \end{alltt}
 \end{CodeOut}\vspace*{-4ex}
@@ -57,31 +58,31 @@ this sentence. I haven't got what this means?).
 Java to C\#.}\vspace*{-3ex}
 \end{figure}
 
-Furthermore, mapped API classes can have different functionalities
-in different languages. For example, \CodeIn{java.lang.String} of
-Java is mapped to \CodeIn{System.String} of C\#. However,
-\CodeIn{System.String} has an API method \CodeIn{insert}, which does
-not exist in \CodeIn{java.lang.String}.
+Furthermore, mapped API classes may have different behaviors. For
+example, \CodeIn{java.lang.String} of Java is mapped to
+\CodeIn{System. String} of C\#. However, \CodeIn{System.String} has
+an API method \CodeIn{insert()}, which does not exist in
+\CodeIn{java.lang.String}.
 
 \textbf{Mapping relation of API methods:} We define a mapping relation
 between two API methods $m_1$ and $m_2$ of languages $L_1$ and $L_2$,
 respectively, if $m_1$ is translated to $m_2$ without introducing defects
 in the translated code.
 
-Both the mapping relations of API classes and methods are required for
-achieving language translation. In particular, mapping relation of API classes is
-required to translate variables such as \CodeIn{file} in Figure~\ref{}.
-Similarly, mapping relation of API methods is
-required to translate API methods such as \CodeIn{exist()} in Figure~\ref{}.
-When an API method is translated from one language to another, the translated
-method accepts the same parameters (both variables and constants) and implement
-the same functionality as the original method.
+Both the mapping relations of API classes and methods are required
+for achieving language translation. In particular, mapping relation
+of API classes is required to translate variables such as
+\CodeIn{file} in Figure~\ref{fig:totranslation}. Similarly, mapping
+relation of API methods is required to translate API methods such as
+\CodeIn{exist()} in Figure~\ref{fig:totranslation}. When an API
+method is translated from one language to another, the translated
+method accepts the same parameters (both variables and constants)
+and implement the same functionality as the original method.
 
-\textbf{Merged API method:} A merged API method of $L_1$ refers to an API method
-that is created by merging two other API methods of $L_1$. (@Hao: From my
-understanding, i think that merged API method is within the language. Is that correct?)
-For example, consider two API methods $m_1$ and $m_2$ defined in classes
-$C_1$ and $C_2$ of $L_1$, respectively, with the
+\textbf{Merged API method:} A merged API method of $L_1$ refers to
+an API method that is created by merging two other API methods of
+$L_1$. For example, consider two API methods $m_1$ and $m_2$ defined
+in classes $C_1$ and $C_2$ of $L_1$, respectively, with the
 following signatures:
 
 \CodeIn{$m_1$ signature: $o_1$ $C_1$.$m_1$($inp_1^1$, $inp_2^1$, ..., $inp_m^1$)}
@@ -97,16 +98,17 @@ shown below:
 \CodeIn{$m_{new}$ signature: $o_2$ $m_{new}$($inp_1^1$, $inp_2^1$, ..., $inp_m^1$,$inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
 
 We next present an example for a merged API method using the
-illustrative code example shown in Section~\ref{sec:example}. (@Suresh:
-Insert a figure for the code sample and refer it from here).
-Consider the \CodeIn{file} variable, which is a return variable
-for the constructor and a receiver object for the \CodeIn{exist()} method.
+illustrative code example shown in Section~\ref{sec:example}. For
+the code snippet shown in Figure~\ref{fig:totranslation}, consider
+the \CodeIn{file} variable, which is a return variable for the
+constructor and a receiver object for the \CodeIn{exist()} method.
 As the output of one API method is passed as receiver object of
 another API method, we can combine these two methods to create a new
-merged API method $m_{new}$. Figure~\ref{fig:example} shows
-the $m_{new}$ method \CodeIn{boolean File.exists(string)}. The $m_{new}$
-method accepts a \CodeIn{string} parameter that represents a file name
-and returns a boolean value that describes whether a file exists or not.
+merged API method $m_{new}$. Figure~\ref{fig:example} shows the
+$m_{new}$ method \CodeIn{boolean File.exists(string)}. The $m_{new}$
+method accepts a \CodeIn{string} parameter that represents a file
+name and returns a boolean value that describes whether a file
+exists or not.
 
 A merged API method can be further merged with other API methods or
 other merged API methods. For simplicity, we use API method to refer
