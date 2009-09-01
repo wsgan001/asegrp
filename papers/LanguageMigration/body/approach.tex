@@ -370,89 +370,106 @@ our approach applies Rule 2, 3, and 6 to build corresponding sub-graphs.
 \vspace*{-6ex}
 \end{figure}
 
-\subsubsection{Comparing API transformation graphs} The
-second sub-step compares each pair of built ATGs for mining mapping
-relations of API methods. As shown in Figure~\ref{fig:example}, two
-mapped API methods have (1) the same functionality, (2) the mapping
-relations of inputs, and (3) the mapping relations of returns. As
-two mapped API methods satisfy the preceding three criteria, they
-are replaceable in client code and thus are useful to aid language
-migration.
+%--------------------------------------------------------------------
+\subsubsection{Comparing API transformation graphs} 
 
-Algorithm 2 shows the main steps of comparing ATGs for mining
-mapping relations of API methods. For each method pair $\langle m,
-m'\rangle$, our algorithm first finds matched variable pairs and
-matched constant pairs of $F$, $V$, and $P_1$ of $m$ and $m'$. For
-two variables, our algorithm considers them matched when the
-similarity between two variables is greater than a threshold. For
-constants, our algorithm considers them matched when the two
-constants have exactly the same value. For each variable pair and
-each constant pair, our algorithm finds the first two methods ($jm$
-and $sm$) that use the two variables or the two constants as inputs.
-Our algorithm considers $jm$ and $sm$ mapped when they satisfy the
-following criteria:
+The second sub-step compares each pair of built ATGs for mining mapping
+relations of API methods. Our mapped API methods satisfy three
+criteria: (1) Mapped API methods implement the same
+functionality. (2) Mapping relation describes the relation
+between parameters of mapped API methods. (3) Mapping relation 
+describes the relation between return values of 
+mapped API methods. The two mapped API methods in two 
+different languages satisfying the preceding three criteria
+are replaceable in the client code. Therefore, these mapped API
+methods assist for migrating client code from one language to another.
 
-\emph{inputs}: (1) the total number of $jm$'s receiver and
-parameters equal the total number of $sm$'s receiver and parameters;
-(2) each receiver and each parameter are mapped. Here, our algorithm
-considers two inputs matched if the two inputs come from two matched
-variables/constants or two outputs of two matched API methods.
+(@Hao: In the diagram of Algorithm 2, change data -> Input, Result -> output)
+Algorithm 2 presents major steps of comparing ATGs for mining
+mapping relations of API methods. Consider two methods $m$ and $m'$
+of two different languages $L$ and $L'$, respectively, in the client code. 
+Consider that the associated ATGs of $m$ and $m'$ are compared to mine mapping relations of API methods.
+First, our algorithm finds matching variables $\in$ $F$, $V$, and $P_1$
+in $m$ and $m'$. Our algorithm maps two variables $v$ and $v'$ of methods $m$ and $m'$,
+respectively, if the similarity measure on their names is greater than \emph{SIM\_THRESHOLD}.
+For constants in $m$ and $m'$, our algorithm maps those two constants,
+if they have exactly the same value. Our algorithm uses these variable
+and constant mappings to compute mappings between API methods that use
+these variables and constants. Our algorithm uses the following criteria
+for mapping two API methods $jm$ and $sm$.
 
-\emph{functionalities}: The similarity between the name of $jm$ and
-the name of $sm$ is greater than a threshold.
+\emph{Matching entities}: The first criterion is based on entities such as receiver variable
+or parameters of $jm$ and $sm$ to map $jm$ and $sm$. We map $jm$ with $sm$, if
+the receiver variable of API method $jm$ is mapped
+to the receiver variable of $sm$, and there is a one-to-one mapping between parameters
+of $jm$ and $sm$. 
 
-\emph{outputs:} The output of $jm$ and the output of $sm$ are mapped
-API classes.
+\emph{Matching functionalities}: The second criterion is based on functionalities of 
+$jm$ and $sm$. We consider that $jm$ and $sm$ implement the same functionality,
+if the similarity measure between the name of $jm$ and the name of $sm$ is 
+greater than \emph{SIM\_THRESHOLD}.
 
-If a method is mapped, our approach replaces the method with its
-next connected method. If a method is not mapped, our approach
-merges the next connected method to this method. As our approach
-merges some methods, both $jm$ and $sm$ may be two merged API
-methods. For two merged API methods, and our algorithm uses the
-maximum similarity of method names between $jm$ and $sm$ as the
-similarity of their functionalities. Our algorithm continues until
-$S$, $SM$, and $JM$ do not change anymore.
+\emph{Matching outputs:} The third criterion is based on the return values of $jm$ and $sm$.
+Consider the return values of $jm$ and $sm$ as $r_1$ and $r_2$, respectively. We map $jm$
+with $sm$, if the type of $r_1$ is mapped with the type of $r_2$ in mapping API classes
+relationship.
 
+Our algorithm first attempts to map first API method $jm$ in $m$ 
+with the first API method $sm$ in $m'$. If our algorithm successfully maps $jm$ with
+$sm$, our algorithm moves to the next available API methods in $m$
+and $m'$ of the client code. If our algorithm does not able to map $jm$
+with $sm$, our algorithm merges $sm$ and $jm$ with their next available API methods
+in the corresponding ATGs, respectively, and attempts to map merged API methods.
+For two merged API methods, our algorithm uses the
+maximum similarity of method names between $jm$ and $sm$ as a
+similarity measure for matching their functionalities. 
+With each iteration, $sm$ or $jm$ or the mapping relation (represented as $S$)
+in the algorithm changes. Therefore, we repeat our algorithm 
+till $S$, $sm$, and $jm$ do not change anymore.
 
-For example, the numbers within circles of Figure~\ref{fig:graph}
-show the main steps to mine the mapping relations of API methods as
-shown in Figure~\ref{fig:example}. The main steps are as follows:
+We next explain our algorithm using the illustrative example shown
+in Figure~\ref{fig:graph}. The numbers shown in circles
+represent the major steps in our algorithm for mining mapping
+relations of API methods. We next explain each step in detail.
 
-\emph{S1: mapping parameters, fields, local variables, and
-constants.} For the two graphs of each method pair, this step maps
-variables such as parameters, fields, and local variables by names
-and maps constants by values. For the preceding example, this step
-maps two constants as shown by the first red arrow of
-Figure~\ref{fig:graph} since the two constants have the same values
-as \CodeIn{index}.
+\emph{S1: mapping parameters, fields, local variables, and constants.} 
+Given two ATGs of each method pair $\langle m, m' \rangle$, this step maps
+variables such as parameters, fields, and local variables by comparing their names
+and maps constants by comparing their values. As shown in
+Figure~\ref{fig:graph}, Step 1 maps two constants as both the constants
+have the same value \CodeIn{index}.
 
-\emph{S2: mapping inputs of API methods.} For each variable pair,
-this step traces to the first connected two API methods and tries to
-map all the parameters and the receivers of the two API method. For
-the preceding example, this step maps the parameter named as
-\CodeIn{filename} to the parameter named as \CodeIn{arg0} as they
-are of the same type and they connect to the mapped constants.
+\emph{S2: mapping inputs of API methods.} Step 2 mines mapping
+relations of API methods using variable and constant mapping relations.
+Initially, this step identifies first API methods in the two ATGs and tries to
+map their parameters and receiver objects of the two API methods. 
+In our current example, this step maps the parameter \CodeIn{filename}
+to the parameter \CodeIn{arg0} as these parameters
+are of the same type and their associated constants are mapped.
 
-\emph{S3: mapping outputs of API methods.} After inputs are mapped,
-this step further maps outputs of API methods. If it fails to map
-outputs, this step further merges the next API method and tries to
-map output of merged API methods. For the preceding example, as the
-output of \CodeIn{System.IO.FileInfo()} is not mapped to the output
-of \CodeIn{java.io.File.File()}, this step further merges the next
-API methods until it finds a match. The arrows marked as ``3"" of
-Figure~\ref{fig:graph} shows the matched outputs. These outputs are
-of matched API classes.
+\emph{S3: mapping outputs of API methods.} In contrast to Step 2
+that maps parameters, Step 3 maps return values of API methods.
+In this step, if our approach is not able to map return values,
+our approach merges the next API method and then attempts to map
+return values of merged API methods. In our current example shown 
+in Figure~\ref{fig:graph}, return value of \CodeIn{System.IO.FileInfo.FileInfo()}
+(@Hao, Could you please update the diagram to include the constructor call
+as FileInfo.FileInfo) cannot be mapped to the return value of \CodeIn{java.io.File.File()}.
+Therefore, our approach merges next API methods in the ATG till 
+the \CodeIn{Exists} API method, as the return values (shown as \CodeIn{Boolean})
+match only after the \CodeIn{Exists} API method. Figure~\ref{fig:graph}
+shows Step 3 along with the matching return values.
 
-\emph{S4: mapping functionalities.} After inputs and outputs are
-both mapped, this step further maps functionalities of those merged
-methods. Give two merged methods with mapped inputs and outputs,
-this step use the maximum similarity of method names as the measure
-for their functionalities. In the preceding example, this step maps
-the two merged methods shown in Figure~\ref{fig:graph} (a) to the
-merged methods of the \CodeIn{java.io.File.exist()} as the three
-merged methods all contain a method named as ``exist''.
+\emph{S4: mapping functionalities.} After our approach maps parameters and return values, 
+this step further maps functionalities of those merged API
+methods. Given two merged API methods with mapped parameters and return values,
+this step uses the similarity measure based of their method names as a criterion
+for matching their functionalities. In the preceding example, this step maps
+the two merged API methods shown in Figure~\ref{fig:graph}a to the
+merged API methods of the \CodeIn{java.io.File.exist()} as all three
+merged API methods include the method named \CodeIn{exist}.
 
-After comparing the graph shown in Figure~\ref{fig:graph} (a) with
-the graph shown in Figure~\ref{fig:graph} (b), our approach mines
-the mapping relation as shown in Figure~\ref{fig:example} by merging
-variables between API methods.
+Our approach applies preceding steps on ATGs 
+(as shown in Figures~\ref{fig:graph}a and~\ref{fig:graph}b) and mines
+mapping relations. An example mapping relation from the preceding ATGs is
+shown in Figure~\ref{fig:example}.
