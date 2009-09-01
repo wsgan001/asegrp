@@ -264,9 +264,9 @@ cover various libraries.
 
 \textbf{Comparing with manually built API mapping.} Some translation
 tools such as
-CSharp2Java\footnote{\url{http://j2cstranslator.wiki.sourceforge.net}}
+Java2CSharp\footnote{\url{http://j2cstranslator.wiki.sourceforge.net}}
 have manually built files that describe mapping relations of APIs.
-For example, one item from the mapping files of CSharp2Java is as
+For example, one item from the mapping files of Java2CSharp is as
 follows:
 
 \begin{CodeOut}\vspace*{-1ex}
@@ -284,7 +284,7 @@ This item describes mapping relations between \CodeIn{java.math.Big-
 Decimal.multiply()} and \CodeIn{System.Decimal.Multiply()}. The
 pattern string describes mapping relations of inputs. In particular,
 ``\CodeIn{@0}'' denotes the receiver, and ``\CodeIn{@1}'' denotes
-the first parameter. Based on this item, CSharp2Java translates the
+the first parameter. Based on this item, Java2CSharp translates the
 following code snippet from Java to C\# as follows:
 
 \begin{CodeOut}\vspace*{-1ex}
@@ -299,7 +299,7 @@ following code snippet from Java to C\# as follows:
 \end{alltt}
 \end{CodeOut}\vspace*{-1ex}
 
-To compare with manually built mapping files of CSharp2Java, we
+To compare with manually built mapping files of Java2CSharp, we
 translate our mined API mapping with the following strategy. First,
 for each Java class, we translate its mapping relations of classes
 with the highest supports into mapping files as relations of
@@ -313,11 +313,11 @@ this step is manual as mined mapping relations do not include
 adequate details such as how to deal with multiple outputs. We
 further discuss this issue in Section~\ref{sec:discuss}.
 
-The mapping files of CSharp2Java cover all 13 packages defined by
+The mapping files of Java2CSharp cover all 13 packages defined by
 J2SE and 2 packages defined by
 JUnit\footnote{\url{http://www.junit.org/}}, and we treat these
 mapping files as a golden standard. We find that 9 packages overlap
-in the mined mapping files and the mapping files of CSharp2Java. We
+in the mined mapping files and the mapping files of Java2CSharp. We
 compare mapping relations of APIs within these mapping packages, and
 Table~\ref{table:compare} shows the results. Column ``Class'' lists
 the results of comparing API classes. Column ``Method'' lists the
@@ -380,10 +380,10 @@ Table~\ref{table:compare}, our approach achieves a relatively high
 precision and a relatively low recall. We further investigate the
 differences, and we find three main causing impact factors. First,
 the mined mapping files contain correct items that do not exist in
-the mapping files of CSharp2Java. For example, the mined mapping
+the mapping files of Java2CSharp. For example, the mined mapping
 files contain a mapping relation between \CodeIn{org.w3c.dom. Attr}
 and \CodeIn{System.Xml.XmlAttribute}, and the mapping relation does
-not exist in the mapping files of CSharp2Java. As these items are
+not exist in the mapping files of Java2CSharp. As these items are
 counted as false positives, this impact factor reduces the
 precisions. Second, although we use 10 large projects as subjects to
 mine API mapping, these projects do not cover mapping relations of
@@ -394,23 +394,23 @@ approach mines many mapping relations, these mapping relations cover
 many libraries. When we limit mapping relations to the packages as
 shown in Table~\ref{table:compare}, the mined mapping relations are
 actually not so many as expected. On the contrary, the mapping files
-of CSharp2Java are more detailed as they are manually built. This
+of Java2CSharp are more detailed as they are manually built. This
 impact factor reduces the recalls. Third, some API classes and API
 methods between Java and C\# have different behaviors. To hide these
-behaviors from client code, CSharp2Java maps these classes and
+behaviors from client code, Java2CSharp maps these classes and
 methods to its implemented classes and methods. For example,
-CSharp2Java maps \CodeIn{java.util. Set} to
+Java2CSharp maps \CodeIn{java.util. Set} to
 \CodeIn{ILOG.J2CsMapping.Collections.ISet}. Our approach did not
 mine these mapping relations since the subjects in
-Table~\ref{table:subjects} do not use CSharp2Java's own implemented
+Table~\ref{table:subjects} do not use Java2CSharp's own implemented
 classes and methods. This impact factor reduces both the precisions
 and the recalls.
 
-In summary, compared with the mapping files of CSharp2Java, our
+In summary, compared with the mapping files of Java2CSharp, our
 mined mapping files show a relatively high precisions and relatively
 low recalls. The relatively high precisions show that our mined
 mapping relations are accurate and contain some mapping relations
-that are not covered by CSharp2Java. The relatively low recalls show
+that are not covered by Java2CSharp. The relatively low recalls show
 that we need improvements such as introducing more subject projects
 to cover detailed API mapping.
 \begin{table}[t]
@@ -440,23 +440,23 @@ to cover detailed API mapping.
 \end{table}
 \subsection{Aiding Language Migration}
 \label{sec:evaluation:migration} To evaluate the second research
-question, we feed the mined API mapping to the CSharp2Java tool and
+question, we feed the mined API mapping to the Java2CSharp tool and
 investigate whether these mined API mapping can improve the tool's
 effectiveness. We choose this tool because this tool is a relatively
 mature project at ILOG\footnote{\url{http://www.ilog.com/}} (now a
 part of IBM) and supports the extension of user-defined mapping
 relations of APIs.
 
-We use CSharp2Java to translate five projects listed in
+We use Java2CSharp to translate five projects listed in
 Table~\ref{table:subjects} from Java to C\#, and
 Table~\ref{table:errors} shows the results. For each translated C\#
 project, Column ``No MF'' lists the number of compilation errors
 without mapping files. Column ``MF'' lists the number of compilation
-errors with the mapping files of CSharp2Java. Column ``Ext. MF''
+errors with the mapping files of Java2CSharp. Column ``Ext. MF''
 lists the number of compilation errors with extended mapping files.
 We produce these mapping files by combing mined API mapping with the
-existing mapping files of CSharp2Java. Totally, the mapping files of
-CSharp2Java helps reduce 36.6\% compilation errors, and the extended
+existing mapping files of Java2CSharp. Totally, the mapping files of
+Java2CSharp helps reduce 36.6\% compilation errors, and the extended
 mapping files helps further reduces 54.4\% compilation errors. For
 the three columns, sub-column ``\emph{U}'' lists numbers of
 compilation errors that are caused by wrong using statements.
@@ -465,7 +465,7 @@ caused by unresolved classes. Sub-column ``\emph{O}'' lists the
 numbers of compilation errors that are caused by other factors. The
 three types of compilation errors are not exclusive. For example, if
 a mapping relation maps a class in Java to a wrong class in C\#,
-both ``\emph{U}'' and ``\emph{T}'' decrease as CSharp2Java can
+both ``\emph{U}'' and ``\emph{T}'' decrease as Java2CSharp can
 translate a variable in Java to a variable in C\# whose type is
 resolvable. However, as the translated variable may not provide
 desirable methods, ``\emph{O}'' may increase when code uses some
@@ -480,7 +480,7 @@ API classes of J2SE that are covered by mapping files. Consequently,
 the translated projects of \emph{simmetrics} and \emph{fit} have no
 ``\emph{U}'' and ``\emph{T}'' errors. The \emph{aligner} project
 also mainly uses J2SE, but it uses many API classes and methods from
-\CodeIn{java.awt} for its GUI. The mapping files of CSharp2Java
+\CodeIn{java.awt} for its GUI. The mapping files of Java2CSharp
 cover only 1 class of \CodeIn{java.awt}, so the translated project
 has many ``\emph{U}'' and ``\emph{T}'' errors. The mined files map
 \CodeIn{java.awt} to \CodeIn{System.Windows.Forms} and thus reduce
@@ -502,7 +502,7 @@ two libraries, the translated project of \emph{rasp} contains many
 ``\emph{U}'' and ``\emph{T}'' errors.
 
 In summary, the mined API mapping improves existing language
-translation tools such as CSharp2Java. In particular, the mined API
+translation tools such as Java2CSharp. In particular, the mined API
 mapping helps effectively reduce ``\emph{U}'' and ``\emph{T}''
 errors in the translated projects.
 
