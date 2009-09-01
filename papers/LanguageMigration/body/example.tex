@@ -9,37 +9,48 @@
 outputs}\vspace*{-3ex}
 \end{figure}
 
-In this section, we use an example to illustrate challenges of
-mining API mapping. Suppose that a programmer needs to migrate the
-following code snippet from Java to C\# using a translation tool.
+We next use an example to illustrate challenges involved in
+mining API mapping. Consider that a programmer needs to migrate 
+a Java code example (shown in Figure~\ref{fig:totranslation}) to C\# using a translation tool.
+This code example accepts a \CodeIn{string} input that represents
+name of a file or directory and returns a \CodeIn{boolean} value that
+describes whether the file or directory exists. To achieve this functionality, 
+the code example declares a local variable, called \CodeIn{file},
+of type \CodeIn{java.io.File} and calls the \CodeIn{exists} method. 
+We consider the local variable \CodeIn{file} as a receiver object for
+the \CodeIn{exists} method. 
 
-The input of the code snippet is a string that denotes the name of a
-file or a directory. The output of the code snippet is a boolean
-value that denotes whether the file or the directory exists. To
-achieve this functionality, the code snippet declares a local
-variable whose type is \CodeIn{java.io.File} and calls
-\CodeIn{exists()} of the local variable. Here, as \CodeIn{exists()}
-is called through \CodeIn{file}, we call \CodeIn{file} as a receiver
-of \CodeIn{exists()}. To translate this code snippet, a translation
-tool needs to know mapping relations of API class to translate the
-variable \CodeIn{file} to C\#. In addition, a translation tool needs
-to know how to call API methods to use the variable and the input
-(``\CodeIn{test}'') to produce the exactly same output.
+To translate this code example into C\#, the translation
+tool needs to know mapping relations of API classes. For example,
+the translation tool needs to know the mapped API class for \CodeIn{java.io.File}
+in C\# to translate the variable \CodeIn{file} to C\#. In addition, the translation tool needs
+to know the mapped API methods of \CodeIn{exists}. Furthermore,
+the translated code should be able to accept the same input
+``\CodeIn{test}'' and produce the same output as the Java code example.
 
-As APIs are often large in size, a translation tool often supports
-only a subset of mapping relations of used APIs. Thus, a translation
-tool fails to translate the preceding code snippet correctly if the
-translation tool does not know how to translate the preceding two
-API methods. Some translation tools provide extensions for the
-programmer to add customized rules for translation. To write a
-customized rule, a programmer needs to know the mapping relation of
-APIs. Otherwise, the programmer may choose to learn the mapping
-relation of APIs from existing samples.
+As APIs are often large in size, existing translation tools~\cite{} 
+(@Hao: Please add citations) often support only a subset of 
+mapping relations of used APIs. The reason for supporting only
+a subset of mapping relations is that the mapping relations are written
+manually in these translation tools. Therefore, the translation
+tool cannot translate this Java code example, if the mapping relation
+for the \CodeIn{java.io.File} does not exist. To address this issue,
+a few translation other tools~\cite{} (@Hao, please add citations)
+provide extensions for the programmer to write customized rules for translation.
+However, to write customized rules, programmer needs to have 
+knowledge about both the languages. Furthermore, writing these
+customized rules manually for all APIs is tedious and error-prone.
 
-Many projects such as Lucene provide both C\# versions and Java
-versions, and these projects provide various such samples. However,
-it is not straightforward to learn those mapping relations of APIs.
-The programmer needs to find Java source files that implement the
+To address these preceding issues and to generate the rules for translation,
+we propose a novel approach that automatically mines mapping
+relations of APIs. Our approach uses existing projects such as
+Lucene that have both Java and C\# versions, and mines
+mapping relations of APIs. One would argue that given projects
+such as Lucene with both Java and C\# versions, a programmer
+can manually learn these mapping relations easily. 
+We next explain why it is not straightforward to learn these mapping relations of APIs.
+
+First, the programmer needs to find Java source files that implement the
 same functionality with the same input and output. For this example,
 the programmer may find that \CodeIn{IndexFiles.java} in the Java
 version of Lucene is a suitable source file. The programmer then
@@ -90,8 +101,6 @@ migration.}%\vspace*{-1ex}
 client code.}\vspace*{-4ex}
 \end{figure}
 
-
-
 It is time-consuming to find out the two files as the two versions
 of Lucene have more than 1,000 classes totally. Even after the
 programmer successfully finds out the two aligned files, it is still
@@ -128,7 +137,7 @@ particular, Figure~\ref{fig:dataflow} does not consider parameters
 and fails to provide useful information if two API methods have
 different parameter orders. For this example, as shown in Line 6,
 the input of \CodeIn{java.io.File.exist()} is a variable, but the
-inputs of \CodeIn{Sys- tem.IO.Directory.Exist()} and
+inputs of \CodeIn{System.IO.Directory.Exist()} and
 \CodeIn{System.IO.File.Exist()} are both their parameters as shown
 in Line 12 and Line 15. The preceding analysis does not consider
 parameters yet.
