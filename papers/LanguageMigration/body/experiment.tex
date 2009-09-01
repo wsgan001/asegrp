@@ -16,7 +16,7 @@ migration (Section~\ref{sec:evaluation:migration})?\vspace*{-1.5ex}
 \multirow{2}*[-2pt]{\textbf{Project}}&
 \multirow{2}*[-2pt]{\textbf{Source}}
 & \multicolumn{2}{|c|}{\textbf{Java version}} & \multicolumn{2}{|c|}{\textbf{C\# version}} \\\cline{3-6} &  &  \emph{\textbf{\#C}}& \emph{\textbf{\#M}} &\emph{\textbf{\#C}}& \emph{\textbf{\#M}}\\
-\hline
+\hline \hline
   neodatis &   SourceForge  & 1298 &   9040 & 464  & 3983     \\
 \hline
   db4o     &   SourceForge  & 3047 &   17449 & 3051 & 15430     \\
@@ -46,7 +46,7 @@ binaryNotes &   SourceForge  & 178 &   1590  & 197 & 1047    \\
   aligner &   SourceForge  & 41    &   232 & 18 & 50     \\
 \hline
   fit       &   SourceForge  & 95 &   461    & 43 & 281     \\
-\hline
+\hline\hline
   \multicolumn{2}{|c|}{Total} &   11668 & 75685  &   6900 & 34165   \\
 \hline
 \end{tabular}\vspace*{-2ex}
@@ -54,30 +54,31 @@ binaryNotes &   SourceForge  & 178 &   1590  & 197 & 1047    \\
 \end{SmallOut}\vspace*{-3ex}
 \end{table}
 
-We choose fifteen open source projects that have both Java versions
-and C\# versions as the subjects of our evaluations, and
+We choose 15 open source projects that have both Java versions and
+C\# versions as the subjects of our evaluations, and
 Table~\ref{table:subjects} show these subjects. Column ``Project''
 lists names of subjects. Column ``Source'' lists sources of these
 subjects. These subjects come from famous open source societies such
 as SourgeForge\footnote{\url{http://www.sf.net}},
 Apache\footnote{\url{http://www.apache.org/}}, and
-hibernate\footnote{\url{http://www.hibernate.org/}}. Column ``Java
-version'' and Column ``C\# version'' list the two versions from each
-subject. All these used versions are the latest versions. For these
-two columns, sub-column ``\emph{\#C}'' lists numbers of classes, and
-sub-column ``\emph{\#M}'' lists numbers of methods. We notice that
-Java versions are much larger than C\# versions totally. We
-investigate these projects and find two factors as follows. One is
-that Java versions of some projects are more update-to-date. For
-example, the latest Java version of \emph{numericas4j} is 1.3
-whereas the latest C\# version is 1.2. The other factor is that some
-projects are migrating from Java to C\# in progress. For example,
-the website\footnote{\url{http://wiki.neodatis.org/}} of
-\emph{neodatis} states that \emph{neodatis} is a project in Java and
-is being ported to C\#. This observation further confirms the
-usefulness of our approach as our approach aids migrating from one
-language to other languages. Totally, these projects have 18,568
-classes and 109,850 methods.
+hibernate\footnote{\url{http://www.hibernate.org/}}. Columns ``Java
+version'' and ``C\# version'' list the two versions from each
+subject. All these used versions are the latest versions at the time
+of writing. For these two columns, sub-column ``\emph{\#C}'' lists
+numbers of classes, and sub-column ``\emph{\#M}'' lists numbers of
+methods. We notice that Java versions are much larger than C\#
+versions totally. We investigate these projects and find two factors
+as follows. One is that Java versions of some projects are more
+update-to-date. For example, the latest Java version of
+\emph{numericas4j} is 1.3 whereas the latest C\# version is 1.2. The
+other factor is that some projects are migrating from Java to C\# in
+progress. For example, the
+website\footnote{\url{http://wiki.neodatis.org/}} of \emph{neodatis}
+states that \emph{neodatis} is a project in Java and is being ported
+to C\#. This observation further confirms the usefulness of our
+approach as our approach aids migrating from one language to other
+languages. Totally, these projects have 18,568 classes and 109,850
+methods.
 
 We conducted all the evaluations on a PC with an Intel Qual CPU @
 2.83GHz and 1.98M memory running Windows XP.
@@ -89,10 +90,9 @@ Table~\ref{table:subjects} as the subjects for mining API mapping.
 
 
 \textbf{Aligning client code.} We first use our approach to align
-client code based on name similarities. The threshold is set to 0.6
-based on our initial experience. We choose a relatively low
-threshold so that our approach can take into account as much client
-code as possible.
+client code. The threshold is set to 0.6 based on our initial
+experience. We choose a relatively low threshold so that our
+approach can take into account as much client code as possible.
 
 Table~\ref{table:analyzingclient} shows the results of this step.
 For column ``Aligned'', sub-column ``\emph{\# C}'' lists numbers of
@@ -109,21 +109,21 @@ the results of Table~\ref{table:analyzingclient} fall into three
 categories. This first category includes \emph{db4o}, \emph{fpml},
 \emph{PDFClown}, \emph{OpenFSM}, and \emph{binaryNotes}. There, our
 approach achieves relatively high percentages for both Java versions
-and C\# versions. In each of the five project, ``\emph{\%M}'' is
-relatively smaller than ``\emph{\%C}'' due to two factors. First,
-methods of those unaligned classes cannot be aligned and thus are
-counted as unaligned. Second, Java versions usually have many
-getters and setters and these getters and setters often do not have
-corresponding methods in C\# versions. The second category includes
-\emph{neodatis}, \emph{numerics4j}, and \emph{lucene}. There, our
-approach aligns C\# versions well but does not align Java versions
-so well. We find that \emph{neodatis} and \emph{lucene} are
-migrating from Java to C\# in progress and the Java version of
-\emph{numerics4j} is more update-to-date than its C\# version. As a
-result, some Java classes or methods do not have corresponding
-implementations in C\# versions in these projects and thus are left
-unmapped. The third category includes \emph{logging} and
-\emph{hibernate}. There, our approach does not align classes and
+and C\# versions. For each of the five project, ``\emph{\%M}'' is
+relatively smaller than ``\emph{\%C}'' since methods of those
+unaligned classes cannot be aligned and thus are counted as
+unaligned\footnote{Another factor lies in that Java versions usually
+have many getters and setters and these getters and setters often do
+not have corresponding methods in C\# versions.}. The second
+category includes \emph{neodatis}, \emph{numerics4j}, and
+\emph{lucene}. There, our approach aligns C\# versions well but does
+not align Java versions so well. We find that \emph{neodatis} and
+\emph{lucene} are migrating from Java to C\# in progress and the
+Java version of \emph{numerics4j} is more update-to-date than its
+C\# version. As a result, some Java classes or methods do not have
+corresponding implementations in C\# versions in these projects and
+thus are left unmapped. The third category includes \emph{logging}
+and \emph{hibernate}. There, our approach does not align classes and
 methods of the two projects well. Although both of the two projects
 seem to be migrated from existing Java versions, the programmers of
 the two projects often do not refer to names of existing Java
@@ -132,23 +132,17 @@ percentage of aligned classes is relatively high, and the percentage
 of aligned methods is relatively low. We find that even if our
 approach aligns a wrong class pair, our approach does not align
 methods within the wrong pair as the method names of a wrong pair
-are quite different. The results suggest that we can take method
+are quite different. The result suggests that we can take method
 names into account when aligning classes in future work.
 
 For all these projects, our approach does not align all classes and
-all methods. Besides the factor of different entities naming across
-languages, one factor lies in that one functionality may be
-implemented as a single class in one language version and is
-implemented as several classes in the other language version.
-Another factor lies in that a Java version and a C\# version may
-have quite different functionalities. We further discuss these
-issues in Section~\ref{sec:discuss}.
-
-In summary, our approach aligns most classes and methods of eight
-projects listed in Table~\ref{table:analyzingclient} using name
-similarities. The result confirms that many programmers refer to
-existing versions of another language to name entities of a version
-under development.
+all methods. We find another two factors besides the factor of
+different entities naming across languages. First, one functionality
+may be implemented as a single class in one language version and is
+implemented as multiple classes in the other language version.
+Second, a Java version and a C\# version sometimes may have quite
+different functionalities. We discuss these issues in
+Section~\ref{sec:discuss}.
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -157,12 +151,8 @@ under development.
 \multirow{2}*[-2pt]{\textbf{Project}}&
 \multicolumn{2}{|c|}{\textbf{Java version}}
 & \multicolumn{2}{|c|}{\textbf{C\# version}} & \multicolumn{2}{|c|}{\textbf{Aligned}} \\\cline{2-7} &  \emph{\textbf{\%C}}& \emph{\textbf{\%M}}&  \emph{\textbf{\%C}}& \emph{\textbf{\%M}} &\emph{\textbf{\#C}}& \emph{\textbf{\#M}}\\
-\hline
-  neodatis &   44.7\%  &  54.8\% &   100.0\% & 93.6\% & 408  & 3728   \\
-\hline
+\hline\hline
   db4o     &   87.8\%  &  65.5\%&    87.6\%  & 74.1\% & 2674  & 11433   \\
-\hline
-  numerics4j & 57.2\%  &  48.6\% & 95.4\%  & 89.9\% &  75  &  174   \\
 \hline
   fpml       & 93.7\%  &  70.5\% & 93.5\%  & 56.2\% &  134 &  620  \\
 \hline
@@ -171,20 +161,29 @@ under development.
   OpenFSM    & 97.1\%  &  72.1\% &  94.4\% &  92.1\%  & 34   & 129   \\
 \hline
   binaryNotes & 98.9\%  & 61.1\% &  89.3\% &  92.7\% & 176   & 971  \\
+\hline \hline
+  neodatis &   44.7\%  &  54.8\% &   100.0\% & 93.6\% & 408  & 3728   \\
+\hline
+  numerics4j & 57.2\%  &  48.6\% & 95.4\%  & 89.9\% &  75  &  174   \\
 \hline
   lucene     &  34.9\%  & 26.6\%&   97.6\% &  79.8\% & 453  & 2406  \\
-\hline
+\hline\hline
   logging    &   91.8\% & 18.1\%&   58.4\% & 19.3\% &  180  & 285   \\
 \hline
   hibernate &   26.4\%  & 1.2\%&    99.1\% & 12.6\% &  848  & 319   \\
-\hline
-  Total &   44.9\% & 28.0\%  &   75\% & 62.1\% & 5239 & 21208 \\
+\hline\hline
+  Average &   53.2\% & 30.8\% &   88.8\% & 69.2\% & 524 & 2121 \\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Aligned client code} \label{table:analyzingclient}
+\Caption{Results of Aligning client code}
+\label{table:analyzingclient}
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
 
+In summary, as shown by Row ``Average'', our approach aligns most
+classes and methods on average. The result confirms that many
+programmers refer to existing versions of another language to name
+entities of a version under development.
 
 \textbf{Mining API mapping.} We then use our approach to mine
 mapping relations of API classes and API methods.
@@ -207,13 +206,14 @@ our approach achieves high accuracies except \emph{hibernate}.
 Although our approach does not align \emph{logging} quite well
 either, the accuracies of API mapping from \emph{logging} are still
 relatively high. To mine API mapping of classes, our approach
-requires names of classes, methods, and variables are all similar.
-To mine API mapping of methods, our approach requires two built API
-transformation graphs are similar. The two requirements are
-relatively strict. As a result, if the first step does not align
-client code quite well, our approach misses some mapping relations
-of APIs but does not introduce many false mapping relations. In
-other words, our approach is robust to mine accurate API mapping.
+requires that names of classes, methods, and variables are all
+similar. To mine API mapping of methods, our approach requires that
+two built API transformation graphs are similar. The two
+requirements are relatively strict. As a result, if the first step
+does not align client code quite well, our approach misses some
+mapping relations of APIs but does not introduce many false mapping
+relations. In other words, our approach is robust to mine accurate
+API mapping.
 
 %Sub-column ``\emph{1-1}'' list the number of one-to-one relations.
 %We find that most mined mapping relations are of this kind. Our
@@ -255,10 +255,10 @@ cover various libraries.
 \hline
   hibernate   &   1126 & 66.7\% &   7 & 13.3\%     \\
 \hline\hline
-  Total       &   7016 & 85.0\%  &  19353  & 81.3\%   \\
+  Average       &   702 & 85.0\%  &  1936  & 81.3\%   \\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Mined API mapping} \label{table:minedresults}
+\Caption{Results of mining API mapping} \label{table:minedresults}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
@@ -362,10 +362,10 @@ F\!-\!score=\frac{2\times Precision \times Recall}{Precision+Recall}
 \hline
   orw.w3c &   42.9\% & 33.3\% &   38.1\% & 41.2\% & 25.0\% & 33.1\%   \\
 \hline
-  Total &   68.8\% & 26.4\%  &  47.6\%  & 84.6\% & 28.7\% & 56.7\% \\
+  Average &   68.8\% & 26.4\%  &  47.6\%  & 84.6\% & 28.7\% & 56.7\% \\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Compared results} \label{table:compare}
+\Caption{Results of comparing results} \label{table:compare}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
@@ -381,7 +381,7 @@ precision and a relatively low recall. We further investigate the
 differences, and we find three main causing impact factors. First,
 the mined mapping files contain correct items that do not exist in
 the mapping files of Java2CSharp. For example, the mined mapping
-files contain a mapping relation between \CodeIn{org.w3c.dom. Attr}
+files contain a mapping relation between \CodeIn{org.w3c.dom.Attr}
 and \CodeIn{System.Xml.XmlAttribute}, and the mapping relation does
 not exist in the mapping files of Java2CSharp. As these items are
 counted as false positives, this impact factor reduces the
@@ -399,7 +399,7 @@ impact factor reduces the recalls. Third, some API classes and API
 methods between Java and C\# have different behaviors. To hide these
 behaviors from client code, Java2CSharp maps these classes and
 methods to its implemented classes and methods. For example,
-Java2CSharp maps \CodeIn{java.util. Set} to
+Java2CSharp maps \CodeIn{java.util.Set} to
 \CodeIn{ILOG.J2CsMapping.Collections.ISet}. Our approach did not
 mine these mapping relations since the subjects in
 Table~\ref{table:subjects} do not use Java2CSharp's own implemented
