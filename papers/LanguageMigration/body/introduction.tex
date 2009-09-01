@@ -1,39 +1,51 @@
 \section{Introduction}
-\label{sec:introduction} In the history of software programming,
-researchers and practitioners created various programming languages.
-In particular, the HOPL\footnote{\url{http://hopl.murdoch.edu.au/}}
-website lists 8512 different languages. Due to various
-considerations such as attracting programmers with various
-backgrounds and achieving better performances on particular
-platforms, a project may be implemented as versions of multiple
-languages. For example, many well-known projects such as
-Lucene\footnote{\url{http://lucene.apache.org/}},
-Db4o\footnote{\url{http://www.db4o.com/}}, and
-WordNet\footnote{\url{http://wordnet.princeton.edu/}} all provide
-versions of multiple languages. For those open source projects, even
-if a project does not provide any versions of multiple languages,
-outside programmers may implement versions of particular languages
-for the project. For example, although WordNet officially does not
-provide a C\# version, Simpson and Crowe developed
-WordNet.Net\footnote{\url{http://opensource.ebswift.com/WordNet.Net/}}
-for C\# programmers. Another example is
-iText\footnote{\url{http://www.lowagie.com/iText/}}. Although it
-provides only a Java version, Kazuya developed
-iText.Net\footnote{\url{http://www.ujihara.jp/iTextdotNET/en/}} for
-C\# programmers. In fact, as pointed out by
-Jones~\cite{jones1998estimating}, about 1/3 of existing software
-projects have versions of multiple languages.
+\label{sec:introduction} 
 
-To reduce the effort of programming, a natural way to develop a
-version of a new language for a project is to translate from an
-existing version of the project. To help programmers conduct such
-migration, researchers proposed various
-approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}.
-However, language migration is still very risk even with the help of
-those proposed approaches. For example, Terekhov and
-Verhoef~\cite{terekhov2000realities} stated that at least three
-companies went bankrupt and another company lost 50 million dollars
-all because of failed language migration projects.
+A programming language serves as a means for instructing computers to achieve a programming task at hand.
+Since their inception, various programming languages came into existence due to several 
+reasons such as existence of many platforms or requirements for different programming styles.
+The HOPL\footnote{\url{http://hopl.murdoch.edu.au}} website lists 
+8,512 different programming languages. 
+
+To address business requirements and to survive in competing markets, companies
+often have to develop different versions of their projects in different languages.
+For example, many well-known projects such as Lucene\footnote{\url{http://lucene.apache.org/}},
+Db4o\footnote{\url{http://www.db4o.com/}}, and WordNet\footnote{\url{http://wordnet.princeton.edu/}} provide
+multiple versions in different languages. There are several instances where
+companies incurred huge losses due to lack of multiple versions of their projects.
+For example, Terekhov and Verhoef~\cite{terekhov2000realities} stated that atleast three
+companies went bankrupt and another company lost 50 million dollars due to failed language migration projects.
+
+For some open source projects, although companies do not offically provide multiple versions, external programmers often
+create their versions in different languages. For example, WordNet does not
+provide a C\# version. However, Simpson and Crowe developed
+a C\# version of WordNet.Net\footnote{\url{http://opensource.ebswift.com/WordNet.Net/}}. 
+Another example is iText\footnote{\url{http://www.lowagie.com/iText/}}, which
+provides Java version only. Kazuya developed a C\# version of 
+iText.Net\footnote{\url{http://www.ujihara.jp/iTextdotNET/en/}}. As described by Jones~\cite{jones1998estimating}, 
+about one-third of the existing projects have multiple versions in different languages.
+
+Migrating projects from one language to another language (such as from Java to C\#) manually
+is a tedious and error-prone task. A natural way to address this issue is to develop
+a translation tool that can automatically translate projects from one language to another.
+However, it is challenging to develop such a translation tool as the translation tool should
+have knowledge of how one programming language is mapped to the other language. In literature,
+there are several approaches~\cite{mossienko2003automated, yasumatsu1995spice, hainaut2008migration}
+proposed that address the problem of language migration partially. These approaches address 
+the problem of language migration partially, because these approaches expect programmers
+to describe how one language is mapped to another language. As programming languages provide
+a large number of Application Programming Interfaces (API), writing these rules manually 
+for all APIs is tedious and error-prone.
+
+In this paper, we propose a novel approach that automatically captures
+how APIs of one language are mapped to the APIs of another language. We refer this
+mapping as \emph{mapping relations of APIs}. There are two possible alternatives
+for capturing mapping relations of APIs. First, capture mapping relations based
+on API implementations. Second, capture mapping relations based on API usages.
+In our approach, we use the second alternative rather than the first alternative 
+for three major reasons: (1) Often API implementations such as C\# base class 
+libraries are not available. (2) Capturing relations based on API implementations
+
 
 One main challenge of language migration is to map APIs from one
 language into other languages. It is non-trivial to build API
