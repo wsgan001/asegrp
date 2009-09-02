@@ -48,14 +48,18 @@ Lucene that have both Java and C\# versions, and mines
 mapping relations of APIs. One would argue that given projects
 such as Lucene with both Java and C\# versions, a programmer
 can manually learn these mapping relations easily. 
-We next explain why it is not straightforward to learn these mapping relations of APIs.
+We next explain why it is not straightforward to learn these mapping relations of APIs
+and how our approach addresses these challenges.
 
-First, the programmer needs to find Java source files that implement the
-same functionality with the same input and output. For this example,
-the programmer may find that \CodeIn{IndexFiles.java} in the Java
-version of Lucene is a suitable source file. The programmer then
-finds the corresponding source file \CodeIn{IndexFiles.cs} from the
-C\# version of Lucene. The two files are as follows:
+First, our approach aligns classes and methods of the two versions by using 
+a matching algorithm based on similarities in the names of classes 
+and methods between the two versions. For example, our approach aligns 
+\CodeIn{IndexFiles.java} with the \CodeIn{IndexFiles.cs} 
+(shown in Figure~\ref{fig:clientcode}) as the names of their classes and methods are similar.
+Although it appears trivial, It is tedious task for the programmer to align
+the classes manually as both versions can have large number of classes and methods.
+For example, Lucene includes more than 1,000 classes.
+
 
 \begin{figure}[t]
 \begin{CodeOut}
@@ -101,9 +105,7 @@ migration.}%\vspace*{-1ex}
 client code.}\vspace*{-4ex}
 \end{figure}
 
-It is time-consuming to find out the two files as the two versions
-of Lucene have more than 1,000 classes totally. Even after the
-programmer successfully finds out the two aligned files, it is still
+Even after the programmer successfully finds out the two aligned files, it is still
 non-trivial to learn mapping relations of APIs. The programmer first
 needs to map inputs of the three code snippets. In particular, by
 comparing Line 1 with Line 4, the programmer knows that

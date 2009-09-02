@@ -6,7 +6,6 @@ Since their inception, various programming languages came into existence due to
 reasons such as existence of many platforms or requirements for different programming styles.
 The HOPL\footnote{\url{http://hopl.murdoch.edu.au}} website lists 
 8,512 different programming languages. 
-
 To address business requirements and to survive in competing markets, companies
 often have to develop different versions of their projects in different languages.
 For example, many well-known projects such as Lucene\footnote{\url{http://lucene.apache.org/}},
@@ -82,40 +81,55 @@ $m_3$ in Java: E java.util.LinkedList.removeLast()\\
 Although the method names of $m_3$ and $m_4$ are the same, $m_3$ in Java
 cannot be directly mapped with $m_4$ in C\#. The reason is that $m_3$ in Java
 returns the last element removed from the list, whereas $m_4$ does not return any
-element. Therefore, $m_3$ is mapped to two API method $m_4$ and $m_5$ (shown below) in C\#.
-The API method $m_5$ is shown below and this method returns the last element
-and should be called before calling $m_4$.
+element. Therefore, $m_3$ is mapped to two API methods $m_4$ and $m_5$ (shown below) in C\#.
+The API method $m_5$ returns the last element and should be called before calling $m_4$.
 
 \begin{CodeOut}
 $m_5$ in C\#: void System.Collections.Generic.LinkedList.Last()
 \end{CodeOut}
 
-This example shows that in many cases, an API method of one language is mapped
+This example shows that an API method of one language is mapped
 to multiple API methods of the other language. Therefore, capturing API mapping relationships
 based on API implementations is often not possible. We next describe our approach
 that mines mapping relations using the API client code.
 
-TODO:
+Our approach accepts existing projects such as Lucene that have both Java and C\# versions,
+and mines mapping relations of APIs. We refer these existing projects as client code
+using the APIs of two languages. First, our approach aligns classes and methods of the 
+two versions by using a matching algorithm based on similarities in the names
+of classes and methods. Aligning client code based on names of classes and methods is
+based on our observation of how existing projects such as rasp\footnote{\url{http://sourceforge.net/projects/r-asp/}} are
+migrated from one language to another. We observed that while migrating rasp project
+from Java to C\#, programmers first rename source files from Java to C\# and systematically
+address the compilation errors by replacing Java APIs with C\# APIs. During this procedure,
+names of classes, methods, fields of classes, or local variables in methods often remain
+the same between the two versions. Therefore, we use name similarities for aligning client
+code of the two versions. Second, our approach maps API classes of one language with
+the other language by matching the names of fields of classes and local variables of methods in the client code.
+Finally, our approach maps API methods of one language with the other language. Mapping API methods
+is challenging as one API method of one language can be mapped to multiple API
+methods of the other language (as shown in our preceding example). To address this challenge, 
+we construct a graph, referred as \emph{API transformation graph} (ATG), for aligned methods
+of the client code in both languages. These ATGs precisely capture inputs and outputs
+of API methods, and help mine relationships API methods. (@Hao, could you please revise this preceding sentence and put more details)
 
-This paper makes the following main contributions:
+This paper makes the following major contributions:
 
 \begin{itemize}\vspace*{-1.5ex}
-\item We propose the first approach that mines API mapping of
-different languages from existing client code automatically. Our
-approach addresses an important and yet challenging problem
-unaddressed by previous work on language migration.\vspace*{-1.5ex}
-\item We propose techniques to build and to compare API
+\item A first approach that mines mapping relations of APIs between
+different languages using API client code. Our
+approach addresses an important and yet challenging problem that is not
+addressed by previous work on language migration.\vspace*{-1.5ex}
+\item A technique to build and compare API
 transformation graphs (ATG). ATGs describe data dependencies among
-inputs and outputs of API methods, so that our approach is able to
-mine complicated mapping relations of inputs and many-to-many
-mapping relations.\vspace*{-1.5ex}
-\item We
-implemented a tool named MAM based on our approach and conducted two
-evaluations on fifteen projects with both Java and C\# versions.
-These projects have 18568 classes and 109,850 methods totally. The
+inputs and outputs of API methods. Our approach uses these ATGs to
+mine complex many-to-many mapping relations between API methods.\vspace*{-1.5ex}
+\item A tool named MAM based on our approach and two
+evaluations on 15 projects with both Java and C\# versions.
+These projects include 18,568 classes and 109,850 methods. The
 results show that our approach mines 26,369 mapping relations of
-APIs with 83.2\% accuracies and the mined API mapping reduces 55.4\%
-compilation errors in migrated projects.
+APIs with 83.2\% accuracies and the mined API mapping relations reduce 55.4\% of
+compilation errors during translation projects from Java to C\#.
 \end{itemize}\vspace*{-1.5ex}
 
 The remainder of this paper is organized as follows. Section~\ref{sec:example}
