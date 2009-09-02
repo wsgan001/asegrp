@@ -9,16 +9,45 @@
 outputs}\vspace*{-3ex}
 \end{figure}
 
+
+
+
+
+Our approach accepts existing projects such as Lucene that have both
+Java and C\# versions, and mines mapping relations of APIs. We refer
+these existing projects as client code using the APIs of two
+languages. First, our approach aligns classes and methods of the two
+versions by using a matching algorithm based on similarities in the
+names of classes and methods. Aligning client code based on names of
+classes and methods is based on our observation of how existing
+projects such as
+rasp\footnote{\url{http://sourceforge.net/projects/r-asp/}} are
+migrated from one language to another. We observed that while
+migrating rasp project from Java to C\#, programmers first rename
+source files from Java to C\# and systematically address the
+compilation errors by replacing Java APIs with C\# APIs. During this
+procedure, names of classes, methods, fields of classes, or local
+variables in methods often remain the same between the two versions.
+Therefore, we use name similarities for aligning client code of the
+two versions. Second, our approach maps API classes of one language
+with the other language by matching the names of fields of classes
+and local variables of methods in the client code. Finally, our
+approach maps API methods of one language with the other language.
+Mapping API methods is challenging as one API method of one language
+can be mapped to multiple API methods of the other language (as
+shown in our preceding example).
+
+
 We next use an example to illustrate challenges involved in
-mining API mapping. Consider that a programmer needs to migrate 
+mining API mapping. Consider that a programmer needs to migrate
 a Java code example (shown in Figure~\ref{fig:totranslation}) to C\# using a translation tool.
 This code example accepts a \CodeIn{string} input that represents
 name of a file or directory and returns a \CodeIn{boolean} value that
-describes whether the file or directory exists. To achieve this functionality, 
+describes whether the file or directory exists. To achieve this functionality,
 the code example declares a local variable, called \CodeIn{file},
-of type \CodeIn{java.io.File} and calls the \CodeIn{exists} method. 
+of type \CodeIn{java.io.File} and calls the \CodeIn{exists} method.
 We consider the local variable \CodeIn{file} as a receiver object for
-the \CodeIn{exists} method. 
+the \CodeIn{exists} method.
 
 To translate this code example into C\#, the translation
 tool needs to know mapping relations of API classes. For example,
@@ -28,8 +57,8 @@ to know the mapped API methods of \CodeIn{exists}. Furthermore,
 the translated code should be able to accept the same input
 ``\CodeIn{test}'' and produce the same output as the Java code example.
 
-As APIs are often large in size, existing translation tools~\cite{} 
-(@Hao: Please add citations) often support only a subset of 
+As APIs are often large in size, existing translation tools~\cite{}
+(@Hao: Please add citations) often support only a subset of
 mapping relations of used APIs. The reason for supporting only
 a subset of mapping relations is that the mapping relations are written
 manually in these translation tools. Therefore, the translation
@@ -37,7 +66,7 @@ tool cannot translate this Java code example, if the mapping relation
 for the \CodeIn{java.io.File} does not exist. To address this issue,
 a few translation other tools~\cite{} (@Hao, please add citations)
 provide extensions for the programmer to write customized rules for translation.
-However, to write customized rules, programmer needs to have 
+However, to write customized rules, programmer needs to have
 knowledge about both the languages. Furthermore, writing these
 customized rules manually for all APIs is tedious and error-prone.
 
@@ -47,14 +76,14 @@ relations of APIs. Our approach uses existing projects such as
 Lucene that have both Java and C\# versions, and mines
 mapping relations of APIs. One would argue that given projects
 such as Lucene with both Java and C\# versions, a programmer
-can manually learn these mapping relations easily. 
+can manually learn these mapping relations easily.
 We next explain why it is not straightforward to learn these mapping relations of APIs
 and how our approach addresses these challenges.
 
-First, our approach aligns classes and methods of the two versions by using 
-a matching algorithm based on similarities in the names of classes 
-and methods between the two versions. For example, our approach aligns 
-\CodeIn{IndexFiles.java} with the \CodeIn{IndexFiles.cs} 
+First, our approach aligns classes and methods of the two versions by using
+a matching algorithm based on similarities in the names of classes
+and methods between the two versions. For example, our approach aligns
+\CodeIn{IndexFiles.java} with the \CodeIn{IndexFiles.cs}
 (shown in Figure~\ref{fig:clientcode}) as the names of their classes and methods are similar.
 Although it appears trivial, It is tedious task for the programmer to align
 the classes manually as both versions can have large number of classes and methods.

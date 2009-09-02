@@ -1,62 +1,75 @@
 \section{Introduction}
-\label{sec:introduction} 
+\label{sec:introduction}
 
-A programming language serves as a means for instructing computers to achieve a programming task at hand.
-Since their inception, various programming languages came into existence due to  
-reasons such as existence of many platforms or requirements for different programming styles.
-The HOPL\footnote{\url{http://hopl.murdoch.edu.au}} website lists 
-8,512 different programming languages. 
-To address business requirements and to survive in competing markets, companies
-often have to develop different versions of their projects in different languages.
-For example, many well-known projects such as Lucene\footnote{\url{http://lucene.apache.org/}},
-Db4o\footnote{\url{http://www.db4o.com/}}, and WordNet\footnote{\url{http://wordnet.princeton.edu/}} provide
-multiple versions in different languages. There are instances where
-companies incurred huge losses due to lack of multiple versions of their projects.
-For example, Terekhov and Verhoef~\cite{terekhov2000realities} stated that at least three
-companies went bankrupt and another company lost 50 million dollars due to failed language migration projects.
+A programming language serves as a means for instructing computers
+to achieve a programming task at hand. Since their inception,
+various programming languages came into existence due to reasons
+such as existence of many platforms and requirements for different
+programming styles. \Comment{The
+HOPL\footnote{\url{http://hopl.murdoch.edu.au}} website lists 8,512
+different programming languages. }To address business requirements
+and to survive in competing markets, companies often have to develop
+different versions of their projects in different languages. For
+example, many well-known projects such as
+Lucene\footnote{\url{http://lucene.apache.org/}}\Comment{,
+Db4o\footnote{\url{http://www.db4o.com/}},} and
+WordNet\footnote{\url{http://wordnet.princeton.edu/}} provide
+multiple versions in different languages. As described by
+Jones~\cite{jones1998estimating}, about one-third of the existing
+projects have multiple versions in different languages.
 
-For some open source projects, although companies do not offically provide multiple versions, external programmers often
-create their versions in different languages. For example, WordNet does not
-provide a C\# version. However, Simpson and Crowe developed
-a C\# version of WordNet.Net\footnote{\url{http://opensource.ebswift.com/WordNet.Net/}}. 
-Another example is iText\footnote{\url{http://www.lowagie.com/iText/}}, which
-provides Java version only. Kazuya developed a C\# version of 
-iText.Net\footnote{\url{http://www.ujihara.jp/iTextdotNET/en/}}. As described by Jones~\cite{jones1998estimating}, 
-about one-third of the existing projects have multiple versions in different languages.
+%For some open source projects, although companies do not officially
+%provide multiple versions, external programmers often create their
+%versions in different languages. For example, WordNet does not
+%provide a C\# version. However, Simpson and Crowe developed a C\#
+%version of
+%WordNet.Net\footnote{\url{http://opensource.ebswift.com/WordNet.Net/}}.
+%Another example is
+%iText\footnote{\url{http://www.lowagie.com/iText/}}, which provides
+%Java version only. Kazuya developed a C\# version of
+%iText.Net\footnote{\url{http://www.ujihara.jp/iTextdotNET/en/}}.
 
-Migrating projects from one language to another language (such as from Java to C\#) manually
-is a tedious and error-prone task. A natural way to address this issue is to develop
-a translation tool that can automatically translate projects from one language to another.
-However, it is challenging to develop such a translation tool as the translation tool should
-have knowledge of how one programming language is mapped to the other language. In literature,
-there exist approaches~\cite{mossienko2003automated, yasumatsu1995spice, hainaut2008migration}
-that address the problem of language migration partially. These approaches address 
-the problem of language migration partially, because these approaches expect programmers
-to describe how one language is mapped to another language. Based on the mappings provided
-as input, these existing approaches translate projects from one language to another. 
-As programming languages provide a large number of Application Programming Interfaces (API), writing these rules manually 
-for all APIs is tedious and error-prone. As a result, existing
+Migrating projects from one language to another language
+(\emph{e.g.}, from Java to C\#) manually is a tedious and
+error-prone task. Some companies have incurred huge losses during
+the process of language migration. For example, Terekhov and
+Verhoef~\cite{terekhov2000realities} stated that at least three
+companies went bankrupt and another company lost 50 million dollars
+due to failed language migration projects. A natural way to address
+this issue is to develop a translation tool that can automatically
+translate projects from one language to another. However, it is
+challenging to develop such a translation tool as the translation
+tool should have knowledge of how one programming language is mapped
+to the other language. In literature, exist
+approaches~\cite{mossienko2003automated, yasumatsu1995spice,
+hainaut2008migration} address the problem of language migration
+partially, because these approaches expect programmers to describe
+how one language is mapped to another language. Based on the
+mappings provided as input, these existing approaches translate
+projects from one language to another. As programming languages
+provide a large number of APIs, writing rules manually for all APIs
+is tedious and error-prone. As a result, existing
 approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}
 support only a subset of APIs or even ignore the mapping relations
-of APIs. Such a limitation causes many compilation errors in migrated projects and limits their usage in practice. 
+of APIs. Such a limitation causes many compilation errors in
+migrated projects and limits their usage in practice.
 
-In this paper, we propose a novel approach that automatically captures
-how APIs of one language are mapped to the APIs of another language. We refer this
-mapping as \emph{mapping relations of APIs}. There are two possible alternatives
-for capturing mapping relations of APIs. First, capture mapping relations based
-on API implementations. Second, mine mapping relations based on API usages in the client code.
-In our approach, we use the second alternative rather than the first alternative 
-for three major reasons: (1) Often API implementations such as implementations of C\# base class 
-libraries are not available. (2) Capturing relations based on API implementations
-often can have relatively low confidence than mining mapping relations based on API usages.
-The reason is that API implementations have only one call site for the analysis, whereas
-API usages can have many call sites for mining; providing relatively high confidence on mapped
-relations. (3) Mapping relations of APIs are more complex and cannot be captured solely
-based on the information available in the API implementations. We next
-show why it is not possible to capture mapping relations
-based on the information available in API implementations using two illustrative examples.
-
-Consider the following two API methods in Java and C\#:
+In this paper, we propose a novel approach that mines how APIs of
+one language are mapped to the APIs of another language. We refer
+this mapping as \emph{mapping relations of APIs}. In our approach,
+we use to mine mapping relations based on API usages in the client
+code rather based on API implementations for three major reasons:
+(1) API libraries often do not provide source files especially for
+those C\# libraries. (2) Mining relations based on API
+implementations often can have relatively low confidence than mining
+mapping relations based on API usages. The reason is that API
+implementations have only one call site for the analysis, whereas
+API usages can have many call sites for mining. (3) Mapping
+relations of APIs are often complex and cannot be mined solely based
+on the information available in the API implementations. First,
+mapping parameters of an API method in one language with an API
+method in the other language can be complex. For example, consider
+the following two API methods in Java and C\#:
 
 \begin{CodeOut}
 $m_1$ in Java: BigDecimal java.math.BigDecimal.multiply (BigDecimal $p_1^1$)\\
@@ -67,11 +80,9 @@ System.Decimal.Multiply (Decimal $p_1^2$, Decimal $p_2^2$)
 Here, $m_1$ has a receiver, say $v_1^1$, of type \CodeIn{BigDecimal}
 and has one parameter $p_1^1$, and $m_2$ has two parameters $p_1^2$
 and $p_2^2$. Based on the definitions of these inputs, $v_1^1$ is
-mapped to $p_1^2$, and $p_1^1$ is mapped to $p_2^2$. This preceding
-example shows the complexities involved in mapping parameters of an API
-method in one language with an API method in the other language. 
-We next provide a more complex example where an API method of one 
-language is mapped to more than one API method in the other language. Consider the following two API methods:
+mapped to $p_1^2$, and $p_1^1$ is mapped to $p_2^2$. Second, an API
+method of one language is mapped to more than one API method in the
+other language. For example, consider the following two API methods:
 
 \begin{CodeOut}
 $m_3$ in Java: E java.util.LinkedList.removeLast()\\
@@ -88,48 +99,28 @@ The API method $m_5$ returns the last element and should be called before callin
 $m_5$ in C\#: void System.Collections.Generic.LinkedList.Last()
 \end{CodeOut}
 
-This example shows that an API method of one language is mapped
-to multiple API methods of the other language. Therefore, capturing API mapping relationships
-based on API implementations is often not possible. We next describe our approach
-that mines mapping relations using the API client code.
-
-Our approach accepts existing projects such as Lucene that have both Java and C\# versions,
-and mines mapping relations of APIs. We refer these existing projects as client code
-using the APIs of two languages. First, our approach aligns classes and methods of the 
-two versions by using a matching algorithm based on similarities in the names
-of classes and methods. Aligning client code based on names of classes and methods is
-based on our observation of how existing projects such as rasp\footnote{\url{http://sourceforge.net/projects/r-asp/}} are
-migrated from one language to another. We observed that while migrating rasp project
-from Java to C\#, programmers first rename source files from Java to C\# and systematically
-address the compilation errors by replacing Java APIs with C\# APIs. During this procedure,
-names of classes, methods, fields of classes, or local variables in methods often remain
-the same between the two versions. Therefore, we use name similarities for aligning client
-code of the two versions. Second, our approach maps API classes of one language with
-the other language by matching the names of fields of classes and local variables of methods in the client code.
-Finally, our approach maps API methods of one language with the other language. Mapping API methods
-is challenging as one API method of one language can be mapped to multiple API
-methods of the other language (as shown in our preceding example). To address this challenge, 
-we construct a graph, referred as \emph{API transformation graph} (ATG), for aligned methods
-of the client code in both languages. These ATGs precisely capture inputs and outputs
-of API methods, and help mine relationships API methods. (@Hao, could you please revise this preceding sentence and put more details)
-
-This paper makes the following major contributions:
+To deal with the complexity of mining API mapping, we construct a
+graph, referred as \emph{API transformation graph} (ATG), for
+aligned methods of the client code in both languages. These ATGs
+precisely capture inputs and outputs of API methods, and help mine
+relationships API methods. This paper makes the following major
+contributions:
 
 \begin{itemize}\vspace*{-1.5ex}
-\item A first approach that mines mapping relations of APIs between
+\item A first approach that mines API mapping between
 different languages using API client code. Our
 approach addresses an important and yet challenging problem that is not
 addressed by previous work on language migration.\vspace*{-1.5ex}
-\item A technique to build and compare API
-transformation graphs (ATG). ATGs describe data dependencies among
-inputs and outputs of API methods. Our approach uses these ATGs to
-mine complex many-to-many mapping relations between API methods.\vspace*{-1.5ex}
+\item A technique to build and ATGs. As ATGs describe data dependencies among
+inputs and outputs of API methods, our approach is able to mine
+complex mapping relations between API methods.\vspace*{-1.5ex}
 \item A tool named MAM based on our approach and two
-evaluations on 15 projects with both Java and C\# versions.
-These projects include 18,568 classes and 109,850 methods. The
-results show that our approach mines 26,369 mapping relations of
-APIs with 83.2\% accuracies and the mined API mapping relations reduce 55.4\% of
-compilation errors during translation projects from Java to C\#.
+evaluations on 15 projects with both Java and C\# versions. These
+projects include 18,568 classes and 109,850 methods. The results
+show that our approach mines 26,369 mapping relations of APIs with
+83.2\% accuracies and the mined API mapping relations reduce 55.4\%
+of compilation errors and 43.0\% bugs during translation projects
+from Java to C\#.
 \end{itemize}\vspace*{-1.5ex}
 
 The remainder of this paper is organized as follows. Section~\ref{sec:example}
