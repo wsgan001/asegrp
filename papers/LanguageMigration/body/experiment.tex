@@ -269,7 +269,7 @@ have manually built files that describe mapping relations of APIs.
 For example, one item from the mapping files of Java2CSharp is as
 follows:
 
-\begin{CodeOut}\vspace*{-1ex}
+\begin{CodeOut}\vspace*{-2ex}
 \begin{alltt}
 package java.math :: System \{
   class java.math.BigDecimal :: System:Decimal \{
@@ -278,7 +278,7 @@ package java.math :: System \{
   \}
 \}
 \end{alltt}
-\end{CodeOut}\vspace*{-1ex}
+\end{CodeOut}\vspace*{-2ex}
 
 This item describes mapping relations between \CodeIn{java.math.Big-
 Decimal.multiply()} and \CodeIn{System.Decimal.Multiply()}. The
@@ -287,7 +287,7 @@ pattern string describes mapping relations of inputs. In particular,
 the first parameter. Based on this item, Java2CSharp translates the
 following code snippet from Java to C\# as follows:
 
-\begin{CodeOut}\vspace*{-1ex}
+\begin{CodeOut}\vspace*{-2ex}
 \begin{alltt}
   BigDecimal m = new BigDecimal(1);
   BigDecimal n = new BigDecimal(2);
@@ -297,7 +297,7 @@ following code snippet from Java to C\# as follows:
   Decimal n = new Decimal(2);
   Decimal result = Decimal.Multiply(m,n);
 \end{alltt}
-\end{CodeOut}\vspace*{-1ex}
+\end{CodeOut}\vspace*{-2ex}
 
 To compare with manually built mapping files of Java2CSharp, we
 translate our mined API mapping with the following strategy. First,
@@ -313,27 +313,28 @@ this step is manual as mined mapping relations do not include
 adequate details such as how to deal with multiple outputs. We
 further discuss this issue in Section~\ref{sec:discuss}.
 
-The mapping files of Java2CSharp cover all 13 packages defined by
-J2SE and 2 packages defined by
+The mapping files of Java2CSharp cover 13 packages defined by J2SE
+and 2 packages defined by
 JUnit\footnote{\url{http://www.junit.org/}}, and we treat these
-mapping files as a golden standard. We find that 9 packages overlap
-in the mined mapping files and the mapping files of Java2CSharp. We
-compare mapping relations of APIs within these mapping packages, and
-Table~\ref{table:compare} shows the results. Column ``Class'' lists
-the results of comparing API classes. Column ``Method'' lists the
-results of comparing API methods. For their sub-columns, sub-column
-``\emph{P}'' denotes precision. Sub-column ``\emph{R}'' denotes
-recall. Sub-column ``\emph{F}'' denotes F-score. \emph{Precision},
-\emph{Recall}, and \emph{F-score} are defined as follows:
+mapping files as a golden standard. We find 9 packages overlapping
+between the mined mapping files and the mapping files of
+Java2CSharp. We compare mapping relations of APIs within these
+mapping packages, and Table~\ref{table:compare} shows the results.
+Column ``Class'' lists the results of comparing API classes. Column
+``Method'' lists the results of comparing API methods. For their
+sub-columns, sub-column ``\emph{P}'' denotes precision. Sub-column
+``\emph{R}'' denotes recall. Sub-column ``\emph{F}'' denotes
+F-score. \emph{Precision}, \emph{Recall}, and \emph{F-score} are
+defined as follows:\vspace*{-2ex}
 \begin{equation}\label{eq-precison}
 Precison=\frac{true\ positives}{true\ positives+false\ positives}
-\end{equation}
+\end{equation}\vspace*{-2ex}
 \begin{equation}\label{eq-recall}
 Recall=\frac{true\ positives}{true\ positives+false\ negatives}
-\end{equation}
+\end{equation}\vspace*{-2ex}
 \begin{equation}\label{eq-fscore}
 F\!-\!score=\frac{2\times Precision \times Recall}{Precision+Recall}
-\end{equation}
+\end{equation}\vspace*{-2ex}
 
 \begin{table}[t]
 \centering
