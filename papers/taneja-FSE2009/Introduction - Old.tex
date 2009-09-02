@@ -1,0 +1,27 @@
+\section{Introduction}
+% What is Regression Testing and why is it important and is very expensive
+% Regression testing aims to find beh diff between 2 versions
+% Previous approach used by DiffGen
+
+Whenever software developers change an existing version of software system, they want to make sure that (1)the changes made to the software system are the changes that the developers actually intended. (2)No unintended side effects are introduced in the software system. Regression testing of a software system gives software developers such confidence. Regression testing is the activity of re-testing a software system after it is changed. In particular, regression testing aims to find behavioral differences between the original and the modified version of the software system. These behavioral differences are exposed by regression tests that pass for one version but fail for the other version. Software developers can inspect these failing tests to decide whether the failing tests indicate the behavioral difference that the developers intended or these failing tests represent regression faults. If these failing tests represent intended behavior, developers can modify the failing tests to make these tests pass and if the failing tests represent regression faults, the developers can fix the fault(s) in the software system that made these tests fail.
+ 
+Regression testing is one of the most expensive activities of software development. Previous studies have shown that  regression testing can account for up to 50\% of total softwrae development costs. To reduce these costs, researchers have proposed various techniques for test selection~\cite{minimization}, prioritization~\cite{prioritization}, and minimization~\cite{minimization}. However, the existing test suites might not exercise the changed parts of the software system. Even if the existing test suite is able to execute the changed parts, the test suite may not be able to expose behavioral difference between the original and modified version of the software system since the test suite was not written (or generated) with the intent of finding behavioral differences between the original and modified versions of the software system. Hence, the developers need to augment these test cases with new tests to find behavioral differences between the two versions.
+
+Developers can generate new tests using some automated test generation tool. Most such test generation tools do not
+insert test oracles into the generated test suites. In such situations, developers can detect only behavioral differences in
+which an exception is thrown in one of the original or modified versions. Indeed, there are test generation tools like
+JUnit Factory~\cite{JUF} that insert test oracles (in the form of assertions) in the generated test suite. However, generating
+tests with high structural coverage on both versions of a software system is not sufficient to expose all the behavioral
+differences between the two versions.
+
+Our previous work \CodeIn{DiffGen}~\cite{taneja08:diffgen} generates regression test suites given the old and a modified version of a software system. In particular, \CodeIn{DiffGen} instruments the source code by adding extra branches in the source code. If these branches can be covered by a test generation tool the behavioral differences are exposed between the two input versions.  \CodeIn{DiffGen} then uses a test generator tool to cover these branches to expose behavioral differences. However, due to lack of guidance, a test generator tool will have to explore various branches that cannot help in exposing behavioral differences between the two versions of the software system under test. Due to exploration of these unnecessary branches, the test generation process is expensive. Especially, when the number of changes in a software system are relatively small, there may be many branches in the software system that are unnecessarily explored. 
+
+Various test generation techniques~\cite{burnim, fitnex} are proposed in literature to efficiently cover a specific target. These techniques can be used to efficiently cover the changed part of the software system. However, the coverage of these changed parts cannot guarantee that the behavioral difference between the two software system versions is propagated to output. According to the PIE model~\cite{voas} of error propagation, a fault can be detected by a test suite if the fault is executed (E), the execution of the fault infects the state (I), and that the infected state propagates to the output (P). 
+
+In this paper, we present an approach that uses Dynamic Symbolic Execution (DSE) to detect behavioral differences between two versions of a software system under test. Our approach first statically determines all the branches in the software system under test that cannot help in achieving either of E, I, or P of the PIE model. To make the test generation process efficient, our approach then prevents search strategy in DSE from exploring these branches.
+This paper makes the following contributions:
+\begin{itemize}
+	\item \textbf{Approach.} An approach that uses DSE for effective generation of regression unit-tests. 
+	\item \textbf{Implementation.} We have implemented our approach in Pex~\cite{Pex}, an automated structural testing tool for .NET developed at Microsoft Research.
+	\item \textbf{Experiments.} We have evaluated our approach on different versions of ** classes. 
+\end{itemize}

@@ -1,0 +1,163 @@
+\begin{thebibliography}{10}
+
+\bibitem{demandDriven}
+S.~Anand, P.~Godefroid, and N.~Tillmann.
+\newblock Demand-driven compositional symbolic execution.
+\newblock In {\em Proc. TACAS}, pages 367--381, 2008.
+
+\bibitem{Apiwattanapong2006AUG}
+T.~Apiwattanapong, R.~Santelices, P.~K. Chittimalli, A.~Orso, and M.~J.
+  Harrold.
+\newblock Matrix: Maintenance-oriented testing requirement identifier and
+  examiner.
+\newblock In {\em Proc. TAICPART}, pages 137--146, 2006.
+
+\bibitem{burnim}
+J.~Burnim and K.~Sen.
+\newblock Heuristics for scalable dynamic test generation.
+\newblock In {\em Proc. ASE}, pages 443--446, 2008.
+
+\bibitem{exe}
+C.~Cadar, V.~Ganesh, P.~M. Pawlowski, D.~L. Dill, and D.~R. Engler.
+\newblock Exe: automatically generating inputs of death.
+\newblock In {\em Proc. CCS}, pages 322--335, 2006.
+
+\bibitem{Clarke:symbolic}
+L.~Clarke.
+\newblock {A System to Generate Test Data and Symbolically Execute Programs}.
+\newblock {\em IEEE Trans. Softw. Eng.}, 2(3):215--222, 1976.
+
+\bibitem{Dig'06:ECOOP}
+D.~Dig, C.~Comertoglu, D.~Marinov, and R.~Johnson.
+\newblock Automatic detection of refactorings in evolving components.
+\newblock In {\em Proc. ECOOP}, pages 404--428, 2006.
+
+\bibitem{doESE05}
+H.~Do, S.~G. Elbaum, and G.~Rothermel.
+\newblock Supporting controlled experimentation with testing techniques: An
+  infrastructure and its potential impact.
+\newblock {\em ESE}, pages 405--435, 2005.
+
+\bibitem{elbaum}
+S.~Elbaum, H.~N. Chin, M.~B. Dwyer, and M.~Jorde.
+\newblock Carving and replaying differential unit test cases from system test
+  cases.
+\newblock {\em TSE}, 35(1):29--45, 2009.
+
+\bibitem{evans:DiffTest07}
+R.~B. Evans and A.~Savoia.
+\newblock Differential testing: a new approach to change detection.
+\newblock In {\em Proc. FSE}, pages 549--552, 2007.
+
+\bibitem{CSE}
+P.~Godefroid.
+\newblock Compositional dynamic test generation.
+\newblock In {\em Proc. POPL}, pages 47--54, 2007.
+
+\bibitem{dart}
+P.~Godefroid, N.~Klarlund, and K.~Sen.
+\newblock {DART}: directed automated random testing.
+\newblock {\em Proc. PLDI}, pages 213--223, 2005.
+
+\bibitem{howritz:prioritization}
+S.~Horwitz.
+\newblock Tool support for improving test coverage.
+\newblock In {\em Proc. ESOP}, pages 162--177, 2002.
+
+\bibitem{king:symex}
+J.~C. King.
+\newblock {Symbolic Execution and Program Testing}.
+\newblock {\em Communications of the ACM}, 19(7):385--394, 1976.
+
+\bibitem{jjli:prioritization}
+J.~J. Li.
+\newblock Prioritize code for testing to improve code coverage of complex
+  software.
+\newblock In {\em Proc. ISSRE}, pages 75--84, 2005.
+
+\bibitem{orso:selective}
+A.~Orso and B.~Kennedy.
+\newblock Selective capture and replay of program executions.
+\newblock In {\em Proc.WODA}, pages 1--7, 2005.
+
+\bibitem{DSE}
+S.~Person, M.~B. Dwyer, S.~Elbaum, and C.~S. P\v{a}s\v{a}reanu.
+\newblock Differential symbolic execution.
+\newblock In {\em Proc. FSE}, pages 226--237, 2008.
+
+\bibitem{chianti}
+X.~Ren, B.~G. Ryder, M.~Stoerzer, and F.~Tip.
+\newblock Chianti: A change impact analysis tool for java programs.
+\newblock In {\em Proc. ICSE}, pages 664--665, 2005.
+
+\bibitem{SaffAPE2005}
+D.~Saff, S.~Artzi, J.~H. Perkins, and M.~D. Ernst.
+\newblock Automatic test factoring for {Java}.
+\newblock In {\em Proc. ASE}, pages 114--123, 2005.
+
+\bibitem{santelices08sep}
+R.~A. Santelices, P.~Chittimalli, T.~Apiwattanapong, A.~Orso, and M.~J.
+  Harrold.
+\newblock Test-suite augmentation for evolving software.
+\newblock In {\em Proc. ASE}, pages 218--227, 2008.
+
+\bibitem{cute}
+K.~Sen, D.~Marinov, and G.~Agha.
+\newblock {CUTE}: a concolic unit testing engine for {C}.
+\newblock In {\em Proc. FSE}, pages 263--272, 2005.
+
+\bibitem{taneja08:diffgen}
+K.~Taneja and T.~Xie.
+\newblock {DiffGen}: Automated regression unit-test generation.
+\newblock In {\em Proc. ASE}, pages 407--410, 2008.
+
+\bibitem{taneja09:guided}
+K.~Taneja, T.~Xie, N.~Tillmann, J.~de~Halleux, and W.~Schulte.
+\newblock Guided path exploration for regression test generation.
+\newblock In {\em Proc. ICSE, NIER}, May 2009.
+
+\bibitem{Pex}
+N.~Tillmann and J.~de~Halleux.
+\newblock Pex-white box test generation for {.{N}{E}{T}}.
+\newblock In {\em Proc. TAP}, pages 134--153, 2008.
+
+\bibitem{tillmann05:parameterized}
+N.~Tillmann and W.~Schulte.
+\newblock Parameterized unit tests.
+\newblock In {\em Proc. ESEC/FSE}, pages 253--262, 2005.
+
+\bibitem{voas}
+J.~Voas.
+\newblock {PIE}: A dynamic failure-based technique.
+\newblock {\em TSE}, 18(8):717--727, 1992.
+
+\bibitem{xie06:augmenting}
+T.~Xie.
+\newblock Augmenting automatically generated unit-test suites with regression
+  oracle checking.
+\newblock In {\em Proc. ECOOP}, pages 380--403, 2006.
+
+\bibitem{xie06:ecoop}
+T.~Xie.
+\newblock Augmenting automatically generated unit-test suites with regression
+  oracle checking.
+\newblock In {\em Proc. ECOOP}, pages 380--403, 2006.
+
+\bibitem{xie05:spectra}
+T.~Xie and D.~Notkin.
+\newblock Checking inside the black box: Regression testing based on value
+  spectra differences.
+\newblock In {\em Proc. ICSM}, pages 28--37, 2004.
+
+\bibitem{xie05:checking}
+T.~Xie and D.~Notkin.
+\newblock Checking inside the black box: Regression testing by comparing value
+  spectra.
+\newblock {\em TSE}, 31(10):869--883, 2005.
+
+\bibitem{fitnex}
+T.~Xie, N.~Tillmann, P.~de~Halleux, and W.~Schulte.
+\newblock Fitness-guided path exploration in dynamic symbolic execution.
+\newblock In {\em Proc. DSN}, 2009.
+
+\end{thebibliography}
