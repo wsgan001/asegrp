@@ -416,23 +416,21 @@ to cover detailed API mapping.
 \begin{table}[t]
 \centering
 \begin{SmallOut}
-\begin {tabular} {|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c|c|c|c|}
+\begin {tabular} {|c!{\vrule width 1pt}c|c!{\vrule width 1pt}c|c!{\vrule width 1pt}c|c|c|c|c|c|}
  \hline
-\multirow{2}*[-2pt]{\textbf{Projects}}& \multicolumn{3}{|c|}{\textbf{No MF}}  & \multicolumn{3}{|c|}{\textbf{MF}} & \multicolumn{3}{|c|}{\textbf{Ext. MF}}\\
-\cline{2-10} &  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}&  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}&  \emph{\textbf{U}}&  \emph{\textbf{T}}&  \emph{\textbf{O}}\\
+\multirow{2}*[-2pt]{\textbf{Projects}}& \multicolumn{2}{|c|}{\textbf{No MF}}  & \multicolumn{2}{|c|}{\textbf{MF}} & \multicolumn{4}{|c|}{\textbf{Ext. MF}}\\
+\cline{2-9} &  \emph{\textbf{E}}&  \emph{\textbf{B}}&  \emph{\textbf{E}}&  \emph{\textbf{B}}& \emph{\textbf{E}}&  \emph{\textbf{\%E}}&  \emph{\textbf{B}}&  \emph{\textbf{\%B}}\\
  \hline
-  rasp &  405 &   518 &  50  & 173  &  480  &  55  & 103  & 455  &69     \\
+  rasp        &  973  &   159 &  708  & 123   &  627  &  11.4\% & 93 &  24.4\%    \\
 \hline
-  llrp &  1033 &  1292  & 3  &  463  &  1076 &  1  &  6   & 262  & 1    \\
+  llrp        &  2328 &  122  & 1540  &  114  &  269  &  82.5\% & 42 & 63.2\%   \\
 \hline
-  simmetrics &  164 & 32 &  21 & 0   & 12    & 0   & 0    &  6  & 0    \\
+  simmetrics  &  217  & 13    &  12   & 0     & 6     &  50.0\% &  0  & 0\%   \\
 \hline
-  aligner &  283 &  77 &  8  & 223 & 57 & 9 & 140 & 113 & 9     \\
+  aligner     &  368  &  34   &  289  & 0     & 262   &  9.3\%  &  0  & 0\%    \\
 \hline
-  fit &  63 & 94 &  17 & 0  & 20 & 7 &  0 & 3 & 7  \\
-\hline
-\multirow{2}*[-2pt]{Total} &1948  & 2016 & 99 & 859 & 1645 & 72 & 249 & 839 & 86\\
-\cline{2-10} &\multicolumn{3}{|c|}{4063} &\multicolumn{3}{|c|}{2576}&\multicolumn{3}{|c|}{1174}\\
+  fit         &  177  & 29    &  27   & 0     & 20    &  25.9\% &  0  & 0\%  \\
+\hline Total  & 4063  & 491   & 2576  & 237   & 1174  &  54.4\% & 135 & 43.0\% \\
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{\label{table:errors}Compilation errors}
@@ -450,51 +448,40 @@ relations of APIs.
 We use Java2CSharp to translate five projects listed in
 Table~\ref{table:subjects} from Java to C\#, and
 Table~\ref{table:errors} shows the results. For each translated C\#
-project, Column ``No MF'' lists the number of compilation errors
-without mapping files. Column ``MF'' lists the number of compilation
-errors with the mapping files of Java2CSharp. Column ``Ext. MF''
-lists the number of compilation errors with extended mapping files.
-We produce these mapping files by combing mined API mapping with the
-existing mapping files of Java2CSharp. Totally, the mapping files of
-Java2CSharp helps reduce 36.6\% compilation errors, and the extended
-mapping files helps further reduces 54.4\% compilation errors. For
-the three columns, sub-column ``\emph{U}'' lists numbers of
-compilation errors that are caused by wrong using statements.
-Sub-column ``\emph{T}'' lists numbers of compilation errors that are
-caused by unresolved classes. Sub-column ``\emph{O}'' lists the
-numbers of compilation errors that are caused by other factors. The
-three types of compilation errors are not exclusive. For example, if
-a mapping relation maps a class in Java to a wrong class in C\#,
-both ``\emph{U}'' and ``\emph{T}'' decrease as Java2CSharp can
-translate a variable in Java to a variable in C\# whose type is
-resolvable. However, as the translated variable may not provide
-desirable methods, ``\emph{O}'' may increase when code uses some
-methods with the variable as a receiver. From the results of
-Table~\ref{table:errors}, we find that API mapping helps reduces
-``\emph{U}'' and ``\emph{T}'' without significant increases of
-``\emph{O}''. In other words, both manually built mapping files and
-our mined mapping files are useful and accurate. As the five
-projects use different libraries, the numbers of translated projects
-are different. In particular, \emph{simmetrics} and \emph{fit} use
-API classes of J2SE that are covered by mapping files. Consequently,
-the translated projects of \emph{simmetrics} and \emph{fit} have no
-``\emph{U}'' and ``\emph{T}'' errors. The \emph{aligner} project
-also mainly uses J2SE, but it uses many API classes and methods from
-\CodeIn{java.awt} for its GUI. The mapping files of Java2CSharp
-cover only 1 class of \CodeIn{java.awt}, so the translated project
-has many ``\emph{U}'' and ``\emph{T}'' errors. The mined files map
-\CodeIn{java.awt} to \CodeIn{System.Windows.Forms} and thus reduce
-``\emph{U}'' errors. However, the mined files also introduce many
-``\emph{T}'' errors as many classes of the two packages are still
-not mapped. For \emph{rasp} and \emph{llrp}, they both use various
-libraries besides J2SE. Consequently, the translated projects have
-both many ``\emph{U}'' and ``\emph{T}'' errors. In particular,
-\emph{llrp} uses
+project, Column ``No MF'' lists results without mapping files.
+Column ``MF'' lists results with the mapping files of Java2CSharp.
+Column ``Ext. MF'' lists results with mapping files that combine
+mined API mapping with the existing mapping files of Java2CSharp.
+Sub-column ``\emph{E}'' lists numbers of compilation errors.
+Sub-column ``\emph{B}'' lists numbers of found bugs. For each
+project, we find out those overlapping files between translated
+files and existing C\# files and manually inspect the top 5 largest
+files by comparing existing C\# files for API related bugs.
+Sub-columns ``\emph{\%E}'' and ``\emph{\%B}'' list percentages of
+improvements over the mapping files of Java2CSharp. Totally, mined
+API mapping helps further reduces 54.4\% compilation errors and
+43.0\% found bugs. As the five projects use different libraries, the
+numbers of translated projects are different. In particular,
+\emph{simmetrics} and \emph{fit} use API classes of J2SE that are
+covered by mapping files. Consequently, the translated projects of
+\emph{simmetrics} and \emph{fit} have few errors and bugs. The
+\emph{aligner} project also mainly uses J2SE, but it uses many API
+classes and methods from \CodeIn{java.awt} for its GUI. The mapping
+files of Java2CSharp cover only 1 class of \CodeIn{java.awt}, so the
+translated project has many errors. As the existing C\# version of
+\emph{aligner} does not have GUI, we do not compare those buggy
+translated GUI files and we do not find any bugs. The mined files
+map \CodeIn{java.awt} to \CodeIn{System.Windows.Forms} and thus
+reduce compilation errors. However, the result is not significant as
+many classes of the two packages are still not mapped. For
+\emph{rasp} and \emph{llrp}, they both use various libraries besides
+J2SE. Consequently, the translated projects have both many errors
+and bugs. In particular, \emph{llrp} uses
 log4j\footnote{\url{http://logging.apache.org/log4j/}} and
 jdom\footnote{\url{http://www.jdom.org/}}, and the mined mapping
 files contain mapping relations of the two libraries. As a result,
-the mined API mapping helps reduce compilation errors significantly.
-For \emph{rasp}, it uses some libraries such as
+the mined API mapping helps reduce compilation errors and bugs
+significantly. For \emph{rasp}, it uses some libraries such as
 Neethi\footnote{\url{http://ws.apache.org/commons/neethi/}} and
 WSS4J\footnote{\url{http://ws.apache.org/wss4j/}}. Sine the used
 subjects for mining and thus our mined API mapping do not cover the
