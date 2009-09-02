@@ -57,38 +57,14 @@ to know the mapped API methods of \CodeIn{exists}. Furthermore,
 the translated code should be able to accept the same input
 ``\CodeIn{test}'' and produce the same output as the Java code example.
 
-As APIs are often large in size, existing translation tools~\cite{}
-(@Hao: Please add citations) often support only a subset of
-mapping relations of used APIs. The reason for supporting only
-a subset of mapping relations is that the mapping relations are written
-manually in these translation tools. Therefore, the translation
-tool cannot translate this Java code example, if the mapping relation
-for the \CodeIn{java.io.File} does not exist. To address this issue,
-a few translation other tools~\cite{} (@Hao, please add citations)
-provide extensions for the programmer to write customized rules for translation.
-However, to write customized rules, programmer needs to have
-knowledge about both the languages. Furthermore, writing these
-customized rules manually for all APIs is tedious and error-prone.
 
-To address these preceding issues and to generate the rules for translation,
-we propose a novel approach that automatically mines mapping
-relations of APIs. Our approach uses existing projects such as
-Lucene that have both Java and C\# versions, and mines
-mapping relations of APIs. One would argue that given projects
-such as Lucene with both Java and C\# versions, a programmer
-can manually learn these mapping relations easily.
-We next explain why it is not straightforward to learn these mapping relations of APIs
-and how our approach addresses these challenges.
-
-First, our approach aligns classes and methods of the two versions by using
-a matching algorithm based on similarities in the names of classes
-and methods between the two versions. For example, our approach aligns
-\CodeIn{IndexFiles.java} with the \CodeIn{IndexFiles.cs}
+To mine mapping relations of APIs, our approach uses existing projects such as
+Lucene that have both Java and C\# versions. First, our approach aligns 
+classes and methods of the two versions by using 
+a matching algorithm based on similarities in the names of classes 
+and methods between the two versions. For example, our approach aligns 
+\CodeIn{IndexFiles.java} with the \CodeIn{IndexFiles.cs} 
 (shown in Figure~\ref{fig:clientcode}) as the names of their classes and methods are similar.
-Although it appears trivial, It is tedious task for the programmer to align
-the classes manually as both versions can have large number of classes and methods.
-For example, Lucene includes more than 1,000 classes.
-
 
 \begin{figure}[t]
 \begin{CodeOut}
@@ -134,74 +110,38 @@ migration.}%\vspace*{-1ex}
 client code.}\vspace*{-4ex}
 \end{figure}
 
-Even after the programmer successfully finds out the two aligned files, it is still
-non-trivial to learn mapping relations of APIs. The programmer first
-needs to map inputs of the three code snippets. In particular, by
-comparing Line 1 with Line 4, the programmer knows that
-\CodeIn{index} is the name for a file or a directory. Consequently,
-the programmer analyzes how \CodeIn{index} in Line 4 (Java code) and
-\CodeIn{index} in Line 9 (C\# code) are used in the two source files
-for API mapping of interest so that boolean values are produced for
-the functionality. To achieve so, the programmer may need to analyze
-inputs and outputs of each API method. Figure~\ref{fig:dataflow}
-shows API methods connected by inputs and outputs for the preceding
-two files. In particular, a box denotes an API method, and an
-ellipse denotes either an input or an output. The strategy of
-analyzing inputs and outputs helps find out an API method like
-\CodeIn{System.IO.Directory.Exists()}. This API method is called in
-an assignment statement, whereas three other related API methods are
-called in infix expressions of if-statements. If the programmer
-relies on call-site structures only, the programmer can miss the API
-method as its call-site structure is quite different. To match
-outputs, the programmer must know the mapping relations of classes.
-For this example, the programmer should know the mapping relation
-between \CodeIn{boolean} in Java and \CodeIn{System.Boolean}. After
-the inputs and outputs are mapped, the programmer needs to further
-match functionalities. For this example, the \CodeIn{delete()}
-branch of Figure~\ref{fig:dataflow} implements a different
-functionality as indicated by its name, and thus this branch is not
-mapped with other branches.
+Next, our approach mines mapping relations of API classes by comparing entities such as
+names of fields in aligned classes, or variable names or constants in aligned methods. 
+Figure~\ref{fig:dataflow} shows how our approach maps variables and constants in aligned methods 
+of the client code. Our approach uses a text-based similarity measure for comparing these entities
+and considers the entities as similar if the measure is greater than a given threshold.
+These relations help translate variables from one language to another. 
+For example, our approach identifies the constant value ``\CodeIn{index}'',
+in Lines 4 (Java) and 9 (C\#) (Figure~\ref{fig:clientcode}) and
+maps the API classes associated with these constants. For example,
+using the constant value ``\CodeIn{index}'', our approach maps the API
+class \CodeIn{java.io.File} of Java to \CodeIn{System.IO.FileInfo} of C\#.  
 
-The programmer learns mapping relations of APIs from the preceding
-analysis. However, the analysis is not accurate enough. In
-particular, Figure~\ref{fig:dataflow} does not consider parameters
-and fails to provide useful information if two API methods have
-different parameter orders. For this example, as shown in Line 6,
-the input of \CodeIn{java.io.File.exist()} is a variable, but the
-inputs of \CodeIn{System.IO.Directory.Exist()} and
-\CodeIn{System.IO.File.Exist()} are both their parameters as shown
-in Line 12 and Line 15. The preceding analysis does not consider
-parameters yet.
+After mapping API classes between the two languages, our approach maps
+API methods. Mapping API methods is challenging as often an API method of one language
+can be mapped to multiple API methods of the other language. Furthermore,
+mapping relations of API methods should also describe how parameters and return
+values are of an API method in one language are mapped to an API in the other
+language. To address these challenges, our approach constructs a
+graph, referred as \emph{API transformation graph} (ATG), for
+aligned methods of the client code in both languages. These ATGs
+precisely capture inputs and outputs of API methods, and help mine
+relationships of API methods. Figure~\ref{fig:example} shows a mapping
+relation between API method \CodeIn{Exist} from one language to another.
+Section~\ref{sec:approach:mappingtypes} presents more details on how we mine the mapping relations
+of API methods using ATGs.
+
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.65,clip]{figure/sample.eps}\vspace*{-3ex}
  \caption
 {\label{fig:example}API mapping}\vspace*{-3ex}
 \end{figure}
-
-In this paper, we propose a novel approach that mines API mapping
-automatically. Figure~\ref{fig:example} show the mined mapping
-relation of APIs from the preceding two source files. In this
-figure, a box denotes an API method. Here, our approach uses
-\CodeIn{getFullName()} to denote the field access of
-\CodeIn{FullName}. An ellipse denotes a parameter, a variable, or a
-return value. Each ellipse is named as ``\emph{name:type}''. Here,
-our approach uses ``variable'' for accesses of variables, ``null''
-for return values, and parameter names for parameters.
-
-
-The mined API mapping has matched inputs, outputs, and how inputs
-and outputs are connected. Consequently, with the mined API mapping,
-a translation tool can automatically translate the preceding code
-snippet into C\# as follows:
-
-
-
-In summary, for this example, we find that a programmer needs to
-take tedious and error-prone efforts to find and to analyze source
-files from two versions of a project for API mapping. We next
-present our approach to mine API mapping automatically.
-
 
 %Based on the mapping relations, a translation tool can migrate the
 %preceding code snippet automatically. To learn the mapping
