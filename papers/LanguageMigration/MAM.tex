@@ -51,21 +51,23 @@ another language (such as from Java to C\#) manually is a tedious
 and error-prone task. In contrast, automatic translation of projects
 from one language to another requires the knowledge of how
 Application Programming Interfaces (API) of one language are mapped
-to the APIs of the other language, referred as API mapping relations. In this paper, we propose a
-novel approach that mines API mapping relations from one language to another using API client
+to the APIs of the other language, referred as API mapping
+relations. In this paper, we propose a novel approach that mines API
+mapping relations from one language to another using API client
 code. Our approach accepts a set of projects with versions in two
-languages and mines API mapping relations between those two languages based on how APIs are used
-by the two versions. These mined API mappings assist in
-translation of projects from one language to another. Based on our
-approach, we implemented a tool, called MAM (\textbf{M}ining
-\textbf{A}PI \textbf{M}apping), and conducted two evaluations to
-show the effectiveness of our approach. The results show that our
-approach mines 25,805 mapping relations of APIs between Java and C\#
-with more than 80\% accuracy. The results also show that mined API
-mapping relations reduce 54.4\% compilation errors during translation
-of projects with an existing translation tool, called Java2CSharp. 
-The reduction in compilation errors is due to our mined mappings
-that do not available with the existing translation tools.
+languages and mines API mapping relations between those two
+languages based on how APIs are used by the two versions. These
+mined API mappings assist in translation of projects from one
+language to another. Based on our approach, we implemented a tool,
+called MAM (\textbf{M}ining \textbf{A}PI \textbf{M}apping), and
+conducted two evaluations to show the effectiveness of our approach.
+The results show that our approach mines 25,805 unique mapping
+relations of APIs between Java and C\# with more than 80\% accuracy.
+The results also show that mined API mapping relations reduce 54.4\%
+compilation errors during translation of projects with an existing
+translation tool, called Java2CSharp. The reduction in compilation
+errors is due to our mined mappings that do not available with the
+existing translation tools.
 \end{abstract}
 
 \input{body/introduction}
