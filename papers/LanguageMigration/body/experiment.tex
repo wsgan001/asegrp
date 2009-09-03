@@ -467,16 +467,17 @@ covered by mapping files. Consequently, the translated projects of
 \emph{simmetrics} and \emph{fit} have few errors and bugs. The
 \emph{aligner} project also mainly uses J2SE, but it uses many API
 classes and methods from \CodeIn{java.awt} for its GUI. The mapping
-files of Java2CSharp cover only 1 class of \CodeIn{java.awt}, so the
-translated project has many errors. As the existing C\# version of
-\emph{aligner} does not have GUI, we do not compare those buggy
-translated GUI files and we do not find any bugs. The mined files
-map \CodeIn{java.awt} to \CodeIn{System.Windows.Forms} and thus
-reduce compilation errors. However, the result is not significant as
-many classes of the two packages are still not mapped. For
-\emph{rasp} and \emph{llrp}, they both use various libraries besides
-J2SE. Consequently, the translated projects have both many errors
-and bugs. In particular, \emph{llrp} uses
+files of Java2CSharp does not cover any classes of
+\CodeIn{java.awt}, so the translated project has many errors. As the
+existing C\# version of \emph{aligner} does not have GUI, we do not
+compare those buggy translated GUI files and we do not find any
+bugs. The mined files map \CodeIn{java.awt} to
+\CodeIn{System.Windows.Forms} and thus reduce compilation errors.
+However, the result is not significant as many classes of the two
+packages are still not mapped. For \emph{rasp} and \emph{llrp}, they
+both use various libraries besides J2SE. Consequently, the
+translated projects have both many errors and bugs. In particular,
+\emph{llrp} uses
 log4j\footnote{\url{http://logging.apache.org/log4j/}} and
 jdom\footnote{\url{http://www.jdom.org/}}, and the mined mapping
 files contain mapping relations of the two libraries. As a result,
