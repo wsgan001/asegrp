@@ -398,13 +398,13 @@ shown in Table~\ref{table:compare}, the mined mapping relations are
 actually not so many as expected. On the contrary, the mapping files
 of Java2CSharp are more detailed as they are manually built. This
 impact factor reduces the recalls. Third, we find that Java2CSharp
-maps 51 API classes of these packages to its implemented classes to
-hide different behaviors from client code. For example, Java2CSharp
-maps \CodeIn{java.util.Set} to \CodeIn{ILOG.J2CsMapping.
-Collections.ISet}. Our approach did not mine these mapping relations
-since the subjects in Table~\ref{table:subjects} do not use
-Java2CSharp's own implemented classes and methods. This impact
-factor reduces both the precisions and the recalls.
+maps 51 J2SE classes of these packages to its implemented classes.
+For example, Java2CSharp maps \CodeIn{java.util.Set} to
+\CodeIn{ILOG.J2CsMapping.Collections.ISet}. Our approach did not
+mine these mapping relations since the subjects in
+Table~\ref{table:subjects} do not use Java2CSharp's own implemented
+classes and methods. This impact factor reduces both the precisions
+and the recalls.
 
 In summary, compared with the mapping files of Java2CSharp, our
 mined mapping files show a relatively high precisions and relatively
@@ -441,7 +441,7 @@ to cover detailed API mapping.
 question, we feed the mined API mapping to the Java2CSharp tool and
 investigate whether these mined API mapping can improve the tool's
 effectiveness. We choose this tool because this tool is a relatively
-mature project at ILOG\footnote{\url{http://www.ilog.com/}} (now a
+mature project at ILOG\footnote{\url{http://www.ilog.com/}} (now
 part of IBM) and supports the extension of user-defined mapping
 relations of APIs.
 
