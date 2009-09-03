@@ -1,5 +1,5 @@
 \section{Discussion and Future Work}
-\label{sec:discuss} 
+\label{sec:discuss}
 
 We next discuss issues in our approach and describe how we address
 these issues in our future work.
@@ -21,28 +21,31 @@ to align classes and methods that are not aligned by our current static approach
 \end{figure}
 
 \textbf{Mining richer API mapping.} Table~\ref{table:compare} shows
-that our approach does not achieve high recall for the APIs of J2SE. Although
-we use ten large projects as subjects, these projects still do not provide
-sufficient code examples for mining mapping relations of all APIs in J2SE.
-Our previous work~\cite{thummalapenta07parseweb,thummalapentaase08spotweb} show
-that it is feasible to use large-scale repositories available on the web as subjects.
-These large-scale repositories can be used for mining with the help of code search engines such
-as Google code search\footnote{\url{http://www.google.com/codesearch}}. In future
-work, we plan to leverage these code search engines to mine richer API mapping.
+that our approach does not achieve high recall for J2SE. Although we
+use ten large projects as subjects, these projects still do not
+provide sufficient code examples for mining mapping relations of all
+APIs in J2SE. Our previous
+work~\cite{thummalapenta07parseweb,thummalapentaase08spotweb} show
+that it is feasible to use large-scale repositories available on the
+web as subjects. These large-scale repositories can be used for
+mining with the help of code search engines such as Google code
+search\footnote{\url{http://www.google.com/codesearch}}. In future
+work, we plan to leverage these code search engines to mine richer
+API mapping.
 
-(@Hao: This ranking mined mapping relations sound very trivial. Can we ignore this?)
-\textbf{Ranking mined mapping relations.} When comparing with the
-built mapping files of Java2CSharp, we choose mined mapping
-relations of APIs with the highest supports as generated mapping
-files. However, in some cases, the API mapping with the highest
-support is not necessarily the best choice. For example,
-\CodeIn{java.util. ArrayList} is mapped to
-\CodeIn{System.Collections.ArrayList} based on support values. The
-Java class supports generic programming, whereas the C\# class does
-not. Consequently, the Java class seems to be better mapped to
-\CodeIn{System.Collections.Generic.List} as this C\# class also
-supports generic programming. We plan to develop ranking techniques
-to address this issue in future work.
+%(@Hao: This ranking mined mapping relations sound very trivial. Can we ignore this?)
+%\textbf{Ranking mined mapping relations.} When comparing with the
+%built mapping files of Java2CSharp, we choose mined mapping
+%relations of APIs with the highest supports as generated mapping
+%files. However, in some cases, the API mapping with the highest
+%support is not necessarily the best choice. For example,
+%\CodeIn{java.util. ArrayList} is mapped to
+%\CodeIn{System.Collections.ArrayList} based on support values. The
+%Java class supports generic programming, whereas the C\# class does
+%not. Consequently, the Java class seems to be better mapped to
+%\CodeIn{System.Collections.Generic.List} as this C\# class also
+%supports generic programming. We plan to develop ranking techniques
+%to address this issue in future work.
 
 \textbf{Mining many-to-many mapping relations of API methods.}
 Among our mined mapping relations of API methods, majority of
@@ -57,9 +60,9 @@ the mapping relation. In future work, we plan to incorporate
 backward analysis to enhance our existing algorithm. We expect
 that our enhanced algorithm can mine more many-to-many mapping relations.
 
-\textbf{Migrating many-to-many mapping relations of API methods.} 
+\textbf{Migrating many-to-many mapping relations of API methods.}
 A mined many-to-many mapping relation of API methods can have multiple outputs
-and complex internal data processes. Although, our ATGs 
+and complex internal data processes. Although, our ATGs
 help identify all API methods, our implementation of ATGs is not complete
 for supporting an automatic translation. For example, we need to manually add an
 \emph{or} operator for the two outputs of the API mapping shown in
@@ -69,10 +72,10 @@ automate migration with many-to-many mapping relations.
 \textbf{Migrating unmapped APIs.} Our approach mines API mapping of
 methods along with the mappings of their inputs and outputs.
 These mappings are useful for translating API methods of one language to another.
-Sometimes, our approach may not be able to map inputs and outputs 
+Sometimes, our approach may not be able to map inputs and outputs
 of mapped API methods. If our approach is not able to map outputs,
 our approach simply ignores those outputs that are not used in the client code.
 However, as inputs cannot be ignored, the translated code results in compilation errors.
 (@Hao, please confirm whether this is fine). In future work, we plan to address
-this issue by analyzing how two versions of a project deal 
+this issue by analyzing how two versions of a project deal
 with a similar unmapped API problem for some other code examples.
