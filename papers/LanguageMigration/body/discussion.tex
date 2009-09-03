@@ -70,12 +70,13 @@ Figure~\ref{fig:example}. In future work, we plan to enhance our implementation 
 automate migration with many-to-many mapping relations.
 
 \textbf{Migrating unmapped APIs.} Our approach mines API mapping of
-methods along with the mappings of their inputs and outputs.
-These mappings are useful for translating API methods of one language to another.
-Sometimes, our approach may not be able to map inputs and outputs
-of mapped API methods. If our approach is not able to map outputs,
-our approach simply ignores those outputs that are not used in the client code.
-However, as inputs cannot be ignored, the translated code results in compilation errors.
-(@Hao, please confirm whether this is fine). In future work, we plan to address
-this issue by analyzing how two versions of a project deal
-with a similar unmapped API problem for some other code examples.
+methods along with the mappings of their inputs and outputs. These
+mappings are useful for translating API methods of one language to
+another. Sometimes, our approach may not be able to map inputs and
+outputs of mapped API methods. If our approach is not able to map
+outputs, our approach simply ignores those outputs that are not used
+in the client code. However, as inputs cannot be ignored, the
+translated code results in compilation errors. In future work, we
+plan to address this issue by analyzing how two versions of a
+project deal with a similar unmapped API problem for some other code
+examples.

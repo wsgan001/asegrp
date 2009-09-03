@@ -3,9 +3,9 @@
 
 A programming language serves as a means for instructing computers
 to achieve a programming task at hand. Since their inception,
-various programming languages came into existence due to several reasons
-such as existence of many platforms or requirements for different
-programming styles. \Comment{The
+various programming languages came into existence due to several
+reasons such as existence of many platforms or requirements for
+different programming styles. \Comment{The
 HOPL\footnote{\url{http://hopl.murdoch.edu.au}} website lists 8,512
 different programming languages.} To address business requirements
 and to survive in competing markets, companies often have to release
@@ -14,9 +14,15 @@ example, many well-known projects such as
 Lucene\footnote{\url{http://lucene.apache.org/}}\Comment{,
 Db4o\footnote{\url{http://www.db4o.com/}},} and
 WordNet\footnote{\url{http://wordnet.princeton.edu/}} provide
-multiple versions in different languages. As described by
-Jones~\cite{jones1998estimating}, about one-third of the existing
-projects have multiple versions in different languages.
+multiple versions in different languages. For some open source
+projects, although companies do not officially provide multiple
+versions, external programmers often create their versions in
+different languages. For example, WordNet does not provide a C\#
+version, but Simpson and Crowe developed a C\# version of
+WordNet.Net\footnote{\url{http://opensource.ebswift.com/WordNet.Net/}}.
+Totally, as described by Jones~\cite{jones1998estimating}, about
+one-third of the existing projects have multiple versions in
+different languages.
 
 %For some open source projects, although companies do not officially
 %provide multiple versions, external programmers often create their
@@ -50,7 +56,7 @@ projects from one language to another.} As programming languages
 provide a large number of APIs, writing mappings manually for all APIs
 is tedious and error-prone. As a result, existing
 approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}
-support only a subset of APIs for translation. Such a limitation results 
+support only a subset of APIs for translation. Such a limitation results
 many compilation errors in translated projects and limits their usage in practice.
 
 In this paper, we propose a novel approach that automatically mines how APIs of

@@ -497,14 +497,17 @@ errors in the translated projects.
 
 \subsection{Threats to Validity}
 \label{sec:evaluation:threats} The threat to external validity
-includes the representativeness of the subjects in true practice.
-TO... For space These threats could be reduced by more experiments
-on wider types of subjects in future work. The threats to internal
-validity are instrumentation effects that can bias our results.
-Faults in our prototype, the Daikon front end, and the RECON
-instrumenter might cause such effects. To reduce these threats, we
-manually inspected the spectra differences on a dozen of traces for
-each program subject. One threat to construct validity is that our
-experiment makes use of the data traces collected during executions,
-hoping that these precisely capture the internal program states for
-each execution point.
+includes the representativeness of the subjects in true practice and
+the existing translation tool being compared. Although we applied
+our approach on 10 projects for mining API mapping and on additional
+5 projects for helping language translation, our approach is
+evaluated only on these limited projects. Although Java2CSharp is
+the best translation tool as far as we know, other tools may perform
+better than the tool. The threat could be reduced by more
+evaluations on more subjects and more translation tools in future
+work. The threat to internal validity includes human factors for
+determining bugs in translated projects. To reduce the threat, we
+inspected bugs carefully and refer to existing C\# files for
+confirming these bugs. This threat could be further reduced by
+running test cases when we improve our approach and produce
+translated projects without complication errors.
