@@ -3,12 +3,12 @@
 
 A programming language serves as a means for instructing computers
 to achieve a programming task at hand. Since their inception,
-various programming languages came into existence due to reasons
-such as existence of many platforms and requirements for different
+various programming languages came into existence due to several reasons
+such as existence of many platforms or requirements for different
 programming styles. \Comment{The
 HOPL\footnote{\url{http://hopl.murdoch.edu.au}} website lists 8,512
-different programming languages. }To address business requirements
-and to survive in competing markets, companies often have to develop
+different programming languages.} To address business requirements
+and to survive in competing markets, companies often have to release
 different versions of their projects in different languages. For
 example, many well-known projects such as
 Lucene\footnote{\url{http://lucene.apache.org/}}\Comment{,
@@ -29,41 +29,40 @@ projects have multiple versions in different languages.
 %Java version only. Kazuya developed a C\# version of
 %iText.Net\footnote{\url{http://www.ujihara.jp/iTextdotNET/en/}}.
 
-Migrating projects from one language to another language
+Translating projects from one language to another language
 (\emph{e.g.}, from Java to C\#) manually is a tedious and
-error-prone task. Some companies have incurred huge losses during
-the process of language migration. For example, Terekhov and
+error-prone task. Some companies have incurred huge losses because
+of failures in language translation. For example, Terekhov and
 Verhoef~\cite{terekhov2000realities} stated that at least three
 companies went bankrupt and another company lost 50 million dollars
-due to failed language migration projects. A natural way to address
+due to failed language translation projects. A natural way to address
 this issue is to develop a translation tool that can automatically
 translate projects from one language to another. However, it is
 challenging to develop such a translation tool as the translation
 tool should have knowledge of how one programming language is mapped
-to the other language. In literature, exist
+to the other language. In literature, there exist
 approaches~\cite{mossienko2003automated, yasumatsu1995spice,
-hainaut2008migration} address the problem of language migration
-partially, because these approaches expect programmers to describe
-how one language is mapped to another language. Based on the
+hainaut2008migration} that address the problem of language translation
+partially. These approaches expect programmers to describe
+how one language is mapped to another language. \Comment{Based on the
 mappings provided as input, these existing approaches translate
-projects from one language to another. As programming languages
-provide a large number of APIs, writing rules manually for all APIs
+projects from one language to another.} As programming languages
+provide a large number of APIs, writing mappings manually for all APIs
 is tedious and error-prone. As a result, existing
 approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}
-support only a subset of APIs or even ignore the mapping relations
-of APIs. Such a limitation causes many compilation errors in
-migrated projects and limits their usage in practice.
+support only a subset of APIs for translation. Such a limitation results 
+many compilation errors in translated projects and limits their usage in practice.
 
-In this paper, we propose a novel approach that mines how APIs of
+In this paper, we propose a novel approach that automatically mines how APIs of
 one language are mapped to the APIs of another language. We refer
 this mapping as \emph{mapping relations of APIs}. In our approach,
-we use to mine mapping relations based on API usages in the client
+we mine mapping relations based on API usages in the client
 code rather based on API implementations for three major reasons:
 (1) API libraries often do not provide source files especially for
 those C\# libraries. (2) Mining relations based on API
 implementations often can have relatively low confidence than mining
-mapping relations based on API usages. The reason is that API
-implementations have only one call site for the analysis, whereas
+relations based on API usages. The reason is that API
+implementations have only one call site for analysis, whereas
 API usages can have many call sites for mining. (3) Mapping
 relations of APIs are often complex and cannot be mined solely based
 on the information available in the API implementations. First,
@@ -78,10 +77,10 @@ System.Decimal.Multiply (Decimal $p_1^2$, Decimal $p_2^2$)
 \end{CodeOut}
 
 Here, $m_1$ has a receiver, say $v_1^1$, of type \CodeIn{BigDecimal}
-and has one parameter $p_1^1$, and $m_2$ has two parameters $p_1^2$
+and has one parameter $p_1^1$, whereas $m_2$ has two parameters $p_1^2$
 and $p_2^2$. Based on the definitions of these inputs, $v_1^1$ is
 mapped to $p_1^2$, and $p_1^1$ is mapped to $p_2^2$. Second, an API
-method of one language is mapped to more than one API method in the
+method of one language can be mapped to more than one API method in the
 other language. For example, consider the following two API methods:
 
 \begin{CodeOut}
@@ -103,24 +102,24 @@ To deal with the complexity of mining API mapping, we construct a
 graph, referred as \emph{API transformation graph} (ATG), for
 aligned methods of the client code in both languages. These ATGs
 precisely capture inputs and outputs of API methods, and help mine
-relationships API methods. This paper makes the following major
+mapping relations of API methods. This paper makes the following major
 contributions:
 
 \begin{itemize}\vspace*{-1.5ex}
 \item A first approach that mines API mapping between
 different languages using API client code. Our
 approach addresses an important and yet challenging problem that is not
-addressed by previous work on language migration.\vspace*{-1.5ex}
-\item A technique to build and ATGs. As ATGs describe data dependencies among
+addressed by previous work on language translation.\vspace*{-1.5ex}
+\item A technique to build ATGs. As ATGs describe data dependencies among
 inputs and outputs of API methods, our approach is able to mine
 complex mapping relations between API methods.\vspace*{-1.5ex}
 \item A tool named MAM based on our approach and two
 evaluations on 15 projects with both Java and C\# versions. These
 projects include 18,568 classes and 109,850 methods. The results
 show that our approach mines 6,695 mapping relations of API classes
-with 86.7\% accuracies and 19,110 mapping relations of API methods.
+with an accuracy of 86.7\% and 19,110 mapping relations of API methods.
 The results also show that the mined API mapping relations reduce
-55.4\% of compilation errors and 43.0\% bugs during translation
+55.4\% of compilation errors and 43.0\% bugs during translation of
 projects from Java to C\# using Java2CSharp.
 \end{itemize}\vspace*{-1.5ex}
 
