@@ -5,7 +5,7 @@ Version=2
 [SessionInfo]
 ActiveTab=2
 FrameCount=6
-ActiveFrame=2
+ActiveFrame=3
 
 [Frame0]
 Columns=1
@@ -14,8 +14,8 @@ Flags=0
 ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
-MaxPos.x=-8
-MaxPos.y=-28
+MaxPos.x=-4
+MaxPos.y=-23
 NormalPos.left=92
 NormalPos.top=92
 NormalPos.right=1359
@@ -24,17 +24,17 @@ Class=CLatexEdit
 Document=body\introduction.tex
 
 [Frame0_Row0]
-cyCur=392
+cyCur=402
 cyMin=10
 
 [Frame0_Col0]
-cxCur=1230
+cxCur=1239
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=27
-Cursor.column=34
-TopSubLine=4
+Cursor.row=83
+Cursor.column=15
+TopSubLine=75
 
 [Frame1]
 Columns=1
@@ -53,27 +53,27 @@ Class=CLatexEdit
 Document=body\example.tex
 
 [Frame1_Row0]
-cyCur=258
+cyCur=268
 cyMin=10
 
 [Frame1_Col0]
-cxCur=890
+cxCur=899
 cxMin=10
 
 [Frame1_View0,0]
-Cursor.row=84
-Cursor.column=6
+Cursor.row=0
+Cursor.column=0
 TopSubLine=66
 
 [Frame2]
 Columns=1
 Rows=1
-Flags=2
-ShowCmd=3
+Flags=0
+ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
-MaxPos.x=-8
-MaxPos.y=-28
+MaxPos.x=-4
+MaxPos.y=-23
 NormalPos.left=0
 NormalPos.top=0
 NormalPos.right=901
@@ -82,23 +82,23 @@ Class=CLatexEdit
 Document=MAM.tex
 
 [Frame2_Row0]
-cyCur=557
+cyCur=270
 cyMin=10
 
 [Frame2_Col0]
-cxCur=1453
+cxCur=873
 cxMin=10
 
 [Frame2_View0,0]
-Cursor.row=66
-Cursor.column=36
-TopSubLine=36
+Cursor.row=20
+Cursor.column=60
+TopSubLine=5
 
 [Frame3]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-4
@@ -111,17 +111,17 @@ Class=CLatexEdit
 Document=body\approach.tex
 
 [Frame3_Row0]
-cyCur=258
+cyCur=412
 cyMin=10
 
 [Frame3_Col0]
-cxCur=890
+cxCur=998
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=30
-Cursor.column=0
-TopSubLine=15
+Cursor.row=459
+Cursor.column=65
+TopSubLine=447
 
 [Frame4]
 Columns=1
@@ -130,8 +130,8 @@ Flags=0
 ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
-MaxPos.x=-8
-MaxPos.y=-28
+MaxPos.x=-4
+MaxPos.y=-23
 NormalPos.left=22
 NormalPos.top=22
 NormalPos.right=949
@@ -140,11 +140,11 @@ Class=CLatexEdit
 Document=body\mapping.tex
 
 [Frame4_Row0]
-cyCur=258
+cyCur=268
 cyMin=10
 
 [Frame4_Col0]
-cxCur=890
+cxCur=899
 cxMin=10
 
 [Frame4_View0,0]
@@ -159,8 +159,8 @@ Flags=0
 ShowCmd=1
 MinPos.x=-1
 MinPos.y=-1
-MaxPos.x=-8
-MaxPos.y=-28
+MaxPos.x=-4
+MaxPos.y=-23
 NormalPos.left=138
 NormalPos.top=138
 NormalPos.right=1428
@@ -169,15 +169,15 @@ Class=CLatexEdit
 Document=body\experiment.tex
 
 [Frame5_Row0]
-cyCur=337
+cyCur=347
 cyMin=10
 
 [Frame5_Col0]
-cxCur=1253
+cxCur=1262
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=500
-Cursor.column=51
-TopSubLine=485
+Cursor.row=0
+Cursor.column=0
+TopSubLine=486
 
