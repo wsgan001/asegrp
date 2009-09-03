@@ -321,12 +321,12 @@ mapping files as a golden standard. We find 9 packages overlapping
 between the mined mapping files and the mapping files of
 Java2CSharp. We compare mapping relations of APIs within these
 mapping packages, and Table~\ref{table:compare} shows the results.
-Column ``Class'' lists the results of comparing API classes. Column
-``Method'' lists the results of comparing API methods. For their
-sub-columns, sub-column ``\emph{P}'' denotes precision. Sub-column
-``\emph{R}'' denotes recall. Sub-column ``\emph{F}'' denotes
-F-score. \emph{Precision}, \emph{Recall}, and \emph{F-score} are
-defined as follows:\vspace*{-1ex}
+Columns ``Class'' and `Method'' list results of comparing API
+classes and methods, respectively. For their sub-columns, sub-column
+``\emph{P}'' denotes precision. Sub-column ``\emph{R}'' denotes
+recall. Sub-column ``\emph{F}'' denotes F-score. \emph{Precision},
+\emph{Recall}, and \emph{F-score} are defined as
+follows:\vspace*{-1ex}
 \begin{equation}\label{eq-precison}
 Precison=\frac{true\ positives}{true\ positives+false\ positives}
 \end{equation}\vspace*{-2ex}
@@ -378,14 +378,14 @@ standard; false positives represent those transitions that exist in
 the mined API mapping but not in the golden standard; false
 negatives represent those transitions that exist in the golden
 standard but not in the mined API mapping. From the results of
-Table~\ref{table:compare}, our approach achieves a relatively high
-precision and a relatively low recall. We further investigate the
-differences, and we find three main causing impact factors. First,
-the mined mapping files contain correct items that do not exist in
-the mapping files of Java2CSharp. For example, the mined mapping
-files contain a mapping relation between \CodeIn{org.w3c.dom.Attr}
-and \CodeIn{System.Xml.XmlAttribute}, and the mapping relation does
-not exist in the mapping files of Java2CSharp. As these items are
+Table~\ref{table:compare}, we find that our approach achieves a
+relatively high precision and a relatively low recall due to the
+three main causing impact factors. First, we find 25 correct mapping
+relations of API classes in mined mapping files but not in the
+golden standard. For example, the mined mapping files contain a
+mapping relation between \CodeIn{org.w3c.dom.Attr} and
+\CodeIn{System.Xml.XmlAttribute}, and the mapping relation does not
+exist in the mapping files of Java2CSharp. As these items are
 counted as false positives, this impact factor reduces the
 precisions. Second, although we use 10 large projects as subjects to
 mine API mapping, these projects do not cover mapping relations of
@@ -397,16 +397,14 @@ many libraries. When we limit mapping relations to the packages as
 shown in Table~\ref{table:compare}, the mined mapping relations are
 actually not so many as expected. On the contrary, the mapping files
 of Java2CSharp are more detailed as they are manually built. This
-impact factor reduces the recalls. Third, some API classes and API
-methods between Java and C\# have different behaviors. To hide these
-behaviors from client code, Java2CSharp maps these classes and
-methods to its implemented classes and methods. For example,
-Java2CSharp maps \CodeIn{java.util.Set} to
-\CodeIn{ILOG.J2CsMapping.Collections.ISet}. Our approach did not
-mine these mapping relations since the subjects in
-Table~\ref{table:subjects} do not use Java2CSharp's own implemented
-classes and methods. This impact factor reduces both the precisions
-and the recalls.
+impact factor reduces the recalls. Third, we find that Java2CSharp
+maps 51 API classes of these packages to its implemented classes to
+hide different behaviors from client code. For example, Java2CSharp
+maps \CodeIn{java.util.Set} to \CodeIn{ILOG.J2CsMapping.
+Collections.ISet}. Our approach did not mine these mapping relations
+since the subjects in Table~\ref{table:subjects} do not use
+Java2CSharp's own implemented classes and methods. This impact
+factor reduces both the precisions and the recalls.
 
 In summary, compared with the mapping files of Java2CSharp, our
 mined mapping files show a relatively high precisions and relatively
@@ -435,7 +433,7 @@ to cover detailed API mapping.
 \hline Total  & 4063  & 491   & 2576  & 237   & 1174  &  54.4\% & 135 & 43.0\% \\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{\label{table:errors}Compilation errors}
+\Caption{\label{table:errors}Compilation errors and bugs}
 \end{SmallOut}\vspace*{-3ex}
 \end{table}
 \subsection{Aiding Language Migration}
