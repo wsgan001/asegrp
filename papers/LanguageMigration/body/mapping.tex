@@ -29,36 +29,26 @@ relation between $e_1$ and $e_2$, if $e_1$ of $L_1$ can be translated to $e_2$ o
 without introducing new defects in the translated code.
 
 \textbf{Mapping relation of API classes:} We define a mapping
-relation between two API classes $c_1$ and $c_2$ of $L_1$
-and $L_2$, respectively, if $c_1$ of $L_1$ is
-translated to $c_2$ of $L_2$ without introducing new
-defects in the translated code. Our mapping relation of API classes
-is many-to-many. For example, \CodeIn{java.util.ArrayList}
-of Java is mapped to either \CodeIn{System.Collections.ArrayList}
-\textbf{or} \CodeIn{System.Collections.Generic.List} of C\#,
-whereas \CodeIn{java.lang.System} of Java is mapped to
+relation between two API classes $c_1$ and $c_2$ of $L_1$ and $L_2$,
+respectively, if $c_1$ of $L_1$ is translated to $c_2$ of $L_2$
+without introducing new defects in the translated code.
+
+Our mapping relation of API classes is many-to-many. For example,
+\CodeIn{java.util.ArrayList} of Java is mapped to either
+\CodeIn{System. Collections.ArrayList} \textbf{or}
+\CodeIn{System.Collections.Generic. List} of C\#, whereas
+\CodeIn{java.lang.System} of Java is mapped to
 \CodeIn{System.DataTime} \textbf{and} \CodeIn{System.Environment} of
 C\# based on how client code uses these classes. In particular, when
 client code uses APIs to get the current time,
-\CodeIn{java.lang.System} is mapped to \CodeIn{System.DataTime}.
-In contrast, when client code uses APIs to get environment
-settings, \CodeIn{java.lang.System} is mapped with \CodeIn{System.Environment}.
-
-\begin{figure}[t]
-\begin{CodeOut}\vspace*{-1ex}
-\begin{alltt}
-16  FileInfo file = \textbf{new} FileInfo("test");
-17   \textbf{if}(System.IO.File.Exist(file.FullName)||
-       System.IO.Directory.Exists(file.FullName))\{...\}
-\end{alltt}
-\end{CodeOut}\vspace*{-4ex}
-\caption{\label{fig:translatedcode} A translated code snippet from
-Java to C\#.}\vspace*{-5ex}
-\end{figure}
+\CodeIn{java.lang.System} is mapped to \CodeIn{System.DataTime}. In
+contrast, when client code uses APIs to get environment settings,
+\CodeIn{java.lang.System} is mapped with
+\CodeIn{System.Environment}.
 
 Furthermore, mapped API classes may have different behaviors. For
 example, \CodeIn{java.lang.String} of Java is mapped to
-\CodeIn{System.String} of C\#. However, \CodeIn{System.String} has
+\CodeIn{System. String} of C\#. However, \CodeIn{System.String} has
 an API method \CodeIn{insert}, which does not exist in
 \CodeIn{java.lang.String}.
 
@@ -70,12 +60,12 @@ in the translated code.
 Both the mapping relations of API classes and methods are required
 for achieving language translation. In particular, mapping relation
 of API classes is required to translate variables such as
-\CodeIn{file} in Figure~\ref{fig:totranslation}. Similarly, mapping
+\CodeIn{file} in Figure~\ref{fig:challenge}. Similarly, mapping
 relation of API methods is required to translate API methods such as
-\CodeIn{exist} in Figure~\ref{fig:totranslation}. When an API
-method is translated from one language to another, the translated
-method accepts the same parameters (both variables and constants)
-and implement the same functionality as the original method.
+\CodeIn{exist} in Figure~\ref{fig:challenge}. When an API method is
+translated from one language to another, the translated method
+accepts the same parameters (both variables and constants) and
+implement the same functionality as the original method.
 
 \textbf{Merged API method:} A merged API method of $L_1$ refers to
 an API method that is created by merging two other API methods of
@@ -93,21 +83,19 @@ parameter for $m_2$ (i.e., $o_1$ == $C_2$ or $o_1$ == $inp_i^2$)
 in client code. The signature of the new merged API method $m_{new}$ is
 shown below:
 
-\CodeIn{$m_{new}$ signature: $o_2$ $m_{new}$($inp_1^1$, $inp_2^1$, ..., $inp_m^1$,$inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
+\CodeIn{$m_{new}$ signature: $o_2$ $m_{new}$($inp_1^1$, $inp_2^1$, ..., $inp_m^1$, \\ $inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
 
-(@Hao: This paragraph can be skipped later if we need more space)
 We next present an example for a merged API method using the
 illustrative code example shown in Section~\ref{sec:example}. For
-the code example shown in Figure~\ref{fig:totranslation}, consider
-the \CodeIn{file} variable, which is a return variable for the
-constructor and a receiver object for the \CodeIn{exists} method.
-As the output of one API method is passed as receiver object of
-another API method, we can combine these two methods to create a new
-merged API method $m_{new}$. Figure~\ref{fig:example} shows the
-$m_{new}$ method \CodeIn{boolean File.exists(string)}. The $m_{new}$
-method accepts a \CodeIn{string} parameter that represents a file
-name and returns a boolean value that describes whether a file
-exists or not.
+the code example shown in Figure~\ref{fig:challenge}, consider the
+\CodeIn{file} variable, which is a return variable for the
+constructor and a receiver object for the \CodeIn{exists} method. As
+the output of one API method is passed as receiver object of another
+API method, we can combine these two methods to create a new merged
+API method $m_{new}$. Figure~\ref{fig:example} shows the $m_{new}$
+method \CodeIn{boolean File.exists(string)}. The $m_{new}$ method
+accepts a \CodeIn{string} parameter that represents a file name and
+returns a boolean value that describes whether a file exists or not.
 
 A merged API method can be further merged with other API methods or
 other merged API methods. For simplicity, we use API method to refer
