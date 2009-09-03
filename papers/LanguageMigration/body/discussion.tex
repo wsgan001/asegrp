@@ -1,18 +1,18 @@
 \section{Discussion and Future Work}
-\label{sec:discuss} In this section, we discuss related issues of
-our approach.
+\label{sec:discuss} 
 
-\textbf{Aligning client code of similar functionalities.} As shown
-in Table~\ref{table:analyzingclient}, our approach sometimes fails
-to align client code. For some considerations, programmers may
-implement one functionality as one class or one method in one
-language version but implement the same functionality as multiple
-classes or methods in another language version. One feasible way to
-align these functionalities is to analyze them dynamically. For
-example, Jiang and Su~\cite{jiang2009automatic} propose an approach
-to mine code snippets of similar functionalities. We plan to develop
-a dynamic technique for those unmatched classes or methods in our
-future work.
+We next discuss issues in our approach and describe how we address
+these issues in our future work.
+
+\textbf{Aligning client code.} Table~\ref{table:analyzingclient} shows that our approach could not
+align client code in a few cases. The primary reason is that
+the functionality associated with a class or a method in one language
+version is split among multiple classes or methods in the other language
+version. In future work, we plan to address this issue by aligning
+classes based on their functionalities rather than by matching their names.
+We plan to develop a dynamic approach based on Jiang and Su~\cite{jiang2009automatic}
+to align classes and methods that are not aligned by our current static approach.
+
 \begin{figure}[t]
 \centering
 \includegraphics[scale=1,clip]{figure/n2n.eps}\vspace*{-3ex}
@@ -20,19 +20,17 @@ future work.
  \label{fig:n2n}
 \end{figure}
 
-\textbf{Mining richer API mapping.} As shown in
-Table~\ref{table:compare}, although we use 10 large projects as
-subjects, our evaluation does not achieve high recalls for J2SE. For
-a given library, these projects still do not provide adequate source
-files for mining. Our previous
-work~\cite{thummalapenta07parseweb,thummalapentaase08spotweb} show
-that it is feasible to use the internet-scale code available on the
-web as subjects for mining with the help of code search engines such
-as Google code
-search\footnote{\url{http://www.google.com/codesearch}}. In future
-work, we plan to leverage such search engines to mine richer API
-mapping.
+\textbf{Mining richer API mapping.} Table~\ref{table:compare} shows
+that our approach does not achieve high recall for the APIs of J2SE. Although
+we use ten large projects as subjects, these projects still do not provide
+sufficient code examples for mining mapping relations of all APIs in J2SE.
+Our previous work~\cite{thummalapenta07parseweb,thummalapentaase08spotweb} show
+that it is feasible to use large-scale repositories available on the web as subjects.
+These large-scale repositories can be used for mining with the help of code search engines such
+as Google code search\footnote{\url{http://www.google.com/codesearch}}. In future
+work, we plan to leverage these code search engines to mine richer API mapping.
 
+(@Hao: This ranking mined mapping relations sound very trivial. Can we ignore this?)
 \textbf{Ranking mined mapping relations.} When comparing with the
 built mapping files of Java2CSharp, we choose mined mapping
 relations of APIs with the highest supports as generated mapping
@@ -46,35 +44,35 @@ not. Consequently, the Java class seems to be better mapped to
 supports generic programming. We plan to develop ranking techniques
 to address this issue in future work.
 
-\textbf{Mining more many-to-many mapping relations of API methods.}
-A majority of mined mapping relations of API methods describe
-one-to-one relations. Algorithm 2 merges the next API method with a
-forward strategy. For the example shown in Figure~\ref{fig:n2n}, if
-the algorithm merges \CodeIn{method1()} and \CodeIn{method2()} but
-fails to find a match, the algorithm tries to merge
-\CodeIn{method3()}. In some cases, a match can be found if the
-algorithm merges \CodeIn{method4()} instead of \CodeIn{method3()}.
-We plan to improve the algorithm to mine more many-to-many relations
-in future work.
+\textbf{Mining many-to-many mapping relations of API methods.}
+Among our mined mapping relations of API methods, majority of
+the relations are one-to-one relations. The reason is that our Algorithm 2
+uses only forward analysis for merging API methods. We explain this
+issue using an illustrative example shown in Figure~\ref{fig:n2n}.
+After merging API methods \CodeIn{method1} and \CodeIn{method2},
+if our algorithm still not able to map the merged API methods with an API method in the
+other language, our algorithm attempts to merge \CodeIn{method3} rather than
+\CodeIn{method4}, which could be a possible candidate for mining
+the mapping relation. In future work, we plan to incorporate
+backward analysis to enhance our existing algorithm. We expect
+that our enhanced algorithm can mine more many-to-many mapping relations.
 
-\textbf{Migrating many-to-many mapping relations of API methods.} A
-mined many-to-many mapping of API methods may have multiple outputs
-and complicated internal data processes. Our defined API
-transformation graphs help find out all essential API methods.
-However a graph does not describe adequate details to support
-automatic translation. For example, we need to manually add an
+\textbf{Migrating many-to-many mapping relations of API methods.} 
+A mined many-to-many mapping relation of API methods can have multiple outputs
+and complex internal data processes. Although, our ATGs 
+help identify all API methods, our implementation of ATGs is not complete
+for supporting an automatic translation. For example, we need to manually add an
 \emph{or} operator for the two outputs of the API mapping shown in
-Figure~\ref{fig:example}. We plan to add more details to help
-automate migration with many-to-many mapping relations in future
-work.
+Figure~\ref{fig:example}. In future work, we plan to enhance our implementation to help
+automate migration with many-to-many mapping relations.
 
 \textbf{Migrating unmapped APIs.} Our approach mines API mapping of
-methods that have mapped inputs, mapped outputs, and similar
-functionalities. Consequently, mined API mapping can be migrated
-automatically. However, some APIs between two languages cannot
-satisfy all the three criteria. For these APIs, if outputs are
-unmapped, our approach can simply ignore outputs when outputs are
-not used in client code. If inputs or functionalities are unmapped,
-we plan to develop techniques that analyze how two versions of a
-project deal with a similar unmapped API problem for some reusable
-code snippets in future work.
+methods along with the mappings of their inputs and outputs.
+These mappings are useful for translating API methods of one language to another.
+Sometimes, our approach may not be able to map inputs and outputs 
+of mapped API methods. If our approach is not able to map outputs,
+our approach simply ignores those outputs that are not used in the client code.
+However, as inputs cannot be ignored, the translated code results in compilation errors.
+(@Hao, please confirm whether this is fine). In future work, we plan to address
+this issue by analyzing how two versions of a project deal 
+with a similar unmapped API problem for some other code examples.
