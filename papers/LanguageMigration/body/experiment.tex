@@ -213,49 +213,50 @@ requirements are relatively strict. As a result, if the first step
 does not align client code quite well, our approach misses some
 mapping relations of APIs but does not introduce many false mapping
 relations. In other words, our approach is robust to mine accurate
-API mapping.
+API mapping. Sub-column ``\emph{J2SE}'' lists mined API mapping
+between J2SE and NET. We next compare these mapping relations with
+manually built mapping relations.
 
+Row ``Total'' lists the total result after we merge all duplicated
+mapping relations. In summary, our approach mines a large number of
+mapping relations of APIs totally. These mined mapping relations are
+accurate and cover various libraries.
 %Sub-column ``\emph{1-1}'' list the number of one-to-one relations.
 %We find that most mined mapping relations are of this kind. Our
 %approach still needs improvements to mine those many-to-many mapping
 %relations. We further discuss this issue in
 %Section~\ref{sec:discuss}.
-
-
-In summary, our approach mines a large number of mapping relations
-of APIs totally. These mined mapping relations are accurate and
-cover various libraries.
 \begin{table}[t]
 %\flushleft
 \centering
 \begin{SmallOut}
-\begin {tabular} {|c!{\vrule width 1pt}c|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c|c|}
+\begin {tabular} {|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c!{\vrule width 1pt}c|c|c|c|}
  \hline
 \multirow{2}*[-2pt]{\textbf{Project}}&
-\multicolumn{2}{|c|}{\textbf{Class}}
-& \multicolumn{2}{|c|}{\textbf{Method}}  \\\cline{2-5} &  \emph{\textbf{Num.}}&\emph{\textbf{Acc.}}& \emph{\textbf{Num.}}&  \emph{\textbf{Acc.}} \\
+\multicolumn{3}{|c|}{\textbf{Class}}
+& \multicolumn{3}{|c|}{\textbf{Method}}  \\\cline{2-7} &  \emph{\textbf{Num.}}&\emph{\textbf{Acc.}}&\emph{\textbf{J2SE}}& \emph{\textbf{Num.}}&  \emph{\textbf{Acc.}}&\emph{\textbf{J2SE}} \\
 \hline \hline
-  db4o       &   3155  & 83.3\% &   10787 & 90.0\%     \\
+  db4o         &   3155  & 83.3\%  &   246 & 10787 & 90.0\%  & 513  \\
 \hline
-  fpml       &   199 & 83.3\% &   508 & 83.3\%     \\
+  fpml         &   199   & 83.3\%  &   53  & 508   & 83.3\%  & 229   \\
 \hline
-  PDFClown   &   539 & 96.7\% &   514 & 100.0\%     \\
+  PDFClown     &   539   & 96.7\%  &   102 & 514   & 100.0\% & 126  \\
 \hline
-  OpenFSM    &   64  & 86.7\%  &   139 &  73.3\%    \\
+  OpenFSM      &   64    & 86.7\%  &   27  & 139   & 73.3\%  &  12  \\
 \hline
-  binaryNotes &   287 & 90.0\%  &   671 & 90.0\%      \\
+  binaryNotes  &   287   & 90.0\%  &   56  & 671   & 90.0\%  &  59   \\
 \hline \hline
-  neodatis   &   526 & 96.7\% &   3517 & 100.0\%     \\
+  neodatis     &   526   & 96.7\%  &    86 & 3517  & 100.0\% & 600    \\
 \hline
-  numerics4j &   97  & 83.3\%  &   429 & 83.3\%    \\
+  numerics4j   &   97    & 83.3\%  &   8   & 429   & 83.3\%  &  34  \\
 \hline
-  lucene      &   718 & 90.0\% &   2725 & 90.0\%     \\
+  lucene       &   718   & 90.0\%  &   147  & 2725  & 90.0\%  & 584   \\
 \hline\hline
-  logging     &   305 & 73.3\%  &   56 & 90.0\%    \\
+  logging      &   305   & 73.3\%  &   93  & 56    & 90.0\%  & 21  \\
 \hline
-  hibernate   &   1126 & 66.7\% &   7 & 13.3\%     \\
+  hibernate    &   1126  & 66.7\%  &   164 & 7     & 13.3\%   & 5  \\
 \hline\hline
-  Average       &   702 & 85.0\%  &  1936  & 81.3\%   \\
+  Total        &   6695   & 86.7\% &   344  & 19110 & 90.0\%  & 1768\\
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{Results of mining API mapping} \label{table:minedresults}
@@ -325,7 +326,7 @@ Column ``Class'' lists the results of comparing API classes. Column
 sub-columns, sub-column ``\emph{P}'' denotes precision. Sub-column
 ``\emph{R}'' denotes recall. Sub-column ``\emph{F}'' denotes
 F-score. \emph{Precision}, \emph{Recall}, and \emph{F-score} are
-defined as follows:\vspace*{-2ex}
+defined as follows:\vspace*{-1ex}
 \begin{equation}\label{eq-precison}
 Precison=\frac{true\ positives}{true\ positives+false\ positives}
 \end{equation}\vspace*{-2ex}
