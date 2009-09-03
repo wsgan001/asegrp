@@ -62,16 +62,16 @@ subjects. These subjects come from famous open source societies such
 as SourgeForge\footnote{\url{http://www.sf.net}},
 Apache\footnote{\url{http://www.apache.org/}}, and
 hibernate\footnote{\url{http://www.hibernate.org/}}. Columns ``Java
-version'' and ``C\# version'' list the two versions from each
-subject. All these used versions are the latest versions at the time
-of writing. For these two columns, sub-column ``\emph{\#C}'' lists
-numbers of classes, and sub-column ``\emph{\#M}'' lists numbers of
-methods. We notice that Java versions are much larger than C\#
-versions totally. We investigate these projects and find two factors
-as follows. One is that Java versions of some projects are more
-update-to-date. For example, the latest Java version of
-\emph{numericas4j} is 1.3 whereas the latest C\# version is 1.2. The
-other factor is that some projects are migrating from Java to C\# in
+version'' and ``C\# version'' list versions in Java and versions in
+C\#, respectively. All these used versions are the latest versions
+at the time of writing. For these two columns, sub-column
+``\emph{\#C}'' lists numbers of classes, and sub-column
+``\emph{\#M}'' lists numbers of methods. We notice that Java
+versions are much larger than C\# versions totally. We investigate
+these projects and find two factors. First, Java versions of some
+projects are more update-to-date. For example, the latest Java
+version of \emph{numericas4j} is 1.3 whereas the latest C\# version
+is 1.2. Second, some projects are migrating from Java to C\# in
 progress. For example, the
 website\footnote{\url{http://wiki.neodatis.org/}} of \emph{neodatis}
 states that \emph{neodatis} is a project in Java and is being ported
@@ -85,8 +85,9 @@ We conducted all the evaluations on a PC with an Intel Qual CPU @
 \subsection{Mining API mapping}
 \label{sec:evaluation:mining}
 
-To evaluate the first research question, we use 10 projects from
-Table~\ref{table:subjects} as the subjects for mining API mapping.
+To evaluate the first research question, we use the top 10 projects
+from Table~\ref{table:subjects} as the subjects for mining API
+mapping.
 
 
 \textbf{Aligning client code.} We first use our approach to align
@@ -109,7 +110,7 @@ the results of Table~\ref{table:analyzingclient} fall into three
 categories. This first category includes \emph{db4o}, \emph{fpml},
 \emph{PDFClown}, \emph{OpenFSM}, and \emph{binaryNotes}. There, our
 approach achieves relatively high percentages for both Java versions
-and C\# versions. For each of the five project, ``\emph{\%M}'' is
+and C\# versions. For each of the 5 project, ``\emph{\%M}'' is
 relatively smaller than ``\emph{\%C}'' since methods of those
 unaligned classes cannot be aligned and thus are counted as
 unaligned\footnote{Another factor lies in that Java versions usually
@@ -133,16 +134,9 @@ of aligned methods is relatively low. We find that even if our
 approach aligns a wrong class pair, our approach does not align
 methods within the wrong pair as the method names of a wrong pair
 are quite different. The result suggests that we can take method
-names into account when aligning classes in future work.
-
-For all these projects, our approach does not align all classes and
-all methods. We find another two factors besides the factor of
-different entities naming across languages. First, one functionality
-may be implemented as a single class in one language version and is
-implemented as multiple classes in the other language version.
-Second, a Java version and a C\# version sometimes may have quite
-different functionalities. We discuss these issues in
-Section~\ref{sec:discuss}.
+names into account when aligning classes in future work. For all
+these projects, our approach does not align all classes and all
+methods. We discuss these issues in Section~\ref{sec:discuss}.
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -188,34 +182,35 @@ entities of a version under development.
 \textbf{Mining API mapping.} We then use our approach to mine
 mapping relations of API classes and API methods.
 
-Table~\ref{table:minedresults} shows the results of this step. For
-Columns ``Class'' and ``Method'', sub-column ``\emph{Num.}'' lists
-numbers of mined mapping relations. The numbers of mined API mapping
-are largely proportional to the sizes of projects as shown in
-Table~\ref{table:subjects} except \emph{logging} and
-\emph{hibernate}. As classes and methods of these two projects are
-not quite well aligned, our approach does not mine many mapping
-relations of APIs from the two projects. For the remaining projects,
-our approach mines many mapping relations of API classes and API
-methods. Sub-column ``\emph{Acc.}'' lists accuracies of the top 30
-mined API mapping (\emph{i.e.}, percentages of correct mapping
-relations). For mined API mapping from each project, we manually
-inspect top 30 mined mapping relations of APIs and classify them as
-correct or incorrect based on programming experiences. We find that
-our approach achieves high accuracies except \emph{hibernate}.
-Although our approach does not align \emph{logging} quite well
-either, the accuracies of API mapping from \emph{logging} are still
-relatively high. To mine API mapping of classes, our approach
-requires that names of classes, methods, and variables are all
-similar. To mine API mapping of methods, our approach requires that
-two built API transformation graphs are similar. The two
-requirements are relatively strict. As a result, if the first step
-does not align client code quite well, our approach misses some
-mapping relations of APIs but does not introduce many false mapping
-relations. In other words, our approach is robust to mine accurate
-API mapping. Sub-column ``\emph{J2SE}'' lists mined API mapping
-between J2SE and NET. We next compare these mapping relations with
-manually built mapping relations.
+Table~\ref{table:minedresults} shows the results of this step.
+Columns ``Class'' and ``Method'' list results of mining API classes
+and API methods, respectively. For their sub-columns, sub-column
+``\emph{Num.}'' lists numbers of mined mapping relations. The
+numbers of mined API mapping are largely proportional to the sizes
+of projects as shown in Table~\ref{table:subjects} except
+\emph{logging} and \emph{hibernate}. As classes and methods of these
+two projects are not quite well aligned, our approach does not mine
+many mapping relations of APIs from the two projects. For the
+remaining projects, our approach mines many mapping relations of API
+classes and API methods. Sub-column ``\emph{Acc.}'' lists accuracies
+of the top 30 mined API mapping (\emph{i.e.}, percentages of correct
+mapping relations). For mined API mapping from each project, we
+manually inspect top 30 mined mapping relations of APIs and classify
+them as correct or incorrect based on programming experiences. We
+find that our approach achieves high accuracies except
+\emph{hibernate}. Although our approach does not align
+\emph{logging} quite well either, the accuracies of API mapping from
+\emph{logging} are still relatively high. To mine API mapping of
+classes, our approach requires that names of classes, methods, and
+variables are all similar. To mine API mapping of methods, our
+approach requires that two built API transformation graphs are
+similar. The two requirements are relatively strict. As a result, if
+the first step does not align client code quite well, our approach
+misses some mapping relations of APIs but does not introduce many
+false mapping relations. In other words, our approach is robust to
+mine accurate API mapping. Sub-column ``\emph{J2SE}'' lists mined
+API mapping between J2SE and NET. We next compare these mapping
+relations with manually built mapping relations.
 
 Row ``Total'' lists the total result after we merge all duplicated
 mapping relations. In summary, our approach mines a large number of
@@ -236,25 +231,25 @@ accurate and cover various libraries.
 \multicolumn{3}{|c|}{\textbf{Class}}
 & \multicolumn{3}{|c|}{\textbf{Method}}  \\\cline{2-7} &  \emph{\textbf{Num.}}&\emph{\textbf{Acc.}}&\emph{\textbf{J2SE}}& \emph{\textbf{Num.}}&  \emph{\textbf{Acc.}}&\emph{\textbf{J2SE}} \\
 \hline \hline
-  db4o         &   3155  & 83.3\%  &   246 & 10787 & 90.0\%  & 513  \\
+  db4o         &   3155  & 83.3\%  &   117 & 10787 & 90.0\%  & 297  \\
 \hline
-  fpml         &   199   & 83.3\%  &   53  & 508   & 83.3\%  & 229   \\
+  fpml         &   199   & 83.3\%  &   41  & 508   & 83.3\%  & 216   \\
 \hline
-  PDFClown     &   539   & 96.7\%  &   102 & 514   & 100.0\% & 126  \\
+  PDFClown     &   539   & 96.7\%  &   36 & 514   & 100.0\% & 111  \\
 \hline
-  OpenFSM      &   64    & 86.7\%  &   27  & 139   & 73.3\%  &  12  \\
+  OpenFSM      &   64    & 86.7\%  &   16  & 139   & 73.3\%  &  12  \\
 \hline
-  binaryNotes  &   287   & 90.0\%  &   56  & 671   & 90.0\%  &  59   \\
+  binaryNotes  &   287   & 90.0\%  &   31  & 671   & 90.0\%  &  55   \\
 \hline \hline
-  neodatis     &   526   & 96.7\%  &    86 & 3517  & 100.0\% & 600    \\
+  neodatis     &   526   & 96.7\%  &    41 & 3517  & 100.0\% & 539    \\
 \hline
-  numerics4j   &   97    & 83.3\%  &   8   & 429   & 83.3\%  &  34  \\
+  numerics4j   &   97    & 83.3\%  &   2   & 429   & 83.3\%  &  29  \\
 \hline
-  lucene       &   718   & 90.0\%  &   147  & 2725  & 90.0\%  & 584   \\
+  lucene       &   718   & 90.0\%  &   83  & 2725  & 90.0\%  & 522   \\
 \hline\hline
-  logging      &   305   & 73.3\%  &   93  & 56    & 90.0\%  & 21  \\
+  logging      &   305   & 73.3\%  &   45  & 56    & 90.0\%  & 19  \\
 \hline
-  hibernate    &   1126  & 66.7\%  &   164 & 7     & 13.3\%   & 5  \\
+  hibernate    &   1126  & 66.7\%  &   87  & 7     & 13.3\%   & 5  \\
 \hline\hline
   Total        &   6695   & 86.7\% &   344  & 19110 & 90.0\%  & 1768\\
 \hline
@@ -452,32 +447,31 @@ project, Column ``No MF'' lists results without mapping files.
 Column ``MF'' lists results with the mapping files of Java2CSharp.
 Column ``Ext. MF'' lists results with mapping files that combine
 mined API mapping with the existing mapping files of Java2CSharp.
-Sub-column ``\emph{E}'' lists numbers of compilation errors.
-Sub-column ``\emph{B}'' lists numbers of found bugs. For each
-project, we find out those overlapping files between translated
-files and existing C\# files and manually inspect the top 5 largest
-files by comparing existing C\# files for API related bugs.
-Sub-columns ``\emph{\%E}'' and ``\emph{\%B}'' list percentages of
-improvements over the mapping files of Java2CSharp. Totally, mined
-API mapping helps further reduces 54.4\% compilation errors and
-43.0\% found bugs. As the five projects use different libraries, the
-numbers of translated projects are different. In particular,
+For their sub-columns, sub-column ``\emph{E}'' lists numbers of
+compilation errors, and sub-column ``\emph{B}'' lists numbers of
+found bugs. For each project, we find out those overlapping files
+between translated files and existing C\# files and manually inspect
+the top 5 largest files by comparing existing C\# files for API
+related bugs. Sub-columns ``\emph{\%E}'' and ``\emph{\%B}'' list
+percentages of improvements over the results of ``MF''. Totally,
+mined API mapping helps further reduces 54.4\% compilation errors
+and 43.0\% found bugs. As the five projects use different libraries,
+the numbers of translated projects are different. In particular,
 \emph{simmetrics} and \emph{fit} use API classes of J2SE that are
 covered by mapping files. Consequently, the translated projects of
 \emph{simmetrics} and \emph{fit} have few errors and bugs. The
 \emph{aligner} project also mainly uses J2SE, but it uses many API
 classes and methods from \CodeIn{java.awt} for its GUI. The mapping
-files of Java2CSharp does not cover any classes of
-\CodeIn{java.awt}, so the translated project has many errors. As the
-existing C\# version of \emph{aligner} does not have GUI, we do not
-compare those buggy translated GUI files and we do not find any
-bugs. The mined files map \CodeIn{java.awt} to
-\CodeIn{System.Windows.Forms} and thus reduce compilation errors.
-However, the result is not significant as many classes of the two
-packages are still not mapped. For \emph{rasp} and \emph{llrp}, they
-both use various libraries besides J2SE. Consequently, the
-translated projects have both many errors and bugs. In particular,
-\emph{llrp} uses
+files of Java2CSharp do not cover any classes of \CodeIn{java.awt},
+so the translated project has many errors. As the existing C\#
+version of \emph{aligner} does not have GUI, we do not compare those
+buggy translated GUI files and we do not find any bugs. The mined
+files map \CodeIn{java.awt} to \CodeIn{System.Windows.Forms} and
+thus reduce compilation errors. However, the result is not
+significant as many classes of the two packages are still not
+mapped. For \emph{rasp} and \emph{llrp}, they both use various
+libraries besides J2SE. Consequently, the translated projects have
+both many errors and bugs. In particular, \emph{llrp} uses
 log4j\footnote{\url{http://logging.apache.org/log4j/}} and
 jdom\footnote{\url{http://www.jdom.org/}}, and the mined mapping
 files contain mapping relations of the two libraries. As a result,
@@ -496,7 +490,7 @@ errors in the translated projects.
 
 
 \subsection{Threats to Validity}
-\label{sec:evaluation:threats} The threat to external validity
+\label{sec:evaluation:threats} The threats to external validity
 includes the representativeness of the subjects in true practice and
 the existing translation tool being compared. Although we applied
 our approach on 10 projects for mining API mapping and on additional
@@ -505,9 +499,11 @@ evaluated only on these limited projects. Although Java2CSharp is
 the best translation tool as far as we know, other tools may perform
 better than the tool. The threat could be reduced by more
 evaluations on more subjects and more translation tools in future
-work. The threat to internal validity includes human factors for
-determining bugs in translated projects. To reduce the threat, we
-inspected bugs carefully and refer to existing C\# files for
-confirming these bugs. This threat could be further reduced by
-running test cases when we improve our approach and produce
-translated projects without complication errors.
+work. The threats to internal validity includes human factors for
+determining correct mined API mapping and for determining bugs in
+translated projects. To reduce the threats, we inspected mined
+mapping relations and bugs carefully. The former threat could be
+further reduced by find more existing mapping relations of APIs as
+we did to J2SE. The latter threat could be reduced by running test
+cases we improve our approach and produce translated projects
+without complication errors.

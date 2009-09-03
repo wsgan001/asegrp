@@ -57,16 +57,6 @@ between two API methods $m_1$ and $m_2$ of languages $L_1$ and $L_2$,
 respectively, if $m_1$ is translated to $m_2$ without introducing defects
 in the translated code.
 
-Both the mapping relations of API classes and methods are required
-for achieving language translation. In particular, mapping relation
-of API classes is required to translate variables such as
-\CodeIn{file} in Figure~\ref{fig:challenge}. Similarly, mapping
-relation of API methods is required to translate API methods such as
-\CodeIn{exist} in Figure~\ref{fig:challenge}. When an API method is
-translated from one language to another, the translated method
-accepts the same parameters (both variables and constants) and
-implement the same functionality as the original method.
-
 \textbf{Merged API method:} A merged API method of $L_1$ refers to
 an API method that is created by merging two other API methods of
 $L_1$. For example, consider two API methods $m_1$ and $m_2$ defined
@@ -100,3 +90,13 @@ returns a boolean value that describes whether a file exists or not.
 A merged API method can be further merged with other API methods or
 other merged API methods. For simplicity, we use API method to refer
 to both API method and merged API method in the rest of the paper.
+
+Both the mapping relations of API classes and methods are required
+for achieving language translation. In particular, mapping relation
+of API classes is required to translate variables such as
+\CodeIn{file} in Figure~\ref{fig:challenge}. Similarly, mapping
+relation of API methods is required to translate API methods such as
+\CodeIn{exist} in Figure~\ref{fig:challenge}. When an API method is
+translated from one language to another, the translated method
+accepts the same parameters (both variables and constants) and
+implement the same functionality as the original method.

@@ -41,23 +41,25 @@ error-prone task. Some companies have incurred huge losses because
 of failures in language translation. For example, Terekhov and
 Verhoef~\cite{terekhov2000realities} stated that at least three
 companies went bankrupt and another company lost 50 million dollars
-due to failed language translation projects. A natural way to address
-this issue is to develop a translation tool that can automatically
-translate projects from one language to another. However, it is
-challenging to develop such a translation tool as the translation
-tool should have knowledge of how one programming language is mapped
-to the other language. In literature, there exist
+due to failed language translation projects. A natural way to
+address this issue is to develop a translation tool that can
+automatically translate projects from one language to another.
+However, it is challenging to develop such a translation tool as the
+translation tool should have knowledge of how one programming
+language is mapped to the other language. In literature, there exist
 approaches~\cite{mossienko2003automated, yasumatsu1995spice,
-hainaut2008migration} that address the problem of language translation
-partially. These approaches expect programmers to describe
-how one language is mapped to another language. \Comment{Based on the
-mappings provided as input, these existing approaches translate
-projects from one language to another.} As programming languages
-provide a large number of APIs, writing mappings manually for all APIs
-is tedious and error-prone. As a result, existing
+hainaut2008migration} that address the problem of language
+translation partially. These approaches expect programmers to
+describe how APIs of one language is mapped to APIs of another
+language. \Comment{Based on the mappings provided as input, these
+existing approaches translate projects from one language to
+another.} As programming languages provide a large number of APIs,
+writing mappings manually for all APIs is tedious and error-prone.
+As a result, existing
 approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}
-support only a subset of APIs for translation. Such a limitation results
-many compilation errors in translated projects and limits their usage in practice.
+support only a subset of APIs for translation. Such a limitation
+results many compilation errors in translated projects and limits
+their usage in practice.
 
 In this paper, we propose a novel approach that automatically mines how APIs of
 one language are mapped to the APIs of another language. We refer
@@ -108,8 +110,8 @@ To deal with the complexity of mining API mapping, we construct a
 graph, referred as \emph{API transformation graph} (ATG), for
 aligned methods of the client code in both languages. These ATGs
 precisely capture inputs and outputs of API methods, and help mine
-mapping relations of API methods. This paper makes the following major
-contributions:
+complex mapping relations of API methods. This paper makes the
+following major contributions:
 
 \begin{itemize}\vspace*{-1.5ex}
 \item A first approach that mines API mapping between
@@ -123,10 +125,11 @@ complex mapping relations between API methods.\vspace*{-1.5ex}
 evaluations on 15 projects with both Java and C\# versions. These
 projects include 18,568 classes and 109,850 methods. The results
 show that our approach mines 6,695 mapping relations of API classes
-with an accuracy of 86.7\% and 19,110 mapping relations of API methods.
-The results also show that the mined API mapping relations reduce
-55.4\% of compilation errors and 43.0\% bugs during translation of
-projects from Java to C\# using Java2CSharp.
+with an accuracy of 86.7\% and 19,110 mapping relations of API
+methods with an accuracy of 90.0\%. The results also show that the
+mined API mapping relations reduce 55.4\% of compilation errors and
+43.0\% bugs during translation of projects from Java to C\# using
+Java2CSharp.
 \end{itemize}\vspace*{-1.5ex}
 
 The remainder of this paper is organized as follows. Section~\ref{sec:example}

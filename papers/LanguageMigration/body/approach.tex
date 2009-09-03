@@ -1,14 +1,14 @@
 \section{Approach}
 \label{sec:approach}
 
-Our approach accepts a set of projects as data sources and mines
-API mapping relations between two languages $L_1$ and $L_2$.
-As mined API mapping relations describe mapping relations of APIs between
-the two languages, this mapping is useful for language translation between the two languages.
-For each project used as a data source, our approach requires
-atleast two versions of the project (one version in $L_1$ and
-the other version in $L_2$). Figure~\ref{fig:approach} shows
-the overview of our approach.
+Our approach accepts a set of projects as data sources and mines API
+mapping relations between two languages $L_1$ and $L_2$. As mined
+API mapping relations describe mapping relations of APIs between the
+two languages, this mapping is useful for language translation
+between the two languages. For each project used as a data source,
+our approach requires at least two versions of the project (one
+version in $L_1$ and the other version in $L_2$).
+Figure~\ref{fig:approach} shows the overview of our approach.
 
 First, our approach aligns client code in languages $L_1$ and $L_2$
 so that the aligned source files implement similar functionalities
@@ -37,38 +37,41 @@ implement a similar functionality, APIs used by these classes or methods can be
 replaceable.
 
 To align classes and methods of the two versions, our approach uses
-name similarities between entities (such as class names or method names)
-defined by the two versions of the project. In our approach, we have two
-different kinds of entity names: entity names defined by the two versions
-of the project and entity names of third-party libraries used by the two versions of the project.
-The first kind often comes from the same programmer or the same team, or
+name similarities between entities (such as class names or method
+names) defined by the two versions of the project. In our approach,
+we have two different kinds of entity names: entity names defined by
+the two versions of the project and entity names of third-party
+libraries used by the two versions of the project. The first kind
+often comes from the same programmer or the same team, or
 programmers may refer to existing versions for naming entities such
-as classes, methods, and variables. Therefore, name similarity is often
-reliable to distinguish functionalities of the first kind compared to the second
-kind. Our approach uses Simmetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
+as classes, methods, and variables. Therefore, name similarity of
+the first kind is often reliable to distinguish functionalities
+compared to the second kind. Our approach uses
+Simmetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
 to calculate name similarities.
 
 Algorithm 1 shows how our approach aligns client code classes. The
 first step is to find candidate class pairs by names. For two sets
 of classes ($C$ and $C'$), the algorithm returns candidate class
 pairs ($M$) with a similarity greater than a given threshold,
-referred to as \emph{SIM\_THRESHOLD}. As some projects may have many
-classes with the same name, $M$ may contain more than one matching
-pair for a class in a version. To align those classes, our algorithm
-uses package names of these classes to refine $M$ and returns only
-one matching pair with the maximum similarity\footnote{For C\#, we
-refer to namespace names for package names.}.
+referred to as \emph{SIM\_THRESHOLD}. As some projects may have more
+than one class with the same name, $M$ may contain more than one
+matching pair for a class in a version. To align those classes, our
+algorithm uses package names of these classes to refine $M$ and
+returns only one matching pair with the maximum
+similarity\footnote{For C\#, we refer to namespace names for package
+names.}.
 
 In each aligned class pair, our approach further aligns methods
 within the class pair. The algorithm for methods is similar to the
-algorithm for classes but relies on other criteria such as the number of parameters
-and names of parameters to refine candidate method pairs. These candidates
-may contain more than one method pair due to overloading.
-For the example shown in Section~\ref{sec:example}, our approach
-correctly aligns the class \CodeIn{IndexFiles} and the method
-\CodeIn{main} in Java to the class \CodeIn{IndexFiles}
-and the method \CodeIn{Main} in C\#, respectively, as their names are quite
-similar.
+algorithm for classes and also may return more than one candidate
+method pairs due to overloading. Here, the algorithm for methods
+relies on criteria such as the number of parameters and names of
+parameters to refine candidate method pairs. For the example shown
+in Section~\ref{sec:example}, our approach correctly aligns the
+class \CodeIn{IndexFiles} and the method \CodeIn{main} in Java to
+the class \CodeIn{IndexFiles} and the method \CodeIn{Main} in C\#,
+respectively, as their names are quite similar.
 %-----------------------------------------------------------------
 \subsection{Mapping API classes}
 \label{sec:approach:mappingtypes}
@@ -77,7 +80,7 @@ In this step, our approach mines mapping relations of
 API classes. As described in Section~\ref{sec:mapping}, mapping relations of API classes are used
 to translate variables. Consequently, our approach mines mapping
 relations of API classes based on how aligned client code declares
-variables such as fields of aligned classes, parameters 
+variables such as fields of aligned classes, parameters
 and local variables of aligned methods. In
 particular, for each aligned class pair $\Pair{c_1} {c_2}$, our
 approach analyzes each field pair $\Pair{f_1}{f_2}$ and considers
@@ -85,7 +88,7 @@ $\Pair{f_1.type} {f_2.type}$ as a relation, if the similarity between $f_1.name$
 greater than \emph{SIM\_THRESHOLD}. Similarly, for each aligned method pair
 $\Pair{m_1} {m_2}$, our approach analyzes each local variable pair
 $\Pair{var_1} {var_2}$ and considers $\langle var_1.type,$ $
-var_2.type\rangle$ as a relation, if the similarity between 
+var_2.type\rangle$ as a relation, if the similarity between
 $var_1.name$ and $var_2.name$ is greater than
 \emph{SIM\_THRESHOLD}. Also, our approach analyzes each parameter pair
 $\langle para_1, $ $para_2\rangle$ of $m_1$ and $m_2$, and our
@@ -95,9 +98,10 @@ a relation when the similarity between $para_1.name$ and $para_2.name$ is greate
 For the example shown in Section~\ref{sec:example}, our approach
 mines the mapping relation between \CodeIn{java.io.File} and
 \CodeIn{System.IO.FileInfo} based on the matched fields of Lines 4
-and 9 (Figure~\ref{fig:clientcode}). The mapping relation of API classes helps translate the
-variable declared in Line 1 (Figure~\ref{fig:totranslation})
-to the variable declared in Line 16 (Figure~\ref{fig:translatedcode}).
+and 9 (Figure~\ref{fig:clientcode}). The mapping relation of API
+classes helps translate the variable declared in Line 1
+(Figure~\ref{fig:challenge}) to the variable declared in Line 3
+(Figure~\ref{fig:challenge}).
 
 %\begin{algorithm}[t]
 %\begin{SmallOut}
@@ -156,19 +160,19 @@ method in the other language can be complex. (2) An API
 method of one language can be mapped to more than one API method in the
 other language.
 
-An API transformation graph of a client code method $m$ is a directed graph
-$G\Triple{N_{data}}{N_{m}}{E}$. $N_{data}$ is a set of the fields
-$F$ of $m$'s declaring class, local variables $V$ of $m$, parameters
-$P_1$ of $m$, parameters $P_2$ of methods called by $m$, and return
-values $R$ of all methods. $N_{m}$ is a set of methods called by
-$m$. $E$ is a set of directed edges. An edge $d_1\rightarrow d_2$
-from a datum $d_1 \in N_{data}$ to a datum $d_2 \in N_{data}$
-denotes the data dependency from $d_1$ to $d_2$. An edge $d_1
-\rightarrow m_1$ from a datum $d_1 \in N_{data}$  to a method $ m_1
-\in N_{m}$ denotes $d_1$ is a parameter or a related variable of
-$m_1$. An edge $m_1 \rightarrow d_1$ from a method $m_1 \in N_{m}$
-to a datum $d_1 \in N_{data}$ denotes $d_1$ is the return value of
-$m_1$.
+An API transformation graph of a client code method $m$ is a
+directed graph $G\Triple{N_{data}}{N_{m}}{E}$. $N_{data}$ is a set
+of the fields $F$ of $m$'s declaring class, local variables $V$ of
+$m$, parameters $P_1$ of $m$, parameters $P_2$ of API methods called
+by $m$, and return values $R$ of all methods. $N_{m}$ is a set of
+methods called by $m$. $E$ is a set of directed edges. An edge
+$d_1\rightarrow d_2$ from a datum $d_1 \in N_{data}$ to a datum $d_2
+\in N_{data}$ denotes the data dependency from $d_1$ to $d_2$. An
+edge $d_1 \rightarrow m_1$ from a datum $d_1 \in N_{data}$  to a
+method $ m_1 \in N_{m}$ denotes $d_1$ is a parameter or a related
+variable of $m_1$. An edge $m_1 \rightarrow d_1$ from a method $m_1
+\in N_{m}$ to a datum $d_1 \in N_{data}$ denotes $d_1$ is the return
+value of $m_1$.
 
 %We propose ATG for two main purposes. The first purpose is to mine mapping
 %relations among parameters of mapped API methods. Mining mapping relations
@@ -197,14 +201,14 @@ $m_1$.
 %------------------------------------------------------------------
 \subsubsection{Building API transformation graphs }
 
-Our approach builds an ATG for each method $m$ in the client code. 
-ATG includes information such as inputs 
+Our approach builds an ATG for each method $m$ in the client code.
+ATG includes information such as inputs
 and outputs for each client code method. In particular, for
 each method $m$, our approach first builds subgraphs for its variables,
-API methods, and field accesses. Our approach adds additional edges 
-to the built ATG (and sub-graphs inside ATG) representing 
+API methods, and field accesses. Our approach adds additional edges
+to the built ATG (and sub-graphs inside ATG) representing
 data dependencies among built sub-graphs.
-We use the following rules for adding nodes and edges to ATG. 
+We use the following rules for adding nodes and edges to ATG.
 \Comment{In particular, our approach analyzes source files of a
 client code method statement by statement and adds edges according
 to the rules as follows:}
@@ -322,11 +326,13 @@ Figures~\ref{fig:graph}a and ~\ref{fig:graph}b show partial ATGs for
 C\# (\CodeIn{IndexFiles.cs}) and Java (\CodeIn{IndexFiles.java})
 code examples shown in Figure~\ref{fig:clientcode}, respectively.
 Figure~\ref{fig:graph} also shows corresponding line numbers of each
-sub-graph. Our approach applies Rules 2 and 6 for Lines 4 and 9 (Figure~\ref{fig:clientcode})
-to build corresponding sub-graphs in the ATG. For
-Lines 6 and 7 (Figure~\ref{fig:clientcode}), our approach applies Rules 2 and 8 to build
-corresponding sub-graphs in the ATG. For Lines 12 and 15 (Figure~\ref{fig:clientcode}),
-our approach applies Rule 2, 3, and 6 to build corresponding sub-graphs.
+sub-graph. Our approach applies Rules 2 and 6 for Lines 4 and 9
+(Figure~\ref{fig:clientcode}) to build corresponding sub-graphs in
+the ATG. For Lines 6 and 7 (Figure~\ref{fig:clientcode}), our
+approach applies Rules 2 and 8 to build corresponding sub-graphs in
+the ATG. For Lines 12 and 15 (Figure~\ref{fig:clientcode}), our
+approach applies Rules 2, 3, and 6 to build corresponding
+sub-graphs.
 
 %\begin{algorithm}[t]
 %\begin{SmallOut}
@@ -372,16 +378,16 @@ our approach applies Rule 2, 3, and 6 to build corresponding sub-graphs.
 %--------------------------------------------------------------------
 \subsubsection{Comparing API transformation graphs}
 
-The second sub-step compares each pair of built ATGs for mining mapping
-relations of API methods. Our mapped API methods satisfy three
-criteria: (1) Mapped API methods implement the same
-functionality. (2) Mapping relation describes the relation
-between parameters of mapped API methods. (3) Mapping relation
-describes the relation between return values of
-mapped API methods. The two mapped API methods in two
-different languages satisfying the preceding three criteria
-are replaceable in the client code. Therefore, these mapped API
-methods assist for translating client code from one language to another.
+The second sub-step compares each pair of built ATGs for mining
+mapping relations of API methods. Our mapped API methods satisfy
+three criteria: (1) Mapped API methods implement the same
+functionality. (2) Mapping relation describes the relation between
+parameters and receivers of mapped API methods. (3) Mapping relation
+describes the relation between return values of mapped API methods.
+The two mapped API methods in two different languages satisfying the
+preceding three criteria are replaceable in the client code.
+Therefore, these mapped API methods assist for translating client
+code from one language to another.
 
 Algorithm 2 presents major steps of comparing ATGs for mining
 mapping relations of API methods. Consider two methods $m$ and $m'$
@@ -398,11 +404,11 @@ compute mappings between API methods that use these variables and
 constants. Our algorithm uses the following criteria for mapping two
 API methods $jm$ and $sm$.
 
-\emph{Matching entities}: The first criterion is based on entities such as receiver 
-or parameters of $jm$ and $sm$. We map $jm$ with $sm$, if
-the receiver of API method $jm$ is mapped to the receiver 
-of $sm$, and there is a one-to-one mapping between parameters
-of $jm$ and $sm$.
+\emph{Matching inputs}: The first criterion is based on the inputs
+of $jm$ and $sm$. We map $jm$ with $sm$, if there is a one-to-one
+mapping between parameters of $jm$ and $sm$. Here, our approach
+considers both the receiver and the parameters as the inputs of an
+API method.
 
 \emph{Matching functionalities}: The second criterion is based on functionalities of
 $jm$ and $sm$. We consider that $jm$ and $sm$ implement the same functionality,
@@ -411,7 +417,7 @@ greater than \emph{SIM\_THRESHOLD}.
 
 \emph{Matching outputs:} The third criterion is based on the return values of $jm$ and $sm$.
 Consider the return values of $jm$ and $sm$ as $r_1$ and $r_2$, respectively. We map $jm$
-with $sm$, if the type of $r_1$ is mapped with the type of $r_2$ in 
+with $sm$, if the type of $r_1$ is mapped with the type of $r_2$ in
 mapping relations of API classes.
 
 Our algorithm first attempts to map first API method $jm$ in $m$
@@ -460,16 +466,19 @@ API method, as the return values (shown as \CodeIn{Boolean}) match
 only after the \CodeIn{Exists} API method. Figure~\ref{fig:graph}
 shows Step 3 along with the matching return values.
 
-\emph{S4: mapping functionalities.} After our approach maps parameters and return values,
-this step further maps functionalities of those merged API
-methods. Given two merged API methods with mapped parameters and return values,
-this step uses the similarity measure based of their method names as a criterion
-for matching their functionalities. In the preceding example, this step maps
-the two merged API methods shown in Figure~\ref{fig:graph}a to the
-merged API methods of the \CodeIn{java.io.File.exists()} as all three
-merged API methods include the method named \CodeIn{exists}.
+\emph{Step 4: mapping functionalities.} After our approach maps
+parameters and return values, this step further maps functionalities
+of those merged API methods. Given two merged API methods with
+mapped parameters and return values, this step uses the similarity
+measure based of their method names as a criterion for matching
+their functionalities. In the preceding example, this step maps the
+two merged API methods shown in Figure~\ref{fig:graph}a to the
+merged API methods of the \CodeIn{java.io.File.exists()} as all
+three merged API methods include the method named \CodeIn{exists}.
 
-Our approach applies preceding steps on ATGs
-(as shown in Figures~\ref{fig:graph}a and~\ref{fig:graph}b) and mines
-mapping relations. An example mapping relation from the preceding ATGs is
-shown in Figure~\ref{fig:example}.
+Our approach applies preceding steps on ATGs (as shown in
+Figures~\ref{fig:graph}a and~\ref{fig:graph}b). After finding out
+the matched pair of API methods as shown in Figure~\ref{fig:graph},
+our approach merges all variables and outputs to corresponding
+parameters and receivers and produces the mapping relation of API
+method as shown in Figure~\ref{fig:example}.

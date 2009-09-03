@@ -4,14 +4,14 @@
 We next discuss issues in our approach and describe how we address
 these issues in our future work.
 
-\textbf{Aligning client code.} Table~\ref{table:analyzingclient} shows that our approach could not
-align client code in a few cases. The primary reason is that
-the functionality associated with a class or a method in one language
-version is split among multiple classes or methods in the other language
-version. In future work, we plan to address this issue by aligning
-classes based on their functionalities rather than by matching their names.
-We plan to develop a dynamic approach based on Jiang and Su~\cite{jiang2009automatic}
-to align classes and methods that are not aligned by our current static approach.
+\textbf{Aligning client code.} Table~\ref{table:analyzingclient}
+shows that our approach could not align client code in a few cases.
+The primary reason is that the functionality associated with a class
+or a method in one language version is split among multiple classes
+or methods in the other language version. To address this issue, we
+plan to align classes and methods of client code based on their
+functionalities through developing or adapting dynamic approaches
+such as Jiang and Su~\cite{jiang2009automatic} in future work.
 
 \begin{figure}[t]
 \centering
@@ -27,11 +27,10 @@ provide sufficient code examples for mining mapping relations of all
 APIs in J2SE. Our previous
 work~\cite{thummalapenta07parseweb,thummalapentaase08spotweb} show
 that it is feasible to use large-scale repositories available on the
-web as subjects. These large-scale repositories can be used for
-mining with the help of code search engines such as Google code
-search\footnote{\url{http://www.google.com/codesearch}}. In future
-work, we plan to leverage these code search engines to mine richer
-API mapping.
+web as subjects with the help of code search engines such as Google
+code search\footnote{\url{http://www.google.com/codesearch}}. In
+future work, we plan to leverage these code search engines to mine
+richer API mapping.
 
 %(@Hao: This ranking mined mapping relations sound very trivial. Can we ignore this?)
 %\textbf{Ranking mined mapping relations.} When comparing with the
@@ -47,18 +46,19 @@ API mapping.
 %supports generic programming. We plan to develop ranking techniques
 %to address this issue in future work.
 
-\textbf{Mining many-to-many mapping relations of API methods.}
-Among our mined mapping relations of API methods, majority of
-the relations are one-to-one relations. The reason is that our Algorithm 2
-uses only forward analysis for merging API methods. We explain this
-issue using an illustrative example shown in Figure~\ref{fig:n2n}.
-After merging API methods \CodeIn{method1} and \CodeIn{method2},
-if our algorithm still not able to map the merged API methods with an API method in the
-other language, our algorithm attempts to merge \CodeIn{method3} rather than
-\CodeIn{method4}, which could be a possible candidate for mining
-the mapping relation. In future work, we plan to incorporate
-backward analysis to enhance our existing algorithm. We expect
-that our enhanced algorithm can mine more many-to-many mapping relations.
+\textbf{Mining many-to-many mapping relations of API methods.} Among
+our mined mapping relations of API methods, many relations are
+one-to-one relations. The reason is that our Algorithm 2 uses only
+forward analysis for merging API methods. We explain this issue
+using an illustrative example shown in Figure~\ref{fig:n2n}. After
+merging API methods \CodeIn{method1} and \CodeIn{method2}, if our
+algorithm still not able to map the merged API methods with an API
+method in the other language, our algorithm attempts to merge
+\CodeIn{method3} rather than \CodeIn{method4}, which could be a
+possible candidate for mining the mapping relation. In future work,
+we plan to incorporate backward analysis to enhance our existing
+algorithm. We expect that our enhanced algorithm can mine more
+many-to-many mapping relations.
 
 \textbf{Migrating many-to-many mapping relations of API methods.}
 A mined many-to-many mapping relation of API methods can have multiple outputs
