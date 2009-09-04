@@ -1,0 +1,356 @@
+\vspace{-2ex}
+
+\section{Experimental Design}
+\label{Experiment}
+
+In this section, we first present the research questions in our
+study. Then, we describe the experimented techniques, the tool we
+used to obtain mutants, the subject programs, and the way we
+measure each technique. Finally, we describe the details of our
+experimental procedure.
+
+\vspace{-1ex}
+\subsection{Research Questions}
+\label{Questions}
+
+In our study, we investigate the following research questions:
+
+\begin{itemize}
+\vspace{-1ex}
+
+\item \textbf{RQ1}: How does operator-based mutant selection
+compare with random mutant selection in terms of average
+effectiveness?\vspace{-1ex}
+
+\item \textbf{RQ2}: How does operator-based mutant selection
+compare with random mutant selection in terms of
+stability?\vspace{-1ex}
+
+\end{itemize}
+
+\subsection{Experimented Techniques}
+\label{Techniques}
+
+In our study, we experimented three operator-based
+mutant-selection techniques (i.e., Offutt et al.'s 5 mutation
+operators~\cite{Offutt:96}, Barbosa et al.'s 10 mutation
+operators~\cite{Barbosa:01}, and Siami Namin et al.'s 28 mutation
+operators~\cite{SiamiNamin:08})\footnote{As Wong and Mathur's two
+mutation operators~\cite{Wong:93,Wong:95} are among Offutt et
+al.'s five mutation operators~\cite{Offutt:96} and Offutt et al.
+showed that any subset of the five mutation operators is not
+sufficient, we did not empirically compare Wong and Mathur's two
+mutation operators in our study.} and two random mutant-selection
+techniques.
+
+Given a number (denoted as $u$), the first random mutant-selection
+technique is to randomly select $u$ mutants. This technique is
+basically the $x$\%-random technique studied by Wong and
+Mathur~\cite{Wong:93,Wong:95}. The second random mutant-selection
+technique employs two steps when selecting each mutant. The first
+step randomly selects a mutation operator, and the second step
+randomly selects a mutant that is generated with the selected
+mutation operator. Using the two steps, the second random
+technique continually selects one mutant that has not been
+selected previously until $u$ mutants are selected. In this paper,
+we refer to the first random technique as the $one$-$round$
+$random$ and the second random technique as the $two$-$round$
+$random$. For the $one$-$round$ $random$, the probability of
+selecting each mutant is equal; but for the $two$-$round$
+$random$, the number of selected mutants that are produced by each
+mutation operator is about the same.
+
+\vspace{-1ex}
+\subsection{Supporting Tool}
+\label{Tool}
+
+In our study, we used Proteum~\cite{Delamaro:96}, which is a
+mutation system implementing a comprehensive set of mutation
+operators for C programs, to generate mutants for each subject.
+The version of Proteum used in our study supports 108 mutation
+operators, including traditional mutation
+operators~\cite{Agrawal:06} and interface mutation
+operators~\cite{Delamaro:01}. As the 108 mutation operators
+include Offutt et al.'s five mutation operators\footnote{Offutt et
+al.'s five mutation operators are defined on programs in
+Fortran-77. Agrawal et al.~\cite{Agrawal:06} list the mutation
+operators in Proteum that correspond to Offutt et al.'s five
+mutation operators.}, Barbosa et al.'s 10 mutation operators, and
+Siami Namin et al.'s 28 mutation operators, we are able to use
+Proteum to compare random mutant selection with all the three
+operator-based mutant-selection techniques.
+
+\vspace{-1ex}
+\subsection{Subject Programs}
+\label{Subjects}
+
+\begin{table}[t]
+\caption{\label{tab:Subjects} Statistics of subjects} \centering
+\hspace*{-0.2cm}
+\begin{tabular}{|p{5.4em}|p{1.8em}|p{3.5em}|p{1.9em}|p{3.2em}|p{4.1em}|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  ~ & ~ &Net  & Test & ~ & Non-\\
+  ~ & ~ & Lines of  &  Pool  & All & Equivalent\\
+  Program & Abb. & Code & Size & Mutants & Mutants\\
+  \hline
+  print\_tokens &PT&343 &4130 &11741 &9326\\
+  \hline
+  print\_tokens2 &PT2&355 &4115 &10266 &8664\\
+  \hline
+  replace &RE&513 &5542 &23847 &19861\\
+  \hline
+  schedule &SC&296 &2650 &4130 &3670 \\
+  \hline
+  schedule2 &SC2&263 &2710 &6552 &4832 \\
+  \hline
+  tcas &TC&137 &1608 &4935 &4069\\
+  \hline
+  tot\_info &TI&281 &1052 &8767 &7876\\
+  \hline
+\end{tabular}
+\vspace{-4ex}
+\end{table}
+
+The subjects used in our study are the Siemens programs. The
+Siemens programs include seven C programs whose numbers of net
+lines of code (not counting whitespace and commenting lines) range
+from 137 to 513. Hutchins et al.~\cite{Hutchins:94} first
+introduced the Siemens programs in 1994, and after that many
+researchers (e.g., Rothermel et
+al.~\cite{Rothermel:98,Rothermel:99}, Elbaum et
+al.~\cite{Elbaum:00}, Li et al.~\cite{Li:07}, Jones et
+al.~\cite{Jones:05}, and Andrews et
+al.~\cite{Andrews:05,SiamiNamin:08}) used the Siemens programs as
+subjects in testing experiments. In particular, a recent study on
+mutant selection by Siami Namin et al.~\cite{SiamiNamin:08} used
+only the Siemens programs as subjects. For each of the Siemens
+programs, Hutchins et al. provided a test pool, and Rothermel et
+al.~\cite{Rothermel:98} augmented the test pool through manually
+adding some white-box test cases. After augmentation, the test
+pool for each program ensures that ``each executable statement,
+edge, and definition-use pair in the base program or its control
+flow graph was exercised by at least 30 test
+cases"~\cite{Rothermel:98}. Table~\ref{tab:Subjects} depicts the
+statistics of the subjects. Note that the second column in
+Table~\ref{tab:Subjects} lists the abbreviations of the seven
+subjects, and we use these abbreviations to denote the subjects
+when presenting our experimental results in Section~\ref{Results}.
+
+Similar to Siami Namin et al.~\cite{SiamiNamin:08}, we considered
+the following three reasons when choosing our subjects. First, the
+Siemens programs contain typical structures that also appear in
+various large programs in C. Thus, findings on these subjects are
+very likely to generalize to other programs. Second, there is a
+large test pool for each of the Siemens programs. As measuring the
+effectiveness of selected mutants relies on the use of different
+test suites (see Section~\ref{Measurement} for the details of
+measurement in our study), a large test pool allows us to
+construct a large number of test suites containing different test
+cases. Third, as Proteum generates a large number of mutants for
+even a small program, using programs significantly larger than the
+Siemens programs as subjects may result in huge computational
+cost. Actually, beside Siami Namin et al.~\cite{SiamiNamin:08},
+who used only less than one third of the mutants that Proteum
+generates for the Siemens programs\footnote{Except for the
+smallest subject (i.e., $tcas$), Siami Namin et
+al.~\cite{SiamiNamin:08} used 2000 mutants for each other
+subject.}, other researchers (i.e., Wong~\cite{Wong:93}, Offutt et
+al.~\cite{Offutt:96}, and Barbosa et al.~\cite{Barbosa:01}) used
+programs much smaller than the Siemens programs for evaluating
+mutant-selection techniques.
+
+
+\vspace{-1ex}
+\subsection{Measurement}
+\label{Measurement}
+
+As our study is in the context of mutation testing, we adopted a
+metric that researchers used to evaluate the effectiveness of
+mutant-selection techniques in previous studies (e.g., Wong and
+Mathur~\cite{Wong:93,Wong:95}, Offutt et al.~\cite{Offutt:96}, and
+Barbosa et al.~\cite{Barbosa:01}). Given a program (denoted as
+$P$) and a set of mutants (denoted as $AM$) generated for $P$ with
+all mutation operators, we removed equivalent mutants from $AM$
+and acquired a set of non-equivalent mutants (denoted as $NEM$).
+When evaluating a mutant-selection technique (denoted as $T$), we
+used $T$ to select mutants from $NEM$, and denote the set of
+selected non-equivalent mutants as $M_T$. To evaluate the
+effectiveness of $T$, we create a series of test suites (denoted
+as $\{ts_1, ts_2, ..., ts_n\}$), each of which can kill all
+mutants in $M_T$. If we denote the subset of mutants in $NEM$ that
+can be killed by $ts_i$ ($1\leq$$i$$\leq$$n$) as
+$Killed_{NEM}(ts_i)$, we used Formula~\ref{form:Measurement} to
+measure the effectiveness of $T$.\vspace{-2ex}
+
+\begin{equation}\label{form:Measurement}
+    Eff(T)=\frac{\sum_{i=1}^n {\frac{|Killed_{NEM}(ts_i)|}{|NEM|}}}{n}
+\end{equation}
+\vspace{-2ex}
+
+Intuitively, this metric measures the effectiveness of $T$ as the
+representativeness of the set of non-equivalent mutants selected
+by $T$ for the whole set of non-equivalent mutants $NEM$. As the
+aim of mutation testing is to provide a test-adequacy criterion,
+this metric measures the representativeness of $M_T$ for $NEM$ as
+the representativeness of the test-adequacy criterion based on
+$M_T$ for the test-adequacy criterion based on $NEM$. Thus, the
+closer $Eff(T)$ is to 1.0, the more effective $T$ is. When
+$Eff(T)$ is equal to 1.0, technique $T$ is able to select a subset
+of mutants that fully represent the whole set of non-equivalent
+mutants.
+
+As measuring the effectiveness of a subset of mutants in each
+experiment requires a series of test suites, we used a procedure
+similar to the procedure used by Offutt et al.~\cite{Offutt:96} to
+construct the test suites. That is to say, for a subset of
+mutants, we continually selected $k$ test cases from the test pool
+until the test suite composed of all the selected test cases is
+able to kill all the mutants in the subset. Offutt et
+al.~\cite{Offutt:96} selected 200 (i.e., $k$=200) test cases each
+time when constructing such a test suite. That is to say, the
+numbers of test cases in test suites used by Offutt et al. are
+multiples of 200 (i.e., 200, 400, 600, etc.). Actually, Offutt et
+al. used this way of test-suite construction to simulate the
+situation of applying mutation testing as a test-adequacy
+criterion, and the number of test cases selected each time
+represents an incremental of test cases in the process of building
+up each test suite for evaluating mutant selection. Considering
+that testers may use different incremental numbers to create the
+test suite, we used four different incremental numbers (i.e.,
+$k$=25, 50, 100, and 200) including Offutt et al.'s incremental
+number. Note that one mutant-selection technique may achieve very
+different effectiveness values using test suites created with
+different incremental numbers. In our study, given an incremental
+number, we constructed 50 test suites when measuring the
+effectiveness of a subset of selected mutants.
+
+\begin{table*}[t]
+\caption{\label{tab:Ran-Offutt} Offutt et al.'s technique v.s.
+random mutant selection} \centering \hspace*{-0.8cm}
+\begin{tabular}{|c||c|c||c|c||c|c||c|c||c|c||c|c||c|c||c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Incr&\multicolumn{2}{|c||}{Program}
+  &\multicolumn{2}{|c||}{PT}&\multicolumn{2}{|c||}{PT2}&\multicolumn{2}{|c||}{RE}&\multicolumn{2}{|c||}{SC}&\multicolumn{2}{|c||}{SC2}&\multicolumn{2}{|c||}{TC}&\multicolumn{2}{|c|}{TI}\\
+  \cline{2-17}
+  ~&\multicolumn{2}{|c||}{Result}
+  &Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Offutt et al.}&99.11&0.27&99.84&0.17&99.09&0.29&99.94&0.07&99.29&0.23&99.54&0.21&99.57&0.32\\
+  \cline{2-17}
+  ~&one-&50\%&99.09&0.21&99.52&0.14&99.20&0.15&99.11&0.38&99.09&0.29&98.16&0.49&99.76&0.11\\
+  \cline{3-17}
+  ~&round&75\%&99.35&0.16&99.74&0.10&99.48&0.09&99.44&0.26&99.21&0.25&98.56&0.37&99.84&0.07\\
+  \cline{3-17}
+  25&random&100\%&99.52&0.12&99.79&0.08&99.57&0.07&99.58&0.18&99.44&0.17&98.81&0.30&99.87&0.05\\
+  \cline{2-17}
+  ~&two-~&50\%&98.60&0.28&99.40&0.16&99.04&0.19&99.38&0.24&99.03&0.30&98.15&0.59&99.67&0.15\\
+  \cline{3-17}
+  ~&round&75\%&99.02&0.22&99.58&0.12&99.30&0.14&99.50&0.20&99.32&0.23&98.66&0.34&99.77&0.11\\
+  \cline{3-17}
+  ~&random&100\%&99.18&0.19&99.70&0.10&99.40&0.11&99.59&0.17&99.52&0.18&98.86&0.30&99.80&0.10\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Offutt et al.}&99.26&0.21&99.91&0.13&99.27&0.20&99.97&0.04&99.40&0.23&99.68&0.11&99.66&0.17\\
+  \cline{2-17}
+  ~&one-&50\%&99.14&0.21&99.58&0.12&99.42&0.12&99.31&0.34&99.17&0.27&98.62&0.44&99.79&0.11\\
+  \cline{3-17}
+  ~&round&75\%&99.47&0.15&99.79&0.08&99.57&0.08&99.53&0.25&99.32&0.23&98.95&0.33&99.88&0.06\\
+  \cline{3-17}
+  50&random&100\%&99.60&0.12&99.89&0.06&99.61&0.08&99.62&0.20&99.58&0.15&99.13&0.25&99.90&0.06\\
+  \cline{2-17}
+  ~&two-~&50\%&98.68&0.30&99.48&0.14&99.22&0.16&99.48&0.23&99.32&0.25&98.60&0.50&99.73&0.14\\
+  \cline{3-17}
+  ~&round&75\%&99.18&0.22&99.67&0.10&99.37&0.14&99.64&0.17&99.46&0.20&98.95&0.32&99.80&0.11\\
+  \cline{3-17}
+  ~&random&100\%&99.28&0.21&99.77&0.08&99.53&0.09&99.68&0.14&99.65&0.14&99.18&0.25&99.90&0.06\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Offutt et al.}&99.34&0.23&99.97&0.05&99.54&0.18&99.98&0.02&99.62&0.21&99.80&0.13&99.74&0.20\\
+  \cline{2-17}
+  ~&one-&50\%&99.32&0.20&99.66&0.11&99.53&0.10&99.43&0.34&99.36&0.25&98.99&0.38&99.83&0.10\\
+  \cline{3-17}
+  ~&round&75\%&99.56&0.15&99.77&0.08&99.65&0.08&99.65&0.21&99.52&0.19&99.23&0.28&99.92&0.05\\
+  \cline{3-17}
+  100&random&100\%&99.62&0.13&99.93&0.04&99.71&0.07&99.73&0.15&99.68&0.14&99.37&0.23&99.94&0.04\\
+  \cline{2-17}
+  ~&two-~&50\%&99.00&0.27&99.46&0.15&99.36&0.15&99.60&0.20&99.44&0.23&99.05&0.38&99.74&0.17\\
+  \cline{3-17}
+  ~&round&75\%&99.20&0.23&99.59&0.12&99.50&0.12&99.70&0.16&99.69&0.15&99.32&0.25&99.88&0.08\\
+  \cline{3-17}
+  ~&random&100\%&99.46&0.19&99.76&0.08&99.61&0.10&99.75&0.12&99.72&0.13&99.45&0.21&99.90&0.06\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Offutt et al.}&99.54&0.26&99.97&0.07&99.65&0.17&99.99&0.01&99.60&0.18&99.89&0.11&99.76&0.20\\
+  \cline{2-17}
+  ~&one-&50\%&99.46&0.20&99.72&0.08&99.63&0.11&99.64&0.25&99.54&0.22&99.26&0.35&99.93&0.06\\
+  \cline{3-17}
+  ~&round&75\%&99.59&0.17&99.83&0.07&99.73&0.09&99.75&0.16&99.62&0.17&99.47&0.27&99.94&0.05\\
+  \cline{3-17}
+  200&random&100\%&99.79&0.09&99.92&0.04&99.83&0.06&99.78&0.13&99.75&0.13&99.60&0.21&99.95&0.04\\
+  \cline{2-17}
+  ~&two-~&50\%&99.15&0.28&99.61&0.12&99.48&0.14&99.70&0.18&99.65&0.18&99.31&0.33&99.84&0.12\\
+  \cline{3-17}
+  ~&round&75\%&99.35&0.25&99.73&0.09&99.65&0.10&99.77&0.14&99.78&0.12&99.54&0.23&99.89&0.08\\
+  \cline{3-17}
+  ~&random&100\%&99.57&0.19&99.85&0.06&99.71&0.09&99.82&0.10&99.81&0.11&99.63&0.20&99.93&0.05\\
+  \hline
+\end{tabular}
+\vspace{-4ex}
+\end{table*}
+
+\vspace{-1ex}
+\subsection{Experimental Procedure}
+\label{Procedure}
+
+For each subject, we used all the 108 mutation operators in
+Proteum to generate mutants. The fifth column in
+Table~\ref{tab:Subjects} lists the number of all the generated
+mutants for each subject.
+
+After acquiring all the mutants, for each subject, we executed
+each test case in the test pool of the subject against each mutant
+of the subject and the subject in the original form. Thus, we
+acquired the information of which mutants are killed by which test
+cases for each subject. Similar to Siami Namin et
+al.~\cite{SiamiNamin:08}, we deemed mutants that cannot be killed
+by any test case as equivalent mutants in our study. The last
+column in Table~\ref{tab:Subjects} lists the number of
+non-equivalent mutants for each subject.
+
+For a subject, different operator-based mutant-selection
+techniques select different numbers of mutants. Thus, it is
+difficult for us to compare random mutant selection with all the
+three techniques on the same ground. Therefore, we used the
+following way to compare an operator-based mutant-selection
+technique with random mutant-selection.
+
+When comparing an operator-based mutant-selection technique
+(denoted as $T$) with random mutant selection on one subject, we
+used $T$ to select a subset of mutants (denoted as $M_T$) from all
+the non-equivalent mutants (denoted as $NEM$) of the subject. To
+compare $T$ with random mutant selection, we used each random
+mutant-selection technique to select a series of subsets of
+mutants from $NEM$, each subset containing $50\%*|M_T|$,
+$75\%*|M_T|$, and $100\%*|M_T|$ mutants. To reduce accidental
+results, for each random technique and each size of subsets, we
+randomly selected $m$ subsets of the same size. That is to say,
+for each subject and each random technique, we randomly selected
+$m$ subsets each containing $50\%*|M_T|$ mutants, $m$ subsets each
+containing $75\%*|M_T|$ mutants, and $m$ subsets each containing
+$100\%*|M_T|$ mutants. After acquiring the subsets of mutants
+selected with $T$ and the random mutant-selection techniques, we
+used the metric defined in Section~\ref{Measurement} to calculate
+the effectiveness of each technique. For each random technique and
+each size of subsets (e.g., using a random technique to select
+$100\%*|M_T|$ mutants), we used the average effectiveness of the
+$m$ subsets as the effectiveness of that technique with that size.
+In our study, we set the value of $m$ as 50, which is large enough
+to avoid accidental results.
+
+As we used 50 test suites to measure the effectiveness of each
+technique and we randomly selected 50 subsets of mutants for each
+random technique, we further studied the stability of each
+technique in terms of standard deviation of its effectiveness.

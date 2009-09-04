@@ -1,0 +1,138 @@
+\vspace{-2ex}
+\section{Discussion}
+\label{Discussion}
+
+In this section, we discuss the following issues related to our
+study: threats to validity, cost of mutant selection, and some
+further implications of our experimental results.
+
+\vspace{-1.5ex}
+\subsection{Threats to Validity}
+\label{Threats} \vspace{-1.5ex}
+\subsubsection{Internal Validity}
+\label{Internal}
+
+Threats to internal validity are concerned with uncontrolled
+factors that may also be responsible for the results. In our
+study, the main threat to internal validity is the possible faults
+in our experiments and result analysis. To reduce this threat, we
+used Proteum for mutant generation. Furthermore, we reviewed all
+the code that we produced for our experiments and analysis before
+conducting the experiments. Note that the experimented techniques
+are all straightforward to implement and their implementation is
+thus less likely to threaten the internal validity.
+
+\vspace{-1.5ex}
+\subsubsection{External Validity}
+\label{External}
+
+Threats to external validity are concerned with whether the
+findings in our study are generalizable for other situations. The
+main threat to external validity lies in the representativeness of
+the subjects. To reduce this threat, we chose seven subjects
+written in C and these subjects contain a wide range of data and
+control structures commonly used in C (or even C++ and Java)
+programs~\cite{SiamiNamin:08}. Conducting more experiments using
+more subjects of larger sizes and with structures not contained in
+our subjects is one way to further reduce this threat. Note that,
+when experimenting with subjects containing object-oriented
+structures, mutation operators on these structures~\cite{Ma:05}
+should also be considered.
+
+\vspace{-1.5ex}
+\subsubsection{Construct Validity}
+\label{Construct}
+
+Threats to construct validity are concerned with whether the
+measurement in our study reflects real-world situations. The main
+threat to construct validity is the way we measured the
+effectiveness of selected mutants. To reduce this threat, we used
+a metric commonly used by previous studies, such as Offutt et
+al.~\cite{Offutt:96} and Barbosa et al.~\cite{Barbosa:01}. Further
+reduction of this threat requires the design of better metrics to
+assess the effectiveness of selected mutants in mutation testing.
+The metric used in our study actually measures to what extent the
+selected mutants are representative for mutants generated with all
+the mutation operators, but users of mutant-selection techniques
+may be more concerned with the representativeness of the selected
+mutants for real bugs. Furthermore, the metric used in our study
+requires a series of randomly created test suites, but test suites
+used in practice may not be created randomly.
+
+\vspace{-1.5ex}
+\subsection{Cost of Mutant Selection}
+\label{Cost}
+
+According to Offutt et al.~\cite{Offutt:96}, the expensiveness of
+mutation testing mainly lies in the need to compile and execute a
+large number of mutants against each test case. Compared with the
+cost of compiling and executing mutants, the cost of mutant
+selection is typically very small. In our study, we used Proteum
+as the platform for mutant selection. In particular, we ran
+Proteum on a PC with a Genuine Intel CPU T1400 at 1.83GHz and 1GB
+memory running SUSE Linux (version 2.6.25.5-1.1) with the $tcsh$
+shell (version 6.15.00). For each subject, Proteum generated the
+selected mutants in a few seconds. For the smallest subject (i.e.,
+$tcas$), the time is less than one second; for the largest subject
+(i.e., $replace$), the time is less than four seconds; for each
+other subject, the time is less than two seconds. But the total
+time for us to compile and execute all the mutants for all the
+seven subjects against all the test cases under the same hardware
+and software environment is about one month CPU time. Note that
+Offutt et al.'s, Barbosa et al.'s, and Siami Namin et al.'s
+techniques averagely select 7.28\%, 16.04\%, and 7.42\% mutants
+respectively. That is to say, compiling and executing mutants
+selected by one of the three operator-based mutant-selection
+techniques for all the seven subjects against all the test cases
+may take two to five days. As a result, for either operator-based
+mutant selection or random mutant selection, there is little
+difference in the cost of mutant selection.
+
+One issue we may need to consider is the way that Barbosa et al.'s
+and Siami Namin et al.'s techniques use to determine mutant
+operators. In particular, both techniques determine the set of
+sufficient mutation operators using training data acquired through
+compiling and executing mutants against test cases. That is to
+say, both techniques may require some extra cost besides compiling
+and executing the selected mutants. However, as their
+cross-validation indicates that the set of sufficient mutation
+operators determined with some programs may also be applicable for
+other programs, the extra cost of either Barbosa et al.'s
+technique or Siami Namin et al.'s technique should be considerably
+small.
+
+\vspace{-1.5ex}
+\subsection{Further Implications}
+\label{Implications}
+
+Based on the findings of our study, we have the following
+implications.
+
+First, as the three operator-based mutant-selection techniques are
+not superior to the two random mutant-selection techniques in
+terms of either effectiveness or stability, random
+mutant-selection techniques may be a better choice in practice due
+to their flexibility in controlling the number of selected
+mutants. Note that random mutant-selection techniques can achieve
+similar effectiveness and stability even when selecting much fewer
+mutants.
+
+Second, the findings in our study also imply that we may need much
+fewer mutants in mutation testing than those selected by existing
+operator-based mutant-selection techniques. That is to say, it is
+very likely to invent new mutant-selection techniques to select
+much fewer mutants but with similar or even better effectiveness
+and stability. Random mutant selection may be a good starting
+point.
+
+Third, considering the nature of random mutant selection, the
+following difference between random mutant selection and
+operator-based mutant selection may be an explanation of the
+surprisingly good results of random mutant selection. Random
+mutant selection selects mutants on the basis of individual
+mutants, but operator-based mutant selection needs to include or
+exclude all the mutants generated with one mutation operator as a
+whole. If this difference accounts for the goodness of random
+mutant selection, techniques that both consider the difference in
+operators and select mutants individually may outperform existing
+random and operator-based mutant-selection techniques.

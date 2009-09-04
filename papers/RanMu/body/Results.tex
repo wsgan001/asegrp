@@ -1,0 +1,435 @@
+
+
+
+\begin{table*}[t]
+\caption{\label{tab:Ran-Barbosa} Barbosa et al.'s technique v.s.
+random mutant selection} \centering \hspace*{-0.8cm}
+\begin{tabular}{|c||c|c||c|c||c|c||c|c||c|c||c|c||c|c||c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Incr&\multicolumn{2}{|c||}{Program}
+  &\multicolumn{2}{|c||}{PT}&\multicolumn{2}{|c||}{PT2}&\multicolumn{2}{|c||}{RE}&\multicolumn{2}{|c||}{SC}&\multicolumn{2}{|c||}{SC2}&\multicolumn{2}{|c||}{TC}&\multicolumn{2}{|c|}{TI}\\
+  \cline{2-17}
+  ~&\multicolumn{2}{|c||}{Result}
+  &Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Barbosa et al.}&99.20&0.21&99.89&0.13&99.42&0.18&99.97&0.02&99.73&0.13&99.57&0.13&99.62&0.23\\
+  \cline{2-17}
+  ~&one-&50\%&99.61&0.10&99.91&0.04&99.64&0.06&99.50&0.21&99.45&0.18&98.93&0.26&99.85&0.07\\
+  \cline{3-17}
+  ~&round&75\%&99.73&0.07&99.93&0.03&99.75&0.05&99.60&0.18&99.61&0.14&99.26&0.19&99.91&0.04\\
+  \cline{3-17}
+  25&random&100\%&99.80&0.05&99.94&0.03&99.81&0.04&99.76&0.11&99.73&0.10&99.45&0.15&99.92&0.04\\
+  \cline{2-17}
+  ~&two-~&50\%&99.39&0.16&99.86&0.06&99.54&0.09&99.59&0.16&99.46&0.19&99.01&0.25&99.79&0.10\\
+  \cline{3-17}
+  ~&round&75\%&99.65&0.11&99.93&0.03&99.66&0.05&99.70&0.11&99.68&0.13&99.30&0.18&99.85&0.07\\
+  \cline{3-17}
+  ~&random&100\%&99.78&0.08&99.94&0.03&99.75&0.05&99.76&0.09&99.77&0.09&99.47&0.15&99.91&0.04\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Barbosa et al.}&99.31&0.23&99.96&0.05&99.60&0.19&99.98&0.02&99.82&0.11&99.70&0.14&99.73&0.20\\
+  \cline{2-17}
+  ~&one-&50\%&99.68&0.10&99.94&0.04&99.71&0.06&99.63&0.18&99.46&0.19&99.29&0.22&99.88&0.06\\
+  \cline{3-17}
+  ~&round&75\%&99.78&0.07&99.96&0.02&99.80&0.04&99.74&0.13&99.72&0.11&99.47&0.17&99.92&0.04\\
+  \cline{3-17}
+  50&random&100\%&99.83&0.05&99.97&0.02&99.85&0.04&99.75&0.11&99.78&0.09&99.61&0.14&99.95&0.03\\
+  \cline{2-17}
+  ~&two-~&50\%&99.49&0.17&99.89&0.04&99.57&0.08&99.67&0.15&99.61&0.16&99.27&0.22&99.85&0.08\\
+  \cline{3-17}
+  ~&round&75\%&99.69&0.10&99.96&0.02&99.73&0.05&99.74&0.12&99.74&0.12&99.53&0.16&99.91&0.05\\
+  \cline{3-17}
+  ~&random&100\%&99.82&0.08&99.97&0.02&99.79&0.04&99.80&0.09&99.82&0.08&99.67&0.13&99.93&0.04\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Barbosa et al.}&99.45&0.21&99.96&0.07&99.66&0.17&99.99&0.02&99.84&0.12&99.84&0.11&99.77&0.16\\
+  \cline{2-17}
+  ~&one-&50\%&99.77&0.09&99.96&0.02&99.78&0.06&99.69&0.17&99.62&0.16&99.48&0.20&99.92&0.05\\
+  \cline{3-17}
+  ~&round&75\%&99.86&0.06&99.97&0.02&99.84&0.04&99.77&0.13&99.77&0.11&99.63&0.16&99.94&0.04\\
+  \cline{3-17}
+  100&random&100\%&99.88&0.04&99.97&0.02&99.89&0.03&99.84&0.09&99.84&0.09&99.78&0.11&99.96&0.03\\
+  \cline{2-17}
+  ~&two-~&50\%&99.61&0.16&99.94&0.03&99.70&0.07&99.74&0.12&99.65&0.16&99.54&0.19&99.89&0.07\\
+  \cline{3-17}
+  ~&round&75\%&99.79&0.09&99.96&0.02&99.79&0.05&99.78&0.10&99.83&0.09&99.71&0.14&99.91&0.06\\
+  \cline{3-17}
+  ~&random&100\%&99.87&0.06&99.98&0.02&99.84&0.04&99.84&0.08&99.89&0.06&99.80&0.11&99.94&0.04\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Barbosa et al.}&99.61&0.24&99.99&0.01&99.80&0.15&99.99&0.01&99.90&0.06&99.89&0.11&99.79&0.20\\
+  \cline{2-17}
+  ~&one-&50\%&99.82&0.09&99.96&0.02&99.83&0.06&99.78&0.14&99.70&0.15&99.63&0.20&99.95&0.04\\
+  \cline{3-17}
+  ~&round&75\%&99.89&0.05&99.99&0.01&99.89&0.04&99.83&0.09&99.87&0.08&99.82&0.13&99.96&0.03\\
+  \cline{3-17}
+  200&random&100\%&99.92&0.04&99.98&0.01&99.92&0.03&99.89&0.07&99.87&0.08&99.87&0.10&99.97&0.03\\
+  \cline{2-17}
+  ~&two-~&50\%&99.71&0.15&99.95&0.03&99.77&0.08&99.81&0.11&99.81&0.11&99.67&0.18&99.90&0.07\\
+  \cline{3-17}
+  ~&round&75\%&99.87&0.07&99.99&0.01&99.85&0.05&99.86&0.08&99.90&0.07&99.82&0.13&99.95&0.04\\
+  \cline{3-17}
+  ~&random&100\%&99.92&0.05&99.98&0.01&99.89&0.04&99.88&0.08&99.93&0.05&99.88&0.10&99.96&0.03\\
+  \hline
+\end{tabular}
+\vspace{-4ex}
+\end{table*}
+
+
+\begin{table*}[t]
+\caption{\label{tab:Ran-SiamiNamin} Siami Namin et al.'s technique
+v.s. random mutant selection} \centering \hspace*{-0.8cm}
+\begin{tabular}{|c||c|c||c|c||c|c||c|c||c|c||c|c||c|c||c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Incr&\multicolumn{2}{|c||}{Program}
+  &\multicolumn{2}{|c||}{PT}&\multicolumn{2}{|c||}{PT2}&\multicolumn{2}{|c||}{RE}&\multicolumn{2}{|c||}{SC}&\multicolumn{2}{|c||}{SC2}&\multicolumn{2}{|c||}{TC}&\multicolumn{2}{|c|}{TI}\\
+  \cline{2-17}
+  ~&\multicolumn{2}{|c||}{Result}
+  &Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev&Eff&Dev\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Siami Namin et al.}&99.71&0.14&99.95&0.02&99.36&0.11&99.60&0.13&99.60&0.19&97.58&0.54&98.94&0.32\\
+  \cline{2-17}
+  ~&one-&50\%&99.30&0.17&99.70&0.10&99.24&0.14&99.11&0.37&98.99&0.30&98.23&0.48&99.68&0.14\\
+  \cline{3-17}
+  ~&round&75\%&99.47&0.13&99.80&0.07&99.42&0.12&99.40&0.26&99.17&0.29&98.60&0.38&99.75&0.12\\
+  \cline{3-17}
+  25&random&100\%&99.57&0.10&99.89&0.05&99.56&0.08&99.49&0.21&99.43&0.18&98.94&0.27&99.85&0.07\\
+  \cline{2-17}
+  ~&two-~&50\%&98.71&0.26&99.61&0.11&99.01&0.18&99.20&0.31&99.08&0.26&98.30&0.46&99.57&0.19\\
+  \cline{3-17}
+  ~&round&75\%&99.13&0.21&99.67&0.10&99.26&0.14&99.49&0.20&99.34&0.21&98.70&0.32&99.71&0.13\\
+  \cline{3-17}
+  ~&random&100\%&99.38&0.16&99.85&0.06&99.37&0.11&99.59&0.16&99.51&0.18&98.97&0.27&99.72&0.14\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Siami Namin et al.}&99.81&0.10&99.97&0.02&99.47&0.11&99.66&0.13&99.64&0.19&98.08&0.5&99.16&0.42\\
+  \cline{2-17}
+  ~&one-&50\%&99.31&0.17&99.83&0.08&99.38&0.12&99.21&0.41&99.13&0.28&98.72&0.42&99.81&0.09\\
+  \cline{3-17}
+  ~&round&75\%&99.53&0.13&99.85&0.06&99.55&0.09&99.48&0.25&99.42&0.21&98.99&0.31&99.80&0.10\\
+  \cline{3-17}
+  50&random&100\%&99.64&0.11&99.91&0.04&99.66&0.07&99.57&0.22&99.52&0.16&99.14&0.25&99.86&0.08\\
+  \cline{2-17}
+  ~&two-~&50\%&99.03&0.23&99.62&0.11&99.22&0.16&99.40&0.29&99.33&0.25&98.79&0.39&99.64&0.18\\
+  \cline{3-17}
+  ~&round&75\%&99.32&0.20&99.74&0.09&99.37&0.13&99.60&0.18&99.43&0.21&99.07&0.29&99.69&0.17\\
+  \cline{3-17}
+  ~&random&100\%&99.51&0.15&99.87&0.05&99.50&0.11&99.64&0.16&99.63&0.15&99.28&0.22&99.79&0.11\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Siami Namin et al.}&99.87&0.10&99.98&0.02&99.61&0.08&99.73&0.07&99.68&0.20&98.56&0.51&99.25&0.40\\
+  \cline{2-17}
+  ~&one-&50\%&99.52&0.16&99.78&0.08&99.47&0.12&99.46&0.33&99.31&0.27&99.12&0.33&99.79&0.13\\
+  \cline{3-17}
+  ~&round&75\%&99.63&0.13&99.92&0.04&99.64&0.08&99.61&0.23&99.54&0.18&99.36&0.24&99.86&0.09\\
+  \cline{3-17}
+  100&random&100\%&99.76&0.09&99.95&0.03&99.73&0.06&99.67&0.19&99.65&0.16&99.45&0.21&99.91&0.06\\
+  \cline{2-17}
+  ~&two-~&50\%&99.16&0.25&99.64&0.11&99.32&0.15&99.57&0.23&99.43&0.22&99.12&0.32&99.64&0.20\\
+  \cline{3-17}
+  ~&round&75\%&99.43&0.19&99.83&0.07&99.54&0.11&99.68&0.16&99.62&0.17&99.33&0.25&99.78&0.14\\
+  \cline{3-17}
+  ~&random&100\%&99.61&0.17&99.90&0.05&99.64&0.09&99.75&0.13&99.71&0.14&99.49&0.20&99.83&0.10\\
+  \hline
+  \hline
+  ~&\multicolumn{2}{|c||}{Siami Namin et al.}&99.94&0.04&99.99&0.01&99.67&0.07&99.75&0.10&99.79&0.18&98.79&0.44&99.44&0.37\\
+  \cline{2-17}
+  ~&one-&50\%&99.59&0.17&99.83&0.07&99.20&0.11&99.61&0.27&99.58&0.21&99.39&0.29&99.86&0.10\\
+  \cline{3-17}
+  ~&round&75\%&99.76&0.11&99.96&0.02&99.74&0.08&99.74&0.18&99.68&0.16&99.52&0.23&99.92&0.06\\
+  \cline{3-17}
+  200&random&100\%&99.80&0.09&99.96&0.02&99.80&0.07&99.78&0.14&99.73&0.14&99.60&0.21&99.91&0.06\\
+  \cline{2-17}
+  ~&two-~&50\%&99.33&0.24&99.77&0.09&99.50&0.14&99.68&0.20&99.60&0.19&99.33&0.33&99.78&0.16\\
+  \cline{3-17}
+  ~&round&75\%&99.57&0.17&99.85&0.05&99.64&0.11&99.75&0.15&99.72&0.14&99.53&0.24&99.85&0.10\\
+  \cline{3-17}
+  ~&random&100\%&99.70&0.15&99.94&0.03&99.71&0.09&99.81&0.11&99.80&0.12&99.69&0.18&99.85&0.11\\
+  \hline
+\end{tabular}
+\vspace{-4ex}
+\end{table*}
+
+
+\vspace{-2ex}
+\section{Results and Analysis}
+\label{Results}
+
+In this section, we present and analyze the results of comparison
+to answer the two research questions. We further analyze the
+ability of reduction in mutants for the three operator-based
+mutant-selection techniques.
+
+
+\vspace{-1ex}
+\subsection{Effectiveness}
+\label{OffuttEff}
+
+Tables~\ref{tab:Ran-Offutt},~\ref{tab:Ran-Barbosa},
+and~\ref{tab:Ran-SiamiNamin} depict the average effectiveness
+values and standard-deviation values for comparing Offutt et al.'s
+technique, Barbosa et al.'s technique, and Siami Namin et al.'s
+technique with random mutant selection respectively\footnote{Due
+to space limit, we use tables instead of figures to present the
+experimental results. Tables are more concise but less intuitive
+than figures. Also due to space limit, we put results on
+effectiveness and standard deviation in each table.}. In the three
+tables, we use $Incr$ to represent the four incremental numbers
+for creating test suites for evaluating selected mutants; $Eff$ to
+represent average effectiveness values measured by the metric
+defined in Section~\ref{Measurement}; $Dev$ to represent
+standard-deviation values among the corresponding effectiveness
+values; and $50\%$, $75\%$, and $100\%$ to represent the use of
+random mutant selection to select 50\%, 75\%, and 100\% of mutants
+selected by each of the three operator-based mutant-selection
+techniques. Both the effectiveness values and the
+standard-deviation values are in percentage points. To make the
+difference clear, we keep two numbers after the decimal point for
+each value. From the three tables, we have the following
+observations concerning the average effectiveness.
+
+First, our results confirm that all the three operator-based
+mutant-selection techniques are able to achieve good effectiveness
+values using test suites created with all the four incremental
+numbers. According to the criterion proposed by Offutt et
+al.~\cite{Offutt:96}, a mutant-selection technique is good in
+effectiveness if it achieves an average effectiveness value over
+99\% using test suites created with incremental number 200. Based
+on this criterion, all the three technique are good in
+effectiveness, except for Siami Namin et al.'s technique on $tcas$
+(i.e., 98.79\%).
+
+Second, despite the effectiveness of the three operator-based
+mutant-selection techniques, none of them is superior to random
+mutant-selection when selecting the same number of mutants. Both
+random techniques outperform Offutt et al.'s technique for four
+subjects (i.e., $print\_tokens$, $replace$, $schedule2$, and
+$tot\_info$) out of seven. This trend is consistent for all the
+four incremental numbers. Both random techniques consistently
+outperform Barbosa et al.'s technique for $print\_tokens$,
+$replace$, and $tot\_info$ with different incremental numbers. For
+$print\_tokens2$ and $schedule2$, the two random techniques
+achieve almost the same average effectiveness as Barbosa et al.'s
+technique. Both random techniques consistently outperform Siami
+Namin et al.'s technique for $replace$, $tcas$, and $tot\_info$
+with different incremental numbers. The two-round random technique
+also achieves similar effectiveness values as Siami Namin et al.'s
+technique for $schedule$ for different incremental numbers.
+Overall, for any subject the difference between one operator-based
+mutant-selection technique and its corresponding random
+mutant-selection techniques is quite small. This observation
+indicates that random mutant selection is still as competitive as
+or even better than operator-based mutant-selection in terms of
+average effectiveness.
+
+Third, compared with the three operator-based mutant-selection
+techniques, random mutant selection is able to achieve competitive
+effectiveness when selecting fewer mutants. In general, for any
+random technique and any subject, the differences between
+selecting 50\%, 75\%, and 100\% mutants are quite small. Thus, the
+difference between each operator-based mutant-selection technique
+and its corresponding random techniques selecting 50\% or 75\%
+mutants are also small. Based on Offutt et al.'s criterion, for
+each operator-based mutant-selection technique, using its
+corresponding random techniques to select 50\% is also good in
+effectiveness, as the average effectiveness values are always over
+99\% for all the subjects using test suites created with
+incremental number 200. Since there is no sophisticated strategy
+in random mutant selection, this observation indicates that it is
+likely that mutants selected by either of the three operator-based
+mutant-selection techniques are more than necessary.
+
+
+Fourth, when comparing the two random techniques, the one-round
+technique is less effective than the two-round technique for
+smaller subjects, but more effective than the two-round technique
+for larger subjects. We suspect the reason to be that the
+one-round technique may fail to select any mutant for some
+important mutation operators when the number of mutants is small.
+Without mutants generated with these mutation operators, the
+selected set of mutants is not as representative as those
+containing mutants generated with all the different mutation
+operators. However, for the two-round technique, the distribution
+of selected mutants over the mutation operators may be very
+different from the distribution of all the non-equivalent mutants
+over the mutation operators when the subject becomes large. Thus,
+mutants selected by the two-round technique may be less
+representative than those selected by the one-round technique for
+large subjects.
+
+Finally, although different incremental numbers impact the
+effectiveness values for any experimented techniques and any
+subjects, the preceding observations are consistent for different
+incremental numbers. Typically, with the increase of the
+incremental number, the effectiveness value for any technique on
+any subject also increases. We suspect the reason to be that
+different incremental numbers result in different sizes of created
+test suites and the differences in test-suite sizes lead to the
+differences in effectiveness values. We further checked the
+average sizes of test suites under different incremental numbers
+and corroborated this suspicion. Table~\ref{tab:TestSuiteSize}
+depicts average test-suite sizes for measuring Offutt et al.'s
+technique on the seven subjects under different incremental
+numbers. The trends in average test-suite sizes for other
+experimented techniques are similar. Due to space limit, we do not
+present the average test-suite sizes for them here. It should also
+be noted that, due to the nature of the metric used in our study,
+the test suites created with any incremental number usually are of
+different sizes, and thus the average test-suite sizes are not
+multiples of 25, 50, 100, or 200.
+
+\begin{table}[t]
+\caption{\label{tab:TestSuiteSize} Average test-suite sizes for
+Offutt et al.'s} \centering \hspace*{-0.3cm}
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Program & Increment  &Increment  & Increment &Increment \\
+  ~ & 25  &50  & 100 &200 \\
+   \hline
+  \hline
+  PT&309 &479 &725 &1190\\
+  \hline
+  PT2&196 &307 &471 &725\\
+  \hline
+  RE&638 &1019 &1609 &2445\\
+  \hline
+  SC&237 &383 &591 &894\\
+  \hline
+  SC2&290 &464 &710 &970\\
+  \hline
+  TC&474 &700 &910 &1175\\
+  \hline
+  TI&185 &261 &351 &468\\
+  \hline
+\end{tabular}
+\vspace{-4ex}
+\end{table}
+
+\vspace{-1.5ex}
+\subsection{Stability}
+\label{Stability}
+
+Based on the standard-deviation values depicted in
+Tables~\ref{tab:Ran-Offutt},~\ref{tab:Ran-Barbosa},
+and~\ref{tab:Ran-SiamiNamin}, we have the following observations
+concerning the comparison of stability for the three
+operator-based mutant-selection techniques and random mutant
+selection.
+
+First, all the experimented techniques are quite stable in
+effectiveness. For any experimented technique, the
+standard-deviation values are typically less than 0.20 percentage
+points, and it is rarely for standard-deviation values to be
+larger than 0.30 percentage points. Most of those exceptionally
+large standard-deviation values come from Siami Namin et al.'s
+technique and random techniques with 50\% mutants on $tcas$, which
+is the smallest subject. Siami Namin et al.'s technique is less
+effective and less stable for $tcas$. Random techniques seem to be
+less stable for smaller subjects but more stable for larger
+subjects.
+
+Second, similar to the observation on average effectiveness,
+either of the three operator-based mutant-selection techniques is
+not more stable than random mutant selection when selecting the
+same number of mutants. Both random techniques are more stable
+than Offutt et al.'s technique for $print\_tokens$, $replace$,
+$schedule2$, and $tot\_info$; and are as stable as Offutt et al.'s
+technique for $print\_tokens2$. Both random techniques are more
+stable than Barbosa et al.'s technique for $print\_tokens$,
+$replace$, and $tot\_info$; and are as stable as Barbosa et al.'s
+technique for $print\_tokens2$,  $schedule2$, and $tcas$. Both
+random techniques are more stable than Siami Namin et al.'s
+technique for $schedule2$, $tcas$, and $tot\_info$; and are as
+stable as Siami Namin et al.'s technique for $replace$. It is
+interesting to note that a technique achieving better
+effectiveness values is typically also more stable.
+
+Third, when comparing the two random techniques, the one-round
+technique seems to be less stable than the two-round technique for
+smaller subjects, but more effective than the two-round technique
+for larger subjects. This observation is in accordance with the
+observation concerning the comparison of effectiveness for the two
+random techniques. Furthermore, given a random mutant-selection
+technique, selecting more mutants is more stable than selecting
+fewer mutants.
+
+
+\vspace{-1.5ex}
+\subsection{Reduction in Mutants}
+\label{Reduction}
+
+
+\begin{table}[t]
+\caption{\label{tab:Reduction} Ratio of selected mutants}
+\centering \hspace*{-0.1cm}
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Program & Offutt  &Barbosa  & Siami Namin \\
+  ~ & et al. & et al.  &  et al.\\
+  \hline
+  \hline
+  PT&6.00 &14.89 &7.33\\
+  \hline
+  PT2&5.90 &18.89 &8.64\\
+  \hline
+  RE&6.84 &16.30 &6.62\\
+  \hline
+  SC&7.77 &14.11 &7.11\\
+  \hline
+  SC2&8.09 &14.84 &7.88\\
+  \hline
+  TC&6.07 &15.31 &7.08\\
+  \hline
+  TI&10.27 &17.92 &7.29\\
+  \hline
+  \hline
+  Average&7.28 &16.04 &7.42\\
+  \hline
+\end{tabular}
+\vspace{-4ex}
+\end{table}
+
+As the preceding results indicate that none of the three
+operator-based mutant-selection techniques is superior to random
+mutant selection in terms of either effectiveness or stability, we
+further examine their ability to reduce the number of mutants.
+Table~\ref{tab:Reduction} depicts the ratio of selected mutants to
+all the non-equivalent mutants for each subject. From this table,
+we have the following observations.
+
+First, all the three operator-based mutant-selection techniques
+are able to substantially reduce the number of mutants. Either
+Offutt et al.'s technique or Siami Namin et al.'s technique is
+able to reduce about 93\% mutants, while Barbosa et al.'s
+technique is able to reduce 84\% mutants. Our result for Siami
+Namin et al.'s technique is similar to that reported by Siami
+Namin et al.~\cite{SiamiNamin:08} (i.e., 92.6\%). Our result for
+Offutt et al.'s technique is different from that reported by
+Offutt et al.~\cite{Offutt:96} (i.e., 78\%). We suspect the reason
+to be that we considered much more mutation operators than Offutt
+et al. Our result for Barbosa et al.'s technique is also different
+from that reported by Barbosa et al.~\cite{Barbosa:01} (i.e.,
+78\%). We suspect the reason to be that Barbosa et al. used 71
+mutation operators (which were implemented in Proteum by 2001)
+rather than 108 mutation operators in our study. This observation
+also indicates that Barbosa et al.'s technique is much more
+expensive than either Offutt et al.'s technique or Siami Namin et
+al.'s technique.
+
+Second, for each technique the ratio of selected mutants does not
+differ much for a different subject. This observation indicates
+that the reduction in mutants is highly predictable for any of
+three operator-based mutant-selection techniques. Furthermore,
+when applying random mutant selection in practice, we may use the
+average ratio of selected mutants for an operator-based
+mutant-selection technique as a guidance to determine the number
+of mutants to select. For example, randomly selecting 7\% mutants
+from mutants generated with the 108 Proteum mutation operators is
+likely to achieve similar effectiveness and stability as Offutt et
+al.'s technique.
