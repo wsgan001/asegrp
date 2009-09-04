@@ -30,24 +30,29 @@ In this section, we illustrate the \CodeIn{eXpress} approach with an example. \C
 \end{alltt}
 \end{tiny}
 }
+
+
 \includegraphics[width=8cm, keepaspectratio]{Figures/examp}
+\vspace{-0.25 in}
 \caption{An example program}
+\vspace{-0.2 in}
 \label{fig:example}
 \end{figure}
 
 	Consider the example in Figure~\ref{fig:example}. Suppose that the statement at Line 11 of \CodeIn{testMe} has been modified resulting in the one shown in the comment at Line 11.
-	The \CodeIn{Difference Finder} component of \CodeIn{eXpress} compares the original and the new versions of the program under test to find differences between each corresponding method of the two program versions. For the program in Figure~\ref{fig:example}, \CodeIn{Difference Finder} detects that the statement at Line 11 is changed in the new version. The \CodeIn{Graph Builder} component of \CodeIn{eXpress} then builds a Control-Flow Graph (CFG) of the new version of  the program under test and marks the changed vertices in the graph. Figure~\ref{fig:example} also shows the CFG of the example program. The labels of vertices in the CFG show the corresponding line numbers in Figure~\ref{fig:example}. The red (dark) vertex shows the changed statement at Line 11. The \CodeIn{Graph Traverser} component traverses the CFG to find all the branches\footnote{A branch is an outgoing edge of a branching node} $b$ in a program such that if $b$ is taken, the program execution cannot reach the dark vertex at Line 11. 
+	The \CodeIn{Difference Finder} component of \CodeIn{eXpress} compares the original and the new versions of the program under test to find differences between each corresponding method of the two program versions. For the program in Figure~\ref{fig:example}, \CodeIn{Difference Finder} detects that the statement at Line 11 is changed in the new version. The \CodeIn{Graph Builder} component of \CodeIn{eXpress} then builds a Control-Flow Graph (CFG) of the new version of  the program under test and marks the changed vertices in the graph. Figure~\ref{fig:example} also shows the CFG of the example program. The labels of vertices in the CFG show the corresponding line numbers in Figure~\ref{fig:example}. The red (dark) vertex shows the changed statement at Line 11. The \CodeIn{Graph Traverser} component traverses the CFG to find all the branches\footnote{\scriptsize{A branch is an outgoing edge of a branching node}} $b$ in a program such that if $b$ is taken, the program execution cannot reach the dark vertex at Line 11. 
 	\Comment{
-	For each branch $b$ in the program, the \CodeIn{Graph Traversal} component tries to find a path from the source vertex of $b$ to the dark vertex with $b$ as the first edge in the path.	For each vertex in the graph with a degree\footnote{The degree of a vertex in a graph is the number of edges starting from the vertex. The nodes having a degree greater than one} of more than one (the vertices colored gray), the \CodeIn{Graph Traversal} component tries to find a path from a gray vertex to the dark vertex through each branch (edge) of the gray vertex.
+	For each branch $b$ in the program, the \CodeIn{Graph Traversal} component tries to find a path from the source vertex of $b$ to the dark vertex with $b$ as the first edge in the path.	For each vertex in the graph with a degree\footnote{\scriptsize{The degree of a vertex in a graph is the number of edges starting from the vertex. The nodes having a degree greater than one}} of more than one (the vertices colored gray), the \CodeIn{Graph Traversal} component tries to find a path from a gray vertex to the dark vertex through each branch (edge) of the gray vertex.
 	For example, \CodeIn{Graph Traverser} tries to find a path between the gray vertex labeled 8 in Figure~\ref{fig:CFG} and the dark vertex labeled \ref{fig:CFG} through both of the edges $<8, 9>$ and $<8, 10>$. \CodeIn{Graph Traverser} finds a path $<8, 10, 11>$ through branch $<8,10>$ but is not able to find any path through the branch <8,10>.
-	}On traversing the CFG in Figure~\ref{fig:example}, the \CodeIn{Graph Traversal} detects that taking the branches $<2, 16>$, $<3, 16>$, $<8, 9>$, and $<12, 13>$ (dotted/dark red edges in Figure~\ref{fig:CFG}), the program execution cannot the vertex at Line 11. Since after taking these branches, the execution cannot reach the changed statement at Line 11, the execution of these branches cannot help in executing the statement at Line 11; behavioral differences between two versions of the program cannot be detected without executing the changed statement at Line 11. Hence, these branches are not explored by the \CodeIn{Dynamic Test Generator} component of \CodeIn{eXpress} while generating regression tests for the program under test. 
+	}On traversing the CFG in Figure~\ref{fig:example}, the \CodeIn{Graph Traversal} detects that taking the branches $<2, 16>$, $<3, 16>$, $<8, 9>$, and $<12, 13>$ (dotted/dark red edges in Figure~\ref{fig:example}), the program execution cannot reach the vertex at Line 11. Hence, the execution of these branches cannot help in executing the statement at Line 11; behavioral differences between two versions of the program cannot be detected without executing the changed statement at Line 11. Hence, these branches are not explored by the \CodeIn{Dynamic Test Generator} component of \CodeIn{eXpress} while generating regression tests for the program under test. 
 \Comment{
 	\begin{figure}[t]
     \centering
         \includegraphics[width=3cm, keepaspectratio]{Figures/exampleCFG2}
     \caption{Control-Flow Graph for the program in Figure~\ref{fig:example}}
+    \vspace{-0.2 in}
     \label{fig:CFG}
-    
+    \vspace{-0.2 in}
 \end{figure}
 }
 
@@ -58,11 +63,11 @@ instruments both versions of the program under test. The
 instrumentation allows us to compare the internal behavior
 of running the same generated test on the two versions.
 	
-	Figure~\ref{fig:Changed} shows the code of \CodeIn{testMe}'s new version after instrumentation. The \CodeIn{Instrumenter} component inserts a statement (Line 12 in Figure~\ref{fig:Changed}) just after any changed	 statement (Line 11 in Figure~\ref{fig:example}). The instrumented statement allows us to store the current value of \CodeIn{x} in a particular run (i.e., an explored path) of DSE. In particular, this statement results in an assertion \CodeIn{PexAssert.IsTrue ("uniqueName", x == currentX)}\footnote{\CodeIn{PexAssert} is an API class provided by Pex.} in the generated test, where \CodeIn{currentX} is the value of $x$ at Line 12 in the new version of the program. One such assertion is generated by Pex each time the statement is executed in the loop. Hence, if the loop containing the changed statement executes 20 times, 20 such assertions will be added to the test generated by Pex.
+	Figure~\ref{fig:Changed} shows the code of \CodeIn{testMe}'s new version after instrumentation. The \CodeIn{Instrumenter} component inserts a statement (Line 12 in Figure~\ref{fig:Changed}) just after any changed	 statement (Line 11 in Figure~\ref{fig:example}). The instrumented statement allows us to store the current value of \CodeIn{x} in a particular run $r$ (i.e., an explored path) of DSE. In particular, this statement results in an assertion \CodeIn{PexAssert.IsTrue ("uniqueName", x == currentX)}\footnote{\scriptsize{\CodeIn{PexAssert} is an API class provided by Pex.}} in the test generated in run $r$, where \CodeIn{currentX} is the value of $x$ at Line 12 in the new version of the program. One such assertion is added by Pex to the generated test each time the statement is executed in the loop. Hence, if the loop containing the changed statement executes 20 times, 20 such assertions will be added to the test generated by Pex.
 The generated test can be executed on the original version of \CodeIn{testMe} to compare program states at Line 12 after the execution of the changed statement with the ones captured in the execution of the new version. 
 			
 \begin{figure}[t]
-\begin{CodeOut}
+\begin{tiny}
 \begin{alltt}
   \hspace{0.5cm}\textbf{public boolean} testMe(\textbf{int }x, \textbf{int[] } y)\{
   \hspace{1.0cm} ...
@@ -73,16 +78,18 @@ The generated test can be executed on the original version of \CodeIn{testMe} to
   \hspace{1.0cm} ...
   \}
 \end{alltt}
-\end{CodeOut}
-\caption{Instrumented example program after instrumentation}
+\end{tiny}
+\vspace{-0.2 in}
+\caption{\scriptsize{Instrumented example program after instrumentation}}
 \label{fig:Changed}
+\vspace{-0.25 in}
 \end{figure}
 
-If there are multiple changed statements in the program, our approach first finds multiple regions each of which contains nearby changed statements in the program. We refer to each of such regions as a changed region in the rest of the paper. Our approach finds all the variables and fields that are identified as defined in a changed region and inserts statements (such as the statement at Line 12 of Figure \ref{fig:Changed}) to log the value of each defined variable or field in the changed region. If a defined variable is a non-primitive type, such a statement enables to compare the object graphs reachable from the logged values to compare program states. The \CodeIn{Dynamic Test Generator} component of \CodeIn{eXpress} then performs DSE on the instrumented new version of the program to generate regression tests. 
+If there are multiple changed statements in the program, our approach first finds multiple regions each of which contains nearby changed statements in the program. We refer to each of such regions as a changed region\footnote{\scriptsize{A changed region is a minimal set of statements that contains all the changed statements in a method. There can be a maximum of one region per method.}} in the rest of the paper. Our approach finds all the variables and fields that are identified as defined in a changed region and inserts statements (such as the statement at Line 12 of Figure \ref{fig:Changed}) to log the value of each defined variable or field in the changed region. If a defined variable is a non-primitive type, such a statement enables to compare program states by comparing the object graphs reachable from the logged values. The \CodeIn{Dynamic Test Generator} component of \CodeIn{eXpress} then performs DSE on the instrumented new version of the program to generate regression tests. 
 
 \CodeIn{eXpress} performs DSE on the instrumented new version of the program. After each run of DSE, \CodeIn{eXpress} executes the generated test on the instrumented original version (in the same way as instrumentation of the new version) to check whether the program state is infected after the execution of a changed region. The instrumentation enables us to perform only one instance of DSE on the new version instead of performing two instances of DSE: one on the original and the other on the new program version. Performing two instances of DSE can be technically challenging since we have to perform the two DSE instances in a controlled manner such that both versions are executed  with the same input and the execution trace is monitored for both the versions by a common exploration strategy to decide which branching node to flip next in the two versions. 
 
-The \CodeIn{Dynamic Test Generator} component of \CodeIn{eXpress} uses Dynamic Symbolic Execution (DSE) to generate tests for the new version. DSE iteratively generates test inputs to cover various feasible paths in the program under test. In particular, DSE flips some branching node from a previous execution to generate a test input for covering a new path. The node to be flipped is decided by a search strategy (also called exploration starategy) such as depth-first search. \CodeIn{Dynamic Test Generator} implements a search strategy for Pex~\cite{Pex} to efficiently find behavioral differences between two versions of a program.
+The \CodeIn{Dynamic Test Generator} component of \CodeIn{eXpress} uses Dynamic Symbolic Execution (DSE) to generate tests for the new version. DSE iteratively generates test inputs to cover various feasible paths in the program under test. In particular, DSE flips some branching node from a previous execution to generate a test input for covering a new path. The node to be flipped is decided by a search strategy (also called exploration strategy) such as depth-first search. \CodeIn{Dynamic Test Generator} implements a search strategy for Pex~\cite{Pex} to efficiently find behavioral differences between two versions of a program.
 
 To cover the changed statement at Line 11, DSE needs inputs
 $x=90$ and the array $y$ of length greater than 20 where at least 20 elements of y
@@ -185,6 +192,7 @@ In this section, we illustrate our approach with the aid of an example. Our appr
 \end{CodeOut}
 \vspace{-0.15 in}
 \caption{An Example Program}
+\vspace{-0.55 in}
 \label{fig:example}
 \end{figure}
 
@@ -272,10 +280,10 @@ Our approach works in three phases (1) The Execution Phase (2) The Infection Pha
 The method \CodeIn{testMe} in Figure~\ref{fig:example} has 2 observation point at Lines 7 and 20. Since the changed statement is not reachable to he observation point at Line 7, we only consider observation point at Line 20. The program state at an observation point consists of return value and the object fields. We check whether the infected state at Line 15 for the input $I_{63}$ is propagated to the end of program. This is done by comparing the return values and the value of fields after the execution of the return statement at Line 20. Our approach detects that the return value at Line 20 is the same for both versions. Our approach finds the propagation stopping statement by comparing the states after execution of all the statements executed between the changed statement at Line 15 and the return statement at Line 20. Our approach finds that the propagation is stopped after the execution of statement at line 17. The statement at line 17 is now the point of interest. The branches are prioritized based on the data dependence from statement at Line 17. Branches 12 is given the priority score $p=1$, Branch 4 is assigned a priority of score $p=2$, while branch 3 is assigned a score $p=3$. Branch 12 cannot be flipped due to infeasible path condition, hence branch 4 is flipped. The preceding process is continued 50 times until an input is generated that executes the path $P_{113}= 2T, (3T, 4T, 6F, 8F, 10F, 12F, 14F, 16F)^{110},$ $3T, 4T, 6F, 8F, 10T, 12T, 12F, 14T, 16F, 3F$, which results in the propagation of the program infection.
 }
 \subsection{Incremental Test Generation}
-Our approach can reuse the existing
-test suite so that changed parts of the program can be executed
-effectively due to which test generation is likely to find behavior
-differences earlier in path exploration. Figure~\ref{fig:example2} shows the new version of a program \CodeIn{testMe}. Suppose statements at Lines 12 and 13 have been added in the new version. 
+Our approach can reuse an existing
+test suite for the original version so that changed parts of the program can be explored
+efficiently due to which test generation is likely to find behavior
+differences earlier in path exploration. Figure~\ref{fig:example2} shows the new version of a program \CodeIn{testMe}. Suppose that statements at Lines 12 and 13 are added in the new version. 
 \Comment{
 \begin{figure}[t]
 \begin{tiny}
@@ -311,9 +319,13 @@ differences earlier in path exploration. Figure~\ref{fig:example2} shows the new
 \end{figure}
 }
 \begin{figure}
-\includegraphics[height=4cm, keepaspectratio]{Figures/ex2}
-\includegraphics[height=4cm, keepaspectratio]{Figures/exTree}
-\scriptsize\caption{An example program on the left side with a part of its execution tree for c[] = \{[, \{, (, $\backslash$, * \} on the right}
+%\includegraphics[height=4cm, keepaspectratio]{Figures/ex2}
+%\includegraphics[height=4cm, keepaspectratio]{Figures/exTree}
+\includegraphics[height=4.7cm, keepaspectratio]{Figures/Presentation3}
+\includegraphics[height=4.7cm, keepaspectratio]{Figures/Presentation2}
+\vspace{-0.2 in}
+\scriptsize\caption{An example program on the left side with a part of its execution tree for c = \{[, \{, (, $\backslash$, * \} on the right side.}
+\vspace{-0.2 in}
 \label{fig:example2}
 \end{figure}
-Let there be an existing test suite covering all the blocks in the old version of the program. Suppose the test suite has a test input $I$ = \{"[", "\{", "(", "$\backslash$", "*" \}. The input covers all the blocks in the new version of \CodeIn{TestMe} except the newly added block at Line 13. If we start the program exploration from scratch (i.e default input), Pex takes 441 runs to cover the block at Line 13. However, we can reuse the existing test suite for covering the block effectively. Our approach executes the test suite to build an execution tree for the tests in the test suite. Our approach then starts the program exploration using the dynamic execution tree discovered by executing the existing test suite instead of starting from an empty tree. Some of the branches in the tree might take many runs for Pex to discover. The right side of Figure~\ref{fig:example2} shows the part of the execution tree for the input $I$. The red edges in the tree indicate false side of the source branching node while the blue edges indicate the true side. For generating an input for the next DSE run, Pex chooses a branching node $b$ in the tree whose other side has not yet been explored and generates an input so that program execution takes the unexplored branch of $b$. Pex chooses such branch using various heuristics for covering new parts of the program. Its likely that Pex chooses to flip the branching node 12 (colored red), which on execution covers the block at Line 12. When starting the program exploration from scratch, Pex takes 420 runs before it could discovers the red branching node in Figure~\ref{fig:example2}. Using our approach of seeding the input, Pex takes 39 runs to flip the branching node and cover the block at Line 12. 
+Let there be an existing test suite covering all the blocks in the old version of the program. Suppose that the test suite has a test input $I$ = \{"[", "\{", "(", "$\backslash$", "*" \}. The input covers all the blocks in the new version of \CodeIn{TestMe} except the newly added block at Line 13. If we start the program exploration from scratch (i.e default input), Pex takes 441 runs to cover the block at Line 13. However, we can reuse the existing test suite for exploration to cover the new block efficiently. Our approach executes the test suite to build an execution tree for the tests in the test suite. Our approach then starts the program exploration using the dynamic execution tree discovered by executing the existing test suite instead of starting from an empty tree. Some of the branches in the tree might take many runs for Pex to discover. The right side of Figure~\ref{fig:example2} shows the part of the execution tree for the input $I$. The red (dotted) edges in the tree indicate false side of the source branching node while the blue (solid) edges indicate the true side. To generate an input for the next DSE run, Pex flips a branching node $b$ in the tree whose the other side has not yet been explored and generates an input so that program execution takes the unexplored branch of $b$. Pex chooses such branch for flipping using various heuristics for covering new parts of the program. Its likely that Pex chooses the branching node 12 (colored red), which on execution covers the block at Line 12. When starting the program exploration from scratch, Pex takes 420 runs before it could discover the red branching node in Figure~\ref{fig:example2}. Using our approach of seeding the tests from the existing test suite, Pex takes 39 runs to flip the branching node and cover the block at Line 12. 
