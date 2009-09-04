@@ -481,12 +481,12 @@ Neethi\footnote{\url{http://ws.apache.org/commons/neethi/}} and
 WSS4J\footnote{\url{http://ws.apache.org/wss4j/}}. Sine the used
 subjects for mining and thus our mined API mapping do not cover the
 two libraries, the translated project of \emph{rasp} contains many
-``\emph{U}'' and ``\emph{T}'' errors.
+complication errors and bugs.
 
 In summary, the mined API mapping improves existing language
 translation tools such as Java2CSharp. In particular, the mined API
-mapping helps effectively reduce ``\emph{U}'' and ``\emph{T}''
-errors in the translated projects.
+mapping helps effectively reduce compilation errors and bugs in the
+translated projects.
 
 
 \subsection{Threats to Validity}
@@ -502,8 +502,10 @@ evaluations on more subjects and more translation tools in future
 work. The threats to internal validity includes human factors for
 determining correct mined API mapping and for determining bugs in
 translated projects. To reduce the threats, we inspected mined
-mapping relations and bugs carefully. The former threat could be
-further reduced by find more existing mapping relations of APIs as
-we did to J2SE. The latter threat could be reduced by running test
-cases we improve our approach and produce translated projects
-without complication errors.
+mapping relations and bugs carefully and referred to existing
+mapping relations and existing C\# files for determining correct API
+mapping and bugs, respectively. The former threat could be further
+reduced by find more existing mapping relations of APIs as we did to
+J2SE. The latter threat could be reduced by running test cases when
+we improve our approach and produce translated projects without
+complication errors.
