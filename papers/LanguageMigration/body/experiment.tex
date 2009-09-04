@@ -276,12 +276,13 @@ package java.math :: System \{
 \end{alltt}
 \end{CodeOut}\vspace*{-2ex}
 
-This item describes mapping relations between \CodeIn{java.math.Big-
-Decimal.multiply()} and \CodeIn{System.Decimal.Multiply()}. The
-pattern string describes mapping relations of inputs. In particular,
-``\CodeIn{@0}'' denotes the receiver, and ``\CodeIn{@1}'' denotes
-the first parameter. Based on this item, Java2CSharp translates the
-following code snippet from Java to C\# as follows:
+This item describes mapping relations between the \CodeIn{multiply}
+method of Java and the \CodeIn{Multiply} method of C\#. The pattern
+string describes mapping relations of inputs. In particular,
+``\CodeIn{@0}'' denotes the receiver of the \CodeIn{multiply}
+method, and ``\CodeIn{@1}'' denotes the first parameter of the
+\CodeIn{multiply} method. Based on this item, Java2CSharp translates
+the following code snippet from Java to C\# as follows:
 
 \begin{CodeOut}\vspace*{-2ex}
 \begin{alltt}
@@ -502,7 +503,7 @@ evaluations on more subjects and more translation tools in future
 work. The threats to internal validity includes human factors for
 determining correct mined API mapping and for determining bugs in
 translated projects. To reduce the threats, we inspected mined
-mapping relations and bugs carefully and referred to existing
+mapping relations and bugs carefully, and we referred to existing
 mapping relations and existing C\# files for determining correct API
 mapping and bugs, respectively. The former threat could be further
 reduced by find more existing mapping relations of APIs as we did to
