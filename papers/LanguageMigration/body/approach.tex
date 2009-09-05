@@ -56,9 +56,9 @@ of classes ($C$ and $C'$), our approach returns candidate class
 pairs ($M$) with a similarity greater than a given threshold,
 referred to as \emph{SIM\_THRESHOLD}. As some projects may have more
 than one class with the same name, $M$ may contain more than one
-matching pair for a class in a version. To align those classes, our
+mapping pair for a class in a version. To align those classes, our
 approach uses package names of these classes to refine $M$ and
-returns only one matching pair with the maximum
+returns only one mapping pair with the maximum
 similarity\footnote{For C\#, we refer to namespace names for package
 names.}.
 
@@ -96,7 +96,7 @@ a relation when the similarity between $para_1.name$ and $para_2.name$ is greate
 
 For the example shown in Section~\ref{sec:example}, our approach
 mines the mapping relation between \CodeIn{java.io.File} and
-\CodeIn{System.IO.FileInfo} based on the matched fields of Lines 6
+\CodeIn{System.IO.FileInfo} based on the mapped fields of Lines 6
 and 11 (Figure~\ref{fig:clientcode}). The mapping relation of API
 classes helps translate the variable declared in Line 1
 (Figure~\ref{fig:challenge}) to the variable declared in Line 3
@@ -344,9 +344,8 @@ code examples shown in Figure~\ref{fig:clientcode}, respectively.
 Figure~\ref{fig:graph} also shows corresponding line numbers of each
 sub-graph. Our approach applies Rules 2 and 8 for Lines 6 and 9
 (Figure~\ref{fig:clientcode}) to build corresponding sub-graphs in
-the ATG. For Lines 11 and 14 (Figure~\ref{fig:clientcode}), our
-approach applies Rules 2, 3, and 6 to build corresponding
-sub-graphs.
+the ATG. Our approach applies Rules 2, 3, and 6 to build corresponding
+sub-graphs for Lines 11 and 14 (Figure~\ref{fig:clientcode}). 
 
 %\begin{algorithm}[t]
 %\begin{SmallOut}
@@ -393,10 +392,10 @@ sub-graphs.
 \subsubsection{Comparing API transformation graphs}
 
 The second sub-step compares each pair of built ATGs for mining
-mapping relations of API methods. Our mapped API methods satisfy
-three criteria: (1) Mapped API methods implement the same
-functionality. (2) Mapping relation describes the relation between
-parameters and receivers of mapped API methods. (3) Mapping relation
+mapping relations of API methods. Our mapped API methods should satisfy
+three criteria. (1) The mapped API methods implement the same
+functionality. (2) The mapping relation describes the relation between
+parameters and receivers of mapped API methods. (3) The mapping relation
 describes the relation between return of mapped API methods.
 The two mapped API methods in two different languages satisfying the
 preceding three criteria are replaceable in the client code.
@@ -408,7 +407,7 @@ mapping relations of API methods. Consider two methods $m$ and $m'$
 of two different languages $L$ and $L'$, respectively, in the client
 code. Consider that the associated ATGs of $m$ and $m'$ are compared
 to mine mapping relations of API methods. First, our algorithm finds
-matching variables $\in$ $F$, $V$, and $P_1$ in $m$ and $m'$. Our
+mapping variables $\in$ $F$, $V$, and $P_1$ in $m$ and $m'$. Our
 algorithm maps two variables $v$ and $v'$ of methods $m$ and $m'$,
 respectively, if the similarity measure on their names is greater
 than \emph{SIM\_THRESHOLD}. For constants in $m$ and $m'$, our
@@ -418,18 +417,18 @@ compute mappings between API methods that use these variables and
 constants. Our algorithm uses the following criteria for mapping two
 API methods $jm$ and $sm$.
 
-\emph{Matching inputs}: The first criterion is based on the inputs
+\emph{Mapping inputs}: The first criterion is based on the inputs
 of $jm$ and $sm$. We map $jm$ with $sm$, if there is a one-to-one
 mapping between inputs of $jm$ and $sm$. Here, our approach
 considers both the receiver and the parameters as the inputs of an
 API method.
 
-\emph{Matching functionalities}: The second criterion is based on functionalities of
+\emph{Mapping functionalities}: The second criterion is based on functionalities of
 $jm$ and $sm$. We consider that $jm$ and $sm$ implement the same functionality,
 if the similarity measure between the name of $jm$ and the name of $sm$ is
 greater than \emph{SIM\_THRESHOLD}.
 
-\emph{Matching outputs:} The third criterion is based on the returns of $jm$ and $sm$.
+\emph{Mapping outputs:} The third criterion is based on the returns of $jm$ and $sm$.
 Consider the returns of $jm$ and $sm$ as $r_1$ and $r_2$, respectively. We map $jm$
 with $sm$, if the type of $r_1$ is mapped with the type of $r_2$ in
 mapping relations of API classes.
@@ -442,7 +441,7 @@ with $sm$, our algorithm merges $sm$ and $jm$ with their next available API meth
 in the corresponding ATGs, respectively, and attempts to map merged API methods.
 For two merged API methods, our algorithm uses the
 maximum similarity of method names between $jm$ and $sm$ as a
-similarity measure for matching their functionalities.
+similarity measure for mapping their functionalities.
 With each iteration, $sm$ or $jm$ or the mapping relation (represented as $S$)
 in the algorithm changes. Therefore, we repeat our algorithm
 till $S$, $sm$, and $jm$ do not change anymore.
@@ -475,9 +474,9 @@ Figure~\ref{fig:graph}, return of
 \CodeIn{System.IO.FileInfo.FileInfo()} cannot be mapped to the
 return of \CodeIn{java.io.File.File()}. Therefore, our
 approach merges next API methods in the ATG till the \CodeIn{Exists}
-API method, as the returns (shown as \CodeIn{Boolean}) match
+API method, as the returns (shown as \CodeIn{Boolean}) map
 only after the \CodeIn{Exists} API method. Figure~\ref{fig:graph}
-shows Step 3 along with the matching returns.
+shows Step 3 along with the mapping returns.
 
 \emph{Step 4: mapping functionalities.} After our approach maps
 parameters and returns, this step further maps functionalities
