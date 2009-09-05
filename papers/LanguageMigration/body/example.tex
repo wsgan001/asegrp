@@ -1,13 +1,14 @@
 \section{Example}
 \label{sec:example}
+
 \begin{figure}[t]
 \begin{CodeOut}
 \begin{alltt}
-  Java code:
+\textbf{Java code}:
 1  File file = \textbf{new} File("test");
 2  Boolean b = file.exists();
 
-  Translated C\# code:
+\textbf{Translated C\# code}:
 3  FileInfo file = \textbf{new} FileInfo("test");
 4  Boolean b = System.IO.File.Exist(file.FullName)||
            System.IO.Directory.Exists(file.FullName);
@@ -50,17 +51,17 @@
 client code.}\vspace*{-2ex}
 \end{figure}
 
-We next use an example to illustrate the challenges involved in
-mining API mapping relations. Figure~\ref{fig:challenge} shows a
+We next use an example to illustrate challenges in mining 
+API mapping relations. Figure~\ref{fig:challenge} shows a
 Java code example and its translated C\# code. This Java code
-example accepts a \CodeIn{string} input that represents name of a
+example accepts a \CodeIn{string} input that represents the name of a
 file or directory and returns a \CodeIn{boolean} value that
-describes whether the file or directory exists. To achieve this, the
+describes whether the file or directory exists. To achieve this functionality, the
 code example declares a local variable, called \CodeIn{file}, of
-type \CodeIn{java.io.File} and calls the \CodeIn{exists} method. The
+type \CodeIn{java.io.File} and invokes the \CodeIn{exists} method. The
 method takes the \CodeIn{string} input and \CodeIn{file} as its
 inputs and produces the desirable \CodeIn{boolean} value. Here, we
-consider \CodeIn{file} as a receiver and also a special input for
+consider \CodeIn{file} (a receiver) as a special input for
 the \CodeIn{exists} method.
 
 To translate this code example into C\#, a translation tool needs to
@@ -69,32 +70,36 @@ outputs, and variables into C\#. For example, the translation tool
 needs to know the mapped API class for \CodeIn{java.io.File} in C\#
 to translate the variable \CodeIn{file} to C\#. In addition, the
 translation tool needs to know the mapped API methods, so it can
-call proper API methods that use translated inputs and variables to
+add code for invoking proper API methods that use translated inputs and variables to
 produce desirable outputs. For this example, the translation tool
-call the \CodeIn{Exist} method and the \CodeIn{FullName} method to
-achieve the functionality. Here, we consider field accesses as a
-special type of methods.
+adds code for invoking the \CodeIn{Exists} method and the 
+\CodeIn{FullName} method to achieve the functionality. 
+Here, we consider field accesses as special type of method calls.
 
 Some projects such as Lucene have both Java and C\# versions. Our
 approach has three major steps to mine the preceding two types of
 mapping relations of APIs from these projects.
 
 \textbf{Aligning client code.} First, our approach aligns classes
-and methods of the two versions by using a matching algorithm based
-on similarities in the names of classes and methods between the two
-versions. Aligning client code based on names of classes and methods
-is based on our observation of how existing projects such as
+and methods (between the two versions) that implement similar functionality.
+As these aligned classes and methods implement similar functionality,
+our approach mines mapping relations of API classes and methods from
+these aligned classes and methods. To align classes and methods, our approach uses a 
+matching algorithm based on similarities in the names of classes and methods. 
+
+Aligning client code based on names of classes and methods
+is based on our observation on how many existing projects such as
 rasp\footnote{\url{http://sourceforge.net/projects/r-asp/}} are
 migrated from one language to another. We observed that while
-migrating rasp project from C\# to Java, programmers first rename
-source files from C\# to Java and systematically address the
+migrating the rasp project from C\# to Java, programmers first renamed
+source files from C\# to Java and systematically addressed the
 compilation errors by replacing C\# APIs with Java APIs. During this
 procedure, names of classes, methods, fields of classes, or local
-variables in methods often remain the same between the two versions.
+variables in methods often remain the same or similar between the two versions.
 Therefore, we use name similarities for aligning client code of the
 two versions. For example, our approach aligns
 \CodeIn{IndexFiles.java} with the \CodeIn{IndexFiles.cs} (shown in
-Figure~\ref{fig:clientcode}) as the names of their classes and
+Figure~\ref{fig:clientcode}) since the names of their classes and
 methods are similar.
 %\begin{figure}[t]
 %\centering
@@ -108,30 +113,32 @@ methods are similar.
 mines mapping relations of API classes by comparing entities such as
 names of fields in aligned classes, or variable names or constants
 in aligned methods. Our approach uses a text-based similarity
-measure for comparing these entities and considers the entities as
-similar if the measure is greater than a given threshold. These
+metric for comparing these entities and considers the entities as
+similar if the metric is greater than a given threshold. These
 mapping relations of API classes help translate variables from one
 language to another. For example, our approach identifies the
-constant value ``\CodeIn{index}'', in Lines 6 (Java) and 11 (C\#)
+constant value ``\CodeIn{index}'' in Lines 6 (Java) and 11 (C\#)
 (Figure~\ref{fig:clientcode}) and maps the API classes associated
 with these constants. Based on this constant value, our approach maps
-the API class \CodeIn{java.io.File} of Java to
-\CodeIn{System.IO.FileInfo} of C\#.
+the API class \CodeIn{java.io.File} of Java to \CodeIn{System.IO.FileInfo} of C\#.
 
 \textbf{Mining API mapping of methods.} After mapping API classes
 between the two languages, our approach maps API methods. Mapping
-API methods is challenging as often an API method of one language
+API methods is challenging since often an API method of one language
 can be mapped to multiple API methods of the other language.
 Furthermore, mapping relations of API methods should also describe
-how parameters and return values are mapped between them. To address
-these challenges, our approach constructs a graph, referred as
-\emph{API transformation graph} (ATG), for aligned methods of the
+how parameters and returns are mapped between them. To address
+these challenges, our approach constructs a graph, referred to as
+\emph{API Transformation Graph} (ATG), for each aligned method of the
 client code in both languages. These ATGs precisely capture inputs
 and outputs of API methods, and help mine mapping relations of API
 methods. Figure~\ref{fig:example} shows a mapping relation between
-API method \CodeIn{Exist} from one language to another.
+API method \CodeIn{Exists} from one language to another. (@Hao, could you please
+add notations used in the figure here.)
 Section~\ref{sec:approach:mappingtypes} presents more details on how
 we mine these mapping relations of API methods using ATGs.
+Our approach uses these mapping relations to assist translation tools such
+as Java2CSharp for conducting language translation.
 
 \begin{figure}[t]
 \centering %\hfill
