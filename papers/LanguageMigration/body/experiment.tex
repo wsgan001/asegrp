@@ -1,7 +1,7 @@
 \section{Evaluations}
-\label{sec:evaluation} 
+\label{sec:evaluation}
 
-We implemented a tool named MAM based on our approach and 
+We implemented a tool named MAM based on our approach and
 conducted two evaluations using our tool to show the effectiveness
 of our approach. In our evaluations, we address the following
 two research questions.
@@ -65,10 +65,10 @@ subjects. These subjects are collected from famous open source societies such
 as SourgeForge\footnote{\url{http://www.sf.net}},
 Apache\footnote{\url{http://www.apache.org/}}, and
 hibernate\footnote{\url{http://www.hibernate.org/}}. Columns ``Java
-version'' and ``C\# version'' list versions in Java and 
+version'' and ``C\# version'' list versions in Java and
 C\#, respectively. In these two columns, sub-columns
 ``\emph{\#C}'' and ``\emph{\#M}'' list number of classes and methods, respectively. As shown
-in the table, Java versions are much larger than C\# versions 
+in the table, Java versions are much larger than C\# versions
 for all subjects. We found two major factors for such
 a difference. First, Java versions of some of the
 projects are more up-to-date. For example, the latest Java
@@ -92,15 +92,15 @@ evaluation results are available at \url{https://sites.google.com/site/asergrp/p
 To evaluate the first research question, we use the top 10 projects
 from Table~\ref{table:subjects} as subjects for mining API mapping.
 
-\textbf{Aligning client code.} 
+\textbf{Aligning client code.}
 We first present the results of aligning client code.
 We use the \emph{SIM\_THRESHOLD} value as 0.6, which is based on our initial
 empirical experience. We choose a relatively low threshold as it helps our
 approach to take into account as much client code as possible.
 
 Table~\ref{table:analyzingclient} shows our evaluation results.
-In column ``Aligned'', sub-columns ``\emph{\# C}'' and 
-``\emph{\# M}'' list number of aligned classes and aligned methods. 
+In column ``Aligned'', sub-columns ``\emph{\# C}'' and
+``\emph{\# M}'' list number of aligned classes and aligned methods.
 For each project of Column ``C\# version'' and
 Column ``Java version'', sub-column ``\emph{\%C}'' lists the
 percentage of the aligned classes among total classes of
@@ -112,7 +112,7 @@ methods/classes as shown in Table~\ref{table:subjects}. We find that
 the results of Table~\ref{table:analyzingclient} fall into three
 categories. This first category includes \emph{db4o}, \emph{fpml},
 \emph{PDFClown}, \emph{OpenFSM}, and \emph{binaryNotes}. In this category, our
-approach achieves relatively high percentages for both Java 
+approach achieves relatively high percentages for both Java
 and C\# versions. For all these five projects, ``\emph{\%M}'' is
 relatively smaller than ``\emph{\%C}'' because methods of those
 unaligned classes cannot be aligned and hence are counted as
@@ -182,8 +182,8 @@ classes and methods on average. The result confirms that many
 programmers refer to existing versions of another language to name
 entities of a version under development.
 
-\textbf{Mining API mapping.} 
-Table~\ref{table:minedresults} shows the results of mined mapping 
+\textbf{Mining API mapping.}
+Table~\ref{table:minedresults} shows the results of mined mapping
 relations of API classes and methods.
 Columns ``Class'' and ``Method'' list results of mining API classes
 and API methods, respectively. Sub-column
@@ -321,11 +321,11 @@ Java2CSharp. We compare mapping relations of APIs within these
 mapping packages, and Table~\ref{table:compare} shows the results.
 Columns ``Class'' and ``Method'' list results of comparing API
 classes and methods, respectively. Sub-columns
-``\emph{P}'', ``\emph{R}'', and ``\emph{F}'' denote precision, 
+``\emph{P}'', ``\emph{R}'', and ``\emph{F}'' denote precision,
 recall, and F-score. \emph{Precision}, \emph{Recall}, and \emph{F-score} are defined as
 follows:\vspace*{-1ex}
 \begin{equation}\label{eq-precison}
-Precison=\frac{true\ positives}{true\ positives+false\ positives}
+Precision=\frac{true\ positives}{true\ positives+false\ positives}
 \end{equation}\vspace*{-2ex}
 \begin{equation}\label{eq-recall}
 Recall=\frac{true\ positives}{true\ positives+false\ negatives}
@@ -343,25 +343,25 @@ F\!-\!score=\frac{2\times Precision \times Recall}{Precision+Recall}
 \multicolumn{3}{|c|}{\textbf{Class}}
 & \multicolumn{3}{|c|}{\textbf{Method}}  \\\cline{2-7} &  \emph{\textbf{P}}& \emph{\textbf{R}}& \emph{\textbf{F}}& \emph{\textbf{P}}& \emph{\textbf{R}}& \emph{\textbf{F}}\\
 \hline
-  java.io &   78.6\% & 26.8\% &   52.7\% & 93.1\% & 53.2\% & 73.1\%   \\
+  java.io   &   78.6\%  & 73.3\%   &   76.0\%   & 93.1\%  & 66.3\%  & 79.7\%   \\
 \hline
-  java.lang &   82.6\% & 27.9\% &   55.3\% & 93.8\% & 25.4\% & 59.6\%   \\
+  java.lang &   82.6\%  & 86.4\%   &   84.5\%   & 93.8\%  & 81.5\%  & 87.6\%   \\
 \hline
-  java.math &   50.0\% & 50.0\% &   50.0\% & 66.7\% & 15.4\% & 41.0\%   \\
+  java.math &   50.0\%  & 50.0\%   &   50.0\%   & 66.7\%  & 66.7\%  & 66.7\%   \\
 \hline
-  java.net &   100.0\% & 12.5\% &   56.3\% & 100.0\% & 25.0\% & 62.5\%   \\
+  java.net  &   100.0\% & 50.0\%  &   75.0\%  & 100.0\% & 50.0\% & 75.0\%   \\
 \hline
-  java.sql &   100.0\% & 33.3\% &   66.7\% & 100.0\% & 15.4\% & 57.7\%   \\
+  java.sql  &   100.0\% & 66.7\%   &   83.3\%   & 100.0\% & 66.7\%  & 83.3\%   \\
 \hline
-  java.text &   50.0\% & 10.0\% &   30.0\% & 50.0\% & 16.7\% & 33.3\%   \\
+  java.text &   50.0\%  & 50.0\%   &   50.0\%   & 50.0\%  & 50.0\%  & 50.0\%   \\
 \hline
-  java.util &   56.0\% & 25.5\% &   40.7\% & 65.8\% & 12.6\% & 39.2\%   \\
+  java.util &   56.0\%  & 87.5\%   &   71.8\%   & 65.8\%  & 67.6\%  & 66.7\%   \\
 \hline
-  junit &   100.0\% & 50.0\% &   75.0\% & 92.3\% & 88.9\% & 90.6\%   \\
+  junit     &   100.0\% & 50.0\%   &   75.0\%   & 92.3\%  & 88.9\%  & 90.6\%   \\
 \hline
-  orw.w3c &   42.9\% & 33.3\% &   38.1\% & 41.2\% & 25.0\% & 33.1\%   \\
+  orw.w3c   &   42.9\%  & 75.0\%   &   58.9\%   & 41.2\%  & 77.8\%  & 59.5\%   \\
 \hline
-  Average &   68.8\% & 26.4\%  &  47.6\%  & 84.6\% & 28.7\% & 56.7\% \\
+  Total     &   68.8\%  & 77.9\%   &    73.4\%  & 84.6\%  & 73.9\%  & 79.3\% \\
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{Results of comparing results} \label{table:compare}
@@ -371,45 +371,52 @@ F\!-\!score=\frac{2\times Precision \times Recall}{Precision+Recall}
 
 In these preceding formula, true positives represent those mapping
 relations that exist in both the mined API mapping and the golden
-standard; false positives represent those transitions that exist in
-the mined API mapping but not in the golden standard; false
-negatives represent those mapping relations that exist in the golden
-standard but not in the mined API mapping. As shown in
-Table~\ref{table:compare}, we find that our approach achieves a
-relatively high precision and a relatively low recall due to the
-three main reasons. First, we find 25 correct mapping
-relations of API classes in mined mapping files but not in the
-golden standard. For example, the mined mapping files contain a
-mapping relation between \CodeIn{org.w3c.dom.Attr} and
+standard\footnote{We ignore those mapping relations of APIs that do
+not have call sites in the projets listed in
+Table~\ref{table:minedresults}, since our approach cannot mine
+mapping relations for these APIs from the given projects.}; false
+positives represent those transitions that exist in the mined API
+mapping but not in the golden standard; false negatives represent
+those mapping relations that exist in the golden standard but not in
+the mined API mapping. Row ``Total'' show the results when we
+compare mapping relations of all the packages listed in
+Table~\ref{table:compare}.
+
+From sub-columns ``\emph{P}'' of Table~\ref{table:compare}, we find
+that our approach achieves relatively high precisions, but the
+precisions are lower than the accuracies shown in
+Table~\ref{table:minedresults}. After inspecting those differences,
+and we find 25 new correct mapping relations of API classes from our
+mined mapping files. For example, these mined mapping files contain
+a mapping relation between \CodeIn{org.w3c.dom.Attr} and
 \CodeIn{System.Xml.XmlAttribute}, and the mapping relation does not
-exist in the mapping files of Java2CSharp. As these relations are
-considered as false positives, these relations reduced our
-precision values. Second, although we use 10 large projects as subjects to
-mine API mapping, these projects do not cover mapping relations of
-all API classes and methods. Consequently, our approach does
-not mine mapping relations of the entire API classes and 
-methods. As shown in Table~\ref{table:minedresults}, our
-approach mines many mapping relations and these mapping relations cover
-many libraries. However, when we limit mapping relations to the packages as
-shown in Table~\ref{table:compare}, these mined mapping relations are
-actually not many as expected. In contrast, the mapping files
-of Java2CSharp are more detailed as they are manually built. These
-factors reduced our recall values. Third, we find that Java2CSharp
-maps 51 J2SE classes of these packages to its implemented classes.
-For example, Java2CSharp maps \CodeIn{java.util.Set} to
-\CodeIn{ILOG.J2CsMapping.Collections.ISet}. Our approach did not
-mine these mapping relations since the subjects in
-Table~\ref{table:subjects} do not use Java2CSharp's own implemented
-classes and methods. This factor reduced both the precision
-and the recall values.
+exist in the mapping files of Java2CSharp. As these mapping
+relations are considered as false positives, these relations reduced
+our precisions. However, these mapping relations are useful and
+complements the existing mapping files of the Java2CSharp tool.
+
+From sub-columns ``\emph{R}'' of Table~\ref{table:compare}, we find
+that our approach achieves relatively high recalls, but the recalls
+still have spaces for improvements. For example, our approach does
+not mine the mapping relation between
+\CodeIn{java.util.ResourceBundle} and \CodeIn{System.
+Resources.ResourceManager} as described in the mapping files of
+Java2CSharp. Although it exists in \emph{hibernate}, our approach
+fails to mine the mapping relation since \emph{hibernate} uses the
+two API classes in two classes with quite different names. Our
+approach also fails to mine the mapping relations between
+\CodeIn{java.util.getTime()} and \CodeIn{System.DateTime.Ticks}
+correctly as our approach ignores the operation of dividing 1,000
+from ticks to milliseconds. We further discuss these issues in
+Section~\ref{sec:discuss}.
 
 In summary, compared with the mapping files of Java2CSharp, our
-mined mapping files show a relatively high precisions and relatively
-low recalls. The relatively high precisions show that our mined
-mapping relations are accurate and include new mapping relations
-that are not covered by Java2CSharp. The relatively low recalls show
-that we need improvements such as introducing more subject projects
-to achieve more detailed API mapping.
+mined mapping files show a reasonable high precisions and recalls.
+The precisions are relatively high since our mined mapping relations
+are accurate and include new mapping relations that are not covered
+by Java2CSharp. The recalls are also relatively high as our approach
+mines many mapping relations although we still have spaces for
+further improvements.
 \begin{table}[t]
 \centering
 \begin{SmallOut}
