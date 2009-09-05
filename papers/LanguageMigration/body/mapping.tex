@@ -3,13 +3,13 @@
 
 We next present definitions of terms used in the rest of the paper.
 
-\textbf{API:} An Application Programming Interface (API)~\cite{orenstein2000quickstudy}
+\textbf{API.} An Application Programming Interface (API)~\cite{orenstein2000quickstudy}
 is a set of classes and methods provided by frameworks or libraries.
 
-\textbf{API library:} An API library refers to a framework
+\textbf{API library.} An API library is a framework
 or library that provides reusable API classes and methods.
 
-\textbf{Client code:} Client code refers to the application code
+\textbf{Client code.} Client code is the application code
 that reuses or extends API classes and methods provided by API
 libraries. The definitions of API library and client code are
 relative to each other. For example, Lucene uses
@@ -17,22 +17,25 @@ J2SE\footnote{\url{http://java.sun.com/j2se/1.5.0/}} as an API
 library, whereas Nutch\footnote{\url{http://lucene.apache.org/nutch/}} uses Lucene as
 an API library. Therefore, we consider Lucene as client code and API
 library for the J2SE API library and Nutch, respectively. In
-general, for client code, source files of API libraries are often
+general, for programmers of client code, source files of API libraries are often
 not available.
 
-\textbf{Mapping relation:} A mapping relation refers to a
+\textbf{Mapping relation.} A mapping relation is a
 replaceable relation among entities such as API classes or methods
 defined by two different languages. For example, consider two
 languages $L_1$ and $L_2$, and two entities $e_1$ and $e_2$ in
-$L_1$ and $L_2$, respectively. We define a mapping
-relation between $e_1$ and $e_2$, if $e_1$ of $L_1$ can be translated to $e_2$ of $L_2$
-without introducing new defects in the translated code.
+$L_1$ and $L_2$, respectively. A mapping
+relation between the entities $e_1$ and $e_2$ describes 
+that $e_1$ of $L_1$ can be translated to $e_2$ of $L_2$.
 
-\textbf{Mapping relation of API classes:} We define a mapping
-relation between two API classes $c_1$ and $c_2$ of $L_1$ and $L_2$,
-respectively, if $c_1$ of $L_1$ is translated to $c_2$ of $L_2$
-without introducing new defects in the translated code.
+\textbf{Mapping relation of API classes.} A mapping relation
+of API classes is a pair $\langle c_1, c_2 \rangle$, where
+$c_1$ and $c_2$ are two API classes of $L_1$ and $L_2$,
+respectively. This mapping relation describes that 
+$c_1$ of $L_1$ can be translated to $c_2$ of $L_2$.
 
+(@Hao, could you please fix this comment of Dr. Xie.
+I am also not so sure what is the right fix?)
 Our mapping relation of API classes is many-to-many. For example,
 \CodeIn{java.util.ArrayList} of Java is mapped to either
 \CodeIn{System. Collections.ArrayList} \textbf{or}
@@ -52,14 +55,16 @@ example, \CodeIn{java.lang.String} of Java is mapped to
 an API method \CodeIn{insert}, which does not exist in
 \CodeIn{java.lang.String}.
 
-\textbf{Mapping relation of API methods:} We define a mapping relation
-between two API methods $m_1$ and $m_2$ of languages $L_1$ and $L_2$,
-respectively, if $m_1$ is translated to $m_2$ without introducing defects
-in the translated code.
+\textbf{Mapping relation of API methods.} A mapping relation of
+API methods is a pair $\langle m_1, M_2 \rangle$, where $m_1$
+is an API method of $L_1$ and $M_2$ = $m_2^1$, $\dots$, $m_2^n$
+is a sequence of API methods of $L_2$. 
+This mapping relation describes that $m_1$ of $L_1$ can be translated
+to $M_2$ of $L_2$. The mapping relation of API methods also
+describes the mappings between receiver, parameters, and return values of mapped
+API methods. 
 
-\textbf{Merged API method:} A merged API method of $L_1$ refers to
-an API method that is created by merging two other API methods of
-$L_1$. For example, consider two API methods $m_1$ and $m_2$ defined
+\textbf{Merged API method.} Consider two API methods $m_1$ and $m_2$ defined
 in classes $C_1$ and $C_2$ of $L_1$, respectively, with the
 following signatures:
 
@@ -67,7 +72,7 @@ following signatures:
 
 \CodeIn{$m_2$ signature: $o_2$ $C_2$.$m_2$($inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
 
-We merge methods $m_1$ and $m_2$ to create a new merged API method $m_{new}$ if the
+We merge methods $m_1$ and $m_2$ to create a new \emph{merged API method} $m_{new}$ if the
 output $o_1$ of $m_1$ is used either as a receiver or as a
 parameter for $m_2$ (i.e., $o_1$ == $C_2$ or $o_1$ == $inp_i^2$)
 in client code. The signature of the new merged API method $m_{new}$ is
@@ -92,11 +97,13 @@ other merged API methods. For simplicity, we use API method to refer
 to both API method and merged API method in the rest of the paper.
 
 Both the mapping relations of API classes and methods are required
-for achieving language translation. In particular, mapping relation
+for conducting language translation. In particular, mapping relation
 of API classes is required to translate variables such as
 \CodeIn{file} in Figure~\ref{fig:challenge}. Similarly, mapping
 relation of API methods is required to translate API methods such as
 \CodeIn{exist} in Figure~\ref{fig:challenge}. When an API method is
 translated from one language to another, the translated method
 accepts the same parameters (both variables and constants) and
-implement the same functionality as the original method.
+implement the same functionality as the original method. In our approach,
+we use these mapping relations to assist existing translation
+tools such as Java2CSharp for conducting language translation.

@@ -4,20 +4,21 @@
 A programming language serves as a means for instructing computers
 to achieve a programming task at hand. Since their inception,
 various programming languages came into existence due to several
-reasons such as existence of many platforms or requirements for
-different programming styles. \Comment{The
+factors such as existence of many platforms or requirements for
+different programming styles. The
 HOPL\footnote{\url{http://hopl.murdoch.edu.au}} website lists 8,512
-different programming languages.} To address business requirements
-and to survive in competing markets, companies often have to release
-different versions of their projects in different languages. For
+different programming languages. To address business requirements
+and to survive in competing markets, companies or open source
+organizations often have to release different 
+versions of their projects in different languages. For
 example, many well-known projects such as
 Lucene\footnote{\url{http://lucene.apache.org/}}\Comment{,
 Db4o\footnote{\url{http://www.db4o.com/}},} and
 WordNet\footnote{\url{http://wordnet.princeton.edu/}} provide
 multiple versions in different languages. For some open source
-projects, although companies do not officially provide multiple
+projects, although their project team does not officially provide multiple
 versions, external programmers often create their versions in
-different languages. For example, WordNet does not provide a C\#
+different languages. For example, the WordNet team does not provide a C\#
 version, but Simpson and Crowe developed a C\# version of
 WordNet.Net\footnote{\url{http://opensource.ebswift.com/WordNet.Net/}}.
 Totally, as described by Jones~\cite{jones1998estimating}, about
@@ -37,7 +38,7 @@ different languages.
 
 Translating projects from one language to another language
 (\emph{e.g.}, from Java to C\#) manually is a tedious and
-error-prone task. Some companies have incurred huge losses because
+error-prone task. Some companies have suffered from huge losses because
 of failures in language translation. For example, Terekhov and
 Verhoef~\cite{terekhov2000realities} stated that at least three
 companies went bankrupt and another company lost 50 million dollars
@@ -45,8 +46,9 @@ due to failed language translation projects. A natural way to
 address this issue is to develop a translation tool that can
 automatically translate projects from one language to another.
 However, it is challenging to develop such a translation tool as the
-translation tool should have knowledge of how one programming
-language is mapped to the other language. In literature, there exist
+translation tool should have knowledge of how Application
+Programming Interfaces (APIs) in one programming
+language are mapped to APIs in the other language. In the literature, there exist
 approaches~\cite{mossienko2003automated, yasumatsu1995spice,
 hainaut2008migration} that address the problem of language
 translation partially. These approaches expect programmers to
@@ -55,24 +57,23 @@ language. \Comment{Based on the mappings provided as input, these
 existing approaches translate projects from one language to
 another.} As programming languages provide a large number of APIs,
 writing mappings manually for all APIs is tedious and error-prone.
-As a result, existing
-approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}
+As a result, existing approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}
 support only a subset of APIs for translation. Such a limitation
-results many compilation errors in translated projects and limits
-their usage in practice.
+results in many compilation errors in translated projects and limits
+these approaches' usage in practice.
 
 In this paper, we propose a novel approach that automatically mines how APIs of
-one language are mapped to the APIs of another language. We refer
+one language are mapped to APIs of another language. We refer to
 this mapping as \emph{mapping relations of APIs}. In our approach,
 we mine mapping relations based on API usages in the client
-code rather based on API implementations for three major reasons:
-(1) API libraries often do not provide source files especially for
-those C\# libraries. (2) Mining relations based on API
-implementations often can have relatively low confidence than mining
-relations based on API usages. The reason is that API
-implementations have only one call site for analysis, whereas
-API usages can have many call sites for mining. (3) Mapping
-relations of APIs are often complex and cannot be mined solely based
+code rather based on API implementations with three major reasons.
+(1) API libraries often do not come with source files especially for
+those C\# libraries. (2) Relations mined based on API
+implementations often have lower confidence than 
+relations mined based on API usages. The reason is that API
+implementations have only one data point for analysis, whereas
+API usages can have many data points (i.e., call sites) for mining. (3) Mapping
+relations of APIs are often complex and cannot be mined based
 on the information available in the API implementations. First,
 mapping parameters of an API method in one language with an API
 method in the other language can be complex. For example, consider
@@ -86,7 +87,7 @@ System.Decimal.Multiply (Decimal $p_1^2$, Decimal $p_2^2$)
 
 Here, $m_1$ has a receiver, say $v_1^1$, of type \CodeIn{BigDecimal}
 and has one parameter $p_1^1$, whereas $m_2$ has two parameters $p_1^2$
-and $p_2^2$. Based on the definitions of these inputs, $v_1^1$ is
+and $p_2^2$. For these two API methods, $v_1^1$ is
 mapped to $p_1^2$, and $p_1^1$ is mapped to $p_2^2$. Second, an API
 method of one language can be mapped to more than one API method in the
 other language. For example, consider the following two API methods:
@@ -107,35 +108,40 @@ $m_5$ in C\#: void System.Collections.Generic.LinkedList.Last()
 \end{CodeOut}
 
 To deal with the complexity of mining API mapping, we construct a
-graph, referred as \emph{API transformation graph} (ATG), for
+graph, referred to as \emph{API transformation graph} (ATG), for
 aligned methods of the client code in both languages. These ATGs
 precisely capture inputs and outputs of API methods, and help mine
-complex mapping relations of API methods. This paper makes the
-following major contributions:
+complex mapping relations of API methods. 
+
+This paper makes the following major contributions:
 
 \begin{itemize}\vspace*{-1.5ex}
-\item A first approach that mines API mapping between
+\item The first approach that mines API mapping between
 different languages using API client code. Our
 approach addresses an important and yet challenging problem that is not
 addressed by previous work on language translation.\vspace*{-1.5ex}
-\item A technique to build ATGs. As ATGs describe data dependencies among
+\item API transformation graphs (ATGs) proposed to capture inputs
+and outputs of API methods, and a technique for building ATGs
+and comparing built ATGs for mining API mapping relations.
+As ATGs describe data dependencies among
 inputs and outputs of API methods, our approach is able to mine
-complex mapping relations between API methods.\vspace*{-1.5ex}
-\item A tool named MAM based on our approach and two
+complex mapping relations between API methods from two languages.\vspace*{-1.5ex}
+\item A tool named MAM implemented for our approach and two
 evaluations on 15 projects with both Java and C\# versions. These
 projects include 18,568 classes and 109,850 methods. The results
 show that our approach mines 6,695 mapping relations of API classes
-with an accuracy of 86.7\% and 19,110 mapping relations of API
-methods with an accuracy of 90.0\%. The results also show that the
+with accuracy of 86.7\% and 19,110 mapping relations of API
+methods with accuracy of 90.0\%. The results also show that the
 mined API mapping relations reduce 55.4\% of compilation errors and
-43.0\% bugs during translation of projects from Java to C\# using
+43.0\% defects during translation of projects from Java to C\# using
 Java2CSharp.
 \end{itemize}\vspace*{-1.5ex}
 
-The remainder of this paper is organized as follows. Section~\ref{sec:example}
-illustrates our approach using an example. Section~\ref{sec:mapping}
-presents definitions. Section~\ref{sec:approach} presents our
-approach. Section~\ref{sec:evaluation} presents our evaluations.
+The rest of this paper is organized as follows. 
+Section~\ref{sec:mapping} presents definitions.
+Section~\ref{sec:example} illustrates our approach using an example. 
+Section~\ref{sec:approach} presents our approach. 
+Section~\ref{sec:evaluation} presents our evaluations.
 Section~\ref{sec:discuss} discusses issues of our approach.
-Section~\ref{sec:related} presents related work. Finally,
-Section~\ref{sec:colcusion} concludes.
+Section~\ref{sec:related} presents related work. 
+Finally, Section~\ref{sec:conclusion} concludes.
