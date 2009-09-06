@@ -10,8 +10,7 @@ The primary reason is that the functionality associated with a class
 or a method in one language version is split among multiple classes
 or methods in the other language version. To address this issue, we
 plan to align classes and methods of client code based on their
-functionalities through developing or adapting dynamic approaches
-such as Jiang and Su~\cite{jiang2009automatic} in future work.
+functionalities through developing or adapting dynamic approaches~\cite{jiang2009automatic} in future work.
 
 \begin{figure}[t]
 \centering
@@ -21,8 +20,8 @@ such as Jiang and Su~\cite{jiang2009automatic} in future work.
 \end{figure}
 
 \textbf{Mining richer API mapping.} Table~\ref{table:compare} shows
-that our approach does not achieve high recall for J2SE. Although we
-use ten large projects as subjects, these projects still do not
+that our approach does not achieve very high recall for J2SE. Although we
+use 10 large projects as subjects, these projects still do not
 provide sufficient code examples for mining mapping relations of all
 APIs in J2SE. Our previous
 work~\cite{thummalapenta07parseweb,thummalapentaase08spotweb} show
@@ -52,7 +51,7 @@ one-to-one relations. The reason is that our Algorithm 2 uses only
 forward analysis for merging API methods. We explain this issue
 using an illustrative example shown in Figure~\ref{fig:n2n}. After
 merging API methods \CodeIn{method1} and \CodeIn{method2}, if our
-algorithm still not able to map the merged API methods with an API
+algorithm is still not able to map the merged API methods with an API
 method in the other language, our algorithm attempts to merge
 \CodeIn{method3} rather than \CodeIn{method4}, which could be a
 possible candidate for mining the mapping relation. In future work,
@@ -62,9 +61,9 @@ many-to-many mapping relations.
 
 \textbf{Migrating many-to-many mapping relations of API methods.}
 A mined many-to-many mapping relation of API methods can have multiple outputs
-and complex internal data processes. Although, our ATGs
-help identify all API methods, our implementation of ATGs is not complete
-for supporting an automatic translation. For example, we need to manually add an
+and complex internal data processes. Although our ATGs
+help identify all API methods, our implementation is not complete
+for supporting automatic translation. For example, we need to manually add an
 \emph{or} operator for the two outputs of the API mapping shown in
 Figure~\ref{fig:example}. In future work, we plan to enhance our implementation to help
 automate migration with many-to-many mapping relations.
@@ -74,9 +73,9 @@ methods along with the mappings of their inputs and outputs. These
 mappings are useful for translating API methods of one language to
 another. Sometimes, our approach may not be able to map inputs and
 outputs of mapped API methods. If our approach is not able to map
-outputs, our approach simply ignores those outputs that are not used
-in the client code. However, as inputs cannot be ignored, the
-translated code results in compilation errors. In future work, we
+outputs, our approach currently simply ignores those outputs that are not used
+in the client code. However, since inputs cannot be ignored, the
+translated code has compilation errors. In future work, we
 plan to address this issue by analyzing how two versions of a
 project deal with a similar unmapped API problem for some other code
 examples.
