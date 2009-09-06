@@ -437,7 +437,7 @@ further improvements.
 \hline Total  & 4063  & 491   & 2576  & 237   & 1174  &  54.4\% & 135 & 43.0\% \\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{\label{table:errors}Compilation errors and bugs}
+\Caption{\label{table:errors}Compilation errors and defects}
 \end{SmallOut}\vspace*{-3ex}
 \end{table}
 
@@ -456,47 +456,48 @@ Table~\ref{table:subjects} from Java to C\#, and
 Table~\ref{table:errors} shows the results. For each translated C\#
 project, Column ``No MF'' lists results without mapping files.
 Column ``MF'' lists results with the mapping files of Java2CSharp.
-Column ``Ext. MF'' lists results with mapping files that combine
-our mined API mapping relations with the existing mapping files of Java2CSharp.
-Sub-columns ``\emph{E}'' and ``\emph{B}'' list number of
-compilation errors and found bugs, respectively. For each project, we find out those overlapping files
-between translated files and existing C\# files and manually inspect
-the top 5 largest files by comparing existing C\# files for API
-related bugs. Sub-columns ``\emph{\%E}'' and ``\emph{\%B}'' list
-percentages of improvements over the results of ``MF''. On average,
-mined API mapping relations help further reduce 54.4\% compilation errors
-and 43.0\% found bugs. As the five projects use different libraries,
+Column ``Ext. MF'' lists results with mapping files that combine our
+mined API mapping relations with the existing mapping files of
+Java2CSharp. Sub-columns ``\emph{E}'' and ``\emph{B}'' list number
+of compilation errors and found defects, respectively. For each
+project, we find out those overlapping files between translated
+files and existing C\# files and manually inspect the top 5 largest
+files by comparing existing C\# files for API related defects.
+Sub-columns ``\emph{\%E}'' and ``\emph{\%B}'' list percentages of
+improvements over the results of ``MF''. On average, mined API
+mapping relations help further reduce 54.4\% compilation errors and
+43.0\% found defects. As the five projects use different libraries,
 the number of translated projects are different. In particular,
 \emph{simmetrics} and \emph{fit} use API classes of J2SE that are
 covered by mapping files. Consequently, the translated projects of
-\emph{simmetrics} and \emph{fit} have a few errors and bugs. The
+\emph{simmetrics} and \emph{fit} have a few errors and defects. The
 \emph{aligner} project also mainly uses J2SE, but it uses many API
 classes and methods from \CodeIn{java.awt} for its GUI. The mapping
 files of Java2CSharp do not cover any classes of \CodeIn{java.awt},
 so the translated project has many errors. As the existing C\#
 version of \emph{aligner} does not have GUI, we do not compare those
-buggy translated GUI files and we do not find any bugs. The mined
+buggy translated GUI files and we do not find any defects. The mined
 files map \CodeIn{java.awt} to \CodeIn{System.Windows.Forms} and
 thus reduce compilation errors. However, the result is not
 significant as many classes of the two packages are still not
 mapped. For \emph{rasp} and \emph{llrp}, they both use various
 libraries besides J2SE. Consequently, the translated projects have
-both many errors and bugs. In particular, \emph{llrp} uses
+both many errors and defects. In particular, \emph{llrp} uses
 log4j\footnote{\url{http://logging.apache.org/log4j/}} and
 jdom\footnote{\url{http://www.jdom.org/}}, and the mined mapping
 files contain mapping relations of the two libraries. As a result,
-the mined API mapping helps reduce compilation errors and bugs
+the mined API mapping helps reduce compilation errors and defects
 significantly. For \emph{rasp}, it uses some libraries such as
 Neethi\footnote{\url{http://ws.apache.org/commons/neethi/}} and
 WSS4J\footnote{\url{http://ws.apache.org/wss4j/}}. Sine the used
 subjects for mining and thus our mined API mapping do not cover the
 two libraries, the translated project of \emph{rasp} contains many
-complex errors and bugs.
+complex errors and defects.
 
 In summary, the mined API mapping improves existing language
 translation tools such as Java2CSharp. In particular, the mined API
-mapping helps effectively reduce compilation errors and bugs in the
-translated projects.
+mapping helps effectively reduce compilation errors and defects in
+the translated projects.
 
 
 \subsection{Threats to Validity}
@@ -510,12 +511,12 @@ the best translation tool as far as we know, other tools may perform
 better than the tool. The threat could be reduced by more
 evaluations on more subjects and more translation tools in future
 work. The threats to internal validity includes human factors for
-determining correct mined API mapping and for determining bugs in
+determining correct mined API mapping and for determining defects in
 translated projects. To reduce the threats, we inspected mined
-mapping relations and bugs carefully, and we referred to existing
+mapping relations and defects carefully, and we referred to existing
 mapping relations and existing C\# files for determining correct API
-mapping and bugs, respectively. The former threat could be further
-reduced by find more existing mapping relations of APIs as we did to
-J2SE. The latter threat could be reduced by running test cases when
-we improve our approach and produce translated projects without
-complication errors.
+mapping and defects, respectively. The former threat could be
+further reduced by find more existing mapping relations of APIs as
+we did to J2SE. The latter threat could be reduced by running test
+cases when we improve our approach and produce translated projects
+without complication errors.
