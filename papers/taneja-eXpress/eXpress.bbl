@@ -38,6 +38,12 @@ H.~Do, S.~G. Elbaum, and G.~Rothermel.
   infrastructure and its potential impact.
 \newblock {\em ESE}, pages 405--435, 2005.
 
+\bibitem{elbaum}
+S.~Elbaum, H.~N. Chin, M.~B. Dwyer, and M.~Jorde.
+\newblock Carving and replaying differential unit test cases from system test
+  cases.
+\newblock {\em TSE}, 35(1):29--45, 2009.
+
 \bibitem{evans:DiffTest07}
 R.~B. Evans and A.~Savoia.
 \newblock Differential testing: a new approach to change detection.
@@ -57,11 +63,6 @@ P.~Godefroid, N.~Klarlund, and K.~Sen.
 P.~Godefroid, M.~Y. Levin, and D.~A. Molnar.
 \newblock In {\em NDSS}, 2008.
 
-\bibitem{howritz:prioritization}
-S.~Horwitz.
-\newblock Tool support for improving test coverage.
-\newblock In {\em Proc. ESOP}, pages 162--177, 2002.
-
 \bibitem{joshi:pretext}
 P.~Joshi, K.~Sen, and M.~Shlimovich.
 \newblock Predictive testing: Amplifying the effectiveness of software testing.
@@ -72,16 +73,15 @@ J.~C. King.
 \newblock {Symbolic Execution and Program Testing}.
 \newblock {\em Communications of the ACM}, 19(7):385--394, 1976.
 
-\bibitem{jjli:prioritization}
-J.~J. Li.
-\newblock Prioritize code for testing to improve code coverage of complex
-  software.
-\newblock In {\em Proc. ISSRE}, pages 75--84, 2005.
-
 \bibitem{majumdar:hybrid}
 R.~Majumdar and K.~Sen.
 \newblock Hybrid concolic testing.
 \newblock In {\em Proc. ICSE}, pages 416--426, 2007.
+
+\bibitem{orso:selective}
+A.~Orso and B.~Kennedy.
+\newblock Selective capture and replay of program executions.
+\newblock In {\em Proc.WODA}, pages 1--7, 2005.
 
 \bibitem{DSE}
 S.~Person, M.~B. Dwyer, S.~Elbaum, and C.~S. P\v{a}s\v{a}reanu.
@@ -92,6 +92,11 @@ S.~Person, M.~B. Dwyer, S.~Elbaum, and C.~S. P\v{a}s\v{a}reanu.
 X.~Ren, B.~G. Ryder, M.~Stoerzer, and F.~Tip.
 \newblock Chianti: A change impact analysis tool for java programs.
 \newblock In {\em Proc. ICSE}, pages 664--665, 2005.
+
+\bibitem{SaffAPE2005}
+D.~Saff, S.~Artzi, J.~H. Perkins, and M.~D. Ernst.
+\newblock Automatic test factoring for {Java}.
+\newblock In {\em Proc. ASE}, pages 114--123, 2005.
 
 \bibitem{santelices08sep}
 R.~A. Santelices, P.~Chittimalli, T.~Apiwattanapong, A.~Orso, and M.~J.

@@ -6,20 +6,20 @@ In this section, we illustrate the \CodeIn{eXpress} approach with an example. \C
 \begin{tiny}
 \begin{alltt}
 
-  \hspace{0.5cm}\textbf{static public int} testMe(\textbf{string[] }c)\{
+  \hspace{0.5cm}\textbf{static public int} TestMe(\textbf{string[] }c)\{
 1 \hspace{1.0cm} \textbf{int} state = 0;
 2 \hspace{1.5cm} \textbf{for}(\textbf{int} i=0; i< c.Length; i++)\{
 3 \hspace{2.0cm} \textbf{if}(c[i] == '[')
 4 \hspace{2.5cm} state =1;
-5 \hspace{2.0cm} \textbf{if}(state == 1 && c[i] == "\{")
+5 \hspace{2.0cm} \textbf{else if}(state == 1 && c[i] == "\{")
 6 \hspace{2.5cm} state =2;
-7 \hspace{2.0cm} \textbf{if}(state == 2 && c[i] == "(")
+7 \hspace{2.0cm} \textbf{else if}(state == 2 && c[i] == "(")
 8 \hspace{2.5cm} state =3;
-9 \hspace{2.0cm} \textbf{if}(state == 3 &&  c[i] == "//") 
+9 \hspace{2.0cm} \textbf{else if}(state == 3 &&  c[i] == "<") 
 10\hspace{2.5cm} state =4;
-11\hspace{2.0cm} \textbf{if}(state == 3 && c[i] == "*")\{ state =4;
-12\hspace{2.5cm} \textbf{if}(c.Length==5)
-13\hspace{3.0cm} \textbf{break};
+11\hspace{2.0cm} \textbf{else if}(state == 4 && c[i] == "*")\{ state =4;
+12\hspace{2.5cm} \textbf{else if}(c.Length==15) //Added in new version
+13\hspace{3.0cm} \textbf{break}; //Added in new version
 14\hspace{2.0cm} \textbf{if}(c[i]==' ')
 15\hspace{2.5cm} \textbf{break};
 16\hspace{2.0cm} \textbf{if}(state==-1)
@@ -35,30 +35,25 @@ In this section, we illustrate the \CodeIn{eXpress} approach with an example. \C
 \label{fig:example}
 \end{figure}
 
-	Consider the example in Figure~\ref{fig:example}. Suppose that the statements at Lines 11, and 12 of \CodeIn{testMe} have been added in the new version.
-	The \CodeIn{Difference Finder} component of \CodeIn{eXpress} compares the original and the new versions of the program under test to find differences between each corresponding method of the two program versions. For the program in Figure~\ref{fig:example}, \CodeIn{Difference Finder} detects that the statements at Lines 11, and 12 are added in the new version. The \CodeIn{Graph Builder} component of \CodeIn{eXpress} then builds a Control-Flow Graph (CFG) of the new version of  the program under test and marks the changed vertices in the graph. Figure~\ref{fig:CFG} shows the CFG of the example program in Figure~\ref{fig:example}. The labels of vertices in the CFG show the corresponding line numbers in Figure~\ref{fig:example}. The red (dark) vertex shows the changed statement at Line 11. The \CodeIn{Graph Traverser} component traverses the CFG to find all the branches\footnote{A branch is an outgoing edge of a branching node} $b$ in a program such that if $b$ is taken, the program execution cannot reach the red (dark) vertex at Lines 11 or 12. 
-	\Comment{
-	For each branch $b$ in the program, the \CodeIn{Graph Traversal} component tries to find a path from the source vertex of $b$ to the dark vertex with $b$ as the first edge in the path.	For each vertex in the graph with a degree\footnote{The degree of a vertex in a graph is the number of edges starting from the vertex. The nodes having a degree greater than one} of more than one (the vertices colored gray), the \CodeIn{Graph Traversal} component tries to find a path from a gray vertex to the dark vertex through each branch (edge) of the gray vertex.
-	For example, \CodeIn{Graph Traverser} tries to find a path between the gray vertex labeled 8 in Figure~\ref{fig:CFG} and the dark vertex labeled \ref{fig:CFG} through both of the edges $<2, 18>$, $<14, 15>$, and $<2, 18>$. \CodeIn{Graph Traverser} finds a path $<8, 10, 11>$ through branch $<8,10>$ but is not able to find any path through the branch <8,10>.
-	}On traversing the CFG in Figure~\ref{fig:CFG}, the \CodeIn{Graph Traversal} detects that taking the branches $<2, 18>$, $<14, 15>$, $<16, 17>$, and $<12, 14>$ (dotted/dark red edges in Figure~\ref{fig:CFG}), the program execution cannot reach either of the vertices at Lines 11 or 12. Since after taking these branches, the execution cannot reach the changed statements at Line 11 and 12, the execution of these branches cannot help in executing the changed statements; behavioral differences between two versions of the program cannot be detected without executing the changed statements. Hence, these branches are not explored by the \CodeIn{Dynamic Test Generator} component of \CodeIn{eXpress} while generating regression tests for the program under test. 
+Consider the example in Figure~\ref{fig:example}. Suppose that the statements at Lines 11, and 12 of \CodeIn{testMe} have been added in the new version. 	We next describe our approach using the example.
+\\ \textbf{Difference Finder.} The \CodeIn{Difference Finder} component of \CodeIn{eXpress} compares the original and the new versions of the program under test to find differences between each corresponding method of the two program versions. For the program in Figure~\ref{fig:example}, \CodeIn{Difference Finder} detects that the statements at Lines 11, and 12 are added in the new version. 
+\\ \textbf{Graph Builder. }The \CodeIn{Graph Builder} component of \CodeIn{eXpress} then builds a Control-Flow Graph (CFG) of the new version of  the program under test and marks the changed vertices in the graph. Left side of Figure~\ref{fig:CFG} shows the CFG of the example program in Figure~\ref{fig:example}. The labels of vertices in the CFG show the corresponding line numbers in Figure~\ref{fig:example}. The red (dark) vertices show the added statements at Lines 11 and 12. The gray vertices are the branching nodes (i.e. these vertices denote the branching statements in the program in Figure~\ref{fig:example}) , while the white vertices show the other statements in the program.
+\\ \textbf{Graph Traverser.} The \CodeIn{Graph Traverser} component traverses the CFG to find each branch\footnote{A branch is an outgoing edge of a branching node} $b$ in a program such that if $b$ is taken, the program execution cannot reach a red (dark) vertex at Lines 11 or 12.  On traversing the CFG in Figure~\ref{fig:CFG}, the \CodeIn{Graph Traversal} detects that taking the branches $<2, 18>$\footnote{$<x,y>$ represents a branch from node $x$ to node $y$}, $<14, 15>$, $<16, 17>$, and $<12, 14>$ (dotted/dark red edges in Figure~\ref{fig:CFG}), the program execution cannot reach either of the vertices at Lines 11 or 12. Since after taking these branches, the execution cannot reach the changed statements at Line 11 and 12, the execution of these branches cannot help in executing the changed statements; behavioral differences between two versions of the program cannot be detected without executing the changed statements. Hence, these branches are not explored by the \CodeIn{Dynamic Test Generator} (described later in this section) component of \CodeIn{eXpress} while generating regression tests for the program under test. 
+\\ \textbf{Instrumenter. }The \CodeIn{Instrumenter} component transforms the two versions of the
+program code such that the transformed program code is
+amenable to regression testing. In particular, the \CodeIn{Instrumenter} component
+instruments both versions of the program under test so that program states can be compared (to determine state infection) after the execution of the added  statements at Lines 11 and 12.
 	\begin{figure}[t]
     \centering
-        \includegraphics[width=4cm, keepaspectratio]{Figures/exampleCFG}
-    \caption{Control-Flow Graph for the program in Figure~\ref{fig:example}}
+        \includegraphics[width=3cm, keepaspectratio]{Figures/exampleCFG}
+        \includegraphics[height=4cm, keepaspectratio]{Figures/Presentation2}
+    \caption{\scriptsize{Left side shows the Control-Flow Graph for the program in Figure~\ref{fig:example}, while the right side shows a part of execution tree of the program for c = \{"[", "\{", "(", "$<$", "*" \}.}}
     \label{fig:CFG}
     
 \end{figure}
-
-The \CodeIn{Instrumenter} component transforms the two versions of the
-program code such that the transformed program code is
-amenable to regression testing. In particular, the \CodeIn{Instrumenter} component
-instruments both versions of the program under test. The
-instrumentation allows us to compare the internal behavior
-of running the same generated test on the two versions.
-	
+\Comment{
 	Figure~\ref{fig:Changed} shows the code of \CodeIn{testMe}'s new version after instrumentation. The \CodeIn{Instrumenter} component inserts a statement (Line 12 in Figure~\ref{fig:Changed}) just after any changed	 statement (Line 11 in Figure~\ref{fig:example}). The instrumented statement allows us to store the current value of \CodeIn{x} in a particular run (i.e., an explored path) of DSE. In particular, this statement results in an assertion \CodeIn{PexAssert.IsTrue ("uniqueName", x == currentX)}\footnote{\CodeIn{PexAssert} is an API class provided by Pex.} in the generated test, where \CodeIn{currentX} is the value of $x$ at Line 12 in the new version of the program. One such assertion is generated by Pex each time the statement is executed in the loop. Hence, if the loop containing the changed statement executes 20 times, 20 such assertions will be added to the test generated by Pex.
-The generated test can be executed on the original version of \CodeIn{testMe} to compare program states at Line 12 after the execution of the changed statement with the ones captured in the execution of the new version. 
-			
+The generated test can be executed on the original version of \CodeIn{testMe} to compare program states at Line 12 after the execution of the changed statement with the ones captured in the execution of the new version. 			
 \begin{figure}[t]
 \begin{CodeOut}
 \begin{alltt}
@@ -75,29 +70,28 @@ The generated test can be executed on the original version of \CodeIn{testMe} to
 \caption{Instrumented example program after instrumentation}
 \label{fig:Changed}
 \end{figure}
-
 If there are multiple changed statements in the program, our approach first finds multiple regions each of which contains nearby changed statements in the program. We refer to each of such regions as a changed region in the rest of the paper. Our approach finds all the variables and fields that are identified as defined in a changed region and inserts statements (such as the statement at Line 12 of Figure \ref{fig:Changed}) to log the value of each defined variable or field in the changed region. If a defined variable is a non-primitive type, such a statement enables to compare the object graphs reachable from the logged values to compare program states. The \CodeIn{Dynamic Test Generator} component of \CodeIn{eXpress} then performs DSE on the instrumented new version of the program to generate regression tests. 
-
+}
+\Comment{
 \CodeIn{eXpress} performs DSE on the instrumented new version of the program. After each run of DSE, \CodeIn{eXpress} executes the generated test on the instrumented original version (in the same way as instrumentation of the new version) to check whether the program state is infected after the execution of a changed region. The instrumentation enables us to perform only one instance of DSE on the new version instead of performing two instances of DSE: one on the original and the other on the new program version. Performing two instances of DSE can be technically challenging since we have to perform the two DSE instances in a controlled manner such that both versions are executed  with the same input and the execution trace is monitored for both the versions by a common exploration strategy to decide which branching node to flip next in the two versions. 
 
 The \CodeIn{Dynamic Test Generator} component of \CodeIn{eXpress} uses Dynamic Symbolic Execution (DSE) to generate tests for the new version. DSE iteratively generates test inputs to cover various feasible paths in the program under test. In particular, DSE flips some branching node from a previous execution to generate a test input for covering a new path. The node to be flipped is decided by a search strategy (also called exploration starategy) such as depth-first search. \CodeIn{Dynamic Test Generator} implements a search strategy for Pex~\cite{Pex} to efficiently find behavioral differences between two versions of a program.
-
-To cover the changed statement at Line 11, DSE needs inputs
-$x=90$ and the array $y$ of length greater than 20 where at least 20 elements of y
-have a value 15 and no element has a value 25. To generate the input, DSE needs to execute the loop at least 20 times. In each iteration DSE has the choice of flipping branching nodes at Lines 4, 6, 8, 10, 12, a search space of $2^{100}$ paths (considering a loop bound of 20). 
-  
-To reduce the branch search space of DSE, the \CodeIn{Dynamic Test Generator} component adopts the PIE model~\cite{voas} of error propagation described in Section~\ref{sec:intro}. In particular, the \CodeIn{Dynamic Test Generator} prunes all the following branches from the search space of DSE.
+}
+\\ \textbf{Dynamic Test Generator. }To cover the changed statement at Line 12, DSE needs at least 5 loop iterations. However, the number of iterations depend on the choice of branches DSE flips in each iteration. In each iteration DSE has the choice of flipping 7 branches in the program. For the program in Figure~\ref{fig:example}, Pex takes 441 DSE runs to cover the added statement at Line 12 (to infect the program state). The problem can be amplified if the number of states in the program increase. To reduce the branch search space of DSE, the \CodeIn{Dynamic Test Generator} component adopts the PIE model~\cite{voas} of error propagation described in Section~\ref{sec:intro}. In particular, the \CodeIn{Dynamic Test Generator} prunes all the following branches from the search space of DSE.
 \begin{itemize}
-	\item \textbf{Branches not satisfying E}. The branches $<2, 16>$, $<3, 16>$, $<8, 9>$, and $<12, 13>$ found to be irrelevant by the \CodeIn{Graph Traverser} component cannot help in executing the changed statement at Line 11. Hence, these branches are not explored by the \CodeIn{Dynamic Test Generator} component. 
-	\item \textbf{Branches not satisfying I}. Suppose
-that we cover the changed statement at Line 11 in Figure 1 using inputs
-$x=90$ and the array $y$ of length $20$ where each element of $y$
-has a value $15$. The execution takes a path $P$ executing the
-loop $20$ times, assigning the variable $x$ to $110$ and eventually
-covering the changed statement at Line 11 . However, the program state after the
-execution of  changed statement is not infected since after the first execution
-of the changed statement, the value of $x$ is $3$ in both versions. In such situations, the branching nodes in the execution path
-that are after the last instance of the changed node are not explored. For the example, the branch $<12, 3>$ is pruned from exploration.
+	\item \textbf{Branches not satisfying E}. The branches $<2, 18>$, $<14, 15>$, $<16, 17>$, and $<12, 14>$ found to be irrelevant by the \CodeIn{Graph Traverser} component cannot help in executing the changed statement at Line 11. Hence, these branches are not explored by the \CodeIn{Dynamic Test Generator} component. 
+	\item \textbf{Branches not satisfying I}. If the statement 12 is executed but program state is not infected (i.e execution does not takes the  $<12, 13>$ branch), the branching nodes (in the execution path)
+that are after the last instance of the changed node are not explored. For the example in Figure~\ref{fig:example}, the branches $<14, 16>$, and $<16, 12>$ are pruned from exploration.
+\end{itemize}
+\textbf{Incremental Test Generation.} Our approach can reuse an existing
+test suite for the original version so that changed parts of the program can be explored
+efficiently due to which test generation is likely to find behavior
+differences earlier in path exploration. Assume that there is an existing test suite covering all the blocks in the old version of the program in Figure~\ref{fig:example}. Suppose that the test suite has a test input $I$ = \{"[", "\{", "(", "$<$", "*" \}. The input covers all the blocks in the new version of \CodeIn{TestMe} except the newly added block at Line 13. If we start the program exploration from a scratch (i.e., default input), Pex takes 441 runs to cover the block at Line 13. However, we can reuse the existing test suite for exploration to cover the new block efficiently. Our approach executes the test suite to build an execution tree for the tests in the test suite. Our approach then starts program exploration using the dynamic execution tree discovered by executing the existing test suite instead of starting from an empty tree. Some of the branches in the tree might take many runs for Pex to discover. The right side of Figure~\ref{fig:CFG} shows part of the execution tree for the input $I$. A red (dotted) edge in the tree indicates the false side of a branching node while a blue (solid) edge indicates the true side. To generate an input for the next DSE run, Pex flips a branching node $b$ in the tree whose the other side has not yet been explored and generates an input so that program execution takes the unexplored branch of $b$. Pex chooses such branch for flipping using various heuristics for covering changed regions of the program. It is likely that Pex chooses the branching node 12 (colored dark), which on execution covers the block at Line 12. When starting the program exploration from scratch, Pex takes 420 runs before it could reach the red branching node in Figure~\ref{fig:example2}. Using our approach of seeding the tests from the existing test suite, Pex takes 39 runs to flip the branching node and cover the block at Line 12.
+
+
+
+
+
 \Comment{
 \item \textbf{Branches not satisfying P}. Suppose the changed statement is executed, the program
 state is infected after the execution of the changed statement, but the infection
@@ -105,7 +99,7 @@ does not propagate to an observable output.  We do
 not explore the branches after the execution of the changed statement if these
 branches do not lead to any other changed region.
 }
-\end{itemize}
+
 \Comment{
 For the example in Figure~\ref{fig:example}, our approach takes ** DSE runs to execute the changed statement, while the default strategy in Pex~\cite{Pex} takes ** DSE runs. To infect the program state, our approach takes ** DSE runs. The program state was propagated as soon as it was infected.
 		}

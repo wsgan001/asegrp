@@ -34,12 +34,11 @@ versions of the program under test. In contrast, the goal of
 our approach is specifically to expose behavioral differences across
 versions.
 
-\Comment{
 Some existing capture and replay techniques~\cite{elbaum, orso:selective, SaffAPE2005} capture
 the inputs and outputs of the unit under test during system-test execution. 
 These techniques then replay the captured inputs for the
 unit as less expensive unit tests, and can also check the outputs of
 the unit against the captured outputs. However, the existing system tests do not necessarily exercise the changed behavior of the program under test. In contrast, our approach generates new tests to specifically find behavioral differences.
-}
+
 
 Joshi et al.~\cite{joshi:pretext} use the path conditions from the paths followed by the tests in an existing test suite to generate inputs that violate the assertions existing in the test suite. The generated test inputs follow the same paths already covered by the existing test suite and do not cover any new paths. In contrast, our approach exploits the existing test suite to cover new paths. Majumdar et al.~\cite{majumdar:hybrid} propose the concept of hybrid concolic testing. Hybrid concolic testing seeds the program with random inputs so that the program exploration does not get stuck at a particular program location. In contrast, our approach exploits the existing test suite to seed the program exploration. Since the existing test suite is expected to achieve a higher structural coverage, the existing test suite is expected to discover more hard to discover branching nodes in comparison with random inputs. Godefroid et al.~\cite{godefroid:fuzz} propose a DSE based approach for fuzz testing of large applications. Their approach uses a single seed for program exploration. In contrast, our approach  seeds more than one tests to program exploration. Seeding multiple tests can help program exploration in covering the changes more efficiently as discussed in Section~\ref{sec:incremental}. 

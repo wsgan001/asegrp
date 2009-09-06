@@ -196,12 +196,12 @@ The \CodeIn{Instrumenter} component transforms the two versions of the program c
 }
 
 The \CodeIn{Instrumenter} component uses Sets $\Delta_i$ (differences between method $M_{i1}$ and $M_{i2}$) produced by the \CodeIn{Difference Finder}. For each changed method pair $<M_{i1}, M_{i2}>$ for which $\Delta_i \neq \phi$, the \CodeIn{Instrumenter} component finds a region $\delta_i$ containing all the changed instructions in the program. $\delta_i$ is a minimal list of continuous instructions such that all the changed instructions in the method $M_i$ are in the region $\delta_i$. Hence, there can be a maximum of one changed region in one method. At the end of each changed region $\delta_i$, the \CodeIn{Instrumenter} component inserts instructions to save the program state. In particular, the \CodeIn{Instrumenter} inserts the corresponding instructions for \CodeIn{PexStore} statements for each variable (and field) defined in the changed region.
-The \CodeIn{PexStore} statement for a variable $x$ results in an assertion statement \CodeIn{PexAssert.IsTrue( "uniqueName", x == currentX)} in the generated test, where \CodeIn{currentX} is the value of $x$ at Line 12 in the new version of the example program in Figure~\ref{fig:example}.
+The \CodeIn{PexStore} statement for a variable $x$ results in an assertion statement \CodeIn{PexAssert.IsTrue( "uniqueName", x == currentX)} in the generated test, where \CodeIn{currentX} is the value of $x$in the new version.
 The \CodeIn{Dynamic Test Generator} component generates tests for the new version $v2$.
 Once a test is generated that executes a changed region, 
 the test is executed on Version $v1$ 
 to compare program states after the execution of the changed region
-with the ones captured in the execution of Version $v2$.
+with the ones captured in the execution of Version $v2$. The instrumentation enables us to perform only one instance of DSE on the new version instead of performing two instances of DSE: one on the original and the other on the new program version. Performing two instances of DSE can be technically challenging since we have to perform the two DSE instances in a controlled manner such that both versions are executed  with the same input and the execution trace is monitored for both the versions by a common exploration strategy to decide which branching node to flip next in the two versions.
 
 
 
