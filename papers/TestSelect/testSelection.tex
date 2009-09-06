@@ -57,7 +57,10 @@ operational models for result inspection. We have evaluated our
 approach on a set of programs, compared with previous
 code-coverage-based, clustering-based, dynamic-invariant-based, and
 random selection approaches. The experimental results show that our
-approach is effective for test selection.
+approach can effectively reduce the number of tests for result
+inspection while revealing most of the faults.
+%The experimental results
+%show that our approach is effective for test selection.
 
 
 \end{abstract}
@@ -172,7 +175,7 @@ output.
   \centering
   \caption{Faulty code of the grep program}
   \label{fig:example1}
-\end{center}
+\end{center} \vspace{-0.2in}
 \end{figure}
 
 
@@ -323,7 +326,7 @@ We call $y\Rightarrow x$ and $y\Rightarrow \neg x$ control rules.
   \centering
   \caption{Faulty code of the tcas program}
   \label{fig:example2}
-\end{center}
+\end{center} \vspace{-0.2in}
 \end{figure}
 
 
@@ -413,7 +416,7 @@ mean value and the standard deviation of $V_{min}$.
   \includegraphics[angle=0,width=0.4\textwidth]{figs/example31.eps}
   \centering
   \caption{Faulty code of the print\_tokens program}
-  \label{fig:example3}
+  \label{fig:example3} \vspace{-0.2in}
 %\end{left}
 \end{figure}
 
@@ -476,7 +479,7 @@ as the final subset of selected tests.
 
 In this section, we present a set of empirical studies to evaluate
 the effectiveness of our approach in test selection. In particular,
-we investigate three main research questions: %\vspace{-0.1in}
+we investigate three main research questions:
 \begin{itemize}
 \item
 RQ1: Can our approach select a small subset of tests that have high
@@ -497,8 +500,9 @@ RQ3: What is the efficiency of our approach?
 
 We next describe the subjects and measurements. We then present the
 results of our approach in test selection, compared with the
-existing approaches.
-
+existing approaches. The detailed results of our evaluation are
+available at
+\url{https://sites.google.com/site/asergrp/projects/testselect/}.
 
 
 
@@ -524,26 +528,60 @@ test selection~\cite{Harder03}.
 %Failed Tests &  \\
 
 \hline  Program &   LOC &   Test Cases  &   Faulty Versions & Failed
-Tests    &   Faulty Versions     &   Failed Tests
+Tests & Faulty Versions     &   Failed Tests
     &   Program Description \\
- & & & & & (Nontrivial) & (Nontrivial) & \\
+ & &  &  & (Avg.) & (Nontrivial) & (Nontrivial) & \\
 
-\hline  print\_tokens   &   539 &   4130    &   7   &   69.1    &   7   &   69.1    &   lexical analyzer    \\
-\hline  print\_tokens2  &   489 &   4115    &   10  &   223.7   &   4   &   108.8   &   lexical analyzer    \\
-\hline  replace &   507 &   5542    &   31  &   105.8   &   29  &   92.7    &   pattern replacement \\
-\hline  schedule    &   397 &   2650    &   9   &   87.7    &   6   &   21  &   priority scheduler  \\
-\hline  schedule2   &   299 &   2710    &   9   &   32.8    &   9   &   32.8    &   priority scheduler  \\
-\hline  tcas    &   174 &   1608    &   41  &   38.5    &   36  &   28.2    &   altitude separation \\
-\hline  tot\_info &   398 &   1052    &   23  &   82.6    &   11  &   24.4    &   information measure \\
-\hline  Space   &   9564    &   13585   &   34  &   2111    &   17  &   164.4   &   ADL interpreter \\
+\hline  print\_tokens   &   539 &   4130    &   7   &   69    &   7   &   69    &   lexical analyzer    \\
+\hline  print\_tokens2  &   489 &   4115    &   10  &   224   &   4   &   109   &   lexical analyzer    \\
+\hline  replace &   507 &   5542    &   31  &   106   &   29  &   93    &   pattern replacement \\
+\hline  schedule    &   397 &   2650    &   9   &   88    &   6   &   21  &   priority scheduler  \\
+\hline  schedule2   &   299 &   2710    &   9   &   33    &   9   &   33    &   priority scheduler  \\
+\hline  tcas    &   174 &   1608    &   41  &   39    &   36  &   28    &   altitude separation \\
+\hline  tot\_info &   398 &   1052    &   23  &   83    &   11  &   24    &   information measure \\
+\hline  Siemens suite & 404 & 3115 & 130 & 92 & 102 & 54 & -- \\
+\hline  Space   &   9564    &   13585   &   34  &   2111    &   17  &   164   &   ADL interpreter \\
 %\hline  grep    &   13358   &   809 &   20  &   215 &   9   &   12.4    &   pattern matching    \\
-\hline  grep    &   13358   &   809 &   20  &   177 &   9   &   11.5    &   pattern matching    \\
+\hline  grep    &   13358   &   809 &   20  &   177 &   9   &   12    &   pattern matching    \\
 
 \hline
 \end{tabular}
 \end{table*}
 
-
+%\begin{figure*}
+%%  \centering
+%\vspace{-0.4in}
+%  \subfigure[Results in the Siemens program]{
+%    \label{fig:all:a} %% label for first subfigure
+%    %\includegraphics{figs/plotExps_siemens.eps}}
+%    \includegraphics[width=0.35\textwidth]{figs/plotExps_siemens.eps}}
+%%  \hspace{0.5in}
+%  \subfigure[Results in the space program]{
+%    \label{fig:all:b} %% label for second subfigure
+%    \includegraphics[width=0.35\textwidth]{figs/plotExps_space.eps}}
+%  \subfigure[Results in the grep program]{
+%    \label{fig:all:c} %% label for second subfigure
+%    \includegraphics[width=0.35\textwidth]{figs/plotExps_grep.eps}}
+%  \caption{Results of all the faults}
+%  \label{fig:all} %% label for entire figure
+%%\end{figure}
+%
+%%\begin{figure}
+%%  \centering
+%  \subfigure[Results in the Siemens program]{
+%    \label{fig:nontrivial:a} %% label for first subfigure
+%    %\includegraphics{figs/plotExps_diffi_siemens.eps}}
+%    \includegraphics[width=0.35\textwidth]{figs/plotExps_diffi5_siemens.eps}}
+%%  \hspace{0.5in}
+%  \subfigure[Results in the space program]{
+%    \label{fig:nontrivial:b} %% label for second subfigure
+%    \includegraphics[width=0.35\textwidth]{figs/plotExps_diffi5_space.eps}}
+%  \subfigure[Results in the grep program]{
+%    \label{fig:nontrivial:c} %% label for second subfigure
+%    \includegraphics[width=0.35\textwidth]{figs/plotExps_diffi5_grep.eps}}
+%  \caption{Results of the nontrivial faults}
+%  \label{fig:nontrivial} %% label for entire figure
+%\end{figure*}
 
 The first subject is the Siemens suite~\cite{Hutchins94}, which was
 created by Siemens researchers. The Siemens researchers created 132
@@ -552,13 +590,13 @@ lines. The Siemens researchers generated tests automatically from
 test-specification scripts, then augmented those tests with
 manually-constructed white-box tests such that each exercisable
 coverage unit was covered by at least 30 test cases. The numbers of
-tests range from 1,052 to 5,542. There are 130 faults that can be
+tests range from 1052 to 5542. There are 130 faults that can be
 detected by the test suite in our environment.
 
 The second subject is the {\it Space} program~\cite{Rothermel01},
 which interprets Array Definition Language inputs. The {\it Space}
 program was developed at the European Space Agency. It has 9564
-lines of C code. The test suite of Space contains 13,585 test cases,
+lines of C code. The test suite of Space contains 13585 test cases,
 where 10000 were randomly generated and the remainder were added to
 cover every statement or branch at least 30 times. There are 38
 faults, among which 34 faults can be detected by the test suite in
@@ -605,33 +643,37 @@ can reveal most of the faults.
 
 \subsection{Results}
 
+
+
 Figures \ref{fig:all} and \ref{fig:nontrivial} show the results of
 our approach and the existing test selection approaches, including
 the code-coverage-based, clustering-based, and
-dynamic-invariant-based approaches. Tables \ref{tab:our},
-\ref{tab:other}, \ref{tab:our:nontrivial}, and
-\ref{tab:other:nontrivial} show some of the detailed results. We
-also present the results of random selection as the comparison
-baseline. Because the three subjects are quite different in the
-program size and the original test suite size, we present the
-results in these three subjects separately. To reduce the potential
+dynamic-invariant-based approaches. The x-axis is the number of
+selected tests and the y-axis is the percentage of faults revealed
+by the selected tests. We also present the results of random
+selection as the comparison baseline. Because the three subjects are
+quite different in the program size and the original test suite
+size, we present the results in these three subjects separately.
+Tables \ref{tab:our}, \ref{tab:other}, \ref{tab:our:nontrivial}, and
+\ref{tab:other:nontrivial} show some of the detailed results,
+including the number of selected tests and the percentage of
+revealed faults in each subject program. To reduce the potential
 effect of random noise, we run all of the experiments 50 times and
 then report the averaged results.
 
-\vspace{-0.1in}
+
 
 \subsubsection{Effectiveness of Our Approach}
 
 
 
-
 \begin{figure}
-  \centering
+%  \centering
   \subfigure[Results in the Siemens program]{
     \label{fig:all:a} %% label for first subfigure
     %\includegraphics{figs/plotExps_siemens.eps}}
     \includegraphics[width=0.5\textwidth]{figs/plotExps_siemens.eps}}
-  \hspace{0.5in}
+%  \hspace{0.5in}
   \subfigure[Results in the space program]{
     \label{fig:all:b} %% label for second subfigure
     \includegraphics[width=0.5\textwidth]{figs/plotExps_space.eps}}
@@ -643,12 +685,12 @@ then report the averaged results.
 \end{figure}
 
 \begin{figure}
-  \centering
+%  \centering
   \subfigure[Results in the Siemens program]{
     \label{fig:nontrivial:a} %% label for first subfigure
     %\includegraphics{figs/plotExps_diffi_siemens.eps}}
     \includegraphics[width=0.5\textwidth]{figs/plotExps_diffi5_siemens.eps}}
-  \hspace{0.5in}
+%  \hspace{0.5in}
   \subfigure[Results in the space program]{
     \label{fig:nontrivial:b} %% label for second subfigure
     \includegraphics[width=0.5\textwidth]{figs/plotExps_diffi5_space.eps}}
@@ -660,6 +702,27 @@ then report the averaged results.
 \end{figure}
 
 
+
+
+%\begin{figure*}
+%  \centering
+%  \hspace{-0.2in}
+%  \subfigure[Results in the Siemens program]{
+%    \label{fig:all:a} %% label for first subfigure
+%    %\includegraphics{figs/plotExps_siemens.eps}}
+%    \includegraphics[width=0.35\textwidth]{figs/plotExps_siemens.eps}}
+%  \hspace{-0.4in}
+%  \subfigure[Results in the space program]{
+%    \label{fig:all:b} %% label for second subfigure
+%    \includegraphics[width=0.35\textwidth]{figs/plotExps_space.eps}}
+%  \hspace{-0.4in}
+%  \subfigure[Results in the grep program]{
+%    \label{fig:all:c} %% label for second subfigure
+%    \includegraphics[width=0.35\textwidth]{figs/plotExps_grep.eps}}
+%  \hspace{-0.2in}
+%  \caption{Results of all the faults}
+%  \label{fig:all} %% label for entire figure
+%\end{figure*}
 
 \begin{table*}[htbp]
 \caption{Results of our approach on all the faults}\label{tab:our}
@@ -677,10 +740,10 @@ then report the averaged results.
 \hline  schedule2   &   2710    &   100 &   32  &   62  &   24  &   61  &   9   &   25  \\
 \hline  tcas    &   1608    &   100 &   26  &   74  &   15  &   68  &   12  &   23  \\
 \hline  tot\_info &   1052    &   100 &   29  &   84  &   21  &   71  &   9   &   74  \\
-\hline  Siemens suite   &   3115    &   100 &   37  &   82  &   27  &   76  &   10  &   46  \\
-\hline  Space   &   13585   &   100 &   345 &   100 &   242 &   94  &   109 &   84  \\
+\hline  Siemens suite   &   3115    &   100 &   \textbf{37}  &   \textbf{82}  &   27  &   76  &   10  &   46  \\
+\hline  Space   &   13585   &   100 &   \textbf{345} &   \textbf{100} &   242 &   94  &   109 &   84  \\
 %\hline  grep    &   809 &   100 &   219 &   97  &   178 &   94  &   76  &   95  \\
-\hline  grep    &   809 &   100 &   218 &   98  &   178 &   96  &   75  &   96  \\
+\hline  grep    &   809 &   100 &   \textbf{218} &   \textbf{98}  &   178 &   96  &   75  &   96  \\
 
 \hline
 \end{tabular}
@@ -689,34 +752,37 @@ then report the averaged results.
 \begin{table*}[htbp]
 \caption{Results of other approaches on all the
 faults}\label{tab:other} \center
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 %\hline Program   & \multicolumn{2}{c}{Original Test Set} \vline & \multicolumn{3}{c}{Covering Branches} \vline  \\
 
-\hline Program   & \multicolumn{2}{c}{Original Test Suite} \vline &
+\hline Program   & \multicolumn{2}{c}{Original } \vline &
+\multicolumn{2}{c}{Random} \vline &
 \multicolumn{2}{c}{Code-coverage-based} \vline &
 \multicolumn{2}{c}{Clustering-based} \vline &
-\multicolumn{2}{c}{Operational Difference} \vline
+\multicolumn{2}{c}{Operational} \vline
     \\
 
-& \multicolumn{2}{c}{} \vline & \multicolumn{2}{c}{Approach} \vline
-& \multicolumn{2}{c}{Approach} \vline & \multicolumn{2}{c}{} \vline
+& \multicolumn{2}{c}{Test Suite} \vline &
+\multicolumn{2}{c}{Selection} \vline & \multicolumn{2}{c}{Approach
+(k=1)} \vline & \multicolumn{2}{c}{Approach} \vline &
+\multicolumn{2}{c}{Difference} \vline
    \\
 
- \cline{2-9}  & \#Tests &   \%Faults & \#Tests &   \%Faults &
-\#Tests &   \%Faults & \#Tests &   \%Faults  \\
+ \cline{2-11}  & \#Tests &   \%Faults & \#Tests &   \%Faults &
+\#Tests &   \%Faults & \#Tests &   \%Faults & \#Tests &   \%Faults  \\
 
 
-\hline  print\_tokens   &   4130    &   100 &   6   &   61  &   40  &   84  &   9   &   37   \\
-\hline  print\_tokens2  &   4115    &   100 &   4   &   90  &   40  &   100 &   6   &   51    \\
-\hline  replace &   5542    &   100 &   12  &   33  &   40  &   57  &   18  &   45    \\
-\hline  schedule    &   2650    &   100 &   7   &   26  &   40  &   60  &   10  &   33   \\
-\hline  schedule2   &   2710    &   100 &   5   &   26  &   40  &   47  &   13  &   30    \\
-\hline  tcas    &   1608    &   100 &   11  &   31  &   40  &   84  &   26  &   55    \\
-\hline  tot\_info &   1052    &   100 &   5   &   53  &   40  &   82  &   9   &   72   \\
-\hline  Siemens suite   &   3115    &   100 &   7   &   46  &   40  &   73  &   13  &   46   \\
-\hline  Space   &   13585   &   100 &   102 &   80  &   400 &   87  &   63  &   80  \\
+\hline  print\_tokens   &   4130    &   100 &   37  &   39&   6   &   61  &   40  &   84  &   9   &   37   \\
+\hline  print\_tokens2  &   4115    &   100 &   37  &   78&   4   &   90  &   40  &   100 &   6   &   51    \\
+\hline  replace &   5542    &   100 &   37  &   45&   12  &   33  &   40  &   57  &   18  &   45    \\
+\hline  schedule    &   2650    &   100 &   37  &   48&   7   &   26  &   40  &   60  &   10  &   33   \\
+\hline  schedule2   &   2710    &   100 &   37  &   34&   5   &   26  &   40  &   47  &   13  &   30    \\
+\hline  tcas    &   1608    &   100 &   37  &   46&   11  &   31  &   40  &   84  &   26  &   55    \\
+\hline  tot\_info &   1052    &   100 &   37  &   75&   5   &   53  &   40  &   82  &   9   &   72   \\
+\hline  Siemens suite   &   3115    &   100 &   \textbf{37}  &   \textbf{52}&   \textbf{7}   &   \textbf{46}  &   \textbf{40}  &   \textbf{73}  &   \textbf{13}  &   \textbf{46}   \\
+\hline  Space   &   13585   &   100 &   \textbf{345} &   \textbf{89}&   \textbf{102} &   \textbf{80}  &   \textbf{400} &   \textbf{87}  &   \textbf{63}  &   \textbf{80}  \\
 %\hline  grep    &   809 &   100 &   101 &   90  &   250 &   91  &   -   &   -     \\
-\hline  grep    &   809 &   100 &   100 &   91  &   250 &   89  &   -   &   -     \\
+\hline  grep    &   809 &   100 &   \textbf{219} &   \textbf{90}&   \textbf{100} &   \textbf{91}  &   \textbf{250} &   \textbf{89}  &   -   &   -     \\
 
 \hline
 \end{tabular}
@@ -741,10 +807,10 @@ faults}\label{tab:our:nontrivial} \center
 \hline  schedule2   &   2710    &   100 &   32  &   62  &   24  &   61  &   9   &   25  \\
 \hline  tcas    &   1608    &   100 &   26  &   72  &   15  &   65  &   12  &   18  \\
 \hline  tot\_info &   1052    &   100 &   30  &   69  &   21  &   50  &   9   &   55  \\
-\hline  Siemens suite   &   3115    &   100 &   37  &   80  &   28  &   74  &   10  &   37  \\
-\hline  Space   &   13585   &   100 &   376 &   99  &   265 &   89  &   118 &   77  \\
+\hline  Siemens suite   &   3115    &   100 &   \textbf{37}  &   \textbf{80}  &   28  &   74  &   10  &   37  \\
+\hline  Space   &   13585   &   100 &   \textbf{376} &   \textbf{99}  &   265 &   89  &   118 &   77  \\
 %\hline  grep    &   809 &   100 &   225 &   93  &   184 &   87  &   77  &   90  \\
-\hline  grep    &   809 &   100 &   224 &   95  &   183 &   90  &   76  &   92  \\
+\hline  grep    &   809 &   100 &   \textbf{224} &   \textbf{95}  &   183 &   90  &   76  &   92  \\
 
 \hline
 \end{tabular}
@@ -753,29 +819,33 @@ faults}\label{tab:our:nontrivial} \center
 \begin{table*}[htbp]
 \caption{Results of other approaches on nontrivial
 faults}\label{tab:other:nontrivial} \center
-\begin{tabular}{|c|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 
-\hline Program   & \multicolumn{2}{c}{Original Test Suite} \vline &
-\multicolumn{2}{c}{Code-coverage-based Approach} \vline &
-\multicolumn{2}{c}{Clustering-based Approach} \vline     \\
+\hline Program   & \multicolumn{2}{c}{Original } \vline &
+\multicolumn{2}{c}{Random} \vline &
+\multicolumn{2}{c}{Code-coverage-based} \vline &
+\multicolumn{2}{c}{Clustering-based} \vline     \\
+
+& \multicolumn{2}{c}{Test Suite} \vline &
+\multicolumn{2}{c}{Selection} \vline & \multicolumn{2}{c}{Approach
+(k=1)} \vline &
+\multicolumn{2}{c}{Approach} \vline     \\
+
+ \cline{2-9}  & \#Tests &   \%Faults & \#Tests &   \%Faults &
+\#Tests &   \%Faults & \#Tests &   \%Faults \\
 
 
-
- \cline{2-7}  & \#Tests &   \%Faults & \#Tests &   \%Faults &
-\#Tests &   \%Faults  \\
-
-
-\hline  print\_tokens   &   4130    &   100 &   6   &   61  &   40  &   84  \\
-\hline  print\_tokens2  &   4115    &   100 &   5   &   76  &   40  &   100 \\
-\hline  replace &   5542    &   100 &   12  &   32  &   40  &   60  \\
-\hline  schedule    &   2650    &   100 &   7   &   26  &   40  &   80  \\
-\hline  schedule2   &   2710    &   100 &   5   &   26  &   40  &   47  \\
-\hline  tcas    &   1608    &   100 &   11  &   25  &   40  &   82  \\
-\hline  tot\_info &   1052    &   100 &   5   &   23  &   40  &   67  \\
-\hline  Siemens suite   &   3115    &   100 &   7   &   38  &   40  &   74  \\
-\hline  Space   &   13585   &   100 &   110 &   63  &   400 &   87  \\
+\hline  print\_tokens   &   4130    &   100 &   37  &   39&   6   &   61  &   40  &   84  \\
+\hline  print\_tokens2  &   4115    &   100 &   37  &   54&   5   &   76  &   40  &   100 \\
+\hline  replace &   5542    &   100 &   37  &   42&   12  &   32  &   40  &   60  \\
+\hline  schedule    &   2650    &   100 &   37  &   26&   7   &   26  &   40  &   80  \\
+\hline  schedule2   &   2710    &   100 &   37  &   34&   5   &   26  &   40  &   47  \\
+\hline  tcas    &   1608    &   100 &   37  &   40&   11  &   25  &   40  &   82  \\
+\hline  tot\_info &   1052    &   100 &   37  &   51&   5   &   23  &   40  &   67  \\
+\hline  Siemens suite   &   3115    &   100 &   \textbf{37}  &   \textbf{41}&   \textbf{7}   &   \textbf{38}  &   \textbf{40}  &   \textbf{74}  \\
+\hline  Space   &   13585   &   100 &   \textbf{376} &   \textbf{79}&   \textbf{110} &   \textbf{63}  &   \textbf{400} &   \textbf{87}  \\
 %\hline  grep    &   809 &   100 &   103 &   78  &   250 &   79  \\
-\hline  grep    &   809 &   100 &   103 &   83  &   250 &   81  \\
+\hline  grep    &   809 &   100 &   \textbf{225} &   \textbf{77}&   \textbf{103} &   \textbf{83}  &   \textbf{250} &   \textbf{81}  \\
 
 \hline
 \end{tabular}
@@ -832,16 +902,13 @@ algorithm selects the test that covers the largest number of
 elements not covered by the previously selected tests. This approach
 is based on the assumption that many software faults and their
 caused failures can be revealed simply by exercising such elements,
-regardless of other factors.
-
-To evaluate the potential capability of finding more faults using
-the code-coverage-based approach, we also extend the basic
-code-coverage-based approach by increasing the number of times each
-program element should be covered. We say a program element is
-covered k times if there are k different tests that cover it.
-
-We use the branch coverage and we experiment with k from 1 to 10.
-The results are plotted in Figures \ref{fig:all} and
+regardless of other factors. To evaluate the potential capability of
+finding more faults using the code-coverage-based approach, we also
+extend the basic code-coverage-based approach by increasing the
+number of times each program element should be covered. We say a
+program element is covered k times if there are k different tests
+that cover it. We use the branch coverage and we experiment with k
+from 1 to 10. The results are plotted in Figures \ref{fig:all} and
 \ref{fig:nontrivial}, and shown in Tables \ref{tab:other} and
 \ref{tab:other:nontrivial}.
 
@@ -942,7 +1009,7 @@ most of the faults.
 
 
 
-\vspace{-0.1in}
+
 
 \subsubsection{Efficiency}
 
@@ -954,10 +1021,11 @@ basic code-coverage-based approach and that of the clustering-based
 approach. The result is shown in Table \ref{tab:effi}.
 
 \begin{table}[t]
-\caption{Efficiency of Our Approach}\label{tab:effi} \center
+\caption{Efficiency of Our Approach
+(\emph{seconds})}\label{tab:effi} \center
 \begin{tabular}{|c|c|c|c|c|c|}
-\hline Program   & LOC & \#Tests & Our  & \hspace{-0.1cm}Coverage\hspace{-0.1cm} & \hspace{-0.1cm}Clustering\hspace{-0.1cm}   \\
-& & & \hspace{-0.1cm}Approach\hspace{-0.1cm} &  &  \\
+\hline Program   & LOC \hspace{-0.3cm}& \hspace{-0.2cm}\#Tests\hspace{-0.1cm} & Our  & \hspace{-0.1cm}Coverage\hspace{-0.1cm} & \hspace{-0.1cm}Clustering\hspace{-0.1cm}   \\
+& & & \hspace{-0.1cm}\footnotesize{Approach}\hspace{-0.1cm} &  &  \\
 
 \hline  print\_tokens   &   539 &   4130    &   1.4 &   0.4 &   366.2   \\
 \hline  print\_tokens2  &   489 &   4115    &   5.4 &   0.7 &   82.5    \\
@@ -965,10 +1033,10 @@ approach. The result is shown in Table \ref{tab:effi}.
 \hline  schedule    &   397 &   2650    &   1.0 &   0.2 &   65.1    \\
 \hline  schedule2   &   299 &   2710    &   1.3 &   0.2 &   93.8    \\
 \hline  tcas    &   174 &   1608    &   0.7 &   0.1 &   38.8    \\
-\hline  Tot\_info   &   398 &   1052    &   0.8 &   0.1 &   14.7    \\
-\hline  Siemens suite   &   400 &   3115    &   2.6 &   0.4 &   150.2   \\
+\hline  tot\_info   &   398 &   1052    &   0.8 &   0.1 &   14.7    \\
+\hline  \hspace{-0.1cm}Siemens suite\hspace{-0.1cm}   &   400 &   3115    &   2.6 &   0.4 &   150.2   \\
 \hline  Space   &   9564    &   13585   &   598.8   &   5.4 &   1364    \\
-\hline  grep    &   13358   &   809 &   92.9    &   4.9 &   6.8 \\
+\hline  grep    &   \hspace{-0.1cm}13358 \hspace{-0.1cm}  &   809 &   92.9    &   4.9 &   6.8 \\
 
 
 \hline
@@ -997,7 +1065,7 @@ improvement is to mine only the control rules between the branches
 in the same modules. We can then greatly reduce the number of
 candidate control rules and thus the time cost of our approach.
 
-
+\vspace{-0.1in}
 \subsubsection{Summary and Discussions}
 
 Our results suggest the following observations:
@@ -1011,15 +1079,20 @@ program behaviors.
 
 
 \item \vspace{-0.1in}
-Our approach can select a test suite with much higher
+Our approach can select a test suite with a much higher
 fault-revealing capability than those of the code-coverage-based
 approach and the dynamic-invariant-based approach, and is more
 robust and cost-effective than the clustering-based approach.
-However, we have not compared the effectiveness of our approach with
-that of maximizing more complex coverage profiles, which are more
-difficult to collect. The clustering approach is more flexible for
-selecting different numbers of tests. Finally, the dynamic
-invariants are useful for multiple purposes besides test selection.
+%However, we have not compared the effectiveness of our approach with
+%that of maximizing more complex coverage profiles, which are more
+%difficult to collect. The clustering approach is more flexible for
+%selecting different numbers of tests. Finally, the dynamic
+%invariants are useful for multiple purposes besides test selection.
+But we note that there are some issues to be considered. The
+code-coverage-based approach may reveal more faults if more complex
+coverage profiles are used, which however are more difficult to
+collect. The clustering approach is more flexible for selecting
+different numbers of tests.
 \item \vspace{-0.1in}
 Our approach takes reasonable time for small to medium sized
 programs with large test suites. However, it may not be efficient
@@ -1027,18 +1100,33 @@ enough for large programs with large test suites. This issue may be
 alleviated by mining only the control rules between the branches in
 the same modules. We need to conduct further experiments to
 investigate this technique.
-\end{itemize} \vspace{-0.1in}
-Our current experiments are based on existing test suites whose
-tests are manually or randomly generated. In automated testing, a
-number of test generation approaches generate tests systematically.
-It is valuable for our future work to investigate how our approach
-can work on the test sets automatically generated by these
-approaches.
+\end{itemize}
+%Our current experiments are based on existing test suites whose
+%tests are manually or randomly generated. In automated testing, a
+%number of test generation approaches generate tests systematically.
+%It is valuable for our future work to investigate how our approach
+%can work on the test sets automatically generated by these
+%approaches.
+
+\subsection{Threats to Validity}
+The threats to external validity primarily include the degree to
+which the subject programs, faults, and test cases are
+representative of true practice. The Siemens programs are small and
+the space program is of medium size. Most of the faulty versions
+involve simple, one or two-line manually seeded faults. Moreover,
+the tests are manually or randomly generated, while in automated
+testing, a number of test generation approaches generate tests
+systematically. These threats could be reduced by more experiments
+on wider types of subjects with systematically generated tests in
+future work. The threats to internal validity include the fact that
+different approaches select different numbers of tests. This fact
+may make the comparison of fault-revealing effectiveness bias to the
+approaches that select larger number of tests. To reduce this bias,
+we present the results of random selection as the baseline. We also
+try to evaluate the fault-revealing capabilities of other approaches
+with different numbers of selected tests.
 
 
-
-
-\vspace{-0.15in}
 
 %-------------------------------------------------------------------------
 \section{Related Work} \label{sec:relatedwork}
@@ -1168,7 +1256,7 @@ test oracles are not available.
 
 
 
-\vspace{-0.15in}
+
 
 %-------------------------------------------------------------------------
 \section{Conclusions and Future Work}
@@ -1185,8 +1273,13 @@ that violate all these common operational models greedily. We have
 evaluated our approach on the {\it Siemens} suite, the {\it Space}
 program, and the {\it grep} program, compared with
 code-coverage-based, clustering-based, and dynamic-invariant-based
-approaches. The experimental results show that our approach is
-effective in finding failing tests.
+approaches. The experimental results show that our approach can
+select a test suite with a much higher fault-revealing capability
+than those of the code-coverage-based approach and the
+dynamic-invariant-based approach, and is more robust and
+cost-effective than the clustering-based approach.
+%The experimental results show that our
+%approach is effective in finding failing tests.
 
 We plan to pursue several future directions for improving our
 approach. First, we plan to combine our approach with automatic test
