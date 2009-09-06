@@ -407,16 +407,15 @@ Algorithm 1 presents major steps of comparing ATGs for mining
 mapping relations of API methods. Consider two methods $m$ and $m'$
 of two different languages $L$ and $L'$, respectively, in the client
 code. Consider that the associated ATGs of $m$ and $m'$ are compared
-to mine mapping relations of API methods. First, our algorithm finds
-mapped variables $\in$ $F$, $V$, and $P_1$ in $m$ and $m'$. Our
-algorithm maps two variables $v$ and $v'$ of methods $m$ and $m'$,
+to mine mapping relations of API methods. First, the 
+\CodeIn{findVarPairs} function finds mapped variables $\in$ $F$, $V$, and $P_1$ in $m$ and $m'$. 
+\CodeIn{findVarPairs} maps two variables $v$ and $v'$ of methods $m$ and $m'$,
 respectively, if the similarity metric value on their names is greater
-than \emph{SIM\_THRESHOLD}. For constants in $m$ and $m'$, our
-algorithm maps those two constants, if they have exactly the same
+than \emph{SIM\_THRESHOLD}. For constants in $m$ and $m'$, \CodeIn{findVarPairs} 
+maps those two constants, if they have exactly the same
 value. Our algorithm uses these variable and constant mappings to
 compute mappings between API methods that use these variables and
-constants. Our algorithm uses the following criteria for mapping two
-API methods $jm$ and $sm$.
+constants. 
 
 \emph{Mapping inputs}: The first criterion is based on the inputs
 of $jm$ and $sm$. We map $jm$ with $sm$, if there is a one-to-one
@@ -435,12 +434,14 @@ with $sm$, if the type of $r_1$ is mapped with the type of $r_2$ in
 mapping relations of API classes.
 
 Our algorithm first attempts to map the first API method $jm$ in $m$
-with the first API method $sm$ in $m'$. If our algorithm successfully maps $jm$ with
+with the first API method $sm$ in $m'$. Our algorithm uses the \CodeIn{nextMethods}
+function to get these $jm$ and $sm$ API methods. If our algorithm successfully maps $jm$ with
 $sm$, our algorithm moves to the next available API methods in $m$
 and $m'$ of the client code. If our algorithm is not able to map $jm$
 with $sm$, our algorithm merges $sm$ and $jm$ with their next available API methods
 in the corresponding ATGs, respectively, and attempts to map merged API methods.
-For two merged API methods, our algorithm uses the
+Our algorithm uses the \CodeIn{replace} function for merging an API method with its
+next available API method. For two merged API methods, our algorithm uses the
 maximum similarity of method names between $jm$ and $sm$ as a
 similarity metric value for mapping their functionalities.
 With each iteration, $sm$ or $jm$ or the mapping relation (represented as $S$)
