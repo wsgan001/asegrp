@@ -11,10 +11,9 @@ different programming languages. To address business requirements
 and to survive in competing markets, companies or open source
 organizations often have to release different versions of their
 projects in different languages. For example, many well-known
-projects such as\Comment{
-Lucene\footnote{\url{http://lucene.apache.org/}},}
-db4o\footnote{\url{http://www.db4o.com/}} and
-WordNet\footnote{\url{http://wordnet.princeton.edu/}} provide
+projects such as
+Lucene\footnote{\url{http://lucene.apache.org/}}\Comment{db4o\footnote{\url{http://www.db4o.com/}}}
+and WordNet\footnote{\url{http://wordnet.princeton.edu/}} provide
 multiple versions in different languages. For some open source
 projects, although their project teams do not officially provide
 multiple versions, external programmers often create their versions
@@ -63,22 +62,22 @@ support only a subset of APIs for translation. Such a limitation
 results in many compilation errors in translated projects and limits
 these approaches' usage in practice.
 
-In this paper, we propose a novel approach that automatically mines how APIs of
-one language are mapped to APIs of another language. We refer to
-this mapping as \emph{mapping relations of APIs}. In our approach,
-we mine mapping relations based on API usages in the client
-code rather based on API implementations with three major reasons.
-(1) API libraries often do not come with source files especially for
-those C\# libraries. (2) Relations mined based on API
-implementations often have lower confidence than
-relations mined based on API usages. The reason is that API
-implementations have only one data point for analysis, whereas
-API usages can have many data points (i.e., call sites) for mining. (3) Mapping
-relations of APIs are often complex and cannot be mined based
-on the information available in the API implementations. First,
-mapping parameters of an API method in one language with an API
-method in the other language can be complex. For example, consider
-the following two API methods in Java and C\#:
+In this paper, we propose a novel approach that automatically mines
+how APIs of one language are mapped to APIs of another language. We
+refer to this mapping as \emph{mapping relations of APIs} and our
+approach as MAM. MAM mines mapping relations based on API usages in
+the client code rather based on API implementations with three major
+reasons. (1) API libraries often do not come with source files
+especially for those C\# libraries. (2) Relations mined based on API
+implementations often have lower confidence than relations mined
+based on API usages. The reason is that API implementations have
+only one data point for analysis, whereas API usages can have many
+data points (i.e., call sites) for mining. (3) Mapping relations of
+APIs are often complex and cannot be mined based on the information
+available in the API implementations. First, mapping parameters of
+an API method in one language with an API method in the other
+language can be complex. For example, consider the following two API
+methods in Java and C\#:
 
 \begin{CodeOut}
 $m_1$ in Java: BigDecimal java.math.BigDecimal.multiply (BigDecimal $p_1^1$)\\
@@ -130,11 +129,11 @@ languages.\vspace*{-1.5ex}
 \item A tool implemented for MAM and two
 evaluations on 15 projects that include 18,568 classes and 109,850
 methods with both Java and C\# versions. The results show that our
-approach mines 6,695 mapping relations of API classes with accuracy
-of 86.7\% and 19,110 mapping relations of API methods with accuracy
-of 90.0\%. The results also show that the mined API mapping
-relations reduce 55.4\% of compilation errors and 43.0\% defects
-during translation of projects from Java to C\# using Java2CSharp.
+tool mines 6,695 mapping relations of API classes with accuracy of
+86.7\% and 19,110 mapping relations of API methods with accuracy of
+90.0\%. The results also show that the mined API mapping relations
+reduce 55.4\% of compilation errors and 43.0\% defects during
+translation of projects from Java to C\# using Java2CSharp.
 \end{itemize}\vspace*{-1.5ex}
 
 The rest of this paper is organized as follows.
