@@ -423,7 +423,7 @@ further improvements.
 \begin {tabular} {|c!{\vrule width 1pt}c|c!{\vrule width 1pt}c|c!{\vrule width 1pt}c|c|c|c|c|c|}
  \hline
 \multirow{2}*[-2pt]{\textbf{Projects}}& \multicolumn{2}{|c|}{\textbf{No MF}}  & \multicolumn{2}{|c|}{\textbf{MF}} & \multicolumn{4}{|c|}{\textbf{Ext. MF}}\\
-\cline{2-9} &  \emph{\textbf{E}}&  \emph{\textbf{B}}&  \emph{\textbf{E}}&  \emph{\textbf{B}}& \emph{\textbf{E}}&  \emph{\textbf{\%E}}&  \emph{\textbf{B}}&  \emph{\textbf{\%B}}\\
+\cline{2-9} &  \emph{\textbf{E}}&  \emph{\textbf{D}}&  \emph{\textbf{E}}&  \emph{\textbf{D}}& \emph{\textbf{E}}&  \emph{\textbf{\%E}}&  \emph{\textbf{D}}&  \emph{\textbf{\%D}}\\
  \hline
   rasp        &  973  &   159 &  708  & 123   &  627  &  11.4\% & 93 &  24.4\%    \\
 \hline
@@ -458,12 +458,12 @@ project, Column ``No MF'' lists results without mapping files.
 Column ``MF'' lists results with the mapping files of Java2CSharp.
 Column ``Ext. MF'' lists results with mapping files that combine our
 mined API mapping relations with the existing mapping files of
-Java2CSharp. Sub-columns ``\emph{E}'' and ``\emph{B}'' list number
+Java2CSharp. Sub-columns ``\emph{E}'' and ``\emph{D}'' list number
 of compilation errors and found defects, respectively. For each
 project, we find out those overlapping files between translated
 files and existing C\# files and manually inspect the top 5 largest
 files by comparing existing C\# files for API related defects.
-Sub-columns ``\emph{\%E}'' and ``\emph{\%B}'' list percentages of
+Sub-columns ``\emph{\%E}'' and ``\emph{\%D}'' list percentages of
 improvements over the results of ``MF''. On average, mined API
 mapping relations help further reduce 54.4\% compilation errors and
 43.0\% found defects. As the five projects use different libraries,
