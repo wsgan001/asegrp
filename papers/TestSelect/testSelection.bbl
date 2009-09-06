@@ -1,10 +1,12 @@
 \begin{thebibliography}{10}
+
 \footnotesize
+
 \bibitem{SIR}
-http://sir.unl.edu/php/index.php.
+\url{http://sir.unl.edu/php/index.php}.
 
 \bibitem{Normal}
-www.math.unb.ca/~knight/utility/normtble.htm.
+www.math.unb.ca/~knight/utility/{NormTble}.htm.
 
 \bibitem{Bowring04}
 J.~F. Bowring, J.~M. Rehg, and M.~J. Harrold.
@@ -15,7 +17,7 @@ J.~F. Bowring, J.~M. Rehg, and M.~J. Harrold.
 J.~Chang and D.~J. Richardson.
 \newblock Structural specification-based testing: Automated support and
   experimental evaluation.
-\newblock In {\em ESEC / SIGSOFT FSE}, pages 285--302, 1999.
+\newblock In {\em ESEC/SIGSOFT FSE}, pages 285--302, 1999.
 
 \bibitem{Dickinson01a}
 W.~Dickinson, D.~Leon, and A.~Podgurski.
@@ -26,7 +28,7 @@ W.~Dickinson, D.~Leon, and A.~Podgurski.
 W.~Dickinson, D.~Leon, and A.~Podgurski.
 \newblock Pursuing failure: the distribution of program failures in a profile
   space.
-\newblock In {\em ESEC / SIGSOFT FSE}, pages 246--255, 2001.
+\newblock In {\em ESEC/SIGSOFT FSE}, pages 246--255, 2001.
 
 \bibitem{Elbaum02}
 S.~G. Elbaum, A.~G. Malishevsky, and G.~Rothermel.
@@ -62,7 +64,7 @@ M.~Harder, J.~Mellen, and M.~D. Ernst.
 
 \bibitem{Hsu09}
 H.-Y. Hsu and A.~Orso.
-\newblock Mints: A general framework and tool for supporting test-suite
+\newblock {MINTS: A} general framework and tool for supporting test-suite
   minimization.
 \newblock In {\em ICSE}, pages 419--429, 2009.
 
@@ -125,12 +127,12 @@ G.~Rothermel, R.~H. Untch, C.~Chu, and M.~J. Harrold.
 
 \bibitem{Sen05}
 K.~Sen, D.~Marinov, and G.~Agha.
-\newblock Cute: a concolic unit testing engine for c.
+\newblock {CUTE}: a concolic unit testing engine for {C}.
 \newblock In {\em ESEC/SIGSOFT FSE}, pages 263--272, 2005.
 
 \bibitem{Visser04}
 W.~Visser, C.~S. Pasareanu, and S.~Khurshid.
-\newblock Test input generation with java pathfinder.
+\newblock Test input generation with {Java PathFinder}.
 \newblock In {\em ISSTA}, pages 97--107, 2004.
 
 \bibitem{Xie03}

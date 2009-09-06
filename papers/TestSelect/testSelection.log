@@ -1,4 +1,4 @@
-This is e-TeX, Version 3.141592-2.2 (MiKTeX 2.4) (preloaded format=latex 2006.12.15)  6 SEP 2009 08:22
+This is e-TeX, Version 3.141592-2.2 (MiKTeX 2.4) (preloaded format=latex 2006.12.15)  6 SEP 2009 12:28
 entering extended mode
 **testSelection.tex
 (testSelection.tex
@@ -232,8 +232,9 @@ Overfull \hbox (6.72665pt too wide) in paragraph at lines 38--38
  []
 
 
-Overfull \hbox (9.85793pt too wide) in paragraph at lines 41--60
-\T1/aer/m/n/9 coverage-based, clustering-based, and dynamic-invariant-based
+Overfull \hbox (1.73442pt too wide) in paragraph at lines 93--113
+[][]\T1/aer/m/n/9 A promis-ing test-selection ap-proach is to dy-nam-i-cally mi
+ne
  []
 
 
@@ -247,66 +248,68 @@ File: figs/example11.eps Graphic file (type eps)
 
 <figs/example11.eps>
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 177.
+LaTeX Font Warning: Command \small invalid in math mode on input line 180.
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 177.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 180.
 
 (C:\CTeX\texmf\tex\latex\ae\t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 178.
-
-
 LaTeX Font Warning: Command \small invalid in math mode on input line 181.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 182.
+LaTeX Font Warning: Command \small invalid in math mode on input line 184.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 183.
+LaTeX Font Warning: Command \small invalid in math mode on input line 185.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 188.
+LaTeX Font Warning: Command \small invalid in math mode on input line 186.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 192.
+LaTeX Font Warning: Command \small invalid in math mode on input line 191.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 194.
+LaTeX Font Warning: Command \small invalid in math mode on input line 195.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 205.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 206.
+LaTeX Font Warning: Command \small invalid in math mode on input line 197.
 
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 208.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 217.
+LaTeX Font Warning: Command \small invalid in math mode on input line 209.
 
 
-Overfull \hbox (2.01328pt too wide) in paragraph at lines 236--241
+LaTeX Font Warning: Command \small invalid in math mode on input line 211.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 220.
+
+
+Overfull \hbox (2.01328pt too wide) in paragraph at lines 239--244
 [][]\T1/aer/m/n/9 We pro-pose to mine com-mon op-er-a-tional mod-els, which
  []
 
 
-Overfull \hbox (15.1039pt too wide) in paragraph at lines 279--279
+Overfull \hbox (15.1039pt too wide) in paragraph at lines 281--281
 []\secfnt MINING COM-MON OP-ER-A-TIONAL MOD-
  []
 
 [2]
+Overfull \hbox (12.51552pt too wide) in paragraph at lines 296--301
+\T1/aer/m/n/9 There-fore, we can mine com-mon re-la-tion-ships be-tween branche
+s
+ []
+
 File: figs/example21.eps Graphic file (type eps)
- <figs/example21.eps>
+<figs/example21.eps>
 File: figs/example31.eps Graphic file (type eps)
  <figs/example31.eps>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 422.
 
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 423.
@@ -315,28 +318,31 @@ LaTeX Font Warning: Command \small invalid in math mode on input line 423.
 LaTeX Font Warning: Command \small invalid in math mode on input line 424.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 426.
+LaTeX Font Warning: Command \small invalid in math mode on input line 425.
 
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 427.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 430.
+LaTeX Font Warning: Command \small invalid in math mode on input line 428.
 
 
-Overfull \hbox (2.1096pt too wide) in paragraph at lines 419--433
+LaTeX Font Warning: Command \small invalid in math mode on input line 432.
+
+
+Overfull \hbox (2.1096pt too wide) in paragraph at lines 420--434
 \T1/aer/m/n/9 pro-gram, which is a lex-i-cal an-a-lyzer, in the Siemens suite [
 15].
  []
 
 
-Overfull \hbox (2.84012pt too wide) in paragraph at lines 419--433
+Overfull \hbox (2.84012pt too wide) in paragraph at lines 420--434
 [] \OT1/cmr/m/n/9 = 30$\T1/aer/m/n/9 , $[]$ should be re-set to 0, which is wro
 ngly
  []
 
 
-Overfull \hbox (5.52473pt too wide) in paragraph at lines 419--433
+Overfull \hbox (5.52473pt too wide) in paragraph at lines 420--434
 \T1/aer/m/n/9 omit-ted. The omis-sion of this as-sign-ment may make $[]$
  []
 
@@ -344,18 +350,18 @@ Overfull \hbox (5.52473pt too wide) in paragraph at lines 419--433
 Underfull \vbox (badness 1558) has occurred while \output is active []
 
  [3]
-Overfull \hbox (18.53606pt too wide) in paragraph at lines 485--488
+Overfull \hbox (18.53606pt too wide) in paragraph at lines 486--489
 \T1/aer/m/n/9 clustering-based, and dynamic-invariant-based ap-proaches? 
  []
 
 
-Overfull \hbox (7.75897pt too wide) in paragraph at lines 518--543
+Overfull \hbox (7.75897pt too wide) in paragraph at lines 519--544
  [][] 
  []
 
 [4]
-Overfull \hbox (8.51685pt too wide) in paragraph at lines 607--619
-\T1/aer/m/n/9 code-coverage-based, clustering-based, and dynamic-invariant-
+Overfull \hbox (9.85793pt too wide) in paragraph at lines 608--620
+\T1/aer/m/n/9 coverage-based, clustering-based, and dynamic-invariant-based
  []
 
 File: figs/plotExps_siemens.eps Graphic file (type eps)
@@ -364,17 +370,17 @@ File: figs/plotExps_space.eps Graphic file (type eps)
  <figs/plotExps_space.eps>
 File: figs/plotExps_grep.eps Graphic file (type eps)
  <figs/plotExps_grep.eps>
-Overfull \hbox (15.07787pt too wide) in paragraph at lines 632--640
+Overfull \hbox (15.07787pt too wide) in paragraph at lines 633--641
  [][][] 
  []
 
 
-Overfull \hbox (15.07787pt too wide) in paragraph at lines 632--640
+Overfull \hbox (15.07787pt too wide) in paragraph at lines 633--641
  [] 
  []
 
 
-Overfull \hbox (15.07787pt too wide) in paragraph at lines 632--640
+Overfull \hbox (15.07787pt too wide) in paragraph at lines 633--641
  [] 
  []
 
@@ -385,35 +391,31 @@ File: figs/plotExps_diffi5_space.eps Graphic file (type eps)
 File: figs/plotExps_diffi5_grep.eps Graphic file (type eps)
 
 <figs/plotExps_diffi5_grep.eps>
-Overfull \hbox (15.07787pt too wide) in paragraph at lines 649--657
+Overfull \hbox (15.07787pt too wide) in paragraph at lines 650--658
  [][][] 
  []
 
 
-Overfull \hbox (15.07787pt too wide) in paragraph at lines 649--657
+Overfull \hbox (15.07787pt too wide) in paragraph at lines 650--658
  [] 
  []
 
 
-Overfull \hbox (15.07787pt too wide) in paragraph at lines 649--657
+Overfull \hbox (15.07787pt too wide) in paragraph at lines 650--658
  [] 
  []
 
 
-Overfull \hbox (2.81236pt too wide) in paragraph at lines 823--823
+Overfull \hbox (2.81236pt too wide) in paragraph at lines 822--822
 []\subsecfnt Comparison with the Code-coverage-based Ap-
  []
 
 
-Underfull \vbox (badness 3108) has occurred while \output is active []
-
- [5]
-[6] [7]
-Overfull \hbox (9.40114pt too wide) in paragraph at lines 866--866
+Overfull \hbox (9.40114pt too wide) in paragraph at lines 865--865
 []\subsecfnt Comparison with the Clustering-based Ap-proach 
  []
 
-
+[5] [6] [7]
 Overfull \hbox (2.00914pt too wide) in paragraph at lines 911--911
 []\subsecfnt Comparison with the Dynamic-Invariant-based
  []
@@ -425,19 +427,19 @@ Overfull \hbox (15.00864pt too wide) in paragraph at lines 913--928
  []
 
 
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+
 Overfull \hbox (31.36423pt too wide) in paragraph at lines 958--976
  [][] 
  []
 
 
-Underfull \vbox (badness 6348) has occurred while \output is active []
-
- [8]
 Overfull \hbox (10.47418pt too wide) in paragraph at lines 1014--1023
 \T1/aer/m/n/9 fault-revealing ca-pa-bil-ity than those of the code-coverage-
  []
 
-
+[8]
 Overfull \hbox (5.00308pt too wide) in paragraph at lines 1024--1030
 [][]\T1/aer/m/n/9 Our ap-proach takes rea-son-able time for small to medium
  []
@@ -448,12 +450,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [9]
 (testSelection.bbl) [10] (testSelection.aux) ) 
 Here is how much of TeX's memory you used:
- 2298 strings out of 95889
- 23793 string characters out of 1194556
- 98766 words of memory out of 1072259
- 5175 multiletter control sequences out of 60000
- 46940 words of font info for 64 fonts, out of 1000000 for 2000
+ 2300 strings out of 95889
+ 23811 string characters out of 1194556
+ 97742 words of memory out of 1072259
+ 5176 multiletter control sequences out of 60000
+ 47261 words of font info for 65 fonts, out of 1000000 for 2000
  14 hyphenation exceptions out of 4999
  39i,10n,26p,455b,303s stack positions out of 5000i,500n,10000p,200000b,32768s
 
-Output written on testSelection.dvi (10 pages, 93024 bytes).
+Output written on testSelection.dvi (10 pages, 92904 bytes).

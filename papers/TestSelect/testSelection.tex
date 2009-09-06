@@ -40,35 +40,36 @@ Wujie Zheng\\
 \begin{abstract}
 In automated testing, especially test generation in the absence of
 specifications, a large amount of manual effort is spent on
-test-result inspection. Test selection helps to reduce this cost by
-selecting a small subset of tests that are likely to reveal faults.
-A promising approach is to dynamically mine operational models as
-potential test oracles and then select tests that violate them.
-Existing work mines operational models based on dynamic invariant
-detection. In this paper, we propose to mine common operational
-models, which are often but not always true in all observed traces,
-from a (potentially large) set of unverified tests. Specifically,
-our approach collects branch coverage and data value bounds at
-runtime and then mine implication relationships between branches and
-constraints of data values as potential operational models after
-running all the tests. Our approach then selects tests that violate
-the mined common operational models for result inspection. We have
-evaluated our approach on a set of programs, compared with the
-code-coverage-based, clustering-based, and dynamic-invariant-based
-approaches. The experimental results show that our approach is
-effective for test selection.
+test-result inspection. Test selection helps to reduce this effort
+by selecting a small subset of tests that are likely to reveal
+faults. A promising test-selection approach is to dynamically mine
+operational models as potential test oracles and then select tests
+that violate them. Existing work adopting this approach mines
+operational models based on dynamic invariant detection. In this
+paper, we propose to mine common operational models, which are often
+but not always true in all observed traces, from a (potentially
+large) set of unverified tests. Specifically, our approach collects
+branch coverage and data value bounds at runtime and then mines
+implication relationships between branches and constraints of data
+values as potential operational models after running all the tests.
+Our approach then selects tests that violate the mined common
+operational models for result inspection. We have evaluated our
+approach on a set of programs, compared with previous
+code-coverage-based, clustering-based, dynamic-invariant-based, and
+random selection approaches. The experimental results show that our
+approach is effective for test selection.
 
 
 \end{abstract}
 
-% A category with the (minimum) three required fields
-\category{D.2.5}{Software Engineering}{Testing and Debugging}
-%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures,
-%performance measures]
-
-\terms{Reliability, Experimentation}
-
-\keywords{Software testing, Test selection}
+%% A category with the (minimum) three required fields
+%\category{D.2.5}{Software Engineering}{Testing and Debugging}
+%%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures,
+%%performance measures]
+%
+%\terms{Reliability, Experimentation}
+%
+%\keywords{Software testing, Test selection}
 
 \section{Introduction} \label{sec:intro}
 
@@ -78,36 +79,37 @@ inputs and verify their outputs. Recently, there have been various
 practical approaches on automatic test-input
 generation~\cite{Pacheco07, Sen05, Visser04}. However, test-result
 inspection still remains a largely manual task. Given \emph{a
-priori} specification, developers can reduce this cost by selecting
-test inputs (in short as \emph{tests}) using specification coverage
-criteria~\cite{Chang99}. But it is uncommon to have \emph{a priori}
-specification. Sometimes developers may use general test oracles
-based on memory monitoring tools such as Valgrind
-~\cite{Nethercote07}. But these oracles are limited in checking
-specific kinds of faults. It is highly demanded to develop practical
-test selection techniques, which can select a small subset of tests
-that are likely to reveal faults.
+priori} specification, developers can reduce this manual effort by
+selecting test inputs (in short as \emph{tests}) using specification
+coverage criteria~\cite{Chang99}. But it is uncommon to have \emph{a
+priori} specification in practice. Sometimes developers may use
+general test oracles based on memory monitoring tools such as
+Valgrind ~\cite{Nethercote07}. But these oracles are limited in
+checking specific kinds of faults. It is highly demanded to develop
+practical test-selection techniques, which can select a small subset
+of tests that are likely to reveal faults.
 
 
-A promising approach is to dynamically mine operational models as
-potential test oracles and then select tests that violate them.
-Existing approaches such as Jov~\cite{Xie03} and
+A promising test-selection approach is to dynamically mine
+operational models as potential test oracles and then select tests
+that violate them. Existing approaches such as Jov~\cite{Xie03} and
 Eclat~\cite{Pacheco05} mine dynamic invariants using
 Daikon~\cite{Ernst01} from a set of manually written passing unit
 tests whose results are verified with manually written assertions.
 Due to nontrivial effort for writing the assertions, the number of
 these existing passing unit tests is often limited. Therefore, the
 mined dynamic invariants could be noisy and thus many model
-violations could be false positives. The operational difference (OD)
+violations could be false positives. The operational difference
 approach~\cite{Harder03} starts with an empty test suite and
-repeatedly adds new tests if they violate the invariants of the
-previously selected tests. As the number of previously selected
-tests is also limited, this approach faces the same difficulty of
-false positives. DIDUCE~\cite{Hangal02} mines operational models
-from normal execution of long-running applications and relaxes the
-models gradually. At the beginning of a program run, many presumed
-operational models may be violated and a violation that reveals a
-fault can be overwhelmed by the noise.
+repeatedly adds new tests if they violate the invariants mined from
+the previously selected tests. As the number of previously selected
+tests is also limited, this approach faces the same problem of
+producing many false positives. DIDUCE~\cite{Hangal02} mines
+operational models from normal execution of long-running
+applications and relaxes the models gradually. At the beginning of a
+program run, many presumed operational models may be violated and a
+violation that reveals a fault can be overwhelmed by the
+false-positive noise.
 
 In this paper, we propose to mine common operational models, which
 are often but not always true in all observed traces, from a
@@ -115,16 +117,17 @@ are often but not always true in all observed traces, from a
 of poor quality should pass most of the tests. So the common
 operational models mined from a large set of unverified tests may be
 similar to the true operational models and their violations are
-likely to reveal the faults. By utilizing the information of all the
+likely to reveal faults. By using the information of all the
 unverified tests at hand, our approach can avoid the noise caused by
 a small number of data samples, without requiring a large set of
 verified tests. As a common operational model is not always true
 over the whole set of tests, the type of Daikon inference techniques
 does not work anymore. Alternatively, we may generate and collect
-all the potential models at runtime and evaluate them after running
-all the tests. However, such an approach can incur high runtime
-overhead if Daikon-like operational models, which are in a large
-number, are used.
+all the potential models at runtime (instead of immediately
+discarding any violated potential models) and evaluate them after
+running all the tests. However, such an approach can incur high
+runtime overhead if Daikon-like operational models, which are in a
+large number, are used.
 
 
 
@@ -141,33 +144,33 @@ tools~\cite{Liblit04}. Our approach then mines control rules and
 data rules as potential operational models after running all the
 tests. The likelihood of a common operational model to be a true
 oracle is evaluated using the concept of confidence, i.e., the ratio
-between the number of tests that satisfy the model and the number of
+of the number of tests that satisfy the model over the number of
 tests that satisfy or violate the model. When a model's confidence
 is not equal to 1, the higher the model's confidence is, the more
-suspicious its violations are in indicating a failure. Finally, our
+suspicious its violations are in revealing a fault. Finally, our
 approach selects a small subset of tests that violate the mined
 common operational models for result inspection.
 
 
 To illustrate what a common operational model may look like and how
-its violation is useful for indicating failures, we present an
-example in Figure~\ref{fig:example1}. The example is a buggy version
-of grep 2.3, which is downloaded from the Software Infrastructure
+its violation is useful for indicating faults, we present an example
+in Figure~\ref{fig:example1}. The example is a faulty version of
+grep 2.3, which is downloaded from the Software Infrastructure
 Repository (SIR)~\cite{SIR}. grep is a GNU utility that searches the
 input files for lines containing a match to a given pattern list.
 When grep finds a match in a line of a text file, it copies the line
-to standard output. But if the input file is a binary file, it
+to the standard output. But if the input file is a binary file, it
 normally\footnote{By default, binary files are not treated as text
 files} outputs either a one-line message saying that a binary file
 matches, or no message if there is no match. Furthermore, given the
-option ``--quiet'', grep should not write anything to standard
+option ``--quiet'', grep should not write anything to the standard
 output.
 
 \begin{figure}[t]
 \begin{center}
   \includegraphics[angle=0,width=0.4\textwidth]{figs/example11.eps}
   \centering
-  \caption{Buggy code of the grep program}
+  \caption{Faulty code of the grep program}
   \label{fig:example1}
 \end{center}
 \end{figure}
@@ -192,7 +195,7 @@ found, the checking in Line 14 is expected to return true. In this
 case, $\CodeIn{out\_quiet}$ is originally 0 and then is changed to
 be 1 in Line 3. Without restoring the original value of
 $\CodeIn{out\_quiet}$, the checking in Line 14 returns false and no
-message would be outputted. Because returning no message is not the
+message would be output. Because returning no message is not the
 desired result, we call the test a failing test.
 
 
@@ -201,30 +204,30 @@ Without knowing the fault a priori, how can we identify such a test
 to be a suspicious one among a large number of tests? Our insight is
 that we may get some guidance from the (unverified) executions of
 the program. We run the grep programs on 809 tests that are also
-downloaded from SIR. 667 tests cover the branch that
-$\CodeIn{nlines}$ is true (Line 9), among which only 8 tests cover
-the branch that $\CodeIn{memchr(bufbeg,'\\0',buflim-bufbeg)}$ is
-true (Line 1). Therefore, we can uncover a common operational model
-from the executions: ``$\CodeIn{nlines}>0$ is ever true
+downloaded from SIR. Among the 809 tests, 667 tests cover the branch
+that $\CodeIn{nlines}$ is true (Line 9), among which only 8 tests
+cover the branch that $\CodeIn{memchr(bufbeg,'\\0',buflim-bufbeg)}$
+is true (Line 1). Therefore, we can uncover a common operational
+model from the executions: ``$\CodeIn{nlines}>0$ is ever true
 $\Rightarrow$ \CodeIn{memchr(bufbeg,'\\0',buflim-bufbeg)} is never
 true (in a test)''. Although this model is not always true, it
 reflects the fact that we search more often in a text file than in a
-binary file and a binary file is less likely to contain a match to a
-given pattern. The violations of this model are corner cases that
+binary file, and a binary file is less likely to contain a match to
+a given pattern. The violations of this model are corner cases that
 may require special handling. Yet such corner cases are often
 neglected by programmers or their handling is too tedious to be
 fault free. Therefore, it is valuable to check the result of a test
 that violates the model, i.e., satisfying ``$\CodeIn{nlines}>0$ is
 ever true $\wedge$ \CodeIn{memchr(bufbeg,'\\0',buflim-bufbeg)} is
-ever true''. We will then find the selected test is a failing test
-that identifies the fault.
+ever true''. We then find the selected test to be a failing test
+that reveals the fault.
 
 
 This paper makes the following main contributions\footnote{An
-earlier version of this work is to appear in ICSE NIER 2009 as a
+earlier version of this work was presented in ICSE NIER 2009 as a
 4-page paper \cite{Zheng09}. This work extends the NIER paper in two
 main aspects. First, we enrich the common operational models with
-data rules, which is complementary to our previous control rules.
+data rules, which are complementary to our previous control rules.
 Second, we evaluate both the effectiveness and efficiency of our
 approach, compared with the existing approaches instead of random
 selection.}:
@@ -235,9 +238,9 @@ selection.}:
 \item
 We propose to mine common operational models, which are often but
 not always true in all observed traces, from a (potentially large)
-set of unverified tests. Such common operational models captures
+set of unverified tests. Such common operational models capture
 typical behaviors of the unverified tests and their violations are
-likely to isolate the failures.
+likely to reveal faults.
 
 
 \item
@@ -251,9 +254,9 @@ consist of only branch coverage and data value bounds.
 \item
 
 We conduct a comprehensive experimental study of the effectiveness
-and efficiency of our approach, compared with the
-code-coverage-based, clustering-based, and dynamic-invariant-based
-approaches.
+and efficiency of our approach, compared with previous
+code-coverage-based, clustering-based, dynamic-invariant-based, and
+random selection approaches.
 
 
 \end{itemize}
@@ -261,13 +264,12 @@ approaches.
 
 
 The rest of the paper is organized as follows. Section
-\ref{sec:common} present the proposed approach to mine common
+\ref{sec:common} presents the proposed approach to mine common
 operational models. Section~\ref{sec:select} presents the test
-selection approach.% based on the mined common operational models.
-Section~\ref{sec:studies} describes the empirical studies and
-results. Section \ref{sec:relatedwork} reviews related work.
-Section~\ref{sec:conclusions} concludes the work with future
-directions.
+selection approach. Section~\ref{sec:studies} describes the
+empirical studies and results. Section \ref{sec:relatedwork} reviews
+related work. Section~\ref{sec:conclusions} concludes the work with
+future directions.
 
 
 
@@ -279,38 +281,38 @@ directions.
 \section{Mining Common Operational Models} \label{sec:common}
 
 In this section, we propose two kinds of common operational models
-that are potentially failure-revealing, including control rules and
+that are potentially fault-revealing, including control rules and
 data rules. A control rule is an implication relationship between
 branches. A data rule is an implicit constraint of the variable
-values. We mine the common operational models from all the
-unverified tests. A program that is not of poor quality should pass
-most of the tests. Therefore, the common operational models mined
-from a set of unverified tests may be similar to the real models in
-passing tests.
+values. We mine common operational models from all the unverified
+tests. A program that is not of poor quality should pass most of the
+tests. Therefore, the common operational models mined from a set of
+unverified tests may be similar to the real models in passing tests.
 
 
 
 \subsection{Control Rules}
 
-Many faults can only be revealed when specific control paths are
+Many faults can be revealed only when specific control paths are
 executed. Such control paths may have special branch combinations
-that the programmers do not expect. Therefore, we can mine the
-common relationships between branches and isolate their violations
-as suspicious tests.
+that the programmers do not expect. Therefore, we can mine common
+relationships between branches and isolate their violations as
+suspicious tests.
 
 
 
-Given a branch condition C, denote its then-branch and else-branch
-as C=true and C=false. In a loop, a branch may be executed several
-times. We use two branch predicates $C_t$ and $C_f$ to denote that
-the branch C=true is ever covered (satisfied) and C=false is ever
-covered, respectively. Correspondingly, $\neg C_t$ means that C=true
-is never covered and $\neg C_f$ means that C=false is never covered.
-Note that $\neg C_t$ is not equivalent to $C_f$. It is possible that
-one of them is true and the other is false. The evaluations of a
-branch predicate $x$ may be implied by other predicates. To model
-such implication relationships, we consider two kinds of rules
-$y\Rightarrow x$ and $y\Rightarrow \neg x$, where
+Given a branch condition C, let us denote its then-branch and
+else-branch as C=true and C=false. In a loop, a branch may be
+executed multiple times. We use two branch predicates $C_t$ and
+$C_f$ to denote that the branch C=true is ever covered (satisfied)
+and C=false is ever covered, respectively. Correspondingly, $\neg
+C_t$ means that C=true is never covered and $\neg C_f$ means that
+C=false is never covered. Note that $\neg C_t$ is not equivalent to
+$C_f$. It is possible that one of them is true and the other is
+false. The evaluations of a branch predicate $x$ may be implied by
+other predicates. To model such implication relationships, we
+consider two kinds of rules $y\Rightarrow x$ and $y\Rightarrow \neg
+x$, where
 $y$ is another branch predicate. %a conjunction of other branch predicates.
 We call $y\Rightarrow x$ and $y\Rightarrow \neg x$ control rules.
 
@@ -319,7 +321,7 @@ We call $y\Rightarrow x$ and $y\Rightarrow \neg x$ control rules.
 \begin{center}
   \includegraphics[angle=0,width=0.4\textwidth]{figs/example21.eps}
   \centering
-  \caption{Buggy code of the tcas program}
+  \caption{Faulty code of the tcas program}
   \label{fig:example2}
 \end{center}
 \end{figure}
@@ -328,18 +330,17 @@ We call $y\Rightarrow x$ and $y\Rightarrow \neg x$ control rules.
 We have shown an example of the rule $y\Rightarrow \neg x$ in Figure
 \ref{fig:example1}. Here we show an example of the rule
 $y\Rightarrow x$ in Figure \ref{fig:example2}. The example program
-is a buggy version of the tcas program, which is an altitude
+is a faulty version of the tcas program, which is an altitude
 separation controller, in the Siemens suite~\cite{Hutchins94}. In
 Line 4, a $>$ operator is wrongly implemented as $\ge$. Let x and y
-be two branch predicates that denote the branch
+be two branch predicates for denoting that the branch
 \CodeIn{upward\_preferred=true} in Line 12 is ever covered and the
 branch \CodeIn{upward\_preferred=true} in Line 5 is ever covered,
 respectively. Running 1608 tests on the program, we can find that y
 is true in 514 tests, among which x is true 478 times. Therefore, we
 can uncover a common operational model ``$y\Rightarrow x$''. This
 model reflects the real assumption of the programmers. Its
-violations will cause errors that may finally become observable
-failures.
+violations cause errors that may finally become observable failures.
 
 
 
@@ -347,15 +348,15 @@ There may be a large number of control rules. We are interested only
 in the control rules that are likely to be true oracles and are
 violated by some tests. To evaluate the likelihood of a control rule
 to be a true oracle, we use the concept of confidence. The
-confidence of $y\Rightarrow x$ is defined as the ratio between the
-number of tests that satisfy $y\wedge x$ and the number of tests
-that satisfy $y$. The confidence of $y\Rightarrow \neg x$ is defined
-as the ratio between the number of tests that satisfy $y\wedge \neg
-x$ and the number of tests that satisfy $y$. If a rule's confidence
-is 1, it can be omitted as there is no violation of this rule. Our
-approach then selects a subset of rules that have high confidences.
-More specifically, for each predicate x, our approach selects the
-most confident rule $y\Rightarrow x$ and the most confident rule
+confidence of $y\Rightarrow x$ is defined as the ratio of the number
+of tests that satisfy $y\wedge x$ over the number of tests that
+satisfy $y$. The confidence of $y\Rightarrow \neg x$ is defined as
+the ratio of the number of tests that satisfy $y\wedge \neg x$ over
+the number of tests that satisfy $y$. If a rule's confidence is 1,
+it can be omitted since there is no violation of this rule. Our
+approach then selects a subset of rules with high confidences. More
+specifically, for each predicate x, our approach selects the most
+confident rule $y\Rightarrow x$ and the most confident rule
 $y\Rightarrow !x$. Another possible way is to select the rules whose
 confidences are higher than a preset threshold, whose value may be
 application-dependent.
@@ -368,7 +369,7 @@ application-dependent.
 
 The values of a variable may have some implicit constraints. A
 failure may require or result in suspicious data values, i.e.,
-violate the value constraints. Therefore, we can mine the implicit
+violating the value constraints. Therefore, we can mine implicit
 constraints of variable values and isolate their violations as
 suspicious tests.
 
@@ -381,17 +382,17 @@ are constants (different variables have different $c_1$ and $c_2$).
 We call $V_{max}\le c_1$ and $V_{min}\ge c_2$ data rules.
 
 
-Unlike the control rules, the data rules have some parameters $c_1$
-and $c_2$ to be determined. Let's first Consider the rule
-$V_{max}\le c_1$. Assume $V_{max}$ follow the normal distribution.
-We can get the estimations of the mean value $\mu_1$ and the
-standard deviation $\sigma_1$ based on the values of $V_{max}$ in
-the observed but unverified tests. We would like to select a $c_1$
-such that there is a high probability, say 0.9, that $V_{max}$ is no
-more than $c_1$. Let $Z=(V_{max}-\mu_1) / \sigma_1$, then Z follows
-the standard normal distribution, i.e., having a mean of 0 and a
-standard deviation of 1. The problem $Prob(V_{max}\le c_1)=0.9$ is
-equivalent to the problem $Prob(Z\le (c_1-\mu_1)/\sigma_1)=0.9$.
+Unlike control rules, data rules have some parameters $c_1$ and
+$c_2$ to be determined. Let us first consider the rule $V_{max}\le
+c_1$. Assume $V_{max}$ follows the normal distribution. We can get
+the estimations of the mean value $\mu_1$ and the standard deviation
+$\sigma_1$ based on the values of $V_{max}$ in the observed but
+unverified tests. We would like to select a $c_1$ such that there is
+a high probability, say 0.9, that $V_{max}$ is no more than $c_1$.
+Let $Z=(V_{max}-\mu_1) / \sigma_1$, then Z follows the standard
+normal distribution, i.e., having a mean of 0 and a standard
+deviation of 1. The problem $Prob(V_{max}\le c_1)=0.9$ is equivalent
+to the problem $Prob(Z\le (c_1-\mu_1)/\sigma_1)=0.9$.
 %This probability is actually the z score [].
 Querying the cumulative probabilities of the standard normal
 table~\cite{Normal}, we can get the solution
@@ -411,36 +412,36 @@ mean value and the standard deviation of $V_{min}$.
 %\begin{left}
   \includegraphics[angle=0,width=0.4\textwidth]{figs/example31.eps}
   \centering
-  \caption{Buggy code of the print\_tokens program}
+  \caption{Faulty code of the print\_tokens program}
   \label{fig:example3}
 %\end{left}
 \end{figure}
 
 Figure~\ref{fig:example3} shows an example of the data rule
-$V_{max}\le c_1$. The example program is a buggy version of the
+$V_{max}\le c_1$. The example program is a faulty version of the
 print\_tokens program, which is a lexical analyzer, in the Siemens
 suite~\cite{Hutchins94}. In the loop, $\CodeIn{token\_ind}$ is
 increased by 1 each time. When $\CodeIn{next\_st}=30$,
 $\CodeIn{token\_ind}$ should be reset to 0, which is wrongly
 omitted. The omission of this assignment may make
-$\CodeIn{token\_ind}$ get unusual large values. Running the program
-on 4130 tests, the assignment of $\CodeIn{token\_ind}$ in Line 5 is
-executed in 4070 tests. Its maximum value has a mean value of 11 and
-a standard deviation of 13. So we can get a data rule $V_{max}\le
-c_1=1.28*\sigma_1+\mu_1=28$, where V is $\CodeIn{token\_ind}$ in
-Line 5. Violations of this model may be caused by the omission bug
-and indicate failures.
+$\CodeIn{token\_ind}$ get unusually large values. Running the
+program on 4130 tests, the assignment of $\CodeIn{token\_ind}$ in
+Line 5 is executed in 4070 tests. Its maximum value has a mean value
+of 11 and a standard deviation of 13. So we can get a data rule
+$V_{max}\le c_1=1.28*\sigma_1+\mu_1=28$, where V is
+$\CodeIn{token\_ind}$ in Line 5. Violations of this model may be
+caused by an omission fault and indicate failures.
 
 
 
 To evaluate the likelihood of a data rule to be a true oracle, we
 also use the concept of confidence. The confidence of $V_{max}\le
-c_1$ is defined as the ratio between the number of tests that
-satisfy $V_{max}\le c_1$ and the number of tests where $V$ is ever
+c_1$ is defined as the ratio of the number of tests that satisfy
+$V_{max}\le c_1$ over the number of tests where $V$ is ever
 assigned. The confidence of $V_{min}\ge c_2$ is defined as the ratio
-between the number of tests that satisfy $V_{min}\ge c_2$ and the
-number of tests where $V$ is ever assigned. If a rule's confidence
-is 1, it can be omitted as there is no violation of this rule.
+of the number of tests that satisfy $V_{min}\ge c_2$ over the number
+of tests where $V$ is ever assigned. If a rule's confidence is 1, it
+can be omitted since there is no violation of this rule.
 
 
 
@@ -448,21 +449,21 @@ is 1, it can be omitted as there is no violation of this rule.
 \section{Test Selection} \label{sec:select}
 
 Given a set of control rules and data rules, selecting all the tests
-that violate any of them may result in a large subset of the tests.
-Instead, our approach selects only a small subset of the tests that
-violate all these rules at least once, in a way that the most
-confident rules are violated by the selected tests first. Since the
-control rules and the data rules have different definitions of the
-confidence, we deal with them separately. The process of test
-selection based on the control rules are as follows. Initially, the
+that violate any of the rules may result in a large subset of the
+tests. Instead, our approach selects only a small subset of the
+tests that violate all these rules at least once, in a way that the
+most confident rules are violated by the selected tests first. Since
+the control rules and the data rules have different definitions of
+the confidence, we deal with them separately. The process of test
+selection based on the control rules is as follows. Initially, the
 set of selected tests is empty. Our approach sorts the control rules
-in descending order of confidence. From top to bottom, if a rule is
-not violated by any of the previously selected tests, our approach
-randomly selects a test that violates the rule. Finally, in a greedy
-way all the control rules will be violated by the selected tests.
-Our approach also selects a subset of tests that violate all the
-data rules in the similar way. The selected tests based on the
-control rules and those based on the data rules are merged together
+in descending order of confidence. From the top to bottom, if a rule
+is not violated by any of the previously selected tests, our
+approach randomly selects a test that violates the rule. Finally, in
+a greedy way each of the control rules is violated by the selected
+tests. Our approach also selects a subset of tests that violate all
+the data rules in the similar way. We merge together the selected
+tests based on the control rules and those based on the data rules
 as the final subset of selected tests.
 
 
@@ -488,15 +489,15 @@ dynamic-invariant-based approaches?
 
 
 \item
-RQ3: How is the efficiency of our approach?
+RQ3: What is the efficiency of our approach?
 
 
 \end{itemize}
 
 
-In the following sections, we first describe the subjects and
-measurements. We then present the results of our approach in test
-selection, compared with the existing approaches.
+We next describe the subjects and measurements. We then present the
+results of our approach in test selection, compared with the
+existing approaches.
 
 
 
@@ -545,10 +546,10 @@ Tests    &   Faulty Versions     &   Failed Tests
 
 
 The first subject is the Siemens suite~\cite{Hutchins94}, which was
-created by Siemens Research. The Siemens researchers created 132
+created by Siemens researchers. The Siemens researchers created 132
 faulty versions of 7 programs that range in size from 170 to 540
 lines. The Siemens researchers generated tests automatically from
-test specification scripts, then augmented those tests with
+test-specification scripts, then augmented those tests with
 manually-constructed white-box tests such that each exercisable
 coverage unit was covered by at least 30 test cases. The numbers of
 tests range from 1,052 to 5,542. There are 130 faults that can be
@@ -556,9 +557,9 @@ detected by the test suite in our environment.
 
 The second subject is the {\it Space} program~\cite{Rothermel01},
 which interprets Array Definition Language inputs. The {\it Space}
-program was developed at the European Space Agency. It has about
-9564 lines of C code. The test suite of Space contains 13,585 test
-cases, 10000 were randomly generated and the remainder were added to
+program was developed at the European Space Agency. It has 9564
+lines of C code. The test suite of Space contains 13,585 test cases,
+where 10000 were randomly generated and the remainder were added to
 cover every statement or branch at least 30 times. There are 38
 faults, among which 34 faults can be detected by the test suite in
 our environment.
@@ -568,47 +569,47 @@ our environment.
 The third subject is the {\it grep} program, which is a GNU utility
 that searches the input files for lines containing a match to a
 given pattern list. It has 13358 lines of C code. There are 809 test
-cases which were generated based on informal specifications and then
-augmented to increase statement coverage~\cite{SIR}. There are five
-original versions of the grep program, each of which was seeded by a
-number of faults. In our environment there are in total 20 faults
-that can be detected by the test suite.
+cases, which were generated based on informal specifications and
+then augmented to increase statement coverage~\cite{SIR}. There are
+five original versions of the grep program, each of which was seeded
+by a number of faults. In our environment, there are in total 20
+faults that can be detected by the test suite.
 
 
 The characteristic of the subject programs is shown in Table
 \ref{tab:subjects}. In these subjects, there are many trivial faults
 that fail on more than 5\% of the tests. Such faults are less likely
-to be seen in practical testing. To better evaluate the potential
-effectiveness of test selection approaches in practice, we also
-conduct experiments on only the nontrivial faults.
+to be seen in practical setting. To better evaluate the potential
+effectiveness of test selection approaches in practice, we conduct
+additional experiments on only the nontrivial faults.
 
 
 
 
-\subsection{Measurements}
+\subsection{Measurement}
 
 
 
 To evaluate the effectiveness of an approach in test selection, we
-perform two measurements. The first measurement is the size of the
-selected test suite, i.e., the number of the selected tests. This
-measurement indicates the amount of human effort required to check
-the results of the selected tests. The second measurement is the
-percentage of faults that can be detected by the selected tests. A
-set of tests are said to detect a fault if the faulty program fails
-on one or more of the tests. Of course we would like to reveal as
-many faults as possible. A good test selection algorithm should
-select a small number of tests that can detect most of the faults.
+use two metrics. The first metric is the size of the selected test
+suite, i.e., the number of the selected tests. This metric indicates
+the amount of human effort required to check the results of the
+selected tests. The second metric is the percentage of faults that
+can be detected by the selected tests. A set of tests are said to
+detect a fault if the faulty program fails on one or more of the
+tests. We would like to reveal as many faults as possible. A good
+test-selection algorithm should select a small number of tests that
+can reveal most of the faults.
 
 
 
 \subsection{Results}
 
-Figures \ref{fig:all} and Figure \ref{fig:nontrivial} show the
-results of our approach and the existing test selection approaches,
-including the code-coverage-based, clustering-based, and
+Figures \ref{fig:all} and \ref{fig:nontrivial} show the results of
+our approach and the existing test selection approaches, including
+the code-coverage-based, clustering-based, and
 dynamic-invariant-based approaches. Tables \ref{tab:our},
-\ref{tab:other}, \ref{tab:our:nontrivial} and
+\ref{tab:other}, \ref{tab:our:nontrivial}, and
 \ref{tab:other:nontrivial} show some of the detailed results. We
 also present the results of random selection as the comparison
 baseline. Because the three subjects are quite different in the
@@ -661,7 +662,7 @@ then report the averaged results.
 
 
 \begin{table*}[htbp]
-\caption{Results of Our Approach on all the faults}\label{tab:our}
+\caption{Results of our approach on all the faults}\label{tab:our}
 \center
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline Program   & \multicolumn{2}{c}{Original Test Suite} \vline & \multicolumn{2}{c}{Our Approach} \vline
@@ -698,8 +699,7 @@ faults}\label{tab:other} \center
     \\
 
 & \multicolumn{2}{c}{} \vline & \multicolumn{2}{c}{Approach} \vline
-& \multicolumn{2}{c}{Approach} \vline & \multicolumn{2}{c}{(OD)}
-\vline
+& \multicolumn{2}{c}{Approach} \vline & \multicolumn{2}{c}{} \vline
    \\
 
  \cline{2-9}  & \#Tests &   \%Faults & \#Tests &   \%Faults &
@@ -724,7 +724,7 @@ faults}\label{tab:other} \center
 
 
 \begin{table*}[htbp]
-\caption{Results of Our Approach on nontrivial
+\caption{Results of our approach on nontrivial
 faults}\label{tab:our:nontrivial} \center
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 
@@ -800,11 +800,11 @@ effective while the effectiveness of random selection decreases
 much. For example, in the Siemens suite (nontrivial faults), our
 approach selects only 37 tests for the programs on average, which
 can still reveal 80\% of the faults. Randomly selecting the same
-number of tests can only reveal 41\% of the faults.
+number of tests can reveal only 41\% of the faults.
 
 We also evaluate the effects of the two kinds of common operational
-models we proposed, i.e., control rules and data rules, separately.
-The results are plotted in Figures \ref{fig:all} and
+models that we proposed, i.e., control rules and data rules,
+separately. The results are plotted in Figures \ref{fig:all} and
 \ref{fig:nontrivial}, and shown in Tables \ref{tab:our} and
 \ref{tab:our:nontrivial}. We observe that both these two kinds of
 rules are helpful in revealing faults. Among them, covering
@@ -813,9 +813,8 @@ violations of data rules, but also requires much more tests. The
 data rules are better for some programs such as tot\_info, which is
 an information measure program that deals with data tables. In
 summary, these two kinds of rules are complementary to each other as
-they reflect different aspects of the program behaviors. When
-combining together, they are able to produce quite a good subset of
-tests.
+they reflect different aspects of program behaviors. When combined
+together, they are able to help select quite a good subset of tests.
 
 
 
@@ -836,7 +835,7 @@ caused failures can be revealed simply by exercising such elements,
 regardless of other factors.
 
 To evaluate the potential capability of finding more faults using
-code-coverage-based approach, we also extend the basic
+the code-coverage-based approach, we also extend the basic
 code-coverage-based approach by increasing the number of times each
 program element should be covered. We say a program element is
 covered k times if there are k different tests that cover it.
@@ -848,9 +847,9 @@ The results are plotted in Figures \ref{fig:all} and
 
 We observe that the basic code-coverage-based approach, in which
 each branch is covered at least once, is good in selecting a small
-subset of tests that can reveal many faults. However, it may miss
-many other faults, e.g., it misses more than half of the faults in
-the Siemens suite. Our approach can select a test suite with a much
+subset of tests that can reveal many faults. However, it misses many
+other faults, e.g., it misses more than half of the faults in the
+Siemens suite. Our approach can select a test suite with a much
 higher fault-revealing capability, and the number of selected tests
 is only a few times larger than that of the basic
 code-coverage-based approach. Increasing the number of the times
@@ -865,26 +864,27 @@ of tests that covers each program element at least k+1 times.
 
 \subsubsection{Comparison with the Clustering-based Approach}
 
-We then compare the results of our approach with the results of the
+We next compare the results of our approach with the results of the
 clustering-based approach~\cite{Dickinson01a}. The clustering-based
 approach uses agglomerative hierarchical clustering to cluster the
-tests, and then select one test from each cluster. The main
+tests, and then selects one test from each cluster. The main
 assumption of the clustering-based approach is that a significant
 number of failures are isolated in clusters of small size. Besides
 one-per-cluster sampling, there are other possible sampling schemes
 that aim at finding more failing tests for each
 fault~\cite{Dickinson01b}. As our concern is to increase the
 likelihood of finding at least one failing test for each fault, we
-do not compare with these other sampling schemes. We use the binary
-branch profiles for clustering. We do not use the variable value
-profiles as a variable may not be observed in all the tests. We
-experiment with 10 different values of the number of the clusters.
-The values are 10 to 100, 100 to 1000, and 50 to 500 in the Siemens
-suite, the space program, and the grep program, respectively. We
-select these values based on the program sizes and the numbers of
-tests selected by the code-coverage-based approach. The results are
-plotted in Figures \ref{fig:all} and \ref{fig:nontrivial}, and shown
-in Tables \ref{tab:other} and \ref{tab:other:nontrivial}.
+do not compare our approach with these other sampling schemes. We
+use the binary branch profiles for clustering. We do not use the
+variable-value profiles since a variable may not be observed in all
+the tests. We experiment with 10 different values of the number of
+the clusters. The values are 10 to 100, 100 to 1000, and 50 to 500
+in the Siemens suite, the space program, and the grep program,
+respectively. We select these values based on the program sizes and
+the numbers of tests selected by the code-coverage-based approach.
+The results are plotted in Figures \ref{fig:all} and
+\ref{fig:nontrivial}, and shown in Tables \ref{tab:other} and
+\ref{tab:other:nontrivial}.
 
 We observe that the clustering-based approach performs better than
 random selection in the Siemens suite (all faults), the Siemens
@@ -912,15 +912,15 @@ general.
 
 Finally, we compare our approach with the dynamic-invariant-based
 approach. Harder et al. \cite{Harder03} proposed the operational
-difference (OD) approach to select tests based on Daikon. It starts
-with an empty test suite and repeatedly adds new tests if they
-violate the invariants of the previously selected tests. To control
-the number of tests, the algorithm terminates when n (n=50 in their
+difference approach to select tests based on Daikon. It starts with
+an empty test suite and repeatedly adds new tests if they violate
+the invariants of the previously selected tests. To control the
+number of tests, the algorithm terminates when n (n=50 in their
 experiments) consecutive tests are considered and rejected. They
 also conducted experiments on the Siemens suite and the space
 program that we used. We adopt the experimental results from their
-original paper directly, which is shown in Table \ref{tab:other} and
-plotted in Figure \ref{fig:all}. No result of the operational
+original paper directly, which are shown in Table \ref{tab:other}
+and plotted in Figure \ref{fig:all}. No result of the operational
 difference approach in the grep program or on the nontrivial faults
 is available (Daikon cannot be scalable to deal with the grep
 program and therefore poses barriers for us to re-implement and
@@ -935,10 +935,10 @@ However, it misses many other faults at the same time. The
 operational difference approach may be able to reveal more faults if
 the termination condition is removed. However, it may then select
 much more tests due to the false positives in the detected
-invariants. By utilizing the information of all the unverified tests
-at hand, our approach can reduce the noise of mined operational
-models and thus select a reasonably sized subset of tests that can
-reveal most of the faults.
+invariants. By using the information of all the unverified tests at
+hand, our approach can reduce the noise of mined operational models
+and thus select a reasonably sized subset of tests that can reveal
+most of the faults.
 
 
 
@@ -1000,18 +1000,18 @@ candidate control rules and thus the time cost of our approach.
 
 \subsubsection{Summary and Discussions}
 
-Our results suggest the following conclusions:
+Our results suggest the following observations:
 
 \begin{itemize}
 \item \vspace{-0.1in}
 Our approach is effective in reducing the number of tests while
 revealing most of the faults. Control rules and data rules are
-complementary to each other as they reflect different aspects of the
+complementary to each other as they reflect different aspects of
 program behaviors.
 
 
 \item \vspace{-0.1in}
-Our approach can select a test suite with a much higher
+Our approach can select a test suite with much higher
 fault-revealing capability than those of the code-coverage-based
 approach and the dynamic-invariant-based approach, and is more
 robust and cost-effective than the clustering-based approach.
@@ -1024,15 +1024,16 @@ invariants are useful for multiple purposes besides test selection.
 Our approach takes reasonable time for small to medium sized
 programs with large test suites. However, it may not be efficient
 enough for large programs with large test suites. This issue may be
-eased by mining only the control rules between the branches in the
-same modules. We need to conduct further experiments to investigate
-this issue.
+alleviated by mining only the control rules between the branches in
+the same modules. We need to conduct further experiments to
+investigate this technique.
 \end{itemize} \vspace{-0.1in}
 Our current experiments are based on existing test suites whose
 tests are manually or randomly generated. In automated testing, a
 number of test generation approaches generate tests systematically.
-It is valuable to investigate how our approach can work on the test
-sets automatically generated by these approaches.
+It is valuable for our future work to investigate how our approach
+can work on the test sets automatically generated by these
+approaches.
 
 
 
@@ -1042,22 +1043,19 @@ sets automatically generated by these approaches.
 %-------------------------------------------------------------------------
 \section{Related Work} \label{sec:relatedwork}
 
-In this section we describe the existing work in test selection,
-which can be classified into the following categories.
+In this section, we describe existing work in test selection, which
+can be classified into five main categories.
 
 
 
-\textbf{Black-box Test Selection}
-
-
-
-There exist a number of  black-box approaches for test selection. In
-partition testing~\cite{Myers79}, a test input domain is divided
-into subdomains based on some criteria, and then developers can
-select one or more representative inputs from each subdomain. Our
-approach partitions the tests based on mining common software
-behaviors, without requiring any knowledge of input domains. When
-\emph{a priori} specifications are provided for a program, Chang and
+\textbf{Black-box Test Selection.} There exist a number of
+black-box approaches for test selection. In partition
+testing~\cite{Myers79}, a test input domain is divided into
+subdomains based on some criteria, and then developers can select
+one or more representative inputs from each subdomain. Our approach
+partitions the tests based on mining common software behaviors,
+without requiring any knowledge of input domains. When \emph{a
+priori} specifications are provided for a program, Chang and
 Richardson \cite{Chang99} used specification coverage criteria to
 select a candidate set of test cases that exercise new aspects of
 the specification. Our approach does not require \emph{a priori}
@@ -1065,60 +1063,55 @@ specifications.
 
 % model coverage
 
-\textbf{Code-coverage-based Test Selection}
+\textbf{Code-coverage-based Test Selection.} Various kinds of code
+coverage criteria have been proposed for test selection, such as
+control-flow testing criteria~\cite{Huang75} and data-flow testing
+criteria \cite{Frankl88}. Hutchins et al. \cite{Hutchins94} reported
+an experimental study investigating the effectiveness of
+control-flow and data-flow testing criteria. Their results suggested
+that test sets achieving high code coverage levels usually showed
+significantly better fault-detection capability than randomly chosen
+test sets of the same size. However, the results also indicated that
+100\% code coverage alone is not a reliable indicator of the
+effectiveness of a test set. Leon et al. \cite{Leon05} evaluated the
+effectiveness of complex information flow criteria, which model
+indirect control/data dependencies between instructions or objects,
+for test selection. Their results suggested that test sets
+maximizing complex information flow criteria revealed more faults
+than test sets maximizing block coverage with substantial additional
+cost, and in some subjects the profiles could not be generated due
+to memory constraints. Our approach is based on low overhead
+profiles, such as branch coverage and data value bounds. Yet our
+approach can reveal most of the faults by mining and violating
+implication relationships between branches and constraints of data
+values.
 
-Various kinds of code coverage criteria have been proposed for test
-selection, such as control-flow testing criteria~\cite{Huang75} and
-data-flow testing criteria \cite{Frankl88}. Hutchins et al.
-\cite{Hutchins94} reported an experimental study investigating the
-effectiveness of control-flow and data-flow testing criteria. Their
-results suggested that test sets achieving high code coverage levels
-usually showed significantly better fault detection than randomly
-chosen test sets of the same size. However, the results also
-indicated that 100\% code coverage alone is not a reliable indicator
-of the effectiveness of a test set. Leon et al. \cite{Leon05}
-evaluated the effectiveness of complex information flow criteria,
-which model indirect control/data dependencies between instructions
-or objects, for test selection. Their results suggested that test
-sets maximizing complex information flow criteria revealed more
-faults than test sets maximizing block coverage with substantial
-additional cost, and in some subjects the profiles could not be
-generated due to memory constraints. Our approach is based on low
-overhead profiles, such as branch coverage and data value bounds.
-Yet our approach can reveal most of the faults by mining and
-violating implication relationships between branches and constraints
-of data values.
+\textbf{Clustering-based Test Selection.} Dickinson et
+al.~\cite{Dickinson01a} used clustering analysis to partition
+executions based on structural profiles, and employed sampling
+techniques to select executions from clusters for result inspection.
+They further proposed a failure-pursuit sampling approach
+\cite{Dickinson01b} to enhance the efficiency in finding failures.
+Moreover, Leon et al. \cite{Leon05} evaluated the effectiveness of
+clustering analysis based on complex information flow criteria.
+Their results suggested that the effectiveness of the clustering
+analysis did not depend strongly on the type of used profiling. Our
+approach selects tests using the principle of anomaly detection
+instead of sampling. In addition, our approach also mines common
+operational models that may guide result inspection.
 
-\textbf{Clustering-based Test Selection}
-
-Dickinson et al.~\cite{Dickinson01a} used clustering analysis to
-partition executions based on structural profiles, and employed
-sampling techniques to select executions from clusters for result
-inspection. They further proposed a failure-pursuit sampling
-approach \cite{Dickinson01b} to enhance the efficiency in finding
-failures. Moreover, Leon et al. \cite{Leon05} evaluated the
-effectiveness of clustering analysis based on complex information
-flow criteria. Their results suggested that the effectiveness of the
-clustering analysis did not depend strongly on the type of profiling
-used. Our approach selects tests using the principle of anomaly
-detection instead of sampling. Besides, our approach also mines
-common operational models that may guide result inspection.
-
-\textbf{Behavioral-model-based Test Selection}
-
-
-
-There are many approaches that build software behavioral models and
-then classify failures using both failing and passing tests. Haran
-et al.~\cite{Haran05} built behavior models of failures in-house
-using random forests, so as to help classify remotely-collected
-execution data. Michail and Xie~\cite{Michail05} collected bug and
-``not bug'' reports that consist of event histories from GUI
-application users. They then built a distance weighted nearest
-neighbor learner to help users avoid bugs in GUI applications.
-Bowring et al. \cite{Bowring04} classified program executions based
-on Markov models. They trained the classifier incrementally in an
-active-learning paradigm to help test-plan development.
+\textbf{Behavioral-model-based Test Selection.} There are many
+approaches that build software behavioral models and then classify
+failures using both failing and passing tests. Haran et
+al.~\cite{Haran05} built behavior models of failures in-house using
+random forests, so as to help classify remotely-collected execution
+data. Michail and Xie~\cite{Michail05} collected bug and ``not bug''
+reports that consist of event histories from GUI application users.
+They then built a distance weighted nearest neighbor learner to help
+users avoid bugs in GUI applications. Bowring et al.
+\cite{Bowring04} classified program executions based on Markov
+models. They trained the models incrementally in an active-learning
+paradigm to help test-plan development.
 
 There are also many approaches that mine behavioral models based on
 dynamic invariant detection for test selection. Hangal and
@@ -1126,9 +1119,9 @@ Lam~\cite{Hangal02} developed DIDUCE that extracts operational
 models dynamically from long-running program executions. DIDUCE
 reports all detected violations at runtime and gradually relaxes
 invariants to allow for new behavior. Harder et al. \cite{Harder03}
-proposed the operational difference (OD) approach to select tests
-based on Daikon. OD repeatedly adds new tests if they violate the
-invariants of the previously selected tests. Xie and
+proposed the operational difference approach to select tests based
+on Daikon. Their approach repeatedly adds new tests if they violate
+the invariants of the previously selected tests. Xie and
 Notkin~\cite{Xie03} developed an operational violation approach
 called Jov for unit-test selection and generation. They mined
 operational models using Daikon from a set of manually written
@@ -1153,13 +1146,11 @@ algebraic models, which are applicable only in object-oriented unit
 testing.
 
 
-\textbf{Regression Test Selection} %/Prioritization/Minimization}
-
-There has been a lot of work to select, prioritize, or minimize the
-test cases in a regression test
+\textbf{Regression Test Selection.} There has been a lot of work to
+select, prioritize, or minimize the test cases in a regression test
 suite~\cite{Elbaum02,Hsu09,Orso04,Rothermel01}. Orso et
-al.~\cite{Orso04} presents a technique for Java programs that
-selects every test case in a regression test suite that may behave
+al.~\cite{Orso04} present a technique for Java programs that selects
+every test case in a regression test suite that may behave
 differently in the original and modified versions of the software,
 and yet scales to large systems. Rothermel et al. \cite{Rothermel01}
 and Elbaum et al. \cite{Elbaum02} evaluate a set of prioritization
@@ -1168,11 +1159,11 @@ increasing the likelihood of revealing faults earlier in the testing
 process. Hus and Orso \cite{Hsu09} propose a test-suite minimization
 framework based on integer linear programming. Although these
 techniques also select/prioritize a small number of tests that are
-likely to reveal (regression) faults, they are based on the code
-changes and the historical testing information, and have other
-objectives such as reducing the time of running test cases. Our work
-focuses on reducing the effort of result inspection in initial
-testing when test oracles are not available.
+likely to reveal (regression) faults, they are based on code changes
+and historical testing information, and have other objectives such
+as reducing the time of running test cases. Our work focuses on
+reducing the effort of result inspection in initial testing when
+test oracles are not available.
 
 
 
@@ -1190,15 +1181,15 @@ unverified tests. Specifically, we collect branch coverage and data
 value bounds at runtime and then mine implication relationships
 between branches and constraints of data values as common
 operational models after running all the tests. We then select tests
-by violating all these common operational models greedily. We have
+that violate all these common operational models greedily. We have
 evaluated our approach on the {\it Siemens} suite, the {\it Space}
-program and the {\it grep} program, compared with
+program, and the {\it grep} program, compared with
 code-coverage-based, clustering-based, and dynamic-invariant-based
 approaches. The experimental results show that our approach is
 effective in finding failing tests.
 
-We plan to pursue several future directions for our new approach.
-First, we plan to combine our approach with automatic test
+We plan to pursue several future directions for improving our
+approach. First, we plan to combine our approach with automatic test
 generation tools. Our current experiments are based on existing test
 suites whose tests are manually or randomly generated. It is
 valuable to investigate how our approach can work on automatically
