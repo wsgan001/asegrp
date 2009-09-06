@@ -2,10 +2,8 @@
 \section{Related Work}
 \label{RelatedWork}
 
-In this section, we first review the literature on mutation
-testing and analysis briefly, and then we discuss research on
-mutant selection, which is closely related to our study in this
-paper.
+We next discuss related work on mutation testing and analysis, and
+mutant selection.
 
 \vspace{-1ex}
 \subsection{Mutation Testing and Analysis}
@@ -79,25 +77,25 @@ Mathur~\cite{Mathur:91} first proposed the idea of excluding some
 mutation operators in mutation testing, several researchers have
 studied operator-based mutant selection. In operator-based mutant
 selection, researchers first determine a set of mutation
-operators, and select only mutants generated with this set of
+operators, and then select only mutants generated with this set of
 mutation operators.
 
-Wong and Mathur~\cite{Wong:93,Wong:95} studied two mutation
+Wong and Mathur~\cite{Wong:93,Wong:95} studied 2 mutation
 operators among the 22 mutation operators in
-Mothra~\cite{DeMillo:87}, and found mutants generated with these
-two mutation operators can achieve similar results as mutants
+Mothra~\cite{DeMillo:87}, and found that mutants generated with these
+2 mutation operators can achieve similar results as mutants
 generated with all the 22 mutation operators. Offutt et
-al.~\cite{Offutt:96} experimentally determined five mutation
+al.~\cite{Offutt:96} experimentally determined 5 mutation
 operators among the 22 mutation operators in Mothra, and found
-that the effectiveness values of the five mutation operators are
+that the effectiveness values of the 5 mutation operators are
 between 99.0\% and 100\% on ten subjects, with the average 99.5\%.
 Note that the effectiveness values are based on test suites
 created with incremental number 200. Furthermore, Offutt et al.
-also found that, without any of the five mutation operators, the
+also found that, without any of the 5 mutation operators, the
 effectiveness value on some subject would be lower than 99\%,
 which they defined as the minimal requirement of a set of
 sufficient mutation operators for mutation testing. Note that Wong
-and Mathur's two mutation operators are among Offutt et al.'s five
+and Mathur's 2 mutation operators are among Offutt et al.'s 5
 mutation operators. Barbosa et al.~\cite{Barbosa:01} proposed six
 guidelines to determine sufficient mutation operators. The
 application of some of the six guidelines requires compilation and
@@ -106,7 +104,7 @@ guidelines, Barbosa et al. determined 10 mutation operators, and
 found that, using the same way as Offutt et al. to measure the
 effectiveness, the effectiveness values of the 10 mutation
 operators on 27 subjects (which were also used to determine the 10
-mutation operators) are between 95.8\% and 100\%, with the average
+mutation operators) are between 95.8\% and 100\%, with the average of
 99.6\%. Siami Namin et al.~\cite{SiamiNamin:08} leveraged variable
 reduction to determine 28 mutation operators using the execution
 information of a subset of mutants. As their work aims at mutation

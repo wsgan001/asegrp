@@ -178,9 +178,9 @@ used $T$ to select mutants from $NEM$, and denote the set of
 selected non-equivalent mutants as $M_T$. To evaluate the
 effectiveness of $T$, we create a series of test suites (denoted
 as $\{ts_1, ts_2, ..., ts_n\}$), each of which can kill all
-mutants in $M_T$. If we denote the subset of mutants in $NEM$ that
+mutants in $M_T$. We denote the subset of mutants in $NEM$ that
 can be killed by $ts_i$ ($1\leq$$i$$\leq$$n$) as
-$Killed_{NEM}(ts_i)$, we used Formula~\ref{form:Measurement} to
+$Killed_{NEM}(ts_i)$, and then we use Formula~\ref{form:Measurement} to
 measure the effectiveness of $T$.\vspace{-2ex}
 
 \begin{equation}\label{form:Measurement}
@@ -214,7 +214,7 @@ multiples of 200 (i.e., 200, 400, 600, etc.). Actually, Offutt et
 al. used this way of test-suite construction to simulate the
 situation of applying mutation testing as a test-adequacy
 criterion, and the number of test cases selected each time
-represents an incremental of test cases in the process of building
+represents an increment of test cases in the process of building
 up each test suite for evaluating mutant selection. Considering
 that testers may use different incremental numbers to create the
 test suite, we used four different incremental numbers (i.e.,
@@ -342,7 +342,7 @@ $m$ subsets each containing $50\%*|M_T|$ mutants, $m$ subsets each
 containing $75\%*|M_T|$ mutants, and $m$ subsets each containing
 $100\%*|M_T|$ mutants. After acquiring the subsets of mutants
 selected with $T$ and the random mutant-selection techniques, we
-used the metric defined in Section~\ref{Measurement} to calculate
+used the metric defined in Section~\ref{Measurement} to measure
 the effectiveness of each technique. For each random technique and
 each size of subsets (e.g., using a random technique to select
 $100\%*|M_T|$ mutants), we used the average effectiveness of the

@@ -46,18 +46,23 @@ should also be considered.
 Threats to construct validity are concerned with whether the
 measurement in our study reflects real-world situations. The main
 threat to construct validity is the way we measured the
-effectiveness of selected mutants. To reduce this threat, we used
-a metric commonly used by previous studies, such as Offutt et
+effectiveness of selected mutants. To reduce this threat, we used a
+metric commonly used by previous studies, such as Offutt et
 al.~\cite{Offutt:96} and Barbosa et al.~\cite{Barbosa:01}. Further
 reduction of this threat requires the design of better metrics to
 assess the effectiveness of selected mutants in mutation testing.
 The metric used in our study actually measures to what extent the
 selected mutants are representative for mutants generated with all
-the mutation operators, but users of mutant-selection techniques
+the mutation operators. Indeed, users of mutant-selection techniques
 may be more concerned with the representativeness of the selected
-mutants for real bugs. Furthermore, the metric used in our study
-requires a series of randomly created test suites, but test suites
-used in practice may not be created randomly.
+mutants for real bugs. Such concerns may be alleviated by previous
+empirical studies~\cite{Andrews:05,Do:06} showing evidence that mutants
+generated with mutation operators are similar to real faults in
+evaluating test effectiveness. But it is worthwhile of conducting
+empirical studies directly on representativeness of the selected
+mutants for real bugs in future work.  Furthermore, the metric used in our
+study requires a series of randomly created test suites, but test
+suites used in practice may not be created randomly.
 
 \vspace{-1.5ex}
 \subsection{Cost of Mutant Selection}
@@ -80,7 +85,7 @@ time for us to compile and execute all the mutants for all the
 seven subjects against all the test cases under the same hardware
 and software environment is about one month CPU time. Note that
 Offutt et al.'s, Barbosa et al.'s, and Siami Namin et al.'s
-techniques averagely select 7.28\%, 16.04\%, and 7.42\% mutants
+techniques averagely select 7.28\%, 16.04\%, and 7.42\% mutants,
 respectively. That is to say, compiling and executing mutants
 selected by one of the three operator-based mutant-selection
 techniques for all the seven subjects against all the test cases
@@ -88,7 +93,7 @@ may take two to five days. As a result, for either operator-based
 mutant selection or random mutant selection, there is little
 difference in the cost of mutant selection.
 
-One issue we may need to consider is the way that Barbosa et al.'s
+One issue that we may need to consider is the way that Barbosa et al.'s
 and Siami Namin et al.'s techniques use to determine mutant
 operators. In particular, both techniques determine the set of
 sufficient mutation operators using training data acquired through

@@ -162,7 +162,8 @@ v.s. random mutant selection} \centering \hspace*{-0.8cm}
 In this section, we present and analyze the results of comparison
 to answer the two research questions. We further analyze the
 ability of reduction in mutants for the three operator-based
-mutant-selection techniques.
+mutant-selection techniques. The detailed results
+of our evaluation are available at \url{https://sites.google.com/site/asergrp/projects/ranmu}.
 
 
 \vspace{-1ex}
@@ -170,27 +171,27 @@ mutant-selection techniques.
 \label{OffuttEff}
 
 Tables~\ref{tab:Ran-Offutt},~\ref{tab:Ran-Barbosa},
-and~\ref{tab:Ran-SiamiNamin} depict the average effectiveness
-values and standard-deviation values for comparing Offutt et al.'s
+and~\ref{tab:Ran-SiamiNamin} depict the average effectiveness values
+and standard-deviation values for comparing Offutt et al.'s
 technique, Barbosa et al.'s technique, and Siami Namin et al.'s
-technique with random mutant selection respectively\footnote{Due
-to space limit, we use tables instead of figures to present the
+technique with random mutant selection, respectively\footnote{Due to
+space limit, we use tables instead of figures to present the
 experimental results. Tables are more concise but less intuitive
-than figures. Also due to space limit, we put results on
+than figures. Also due to space limit, we present results on
 effectiveness and standard deviation in each table.}. In the three
-tables, we use $Incr$ to represent the four incremental numbers
-for creating test suites for evaluating selected mutants; $Eff$ to
+tables, we use $Incr$ to represent the four incremental numbers for
+creating test suites for evaluating selected mutants; $Eff$ to
 represent average effectiveness values measured by the metric
 defined in Section~\ref{Measurement}; $Dev$ to represent
 standard-deviation values among the corresponding effectiveness
 values; and $50\%$, $75\%$, and $100\%$ to represent the use of
 random mutant selection to select 50\%, 75\%, and 100\% of mutants
 selected by each of the three operator-based mutant-selection
-techniques. Both the effectiveness values and the
-standard-deviation values are in percentage points. To make the
-difference clear, we keep two numbers after the decimal point for
-each value. From the three tables, we have the following
-observations concerning the average effectiveness.
+techniques. Both the effectiveness values and the standard-deviation
+values are in percentage points. To make the difference clear, we
+keep two digits after the decimal point for each value. From the
+three tables, we have the following observations related to the
+average effectiveness.
 
 First, our results confirm that all the three operator-based
 mutant-selection techniques are able to achieve good effectiveness
@@ -219,7 +220,7 @@ Namin et al.'s technique for $replace$, $tcas$, and $tot\_info$
 with different incremental numbers. The two-round random technique
 also achieves similar effectiveness values as Siami Namin et al.'s
 technique for $schedule$ for different incremental numbers.
-Overall, for any subject the difference between one operator-based
+Overall, for any subject, the difference between one operator-based
 mutant-selection technique and its corresponding random
 mutant-selection techniques is quite small. This observation
 indicates that random mutant selection is still as competitive as
@@ -236,7 +237,7 @@ and its corresponding random techniques selecting 50\% or 75\%
 mutants are also small. Based on Offutt et al.'s criterion, for
 each operator-based mutant-selection technique, using its
 corresponding random techniques to select 50\% is also good in
-effectiveness, as the average effectiveness values are always over
+effectiveness, since the average effectiveness values are always over
 99\% for all the subjects using test suites created with
 incremental number 200. Since there is no sophisticated strategy
 in random mutant selection, this observation indicates that it is
@@ -317,14 +318,14 @@ Offutt et al.'s} \centering \hspace*{-0.3cm}
 Based on the standard-deviation values depicted in
 Tables~\ref{tab:Ran-Offutt},~\ref{tab:Ran-Barbosa},
 and~\ref{tab:Ran-SiamiNamin}, we have the following observations
-concerning the comparison of stability for the three
+on comparing the stability of the three
 operator-based mutant-selection techniques and random mutant
-selection.
+selection techniques.
 
 First, all the experimented techniques are quite stable in
 effectiveness. For any experimented technique, the
 standard-deviation values are typically less than 0.20 percentage
-points, and it is rarely for standard-deviation values to be
+points, and standard-deviation values are rarely
 larger than 0.30 percentage points. Most of those exceptionally
 large standard-deviation values come from Siami Namin et al.'s
 technique and random techniques with 50\% mutants on $tcas$, which
@@ -353,7 +354,7 @@ Third, when comparing the two random techniques, the one-round
 technique seems to be less stable than the two-round technique for
 smaller subjects, but more effective than the two-round technique
 for larger subjects. This observation is in accordance with the
-observation concerning the comparison of effectiveness for the two
+observation on comparing the effectiveness of the two
 random techniques. Furthermore, given a random mutant-selection
 technique, selecting more mutants is more stable than selecting
 fewer mutants.
@@ -422,7 +423,7 @@ also indicates that Barbosa et al.'s technique is much more
 expensive than either Offutt et al.'s technique or Siami Namin et
 al.'s technique.
 
-Second, for each technique the ratio of selected mutants does not
+Second, for each technique, the ratio of selected mutants does not
 differ much for a different subject. This observation indicates
 that the reduction in mutants is highly predictable for any of
 three operator-based mutant-selection techniques. Furthermore,

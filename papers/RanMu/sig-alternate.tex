@@ -48,6 +48,10 @@
 
 \documentclass{sig-alternate}
 
+\newcommand{\Comment}[1]{}
+
+\usepackage{url}
+
 \begin{document}
 %
 % --- Author Metadata here ---
@@ -94,9 +98,8 @@ Hu$^{1,2}$, Tao Xie$^3$, Hong Mei$^{1,2}$\\
        \affaddr{\vspace{0.1cm}$^1$Institute of Software, School of Electronics Engineering and Computer Science}\\
        \affaddr{$^2$Key Laboratory of High Confidence Software Technologies (Peking University), Ministry of Education}\\
        \affaddr{Peking University, Beijing, 100871, China}\\
-       \email{\{zhanglu,houss,hujj08,meih\}@sei.pku.edu.cn}\\
        \affaddr{$^3$Department of Computer Science, North Carolina State University, Raleigh, NC 27695}\\
-       \email{xie@csc.ncsu.edu\vspace{-2ex}}
+       \email{\{zhanglu,houss,hujj08,meih\}@sei.pku.edu.cn, xie@csc.ncsu.edu\vspace{-2ex}}\\
 }
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
@@ -123,13 +126,13 @@ Experimentation}\vspace{-2ex}
 \input{body/RelatedWork}
 \input{body/Conclusion}
 
-\vspace{-1.5ex}
+\Comment{ \vspace{-1.5ex}
 \section{Acknoledgments}
 We thank Gregg Rothermel for providing the Siemens programs and
-their test pools through Subject Infrastructure Repository (SIR)
-at the University of Nebraska-Lincoln. We thank Auri Vincenzi,
-Adita Mathur, Qianxiang Wang, and Jos\'{e} Carlos Maldonado for
-their help in accessing Proteum. \vspace{-1.5ex}
+their test pools through Subject Infrastructure Repository (SIR) at
+the University of Nebraska-Lincoln. We thank Auri Vincenzi, Adita
+Mathur, Qianxiang Wang, and Jos\'{e} Carlos Maldonado for their help
+in accessing Proteum. \vspace{-1.5ex}}
 %
 % The following two commands are all you need in the
 % initial runs of your .tex file to
