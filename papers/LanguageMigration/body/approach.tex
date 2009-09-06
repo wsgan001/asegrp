@@ -50,7 +50,7 @@ compared to the second kind. Our approach uses
 Simmetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
 to calculate name similarities.
 
-We next describe how our approach aligns client-code classes. 
+We next describe how our approach aligns client-code classes.
 The first step is to find candidate class pairs by names. For two sets
 of classes ($C$ and $C'$), our approach returns candidate class
 pairs ($M$) with a similarity greater than a given threshold,
@@ -94,10 +94,10 @@ $\langle para_1, para_2\rangle$ of $m_1$ and $m_2$, and our
 approach considers $\langle para_1.type, para_2.type\rangle$ as
 a relation when the similarity between $para_1.name$ and $para_2.name$ is greater than \emph{SIM\_THRESHOLD}.
 
-For the example shown in Section~\ref{sec:example}, our approach
+For the example shown in Figure~\ref{fig:clientcode}, our approach
 mines the mapping relation between \CodeIn{java.io.File} and
 \CodeIn{System.IO.FileInfo} based on the mapped fields of Lines 6
-and 11 (Figure~\ref{fig:clientcode}). The mapping relation of API
+and 11. The mapping relation of API
 classes helps translate the variable declared in Line 1
 (Figure~\ref{fig:challenge}) to the variable declared in Line 3
 (Figure~\ref{fig:challenge}).
@@ -159,13 +159,13 @@ parameters of an API method in the other language can be complex. (2) An API
 method of one language can be mapped to more than one API method in the
 other language.
 
-An ATG of a client-code method $m$ is a directed graph $G\Triple{N_{data}}{N_{m}}{E}$. 
+An ATG of a client-code method $m$ is a directed graph $G\langle N_{data},$ $ N_m, E\rangle$.
 $N_{data}$ is a set of the fields $F$ of $m$'s declaring class, local variables $V$ of
 $m$, parameters $P_1$ of $m$, parameters $P_2$ of API methods invoked
 by $m$, and returns $R$ of all methods. $N_{m}$ is a set of
 methods invoked by $m$. $E$ is a set of directed edges. An edge
 $d_1\rightarrow d_2$ from a datum $d_1 \in N_{data}$ to a datum $d_2
-\in N_{data}$ denotes that $d_2$ is data-dependent on $d_1$, referred to 
+\in N_{data}$ denotes that $d_2$ is data-dependent on $d_1$, referred to as
 data dependency from $d_1$ to $d_2$. An edge $d_1 \rightarrow m_1$ from a datum $d_1 \in N_{data}$ to a
 method $ m_1 \in N_{m}$ denotes that $d_1$ is a parameter or receiver
 of $m_1$. An edge $m_1 \rightarrow d_1$ from a method $m_1
@@ -197,7 +197,7 @@ of $m_1$.
 %uses ATGs for mining mapping relations of API methods.
 
 %------------------------------------------------------------------
-\subsubsection{Building API Transformation Graphs} 
+\subsubsection{Building API Transformation Graphs}
 
 Our approach builds an ATG for each method $m$ in the client code.
 ATG includes information such as inputs
@@ -210,7 +210,7 @@ We use two notations for representing nodes in the ATG. A rectangle
 represents a method labeled with the method name, whereas an ellipse
 represents a datum such as fields, local variables, and parameters.
 An ellipse is labeled as ``\emph{n:t}'', where \emph{n} is the name
-of the variable and \emph{t} is its type. We use the 
+of the variable and \emph{t} is its type. We use the
 following rules for adding nodes and edges to the ATG.
 
 \Comment{In particular, our approach analyzes source files of a
@@ -345,7 +345,7 @@ Figure~\ref{fig:graph} also shows corresponding line numbers of each
 sub-graph. Our approach applies Rules 2 and 8 for Lines 6 and 9
 (Figure~\ref{fig:clientcode}) to build corresponding sub-graphs in
 the ATG. Our approach applies Rules 2, 3, and 6 to build corresponding
-sub-graphs for Lines 11 and 14 (Figure~\ref{fig:clientcode}). 
+sub-graphs for Lines 11 and 14 (Figure~\ref{fig:clientcode}).
 
 %\begin{algorithm}[t]
 %\begin{SmallOut}
@@ -355,11 +355,19 @@ sub-graphs for Lines 11 and 14 (Figure~\ref{fig:clientcode}).
 %  \Begin{
 %     $P \leftarrow findVarPairs(m, m')$\;
 %     \For{Pair p in P}{
-%        $SM \leftarrow G.nextMethods(p.sharp)$\;
-%        $JM \leftarrow G.nextMethods(p.java)$\;
+%        $JM \leftarrow G.nextMethods(p.j)$\;
+%        $SM \leftarrow G'.nextMethods(p.s)$\;
 %        $\Delta S = mapping(SM, JM)$\;
 %        \While{$\Delta S \neq \phi| \Delta SM \neq \phi| \Delta JM \neq \phi$}{
 %            $S.addAll(\Delta S)$\;
+%             \For{Method jm in JM}{
+%                 \If{$jm.isMapped$}{
+%                    $JM.replace(jm, jm.nextMethod())$\;
+%                  }\Else{
+%                    $JM.replace(jm, jm.mergeNextMethod())$\;
+%                  }
+%             }
+%             $\Delta S = mapping(SM, JM)$\;
 %             \For{Method sm in SM}{
 %                 \If{$sm.isMapped$}{
 %                    $SM.replace(sm, sm.nextMethod())$\;
@@ -367,14 +375,6 @@ sub-graphs for Lines 11 and 14 (Figure~\ref{fig:clientcode}).
 %                    $SM.replace(sm, sm.mergeNextMethod())$\;
 %                  }
 %             }
-%             \For{Method jm in JM}{
-%                 \If{$jm.isMapped$}{
-%                    $JM.replace(jm, jm.nextMethod())$\;
-%                  }\Else{
-%                    $JM.replace(jm, Jm.mergeNextMethod())$\;
-%                  }
-%             }
-%             $\Delta S = mapping(SM, JM)$\;
 %        }
 %     }
 % }
@@ -402,33 +402,25 @@ preceding three criteria are replaceable in the client code.
 Therefore, these mapped API methods assist for translating client
 code from one language to another.
 
-(@Hao: Could you please change the image to Algorithm 1 from Algorithm 2)
 Algorithm 1 presents major steps of comparing ATGs for mining
-mapping relations of API methods. Consider two methods $m$ and $m'$
-of two different languages $L$ and $L'$, respectively, in the client
-code. Consider that the associated ATGs of $m$ and $m'$ are compared
-to mine mapping relations of API methods. First, the 
-\CodeIn{findVarPairs} function finds mapped variables $\in$ $F$, $V$, and $P_1$ in $m$ and $m'$. 
-\CodeIn{findVarPairs} maps two variables $v$ and $v'$ of methods $m$ and $m'$,
-respectively, if the similarity metric value on their names is greater
-than \emph{SIM\_THRESHOLD}. For constants in $m$ and $m'$, \CodeIn{findVarPairs} 
+mapping relations of API methods. For each pair of aligned methods $m$ and $m'$, the \CodeIn{findVarPairs} function finds mapped variables and constants as follows. For two variables $v$ and $v'$ $\in$ $F$, $V$, and $P_1$ in $m$ and $m'$, respectively,
+\CodeIn{findVarPairs} maps $v$ and $v'$, if the similarity metric value on their names is greater
+than \emph{SIM\_THRESHOLD}. For constants in $m$ and $m'$, \CodeIn{findVarPairs}
 maps those two constants, if they have exactly the same
-value. Our algorithm uses these variable and constant mappings to
-compute mappings between API methods that use these variables and
-constants. 
+value. From matched variables and constants, our algorithm uses the following criteria to find mapping relations between two API methods $jm$ and $sm$.
 
-\emph{Mapping inputs}: The first criterion is based on the inputs
+\emph{Mapped inputs}: The first criterion is based on the inputs
 of $jm$ and $sm$. We map $jm$ with $sm$, if there is a one-to-one
 mapping between inputs of $jm$ and $sm$. Here, our approach
 considers both the receiver and the parameters as the inputs of an
 API method.
 
-\emph{Mapping functionalities}: The second criterion is based on functionalities of
+\emph{Mapped functionalities}: The second criterion is based on functionalities of
 $jm$ and $sm$. We consider that $jm$ and $sm$ implement the same functionality,
 if the similarity metric value between the name of $jm$ and the name of $sm$ is
 greater than \emph{SIM\_THRESHOLD}.
 
-\emph{Mapping outputs:} The third criterion is based on the returns of $jm$ and $sm$.
+\emph{Mapped outputs:} The third criterion is based on the returns of $jm$ and $sm$.
 Consider the returns of $jm$ and $sm$ as $r_1$ and $r_2$, respectively. We map $jm$
 with $sm$, if the type of $r_1$ is mapped with the type of $r_2$ in
 mapping relations of API classes.
@@ -453,8 +445,6 @@ in Figure~\ref{fig:graph}. The numbers shown in circles
 represent the major steps in our algorithm for mining mapping
 relations of API methods. We next explain each step in detail.
 
-(@Hao, Can you please change the numbers in Figure~\ref{fig:graph} to show
-more explicitly as steps such as Step 1 ...)
 \emph{Step 1: mapping parameters, fields, local variables, and constants.}
 Given two ATGs of each method pair $\langle m, m' \rangle$, this step maps
 variables such as parameters, fields, and local variables by comparing their names,
@@ -473,9 +463,9 @@ are of the same type and their associated constants are mapped.
 \emph{Step 3: mapping outputs of API methods.} In contrast to Step 2
 that maps parameters, Step 3 maps returns of API methods. In
 this step, if our approach is not able to map returns, our
-approach merges the next API method (Section~\ref{sec:mapping}) and 
+approach merges the next API method (Section~\ref{sec:mapping}) and
 then attempts to map returns of merged API methods. In our current example shown in
-Figure~\ref{fig:graph}, the return of \CodeIn{System.IO.FileInfo.FileInfo()} 
+Figure~\ref{fig:graph}, the return of \CodeIn{System.IO.FileInfo.FileInfo()}
 cannot be mapped to the return of \CodeIn{java.io.File.File()}. Therefore, our
 approach merges subsequent API methods in the ATG till the \CodeIn{Exists}
 API method, since the returns (shown as \CodeIn{Boolean}) can be mapped
