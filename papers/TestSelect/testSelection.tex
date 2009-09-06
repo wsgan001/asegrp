@@ -62,6 +62,24 @@ inspection while revealing most of the faults.
 %The experimental results
 %show that our approach is effective for test selection.
 
+%% abstract in the submission page
+%In automated testing, especially test generation in the absence of
+%specifications, a large amount of manual effort is spent on
+%test-result inspection. Test selection helps to reduce this effort
+%by selecting a small subset of tests that are likely to reveal
+%faults. A promising approach is to dynamically mine operational
+%models and then select tests that violate them. Existing work mines
+%operational models based on dynamic invariant detection. We propose
+%to mine common operational models, which are often but not always
+%true in all observed traces, from a (potentially large) set of
+%unverified tests. Specifically, our approach collects branch
+%coverage and data value bounds at runtime and then mines implication
+%relationships between branches and constraints of data values as
+%potential operational models after running all the tests. Our
+%approach then selects tests that violate the mined common
+%operational models for result inspection. Experimental results show
+%the effectiveness of our approach.
+
 
 \end{abstract}
 
@@ -158,24 +176,24 @@ common operational models for result inspection.
 To illustrate what a common operational model may look like and how
 its violation is useful for indicating faults, we present an example
 in Figure~\ref{fig:example1}. The example is a faulty version of
-grep 2.3, which is downloaded from the Software Infrastructure
-Repository (SIR)~\cite{SIR}. grep is a GNU utility that searches the
-input files for lines containing a match to a given pattern list.
-When grep finds a match in a line of a text file, it copies the line
-to the standard output. But if the input file is a binary file, it
-normally\footnote{By default, binary files are not treated as text
-files} outputs either a one-line message saying that a binary file
-matches, or no message if there is no match. Furthermore, given the
-option ``--quiet'', grep should not write anything to the standard
-output.
+\emph{grep} 2.3, which is downloaded from the Software
+Infrastructure Repository (SIR)~\cite{SIR}. \emph{grep} is a GNU
+utility that searches the input files for lines containing a match
+to a given pattern list. When \emph{grep} finds a match in a line of
+a text file, it copies the line to the standard output. But if the
+input file is a binary file, it normally\footnote{By default, binary
+files are not treated as text files} outputs either a one-line
+message saying that a binary file matches, or no message if there is
+no match. Furthermore, given the option ``--quiet'', \emph{grep}
+should not write anything to the standard output.
 
 \begin{figure}[t]
 \begin{center}
-  \includegraphics[angle=0,width=0.4\textwidth]{figs/example11.eps}
+  \includegraphics[width=0.46\textwidth]{figs/example11.eps}
   \centering
-  \caption{Faulty code of the grep program}
+  \caption{Faulty code of the \emph{grep} program}
   \label{fig:example1}
-\end{center} \vspace{-0.2in}
+\end{center} %\vspace{-0.2in}
 \end{figure}
 
 
@@ -203,27 +221,28 @@ desired result, we call the test a failing test.
 
 
 
-Without knowing the fault a priori, how can we identify such a test
-to be a suspicious one among a large number of tests? Our insight is
-that we may get some guidance from the (unverified) executions of
-the program. We run the grep programs on 809 tests that are also
-downloaded from SIR. Among the 809 tests, 667 tests cover the branch
-that $\CodeIn{nlines}$ is true (Line 9), among which only 8 tests
-cover the branch that $\CodeIn{memchr(bufbeg,'\\0',buflim-bufbeg)}$
-is true (Line 1). Therefore, we can uncover a common operational
-model from the executions: ``$\CodeIn{nlines}>0$ is ever true
-$\Rightarrow$ \CodeIn{memchr(bufbeg,'\\0',buflim-bufbeg)} is never
-true (in a test)''. Although this model is not always true, it
-reflects the fact that we search more often in a text file than in a
-binary file, and a binary file is less likely to contain a match to
-a given pattern. The violations of this model are corner cases that
-may require special handling. Yet such corner cases are often
-neglected by programmers or their handling is too tedious to be
-fault free. Therefore, it is valuable to check the result of a test
-that violates the model, i.e., satisfying ``$\CodeIn{nlines}>0$ is
-ever true $\wedge$ \CodeIn{memchr(bufbeg,'\\0',buflim-bufbeg)} is
-ever true''. We then find the selected test to be a failing test
-that reveals the fault.
+Without knowing the fault \emph{a priori}, how can we identify such
+a test to be a suspicious one among a large number of tests? Our
+insight is that we may get some guidance from the (unverified)
+executions of the program. We run the \emph{grep} programs on 809
+tests that are also downloaded from SIR. Among the 809 tests, 667
+tests cover the branch that $\CodeIn{nlines}$ is true (Line 9),
+among which only 8 tests cover the branch that
+$\CodeIn{memchr(bufbeg,'\\0',buflim-bufbeg)}$ is true (Line 1).
+Therefore, we can uncover a common operational model from the
+executions: ``$\CodeIn{nlines}>0 \textrm{ is ever true} \Rightarrow$
+\\ $\CodeIn{memchr(bufbeg,'\\0',buflim-bufbeg)}$ is never true (in a
+test)''. Although this model is not always true, it reflects the
+fact that we search more often in a text file than in a binary file,
+and a binary file is less likely to contain a match to a given
+pattern. The violations of this model are corner cases that may
+require special handling. Yet such corner cases are often neglected
+by programmers or their handling is too tedious to be fault free.
+Therefore, it is valuable to check the result of a test that
+violates the model, i.e., satisfying ``$\CodeIn{nlines}>0$ is ever
+true $\wedge \CodeIn{ memchr(bufbeg,'\\0',buflim-bufbeg)}$ is ever
+true''. We then find the selected test to be a failing test that
+reveals the fault.
 
 
 This paper makes the following main contributions\footnote{An
@@ -322,11 +341,11 @@ We call $y\Rightarrow x$ and $y\Rightarrow \neg x$ control rules.
 
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[angle=0,width=0.4\textwidth]{figs/example21.eps}
+  \includegraphics[angle=0,width=0.45\textwidth]{figs/example21.eps}
   \centering
   \caption{Faulty code of the tcas program}
   \label{fig:example2}
-\end{center} \vspace{-0.2in}
+\end{center} %\vspace{-0.2in}
 \end{figure}
 
 
@@ -334,16 +353,17 @@ We have shown an example of the rule $y\Rightarrow \neg x$ in Figure
 \ref{fig:example1}. Here we show an example of the rule
 $y\Rightarrow x$ in Figure \ref{fig:example2}. The example program
 is a faulty version of the tcas program, which is an altitude
-separation controller, in the Siemens suite~\cite{Hutchins94}. In
-Line 4, a $>$ operator is wrongly implemented as $\ge$. Let x and y
-be two branch predicates for denoting that the branch
-\CodeIn{upward\_preferred=true} in Line 12 is ever covered and the
-branch \CodeIn{upward\_preferred=true} in Line 5 is ever covered,
-respectively. Running 1608 tests on the program, we can find that y
-is true in 514 tests, among which x is true 478 times. Therefore, we
-can uncover a common operational model ``$y\Rightarrow x$''. This
-model reflects the real assumption of the programmers. Its
-violations cause errors that may finally become observable failures.
+separation controller, in the \emph{Siemens}
+suite~\cite{Hutchins94}. In Line 4, a $>$ operator is wrongly
+implemented as $\ge$. Let x and y be two branch predicates for
+denoting that the branch \CodeIn{upward\_preferred=true} in Line 12
+is ever covered and the branch \CodeIn{upward\_preferred=true} in
+Line 5 is ever covered, respectively. Running 1608 tests on the
+program, we can find that y is true in 514 tests, among which x is
+true 478 times. Therefore, we can uncover a common operational model
+``$y\Rightarrow x$''. This model reflects the real assumption of the
+programmers. Its violations cause errors that may finally become
+observable failures.
 
 
 
@@ -413,20 +433,20 @@ mean value and the standard deviation of $V_{min}$.
 
 \begin{figure}[h]
 %\begin{left}
-  \includegraphics[angle=0,width=0.4\textwidth]{figs/example31.eps}
+  \includegraphics[angle=0,width=0.46\textwidth]{figs/example31.eps}
   \centering
   \caption{Faulty code of the print\_tokens program}
-  \label{fig:example3} \vspace{-0.2in}
+  \label{fig:example3} %\vspace{-0.2in}
 %\end{left}
 \end{figure}
 
 Figure~\ref{fig:example3} shows an example of the data rule
 $V_{max}\le c_1$. The example program is a faulty version of the
-print\_tokens program, which is a lexical analyzer, in the Siemens
-suite~\cite{Hutchins94}. In the loop, $\CodeIn{token\_ind}$ is
-increased by 1 each time. When $\CodeIn{next\_st}=30$,
-$\CodeIn{token\_ind}$ should be reset to 0, which is wrongly
-omitted. The omission of this assignment may make
+print\_tokens program, which is a lexical analyzer, in the
+\emph{Siemens} suite~\cite{Hutchins94}. In the loop,
+$\CodeIn{token\_ind}$ is increased by 1 each time. When
+$\CodeIn{next\_st}=30$, $\CodeIn{token\_ind}$ should be reset to 0,
+which is wrongly omitted. The omission of this assignment may make
 $\CodeIn{token\_ind}$ get unusually large values. Running the
 program on 4130 tests, the assignment of $\CodeIn{token\_ind}$ in
 Line 5 is executed in 4070 tests. Its maximum value has a mean value
@@ -509,12 +529,13 @@ available at
 \subsection{Subject programs}
 
 We have implemented the proposed approach and applied it to select
-tests in three subjects, including the Siemens
-suite~\cite{Hutchins94}, the {\it Space} program~\cite{Rothermel01},
-and the {\it grep} program. All the three subjects are downloaded
-from the Subject Infrastructure Repository~\cite{SIR}. The first two
-subjects were also used in previous study of dynamic-invariant-based
-test selection~\cite{Harder03}.
+tests in three subjects, including the \emph{Siemens}
+suite~\cite{Hutchins94}, the \emph{Space}
+program~\cite{Rothermel01}, and the \emph{grep} program. All the
+three subjects are downloaded from the Subject Infrastructure
+Repository~\cite{SIR}. The first two subjects were also used in
+previous study of dynamic-invariant-based test
+selection~\cite{Harder03}.
 
 
 
@@ -539,10 +560,10 @@ Tests & Faulty Versions     &   Failed Tests
 \hline  schedule2   &   299 &   2710    &   9   &   33    &   9   &   33    &   priority scheduler  \\
 \hline  tcas    &   174 &   1608    &   41  &   39    &   36  &   28    &   altitude separation \\
 \hline  tot\_info &   398 &   1052    &   23  &   83    &   11  &   24    &   information measure \\
-\hline  Siemens suite & 404 & 3115 & 130 & 92 & 102 & 54 & -- \\
-\hline  Space   &   9564    &   13585   &   34  &   2111    &   17  &   164   &   ADL interpreter \\
+\hline  \emph{Siemens} suite & 404 & 3115 & 130 & 92 & 102 & 54 & -- \\
+\hline  \emph{Space}   &   9564    &   13585   &   34  &   2111    &   17  &   164   &   ADL interpreter \\
 %\hline  grep    &   13358   &   809 &   20  &   215 &   9   &   12.4    &   pattern matching    \\
-\hline  grep    &   13358   &   809 &   20  &   177 &   9   &   12    &   pattern matching    \\
+\hline  \emph{grep}    &   13358   &   809 &   20  &   177 &   9   &   12    &   pattern matching    \\
 
 \hline
 \end{tabular}
@@ -583,35 +604,35 @@ Tests & Faulty Versions     &   Failed Tests
 %  \label{fig:nontrivial} %% label for entire figure
 %\end{figure*}
 
-The first subject is the Siemens suite~\cite{Hutchins94}, which was
-created by Siemens researchers. The Siemens researchers created 132
-faulty versions of 7 programs that range in size from 170 to 540
-lines. The Siemens researchers generated tests automatically from
-test-specification scripts, then augmented those tests with
-manually-constructed white-box tests such that each exercisable
-coverage unit was covered by at least 30 test cases. The numbers of
-tests range from 1052 to 5542. There are 130 faults that can be
-detected by the test suite in our environment.
+The first subject is the \emph{Siemens} suite~\cite{Hutchins94},
+which was created by \emph{Siemens} researchers. The \emph{Siemens}
+researchers created 132 faulty versions of 7 programs that range in
+size from 170 to 540 lines. The \emph{Siemens} researchers generated
+tests automatically from test-specification scripts, then augmented
+those tests with manually-constructed white-box tests such that each
+exercisable coverage unit was covered by at least 30 test cases. The
+numbers of tests range from 1052 to 5542. There are 130 faults that
+can be detected by the test suite in our environment.
 
-The second subject is the {\it Space} program~\cite{Rothermel01},
-which interprets Array Definition Language inputs. The {\it Space}
+The second subject is the \emph{Space} program~\cite{Rothermel01},
+which interprets Array Definition Language inputs. The \emph{Space}
 program was developed at the European Space Agency. It has 9564
-lines of C code. The test suite of Space contains 13585 test cases,
-where 10000 were randomly generated and the remainder were added to
-cover every statement or branch at least 30 times. There are 38
-faults, among which 34 faults can be detected by the test suite in
-our environment.
+lines of C code. The test suite of \emph{Space} contains 13585 test
+cases, where 10000 were randomly generated and the remainder were
+added to cover every statement or branch at least 30 times. There
+are 38 faults, among which 34 faults can be detected by the test
+suite in our environment.
 
 
 
-The third subject is the {\it grep} program, which is a GNU utility
+The third subject is the \emph{grep} program, which is a GNU utility
 that searches the input files for lines containing a match to a
 given pattern list. It has 13358 lines of C code. There are 809 test
 cases, which were generated based on informal specifications and
 then augmented to increase statement coverage~\cite{SIR}. There are
-five original versions of the grep program, each of which was seeded
-by a number of faults. In our environment, there are in total 20
-faults that can be detected by the test suite.
+five original versions of the \emph{grep} program, each of which was
+seeded by a number of faults. In our environment, there are in total
+20 faults that can be detected by the test suite.
 
 
 The characteristic of the subject programs is shown in Table
@@ -666,40 +687,75 @@ then report the averaged results.
 \subsubsection{Effectiveness of Our Approach}
 
 
-
-\begin{figure}
+\begin{figure*}
 %  \centering
-  \subfigure[Results in the Siemens program]{
+  \subfigure[Results in the \emph{Siemens} program]{
     \label{fig:all:a} %% label for first subfigure
     %\includegraphics{figs/plotExps_siemens.eps}}
-    \includegraphics[width=0.5\textwidth]{figs/plotExps_siemens.eps}}
+    \includegraphics[width=0.33\textwidth]{figs/plotExps_siemens_large.eps}}
 %  \hspace{0.5in}
-  \subfigure[Results in the space program]{
+  \subfigure[Results in the \emph{Space} program]{
     \label{fig:all:b} %% label for second subfigure
-    \includegraphics[width=0.5\textwidth]{figs/plotExps_space.eps}}
-  \subfigure[Results in the grep program]{
+    \includegraphics[width=0.328\textwidth]{figs/plotExps_space_large.eps}}
+  \subfigure[Results in the \emph{grep} program]{
     \label{fig:all:c} %% label for second subfigure
-    \includegraphics[width=0.5\textwidth]{figs/plotExps_grep.eps}}
+    \includegraphics[width=0.34\textwidth]{figs/plotExps_grep_large.eps}}
   \caption{Results of all the faults}
   \label{fig:all} %% label for entire figure
-\end{figure}
+\end{figure*}
 
-\begin{figure}
+\begin{figure*}
 %  \centering
-  \subfigure[Results in the Siemens program]{
+  \subfigure[Results in the \emph{Siemens} program]{
     \label{fig:nontrivial:a} %% label for first subfigure
     %\includegraphics{figs/plotExps_diffi_siemens.eps}}
-    \includegraphics[width=0.5\textwidth]{figs/plotExps_diffi5_siemens.eps}}
+    \includegraphics[width=0.33\textwidth]{figs/plotExps_diffi5_siemens_large.eps}}
 %  \hspace{0.5in}
-  \subfigure[Results in the space program]{
+  \subfigure[Results in the \emph{Space} program]{
     \label{fig:nontrivial:b} %% label for second subfigure
-    \includegraphics[width=0.5\textwidth]{figs/plotExps_diffi5_space.eps}}
-  \subfigure[Results in the grep program]{
+    \includegraphics[width=0.328\textwidth]{figs/plotExps_diffi5_space_large.eps}}
+  \subfigure[Results in the \emph{grep} program]{
     \label{fig:nontrivial:c} %% label for second subfigure
-    \includegraphics[width=0.5\textwidth]{figs/plotExps_diffi5_grep.eps}}
+    \includegraphics[width=0.34\textwidth]{figs/plotExps_diffi5_grep_large.eps}}
   \caption{Results of the nontrivial faults}
   \label{fig:nontrivial} %% label for entire figure
-\end{figure}
+\end{figure*}
+
+
+
+%\begin{figure}
+%%  \centering
+%  \subfigure[Results in the Siemens program]{
+%    \label{fig:all:a} %% label for first subfigure
+%    %\includegraphics{figs/plotExps_siemens.eps}}
+%    \includegraphics[width=0.5\textwidth]{figs/plotExps_siemens.eps}}
+%%  \hspace{0.5in}
+%  \subfigure[Results in the space program]{
+%    \label{fig:all:b} %% label for second subfigure
+%    \includegraphics[width=0.5\textwidth]{figs/plotExps_space.eps}}
+%  \subfigure[Results in the grep program]{
+%    \label{fig:all:c} %% label for second subfigure
+%    \includegraphics[width=0.5\textwidth]{figs/plotExps_grep.eps}}
+%  \caption{Results of all the faults}
+%  \label{fig:all} %% label for entire figure
+%\end{figure}
+%
+%\begin{figure}
+%%  \centering
+%  \subfigure[Results in the Siemens program]{
+%    \label{fig:nontrivial:a} %% label for first subfigure
+%    %\includegraphics{figs/plotExps_diffi_siemens.eps}}
+%    \includegraphics[width=0.5\textwidth]{figs/plotExps_diffi5_siemens.eps}}
+%%  \hspace{0.5in}
+%  \subfigure[Results in the space program]{
+%    \label{fig:nontrivial:b} %% label for second subfigure
+%    \includegraphics[width=0.5\textwidth]{figs/plotExps_diffi5_space.eps}}
+%  \subfigure[Results in the grep program]{
+%    \label{fig:nontrivial:c} %% label for second subfigure
+%    \includegraphics[width=0.5\textwidth]{figs/plotExps_diffi5_grep.eps}}
+%  \caption{Results of the nontrivial faults}
+%  \label{fig:nontrivial} %% label for entire figure
+%\end{figure}
 
 
 
@@ -740,10 +796,10 @@ then report the averaged results.
 \hline  schedule2   &   2710    &   100 &   32  &   62  &   24  &   61  &   9   &   25  \\
 \hline  tcas    &   1608    &   100 &   26  &   74  &   15  &   68  &   12  &   23  \\
 \hline  tot\_info &   1052    &   100 &   29  &   84  &   21  &   71  &   9   &   74  \\
-\hline  Siemens suite   &   3115    &   100 &   \textbf{37}  &   \textbf{82}  &   27  &   76  &   10  &   46  \\
-\hline  Space   &   13585   &   100 &   \textbf{345} &   \textbf{100} &   242 &   94  &   109 &   84  \\
+\hline  \emph{Siemens} suite   &   3115    &   100 &   \textbf{37}  &   \textbf{82}  &   27  &   76  &   10  &   46  \\
+\hline  \emph{Space}   &   13585   &   100 &   \textbf{345} &   \textbf{100} &   242 &   94  &   109 &   84  \\
 %\hline  grep    &   809 &   100 &   219 &   97  &   178 &   94  &   76  &   95  \\
-\hline  grep    &   809 &   100 &   \textbf{218} &   \textbf{98}  &   178 &   96  &   75  &   96  \\
+\hline  \emph{grep}    &   809 &   100 &   \textbf{218} &   \textbf{98}  &   178 &   96  &   75  &   96  \\
 
 \hline
 \end{tabular}
@@ -779,10 +835,10 @@ faults}\label{tab:other} \center
 \hline  schedule2   &   2710    &   100 &   37  &   34&   5   &   26  &   40  &   47  &   13  &   30    \\
 \hline  tcas    &   1608    &   100 &   37  &   46&   11  &   31  &   40  &   84  &   26  &   55    \\
 \hline  tot\_info &   1052    &   100 &   37  &   75&   5   &   53  &   40  &   82  &   9   &   72   \\
-\hline  Siemens suite   &   3115    &   100 &   \textbf{37}  &   \textbf{52}&   \textbf{7}   &   \textbf{46}  &   \textbf{40}  &   \textbf{73}  &   \textbf{13}  &   \textbf{46}   \\
-\hline  Space   &   13585   &   100 &   \textbf{345} &   \textbf{89}&   \textbf{102} &   \textbf{80}  &   \textbf{400} &   \textbf{87}  &   \textbf{63}  &   \textbf{80}  \\
+\hline  \emph{Siemens} suite   &   3115    &   100 &   \textbf{37}  &   \textbf{52}&   \textbf{7}   &   \textbf{46}  &   \textbf{40}  &   \textbf{73}  &   \textbf{13}  &   \textbf{46}   \\
+\hline  \emph{Space}   &   13585   &   100 &   \textbf{345} &   \textbf{89}&   \textbf{102} &   \textbf{80}  &   \textbf{400} &   \textbf{87}  &   \textbf{63}  &   \textbf{80}  \\
 %\hline  grep    &   809 &   100 &   101 &   90  &   250 &   91  &   -   &   -     \\
-\hline  grep    &   809 &   100 &   \textbf{219} &   \textbf{90}&   \textbf{100} &   \textbf{91}  &   \textbf{250} &   \textbf{89}  &   -   &   -     \\
+\hline  \emph{grep}    &   809 &   100 &   \textbf{219} &   \textbf{90}&   \textbf{100} &   \textbf{91}  &   \textbf{250} &   \textbf{89}  &   -   &   -     \\
 
 \hline
 \end{tabular}
@@ -807,10 +863,10 @@ faults}\label{tab:our:nontrivial} \center
 \hline  schedule2   &   2710    &   100 &   32  &   62  &   24  &   61  &   9   &   25  \\
 \hline  tcas    &   1608    &   100 &   26  &   72  &   15  &   65  &   12  &   18  \\
 \hline  tot\_info &   1052    &   100 &   30  &   69  &   21  &   50  &   9   &   55  \\
-\hline  Siemens suite   &   3115    &   100 &   \textbf{37}  &   \textbf{80}  &   28  &   74  &   10  &   37  \\
-\hline  Space   &   13585   &   100 &   \textbf{376} &   \textbf{99}  &   265 &   89  &   118 &   77  \\
+\hline  \emph{Siemens} suite   &   3115    &   100 &   \textbf{37}  &   \textbf{80}  &   28  &   74  &   10  &   37  \\
+\hline  \emph{Space}   &   13585   &   100 &   \textbf{376} &   \textbf{99}  &   265 &   89  &   118 &   77  \\
 %\hline  grep    &   809 &   100 &   225 &   93  &   184 &   87  &   77  &   90  \\
-\hline  grep    &   809 &   100 &   \textbf{224} &   \textbf{95}  &   183 &   90  &   76  &   92  \\
+\hline  \emph{grep}    &   809 &   100 &   \textbf{224} &   \textbf{95}  &   183 &   90  &   76  &   92  \\
 
 \hline
 \end{tabular}
@@ -842,10 +898,10 @@ faults}\label{tab:other:nontrivial} \center
 \hline  schedule2   &   2710    &   100 &   37  &   34&   5   &   26  &   40  &   47  \\
 \hline  tcas    &   1608    &   100 &   37  &   40&   11  &   25  &   40  &   82  \\
 \hline  tot\_info &   1052    &   100 &   37  &   51&   5   &   23  &   40  &   67  \\
-\hline  Siemens suite   &   3115    &   100 &   \textbf{37}  &   \textbf{41}&   \textbf{7}   &   \textbf{38}  &   \textbf{40}  &   \textbf{74}  \\
-\hline  Space   &   13585   &   100 &   \textbf{376} &   \textbf{79}&   \textbf{110} &   \textbf{63}  &   \textbf{400} &   \textbf{87}  \\
+\hline  \emph{Siemens} suite   &   3115    &   100 &   \textbf{37}  &   \textbf{41}&   \textbf{7}   &   \textbf{38}  &   \textbf{40}  &   \textbf{74}  \\
+\hline  \emph{Space}   &   13585   &   100 &   \textbf{376} &   \textbf{79}&   \textbf{110} &   \textbf{63}  &   \textbf{400} &   \textbf{87}  \\
 %\hline  grep    &   809 &   100 &   103 &   78  &   250 &   79  \\
-\hline  grep    &   809 &   100 &   \textbf{225} &   \textbf{77}&   \textbf{103} &   \textbf{83}  &   \textbf{250} &   \textbf{81}  \\
+\hline  \emph{grep}    &   809 &   100 &   \textbf{225} &   \textbf{77}&   \textbf{103} &   \textbf{83}  &   \textbf{250} &   \textbf{81}  \\
 
 \hline
 \end{tabular}
@@ -854,23 +910,24 @@ faults}\label{tab:other:nontrivial} \center
 
 
 We observe that our approach is effective in reducing the number of
-tests while revealing most of the faults. In the Siemens suite (all
+tests while revealing most of the faults. In the \emph{Siemens}
+suite (all faults), our approach selects only 37 tests for the
+programs on average, which can still reveal 82\% of the faults. In
+the \emph{Space} and the \emph{grep} programs (all faults), our
+approach selects 345 and 219 tests on average, which can reveal
+100\% and 97\% of the faults, respectively. We note that randomly
+selecting the same number of tests as our approach can also reveal
+52\%, 89\% and 90\% of the faults in these subjects. This result is
+due to two main factors: (1) many trivial faults can be easily
+revealed and (2) the probability of finding no failures of a fault
+decreases exponentially with the number of selected tests. Checking
+the results in nontrivial faults, we can see that our approach is
+still effective while the effectiveness of random selection
+decreases much. For example, in the \emph{Siemens} suite (nontrivial
 faults), our approach selects only 37 tests for the programs on
-average, which can still reveal 82\% of the faults. In the space and
-the grep programs (all faults), our approach selects 345 and 219
-tests on average, which can reveal 100\% and 97\% of the faults,
-respectively. We note that randomly selecting the same number of
-tests as our approach can also reveal 52\%, 89\% and 90\% of the
-faults in these subjects. This result is due to two main factors:
-(1) many trivial faults can be easily revealed and (2) the
-probability of finding no failures of a fault decreases
-exponentially with the number of selected tests. Checking the
-results in nontrivial faults, we can see that our approach is still
-effective while the effectiveness of random selection decreases
-much. For example, in the Siemens suite (nontrivial faults), our
-approach selects only 37 tests for the programs on average, which
-can still reveal 80\% of the faults. Randomly selecting the same
-number of tests can reveal only 41\% of the faults.
+average, which can still reveal 80\% of the faults. Randomly
+selecting the same number of tests can reveal only 41\% of the
+faults.
 
 We also evaluate the effects of the two kinds of common operational
 models that we proposed, i.e., control rules and data rules,
@@ -916,9 +973,9 @@ We observe that the basic code-coverage-based approach, in which
 each branch is covered at least once, is good in selecting a small
 subset of tests that can reveal many faults. However, it misses many
 other faults, e.g., it misses more than half of the faults in the
-Siemens suite. Our approach can select a test suite with a much
-higher fault-revealing capability, and the number of selected tests
-is only a few times larger than that of the basic
+\emph{Siemens} suite. Our approach can select a test suite with a
+much higher fault-revealing capability, and the number of selected
+tests is only a few times larger than that of the basic
 code-coverage-based approach. Increasing the number of the times
 that each branch should be covered helps reveal more faults, but is
 less cost-effective than our approach. Sometimes increasing k may
@@ -946,27 +1003,28 @@ use the binary branch profiles for clustering. We do not use the
 variable-value profiles since a variable may not be observed in all
 the tests. We experiment with 10 different values of the number of
 the clusters. The values are 10 to 100, 100 to 1000, and 50 to 500
-in the Siemens suite, the space program, and the grep program,
-respectively. We select these values based on the program sizes and
-the numbers of tests selected by the code-coverage-based approach.
-The results are plotted in Figures \ref{fig:all} and
-\ref{fig:nontrivial}, and shown in Tables \ref{tab:other} and
-\ref{tab:other:nontrivial}.
+in the \emph{Siemens} suite, the \emph{Space} program, and the
+\emph{grep} program, respectively. We select these values based on
+the program sizes and the numbers of tests selected by the
+code-coverage-based approach. The results are plotted in Figures
+\ref{fig:all} and \ref{fig:nontrivial}, and shown in Tables
+\ref{tab:other} and \ref{tab:other:nontrivial}.
 
 We observe that the clustering-based approach performs better than
-random selection in the Siemens suite (all faults), the Siemens
-suite (nontrivial faults), and the space program (nontrivial
-faults), but not better than random selection in the other
-experiments. There are two main reasons for such results. First,
-there is a large number of tests in the Siemens and the space
-program. The tests could be highly redundant, especially for the
-common execution paths. The clustering-based approach may then help
-to cover more different execution paths. However, there are not a
-large number of tests in the grep program, and these tests are not
-redundant. In this case, the clustering-based approach may not help
-cover more different execution paths or isolate the most suspicious
-tests. Second, there are many trivial faults in the space program
-and the grep program, which may violate the assumption of the
+random selection in the \emph{Siemens} suite (all faults), the
+\emph{Siemens} suite (nontrivial faults), and the \emph{Space}
+program (nontrivial faults), but not better than random selection in
+the other experiments. There are two main reasons for such results.
+First, there is a large number of tests in the \emph{Siemens} and
+the \emph{Space} program. The tests could be highly redundant,
+especially for the common execution paths. The clustering-based
+approach may then help to cover more different execution paths.
+However, there are not a large number of tests in the \emph{grep}
+program, and these tests are not redundant. In this case, the
+clustering-based approach may not help cover more different
+execution paths or isolate the most suspicious tests. Second, there
+are many trivial faults in the \emph{Space} program and the
+\emph{grep} program, which may violate the assumption of the
 clustering-based approach that a significant number of failures are
 isolated in clusters of small size. Our approach can isolate tests
 that are suspicious in some program elements. It is more stable in
@@ -984,14 +1042,17 @@ an empty test suite and repeatedly adds new tests if they violate
 the invariants of the previously selected tests. To control the
 number of tests, the algorithm terminates when n (n=50 in their
 experiments) consecutive tests are considered and rejected. They
-also conducted experiments on the Siemens suite and the space
-program that we used. We adopt the experimental results from their
-original paper directly, which are shown in Table \ref{tab:other}
-and plotted in Figure \ref{fig:all}. No result of the operational
-difference approach in the grep program or on the nontrivial faults
-is available (Daikon cannot be scalable to deal with the grep
-program and therefore poses barriers for us to re-implement and
-apply the operational difference approach on the grep program).
+also conducted experiments on the \emph{Siemens} suite and the
+\emph{Space} program that we used\footnote{In their experiments,
+they only have 30 faulty versions for the replace program (31 in our
+experiments). But this difference can be negligible.}. We adopt the
+experimental results from their original paper directly, which are
+shown in Table \ref{tab:other} and plotted in Figure \ref{fig:all}.
+No result of the operational difference approach in the \emph{grep}
+program or on the nontrivial faults is available (Daikon cannot be
+scalable to deal with the \emph{grep} program and therefore poses
+barriers for us to re-implement and apply the operational difference
+approach on the \emph{grep} program).
 
 
 
@@ -1022,10 +1083,10 @@ approach. The result is shown in Table \ref{tab:effi}.
 
 \begin{table}[t]
 \caption{Efficiency of Our Approach
-(\emph{seconds})}\label{tab:effi} \center
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline Program   & LOC \hspace{-0.3cm}& \hspace{-0.2cm}\#Tests\hspace{-0.1cm} & Our  & \hspace{-0.1cm}Coverage\hspace{-0.1cm} & \hspace{-0.1cm}Clustering\hspace{-0.1cm}   \\
-& & & \hspace{-0.1cm}\footnotesize{Approach}\hspace{-0.1cm} &  &  \\
+(\emph{seconds})}\label{tab:effi} \center {
+\begin{tabular}{|@{}c@{}|c|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|}
+\hline Program   & LOC & \#Tests & Our  & Coverage & Clustering   \\
+& & & \footnotesize{Approach} &  &  \\
 
 \hline  print\_tokens   &   539 &   4130    &   1.4 &   0.4 &   366.2   \\
 \hline  print\_tokens2  &   489 &   4115    &   5.4 &   0.7 &   82.5    \\
@@ -1034,51 +1095,53 @@ approach. The result is shown in Table \ref{tab:effi}.
 \hline  schedule2   &   299 &   2710    &   1.3 &   0.2 &   93.8    \\
 \hline  tcas    &   174 &   1608    &   0.7 &   0.1 &   38.8    \\
 \hline  tot\_info   &   398 &   1052    &   0.8 &   0.1 &   14.7    \\
-\hline  \hspace{-0.1cm}Siemens suite\hspace{-0.1cm}   &   400 &   3115    &   2.6 &   0.4 &   150.2   \\
-\hline  Space   &   9564    &   13585   &   598.8   &   5.4 &   1364    \\
-\hline  grep    &   \hspace{-0.1cm}13358 \hspace{-0.1cm}  &   809 &   92.9    &   4.9 &   6.8 \\
+\hline  \emph{Siemens} suite   &   400 &   3115    &   2.6 &   0.4 &   150.2   \\
+\hline  \emph{Space}   &   9564    &   13585   &   598.8   &   5.4 &   1364    \\
+\hline  \emph{grep}    &   13358  &   809 &   92.9    &   4.9 &   6.8 \\
 
 
 \hline
-\end{tabular} \vspace{-0.2in}
+\end{tabular} }%\vspace{-0.2in}
 \end{table}
+
 
 Among the three approaches, the basic code-coverage-based approach
 is the fastest. It takes at most a few seconds in each of the
-subject programs. The clustering-based approach is fast in the grep
-program but is not fast in other programs. Basically, the more tests
-there are, the longer time the clustering-based approach takes.
-However, there is no clear polynomial relationships between the time
-cost and the number of tests. The time cost of the clustering
-approach can be greatly affected by the distribution of the tests.
-Our approach is fast in the Siemens suite and takes reasonable time
-in the space program and the grep program. More specifically, our
-approach takes about 10 minutes in the space program, which contains
-about 9564 lines of code and 13,585 tests. However, our approach may
-not be efficient enough for large programs with large test suites.
-The main cost of our approach is the time of mining the control
-rules, which is proportional to the number of tests and to the
-square of the number of branches. For a large program with 100,000
-lines of code and a large test suite that has 13,585 tests, our
-approach may take about 20 hours. In this case, a possible
-improvement is to mine only the control rules between the branches
-in the same modules. We can then greatly reduce the number of
-candidate control rules and thus the time cost of our approach.
+subject programs. The clustering-based approach is fast in the
+\emph{grep} program but is not fast in other programs. Basically,
+the more tests there are, the longer time the clustering-based
+approach takes. However, there is no clear polynomial relationships
+between the time cost and the number of tests. The time cost of the
+clustering approach can be greatly affected by the distribution of
+the tests. Our approach is fast in the \emph{Siemens} suite and
+takes reasonable time in the \emph{Space} program and the
+\emph{grep} program. More specifically, our approach takes about 10
+minutes in the \emph{Space} program, which contains about 9564 lines
+of code and 13,585 tests. However, our approach may not be efficient
+enough for large programs with large test suites. The main cost of
+our approach is the time of mining the control rules, which is
+proportional to the number of tests and to the square of the number
+of branches. For a large program with 100,000 lines of code and a
+large test suite that has 13,585 tests, our approach may take about
+20 hours. In this case, a possible improvement is to mine only the
+control rules between the branches in the same modules. We can then
+greatly reduce the number of candidate control rules and thus the
+time cost of our approach.
 
-\vspace{-0.1in}
+%\vspace{-0.1in}
 \subsubsection{Summary and Discussions}
 
 Our results suggest the following observations:
 
 \begin{itemize}
-\item \vspace{-0.1in}
+\item %\vspace{-0.1in}
 Our approach is effective in reducing the number of tests while
 revealing most of the faults. Control rules and data rules are
 complementary to each other as they reflect different aspects of
 program behaviors.
 
 
-\item \vspace{-0.1in}
+\item %\vspace{-0.1in}
 Our approach can select a test suite with a much higher
 fault-revealing capability than those of the code-coverage-based
 approach and the dynamic-invariant-based approach, and is more
@@ -1091,9 +1154,9 @@ robust and cost-effective than the clustering-based approach.
 But we note that there are some issues to be considered. The
 code-coverage-based approach may reveal more faults if more complex
 coverage profiles are used, which however are more difficult to
-collect. The clustering approach is more flexible for selecting
-different numbers of tests.
-\item \vspace{-0.1in}
+collect. The clustering-based approach is more flexible for
+selecting different numbers of tests.
+\item %\vspace{-0.1in}
 Our approach takes reasonable time for small to medium sized
 programs with large test suites. However, it may not be efficient
 enough for large programs with large test suites. This issue may be
@@ -1111,20 +1174,21 @@ investigate this technique.
 \subsection{Threats to Validity}
 The threats to external validity primarily include the degree to
 which the subject programs, faults, and test cases are
-representative of true practice. The Siemens programs are small and
-the space program is of medium size. Most of the faulty versions
-involve simple, one or two-line manually seeded faults. Moreover,
-the tests are manually or randomly generated, while in automated
-testing, a number of test generation approaches generate tests
-systematically. These threats could be reduced by more experiments
-on wider types of subjects with systematically generated tests in
-future work. The threats to internal validity include the fact that
-different approaches select different numbers of tests. This fact
-may make the comparison of fault-revealing effectiveness bias to the
-approaches that select larger number of tests. To reduce this bias,
-we present the results of random selection as the baseline. We also
-try to evaluate the fault-revealing capabilities of other approaches
-with different numbers of selected tests.
+representative of true practice. The \emph{Siemens} programs are
+small and the \emph{Space} program is of medium size. Most of the
+faulty versions involve simple, one or two-line manually seeded
+faults. Moreover, the tests are manually or randomly generated,
+while in automated testing, a number of test generation approaches
+generate tests systematically. These threats could be reduced by
+more experiments on wider types of subjects with systematically
+generated tests in future work. The threats to internal validity
+include the fact that different approaches select different numbers
+of tests. This fact may make the comparison of fault-revealing
+effectiveness bias to the approaches that select larger number of
+tests. To reduce this bias, we present the results of random
+selection as the baseline. We also try to evaluate the
+fault-revealing capabilities of other approaches with different
+numbers of selected tests.
 
 
 
@@ -1245,13 +1309,15 @@ and Elbaum et al. \cite{Elbaum02} evaluate a set of prioritization
 techniques for regression testing, focusing on the goal of
 increasing the likelihood of revealing faults earlier in the testing
 process. Hus and Orso \cite{Hsu09} propose a test-suite minimization
-framework based on integer linear programming. Although these
-techniques also select/prioritize a small number of tests that are
-likely to reveal (regression) faults, they are based on code changes
-and historical testing information, and have other objectives such
-as reducing the time of running test cases. Our work focuses on
-reducing the effort of result inspection in initial testing when
-test oracles are not available.
+framework based on integer linear programming. Their approach can
+get optimal solutions for various minimization problems that involve
+any number of criteria. Although these techniques also
+select/prioritize a small number of tests that are likely to reveal
+(regression) faults, they are based on code changes and historical
+testing information, and have other objectives such as reducing the
+time of running test cases. Our work focuses on reducing the effort
+of result inspection in initial testing when test oracles are not
+available.
 
 
 
@@ -1262,22 +1328,22 @@ test oracles are not available.
 \section{Conclusions and Future Work}
 \label{sec:conclusions}
 
-We have proposed an approach for test selection without a priori
-specifications. We propose to mine common operational models, which
-are often but not always true in all observed traces, from a set of
-unverified tests. Specifically, we collect branch coverage and data
-value bounds at runtime and then mine implication relationships
-between branches and constraints of data values as common
-operational models after running all the tests. We then select tests
-that violate all these common operational models greedily. We have
-evaluated our approach on the {\it Siemens} suite, the {\it Space}
-program, and the {\it grep} program, compared with
-code-coverage-based, clustering-based, and dynamic-invariant-based
-approaches. The experimental results show that our approach can
-select a test suite with a much higher fault-revealing capability
-than those of the code-coverage-based approach and the
-dynamic-invariant-based approach, and is more robust and
-cost-effective than the clustering-based approach.
+We have proposed an approach for test selection without \emph{a
+priori} specifications. We propose to mine common operational
+models, which are often but not always true in all observed traces,
+from a set of unverified tests. Specifically, we collect branch
+coverage and data value bounds at runtime and then mine implication
+relationships between branches and constraints of data values as
+common operational models after running all the tests. We then
+select tests that violate all these common operational models
+greedily. We have evaluated our approach on the \emph{Siemens}
+suite, the \emph{Space} program, and the \emph{grep} program,
+compared with code-coverage-based, clustering-based, and
+dynamic-invariant-based approaches. The experimental results show
+that our approach can select a test suite with a much higher
+fault-revealing capability than those of the code-coverage-based
+approach and the dynamic-invariant-based approach, and is more
+robust and cost-effective than the clustering-based approach.
 %The experimental results show that our
 %approach is effective in finding failing tests.
 
