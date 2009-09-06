@@ -9,17 +9,18 @@ different programming styles. The
 HOPL\footnote{\url{http://hopl.murdoch.edu.au}} website lists 8,512
 different programming languages. To address business requirements
 and to survive in competing markets, companies or open source
-organizations often have to release different 
-versions of their projects in different languages. For
-example, many well-known projects such as
-Lucene\footnote{\url{http://lucene.apache.org/}}\Comment{,
-Db4o\footnote{\url{http://www.db4o.com/}},} and
+organizations often have to release different versions of their
+projects in different languages. For example, many well-known
+projects such as\Comment{
+Lucene\footnote{\url{http://lucene.apache.org/}},}
+db4o\footnote{\url{http://www.db4o.com/}} and
 WordNet\footnote{\url{http://wordnet.princeton.edu/}} provide
 multiple versions in different languages. For some open source
-projects, although their project team does not officially provide multiple
-versions, external programmers often create their versions in
-different languages. For example, the WordNet team does not provide a C\#
-version, but Simpson and Crowe developed a C\# version of
+projects, although their project teams do not officially provide
+multiple versions, external programmers often create their versions
+in different languages. For example, the WordNet team does not
+provide a C\# version, but Simpson and Crowe developed a C\# version
+of
 WordNet.Net\footnote{\url{http://opensource.ebswift.com/WordNet.Net/}}.
 Totally, as described by Jones~\cite{jones1998estimating}, about
 one-third of the existing projects have multiple versions in
@@ -69,7 +70,7 @@ we mine mapping relations based on API usages in the client
 code rather based on API implementations with three major reasons.
 (1) API libraries often do not come with source files especially for
 those C\# libraries. (2) Relations mined based on API
-implementations often have lower confidence than 
+implementations often have lower confidence than
 relations mined based on API usages. The reason is that API
 implementations have only one data point for analysis, whereas
 API usages can have many data points (i.e., call sites) for mining. (3) Mapping
@@ -111,37 +112,36 @@ To deal with the complexity of mining API mapping, we construct a
 graph, referred to as \emph{API transformation graph} (ATG), for
 aligned methods of the client code in both languages. These ATGs
 precisely capture inputs and outputs of API methods, and help mine
-complex mapping relations of API methods. 
+complex mapping relations of API methods.
 
 This paper makes the following major contributions:
 
 \begin{itemize}\vspace*{-1.5ex}
 \item The first approach that mines API mapping between
-different languages using API client code. Our
-approach addresses an important and yet challenging problem that is not
+different languages using API client code, referred to as MAM. MAM
+addresses an important and yet challenging problem that is not
 addressed by previous work on language translation.\vspace*{-1.5ex}
 \item API transformation graphs (ATGs) proposed to capture inputs
-and outputs of API methods, and a technique for building ATGs
-and comparing built ATGs for mining API mapping relations.
-As ATGs describe data dependencies among
-inputs and outputs of API methods, our approach is able to mine
-complex mapping relations between API methods from two languages.\vspace*{-1.5ex}
-\item A tool named MAM implemented for our approach and two
-evaluations on 15 projects with both Java and C\# versions. These
-projects include 18,568 classes and 109,850 methods. The results
-show that our approach mines 6,695 mapping relations of API classes
-with accuracy of 86.7\% and 19,110 mapping relations of API
-methods with accuracy of 90.0\%. The results also show that the
-mined API mapping relations reduce 55.4\% of compilation errors and
-43.0\% defects during translation of projects from Java to C\# using
-Java2CSharp.
+and outputs of API methods, and a technique for building ATGs and
+comparing built ATGs for mining API mapping. As ATGs describe data
+dependencies among inputs and outputs of API methods, MAM is able to
+mine complex mapping relations between API methods from two
+languages.\vspace*{-1.5ex}
+\item A tool implemented for MAM and two
+evaluations on 15 projects that include 18,568 classes and 109,850
+methods with both Java and C\# versions. The results show that our
+approach mines 6,695 mapping relations of API classes with accuracy
+of 86.7\% and 19,110 mapping relations of API methods with accuracy
+of 90.0\%. The results also show that the mined API mapping
+relations reduce 55.4\% of compilation errors and 43.0\% defects
+during translation of projects from Java to C\# using Java2CSharp.
 \end{itemize}\vspace*{-1.5ex}
 
-The rest of this paper is organized as follows. 
+The rest of this paper is organized as follows.
 Section~\ref{sec:mapping} presents definitions.
-Section~\ref{sec:example} illustrates our approach using an example. 
-Section~\ref{sec:approach} presents our approach. 
+Section~\ref{sec:example} illustrates our approach using an example.
+Section~\ref{sec:approach} presents our approach.
 Section~\ref{sec:evaluation} presents our evaluations.
 Section~\ref{sec:discuss} discusses issues of our approach.
-Section~\ref{sec:related} presents related work. 
+Section~\ref{sec:related} presents related work.
 Finally, Section~\ref{sec:conclusion} concludes.
