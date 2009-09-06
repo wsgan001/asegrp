@@ -49,23 +49,23 @@ However, it is challenging to develop such a translation tool since the
 translation tool should have knowledge of how Application
 Programming Interfaces (APIs) in one programming
 language are mapped to APIs in the other language. In the literature, there exist
-approaches~\cite{mossienko2003automated, yasumatsu1995spice,
-hainaut2008migration} that address the problem of language
+approaches~\cite{mossienko2003automated, yasumatsu1995spice} that address the problem of language
 translation partially. These approaches expect programmers to
 describe how APIs of one language is mapped to APIs of another
 language. \Comment{Based on the mappings provided as input, these
 existing approaches translate projects from one language to
 another.} As programming languages provide a large number of APIs,
 writing mappings manually for all APIs is tedious and error-prone.
-As a result, existing approaches~\cite{mossienko2003automated,yasumatsu1995spice,hainaut2008migration}
+As a result, existing approaches~\cite{mossienko2003automated,yasumatsu1995spice}
 support only a subset of APIs for translation. Such a limitation
 results in many compilation errors in translated projects and limits
 these approaches' usage in practice.
 
 In this paper, we propose a novel approach that automatically mines
 how APIs of one language are mapped to APIs of another language. We
-refer to this mapping as \emph{mapping relations of APIs} and our
-approach as MAM. MAM mines mapping relations based on API usages in
+refer to this mapping as \emph{API mapping relations} 
+(in short as relations in the rest of the paper) and our
+approach as MAM. MAM mines relations based on API usages in
 the client code rather based on API implementations with three major
 reasons. (1) API libraries often do not come with source files
 especially for those C\# libraries. (2) Relations mined based on API
@@ -131,7 +131,7 @@ evaluations on 15 projects that include 18,568 classes and 109,850
 methods with both Java and C\# versions. The results show that our
 tool mines 6,695 mapping relations of API classes with accuracy of
 86.7\% and 19,110 mapping relations of API methods with accuracy of
-90.0\%. The results also show that the mined API mapping relations
+90.0\%. The results also show that the mined relations
 reduce 55.4\% of compilation errors and 43.0\% defects during
 translation of projects from Java to C\# using Java2CSharp.
 \end{itemize}\vspace*{-1.5ex}

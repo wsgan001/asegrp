@@ -13,8 +13,7 @@ or library that provides reusable API classes and methods.
 that reuses or extends API classes and methods provided by API
 libraries.
 
-The definitions of API library and client code are
-relative to each other. For example, Lucene uses
+The definitions of API library and client code are relative to each other. For example, Lucene uses
 J2SE\footnote{\url{http://java.sun.com/j2se/1.5.0/}} as an API
 library, whereas Nutch\footnote{\url{http://lucene.apache.org/nutch/}} uses Lucene as
 an API library. Therefore, we consider Lucene as client code and API
@@ -27,10 +26,9 @@ language $L_1$ and another set of entities $E_2$ defined by another
 language $L_2$, a mapping relation is a triple $\langle E_1, E_2,
 b_i \rangle$ where $E_1$ and $E_1$ have the same behavior $b_i$.
 
-
-We use mapping relations of API classes for translating data such as
-variable, parameters, and constants, so we require that two mapped
-API classes have the same behavior of storing data, referred to as
+We use mapping relations of API classes for translating data entities such as
+variables, parameters, and constants, so we require that two mapped
+API classes have the same program behavior, referred to as
 the $s$ behavior.
 
 \textbf{1-to-1 mapping relation of API classes.} For an API class
@@ -39,7 +37,7 @@ $c_1$ defined by $L_1$ and an API class $c_2$ defined by $L_2$, an
 c_2, s \rangle$, where $s$ denotes the $s$ behavior.
 
 One API class defined by $L_1$ can have more than one 1-to-1 mapping
-relations with API classes defined by $L_2$. For example, data in
+relation with API classes defined by $L_2$. For example, data in
 \CodeIn{java.util.ArrayList} of Java can be stored in either
 \CodeIn{System. Collections.ArrayList} \textbf{or}
 \CodeIn{System.Collections.Generic. List} of C\#, so the Java class
@@ -47,21 +45,21 @@ has two 1-to-1 mapping relations with the two C\# classes.
 
 \textbf{1-to-many mapping relation of API classes.} For an API class
 $c_1$ defined by $L_1$ and a set of API classes $C_2$ defined by
-$L_2$, an 1-to-many mapping relation of API classes is a triple
-$\langle c_1, C_2, s \rangle$, where $s$ is the $s$ behavior.
+$L_2$, a 1-to-many mapping relation of API classes is a triple
+$\langle c_1, C_2, s \rangle$, where $s$ denotes the $s$ behavior.
 
 For example, the current time in \CodeIn{java.lang.System} of Java
 is stored in \CodeIn{System.Environment} of C\#, whereas the
 environment settings in \CodeIn{java.lang.System} is stored in
-\CodeIn{System.Environment} of C\#, so the Java class has an
-1-to-many mapping relations with the two C\# classes.
+\CodeIn{System.Environment} of C\#, so the Java class has a
+1-to-many mapping relation with the two C\# classes.
 
 We use mapping relations of API methods for translating API methods
-that use input to produce desirable outputs, so we require two
-mapped API methods have the same behavior of inputs, outputs, and
-functionalities, referred as the ``\emph{t}'' behavior.
+that accept inputs to produce desirable outputs, so we require that two
+mapped API methods have the same program behavior of inputs, outputs, and
+functionalities, referred to as the ``\emph{t}'' behavior.
 
-\textbf{Merged API method.} A merged API method $cm$ is a set of API
+\textbf{Merged API method.} A merged API method $cm$ is a sequence of API
 methods $M$ combined by inputs and outputs, so the $t$ behavior of
 $cm$ is the combination of $M$. Consider two API methods $m_1$ and
 $m_2$ defined in classes $C_1$ and $C_2$ of $L_1$, respectively,
@@ -83,9 +81,9 @@ method $m_{new}$ is shown below:
 ..., $inp_m^1$, \\ $inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
 
 For the Java code example shown in Figure~\ref{fig:challenge},
-consider the \CodeIn{file} variable, which is a return variable for
-the constructor and a receiver object for the \CodeIn{exists}
-method. As the output of one API method is passed as receiver object
+consider the \CodeIn{file} variable, which is a return for
+the constructor and a receiver for the \CodeIn{exists}
+method. Since the output of one API method is passed as a receiver 
 of another API method, we can combine these two methods to create a
 new merged API method \CodeIn{boolean File.exists(string)} as shown
 in Figure~\ref{fig:example} (b). The merged API method accepts a
@@ -97,4 +95,4 @@ we define mapping relations of API methods.
 \textbf{Mapping relation of API methods.} For a merged API method
 $cm_1$ defined by $L_1$ and a merged API method $cm_2$ defined by
 $L_2$, a mapping relation of API methods is a triple $\langle cm_1,
-cm_2, t \rangle$, where $t$ is the $t$ behavior.
+cm_2, t \rangle$, where $t$ denotes the $t$ behavior.
