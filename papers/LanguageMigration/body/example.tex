@@ -1,6 +1,34 @@
 \section{Example}
 \label{sec:example}
 
+We next use an example to illustrate challenges in mining
+API mapping relations. Figure~\ref{fig:challenge} shows a
+Java code example and its translated C\# code. This Java code
+example accepts a \CodeIn{string} input that represents the name of a
+file or directory and returns a \CodeIn{boolean} value that
+describes whether the file or directory exists. To achieve this functionality, the
+code example declares a local variable, called \CodeIn{file}, of
+type \CodeIn{java.io.File} and invokes the \CodeIn{exists} method. The
+method takes the \CodeIn{string} input and \CodeIn{file} as its
+inputs and produces the desirable \CodeIn{boolean} value. Here, we
+consider \CodeIn{file} (a receiver) as a special input for
+the \CodeIn{exists} method.
+
+To translate this code example into C\#, a translation tool needs to
+know mapping relations of API classes, so it can translate inputs,
+outputs, and variables into C\#. For example, the translation tool
+needs to know the mapped API class for \CodeIn{java.io.File} in C\#
+to translate the variable \CodeIn{file} to C\#. In addition, the
+translation tool needs to know the mapped API methods, so it can
+add code for invoking proper API methods that use translated inputs and variables to
+produce desirable outputs. For this example, the translation tool
+adds code for invoking the \CodeIn{Exists} method and the
+\CodeIn{FullName} method to achieve the functionality.
+Here, we consider field accesses as special type of method calls.
+
+Some projects such as Lucene have both Java and C\# versions. MAM
+has three major steps to mine the preceding two types of mapping
+relations of APIs from these projects.
 \begin{figure}[t]
 \begin{CodeOut}
 \begin{alltt}
@@ -50,33 +78,6 @@
 \caption{\label{fig:clientcode} Two versions (Java and C\#) of
 client code.}\vspace*{-2ex}
 \end{figure}
-
-We next use an example to illustrate challenges in mining relations. Figure~\ref{fig:challenge} shows a
-Java code example and its translated C\# code. This Java code
-example accepts a \CodeIn{string} input that represents the name of a
-file or directory and returns a \CodeIn{boolean} value that
-describes whether the file or directory exists. To achieve this functionality, the
-code example declares a local variable, called \CodeIn{file}, of
-type \CodeIn{java.io.File} and invokes the \CodeIn{exists} method. The
-method takes the \CodeIn{string} input and \CodeIn{file} as its
-inputs and produces the desirable \CodeIn{boolean} value. Here, we
-consider \CodeIn{file} (a receiver) as a special input for
-the \CodeIn{exists} method.
-
-To translate this code example into C\#, a translation tool needs to
-know mapping relations of API classes, so it can translate inputs,
-outputs, and variables into C\#. For example, the translation tool
-needs to know the mapped API class for \CodeIn{java.io.File} in C\#
-to translate the variable \CodeIn{file} to C\#. In addition, the
-translation tool needs to know the mapped API methods, so it can
-add code for invoking proper API methods that use translated inputs and variables to
-produce desirable outputs. For this example, the translation tool
-adds code for invoking the \CodeIn{Exists} method and the
-\CodeIn{FullName} method to achieve the functionality.
-Here, we consider field accesses as special type of method calls.
-
-Some projects such as Lucene have both Java and C\# versions. MAM
-has three major steps to mine the preceding two types of relations from these projects.
 
 \textbf{Aligning client code.} First, MAM aligns classes and methods
 between the two versions of each project. As two code snippets with

@@ -423,44 +423,44 @@ function to get these $jm$ and $sm$ API methods. If our algorithm successfully m
 $sm$, our algorithm moves to the next available API methods in $m$
 and $m'$ of the client code. If our algorithm is not able to map $jm$
 with $sm$, our algorithm merges $sm$ and $jm$ with their next available API methods
-in the corresponding ATGs, respectively, and attempts to map merged API methods.
-
-
-A merged API method $cm$ is a set of API
+in the corresponding ATGs, respectively, and attempts to map merged API methods. Here, a merged API method $cm$ is a sequence of API
 methods $M$ combined by inputs and outputs, so the $t$ behavior of
-$cm$ is the combination of $M$. Consider two API methods $m_1$ and
-$m_2$ defined in classes $C_1$ and $C_2$ of $L_1$, respectively,
-with the following signatures:
+$cm$ is the combination of $M$. For $L_1$, consider an API method $m_1$ defined in classes $c_1$ and an API method $m_2$ defined in $c_2$ with the following signatures:
 
-\CodeIn{$m_1$ signature: $o_1$ $C_1$.$m_1$($inp_1^1$, $inp_2^1$,
+\CodeIn{$m_1$ signature: $o_1$ $c_1$.$m_1$($inp_1^1$, $inp_2^1$,
 ..., $inp_m^1$)}
 
-\CodeIn{$m_2$ signature: $o_2$ $C_2$.$m_2$($inp_1^2$, $inp_2^2$,
+\CodeIn{$m_2$ signature: $o_2$ $c_2$.$m_2$($inp_1^2$, $inp_2^2$,
 ..., $inp_n^2$)}
 
-We merge methods $m_1$ and $m_2$ to create a new \emph{merged API
+Our algorithm merges methods $m_1$ and $m_2$ to create a new \emph{merged API
 method} $m_{new}$ if the output $o_1$ of $m_1$ is used either as a
-receiver or as a parameter for $m_2$ (i.e., $o_1$ == $C_2$ or $o_1$
+receiver or as a parameter for $m_2$ (i.e., $o_1$ == $c_2$ or $o_1$
 == $inp_i^2$) in client code. The signature of the new merged API
 method $m_{new}$ is shown below:
 
 \CodeIn{$m_{new}$ signature: $o_2$ $m_{new}$($inp_1^1$, $inp_2^1$,
 ..., $inp_m^1$, \\ $inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
 
-For the Java code example shown in Figure~\ref{fig:challenge},
-consider the \CodeIn{file} variable, which is a return variable for
-the constructor and a receiver object for the \CodeIn{exists}
-method. As the output of one API method is passed as receiver object
-of another API method, we can combine these two methods to create a
-new merged API method \CodeIn{boolean File.exists(string)} as shown
-in Figure~\ref{fig:example} (b). The merged API method accepts a
-\CodeIn{string} parameter that represents a file name and returns a
-boolean value that describes whether a file exists or not. For
-simplicity, we consider each API method as a merged API method when
-we define mapping relations of API methods.
+For example, our algorithm merges the API methods shown in Figure~\ref{fig:graph} (a) to two merged API methods as follows.
 
+\begin{CodeOut}\vspace*{-1.8ex}
+\begin{alltt}
+cm_1:Boolean \{FileInfo,getFullFile,File.Exist\}(String)
+cm_2:Boolean \{FileInfo,getFullFile,Directory.Exist\}(String)
+\end{alltt}
+\end{CodeOut}\vspace*{-1.8ex}
 
-Our algorithm uses the \CodeIn{replace} function for merging an API method with its
+Similarly, our algorithm merges the API methods shown in Figure~\ref{fig:graph} (b) to two merged API methods as follows.
+
+\begin{CodeOut}\vspace*{-1.8ex}
+\begin{alltt}
+cm_3:boolean \{File,exist\}(String)
+cm_4:boolean \{File,delete\}(String)
+\end{alltt}
+\end{CodeOut}\vspace*{-1.8ex}
+
+Our algorithm merges these API methods so that it is able to mine many-to-many mapping relations of API methods as shown in Figure~\ref{fig:graph}. After merging API methods, our algorithm uses the \CodeIn{replace} function for merging an API method with its
 next available API method. For two merged API methods, our algorithm uses the
 maximum similarity of method names between $jm$ and $sm$ as a
 similarity metric value for mapping their functionalities.

@@ -29,17 +29,17 @@ b_i \rangle$ where $E_1$ and $E_1$ have the same behavior $b_i$.
 
 
 We use mapping relations of API classes for translating data such as
-variable, parameters, and constants, so we require that two mapped
-API classes have the same behavior of storing data, referred to as
+variables, parameters, and constants, so we require that two mapped
+API classes have the same programm behavior, referred to as
 the $s$ behavior.
 
 \textbf{1-to-1 mapping relation of API classes.} For an API class
-$c_1$ defined by $L_1$ and an API class $c_2$ defined by $L_2$, an
+$c_1$ defined by $L_1$ and an API class $c_2$ defined by $L_2$, a
 1-to-1 mapping relation of API classes is a triple $\langle c_1,
 c_2, s \rangle$, where $s$ denotes the $s$ behavior.
 
 One API class defined by $L_1$ can have more than one 1-to-1 mapping
-relations with API classes defined by $L_2$. For example, data in
+relation with API classes defined by $L_2$. For example, data in
 \CodeIn{java.util.ArrayList} of Java can be stored in either
 \CodeIn{System. Collections.ArrayList} \textbf{or}
 \CodeIn{System.Collections.Generic. List} of C\#, so the Java class
@@ -48,20 +48,30 @@ has two 1-to-1 mapping relations with the two C\# classes.
 \textbf{Many-to-many mapping relation of API classes.} For a set of API classes
 $C_1$ defined by $L_1$ and a set of API classes $C_2$ defined by
 $L_2$, a many-to-many mapping relation of API classes is a triple
-$\langle c_1, C_2, s \rangle$, where $s$ is the $s$ behavior.
+$\langle C_1, C_2, s \rangle$, where $s$ denotes the $s$ behavior.
 
 For example, the current time in \CodeIn{java.lang.System} of Java
 is stored in \CodeIn{System.Environment} of C\#, whereas the
 environment settings in \CodeIn{java.lang.System} is stored in
-\CodeIn{System.Environment} of C\#, so the Java class has an
-1-to-many mapping relations with the two C\# classes.
+\CodeIn{System.Environment} of C\#, so the Java class has a
+many-to-many mapping relation with the two C\# classes.
 
 We use mapping relations of API methods for translating API methods
-that use input to produce desirable outputs, so we require two
-mapped API methods have the same behavior of inputs, outputs, and
-functionalities, referred as the ``\emph{t}'' behavior.
+that accept inputs to produce desirable outputs, so we require two
+mapped API methods have the same programm behavior of inputs, outputs, and
+functionalities. We refer to this behavior as the ``\emph{t}'' behavior.
 
-\textbf{Mapping relation of API methods.} For a merged API method
-$cm_1$ defined by $L_1$ and a merged API method $cm_2$ defined by
-$L_2$, a mapping relation of API methods is a triple $\langle cm_1,
-cm_2, t \rangle$, where $t$ is the $t$ behavior.
+\textbf{1-to-1 mapping relation of API methods.} For an API method
+$m_1$ defined by $L_1$ and an API method $m_2$ defined by
+$L_2$, a mapping relation of API methods is a triple $\langle m_1,
+m_2, t \rangle$, where $t$ denotes the $t$ behavior.
+
+As one API class defined by $L_1$ can have more than one 1-to-1 mapping
+relation with API classes defined by $L_2$, one API method defined by $L_1$ can have more than one 1-to-1 mapping relation with API methods defined by $L_2$. 
+
+\textbf{Many-to-many mapping relation of API classes.} For a set of API methods
+$M_1$ defined by $L_1$ and a set of API methods $M_2$ defined by
+$L_2$, a many-to-many mapping relation of API methods is a triple
+$\langle M_1, M_2, t \rangle$, where $t$ denotes the $t$ behavior.
+
+For example, Section~\ref{sec:introduction} shows a many-to-many mapping relation between $\{m_3\}$ of Java and $\{m_4, m_5\}$ of C\#. 
