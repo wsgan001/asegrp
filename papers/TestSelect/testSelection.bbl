@@ -135,6 +135,11 @@ W.~Visser, C.~S. Pasareanu, and S.~Khurshid.
 \newblock Test input generation with {Java PathFinder}.
 \newblock In {\em ISSTA}, pages 97--107, 2004.
 
+\bibitem{Wassermann08}
+G.~Wassermann, D.~Yu, A.~Chander, D.~Dhurjati, H.~Inamura, and Z.~Su.
+\newblock Dynamic test input generation for web applications.
+\newblock In {\em ISSTA}, pages 249--260, 2008.
+
 \bibitem{Xie03}
 T.~Xie and D.~Notkin.
 \newblock Tool-assisted unit test selection based on operational violations.

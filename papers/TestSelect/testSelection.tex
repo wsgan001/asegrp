@@ -57,7 +57,7 @@ operational models for result inspection. We have evaluated our
 approach on a set of programs, compared with previous
 code-coverage-based, clustering-based, dynamic-invariant-based, and
 random selection approaches. The experimental results show that our
-approach can effectively reduce the number of tests for result
+approach can more effectively reduce the number of tests for result
 inspection while revealing most of the faults.
 %The experimental results
 %show that our approach is effective for test selection.
@@ -83,14 +83,14 @@ inspection while revealing most of the faults.
 
 \end{abstract}
 
-%% A category with the (minimum) three required fields
-%\category{D.2.5}{Software Engineering}{Testing and Debugging}
-%%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures,
-%%performance measures]
-%
-%\terms{Reliability, Experimentation}
-%
-%\keywords{Software testing, Test selection}
+% A category with the (minimum) three required fields
+\category{D.2.5}{Software Engineering}{Testing and Debugging}
+%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures,
+%performance measures]
+
+\terms{Reliability, Experimentation}
+
+\keywords{Software testing, Test selection}
 
 \section{Introduction} \label{sec:intro}
 
@@ -98,17 +98,17 @@ inspection while revealing most of the faults.
 It is labor-intensive to manually generate a large set of test
 inputs and verify their outputs. Recently, there have been various
 practical approaches on automatic test-input
-generation~\cite{Pacheco07, Sen05, Visser04}. However, test-result
-inspection still remains a largely manual task. Given \emph{a
-priori} specification, developers can reduce this manual effort by
-selecting test inputs (in short as \emph{tests}) using specification
-coverage criteria~\cite{Chang99}. But it is uncommon to have \emph{a
-priori} specification in practice. Sometimes developers may use
-general test oracles based on memory monitoring tools such as
-Valgrind ~\cite{Nethercote07}. But these oracles are limited in
-checking specific kinds of faults. It is highly demanded to develop
-practical test-selection techniques, which can select a small subset
-of tests that are likely to reveal faults.
+generation~\cite{Pacheco07, Sen05, Visser04, Wassermann08}. However,
+test-result inspection still remains a largely manual task. Given
+\emph{a priori} specification, developers can reduce this manual
+effort by selecting test inputs (in short as \emph{tests}) using
+specification coverage criteria~\cite{Chang99}. But it is uncommon
+to have \emph{a priori} specification in practice. Sometimes
+developers may use general test oracles based on memory monitoring
+tools such as Valgrind ~\cite{Nethercote07}. But these oracles are
+limited in checking specific kinds of faults. It is highly demanded
+to develop practical test-selection techniques, which can select a
+small subset of tests that are likely to reveal faults.
 
 
 A promising test-selection approach is to dynamically mine
@@ -200,8 +200,8 @@ should not write anything to the standard output.
 
 In Line 1, $\CodeIn{always\_text}$ is 0 by default,
 $\CodeIn{out\_quiet}$ is 0 when the option ``--quiet'' is not
-specified, \CodeIn{memchr(bufbeg,'\\0',buflim-bufbeg)} returns a
-non-null pointer if the input is a binary file. In Line 3,
+specified, $\CodeIn{memchr(bufbeg,'\\0',buflim}$ $\CodeIn{-bufbeg)}$
+returns a non-null pointer if the input is a binary file. In Line 3,
 $\CodeIn{out\_quiet}$ should be set to be positive if
 $\CodeIn{not\_text}$ is 1, so as to suppress the normal outputs of
 matchings. In Line 7, $\CodeIn{nlines}$ records the number of found
@@ -251,13 +251,13 @@ earlier version of this work was presented in ICSE NIER 2009 as a
 main aspects. First, we enrich the common operational models with
 data rules, which are complementary to our previous control rules.
 Second, we evaluate both the effectiveness and efficiency of our
-approach, compared with the existing approaches instead of random
+approach, compared with the existing approaches besides random
 selection.}:
 
 
 
 \begin{itemize}
-\item
+\item \vspace{-0.1in}
 We propose to mine common operational models, which are often but
 not always true in all observed traces, from a (potentially large)
 set of unverified tests. Such common operational models capture
@@ -265,7 +265,7 @@ typical behaviors of the unverified tests and their violations are
 likely to reveal faults.
 
 
-\item
+\item \vspace{-0.1in}
 We propose two kinds of common operational models, including
 implication relationships between branches and constraints of data
 values. These two kinds of common operational models are indicative
@@ -273,7 +273,7 @@ of many faults and they can be mined from execution traces that
 consist of only branch coverage and data value bounds.
 
 
-\item
+\item \vspace{-0.1in}
 
 We conduct a comprehensive experimental study of the effectiveness
 and efficiency of our approach, compared with previous
@@ -283,7 +283,7 @@ random selection approaches.
 
 \end{itemize}
 
-
+\vspace{-0.1in}
 
 The rest of the paper is organized as follows. Section
 \ref{sec:common} presents the proposed approach to mine common
@@ -689,15 +689,15 @@ then report the averaged results.
 
 \begin{figure*}
 %  \centering
-  \subfigure[Results in the \emph{Siemens} program]{
+  \subfigure[Results for the \emph{Siemens} suite]{
     \label{fig:all:a} %% label for first subfigure
     %\includegraphics{figs/plotExps_siemens.eps}}
     \includegraphics[width=0.33\textwidth]{figs/plotExps_siemens_large.eps}}
 %  \hspace{0.5in}
-  \subfigure[Results in the \emph{Space} program]{
+  \subfigure[Results for the \emph{Space} program]{
     \label{fig:all:b} %% label for second subfigure
     \includegraphics[width=0.328\textwidth]{figs/plotExps_space_large.eps}}
-  \subfigure[Results in the \emph{grep} program]{
+  \subfigure[Results for the \emph{grep} program]{
     \label{fig:all:c} %% label for second subfigure
     \includegraphics[width=0.34\textwidth]{figs/plotExps_grep_large.eps}}
   \caption{Results of all the faults}
@@ -706,15 +706,15 @@ then report the averaged results.
 
 \begin{figure*}
 %  \centering
-  \subfigure[Results in the \emph{Siemens} program]{
+  \subfigure[Results for the \emph{Siemens} suite]{
     \label{fig:nontrivial:a} %% label for first subfigure
     %\includegraphics{figs/plotExps_diffi_siemens.eps}}
     \includegraphics[width=0.33\textwidth]{figs/plotExps_diffi5_siemens_large.eps}}
 %  \hspace{0.5in}
-  \subfigure[Results in the \emph{Space} program]{
+  \subfigure[Results for the \emph{Space} program]{
     \label{fig:nontrivial:b} %% label for second subfigure
     \includegraphics[width=0.328\textwidth]{figs/plotExps_diffi5_space_large.eps}}
-  \subfigure[Results in the \emph{grep} program]{
+  \subfigure[Results for the \emph{grep} program]{
     \label{fig:nontrivial:c} %% label for second subfigure
     \includegraphics[width=0.34\textwidth]{figs/plotExps_diffi5_grep_large.eps}}
   \caption{Results of the nontrivial faults}
@@ -929,19 +929,20 @@ average, which can still reveal 80\% of the faults. Randomly
 selecting the same number of tests can reveal only 41\% of the
 faults.
 
-We also evaluate the effects of the two kinds of common operational
-models that we proposed, i.e., control rules and data rules,
-separately. The results are plotted in Figures \ref{fig:all} and
-\ref{fig:nontrivial}, and shown in Tables \ref{tab:our} and
-\ref{tab:our:nontrivial}. We observe that both these two kinds of
-rules are helpful in revealing faults. Among them, covering
-violations of control rules can detect more faults than covering
-violations of data rules, but also requires much more tests. The
-data rules are better for some programs such as tot\_info, which is
-an information measure program that deals with data tables. In
-summary, these two kinds of rules are complementary to each other as
-they reflect different aspects of program behaviors. When combined
-together, they are able to help select quite a good subset of tests.
+\vspace{0.2in} We also evaluate the effects of the two kinds of
+common operational models that we proposed, i.e., control rules and
+data rules, separately. The results are plotted in Figures
+\ref{fig:all} and \ref{fig:nontrivial}, and shown in Tables
+\ref{tab:our} and \ref{tab:our:nontrivial}. We observe that both
+these two kinds of rules are helpful in revealing faults. Among
+them, covering violations of control rules can detect more faults
+than covering violations of data rules, but also requires much more
+tests. The data rules are better for some programs such as
+tot\_info, which is an information measure program that deals with
+data tables. In summary, these two kinds of rules are complementary
+to each other as they reflect different aspects of program
+behaviors. When combined together, they are able to help select
+quite a good subset of tests.
 
 
 
@@ -1186,9 +1187,9 @@ include the fact that different approaches select different numbers
 of tests. This fact may make the comparison of fault-revealing
 effectiveness bias to the approaches that select larger number of
 tests. To reduce this bias, we present the results of random
-selection as the baseline. We also try to evaluate the
-fault-revealing capabilities of other approaches with different
-numbers of selected tests.
+selection as the baseline. We also evaluate the fault-revealing
+capabilities of other approaches with different numbers of selected
+tests.
 
 
 
