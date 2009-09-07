@@ -15,7 +15,7 @@ consider \CodeIn{file} (a receiver) as a special input for
 the \CodeIn{exists} method.
 
 To translate this code example into C\#, a translation tool needs to
-know mapping relations of API classes, so it can translate inputs,
+know mapping relations of API classes, so that it can translate inputs,
 outputs, and variables into C\#. For example, the translation tool
 needs to know the mapped API class for \CodeIn{java.io.File} in C\#
 to translate the variable \CodeIn{file} to C\#. In addition, the
@@ -26,9 +26,10 @@ adds code for invoking the \CodeIn{Exists} method and the
 \CodeIn{FullName} method to achieve the functionality.
 Here, we consider field accesses as special type of method calls.
 
-Some projects such as Lucene have both Java and C\# versions. MAM
-has three major steps to mine the preceding two types of mapping
-relations of APIs from these projects.
+To mine these mapping relations, MAM uses projects such as Lucene
+that have both Java and C\# versions. MAM includes three major steps 
+to mine the preceding two types of mapping relations of APIs from these projects.
+
 \begin{figure}[t]
 \begin{CodeOut}
 \begin{alltt}
@@ -76,13 +77,13 @@ relations of APIs from these projects.
 \end{alltt}
 \end{CodeOut}\vspace*{-4ex}
 \caption{\label{fig:clientcode} Two versions (Java and C\#) of
-client code.}\vspace*{-2ex}
+client code.}\vspace*{-5ex}
 \end{figure}
 
 \textbf{Aligning client code.} First, MAM aligns classes and methods
-between the two versions of each project. As two code snippets with
+between the two versions of each project. As two code examples with
 the same functionality of two languages may exhibit mapping
-relations of APIs, the step aligns classes and methods by their
+relations of APIs, this step aligns classes and methods by their
 functionalities. To achieve this goal, MAM uses a mapping algorithm
 based on similarities in the names of classes and methods.
 

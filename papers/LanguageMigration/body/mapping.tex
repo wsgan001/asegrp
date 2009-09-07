@@ -22,7 +22,7 @@ not available.
 \textbf{Mapping relation.} For a set of entities $E_1$ defined by a
 language $L_1$ and another set of entities $E_2$ defined by another
 language $L_2$, a mapping relation is a triple $\langle E_1, E_2,
-b_i \rangle$ where $E_1$ and $E_1$ have the same behavior $b_i$.
+b_i \rangle$ where $E_1$ and $E_2$ have the same behavior $b_i$.
 
 
 We use mapping relations of API classes for translating data such as
@@ -40,7 +40,7 @@ relation with API classes defined by $L_2$. For example, data in
 \CodeIn{java.util.ArrayList} of Java can be stored in either
 \CodeIn{System. Collections.ArrayList} \textbf{or}
 \CodeIn{System.Collections.Generic. List} of C\#, so the Java class
-has two 1-to-1 mapping relations with the two C\# classes.
+has two 1-to-1 mapping relations with these two C\# classes.
 
 \textbf{Many-to-many mapping relation of API classes.} For a set of API classes
 $C_1$ defined by $L_1$ and a set of API classes $C_2$ defined by
@@ -55,8 +55,8 @@ many-to-many mapping relation with the two C\# classes.
 
 We use mapping relations of API methods for translating API methods
 that accept inputs to produce desirable outputs, so we require two
-mapped API methods have the same programm behavior of inputs, outputs, and
-functionalities. We refer to this behavior as the ``\emph{t}'' behavior.
+mapped API methods have the same program behavior of inputs, outputs, and
+functionalities. We refer to this behavior as the \emph{t} behavior.
 
 \textbf{1-to-1 mapping relation of API methods.} For an API method
 $m_1$ defined by $L_1$ and an API method $m_2$ defined by

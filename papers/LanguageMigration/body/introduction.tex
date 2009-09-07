@@ -51,7 +51,7 @@ Programming Interfaces (APIs) in one programming
 language are mapped to APIs in the other language. In the literature, there exist
 approaches~\cite{mossienko2003automated, yasumatsu1995spice} that address the problem of language
 translation partially. These approaches expect programmers to
-describe how APIs of one language is mapped to APIs of another
+describe how APIs of one language are mapped to APIs of another
 language. \Comment{Based on the mappings provided as input, these
 existing approaches translate projects from one language to
 another.} As programming languages provide a large number of APIs,
@@ -61,11 +61,11 @@ support only a subset of APIs for translation. Such a limitation
 results in many compilation errors in translated projects and limits
 these approaches' usage in practice.
 
-In this paper, we propose a novel approach that automatically mines
+In this paper, we propose a novel approach, called MAM
+(\textbf{M}ining \textbf{A}PI \textbf{M}apping), that automatically mines
 how APIs of one language are mapped to APIs of another language. We
 refer to this mapping as \emph{API mapping relations} 
-(in short as relations in the rest of the paper) and our
-approach as MAM. MAM mines relations based on API usages in
+(in short as relations in the rest of the paper). MAM mines relations based on API usages in
 the client code rather based on API implementations with three major
 reasons. (1) API libraries often do not come with source files
 especially for those C\# libraries. (2) Relations mined based on API
@@ -101,7 +101,7 @@ Although the method names of $m_3$ and $m_4$ are the same, $m_3$ in Java
 cannot be directly mapped with $m_4$ in C\#. The reason is that $m_3$ in Java
 returns the last element removed from the list, whereas $m_4$ does not return any
 element. Therefore, $m_3$ is mapped to two API methods $m_4$ and $m_5$ (shown below) in C\#.
-The API method $m_5$ returns the last element and should be called before calling $m_4$.
+The API method $m_5$ returns the last element and should be invoked before calling $m_4$.
 
 \begin{CodeOut}
 $m_5$ in C\#: void System.Collections.Generic.LinkedList.Last()
@@ -116,15 +116,15 @@ complex mapping relations of API methods.
 This paper makes the following major contributions:
 
 \begin{itemize}\vspace*{-1.5ex}
-\item The first approach that mines API mapping between
-different languages using API client code, referred to as MAM. MAM
+\item The first approach, called MAM, that mines API mapping between
+different languages using API client code. MAM
 addresses an important and yet challenging problem that is not
 addressed by previous work on language translation.\vspace*{-1.5ex}
 \item API transformation graphs (ATGs) proposed to capture inputs
 and outputs of API methods, and a technique for building ATGs and
-comparing built ATGs for mining API mapping. As ATGs describe data
+comparing built ATGs for mining API mapping relations. As ATGs describe data
 dependencies among inputs and outputs of API methods, MAM is able to
-mine complex mapping relations between API methods from two
+mine complex mapping relations between API methods of the two
 languages.\vspace*{-1.5ex}
 \item A tool implemented for MAM and two
 evaluations on 15 projects that include 18,568 classes and 109,850
@@ -140,7 +140,7 @@ The rest of this paper is organized as follows.
 Section~\ref{sec:mapping} presents definitions.
 Section~\ref{sec:example} illustrates our approach using an example.
 Section~\ref{sec:approach} presents our approach.
-Section~\ref{sec:evaluation} presents our evaluations.
+Section~\ref{sec:evaluation} presents our evaluation results.
 Section~\ref{sec:discuss} discusses issues of our approach.
 Section~\ref{sec:related} presents related work.
 Finally, Section~\ref{sec:conclusion} concludes.

@@ -44,8 +44,8 @@ Simmetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
 to calculate name similarities.
 \begin{figure}[t]
 \centering
-\includegraphics[scale=1,clip]{figure/approach.eps}\vspace*{-3ex}
- \caption{Overview of MAM}\vspace*{-3.5ex}
+\includegraphics[scale=0.9,clip]{figure/approach.eps}\vspace*{-3ex}
+ \caption{Overview of MAM}\vspace*{-4ex}
  \label{fig:approach}
 \end{figure}
 
@@ -199,8 +199,8 @@ ATG includes information such as inputs
 and outputs for each client-code method. In particular, for
 each method $m$, MAM first builds subgraphs for its variables,
 API methods, and field accesses. MAM adds additional edges
-to the built ATG (and sub-graphs inside ATG) representing
-data dependencies among built sub-graphs.
+to the built ATG (and sub-graphs inside ATG) and these additional edges
+represent data dependencies among built sub-graphs.
 We use two notations for representing nodes in the ATG. A rectangle
 represents a method labeled with the method name, whereas an ellipse
 represents a datum such as fields, local variables, and parameters.
