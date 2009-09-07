@@ -61,7 +61,12 @@ P.~Godefroid, N.~Klarlund, and K.~Sen.
 
 \bibitem{godefroid:fuzz}
 P.~Godefroid, M.~Y. Levin, and D.~A. Molnar.
-\newblock In {\em NDSS}, 2008.
+\newblock In {\em Proc. NDSS}, pages 151--166, 2008.
+
+\bibitem{howritz:prioritization}
+S.~Horwitz.
+\newblock Tool support for improving test coverage.
+\newblock In {\em Proc. ESOP}, pages 162--177, 2002.
 
 \bibitem{joshi:pretext}
 P.~Joshi, K.~Sen, and M.~Shlimovich.
@@ -72,6 +77,12 @@ P.~Joshi, K.~Sen, and M.~Shlimovich.
 J.~C. King.
 \newblock {Symbolic Execution and Program Testing}.
 \newblock {\em Communications of the ACM}, 19(7):385--394, 1976.
+
+\bibitem{jjli:prioritization}
+J.~J. Li.
+\newblock Prioritize code for testing to improve code coverage of complex
+  software.
+\newblock In {\em Proc. ISSRE}, pages 75--84, 2005.
 
 \bibitem{majumdar:hybrid}
 R.~Majumdar and K.~Sen.
@@ -133,12 +144,6 @@ N.~Tillmann and W.~Schulte.
 J.~Voas.
 \newblock {PIE}: A dynamic failure-based technique.
 \newblock {\em TSE}, 18(8):717--727, 1992.
-
-\bibitem{xie05:spectra}
-T.~Xie and D.~Notkin.
-\newblock Checking inside the black box: Regression testing based on value
-  spectra differences.
-\newblock In {\em Proc. ICSM}, pages 28--37, 2004.
 
 \bibitem{xie05:checking}
 T.~Xie and D.~Notkin.

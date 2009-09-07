@@ -1,7 +1,7 @@
 
 \section{Related Work}
 \label{sec:related}
-Previous approaches~\cite{evans:DiffTest07, taneja08:diffgen} generate regression unit tests achieving high structural coverage on both versions of the class under test. However, these approaches explore all the irrelevant paths, which cannot help in achieving any of the conditions I, or E in the PIE model. In contrast, we have developed a new search strategy for DSE to avoid exploring these irrelevant paths. 
+Previous approaches~\cite{evans:DiffTest07, taneja08:diffgen} generate regression unit tests achieving high structural coverage on both versions of the class under test. However, these approaches explore all the irrelevant paths, which cannot help in achieving any of the conditions I or E in the PIE model~\cite{voas}. In contrast, we have developed a new search strategy for DSE to avoid exploring these irrelevant paths. 
 \Comment{
 DiffGen~\cite{taneja08:diffgen}, our previous approach, generates regression tests given two version of a class. *****Discuss the results*****
 
@@ -17,28 +17,27 @@ Evans and Savoia~\cite{evans:DiffTest07} proposed an automated differential test
 
 
 Santelices et al.~\cite{Apiwattanapong2006AUG, santelices08sep} use data and control dependence information along with state information gathered through symbolic execution, and provide guidelines for testers to augment an existing regression test suite. Unlike our approach, their approach does not automatically generate tests but provides guidelines for testers to augment an existing test suite. 
-Some existing search strategies~\cite{burnim, fitnex} guide DSE to efficiently achieve high structural coverage in a program under test. However,
-these techniques do not specifically target covering a changed region. In contrast, our approach guides DSE to avoid exploring paths that cannot help in executing a changed region. In addition, our approach avoids exploring paths that cannot help in P or I of the PIE model~\cite{voas}.
 
-Differential symbolic execution~\cite{DSE} determines behavioral differences between two versions of a method (or a program) by comparing their symbolic summaries~\cite{CSE}. Summaries can be computed only for methods amenable to symbolic execution. However, summaries cannot be computed for methods whose behavior is defined in external libraries not amenable to symbolic execution. Our approach still works in practice when these external library methods are present as our approach does not require summaries. In addition, both approaches can be combined using demand-driven-computed summaries~\cite{demandDriven}, which we plan to investigate in future work.
+Some existing search strategies~\cite{burnim, fitnex} guide DSE to efficiently achieve high structural coverage in a program under test. However,
+these techniques do not specifically target covering a changed region. In contrast, our approach guides DSE to avoid exploring paths that cannot help in executing a changed region. In addition, our approach avoids exploring paths that cannot help in I of the PIE model~\cite{voas}.
+
+Differential symbolic execution~\cite{DSE} determines behavioral differences between two versions of a method (or a program) by comparing their symbolic summaries~\cite{CSE}. Summaries can be computed only for methods amenable to symbolic execution. However, summaries cannot be computed for methods whose behavior is defined in external libraries not amenable to symbolic execution. Our approach still works in practice when these external library methods are present since our approach does not require summaries. In addition, both approaches can be combined using demand-driven-computed summaries~\cite{demandDriven}, which we plan to investigate in future work.
 \Comment{
 Our previous Orstra approach~\cite{xie06:ecoop} automatically augments an automatically generated test suite with extra assertions for guarding against regression faults. Orstra first runs the given test suite and collects the return values and receiver-object states after the execution of the methods under test. Based on the collected information, Orstra synthesizes and inserts new assertions in the test suite for asserting against the collected method-return values and receiver object states. However, this approach observes the behavior of the original version to insert assertions in the test suite generated for only the original version. Therefore, the  test suite might not include test inputs for which the behavior of a new version differs from the original version.
 }
-\Comment{
+
 Li~\cite{jjli:prioritization} prioritizes source code portions for testing based on dominator analysis. In particular, her approach finds a minimal set of blocks in the program source code, which, if executed, would ensure the execution of all of the blocks in the program. Howritz~\cite{howritz:prioritization} prioritizes  portions of source code for testing based on control and flow dependencies. These two approaches focus on testing in general. In contrast, our approach focuses specifically on regression testing.
 }
+
 Ren et al. develop a change impact analysis tool called Chianti~\cite{chianti}. Chianti uses a test suite to produce an execution trace for two versions of a program, and then
 categorizes and decomposes the changes between two versions of a program into different atomic types. Chianti uses only an existing test suite and
-does not aim to exercise behavioral differences between the two
-versions of the program under test. In contrast, the goal of
-our approach is specifically to expose behavioral differences across
-versions.
+does not generate new tests for regression testing. In contrast, our approach focuses on regression test generation.
 
 Some existing capture and replay techniques~\cite{elbaum, orso:selective, SaffAPE2005} capture
 the inputs and outputs of the unit under test during system-test execution. 
 These techniques then replay the captured inputs for the
 unit as less expensive unit tests, and can also check the outputs of
-the unit against the captured outputs. However, the existing system tests do not necessarily exercise the changed behavior of the program under test. In contrast, our approach generates new tests to specifically find behavioral differences.
+the unit against the captured outputs. However, the existing system tests do not necessarily exercise the changed behavior of the program under test. In contrast, our approach generates new tests for regression testing.
 
 
-Joshi et al.~\cite{joshi:pretext} use the path conditions from the paths followed by the tests in an existing test suite to generate inputs that violate the assertions existing in the test suite. The generated test inputs follow the same paths already covered by the existing test suite and do not cover any new paths. In contrast, our approach exploits the existing test suite to cover new paths. Majumdar et al.~\cite{majumdar:hybrid} propose the concept of hybrid concolic testing. Hybrid concolic testing seeds the program with random inputs so that the program exploration does not get stuck at a particular program location. In contrast, our approach exploits the existing test suite to seed the program exploration. Since the existing test suite is expected to achieve a higher structural coverage, the existing test suite is expected to discover more hard to discover branching nodes in comparison with random inputs. Godefroid et al.~\cite{godefroid:fuzz} propose a DSE based approach for fuzz testing of large applications. Their approach uses a single seed for program exploration. In contrast, our approach  seeds more than one tests to program exploration. Seeding multiple tests can help program exploration in covering the changes more efficiently as discussed in Section~\ref{sec:incremental}. 
+Joshi et al.~\cite{joshi:pretext} use the path conditions from the paths followed by the tests in an existing test suite to generate inputs that violate the assertions in the test suite. The generated test inputs follow the same paths already covered by the existing test suite and do not explore any new paths. In contrast, our approach exploits the existing test suite to explore new paths. Majumdar and Sen~\cite{majumdar:hybrid} propose the concept of hybrid concolic testing. Hybrid concolic testing seeds the program with random inputs so that the program exploration does not get stuck at a particular program location. In contrast, our approach exploits the existing test suite to seed the program exploration. Since the existing test suite is expected to achieve a higher structural coverage, the existing test suite is expected to discover more hard-to-discover branching nodes in comparison with random inputs. Godefroid et al.~\cite{godefroid:fuzz} propose a DSE based approach for fuzz testing of large applications. Their approach uses a single seed for program exploration. In contrast, our approach  seeds multiple tests to program exploration. Seeding multiple tests can help program exploration in covering the changes more efficiently as discussed in Section~\ref{sec:incremental}. 

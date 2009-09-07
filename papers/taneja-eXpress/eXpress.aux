@@ -18,7 +18,7 @@
 \newlabel{fig:example}{{1}{\thepage }}
 \citation{tillmann05:parameterized}
 \citation{Dig'06:ECOOP}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {7}{8\p@ }\selectfont  {Left side shows the Control-Flow Graph for the program in Figure\nobreakspace  {}1\hbox {}, while the right side shows a part of execution tree of the program for c = \{"[", "\{", "(", "$<$", "*" \}.}}}{\thepage }}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {7}{8\p@ }\selectfont  {The left side shows the Control-Flow Graph for the program in Figure\nobreakspace  {}1\hbox {}, while the right side shows part of execution tree of the program for c = \{"[", "\{", "(", "$<$", "*" \}.}}}{\thepage }}
 \newlabel{fig:CFG}{{2}{\thepage }}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Approach}{\thepage }}
 \newlabel{sec:approach}{{4}{\thepage }}
@@ -31,34 +31,39 @@
 \@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces $FindUnreachableBranches(g, V)$}}{\thepage }}
 \newlabel{alg:irrelavantBranches}{{2}{\thepage }}
 \newlabel{alg:ICFG}{{30}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Instrumenter}{\thepage }}
 \citation{Clarke:symbolic}
 \citation{king:symex}
 \citation{dart}
 \citation{cute}
 \citation{exe}
 \citation{burnim}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Instrumenter}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Dynamic Test Generator}{\thepage }}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1}Paths being Pruned}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Incremental Test Generation}{\thepage }}
-\newlabel{sec:incremental}{{4.6}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Experiments}{\thepage }}
-\newlabel{sec:evaluation}{{5}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Subjects}{\thepage }}
-\newlabel{sec:subjects}{{5.1}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1}Path Pruning}{\thepage }}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2}Incremental Exploration}{\thepage }}
+\newlabel{sec:incremental}{{4.5.2}{\thepage }}
 \citation{doESE05}
 \citation{taneja09:guided}
 \citation{Pex}
 \citation{fitnex}
 \citation{Pex}
 \citation{fitnex}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experiments}{\thepage }}
+\newlabel{sec:evaluation}{{5}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Subjects}{\thepage }}
+\newlabel{sec:subjects}{{5.1}{\thepage }}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Experimental Setup}{\thepage }}
 \citation{Pex}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Experimental subjects}}{\thepage }}
 \newlabel{table:subjects}{{1}{\thepage }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Experimental Setup}{\thepage }}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Experimental Results}{\thepage }}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \relax \fontsize  {7}{8\p@ }\selectfont  {Experimental results}}}{\thepage }}
+\newlabel{table:all_results}{{2}{\thepage }}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \relax \fontsize  {7}{8\p@ }\selectfont  {Time and irrelevant branches}}}{\thepage }}
+\newlabel{table:all_time}{{3}{\thepage }}
 \citation{evans:DiffTest07}
 \citation{taneja08:diffgen}
+\citation{voas}
 \citation{Apiwattanapong2006AUG}
 \citation{santelices08sep}
 \citation{burnim}
@@ -67,15 +72,9 @@
 \citation{DSE}
 \citation{CSE}
 \citation{demandDriven}
+\citation{jjli:prioritization}
+\citation{howritz:prioritization}
 \citation{chianti}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \relax \fontsize  {7}{8\p@ }\selectfont  {Experimental Results}}}{\thepage }}
-\newlabel{table:all_results}{{2}{\thepage }}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \relax \fontsize  {7}{8\p@ }\selectfont  {Time and Irrelevant Branches}}}{\thepage }}
-\newlabel{table:all_time}{{3}{\thepage }}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \relax \fontsize  {7}{8\p@ }\selectfont  {Results obtained by seeding existing test suite for structorian}}}{\thepage }}
-\newlabel{table:rq5}{{4}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Related Work}{\thepage }}
-\newlabel{sec:related}{{6}{\thepage }}
 \citation{elbaum}
 \citation{orso:selective}
 \citation{SaffAPE2005}
@@ -83,14 +82,15 @@
 \citation{majumdar:hybrid}
 \citation{godefroid:fuzz}
 \citation{burnim}
-\citation{xie05:spectra}
 \citation{xie05:checking}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \relax \fontsize  {7}{8\p@ }\selectfont  {Results obtained by seeding existing test suite for structorian}}}{\thepage }}
+\newlabel{table:rq5}{{4}{\thepage }}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Related Work}{\thepage }}
+\newlabel{sec:related}{{6}{\thepage }}
 \@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{\thepage }}
 \newlabel{sec:discussion}{{7}{\thepage }}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{\thepage }}
-\newlabel{sec:conclusion}{{8}{\thepage }}
+\citation{voas}
 \bibstyle{abbrv}
-\bibdata{express}
 \bibcite{demandDriven}{1}
 \bibcite{Apiwattanapong2006AUG}{2}
 \bibcite{burnim}{3}
@@ -103,21 +103,24 @@
 \bibcite{CSE}{10}
 \bibcite{dart}{11}
 \bibcite{godefroid:fuzz}{12}
-\bibcite{joshi:pretext}{13}
-\bibcite{king:symex}{14}
-\bibcite{majumdar:hybrid}{15}
-\bibcite{orso:selective}{16}
-\bibcite{DSE}{17}
-\bibcite{chianti}{18}
-\bibcite{SaffAPE2005}{19}
-\bibcite{santelices08sep}{20}
-\bibcite{cute}{21}
-\bibcite{taneja08:diffgen}{22}
-\bibcite{taneja09:guided}{23}
-\bibcite{Pex}{24}
-\bibcite{tillmann05:parameterized}{25}
-\bibcite{voas}{26}
-\bibcite{xie05:spectra}{27}
-\bibcite{xie05:checking}{28}
-\bibcite{fitnex}{29}
+\bibcite{howritz:prioritization}{13}
+\bibcite{joshi:pretext}{14}
+\bibcite{king:symex}{15}
+\bibcite{jjli:prioritization}{16}
+\bibcite{majumdar:hybrid}{17}
+\bibcite{orso:selective}{18}
+\bibcite{DSE}{19}
+\bibcite{chianti}{20}
+\bibcite{SaffAPE2005}{21}
+\bibcite{santelices08sep}{22}
+\bibcite{cute}{23}
+\bibcite{taneja08:diffgen}{24}
+\bibcite{taneja09:guided}{25}
+\bibcite{Pex}{26}
+\bibcite{tillmann05:parameterized}{27}
+\bibcite{voas}{28}
+\bibcite{xie05:checking}{29}
+\bibcite{fitnex}{30}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{\thepage }}
+\newlabel{sec:conclusion}{{8}{\thepage }}
 \@writefile{toc}{\contentsline {section}{\numberline {9}References}{\thepage }}
