@@ -1,8 +1,8 @@
 \section{Approach}
 \label{sec:approach}
 
-MAM accepts a set of projects as data sources for mining 
-relations between two languages $L_1$ and $L_2$. 
+MAM accepts a set of projects as data sources for mining API
+mapping relations between two languages $L_1$ and $L_2$. 
 For each project used as a data source,
 MAM requires at least two versions of the project (one
 version in $L_1$ and the other version in $L_2$).
@@ -424,6 +424,42 @@ $sm$, our algorithm moves to the next available API methods in $m$
 and $m'$ of the client code. If our algorithm is not able to map $jm$
 with $sm$, our algorithm merges $sm$ and $jm$ with their next available API methods
 in the corresponding ATGs, respectively, and attempts to map merged API methods.
+
+
+A merged API method $cm$ is a set of API
+methods $M$ combined by inputs and outputs, so the $t$ behavior of
+$cm$ is the combination of $M$. Consider two API methods $m_1$ and
+$m_2$ defined in classes $C_1$ and $C_2$ of $L_1$, respectively,
+with the following signatures:
+
+\CodeIn{$m_1$ signature: $o_1$ $C_1$.$m_1$($inp_1^1$, $inp_2^1$,
+..., $inp_m^1$)}
+
+\CodeIn{$m_2$ signature: $o_2$ $C_2$.$m_2$($inp_1^2$, $inp_2^2$,
+..., $inp_n^2$)}
+
+We merge methods $m_1$ and $m_2$ to create a new \emph{merged API
+method} $m_{new}$ if the output $o_1$ of $m_1$ is used either as a
+receiver or as a parameter for $m_2$ (i.e., $o_1$ == $C_2$ or $o_1$
+== $inp_i^2$) in client code. The signature of the new merged API
+method $m_{new}$ is shown below:
+
+\CodeIn{$m_{new}$ signature: $o_2$ $m_{new}$($inp_1^1$, $inp_2^1$,
+..., $inp_m^1$, \\ $inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
+
+For the Java code example shown in Figure~\ref{fig:challenge},
+consider the \CodeIn{file} variable, which is a return variable for
+the constructor and a receiver object for the \CodeIn{exists}
+method. As the output of one API method is passed as receiver object
+of another API method, we can combine these two methods to create a
+new merged API method \CodeIn{boolean File.exists(string)} as shown
+in Figure~\ref{fig:example} (b). The merged API method accepts a
+\CodeIn{string} parameter that represents a file name and returns a
+boolean value that describes whether a file exists or not. For
+simplicity, we consider each API method as a merged API method when
+we define mapping relations of API methods.
+
+
 Our algorithm uses the \CodeIn{replace} function for merging an API method with its
 next available API method. For two merged API methods, our algorithm uses the
 maximum similarity of method names between $jm$ and $sm$ as a
