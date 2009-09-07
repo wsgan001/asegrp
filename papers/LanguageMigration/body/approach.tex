@@ -8,20 +8,15 @@ MAM requires at least two versions of the project (one
 version in $L_1$ and the other version in $L_2$).
 Figure~\ref{fig:approach} shows the overview of MAM.
 
-First, MAM aligns client code in languages $L_1$ and $L_2$
-so that the aligned source files implement similar functionalities
-(Section~\ref{sec:approach:acc}). Second, MAM mines
-mapping relations of API classes (Section~\ref{sec:approach:mappingtypes}).
-Finally, MAM mines mapping relations of API
-methods (Section~\ref{sec:approach:mappingmethods}) defined by the mapped
-API classes.
+%First, MAM aligns client code in languages $L_1$ and $L_2$
+%so that the aligned source files implement similar functionalities
+%(Section~\ref{sec:approach:acc}). Second, MAM mines
+%mapping relations of API classes (Section~\ref{sec:approach:mappingtypes}).
+%Finally, MAM mines mapping relations of API
+%methods (Section~\ref{sec:approach:mappingmethods}) defined by the mapped
+%API classes.
 
-\begin{figure}[t]
-\centering
-\includegraphics[scale=1,clip]{figure/approach.eps}\vspace*{-3ex}
- \caption{Overview of MAM}\vspace*{-3.5ex}
- \label{fig:approach}
-\end{figure}
+
 
 %-------------------------------------------------------------------
 \subsection{Aligning API Client Code}
@@ -47,6 +42,12 @@ the first kind is often reliable to distinguish functionalities
 compared to the second kind. MAM uses
 Simmetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
 to calculate name similarities.
+\begin{figure}[t]
+\centering
+\includegraphics[scale=1,clip]{figure/approach.eps}\vspace*{-3ex}
+ \caption{Overview of MAM}\vspace*{-3.5ex}
+ \label{fig:approach}
+\end{figure}
 
 We next describe how MAM aligns client-code classes.
 The first step is to find candidate class pairs by names. For two sets
@@ -265,7 +266,7 @@ calls. \vspace*{-2ex}
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule3.eps}%\vspace*{-1.5ex}
-\end{center}\vspace*{-3ex}
+\end{center}\vspace*{-4ex}
 
 \item $\forall$ statements in the form $x = y$, where $x \in F \cup V \wedge y \in F \cup V$,
 MAM adds an edge from $y$ to $x$. This edge represents that
@@ -273,25 +274,25 @@ $x$ is data-dependent on $y$.\vspace*{-1.5ex}
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule4.eps}%\vspace*{-1.5ex}
-\end{center}\vspace*{-1.5ex}
+\end{center}\vspace*{-4ex}
 
 \item $\forall$ statements in the form $x = AM()$, where $x \in F \cup V$, MAM
 adds an edge from $AM$ to $x$ if the return of $AM$ is
 assigned to $x$. This edge represents that $x$ is data-dependent on
-the return of $AM$. \vspace*{-1.5ex}
+the return of $AM$. \vspace*{-2ex}
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule5.eps}%\vspace*{-1.5ex}
-\end{center}\vspace*{-1.5ex}
+\end{center}\vspace*{-4ex}
 
 \item $\forall$ API methods $AM(x)$ invoked by method $m$, MAM
 adds an edge from $x$ to the parameter node of $AM$. This edge
 represents that the parameter of $AM$ is data-dependent on
-$x$.\vspace*{-1.5ex}
+$x$.\vspace*{-3ex}
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule6.eps}%\vspace*{-1.5ex}
-\end{center}\vspace*{-1.5ex}
+\end{center}\vspace*{-4ex}
 
 \item $\forall$ statements in the form $m_2(m_1(x))$, MAM
 adds an edge from the return node of $m_1$ to the parameter
