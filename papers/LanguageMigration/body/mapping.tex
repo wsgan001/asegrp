@@ -14,11 +14,8 @@ that reuses or extends API classes and methods provided by API
 libraries.
 
 The definitions of API library and client code are
-relative to each other. For example, Lucene uses
-J2SE\footnote{\url{http://java.sun.com/j2se/1.5.0/}} as an API
-library, whereas Nutch\footnote{\url{http://lucene.apache.org/nutch/}} uses Lucene as
-an API library. Therefore, we consider Lucene as client code and API
-library for the J2SE API library and Nutch, respectively. In
+relative to each other. For example, Lucene uses classes and methods provided by
+J2SE\footnote{\url{http://java.sun.com/j2se/1.5.0/}}, so we consider Lucene as client code and J2SE as API library. In the same time, Nutch\footnote{\url{http://lucene.apache.org/nutch/}} uses classes and methods provided by Lucene, so we consider Nutch as client code and Lucene as API library. In
 general, for programmers of client code, source files of API libraries are often
 not available.
 
@@ -67,9 +64,9 @@ $L_2$, a mapping relation of API methods is a triple $\langle m_1,
 m_2, t \rangle$, where $t$ denotes the $t$ behavior.
 
 As one API class defined by $L_1$ can have more than one 1-to-1 mapping
-relation with API classes defined by $L_2$, one API method defined by $L_1$ can have more than one 1-to-1 mapping relation with API methods defined by $L_2$. 
+relation with API classes defined by $L_2$, one API method defined by $L_1$ can have more than one 1-to-1 mapping relation with API methods defined by $L_2$.
 
-\textbf{Many-to-many mapping relation of API classes.} For a set of API methods
+\textbf{Many-to-many mapping relation of API methods.} For a set of API methods
 $M_1$ defined by $L_1$ and a set of API methods $M_2$ defined by
 $L_2$, a many-to-many mapping relation of API methods is a triple
 $\langle M_1, M_2, t \rangle$, where $t$ denotes the $t$ behavior.

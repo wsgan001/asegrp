@@ -2,7 +2,7 @@
 \label{sec:approach}
 
 MAM accepts a set of projects as data sources for mining API
-mapping relations between two languages $L_1$ and $L_2$. 
+mapping relations between two languages $L_1$ and $L_2$.
 For each project used as a data source,
 MAM requires at least two versions of the project (one
 version in $L_1$ and the other version in $L_2$).
@@ -146,7 +146,7 @@ ATGs}\vspace*{-3.5ex}
 
 %-------------------------------------------------------------
 \subsubsection{API Transformation Graph}
-
+\label{sec:approach:mappingmethods:graph}
 We propose API Transformation Graphs (ATGs) to help deal with two
 major challenges. (1) Mapping parameters of an API method in one language with
 parameters of an API method in the other language can be complex. (2) An API
@@ -245,11 +245,11 @@ to the rules as follows:}
 The reason for considering these variables such as fields in
 the declaring class or local variables in method $m$ used in client code
 is that these variables are useful to analyze data dependencies
-among API methods.\vspace*{-2ex}
+among API methods. Section~\ref{sec:approach:mappingmethods:graph} defines $F$,  $V$, and $P_1$.\vspace*{-2ex}
 %\begin{center}
 %\includegraphics[scale=0.7,clip]{figure/rule1.eps}
 %\end{center}
-\item $\forall$ API methods of the form ``$T_0\ T.AM (T_1 p_1, \ldots, T_n p_n)$''
+\item $\forall$ API methods in the form ``$T_0\ T.AM (T_1 p_1, \ldots, T_n p_n)$''
 invoked by method $m$, MAM adds a receiver node (of type $T$) and
 parameter nodes to the built ATG as shown below. MAM does
 not add a receiver node for static API methods. \vspace*{-2ex}
@@ -261,13 +261,13 @@ not add a receiver node for static API methods. \vspace*{-2ex}
 \item $\forall$ $f\in F \cup V$, if $f$ is a non-primitive variable
 of type $T_1$ and a field $x$ of $T_1$ is accessed as $f.x$, MAM adds nodes to the built ATG as shown below. As Java often
 uses getters and setters whereas C\# often use field accesses, MAM treats field accesses as a special type of method
-calls.\vspace*{-2ex}
+calls. \vspace*{-2ex}
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule3.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-3ex}
 
-\item $\forall$ statements of the form $x = y$, where $x \in F \cup V \wedge y \in F \cup V$,
+\item $\forall$ statements in the form $x = y$, where $x \in F \cup V \wedge y \in F \cup V$,
 MAM adds an edge from $y$ to $x$. This edge represents that
 $x$ is data-dependent on $y$.\vspace*{-1.5ex}
 
@@ -275,7 +275,7 @@ $x$ is data-dependent on $y$.\vspace*{-1.5ex}
 \includegraphics[scale=0.7,clip]{figure/rule4.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-1.5ex}
 
-\item $\forall$ statements of the form $x = AM()$, where $x \in F \cup V$, MAM
+\item $\forall$ statements in the form $x = AM()$, where $x \in F \cup V$, MAM
 adds an edge from $AM$ to $x$ if the return of $AM$ is
 assigned to $x$. This edge represents that $x$ is data-dependent on
 the return of $AM$. \vspace*{-1.5ex}
@@ -293,7 +293,7 @@ $x$.\vspace*{-1.5ex}
 \includegraphics[scale=0.7,clip]{figure/rule6.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-1.5ex}
 
-\item $\forall$ statements of the form $m_2(m_1(x))$, MAM
+\item $\forall$ statements in the form $m_2(m_1(x))$, MAM
 adds an edge from the return node of $m_1$ to the parameter
 node of $m_2$ parameter node. This edge represents that the
 parameter of $m_2$ is data-dependent on the return of $m_1$.\vspace*{-1.5ex}
@@ -302,7 +302,7 @@ parameter of $m_2$ is data-dependent on the return of $m_1$.\vspace*{-1.5ex}
 \includegraphics[scale=0.7,clip]{figure/rule7.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-1.5ex}
 
-\item $\forall$ statements of the form $x.m()$, MAM adds
+\item $\forall$ statements in the form $x.m()$, MAM adds
 an edge from $x$ to $m$ since $x$ is the receiver of $m$. This
 edge represents that the receiver of $m$ is data-dependent on
 $x$.\vspace*{-1.5ex}
@@ -311,7 +311,7 @@ $x$.\vspace*{-1.5ex}
 \includegraphics[scale=0.7,clip]{figure/rule8.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-1.5ex}
 
-\item $\forall$ statements of the form $ x = y\ op\ z\ op\ \ldots, op \in \{+,-,*,/\}$,
+\item $\forall$ statements in the form $ x = y\ op\ z\ op\ \ldots, op \in \{+,-,*,/\}$,
 MAM adds edges from $y$, $z$, and others to $x$, since these
 variables are connected by binary operations and the return is
 assigned to $x$. The edge denotes the data dependency from $y$, $z$,
@@ -423,7 +423,7 @@ function to get these $jm$ and $sm$ API methods. If our algorithm successfully m
 $sm$, our algorithm moves to the next available API methods in $m$
 and $m'$ of the client code. If our algorithm is not able to map $jm$
 with $sm$, our algorithm merges $sm$ and $jm$ with their next available API methods
-in the corresponding ATGs, respectively, and attempts to map merged API methods. Here, a merged API method $cm$ is a sequence of API
+in the corresponding ATGs, respectively, and attempts to map merged API methods. Note that merged API methods are just synthesized intermediate representations for correlated API methods invoked in client code, and are used internally by our algorithm to construct many-to-many mapping relations of API methods. A merged API method $cm$ is a sequence of API
 methods $M$ combined by inputs and outputs, so the $t$ behavior of
 $cm$ is the combination of $M$. For $L_1$, consider an API method $m_1$ defined in classes $c_1$ and an API method $m_2$ defined in $c_2$ with the following signatures:
 
@@ -453,12 +453,12 @@ cm_2:Boolean \{FileInfo,getFullFile,Directory.Exist\}(String)
 
 Similarly, our algorithm merges the API methods shown in Figure~\ref{fig:graph} (b) to two merged API methods as follows.
 
-\begin{CodeOut}\vspace*{-1.8ex}
+\begin{CodeOut}\vspace*{-2ex}
 \begin{alltt}
 cm_3:boolean \{File,exist\}(String)
 cm_4:boolean \{File,delete\}(String)
 \end{alltt}
-\end{CodeOut}\vspace*{-1.8ex}
+\end{CodeOut}\vspace*{-2ex}
 
 Our algorithm merges these API methods so that it is able to mine many-to-many mapping relations of API methods as shown in Figure~\ref{fig:graph}. After merging API methods, our algorithm uses the \CodeIn{replace} function for merging an API method with its
 next available API method. For two merged API methods, our algorithm uses the
