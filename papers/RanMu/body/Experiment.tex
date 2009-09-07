@@ -165,23 +165,24 @@ mutant-selection techniques.
 \subsection{Measurement}
 \label{Measurement}
 
-As our study is in the context of mutation testing, we adopted a
-metric that researchers used to evaluate the effectiveness of
-mutant-selection techniques in previous studies (e.g., Wong and
-Mathur~\cite{Wong:93,Wong:95}, Offutt et al.~\cite{Offutt:96}, and
-Barbosa et al.~\cite{Barbosa:01}). Given a program (denoted as
-$P$) and a set of mutants (denoted as $AM$) generated for $P$ with
-all mutation operators, we removed equivalent mutants from $AM$
-and acquired a set of non-equivalent mutants (denoted as $NEM$).
-When evaluating a mutant-selection technique (denoted as $T$), we
-used $T$ to select mutants from $NEM$, and denote the set of
-selected non-equivalent mutants as $M_T$. To evaluate the
-effectiveness of $T$, we create a series of test suites (denoted
-as $\{ts_1, ts_2, ..., ts_n\}$), each of which can kill all
-mutants in $M_T$. We denote the subset of mutants in $NEM$ that
-can be killed by $ts_i$ ($1\leq$$i$$\leq$$n$) as
-$Killed_{NEM}(ts_i)$, and then we use Formula~\ref{form:Measurement} to
-measure the effectiveness of $T$.\vspace{-2ex}
+In our study, we adopted a metric that researchers used to
+evaluate the effectiveness of mutant-selection techniques in
+previous studies on mutant selection for mutation testing (e.g.,
+Wong and Mathur~\cite{Wong:93,Wong:95}, Offutt et
+al.~\cite{Offutt:96}, and Barbosa et al.~\cite{Barbosa:01}). Given
+a program (denoted as $P$) and a set of mutants (denoted as $AM$)
+generated for $P$ with all mutation operators, we removed
+equivalent mutants from $AM$ and acquired a set of non-equivalent
+mutants (denoted as $NEM$). When evaluating a mutant-selection
+technique (denoted as $T$), we used $T$ to select mutants from
+$NEM$, and denote the set of selected non-equivalent mutants as
+$M_T$. To evaluate the effectiveness of $T$, we created a series
+of test suites (denoted as $\{ts_1, ts_2, ..., ts_n\}$), each of
+which can kill all mutants in $M_T$. We denote the subset of
+mutants in $NEM$ that can be killed by $ts_i$
+($1\leq$$i$$\leq$$n$) as $Killed_{NEM}(ts_i)$, and then we use
+Formula~\ref{form:Measurement} to measure the effectiveness of
+$T$.\vspace{-2ex}
 
 \begin{equation}\label{form:Measurement}
     Eff(T)=\frac{\sum_{i=1}^n {\frac{|Killed_{NEM}(ts_i)|}{|NEM|}}}{n}
@@ -200,30 +201,30 @@ $Eff(T)$ is equal to 1.0, technique $T$ is able to select a subset
 of mutants that fully represent the whole set of non-equivalent
 mutants.
 
-As measuring the effectiveness of a subset of mutants in each
-experiment requires a series of test suites, we used a procedure
-similar to the procedure used by Offutt et al.~\cite{Offutt:96} to
-construct the test suites. That is to say, for a subset of
-mutants, we continually selected $k$ test cases from the test pool
-until the test suite composed of all the selected test cases is
-able to kill all the mutants in the subset. Offutt et
-al.~\cite{Offutt:96} selected 200 (i.e., $k$=200) test cases each
-time when constructing such a test suite. That is to say, the
-numbers of test cases in test suites used by Offutt et al. are
-multiples of 200 (i.e., 200, 400, 600, etc.). Actually, Offutt et
-al. used this way of test-suite construction to simulate the
-situation of applying mutation testing as a test-adequacy
-criterion, and the number of test cases selected each time
-represents an increment of test cases in the process of building
-up each test suite for evaluating mutant selection. Considering
-that testers may use different incremental numbers to create the
-test suite, we used four different incremental numbers (i.e.,
-$k$=25, 50, 100, and 200) including Offutt et al.'s incremental
-number. Note that one mutant-selection technique may achieve very
-different effectiveness values using test suites created with
-different incremental numbers. In our study, given an incremental
-number, we constructed 50 test suites when measuring the
-effectiveness of a subset of selected mutants.
+As measuring the effectiveness of a subset of mutants in our study
+requires a series of test suites, we used a procedure similar to
+the procedure used by Offutt et al.~\cite{Offutt:96} to construct
+the test suites. That is to say, for a subset of mutants, we
+continually selected $k$ test cases from the test pool until the
+test suite composed of all the selected test cases is able to kill
+all the mutants in the subset. Offutt et al.~\cite{Offutt:96}
+selected 200 (i.e., $k$=200) test cases each time when
+constructing such a test suite. That is to say, the numbers of
+test cases in test suites used by Offutt et al. are multiples of
+200 (i.e., 200, 400, 600, etc.). Actually, Offutt et al. used this
+way of test-suite construction to simulate the situation of
+applying mutation testing as a test-adequacy criterion, and the
+number of test cases selected each time represents an increment of
+test cases in the process of building up each test suite for
+evaluating mutant selection. Considering that testers may use
+different incremental numbers to create the test suite, we used
+four different incremental numbers (i.e., $k$=25, 50, 100, and
+200) including Offutt et al.'s incremental number. Note that one
+mutant-selection technique may achieve very different
+effectiveness values using test suites created with different
+incremental numbers. In our study, given an incremental number, we
+constructed 50 test suites when measuring the effectiveness of a
+subset of selected mutants.
 
 \begin{table*}[t]
 \caption{\label{tab:Ran-Offutt} Offutt et al.'s technique v.s.
@@ -322,8 +323,8 @@ non-equivalent mutants for each subject.
 
 For a subject, different operator-based mutant-selection
 techniques select different numbers of mutants. Thus, it is
-difficult for us to compare random mutant selection with all the
-three techniques on the same ground. Therefore, we used the
+difficult for us to compare all the three techniques with random
+mutant selection on the same ground. Therefore, we used the
 following way to compare an operator-based mutant-selection
 technique with random mutant-selection.
 
