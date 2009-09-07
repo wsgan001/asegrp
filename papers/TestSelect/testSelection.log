@@ -1,4 +1,4 @@
-This is e-TeX, Version 3.141592-2.2 (MiKTeX 2.4) (preloaded format=latex 2006.12.15)  7 SEP 2009 11:53
+This is e-TeX, Version 3.141592-2.2 (MiKTeX 2.4) (preloaded format=latex 2006.12.15)  7 SEP 2009 18:51
 entering extended mode
 **testSelection.tex
 (testSelection.tex
@@ -412,7 +412,7 @@ Overfull \hbox (12.33012pt too wide) in paragraph at lines 712--720
 Underfull \vbox (badness 6741) has occurred while \output is active []
 
 
-Overfull \hbox (2.81236pt too wide) in paragraph at lines 950--950
+Overfull \hbox (2.81236pt too wide) in paragraph at lines 949--949
 []\subsecfnt Comparison with the Code-coverage-based Ap-
  []
 
@@ -421,34 +421,34 @@ Underfull \vbox (badness 2418) has occurred while \output is active []
 
  [5]
 [6]
-Overfull \hbox (9.40114pt too wide) in paragraph at lines 990--990
+Overfull \hbox (9.40114pt too wide) in paragraph at lines 989--989
 []\subsecfnt Comparison with the Clustering-based Ap-proach 
  []
 
 
-Overfull \hbox (1.79811pt too wide) in paragraph at lines 1014--1034
+Overfull \hbox (1.79811pt too wide) in paragraph at lines 1013--1033
 \T1/aer/m/n/9 bet-ter than ran-dom se-lec-tion in the \T1/aer/m/it/9 Siemens \T
 1/aer/m/n/9 suite (all faults),
  []
 
 
-Overfull \hbox (2.00914pt too wide) in paragraph at lines 1037--1037
+Overfull \hbox (2.00914pt too wide) in paragraph at lines 1036--1036
 []\subsecfnt Comparison with the Dynamic-Invariant-based
  []
 
 
-Overfull \hbox (15.00864pt too wide) in paragraph at lines 1039--1057
+Overfull \hbox (15.00864pt too wide) in paragraph at lines 1038--1056
 [][]\T1/aer/m/n/9 Finally, we com-pare our ap-proach with the dynamic-invariant
 -
  []
 
 [7]
-Overfull \hbox (10.47418pt too wide) in paragraph at lines 1146--1161
+Overfull \hbox (10.47418pt too wide) in paragraph at lines 1145--1160
 \T1/aer/m/n/9 fault-revealing ca-pa-bil-ity than those of the code-coverage-
  []
 
 
-Overfull \hbox (5.00308pt too wide) in paragraph at lines 1161--1167
+Overfull \hbox (5.00308pt too wide) in paragraph at lines 1160--1166
 [][]\T1/aer/m/n/9 Our ap-proach takes rea-son-able time for small to medium
  []
 
@@ -466,4 +466,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 4999
  39i,10n,26p,455b,303s stack positions out of 5000i,500n,10000p,200000b,32768s
 
-Output written on testSelection.dvi (10 pages, 97588 bytes).
+Output written on testSelection.dvi (10 pages, 97580 bytes).

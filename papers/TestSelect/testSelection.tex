@@ -166,8 +166,8 @@ data rules as potential operational models after running all the
 tests. The likelihood of a common operational model to be a true
 oracle is evaluated using the concept of confidence, i.e., the ratio
 of the number of tests that satisfy the model over the number of
-tests that satisfy or violate the model. When a model's confidence
-is not equal to 1, the higher the model's confidence is, the more
+tests that can evaluate the model. When a model's confidence is not
+equal to 1, the higher the model's confidence is, the more
 suspicious its violations are in revealing a fault. Finally, our
 approach selects a small subset of tests that violate the mined
 common operational models for result inspection.
@@ -380,9 +380,9 @@ it can be omitted since there is no violation of this rule. Our
 approach then selects a subset of rules with high confidences. More
 specifically, for each predicate x, our approach selects the most
 confident rule $y\Rightarrow x$ and the most confident rule
-$y\Rightarrow !x$. Another possible way is to select the rules whose
-confidences are higher than a preset threshold, whose value may be
-application-dependent.
+$y\Rightarrow \neg x$. Another possible way is to select the rules
+whose confidences are higher than a preset threshold, whose value
+may be application-dependent.
 
 
 
@@ -654,8 +654,8 @@ use two metrics. The first metric is the size of the selected test
 suite, i.e., the number of the selected tests. This metric indicates
 the amount of human effort required to check the results of the
 selected tests. The second metric is the percentage of faults that
-can be detected by the selected tests. A set of tests are said to
-detect a fault if the faulty program fails on one or more of the
+can be revealed by the selected tests. A set of tests are said to
+reveal a fault if the faulty program fails on one or more of the
 tests. We would like to reveal as many faults as possible. A good
 test-selection algorithm should select a small number of tests that
 can reveal most of the faults.
@@ -935,14 +935,13 @@ data rules, separately. The results are plotted in Figures
 \ref{fig:all} and \ref{fig:nontrivial}, and shown in Tables
 \ref{tab:our} and \ref{tab:our:nontrivial}. We observe that both
 these two kinds of rules are helpful in revealing faults. Among
-them, covering violations of control rules can detect more faults
-than covering violations of data rules, but also requires much more
-tests. The data rules are better for some programs such as
-tot\_info, which is an information measure program that deals with
-data tables. In summary, these two kinds of rules are complementary
-to each other as they reflect different aspects of program
-behaviors. When combined together, they are able to help select
-quite a good subset of tests.
+them, violating all the control rules can reveal more faults than
+violating all the data rules, but also requires much more tests. The
+data rules are better for some programs such as tot\_info, which is
+an information measure program that deals with data tables. In
+summary, these two kinds of rules are complementary to each other as
+they reflect different aspects of program behaviors. When combined
+together, they are able to help select quite a good subset of tests.
 
 
 
