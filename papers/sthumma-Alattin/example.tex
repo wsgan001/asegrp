@@ -25,11 +25,11 @@ the following condition checks.
 
 \begin{CodeOut}
 \begin{alltt}
-\hspace*{0.1in}1: boolean-check on return of Iterator.hasNext 
+\hspace*{0.1in}1: boolean-check on the return of Iterator.hasNext 
 \hspace*{0.5in}before Iterator.next 
-\hspace*{0.1in}2: boolean-check on return of Collection.isEmpty 
+\hspace*{0.1in}2: boolean-check on the return of Collection.isEmpty 
 \hspace*{0.5in}before Iterator.next 
-\hspace*{0.1in}3: instance-check on return after Iterator.next 
+\hspace*{0.1in}3: instance-check on the return of Iterator.next 
 \hspace*{0.5in}with org.w3c.dom.Node
 \end{alltt}
 \end{CodeOut}
@@ -41,7 +41,7 @@ condition check 3. Alattin analyzes all collected
 code examples to generate various pattern candidates and applies ImMiner
 to mine balanced and imbalanced patterns. Initially, ImMiner
 computes frequent patterns using frequent itemset mining.
-A frequent pattern mined by ImMiner is ``$P_1$: \CodeIn{boolean-check} on \CodeIn{return}
+A frequent pattern mined by ImMiner is ``$P_1$: \CodeIn{boolean-check} on the \CodeIn{return}
 of \CodeIn{Iterator.hasNext} before \CodeIn{Iterator.next}''.
 ImMiner next identifies all pattern candidates that do not support 
 $P_1$ and computes frequent patterns among the non-supporting pattern candidates. 

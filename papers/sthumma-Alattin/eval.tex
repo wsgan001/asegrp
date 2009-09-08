@@ -93,7 +93,7 @@ describes three different ways of using the \CodeIn{getString} method of the \Co
 \textbf{\emph{A}}. \textbf{Balanced pattern}\\
 Method: \CodeIn{ZipInputStream.read (byte[], int, int)}\\
 Pattern: ``$P_1$ \textbf{or} $P_2$''\\
-$P_1$:``\CodeIn{const-check} on the return of \CodeIn{ZipInputStream. \hspace*{0.2in}read} with 0''(SUP($P_1$): 0.79)\\
+$P_1$:``\CodeIn{const-check} on the return of \CodeIn{ZipInputStream. \hspace*{0.2in}read} with 0'' (SUP($P_1$): 0.79)\\
 $P_2$:``\CodeIn{null-check} on the return of \CodeIn{ZipInputStream. \hspace*{0.2in}getNextEntry} before
 \CodeIn{ZipInputStream.read}''\\ (SUP($P_2$): 0.55)\\
 \\
@@ -103,9 +103,9 @@ Pattern: ``$P_1$ \textbf{or} $\hat{P_2}$ \textbf{or} $\hat{P_3}$''\\
 $P_1$:``\CodeIn{boolean-check} on the return of \CodeIn{ResultSet.next} \hspace*{0.2in}before  \CodeIn{ResultSet.getString}'' (SUP($P_1$): 0.88) \\
 $P_2$:``\CodeIn{boolean-check} on the return of \CodeIn{ResultSet.first} \hspace*{0.2in}before \CodeIn{ResultSet.getString}'' \\
 \hspace*{0.4in} (ABS($P_2$): 0.28, SUP($P_2$): 0.01) \\
-$P_3$:``\CodeIn{null-check} on return of \CodeIn{ResultSet.getString}'' \\
+$P_3$:``\CodeIn{null-check} on the return of \CodeIn{ResultSet.getString}'' \\
 \hspace*{0.4in} (ABS($P_3$): 0.4, SUP($P_3$): 0.08) \\
-\Caption{\label{fig:balimbalpar} Balanced and imbalanced patterns}
+\Caption{\label{fig:balimbalpar} Balanced and imbalanced patterns}\vspace*{-3ex}
 \end{figure}
 
 Column ``Time'' presents the amount of time taken (in minutes) by Alattin for analyzing gathered code examples and mining patterns. The amount of processing time depends on the number of code examples gathered for an application under analysis. For example, Alattin took $9.75$ minutes for mining patterns from $49,858$ code examples gathered for the Java Util package. All experiments were conducted on a machine with 3.0GHz Xeon processor and 4GB RAM.
@@ -183,7 +183,7 @@ The rationale behind our accuracy metric is that higher accuracy metric values a
 \Caption{\label{fig:buggycode} A code example gathered from the Debian tools source code.}\vspace*{-3ex}
 \end{figure}
 
-We next present an example to show how imbalanced patterns help reduce the number of false positives.  Figure~\ref{fig:buggycode} shows a code example of class \CodeIn{com.sap.dbtech.jdbc.Parseinfo} collected from the SVN repository of the Debian\footnote{\texttt{http://www.debian.org/}} tools. For simplicity, irrelevant code portions are omitted from the code example. The frequent alternative $P_1$ of the imbalanced pattern shown in Figure~\ref{fig:balimbalpar}B describes that there should be a \CodeIn{boolean} check on the return of \CodeIn{ResultSet.next} before \CodeIn{ResultSet.getString}. With just the $P_1$ alternative, an existing mining approach detects a violation in this code example since the code example does not include a \CodeIn{boolean} check on the return of \CodeIn{ResultSet.next} preceding the first invocation of \CodeIn{ResultSet.getString}. However, the code example does not have a defect in using the \CodeIn{getString} method since the \CodeIn{if} condition in Statement 3 ensures that there is at least one element in \CodeIn{ResultSet} before reaching  Statement 9. This code example illustrates the use of imbalanced patterns in reducing false positives among detected violations.
+We next present an example to show how imbalanced patterns help reduce the number of false positives. Figure~\ref{fig:buggycode} shows a code example of class \CodeIn{com.sap.dbtech.jdbc.Parseinfo} collected from the SVN repository of the Debian\footnote{\texttt{http://www.debian.org/}} tools. For simplicity, irrelevant code portions are omitted from the code example. The frequent alternative $P_1$ of the imbalanced pattern shown in Figure~\ref{fig:balimbalpar}B describes that there should be a \CodeIn{boolean} check on the return of \CodeIn{ResultSet.next} before \CodeIn{ResultSet.getString}. With just the $P_1$ alternative, an existing mining approach detects a violation in this code example since the code example does not include a \CodeIn{boolean} check on the return of \CodeIn{ResultSet.next} preceding the first invocation of \CodeIn{ResultSet.getString}. However, the code example does not have a defect in using the \CodeIn{getString} method since the \CodeIn{if} condition in Statement 3 ensures that there is at least one element in \CodeIn{ResultSet} before reaching  Statement 9. This code example illustrates the use of imbalanced patterns in reducing false positives among detected violations.
 
 \begin{figure}[t]
 \centering
@@ -286,7 +286,7 @@ private static String removeDoubleEntries(String input) \{
 The method \CodeIn{removeDoubleEntries} tries to identify character sequences
 that match with a regular expression. If the given input string does not match with the regular expression
 ``\CodeIn{s*(<[\^s<>]+>)s*}'', no elements will be added to the \CodeIn{entries} list.
-The preceding code sample violated the mined rule ``\CodeIn{boolean-check} on \CodeIn{return} of
+The preceding code sample violated the mined rule ``\CodeIn{boolean-check} on the \CodeIn{return} of
 \CodeIn{Iterator.hasNext} \CodeIn{before} \CodeIn{Iterator.next}'',
 which describes that \CodeIn{hasNext} must be invoked before 
 calling \CodeIn{next} of the \CodeIn{Iterator} class.  In the code sample,
