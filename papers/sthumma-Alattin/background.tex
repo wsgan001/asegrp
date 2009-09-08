@@ -1,0 +1,152 @@
+\section{Rule Templates}
+\label{sec:ruletmpl}
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+01:public static void verifyBCEL(String cName) \{ 
+02:\hspace*{0.1in}VerificationResult vr0, vr1, vr2, vr3; 
+03:\hspace*{0.1in}int mId = 0;
+04:\hspace*{0.1in}Verifier verf = VerifierFactory.getVerifier(cName);
+05:\hspace*{0.1in}if(verf != null) \{ 	
+06:\hspace*{0.2in}vr0 = verf.doPass1();
+07:\hspace*{0.2in}if(vr0 != VerificationResult.VR\_OK)
+08:\hspace*{0.4in}return;
+09:\hspace*{0.2in}vr1 = verf.doPass2();	
+10:\hspace*{0.2in}if (vr1 == VerificationResult.VR\_OK) \{ 
+11:\hspace*{0.4in}JavaClass jc = Repository.lookupClass(cName);
+12:\hspace*{0.4in}for(mId=0; mId<jc.getMethods().length; mId++)\{ 
+13:\hspace*{0.5in}vr2 = verf.doPass3a(mId);
+14:\hspace*{0.5in}vr3 = verf.doPass3b(mId);
+15:\hspace*{0.5in}if(Pass3aVerifier.do\_verify(verf)) \{ ... \}
+16:\hspace*{0.1in}\} \hspace*{0.2in}\} \hspace*{0.1in}\} \} 
+\end{alltt}
+\end{CodeOut}\vspace{-5ex}
+\Caption{\label{fig:patternex} Code sample gathered from a code search engine.}\vspace{-4ex}
+\end{figure}
+
+We next present the rule templates defined by our approach for
+capturing programming rules around individual API calls (for generality,
+we refer methods in an API as individual API calls). We use the code example
+shown in Figure~\ref{fig:patternex} as an illustrative example for
+describing our rule templates. 
+
+In general, a method invocation
+in Java consists of four elements: the receiver object, method name, arguments, and return object.
+For example, the method invocation in Statement 13 of the code example has the receiver object \CodeIn{verf},
+argument \CodeIn{mId}, and the return object \CodeIn{vr2}.
+The condition checks for a method invocation can appear before the call site (say, preceding conditions),
+or can appear after the call site (say, succeeding conditions). More specifically,
+we are interested in condition checks on the receiver object and arguments 
+before a call site and condition checks on the receiver object and return object after
+the call site. To capture such condition checks as programming rules, 
+we define a rule template and a programming rule as follows:\\
+
+\textbf{Definition 1:} \emph{A rule template is a five-tuple ($T_{type}$, $O_{type}$, $MI$, $AI$, $POS$), where\\
+\hspace*{0.3in}$T_{type}$: template type\\
+\hspace*{0.3in}$O_{type}$: object type such as a receiver or return\\
+\hspace*{0.3in}$MI$: method invocation\\
+\hspace*{0.3in}$AI$: optional additional information\\
+\hspace*{0.3in}$POS$: location with respect to a call site}
+
+\textbf{Definition 2:} \emph{A programming rule is an instance of a rule template.}\\
+
+The element $T_{type}$ (template type) of a rule template describes
+the type of the condition checks in the programming rule, whereas the element $O_{type}$ (object type)
+represents the participating object of the individual API call such as the receiver,
+argument, or return object. The element $MI$ (method invocation) stores the individual API call.
+The element $AI$ is optional additional information associated with each programming
+rule. The information stored in the $AI$ element is dependent on $T_{type}$.
+As we capture both preceding and succeeding programming rules, the element
+$POS$ describes the location of the programming rule with respect to the call site of an 
+individual API call. We next describe each element in detail.
+
+\setlength{\tabcolsep}{1pt}
+\begin{table*}[t]
+\begin{SmallOut}
+\begin{CodeOut}
+\begin{center}
+\centering \caption {\label{tab:conditiontypes} Possible $T_{type}$ values of a rule template and associated
+additional information}
+\begin {tabular} {|l|l|l|c|}
+\hline
+Name&\CenterCell{Description}&\CenterCell{Additional Info}&\CenterCell{Coverage}\\
+\hline
+\hline direct-null-check&direct null check. e.g., if(var != null) \{ .. \}&operator involved, e.g., != & 97/497\\
+\hline indirect-null-check&if variable is an argument of a &operator involved, e.g., == & 2/497 \\
+		   &method invocation. e.g., if(MI(var) == null) \{ .. \}&method invocation, MI&\\
+\hline direct-boolean-check&if the variable type is boolean. e.g., if(var) \{ .. \}& &65/497\\
+\hline indirect-boolean-check&indirect boolean check. e.g., if(MI(var)) \{ .. \}&method invocation, e.g., MI& 25/497\\
+\hline direct-const-check&if the variable is compared with a constant.&operator involved, e.g., ==&110/497\\
+			 & e.g., if(var == SUCCESS)&constant value, e.g., SUCCESS&\\
+\hline indirect-const-check&indirect constant equality check.&operator involved, e.g., ==&1/497\\
+		 	 & e.g., if(MI(var) == FAILURE)&constant value, e.g., FAILURE&\\
+		 	 & &method invocation, e.g., MI&\\
+\hline direct-retval-check&if the variable is compared with the&operator involved, e.g., <&0/497\\
+			 &return value of a method invocation.&method invocation, e.g., $MI_{other}()$&\\
+			 &e.g., if(var < $MI_{other}()$)&&\\ 
+\hline indirect-retval-check&if the variable is compared indirectly with the&operator involved, e.g., >&0/497\\
+			 &return value of a method invocation.&method invocation, e.g., MI&\\
+			 &e.g., if(MI(var) > $MI_{other}()$)&method invocation, e.g., $MI_{other}()$&\\ 
+\hline instance-check&if the conditional check involves \CodeIn{instanceof} operator&type-name, e.g., Integer&106/497\\
+			 &e.g., if(var instanceof Integer)&&\\
+\hline direct-expr-check&if the variable is compared with an &operator involved, e.g., <&35/497\\
+			 &expression such as another variable. e.g., if(var < expr) \{ ... \}&other expression, e.g., expr&\\		 			 			 
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\end{SmallOut}
+\vspace*{-4ex}
+\end{table*}
+
+Table~\ref{tab:conditiontypes} shows several possible values for the $T_{type}$ element
+of the rule template. For each template type, we present the name, description with an example, 
+and additional information ($AI$) that is associated with the programming rule. 
+The additional information is dependent on the $T_{type}$ element.
+For example, the template type \CodeIn{direct-null-check} 
+captures programming rules such as \CodeIn{null} checks done on the receiver, arguments, or return objects. 
+In the description of each template type, we use notation \CodeIn{var} 
+to denote a receiver, argument, or return object of the individual API call. The additional
+information for the template type \CodeIn{direct-null-check} stores the operator involved in the 
+conditional expression such as ``=='' or ``!=''. Column ``Coverage'' shows the number
+of rules that belong to each template type divided by the total number of 
+rules that we found in our preliminary investigation with BCEL. All template
+types described in the table include 88\% of the rules we found during our investigation.
+
+Our template types are broadly classified into two different
+categories: direct and indirect. The rationale behind these two categories 
+is that a condition check can be performed directly on the variable or
+can be done indirectly through another method invocation, say MI, where the current
+variable is an argument of that method invocation. The template
+type \CodeIn{indirect-null-check} in the table is an example for the indirect template type. 
+For indirect template types, the optional additional information 
+also stores the associated method invocation. This gathered additional information 
+for each programming rule is later used while detecting violations.
+
+Apart from template types shown in the table, we define two more template types
+that are specific to the receiver object of a method invocation. 
+
+\textbf{before.} this template type represents condition checks 
+on other method invocations of the same receiver object preceding the call site of 
+an individual API call. For example, Statements 6 to 9 in the code example
+describe that before invoking the \CodeIn{doPass2} method, the method \CodeIn{doPass1} must
+be invoked and a condition check must be performed on the return value of the method \CodeIn{doPass1}.
+The corresponding programming rule can be captured by this template type as ``\CodeIn{direct-const-check} on \CodeIn{return} of \CodeIn{doPass1} \CodeIn{before} \CodeIn{doPass2}''.
+
+\textbf{after.} this template type captures condition checks on other method invocations
+of the same receiver object succeeding the call site of an individual API call. In general, 
+this template type is useful for methods such as \CodeIn{Iterator.next()} and 
+\CodeIn{Iterator.hasNext()} that are often used in loops, where
+one of the methods such as \CodeIn{hasNext} is involved in the conditional expression of the loop. If not,
+this template type can result in many false positives based on our
+empirical investigation. Therefore, in the NCDetector framework,
+we limit this template type to those APIs (such as Java Util APIs) that are often
+suggested to be used in loops.
+
+Definition 2 describes programming rules as instances of a rule template. However,
+to provide better readability, we present programming rules in a textual form in this paper. 
+For example, the programming rule ``\CodeIn{direct-null-check} on \CodeIn{receiver before doPass1}''
+indicates that a \CodeIn{null} check should be done on the receiver object of 
+\CodeIn{doPass1} before its call site. In this instance, $T_{type}$ is \CodeIn{direct-null-check},
+$O_{type}$ is \CodeIn{receiver}, $MI$ is \CodeIn{doPass1}, and $POS$ is \CodeIn{before}.

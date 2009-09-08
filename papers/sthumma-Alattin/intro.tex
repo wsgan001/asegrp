@@ -1,0 +1,70 @@
+\section{Introduction}
+\label{sec:intro}
+
+Programming rules serve as a basis for applying static or dynamic verification tools to detect rule violations as software defects and improve software quality. However, in practice, these programming rules are often not well documented for Application Programming Interfaces (APIs) due to various factors such as hard project delivery deadlines and limited resources in the software development process~\cite{document:leth}. To tackle the issue of lacking documented programming rules, various approaches have been developed in the past decade to mine programming rules from program executions~\cite{ernst01:dynamically,ammons02mining,yang2006pmt}, individual versions ~\cite{Engler2001deviant,Zhenmin2005PRMiner,acharya06:mining,ramanathan07:path,shoham07:static,chang07:finding,acharya07:mining,wasylkowski07:detecting}, or version histories~\cite{livshits05dynamine,Chadd2005rule} of program source code. A common methodology adopted by these approaches is to mine common patterns (e.g., frequent occurrences of pairs or sequences of
+API calls) across a sufficiently large number of data points (e.g., code examples). These common patterns often reflect programming rules that should be obeyed when programmers write code using API calls involved in these rules. Then, these approaches use static defect-detection techniques that accept mined patterns as input and detect pattern violations as potential defects in source code under analysis.
+
+In our empirical investigation of using static defect-detection techniques based on code mining, we found that these techniques often produce a high number of false positives. These false positives are partially due to mining and applying each frequent pattern individually. For example, consider that an API call, say $API_1$, has two mined patterns: $P_1$ and $P_2$ (such as condition checks on method arguments or return values of $API_1$). It is necessary for code examples using $API_1$ to satisfy at least one of them. Using $P_1$ alone, a static defect-detection technique reports violations in code examples (using $API_1$) that do not include $P_1$, but include $P_2$. As those code examples include $P_2$, the reported violations turn out to be false positives.
+
+To address this issue, we introduce the notion of alternative patterns, where we consider all frequent patterns of an API call together. For example, an alternative pattern that includes $P_1$ and $P_2$ is of example form ``$P_1$ \textbf{or} $P_2$'', where $P_1$ and $P_2$ are two alternatives of the pattern. In our context, we refer to the preceding kinds of patterns as \emph{balanced} patterns, where all alternatives are frequent. Even with mining and applying balanced patterns, we found that static defect-detection techniques still produce false positives. Some of these false positives are due to the case of writing source code in different ways to achieve the same programming task, and programmers use certain ways much more frequently than others. To address this issue, we need to mine and apply patterns that include both frequent and infrequent alternatives. We refer to such patterns as \emph{imbalanced} patterns in example forms as ``$P_1$ \textbf{or} $\hat{P_2}$'',  where $P_1$ and $P_2$ are frequent and infrequent alternatives, respectively. In our pattern representation, we annotate infrequent alternatives with $\wedge$. In an imbalanced pattern, some alternatives (such as $P_1$) dominate other alternatives (such as $P_2$) of the pattern. These imbalanced patterns include additional 
+programming rules that can be used for both program comprehension and defect detection (as shown in our empirical results in Section~\ref{sec:eval}). 
+
+We next show an example of an imbalanced pattern related to the \CodeIn{next} method of the \CodeIn{Iterator} class in the Java Util package. Using this example, we show the importance of imbalanced patterns and also show that existing approaches~\cite{Burdick01mafia, wang:bide} cannot mine these imbalanced patterns.
+%We next present a frequent pattern that can be mined by these approaches using the method \CodeIn{getStatus} of the \CodeIn{UserTransaction} class in the Java Transaction API\footnote{\url{http://java.sun.com/javaee/technologies/jta/}}. The \CodeIn{getStatus} method returns five possible status codes representing the status of the current transaction. Among these five status codes, two often used status codes are \CodeIn{STATUS\_NO\_TRANSACTION} and \CodeIn{STATUS\_ACTIVE}. As both these status codes are frequently used with the \CodeIn{getStatus} method, existing approaches can mine a pattern such as ``\CodeIn{const-check} on  \CodeIn{return} after \CodeIn{UserTransaction.getStatus} with \CodeIn{STATUS\_NO\_TRANSACTION} \textbf{or} \CodeIn{const-check} on \CodeIn{return} after \CodeIn{UserTransaction.getStatus} with \CodeIn{STATUS\_ACTIVE}''.}  
+%In a balanced pattern, all alternatives such as two condition checks with the status codes in the preceding pattern are \emph{frequent}. 
+Figure~\ref{fig:introexample} shows two code examples using the \CodeIn{next} method of the \CodeIn{Iterator} class. The \CodeIn{next} method throws \CodeIn{NoSuchElementException} when invoked on an \CodeIn{ArrayList} object without any elements. To prevent this exception, a frequent condition check is ``$P_1$: \CodeIn{boolean-check} on \CodeIn{return}
+of \CodeIn{Iterator.hasNext} before \CodeIn{Iterator.next}'' (shown in \CodeIn{printEntries1} from Example 1). Another infrequent condition check that can also help prevent the exception is ``$P_2$: \CodeIn{boolean-check} on \CodeIn{return}
+of \CodeIn{ArrayList.size} before \CodeIn{Iterator.next}'' (shown in \CodeIn{printEntries2} from Example 2). Both $P_1$ and $P_2$ are valid alternatives, which ensure that there are elements in the \CodeIn{ArrayList}. To show that the pattern ``$P_1$ \textbf{or} $\hat{P_2}$'' is an imbalanced pattern, we gathered $1,243$ code examples that use the \CodeIn{Iterator.next} method through Google code search~\cite{GCSE}. We found that $P_1$ and $P_2$ exist in $1,218$ and $6$ code examples (with support values $0.92$ and $0.0048$), respectively. Although both $P_1$ and $P_2$ are valid, these support values show that the frequent alternative $P_1$ dominates the infrequent alternative $P_2$. Therefore, existing mining approaches such as frequent itemset mining~\cite{Burdick01mafia} can mine \emph{only} $P_1$ but not $P_2$. However, the alternative $P_2$ is important when these mined patterns are used for defect detection. For example, consider that only $P_1$ is mined without the $P_2$ alternative. Using $P_1$, a static defect-detection technique reports a violation in \CodeIn{printEntries2} since the method does not satisfy $P_1$. However, the code example does not include any defect on using \CodeIn{Iterator.next} since \CodeIn{printEntries2} satisfies $P_2$; therefore, the detected violation is a false positive. This example shows that mining imbalanced patterns can help reduce false positives among detected violations. But mining imbalanced patterns such as ``$P_1$ \textbf{or} $\hat{P_2}$'' is challenging since alternatives such as $P_2$ are not frequent among an entire set of code examples used for mining. To the best of our knowledge, there are no existing data mining approaches that can mine imbalanced patterns.
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+\textbf{Example 1:}
+00:String printEntries1(ArrayList<String> 
+\hspace*{0.8in}entries)\{
+01:\hspace*{0.1in}...
+02:\hspace*{0.1in}Iterator it = entries.iterator();...
+03:\hspace*{0.1in}\emph{if (it.hasNext()) }\{
+04:\hspace*{0.3in}String last = (String) it.next();... \}\}
+
+\textbf{Example 2:}
+00:String printEntries2(ArrayList<String> 
+\hspace*{0.8in}entries)\{
+01:\hspace*{0.1in}...
+02:\hspace*{0.1in}\emph{if (entries.size() > 0) }\{
+03:\hspace*{0.3in}Iterator it = entries.iterator();...
+04:\hspace*{0.3in}String last = (String) it.next();... \}\}
+\end{alltt}
+\end{CodeOut}\vspace*{-3ex}
+\caption{Two code examples using the \CodeIn{next} method of the \CodeIn{Iterator}
+class\label{fig:introexample}}\vspace*{-3ex}
+\end{figure}
+
+In this paper, we propose a novel approach, called Alattin, that includes a new mining algorithm, called \emph{ImMiner}, and a technique that detects neglected conditions based on our mining algorithm. Our ImMiner algorithm uses an iterative mining strategy to mine imbalanced patterns. ImMiner is based on the observation that alternatives such as $P_2$ (despite infrequent in an entire set of code examples) are frequent among the code examples that do not support $P_1$. We then apply our mining algorithm to address the problem of detecting neglected conditions. \emph{Neglected conditions}, also referred to as missing paths, are known to be an important category of software defects and are considered to be one of the primary reasons for many fatal issues such as security or buffer overflow vulnerabilities~\cite{chang07:finding}. As shown by a recent study~\cite{chang07:finding}, 66\% (109/167) of defect fixes applied in the Mozilla Firefox project are due to neglected conditions. In particular, neglected conditions (related to an API call) refer to 
+(1) missing conditions that check the arguments or receiver of the API call before the API call or 
+(2) missing conditions that check the return values or receiver of the API call after the API call.
+
+To detect neglected conditions related to an API call in an application under analysis, Alattin extracts APIs reused by the application. Then, Alattin interacts with a Code Search Engine (CSE) such as Google code search~\cite{GCSE} to gather
+relevant code examples for each API. Alattin analyzes these relevant code examples statically to generate pattern candidates suitable for applying our ImMiner algorithm. ImMiner mines both balanced and imbalanced patterns related to these APIs. These mined patterns describe programming rules that must be obeyed in reusing the APIs. Finally, Alattin uses mined patterns to detect violations in the application under analysis.
+
+This paper makes the following main contributions:
+\vspace*{1.5ex}
+\begin{Itemize}
+\Item An empirical investigation of mined patterns to show the existence of alternative patterns and their further classification into balanced and imbalanced patterns. These balanced and imbalanced patterns include programming rules that can be used for tasks such as program comprehension and defect detection.
+\vspace*{1.5ex}
+\Item A novel mining algorithm, called ImMiner, that mines alternative patterns in the form of balanced and imbalanced patterns. 
+\vspace*{1.5ex}
+\Item A technique that applies ImMiner for detecting neglected conditions around individual API calls in an application under analysis and an Eclipse plugin implemented for the technique.
+\vspace*{1.5ex}
+\Item Two evaluations to demonstrate the effectiveness of our approach. Our evaluation results show that (1) alternative patterns reach nearly 40\% of all mined patterns for APIs provided by six open source libraries; (2) the mining of alternative patterns helps reduce nearly 28\% of false positives among detected violations.
+\end{Itemize}
+\vspace*{1.5ex}
+The rest of the paper is organized as follows. 
+Section~\ref{sec:imminer} presents the problem definition and solution of our ImMiner algorithm.
+%Section~\ref{sec:example} explains our Alattin approach through an example.
+Section~\ref{sec:framework} describes key aspects of the approach.
+Section~\ref{sec:eval} presents evaluation results.
+Section~\ref{sec:threats} discusses threats to validity.
+Section~\ref{sec:discussion} discusses issues and future work of our approach.
+Section~\ref{sec:related} presents related work.
+Finally, Section~\ref{sec:conclusion} concludes.

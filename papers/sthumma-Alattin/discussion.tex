@@ -1,0 +1,29 @@
+\section{Discussion}
+\label{sec:discussion}
+
+%(1) Overhead of splitting databases into two parts: positive and negative
+%(2) Condition checks are only one level above
+%(3) a pattern candidate is an itemset...i.e., repetitions among elements
+%are not allowed.
+%(4) Ignore obvious patterns such as receiver should have null check..
+%(5) Identification of true false paths...
+
+To mine imbalanced patterns, our ImMiner algorithm splits the input database into two groups for each frequent pattern mined in Phase 1. Although this solution is feasible for approaches (such as Alattin) that produce input databases with thousands of pattern candidates, our current solution might not be practical for large input databases with millions of pattern candidates. In future work, we plan to enhance our mining algorithm using support vector machines~\cite{nello:sup} so that we can mine imbalanced patterns without splitting the input database.
+
+Our current implementation sometimes is not precise and cannot identify equivalent but syntactically different conditions. For example, our current implementation considers the conditions \CodeIn{a $>$ 0} and \CodeIn{a $\geq$ 1} as different. In future work, we plan to address these issues using more precise static analysis that can identify equivalent conditions.
+
+\Comment{
+In our evaluation, we show the significance of imbalanced patterns
+in reducing the number of false positives among detected violations.
+One issue with imbalanced patterns belonging to the partial-rules category
+is that these patterns can increase false negatives among detected violations.
+For example, consider a partial rule ``$P_1$ \textbf{or} $\hat{A_1}$'',
+where the frequent alternative $P_1$ represents a real property 
+and the infrequent alternative $A_1$ does not represent a real property.
+Consider that a code example does not include $P_1$ but includes $A_1$.
+Although the code example includes a violation, our approach does not detect
+the violation because the code example satisfies the false-positive
+alternative $A_1$. However, our results in Tables~\ref{tab:minedpatterns} and~\ref{tab:columba} show
+that the percentage of partial rules is quite low compared to the percentage
+of real rules, reducing the chance of increasing potential false negatives among detected violations.}
+

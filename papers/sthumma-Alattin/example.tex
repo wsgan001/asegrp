@@ -1,0 +1,73 @@
+\section{Alattin Approach at a glance}
+\label{sec:example}
+
+We next use an example to describe how Alattin uses our ImMiner algorithm
+to mine implicit programming rules in the form of balanced and imbalanced patterns.
+We also explain how Alattin applies these mined programming rules to detect neglected conditions
+and how imbalanced patterns can help reduce false warnings among detected violations.
+Consider that an application under analysis uses the \CodeIn{Iterator.next} method as shown in the \CodeIn{printEntries2} method in Figure~\ref{fig:introexample}. 
+
+Initially, Alattin collects relevant code examples of invoking the \CodeIn{Iterator.next}
+method by constructing queries to Google code search. These relevant code examples
+are required for mining patterns that describe necessary 
+condition checks that should be done around the \CodeIn{Iterator.next} method.
+Figure~\ref{fig:csecodeexample} shows a code example gathered from Google code search.
+Alattin constructs a control-flow graph (CFG) for the code example
+and performs two traversals (backward and forward) of the CFG
+from the node corresponding to the \CodeIn{Iterator.next} method. In the backward traversal,
+Alattin collects the condition checks on the receiver and 
+argument objects preceding the call site of the \CodeIn{Iterator.next} method.
+Similarly, in the forward traversal, Alattin collects
+the condition checks on the receiver and return objects 
+succeeding the call site of the \CodeIn{Iterator.next} method.
+For the current code example, our backward and forward traversals gather
+the following condition checks.
+
+\begin{CodeOut}
+\begin{alltt}
+\hspace*{0.1in}1: boolean-check on return of Iterator.hasNext 
+\hspace*{0.5in}before Iterator.next 
+\hspace*{0.1in}2: boolean-check on return of Collection.isEmpty 
+\hspace*{0.5in}before Iterator.next 
+\hspace*{0.1in}3: instance-check on return after Iterator.next 
+\hspace*{0.5in}with org.w3c.dom.Node
+\end{alltt}
+\end{CodeOut}
+
+The preceding set of condition checks collected from the code example forms a pattern candidate
+in $ISD$ for mining. In the preceding pattern candidate, backward traversal
+produces condition checks 1 and 2, whereas the forward traversal produces 
+condition check 3. Alattin analyzes all collected
+code examples to generate various pattern candidates and applies ImMiner
+to mine balanced and imbalanced patterns. Initially, ImMiner
+computes frequent patterns using frequent itemset mining.
+A frequent pattern mined by ImMiner is ``$P_1$: \CodeIn{boolean-check} on \CodeIn{return}
+of \CodeIn{Iterator.hasNext} before \CodeIn{Iterator.next}''.
+ImMiner next identifies all pattern candidates that do not support 
+$P_1$ and computes frequent patterns among the non-supporting pattern candidates. 
+The second phase generates alternative patterns such as
+``$P_2$: \CodeIn{boolean-check} on \CodeIn{return}
+of \CodeIn{ArrayList.size} before \CodeIn{Iterator.next}'',
+resulting in an imbalanced pattern of the form ``$P_1$ \textbf{or} $\hat{P_2}$''.
+
+Alattin next applies the mined pattern on the application under analysis 
+to detect neglected conditions. Alattin does not report any 
+violations if the application under analysis includes at least
+one alternative of the mined pattern. For example, as the 
+\CodeIn{printEntries2} method includes $P_2$, Alattin does not report
+any violation in this code example. In contrast, existing 
+approaches would report a violation leading to a false positive.
+
+This example motivates the idea of 
+exploiting a CSE for gathering relevant code examples
+and applying analysis techniques to capture implicit programming rules. 
+However, there are many other issues that are not obvious
+in this illustrative example, as described next. 
+(1) How do we exploit program dependencies in the source code to generate pattern candidates?
+(2) How do we represent the pattern candidates extracted from code examples suitable for
+applying the mining algorithm?
+(3) How do we apply our mining algorithm on pattern candidates of different API
+methods where pattern candidates of one API method (that is often used) can dominate the
+pattern candidates of another API method (that is rarely used)? 
+We address these issues in Section~\ref{sec:framework}, where we present key aspects
+of our Alattin approach.
