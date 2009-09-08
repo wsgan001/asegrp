@@ -40,7 +40,7 @@ programmers may refer to existing versions for naming entities such
 as classes, methods, and variables. Therefore, name similarity of
 the first kind is often reliable to distinguish functionalities
 compared to the second kind. MAM uses
-Simmetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
+simmetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
 to calculate name similarities.
 \begin{figure}[t]
 \centering
@@ -51,7 +51,7 @@ to calculate name similarities.
 
 We next describe how MAM aligns client-code classes.
 The first step is to find candidate class pairs by names. For two sets
-of classes $C$ and $C'$, MAM returns candidate class
+of classes $c$ and $c'$, MAM returns candidate class
 pairs $M$ with a similarity greater than a given threshold,
 referred to as \emph{SIM\_THRES- HOLD}. As some projects may have more
 than one class with the same name, $M$ may contain more than one
@@ -149,8 +149,8 @@ ATGs}\vspace*{-3ex}
 \subsubsection{API Transformation Graph}
 \label{sec:approach:mappingmethods:graph}
 We propose API Transformation Graphs (ATGs) to help deal with two
-major challenges. (1) Mapping parameters of an API method in one language with
-parameters of an API method in the other language can be complex. (2) An API
+major challenges. First, mapping inputs of an API method in one language with
+inputs of an API method in the other language can be complex. Second, an API
 method of one language can be mapped to more than one API method in the
 other language.
 
@@ -389,7 +389,7 @@ mapping relations of API methods. Our mapped API methods should satisfy
 three criteria. (1) The mapped API methods implement the same
 functionality. (2) The mapping relation describes the relation between
 parameters and receivers of mapped API methods. (3) The mapping relation
-describes the relation between return of mapped API methods.
+describes the relation between returns of mapped API methods.
 The two mapped API methods in two different languages satisfying the
 preceding three criteria are replaceable in the client code.
 Therefore, these mapped API methods assist for translating client
@@ -403,7 +403,7 @@ maps those two constants, if they have exactly the same
 value. From mapped variables and constants, our algorithm uses the following criteria to find mapping relations between two API methods $jm$ and $sm$.
 
 \emph{Mapped inputs}: The first criterion is based on the inputs
-of $jm$ and $sm$. We map $jm$ with $sm$, if there is a one-to-one
+of $jm$ and $sm$. We map $jm$ with $sm$, if there is a 1-to-1
 mapping between inputs of $jm$ and $sm$. Here, MAM
 considers both the receiver and the parameters as the inputs of an
 API method.
@@ -428,38 +428,43 @@ in the corresponding ATGs, respectively, and attempts to map merged API methods.
 methods $M$ combined by inputs and outputs, so the $t$ behavior of
 $cm$ is the combination of $M$. For $L_1$, consider an API method $m_1$ defined in classes $c_1$ and an API method $m_2$ defined in $c_2$ with the following signatures:
 
+
 \CodeIn{$m_1$ signature: $o_1$ $c_1$.$m_1$($inp_1^1$, $inp_2^1$,
 ..., $inp_m^1$)}
+
 
 \CodeIn{$m_2$ signature: $o_2$ $c_2$.$m_2$($inp_1^2$, $inp_2^2$,
 ..., $inp_n^2$)}
 
+
 Our algorithm merges methods $m_1$ and $m_2$ to create a new \emph{merged API
 method} $m_{new}$ if the output $o_1$ of $m_1$ is used either as a
-receiver or as a parameter for $m_2$ (i.e., $o_1$ == $c_2$ or $o_1$
+receiver or as a parameter for $m_2$ (\emph{i.e.}, $o_1$ == $c_2$ or $o_1$
 == $inp_i^2$) in client code. The signature of the new merged API
 method $m_{new}$ is shown below:
+
 
 \CodeIn{$m_{new}$ signature: $o_2$ $m_{new}$($inp_1^1$, $inp_2^1$,
 ..., $inp_m^1$, \\ $inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
 
-For example, our algorithm merges the API methods shown in Figure~\ref{fig:graph} (a) to two merged API methods as follows.
 
-\begin{CodeOut}\vspace*{-1.8ex}
+For example, our algorithm merges the API methods shown in Figure~\ref{fig:graph}a to two merged API methods as follows.
+
+\begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
 cm_1:Boolean \{FileInfo,getFullFile,File.Exist\}(String)
 cm_2:Boolean \{FileInfo,getFullFile,Directory.Exist\}(String)
 \end{alltt}
-\end{CodeOut}\vspace*{-1.8ex}
+\end{CodeOut}\vspace*{-1.5ex}
 
-Similarly, our algorithm merges the API methods shown in Figure~\ref{fig:graph} (b) to two merged API methods as follows.
+Similarly, our algorithm merges the API methods shown in Figure~\ref{fig:graph}b to two merged API methods as follows.
 
-\begin{CodeOut}\vspace*{-2ex}
+\begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
 cm_3:boolean \{File,exist\}(String)
 cm_4:boolean \{File,delete\}(String)
 \end{alltt}
-\end{CodeOut}\vspace*{-2ex}
+\end{CodeOut}\vspace*{-1.5ex}
 
 Our algorithm merges these API methods so that it is able to mine many-to-many mapping relations of API methods as shown in Figure~\ref{fig:graph}. After merging API methods, our algorithm uses the \CodeIn{replace} function for merging an API method with its
 next available API method. For two merged API methods, our algorithm uses the

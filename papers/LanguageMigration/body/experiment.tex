@@ -1,7 +1,7 @@
 \section{Evaluations}
 \label{sec:evaluation}
 
-We implemented a tool named MAM for our approach and
+We implemented a tool for MAM and
 conducted two evaluations using our tool to show the effectiveness
 of our approach. In our evaluations, we address the following
 two research questions.
@@ -102,9 +102,8 @@ approach to take into account as much client code as possible.
 
 Table~\ref{table:analyzingclient} shows our evaluation results.
 In column ``Aligned'', sub-columns ``\emph{\# C}'' and
-``\emph{\# M}'' list the number of aligned classes and aligned methods.
-For each project of Column ``C\# version'' and
-Column ``Java version'', sub-column ``\emph{\%C}'' lists the
+``\emph{\# M}'' list the number of aligned classes and aligned methods, respectively.
+For each project of Columns ``C\# version'' and ``Java version'', sub-column ``\emph{\%C}'' lists the
 percentage of the aligned classes among total classes of
 corresponding versions. Sub-column ``\emph{\%M}'' lists the
 percentage of the aligned methods among total methods of
@@ -134,8 +133,8 @@ methods of the two projects well. Although both of the two projects
 seem to be translated from existing Java versions, the programmers of
 the two projects often do not refer to names of existing Java
 versions for naming entities. For these two projects, the
-percentage of aligned classes is relatively high, and the percentage
-of aligned methods is relatively low. We find that even if our
+percentages of aligned classes are relatively high, and the percentages
+of aligned methods are relatively low. We find that even if our
 approach aligns a wrong class pair, our approach does not align
 methods within the wrong pair since the method names of a wrong pair
 are quite different. These results suggest that we can take method
@@ -188,8 +187,8 @@ entities of a version under development.
 Table~\ref{table:minedresults} shows the results of mined mapping
 relations of API classes and methods. Columns ``Class'' and ``Method''
 list results of mining mapping relations of API classes and API methods, respectively. Sub-column
-``\emph{Num.}'' lists the number of mined mapping relations. The
-number of mined API mapping relations is highly proportional to the sizes
+``\emph{Num.}'' lists numbers of mined mapping relations. The
+numbers of mined API mapping relations are highly proportional to the sizes
 of projects as shown in Table~\ref{table:subjects}, except for
 \emph{logging} and \emph{hibernate}. Since classes and methods of these
 two projects are not well aligned, our approach does not mine
@@ -205,9 +204,9 @@ API documents. We find that our approach achieves high accuracies, except for
 \emph{logging} quite well either, the accuracies of API mapping relations from
 \emph{logging} are still relatively high. To mine API mapping relations of
 classes, our approach requires that names of classes, methods, and
-variables are similar. To mine API mapping relations of methods, our
+variables are all similar. To mine API mapping relations of methods, our
 approach requires that two built ATGs are
-similar. These two requirements are relatively strict. As a result, if
+mapped. These two requirements are relatively strict. As a result, if
 the first step does not align client code well, our approach may
 miss some API mapping relations but does not introduce many
 false mapping relations. In other words, our approach is robust to
@@ -279,9 +278,9 @@ package java.math :: System \{
 \end{alltt}
 \end{CodeOut}\vspace*{-2ex}
 
-This item describes API mapping relations between the \CodeIn{multiply}
-method of Java and the \CodeIn{Multiply} method of C\#. The pattern
-string describes API mapping relations of inputs. In particular,
+This item describes the mapping relation between \CodeIn{java.math. BigDecimal} of Java and \CodeIn{System.Decimal} of C\#, and also describes the mapping relation between the \CodeIn{multiply}
+method and the \CodeIn{Multiply} method. For the two API methods, the pattern
+string describes the mapping relation of inputs:
 ``\CodeIn{@0}'' denotes the receiver of the \CodeIn{multiply}
 method, and ``\CodeIn{@1}'' denotes the first parameter of the
 \CodeIn{multiply} method. Based on this item, Java2CSharp translates
@@ -304,10 +303,10 @@ translate our mined API mapping relations using the following strategy. First,
 for each Java class, we translate its mapping relations of classes
 with the highest support values. Here, the support value of a mapping relation is the frequency that the mapping relation is mined from the subjects listed in Table~\ref{table:minedresults}. Second, for each Java method, we translate its
 mapping relations of methods with the highest support values into mapping
-files as relations of methods with pattern strings. For one-to-one
-mapping relations of methods, this step is automatic since mined
+files as relations of methods with pattern strings. For 1-to-1
+mapping relations of API methods, this step is automatic since mined
 mapping relations describe mapping relations of corresponding
-methods and inputs. For a few many-to-many mapping relations of methods,
+methods and inputs. For a few many-to-many mapping relations of API methods,
 this step is manual since mined mapping relations do not include
 adequate details. We further discuss this issue in Section~\ref{sec:discuss}.
 
@@ -322,7 +321,12 @@ Columns ``Class'' and ``Method'' list results of comparing API
 classes and methods, respectively. Sub-columns
 ``\emph{P}'', ``\emph{R}'', and ``\emph{F}'' denote precision,
 recall, and F-score. \emph{Precision}, \emph{Recall}, and \emph{F-score} are defined as
-follows:\vspace*{-1ex}
+follows\footnote{We ignore those API mapping relations that do
+not have call sites in the projects listed in
+Table~\ref{table:minedresults}, since our approach relies on
+API call sites to mine mapping relations. By adding
+more projects using these APIs to our subjects, our approach can then
+mine relations of these APIs.}:\vspace*{-1ex}
 \begin{equation}\label{eq-precison}
 Precision=\frac{true\ positives}{true\ positives+false\ positives}
 \end{equation}\vspace*{-2ex}
@@ -369,12 +373,7 @@ F\!-\!score=\frac{2\times Precision \times Recall}{Precision+Recall}
 
 In these preceding formula, true positives represent those API mapping
 relations that exist in both the mined API mapping relations and the golden
-standard\footnote{We ignore those API mapping relations that do
-not have call sites in the projects listed in
-Table~\ref{table:minedresults}, since our approach relies on
-API call sites to mine mapping relations. By adding
-more projects using these APIs to our subjects, our approach can then
-mine relations of these APIs.}; false positives represent those relations that exist in the mined API
+standard; false positives represent those relations that exist in the mined API
 mapping relations but not in the golden standard; false negatives represent
 those mapping relations that exist in the golden standard but not in
 the mined API mapping relations. Row ``Total'' shows the results when we
@@ -459,11 +458,11 @@ Column ``MF'' lists results with only the mapping files of Java2CSharp.
 Column ``Ext. MF'' lists results with mapping files that combine
 our mined API mapping relations with the existing mapping files of Java2CSharp.
 Sub-columns ``\emph{E}'' and ``\emph{D}'' list the number of
-compilation errors and found defects, respectively. Complication errors provide a overview for qualities of translated projects, but some complication errors are not related to APIs.
+compilation errors and found defects, respectively. Complication errors provide an overview for qualities of translated projects, but some complication errors are not related to APIs.
 To find out the effectiveness of reducing API related defects, we manually inspect some translated C\# files. In particular, for each project,
 we first select those overlapping files between translated files and existing C\# files
 from the C\# version of the five projects. After that, we manually compare
-the top 5 largest files among these overlapping files with existing C\# files and analyzes those differences for detecting API related defects. For example, a translated C\# statement of \emph{simmetric} in ``No MF'' is as follows.
+the top 5 largest files among these overlapping files with existing C\# files and analyze those differences for detecting API related defects. For example, a translated C\# statement of \emph{simmetric} in ``No MF'' is as follows.
 
 \begin{CodeOut}\vspace*{-1.8ex}
 \begin{alltt}
@@ -475,7 +474,7 @@ This statement contains an API related defect since Java2CSharp does not transla
 percentages of improvements over the results of ``MF''. On average,
 mined API mapping relations help further reduce 54.4\% compilation errors
 and 43.0\% API defects. Since the five projects use different libraries,
-the translated projects are different from their C\# versions. In particular,
+compilation errors and defects in translated projects are different. In particular,
 \emph{simmetrics} and \emph{fit} use API classes of J2SE that are
 covered by mapping files. Consequently, the translated projects of
 \emph{simmetrics} and \emph{fit} have only a few errors and defects. The

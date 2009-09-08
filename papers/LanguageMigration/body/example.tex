@@ -27,7 +27,7 @@ adds code for invoking the \CodeIn{Exists} method and the
 Here, we consider field accesses as special type of method calls.
 
 To mine these mapping relations, MAM uses projects such as Lucene
-that have both Java and C\# versions. MAM includes three major steps 
+that have both Java and C\# versions. MAM includes three major steps
 to mine the preceding two types of mapping relations of APIs from these projects.
 
 \begin{figure}[t]
@@ -43,7 +43,7 @@ to mine the preceding two types of mapping relations of APIs from these projects
            System.IO.Directory.Exists(file.FullName);
 \end{alltt}
 \end{CodeOut}\vspace*{-4ex}
-\caption{\label{fig:challenge}Java code and its translated C\# code.}%\vspace*{-1ex}
+\caption{\label{fig:challenge}Java code and its translated C\# code.}\vspace*{-1ex}
 \end{figure}
 \begin{figure}[t]
 \begin{CodeOut}\vspace*{-1ex}
@@ -77,7 +77,7 @@ to mine the preceding two types of mapping relations of APIs from these projects
 \end{alltt}
 \end{CodeOut}\vspace*{-4ex}
 \caption{\label{fig:clientcode} Two versions (Java and C\#) of
-client code.}\vspace*{-5ex}
+client code.}\vspace*{-4ex}
 \end{figure}
 
 \textbf{Aligning client code.} First, MAM aligns classes and methods
@@ -119,7 +119,7 @@ example, MAM identifies the constant value ``\CodeIn{index}'' in
 Lines 6 (Java) and 11 (C\#) (Figure~\ref{fig:clientcode}) and maps
 the API classes associated with these constants. Based on this
 constant value, MAM maps the API class \CodeIn{java.io.File} of Java
-to \CodeIn{System.IO.FileInfo} of C\#. 
+to \CodeIn{System.IO.FileInfo} of C\#.
 
 \textbf{Mining API mapping of methods.} After mapping API classes
 between the two languages, MAM maps API methods. Mapping API methods
@@ -131,8 +131,8 @@ MAM constructs a graph, referred to as \emph{API Transformation
 Graph} (ATG), for each aligned method of the client code in both
 languages. These ATGs precisely capture inputs and outputs of API
 methods, and help mine mapping relations of API methods.
-Figure~\ref{fig:example} shows a mapping relation between the \CodeIn{java.io.File.Exists} method in Java to the \CodeIn{System.IO.File. Exist} method and the \CodeIn{System.IO.Directory.Exists} method in C\#. By a closer look at the API document for these API methods, we can find that the Java method can check whether a file or directory exists, and this functionality is fulfilled by two C\# API methods: the \CodeIn{System.IO.File.Exist} method for checking whether a file exists and the \CodeIn{System.IO.Directory.Exists} method for checking whether a directory exists. Section~\ref{sec:approach:mappingtypes} presents more details on how
-we mine these mapping relations of API methods. 
+Figure~\ref{fig:example} shows a mapping relation from the \CodeIn{java.io.File.Exists} method in Java to the \CodeIn{System.IO.File. Exist} method and the \CodeIn{System.IO.Directory.Exists} method in C\#. By a closer look at the API document for these API methods, we can find that the Java method can check whether a file or directory exists, and this functionality is fulfilled by two C\# API methods: the \CodeIn{System.IO.File.Exist} method for checking whether a file exists and the \CodeIn{System.IO.Directory.Exists} method for checking whether a directory exists. Section~\ref{sec:approach:mappingtypes} presents more details on how
+we mine these mapping relations of API methods.
 
 \begin{figure}[t]
 \centering %\hfill
