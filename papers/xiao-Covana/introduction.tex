@@ -48,3 +48,29 @@ Supposed we have a class parent with an uncovered branch which requires the eval
 After digging into child's method, we could see that the method could have several paths to return true. I think here we do not need to explore every possible path of class child as our test target is parent, especially when child's methos is an uninstrumented method. We could just choose two values which statisfy the predict coverage of the child's method and the coverage of the parent would be fine. Currently pex will report every issue encountered during the exploration, no matter it is the class under test or not. In this simple example, pex is able to find out all the possible inputs for the child's method, CanUnderstand. However, in real application, like NHibernate or Quartz.NET, the call stack of external method invocation is deep and it is often involved many object creation issues, which make it impossible for pex to solve the constraint. Therefore, if we only satisfy the predict coverage of external method, like child's method, then we could reduce the pex's effort a lot.
 
 To provide more relevant information for developers, we could do static analysis of the external method. Taking the child's method, CanUnderstand, in figure 1 for example, to satisfy predict coverage, we only need to find out two path which make it return true and false respectively. Supposed pex is stuck for two constraints inside the external method, then we should rank the constraints and give the one which have fewer condition checks before it reaches the end of the method higher score. In the given example, supposed we want the method to return true and pex could not solve all the constraints that make it return true, we should rank the first constraint, value.Constains(``hi''), as there is no other condition check following it. 
+
+4. When pex is stuck for some condition check inside a private method, reporting the variable related to the constraints may not be so useful. See the example code from NHibernate below:
+
+\begin{verbatim}
+private bool IsEquals(ICollection x, ICollection y){
+	... 
+		if (x.Count != y.Count)
+					return false;
+	...
+}
+\end{verbatim}
+
+Given this code snippet, even we know x and y are related to the constraints, we have no way to figure it out what we could do to assist pex as we have no idea where and when the method is invoked during the execution. However, if we do keep a dataflow, then it could make things much easier. If we trace back the example code in NHibernate, we could find the method below:
+
+\begin{verbatim}
+public bool Equals(TypedValue x, TypedValue y)
+			{
+				if (y == null) return false;
+				if (!x.type.ReturnedClass.Equals(y.type.ReturnedClass))
+					return false;
+				return IsEquals(x.type, x.value as ICollection, 
+								y.value as ICollection);
+			}
+\end{verbatim}
+
+Here, ``Equals'' is the method under test and the actual arguments for the ``IsEquals'' method are just the ``value'' attribute of its own arguments x and y. By looking at this, we could know that to make that branch covered, we should add some method sequence to help pex assign the value to TypedValue.value. In this case, we could link the second method to the first one and report them together.
