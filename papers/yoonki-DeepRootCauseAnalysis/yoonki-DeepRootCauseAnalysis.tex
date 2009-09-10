@@ -1,0 +1,39 @@
+%
+%  $Description: Author guidelines and sample document in LaTeX 2.09$
+%
+%  $Author: yoonki $
+%  $Date: 2009/09/09 18:00:00 $
+%  $Revision: 1.4 $
+%
+
+\documentclass{sig-alternate}
+%\documentclass{acm_proc_article-sp}
+
+\input{macros}
+%-- Begin patch area for accents in 'Author Block' area - may be needed by some authors / but not all
+\DeclareFixedFont{\auacc}{OT1}{phv}{m}{n}{12}   % Needed for "Author Block" accents - Patch by Gerry 3/21/07
+\DeclareFixedFont{\afacc}{OT1}{phv}{m}{n}{10}   % Needed for "Author Block" accents in the affiliation/address line - Patch by Gerry 3/21/07
+%--
+\begin{document}
+
+\title{Deep Root-Cause Performance Analysis: Integration and Navigation from a Load Testing Tool}
+
+\author{
+Yoonki Song\hspace*{0.3in}Tao Xie\\
+       \affaddr{Department of Computer Science}\\
+       \affaddr{North Carolina State University, Raleigh, USA}\\
+       \textit{\email{\{ysong2, txie\}@ncsu.edu}}
+}
+
+%-------------------------------------------------------------------------
+\maketitle
+%\thispagestyle{fancy}
+
+\input{abstract}              % abstract
+\input{introduction}          % 1. Introduction
+\input{approach}              % 2. Approach
+
+\bibliographystyle{is-abbrv}
+%\bibliographystyle{abbrv}
+\bibliography{yoonki-references,yoonki}  % sigproc.bib is the name of the Bibliography in this case
+\end{document}
