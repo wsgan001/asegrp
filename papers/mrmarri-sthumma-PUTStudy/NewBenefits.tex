@@ -1,0 +1,123 @@
+\section{Benefits of PUTs}
+\label{sec:newbenefits}
+We next present the benefits of retrofitting conventional unit tests for PUTs. 
+In test generalization, we transformed 57 conventional unit tests of 10 test classes resulting in 49 PUTs.  In order to achieve higher block coverage, we wrote 21 new PUTs for 6 of the 10 classes under study. Table~\ref{tab:oldbenefits} shows the results of writing PUTs. Column ``Test Class'' shows the names of the test class and Column ``Test Methods'' shows the statistics of existing 
+conventional test methods, the test methods that are amenable to 
+test generalization, the percentage of amenable conventional unit tests, the number of transformed PUTs, and the number of new PUTs that were written. The five sub-columns 
+represented by ``Conventional'', ``\#Amenable'', ``\%'', ``\#PUT'', and ``\#New PUT'' give cumulative figures for all test methods in the corresponding class. ``\#PUT'' shows the number of PUTs written in Phase 1 and ``\#New PUT'' shows the number of new PUTs written in Phase 2 to achieve higher coverage. Section~\ref{sec:notamenable} provides details of the test methods that are not amenable to test generalization with illustrative examples. 
+Column ``\% Coverage'' shows the block coverage reported by Pex on executing
+tests. These two sub-columns show the average of all the test methods in each class. Column ``Avg. New Blocks'' 
+shows the average number of new blocks covered by PUTs. As PUTs can verify more general behavior,
+we found that PUTs achieve a high block coverage and cover new blocks
+that are not covered by conventional unit tests. Column ``\#Defects'' shows the number of defects that were detected by the PUTs 
+and were not detected by the existing conventional unit tests. 
+This column again shows a cumulative value of all the test methods in a test class.
+%---------------------NEW TABLE SHOWING THE BENEFITS OF TEST GENERALIZATION-----------------------
+\setlength{\tabcolsep}{2pt}
+\begin{table*}[t]
+\begin{center}
+\centering \caption {\label{tab:oldbenefits} Benefits of Retrofitting PUTs in Unit Testing} \vspace*{0.1in}
+\begin {tabular} {|l|r|r|r|r|r|r|r|r|r|r|}
+\hline
+Test Class						&\multicolumn{5}{|c|}{Test Methods}				& \multicolumn{3}{|c|}{\% Coverage}						&Avg. New	&\#Defects\\
+								 			&\multicolumn{5}{|c|}{}										&	\multicolumn{3}{|c|}{}											&Blocks		&\\
+\cline{2-9}
+											&\#Conventional	&\#Amenable		&\%					&\#PUT		&\#New PUT		&Conventional	&PUT		&With			&		&\\
+											&								&							&						&					&							&							&				&New PUT	&		&\\
+\hline
+NUnitProjectSave.cs		&3							&1						&33.33			&1				&2						&35.71				&40.98	&57.91		&10		&0\\
+\hline
+NUnitRegistryTests.cs	&5							&5						&100.00			&4				&							&58.97				&72.80	&100.00		&0		&1\\
+\hline
+TestAgentTests.cs			&2							&2						&100.00			&2				&1						&100.00				&100.00	&NA				&0		&0\\
+\hline
+RegistrySettings-			&								&							&						&					&							&							&				&					&			&	\\
+StorageTests.cs				&6							&5						&83.33			&6				&4						&45.34				&90.60	&100.00		&0		&1\\
+\hline
+MemorySettings-				&								&							&						&					&							&							&				&					&			&	\\
+StorageTests.cs				&6							&4						&66.67			&4				&							&100.00				&100.00	&NA				&2		&0\\
+\hline
+PathUtilTests.cs			&7							&3						&42.86			&6				&							&85.00				&85.00	&NA				&0		&3\\
+\hline
+RecentFilesTests.cs		&22							&21						&95.45			&5				&6						&59.94				&76.08	&84.17		&14		&0\\
+\hline	
+ServerUtilityTests.cs	&2							&2						&100.00			&3				&1						&90.32				&90.32	&95.16		&0		&2\\
+\hline
+SettingsGroupTests.cs	&5							&5						&100.00			&6				&7						&66.94				&90.95	&94.13		&2		&0\\
+\hline
+ProcessRunnerTests.cs	&0							&NA						&NA					&NA				&NA						&NA						&NA				&NA			&NA		&NA\\
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
+%-------------------------------------------------------------------
+
+The benefits discussed here primarily reflect the results of the test generalization phase as we compare the benefits of PUTs over the existing conventional unit tests. Section~\ref{sec:limitations} discusses the amount of effort we took in writing the new PUTs in comparison to generalizing the existing conventional unit tests. We found three major benefits of retrofitting conventional unit tests for PUTs: higher code coverage, detection of new defects, and reduced test code. We observed that generalization
+increases code coverage and detected new defects that were not
+detected by the existing conventional unit tests. 
+We also identified that
+a single PUT often helps to replace multiple conventional unit tests,
+thereby reducing the amount of test code (as shown by Column ``\#Convention'' and Column ``\#PUT'' in Table~\ref{tab:oldbenefits}). Sections~\ref{sec:coverage}, \ref{sec:defects}, and \ref{sec:testcode} explain these details.
+%-------------------------------------------------------------------
+\subsection{Coverage}
+\label{sec:coverage}
+
+As generalized tests often help cover more scenarios, we found that
+test generalization helped to have an effective increase in the block coverage as shown in Table~\ref{tab:oldbenefits}.
+For example, test generalization of the \CodeIn{RegistrySettingsStorage}
+class shows an increase in the coverage of 45.24\%.
+In addition, the tests generated for the PUTs in the test generalization achieved coverage
+of new blocks that are not covered by the existing conventional 
+unit tests. In order to achieve more code coverage, we wrote 21 new PUTs for 6 classes and obtained an average increase of $35$\% code coverage (considering only those classes for which we wrote new PUTs).
+%For example, the generalization of conventional
+%unit tests in the \CodeIn{RecentFilesTests.cs} covered $14$
+%additional blocks (on average for all PUTs). In one scenario of \CodeIn{RecentFilesTest.cs}, there is a decrease in the \% of coverage when the conventional unit tests were transformed to PUTs; however, there is a significant increase in the number of blocks covered by the PUTs. The decrease in the coverage is due to the increase in the number of blocks covered by the PUT when compared to the corresponding conventional unit-test. The difference is primarily due to the
+%Pex strategy of reporting block coverage as Pex cannot detect the total number of blocks correctly
+%when some methods are not analyzed. For example, the numbers of blocks covered by two PUTs in the \CodeIn{RecentFilesTest.cs} were 56 and 58, while the conventional unit tests accounted for 23 and 25, respectively. The ratio of blocks covered to the total number of blocks accounted by PUTs are 41/56 (73.21\%) and 41/58 (70.69\%). Similarly, for conventional unit tests the ratio was 18/23 (78.26\%) and 18/25 (72.00\%). Therefore, despite an increase in the total number of blocks covered, there is a decrease in the \% of code coverage. 
+%Benefits of adding new PUTs was not only an increase in the code coverage, but also we were able to write new PUTs for three conventional unit tests, which were not amenable to test generalization.
+%-------------------------------------------------------------------
+\subsection{Defects}
+\label{sec:defects}
+
+After test generalization we found 7 new defects that were not detected by
+the existing conventional unit tests. We next explain a defect detected 
+by our test generalization. The \CodeIn{NUnitRegistry} 
+class stores the \CodeIn{RegistryKeys} in a tree-structured hierarchy. 
+For building the key hierarchy, a default key is taken as a main 
+key and the given keys are added as sub-keys to the main key or to the other sub-keys. During testing, adding a key hierarchy and on checking for the count or on clearing the keys, we found abnormal behavior for two tests. The PUT was written to take three test inputs. For one of the tests generated by Pex, the test inputs were \CodeIn{t}, \CodeIn{t}, and \CodeIn{t}, and the other test case took the test inputs as \CodeIn{$\backslash$0}, \CodeIn{$\backslash$0}, and \CodeIn{$\backslash$0}. For the first test case, when the three inputs were added to a main key (two as sub-keys and the other as a sub-key to one of the added subkeys), the count check for the keys passed, i.e., \CodeIn{PexAssert(2, mainKey.SubKeyCount)} passed. The same assertion failed for the second case (with test inputs ``$\backslash$0'') with an assertion failure message, ``expected 2, got 1''. This defect shows that the failure was possibly due to missing check on invalid characters. 
+%-------------------------------------------------------------------
+\subsection{Test Code}
+\label{sec:testcode}
+
+Test generalization also helped reduce the 
+test code as shown in Column ``\#PUT'' of Table~\ref{tab:oldbenefits}. Often, test
+generalization either helps reduce the amount of code in a single test method or
+helps combine multiple test methods into a single PUT. Figure~\ref{fig:caseput}
+shows an example PUT of the pattern type \emph{Cases} that combined five conventional unit tests. Each conventional
+unit test verifies one case in the corresponding PUT. In addition, the PUT achieved higher coverage compared
+to the five conventional unit tests as the \CodeIn{MaxValue} is now accepted
+as an argument and the concrete values are generated from the argument
+based on captured constraints.
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+[PexMethod]
+public void CountOverOrAtMaxPUT1(int MaxValue) \{
+\hspace*{0.1in}recentFiles.MaxFiles = MaxValue;
+\hspace*{0.1in}PexAssert
+\hspace*{0.2in}.Case(MaxValue < MIN)
+\hspace*{0.3in}.Implies(() => MIN == recentFiles.MaxFiles)
+\hspace*{0.2in}.Case(MaxValue == MIN)
+\hspace*{0.3in}.Implies(() => MaxValue == recentFiles.MaxFiles)
+\hspace*{0.2in}.Case(MaxValue > MIN && MaxValue < MAX)
+\hspace*{0.3in}.Implies(() => MaxValue == recentFiles.MaxFiles)
+\hspace*{0.2in}.Case(MaxValue == MAX)
+\hspace*{0.3in}.Implies(() => MaxValue == recentFiles.MaxFiles)
+\hspace*{0.2in}.Case(MaxValue > MAX)
+\hspace*{0.3in}.Implies(() => MAX == recentFiles.MaxFiles);            
+\} 
+\end{alltt}
+\end{CodeOut}
+\Caption{\label{fig:caseput} Single PUT constructed from five conventional tests.}
+\end{figure}

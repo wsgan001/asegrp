@@ -1,0 +1,59 @@
+\section{Introduction}
+\label{sec:intro}
+%\vspace*{-2ex}
+Unit testing is a key phase of the software development life cycle that
+helps detect defects at an early stage. It is essential to write high-covering tests during the unit testing phase to ensure high quality of the software under development. Conventional unit tests do not
+accept any parameters and include two major parts: test inputs and test oracles. 
+In general, test inputs include the method calls that modify the 
+object state and concrete argument values of these methods. Test oracles include the verification of method returns, some of which help verify the modified state. Often these conventional unit tests are written manually. However, writing all these conventional unit tests manually to achieve high coverage is
+often a prohibitively expensive task.
+
+Parameterized Unit Tests (PUTs)~\cite{tillmann05:parameterized} are a new advancement in unit testing. PUTs
+accept parameters unlike conventional unit tests, which do not accept
+any parameters. In particular, PUTs represent expected behavior or
+specifications of the code under test with symbolic values. 
+Pex~\cite{tillmann08:pex, pex:rel} is a Microsoft test generation tool that accepts these PUTs
+and generates a set of conventional unit tests that try to
+achieve a high block coverage of the code under test. Pex uses an approach called dynamic symbolic execution~\cite{king:symex, godefroid05:dart, sen07:cute}
+for generating conventional unit tests from PUTs.
+Initially, Pex explores the code under test with random values
+and collects constraints along the path executed in the code under test. 
+Consequently, Pex explores alternate paths in the code under test by systematically flipping the captured constraints and generates concrete values (using a constraint solver) that can cover the alternate paths.
+For each set of concrete values that explores a new path, Pex generates a conventional unit test. Therefore, each PUT is instantiated a number of times to generate a set of conventional unit tests to achieve a high block coverage of the code under test~\cite{tillmann06:unit}. In our empirical study, we use Pex to investigate the benefits of generalized tests (PUTs) in unit testing. The reason for using Pex is its popularity indicated by the recent public releases of Pex which recorded thousands of download counts~\cite{pex:rel}. Pex was previously used internally at Microsoft to test core components
+of the .NET architecture and has found serious
+bugs~\cite{tillmann08:pex}.
+
+Although PUTs are more effective and can often achieve higher block coverage
+compared to conventional unit tests, it is a non-trivial task to write PUTs.
+Writing PUTs requires more effort compared to writing conventional unit tests.
+To address this challenge, we use suggested PUT patterns~\cite{halleux08:putpatterns} and use various supporting techniques to ease the process of writing PUTs. 
+To show the utility of PUTs over conventional unit tests in our empirical study and to ease the process of writing PUTs, we carry out a systematic procedure including two phases (1) \textit{test generalization} and (2) writing additional PUTs. Test generalization\footnote{We refer to unit test generalization as test generalization throughout the paper.} is defined as the process of transforming a conventional unit test into a PUT~\cite{tillmann06:unit}. In the test generalization phase, we take existing conventional unit tests and write PUTs to test the same or generalized behaviors as the ones tested by the conventional unit test. To transform a conventional unit test to a PUT, we first identify elements in the conventional
+unit test (such as arguments or the receiver object  
+of the method under test) and promote these elements as test-method arguments.
+We next transform the assertions provided by the conventional unit test into
+\CodeIn{PexAssert}\footnote{\CodeIn{PexAssert} is a static helper class provided by Pex to evaluate assertions~\cite{PEXDOC}} assertions. We feed such transformed PUTs to Pex and record the coverage information reported by Pex. In the phase of writing new PUTs, we identify the code portions that are not covered by the transformed PUTs and write new PUTs to cover these code portions in the second phase. We define new scenarios\footnote{Unlike the traditional definition of test scenario in system testing, we use the term scenario to refer to a set of conditions required for testing code under test.} and use techniques such as input-space partitioning~\cite{paul:offut} in order to write new PUTs for covering the code portions that are not covered previously. 
+
+There are two major challenges in test generalization with respect to test input values: (1) generating legal input values and (2) generating non-primitive object states. To assist a test generation tool to generate legal input values, a sufficient number of assumptions need to be specified.  For example, a method under test accepting an integer can have a precondition that the argument should be greater than 1000. In our test generalization with PUTs, we add such assumptions (required by the precondition of the method under test) using \CodeIn{PexAssume}\footnote{\CodeIn{PexAssume} is a static helper class provided by Pex to filter inputs~\cite{PEXDOC}} assumptions supported by Pex in a PUT. To address the issue of non-primitive object states, we write factory methods when writing PUTs. For example, if the method under test requires a non-primitive argument, Pex often cannot effectively generate a method-call sequence that can produce desirable object states for the non-primitive argument. These desirable object states are the states that help explore paths in the method under test by covering \CodeIn{true} or \CodeIn{false} branches in the method. To address this issue, we use the factory method feature provided by Pex to assist in generating desirable object states for non-primitive PUT arguments.  We also use suggested test patterns~\cite{halleux08:putpatterns} when writing PUTs.
+
+In our study, we used the NUnit framework~\cite{nunit}, which  is a widely used open source unit-testing framework for C\#, a counterpart of JUnit~\cite{JUnit} for Java. We found that the block coverage achieved by transforming the conventional unit tests to PUTs has increased by $9.68$\% (on average) with a maximum increase of $45.26$\% for one class under test. We also observed a further increase of $7.74$\%  block coverage with the additional new PUTs. Therefore, the total increase in the block coverage achieved by PUTs over conventional unit tests is $17.41$\%. We also found that test generalization helped cover $80$ new blocks and detected 7 new defects.
+
+This paper makes the following contributions:
+\begin{itemize}
+	\item A first-of-a-kind empirical study that investigates the benefits of PUTs over conventional unit tests. In our empirical study, we show that testing with PUTs increased block coverage by $17.41$\% over conventional unit tests and detects $7$ new defects. We also show evidence that test generalization reduces the amount of test code, thereby, helping in better test-code maintenance. The
+detailed results of our empirical study are available at \url{http://ase.csc.ncsu.edu/projects/putstudy/}.
+	\item A systematic procedure of retrofitting conventional unit tests for parameterized unit testing to reduce effort in writing PUTs. Although writing PUTs requires more effort compared to writing conventional unit tests, our systematic procedure helps reduce the additional effort.
+	\item Empirical results that show the benefits of three supporting techniques in writing effective PUTs. 
+	\item Empirical results that show the utility of test patterns in test generalization and writing new PUTs. We also propose two new test patterns that are useful to enable easy writing of the PUTs as observed in our testing of NUnit.
+	\item Observations of two types of conventional unit tests that are not amenable to test generalization.
+\end{itemize}
+
+The rest of the paper is structured as follows. 
+Section~\ref{sec:opensource} describes the characteristics of the NUnit framework. 
+Section~\ref{sec:methods} describes the test methodology followed in our study. 
+Section~\ref{sec:example} presents an example from the NUnit framework and explains the procedure 
+for test generalization.  
+Section~\ref{sec:categorization} presents the categories of test patterns used in writing the PUTs. 
+Section~\ref{sec:helper} describes how the supporting techniques are used in our test generalization. 
+Section~\ref{sec:newbenefits} presents the benefits of test generalization found in our study. 
+Section~\ref{sec:notamenable} describes the categories of conventional unit tests that are not amenable for test generalization.
+Section~\ref{sec:limitations} discusses the limitations of PUTs. Section~\ref{sec:related} discusses the related work. Section~\ref{sec:tov} discusses the threats to validity. Finally, Section~\ref{sec:conclusion} concludes.
