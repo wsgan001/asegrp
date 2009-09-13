@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="colt.jar"/>
+	<classpathentry kind="lib" path="commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="commons-collections-testframework-3.2.jar"/>
+	<classpathentry kind="lib" path="gdata-client-1.0.jar"/>
+	<classpathentry kind="lib" path="gdata-codesearch-1.0.jar"/>
+	<classpathentry kind="lib" path="jung-1.7.6.jar"/>
+	<classpathentry kind="lib" path="junit.jar"/>
+	<classpathentry kind="lib" path="log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="resolver.jar"/>
+	<classpathentry kind="lib" path="serializer.jar"/>
+	<classpathentry kind="lib" path="xercesImpl.jar"/>
+	<classpathentry kind="lib" path="xercesSamples.jar"/>
+	<classpathentry kind="lib" path="xml-apis.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
