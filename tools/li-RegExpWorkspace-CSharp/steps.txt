@@ -1,0 +1,13 @@
+1. collect regular expressions. 
+	(C:\RegExpTesting_workspace\AutomatonToCode\regexp)
+2. synthesize tested methods. one regular expression --> one method --> in one class, with a unique namespace
+	(C:\RegExpTesting_workspace\AutomatonToCode\subjects)
+3. synthesize an automaton (Regex.IsMatch(s, regexp)) for each regular expression, with the same namespace of the corresponding tested method.
+		3.1 automata XML 
+			(C:\RegExpTesting_workspace\AutomatonToCode\automaton.xml)
+		3.2 C\# file, with different file names  
+			(C:\RegExpTesting_workspace\AutomatonToCode\automaton.cs)
+4. Exclude synthesized automata into workspace, Pex generates test data without synthesized automata. Save the generated tests in somewhere else to avoid the tests are covered by new generated tests in step 5.
+5. Include synthesized automata into workspace, Pex generates test data with the synthesized automata.
+6. Run tests generated in Step 4, and collect the coverage statistics.
+7. Run tests generated in Step 5, and collect the coverage statistics.
