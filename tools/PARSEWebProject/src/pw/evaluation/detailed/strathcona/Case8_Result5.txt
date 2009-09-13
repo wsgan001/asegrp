@@ -1,0 +1,324 @@
+org.eclipse.team.internal.ui.target;
+
+import java.util;
+import java.util.List;
+import org.eclipse.jface.action;
+import org.eclipse.jface.viewers;
+import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.SashForm;
+import org.eclipse.swt.events;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets;
+import org.eclipse.team.core.TeamException;
+import org.eclipse.team.internal.core.target;
+import org.eclipse.team.internal.ui;
+import org.eclipse.team.internal.webdav.core.Policy;
+import org.eclipse.ui;
+import org.eclipse.ui.actions.ActionFactory;
+import org.eclipse.ui.dialogs.PropertyDialogAction;
+import org.eclipse.ui.help.WorkbenchHelp;
+import org.eclipse.ui.internal.WorkbenchImages;
+import org.eclipse.ui.model.WorkbenchLabelProvider;
+import org.eclipse.ui.part.ViewPart;
+
+
+
+Action addSiteAction;
+Action newFolderAction;
+PropertyDialogAction propertiesAction;
+SiteRootsElement root;
+String VIEW_ID="org.eclipse.team.ui.target.SiteExplorerView";
+TableViewer folderContentsTable;
+TreeViewer folderTree;
+boolean reversed=false;
+int MODIFIED=2;
+int NAME=0;
+int SIZE=1;
+int columnNumber;
+int[][] SORT_ORDERS_BY_COLUMN={{NAME},{SIZE,NAME},{MODIFIED,NAME,SIZE}};
+
+public void doubleClick(DoubleClickEvent e) {
+				IStructuredSelection selection = (IStructuredSelection)folderContentsTable.getSelection();
+				if(selection.size() == 1) {
+					final RemoteResourceElement[] remoteFolders = getSelectedRemoteFolder(selection);
+					if(remoteFolders.length == 1) {
+						IStructuredSelection treeSelection = (IStructuredSelection)folderTree.getSelection();
+						expandInTreeCurrentSelection(treeSelection, false /*don't toggle*/);
+						folderTree.setSelection(new StructuredSelection(remoteFolders[0]));
+					}
+				}
+			}
+
+
+private void expandInTreeCurrentSelection(IStructuredSelection selection, boolean toggle) {
+		if (!selection.isEmpty()) {
+			Iterator it = selection.iterator();
+			while(it.hasNext()) {
+				Object element = it.next();
+				if(toggle) {
+					folderTree.setExpandedState(element, !folderTree.getExpandedState(element));
+				} else {
+					folderTree.setExpandedState(element, true);
+				}
+			}
+		}
+	}
+
+private void expandInTreeCurrentSelection(IStructuredSelection selection, boolean toggle) {
+		if (!selection.isEmpty()) {
+			Iterator it = selection.iterator();
+			while(it.hasNext()) {
+				Object element = it.next();
+				if(toggle) {
+					folderTree.setExpandedState(element, !folderTree.getExpandedState(element));
+				} else {
+					folderTree.setExpandedState(element, true);
+				}
+			}
+		}
+	}
+
+private RemoteResourceElement[] getSelectedRemoteFolder(IStructuredSelection selection) {		
+		if (!selection.isEmpty()) {
+			final List folders = new ArrayList();
+			Iterator it = selection.iterator();
+			while(it.hasNext()) {
+				Object o = it.next();
+				if(o instanceof RemoteResourceElement) {
+					folders.add(o);
+				}
+			}
+			return (RemoteResourceElement[]) folders.toArray(new RemoteResourceElement[folders.size()]);
+		}
+		return new RemoteResourceElement[0];
+	}
+
+private RemoteResourceElement[] getSelectedRemoteFolder(IStructuredSelection selection) {		
+		if (!selection.isEmpty()) {
+			final List folders = new ArrayList();
+			Iterator it = selection.iterator();
+			while(it.hasNext()) {
+				Object o = it.next();
+				if(o instanceof RemoteResourceElement) {
+					folders.add(o);
+				}
+			}
+			return (RemoteResourceElement[]) folders.toArray(new RemoteResourceElement[folders.size()]);
+		}
+		return new RemoteResourceElement[0];
+	}
+
+
+
+
+
+private void initalizeActions() {
+		final Shell shell = folderContentsTable.getTable().getShell();
+		// Create actions
+		
+		// Refresh (toolbar)
+		addSiteAction = new Action(Policy.bind("SiteExplorerView.addSiteAction"), TeamUIPlugin.getImageDescriptor(ITeamUIImages.IMG_SITE_ELEMENT)) { //$NON-NLS-1$
+			public void run() {
+				ConfigureTargetWizard wizard = new ConfigureTargetWizard();
+				wizard.init(null, null);
+				WizardDialog dialog = new WizardDialog(shell, wizard);
+				dialog.open();
+			}
+		};
+		addSiteAction.setToolTipText(Policy.bind("SiteExplorerView.addSiteActionTooltip")); //$NON-NLS-1$
+		WorkbenchHelp.setHelp(addSiteAction, IHelpContextIds.ADD_SITE_ACTION);
+		
+		newFolderAction = new Action(Policy.bind("SiteExplorerView.newFolderAction"), WorkbenchImages.getImageDescriptor(org.eclipse.ui.ISharedImages.IMG_OBJ_FOLDER)) { //$NON-NLS-1$
+			public void run() {
+				final Shell shell = folderTree.getTree().getShell();
+				try {
+					// assume that only one folder is selected in the folder tree, this
+					// is enforced by isEnable() method for this action
+					IStructuredSelection selection = (IStructuredSelection)folderTree.getSelection();
+					Object currentSelection = selection.getFirstElement();
+					
+					RemoteResourceElement selectedFolder;
+					if(!selection.isEmpty()) {
+						selectedFolder = getSelectedRemoteFolder(selection)[0];
+					} else {
+						selectedFolder = (RemoteResourceElement)folderContentsTable.getInput();
+					}
+										
+					IRemoteTargetResource newFolder = CreateNewFolderAction.createDir(shell, selectedFolder.getRemoteResource(), Policy.bind("CreateNewFolderAction.newFolderName")); //$NON-NLS-1$
+					if (newFolder == null)
+						return;
+					// force a refresh
+					selectedFolder.setCachedChildren(null);
+					
+					// select the newly added folder
+					RemoteResourceElement newFolderUIElement = new RemoteResourceElement(newFolder);
+					folderTree.refresh(currentSelection);
+					expandInTreeCurrentSelection(new StructuredSelection(currentSelection), false);
+					folderTree.setSelection(new StructuredSelection(newFolderUIElement));
+				} catch (TeamException e) {
+					Utils.handle(e);
+					return;
+				}
+			}
+			public boolean isEnabled() {
+				return folderContentsTable.getInput() != null ||
+		 				getSelectedRemoteFolder((IStructuredSelection)folderTree.getSelection()).length == 1;
+			}				
+		};
+		WorkbenchHelp.setHelp(newFolderAction, IHelpContextIds.NEW_FOLDER_ACTION);
+		IActionBars bars = getViewSite().getActionBars();
+		IToolBarManager tbm = bars.getToolBarManager();
+		tbm.add(addSiteAction);
+		tbm.update(false);
+		
+		// Properties
+		propertiesAction = new PropertyDialogAction(shell, folderTree);
+		getViewSite().getActionBars().setGlobalActionHandler(ActionFactory.PROPERTIES.getId(), propertiesAction);		
+		IStructuredSelection selection = (IStructuredSelection)folderTree.getSelection();
+		if (selection.size() == 1 && selection.getFirstElement() instanceof SiteElement) {
+			propertiesAction.setEnabled(true);
+		} else {
+			propertiesAction.setEnabled(false);
+		}
+		folderTree.addSelectionChangedListener(new ISelectionChangedListener() {
+			public void selectionChanged(SelectionChangedEvent event) {
+				IStructuredSelection ss = (IStructuredSelection)event.getSelection();
+				boolean enabled = ss.size() == 1 && ss.getFirstElement() instanceof SiteElement;
+				propertiesAction.setEnabled(enabled);
+			}
+		});
+		
+		MenuManager treeMgr = new MenuManager();
+		MenuManager tableMgr = new MenuManager();
+		Tree tree = folderTree.getTree();
+		Table table = folderContentsTable.getTable();
+		Menu treeMenu = treeMgr.createContextMenu(tree);
+		Menu tableMenu = tableMgr.createContextMenu(table);
+		IMenuListener menuListener = new IMenuListener() {
+			public void menuAboutToShow(IMenuManager manager) {
+				// Misc additions
+				MenuManager sub = new MenuManager(Policy.bind("SiteExplorerView.newMenu"), IWorkbenchActionConstants.GROUP_ADD); //$NON-NLS-1$
+				sub.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
+				manager.add(sub);
+				manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
+				sub.add(addSiteAction);
+				sub.add(newFolderAction);
+				manager.add(propertiesAction);
+			}
+		};
+		treeMgr.addMenuListener(menuListener);
+		treeMgr.setRemoveAllWhenShown(true);
+		tableMgr.addMenuListener(menuListener);
+		tableMgr.setRemoveAllWhenShown(true);
+		tree.setMenu(treeMenu);
+		table.setMenu(tableMenu);
+		getSite().registerContextMenu(tableMgr, folderContentsTable);
+		getSite().registerContextMenu(treeMgr, folderTree);
+	}
+
+private void initalizeActions() {
+		final Shell shell = folderContentsTable.getTable().getShell();
+		// Create actions
+		
+		// Refresh (toolbar)
+		addSiteAction = new Action(Policy.bind("SiteExplorerView.addSiteAction"), TeamUIPlugin.getImageDescriptor(ITeamUIImages.IMG_SITE_ELEMENT)) { //$NON-NLS-1$
+			public void run() {
+				ConfigureTargetWizard wizard = new ConfigureTargetWizard();
+				wizard.init(null, null);
+				WizardDialog dialog = new WizardDialog(shell, wizard);
+				dialog.open();
+			}
+		};
+		addSiteAction.setToolTipText(Policy.bind("SiteExplorerView.addSiteActionTooltip")); //$NON-NLS-1$
+		WorkbenchHelp.setHelp(addSiteAction, IHelpContextIds.ADD_SITE_ACTION);
+		
+		newFolderAction = new Action(Policy.bind("SiteExplorerView.newFolderAction"), WorkbenchImages.getImageDescriptor(org.eclipse.ui.ISharedImages.IMG_OBJ_FOLDER)) { //$NON-NLS-1$
+			public void run() {
+				final Shell shell = folderTree.getTree().getShell();
+				try {
+					// assume that only one folder is selected in the folder tree, this
+					// is enforced by isEnable() method for this action
+					IStructuredSelection selection = (IStructuredSelection)folderTree.getSelection();
+					Object currentSelection = selection.getFirstElement();
+					
+					RemoteResourceElement selectedFolder;
+					if(!selection.isEmpty()) {
+						selectedFolder = getSelectedRemoteFolder(selection)[0];
+					} else {
+						selectedFolder = (RemoteResourceElement)folderContentsTable.getInput();
+					}
+										
+					IRemoteTargetResource newFolder = CreateNewFolderAction.createDir(shell, selectedFolder.getRemoteResource(), Policy.bind("CreateNewFolderAction.newFolderName")); //$NON-NLS-1$
+					if (newFolder == null)
+						return;
+					// force a refresh
+					selectedFolder.setCachedChildren(null);
+					
+					// select the newly added folder
+					RemoteResourceElement newFolderUIElement = new RemoteResourceElement(newFolder);
+					folderTree.refresh(currentSelection);
+					expandInTreeCurrentSelection(new StructuredSelection(currentSelection), false);
+					folderTree.setSelection(new StructuredSelection(newFolderUIElement));
+				} catch (TeamException e) {
+					Utils.handle(e);
+					return;
+				}
+			}
+			public boolean isEnabled() {
+				return folderContentsTable.getInput() != null ||
+		 				getSelectedRemoteFolder((IStructuredSelection)folderTree.getSelection()).length == 1;
+			}				
+		};
+		WorkbenchHelp.setHelp(newFolderAction, IHelpContextIds.NEW_FOLDER_ACTION);
+		IActionBars bars = getViewSite().getActionBars();
+		IToolBarManager tbm = bars.getToolBarManager();
+		tbm.add(addSiteAction);
+		tbm.update(false);
+		
+		// Properties
+		propertiesAction = new PropertyDialogAction(shell, folderTree);
+		getViewSite().getActionBars().setGlobalActionHandler(ActionFactory.PROPERTIES.getId(), propertiesAction);		
+		IStructuredSelection selection = (IStructuredSelection)folderTree.getSelection();
+		if (selection.size() == 1 && selection.getFirstElement() instanceof SiteElement) {
+			propertiesAction.setEnabled(true);
+		} else {
+			propertiesAction.setEnabled(false);
+		}
+		folderTree.addSelectionChangedListener(new ISelectionChangedListener() {
+			public void selectionChanged(SelectionChangedEvent event) {
+				IStructuredSelection ss = (IStructuredSelection)event.getSelection();
+				boolean enabled = ss.size() == 1 && ss.getFirstElement() instanceof SiteElement;
+				propertiesAction.setEnabled(enabled);
+			}
+		});
+		
+		MenuManager treeMgr = new MenuManager();
+		MenuManager tableMgr = new MenuManager();
+		Tree tree = folderTree.getTree();
+		Table table = folderContentsTable.getTable();
+		Menu treeMenu = treeMgr.createContextMenu(tree);
+		Menu tableMenu = tableMgr.createContextMenu(table);
+		IMenuListener menuListener = new IMenuListener() {
+			public void menuAboutToShow(IMenuManager manager) {
+				// Misc additions
+				MenuManager sub = new MenuManager(Policy.bind("SiteExplorerView.newMenu"), IWorkbenchActionConstants.GROUP_ADD); //$NON-NLS-1$
+				sub.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
+				manager.add(sub);
+				manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
+				sub.add(addSiteAction);
+				sub.add(newFolderAction);
+				manager.add(propertiesAction);
+			}
+		};
+		treeMgr.addMenuListener(menuListener);
+		treeMgr.setRemoveAllWhenShown(true);
+		tableMgr.addMenuListener(menuListener);
+		tableMgr.setRemoveAllWhenShown(true);
+		tree.setMenu(treeMenu);
+		table.setMenu(tableMenu);
+		getSite().registerContextMenu(tableMgr, folderContentsTable);
+		getSite().registerContextMenu(treeMgr, folderTree);
+	}
+}

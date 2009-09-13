@@ -1,0 +1,96 @@
+org.eclipse.team.internal.ui.target;
+
+import java.util;
+import java.util.List;
+import org.eclipse.jface.action;
+import org.eclipse.jface.viewers;
+import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.SashForm;
+import org.eclipse.swt.events;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets;
+import org.eclipse.team.core.TeamException;
+import org.eclipse.team.internal.core.target;
+import org.eclipse.team.internal.ui;
+import org.eclipse.team.internal.webdav.core.Policy;
+import org.eclipse.ui;
+import org.eclipse.ui.actions.ActionFactory;
+import org.eclipse.ui.dialogs.PropertyDialogAction;
+import org.eclipse.ui.help.WorkbenchHelp;
+import org.eclipse.ui.internal.WorkbenchImages;
+import org.eclipse.ui.model.WorkbenchLabelProvider;
+import org.eclipse.ui.part.ViewPart;
+
+
+
+Action addSiteAction;
+Action newFolderAction;
+PropertyDialogAction propertiesAction;
+SiteRootsElement root;
+String VIEW_ID="org.eclipse.team.ui.target.SiteExplorerView";
+TableViewer folderContentsTable;
+TreeViewer folderTree;
+boolean reversed=false;
+int MODIFIED=2;
+int NAME=0;
+int SIZE=1;
+int columnNumber;
+int[][] SORT_ORDERS_BY_COLUMN={{NAME},{SIZE,NAME},{MODIFIED,NAME,SIZE}};
+
+public void selectionChanged(SelectionChangedEvent event) {
+				IStructuredSelection ss = (IStructuredSelection)event.getSelection();
+				boolean enabled = ss.size() == 1 && ss.getFirstElement() instanceof SiteElement;
+				propertiesAction.setEnabled(enabled);
+			}
+
+
+private RemoteResourceElement[] getSelectedRemoteFolder(IStructuredSelection selection) {		
+		if (!selection.isEmpty()) {
+			final List folders = new ArrayList();
+			Iterator it = selection.iterator();
+			while(it.hasNext()) {
+				Object o = it.next();
+				if(o instanceof RemoteResourceElement) {
+					folders.add(o);
+				}
+			}
+			return (RemoteResourceElement[]) folders.toArray(new RemoteResourceElement[folders.size()]);
+		}
+		return new RemoteResourceElement[0];
+	}
+
+private RemoteResourceElement[] getSelectedRemoteFolder(IStructuredSelection selection) {		
+		if (!selection.isEmpty()) {
+			final List folders = new ArrayList();
+			Iterator it = selection.iterator();
+			while(it.hasNext()) {
+				Object o = it.next();
+				if(o instanceof RemoteResourceElement) {
+					folders.add(o);
+				}
+			}
+			return (RemoteResourceElement[]) folders.toArray(new RemoteResourceElement[folders.size()]);
+		}
+		return new RemoteResourceElement[0];
+	}
+
+/**
+	 * Method updateFileTable.
+	 */
+	private void updateFileTable(RemoteResourceElement remoteFolder) {
+		if(remoteFolder != null && !remoteFolder.equals(folderContentsTable.getInput())) {
+			folderContentsTable.setInput(remoteFolder);
+		}
+	}
+
+/**
+	 * Method updateFileTable.
+	 */
+	private void updateFileTable(RemoteResourceElement remoteFolder) {
+		if(remoteFolder != null && !remoteFolder.equals(folderContentsTable.getInput())) {
+			folderContentsTable.setInput(remoteFolder);
+		}
+	}
+}

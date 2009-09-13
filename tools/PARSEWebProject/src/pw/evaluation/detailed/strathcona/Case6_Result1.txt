@@ -1,0 +1,303 @@
+package pw.evaluation.detailed.strathcona;
+
+import java.io.IOException;
+import java.io.StringReader;
+import java.io.StringWriter;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IMarkerDelta;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.IResourceDelta;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.resources.mapping.ResourceMapping;
+import org.eclipse.core.resources.mapping.ResourceMappingContext;
+import org.eclipse.core.resources.mapping.ResourceTraversal;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.IJobChangeListener;
+import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.help.HelpSystem;
+import org.eclipse.help.IContext;
+import org.eclipse.help.IContextProvider;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.action.Separator;
+import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.OpenEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.window.Window;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.dnd.Clipboard;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.DragSourceAdapter;
+import org.eclipse.swt.dnd.DragSourceEvent;
+import org.eclipse.swt.dnd.DragSourceListener;
+import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.events.HelpEvent;
+import org.eclipse.swt.events.HelpListener;
+import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.ui.IActionBars;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IMemento;
+import org.eclipse.ui.ISelectionListener;
+import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.IWorkbenchActionConstants;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.WorkbenchException;
+import org.eclipse.ui.XMLMemento;
+import org.eclipse.ui.actions.ActionFactory;
+import org.eclipse.ui.actions.ContributionItemFactory;
+import org.eclipse.ui.actions.SelectionProviderAction;
+import org.eclipse.ui.ide.IDE;
+import org.eclipse.ui.ide.ResourceUtil;
+import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
+import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
+import org.eclipse.ui.part.IShowInSource;
+import org.eclipse.ui.part.MarkerTransfer;
+import org.eclipse.ui.part.ShowInContext;
+import org.eclipse.ui.preferences.ViewPreferencesAction;
+import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
+import org.eclipse.ui.progress.WorkbenchJob;
+import org.eclipse.ui.views.tasklist.ITaskListResourceAdapter;
+
+/**
+ * MarkerView is the abstract super class of the marker based views.
+ * 
+ */
+public abstract class Case6_Result1 extends TableView {
+
+ActionCopyMarker copyAction;
+ActionPasteMarker pasteAction;
+Clipboard clipboard;
+Collection pendingMarkerUpdates=Collections.synchronizedSet(new HashSet());
+ContextProvider contextProvider=new ContextProvider();
+IResourceChangeListener resourceListener=new IResourceChangeListener(){
+  public void resourceChanged(  IResourceChangeEvent event){
+    String[] markerTypes=getMarkerTypes();
+    Collection changedMarkers=new ArrayList();
+    Collection addedMarkers=new ArrayList();
+    Collection removedMarkers=new ArrayList();
+    for (int idx=0; idx < markerTypes.length; idx++) {
+      IMarkerDelta[] markerDeltas=event.findMarkerDeltas(markerTypes[idx],true);
+      for (int i=0; i < markerDeltas.length; i++) {
+        IMarkerDelta delta=markerDeltas[i];
+        int kind=delta.getKind();
+        if (kind == IResourceDelta.CHANGED) {
+          changedMarkers.add(delta.getMarker());
+        }
+        if (kind == IResourceDelta.ADDED) {
+          addedMarkers.add(delta.getMarker());
+        }
+        if (kind == IResourceDelta.REMOVED) {
+          removedMarkers.add(delta.getMarker());
+        }
+      }
+    }
+    if (!changedMarkers.isEmpty()) {
+      MarkerList changed=getCurrentMarkers().findMarkers(changedMarkers);
+      if (changed.getItemCount() > 0) {
+        changed.refresh();
+        updateJob.refresh(changed);
+        getProgressService().schedule(updateJob);
+      }
+    }
+    if (addRefreshRequired(addedMarkers) || removeRefreshRequired(removedMarkers)) {
+      updateJob.refreshAll();
+      getProgressService().schedule(updateJob);
+    }
+  }
+  /** 
+ * Return whether or not any of the removedMarkers are being 
+ * shown.
+ * @param removedMarkers
+ * @return <code>boolean</code>
+ */
+  private boolean removeRefreshRequired(  Collection removedMarkers){
+    if (removedMarkers.isEmpty())     return false;
+    MarkerList currentList=getCurrentMarkers();
+    Iterator removes=removedMarkers.iterator();
+    while (removes.hasNext()) {
+      if (currentList.getMarker((IMarker)removes.next()) != null)       return true;
+    }
+    return false;
+  }
+  /** 
+ * Preprocess to see if an update is required.
+ * @param addedMarkers
+ * @return boolean
+ */
+  private boolean addRefreshRequired(  Collection addedMarkers){
+    if (addedMarkers.isEmpty())     return false;
+    MarkerFilter[] filters=getEnabledFilters();
+    for (int i=0; i < filters.length; i++) {
+      Iterator added=addedMarkers.iterator();
+      while (added.hasNext()) {
+        try {
+          if (filters[i].select(MarkerList.createMarker((IMarker)added.next())))           return true;
+        }
+ catch (        CoreException e) {
+          IDEWorkbenchPlugin.getDefault().getLog().log(e.getStatus());
+        }
+      }
+    }
+    return false;
+  }
+}
+;
+ISelectionListener focusListener=new ISelectionListener(){
+  public void selectionChanged(  IWorkbenchPart part,  ISelection selection){
+    MarkerView.this.focusSelectionChanged(part,selection);
+  }
+}
+;
+MarkerFilter[] enabledFilters=null;
+MarkerFilter[] markerFilters=new MarkerFilter[0];
+MenuManager filtersMenu;
+MenuManager showInMenu;
+Object[] focusElements;
+SelectionProviderAction deleteAction;
+SelectionProviderAction openAction;
+SelectionProviderAction propertiesAction;
+SelectionProviderAction revealAction;
+SelectionProviderAction selectAllAction;
+String MENU_FILTERS_GROUP="group.filter";
+String MENU_SHOW_IN_GROUP="group.showIn";
+String OLD_FILTER_SECTION="filter";
+String TAG_FILTERS_SECTION="filters";
+String TAG_FILTER_ENTRY="filter";
+String TAG_ID="id";
+String TAG_MARKER="marker";
+String TAG_RESOURCE="resource";
+String TAG_SELECTION="selection";
+UpdateJob updateJob=new UpdateJob();
+WorkbenchJob countUpdateJob;
+boolean refreshAll=false;
+int preBusyMarkers=0;
+int totalMarkers=0;
+
+/**
+	 * @param part
+	 * @param selection
+	 */
+	protected void focusSelectionChanged(IWorkbenchPart part,
+			ISelection selection) {
+		List selectedElements = new ArrayList();
+		if (part instanceof IEditorPart) {
+			IEditorPart editor = (IEditorPart) part;
+			IFile file = ResourceUtil.getFile(editor.getEditorInput());
+			if (file == null) {
+				IEditorInput editorInput = editor.getEditorInput();
+				if (editorInput != null) {
+					Object mapping = editorInput
+							.getAdapter(ResourceMapping.class);
+					if (mapping != null)
+						selectedElements.add(mapping);
+				}
+			} else {
+				selectedElements.add(file);
+			}
+		} else {
+			if (selection instanceof IStructuredSelection) {
+				for (Iterator iterator = ((IStructuredSelection) selection)
+						.iterator(); iterator.hasNext();) {
+					Object object = iterator.next();
+					if (object instanceof IAdaptable) {
+						ITaskListResourceAdapter taskListResourceAdapter;
+						Object adapter = ((IAdaptable) object)
+								.getAdapter(ITaskListResourceAdapter.class);
+						if (adapter != null
+								&& adapter instanceof ITaskListResourceAdapter) {
+							taskListResourceAdapter = (ITaskListResourceAdapter) adapter;
+						} else {
+							taskListResourceAdapter = DefaultMarkerResourceAdapter
+									.getDefault();
+						}
+						IResource resource = taskListResourceAdapter
+								.getAffectedResource((IAdaptable) object);
+						if (resource == null) {
+							Object mapping = ((IAdaptable) object)
+									.getAdapter(ResourceMapping.class);
+							if (mapping != null)
+								selectedElements.add(mapping);
+						} else
+							selectedElements.add(resource);
+					}
+				}
+			}
+		}
+		updateFocusMarkers(selectedElements.toArray());
+	}
+
+
+/**
+	 * Remove a listener for the end of the update.
+	 * @param listener
+	 */
+	public void removeUpdateFinishListener(IJobChangeListener listener) {
+		updateJob.removeJobChangeListener(listener);
+	}
+
+/**
+	 * Remove a listener for the end of the update.
+	 * @param listener
+	 */
+	public void removeUpdateFinishListener(IJobChangeListener listener) {
+		updateJob.removeJobChangeListener(listener);
+	}
+
+/**
+	 * Update the focus markers for the supplied elements.
+	 * 
+	 * @param elements
+	 */
+	void updateFocusMarkers(Object[] elements) {
+		boolean updateNeeded = updateNeeded(focusElements, elements);
+		if (updateNeeded) {
+			focusElements = elements;
+			updateFilterSelection(elements);
+			getViewer().refresh();
+		}
+	}
+
+/**
+	 * Update the focus markers for the supplied elements.
+	 * 
+	 * @param elements
+	 */
+	void updateFocusMarkers(Object[] elements) {
+		boolean updateNeeded = updateNeeded(focusElements, elements);
+		if (updateNeeded) {
+			focusElements = elements;
+			updateFilterSelection(elements);
+			getViewer().refresh();
+		}
+	}
+}

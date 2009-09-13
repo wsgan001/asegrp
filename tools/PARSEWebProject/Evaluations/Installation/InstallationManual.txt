@@ -1,0 +1,72 @@
+
+Installation and User Manual of PARSEWeb tool:
+=============================================
+
+Required Softwares:
+===================
+
+1. Perl (With modifications described below).
+
+   Recommended version: Perl, v5.8.8 built for MSWin32-x86-multi-thread	
+   Perl installation can be downloaded for free from: http://aspn.activestate.com/ASPN/Downloads/ActivePerl/
+
+
+   Modifications to be made:
+   -------------------------
+   1. An addtional package is needed for your perl installation. Copy the file "TableExtract.pm" to "<PERL_HOME>\lib\HTML".
+   
+   Testing Perl Installation:
+   --------------------------
+   1. Copy the file "HTMLExtract.pl" supplied with the installation to any location.
+   2. Run the command below:
+
+	"perl HTMLExtract.pl"
+
+	It should give following output:
+		
+		at HTMLExtract.pl line 13.
+		Usage : perl HTMLExtract.pl <inputdir>
+	
+	Instead, If there is any output like the one shown below, your installation needs to be verified:
+
+		Can't locate HTML/TableExtract.pm in @INC (@INC contains: C:/Perl/site/lib C:/Perl/lib .) at HTMLExtract.pl line 2.
+		BEGIN failed--compilation aborted at HTMLExtract.pl line 2.
+
+2. Eclipse version: 3.2
+
+3. The client machine has to be connected to Internet.
+
+4. Create a folder, say "C:\\PARSEWeb", and define a system variable "PARSEWeb_Path" that stores the value of the folder (Say "C:\\PARSEWeb" created for PARSEWeb). Copy the perl file "HTMLExtract.pl" and "PARSEWeb.properties" in to that location. PARSEWeb also uses this folder for storing temporary files downloaded from web. 
+
+5. The properties described in "PARSEWeb.properties" can be customized according to requirements.
+
+6. Copy the Jar file "PARSEWebProject_1.0.0.jar" to the plug-in directory of the eclipse.
+
+7. How to run?
+
+	A menu item "PARSEWeb -> invoke PARSEWeb" is available. Selection of this option opens a dialog, where input query can be given. The queries can be of form "Source->Destination".
+
+	For easing the effort, any selected text in the editor is automatically copied to this dialog. So you can write your query editor and select it and start PARSEWeb. Results are shown in a table.
+
+	The following sample queries can be given as input to PARSEWeb:
+	1. "Source->Destination". Example: "javax.jms.QueueConnectionFactory->javax.jms.QueueSender".
+	2. Other sample queries:
+		a.  org.apache.bcel.classfile.Code->org.apache.bcel.generic.Instruction
+		b.  org.eclipse.ui.editors.text.TextEditor -> org.eclipse.jface.text.ITextSelection
+		c.  org.eclipse.ui.texteditor.TextEditorAction -> org.eclipse.ui.texteditor.ITextEditor
+		d.  org.eclipse.jdt.core.ElementChangedEvent->org.eclipse.jdt.core.ICompilationUnit
+		e.  org.eclipse.swt.widgets.Composite-> org.eclipse.swt.widgets.Canvas
+
+	
+8. Interpreting the results in the table:
+
+        Below is the description of columns:
+	
+	a: Gives the method sequence along with filename and method name.
+	b: Rank: Gives the calculated rank of the method sequence.
+	c: Frequency: Number of times the sequence is detected.
+	d: Length: Length of the sequence.
+	f: Confidence: 'High' indicates that PARSEWeb is able to detect an exact sequence. 'Low' indicates that PARSEWeb couldn't find exact solution but a probable solution is suggested.
+	e: Undefined: This is a temporary column, gives the number of undefined datatypes in the sequence. (Used internally for ranking).
+	
+	The source file containing the sequence can be opened by double clicking on the entry in the table. Currently, the source file containing the code sample is opened in a text editor. The future versions will contain opening in Java editor with an automatic highlighting of sample code.

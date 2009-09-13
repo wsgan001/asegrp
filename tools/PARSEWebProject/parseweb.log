@@ -1,0 +1,33 @@
+2007-04-27 19:32:53,578  INFO (PARSEWeb.java:46) - Downloading related source code files from web...
+2007-04-27 19:32:53,734  INFO (PARSEWeb.java:75) - 
+Transforming downloaded files...
+2007-04-27 19:32:53,828  INFO (PARSEWeb.java:101) - Analyzing files for generating patterns...
+2007-04-27 19:32:54,187  INFO (GCodeAnalyzer.java:96) - Analyzing 0_SoundPlayer.java
+2007-04-27 19:32:55,531  INFO (GCodeAnalyzer.java:96) - Analyzing 10_AntSoundPlayer.java
+2007-04-27 19:32:55,656  INFO (GCodeAnalyzer.java:96) - Analyzing 11_ClipPlayer.java
+2007-04-27 19:32:55,734  INFO (GCodeAnalyzer.java:96) - Analyzing 12_SoundPlayerImpl.java
+2007-04-27 19:32:55,796  INFO (GCodeAnalyzer.java:96) - Analyzing 13_Vision.java
+2007-04-27 19:32:55,937  INFO (GCodeAnalyzer.java:96) - Analyzing 14_ApplicationConstants.java
+2007-04-27 19:32:55,953  INFO (GCodeAnalyzer.java:96) - Analyzing 15_ReminderSettingsTab.java
+2007-04-27 19:32:56,015  INFO (GCodeAnalyzer.java:96) - Analyzing 16_Sounder.java
+2007-04-27 19:32:56,062  INFO (GCodeAnalyzer.java:96) - Analyzing 17_Page.java
+2007-04-27 19:32:56,921  INFO (GCodeAnalyzer.java:96) - Analyzing 18_SoundFile.java
+2007-04-27 19:32:56,953  INFO (GCodeAnalyzer.java:96) - Analyzing 19_JavaSoundAudioPlayer.java
+2007-04-27 19:32:56,968  INFO (GCodeAnalyzer.java:96) - Analyzing 1_AntSoundPlayer.java
+2007-04-27 19:32:56,984  INFO (GCodeAnalyzer.java:96) - Analyzing 20_ClipPlayer.java
+2007-04-27 19:32:57,000  INFO (GCodeAnalyzer.java:96) - Analyzing 21_AudioTool.java
+2007-04-27 19:32:57,093  INFO (GCodeAnalyzer.java:96) - Analyzing 22_DraggableSoundImageLabel.java
+2007-04-27 19:32:57,109  INFO (GCodeAnalyzer.java:96) - Analyzing 23_SoundSystem.java
+2007-04-27 19:32:57,265  INFO (GCodeAnalyzer.java:96) - Analyzing 2_Utils.java
+2007-04-27 19:32:57,281  INFO (GCodeAnalyzer.java:96) - Analyzing 3_FFMPEG.java
+2007-04-27 19:32:57,296  INFO (GCodeAnalyzer.java:96) - Analyzing 4_JDSound.java
+2007-04-27 19:32:57,312  INFO (GCodeAnalyzer.java:96) - Analyzing 5_AntSoundPlayer.java
+2007-04-27 19:32:57,328  INFO (GCodeAnalyzer.java:96) - Analyzing 6_MediaFactory.java
+2007-04-27 19:32:57,375  INFO (GCodeAnalyzer.java:96) - Analyzing 7_SoundHandler.java
+2007-04-27 19:32:57,390  INFO (GCodeAnalyzer.java:96) - Analyzing 8_Audio.java
+2007-04-27 19:32:57,406  INFO (GCodeAnalyzer.java:96) - Analyzing 9_NyxerTray.java
+2007-04-27 19:32:57,453  INFO (PARSEWeb.java:122) - Program terminated successfully
+2007-04-27 19:32:57,453  INFO (PARSEWeb.java:124) - Time for Code Downloader 0 ms
+2007-04-27 19:32:57,453  INFO (PARSEWeb.java:125) - Time for Post Processor 94 ms
+2007-04-27 19:32:57,453  INFO (PARSEWeb.java:126) - Time for Code Analyzer 3610 ms
+2007-04-27 19:32:57,453  INFO (PARSEWeb.java:127) - Total time taken 3704 ms

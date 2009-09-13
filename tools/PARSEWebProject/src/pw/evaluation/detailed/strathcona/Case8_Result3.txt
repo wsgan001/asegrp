@@ -1,0 +1,1136 @@
+org.eclipse.ui.views.navigator;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.jface.action.IMenuListener;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.util.IPropertyChangeListener;
+import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.jface.viewers.DecoratingLabelProvider;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.viewers.ILabelDecorator;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.IOpenListener;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.OpenEvent;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.FileTransfer;
+import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.KeyListener;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IMemento;
+import org.eclipse.ui.IPartListener;
+import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchPreferenceConstants;
+import org.eclipse.ui.IWorkingSet;
+import org.eclipse.ui.IWorkingSetManager;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.ResourceWorkingSetFilter;
+import org.eclipse.ui.actions.ActionContext;
+import org.eclipse.ui.ide.ResourceUtil;
+import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
+import org.eclipse.ui.internal.views.navigator.ResourceNavigatorMessages;
+import org.eclipse.ui.model.WorkbenchContentProvider;
+import org.eclipse.ui.model.WorkbenchLabelProvider;
+import org.eclipse.ui.part.ISetSelectionTarget;
+import org.eclipse.ui.part.IShowInSource;
+import org.eclipse.ui.part.IShowInTarget;
+import org.eclipse.ui.part.PluginTransfer;
+import org.eclipse.ui.part.ResourceTransfer;
+import org.eclipse.ui.part.ShowInContext;
+import org.eclipse.ui.part.ViewPart;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.ui.views.framelist.FrameList;
+import org.eclipse.ui.views.framelist.TreeFrame;
+
+/**
+ * Implements the Resource Navigator view.
+ */
+public class ResourceNavigator extends ViewPart implements ISetSelectionTarget,
+        IResourceNavigator {
+
+FrameList frameList;
+IDialogSettings settings;
+IMemento memento;
+IPartListener partListener=new IPartListener(){
+  public void partActivated(  IWorkbenchPart part){
+    if (part instanceof IEditorPart)     editorActivated((IEditorPart)part);
+  }
+  public void partBroughtToTop(  IWorkbenchPart part){
+  }
+  public void partClosed(  IWorkbenchPart part){
+  }
+  public void partDeactivated(  IWorkbenchPart part){
+  }
+  public void partOpened(  IWorkbenchPart part){
+  }
+}
+;
+IPropertyChangeListener propertyChangeListener=new IPropertyChangeListener(){
+  public void propertyChange(  PropertyChangeEvent event){
+    String property=event.getProperty();
+    Object newValue=event.getNewValue();
+    Object oldValue=event.getOldValue();
+    IWorkingSet filterWorkingSet=workingSetFilter.getWorkingSet();
+    if (IWorkingSetManager.CHANGE_WORKING_SET_REMOVE.equals(property) && oldValue == filterWorkingSet) {
+      setWorkingSet(null);
+    }
+ else     if (IWorkingSetManager.CHANGE_WORKING_SET_NAME_CHANGE.equals(property) && newValue == filterWorkingSet) {
+      updateTitle();
+    }
+ else     if (IWorkingSetManager.CHANGE_WORKING_SET_CONTENT_CHANGE.equals(property) && newValue == filterWorkingSet) {
+      getViewer().refresh();
+    }
+  }
+}
+;
+Listener dragDetectListener;
+ResourceNavigatorActionGroup actionGroup;
+ResourcePatternFilter patternFilter=new ResourcePatternFilter();
+ResourceWorkingSetFilter workingSetFilter=new ResourceWorkingSetFilter();
+String NAVIGATOR_VIEW_HELP_ID=INavigatorHelpContextIds.RESOURCE_VIEW;
+String STORE_SECTION="ResourceNavigator";
+String STORE_SORT_TYPE="ResourceViewer.STORE_SORT_TYPE";
+String STORE_WORKING_SET="ResourceWorkingSetFilter.STORE_WORKING_SET";
+String TAG_CURRENT_FRAME="currentFrame";
+String TAG_ELEMENT="element";
+String TAG_EXPANDED="expanded";
+String TAG_FILTER="filter";
+String TAG_FILTERS="filters";
+String TAG_IS_ENABLED="isEnabled";
+String TAG_PATH="path";
+String TAG_SELECTION="selection";
+String TAG_SORTER="sorter";
+TreeViewer viewer;
+boolean dragDetected;
+boolean linkScheduled=false;
+boolean linkingEnabled;
+
+/**	
+     * @see ViewPart#saveState
+     */
+    public void saveState(IMemento memento) {
+        TreeViewer viewer = getTreeViewer();
+        if (viewer == null) {
+            if (this.memento != null) //Keep the old state;
+                memento.putMemento(this.memento);
+            return;
+        }
+        //save sorter
+        memento.putInteger(TAG_SORTER, getSorter().getCriteria());
+        //save filters
+        String filters[] = getPatternFilter().getPatterns();
+        List selectedFilters = Arrays.asList(filters);
+        List allFilters = FiltersContentProvider.getDefinedFilters();
+        IMemento filtersMem = memento.createChild(TAG_FILTERS);
+        for (Iterator iter = allFilters.iterator(); iter.hasNext();) {
+            String element = (String) iter.next();
+            IMemento child = filtersMem.createChild(TAG_FILTER);
+            child.putString(TAG_ELEMENT, element);
+            child.putString(TAG_IS_ENABLED, String.valueOf(selectedFilters
+                    .contains(element)));
+        }
+        if (frameList.getCurrentIndex() > 0) {
+            //save frame, it's not the "home"/workspace frame
+            TreeFrame currentFrame = (TreeFrame) frameList.getCurrentFrame();
+            IMemento frameMemento = memento.createChild(TAG_CURRENT_FRAME);
+            currentFrame.saveState(frameMemento);
+        } else {
+            //save visible expanded elements
+            Object expandedElements[] = viewer.getVisibleExpandedElements();
+            if (expandedElements.length > 0) {
+                IMemento expandedMem = memento.createChild(TAG_EXPANDED);
+                for (int i = 0; i < expandedElements.length; i++) {
+                    if (expandedElements[i] instanceof IResource) {
+                        IMemento elementMem = expandedMem
+                                .createChild(TAG_ELEMENT);
+                        elementMem.putString(TAG_PATH,
+                                ((IResource) expandedElements[i]).getFullPath()
+                                        .toString());
+                    }
+                }
+            }
+            //save selection
+            Object elements[] = ((IStructuredSelection) viewer.getSelection())
+                    .toArray();
+            if (elements.length > 0) {
+                IMemento selectionMem = memento.createChild(TAG_SELECTION);
+                for (int i = 0; i < elements.length; i++) {
+                    if (elements[i] instanceof IResource) {
+                        IMemento elementMem = selectionMem
+                                .createChild(TAG_ELEMENT);
+                        elementMem.putString(TAG_PATH,
+                                ((IResource) elements[i]).getFullPath()
+                                        .toString());
+                    }
+                }
+            }
+        }
+        saveLinkingEnabled(memento);
+    }
+/**
+     * Sets the resource sorter.
+     * 
+     * @param sorter the resource sorter
+     * @since 2.0
+     */
+    public void setSorter(ResourceSorter sorter) {
+        TreeViewer viewer = getTreeViewer();
+        ViewerSorter viewerSorter = viewer.getSorter();
+        viewer.getControl().setRedraw(false);
+        if (viewerSorter == sorter) {
+            viewer.refresh();
+        } else {
+            viewer.setSorter(sorter);
+        }
+        viewer.getControl().setRedraw(true);
+        settings.put(STORE_SORT_TYPE, sorter.getCriteria());
+        // update the sort actions' checked state
+        updateActionBars((IStructuredSelection) viewer.getSelection());
+    }
+/**
+     * Handles a double-click event from the viewer.
+     * Expands or collapses a folder when double-clicked.
+     * 
+     * @param event the double-click event
+     * @since 2.0
+     */
+    protected void handleDoubleClick(DoubleClickEvent event) {
+        IStructuredSelection selection = (IStructuredSelection) event
+                .getSelection();
+        Object element = selection.getFirstElement();
+        // 1GBZIA0: ITPUI:WIN2000 - Double-clicking in navigator should expand/collapse containers
+        TreeViewer viewer = getTreeViewer();
+        if (viewer.isExpandable(element)) {
+            viewer.setExpandedState(element, !viewer.getExpandedState(element));
+        }
+    }
+public void createPartControl(Composite parent) {
+        TreeViewer viewer = createViewer(parent);
+        this.viewer = viewer;
+        if (memento != null) {
+            restoreFilters();
+            restoreLinkingEnabled();
+        }
+        frameList = createFrameList();
+        initDragAndDrop();
+        updateTitle();
+        initContextMenu();
+        initResourceSorter();
+        initWorkingSetFilter();
+        // make sure input is set after sorters and filters,
+        // to avoid unnecessary refreshes
+        viewer.setInput(getInitialInput());
+        // make actions after setting input, because some actions
+        // look at the viewer for enablement (e.g. the Up action)
+        makeActions();
+        // Fill the action bars and update the global action handlers'
+        // enabled state to match the current selection.
+        getActionGroup().fillActionBars(getViewSite().getActionBars());
+        updateActionBars((IStructuredSelection) viewer.getSelection());
+        getSite().setSelectionProvider(viewer);
+        getSite().getPage().addPartListener(partListener);
+        IWorkingSetManager workingSetManager = getPlugin().getWorkbench()
+                .getWorkingSetManager();
+        workingSetManager.addPropertyChangeListener(propertyChangeListener);
+        if (memento != null)
+            restoreState(memento);
+        memento = null;
+        // Set help for the view 
+        getSite().getWorkbenchWindow().getWorkbench().getHelpSystem().setHelp(
+				viewer.getControl(), getHelpContextId());
+    }
+public void setWorkingSet(IWorkingSet workingSet) {
+        TreeViewer treeViewer = getTreeViewer();
+        Object[] expanded = treeViewer.getExpandedElements();
+        ISelection selection = treeViewer.getSelection();
+        workingSetFilter.setWorkingSet(workingSet);
+        if (workingSet != null) {
+            settings.put(STORE_WORKING_SET, workingSet.getName());
+        } else {
+            settings.put(STORE_WORKING_SET, ""); //$NON-NLS-1$
+        }
+        updateTitle();
+        treeViewer.refresh();
+        treeViewer.setExpandedElements(expanded);
+        if (selection.isEmpty() == false
+                && selection instanceof IStructuredSelection) {
+            IStructuredSelection structuredSelection = (IStructuredSelection) selection;
+            treeViewer.reveal(structuredSelection.getFirstElement());
+        }
+    }
+
+
+public boolean show(ShowInContext context) {
+                ArrayList toSelect = new ArrayList();
+                ISelection sel = context.getSelection();
+                if (sel instanceof IStructuredSelection) {
+                    IStructuredSelection ssel = (IStructuredSelection) sel;
+                    for (Iterator i = ssel.iterator(); i.hasNext();) {
+                        Object o = i.next();
+                        if (o instanceof IResource) {
+                            toSelect.add(o);
+                        } else if (o instanceof IMarker) {
+                            IResource r = ((IMarker) o).getResource();
+                            if (r.getType() != IResource.ROOT) {
+                                toSelect.add(r);
+                            }
+                        } else if (o instanceof IAdaptable) {
+                            IAdaptable adaptable = (IAdaptable) o;
+                            o = adaptable.getAdapter(IResource.class);
+                            if (o instanceof IResource) {
+                                toSelect.add(o);
+                            } else {
+                                o = adaptable.getAdapter(IMarker.class);
+                                if (o instanceof IMarker) {
+                                    IResource r = ((IMarker) o).getResource();
+                                    if (r.getType() != IResource.ROOT) {
+                                        toSelect.add(r);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (toSelect.isEmpty()) {
+                    Object input = context.getInput();
+                    if (input instanceof IAdaptable) {
+                        IAdaptable adaptable = (IAdaptable) input;
+                        Object o = adaptable.getAdapter(IResource.class);
+                        if (o instanceof IResource) {
+                            toSelect.add(o);
+                        }
+                    }
+                }
+                if (!toSelect.isEmpty()) {
+                    selectReveal(new StructuredSelection(toSelect));
+                    return true;
+                }
+                return false;
+            }
+
+public boolean show(ShowInContext context) {
+                ArrayList toSelect = new ArrayList();
+                ISelection sel = context.getSelection();
+                if (sel instanceof IStructuredSelection) {
+                    IStructuredSelection ssel = (IStructuredSelection) sel;
+                    for (Iterator i = ssel.iterator(); i.hasNext();) {
+                        Object o = i.next();
+                        if (o instanceof IResource) {
+                            toSelect.add(o);
+                        } else if (o instanceof IMarker) {
+                            IResource r = ((IMarker) o).getResource();
+                            if (r.getType() != IResource.ROOT) {
+                                toSelect.add(r);
+                            }
+                        } else if (o instanceof IAdaptable) {
+                            IAdaptable adaptable = (IAdaptable) o;
+                            o = adaptable.getAdapter(IResource.class);
+                            if (o instanceof IResource) {
+                                toSelect.add(o);
+                            } else {
+                                o = adaptable.getAdapter(IMarker.class);
+                                if (o instanceof IMarker) {
+                                    IResource r = ((IMarker) o).getResource();
+                                    if (r.getType() != IResource.ROOT) {
+                                        toSelect.add(r);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (toSelect.isEmpty()) {
+                    Object input = context.getInput();
+                    if (input instanceof IAdaptable) {
+                        IAdaptable adaptable = (IAdaptable) input;
+                        Object o = adaptable.getAdapter(IResource.class);
+                        if (o instanceof IResource) {
+                            toSelect.add(o);
+                        }
+                    }
+                }
+                if (!toSelect.isEmpty()) {
+                    selectReveal(new StructuredSelection(toSelect));
+                    return true;
+                }
+                return false;
+            }
+
+/**
+     * Creates the frame source and frame list, and connects them.
+     * 
+     * @since 2.0
+     */
+    protected FrameList createFrameList() {
+        NavigatorFrameSource frameSource = new NavigatorFrameSource(this);
+        FrameList frameList = new FrameList(frameSource);
+        frameSource.connectTo(frameList);
+        return frameList;
+    }
+
+/**
+     * Creates the frame source and frame list, and connects them.
+     * 
+     * @since 2.0
+     */
+    protected FrameList createFrameList() {
+        NavigatorFrameSource frameSource = new NavigatorFrameSource(this);
+        FrameList frameList = new FrameList(frameSource);
+        frameSource.connectTo(frameList);
+        return frameList;
+    }
+
+/**
+     * Creates the viewer.
+     * 
+     * @param parent the parent composite
+     * @since 2.0
+     */
+    protected TreeViewer createViewer(Composite parent) {
+        TreeViewer viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL
+                | SWT.V_SCROLL);
+        viewer.setUseHashlookup(true);
+        initContentProvider(viewer);
+        initLabelProvider(viewer);
+        initFilters(viewer);
+        initListeners(viewer);
+        return viewer;
+    }
+
+/**
+     * Creates the viewer.
+     * 
+     * @param parent the parent composite
+     * @since 2.0
+     */
+    protected TreeViewer createViewer(Composite parent) {
+        TreeViewer viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL
+                | SWT.V_SCROLL);
+        viewer.setUseHashlookup(true);
+        initContentProvider(viewer);
+        initLabelProvider(viewer);
+        initFilters(viewer);
+        initListeners(viewer);
+        return viewer;
+    }
+
+/**
+     * Returns the action group.
+     * 
+     * @return the action group
+     */
+    protected ResourceNavigatorActionGroup getActionGroup() {
+        return actionGroup;
+    }
+
+/**
+     * Returns the action group.
+     * 
+     * @return the action group
+     */
+    protected ResourceNavigatorActionGroup getActionGroup() {
+        return actionGroup;
+    }
+
+/**
+     * Returns the help context id to use for this view.
+     * 
+     * @since 2.0
+     */
+    protected String getHelpContextId() {
+        return INavigatorHelpContextIds.RESOURCE_VIEW;
+    }
+
+/**
+     * Returns the help context id to use for this view.
+     * 
+     * @since 2.0
+     */
+    protected String getHelpContextId() {
+        return INavigatorHelpContextIds.RESOURCE_VIEW;
+    }
+
+/** 
+     * Returns the initial input for the viewer.
+     * Tries to convert the page input to a resource, either directly or via IAdaptable.
+     * If the resource is a container, it uses that.
+     * If the resource is a file, it uses its parent folder.
+     * If a resource could not be obtained, it uses the workspace root.
+     * 
+     * @since 2.0
+     */
+    protected IAdaptable getInitialInput() {
+        IAdaptable input = getSite().getPage().getInput();
+        if (input != null) {
+            IResource resource = null;
+            if (input instanceof IResource) {
+                resource = (IResource) input;
+            } else {
+                resource = (IResource) input.getAdapter(IResource.class);
+            }
+            if (resource != null) {
+                switch (resource.getType()) {
+                case IResource.FILE:
+                    return resource.getParent();
+                case IResource.FOLDER:
+                case IResource.PROJECT:
+                case IResource.ROOT:
+                    return (IContainer) resource;
+                default:
+                    // Unknown resource type.  Fall through.
+                    break;
+                }
+            }
+        }
+        return ResourcesPlugin.getWorkspace().getRoot();
+    }
+
+/** 
+     * Returns the initial input for the viewer.
+     * Tries to convert the page input to a resource, either directly or via IAdaptable.
+     * If the resource is a container, it uses that.
+     * If the resource is a file, it uses its parent folder.
+     * If a resource could not be obtained, it uses the workspace root.
+     * 
+     * @since 2.0
+     */
+    protected IAdaptable getInitialInput() {
+        IAdaptable input = getSite().getPage().getInput();
+        if (input != null) {
+            IResource resource = null;
+            if (input instanceof IResource) {
+                resource = (IResource) input;
+            } else {
+                resource = (IResource) input.getAdapter(IResource.class);
+            }
+            if (resource != null) {
+                switch (resource.getType()) {
+                case IResource.FILE:
+                    return resource.getParent();
+                case IResource.FOLDER:
+                case IResource.PROJECT:
+                case IResource.ROOT:
+                    return (IContainer) resource;
+                default:
+                    // Unknown resource type.  Fall through.
+                    break;
+                }
+            }
+        }
+        return ResourcesPlugin.getWorkspace().getRoot();
+    }
+
+/**
+     * Returns the pattern filter for this view.
+     *
+     * @return the pattern filter
+     * @since 2.0
+     */
+    public ResourcePatternFilter getPatternFilter() {
+        return this.patternFilter;
+    }
+
+/**
+     * Returns the pattern filter for this view.
+     *
+     * @return the pattern filter
+     * @since 2.0
+     */
+    public ResourcePatternFilter getPatternFilter() {
+        return this.patternFilter;
+    }
+
+/**
+     * Returns the navigator's plugin.
+     */
+    public AbstractUIPlugin getPlugin() {
+        return IDEWorkbenchPlugin.getDefault();
+    }
+
+/**
+     * Returns the navigator's plugin.
+     */
+    public AbstractUIPlugin getPlugin() {
+        return IDEWorkbenchPlugin.getDefault();
+    }
+
+
+
+
+
+/**
+     * Returns the sorter.
+     * @since 2.0
+     */
+    public ResourceSorter getSorter() {
+        return (ResourceSorter) getTreeViewer().getSorter();
+    }
+
+/**
+     * Returns the sorter.
+     * @since 2.0
+     */
+    public ResourceSorter getSorter() {
+        return (ResourceSorter) getTreeViewer().getSorter();
+    }
+
+/**
+     * Returns the tree viewer which shows the resource hierarchy.
+     * @return the tree viewer
+     * @since 2.0
+     */
+    public TreeViewer getTreeViewer() {
+        return viewer;
+    }
+
+/**
+     * Returns the tree viewer which shows the resource hierarchy.
+     * @return the tree viewer
+     * @since 2.0
+     */
+    public TreeViewer getTreeViewer() {
+        return viewer;
+    }
+
+
+
+
+
+/**
+     * Initializes and registers the context menu.
+     * 
+     * @since 2.0
+     */
+    protected void initContextMenu() {
+        MenuManager menuMgr = new MenuManager("#PopupMenu"); //$NON-NLS-1$
+        menuMgr.setRemoveAllWhenShown(true);
+        menuMgr.addMenuListener(new IMenuListener() {
+            public void menuAboutToShow(IMenuManager manager) {
+                ResourceNavigator.this.fillContextMenu(manager);
+            }
+        });
+        TreeViewer viewer = getTreeViewer();
+        Menu menu = menuMgr.createContextMenu(viewer.getTree());
+        viewer.getTree().setMenu(menu);
+        getSite().registerContextMenu(menuMgr, viewer);
+    }
+
+/**
+     * Initializes and registers the context menu.
+     * 
+     * @since 2.0
+     */
+    protected void initContextMenu() {
+        MenuManager menuMgr = new MenuManager("#PopupMenu"); //$NON-NLS-1$
+        menuMgr.setRemoveAllWhenShown(true);
+        menuMgr.addMenuListener(new IMenuListener() {
+            public void menuAboutToShow(IMenuManager manager) {
+                ResourceNavigator.this.fillContextMenu(manager);
+            }
+        });
+        TreeViewer viewer = getTreeViewer();
+        Menu menu = menuMgr.createContextMenu(viewer.getTree());
+        viewer.getTree().setMenu(menu);
+        getSite().registerContextMenu(menuMgr, viewer);
+    }
+
+/**
+     * Adds drag and drop support to the navigator.
+     * 
+     * @since 2.0
+     */
+    protected void initDragAndDrop() {
+        int ops = DND.DROP_COPY | DND.DROP_MOVE;
+        Transfer[] transfers = new Transfer[] {
+                LocalSelectionTransfer.getInstance(),
+                ResourceTransfer.getInstance(), FileTransfer.getInstance(),
+                PluginTransfer.getInstance() };
+        TreeViewer viewer = getTreeViewer();
+        viewer.addDragSupport(ops, transfers, new NavigatorDragAdapter(viewer));
+        NavigatorDropAdapter adapter = new NavigatorDropAdapter(viewer);
+        adapter.setFeedbackEnabled(false);
+        viewer.addDropSupport(ops | DND.DROP_DEFAULT, transfers, adapter);
+        dragDetectListener = new Listener() {
+            public void handleEvent(Event event) {
+                dragDetected = true;
+            }
+        };
+        viewer.getControl().addListener(SWT.DragDetect, dragDetectListener);
+    }
+
+/**
+     * Adds drag and drop support to the navigator.
+     * 
+     * @since 2.0
+     */
+    protected void initDragAndDrop() {
+        int ops = DND.DROP_COPY | DND.DROP_MOVE;
+        Transfer[] transfers = new Transfer[] {
+                LocalSelectionTransfer.getInstance(),
+                ResourceTransfer.getInstance(), FileTransfer.getInstance(),
+                PluginTransfer.getInstance() };
+        TreeViewer viewer = getTreeViewer();
+        viewer.addDragSupport(ops, transfers, new NavigatorDragAdapter(viewer));
+        NavigatorDropAdapter adapter = new NavigatorDropAdapter(viewer);
+        adapter.setFeedbackEnabled(false);
+        viewer.addDropSupport(ops | DND.DROP_DEFAULT, transfers, adapter);
+        dragDetectListener = new Listener() {
+            public void handleEvent(Event event) {
+                dragDetected = true;
+            }
+        };
+        viewer.getControl().addListener(SWT.DragDetect, dragDetectListener);
+    }
+
+/**
+     * Initializes the sorter.
+     */
+    protected void initResourceSorter() {
+        int sortType = ResourceSorter.NAME;
+        try {
+            int sortInt = 0;
+            if (memento != null) {
+                String sortStr = memento.getString(TAG_SORTER);
+                if (sortStr != null)
+                    sortInt = new Integer(sortStr).intValue();
+            } else {
+                sortInt = settings.getInt(STORE_SORT_TYPE);
+            }
+            if (sortInt == ResourceSorter.NAME
+                    || sortInt == ResourceSorter.TYPE)
+                sortType = sortInt;
+        } catch (NumberFormatException e) {
+        }
+        setSorter(new ResourceSorter(sortType));
+    }
+
+/**
+     * Initializes the sorter.
+     */
+    protected void initResourceSorter() {
+        int sortType = ResourceSorter.NAME;
+        try {
+            int sortInt = 0;
+            if (memento != null) {
+                String sortStr = memento.getString(TAG_SORTER);
+                if (sortStr != null)
+                    sortInt = new Integer(sortStr).intValue();
+            } else {
+                sortInt = settings.getInt(STORE_SORT_TYPE);
+            }
+            if (sortInt == ResourceSorter.NAME
+                    || sortInt == ResourceSorter.TYPE)
+                sortType = sortInt;
+        } catch (NumberFormatException e) {
+        }
+        setSorter(new ResourceSorter(sortType));
+    }
+
+/**
+     * Restores the working set filter from the persistence store.
+     */
+    void initWorkingSetFilter() {
+        String workingSetName = settings.get(STORE_WORKING_SET);
+        if (workingSetName != null && workingSetName.equals("") == false) { //$NON-NLS-1$
+            IWorkingSetManager workingSetManager = getPlugin().getWorkbench()
+                    .getWorkingSetManager();
+            IWorkingSet workingSet = workingSetManager
+                    .getWorkingSet(workingSetName);
+            if (workingSet != null) {
+                // Only initialize filter. Don't set working set into viewer.
+                // Working set is set via WorkingSetFilterActionGroup
+                // during action creation.
+                workingSetFilter.setWorkingSet(workingSet);
+            }
+        }
+    }
+
+/**
+     * Restores the working set filter from the persistence store.
+     */
+    void initWorkingSetFilter() {
+        String workingSetName = settings.get(STORE_WORKING_SET);
+        if (workingSetName != null && workingSetName.equals("") == false) { //$NON-NLS-1$
+            IWorkingSetManager workingSetManager = getPlugin().getWorkbench()
+                    .getWorkingSetManager();
+            IWorkingSet workingSet = workingSetManager
+                    .getWorkingSet(workingSetName);
+            if (workingSet != null) {
+                // Only initialize filter. Don't set working set into viewer.
+                // Working set is set via WorkingSetFilterActionGroup
+                // during action creation.
+                workingSetFilter.setWorkingSet(workingSet);
+            }
+        }
+    }
+
+/**
+     * Creates the action group, which encapsulates all actions for the view.
+     */
+    protected void makeActions() {
+        setActionGroup(new MainActionGroup(this));
+    }
+
+/**
+     * Creates the action group, which encapsulates all actions for the view.
+     */
+    protected void makeActions() {
+        setActionGroup(new MainActionGroup(this));
+    }
+
+/**
+     * Restores the saved filter settings.
+     */
+    private void restoreFilters() {
+        IMemento filtersMem = memento.getChild(TAG_FILTERS);
+        if (filtersMem != null) { //filters have been defined
+            IMemento children[] = filtersMem.getChildren(TAG_FILTER);
+            // check if first element has new tag defined, indicates new version
+            if (children.length > 0
+                    && children[0].getString(TAG_IS_ENABLED) != null) {
+                ArrayList selectedFilters = new ArrayList();
+                ArrayList unSelectedFilters = new ArrayList();
+                for (int i = 0; i < children.length; i++) {
+                    if (children[i].getString(TAG_IS_ENABLED).equals(
+                            String.valueOf(true)))
+                        selectedFilters.add(children[i].getString(TAG_ELEMENT));
+                    else
+                        //enabled == false
+                        unSelectedFilters.add(children[i]
+                                .getString(TAG_ELEMENT));
+                }
+                /* merge filters from Memento with selected = true filters from plugins
+                 * ensure there are no duplicates & don't override user preferences	 */
+                List pluginFilters = FiltersContentProvider.getDefaultFilters();
+                for (Iterator iter = pluginFilters.iterator(); iter.hasNext();) {
+                    String element = (String) iter.next();
+                    if (!selectedFilters.contains(element)
+                            && !unSelectedFilters.contains(element))
+                        selectedFilters.add(element);
+                }
+                //Convert to an array of Strings
+                String[] patternArray = new String[selectedFilters.size()];
+                selectedFilters.toArray(patternArray);
+                getPatternFilter().setPatterns(patternArray);
+            } else { //filters defined, old version: ignore filters from plugins
+                String filters[] = new String[children.length];
+                for (int i = 0; i < children.length; i++) {
+                    filters[i] = children[i].getString(TAG_ELEMENT);
+                }
+                getPatternFilter().setPatterns(filters);
+            }
+        } else { //no filters defined, old version: ignore filters from plugins
+            getPatternFilter().setPatterns(new String[0]);
+        }
+    }
+
+/**
+     * Restores the saved filter settings.
+     */
+    private void restoreFilters() {
+        IMemento filtersMem = memento.getChild(TAG_FILTERS);
+        if (filtersMem != null) { //filters have been defined
+            IMemento children[] = filtersMem.getChildren(TAG_FILTER);
+            // check if first element has new tag defined, indicates new version
+            if (children.length > 0
+                    && children[0].getString(TAG_IS_ENABLED) != null) {
+                ArrayList selectedFilters = new ArrayList();
+                ArrayList unSelectedFilters = new ArrayList();
+                for (int i = 0; i < children.length; i++) {
+                    if (children[i].getString(TAG_IS_ENABLED).equals(
+                            String.valueOf(true)))
+                        selectedFilters.add(children[i].getString(TAG_ELEMENT));
+                    else
+                        //enabled == false
+                        unSelectedFilters.add(children[i]
+                                .getString(TAG_ELEMENT));
+                }
+                /* merge filters from Memento with selected = true filters from plugins
+                 * ensure there are no duplicates & don't override user preferences	 */
+                List pluginFilters = FiltersContentProvider.getDefaultFilters();
+                for (Iterator iter = pluginFilters.iterator(); iter.hasNext();) {
+                    String element = (String) iter.next();
+                    if (!selectedFilters.contains(element)
+                            && !unSelectedFilters.contains(element))
+                        selectedFilters.add(element);
+                }
+                //Convert to an array of Strings
+                String[] patternArray = new String[selectedFilters.size()];
+                selectedFilters.toArray(patternArray);
+                getPatternFilter().setPatterns(patternArray);
+            } else { //filters defined, old version: ignore filters from plugins
+                String filters[] = new String[children.length];
+                for (int i = 0; i < children.length; i++) {
+                    filters[i] = children[i].getString(TAG_ELEMENT);
+                }
+                getPatternFilter().setPatterns(filters);
+            }
+        } else { //no filters defined, old version: ignore filters from plugins
+            getPatternFilter().setPatterns(new String[0]);
+        }
+    }
+
+/**
+     * Restores the linking enabled state.
+     */
+    private void restoreLinkingEnabled() {
+        Integer val = memento
+                .getInteger(IWorkbenchPreferenceConstants.LINK_NAVIGATOR_TO_EDITOR);
+        if (val != null) {
+            linkingEnabled = val.intValue() != 0;
+        }
+    }
+
+/**
+     * Restores the linking enabled state.
+     */
+    private void restoreLinkingEnabled() {
+        Integer val = memento
+                .getInteger(IWorkbenchPreferenceConstants.LINK_NAVIGATOR_TO_EDITOR);
+        if (val != null) {
+            linkingEnabled = val.intValue() != 0;
+        }
+    }
+
+/**
+     * Restores the state of the receiver to the state described in the specified memento.
+     *
+     * @param memento the memento
+     * @since 2.0
+     */
+    protected void restoreState(IMemento memento) {
+        TreeViewer viewer = getTreeViewer();
+        IMemento frameMemento = memento.getChild(TAG_CURRENT_FRAME);
+        if (frameMemento != null) {
+            TreeFrame frame = new TreeFrame(viewer);
+            frame.restoreState(frameMemento);
+            frame.setName(getFrameName(frame.getInput()));
+            frame.setToolTipText(getFrameToolTipText(frame.getInput()));
+            viewer.setSelection(new StructuredSelection(frame.getInput()));
+            frameList.gotoFrame(frame);
+        } else {
+            IContainer container = ResourcesPlugin.getWorkspace().getRoot();
+            IMemento childMem = memento.getChild(TAG_EXPANDED);
+            if (childMem != null) {
+                ArrayList elements = new ArrayList();
+                IMemento[] elementMem = childMem.getChildren(TAG_ELEMENT);
+                for (int i = 0; i < elementMem.length; i++) {
+                    Object element = container.findMember(elementMem[i]
+                            .getString(TAG_PATH));
+                    if (element != null) {
+                        elements.add(element);
+                    }
+                }
+                viewer.setExpandedElements(elements.toArray());
+            }
+            childMem = memento.getChild(TAG_SELECTION);
+            if (childMem != null) {
+                ArrayList list = new ArrayList();
+                IMemento[] elementMem = childMem.getChildren(TAG_ELEMENT);
+                for (int i = 0; i < elementMem.length; i++) {
+                    Object element = container.findMember(elementMem[i]
+                            .getString(TAG_PATH));
+                    if (element != null) {
+                        list.add(element);
+                    }
+                }
+                viewer.setSelection(new StructuredSelection(list));
+            }
+        }
+    }
+
+/**
+     * Restores the state of the receiver to the state described in the specified memento.
+     *
+     * @param memento the memento
+     * @since 2.0
+     */
+    protected void restoreState(IMemento memento) {
+        TreeViewer viewer = getTreeViewer();
+        IMemento frameMemento = memento.getChild(TAG_CURRENT_FRAME);
+        if (frameMemento != null) {
+            TreeFrame frame = new TreeFrame(viewer);
+            frame.restoreState(frameMemento);
+            frame.setName(getFrameName(frame.getInput()));
+            frame.setToolTipText(getFrameToolTipText(frame.getInput()));
+            viewer.setSelection(new StructuredSelection(frame.getInput()));
+            frameList.gotoFrame(frame);
+        } else {
+            IContainer container = ResourcesPlugin.getWorkspace().getRoot();
+            IMemento childMem = memento.getChild(TAG_EXPANDED);
+            if (childMem != null) {
+                ArrayList elements = new ArrayList();
+                IMemento[] elementMem = childMem.getChildren(TAG_ELEMENT);
+                for (int i = 0; i < elementMem.length; i++) {
+                    Object element = container.findMember(elementMem[i]
+                            .getString(TAG_PATH));
+                    if (element != null) {
+                        elements.add(element);
+                    }
+                }
+                viewer.setExpandedElements(elements.toArray());
+            }
+            childMem = memento.getChild(TAG_SELECTION);
+            if (childMem != null) {
+                ArrayList list = new ArrayList();
+                IMemento[] elementMem = childMem.getChildren(TAG_ELEMENT);
+                for (int i = 0; i < elementMem.length; i++) {
+                    Object element = container.findMember(elementMem[i]
+                            .getString(TAG_PATH));
+                    if (element != null) {
+                        list.add(element);
+                    }
+                }
+                viewer.setSelection(new StructuredSelection(list));
+            }
+        }
+    }
+
+/**
+     * Saves the linking enabled state.
+     */
+    private void saveLinkingEnabled(IMemento memento) {
+        memento.putInteger(
+                IWorkbenchPreferenceConstants.LINK_NAVIGATOR_TO_EDITOR,
+                linkingEnabled ? 1 : 0);
+    }
+
+/**
+     * Saves the linking enabled state.
+     */
+    private void saveLinkingEnabled(IMemento memento) {
+        memento.putInteger(
+                IWorkbenchPreferenceConstants.LINK_NAVIGATOR_TO_EDITOR,
+                linkingEnabled ? 1 : 0);
+    }
+
+/**
+     * Updates the action bar actions.
+     * 
+     * @param selection the current selection
+     * @since 2.0
+     */
+    protected void updateActionBars(IStructuredSelection selection) {
+        ResourceNavigatorActionGroup group = getActionGroup();
+        if (group != null) {
+            group.setContext(new ActionContext(selection));
+            group.updateActionBars();
+        }
+    }
+
+/**
+     * Updates the action bar actions.
+     * 
+     * @param selection the current selection
+     * @since 2.0
+     */
+    protected void updateActionBars(IStructuredSelection selection) {
+        ResourceNavigatorActionGroup group = getActionGroup();
+        if (group != null) {
+            group.setContext(new ActionContext(selection));
+            group.updateActionBars();
+        }
+    }
+
+/**
+     * Updates the title text and title tool tip.
+     * Called whenever the input of the viewer changes.
+     * Called whenever the input of the viewer changes.
+     * 
+     * @since 2.0
+     */
+    public void updateTitle() {
+        Object input = getViewer().getInput();
+        IWorkspace workspace = ResourcesPlugin.getWorkspace();
+        IWorkingSet workingSet = workingSetFilter.getWorkingSet();
+        if (input == null || input.equals(workspace)
+                || input.equals(workspace.getRoot())) {
+            setContentDescription(""); //$NON-NLS-1$
+            if (workingSet != null) {
+                setTitleToolTip(NLS.bind(ResourceNavigatorMessages.ResourceNavigator_workingSetToolTip, workingSet.getName()));
+            } else {
+                setTitleToolTip(""); //$NON-NLS-1$
+            }
+        } else {
+            ILabelProvider labelProvider = (ILabelProvider) getTreeViewer()
+                    .getLabelProvider();
+            String inputToolTip = getFrameToolTipText(input);
+            String text = labelProvider.getText(input);
+            if(text != null)
+            	setContentDescription(text);
+            if (workingSet != null) {
+                setTitleToolTip(NLS.bind(ResourceNavigatorMessages.ResourceNavigator_workingSetInputToolTip, inputToolTip, workingSet.getName()));
+            } else {
+                setTitleToolTip(inputToolTip);
+            }
+        }
+    }
+
+/**
+     * Updates the title text and title tool tip.
+     * Called whenever the input of the viewer changes.
+     * Called whenever the input of the viewer changes.
+     * 
+     * @since 2.0
+     */
+    public void updateTitle() {
+        Object input = getViewer().getInput();
+        IWorkspace workspace = ResourcesPlugin.getWorkspace();
+        IWorkingSet workingSet = workingSetFilter.getWorkingSet();
+        if (input == null || input.equals(workspace)
+                || input.equals(workspace.getRoot())) {
+            setContentDescription(""); //$NON-NLS-1$
+            if (workingSet != null) {
+                setTitleToolTip(NLS.bind(ResourceNavigatorMessages.ResourceNavigator_workingSetToolTip, workingSet.getName()));
+            } else {
+                setTitleToolTip(""); //$NON-NLS-1$
+            }
+        } else {
+            ILabelProvider labelProvider = (ILabelProvider) getTreeViewer()
+                    .getLabelProvider();
+            String inputToolTip = getFrameToolTipText(input);
+            String text = labelProvider.getText(input);
+            if(text != null)
+            	setContentDescription(text);
+            if (workingSet != null) {
+                setTitleToolTip(NLS.bind(ResourceNavigatorMessages.ResourceNavigator_workingSetInputToolTip, inputToolTip, workingSet.getName()));
+            } else {
+                setTitleToolTip(inputToolTip);
+            }
+        }
+    }
+}

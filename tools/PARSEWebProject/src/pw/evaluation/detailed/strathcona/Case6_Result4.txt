@@ -1,0 +1,111 @@
+org.eclipse.debug.internal.ui.views.console;
+
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IStorage;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.PlatformObject;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.core.variables.IStringVariableManager;
+import org.eclipse.core.variables.VariablesPlugin;
+import org.eclipse.debug.core.DebugEvent;
+import org.eclipse.debug.core.DebugPlugin;
+import org.eclipse.debug.core.IDebugEventSetListener;
+import org.eclipse.debug.core.ILaunchConfiguration;
+import org.eclipse.debug.core.ILaunchConfigurationType;
+import org.eclipse.debug.core.IStreamListener;
+import org.eclipse.debug.core.model.IFlushableStreamMonitor;
+import org.eclipse.debug.core.model.IProcess;
+import org.eclipse.debug.core.model.IStreamMonitor;
+import org.eclipse.debug.core.model.IStreamsProxy;
+import org.eclipse.debug.core.sourcelookup.containers.LocalFileStorage;
+import org.eclipse.debug.internal.ui.DebugPluginImages;
+import org.eclipse.debug.internal.ui.DebugUIPlugin;
+import org.eclipse.debug.internal.ui.IDebugHelpContextIds;
+import org.eclipse.debug.internal.ui.preferences.IDebugPreferenceConstants;
+import org.eclipse.debug.ui.DebugUITools;
+import org.eclipse.debug.ui.IDebugUIConstants;
+import org.eclipse.debug.ui.console.IConsole;
+import org.eclipse.debug.ui.console.IConsoleColorProvider;
+import org.eclipse.debug.ui.console.IConsoleHyperlink;
+import org.eclipse.debug.ui.console.IConsoleLineTracker;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.text.BadLocationException;
+import org.eclipse.jface.text.IRegion;
+import org.eclipse.jface.util.IPropertyChangeListener;
+import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IPersistableElement;
+import org.eclipse.ui.IStorageEditorInput;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.console.ConsolePlugin;
+import org.eclipse.ui.console.IHyperlink;
+import org.eclipse.ui.console.IOConsole;
+import org.eclipse.ui.console.IOConsoleInputStream;
+import org.eclipse.ui.console.IOConsoleOutputStream;
+import org.eclipse.ui.console.IPatternMatchListener;
+import org.eclipse.ui.console.PatternMatchEvent;
+import org.eclipse.ui.console.TextConsole;
+import org.eclipse.ui.editors.text.EditorsUI;
+import org.eclipse.ui.part.FileEditorInput;
+
+
+
+File fFile;
+FileOutputStream fFileOutputStream;
+IConsoleColorProvider fColorProvider;
+IOConsoleInputStream fInput;
+IOConsoleOutputStream fStream;
+IProcess fProcess=null;
+IStorage fStorage;
+IStreamMonitor fStreamMonitor;
+IStreamsProxy streamsProxy;
+List fStreamListeners=new ArrayList();
+String fFilePath;
+String fStreamId;
+boolean fAllocateConsole=true;
+boolean fFlushed=false;
+boolean fListenerRemoved=false;
+boolean fStreamsClosed=false;
+
+public void linkActivated() {
+            IEditorInput input;
+            Path path = new Path(fFilePath);
+            IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+            IFile ifile = root.getFileForLocation(path);
+            if (ifile == null) { // The file is not in the workspace
+                File file = new File(fFilePath);
+                LocalFileStorage lfs = new LocalFileStorage(file);
+                input = new StorageEditorInput(lfs, file);
+            } else {
+                input = new FileEditorInput(ifile);
+            }
+            
+            IWorkbenchPage activePage = DebugUIPlugin.getActiveWorkbenchWindow().getActivePage();
+            try {
+                activePage.openEditor(input, EditorsUI.DEFAULT_TEXT_EDITOR_ID, true);
+            } catch (PartInitException e) {
+            }
+        }
+
+}

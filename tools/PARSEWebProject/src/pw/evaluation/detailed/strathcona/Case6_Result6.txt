@@ -1,0 +1,289 @@
+org.eclipse.uml2.presentation;
+
+import org.eclipse.emf.common.command.BasicCommandStack;
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.CommandStack;
+import org.eclipse.emf.common.command.CommandStackListener;
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.ui.ViewerPane;
+import org.eclipse.emf.common.ui.viewer.IViewerProvider;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+import org.eclipse.emf.edit.provider.AdapterFactoryItemDelegator;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
+import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
+import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
+import org.eclipse.emf.edit.ui.celleditor.AdapterFactoryTreeEditor;
+import org.eclipse.emf.edit.ui.dnd.EditingDomainViewerDropAdapter;
+import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
+import org.eclipse.emf.edit.ui.dnd.ViewerDragAdapter;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.edit.ui.provider.PropertyDescriptor;
+import org.eclipse.emf.edit.ui.provider.PropertySource;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.EventObject;
+import java.util.Iterator;
+import java.util.List;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceDelta;
+import org.eclipse.core.resources.IResourceDeltaVisitor;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.jface.action.IMenuListener;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.IStatusLineManager;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.action.Separator;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.jface.viewers.ColumnWeightData;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.ISelectionProvider;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.ListViewer;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.StructuredViewer;
+import org.eclipse.jface.viewers.TableLayout;
+import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CTabFolder;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.events.ControlAdapter;
+import org.eclipse.swt.events.ControlEvent;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.Tree;
+import org.eclipse.swt.widgets.TreeColumn;
+import org.eclipse.ui.IActionBars;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IEditorSite;
+import org.eclipse.ui.IFileEditorInput;
+import org.eclipse.ui.IPartListener;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.dialogs.SaveAsDialog;
+import org.eclipse.ui.ide.IGotoMarker;
+import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.ui.part.MultiPageEditorPart;
+import org.eclipse.ui.views.contentoutline.ContentOutline;
+import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
+import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
+import org.eclipse.ui.views.properties.IPropertyDescriptor;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.eclipse.ui.views.properties.IPropertySource;
+import org.eclipse.ui.views.properties.PropertySheet;
+import org.eclipse.ui.views.properties.PropertySheetPage;
+import org.eclipse.uml2.common.edit.provider.IItemQualifiedTextProvider;
+import org.eclipse.uml2.provider.UML2ItemProviderAdapterFactory;
+import java.util.HashMap;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
+
+/**
+ * This is an example of a UML2 model editor.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class UML2Editor
+	extends MultiPageEditorPart
+	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
+
+AdapterFactoryEditingDomain editingDomain;
+Collection changedResources=new ArrayList();
+Collection removedResources=new ArrayList();
+Collection savedResources=new ArrayList();
+Collection selectionChangedListeners=new ArrayList();
+ComposedAdapterFactory adapterFactory;
+IContentOutlinePage contentOutlinePage;
+IPartListener partListener=new IPartListener(){
+  public void partActivated(  IWorkbenchPart p){
+    if (p instanceof ContentOutline) {
+      if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
+        getActionBarContributor().setActiveEditor(UML2Editor.this);
+        setCurrentViewer(contentOutlineViewer);
+      }
+    }
+ else     if (p instanceof PropertySheet) {
+      if (((PropertySheet)p).getCurrentPage() == propertySheetPage) {
+        getActionBarContributor().setActiveEditor(UML2Editor.this);
+        handleActivate();
+      }
+    }
+ else     if (p == UML2Editor.this) {
+      handleActivate();
+    }
+  }
+  public void partBroughtToTop(  IWorkbenchPart p){
+  }
+  public void partClosed(  IWorkbenchPart p){
+  }
+  public void partDeactivated(  IWorkbenchPart p){
+  }
+  public void partOpened(  IWorkbenchPart p){
+  }
+}
+;
+IResourceChangeListener resourceChangeListener=new IResourceChangeListener(){
+  public void resourceChanged(  IResourceChangeEvent event){
+{
+      IResourceDelta delta=event.getDelta();
+      try {
+class ResourceDeltaVisitor implements IResourceDeltaVisitor {
+          protected ResourceSet resourceSet=editingDomain.getResourceSet();
+          protected Collection changedResources=new ArrayList();
+          protected Collection removedResources=new ArrayList();
+          public boolean visit(          IResourceDelta delta){
+            if (delta.getFlags() != IResourceDelta.MARKERS && delta.getResource().getType() == IResource.FILE) {
+              if ((delta.getKind() & (IResourceDelta.CHANGED | IResourceDelta.REMOVED)) != 0) {
+                Resource resource=resourceSet.getResource(URI.createURI(delta.getFullPath().toString()),false);
+                if (resource != null) {
+                  if ((delta.getKind() & IResourceDelta.REMOVED) != 0) {
+                    removedResources.add(resource);
+                  }
+ else {
+                    changedResources.add(resource);
+                  }
+                }
+              }
+            }
+            return true;
+          }
+          public Collection getChangedResources(){
+            return changedResources;
+          }
+          public Collection getRemovedResources(){
+            return removedResources;
+          }
+        }
+        ResourceDeltaVisitor visitor=new ResourceDeltaVisitor();
+        delta.accept(visitor);
+        if (!visitor.getRemovedResources().isEmpty()) {
+          removedResources.addAll(visitor.getRemovedResources());
+          if (!isDirty()) {
+            getSite().getShell().getDisplay().asyncExec(new Runnable(){
+              public void run(){
+                getSite().getPage().closeEditor(UML2Editor.this,false);
+                UML2Editor.this.dispose();
+              }
+            }
+);
+          }
+        }
+        if (!visitor.getChangedResources().isEmpty()) {
+          changedResources.addAll(visitor.getChangedResources());
+        }
+      }
+ catch (      CoreException exception) {
+        UML2EditorPlugin.INSTANCE.log(exception);
+      }
+    }
+  }
+}
+;
+ISelection editorSelection=StructuredSelection.EMPTY;
+ISelectionChangedListener selectionChangedListener;
+IStatusLineManager contentOutlineStatusLineManager;
+ListViewer listViewer;
+PropertySheetPage propertySheetPage;
+ResourceSet resourceSet=editingDomain.getResourceSet();
+String copyright="Copyright (c) IBM Corporation and others.";
+TableViewer tableViewer;
+TreeViewer contentOutlineViewer;
+TreeViewer parentViewer;
+TreeViewer selectionViewer;
+TreeViewer treeViewer;
+TreeViewer treeViewerWithColumns;
+Viewer currentViewer;
+ViewerPane currentViewerPane;
+boolean guard=false;
+
+/**
+	 * This also changes the editor's input.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void doSaveAs() {
+		SaveAsDialog saveAsDialog= new SaveAsDialog(getSite().getShell());
+		saveAsDialog.open();
+		IPath path= saveAsDialog.getResult();
+		if (path != null) {
+			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
+			if (file != null) {
+				doSaveAs(URI.createPlatformResourceURI(file.getFullPath().toString()), new FileEditorInput(file));
+			}
+		}
+	}
+
+
+/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void doSaveAs(URI uri, IEditorInput editorInput) {
+		((Resource)editingDomain.getResourceSet().getResources().get(0)).setURI(uri);
+		setInput(editorInput);
+		setPartName(editorInput.getName());
+		IProgressMonitor progressMonitor =
+			getActionBars().getStatusLineManager() != null ?
+				getActionBars().getStatusLineManager().getProgressMonitor() :
+				new NullProgressMonitor();
+		doSave(progressMonitor);
+	}
+
+/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void doSaveAs(URI uri, IEditorInput editorInput) {
+		((Resource)editingDomain.getResourceSet().getResources().get(0)).setURI(uri);
+		setInput(editorInput);
+		setPartName(editorInput.getName());
+		IProgressMonitor progressMonitor =
+			getActionBars().getStatusLineManager() != null ?
+				getActionBars().getStatusLineManager().getProgressMonitor() :
+				new NullProgressMonitor();
+		doSave(progressMonitor);
+	}
+
+
+
+
+}

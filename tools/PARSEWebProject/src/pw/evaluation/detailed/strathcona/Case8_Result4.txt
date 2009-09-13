@@ -1,0 +1,111 @@
+org.eclipse.jdt.internal.ui.preferences.formatter;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Observable;
+import java.util.Observer;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.jdt.core.formatter.DefaultCodeFormatterConstants;
+import org.eclipse.jdt.internal.corext.util.Messages;
+import org.eclipse.jdt.internal.ui.JavaPlugin;
+import org.eclipse.jdt.ui.JavaUI;
+import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.Label;
+
+
+
+Button fForceSplit;
+Category fAllocationExpressionArgumentsCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_ARGUMENTS_IN_ALLOCATION_EXPRESSION,"class Example {SomeClass foo() {return new SomeClass(100, 200, 300, 400, 500, 600, 700, 800, 900 );}}",FormatterMessages.LineWrappingTabPage_object_allocation);
+Category fArrayInitializerExpressionsCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_EXPRESSIONS_IN_ARRAY_INITIALIZER,"class Example {int [] fArray= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};}",FormatterMessages.LineWrappingTabPage_array_init);
+Category fAssignmentCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_ASSIGNMENT,"class Example {" + "private static final String string = \"TextTextText\";" + "void foo() {"+ "for (int i = 0; i < 10; i++) {}"+ "String s;"+ "s = \"TextTextText\";}}",FormatterMessages.LineWrappingTabPage_assignment_alignment);
+Category fBinaryExpressionCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_BINARY_EXPRESSION,"class Example extends AnotherClass {" + "int foo() {" + "  int sum= 100 + 200 + 300 + 400 + 500 + 600 + 700 + 800;"+ "  int product= 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10;"+ "  boolean val= true && false && true && false && true;"+ "  return product / sum;}}",FormatterMessages.LineWrappingTabPage_binary_exprs);
+Category fCompactIfCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_COMPACT_IF,"class Example {" + "int foo(int argument) {" + "  if (argument==0) return 0;"+ "  if (argument==1) return 42; else return 43;"+ "}}",FormatterMessages.LineWrappingTabPage_compact_if_else);
+Category fConditionalExpressionCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_CONDITIONAL_EXPRESSION,"class Example extends AnotherClass {int Example(boolean Argument) {return argument ? 100000 : 200000;}}",FormatterMessages.LineWrappingTabPage_conditionals);
+Category fConstructorDeclarationsParametersCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_PARAMETERS_IN_CONSTRUCTOR_DECLARATION,"class Example {Example(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) { this();}" + "Example() {}}",FormatterMessages.LineWrappingTabPage_parameters);
+Category fConstructorThrowsClauseCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_THROWS_CLAUSE_IN_CONSTRUCTOR_DECLARATION,"class Example {" + "Example() throws FirstException, SecondException, ThirdException {" + "  return Other.doSomething();}}",FormatterMessages.LineWrappingTabPage_throws_clause);
+Category fEnumConstArgumentsCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_ARGUMENTS_IN_ENUM_CONSTANT,"enum Example {" + "GREEN(0, 255, 0), RED(255, 0, 0)  }",FormatterMessages.LineWrappingTabPage_enum_constant_arguments);
+Category fEnumConstantsCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_ENUM_CONSTANTS,"enum Example {" + "CANCELLED, RUNNING, WAITING, FINISHED }" + "enum Example {"+ "GREEN(0, 255, 0), RED(255, 0, 0)  }",FormatterMessages.LineWrappingTabPage_enum_constants);
+Category fEnumDeclInterfacesCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_SUPERINTERFACES_IN_ENUM_DECLARATION,"enum Example implements A, B, C {" + "}",FormatterMessages.LineWrappingTabPage_enum_superinterfaces);
+Category fExplicitConstructorArgumentsCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_ARGUMENTS_IN_EXPLICIT_CONSTRUCTOR_CALL,"class Example extends AnotherClass {Example() {super(100, 200, 300, 400, 500, 600, 700);}}",FormatterMessages.LineWrappingTabPage_explicit_constructor_invocations);
+Category fMessageSendArgumentsCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_ARGUMENTS_IN_METHOD_INVOCATION,"class Example {void foo() {Other.bar( 100, 200, 300, 400, 500, 600, 700, 800, 900 );}}",FormatterMessages.LineWrappingTabPage_arguments);
+Category fMessageSendSelectorCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_SELECTOR_IN_METHOD_INVOCATION,"class Example {int foo(Some a) {return a.getFirst();}}",FormatterMessages.LineWrappingTabPage_qualified_invocations);
+Category fMethodDeclarationsParametersCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_PARAMETERS_IN_METHOD_DECLARATION,"class Example {void foo(int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {}}",FormatterMessages.LineWrappingTabPage_parameters);
+Category fMethodThrowsClauseCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_THROWS_CLAUSE_IN_METHOD_DECLARATION,"class Example {" + "int foo() throws FirstException, SecondException, ThirdException {" + "  return Other.doSomething();}}",FormatterMessages.LineWrappingTabPage_throws_clause);
+Category fQualifiedAllocationExpressionCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_ARGUMENTS_IN_QUALIFIED_ALLOCATION_EXPRESSION,"class Example {SomeClass foo() {return SomeOtherClass.new SomeClass(100, 200, 300, 400, 500 );}}",FormatterMessages.LineWrappingTabPage_qualified_object_allocation);
+Category fTypeDeclarationSuperclassCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_SUPERCLASS_IN_TYPE_DECLARATION,"class Example extends OtherClass {}",FormatterMessages.LineWrappingTabPage_extends_clause);
+Category fTypeDeclarationSuperinterfacesCategory=new Category(DefaultCodeFormatterConstants.FORMATTER_ALIGNMENT_FOR_SUPERINTERFACES_IN_TYPE_DECLARATION,"class Example implements I1, I2, I3 {}",FormatterMessages.LineWrappingTabPage_implements_clause);
+CategoryListener fCategoryListener;
+Combo fIndentStyleCombo;
+Combo fWrappingStyleCombo;
+CompilationUnitPreview fPreview;
+Group fOptionsGroup;
+IDialogSettings fDialogSettings;
+IStructuredSelection fSelection;
+Label fIndentStylePolicy;
+Label fWrappingStylePolicy;
+List children;
+List fCategories;
+List fCategoriesList;
+List fElements=new ArrayList();
+Map fPreviewPreferences;
+SelectionState fSelectionState;
+String LINE_SPLIT=DefaultCodeFormatterConstants.FORMATTER_LINE_SPLIT;
+String PREF_CATEGORY_INDEX=JavaUI.ID_PLUGIN + "formatter_page.line_wrapping_tab_page.last_category_index";
+String PREF_PREVIEW_LINE_WIDTH=JavaUI.ID_PLUGIN + ".codeformatter.line_wrapping_tab_page.preview_line_width";
+String key;
+String name;
+String previewText;
+String[] INDENT_NAMES={FormatterMessages.LineWrappingTabPage_indentation_default,FormatterMessages.LineWrappingTabPage_indentation_on_column,FormatterMessages.LineWrappingTabPage_indentation_by_one};
+String[] WRAPPING_NAMES={FormatterMessages.LineWrappingTabPage_splitting_do_not_split,FormatterMessages.LineWrappingTabPage_splitting_wrap_when_necessary,FormatterMessages.LineWrappingTabPage_splitting_always_wrap_first_others_when_necessary,FormatterMessages.LineWrappingTabPage_splitting_wrap_always,FormatterMessages.LineWrappingTabPage_splitting_wrap_always_indent_all_but_first,FormatterMessages.LineWrappingTabPage_splitting_wrap_always_except_first_only_if_necessary};
+TreeViewer fCategoriesViewer;
+int DEFAULT_PREVIEW_WINDOW_LINE_WIDTH=40;
+int fIndex=0;
+int index;
+
+public void doubleClick(DoubleClickEvent event) {
+            final ISelection selection= event.getSelection();
+            if (selection instanceof IStructuredSelection) {
+                final Category node= (Category)((IStructuredSelection)selection).getFirstElement();
+                fCategoriesViewer.setExpandedState(node, !fCategoriesViewer.getExpandedState(node));
+            }
+        }
+
+
+protected void updateControlEnablement(boolean inhomogenous, int wrappingStyle) {
+	    boolean doSplit= wrappingStyle != DefaultCodeFormatterConstants.WRAP_NO_SPLIT;
+	    fIndentStylePolicy.setEnabled(true);
+	    fIndentStyleCombo.setEnabled(inhomogenous || doSplit);
+	    fForceSplit.setEnabled(inhomogenous || doSplit);
+	}
+
+protected void updateControlEnablement(boolean inhomogenous, int wrappingStyle) {
+	    boolean doSplit= wrappingStyle != DefaultCodeFormatterConstants.WRAP_NO_SPLIT;
+	    fIndentStylePolicy.setEnabled(true);
+	    fIndentStyleCombo.setEnabled(inhomogenous || doSplit);
+	    fForceSplit.setEnabled(inhomogenous || doSplit);
+	}
+}

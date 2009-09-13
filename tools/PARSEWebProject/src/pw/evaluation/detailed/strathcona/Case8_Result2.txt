@@ -1,0 +1,74 @@
+org.eclipse.help.ui.internal.views;
+
+import java.util;
+import java.util.Observer;
+import org.eclipse.help.IHelpResource;
+import org.eclipse.help.internal.base;
+import org.eclipse.help.ui.internal;
+import org.eclipse.jface.action;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.viewers;
+import org.eclipse.swt.custom.BusyIndicator;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IMemento;
+import org.eclipse.ui.actions.ActionFactory;
+import org.eclipse.ui.forms.widgets.FormToolkit;
+
+
+
+Action deleteAction;
+
+public void run() {
+				asyncUpdate(o, arg);
+			}
+
+
+public void saveState(IMemento memento) {
+		// TODO Auto-generated method stub
+		
+	}
+
+public void saveState(IMemento memento) {
+		// TODO Auto-generated method stub
+		
+	}
+
+private void asyncUpdate(Observable o, Object arg) {
+		BookmarkManager.BookmarkEvent event = (BookmarkManager.BookmarkEvent) arg;
+		switch (event.getType()) {
+		case BookmarkManager.ADD:
+			treeViewer.add(BaseHelpSystem.getBookmarkManager(), event
+					.getBookmark());
+			break;
+		case BookmarkManager.REMOVE:
+			treeViewer.remove(event.getBookmark());
+			break;
+		case BookmarkManager.REMOVE_ALL:
+		case BookmarkManager.WORLD_CHANGED:
+			treeViewer.refresh();
+			break;
+		}
+	}
+
+private void asyncUpdate(Observable o, Object arg) {
+		BookmarkManager.BookmarkEvent event = (BookmarkManager.BookmarkEvent) arg;
+		switch (event.getType()) {
+		case BookmarkManager.ADD:
+			treeViewer.add(BaseHelpSystem.getBookmarkManager(), event
+					.getBookmark());
+			break;
+		case BookmarkManager.REMOVE:
+			treeViewer.remove(event.getBookmark());
+			break;
+		case BookmarkManager.REMOVE_ALL:
+		case BookmarkManager.WORLD_CHANGED:
+			treeViewer.refresh();
+			break;
+		}
+	}
+
+
+
+
+}

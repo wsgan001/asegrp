@@ -1,0 +1,25 @@
+org.eclipse.wst.javascript.ui.internal.editor;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.browser.Browser;
+import org.eclipse.swt.browser.StatusTextEvent;
+import org.eclipse.swt.browser.StatusTextListener;
+import org.eclipse.swt.custom.ViewForm;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.ui.IActionBars;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IFileEditorInput;
+
+public class JSPreviewPage {
+
+Browser fBrowser=null;
+JSEditor fEditor=null;
+JSPreviewContributor fPreviewContributor=null;
+ViewForm fViewForm=null;
+
+
+
+}
