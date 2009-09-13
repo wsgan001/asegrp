@@ -1,0 +1,3 @@
+9 : java.util.Stack,hasMoreElements()#RETURN_PATTERNS#TRUE_FALSE_CHECK#
+10 : java.util.Stack,size1()#RETURN_PATTERNS#GEN_EQUALITY_CHECK#
+13 : DUMMY_MINING_ENTRY

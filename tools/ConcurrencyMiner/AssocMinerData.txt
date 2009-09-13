@@ -1,0 +1,177 @@
+
+**********************
+MethodInvocation : java.util.Iterator:next() (0) 
+
+Count 0  17_JpegMetadataReader.java,main
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 1  17_JpegMetadataReader.java,main
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 2  17_JpegMetadataReader.java,main
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 3  19_SampleUsage.java,printImageTags
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 4  19_SampleUsage.java,printImageTags
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 5  19_SampleUsage.java,printImageTags
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 6  21_XAButton.java,processActionEvent
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 7  22_XSmilesAWTRenderer.java,renderLinks
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 8  22_XSmilesAWTRenderer.java,renderLinkSet
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 9  22_XSmilesAWTRenderer.java,removeLinks
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 10  23_FormHandler.java,saveWidgetValues
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 11  24_MediaProxy.java,addListenersToPlayer
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 12  25_JMFDependencyHandler.java,informEndDependencyObjects
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 13  25_JMFDependencyHandler.java,informBeginDependencyObjects
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 14  26_SeqPlayer.java,fetchMedia
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 15  27_SynchPlayer.java,notifyControllerListeners
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 16  27_SynchPlayer.java,stop
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 17  27_SynchPlayer.java,close
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 18  27_SynchPlayer.java,pause
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 19  29_HelloWorld.java,execute
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 20  30_BasicTrust.java,validate
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 21  30_BasicTrust.java,validate
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+
+**********************
+
+**********************
+MethodInvocation : java.util.Stack:push(java.lang.Object::) (2) 
+
+Count 0  condition-methodcases.java,normalCases1
+Before:
+
+After:
+	java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.FAILURE (0) 
+	java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.SUCCESS (1) 
+Count 1  condition-methodcases.java,normalCases
+Before:
+	java.util.Stack,CONSTRUCTOR()#RETURN_PATTERNS#INSTANCEARG_TRUE_FALSE_CHECK#(2)
+	java.util.Stack,push(java.lang.Integer)#RECEIVER_PATTERNS#INSTANCEARG_TRUE_FALSE_CHECK#java.util.Stack(3)
+	java.util.Stack,push(java.lang.Integer)#ARGUMENT_PATTERNS#NULL_CHECK#(4)
+
+After:
+	java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.SUCCESS (1) 
+	java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.FAILURE (0) 
+Count 2  condition-methodcases.java,normalCases
+Before:
+	java.util.Stack,push(java.lang.Integer)#RECEIVER_PATTERNS#METHODARG_TRUE_FALSE_CHECK#(5)
+	java.util.HashSet,contains(java.lang.Integer)#RETURN_PATTERNS#TRUE_FALSE_CHECK#(7)
+	java.util.HashSet,anotherCheck(java.util.Stack)#RETURN_PATTERNS#TRUE_FALSE_CHECK#(6)
+	java.util.Stack,push(java.lang.Integer)#ARGUMENT_PATTERNS#METHODARG_TRUE_FALSE_CHECK#(8)
+
+After:
+	java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.SUCCESS (1) 
+	java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.FAILURE (0) 
+Count 3  condition-methodcases.java,exceptionCases
+Before:
+	java.util.HashSet,contains(java.lang.Integer)#RETURN_PATTERNS#TRUE_FALSE_CHECK#(7)
+	java.util.HashSet,anotherCheck(java.util.Stack)#RETURN_PATTERNS#TRUE_FALSE_CHECK#(6)
+
+After:
+	java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.SUCCESS (1) 
+	java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.FAILURE (0) 
+Count 4  condition-methodcases.java,multiCheckOnArgument
+Before:
+	java.util.Stack,push(java.lang.Integer)#ARGUMENT_PATTERNS#NULL_CHECK#(4)
+
+After:
+Count 5  condition-methodcases.java,multiCheckOnArgument
+Before:
+	java.util.Stack,push(java.lang.Integer)#ARGUMENT_PATTERNS#NULL_CHECK#(4)
+
+After:
+
+**********************
+
+**********************
+MethodInvocation : java.util.Stack:pop() (3) 
+
+Count 0  condition-methodcases.java,normalCases
+Before:
+	java.util.Stack,size1()#RETURN_PATTERNS#GEN_EQUALITY_CHECK#(10)
+	java.util.Stack,hasMoreElements()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(9)
+
+After:
+
+**********************

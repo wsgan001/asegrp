@@ -1,0 +1,48 @@
+*****************************
+All patterns of java.util.Iterator,next()
+(0.1.0) java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK
+0.1.0  : 22 (1)
+********************************************************************
+*****************************
+All patterns of java.util.Stack,push(java.lang.Object)
+(2.1.1) java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.SUCCES
+(2.0.1) java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.FAILUR
+2.1.1 2.0.1 : 4 (0.5)
+	2.4.0  : 2
+		 Total negative elements: 2, -ve frequency:2
+		 Total positive elements: 4, +ve frequency:1
+		 Absolute Support: 0.75
+		 Global Support: 0.375
+		(2.4.0) java.util.Stack:push(java.lang.Integer)#ARGUMENT_PATTERNS#NULL_CHECK
+********************************************************************
+(2.4.0) java.util.Stack,push(java.lang.Integer)#ARGUMENT_PATTERNS#NULL_CHECK
+2.4.0  : 3 (0.375)
+	2.1.1 2.0.1 : 3
+		 Total negative elements: 3, -ve frequency:3
+		 Total positive elements: 3, +ve frequency:1
+		 Absolute Support: 0.666666666666667
+		 Global Support: 0.5
+		(2.1.1) java.util.Stack:push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.SUCCES
+		(2.0.1) java.util.Stack:push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.FAILUR
+	2.6.0 2.7.0 2.1.1 2.0.1 : 2
+		 Total negative elements: 3, -ve frequency:2
+		 Total positive elements: 3, +ve frequency:0
+		 Absolute Support: 0.666666666666667
+		 Global Support: 0.25
+		(2.6.0) java.util.HashSet:anotherCheck(java.util.Stack)#RETURN_PATTERNS#TRUE_FALSE_CHECK
+		(2.7.0) java.util.HashSet:contains(java.lang.Integer)#RETURN_PATTERNS#TRUE_FALSE_CHECK
+		(2.1.1) java.util.Stack:push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.SUCCES
+		(2.0.1) java.util.Stack:push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.FAILUR
+********************************************************************
+(2.6.0) java.util.HashSet,anotherCheck(java.util.Stack)#RETURN_PATTERNS#TRUE_FALSE_CHECK
+(2.7.0) java.util.HashSet,contains(java.lang.Integer)#RETURN_PATTERNS#TRUE_FALSE_CHECK
+(2.1.1) java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.SUCCES
+(2.0.1) java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.FAILUR
+2.6.0 2.7.0 2.1.1 2.0.1 : 2 (0.25)
+	2.4.0  : 2
+		 Total negative elements: 2, -ve frequency:2
+		 Total positive elements: 2, +ve frequency:0
+		 Absolute Support: 1
+		 Global Support: 0.25
+		(2.4.0) java.util.Stack:push(java.lang.Integer)#ARGUMENT_PATTERNS#NULL_CHECK
+********************************************************************

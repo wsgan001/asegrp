@@ -1,0 +1,3 @@
+0 : java.util.Iterator,next()
+2 : java.util.Stack,push(java.lang.Object)
+3 : java.util.Stack,pop()

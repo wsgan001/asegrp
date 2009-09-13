@@ -1,0 +1,10 @@
+0 : java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.FAILURE
+1 : java.util.Stack,push(java.lang.Integer)#RETURN_PATTERNS#CONSTANT_EQUALITY_CHECK#Stack.SUCCESS
+2 : java.util.Stack,CONSTRUCTOR()#RETURN_PATTERNS#INSTANCEARG_TRUE_FALSE_CHECK#
+3 : java.util.Stack,push(java.lang.Integer)#RECEIVER_PATTERNS#INSTANCEARG_TRUE_FALSE_CHECK#java.util.Stack
+4 : java.util.Stack,push(java.lang.Integer)#ARGUMENT_PATTERNS#NULL_CHECK#
+5 : java.util.Stack,push(java.lang.Integer)#RECEIVER_PATTERNS#METHODARG_TRUE_FALSE_CHECK#
+6 : java.util.HashSet,anotherCheck(java.util.Stack)#RETURN_PATTERNS#TRUE_FALSE_CHECK#
+7 : java.util.HashSet,contains(java.lang.Integer)#RETURN_PATTERNS#TRUE_FALSE_CHECK#
+8 : java.util.Stack,push(java.lang.Integer)#ARGUMENT_PATTERNS#METHODARG_TRUE_FALSE_CHECK#
+12 : DUMMY_MINING_ENTRY
