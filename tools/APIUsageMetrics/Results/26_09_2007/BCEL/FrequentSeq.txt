@@ -1,0 +1,839 @@
+Frequent Usage Scenario: 1
+	 org.apache.bcel.generic.InstructionList : void,delete(org.apache.bcel.generic.InstructionHandle)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ConstantPoolGen//169_Mode.java MethodName : compileApplyImports
+Frequent Usage Scenario: 2
+	 org.apache.bcel.classfile.JavaClass : void,dump(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Constants//328_ClassFileComposer.java MethodName : renameInnerClass
+Frequent Usage Scenario: 3
+	 org.apache.bcel.generic.LDC : org.apache.bcel.generic.LDC,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//233_CompilerContext.java MethodName : getInstanceConstantIdx
+Frequent Usage Scenario: 4
+	 org.apache.bcel.generic.InstructionList : void,delete(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ALOAD//69_ASTFunDecl.java MethodName : optimizeIFs
+Frequent Usage Scenario: 5
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.CodeExceptionGen[],getExceptionHandlers()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doInstruction
+Frequent Usage Scenario: 6
+	 org.apache.bcel.generic.MethodGen : java.lang.String[],getExceptions()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : isEntity
+Frequent Usage Scenario: 7
+	 org.apache.bcel.generic.CHECKCAST : org.apache.bcel.generic.CHECKCAST,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_MethodGen//156_AnnotationLoader.java MethodName : load
+Frequent Usage Scenario: 8
+	 org.apache.bcel.generic.Type : org.apache.bcel.generic.Type[],getArgumentTypes(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//27_WrappeeTranslator_BCEL.java MethodName : translateMethod
+Frequent Usage Scenario: 9
+	 org.apache.bcel.generic.ConstantPoolGen : org.apache.bcel.classfile.ConstantPool,getConstantPool()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//13_VMStack.java MethodName : execute
+Frequent Usage Scenario: 10
+	 org.apache.bcel.generic.InvokeInstruction : java.lang.String,getMethodName(org.apache.bcel.generic.ConstantPoolGen)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doInstruction
+Frequent Usage Scenario: 11
+	 org.apache.bcel.classfile.Utility : java.lang.String,accessToString(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Instruction//352_TracifyClassLoader.java MethodName : tracifyMethod
+Frequent Usage Scenario: 12
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.classfile.Field[],getFields()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : isLocalNonPublicFieldAccess
+Frequent Usage Scenario: 13
+	 org.apache.bcel.generic.ACONST_NULL : org.apache.bcel.generic.ACONST_NULL,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//27_WrappeeTranslator_BCEL.java MethodName : translateMethod
+Frequent Usage Scenario: 14
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getPackageName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : instrumentLibs
+Frequent Usage Scenario: 15
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR(org.apache.bcel.generic.Instruction)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_JSR//3_ClassGenerator.java MethodName : visitTry
+Frequent Usage Scenario: 16
+	 org.apache.bcel.generic.Instruction : short,getOpcode()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//13_VMStack.java MethodName : execute
+Frequent Usage Scenario: 17
+	 org.apache.bcel.generic.MethodGen : java.lang.String,getSignature()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_BranchInstruction//46_WrappeeTranslator_BCEL.java MethodName : translateConstructor
+Frequent Usage Scenario: 18
+	 org.apache.bcel.generic.FieldOrMethod : java.lang.String,getName(org.apache.bcel.generic.ConstantPoolGen)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doInstruction
+Frequent Usage Scenario: 19
+	 org.apache.bcel.generic.Instruction : int,consumeStack(org.apache.bcel.generic.ConstantPoolGen)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ConstantPoolGen//253_FindInconsistentSync2.java MethodName : findObviouslyLockedCallSites
+Frequent Usage Scenario: 20
+	 org.apache.bcel.generic.LocalVariableInstruction : int,getIndex()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//13_VMStack.java MethodName : execute
+Frequent Usage Scenario: 21
+	 org.apache.bcel.classfile.Method : org.apache.bcel.generic.Type[],getArgumentTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//43_HiddenStaticMethodCheck.java MethodName : visitObject
+Frequent Usage Scenario: 22
+	 org.apache.bcel.classfile.JavaClass : org.apache.bcel.classfile.Method[],getMethods()
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//43_HiddenStaticMethodCheck.java MethodName : visitObject
+Frequent Usage Scenario: 23
+	 org.apache.bcel.Repository : boolean,implementationOf(org.apache.bcel.classfile.JavaClass,java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_classfile_ClassParser//111_IOGenerator.java MethodName : generateCode
+Frequent Usage Scenario: 24
+	 org.apache.bcel.generic.Type : java.lang.String,toString()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 25
+	 org.apache.bcel.classfile.AccessFlags : boolean,isStatic()
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//27_WrappeeTranslator_BCEL.java MethodName : translateMethod
+Frequent Usage Scenario: 26
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getSignature()
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//27_WrappeeTranslator_BCEL.java MethodName : translateMethod
+Frequent Usage Scenario: 27
+	 org.apache.bcel.generic.InstructionHandle : int,getPosition()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.Instruction,getInstruction()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ByteSequence//29_DuplicateBranches.java MethodName : findIfElseDuplicates
+Frequent Usage Scenario: 28
+	 org.apache.bcel.classfile.AccessFlags : boolean,isPrivate()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : isLocalNonPublicFieldAccess
+Frequent Usage Scenario: 29
+	 org.apache.bcel.classfile.AccessFlags : boolean,isProtected()
+	 org.apache.bcel.classfile.AccessFlags : boolean,isPublic()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//329_UnreadFields.java MethodName : visit
+Frequent Usage Scenario: 30
+	 org.apache.bcel.generic.GETFIELD : org.apache.bcel.generic.GETFIELD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Instruction//118_DocumentCall.java MethodName : translate
+Frequent Usage Scenario: 31
+	 org.apache.bcel.classfile.JavaClass : org.apache.bcel.classfile.ConstantPool,getConstantPool()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : isEntity
+Frequent Usage Scenario: 32
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.MethodGen,CONSTRUCTOR(org.apache.bcel.classfile.Method,java.lang.String,org.apache.bcel.generic.ConstantPoolGen)
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Instruction//352_TracifyClassLoader.java MethodName : tracifyMethod
+Frequent Usage Scenario: 33
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.Type,getReturnType()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.Instruction,getInstruction()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_FieldOrMethod//0_TypeStack.java MethodName : TypeStack
+Frequent Usage Scenario: 34
+	 org.apache.bcel.Repository : org.apache.bcel.classfile.JavaClass,lookupClass(java.lang.String)
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Repository//66_AnnotationDatabase.java MethodName : getResolvedAnnotation
+Frequent Usage Scenario: 35
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//27_WrappeeTranslator_BCEL.java MethodName : translateMethod
+Frequent Usage Scenario: 36
+	 org.apache.bcel.classfile.AccessFlags : boolean,isFinal()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Repository//71_FindMaskedFields.java MethodName : visit
+Frequent Usage Scenario: 37
+	 org.apache.bcel.generic.FieldGenOrMethodGen : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doInstruction
+Frequent Usage Scenario: 38
+	 org.apache.bcel.generic.INVOKESTATIC : org.apache.bcel.generic.INVOKESTATIC,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//19_VavoomClassLoader.java MethodName : getPreLoggingInstructions
+Frequent Usage Scenario: 39
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.Instruction,getInstruction()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_PUTFIELD//55_AssignedFieldMap.java MethodName : build
+Frequent Usage Scenario: 40
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_PUTFIELD//55_AssignedFieldMap.java MethodName : build
+Frequent Usage Scenario: 41
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getName()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_classfile_ClassParser//111_IOGenerator.java MethodName : generateCode
+Frequent Usage Scenario: 42
+	 org.apache.bcel.generic.ObjectType : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : getRefType
+Frequent Usage Scenario: 43
+	 org.apache.bcel.classfile.AccessFlags : int,getAccessFlags()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 44
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.InstructionList,getInstructionList()
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : isEntity
+Frequent Usage Scenario: 45
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getPrev()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.Instruction,getInstruction()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_FieldOrMethod//0_TypeStack.java MethodName : TypeStack
+Frequent Usage Scenario: 46
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionTargeter[],getTargeters()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.Instruction,getInstruction()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ExceptionThrower//0_BetterCFGBuilder2.java MethodName : build
+Frequent Usage Scenario: 47
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.classfile.Method[],getMethods()
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Constants//327_InstanceTracer.java MethodName : postProcessJavaClass
+Frequent Usage Scenario: 48
+	 org.apache.bcel.classfile.Method : org.apache.bcel.generic.Type,getReturnType()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//250_ClassWrapGen.java MethodName : addMethod
+Frequent Usage Scenario: 49
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.MethodGen,CONSTRUCTOR(org.apache.bcel.classfile.Method,java.lang.String,org.apache.bcel.generic.ConstantPoolGen)
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : isEntity
+Frequent Usage Scenario: 50
+	 org.apache.bcel.classfile.AccessFlags : boolean,isStatic()
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 51
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.InstructionList,getInstructionList()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.Instruction,getInstruction()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_verifier_exc_VerifierConstraintViolatedException//0_StackVer.java MethodName : do_stack_ver
+Frequent Usage Scenario: 52
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_MethodGen//156_AnnotationLoader.java MethodName : load
+Frequent Usage Scenario: 53
+	 org.apache.bcel.generic.BranchHandle : void,setTarget(org.apache.bcel.generic.InstructionHandle)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_JSR//3_ClassGenerator.java MethodName : visitSynchronized
+Frequent Usage Scenario: 54
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.Type[],getArgumentTypes()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.Type,getReturnType()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doMethod
+Frequent Usage Scenario: 55
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : saveFrame
+Frequent Usage Scenario: 56
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 57
+	 org.apache.bcel.classfile.AccessFlags : boolean,isInterface()
+	 org.apache.bcel.generic.ClassGen : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_BranchInstruction//46_WrappeeTranslator_BCEL.java MethodName : startingTranslation
+Frequent Usage Scenario: 58
+	 org.apache.bcel.classfile.ClassParser : org.apache.bcel.classfile.JavaClass,parse()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassPath//34_Package.java MethodName : go
+Frequent Usage Scenario: 59
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getPrev()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ARETURN//15_LoadOfKnownNullValue.java MethodName : visitClassContext
+Frequent Usage Scenario: 60
+	 org.apache.bcel.generic.FieldOrMethod : java.lang.String,getClassName(org.apache.bcel.generic.ConstantPoolGen)
+	 org.apache.bcel.generic.FieldOrMethod : java.lang.String,getSignature(org.apache.bcel.generic.ConstantPoolGen)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doInstruction
+Frequent Usage Scenario: 61
+	 org.apache.bcel.generic.MethodGen : int,getMaxLocals()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.Instruction,getInstruction()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_verifier_exc_VerifierConstraintViolatedException//0_StackVer.java MethodName : do_stack_ver
+Frequent Usage Scenario: 62
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.InstructionList,getInstructionList()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_verifier_exc_VerifierConstraintViolatedException//0_StackVer.java MethodName : do_stack_ver
+Frequent Usage Scenario: 63
+	 org.apache.bcel.generic.InstructionFactory : org.apache.bcel.generic.InstructionFactory,CONSTRUCTOR(org.apache.bcel.generic.ClassGen)
+	 org.apache.bcel.generic.ClassGen : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 64
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_MethodGen//156_AnnotationLoader.java MethodName : load
+Frequent Usage Scenario: 65
+	 org.apache.bcel.generic.ISTORE : org.apache.bcel.generic.ISTORE,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getEnd()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_IFNE//14_Key.java MethodName : traverseNodeSet
+Frequent Usage Scenario: 66
+	 org.apache.bcel.generic.INVOKEVIRTUAL : org.apache.bcel.generic.INVOKEVIRTUAL,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//122_Sort.java MethodName : compileSortRecordFactory
+Frequent Usage Scenario: 67
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 68
+	 org.apache.bcel.generic.BranchInstruction : void,setTarget(org.apache.bcel.generic.InstructionHandle)
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//219_CompilerVisitor.java MethodName : visit
+Frequent Usage Scenario: 69
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_BranchInstruction//46_WrappeeTranslator_BCEL.java MethodName : startingTranslation
+Frequent Usage Scenario: 70
+	 org.apache.bcel.classfile.Method : org.apache.bcel.classfile.Code,getCode()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ByteSequence//29_DuplicateBranches.java MethodName : findIfElseDuplicates
+Frequent Usage Scenario: 71
+	 org.apache.bcel.generic.PUSH : org.apache.bcel.generic.PUSH,CONSTRUCTOR(org.apache.bcel.generic.ConstantPoolGen,int)
+	 org.apache.bcel.generic.PUSH : org.apache.bcel.generic.PUSH,CONSTRUCTOR(org.apache.bcel.generic.ConstantPoolGen,java.lang.String)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 72
+	 org.apache.bcel.generic.BranchHandle : void,setTarget(org.apache.bcel.generic.InstructionHandle)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_JSR//3_ClassGenerator.java MethodName : visitTry
+Frequent Usage Scenario: 73
+	 org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_MethodGen//156_AnnotationLoader.java MethodName : load
+Frequent Usage Scenario: 74
+	 org.apache.bcel.Repository : org.apache.bcel.classfile.JavaClass,lookupClass(java.lang.String)
+	 org.apache.bcel.classfile.JavaClass : org.apache.bcel.classfile.Method[],getMethods()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Repository//66_AnnotationDatabase.java MethodName : getResolvedAnnotation
+Frequent Usage Scenario: 75
+	 org.apache.bcel.generic.RETURN : org.apache.bcel.generic.RETURN,CONSTRUCTOR()
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_BranchInstruction//46_WrappeeTranslator_BCEL.java MethodName : startingTranslation
+Frequent Usage Scenario: 76
+	 org.apache.bcel.generic.ARETURN : org.apache.bcel.generic.ARETURN,CONSTRUCTOR()
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Constants//103_NamedStatement.java MethodName : generateGetSingleObject
+Frequent Usage Scenario: 77
+	 org.apache.bcel.generic.InstructionFactory : org.apache.bcel.generic.NEW,createNew(java.lang.String)
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ALOAD//65_HelloWorldBuilder.java MethodName : main
+Frequent Usage Scenario: 78
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.MethodGen,CONSTRUCTOR(org.apache.bcel.classfile.Method,java.lang.String,org.apache.bcel.generic.ConstantPoolGen)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_classfile_Method//310_LazyMethodGen.java MethodName : LazyMethodGen
+Frequent Usage Scenario: 79
+	 org.apache.bcel.generic.LocalVariableGen : int,getIndex()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_JSR//3_ClassGenerator.java MethodName : visitLocalVariable
+Frequent Usage Scenario: 80
+	 org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	 org.apache.bcel.generic.ClassGen : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 81
+	 org.apache.bcel.generic.ASTORE : org.apache.bcel.generic.ASTORE,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ASTORE//21_Satinc.java MethodName : rewriteSpawn
+Frequent Usage Scenario: 82
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getSuperclassName()
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : isTimeless
+Frequent Usage Scenario: 83
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_MethodGen//156_AnnotationLoader.java MethodName : load
+Frequent Usage Scenario: 84
+	 org.apache.bcel.classfile.JavaClass : java.lang.String[],getInterfaceNames()
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getSuperclassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : getRefType
+Frequent Usage Scenario: 85
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.classfile.JavaClass,getJavaClass()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : createStateClass
+Frequent Usage Scenario: 86
+	 org.apache.bcel.generic.ILOAD : org.apache.bcel.generic.ILOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ILOAD//83_StepPattern.java MethodName : translateSimpleContext
+Frequent Usage Scenario: 87
+	 org.apache.bcel.classfile.JavaClass : org.apache.bcel.classfile.Field[],getFields()
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_PUTFIELD//55_AssignedFieldMap.java MethodName : build
+Frequent Usage Scenario: 88
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.MethodGen,CONSTRUCTOR(org.apache.bcel.classfile.Method,java.lang.String,org.apache.bcel.generic.ConstantPoolGen)
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.InstructionList,getInstructionList()
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//19_VavoomClassLoader.java MethodName : modifyInstructions
+Frequent Usage Scenario: 89
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getEnd()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//27_WrappeeTranslator_BCEL.java MethodName : translateMethod
+Frequent Usage Scenario: 90
+	 org.apache.bcel.classfile.JavaClass : org.apache.bcel.classfile.Method[],getMethods()
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getSignature()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_RETURN//69_FindNullDeref.java MethodName : visitClassContext
+Frequent Usage Scenario: 91
+	 org.apache.bcel.generic.PUSH : org.apache.bcel.generic.PUSH,CONSTRUCTOR(org.apache.bcel.generic.ConstantPoolGen,java.lang.String)
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 92
+	 org.apache.bcel.generic.ClassGen : void,addField(org.apache.bcel.classfile.Field)
+	 org.apache.bcel.generic.FieldGen : org.apache.bcel.classfile.Field,getField()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 93
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.classfile.JavaClass,getJavaClass()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : createStateClass
+Frequent Usage Scenario: 94
+	 org.apache.bcel.classfile.AccessFlags : boolean,isStatic()
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getSignature()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//27_WrappeeTranslator_BCEL.java MethodName : translateMethod
+Frequent Usage Scenario: 95
+	 org.apache.bcel.generic.InstructionFactory : org.apache.bcel.generic.NEW,createNew(java.lang.String)
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//27_WrappeeTranslator_BCEL.java MethodName : translateMethod
+Frequent Usage Scenario: 96
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 97
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 98
+	 org.apache.bcel.generic.ISTORE : org.apache.bcel.generic.ISTORE,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.ILOAD : org.apache.bcel.generic.ILOAD,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Instruction//463_ParentPattern.java MethodName : translate
+Frequent Usage Scenario: 99
+	 org.apache.bcel.generic.INVOKEINTERFACE : org.apache.bcel.generic.INVOKEINTERFACE,CONSTRUCTOR(int,int)
+	 org.apache.bcel.generic.ILOAD : org.apache.bcel.generic.ILOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Instruction//463_ParentPattern.java MethodName : translate
+Frequent Usage Scenario: 100
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getSignature()
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_MONITORENTER//6_SelfCalls.java MethodName : execute
+Frequent Usage Scenario: 101
+	 org.apache.bcel.generic.NEW : org.apache.bcel.generic.NEW,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.INVOKESPECIAL : org.apache.bcel.generic.INVOKESPECIAL,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//250_ClassWrapGen.java MethodName : addMethod
+Frequent Usage Scenario: 102
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.Instruction,getInstruction()
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ASTORE//21_Satinc.java MethodName : rewriteSpawn
+Frequent Usage Scenario: 103
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.Type,getReturnType()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ASTORE//21_Satinc.java MethodName : rewriteSpawn
+Frequent Usage Scenario: 104
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.classfile.JavaClass,getJavaClass()
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : createStateClass
+Frequent Usage Scenario: 105
+	 org.apache.bcel.generic.INVOKESPECIAL : org.apache.bcel.generic.INVOKESPECIAL,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//237_CompilerContext.java MethodName : pushFunctionData
+Frequent Usage Scenario: 106
+	 org.apache.bcel.generic.INVOKESPECIAL : org.apache.bcel.generic.INVOKESPECIAL,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//219_CompilerVisitor.java MethodName : visit
+Frequent Usage Scenario: 107
+	 org.apache.bcel.generic.ClassGen : java.lang.String,getClassName()
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 108
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ClassGen,CONSTRUCTOR(org.apache.bcel.classfile.JavaClass)
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//19_VavoomClassLoader.java MethodName : modifyClass
+Frequent Usage Scenario: 109
+	 org.apache.bcel.generic.ILOAD : org.apache.bcel.generic.ILOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getEnd()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_IFNE//14_Key.java MethodName : traverseNodeSet
+Frequent Usage Scenario: 110
+	 org.apache.bcel.generic.LocalVariableGen : int,getIndex()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getEnd()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Instruction//342_RealType.java MethodName : translateTo
+Frequent Usage Scenario: 111
+	 org.apache.bcel.generic.ISTORE : org.apache.bcel.generic.ISTORE,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getEnd()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_IFNE//14_Key.java MethodName : traverseNodeSet
+Frequent Usage Scenario: 112
+	 org.apache.bcel.generic.ASTORE : org.apache.bcel.generic.ASTORE,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ILOAD//83_StepPattern.java MethodName : translateGeneralContext
+Frequent Usage Scenario: 113
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionTargeter[],getTargeters()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_classfile_Method//310_LazyMethodGen.java MethodName : LazyMethodGen
+Frequent Usage Scenario: 114
+	 org.apache.bcel.classfile.AccessFlags : boolean,isNative()
+	 org.apache.bcel.classfile.AccessFlags : boolean,isAbstract()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_classfile_Method//310_LazyMethodGen.java MethodName : LazyMethodGen
+Frequent Usage Scenario: 115
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getEnd()
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_IFEQ//14_Copy.java MethodName : translate
+Frequent Usage Scenario: 116
+	 org.apache.bcel.generic.ILOAD : org.apache.bcel.generic.ILOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ILOAD//83_StepPattern.java MethodName : translateGeneralContext
+Frequent Usage Scenario: 117
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.Instruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : restoreFrame
+Frequent Usage Scenario: 118
+	 org.apache.bcel.generic.ISTORE : org.apache.bcel.generic.ISTORE,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_IFNE//14_Key.java MethodName : traverseNodeSet
+Frequent Usage Scenario: 119
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.classfile.Method[],getMethods()
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//19_VavoomClassLoader.java MethodName : modifyClass
+Frequent Usage Scenario: 120
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_GETFIELD//80_Sort.java MethodName : translateSortIterator
+Frequent Usage Scenario: 121
+	 org.apache.bcel.generic.PUSH : org.apache.bcel.generic.PUSH,CONSTRUCTOR(org.apache.bcel.generic.ConstantPoolGen,java.lang.String)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 122
+	 org.apache.bcel.generic.ILOAD : org.apache.bcel.generic.ILOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_IFNE//14_Key.java MethodName : traverseNodeSet
+Frequent Usage Scenario: 123
+	 org.apache.bcel.classfile.JavaClass : java.lang.String,getSuperclassName()
+	 org.apache.bcel.Repository : org.apache.bcel.classfile.JavaClass,lookupClass(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Repository//63_InvalidJUnitTest.java MethodName : visitClassContext
+Frequent Usage Scenario: 124
+	 org.apache.bcel.generic.InstructionFactory : org.apache.bcel.generic.InstructionFactory,CONSTRUCTOR(org.apache.bcel.generic.ClassGen)
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 125
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.Instruction)
+	 org.apache.bcel.generic.ASTORE : org.apache.bcel.generic.ASTORE,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ASTORE//21_Satinc.java MethodName : rewriteSpawn
+Frequent Usage Scenario: 126
+	 org.apache.bcel.generic.MethodGen : int,getMaxLocals()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_classfile_Method//310_LazyMethodGen.java MethodName : LazyMethodGen
+Frequent Usage Scenario: 127
+	 org.apache.bcel.generic.DUP : org.apache.bcel.generic.DUP,CONSTRUCTOR()
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_classfile_ClassParser//111_IOGenerator.java MethodName : generateCode
+Frequent Usage Scenario: 128
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : restoreFrame
+Frequent Usage Scenario: 129
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.InstructionList,getInstructionList()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : restoreFrame
+Frequent Usage Scenario: 130
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.Type[],getArgumentTypes()
+	 org.apache.bcel.classfile.AccessFlags : boolean,isNative()
+	 org.apache.bcel.classfile.AccessFlags : boolean,isAbstract()
+	 org.apache.bcel.generic.MethodGen : int,getMaxLocals()
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_verifier_exc_VerifierConstraintViolatedException//0_StackVer.java MethodName : do_stack_ver
+Frequent Usage Scenario: 131
+	 org.apache.bcel.classfile.AccessFlags : boolean,isNative()
+	 org.apache.bcel.classfile.AccessFlags : boolean,isAbstract()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.MethodGen,CONSTRUCTOR(org.apache.bcel.classfile.Method,java.lang.String,org.apache.bcel.generic.ConstantPoolGen)
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Constants//222_GCRTMethodInfo.java MethodName : stackWalker
+Frequent Usage Scenario: 132
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle[],getInstructionHandles()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.InstructionList,getInstructionList()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeConstructorNew
+Frequent Usage Scenario: 133
+	 org.apache.bcel.generic.InstructionFactory : org.apache.bcel.generic.NEW,createNew(java.lang.String)
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : saveFrame
+Frequent Usage Scenario: 134
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : createStateClass
+Frequent Usage Scenario: 135
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.Type[],getArgumentTypes()
+	 org.apache.bcel.generic.MethodGen : int,getMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.MethodGen,CONSTRUCTOR(org.apache.bcel.classfile.Method,java.lang.String,org.apache.bcel.generic.ConstantPoolGen)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Constants//222_GCRTMethodInfo.java MethodName : stackWalker
+Frequent Usage Scenario: 136
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : saveFrame
+Frequent Usage Scenario: 137
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.InstructionList,getInstructionList()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : restoreFrame
+Frequent Usage Scenario: 138
+	 org.apache.bcel.generic.MethodGen : int,getMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.InstructionList,getInstructionList()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_verifier_exc_VerifierConstraintViolatedException//0_StackVer.java MethodName : do_stack_ver
+Frequent Usage Scenario: 139
+	 org.apache.bcel.generic.ClassGen : java.lang.String,getClassName()
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doInstruction
+Frequent Usage Scenario: 140
+	 org.apache.bcel.generic.ARETURN : org.apache.bcel.generic.ARETURN,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Constants//103_NamedStatement.java MethodName : generateGetSingleObject
+Frequent Usage Scenario: 141
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getSignature()
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_MethodGen//156_AnnotationLoader.java MethodName : load
+Frequent Usage Scenario: 142
+	 org.apache.bcel.generic.ASTORE : org.apache.bcel.generic.ASTORE,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_GETFIELD//80_Sort.java MethodName : translateSortIterator
+Frequent Usage Scenario: 143
+	 org.apache.bcel.generic.ConstantPoolGen : int,addMethodref(java.lang.String,java.lang.String,java.lang.String)
+	 org.apache.bcel.generic.INVOKEVIRTUAL : org.apache.bcel.generic.INVOKEVIRTUAL,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//122_Sort.java MethodName : compileSortRecordFactory
+Frequent Usage Scenario: 144
+	 org.apache.bcel.generic.ConstantPoolGen : int,addMethodref(java.lang.String,java.lang.String,java.lang.String)
+	 org.apache.bcel.generic.INVOKESPECIAL : org.apache.bcel.generic.INVOKESPECIAL,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//122_Sort.java MethodName : compileSortRecordFactory
+Frequent Usage Scenario: 145
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_MethodGen//156_AnnotationLoader.java MethodName : load
+Frequent Usage Scenario: 146
+	 org.apache.bcel.generic.ISTORE : org.apache.bcel.generic.ISTORE,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ConstantPoolGen//358_Stylesheet.java MethodName : translate
+Frequent Usage Scenario: 147
+	 org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : saveFrame
+Frequent Usage Scenario: 148
+	 org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : createStateClass
+Frequent Usage Scenario: 149
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.classfile.JavaClass,getJavaClass()
+	 org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : createStateClass
+Frequent Usage Scenario: 150
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 151
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 152
+	 org.apache.bcel.generic.RETURN : org.apache.bcel.generic.RETURN,CONSTRUCTOR()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_BranchInstruction//46_WrappeeTranslator_BCEL.java MethodName : startingTranslation
+Frequent Usage Scenario: 153
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : createStateClass
+Frequent Usage Scenario: 154
+	 org.apache.bcel.generic.ASTORE : org.apache.bcel.generic.ASTORE,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_GETFIELD//80_Sort.java MethodName : translateSortIterator
+Frequent Usage Scenario: 155
+	 org.apache.bcel.generic.ConstantPoolGen : int,addMethodref(java.lang.String,java.lang.String,java.lang.String)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//122_Sort.java MethodName : compileSortRecordFactory
+Frequent Usage Scenario: 156
+	 org.apache.bcel.generic.InstructionList : void,dispose()
+	 org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//185_MachineCodeJava.java MethodName : MachineCodeJava
+Frequent Usage Scenario: 157
+	 org.apache.bcel.generic.ClassGen : java.lang.String,getClassName()
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 158
+	 org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//27_WrappeeTranslator_BCEL.java MethodName : translateMethod
+Frequent Usage Scenario: 159
+	 org.apache.bcel.generic.InstructionFactory : org.apache.bcel.generic.NEW,createNew(java.lang.String)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : saveFrame
+Frequent Usage Scenario: 160
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 161
+	 org.apache.bcel.generic.ILOAD : org.apache.bcel.generic.ILOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ConstantPoolGen//169_Mode.java MethodName : compileApplyImports
+Frequent Usage Scenario: 162
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getEnd()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ConstantPoolGen//169_Mode.java MethodName : compileApplyImports
+Frequent Usage Scenario: 163
+	 org.apache.bcel.generic.PUSH : org.apache.bcel.generic.PUSH,CONSTRUCTOR(org.apache.bcel.generic.ConstantPoolGen,int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : saveFrame
+Frequent Usage Scenario: 164
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_JSR//3_ClassGenerator.java MethodName : visitFor
+Frequent Usage Scenario: 165
+	 org.apache.bcel.generic.INVOKESPECIAL : org.apache.bcel.generic.INVOKESPECIAL,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//122_Sort.java MethodName : compileSortRecordFactory
+Frequent Usage Scenario: 166
+	 org.apache.bcel.generic.BranchInstruction : void,setTarget(org.apache.bcel.generic.InstructionHandle)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 167
+	 org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//185_MachineCodeJava.java MethodName : MachineCodeJava
+Frequent Usage Scenario: 168
+	 org.apache.bcel.generic.InstructionFactory : org.apache.bcel.generic.InstructionFactory,CONSTRUCTOR(org.apache.bcel.generic.ClassGen)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 169
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : saveFrame
+Frequent Usage Scenario: 170
+	 org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : doClass
+Frequent Usage Scenario: 171
+	 org.apache.bcel.generic.PUSH : org.apache.bcel.generic.PUSH,CONSTRUCTOR(org.apache.bcel.generic.ConstantPoolGen,java.lang.String)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 172
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_ClassLoader//16_PolymerClassLoader.java MethodName : makeMethodNew
+Frequent Usage Scenario: 173
+	 org.apache.bcel.generic.Type : org.apache.bcel.generic.Type,getType(java.lang.String)
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getSignature()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Repository//107_WrappeeTranslator_BCEL.java MethodName : generateStubMethod
+Frequent Usage Scenario: 174
+	 org.apache.bcel.generic.DUP : org.apache.bcel.generic.DUP,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_Constants//104_Compiler.java MethodName : generate
+Frequent Usage Scenario: 175
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : createStateClass
+Frequent Usage Scenario: 176
+	 org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ALOAD//65_HelloWorldBuilder.java MethodName : main
+Frequent Usage Scenario: 177
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : createStateClass
+Frequent Usage Scenario: 178
+	 org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	 org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	 org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_Repository//21_Rewriter.java MethodName : createStateClass
+Frequent Usage Scenario: 179
+	 org.apache.bcel.generic.RETURN : org.apache.bcel.generic.RETURN,CONSTRUCTOR()
+	 org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_BranchInstruction//46_WrappeeTranslator_BCEL.java MethodName : startingTranslation
+Frequent Usage Scenario: 180
+	 org.apache.bcel.generic.PUTFIELD : org.apache.bcel.generic.PUTFIELD,CONSTRUCTOR(int)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_Type//122_Sort.java MethodName : compileSortRecordFactory
+Frequent Usage Scenario: 181
+	 org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getName()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_util_InstructionFinder//27_WrappeeTranslator_BCEL.java MethodName : translateMethod
+Frequent Usage Scenario: 182
+	 org.apache.bcel.generic.InstructionFactory : org.apache.bcel.generic.NEW,createNew(org.apache.bcel.generic.ObjectType)
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	 org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Scenario Type : InvokesUS FileName : C:\APIUsage\BCEL\org_apache_bcel_generic_ArrayType//52_R_Main.java MethodName : generate

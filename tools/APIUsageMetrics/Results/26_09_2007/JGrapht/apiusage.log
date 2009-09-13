@@ -1,0 +1,933 @@
+2007-08-01 13:41:42,921  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for java.lang.RuntimeException
+2007-08-01 13:41:43,062  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Iterator
+2007-08-01 13:41:43,062  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Comparator
+2007-08-01 13:41:43,203  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for javax.swing.JApplet
+2007-08-01 13:41:43,218  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.EventListener
+2007-08-01 13:41:43,234  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for java.util.EventObject
+2007-08-01 13:41:43,250  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for java.util.EventObject
+2007-08-01 13:41:43,281  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for java.util.EventObject
+2007-08-01 13:41:43,281  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for java.util.EventObject
+2007-08-01 13:41:43,531  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Comparator
+2007-08-01 13:41:43,546  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Iterator
+2007-08-01 13:41:43,765  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Iterator
+2007-08-01 13:41:43,796  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Iterator
+2007-08-01 13:41:43,843  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for java.applet.Applet
+2007-08-01 13:41:43,859  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for com.touchgraph.graphlayout.GLPanel
+2007-08-01 13:41:44,015  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for org.jgraph.graph.DefaultGraphModel
+2007-08-01 13:41:44,015  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,015  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for org.jgraph.event.GraphModelListener
+2007-08-01 13:41:44,031  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,031  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,281  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.lang.Cloneable
+2007-08-01 13:41:44,281  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.lang.Cloneable
+2007-08-01 13:41:44,296  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,640  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,687  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,765  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.lang.Cloneable
+2007-08-01 13:41:44,765  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,765  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,765  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,765  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,765  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,781  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,781  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:44,812  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:45,078  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:45,078  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:45,218  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.io.Serializable
+2007-08-01 13:41:45,265  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Iterator
+2007-08-01 13:41:45,453  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for java.util.LinkedList
+2007-08-01 13:41:45,453  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Queue
+2007-08-01 13:41:45,484  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for java.lang.Number
+2007-08-01 13:41:45,484  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.lang.Comparable
+2007-08-01 13:41:45,531  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for java.util.ArrayList
+2007-08-01 13:41:45,531  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Set
+2007-08-01 13:41:45,531  WARN (InheritanceHierarchyVisitor.java:72) - Parent object is found as null for java.util.AbstractSet
+2007-08-01 13:41:45,546  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Iterator
+2007-08-01 13:41:45,546  WARN (InheritanceHierarchyVisitor.java:98) - Parent object is found as null for java.util.Enumeration
+2007-08-01 13:41:45,734  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.NeighborIndex,getNeighbors(V)  ReturnType: for class: org.jgrapht.alg.NeighborIndex
+2007-08-01 13:41:45,734  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.NeighborIndex,getNeighbors(V)  ReturnType: for class: org.jgrapht.alg.NeighborIndex
+2007-08-01 13:41:45,750  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.NeighborIndex,getNeighbors(V)  ReturnType: for class: org.jgrapht.alg.NeighborIndex
+2007-08-01 13:41:45,750  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.NeighborIndex,getNeighbors(V)  ReturnType: for class: org.jgrapht.alg.NeighborIndex
+2007-08-01 13:41:45,750  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.NeighborIndex,getNeighbors(V)  ReturnType:Neighbors<V,E> for class: org.jgrapht.alg.NeighborIndex
+2007-08-01 13:41:45,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.DijkstraShortestPath,createEdgeList(org.jgrapht.Graph<V,E>,org.jgrapht.traverse.ClosestFirstIterator<V,E>,V)  ReturnType: for class: org.jgrapht.alg.DijkstraShortestPath
+2007-08-01 13:41:45,812  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.DijkstraShortestPath,createEdgeList(Graph<V,E>,ClosestFirstIterator<V,E>,V)  ReturnType:void for class: org.jgrapht.alg.DijkstraShortestPath
+2007-08-01 13:41:45,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BronKerboschCliqueFinder,findCliques(java.util.List<V>,java.util.List<V>,java.util.List<V>)  ReturnType: for class: org.jgrapht.alg.BronKerboschCliqueFinder
+2007-08-01 13:41:45,828  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BronKerboschCliqueFinder,findCliques(List<V>,List<V>,List<V>)  ReturnType:void for class: org.jgrapht.alg.BronKerboschCliqueFinder
+2007-08-01 13:41:45,828  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BronKerboschCliqueFinder,end(List<V>,List<V>)  ReturnType:boolean for class: org.jgrapht.alg.BronKerboschCliqueFinder
+2007-08-01 13:41:45,875  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.ConnectivityInspector,init()  ReturnType: for class: org.jgrapht.alg.ConnectivityInspector
+2007-08-01 13:41:45,875  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.ConnectivityInspector,init()  ReturnType: for class: org.jgrapht.alg.ConnectivityInspector
+2007-08-01 13:41:45,875  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.ConnectivityInspector,lazyFindConnectedSets()  ReturnType: for class: org.jgrapht.alg.ConnectivityInspector
+2007-08-01 13:41:45,875  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.ConnectivityInspector,lazyFindConnectedSets()  ReturnType: for class: org.jgrapht.alg.ConnectivityInspector
+2007-08-01 13:41:45,875  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.ConnectivityInspector,init()  ReturnType: for class: org.jgrapht.alg.ConnectivityInspector
+2007-08-01 13:41:45,875  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.ConnectivityInspector,init()  ReturnType: for class: org.jgrapht.alg.ConnectivityInspector
+2007-08-01 13:41:45,875  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.ConnectivityInspector,init()  ReturnType: for class: org.jgrapht.alg.ConnectivityInspector
+2007-08-01 13:41:45,875  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.ConnectivityInspector,init()  ReturnType: for class: org.jgrapht.alg.ConnectivityInspector
+2007-08-01 13:41:45,875  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.ConnectivityInspector,init()  ReturnType:void for class: org.jgrapht.alg.ConnectivityInspector
+2007-08-01 13:41:45,875  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.ConnectivityInspector,lazyFindConnectedSets()  ReturnType:List<Set<V>> for class: org.jgrapht.alg.ConnectivityInspector
+2007-08-01 13:41:45,906  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.DirectedNeighborIndex,getPredecessors(V)  ReturnType: for class: org.jgrapht.alg.DirectedNeighborIndex
+2007-08-01 13:41:45,906  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.DirectedNeighborIndex,getPredecessors(V)  ReturnType: for class: org.jgrapht.alg.DirectedNeighborIndex
+2007-08-01 13:41:45,906  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.DirectedNeighborIndex,getSuccessors(V)  ReturnType: for class: org.jgrapht.alg.DirectedNeighborIndex
+2007-08-01 13:41:45,906  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.DirectedNeighborIndex,getSuccessors(V)  ReturnType: for class: org.jgrapht.alg.DirectedNeighborIndex
+2007-08-01 13:41:45,906  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.DirectedNeighborIndex,getSuccessors(V)  ReturnType: for class: org.jgrapht.alg.DirectedNeighborIndex
+2007-08-01 13:41:45,906  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.DirectedNeighborIndex,getPredecessors(V)  ReturnType: for class: org.jgrapht.alg.DirectedNeighborIndex
+2007-08-01 13:41:45,906  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.DirectedNeighborIndex,getPredecessors(V)  ReturnType:Neighbors<V,E> for class: org.jgrapht.alg.DirectedNeighborIndex
+2007-08-01 13:41:45,906  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.DirectedNeighborIndex,getSuccessors(V)  ReturnType:Neighbors<V,E> for class: org.jgrapht.alg.DirectedNeighborIndex
+2007-08-01 13:41:45,953  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.CycleDetector,execute(null,null)  ReturnType: for class: org.jgrapht.alg.CycleDetector
+2007-08-01 13:41:45,953  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.CycleDetector,execute(null,V)  ReturnType: for class: org.jgrapht.alg.CycleDetector
+2007-08-01 13:41:45,953  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.CycleDetector,execute(java.util.Set<V>,V)  ReturnType: for class: org.jgrapht.alg.CycleDetector
+2007-08-01 13:41:45,953  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.CycleDetector,execute(Set<V>,V)  ReturnType:void for class: org.jgrapht.alg.CycleDetector
+2007-08-01 13:41:46,000  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.StrongConnectivityInspector,createVertexData()  ReturnType: for class: org.jgrapht.alg.StrongConnectivityInspector
+2007-08-01 13:41:46,000  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.StrongConnectivityInspector,dfsVisit(org.jgrapht.DirectedGraph<V,E>,org.jgrapht.alg.StrongConnectivityInspector.VertexData<V>,null)  ReturnType: for class: org.jgrapht.alg.StrongConnectivityInspector
+2007-08-01 13:41:46,000  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.StrongConnectivityInspector,resetVertexData()  ReturnType: for class: org.jgrapht.alg.StrongConnectivityInspector
+2007-08-01 13:41:46,000  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.StrongConnectivityInspector,dfsVisit(org.jgrapht.DirectedGraph<V,E>,org.jgrapht.alg.StrongConnectivityInspector.VertexData<V>,java.util.Set<V>)  ReturnType: for class: org.jgrapht.alg.StrongConnectivityInspector
+2007-08-01 13:41:46,015  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.StrongConnectivityInspector,createVertexData()  ReturnType:void for class: org.jgrapht.alg.StrongConnectivityInspector
+2007-08-01 13:41:46,015  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.StrongConnectivityInspector,dfsVisit(DirectedGraph<V,E>,VertexData<V>,Set<V>)  ReturnType:void for class: org.jgrapht.alg.StrongConnectivityInspector
+2007-08-01 13:41:46,015  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.StrongConnectivityInspector,resetVertexData()  ReturnType:void for class: org.jgrapht.alg.StrongConnectivityInspector
+2007-08-01 13:41:46,015  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.StrongConnectivityInspector.VertexData,CONSTRUCTOR(VertexData<V>,V,boolean,boolean)  ReturnType:null for class: org.jgrapht.alg.StrongConnectivityInspector.VertexData
+2007-08-01 13:41:46,031  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordShortestPath,lazyCalculate()  ReturnType: for class: org.jgrapht.alg.BellmanFordShortestPath
+2007-08-01 13:41:46,031  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordShortestPath,assertGetPath(V)  ReturnType: for class: org.jgrapht.alg.BellmanFordShortestPath
+2007-08-01 13:41:46,031  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordShortestPath,assertGetPath(V)  ReturnType: for class: org.jgrapht.alg.BellmanFordShortestPath
+2007-08-01 13:41:46,031  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordShortestPath,lazyCalculate()  ReturnType: for class: org.jgrapht.alg.BellmanFordShortestPath
+2007-08-01 13:41:46,031  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordShortestPath,createPath(V)  ReturnType: for class: org.jgrapht.alg.BellmanFordShortestPath
+2007-08-01 13:41:46,031  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BellmanFordShortestPath,assertGetPath(V)  ReturnType:void for class: org.jgrapht.alg.BellmanFordShortestPath
+2007-08-01 13:41:46,031  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BellmanFordShortestPath,createPath(V)  ReturnType:List<E> for class: org.jgrapht.alg.BellmanFordShortestPath
+2007-08-01 13:41:46,046  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BellmanFordShortestPath,lazyCalculate()  ReturnType:void for class: org.jgrapht.alg.BellmanFordShortestPath
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordIterator,assertBellmanFordIterator(org.jgrapht.Graph<V,E>,V)  ReturnType: for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordIterator,encounterStartVertex()  ReturnType: for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordIterator,encounterStartVertex()  ReturnType: for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordIterator,relaxVertexAgain(V,E)  ReturnType: for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordIterator,relaxVertex(V,E)  ReturnType: for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.alg.BellmanFordIterator,savePassData(java.util.List<V>)  ReturnType: for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BellmanFordIterator,assertBellmanFordIterator(Graph<V,E>,V)  ReturnType:void for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BellmanFordIterator,createSeenData(V,E,double)  ReturnType:BellmanFordPathElement<V,E> for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BellmanFordIterator,encounterStartVertex()  ReturnType:void for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BellmanFordIterator,relaxVertex(V,E)  ReturnType:void for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BellmanFordIterator,relaxVertexAgain(V,E)  ReturnType:boolean for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,109  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.alg.BellmanFordIterator,savePassData(List<V>)  ReturnType:void for class: org.jgrapht.alg.BellmanFordIterator
+2007-08-01 13:41:46,156  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.PerformanceDemo,reportPerformanceFor(java.lang.String,long)  ReturnType: for class: org.jgrapht.demo.PerformanceDemo
+2007-08-01 13:41:46,171  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.PerformanceDemo,reportPerformanceFor(java.lang.String,long)  ReturnType: for class: org.jgrapht.demo.PerformanceDemo
+2007-08-01 13:41:46,171  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.PerformanceDemo,reportPerformanceFor(java.lang.String,long)  ReturnType: for class: org.jgrapht.demo.PerformanceDemo
+2007-08-01 13:41:46,171  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.PerformanceDemo,reportPerformanceFor(java.lang.String,long)  ReturnType: for class: org.jgrapht.demo.PerformanceDemo
+2007-08-01 13:41:46,171  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.demo.PerformanceDemo,reportPerformanceFor(String,long)  ReturnType:void for class: org.jgrapht.demo.PerformanceDemo
+2007-08-01 13:41:46,171  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.demo.PerformanceDemo,usedMemory()  ReturnType:long for class: org.jgrapht.demo.PerformanceDemo
+2007-08-01 13:41:46,187  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.demo.HelloJGraphT,CONSTRUCTOR()  ReturnType:null for class: org.jgrapht.demo.HelloJGraphT
+2007-08-01 13:41:46,187  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.HelloJGraphT,createStringGraph()  ReturnType: for class: org.jgrapht.demo.HelloJGraphT
+2007-08-01 13:41:46,187  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.HelloJGraphT,createHrefGraph()  ReturnType: for class: org.jgrapht.demo.HelloJGraphT
+2007-08-01 13:41:46,187  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.demo.HelloJGraphT,createHrefGraph()  ReturnType:DirectedGraph<URL,DefaultEdge> for class: org.jgrapht.demo.HelloJGraphT
+2007-08-01 13:41:46,187  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.demo.HelloJGraphT,createStringGraph()  ReturnType:UndirectedGraph<String,DefaultEdge> for class: org.jgrapht.demo.HelloJGraphT
+2007-08-01 13:41:46,250  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.JGraphAdapterDemo,adjustDisplaySettings(org.jgraph.JGraph)  ReturnType: for class: org.jgrapht.demo.JGraphAdapterDemo
+2007-08-01 13:41:46,250  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.JGraphAdapterDemo,getContentPane()  ReturnType: for class: org.jgrapht.demo.JGraphAdapterDemo
+2007-08-01 13:41:46,250  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.JGraphAdapterDemo,resize(java.awt.Dimension)  ReturnType: for class: org.jgrapht.demo.JGraphAdapterDemo
+2007-08-01 13:41:46,250  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.JGraphAdapterDemo,positionVertexAt(java.lang.String,int,int)  ReturnType: for class: org.jgrapht.demo.JGraphAdapterDemo
+2007-08-01 13:41:46,250  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.JGraphAdapterDemo,positionVertexAt(java.lang.String,int,int)  ReturnType: for class: org.jgrapht.demo.JGraphAdapterDemo
+2007-08-01 13:41:46,250  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.JGraphAdapterDemo,positionVertexAt(java.lang.String,int,int)  ReturnType: for class: org.jgrapht.demo.JGraphAdapterDemo
+2007-08-01 13:41:46,250  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.demo.JGraphAdapterDemo,positionVertexAt(java.lang.String,int,int)  ReturnType: for class: org.jgrapht.demo.JGraphAdapterDemo
+2007-08-01 13:41:46,250  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.demo.JGraphAdapterDemo,adjustDisplaySettings(JGraph)  ReturnType:void for class: org.jgrapht.demo.JGraphAdapterDemo
+2007-08-01 13:41:46,250  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.demo.JGraphAdapterDemo,positionVertexAt(Object,int,int)  ReturnType:void for class: org.jgrapht.demo.JGraphAdapterDemo
+2007-08-01 13:41:46,328  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.RandomGraphHelper,CONSTRUCTOR()  ReturnType:null for class: org.jgrapht.experimental.RandomGraphHelper
+2007-08-01 13:41:46,343  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.GraphTests,CONSTRUCTOR()  ReturnType:null for class: org.jgrapht.experimental.GraphTests
+2007-08-01 13:41:46,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.GraphReader,split(String)  ReturnType:List<String> for class: org.jgrapht.experimental.GraphReader
+2007-08-01 13:41:46,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.GraphReader,skipComments()  ReturnType:List<String> for class: org.jgrapht.experimental.GraphReader
+2007-08-01 13:41:46,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.GraphReader,readNodeCount()  ReturnType:int for class: org.jgrapht.experimental.GraphReader
+2007-08-01 13:41:46,406  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.GraphReader,readNodeCount()  ReturnType: for class: org.jgrapht.experimental.GraphReader
+2007-08-01 13:41:46,406  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.GraphReader,skipComments()  ReturnType: for class: org.jgrapht.experimental.GraphReader
+2007-08-01 13:41:46,406  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.GraphReader,skipComments()  ReturnType: for class: org.jgrapht.experimental.GraphReader
+2007-08-01 13:41:46,437  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.GraphSquare,addSquareEdges(org.jgrapht.Graph<V,E>,boolean)  ReturnType: for class: org.jgrapht.experimental.GraphSquare
+2007-08-01 13:41:46,437  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.GraphSquare,edgeAdded(GraphEdgeChangeEvent<V,E>)  ReturnType:void for class: org.jgrapht.experimental.GraphSquare
+2007-08-01 13:41:46,437  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.GraphSquare,edgeRemoved(GraphEdgeChangeEvent<V,E>)  ReturnType:void for class: org.jgrapht.experimental.GraphSquare
+2007-08-01 13:41:46,437  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.GraphSquare,vertexAdded(GraphVertexChangeEvent<V>)  ReturnType:void for class: org.jgrapht.experimental.GraphSquare
+2007-08-01 13:41:46,437  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.GraphSquare,vertexRemoved(GraphVertexChangeEvent<V>)  ReturnType:void for class: org.jgrapht.experimental.GraphSquare
+2007-08-01 13:41:46,437  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.GraphSquare,addEdgesStartingAt(Graph<V,E>,V,V,boolean)  ReturnType:void for class: org.jgrapht.experimental.GraphSquare
+2007-08-01 13:41:46,437  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.GraphSquare,addSquareEdges(Graph<V,E>,boolean)  ReturnType:void for class: org.jgrapht.experimental.GraphSquare
+2007-08-01 13:41:46,453  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.alg.ExactAlgorithm,getResult(Map<V,Object>)  ReturnType:ResultType for class: org.jgrapht.experimental.alg.ExactAlgorithm
+2007-08-01 13:41:46,468  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.alg.ApproximationAlgorithm,getUpperBound(Map<V,Object>)  ReturnType:ResultType for class: org.jgrapht.experimental.alg.ApproximationAlgorithm
+2007-08-01 13:41:46,468  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.alg.ApproximationAlgorithm,getLowerBound(Map<V,Object>)  ReturnType:ResultType for class: org.jgrapht.experimental.alg.ApproximationAlgorithm
+2007-08-01 13:41:46,468  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.alg.ApproximationAlgorithm,isExact()  ReturnType:boolean for class: org.jgrapht.experimental.alg.ApproximationAlgorithm
+2007-08-01 13:41:46,484  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.alg.color.BrownBacktrackColoring,recursiveColor(int)  ReturnType:void for class: org.jgrapht.experimental.alg.color.BrownBacktrackColoring
+2007-08-01 13:41:46,484  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.BrownBacktrackColoring,recursiveColor(int)  ReturnType: for class: org.jgrapht.experimental.alg.color.BrownBacktrackColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.alg.color.GreedyColoring,color(int[])  ReturnType:int for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.alg.color.GreedyColoring,smallestDegreeLastOrder()  ReturnType:int[] for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.alg.color.GreedyColoring,largestSaturationFirstOrder()  ReturnType:int[] for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.GreedyColoring,color(null)  ReturnType: for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.GreedyColoring,color(int[])  ReturnType: for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.GreedyColoring,smallestDegreeLastOrder()  ReturnType: for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.GreedyColoring,color(int[])  ReturnType: for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.GreedyColoring,largestSaturationFirstOrder()  ReturnType: for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.GreedyColoring,color(null)  ReturnType: for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.GreedyColoring,color(int[])  ReturnType: for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.GreedyColoring,smallestDegreeLastOrder()  ReturnType: for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.GreedyColoring,color(int[])  ReturnType: for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,515  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.alg.color.GreedyColoring,largestSaturationFirstOrder()  ReturnType: for class: org.jgrapht.experimental.alg.color.GreedyColoring
+2007-08-01 13:41:46,546  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.equivalence.EquivalenceSet,CONSTRUCTOR()  ReturnType:null for class: org.jgrapht.experimental.equivalence.EquivalenceSet
+2007-08-01 13:41:46,578  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.equivalence.EquivalenceSetCreator,createEqualityGroupMap(java.util.Collection<EE>,org.jgrapht.experimental.equivalence.EquivalenceComparator<,>,CC)  ReturnType: for class: org.jgrapht.experimental.equivalence.EquivalenceSetCreator
+2007-08-01 13:41:46,578  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.equivalence.EquivalenceSetCreator,createEqualityGroupMap(Collection<EE>,EquivalenceComparator<? super EE,? super CC>,CC)  ReturnType:HashMap<Integer,List<EquivalenceSet<? super EE,? super CC>>> for class: org.jgrapht.experimental.equivalence.EquivalenceSetCreator
+2007-08-01 13:41:46,593  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.isomorphism.GraphOrdering,init(org.jgrapht.Graph<V,E>,java.util.Set<V>,java.util.Set<E>)  ReturnType: for class: org.jgrapht.experimental.isomorphism.GraphOrdering
+2007-08-01 13:41:46,593  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.isomorphism.GraphOrdering,init(Graph<V,E>,Set<V>,Set<E>)  ReturnType:void for class: org.jgrapht.experimental.isomorphism.GraphOrdering
+2007-08-01 13:41:46,671  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector,init()  ReturnType: for class: org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector
+2007-08-01 13:41:46,671  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector,init()  ReturnType:void for class: org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector
+2007-08-01 13:41:46,671  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector,findNextIsomorphicGraph()  ReturnType:IsomorphismRelation<V,E> for class: org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector
+2007-08-01 13:41:46,671  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector.NextFunctor,findNextIsomorphicGraph()  ReturnType: for class: org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector.NextFunctor
+2007-08-01 13:41:46,734  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.isomorphism.IsomorphismRelation,initGraphMapping()  ReturnType: for class: org.jgrapht.experimental.isomorphism.IsomorphismRelation
+2007-08-01 13:41:46,734  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.isomorphism.IsomorphismRelation,initGraphMapping()  ReturnType: for class: org.jgrapht.experimental.isomorphism.IsomorphismRelation
+2007-08-01 13:41:46,734  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.isomorphism.IsomorphismRelation,initGraphMapping()  ReturnType:void for class: org.jgrapht.experimental.isomorphism.IsomorphismRelation
+2007-08-01 13:41:46,765  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector,reorderTargetArrayToMatchSourceOrder(org.jgrapht.experimental.equivalence.EquivalenceSet[],org.jgrapht.experimental.equivalence.EquivalenceSet[])  ReturnType: for class: org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector
+2007-08-01 13:41:46,765  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector,fillElementsflatArray(org.jgrapht.experimental.equivalence.EquivalenceSet[],V[])  ReturnType: for class: org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector
+2007-08-01 13:41:46,765  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector,fillElementsflatArray(org.jgrapht.experimental.equivalence.EquivalenceSet[],V[])  ReturnType: for class: org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector
+2007-08-01 13:41:46,765  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector,reorderTargetArrayToMatchSourceOrder(EquivalenceSet[],EquivalenceSet[])  ReturnType:boolean for class: org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector
+2007-08-01 13:41:46,781  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.CollectionPermutationIter,applyPermutation()  ReturnType: for class: org.jgrapht.experimental.permutation.CollectionPermutationIter
+2007-08-01 13:41:46,781  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.permutation.CollectionPermutationIter,applyPermutation()  ReturnType:List<E> for class: org.jgrapht.experimental.permutation.CollectionPermutationIter
+2007-08-01 13:41:46,781  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.CollectionPermutationIter,applyPermutation()  ReturnType: for class: org.jgrapht.experimental.permutation.CollectionPermutationIter
+2007-08-01 13:41:46,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.CompoundPermutationIter,init(int[])  ReturnType: for class: org.jgrapht.experimental.permutation.CompoundPermutationIter
+2007-08-01 13:41:46,812  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.permutation.CompoundPermutationIter,init(int[])  ReturnType:void for class: org.jgrapht.experimental.permutation.CompoundPermutationIter
+2007-08-01 13:41:46,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.CompoundPermutationIter,restartPermutationGroup(int)  ReturnType: for class: org.jgrapht.experimental.permutation.CompoundPermutationIter
+2007-08-01 13:41:46,812  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.permutation.CompoundPermutationIter,restartPermutationGroup(int)  ReturnType:void for class: org.jgrapht.experimental.permutation.CompoundPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.IntegerPermutationIter,init(int[])  ReturnType: for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.IntegerPermutationIter,init(int[])  ReturnType: for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.permutation.IntegerPermutationIter,init(int[])  ReturnType:void for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.permutation.IntegerPermutationIter,swap(int,int)  ReturnType:void for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.permutation.IntegerPermutationIter,arrayClone(int[])  ReturnType:int[] for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.experimental.permutation.IntegerPermutationIter,getNextStartingWith2()  ReturnType:int[] for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.IntegerPermutationIter,getNextStartingWith2()  ReturnType: for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.IntegerPermutationIter,getNextStartingWith2()  ReturnType: for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.IntegerPermutationIter,arrayClone(int[])  ReturnType: for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.IntegerPermutationIter,arrayClone(int[])  ReturnType: for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,843  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.permutation.IntegerPermutationIter,arrayClone(int[])  ReturnType: for class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+2007-08-01 13:41:46,890  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.SimpleTouchgraphApplet,setLayout(java.awt.BorderLayout)  ReturnType: for class: org.jgrapht.experimental.touchgraph.SimpleTouchgraphApplet
+2007-08-01 13:41:46,890  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.SimpleTouchgraphApplet,setSize(int,int)  ReturnType: for class: org.jgrapht.experimental.touchgraph.SimpleTouchgraphApplet
+2007-08-01 13:41:46,890  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.SimpleTouchgraphApplet,add(org.jgrapht.experimental.touchgraph.TouchgraphPanel<java.lang.String,org.jgrapht.graph.DefaultEdge>,java.lang.String)  ReturnType: for class: org.jgrapht.experimental.touchgraph.SimpleTouchgraphApplet
+2007-08-01 13:41:46,921  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.TouchgraphPanel,setBackground(java.awt.Color)  ReturnType: for class: org.jgrapht.experimental.touchgraph.TouchgraphPanel
+2007-08-01 13:41:46,921  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.TouchgraphPanel,setForeground(java.awt.Color)  ReturnType: for class: org.jgrapht.experimental.touchgraph.TouchgraphPanel
+2007-08-01 13:41:46,921  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.TouchgraphPanel,buildPanel()  ReturnType: for class: org.jgrapht.experimental.touchgraph.TouchgraphPanel
+2007-08-01 13:41:46,921  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.TouchgraphPanel,buildLens()  ReturnType: for class: org.jgrapht.experimental.touchgraph.TouchgraphPanel
+2007-08-01 13:41:46,921  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.TouchgraphPanel,addUIs()  ReturnType: for class: org.jgrapht.experimental.touchgraph.TouchgraphPanel
+2007-08-01 13:41:46,921  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.TouchgraphPanel,randomGraph()  ReturnType: for class: org.jgrapht.experimental.touchgraph.TouchgraphPanel
+2007-08-01 13:41:46,921  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.TouchgraphPanel,getHVScroll()  ReturnType: for class: org.jgrapht.experimental.touchgraph.TouchgraphPanel
+2007-08-01 13:41:46,921  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.experimental.touchgraph.TouchgraphPanel,setVisible(boolean)  ReturnType: for class: org.jgrapht.experimental.touchgraph.TouchgraphPanel
+2007-08-01 13:41:46,968  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.MatrixExporter,println(PrintWriter,String,String,String)  ReturnType:void for class: org.jgrapht.ext.MatrixExporter
+2007-08-01 13:41:46,968  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.MatrixExporter,exportAdjacencyMatrixVertex(java.io.PrintWriter,org.jgrapht.ext.VertexNameProvider<V>,V,java.util.List<V>)  ReturnType: for class: org.jgrapht.ext.MatrixExporter
+2007-08-01 13:41:46,968  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.MatrixExporter,exportAdjacencyMatrixVertex(java.io.PrintWriter,org.jgrapht.ext.VertexNameProvider<V>,V,java.util.List<V>)  ReturnType: for class: org.jgrapht.ext.MatrixExporter
+2007-08-01 13:41:46,968  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.MatrixExporter,exportAdjacencyMatrixVertex(PrintWriter,VertexNameProvider<V>,V,List<V>)  ReturnType:void for class: org.jgrapht.ext.MatrixExporter
+2007-08-01 13:41:46,968  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.MatrixExporter,println(java.io.PrintWriter,java.lang.String,java.lang.String,java.lang.String)  ReturnType: for class: org.jgrapht.ext.MatrixExporter
+2007-08-01 13:41:46,968  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.MatrixExporter,println(java.io.PrintWriter,java.lang.String,java.lang.String,java.lang.String)  ReturnType: for class: org.jgrapht.ext.MatrixExporter
+2007-08-01 13:41:46,968  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.MatrixExporter,println(java.io.PrintWriter,java.lang.String,java.lang.String,java.lang.String)  ReturnType: for class: org.jgrapht.ext.MatrixExporter
+2007-08-01 13:41:46,968  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.MatrixExporter,println(java.io.PrintWriter,java.lang.String,java.lang.String,java.lang.String)  ReturnType: for class: org.jgrapht.ext.MatrixExporter
+2007-08-01 13:41:46,968  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.MatrixExporter,println(java.io.PrintWriter,java.lang.String,java.lang.String,java.lang.String)  ReturnType: for class: org.jgrapht.ext.MatrixExporter
+2007-08-01 13:41:47,000  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.GmlExporter,quoted(String)  ReturnType:String for class: org.jgrapht.ext.GmlExporter
+2007-08-01 13:41:47,000  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.GmlExporter,exportHeader(PrintWriter)  ReturnType:void for class: org.jgrapht.ext.GmlExporter
+2007-08-01 13:41:47,000  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.GmlExporter,exportVertices(PrintWriter,VertexNameProvider<V>,Graph<V,E>)  ReturnType:void for class: org.jgrapht.ext.GmlExporter
+2007-08-01 13:41:47,000  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.GmlExporter,exportEdges(PrintWriter,VertexNameProvider<V>,Graph<V,E>)  ReturnType:void for class: org.jgrapht.ext.GmlExporter
+2007-08-01 13:41:47,000  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.GmlExporter,export(Writer,Graph<V,E>,boolean)  ReturnType:void for class: org.jgrapht.ext.GmlExporter
+2007-08-01 13:41:47,000  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.GmlExporter,export(java.io.Writer,org.jgrapht.UndirectedGraph<V,E>,boolean)  ReturnType: for class: org.jgrapht.ext.GmlExporter
+2007-08-01 13:41:47,000  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.GmlExporter,export(java.io.Writer,org.jgrapht.DirectedGraph<V,E>,boolean)  ReturnType: for class: org.jgrapht.ext.GmlExporter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter,handleJGraphTAddedVertex(V)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter,handleJGraphTAddedEdge(E)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter,addGraphModelListener(org.jgrapht.ext.JGraphModelAdapter<V,E>.JGraphListener)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,handleJGraphChangedEdge(org.jgraph.graph.Edge)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,handleJGraphInsertedEdge(org.jgraph.graph.Edge)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,handleJGraphInsertedVertex(GraphCell)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,handleJGraphRemovedEdge(org.jgraph.graph.Edge)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,handleJGraphRemovedVertex(GraphCell)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,handleJGraphTAddedEdge(E)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,handleJGraphTAddedVertex(V)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,handleJGraphTRemoveVertex(Object)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,handleJGraphTRemovedEdge(E)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,isDangling(org.jgraph.graph.Edge)  ReturnType:boolean for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,createEdgeAttributeMap(DefaultEdge)  ReturnType:AttributeMap for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,createVertexAttributeMap(GraphCell)  ReturnType:AttributeMap for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,internalInsertCell(GraphCell,AttributeMap,ConnectionSet)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter,internalRemoveCell(GraphCell)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphListener,handleRemovedEdges(java.util.List<java.lang.Object>)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,375  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphListener,filterEdges(java.lang.Object[])  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphListener,handleRemovedVertices(java.util.List<java.lang.Object>)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphListener,filterVertices(java.lang.Object[])  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphListener,handleInsertedVertices(java.util.List<java.lang.Object>)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphListener,filterVertices(java.lang.Object[])  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphListener,handleInsertedEdges(java.util.List<java.lang.Object>)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphListener,filterEdges(java.lang.Object[])  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphListener,handleChangedEdges(java.util.List<java.lang.Object>)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphListener,filterEdges(java.lang.Object[])  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.JGraphListener,filterEdges(Object[])  ReturnType:List<Object> for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.JGraphListener,filterVertices(Object[])  ReturnType:List<Object> for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.JGraphListener,handleChangedEdges(List<Object>)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.JGraphListener,handleInsertedEdges(List<Object>)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.JGraphListener,handleInsertedVertices(List<Object>)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.JGraphListener,handleRemovedEdges(List<Object>)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.JGraphListener,handleRemovedVertices(List<Object>)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphTListener,handleJGraphTAddedEdge(E)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphTListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphTListener,handleJGraphTRemovedEdge(E)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphTListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphTListener,handleJGraphTAddedVertex(V)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphTListener
+2007-08-01 13:41:47,390  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.JGraphModelAdapter.JGraphTListener,handleJGraphTRemoveVertex(V)  ReturnType: for class: org.jgrapht.ext.JGraphModelAdapter.JGraphTListener
+2007-08-01 13:41:47,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph,CONSTRUCTOR(Graph<V,E>)  ReturnType:null for class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+2007-08-01 13:41:47,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph,getEdgeFactory()  ReturnType:EdgeFactory<V,E> for class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+2007-08-01 13:41:47,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph,addEdge(V,V)  ReturnType:E for class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+2007-08-01 13:41:47,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph,getEdgeSource(E)  ReturnType:V for class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+2007-08-01 13:41:47,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph,getEdgeTarget(E)  ReturnType:V for class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+2007-08-01 13:41:47,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph,addVertex(V)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+2007-08-01 13:41:47,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph,edgesOf(V)  ReturnType:Set<E> for class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+2007-08-01 13:41:47,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph,removeAllEdges(Collection<E>)  ReturnType:boolean for class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+2007-08-01 13:41:47,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph,removeEdge(E)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+2007-08-01 13:41:47,406  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph,removeVertex(V)  ReturnType:void for class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+2007-08-01 13:41:47,484  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.VisioExporter,exportVertex(java.io.PrintStream,V)  ReturnType: for class: org.jgrapht.ext.VisioExporter
+2007-08-01 13:41:47,484  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.ext.VisioExporter,exportEdge(java.io.PrintStream,E,org.jgrapht.Graph<V,E>)  ReturnType: for class: org.jgrapht.ext.VisioExporter
+2007-08-01 13:41:47,484  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.VisioExporter,exportEdge(PrintStream,E,Graph<V,E>)  ReturnType:void for class: org.jgrapht.ext.VisioExporter
+2007-08-01 13:41:47,484  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.ext.VisioExporter,exportVertex(PrintStream,V)  ReturnType:void for class: org.jgrapht.ext.VisioExporter
+2007-08-01 13:41:47,546  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.generate.RandomGraphGenerator,chooseRandomSeedOnce()  ReturnType: for class: org.jgrapht.generate.RandomGraphGenerator
+2007-08-01 13:41:47,546  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.generate.RandomGraphGenerator,chooseRandomSeedOnce()  ReturnType:long for class: org.jgrapht.generate.RandomGraphGenerator
+2007-08-01 13:41:47,546  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.generate.RandomGraphGenerator,resetRandomSeed()  ReturnType:void for class: org.jgrapht.generate.RandomGraphGenerator
+2007-08-01 13:41:47,546  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.generate.RandomGraphGenerator,resetRandomSeed()  ReturnType: for class: org.jgrapht.generate.RandomGraphGenerator
+2007-08-01 13:41:47,546  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.generate.RandomGraphGenerator,edgeTopologyFactoryChooser(org.jgrapht.Graph<V,E>,int)  ReturnType: for class: org.jgrapht.generate.RandomGraphGenerator
+2007-08-01 13:41:47,546  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.generate.RandomGraphGenerator,edgeTopologyFactoryChooser(Graph<V,E>,int)  ReturnType:EdgeTopologyFactory<V,E> for class: org.jgrapht.generate.RandomGraphGenerator
+2007-08-01 13:41:47,562  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.generate.WheelGraphGenerator,createVertex()  ReturnType:V for class: org.jgrapht.generate.WheelGraphGenerator
+2007-08-01 13:41:47,640  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.DefaultListenableGraph,addToListenerList(java.util.ArrayList<org.jgrapht.event.GraphListener<V,E>>,org.jgrapht.event.GraphListener<V,E>)  ReturnType: for class: org.jgrapht.graph.DefaultListenableGraph
+2007-08-01 13:41:47,640  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.DefaultListenableGraph,addToListenerList(java.util.ArrayList<org.jgrapht.event.VertexSetListener<V>>,org.jgrapht.event.VertexSetListener<V>)  ReturnType: for class: org.jgrapht.graph.DefaultListenableGraph
+2007-08-01 13:41:47,640  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.DefaultListenableGraph,createGraphEdgeChangeEvent(int,E)  ReturnType: for class: org.jgrapht.graph.DefaultListenableGraph
+2007-08-01 13:41:47,640  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.DefaultListenableGraph,createGraphEdgeChangeEvent(int,E)  ReturnType: for class: org.jgrapht.graph.DefaultListenableGraph
+2007-08-01 13:41:47,640  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.DefaultListenableGraph,createGraphVertexChangeEvent(int,V)  ReturnType: for class: org.jgrapht.graph.DefaultListenableGraph
+2007-08-01 13:41:47,640  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.DefaultListenableGraph,createGraphVertexChangeEvent(int,V)  ReturnType: for class: org.jgrapht.graph.DefaultListenableGraph
+2007-08-01 13:41:47,640  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.DefaultListenableGraph,addToListenerList(List<L>,L)  ReturnType:void for class: org.jgrapht.graph.DefaultListenableGraph
+2007-08-01 13:41:47,640  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.DefaultListenableGraph,createGraphEdgeChangeEvent(int,E)  ReturnType:GraphEdgeChangeEvent<V,E> for class: org.jgrapht.graph.DefaultListenableGraph
+2007-08-01 13:41:47,640  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.DefaultListenableGraph,createGraphVertexChangeEvent(int,V)  ReturnType:GraphVertexChangeEvent<V> for class: org.jgrapht.graph.DefaultListenableGraph
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph,createSpecifics()  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph,createIntrusiveEdge(E,V,V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph,createIntrusiveEdge(E,V,V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.AbstractBaseGraph,createIntrusiveEdge(E,V,V)  ReturnType:IntrusiveEdge for class: org.jgrapht.graph.AbstractBaseGraph
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph,getIntrusiveEdge(E)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph,getIntrusiveEdge(E)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.AbstractBaseGraph,getIntrusiveEdge(E)  ReturnType:IntrusiveEdge for class: org.jgrapht.graph.AbstractBaseGraph
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.AbstractBaseGraph,createSpecifics()  ReturnType:Specifics for class: org.jgrapht.graph.AbstractBaseGraph
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.AbstractBaseGraph.DirectedEdgeContainer,CONSTRUCTOR(EdgeSetFactory<VV,EE>,VV)  ReturnType:null for class: org.jgrapht.graph.AbstractBaseGraph.DirectedEdgeContainer
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,796  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics,getEdgeContainer(V)  ReturnType:DirectedEdgeContainer<V,E> for class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.AbstractBaseGraph.UndirectedEdgeContainer,CONSTRUCTOR(EdgeSetFactory<VV,EE>,VV)  ReturnType:null for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedEdgeContainer
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+2007-08-01 13:41:47,812  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+2007-08-01 13:41:47,828  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+2007-08-01 13:41:47,828  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+2007-08-01 13:41:47,828  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+2007-08-01 13:41:47,828  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics,getEdgeContainer(V)  ReturnType: for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+2007-08-01 13:41:47,828  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics,getEdgeContainer(V)  ReturnType:UndirectedEdgeContainer<V,E> for class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+2007-08-01 13:41:48,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.Subgraph,addVerticesUsingFilter(java.util.Set<V>,java.util.Set<V>)  ReturnType: for class: org.jgrapht.graph.Subgraph
+2007-08-01 13:41:48,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.Subgraph,addEdgesUsingFilter(java.util.Set<E>,java.util.Set<E>)  ReturnType: for class: org.jgrapht.graph.Subgraph
+2007-08-01 13:41:48,109  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.Subgraph,addEdgesUsingFilter(Set<E>,Set<E>)  ReturnType:void for class: org.jgrapht.graph.Subgraph
+2007-08-01 13:41:48,109  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.graph.Subgraph,addVerticesUsingFilter(Set<V>,Set<V>)  ReturnType:void for class: org.jgrapht.graph.Subgraph
+2007-08-01 13:41:48,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.Subgraph.BaseGraphListener,addEdge(V,V,E)  ReturnType: for class: org.jgrapht.graph.Subgraph.BaseGraphListener
+2007-08-01 13:41:48,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.Subgraph.BaseGraphListener,removeEdge(E)  ReturnType: for class: org.jgrapht.graph.Subgraph.BaseGraphListener
+2007-08-01 13:41:48,109  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.graph.Subgraph.BaseGraphListener,removeVertex(V)  ReturnType: for class: org.jgrapht.graph.Subgraph.BaseGraphListener
+2007-08-01 13:41:48,328  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.CrossComponentIterator,createGraphSpecifics(org.jgrapht.Graph<V,E>)  ReturnType: for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,328  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.CrossComponentIterator,encounterStartVertex()  ReturnType: for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,328  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.CrossComponentIterator,isSeenVertex(V)  ReturnType: for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,328  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.CrossComponentIterator,encounterStartVertex()  ReturnType: for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,328  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.CrossComponentIterator,createVertexTraversalEvent(V)  ReturnType: for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,328  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.CrossComponentIterator,addUnseenChildrenOf(V)  ReturnType: for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,328  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.CrossComponentIterator,createVertexTraversalEvent(V)  ReturnType: for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,343  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.CrossComponentIterator,createGraphSpecifics(Graph<V,E>)  ReturnType:Specifics<V,E> for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,343  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.CrossComponentIterator,addUnseenChildrenOf(V)  ReturnType:void for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,343  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.CrossComponentIterator,createEdgeTraversalEvent(E)  ReturnType:EdgeTraversalEvent<V,E> for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,343  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.CrossComponentIterator,createVertexTraversalEvent(V)  ReturnType:VertexTraversalEvent<V> for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,343  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.CrossComponentIterator,encounterStartVertex()  ReturnType:void for class: org.jgrapht.traverse.CrossComponentIterator
+2007-08-01 13:41:48,375  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.ClosestFirstIterator,checkRadiusTraversal(boolean)  ReturnType: for class: org.jgrapht.traverse.ClosestFirstIterator
+2007-08-01 13:41:48,375  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.ClosestFirstIterator,checkRadiusTraversal(boolean)  ReturnType: for class: org.jgrapht.traverse.ClosestFirstIterator
+2007-08-01 13:41:48,375  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.ClosestFirstIterator,createSeenData(V,E)  ReturnType: for class: org.jgrapht.traverse.ClosestFirstIterator
+2007-08-01 13:41:48,375  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.ClosestFirstIterator,calculatePathLength(V,E)  ReturnType: for class: org.jgrapht.traverse.ClosestFirstIterator
+2007-08-01 13:41:48,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.ClosestFirstIterator,assertNonNegativeEdge(E)  ReturnType:void for class: org.jgrapht.traverse.ClosestFirstIterator
+2007-08-01 13:41:48,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.ClosestFirstIterator,calculatePathLength(V,E)  ReturnType:double for class: org.jgrapht.traverse.ClosestFirstIterator
+2007-08-01 13:41:48,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.ClosestFirstIterator,checkRadiusTraversal(boolean)  ReturnType:void for class: org.jgrapht.traverse.ClosestFirstIterator
+2007-08-01 13:41:48,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.ClosestFirstIterator,createSeenData(V,E)  ReturnType:FibonacciHeapNode<QueueEntry<V,E>> for class: org.jgrapht.traverse.ClosestFirstIterator
+2007-08-01 13:41:48,375  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.ClosestFirstIterator.QueueEntry,CONSTRUCTOR()  ReturnType:null for class: org.jgrapht.traverse.ClosestFirstIterator.QueueEntry
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.TopologicalOrderIterator,CONSTRUCTOR(DirectedGraph<V,E>,Queue<V>,Map<V,ModifiableInteger>)  ReturnType:null for class: org.jgrapht.traverse.TopologicalOrderIterator
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.TopologicalOrderIterator,decrementInDegree(V)  ReturnType: for class: org.jgrapht.traverse.TopologicalOrderIterator
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.TopologicalOrderIterator,decrementInDegree(V)  ReturnType: for class: org.jgrapht.traverse.TopologicalOrderIterator
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.TopologicalOrderIterator,decrementInDegree(V)  ReturnType:void for class: org.jgrapht.traverse.TopologicalOrderIterator
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.TopologicalOrderIterator,initialize(DirectedGraph<V,E>,Queue<V>,Map<V,ModifiableInteger>)  ReturnType:V for class: org.jgrapht.traverse.TopologicalOrderIterator
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue,getFirst()  ReturnType: for class: org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue,add(T)  ReturnType: for class: org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue,isEmpty()  ReturnType: for class: org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue,getFirst()  ReturnType: for class: org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue,isEmpty()  ReturnType: for class: org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue,removeFirst()  ReturnType: for class: org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue
+2007-08-01 13:41:48,437  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue,removeFirst()  ReturnType: for class: org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue
+2007-08-01 13:41:48,453  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.DepthFirstIterator,peekStack()  ReturnType: for class: org.jgrapht.traverse.DepthFirstIterator
+2007-08-01 13:41:48,453  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.DepthFirstIterator,popStack()  ReturnType: for class: org.jgrapht.traverse.DepthFirstIterator
+2007-08-01 13:41:48,453  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.DepthFirstIterator,recordFinish()  ReturnType: for class: org.jgrapht.traverse.DepthFirstIterator
+2007-08-01 13:41:48,468  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.DepthFirstIterator,popStack()  ReturnType: for class: org.jgrapht.traverse.DepthFirstIterator
+2007-08-01 13:41:48,468  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.traverse.DepthFirstIterator,recordFinish()  ReturnType: for class: org.jgrapht.traverse.DepthFirstIterator
+2007-08-01 13:41:48,468  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.DepthFirstIterator,popStack()  ReturnType:V for class: org.jgrapht.traverse.DepthFirstIterator
+2007-08-01 13:41:48,468  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.DepthFirstIterator,peekStack()  ReturnType:V for class: org.jgrapht.traverse.DepthFirstIterator
+2007-08-01 13:41:48,468  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.traverse.DepthFirstIterator,recordFinish()  ReturnType:void for class: org.jgrapht.traverse.DepthFirstIterator
+2007-08-01 13:41:48,546  WARN (ParseSrcVisitor.java:87) - Failed to get equivalent method declaration org.jgrapht.util.PrefetchIterator,getNextElementFromInnerFunctor()  ReturnType:E for class: org.jgrapht.util.PrefetchIterator
+2007-08-01 13:41:48,546  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.util.PrefetchIterator,getNextElementFromInnerFunctor()  ReturnType: for class: org.jgrapht.util.PrefetchIterator
+2007-08-01 13:41:48,546  WARN (ParseSrcVisitor.java:142) - Failed to get equivalent method declaration for org.jgrapht.util.PrefetchIterator,getNextElementFromInnerFunctor()  ReturnType: for class: org.jgrapht.util.PrefetchIterator
+2007-08-01 13:42:05,375 DEBUG (APIUsageActions.java:127) - Finished downloading files...
+2007-08-01 13:42:05,468 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory Dummy
+2007-08-01 13:42:05,468 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_AbstractPathElement
+2007-08-01 13:42:05,484  INFO (GCodeAnalyzer.java:98) - Analyzing 0_AbstractPathElement.java
+2007-08-01 13:42:05,531 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_BellmanFordIterator
+2007-08-01 13:42:05,531  INFO (GCodeAnalyzer.java:98) - Analyzing 0_BellmanFordIterator.java
+2007-08-01 13:42:05,578 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_BellmanFordPathElement
+2007-08-01 13:42:05,578  INFO (GCodeAnalyzer.java:98) - Analyzing 0_BellmanFordPathElement.java
+2007-08-01 13:42:05,609 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_BellmanFordShortestPath
+2007-08-01 13:42:05,609  INFO (GCodeAnalyzer.java:98) - Analyzing 0_BellmanFordShortestPathTest.java
+2007-08-01 13:42:05,640 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_BronKerboschCliqueFinder
+2007-08-01 13:42:05,640  INFO (GCodeAnalyzer.java:98) - Analyzing 0_BronKerboschCliqueFinderTest.java
+2007-08-01 13:42:05,656 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_ConnectivityInspector
+2007-08-01 13:42:05,656  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphDemo1.java
+2007-08-01 13:42:05,750  INFO (GCodeAnalyzer.java:98) - Analyzing 1_InsetProcessor.java
+2007-08-01 13:42:05,875  INFO (GCodeAnalyzer.java:98) - Analyzing 2_StrongConnectivityInspector.java
+2007-08-01 13:42:05,921  INFO (GCodeAnalyzer.java:98) - Analyzing 3_ConnectivityInspectorTest.java
+2007-08-01 13:42:05,968 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_CycleDetector
+2007-08-01 13:42:05,984  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphFunctions.java
+2007-08-01 13:42:06,031  INFO (ASTCrawler.java:940) - Happened in file: C:\APIUsage\JGrapht\org_jgrapht_alg_CycleDetector//0_GraphFunctions.debug.full
+2007-08-01 13:42:06,046  INFO (GCodeAnalyzer.java:98) - Analyzing 1_ShibbolethAttributeResolver.java
+2007-08-01 13:42:06,156  INFO (GCodeAnalyzer.java:98) - Analyzing 2_CycleDetector.java
+2007-08-01 13:42:06,187 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_DijkstraShortestPath
+2007-08-01 13:42:06,187  INFO (GCodeAnalyzer.java:98) - Analyzing 0_MigrationPath.java
+2007-08-01 13:42:06,218  INFO (GCodeAnalyzer.java:98) - Analyzing 1_Experiment1.java
+2007-08-01 13:42:06,250  INFO (GCodeAnalyzer.java:98) - Analyzing 2_DijkstraShortestPathTest.java
+2007-08-01 13:42:06,250 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_DirectedNeighborIndex
+2007-08-01 13:42:06,250  INFO (GCodeAnalyzer.java:98) - Analyzing 0_DirectedNeighborIndex.java
+2007-08-01 13:42:06,296 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_NeighborIndex
+2007-08-01 13:42:06,296  INFO (GCodeAnalyzer.java:98) - Analyzing 0_DirectedNeighborIndex.java
+2007-08-01 13:42:06,328  INFO (GCodeAnalyzer.java:98) - Analyzing 1_NeighborIndex.java
+2007-08-01 13:42:06,359 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_StrongConnectivityInspector
+2007-08-01 13:42:06,375  INFO (GCodeAnalyzer.java:98) - Analyzing 0_StrongConnectivityInspector.java
+2007-08-01 13:42:06,406 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_util_VertexDegreeComparator
+2007-08-01 13:42:06,406  INFO (GCodeAnalyzer.java:98) - Analyzing 0_VertexDegreeComparator.java
+2007-08-01 13:42:06,437 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_alg_VertexCovers
+2007-08-01 13:42:06,453  INFO (GCodeAnalyzer.java:98) - Analyzing 0_VertexCoversTest.java
+2007-08-01 13:42:06,484 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_demo_HelloJGraphT
+2007-08-01 13:42:06,484  INFO (GCodeAnalyzer.java:98) - Analyzing 0_HelloJGraphT.java
+2007-08-01 13:42:06,531 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_demo_JGraphAdapterDemo
+2007-08-01 13:42:06,531  INFO (GCodeAnalyzer.java:98) - Analyzing 0_JGraphAdapterDemo.java
+2007-08-01 13:42:06,562 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_demo_PerformanceDemo
+2007-08-01 13:42:06,562  INFO (GCodeAnalyzer.java:98) - Analyzing 0_PerformanceDemo.java
+2007-08-01 13:42:06,593 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_DirectedGraph
+2007-08-01 13:42:06,593  INFO (GCodeAnalyzer.java:98) - Analyzing 0_MigrationPath.java
+2007-08-01 13:42:06,625  INFO (GCodeAnalyzer.java:98) - Analyzing 10_DefaultDirectedMultigraph.java
+2007-08-01 13:42:06,640  INFO (GCodeAnalyzer.java:98) - Analyzing 11_ListenableDirectedMultigraph.java
+2007-08-01 13:42:06,687  INFO (GCodeAnalyzer.java:98) - Analyzing 12_DirectedGraph.java
+2007-08-01 13:42:06,687  INFO (GCodeAnalyzer.java:98) - Analyzing 1_DuplicateEdgeChecker.java
+2007-08-01 13:42:06,734  INFO (GCodeAnalyzer.java:98) - Analyzing 2_ShibbolethAttributeResolver.java
+2007-08-01 13:42:06,921  INFO (GCodeAnalyzer.java:98) - Analyzing 3_MigrationPath.java
+2007-08-01 13:42:06,968  INFO (GCodeAnalyzer.java:98) - Analyzing 4_DuplicateEdgeChecker.java
+2007-08-01 13:42:07,000  INFO (GCodeAnalyzer.java:98) - Analyzing 5_ShibbolethAttributeResolver.java
+2007-08-01 13:42:07,109  INFO (GCodeAnalyzer.java:98) - Analyzing 6_GraphTutils.java
+2007-08-01 13:42:07,125  INFO (GCodeAnalyzer.java:98) - Analyzing 7_DefaultDirectedMultigraph.java
+2007-08-01 13:42:07,140  INFO (GCodeAnalyzer.java:98) - Analyzing 8_ListenableDirectedMultigraph.java
+2007-08-01 13:42:07,140  INFO (GCodeAnalyzer.java:98) - Analyzing 9_DirectedGraph.java
+2007-08-01 13:42:07,156 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_EdgeFactory
+2007-08-01 13:42:07,156  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GWizEdge.java
+2007-08-01 13:42:07,171  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GraphFunctions.java
+2007-08-01 13:42:07,203  INFO (ASTCrawler.java:940) - Happened in file: C:\APIUsage\JGrapht\org_jgrapht_EdgeFactory//1_GraphFunctions.debug.full
+2007-08-01 13:42:07,218  INFO (GCodeAnalyzer.java:98) - Analyzing 2_DefaultDirectedMultigraph.java
+2007-08-01 13:42:07,218  INFO (GCodeAnalyzer.java:98) - Analyzing 3_EdgeFactory.java
+2007-08-01 13:42:07,234 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_event_ConnectedComponentTraversalEvent
+2007-08-01 13:42:07,234  INFO (GCodeAnalyzer.java:98) - Analyzing 0_ConnectedComponentTraversalEvent.java
+2007-08-01 13:42:07,250 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_event_EdgeTraversalEvent
+2007-08-01 13:42:07,250  INFO (GCodeAnalyzer.java:98) - Analyzing 0_EdgeTraversalEvent.java
+2007-08-01 13:42:07,281 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_event_GraphChangeEvent
+2007-08-01 13:42:07,296  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphVertexChangeEvent.java
+2007-08-01 13:42:07,312  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GraphChangeEvent.java
+2007-08-01 13:42:07,328 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_event_GraphEdgeChangeEvent
+2007-08-01 13:42:07,328  INFO (GCodeAnalyzer.java:98) - Analyzing 0_SketchAdapter.java
+2007-08-01 13:42:07,421 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:07,421 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,437 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:07,437 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,437 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:07,453 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:07,453 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,453 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:07,453 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:07,453 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:07,453 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,453 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,468 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:07,468 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:07,468  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GraphEdgeChangeEvent.java
+2007-08-01 13:42:07,484 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_event_GraphListener
+2007-08-01 13:42:07,500  INFO (GCodeAnalyzer.java:98) - Analyzing 0_ConnectivityInspector.java
+2007-08-01 13:42:07,531  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GraphListener.java
+2007-08-01 13:42:07,546  INFO (GCodeAnalyzer.java:98) - Analyzing 2_SketchAdapter.java
+2007-08-01 13:42:07,593 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:07,593 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,609 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:07,609 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,625 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:07,625 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:07,625 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,625 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:07,625 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:07,625 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:07,625 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,625 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,640 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:07,640 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:07,640 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_event_GraphVertexChangeEvent
+2007-08-01 13:42:07,640  INFO (GCodeAnalyzer.java:98) - Analyzing 0_SketchAdapter.java
+2007-08-01 13:42:07,718 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:07,718 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:07,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:07,750 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:07,750 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,750 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:07,750 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:07,750 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:07,765 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,765 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:07,765 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:07,765 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:07,796  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GraphVertexChangeEvent.java
+2007-08-01 13:42:07,828 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_event_TraversalListener
+2007-08-01 13:42:07,843  INFO (GCodeAnalyzer.java:98) - Analyzing 0_TraversalListenerAdapter.java
+2007-08-01 13:42:07,859 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_event_TraversalListenerAdapter
+2007-08-01 13:42:07,859  INFO (GCodeAnalyzer.java:98) - Analyzing 0_TraversalListenerAdapter.java
+2007-08-01 13:42:07,875 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_event_VertexSetListener
+2007-08-01 13:42:07,890  INFO (GCodeAnalyzer.java:98) - Analyzing 0_VertexSetListener.java
+2007-08-01 13:42:07,906 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_event_VertexTraversalEvent
+2007-08-01 13:42:07,906  INFO (GCodeAnalyzer.java:98) - Analyzing 0_VertexTraversalEvent.java
+2007-08-01 13:42:07,937 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_alg_ApproximationAlgorithm
+2007-08-01 13:42:07,937 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_alg_color_BrownBacktrackColoring
+2007-08-01 13:42:07,937 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_alg_color_GreedyColoring
+2007-08-01 13:42:07,937 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_alg_ExactAlgorithm
+2007-08-01 13:42:07,937 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_alg_IntArrayGraphAlgorithm
+2007-08-01 13:42:07,937 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_equivalence_EquivalenceComparator
+2007-08-01 13:42:07,937  INFO (GCodeAnalyzer.java:98) - Analyzing 0_DirectedEdgeWeightOddEvenComparator.java
+2007-08-01 13:42:07,984  INFO (GCodeAnalyzer.java:98) - Analyzing 1_Mod3GroupComparator.java
+2007-08-01 13:42:08,000  INFO (GCodeAnalyzer.java:98) - Analyzing 2_EquivalenceComparatorChainBase.java
+2007-08-01 13:42:08,015  INFO (GCodeAnalyzer.java:98) - Analyzing 3_EquivalenceComparatorChain.java
+2007-08-01 13:42:08,015 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_equivalence_EquivalenceComparatorChain
+2007-08-01 13:42:08,015  INFO (GCodeAnalyzer.java:98) - Analyzing 0_EquivalenceComparatorChainBase.java
+2007-08-01 13:42:08,046  INFO (GCodeAnalyzer.java:98) - Analyzing 1_EquivalenceComparatorChain.java
+2007-08-01 13:42:08,062 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_equivalence_EquivalenceComparatorChainBase
+2007-08-01 13:42:08,062  INFO (GCodeAnalyzer.java:98) - Analyzing 0_EquivalenceComparatorChainBase.java
+2007-08-01 13:42:08,093 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_equivalence_EquivalenceSet
+2007-08-01 13:42:08,109  INFO (GCodeAnalyzer.java:98) - Analyzing 0_EquivalenceSetCreator.java
+2007-08-01 13:42:08,140 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_equivalence_EquivalenceSetCreator
+2007-08-01 13:42:08,140  INFO (GCodeAnalyzer.java:98) - Analyzing 0_EquivalenceSetCreator.java
+2007-08-01 13:42:08,171 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_equivalence_UniformEquivalenceComparator
+2007-08-01 13:42:08,187  INFO (GCodeAnalyzer.java:98) - Analyzing 0_UniformEquivalenceComparator.java
+2007-08-01 13:42:08,203 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_GraphReader
+2007-08-01 13:42:08,203 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_GraphSquare
+2007-08-01 13:42:08,203  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphSquare.java
+2007-08-01 13:42:08,234 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_GraphTests
+2007-08-01 13:42:08,234  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphTests.java
+2007-08-01 13:42:08,250 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_isomorphism_AbstractExhaustiveIsomorphismInspector
+2007-08-01 13:42:08,250  INFO (GCodeAnalyzer.java:98) - Analyzing 0_AbstractExhaustiveIsomorphismInspector.java
+2007-08-01 13:42:08,296 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_isomorphism_AdaptiveIsomorphismInspectorFactory
+2007-08-01 13:42:08,296  INFO (GCodeAnalyzer.java:98) - Analyzing 0_AdaptiveIsomorphismInspectorFactory.java
+2007-08-01 13:42:08,359 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_isomorphism_EquivalenceIsomorphismInspector
+2007-08-01 13:42:08,390  INFO (GCodeAnalyzer.java:98) - Analyzing 0_EquivalenceIsomorphismInspector.java
+2007-08-01 13:42:08,421 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_isomorphism_GraphIsomorphismInspector
+2007-08-01 13:42:08,437  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphIsomorphismInspector.java
+2007-08-01 13:42:08,453 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_isomorphism_GraphOrdering
+2007-08-01 13:42:08,468  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphOrdering.java
+2007-08-01 13:42:08,515 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_isomorphism_IsomorphismRelation
+2007-08-01 13:42:08,515  INFO (GCodeAnalyzer.java:98) - Analyzing 0_IsomorphismRelation.java
+2007-08-01 13:42:08,562 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_isomorphism_PermutationIsomorphismInspector
+2007-08-01 13:42:08,562  INFO (GCodeAnalyzer.java:98) - Analyzing 0_PermutationIsomorphismInspector.java
+2007-08-01 13:42:08,609 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_isomorphism_VertexDegreeEquivalenceComparator
+2007-08-01 13:42:08,609  INFO (GCodeAnalyzer.java:98) - Analyzing 0_VertexDegreeEquivalenceComparator.java
+2007-08-01 13:42:08,671 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_PartiteRandomGraphGenerator
+2007-08-01 13:42:08,671  INFO (GCodeAnalyzer.java:98) - Analyzing 0_PartiteRandomGraphGenerator.java
+2007-08-01 13:42:08,718 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_permutation_ArrayPermutationsIter
+2007-08-01 13:42:08,718  INFO (GCodeAnalyzer.java:98) - Analyzing 0_ArrayPermutationsIter.java
+2007-08-01 13:42:08,750 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_permutation_CollectionPermutationIter
+2007-08-01 13:42:08,765  INFO (GCodeAnalyzer.java:98) - Analyzing 0_CollectionPermutationIter.java
+2007-08-01 13:42:08,796 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_permutation_CompoundPermutationIter
+2007-08-01 13:42:08,796  INFO (GCodeAnalyzer.java:98) - Analyzing 0_CompoundPermutationIterTest.java
+2007-08-01 13:42:08,828 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_permutation_IntegerPermutationIter
+2007-08-01 13:42:08,828  INFO (GCodeAnalyzer.java:98) - Analyzing 0_IntegerPermutationIter.java
+2007-08-01 13:42:08,875 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_permutation_PermutationFactory
+2007-08-01 13:42:08,875  INFO (GCodeAnalyzer.java:98) - Analyzing 0_PermutationFactory.java
+2007-08-01 13:42:08,906 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_RandomGraphHelper
+2007-08-01 13:42:08,906  INFO (GCodeAnalyzer.java:98) - Analyzing 0_RandomGraphHelper.java
+2007-08-01 13:42:08,921 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_touchgraph_SimpleTouchgraphApplet
+2007-08-01 13:42:08,937  INFO (GCodeAnalyzer.java:98) - Analyzing 0_SimpleTouchgraphApplet.java
+2007-08-01 13:42:08,953 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_touchgraph_TouchgraphConverter
+2007-08-01 13:42:08,953  INFO (GCodeAnalyzer.java:98) - Analyzing 0_TouchgraphConverter.java
+2007-08-01 13:42:08,984 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_touchgraph_TouchgraphPanel
+2007-08-01 13:42:09,000  INFO (GCodeAnalyzer.java:98) - Analyzing 0_TouchgraphPanel.java
+2007-08-01 13:42:09,015 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_experimental_UniformRandomGraphGenerator
+2007-08-01 13:42:09,015  INFO (GCodeAnalyzer.java:98) - Analyzing 0_UniformRandomGraphGenerator.java
+2007-08-01 13:42:09,031 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_DOTExporter
+2007-08-01 13:42:09,046 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_EdgeNameProvider
+2007-08-01 13:42:09,062 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_GmlExporter
+2007-08-01 13:42:09,062 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_GraphMLExporter
+2007-08-01 13:42:09,062 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_IntegerEdgeNameProvider
+2007-08-01 13:42:09,062 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_IntegerNameProvider
+2007-08-01 13:42:09,078  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphViewer.java
+2007-08-01 13:42:09,109  INFO (GCodeAnalyzer.java:98) - Analyzing 1_IntegerNameProvider.java
+2007-08-01 13:42:09,125 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_JGraphModelAdapter
+2007-08-01 13:42:09,125  INFO (GCodeAnalyzer.java:98) - Analyzing 0_HumanOrgansView.java
+2007-08-01 13:42:09,156  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GraphViewer.java
+2007-08-01 13:42:09,171  INFO (GCodeAnalyzer.java:98) - Analyzing 2_GWizEdgeRenderer.java
+2007-08-01 13:42:09,203  INFO (GCodeAnalyzer.java:98) - Analyzing 3_CompatibilityPartitioner.java
+2007-08-01 13:42:09,265  INFO (GCodeAnalyzer.java:98) - Analyzing 4_JGraphModelAdapter.java
+2007-08-01 13:42:09,328 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_MatrixExporter
+2007-08-01 13:42:09,328  INFO (GCodeAnalyzer.java:98) - Analyzing 0_MatrixExporter.java
+2007-08-01 13:42:09,375 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_StringEdgeNameProvider
+2007-08-01 13:42:09,390 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_StringNameProvider
+2007-08-01 13:42:09,390  INFO (GCodeAnalyzer.java:98) - Analyzing 0_StringNameProvider.java
+2007-08-01 13:42:09,437 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_VertexNameProvider
+2007-08-01 13:42:09,437  INFO (GCodeAnalyzer.java:98) - Analyzing 0_InsetProcessor.java
+2007-08-01 13:42:09,531  INFO (GCodeAnalyzer.java:98) - Analyzing 1_VertexNameProvider.java
+2007-08-01 13:42:09,562 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ext_VisioExporter
+2007-08-01 13:42:09,578  INFO (GCodeAnalyzer.java:98) - Analyzing 0_VisioExporter.java
+2007-08-01 13:42:09,609 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_generate_EmptyGraphGenerator
+2007-08-01 13:42:09,609  INFO (GCodeAnalyzer.java:98) - Analyzing 0_EmptyGraphGenerator.java
+2007-08-01 13:42:09,640 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_generate_GraphGenerator
+2007-08-01 13:42:09,640  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GWizRandomGraphGenerator.java
+2007-08-01 13:42:09,687  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GraphGenerator.java
+2007-08-01 13:42:09,703 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_generate_LinearGraphGenerator
+2007-08-01 13:42:09,703  INFO (GCodeAnalyzer.java:98) - Analyzing 0_LinearGraphGenerator.java
+2007-08-01 13:42:09,734 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_generate_RandomGraphGenerator
+2007-08-01 13:42:09,734  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GWizGraphGeneratorDialog.java
+2007-08-01 13:42:09,796  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GWizRandomGraphGenerator.java
+2007-08-01 13:42:09,843  INFO (GCodeAnalyzer.java:98) - Analyzing 2_RandomGraphGenerator.java
+2007-08-01 13:42:09,859  INFO (GCodeAnalyzer.java:98) - Analyzing 3_RandomGraphGeneratorTest.java
+2007-08-01 13:42:09,890 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_generate_RingGraphGenerator
+2007-08-01 13:42:09,890  INFO (GCodeAnalyzer.java:98) - Analyzing 0_RingGraphGenerator.java
+2007-08-01 13:42:09,921 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_generate_WheelGraphGenerator
+2007-08-01 13:42:09,937  INFO (GCodeAnalyzer.java:98) - Analyzing 0_WheelGraphGenerator.java
+2007-08-01 13:42:09,984 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_Graph
+2007-08-01 13:42:09,984  INFO (GCodeAnalyzer.java:98) - Analyzing 0_HumanOrgansGraph.java
+2007-08-01 13:42:10,046  INFO (GCodeAnalyzer.java:98) - Analyzing 10_NeighborIndexTest.java
+2007-08-01 13:42:10,062  INFO (GCodeAnalyzer.java:98) - Analyzing 11_PerformanceDemo.java
+2007-08-01 13:42:10,109  INFO (GCodeAnalyzer.java:98) - Analyzing 12_ConnectivityInspector.java
+2007-08-01 13:42:10,156  INFO (GCodeAnalyzer.java:98) - Analyzing 13_GraphUtilities.java
+2007-08-01 13:42:10,234  INFO (GCodeAnalyzer.java:98) - Analyzing 14_CompatibilityPartitioner.java
+2007-08-01 13:42:10,281  INFO (GCodeAnalyzer.java:98) - Analyzing 15_GWizRandomGraphGenerator.java
+2007-08-01 13:42:10,359  INFO (GCodeAnalyzer.java:98) - Analyzing 16_GWizGraphGeneratorDialog.java
+2007-08-01 13:42:10,421  INFO (GCodeAnalyzer.java:98) - Analyzing 17_GWizGraph.java
+2007-08-01 13:42:10,437  INFO (GCodeAnalyzer.java:98) - Analyzing 18_GWizGraph.java
+2007-08-01 13:42:10,437  INFO (GCodeAnalyzer.java:98) - Analyzing 19_GWizEdge.java
+2007-08-01 13:42:10,484  INFO (GCodeAnalyzer.java:98) - Analyzing 1_MetaComponentSimple.java
+2007-08-01 13:42:10,531  INFO (GCodeAnalyzer.java:98) - Analyzing 20_Graphtest.java
+2007-08-01 13:42:10,593  INFO (GCodeAnalyzer.java:98) - Analyzing 21_Pair.java
+2007-08-01 13:42:10,640  INFO (GCodeAnalyzer.java:98) - Analyzing 22_SocialNetwork.java
+2007-08-01 13:42:10,718  INFO (GCodeAnalyzer.java:98) - Analyzing 23_Tools.java
+2007-08-01 13:42:10,781  INFO (GCodeAnalyzer.java:98) - Analyzing 24_Edge.java
+2007-08-01 13:42:10,828  INFO (GCodeAnalyzer.java:98) - Analyzing 25_HumanOrgansGraph.java
+2007-08-01 13:42:10,875  INFO (GCodeAnalyzer.java:98) - Analyzing 26_MetaComponentSimple.java
+2007-08-01 13:42:10,937  INFO (GCodeAnalyzer.java:98) - Analyzing 27_AbstractBaseGraph.java
+2007-08-01 13:42:11,046  INFO (GCodeAnalyzer.java:98) - Analyzing 28_RandomGraphGenerator.java
+2007-08-01 13:42:11,093  INFO (GCodeAnalyzer.java:98) - Analyzing 29_GraphIO.java
+2007-08-01 13:42:11,140  INFO (GCodeAnalyzer.java:98) - Analyzing 2_HumanOrgansView.java
+2007-08-01 13:42:11,187  INFO (GCodeAnalyzer.java:98) - Analyzing 30_GraphUtilities.java
+2007-08-01 13:42:11,218  INFO (GCodeAnalyzer.java:98) - Analyzing 31_GWizRandomGraphGenerator.java
+2007-08-01 13:42:11,281  INFO (GCodeAnalyzer.java:98) - Analyzing 32_Pair.java
+2007-08-01 13:42:11,296  INFO (GCodeAnalyzer.java:98) - Analyzing 33_VertexCovers.java
+2007-08-01 13:42:11,390  INFO (GCodeAnalyzer.java:98) - Analyzing 34_MsAccessAdapter.java
+2007-08-01 13:42:11,625  INFO (GCodeAnalyzer.java:98) - Analyzing 35_Main.java
+2007-08-01 13:42:11,703  INFO (GCodeAnalyzer.java:98) - Analyzing 36_MigrationPath.java
+2007-08-01 13:42:11,750  INFO (GCodeAnalyzer.java:98) - Analyzing 37_GraphIO.java
+2007-08-01 13:42:11,765  INFO (GCodeAnalyzer.java:98) - Analyzing 38_RandomTree.java
+2007-08-01 13:42:11,781  INFO (GCodeAnalyzer.java:98) - Analyzing 39_GraphDemo1.java
+2007-08-01 13:42:11,796  INFO (GCodeAnalyzer.java:98) - Analyzing 3_RandomGraphGenerator.java
+2007-08-01 13:42:11,828  INFO (GCodeAnalyzer.java:98) - Analyzing 40_InsetProcessor.java
+2007-08-01 13:42:11,921  INFO (GCodeAnalyzer.java:98) - Analyzing 41_GraphViewer.java
+2007-08-01 13:42:11,937  INFO (GCodeAnalyzer.java:98) - Analyzing 42_ShibbolethAttributeResolver.java
+2007-08-01 13:42:12,015  INFO (GCodeAnalyzer.java:98) - Analyzing 43_ShibbolethAttributeResolver.java
+2007-08-01 13:42:12,406  INFO (GCodeAnalyzer.java:98) - Analyzing 44_AttributeResolverImpl.java
+2007-08-01 13:42:12,437  INFO (GCodeAnalyzer.java:98) - Analyzing 45_ShibbolethAttributeResolver.java
+2007-08-01 13:42:12,515  INFO (GCodeAnalyzer.java:98) - Analyzing 46_ShibbolethAttributeResolver.java
+2007-08-01 13:42:12,593  INFO (GCodeAnalyzer.java:98) - Analyzing 47_ResolutionPlugInMap.java
+2007-08-01 13:42:12,640  INFO (GCodeAnalyzer.java:98) - Analyzing 48_Sketch.java
+2007-08-01 13:42:12,734  INFO (GCodeAnalyzer.java:98) - Analyzing 49_Constraint.java
+2007-08-01 13:42:12,781  INFO (GCodeAnalyzer.java:98) - Analyzing 4_AbstractBaseGraph.java
+2007-08-01 13:42:12,843  INFO (GCodeAnalyzer.java:98) - Analyzing 50_SketchAdapter.java
+2007-08-01 13:42:12,921 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:12,921 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:12,921 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:12,921 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:12,937 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:12,937 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:12,937 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:12,937 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:12,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:12,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:12,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:12,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:12,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:12,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:12,968  INFO (GCodeAnalyzer.java:98) - Analyzing 51_DefaultDirectedMultigraph.java
+2007-08-01 13:42:13,015  INFO (GCodeAnalyzer.java:98) - Analyzing 52_SketchEdge.java
+2007-08-01 13:42:13,031  INFO (GCodeAnalyzer.java:98) - Analyzing 53_ListenableDirectedMultigraph.java
+2007-08-01 13:42:13,062  INFO (GCodeAnalyzer.java:98) - Analyzing 54_SketchHandler.java
+2007-08-01 13:42:13,125  INFO (GCodeAnalyzer.java:98) - Analyzing 55_GraphFunctions.java
+2007-08-01 13:42:13,156  INFO (ASTCrawler.java:940) - Happened in file: C:\APIUsage\JGrapht\org_jgrapht_Graph//55_GraphFunctions.debug.full
+2007-08-01 13:42:13,171  INFO (GCodeAnalyzer.java:98) - Analyzing 5_VertexCovers.java
+2007-08-01 13:42:13,171  INFO (GCodeAnalyzer.java:98) - Analyzing 6_IsomorphismInspectorTest.java
+2007-08-01 13:42:13,218  INFO (GCodeAnalyzer.java:98) - Analyzing 7_BellmanFordShortestPathTest.java
+2007-08-01 13:42:13,234  INFO (GCodeAnalyzer.java:98) - Analyzing 8_RandomGraphGeneratorTest.java
+2007-08-01 13:42:13,250  INFO (GCodeAnalyzer.java:98) - Analyzing 9_JGraphAdapterDemo.java
+2007-08-01 13:42:13,296 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_GraphHelper
+2007-08-01 13:42:13,296  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphHelper.java
+2007-08-01 13:42:13,343 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_GraphMapping
+2007-08-01 13:42:13,343  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphMapping.java
+2007-08-01 13:42:13,375 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_Graphs
+2007-08-01 13:42:13,375  INFO (GCodeAnalyzer.java:98) - Analyzing 0_HumanOrgansGraph.java
+2007-08-01 13:42:13,406  INFO (GCodeAnalyzer.java:98) - Analyzing 1_RandomTree.java
+2007-08-01 13:42:13,437  INFO (GCodeAnalyzer.java:98) - Analyzing 2_HumanOrgansGraph.java
+2007-08-01 13:42:13,515  INFO (GCodeAnalyzer.java:98) - Analyzing 3_VertexCovers.java
+2007-08-01 13:42:13,531  INFO (GCodeAnalyzer.java:98) - Analyzing 4_RandomTree.java
+2007-08-01 13:42:13,546  INFO (GCodeAnalyzer.java:98) - Analyzing 5_GraphTutils.java
+2007-08-01 13:42:13,578  INFO (GCodeAnalyzer.java:98) - Analyzing 6_Graphs.java
+2007-08-01 13:42:13,593  INFO (GCodeAnalyzer.java:98) - Analyzing 7_VertexCovers.java
+2007-08-01 13:42:13,625  INFO (GCodeAnalyzer.java:98) - Analyzing 8_Graphs.java
+2007-08-01 13:42:13,671 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_AbstractBaseGraph
+2007-08-01 13:42:13,671  INFO (GCodeAnalyzer.java:98) - Analyzing 0_DefaultDirectedMultigraph.java
+2007-08-01 13:42:13,703  INFO (GCodeAnalyzer.java:98) - Analyzing 1_AbstractBaseGraph.java
+2007-08-01 13:42:13,796 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_AbstractGraph
+2007-08-01 13:42:13,812  INFO (GCodeAnalyzer.java:98) - Analyzing 0_AbstractGraph.java
+2007-08-01 13:42:13,875 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_AsUndirectedGraph
+2007-08-01 13:42:13,875  INFO (GCodeAnalyzer.java:98) - Analyzing 0_VertexCovers.java
+2007-08-01 13:42:13,937  INFO (GCodeAnalyzer.java:98) - Analyzing 1_AsUndirectedGraph.java
+2007-08-01 13:42:13,968 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_ClassBasedEdgeFactory
+2007-08-01 13:42:13,968  INFO (GCodeAnalyzer.java:98) - Analyzing 0_DefaultDirectedMultigraph.java
+2007-08-01 13:42:14,000  INFO (GCodeAnalyzer.java:98) - Analyzing 1_ClassBasedEdgeFactory.java
+2007-08-01 13:42:14,046 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DefaultDirectedGraph
+2007-08-01 13:42:14,046  INFO (GCodeAnalyzer.java:98) - Analyzing 0_MigrationPath.java
+2007-08-01 13:42:14,078  INFO (GCodeAnalyzer.java:98) - Analyzing 1_IsomorphismInspectorTest.java
+2007-08-01 13:42:14,156  INFO (GCodeAnalyzer.java:98) - Analyzing 2_DefaultDirectedGraphTest.java
+2007-08-01 13:42:14,171 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DefaultDirectedWeightedGraph
+2007-08-01 13:42:14,171  INFO (GCodeAnalyzer.java:98) - Analyzing 0_InsetProcessor.java
+2007-08-01 13:42:14,250  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GraphViewer.java
+2007-08-01 13:42:14,281  INFO (GCodeAnalyzer.java:98) - Analyzing 2_DefaultDirectedWeightedGraph.java
+2007-08-01 13:42:14,296 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DefaultEdge
+2007-08-01 13:42:14,328  INFO (GCodeAnalyzer.java:98) - Analyzing 0_MetaComponentSimple.java
+2007-08-01 13:42:14,375  INFO (GCodeAnalyzer.java:98) - Analyzing 10_GraphDemo1.java
+2007-08-01 13:42:14,390  INFO (GCodeAnalyzer.java:98) - Analyzing 11_RandomTree.java
+2007-08-01 13:42:14,437  INFO (GCodeAnalyzer.java:98) - Analyzing 12_CompatibilityPartitioner.java
+2007-08-01 13:42:14,500  INFO (GCodeAnalyzer.java:98) - Analyzing 13_ShibbolethAttributeResolver.java
+2007-08-01 13:42:14,625  INFO (GCodeAnalyzer.java:98) - Analyzing 14_ResolutionPlugInMap.java
+2007-08-01 13:42:14,671  INFO (GCodeAnalyzer.java:98) - Analyzing 15_MetaComponentSimple.java
+2007-08-01 13:42:14,703  INFO (GCodeAnalyzer.java:98) - Analyzing 16_HumanOrgansGraph.java
+2007-08-01 13:42:14,718  INFO (GCodeAnalyzer.java:98) - Analyzing 17_JGraphAdapterDemo.java
+2007-08-01 13:42:14,750  INFO (GCodeAnalyzer.java:98) - Analyzing 18_MigrationPath.java
+2007-08-01 13:42:14,781  INFO (GCodeAnalyzer.java:98) - Analyzing 19_SketchAdapter.java
+2007-08-01 13:42:14,906 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:14,921 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:14,921 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:14,921 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:14,921 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:14,937 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:14,937 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:14,937 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:14,937 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:14,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:14,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:14,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:14,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:14,953 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:14,968  INFO (GCodeAnalyzer.java:98) - Analyzing 1_HumanOrgansGraph.java
+2007-08-01 13:42:15,015  INFO (GCodeAnalyzer.java:98) - Analyzing 20_GraphDemo1.java
+2007-08-01 13:42:15,046  INFO (GCodeAnalyzer.java:98) - Analyzing 21_RandomTree.java
+2007-08-01 13:42:15,062  INFO (GCodeAnalyzer.java:98) - Analyzing 22_Sketch.java
+2007-08-01 13:42:15,140  INFO (GCodeAnalyzer.java:98) - Analyzing 23_CompatibilityPartitioner.java
+2007-08-01 13:42:15,203  INFO (GCodeAnalyzer.java:98) - Analyzing 24_Constraint.java
+2007-08-01 13:42:15,265  INFO (GCodeAnalyzer.java:98) - Analyzing 2_JGraphAdapterDemo.java
+2007-08-01 13:42:15,296  INFO (GCodeAnalyzer.java:98) - Analyzing 3_DefaultEdge.java
+2007-08-01 13:42:15,359  INFO (GCodeAnalyzer.java:98) - Analyzing 4_MigrationPath.java
+2007-08-01 13:42:15,390  INFO (GCodeAnalyzer.java:98) - Analyzing 5_SketchAdapter.java
+2007-08-01 13:42:15,484 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:15,484 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:15,500 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:15,500 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:15,500 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:15,500 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:15,500 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:15,515 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:15,515 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:15,531 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:15,531 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:15,531 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:15,531 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:15,531 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:15,546  INFO (GCodeAnalyzer.java:98) - Analyzing 6_Sketch.java
+2007-08-01 13:42:15,656  INFO (GCodeAnalyzer.java:98) - Analyzing 7_Constraint.java
+2007-08-01 13:42:15,703  INFO (GCodeAnalyzer.java:98) - Analyzing 8_SketchEdge.java
+2007-08-01 13:42:15,734  INFO (GCodeAnalyzer.java:98) - Analyzing 9_SketchHandler.java
+2007-08-01 13:42:15,812 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DefaultGraphMapping
+2007-08-01 13:42:15,828  INFO (GCodeAnalyzer.java:98) - Analyzing 0_DefaultGraphMapping.java
+2007-08-01 13:42:15,843 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DefaultListenableGraph
+2007-08-01 13:42:15,843  INFO (GCodeAnalyzer.java:98) - Analyzing 0_DefaultListenableGraph.java
+2007-08-01 13:42:15,906 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DefaultWeightedEdge
+2007-08-01 13:42:15,921  INFO (GCodeAnalyzer.java:98) - Analyzing 0_InsetProcessor.java
+2007-08-01 13:42:16,000  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GraphViewer.java
+2007-08-01 13:42:16,015  INFO (GCodeAnalyzer.java:98) - Analyzing 2_GWizEdge.java
+2007-08-01 13:42:16,031  INFO (GCodeAnalyzer.java:98) - Analyzing 3_DefaultWeightedEdge.java
+2007-08-01 13:42:16,031 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DirectedMultigraph
+2007-08-01 13:42:16,046  INFO (GCodeAnalyzer.java:98) - Analyzing 0_MsAccessAdapter.java
+2007-08-01 13:42:16,281  INFO (GCodeAnalyzer.java:98) - Analyzing 1_DirectedMultigraph.java
+2007-08-01 13:42:16,296  INFO (GCodeAnalyzer.java:98) - Analyzing 2_DirectedMultigraph.java
+2007-08-01 13:42:16,312 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DirectedPseudograph
+2007-08-01 13:42:16,312  INFO (GCodeAnalyzer.java:98) - Analyzing 0_DirectedPseudograph.java
+2007-08-01 13:42:16,312 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DirectedSubgraph
+2007-08-01 13:42:16,312  INFO (GCodeAnalyzer.java:98) - Analyzing 0_DirectedSubgraph.java
+2007-08-01 13:42:16,343 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DirectedWeightedMultigraph
+2007-08-01 13:42:16,343  INFO (GCodeAnalyzer.java:98) - Analyzing 0_DirectedWeightedMultigraph.java
+2007-08-01 13:42:16,359 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_DirectedWeightedSubgraph
+2007-08-01 13:42:16,359  INFO (GCodeAnalyzer.java:98) - Analyzing 0_InsetProcessor.java
+2007-08-01 13:42:16,421  INFO (GCodeAnalyzer.java:98) - Analyzing 1_DirectedWeightedSubgraph.java
+2007-08-01 13:42:16,421 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_EdgeReversedGraph
+2007-08-01 13:42:16,421 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_EdgeSetFactory
+2007-08-01 13:42:16,453  INFO (GCodeAnalyzer.java:98) - Analyzing 0_EdgeSetFactory.java
+2007-08-01 13:42:16,468 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_GraphDelegator
+2007-08-01 13:42:16,468  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphDelegator.java
+2007-08-01 13:42:16,500 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_IntrusiveEdge
+2007-08-01 13:42:16,500  INFO (GCodeAnalyzer.java:98) - Analyzing 0_IntrusiveEdge.java
+2007-08-01 13:42:16,515 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_ListenableDirectedGraph
+2007-08-01 13:42:16,515  INFO (GCodeAnalyzer.java:98) - Analyzing 0_HumanOrgansView.java
+2007-08-01 13:42:16,531  INFO (GCodeAnalyzer.java:98) - Analyzing 1_HumanOrgansGraph.java
+2007-08-01 13:42:16,546  INFO (GCodeAnalyzer.java:98) - Analyzing 2_Sketch.java
+2007-08-01 13:42:16,609  INFO (GCodeAnalyzer.java:98) - Analyzing 3_Constraint.java
+2007-08-01 13:42:16,656  INFO (GCodeAnalyzer.java:98) - Analyzing 4_SketchAdapter.java
+2007-08-01 13:42:16,718 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:16,718 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:16,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:16,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:16,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:16,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:16,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:16,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:16,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jVertex}
+2007-08-01 13:42:16,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{jEdge}
+2007-08-01 13:42:16,734 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:16,750 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{edgeCell}
+2007-08-01 13:42:16,750 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell}
+2007-08-01 13:42:16,750 ERROR (ASTCrawlerUtil.java:330) - Unhandled case in finding the reference type...{vertexCell,vertexCell.getChildAt(0)}
+2007-08-01 13:42:16,750  INFO (GCodeAnalyzer.java:98) - Analyzing 5_ListenableDirectedMultigraph.java
+2007-08-01 13:42:16,781  INFO (GCodeAnalyzer.java:98) - Analyzing 6_ListenableDirectedGraph.java
+2007-08-01 13:42:16,781 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_ListenableDirectedWeightedGraph
+2007-08-01 13:42:16,781  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GWizGraph.java
+2007-08-01 13:42:16,812  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GWizGraph.java
+2007-08-01 13:42:16,828  INFO (GCodeAnalyzer.java:98) - Analyzing 2_ListenableDirectedWeightedGraph.java
+2007-08-01 13:42:16,859 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_ListenableUndirectedGraph
+2007-08-01 13:42:16,859  INFO (GCodeAnalyzer.java:98) - Analyzing 0_CompatibilityPartitioner.java
+2007-08-01 13:42:16,906  INFO (GCodeAnalyzer.java:98) - Analyzing 1_ListenableUndirectedGraph.java
+2007-08-01 13:42:16,937 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_ListenableUndirectedWeightedGraph
+2007-08-01 13:42:16,937  INFO (GCodeAnalyzer.java:98) - Analyzing 0_ListenableUndirectedWeightedGraph.java
+2007-08-01 13:42:16,968 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_Multigraph
+2007-08-01 13:42:16,968  INFO (GCodeAnalyzer.java:98) - Analyzing 0_IsomorphismInspectorTest.java
+2007-08-01 13:42:17,031  INFO (GCodeAnalyzer.java:98) - Analyzing 1_Multigraph.java
+2007-08-01 13:42:17,031 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_Pseudograph
+2007-08-01 13:42:17,031  INFO (GCodeAnalyzer.java:98) - Analyzing 0_IsomorphismInspectorTest.java
+2007-08-01 13:42:17,093  INFO (GCodeAnalyzer.java:98) - Analyzing 1_Pseudograph.java
+2007-08-01 13:42:17,093 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_SimpleDirectedGraph
+2007-08-01 13:42:17,093  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphFunctions.java
+2007-08-01 13:42:17,140  INFO (ASTCrawler.java:940) - Happened in file: C:\APIUsage\JGrapht\org_jgrapht_graph_SimpleDirectedGraph//0_GraphFunctions.debug.full
+2007-08-01 13:42:17,140  INFO (GCodeAnalyzer.java:98) - Analyzing 1_ShibbolethAttributeResolver.java
+2007-08-01 13:42:17,218  INFO (GCodeAnalyzer.java:98) - Analyzing 2_ShibbolethAttributeResolver.java
+2007-08-01 13:42:17,296  INFO (GCodeAnalyzer.java:98) - Analyzing 3_AttributeResolverImpl.java
+2007-08-01 13:42:17,343  INFO (GCodeAnalyzer.java:98) - Analyzing 4_ShibbolethAttributeResolver.java
+2007-08-01 13:42:17,406  INFO (GCodeAnalyzer.java:98) - Analyzing 5_ShibbolethAttributeResolver.java
+2007-08-01 13:42:17,500  INFO (GCodeAnalyzer.java:98) - Analyzing 6_SocialNetwork.java
+2007-08-01 13:42:17,562  INFO (GCodeAnalyzer.java:98) - Analyzing 7_Tools.java
+2007-08-01 13:42:17,609  INFO (GCodeAnalyzer.java:98) - Analyzing 8_IsomorphismInspectorTest.java
+2007-08-01 13:42:17,640  INFO (GCodeAnalyzer.java:98) - Analyzing 9_SimpleDirectedGraphTest.java
+2007-08-01 13:42:17,671 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_SimpleDirectedWeightedGraph
+2007-08-01 13:42:17,671  INFO (GCodeAnalyzer.java:98) - Analyzing 0_SimpleDirectedWeightedGraph.java
+2007-08-01 13:42:17,687 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_SimpleGraph
+2007-08-01 13:42:17,687  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphDemo1.java
+2007-08-01 13:42:17,718  INFO (GCodeAnalyzer.java:98) - Analyzing 1_RandomTree.java
+2007-08-01 13:42:17,750  INFO (GCodeAnalyzer.java:98) - Analyzing 2_CompatibilityPartitioner.java
+2007-08-01 13:42:17,812  INFO (GCodeAnalyzer.java:98) - Analyzing 3_SocialNetwork.java
+2007-08-01 13:42:17,859  INFO (GCodeAnalyzer.java:98) - Analyzing 4_IsomorphismInspectorTest.java
+2007-08-01 13:42:17,906  INFO (GCodeAnalyzer.java:98) - Analyzing 5_SimpleGraph.java
+2007-08-01 13:42:17,921 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_SimpleWeightedGraph
+2007-08-01 13:42:17,921  INFO (GCodeAnalyzer.java:98) - Analyzing 0_SimpleWeightedGraph.java
+2007-08-01 13:42:17,953 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_Subgraph
+2007-08-01 13:42:17,953  INFO (GCodeAnalyzer.java:98) - Analyzing 0_SubgraphTest.java
+2007-08-01 13:42:17,984 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_UndirectedSubgraph
+2007-08-01 13:42:18,000  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphUtilities.java
+2007-08-01 13:42:18,015  INFO (GCodeAnalyzer.java:98) - Analyzing 1_UndirectedSubgraph.java
+2007-08-01 13:42:18,031 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_UndirectedWeightedSubgraph
+2007-08-01 13:42:18,031  INFO (GCodeAnalyzer.java:98) - Analyzing 0_UndirectedWeightedSubgraph.java
+2007-08-01 13:42:18,062 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_UnmodifiableDirectedGraph
+2007-08-01 13:42:18,062  INFO (GCodeAnalyzer.java:98) - Analyzing 0_UnmodifiableDirectedGraph.java
+2007-08-01 13:42:18,078 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_UnmodifiableGraph
+2007-08-01 13:42:18,078  INFO (GCodeAnalyzer.java:98) - Analyzing 0_UnmodifiableGraph.java
+2007-08-01 13:42:18,093 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_UnmodifiableUndirectedGraph
+2007-08-01 13:42:18,093  INFO (GCodeAnalyzer.java:98) - Analyzing 0_UnmodifiableUndirectedGraph.java
+2007-08-01 13:42:18,125 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_WeightedMultigraph
+2007-08-01 13:42:18,125  INFO (GCodeAnalyzer.java:98) - Analyzing 0_WeightedMultigraph.java
+2007-08-01 13:42:18,140 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_graph_WeightedPseudograph
+2007-08-01 13:42:18,140  INFO (GCodeAnalyzer.java:98) - Analyzing 0_WeightedPseudograph.java
+2007-08-01 13:42:18,171 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_ListenableGraph
+2007-08-01 13:42:18,171  INFO (GCodeAnalyzer.java:98) - Analyzing 0_Subgraph.java
+2007-08-01 13:42:18,250  INFO (GCodeAnalyzer.java:98) - Analyzing 1_ListenableDirectedWeightedGraph.java
+2007-08-01 13:42:18,296  INFO (GCodeAnalyzer.java:98) - Analyzing 2_ListenableDirectedGraph.java
+2007-08-01 13:42:18,312  INFO (GCodeAnalyzer.java:98) - Analyzing 3_ListenableUndirectedWeightedGraph.java
+2007-08-01 13:42:18,312  INFO (GCodeAnalyzer.java:98) - Analyzing 4_ListenableUndirectedGraph.java
+2007-08-01 13:42:18,328  INFO (GCodeAnalyzer.java:98) - Analyzing 5_JGraphModelAdapter.java
+2007-08-01 13:42:18,437  INFO (GCodeAnalyzer.java:98) - Analyzing 6_ListenableGraph.java
+2007-08-01 13:42:18,468  INFO (GCodeAnalyzer.java:98) - Analyzing 7_ListenableDirectedMultigraph.java
+2007-08-01 13:42:18,468  INFO (GCodeAnalyzer.java:98) - Analyzing 8_GWizModelAdapter.java
+2007-08-01 13:42:18,609 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_traverse_AbstractGraphIterator
+2007-08-01 13:42:18,609  INFO (GCodeAnalyzer.java:98) - Analyzing 0_AbstractGraphIteratorTest.java
+2007-08-01 13:42:18,640 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_traverse_BreadthFirstIterator
+2007-08-01 13:42:18,640  INFO (GCodeAnalyzer.java:98) - Analyzing 0_AbstractGraphIteratorTest.java
+2007-08-01 13:42:18,703  INFO (GCodeAnalyzer.java:98) - Analyzing 1_BreadthFirstIterator.java
+2007-08-01 13:42:18,718 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_traverse_ClosestFirstIterator
+2007-08-01 13:42:18,734  INFO (GCodeAnalyzer.java:98) - Analyzing 0_ClosestFirstIterator.java
+2007-08-01 13:42:18,781 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_traverse_CrossComponentIterator
+2007-08-01 13:42:18,781  INFO (GCodeAnalyzer.java:98) - Analyzing 0_CrossComponentIterator.java
+2007-08-01 13:42:18,828 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_traverse_DepthFirstIterator
+2007-08-01 13:42:18,828  INFO (GCodeAnalyzer.java:98) - Analyzing 0_AbstractGraphIteratorTest.java
+2007-08-01 13:42:18,859  INFO (GCodeAnalyzer.java:98) - Analyzing 1_DepthFirstIterator.java
+2007-08-01 13:42:18,890  INFO (GCodeAnalyzer.java:98) - Analyzing 2_CompatibilityPartitioner.java
+2007-08-01 13:42:18,921  INFO (GCodeAnalyzer.java:98) - Analyzing 3_GraphUtilities.java
+2007-08-01 13:42:18,953 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_traverse_GraphIterator
+2007-08-01 13:42:18,953  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphIterator.java
+2007-08-01 13:42:19,000 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_traverse_TopologicalOrderIterator
+2007-08-01 13:42:19,000  INFO (GCodeAnalyzer.java:98) - Analyzing 0_TopologicalOrderIterator.java
+2007-08-01 13:42:19,015 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_UndirectedGraph
+2007-08-01 13:42:19,015  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GraphIO.java
+2007-08-01 13:42:19,046  INFO (GCodeAnalyzer.java:98) - Analyzing 1_RandomTree.java
+2007-08-01 13:42:19,078  INFO (GCodeAnalyzer.java:98) - Analyzing 2_CompatibilityPartitioner.java
+2007-08-01 13:42:19,109  INFO (GCodeAnalyzer.java:98) - Analyzing 3_GraphUtilities.java
+2007-08-01 13:42:19,125  INFO (GCodeAnalyzer.java:98) - Analyzing 4_UndirectedGraph.java
+2007-08-01 13:42:19,156 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_util_ArrayUnenforcedSet
+2007-08-01 13:42:19,156  INFO (GCodeAnalyzer.java:98) - Analyzing 0_ArrayUnenforcedSet.java
+2007-08-01 13:42:19,187 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_util_ArrayUtil
+2007-08-01 13:42:19,187  INFO (GCodeAnalyzer.java:98) - Analyzing 0_ArrayUtil.java
+2007-08-01 13:42:19,203 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_util_FibonacciHeap
+2007-08-01 13:42:19,218  INFO (GCodeAnalyzer.java:98) - Analyzing 0_FibonacciHeap.java
+2007-08-01 13:42:19,250 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_util_FibonacciHeapNode
+2007-08-01 13:42:19,265  INFO (GCodeAnalyzer.java:98) - Analyzing 0_FibonacciHeapNode.java
+2007-08-01 13:42:19,281 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_util_MathUtil
+2007-08-01 13:42:19,281  INFO (GCodeAnalyzer.java:98) - Analyzing 0_MathUtil.java
+2007-08-01 13:42:19,296 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_util_ModifiableInteger
+2007-08-01 13:42:19,296  INFO (GCodeAnalyzer.java:98) - Analyzing 0_ModifiableInteger.java
+2007-08-01 13:42:19,359 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_util_PrefetchIterator
+2007-08-01 13:42:19,359  INFO (GCodeAnalyzer.java:98) - Analyzing 0_PrefetchIteratorTest.java
+2007-08-01 13:42:19,406 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_util_TypeUtil
+2007-08-01 13:42:19,406  INFO (GCodeAnalyzer.java:98) - Analyzing 0_TypeUtil.java
+2007-08-01 13:42:19,437 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_VertexFactory
+2007-08-01 13:42:19,437  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GWizVertex.java
+2007-08-01 13:42:19,500  INFO (GCodeAnalyzer.java:98) - Analyzing 1_VertexFactory.java
+2007-08-01 13:42:19,515 DEBUG (RepositoryAnalyzer.java:153) - Analyzing directory org_jgrapht_WeightedGraph
+2007-08-01 13:42:19,531  INFO (GCodeAnalyzer.java:98) - Analyzing 0_GWizEdge.java
+2007-08-01 13:42:19,531  INFO (GCodeAnalyzer.java:98) - Analyzing 1_GWizEdge.java
+2007-08-01 13:42:19,593  INFO (GCodeAnalyzer.java:98) - Analyzing 2_WeightedGraph.java
+2007-08-01 13:42:19,718  INFO (APIUsageActions.java:132) - Outputting all gathered sequenes...
+2007-08-01 13:43:19,781  INFO (APIUsageActions.java:266) - Number of Final Hotspots: 80
+2007-08-01 13:43:19,781  INFO (APIUsageActions.java:267) - Hotspot IDs: [15, 865, 620, 16, 1176, 863, 118, 32, 124, 1160, 169, 1178, 1343, 270, 1057, 60, 881, 29, 762, 122, 268, 867, 859, 887, 162, 1198, 3, 27, 2, 13, 28, 885, 1063, 861, 269, 1073, 644, 163, 1248, 262, 899, 845, 643, 263, 1066, 883, 674, 1207, 889, 1153, 774, 1132, 1196, 760, 4, 19, 167, 895, 1029, 764, 1209, 713, 281, 1154, 266, 1246, 622, 109, 1075, 778, 714, 877, 766, 751, 814, 1200, 730, 597, 893, 645]

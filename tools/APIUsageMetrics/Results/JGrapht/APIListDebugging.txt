@@ -1,0 +1,1408 @@
+Class: org.jgrapht.util.ArrayUtil.ToStringFunctor
+	java.lang.String,toString(java.lang.Object)
+
+Class: org.jgrapht.graph.DefaultGraphMapping
+	org.jgrapht.graph.DefaultGraphMapping,CONSTRUCTOR(java.util.Map<V,V>,java.util.Map<V,V>,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	E,getEdgeCorrespondence(E,boolean)
+		V,getVertexCorrespondence(V,boolean)
+	V,getVertexCorrespondence(V,boolean)
+
+Class: org.jgrapht.graph.ListenableUndirectedWeightedGraph
+	org.jgrapht.graph.ListenableUndirectedWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.ListenableUndirectedWeightedGraph,CONSTRUCTOR(org.jgrapht.WeightedGraph<V,E>)
+
+Class: org.jgrapht.graph.DirectedWeightedMultigraph
+	org.jgrapht.graph.DirectedWeightedMultigraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.DirectedWeightedMultigraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+
+Class: org.jgrapht.alg.BellmanFordPathElement
+	org.jgrapht.alg.BellmanFordPathElement,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.alg.BellmanFordPathElement<V,E>,E,double)
+	org.jgrapht.alg.BellmanFordPathElement,CONSTRUCTOR(V)
+	double,getCost()
+	boolean,improve(org.jgrapht.alg.BellmanFordPathElement<V,E>,E,double)
+		double,getCost()
+
+Class: org.jgrapht.experimental.alg.color.GreedyColoring
+	org.jgrapht.experimental.alg.color.GreedyColoring,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	org.jgrapht.experimental.alg.color.GreedyColoring,CONSTRUCTOR(org.jgrapht.Graph<V,E>,int)
+	java.lang.Integer,getLowerBound(java.util.Map<V,java.lang.Object>)
+	java.lang.Integer,getUpperBound(java.util.Map<V,java.lang.Object>)
+	boolean,isExact()
+
+Class: org.jgrapht.experimental.isomorphism.GraphOrdering.LabelsEdge
+	org.jgrapht.experimental.isomorphism.GraphOrdering.LabelsEdge,CONSTRUCTOR(int,int)
+	boolean,equals(java.lang.Object)
+	int,hashCode()
+	java.lang.String,toString()
+
+Class: org.jgrapht.ext.JGraphModelAdapter.CellFactory
+	org.jgraph.graph.DefaultEdge,createEdgeCell(EE)
+	org.jgraph.graph.DefaultGraphCell,createVertexCell(VV)
+
+Class: org.jgrapht.event.EdgeTraversalEvent
+	org.jgrapht.event.EdgeTraversalEvent,CONSTRUCTOR(java.lang.Object,E)
+	E,getEdge()
+
+Class: org.jgrapht.traverse.CrossComponentIterator.DirectedSpecifics
+	org.jgrapht.traverse.CrossComponentIterator.DirectedSpecifics,CONSTRUCTOR(org.jgrapht.DirectedGraph<VV,EE>)
+	java.util.Set<? extends EE>,edgesOf(VV)
+
+Class: org.jgrapht.event.ConnectedComponentTraversalEvent
+	org.jgrapht.event.ConnectedComponentTraversalEvent,CONSTRUCTOR(java.lang.Object,int)
+	int,getType()
+
+Class: org.jgrapht.alg.NeighborIndex.Neighbors
+	org.jgrapht.alg.NeighborIndex.Neighbors,CONSTRUCTOR(V,java.util.Collection<V>)
+		void,addNeighbor(V)
+	void,addNeighbor(V)
+		void,increment()
+	void,removeNeighbor(V)
+		int,getValue()
+		void,decrement()
+	java.util.Set<V>,getNeighbors()
+	java.util.List<V>,getNeighborList()
+		int,intValue()
+
+Class: org.jgrapht.GraphMapping
+	V,getVertexCorrespondence(V,boolean)
+	E,getEdgeCorrespondence(E,boolean)
+
+Class: org.jgrapht.graph.DefaultListenableGraph.FlyweightEdgeEvent
+	org.jgrapht.graph.DefaultListenableGraph.FlyweightEdgeEvent,CONSTRUCTOR(java.lang.Object,int,EE)
+	void,setEdge(EE)
+	void,setType(int)
+
+Class: org.jgrapht.ext.StringEdgeNameProvider
+	org.jgrapht.ext.StringEdgeNameProvider,CONSTRUCTOR()
+	java.lang.String,getEdgeName(E)
+
+Class: org.jgrapht.experimental.UniformRandomGraphGenerator
+	org.jgrapht.experimental.UniformRandomGraphGenerator,CONSTRUCTOR(int,int)
+	void,generateGraph(org.jgrapht.Graph,org.jgrapht.VertexFactory,java.util.Map)
+		void,addEdges(org.jgrapht.Graph,java.util.List,java.util.List,int)
+		java.lang.Object[],addVertices(org.jgrapht.Graph,org.jgrapht.VertexFactory,int)
+
+Class: org.jgrapht.alg.CycleDetector.ProbeIterator
+	void,encounterVertexAgain(V,E)
+	V,provideNextVertex()
+
+Class: org.jgrapht.Graph
+	java.util.Set<E>,getAllEdges(V,V)
+	E,getEdge(V,V)
+	org.jgrapht.EdgeFactory<V,E>,getEdgeFactory()
+	E,addEdge(V,V)
+	boolean,addEdge(V,V,E)
+	boolean,addVertex(V)
+	boolean,containsEdge(V,V)
+	boolean,containsEdge(E)
+	boolean,containsVertex(V)
+	java.util.Set<E>,edgeSet()
+	java.util.Set<E>,edgesOf(V)
+	boolean,removeAllEdges(java.util.Collection<? extends E>)
+	java.util.Set<E>,removeAllEdges(V,V)
+	boolean,removeAllVertices(java.util.Collection<? extends V>)
+	E,removeEdge(V,V)
+	boolean,removeEdge(E)
+	boolean,removeVertex(V)
+	java.util.Set<V>,vertexSet()
+	V,getEdgeSource(E)
+	V,getEdgeTarget(E)
+	double,getEdgeWeight(E)
+
+Class: org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator
+	org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator,CONSTRUCTOR()
+	boolean,equivalenceCompare(V,V,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+		org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator<V,E>.InOutDegrees,getInOutDegrees(org.jgrapht.Graph<V,E>,V)
+	int,equivalenceHashcode(V,org.jgrapht.Graph<V,E>)
+		org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator<V,E>.InOutDegrees,getInOutDegrees(org.jgrapht.Graph<V,E>,V)
+	org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator<V,E>.InOutDegrees,getInOutDegrees(org.jgrapht.Graph<V,E>,V)
+
+Class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+	void,graphChanged(org.jgraph.event.GraphModelEvent)
+
+Class: org.jgrapht.generate.WheelGraphGenerator
+	org.jgrapht.generate.WheelGraphGenerator,CONSTRUCTOR(int)
+	org.jgrapht.generate.WheelGraphGenerator,CONSTRUCTOR(int,boolean)
+	void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+
+Class: org.jgrapht.graph.UnmodifiableGraph
+	org.jgrapht.graph.UnmodifiableGraph,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	E,addEdge(V,V)
+	boolean,addEdge(V,V,E)
+	boolean,addVertex(V)
+	boolean,removeAllEdges(java.util.Collection<? extends E>)
+	java.util.Set<E>,removeAllEdges(V,V)
+	boolean,removeAllVertices(java.util.Collection<? extends V>)
+	boolean,removeEdge(E)
+	E,removeEdge(V,V)
+	boolean,removeVertex(V)
+
+Class: org.jgrapht.experimental.GraphTests
+	boolean,isEmpty(org.jgrapht.Graph<V,E>)
+	boolean,isComplete(org.jgrapht.Graph<V,E>)
+	boolean,isConnected(org.jgrapht.Graph<V,E>)
+		java.util.List<V>,neighborListOf(org.jgrapht.Graph<V,E>,V)
+	boolean,isTree(org.jgrapht.Graph<V,E>)
+		boolean,isConnected(org.jgrapht.Graph<V,E>)
+	boolean,isBipartite(org.jgrapht.Graph<V,E>)
+		java.util.List<V>,neighborListOf(org.jgrapht.Graph<V,E>,V)
+		boolean,isEmpty(org.jgrapht.Graph<V,E>)
+
+Class: org.jgrapht.DirectedGraph
+	int,inDegreeOf(V)
+	java.util.Set<E>,incomingEdgesOf(V)
+	int,outDegreeOf(V)
+	java.util.Set<E>,outgoingEdgesOf(V)
+
+Class: org.jgrapht.traverse.CrossComponentIterator.Specifics
+	java.util.Set<? extends EE>,edgesOf(VV)
+
+Class: org.jgrapht.graph.ClassBasedEdgeFactory
+	org.jgrapht.graph.ClassBasedEdgeFactory,CONSTRUCTOR(java.lang.Class<? extends E>)
+	E,createEdge(V,V)
+
+Class: org.jgrapht.alg.VertexCovers
+	java.util.Set<V>,find2ApproximationCover(org.jgrapht.Graph<V,E>)
+	java.util.Set<V>,findGreedyCover(org.jgrapht.UndirectedGraph<V,E>)
+
+Class: org.jgrapht.graph.Subgraph
+	org.jgrapht.graph.Subgraph,CONSTRUCTOR(G,java.util.Set<V>,java.util.Set<E>)
+	org.jgrapht.graph.Subgraph,CONSTRUCTOR(G,java.util.Set<V>)
+	java.util.Set<E>,getAllEdges(V,V)
+		boolean,containsVertex(V)
+	E,getEdge(V,V)
+		java.util.Set<E>,getAllEdges(V,V)
+	org.jgrapht.EdgeFactory<V,E>,getEdgeFactory()
+	E,addEdge(V,V)
+		boolean,containsEdge(E)
+		boolean,assertVertexExist(V)
+	boolean,addEdge(V,V,E)
+		boolean,containsEdge(E)
+		boolean,assertVertexExist(V)
+	boolean,addVertex(V)
+		boolean,containsVertex(V)
+	boolean,containsEdge(E)
+	boolean,containsVertex(V)
+	java.util.Set<E>,edgeSet()
+	java.util.Set<E>,edgesOf(V)
+		boolean,containsEdge(E)
+		boolean,assertVertexExist(V)
+	boolean,removeEdge(E)
+	E,removeEdge(V,V)
+		E,getEdge(V,V)
+	boolean,removeVertex(V)
+		java.util.Set<E>,edgesOf(V)
+		boolean,removeAllEdges(java.util.Collection<? extends E>)
+		boolean,containsVertex(V)
+	java.util.Set<V>,vertexSet()
+	V,getEdgeSource(E)
+	V,getEdgeTarget(E)
+	G,getBase()
+	double,getEdgeWeight(E)
+	void,setEdgeWeight(E,double)
+
+Class: org.jgrapht.graph.ListenableUndirectedGraph
+	org.jgrapht.graph.ListenableUndirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.ListenableUndirectedGraph,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+
+Class: org.jgrapht.graph.AbstractBaseGraph.DirectedEdgeContainer
+	java.util.Set<EE>,getUnmodifiableIncomingEdges()
+	java.util.Set<EE>,getUnmodifiableOutgoingEdges()
+	void,addIncomingEdge(EE)
+	void,addOutgoingEdge(EE)
+	void,removeIncomingEdge(EE)
+	void,removeOutgoingEdge(EE)
+
+Class: org.jgrapht.graph.AbstractBaseGraph.Specifics
+	void,addVertex(V)
+	java.util.Set<V>,getVertexSet()
+	java.util.Set<E>,getAllEdges(V,V)
+	E,getEdge(V,V)
+	void,addEdgeToTouchingVertices(E)
+	int,degreeOf(V)
+	java.util.Set<E>,edgesOf(V)
+	int,inDegreeOf(V)
+	java.util.Set<E>,incomingEdgesOf(V)
+	int,outDegreeOf(V)
+	java.util.Set<E>,outgoingEdgesOf(V)
+	void,removeEdgeFromTouchingVertices(E)
+
+Class: org.jgrapht.graph.ListenableDirectedWeightedGraph
+	org.jgrapht.graph.ListenableDirectedWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.ListenableDirectedWeightedGraph,CONSTRUCTOR(org.jgrapht.WeightedGraph<V,E>)
+
+Class: org.jgrapht.experimental.GraphSquare
+	org.jgrapht.experimental.GraphSquare,CONSTRUCTOR(org.jgrapht.Graph<V,E>,boolean)
+		boolean,addAllVertices(org.jgrapht.Graph<V,E>,java.util.Collection<? extends V>)
+	E,addEdge(V,V)
+	boolean,addEdge(V,V,E)
+	boolean,addVertex(V)
+	boolean,removeAllEdges(java.util.Collection<? extends E>)
+	java.util.Set<E>,removeAllEdges(V,V)
+	boolean,removeAllVertices(java.util.Collection<? extends V>)
+	boolean,removeEdge(E)
+	E,removeEdge(V,V)
+	boolean,removeVertex(V)
+
+Class: org.jgrapht.GraphHelper
+
+Class: org.jgrapht.alg.BronKerboschCliqueFinder
+	org.jgrapht.alg.BronKerboschCliqueFinder,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	java.util.Collection<java.util.Set<V>>,getAllMaximalCliques()
+	java.util.Collection<java.util.Set<V>>,getBiggestMaximalCliques()
+		java.util.Collection<java.util.Set<V>>,getAllMaximalCliques()
+
+Class: org.jgrapht.graph.SimpleDirectedGraph
+	org.jgrapht.graph.SimpleDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.SimpleDirectedGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+
+Class: org.jgrapht.experimental.isomorphism.GraphOrdering
+	org.jgrapht.experimental.isomorphism.GraphOrdering,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	org.jgrapht.experimental.isomorphism.GraphOrdering,CONSTRUCTOR(org.jgrapht.Graph<V,E>,java.util.Set<V>,java.util.Set<E>)
+	boolean,equalsByEdgeOrder(org.jgrapht.experimental.isomorphism.GraphOrdering)
+		java.util.Set<org.jgrapht.experimental.isomorphism.GraphOrdering<V,E>.LabelsEdge>,getLabelsEdgesSet()
+	java.util.Set<org.jgrapht.experimental.isomorphism.GraphOrdering<V,E>.LabelsEdge>,getLabelsEdgesSet()
+	java.lang.String,toString()
+		java.lang.String,toString(java.lang.Object[])
+
+Class: org.jgrapht.alg.DirectedNeighborIndex
+	org.jgrapht.alg.DirectedNeighborIndex,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	java.util.Set<V>,predecessorsOf(V)
+	java.util.List<V>,predecessorListOf(V)
+	java.util.Set<V>,successorsOf(V)
+	java.util.List<V>,successorListOf(V)
+	void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+
+Class: org.jgrapht.experimental.alg.ApproximationAlgorithm
+
+Class: org.jgrapht.traverse.AbstractGraphIterator
+	void,setCrossComponentTraversal(boolean)
+	boolean,isCrossComponentTraversal()
+	void,setReuseEvents(boolean)
+	boolean,isReuseEvents()
+	void,addTraversalListener(org.jgrapht.event.TraversalListener<V,E>)
+	void,remove()
+	void,removeTraversalListener(org.jgrapht.event.TraversalListener<V,E>)
+	void,fireConnectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+		void,connectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+		void,connectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+		void,connectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	void,fireConnectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+		void,connectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+		void,connectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+		void,connectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	void,fireEdgeTraversed(org.jgrapht.event.EdgeTraversalEvent<V,E>)
+	void,fireVertexTraversed(org.jgrapht.event.VertexTraversalEvent<V>)
+	void,fireVertexFinished(org.jgrapht.event.VertexTraversalEvent<V>)
+
+Class: org.jgrapht.graph.AsUndirectedGraph
+	org.jgrapht.graph.AsUndirectedGraph,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	java.util.Set<E>,getAllEdges(V,V)
+	E,getEdge(V,V)
+	E,addEdge(V,V)
+	boolean,addEdge(V,V,E)
+	int,degreeOf(V)
+	int,inDegreeOf(V)
+	java.util.Set<E>,incomingEdgesOf(V)
+	int,outDegreeOf(V)
+	java.util.Set<E>,outgoingEdgesOf(V)
+	java.lang.String,toString()
+		java.util.Set<E>,edgeSet()
+		java.util.Set<V>,vertexSet()
+
+Class: org.jgrapht.demo.JGraphAdapterDemo.ListenableDirectedMultigraph
+
+Class: org.jgrapht.graph.UndirectedSubgraph
+	org.jgrapht.graph.UndirectedSubgraph,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+	int,degreeOf(V)
+		boolean,containsEdge(E)
+		V,getEdgeTarget(E)
+		boolean,assertVertexExist(V)
+		G,getBase()
+		V,getEdgeSource(E)
+
+Class: org.jgrapht.alg.BellmanFordShortestPath
+	org.jgrapht.alg.BellmanFordShortestPath,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	org.jgrapht.alg.BellmanFordShortestPath,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V,int)
+	double,getCost(V)
+	java.util.List<E>,getPathEdgeList(V)
+	java.util.List<E>,findPathBetween(org.jgrapht.Graph<V,E>,V,V)
+
+Class: org.jgrapht.experimental.isomorphism.PermutationIsomorphismInspector
+	org.jgrapht.experimental.isomorphism.PermutationIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<? super V,? super E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<? super V,? super E>>)
+	org.jgrapht.experimental.isomorphism.PermutationIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	org.jgrapht.experimental.permutation.CollectionPermutationIter<V>,createPermutationIterator(java.util.Set<V>,java.util.Set<V>)
+	boolean,areVertexSetsOfTheSameEqualityGroup(java.util.Set<V>,java.util.Set<V>)
+
+Class: org.jgrapht.util.FibonacciHeapNode
+	org.jgrapht.util.FibonacciHeapNode,CONSTRUCTOR(T,double)
+	double,getKey()
+	T,getData()
+	java.lang.String,toString()
+
+Class: org.jgrapht.util.ArrayUtil
+	java.lang.String,toString(int[])
+	java.lang.String,toString(java.lang.Object[],org.jgrapht.util.ArrayUtil.ToStringFunctor)
+		java.lang.String,toString(java.lang.Object)
+	java.lang.String,toString(java.lang.Object[])
+
+Class: org.jgrapht.util.FibonacciHeap
+	org.jgrapht.util.FibonacciHeap,CONSTRUCTOR()
+	boolean,isEmpty()
+	void,clear()
+	void,decreaseKey(org.jgrapht.util.FibonacciHeapNode<T>,double)
+		void,cascadingCut(org.jgrapht.util.FibonacciHeapNode<T>)
+		void,cut(org.jgrapht.util.FibonacciHeapNode<T>,org.jgrapht.util.FibonacciHeapNode<T>)
+	void,delete(org.jgrapht.util.FibonacciHeapNode<T>)
+		void,decreaseKey(org.jgrapht.util.FibonacciHeapNode<T>,double)
+		org.jgrapht.util.FibonacciHeapNode<T>,removeMin()
+	void,insert(org.jgrapht.util.FibonacciHeapNode<T>,double)
+	org.jgrapht.util.FibonacciHeapNode<T>,min()
+	org.jgrapht.util.FibonacciHeapNode<T>,removeMin()
+		void,consolidate()
+	int,size()
+	org.jgrapht.util.FibonacciHeap<T>,union(org.jgrapht.util.FibonacciHeap<T>,org.jgrapht.util.FibonacciHeap<T>)
+	java.lang.String,toString()
+	void,cascadingCut(org.jgrapht.util.FibonacciHeapNode<T>)
+		void,cascadingCut(org.jgrapht.util.FibonacciHeapNode<T>)
+		void,cut(org.jgrapht.util.FibonacciHeapNode<T>,org.jgrapht.util.FibonacciHeapNode<T>)
+	void,consolidate()
+		void,link(org.jgrapht.util.FibonacciHeapNode<T>,org.jgrapht.util.FibonacciHeapNode<T>)
+	void,cut(org.jgrapht.util.FibonacciHeapNode<T>,org.jgrapht.util.FibonacciHeapNode<T>)
+	void,link(org.jgrapht.util.FibonacciHeapNode<T>,org.jgrapht.util.FibonacciHeapNode<T>)
+
+Class: org.jgrapht.alg.NeighborIndex
+	org.jgrapht.alg.NeighborIndex,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	java.util.Set<V>,neighborsOf(V)
+	java.util.List<V>,neighborListOf(V)
+	void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+
+Class: org.jgrapht.experimental.alg.color.BrownBacktrackColoring
+	org.jgrapht.experimental.alg.color.BrownBacktrackColoring,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	java.lang.Integer,getResult(java.util.Map<V,java.lang.Object>)
+
+Class: org.jgrapht.alg.StrongConnectivityInspector.VertexData
+
+Class: org.jgrapht.graph.DirectedMultigraph
+	org.jgrapht.graph.DirectedMultigraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.DirectedMultigraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+
+Class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+	org.jgrapht.experimental.permutation.IntegerPermutationIter,CONSTRUCTOR(int)
+	org.jgrapht.experimental.permutation.IntegerPermutationIter,CONSTRUCTOR(int[])
+	boolean,hasNext()
+	java.lang.Object,next()
+		int[],getNext()
+	int[],getNext()
+		boolean,hasNext()
+	int[],getCurrent()
+	java.lang.String,toString(int[])
+	void,remove()
+	int[],nextPermutation()
+		java.lang.Object,next()
+	boolean,hasNextPermutaions()
+		boolean,hasNext()
+
+Class: org.jgrapht.traverse.CrossComponentIterator.UndirectedSpecifics
+	org.jgrapht.traverse.CrossComponentIterator.UndirectedSpecifics,CONSTRUCTOR(org.jgrapht.Graph<VV,EE>)
+	java.util.Set<EE>,edgesOf(VV)
+
+Class: org.jgrapht.traverse.GraphIterator
+	boolean,isCrossComponentTraversal()
+	void,setReuseEvents(boolean)
+	boolean,isReuseEvents()
+	void,addTraversalListener(org.jgrapht.event.TraversalListener<V,E>)
+	void,remove()
+	void,removeTraversalListener(org.jgrapht.event.TraversalListener<V,E>)
+
+Class: org.jgrapht.graph.Subgraph.BaseGraphListener
+	void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+
+Class: org.jgrapht.graph.IntrusiveEdge
+	java.lang.Object,clone()
+
+Class: org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue
+	T,element()
+	boolean,offer(T)
+	T,peek()
+	T,poll()
+	T,remove()
+
+Class: org.jgrapht.ListenableGraph
+	void,addGraphListener(org.jgrapht.event.GraphListener<V,E>)
+	void,addVertexSetListener(org.jgrapht.event.VertexSetListener<V>)
+	void,removeGraphListener(org.jgrapht.event.GraphListener<V,E>)
+	void,removeVertexSetListener(org.jgrapht.event.VertexSetListener<V>)
+
+Class: org.jgrapht.traverse.ClosestFirstIterator.QueueEntry
+
+Class: org.jgrapht.experimental.isomorphism.IsomorphismRelation
+	org.jgrapht.experimental.isomorphism.IsomorphismRelation,CONSTRUCTOR(java.util.List<V>,java.util.List<V>,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	java.lang.String,toString()
+	V,getVertexCorrespondence(V,boolean)
+	E,getEdgeCorrespondence(E,boolean)
+
+Class: org.jgrapht.graph.WeightedMultigraph
+	org.jgrapht.graph.WeightedMultigraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	org.jgrapht.graph.WeightedMultigraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+
+Class: org.jgrapht.traverse.TopologicalOrderIterator
+	org.jgrapht.traverse.TopologicalOrderIterator,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	org.jgrapht.traverse.TopologicalOrderIterator,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>,java.util.Queue<V>)
+	boolean,isConnectedComponentExhausted()
+	void,encounterVertex(V,E)
+		D,putSeenData(V,D)
+	void,encounterVertexAgain(V,E)
+	V,provideNextVertex()
+
+Class: org.jgrapht.graph.DefaultDirectedGraph
+	org.jgrapht.graph.DefaultDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.DefaultDirectedGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+
+Class: org.jgrapht.graph.DefaultWeightedEdge
+
+Class: org.jgrapht.experimental.equivalence.EquivalenceSetCreator
+	org.jgrapht.experimental.equivalence.EquivalenceSet[],createEqualityGroupOrderedArray(EE[],org.jgrapht.experimental.equivalence.EquivalenceComparator<? super EE,? super CC>,CC)
+		org.jgrapht.experimental.equivalence.EquivalenceSet[],createEqualityGroupOrderedArray(java.util.Collection<EE>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super EE,? super CC>,CC)
+	org.jgrapht.experimental.equivalence.EquivalenceSet[],createEqualityGroupOrderedArray(java.util.Collection<EE>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super EE,? super CC>,CC)
+
+Class: org.jgrapht.alg.BellmanFordIterator
+	org.jgrapht.alg.BellmanFordIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	org.jgrapht.alg.BellmanFordPathElement<V,E>,getPathElement(V)
+		org.jgrapht.alg.BellmanFordPathElement<V,E>,getSeenData(V)
+	boolean,hasNext()
+	java.util.List<V>,next()
+		java.util.Iterator<E>,edgesOfIterator(V)
+		org.jgrapht.alg.BellmanFordPathElement<V,E>,getPathElement(V)
+		V,getOppositeVertex(org.jgrapht.Graph<V,E>,E,V)
+		boolean,hasNext()
+	void,remove()
+	void,assertValidEdge(E)
+	double,calculatePathCost(V,E)
+		org.jgrapht.alg.BellmanFordPathElement<V,E>,getPrevSeenData(V)
+		V,getOppositeVertex(org.jgrapht.Graph<V,E>,E,V)
+	java.util.Iterator<E>,edgesOfIterator(V)
+	org.jgrapht.alg.BellmanFordPathElement<V,E>,getPrevSeenData(V)
+	org.jgrapht.alg.BellmanFordPathElement<V,E>,getSeenData(V)
+	boolean,isSeenVertex(V)
+	org.jgrapht.alg.BellmanFordPathElement<V,E>,putPrevSeenData(V,org.jgrapht.alg.BellmanFordPathElement<V,E>)
+	org.jgrapht.alg.BellmanFordPathElement<V,E>,putSeenData(V,org.jgrapht.alg.BellmanFordPathElement<V,E>)
+
+Class: org.jgrapht.VertexFactory
+	V,createVertex()
+
+Class: org.jgrapht.experimental.touchgraph.SimpleTouchgraphApplet
+	org.jgrapht.Graph<java.lang.String,org.jgrapht.graph.DefaultEdge>,createSamplegraph()
+	void,init()
+		org.jgrapht.Graph<java.lang.String,org.jgrapht.graph.DefaultEdge>,createSamplegraph()
+	void,main(java.lang.String[])
+		org.jgrapht.Graph<java.lang.String,org.jgrapht.graph.DefaultEdge>,createSamplegraph()
+
+Class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+	void,addVertex(V)
+	java.util.Set<V>,getVertexSet()
+	java.util.Set<E>,getAllEdges(V,V)
+		V,getEdgeTarget(E)
+		boolean,containsVertex(V)
+	E,getEdge(V,V)
+		V,getEdgeTarget(E)
+		boolean,containsVertex(V)
+	void,addEdgeToTouchingVertices(E)
+		V,getEdgeSource(E)
+		V,getEdgeTarget(E)
+	int,degreeOf(V)
+	java.util.Set<E>,edgesOf(V)
+		java.util.Set<E>,getAllEdges(V,V)
+	int,inDegreeOf(V)
+	java.util.Set<E>,incomingEdgesOf(V)
+	int,outDegreeOf(V)
+	java.util.Set<E>,outgoingEdgesOf(V)
+	void,removeEdgeFromTouchingVertices(E)
+		V,getEdgeSource(E)
+		V,getEdgeTarget(E)
+
+Class: org.jgrapht.Graphs
+	E,addEdge(org.jgrapht.Graph<V,E>,V,V,double)
+	E,addEdgeWithVertices(org.jgrapht.Graph<V,E>,V,V)
+	boolean,addEdgeWithVertices(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,E)
+	E,addEdgeWithVertices(org.jgrapht.Graph<V,E>,V,V,double)
+		E,addEdge(org.jgrapht.Graph<V,E>,V,V,double)
+	boolean,addGraph(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+		boolean,addAllVertices(org.jgrapht.Graph<V,E>,java.util.Collection<? extends V>)
+		boolean,addAllEdges(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,java.util.Collection<? extends E>)
+	void,addGraphReversed(org.jgrapht.DirectedGraph<V,E>,org.jgrapht.DirectedGraph<V,E>)
+		boolean,addAllVertices(org.jgrapht.Graph<V,E>,java.util.Collection<? extends V>)
+	boolean,addAllEdges(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,java.util.Collection<? extends E>)
+	boolean,addAllVertices(org.jgrapht.Graph<V,E>,java.util.Collection<? extends V>)
+	java.util.List<V>,neighborListOf(org.jgrapht.Graph<V,E>,V)
+		V,getOppositeVertex(org.jgrapht.Graph<V,E>,E,V)
+	java.util.List<V>,predecessorListOf(org.jgrapht.DirectedGraph<V,E>,V)
+		V,getOppositeVertex(org.jgrapht.Graph<V,E>,E,V)
+	java.util.List<V>,successorListOf(org.jgrapht.DirectedGraph<V,E>,V)
+		V,getOppositeVertex(org.jgrapht.Graph<V,E>,E,V)
+	org.jgrapht.UndirectedGraph<V,E>,undirectedGraph(org.jgrapht.Graph<V,E>)
+	boolean,testIncidence(org.jgrapht.Graph<V,E>,E,V)
+	V,getOppositeVertex(org.jgrapht.Graph<V,E>,E,V)
+
+Class: org.jgrapht.traverse.BreadthFirstIterator
+	org.jgrapht.traverse.BreadthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	org.jgrapht.traverse.BreadthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	boolean,isConnectedComponentExhausted()
+	void,encounterVertex(V,E)
+		D,putSeenData(V,D)
+	void,encounterVertexAgain(V,E)
+	V,provideNextVertex()
+
+Class: org.jgrapht.WeightedGraph
+	void,setEdgeWeight(E,double)
+
+Class: org.jgrapht.experimental.equivalence.EquivalenceComparatorChain
+	void,appendComparator(org.jgrapht.experimental.equivalence.EquivalenceComparator)
+
+Class: org.jgrapht.graph.DefaultDirectedWeightedGraph
+	org.jgrapht.graph.DefaultDirectedWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.DefaultDirectedWeightedGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+
+Class: org.jgrapht.experimental.permutation.PermutationFactory
+	org.jgrapht.experimental.permutation.ArrayPermutationsIter,createRegular(int[])
+	org.jgrapht.experimental.permutation.ArrayPermutationsIter,createByGroups(int[])
+
+Class: org.jgrapht.ext.GraphMLExporter
+	org.jgrapht.ext.GraphMLExporter,CONSTRUCTOR()
+	org.jgrapht.ext.GraphMLExporter,CONSTRUCTOR(org.jgrapht.ext.VertexNameProvider<V>,org.jgrapht.ext.VertexNameProvider<V>,org.jgrapht.ext.EdgeNameProvider<E>,org.jgrapht.ext.EdgeNameProvider<E>)
+	void,export(java.io.Writer,org.jgrapht.Graph<V,E>)
+
+Class: org.jgrapht.traverse.DepthFirstIterator
+	org.jgrapht.traverse.DepthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	org.jgrapht.traverse.DepthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	boolean,isConnectedComponentExhausted()
+	void,encounterVertex(V,E)
+		D,putSeenData(V,D)
+	void,encounterVertexAgain(V,E)
+		D,getSeenData(V)
+	V,provideNextVertex()
+		D,putSeenData(V,D)
+
+Class: org.jgrapht.experimental.GraphReader.IntVertexFactory
+	java.lang.Integer,createVertex()
+
+Class: org.jgrapht.demo.HelloJGraphT
+	void,main(java.lang.String[])
+
+Class: org.jgrapht.experimental.permutation.ArrayPermutationsIter
+	int[],nextPermutation()
+	boolean,hasNextPermutaions()
+
+Class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+	void,addVertex(V)
+	java.util.Set<V>,getVertexSet()
+	java.util.Set<E>,getAllEdges(V,V)
+		V,getEdgeSource(E)
+		V,getEdgeTarget(E)
+		boolean,containsVertex(V)
+	E,getEdge(V,V)
+		V,getEdgeSource(E)
+		V,getEdgeTarget(E)
+		boolean,containsVertex(V)
+	void,addEdgeToTouchingVertices(E)
+		V,getEdgeSource(E)
+		V,getEdgeTarget(E)
+	int,degreeOf(V)
+		V,getEdgeSource(E)
+		V,getEdgeTarget(E)
+	java.util.Set<E>,edgesOf(V)
+	int,inDegreeOf(V)
+	java.util.Set<E>,incomingEdgesOf(V)
+	int,outDegreeOf(V)
+	java.util.Set<E>,outgoingEdgesOf(V)
+	void,removeEdgeFromTouchingVertices(E)
+		V,getEdgeSource(E)
+		V,getEdgeTarget(E)
+
+Class: org.jgrapht.experimental.equivalence.EquivalenceSetCreator.EqGroupSizeComparator
+	int,compare(org.jgrapht.experimental.equivalence.EquivalenceSet,org.jgrapht.experimental.equivalence.EquivalenceSet)
+		int,hashCode()
+		int,size()
+
+Class: org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector.NextFunctor
+	org.jgrapht.experimental.isomorphism.IsomorphismRelation,nextElement()
+
+Class: org.jgrapht.EdgeFactory
+	E,createEdge(V,V)
+
+Class: org.jgrapht.traverse.CrossComponentIterator
+	org.jgrapht.traverse.CrossComponentIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+		void,setCrossComponentTraversal(boolean)
+	org.jgrapht.Graph<V,E>,getGraph()
+	boolean,hasNext()
+		void,encounterVertex(V,E)
+		boolean,isConnectedComponentExhausted()
+		void,encounterVertex(V,E)
+		boolean,isConnectedComponentExhausted()
+		boolean,isConnectedComponentExhausted()
+		void,fireConnectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+		void,encounterVertex(V,E)
+		boolean,isConnectedComponentExhausted()
+		void,encounterVertex(V,E)
+		boolean,isCrossComponentTraversal()
+		boolean,isConnectedComponentExhausted()
+		void,encounterVertex(V,E)
+	V,next()
+		V,provideNextVertex()
+		boolean,hasNext()
+		V,provideNextVertex()
+		V,provideNextVertex()
+		void,fireConnectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+		void,fireVertexTraversed(org.jgrapht.event.VertexTraversalEvent<V>)
+		V,provideNextVertex()
+		V,provideNextVertex()
+		V,provideNextVertex()
+	boolean,isConnectedComponentExhausted()
+	void,encounterVertex(V,E)
+	V,provideNextVertex()
+	D,getSeenData(V)
+	boolean,isSeenVertex(java.lang.Object)
+	void,encounterVertexAgain(V,E)
+	D,putSeenData(V,D)
+	void,finishVertex(V)
+		void,fireVertexFinished(org.jgrapht.event.VertexTraversalEvent<V>)
+
+Class: org.jgrapht.graph.AbstractBaseGraph.ArrayListFactory
+	java.util.Set<EE>,createEdgeSet(VV)
+
+Class: org.jgrapht.experimental.alg.ExactAlgorithm
+
+Class: org.jgrapht.graph.DefaultListenableGraph.FlyweightVertexEvent
+	org.jgrapht.graph.DefaultListenableGraph.FlyweightVertexEvent,CONSTRUCTOR(java.lang.Object,int,VV)
+	void,setType(int)
+	void,setVertex(VV)
+
+Class: org.jgrapht.experimental.permutation.CollectionPermutationIter
+	org.jgrapht.experimental.permutation.CollectionPermutationIter,CONSTRUCTOR(java.util.Set<E>)
+	org.jgrapht.experimental.permutation.CollectionPermutationIter,CONSTRUCTOR(java.util.List<E>)
+	org.jgrapht.experimental.permutation.CollectionPermutationIter,CONSTRUCTOR(java.util.List<E>,org.jgrapht.experimental.permutation.ArrayPermutationsIter)
+	boolean,hasNext()
+		boolean,hasNextPermutaions()
+		boolean,hasNextPermutaions()
+		boolean,hasNextPermutaions()
+	java.util.List<E>,getNextArray()
+		boolean,hasNextPermutaions()
+		int[],nextPermutation()
+		int[],nextPermutation()
+		boolean,hasNextPermutaions()
+		boolean,hasNextPermutaions()
+		int[],nextPermutation()
+	java.util.Set<E>,getNextSet()
+		java.util.List<E>,getNextArray()
+	int[],getCurrentPermutationArray()
+	java.lang.String,toString()
+		int[],getCurrentPermutationArray()
+		java.lang.String,toString(int[])
+
+Class: org.jgrapht.ext.JGraphModelAdapter.DefaultCellFactory
+	org.jgraph.graph.DefaultEdge,createEdgeCell(EE)
+	org.jgraph.graph.DefaultGraphCell,createVertexCell(VV)
+
+Class: org.jgrapht.experimental.equivalence.EquivalenceComparator
+	boolean,equivalenceCompare(E,E,C,C)
+	int,equivalenceHashcode(E,C)
+
+Class: org.jgrapht.ext.GmlExporter
+	org.jgrapht.ext.GmlExporter,CONSTRUCTOR()
+	void,export(java.io.Writer,org.jgrapht.UndirectedGraph<V,E>)
+	void,export(java.io.Writer,org.jgrapht.DirectedGraph<V,E>)
+	void,setPrintLabels(java.lang.Integer)
+	java.lang.Integer,getPrintLabels()
+
+Class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+
+Class: org.jgrapht.graph.DefaultListenableGraph
+	org.jgrapht.graph.DefaultListenableGraph,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	org.jgrapht.graph.DefaultListenableGraph,CONSTRUCTOR(org.jgrapht.Graph<V,E>,boolean)
+	void,setReuseEvents(boolean)
+	boolean,isReuseEvents()
+	E,addEdge(V,V)
+		void,fireEdgeAdded(E)
+	boolean,addEdge(V,V,E)
+		void,fireEdgeAdded(E)
+	void,addGraphListener(org.jgrapht.event.GraphListener<V,E>)
+	boolean,addVertex(V)
+		void,fireVertexAdded(V)
+	void,addVertexSetListener(org.jgrapht.event.VertexSetListener<V>)
+	java.lang.Object,clone()
+		T,uncheckedCast(java.lang.Object,org.jgrapht.util.TypeUtil<T>)
+	E,removeEdge(V,V)
+		void,fireEdgeRemoved(E)
+	boolean,removeEdge(E)
+		void,fireEdgeRemoved(E)
+	void,removeGraphListener(org.jgrapht.event.GraphListener<V,E>)
+	boolean,removeVertex(V)
+		boolean,removeAllEdges(java.util.Collection<? extends E>)
+		boolean,containsVertex(V)
+		void,fireVertexRemoved(V)
+		java.util.Set<E>,edgesOf(V)
+	void,removeVertexSetListener(org.jgrapht.event.VertexSetListener<V>)
+	void,fireEdgeAdded(E)
+	void,fireEdgeRemoved(E)
+	void,fireVertexAdded(V)
+	void,fireVertexRemoved(V)
+
+Class: org.jgrapht.graph.EdgeReversedGraph
+	org.jgrapht.graph.EdgeReversedGraph,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	E,getEdge(V,V)
+	E,addEdge(V,V)
+	boolean,addEdge(V,V,E)
+	int,inDegreeOf(V)
+	int,outDegreeOf(V)
+	java.util.Set<E>,incomingEdgesOf(V)
+	java.util.Set<E>,outgoingEdgesOf(V)
+	E,removeEdge(V,V)
+	V,getEdgeSource(E)
+	V,getEdgeTarget(E)
+	java.lang.String,toString()
+		java.util.Set<E>,edgeSet()
+		java.lang.String,toStringFromSets(java.util.Collection<? extends V>,java.util.Collection<? extends E>,boolean)
+		java.util.Set<V>,vertexSet()
+
+Class: org.jgrapht.experimental.isomorphism.AdaptiveIsomorphismInspectorFactory
+	org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createIsomorphismInspector(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+		org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createAppropriateConcreteInspector(int,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+		int,checkGraphsType(org.jgrapht.Graph,org.jgrapht.Graph)
+	org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createIsomorphismInspector(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+		org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createIsomorphismInspector(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+	org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createIsomorphismInspectorByType(int,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+		org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createAppropriateConcreteInspector(int,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+	org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createIsomorphismInspectorByType(int,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+		org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createAppropriateConcreteInspector(int,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+	org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createAppropriateConcreteInspector(int,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+		void,assertUnsupportedGraphTypes(org.jgrapht.Graph)
+		org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createTopologicalExhaustiveInspector(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+	void,assertUnsupportedGraphTypes(org.jgrapht.Graph)
+	int,checkGraphsType(org.jgrapht.Graph,org.jgrapht.Graph)
+	org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createTopologicalExhaustiveInspector(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+
+Class: org.jgrapht.graph.DirectedPseudograph
+	org.jgrapht.graph.DirectedPseudograph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.DirectedPseudograph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+
+Class: org.jgrapht.graph.Multigraph
+	org.jgrapht.graph.Multigraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.Multigraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+
+Class: org.jgrapht.util.MathUtil
+	long,factorial(int)
+
+Class: org.jgrapht.traverse.CrossComponentIterator.SimpleContainer
+	boolean,isEmpty()
+	void,add(T)
+	T,remove()
+
+Class: org.jgrapht.event.GraphListener
+	void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+
+Class: org.jgrapht.util.ArrayUnenforcedSet.SetForEquality
+	java.util.Iterator<E>,iterator()
+		java.util.Iterator<E>,iterator()
+	int,size()
+		int,size()
+
+Class: org.jgrapht.graph.UndirectedWeightedSubgraph
+	org.jgrapht.graph.UndirectedWeightedSubgraph,CONSTRUCTOR(org.jgrapht.WeightedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+
+Class: org.jgrapht.event.TraversalListener
+	void,connectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	void,connectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	void,edgeTraversed(org.jgrapht.event.EdgeTraversalEvent<V,E>)
+	void,vertexTraversed(org.jgrapht.event.VertexTraversalEvent<V>)
+	void,vertexFinished(org.jgrapht.event.VertexTraversalEvent<V>)
+
+Class: org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector
+	org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<? super V,? super E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<? super V,? super E>>)
+	org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	org.jgrapht.experimental.permutation.CollectionPermutationIter<V>,createPermutationIterator(java.util.Set<V>,java.util.Set<V>)
+		int,size()
+		org.jgrapht.experimental.permutation.ArrayPermutationsIter,createByGroups(int[])
+		org.jgrapht.experimental.equivalence.EquivalenceSet[],createEqualityGroupOrderedArray(java.util.Collection<EE>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super EE,? super CC>,CC)
+	void,fillElementsflatArray(org.jgrapht.experimental.equivalence.EquivalenceSet[],java.lang.Object[])
+		java.lang.Object[],toArray()
+	boolean,areVertexSetsOfTheSameEqualityGroup(java.util.Set,java.util.Set)
+
+Class: org.jgrapht.util.PrefetchIterator.NextElementFunctor
+	EE,nextElement()
+
+Class: org.jgrapht.graph.WeightedPseudograph
+	org.jgrapht.graph.WeightedPseudograph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	org.jgrapht.graph.WeightedPseudograph,CONSTRUCTOR(java.lang.Class<? extends E>)
+
+Class: org.jgrapht.alg.AbstractPathElement
+	org.jgrapht.alg.AbstractPathElement,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.alg.AbstractPathElement<V,E>,E)
+		V,getOppositeVertex(org.jgrapht.Graph<V,E>,E,V)
+	org.jgrapht.alg.AbstractPathElement,CONSTRUCTOR(org.jgrapht.alg.AbstractPathElement<V,E>)
+	org.jgrapht.alg.AbstractPathElement,CONSTRUCTOR(V)
+	java.util.List<E>,createEdgeListPath()
+	int,getHopCount()
+	E,getPrevEdge()
+	org.jgrapht.alg.AbstractPathElement<V,E>,getPrevPathElement()
+	V,getVertex()
+
+Class: org.jgrapht.util.TypeUtil
+	T,uncheckedCast(java.lang.Object,org.jgrapht.util.TypeUtil<T>)
+
+Class: org.jgrapht.util.ArrayUnenforcedSet
+	org.jgrapht.util.ArrayUnenforcedSet,CONSTRUCTOR()
+	org.jgrapht.util.ArrayUnenforcedSet,CONSTRUCTOR(java.util.Collection<? extends E>)
+	org.jgrapht.util.ArrayUnenforcedSet,CONSTRUCTOR(int)
+	boolean,equals(java.lang.Object)
+	int,hashCode()
+
+Class: org.jgrapht.graph.DirectedSubgraph
+	org.jgrapht.graph.DirectedSubgraph,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+	int,inDegreeOf(V)
+		boolean,containsEdge(E)
+		boolean,assertVertexExist(V)
+		G,getBase()
+	java.util.Set<E>,incomingEdgesOf(V)
+		boolean,containsEdge(E)
+		boolean,assertVertexExist(V)
+		G,getBase()
+	int,outDegreeOf(V)
+		boolean,containsEdge(E)
+		boolean,assertVertexExist(V)
+		G,getBase()
+	java.util.Set<E>,outgoingEdgesOf(V)
+		boolean,containsEdge(E)
+		boolean,assertVertexExist(V)
+		G,getBase()
+
+Class: org.jgrapht.event.GraphChangeEvent
+	org.jgrapht.event.GraphChangeEvent,CONSTRUCTOR(java.lang.Object,int)
+	int,getType()
+
+Class: org.jgrapht.traverse.ClosestFirstIterator
+	org.jgrapht.traverse.ClosestFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	org.jgrapht.traverse.ClosestFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	org.jgrapht.traverse.ClosestFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V,double)
+		boolean,isCrossComponentTraversal()
+	void,setCrossComponentTraversal(boolean)
+	double,getShortestPathLength(V)
+		D,getSeenData(V)
+	E,getSpanningTreeEdge(V)
+		D,getSeenData(V)
+	boolean,isConnectedComponentExhausted()
+	void,encounterVertex(V,E)
+		D,putSeenData(V,D)
+	void,encounterVertexAgain(V,E)
+		D,getSeenData(V)
+	V,provideNextVertex()
+
+Class: org.jgrapht.alg.ConnectivityInspector.MyTraversalListener
+	void,connectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	void,connectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	void,vertexTraversed(org.jgrapht.event.VertexTraversalEvent<V>)
+
+Class: org.jgrapht.graph.UnmodifiableDirectedGraph
+	org.jgrapht.graph.UnmodifiableDirectedGraph,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+
+Class: org.jgrapht.experimental.GraphReader
+	org.jgrapht.experimental.GraphReader,CONSTRUCTOR(java.lang.String)
+	void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+	void,main(java.lang.String[])
+
+Class: org.jgrapht.ext.VisioExporter
+	org.jgrapht.ext.VisioExporter,CONSTRUCTOR(org.jgrapht.ext.VertexNameProvider<V>)
+	org.jgrapht.ext.VisioExporter,CONSTRUCTOR()
+	void,export(java.io.OutputStream,org.jgrapht.Graph<V,E>)
+
+Class: org.jgrapht.alg.StrongConnectivityInspector
+	org.jgrapht.alg.StrongConnectivityInspector,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	org.jgrapht.DirectedGraph<V,E>,getGraph()
+	boolean,isStronglyConnected()
+		java.util.List<java.util.Set<V>>,stronglyConnectedSets()
+	java.util.List<java.util.Set<V>>,stronglyConnectedSets()
+		void,addGraphReversed(org.jgrapht.DirectedGraph<V,E>,org.jgrapht.DirectedGraph<V,E>)
+	java.util.List<org.jgrapht.graph.DirectedSubgraph<V,E>>,stronglyConnectedSubgraphs()
+		java.util.List<java.util.Set<V>>,stronglyConnectedSets()
+
+Class: org.jgrapht.generate.EmptyGraphGenerator
+	org.jgrapht.generate.EmptyGraphGenerator,CONSTRUCTOR(int)
+	void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+
+Class: org.jgrapht.ext.StringNameProvider
+	org.jgrapht.ext.StringNameProvider,CONSTRUCTOR()
+	java.lang.String,getVertexName(V)
+
+Class: org.jgrapht.util.PrefetchIterator
+	org.jgrapht.util.PrefetchIterator,CONSTRUCTOR(org.jgrapht.util.PrefetchIterator.NextElementFunctor<E>)
+	E,nextElement()
+	boolean,hasMoreElements()
+	boolean,isEnumerationStartedEmpty()
+		boolean,hasMoreElements()
+	boolean,hasNext()
+		boolean,hasMoreElements()
+	E,next()
+		E,nextElement()
+	void,remove()
+
+Class: org.jgrapht.graph.AbstractGraph
+	org.jgrapht.graph.AbstractGraph,CONSTRUCTOR()
+	boolean,containsEdge(V,V)
+		E,getEdge(V,V)
+		E,getEdge(V,V)
+		E,getEdge(V,V)
+		E,getEdge(V,V)
+		E,getEdge(V,V)
+		E,getEdge(V,V)
+	boolean,removeAllEdges(java.util.Collection<? extends E>)
+		boolean,removeEdge(E)
+		boolean,removeEdge(E)
+		boolean,removeEdge(E)
+		boolean,removeEdge(E)
+		boolean,removeEdge(E)
+		boolean,removeEdge(E)
+		boolean,removeEdge(E)
+	java.util.Set<E>,removeAllEdges(V,V)
+		boolean,removeAllEdges(java.util.Collection<? extends E>)
+		java.util.Set<E>,getAllEdges(V,V)
+		java.util.Set<E>,getAllEdges(V,V)
+		java.util.Set<E>,getAllEdges(V,V)
+		java.util.Set<E>,getAllEdges(V,V)
+		java.util.Set<E>,getAllEdges(V,V)
+	boolean,removeAllVertices(java.util.Collection<? extends V>)
+		boolean,removeVertex(V)
+		boolean,removeVertex(V)
+		boolean,removeVertex(V)
+		boolean,removeVertex(V)
+		boolean,removeVertex(V)
+		boolean,removeVertex(V)
+		boolean,removeVertex(V)
+	java.lang.String,toString()
+		java.util.Set<E>,edgeSet()
+		java.util.Set<V>,vertexSet()
+		java.util.Set<E>,edgeSet()
+		java.util.Set<V>,vertexSet()
+		java.util.Set<E>,edgeSet()
+		java.util.Set<E>,edgeSet()
+		java.lang.String,toStringFromSets(java.util.Collection<? extends V>,java.util.Collection<? extends E>,boolean)
+		java.util.Set<V>,vertexSet()
+		java.util.Set<V>,vertexSet()
+	boolean,assertVertexExist(V)
+		boolean,containsVertex(V)
+		boolean,containsVertex(V)
+		boolean,containsVertex(V)
+		boolean,containsVertex(V)
+	boolean,removeAllEdges(E[])
+	java.lang.String,toStringFromSets(java.util.Collection<? extends V>,java.util.Collection<? extends E>,boolean)
+		V,getEdgeSource(E)
+		V,getEdgeSource(E)
+		V,getEdgeSource(E)
+		V,getEdgeTarget(E)
+		V,getEdgeTarget(E)
+		V,getEdgeTarget(E)
+		V,getEdgeTarget(E)
+		V,getEdgeTarget(E)
+		V,getEdgeSource(E)
+		V,getEdgeSource(E)
+
+Class: org.jgrapht.generate.RandomGraphGenerator.DefaultEdgeTopologyFactory
+	void,createEdges(org.jgrapht.Graph<VV,EE>,java.util.Map<java.lang.Integer,VV>,int,java.util.Random)
+	boolean,isNumberOfEdgesValid(org.jgrapht.Graph<VV,EE>,int)
+		int,getMaxEdgesForVertexNum(org.jgrapht.Graph<VV,EE>)
+	int,getMaxEdgesForVertexNum(org.jgrapht.Graph<VV,EE>)
+
+Class: org.jgrapht.ext.DOTExporter
+	org.jgrapht.ext.DOTExporter,CONSTRUCTOR()
+	org.jgrapht.ext.DOTExporter,CONSTRUCTOR(org.jgrapht.ext.VertexNameProvider<V>,org.jgrapht.ext.VertexNameProvider<V>,org.jgrapht.ext.EdgeNameProvider<E>)
+	void,export(java.io.Writer,org.jgrapht.Graph<V,E>)
+
+Class: org.jgrapht.generate.RandomGraphGenerator.EdgeTopologyFactory
+	void,createEdges(org.jgrapht.Graph<VV,EE>,java.util.Map<java.lang.Integer,VV>,int,java.util.Random)
+	boolean,isNumberOfEdgesValid(org.jgrapht.Graph<VV,EE>,int)
+
+Class: org.jgrapht.UndirectedGraph
+	int,degreeOf(V)
+
+Class: org.jgrapht.graph.AbstractBaseGraph.UndirectedEdgeContainer
+	java.util.Set<EE>,getUnmodifiableVertexEdges()
+	void,addEdge(EE)
+	int,edgeCount()
+	void,removeEdge(EE)
+
+Class: org.jgrapht.alg.DijkstraShortestPath
+	org.jgrapht.alg.DijkstraShortestPath,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V,V)
+	org.jgrapht.alg.DijkstraShortestPath,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V,V,double)
+	java.util.List<E>,getPathEdgeList()
+	double,getPathLength()
+	java.util.List<E>,findPathBetween(org.jgrapht.Graph<V,E>,V,V)
+
+Class: org.jgrapht.generate.LinearGraphGenerator
+	org.jgrapht.generate.LinearGraphGenerator,CONSTRUCTOR(int)
+	void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+
+Class: org.jgrapht.event.VertexTraversalEvent
+	org.jgrapht.event.VertexTraversalEvent,CONSTRUCTOR(java.lang.Object,V)
+	V,getVertex()
+
+Class: org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator.InOutDegrees
+	org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator.InOutDegrees,CONSTRUCTOR(int,int)
+	boolean,equals(java.lang.Object)
+
+Class: org.jgrapht.alg.CycleDetector
+	org.jgrapht.alg.CycleDetector,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	boolean,detectCycles()
+	boolean,detectCyclesContainingVertex(V)
+	java.util.Set<V>,findCycles()
+	java.util.Set<V>,findCyclesContainingVertex(V)
+
+Class: org.jgrapht.experimental.RandomGraphHelper
+	void,addEdges(org.jgrapht.Graph,java.util.List,java.util.List,int)
+		E,addEdge(V,V)
+		E,addEdge(V,V)
+		E,addEdge(V,V)
+		E,addEdge(V,V)
+		E,addEdge(V,V)
+		E,addEdge(V,V)
+		E,addEdge(V,V)
+		E,addEdge(V,V)
+		E,addEdge(V,V)
+	java.lang.Object[],addVertices(org.jgrapht.Graph,org.jgrapht.VertexFactory,int)
+		java.lang.Integer,createVertex()
+		boolean,addVertex(V)
+		boolean,addVertex(V)
+		boolean,addVertex(V)
+		boolean,addVertex(V)
+		boolean,addVertex(V)
+		boolean,addVertex(V)
+		boolean,addVertex(V)
+		V,createVertex()
+
+Class: org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector
+	boolean,isIsomorphic()
+
+Class: org.jgrapht.experimental.equivalence.EquivalenceSet
+	org.jgrapht.experimental.equivalence.EquivalenceSet,CONSTRUCTOR(E,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super C>,C)
+	E,getRepresentative()
+	C,getContext()
+	int,size()
+	void,add(E)
+	boolean,equivalentTo(E,C)
+		E,getRepresentative()
+	boolean,equals(java.lang.Object)
+		E,getRepresentative()
+	int,hashCode()
+		E,getRepresentative()
+	java.lang.String,toString()
+	java.lang.Object[],toArray()
+
+Class: org.jgrapht.ext.IntegerNameProvider
+	void,clear()
+	java.lang.String,getVertexName(V)
+
+Class: org.jgrapht.graph.GraphDelegator
+	org.jgrapht.graph.GraphDelegator,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	java.util.Set<E>,getAllEdges(V,V)
+	E,getEdge(V,V)
+	org.jgrapht.EdgeFactory<V,E>,getEdgeFactory()
+	E,addEdge(V,V)
+	boolean,addEdge(V,V,E)
+	boolean,addVertex(V)
+	boolean,containsEdge(E)
+	boolean,containsVertex(V)
+	int,degreeOf(V)
+	java.util.Set<E>,edgeSet()
+	java.util.Set<E>,edgesOf(V)
+	int,inDegreeOf(V)
+	java.util.Set<E>,incomingEdgesOf(V)
+	int,outDegreeOf(V)
+	java.util.Set<E>,outgoingEdgesOf(V)
+	boolean,removeEdge(E)
+	E,removeEdge(V,V)
+	boolean,removeVertex(V)
+	java.lang.String,toString()
+	java.util.Set<V>,vertexSet()
+	V,getEdgeSource(E)
+	V,getEdgeTarget(E)
+	double,getEdgeWeight(E)
+	void,setEdgeWeight(E,double)
+
+Class: org.jgrapht.experimental.equivalence.UniformEquivalenceComparator
+	boolean,equivalenceCompare(E,E,C,C)
+	int,equivalenceHashcode(E,C)
+
+Class: org.jgrapht.graph.Pseudograph
+	org.jgrapht.graph.Pseudograph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.Pseudograph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+
+Class: org.jgrapht.ext.JGraphModelAdapter
+	org.jgrapht.ext.JGraphModelAdapter,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+		org.jgraph.graph.AttributeMap,createDefaultEdgeAttributes(org.jgrapht.Graph<V,E>)
+		org.jgraph.graph.AttributeMap,createDefaultVertexAttributes()
+	org.jgrapht.ext.JGraphModelAdapter,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgraph.graph.AttributeMap,org.jgraph.graph.AttributeMap)
+	org.jgrapht.ext.JGraphModelAdapter,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgraph.graph.AttributeMap,org.jgraph.graph.AttributeMap,org.jgrapht.ext.JGraphModelAdapter.CellFactory<V,E>)
+		void,setDefaultVertexAttributes(org.jgraph.graph.AttributeMap)
+		void,setDefaultEdgeAttributes(org.jgraph.graph.AttributeMap)
+	org.jgraph.graph.AttributeMap,createDefaultEdgeAttributes(org.jgrapht.Graph<V,E>)
+	org.jgraph.graph.AttributeMap,createDefaultVertexAttributes()
+	org.jgrapht.ext.JGraphModelAdapter.CellFactory<V,E>,getCellFactory()
+	void,setDefaultEdgeAttributes(org.jgraph.graph.AttributeMap)
+	org.jgraph.graph.AttributeMap,getDefaultEdgeAttributes()
+	void,setDefaultVertexAttributes(org.jgraph.graph.AttributeMap)
+	org.jgraph.graph.AttributeMap,getDefaultVertexAttributes()
+	org.jgraph.graph.DefaultEdge,getEdgeCell(E)
+	org.jgraph.graph.DefaultGraphCell,getVertexCell(java.lang.Object)
+	org.jgraph.graph.DefaultPort,getVertexPort(java.lang.Object)
+		org.jgraph.graph.DefaultGraphCell,getVertexCell(java.lang.Object)
+
+Class: org.jgrapht.graph.DirectedWeightedSubgraph
+	org.jgrapht.graph.DirectedWeightedSubgraph,CONSTRUCTOR(org.jgrapht.WeightedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+
+Class: org.jgrapht.graph.AbstractBaseGraph
+	org.jgrapht.graph.AbstractBaseGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>,boolean,boolean)
+	java.util.Set<E>,getAllEdges(V,V)
+	boolean,isAllowingLoops()
+	boolean,isAllowingMultipleEdges()
+	E,getEdge(V,V)
+	org.jgrapht.EdgeFactory<V,E>,getEdgeFactory()
+	void,setEdgeSetFactory(org.jgrapht.graph.EdgeSetFactory<V,E>)
+	E,addEdge(V,V)
+		boolean,containsEdge(E)
+		boolean,containsEdge(V,V)
+		boolean,assertVertexExist(V)
+	boolean,addEdge(V,V,E)
+		boolean,containsEdge(E)
+		boolean,containsEdge(V,V)
+		boolean,assertVertexExist(V)
+	boolean,addVertex(V)
+		boolean,containsVertex(V)
+	V,getEdgeSource(E)
+		T,uncheckedCast(java.lang.Object,org.jgrapht.util.TypeUtil<T>)
+	V,getEdgeTarget(E)
+		T,uncheckedCast(java.lang.Object,org.jgrapht.util.TypeUtil<T>)
+	java.lang.Object,clone()
+		T,uncheckedCast(java.lang.Object,org.jgrapht.util.TypeUtil<T>)
+		boolean,addGraph(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	boolean,containsEdge(E)
+	boolean,containsVertex(V)
+	int,degreeOf(V)
+	java.util.Set<E>,edgeSet()
+	java.util.Set<E>,edgesOf(V)
+	int,inDegreeOf(V)
+	java.util.Set<E>,incomingEdgesOf(V)
+	int,outDegreeOf(V)
+	java.util.Set<E>,outgoingEdgesOf(V)
+	E,removeEdge(V,V)
+		E,getEdge(V,V)
+	boolean,removeEdge(E)
+		boolean,containsEdge(E)
+	boolean,removeVertex(V)
+		java.util.Set<E>,edgesOf(V)
+		boolean,removeAllEdges(java.util.Collection<? extends E>)
+		boolean,containsVertex(V)
+	java.util.Set<V>,vertexSet()
+	double,getEdgeWeight(E)
+	void,setEdgeWeight(E,double)
+
+Class: org.jgrapht.event.GraphVertexChangeEvent
+	org.jgrapht.event.GraphVertexChangeEvent,CONSTRUCTOR(java.lang.Object,int,V)
+	V,getVertex()
+
+Class: org.jgrapht.event.TraversalListenerAdapter
+	void,connectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	void,connectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	void,edgeTraversed(org.jgrapht.event.EdgeTraversalEvent<V,E>)
+	void,vertexTraversed(org.jgrapht.event.VertexTraversalEvent<V>)
+	void,vertexFinished(org.jgrapht.event.VertexTraversalEvent<V>)
+
+Class: org.jgrapht.graph.UnmodifiableUndirectedGraph
+	org.jgrapht.graph.UnmodifiableUndirectedGraph,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+
+Class: org.jgrapht.experimental.touchgraph.TouchgraphConverter
+	com.touchgraph.graphlayout.Node,convertToTouchGraph(org.jgrapht.Graph<V,E>,com.touchgraph.graphlayout.TGPanel,boolean)
+
+Class: org.jgrapht.graph.DefaultEdge
+	java.lang.String,toString()
+
+Class: org.jgrapht.generate.GraphGenerator
+	void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,T>)
+
+Class: org.jgrapht.traverse.CrossComponentIterator.FlyweightEdgeEvent
+	org.jgrapht.traverse.CrossComponentIterator.FlyweightEdgeEvent,CONSTRUCTOR(java.lang.Object,localE)
+	void,setEdge(localE)
+
+Class: org.jgrapht.event.GraphEdgeChangeEvent
+	org.jgrapht.event.GraphEdgeChangeEvent,CONSTRUCTOR(java.lang.Object,int,E)
+	E,getEdge()
+
+Class: org.jgrapht.ext.JGraphModelAdapter.JGraphTListener
+	void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+
+Class: org.jgrapht.ext.IntegerEdgeNameProvider
+	void,clear()
+	java.lang.String,getEdgeName(E)
+
+Class: org.jgrapht.graph.SimpleWeightedGraph
+	org.jgrapht.graph.SimpleWeightedGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	org.jgrapht.graph.SimpleWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+
+Class: org.jgrapht.experimental.touchgraph.TouchgraphPanel
+	org.jgrapht.experimental.touchgraph.TouchgraphPanel,CONSTRUCTOR(org.jgrapht.Graph<V,E>,boolean)
+		void,initialize()
+		void,preinitialize()
+	void,preinitialize()
+	void,initialize()
+
+Class: org.jgrapht.experimental.alg.IntArrayGraphAlgorithm
+	org.jgrapht.experimental.alg.IntArrayGraphAlgorithm,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+		V,getOppositeVertex(org.jgrapht.Graph<V,E>,E,V)
+
+Class: org.jgrapht.ext.VertexNameProvider
+	java.lang.String,getVertexName(V)
+
+Class: org.jgrapht.graph.SimpleDirectedWeightedGraph
+	org.jgrapht.graph.SimpleDirectedWeightedGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	org.jgrapht.graph.SimpleDirectedWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+
+Class: org.jgrapht.demo.PerformanceDemo
+	void,main(java.lang.String[])
+
+Class: org.jgrapht.demo.JGraphAdapterDemo
+	void,main(java.lang.String[])
+		void,init()
+	void,init()
+
+Class: org.jgrapht.experimental.equivalence.EquivalenceComparatorChainBase
+	org.jgrapht.experimental.equivalence.EquivalenceComparatorChainBase,CONSTRUCTOR(org.jgrapht.experimental.equivalence.EquivalenceComparator<E,C>)
+	void,appendComparator(org.jgrapht.experimental.equivalence.EquivalenceComparator)
+	boolean,equivalenceCompare(E,E,C,C)
+	int,equivalenceHashcode(E,C)
+
+Class: org.jgrapht.generate.RingGraphGenerator
+	org.jgrapht.generate.RingGraphGenerator,CONSTRUCTOR(int)
+	void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+
+Class: org.jgrapht.alg.util.VertexDegreeComparator
+	org.jgrapht.alg.util.VertexDegreeComparator,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+	org.jgrapht.alg.util.VertexDegreeComparator,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>,boolean)
+	int,compare(V,V)
+
+Class: org.jgrapht.graph.ListenableDirectedGraph
+	org.jgrapht.graph.ListenableDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.ListenableDirectedGraph,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+
+Class: org.jgrapht.event.VertexSetListener
+	void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+
+Class: org.jgrapht.ext.EdgeNameProvider
+	java.lang.String,getEdgeName(E)
+
+Class: org.jgrapht.experimental.PartiteRandomGraphGenerator
+	org.jgrapht.experimental.PartiteRandomGraphGenerator,CONSTRUCTOR(int,int,int)
+	org.jgrapht.experimental.PartiteRandomGraphGenerator,CONSTRUCTOR(int[],int)
+	void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,java.lang.Object[]>)
+		void,addEdges(org.jgrapht.Graph,java.util.List,java.util.List,int)
+		java.lang.Object[],addVertices(org.jgrapht.Graph,org.jgrapht.VertexFactory,int)
+
+Class: org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector
+	org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<? super V,? super E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<? super V,? super E>>)
+	org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	org.jgrapht.experimental.permutation.CollectionPermutationIter<V>,createPermutationIterator(java.util.Set<V>,java.util.Set<V>)
+	boolean,areVertexSetsOfTheSameEqualityGroup(java.util.Set<V>,java.util.Set<V>)
+	boolean,areAllEdgesEquivalent(org.jgrapht.experimental.isomorphism.IsomorphismRelation<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+	org.jgrapht.experimental.isomorphism.IsomorphismRelation,nextIsoRelation()
+		org.jgrapht.experimental.isomorphism.IsomorphismRelation,next()
+	boolean,isIsomorphic()
+	boolean,hasNext()
+	org.jgrapht.experimental.isomorphism.IsomorphismRelation,next()
+	void,remove()
+
+Class: org.jgrapht.util.ModifiableInteger
+	org.jgrapht.util.ModifiableInteger,CONSTRUCTOR()
+	org.jgrapht.util.ModifiableInteger,CONSTRUCTOR(int)
+	void,setValue(int)
+	int,getValue()
+	void,increment()
+	void,decrement()
+	int,compareTo(org.jgrapht.util.ModifiableInteger)
+	int,compareTo(java.lang.Object)
+		int,compareTo(org.jgrapht.util.ModifiableInteger)
+	double,doubleValue()
+	boolean,equals(java.lang.Object)
+	float,floatValue()
+	int,hashCode()
+	int,intValue()
+	long,longValue()
+	java.lang.Integer,toInteger()
+	java.lang.String,toString()
+
+Class: org.jgrapht.alg.CycleDetector.CycleDetectedException
+
+Class: org.jgrapht.ext.MatrixExporter
+	org.jgrapht.ext.MatrixExporter,CONSTRUCTOR()
+	void,exportAdjacencyMatrix(java.io.Writer,org.jgrapht.UndirectedGraph<V,E>)
+		java.util.List<V>,successorListOf(org.jgrapht.DirectedGraph<V,E>,V)
+		java.util.List<V>,neighborListOf(org.jgrapht.Graph<V,E>,V)
+	void,exportAdjacencyMatrix(java.io.Writer,org.jgrapht.DirectedGraph<V,E>)
+	void,exportLaplacianMatrix(java.io.Writer,org.jgrapht.UndirectedGraph<V,E>)
+		java.util.List<V>,neighborListOf(org.jgrapht.Graph<V,E>,V)
+	void,exportNormalizedLaplacianMatrix(java.io.Writer,org.jgrapht.UndirectedGraph<V,E>)
+		java.util.List<V>,neighborListOf(org.jgrapht.Graph<V,E>,V)
+
+Class: org.jgrapht.generate.RandomGraphGenerator
+	org.jgrapht.generate.RandomGraphGenerator,CONSTRUCTOR(int,int)
+	void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+
+Class: org.jgrapht.experimental.permutation.CompoundPermutationIter
+	org.jgrapht.experimental.permutation.CompoundPermutationIter,CONSTRUCTOR(int[])
+	java.lang.Object,next()
+		int[],getNext()
+	int[],getNext()
+		boolean,hasNext()
+		int[],getPermAsArray()
+		int[],getNext()
+	int[],getPermAsArray()
+		int[],getCurrent()
+	boolean,hasNext()
+	int,getMax()
+	int[],nextPermutation()
+		java.lang.Object,next()
+	boolean,hasNextPermutaions()
+		boolean,hasNext()
+	void,remove()
+
+Class: org.jgrapht.alg.ConnectivityInspector
+	org.jgrapht.alg.ConnectivityInspector,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+	org.jgrapht.alg.ConnectivityInspector,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	boolean,isGraphConnected()
+	java.util.Set<V>,connectedSetOf(V)
+	java.util.List<java.util.Set<V>>,connectedSets()
+	void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	boolean,pathExists(V,V)
+		java.util.Set<V>,connectedSetOf(V)
+	void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+
+Class: org.jgrapht.graph.EdgeSetFactory
+	java.util.Set<E>,createEdgeSet(V)
+
+Class: org.jgrapht.graph.SimpleGraph
+	org.jgrapht.graph.SimpleGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	org.jgrapht.graph.SimpleGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+
+Class: org.jgrapht.traverse.CrossComponentIterator.FlyweightVertexEvent
+	org.jgrapht.traverse.CrossComponentIterator.FlyweightVertexEvent,CONSTRUCTOR(java.lang.Object,VV)
+	void,setVertex(VV)
+

@@ -1,0 +1,54 @@
+Sequence 1
+	junit.framework.Assert : void,assertNotNull(java.lang.String,java.lang.Object)
+		Optional Hook: junit.framework.Assert : void,assertTrue(java.lang.String,boolean) Category: 1
+Sequence 2
+	junit.textui.TestRunner : void,main(java.lang.String)
+		Optional Hook: junit.framework.TestResult : boolean,wasSuccessful() Category: 0
+Sequence 3
+	junit.framework.Assert : void,assertEquals(java.lang.String,java.lang.Object,java.lang.Object)
+Sequence 4
+	junit.framework.TestSuite : void,addTestSuite(java.lang.Class)
+		Optional Hook: junit.framework.TestSuite : void,addTest(junit.framework.Test) Category: 1
+Sequence 5
+	junit.swingui.TestRunner : void,run(java.lang.Class)
+Sequence 6
+	junit.framework.Assert : void,assertEquals(int,int)
+Sequence 7
+	junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR(java.lang.String)
+		Optional Hook: junit.framework.TestSuite : void,setName(java.lang.String) Category: 0
+	junit.framework.TestSuite : void,addTest(junit.framework.Test)
+Sequence 8
+	junit.textui.TestRunner : void,run(java.lang.Class)
+		Optional Hook: junit.textui.TestRunner : junit.framework.TestResult,run(junit.framework.Test) Category: 1
+Sequence 9
+	junit.framework.Assert : void,assertEquals(java.lang.Object,java.lang.Object)
+Sequence 10
+	junit.framework.Assert : void,fail(java.lang.String)
+Sequence 11
+	junit.framework.Assert : void,assertTrue(java.lang.String,boolean)
+		Optional Hook: junit.framework.Assert : void,fail(java.lang.String) Category: 1
+Sequence 12
+	junit.framework.Assert : void,assertTrue(boolean)
+Sequence 13
+	junit.framework.TestResult : java.util.Enumeration,failures()
+	junit.framework.TestResult : junit.framework.TestResult,CONSTRUCTOR()
+Sequence 14
+	junit.framework.AssertionFailedError : junit.framework.AssertionFailedError,CONSTRUCTOR(java.lang.String)
+Sequence 15
+	junit.framework.TestResult : int,runCount()
+	junit.framework.TestResult : int,failureCount()
+	junit.framework.TestResult : int,errorCount()
+Sequence 16
+	junit.framework.Test : void,run(junit.framework.TestResult)
+	junit.framework.TestResult : int,failureCount()
+	junit.framework.TestResult : int,errorCount()
+	junit.framework.TestResult : junit.framework.TestResult,CONSTRUCTOR()
+Sequence 17
+	junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR()
+	junit.framework.TestSuite : void,addTest(junit.framework.Test)
+Sequence 18
+	junit.textui.TestRunner : junit.framework.TestResult,run(junit.framework.Test)
+		Optional Hook: junit.textui.TestRunner : junit.framework.TestResult,doRun(junit.framework.Test) Category: 0
+	junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR(java.lang.Class)
+		Optional Hook: junit.framework.TestSuite : java.lang.reflect.Constructor,getTestConstructor(java.lang.Class) Category: 0
+		Optional Hook: junit.framework.TestSuite : void,addTest(junit.framework.Test) Category: 1

@@ -1,0 +1,129 @@
+Frequent Usage Scenario: 1
+	 junit.extensions.TestSetup : junit.extensions.TestSetup,CONSTRUCTOR(junit.framework.Test)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_extensions_RepeatedTest//33_PluginTest.java MethodName : main
+Frequent Usage Scenario: 2
+	 junit.framework.TestFailure : junit.framework.Test,failedTest()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_swingui_CounterPanel//2_CounterPanel.java MethodName : handleTestSelected
+Frequent Usage Scenario: 3
+	 junit.framework.TestSuite : java.util.Enumeration,tests()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_swingui_TestRunner//148_WGTests.java MethodName : addTest
+Frequent Usage Scenario: 4
+	 junit.textui.TestRunner : junit.framework.TestResult,doRun(junit.framework.Test)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//781_ForwardCompatibilityPrintingTest.java MethodName : testError
+Frequent Usage Scenario: 5
+	 junit.framework.Assert : void,assertEquals(java.lang.String,int,int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//781_AssertTestFactoryUTest.java MethodName : testCreateAssertEquals14
+Frequent Usage Scenario: 6
+	 junit.framework.Assert : void,assertNotNull(java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//41_CountingAssert.java MethodName : NA
+Frequent Usage Scenario: 7
+	 junit.textui.TestRunner : junit.framework.TestResult,run(junit.framework.Test)
+	 junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR(java.lang.Class)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_extensions_ActiveTestSuite//28_ActiveTestSuite.java MethodName : main
+Frequent Usage Scenario: 8
+	 junit.framework.TestCase : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_swingui_CounterPanel//2_CounterPanel.java MethodName : rerunTest
+Frequent Usage Scenario: 9
+	 junit.framework.TestFailure : java.lang.Throwable,thrownException()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//313_TestCaseTest.java MethodName : testExceptionRunningAndTearDown
+Frequent Usage Scenario: 10
+	 junit.framework.TestSuite : void,setName(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//880_BuilderTestSuite.java MethodName : main
+Frequent Usage Scenario: 11
+	 junit.framework.TestResult : void,stop()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_extensions_RepeatedTest//3_LoadTestTest.java MethodName : testMultiUserWithStop
+Frequent Usage Scenario: 12
+	 junit.framework.TestResult : java.util.Enumeration,errors()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//392_TestCaseTest.java MethodName : testInvalidMethod
+Frequent Usage Scenario: 13
+	 junit.framework.TestResult : boolean,wasSuccessful()
+	 junit.framework.TestResult : int,failureCount()
+	 junit.framework.TestResult : int,errorCount()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//1111_Spexerciser.java MethodName : execute
+Frequent Usage Scenario: 14
+	 junit.framework.TestCase : junit.framework.TestCase,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//313_SAXMarshallerTest.java MethodName : suite
+Frequent Usage Scenario: 15
+	 junit.swingui.TestRunner : void,run(java.lang.Class)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_swingui_TestRunner//1160_RmiServerTest.java MethodName : main
+Frequent Usage Scenario: 16
+	 junit.awtui.TestRunner : void,main(java.lang.String[])
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_awtui_TestRunner//130_TestMultiboxTag1.java MethodName : main
+Frequent Usage Scenario: 17
+	 junit.textui.TestRunner : void,main(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//67_CookbookTestRunner.java MethodName : NA
+Frequent Usage Scenario: 18
+	 junit.framework.AssertionFailedError : junit.framework.AssertionFailedError,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//773_NbTestSuite.java MethodName : run
+Frequent Usage Scenario: 19
+	 junit.textui.TestRunner : void,run(java.lang.Class)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//851_ExtensibleObjectImplTest.java MethodName : main
+Frequent Usage Scenario: 20
+	 junit.framework.Assert : void,assertEquals(java.lang.String,java.lang.Object,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//781_AssertTestFactoryUTest.java MethodName : testCreateAssertEquals2
+Frequent Usage Scenario: 21
+	 junit.framework.TestCase : void,tearDown()
+	 junit.framework.TestCase : void,setUp()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_TestCase//1001_showthread.java MethodName : NA
+Frequent Usage Scenario: 22
+	 junit.framework.Assert : void,assertNotNull(java.lang.String,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//41_CountingAssert.java MethodName : NA
+Frequent Usage Scenario: 23
+	 junit.framework.TestSuite : void,run(junit.framework.TestResult)
+	 junit.framework.TestResult : junit.framework.TestResult,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//313_TestCaseTest.java MethodName : testNoArgTestCasePasses
+Frequent Usage Scenario: 24
+	 junit.framework.Assert : void,assertEquals(int,int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//781_AssertTestFactoryUTest.java MethodName : testCreateAssertEquals16
+Frequent Usage Scenario: 25
+	 junit.framework.Assert : void,assertEquals(java.lang.Object,java.lang.Object)
+	 junit.framework.Assert : void,assertTrue(boolean)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//41_CountingAssert.java MethodName : NA
+Frequent Usage Scenario: 26
+	 junit.framework.Assert : void,assertTrue(java.lang.String,boolean)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//781_AssertTestFactoryUTest.java MethodName : testCreateAssertTrue2
+Frequent Usage Scenario: 27
+	 junit.framework.TestResult : boolean,wasSuccessful()
+	 junit.framework.TestResult : int,runCount()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//1111_Spexerciser.java MethodName : execute
+Frequent Usage Scenario: 28
+	 junit.framework.TestSuite : void,addTestSuite(java.lang.Class)
+	 junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//880_BuilderTestSuite.java MethodName : main
+Frequent Usage Scenario: 29
+	 junit.framework.TestResult : java.util.Enumeration,failures()
+	 junit.framework.Test : void,run(junit.framework.TestResult)
+	 junit.framework.TestResult : junit.framework.TestResult,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//781_AssertTestFactoryUTest.java MethodName : testCreateAssertEquals16
+Frequent Usage Scenario: 30
+	 junit.framework.TestResult : void,addListener(junit.framework.TestListener)
+	 junit.framework.TestResult : junit.framework.TestResult,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_awtui_TestRunner//13_BaseTestRunner.java MethodName : run
+Frequent Usage Scenario: 31
+	 junit.framework.Test : void,run(junit.framework.TestResult)
+	 junit.framework.TestResult : int,failureCount()
+	 junit.framework.TestResult : int,errorCount()
+	 junit.framework.TestResult : junit.framework.TestResult,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_extensions_TestDecorator//19_ParametrizedTestSuiteTest.java MethodName : testAddTest
+Frequent Usage Scenario: 32
+	 junit.framework.TestResult : int,runCount()
+	 junit.framework.TestResult : int,failureCount()
+	 junit.framework.TestResult : int,errorCount()
+	 junit.framework.TestResult : junit.framework.TestResult,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//313_TestCaseTest.java MethodName : testNoArgTestCasePasses
+Frequent Usage Scenario: 33
+	 junit.framework.Assert : void,fail(java.lang.String)
+	 junit.framework.TestSuite : void,addTest(junit.framework.Test)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//1300_JMLFloat_JML_Test.java MethodName : addTestSuiteFor$TestJMLFloat$1
+Frequent Usage Scenario: 34
+	 junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR(java.lang.String)
+	 junit.framework.TestSuite : void,addTest(junit.framework.Test)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//186_AllTests.java MethodName : main
+Frequent Usage Scenario: 35
+	 junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR()
+	 junit.framework.TestSuite : void,addTest(junit.framework.Test)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//781_ForwardCompatibilityPrintingTest.java MethodName : testError
+Frequent Usage Scenario: 36
+	 junit.framework.TestSuite : void,addTest(junit.framework.Test)
+	 junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR(java.lang.Class)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_awtui_TestRunner//277_AllTests.java MethodName : suite

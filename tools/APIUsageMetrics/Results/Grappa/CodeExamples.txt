@@ -1,0 +1,845 @@
+Class: att.grappa.GrappaPathIterator
+	Method ID: 5 att.grappa.GrappaPathIterator,CONSTRUCTOR(att.grappa.GrappaNexus)
+	Method ID: 6 att.grappa.GrappaPathIterator,CONSTRUCTOR(att.grappa.GrappaNexus,java.awt.geom.AffineTransform)
+	Method ID: 7 int,currentSegment(double[])
+	Method ID: 8 int,currentSegment(float[])
+	Method ID: 9 int,getWindingRule()
+	Method ID: 10 boolean,isDone()
+	Method ID: 11 void,next()
+	Method ID: 12 void,#ExtendsOrImplements#()
+Class: java_cup.runtime.Symbol
+	Method ID: 554 java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int,java.lang.Object)
+	Method ID: 555 java_cup.runtime.Symbol,CONSTRUCTOR(int,java.lang.Object)
+	Method ID: 556 java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int)
+	Method ID: 557 java_cup.runtime.Symbol,CONSTRUCTOR(int)
+	Method ID: 558 java_cup.runtime.Symbol,CONSTRUCTOR(int,int)
+	Method ID: 559 java.lang.String,toString()
+	Method ID: 560 void,#ExtendsOrImplements#()
+Class: att.grappa.Attribute
+	Method ID: 241 att.grappa.AttributeHandler,setAttributeHandler(att.grappa.AttributeHandler)
+	Method ID: 242 att.grappa.Attribute,CONSTRUCTOR(int,java.lang.String,java.lang.Object)
+	Method ID: 243 att.grappa.Attribute,CONSTRUCTOR(att.grappa.Attribute)
+	Method ID: 244 int,getElementType()
+	Method ID: 245 int,getAttributeType()
+	Method ID: 246 java.lang.String,getName()
+	Method ID: 249 java.lang.Object,setValue(java.lang.Object)
+	Method ID: 250 boolean,equals(att.grappa.Attribute)
+	Method ID: 251 boolean,equalsValue(att.grappa.Attribute)
+	Method ID: 252 int,getNameHash()
+	Method ID: 253 void,setChanged()
+	Method ID: 254 void,clearChanged()
+	Method ID: 255 java.lang.String,toString()
+	Method ID: 256 java.lang.String,convertValue(int,java.lang.String,java.lang.Object,int)
+	Method ID: 257 java.lang.Object,convertStringValue(int,java.lang.String,java.lang.String,int)
+	Method ID: 258 java.lang.Object,copyValue(int,java.lang.String,java.lang.Object,int)
+	Method ID: 259 int,attributeType(int,java.lang.String)
+	Method ID: 260 void,#ExtendsOrImplements#()
+	Method ID: 247 java.lang.Object,getValue()
+		Invocation Code Examples (Templates): 
+			att_grappa_Attribute14_ULPlanTableModel.java	addAttribute
+			att_grappa_Attribute3_ULPlanTableModel.java	addAttribute
+	Method ID: 248 java.lang.String,getStringValue()
+		Invocation Code Examples (Templates): 
+			att_grappa_Attribute0_OwlsvizGrappaAdapter.java	grappaTip
+Class: java_cup.runtime.Scanner
+	Method ID: 545 java_cup.runtime.Symbol,next_token()
+	Method ID: 546 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaPoint
+	Instantiation Code Examples (Templates): 
+		att_grappa_GrappaPoint15_Graph.java	drawGraph
+		att_grappa_GrappaPoint4_Graph.java	drawGraph
+	Method ID: 471 att.grappa.GrappaPoint,CONSTRUCTOR()
+	Method ID: 473 att.grappa.GrappaPoint,CONSTRUCTOR(java.lang.String)
+	Method ID: 474 java.lang.String,toAttributeString()
+	Method ID: 475 java.lang.String,toFormattedString(java.lang.String)
+	Method ID: 476 java.lang.String,toString()
+	Method ID: 477 void,#ExtendsOrImplements#()
+	Method ID: 472 att.grappa.GrappaPoint,CONSTRUCTOR(double,double)
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaPoint15_Graph.java	drawGraph
+			att_grappa_GrappaPoint4_Graph.java	drawGraph
+Class: att.grappa.Grappa
+	Method ID: 0 void,displayException(java.lang.Exception)
+	Method ID: 1 void,displayException(java.lang.Exception,java.lang.String)
+	Method ID: 2 java.lang.String,setToolTipText(java.lang.String)
+	Method ID: 3 java.lang.String,getToolTipText()
+	Method ID: 4 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaNexus
+	Method ID: 106 att.grappa.GrappaNexus,CONSTRUCTOR(att.grappa.Element)
+	Method ID: 107 att.grappa.Element,getElement()
+	Method ID: 108 java.awt.Image,getImage()
+	Method ID: 109 boolean,isImageLoading()
+	Method ID: 110 int,getWindingRule()
+	Method ID: 111 void,rebuild()
+	Method ID: 112 void,updateShape()
+	Method ID: 113 void,updateStyle()
+	Method ID: 114 void,updateText()
+	Method ID: 115 void,updateDecoration()
+	Method ID: 116 void,updateImage()
+	Method ID: 117 boolean,imageUpdate(java.awt.Image,int,int,int,int,int)
+	Method ID: 118 java.lang.Object,clone()
+	Method ID: 119 boolean,contains(double,double)
+	Method ID: 120 boolean,contains(double,double,double,double)
+	Method ID: 121 boolean,contains(java.awt.geom.Point2D)
+	Method ID: 122 boolean,contains(java.awt.geom.Rectangle2D)
+	Method ID: 124 java.awt.geom.Rectangle2D,getBounds2D()
+	Method ID: 125 java.awt.geom.PathIterator,getPathIterator()
+	Method ID: 126 java.awt.geom.PathIterator,getPathIterator(java.awt.geom.AffineTransform)
+	Method ID: 127 java.awt.geom.PathIterator,getPathIterator(java.awt.geom.AffineTransform,double)
+	Method ID: 128 boolean,intersects(double,double,double,double)
+	Method ID: 129 boolean,intersects(java.awt.geom.Rectangle2D)
+	Method ID: 130 void,update(java.util.Observable,java.lang.Object)
+	Method ID: 131 void,#ExtendsOrImplements#()
+	Method ID: 123 java.awt.Rectangle,getBounds()
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaNexus0_GraphPanel.java	scrollToCenterPoint
+Class: att.grappa.GraphEnumeration
+	Method ID: 417 att.grappa.Subgraph,getSubgraphRoot()
+	Method ID: 418 int,getEnumerationTypes()
+	Method ID: 419 att.grappa.Element,nextGraphElement()
+	Method ID: 420 void,#ExtendsOrImplements#()
+Class: att.grappa.TableField
+	Method ID: 480 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaShape
+	Method ID: 359 att.grappa.GrappaShape,CONSTRUCTOR(int,double,double,double,double,int,int,double,double,double,boolean,boolean,java.lang.Object)
+	Method ID: 360 java.lang.Object,clone()
+	Method ID: 361 boolean,contains(double,double)
+	Method ID: 362 boolean,contains(double,double,double,double)
+	Method ID: 363 boolean,contains(java.awt.geom.Point2D)
+	Method ID: 364 boolean,contains(java.awt.geom.Rectangle2D)
+	Method ID: 365 java.awt.Rectangle,getBounds()
+	Method ID: 366 java.awt.geom.Rectangle2D,getBounds2D()
+	Method ID: 367 java.awt.geom.PathIterator,getPathIterator()
+	Method ID: 368 java.awt.geom.PathIterator,getPathIterator(java.awt.geom.AffineTransform)
+	Method ID: 369 java.awt.geom.PathIterator,getPathIterator(java.awt.geom.AffineTransform,double)
+	Method ID: 370 boolean,intersects(double,double,double,double)
+	Method ID: 371 boolean,intersects(java.awt.geom.Rectangle2D)
+	Method ID: 372 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaSupportPrintf
+	Method ID: 90 java.lang.String,sprintf(java.lang.Object)
+	Method ID: 91 void,#ExtendsOrImplements#()
+Class: att.grappa.CUP$Parser$actions
+	Method ID: 231 java_cup.runtime.Symbol,CUP$Parser$do_action(int,java_cup.runtime.lr_parser,java.util.Stack,int)
+	Method ID: 232 void,#ExtendsOrImplements#()
+Class: att.grappa.CustomRenderer
+	Method ID: 261 void,draw(java.awt.Graphics2D)
+	Method ID: 262 void,fill(java.awt.Graphics2D)
+	Method ID: 263 void,drawImage(java.awt.Graphics2D)
+	Method ID: 264 void,#ExtendsOrImplements#()
+Class: att.grappa.Graph
+	Instantiation Code Examples (Templates): 
+		att_grappa_Graph19_LATLParseReader.java	read
+		att_grappa_Graph1_b1031.java	GrappaBugdemo
+		att_grappa_Graph32_KBSummary.java	generateThumbnail
+		att_grappa_Graph39_SimpleGraph.java	buildGraph
+		att_grappa_Graph3_b1031.java	GrappaBugdemo
+		att_grappa_Graph46_Graph.java	drawGraph
+	Method ID: 375 boolean,setSynchronizePaint(boolean)
+	Method ID: 376 boolean,getSynchronizePaint()
+	Method ID: 377 boolean,dropcloth(boolean,boolean)
+	Method ID: 378 att.grappa.Attribute,getGrappaAttribute(java.lang.String)
+	Method ID: 379 java.lang.Object,getGrappaAttributeValue(java.lang.String)
+	Method ID: 380 java.lang.Object,setGrappaAttribute(java.lang.String,java.lang.String)
+	Method ID: 381 int,attributeType(java.lang.String)
+	Method ID: 382 java.util.Enumeration,getGrappaAttributeKeys()
+	Method ID: 383 boolean,validGrappaAttributeKey(java.lang.String)
+	Method ID: 384 att.grappa.Attribute,getGlobalAttribute(int,java.lang.String)
+	Method ID: 385 java.util.Enumeration,getGlobalAttributeKeys(int)
+	Method ID: 386 java.util.Enumeration,getGlobalAttributePairs(int)
+	Method ID: 387 int,getGlobalAttributeSize(int)
+	Method ID: 388 void,printGraph(java.io.Writer)
+	Method ID: 389 void,printGraph(java.io.OutputStream)
+	Method ID: 390 int,getId(int)
+	Method ID: 391 java.lang.String,getIndent()
+	Method ID: 392 void,incrementIndent()
+	Method ID: 393 void,decrementIndent()
+	Method ID: 394 boolean,isDirected()
+	Method ID: 395 boolean,isStrict()
+	Method ID: 396 java.lang.String,setToolTipText(java.lang.String)
+	Method ID: 397 java.lang.String,getToolTipText()
+	Method ID: 398 void,reset()
+	Method ID: 399 void,reset(java.lang.String,boolean,boolean)
+	Method ID: 400 boolean,isEditable()
+	Method ID: 402 boolean,isSelectable()
+	Method ID: 403 boolean,setSelectable(boolean)
+	Method ID: 404 boolean,isMenuable()
+	Method ID: 407 java.io.PrintWriter,getErrorWriter()
+	Method ID: 408 void,printError(java.lang.String)
+	Method ID: 409 void,printError(java.lang.String,java.lang.Exception)
+	Method ID: 410 void,buildShapes()
+	Method ID: 411 void,resync()
+	Method ID: 414 void,addPanel(att.grappa.GrappaPanel)
+	Method ID: 415 void,removePanel(att.grappa.GrappaPanel)
+	Method ID: 416 void,#ExtendsOrImplements#()
+	Method ID: 406 java.io.PrintWriter,setErrorWriter(java.io.PrintWriter)
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph25_ClusterNode.java	getClusterGraphPanel
+			att_grappa_Graph34_ShowWindow.java	doDemo
+			att_grappa_Graph35_JTelosUtil.java	doParse
+			att_grappa_Graph44_Visualizer.java	generateGraphPanel
+			att_grappa_Graph47_VizGraph.java	visualizeLayout
+			att_grappa_Graph4_GraphPanel.java	displayGraph
+	Method ID: 401 boolean,setEditable(boolean)
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph25_ClusterNode.java	getClusterGraphPanel
+			att_grappa_Graph34_ShowWindow.java	doDemo
+			att_grappa_Graph35_JTelosUtil.java	doParse
+			att_grappa_Graph44_Visualizer.java	generateGraphPanel
+			att_grappa_Graph47_VizGraph.java	visualizeLayout
+			att_grappa_Graph4_GraphPanel.java	displayGraph
+	Method ID: 374 att.grappa.Graph,CONSTRUCTOR(java.lang.String)
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph19_LATLParseReader.java	read
+			att_grappa_Graph1_b1031.java	GrappaBugdemo
+			att_grappa_Graph32_KBSummary.java	generateThumbnail
+			att_grappa_Graph39_SimpleGraph.java	buildGraph
+			att_grappa_Graph3_b1031.java	GrappaBugdemo
+	Method ID: 412 void,repaint()
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph34_ShowWindow.java	changeColorNode
+			att_grappa_Graph4_GraphPanel.java	select
+	Method ID: 405 boolean,setMenuable(boolean)
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph25_ClusterNode.java	getClusterGraphPanel
+			att_grappa_Graph9_ClusterNode.java	getClusterGraphPanel
+	Method ID: 413 void,paintImmediately()
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph4_GraphPanel.java	actionPerformed
+	Method ID: 373 att.grappa.Graph,CONSTRUCTOR(java.lang.String,boolean,boolean)
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph46_Graph.java	drawGraph
+Class: att.grappa.ExceptionDisplay.Display.WindowObserver
+	Method ID: 449 void,windowClosing(java.awt.event.WindowEvent)
+	Method ID: 450 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 451 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaBacker
+	Method ID: 94 void,drawBackground(java.awt.Graphics2D,att.grappa.Graph,java.awt.geom.Rectangle2D,java.awt.Shape)
+	Method ID: 95 void,#ExtendsOrImplements#()
+Class: att.grappa.Subgraph.Enumerator
+	Method ID: 196 boolean,hasMoreElements()
+	Method ID: 197 java.lang.Object,nextElement()
+	Method ID: 198 att.grappa.Element,nextGraphElement()
+	Method ID: 199 att.grappa.Subgraph,getSubgraphRoot()
+	Method ID: 200 int,getEnumerationTypes()
+	Method ID: 201 void,#ExtendsOrImplements#()
+Class: att.grappa.Edge.Enumerator
+	Method ID: 501 boolean,hasMoreElements()
+	Method ID: 502 java.lang.Object,nextElement()
+	Method ID: 503 void,#ExtendsOrImplements#()
+Class: java_cup.runtime.virtual_parse_stack
+	Method ID: 547 java_cup.runtime.virtual_parse_stack,CONSTRUCTOR(java.util.Stack)
+	Method ID: 548 void,get_from_real()
+	Method ID: 549 boolean,empty()
+	Method ID: 550 int,top()
+	Method ID: 551 void,pop()
+	Method ID: 552 void,push(int)
+	Method ID: 553 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaConstants
+	Method ID: 265 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaSize
+	Method ID: 21 att.grappa.GrappaSize,CONSTRUCTOR()
+	Method ID: 22 att.grappa.GrappaSize,CONSTRUCTOR(double,double)
+	Method ID: 23 att.grappa.GrappaSize,CONSTRUCTOR(java.lang.String)
+	Method ID: 24 double,getWidth()
+	Method ID: 25 double,getHeight()
+	Method ID: 26 void,setSize(java.awt.geom.Dimension2D)
+	Method ID: 27 void,setSize(double,double)
+	Method ID: 28 java.lang.String,toAttributeString()
+	Method ID: 29 java.lang.String,toFormattedString(java.lang.String)
+	Method ID: 30 java.lang.String,toString()
+	Method ID: 31 void,#ExtendsOrImplements#()
+Class: att.grappa.Node.Enumerator
+	Method ID: 468 boolean,hasMoreElements()
+	Method ID: 469 java.lang.Object,nextElement()
+	Method ID: 470 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaStyle
+	Instantiation Code Examples (Templates): 
+		att_grappa_GrappaStyle2_Graph.java	drawGraph
+	Method ID: 266 att.grappa.GrappaStyle,CONSTRUCTOR(int,java.lang.String)
+	Method ID: 267 void,updateStyle(java.lang.String)
+	Method ID: 268 java.lang.String,toAttributeString()
+	Method ID: 269 java.lang.String,toString()
+	Method ID: 270 java.awt.Color,getLineColor()
+	Method ID: 271 int,getLineStyle()
+	Method ID: 272 float,getLineWidth()
+	Method ID: 273 int,getCapStyle()
+	Method ID: 274 int,getJoinStyle()
+	Method ID: 275 float,getMiterLimit()
+	Method ID: 276 float[],getDash()
+	Method ID: 277 float,getDashPhase()
+	Method ID: 278 boolean,getRounded()
+	Method ID: 279 boolean,getDiagonals()
+	Method ID: 280 boolean,getFilled()
+	Method ID: 281 boolean,getInvis()
+	Method ID: 282 boolean,getFixedSize()
+	Method ID: 283 int,getFontStyle()
+	Method ID: 284 java.lang.Object,clone()
+	Method ID: 285 void,#ExtendsOrImplements#()
+Class: att.grappa.Node
+	Instantiation Code Examples (Templates): 
+		att_grappa_Node29_CSMARTGraph.java	CSMARTGraph
+		att_grappa_Node35_SimpleGraph.java	buildGraph
+		att_grappa_Node37_Graph.java	drawGraph
+	Method ID: 454 boolean,isNode()
+	Method ID: 455 int,getType()
+	Method ID: 456 void,setName(java.lang.String)
+	Method ID: 457 void,addEdge(att.grappa.Edge,boolean)
+	Method ID: 458 att.grappa.Edge,findOutEdgeByKey(att.grappa.Node,java.lang.String)
+	Method ID: 459 att.grappa.Edge,findInEdgeByKey(att.grappa.Node,java.lang.String)
+	Method ID: 461 void,removeEdge(att.grappa.Edge,boolean)
+	Method ID: 462 void,printNode(java.io.PrintWriter)
+	Method ID: 463 int,attributeType(java.lang.String)
+	Method ID: 464 java.util.Enumeration,edgeElements()
+	Method ID: 467 void,#ExtendsOrImplements#()
+	Method ID: 460 att.grappa.GrappaPoint,getCenterPoint()
+		Invocation Code Examples (Templates): 
+			att_grappa_Node28_JTelosUtil.java	update
+			att_grappa_Node6_ColoredPetriNet.java	ColoredPetriNet
+	Method ID: 452 att.grappa.Node,CONSTRUCTOR(att.grappa.Subgraph,java.lang.String)
+		Invocation Code Examples (Templates): 
+			att_grappa_Node29_CSMARTGraph.java	CSMARTGraph
+			att_grappa_Node37_Graph.java	drawGraph
+	Method ID: 466 java.util.Enumeration,outEdgeElements()
+		Invocation Code Examples (Templates): 
+			att_grappa_Node29_CSMARTGraph.java	getHeadElements
+	Method ID: 465 java.util.Enumeration,inEdgeElements()
+		Invocation Code Examples (Templates): 
+			att_grappa_Node29_CSMARTGraph.java	getTailElements
+	Method ID: 453 att.grappa.Node,CONSTRUCTOR(att.grappa.Subgraph)
+		Invocation Code Examples (Templates): 
+			att_grappa_Node35_SimpleGraph.java	buildGraph
+Class: att.grappa.GrappaPanel
+	Instantiation Code Examples (Templates): 
+		att_grappa_GrappaPanel10_OrgModel.java	getGraphPanel
+		att_grappa_GrappaPanel12_ClusterNode.java	getClusterGraphPanel
+		att_grappa_GrappaPanel1_b1031.java	GrappaBugdemo
+		att_grappa_GrappaPanel21_VizGraph.java	visualizeLayout
+		att_grappa_GrappaPanel24_Graphe.java	Graphe
+		att_grappa_GrappaPanel25_Visualizer.java	generateGraphPanel
+	Extension Code Examples (Hooks): 
+		att_grappa_GrappaPanel23_JpgEncodeGraph.java	NA
+	Method ID: 47 att.grappa.GrappaPanel,CONSTRUCTOR(att.grappa.Subgraph,att.grappa.GrappaBacker)
+	Method ID: 49 att.grappa.GrappaListener,removeGrappaListener()
+	Method ID: 50 int,print(java.awt.Graphics,java.awt.print.PageFormat,int)
+	Method ID: 51 void,paintComponent(java.awt.Graphics)
+	Method ID: 52 void,centerPanelAtPoint(java.awt.geom.Point2D)
+	Method ID: 54 java.awt.geom.AffineTransform,getInverseTransform()
+	Method ID: 55 void,setToolTipText(java.lang.String)
+	Method ID: 56 java.lang.String,getToolTipText(java.awt.event.MouseEvent)
+	Method ID: 59 att.grappa.Subgraph,getSubgraph()
+	Method ID: 61 boolean,hasOutline()
+	Method ID: 62 void,clearOutline()
+	Method ID: 63 att.grappa.GrappaBox,zoomToOutline()
+	Method ID: 64 att.grappa.GrappaBox,zoomToOutline(att.grappa.GrappaBox)
+	Method ID: 66 void,ancestorMoved(javax.swing.event.AncestorEvent)
+	Method ID: 67 void,ancestorAdded(javax.swing.event.AncestorEvent)
+	Method ID: 68 void,ancestorRemoved(javax.swing.event.AncestorEvent)
+	Method ID: 69 void,componentHidden(java.awt.event.ComponentEvent)
+	Method ID: 70 void,componentMoved(java.awt.event.ComponentEvent)
+	Method ID: 71 void,componentResized(java.awt.event.ComponentEvent)
+	Method ID: 72 void,componentShown(java.awt.event.ComponentEvent)
+	Method ID: 73 void,popupMenuCanceled(javax.swing.event.PopupMenuEvent)
+	Method ID: 74 void,popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent)
+	Method ID: 75 void,popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent)
+	Method ID: 76 void,mouseClicked(java.awt.event.MouseEvent)
+	Method ID: 77 void,mousePressed(java.awt.event.MouseEvent)
+	Method ID: 78 void,mouseReleased(java.awt.event.MouseEvent)
+	Method ID: 79 void,mouseEntered(java.awt.event.MouseEvent)
+	Method ID: 80 void,mouseExited(java.awt.event.MouseEvent)
+	Method ID: 81 void,mouseDragged(java.awt.event.MouseEvent)
+	Method ID: 82 void,mouseMoved(java.awt.event.MouseEvent)
+	Method ID: 83 java.awt.Dimension,getPreferredScrollableViewportSize()
+	Method ID: 84 int,getScrollableUnitIncrement(java.awt.Rectangle,int,int)
+	Method ID: 85 int,getScrollableBlockIncrement(java.awt.Rectangle,int,int)
+	Method ID: 86 boolean,getScrollableTracksViewportWidth()
+	Method ID: 87 boolean,getScrollableTracksViewportHeight()
+	Method ID: 88 void,run()
+	Method ID: 46 att.grappa.GrappaPanel,CONSTRUCTOR(att.grappa.Subgraph)
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaPanel10_OrgModel.java	getGraphPanel
+			att_grappa_GrappaPanel12_ClusterNode.java	getClusterGraphPanel
+			att_grappa_GrappaPanel1_b1031.java	GrappaBugdemo
+			att_grappa_GrappaPanel21_VizGraph.java	visualizeLayout
+			att_grappa_GrappaPanel24_Graphe.java	Graphe
+			att_grappa_GrappaPanel25_Visualizer.java	generateGraphPanel
+	Method ID: 57 void,setScaleToFit(boolean)
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaPanel10_OrgModel.java	getGraphPanel
+			att_grappa_GrappaPanel12_ClusterNode.java	getClusterGraphPanel
+			att_grappa_GrappaPanel21_VizGraph.java	visualizeLayout
+			att_grappa_GrappaPanel24_Graphe.java	Graphe
+			att_grappa_GrappaPanel25_Visualizer.java	generateGraphPanel
+	Method ID: 48 att.grappa.GrappaListener,addGrappaListener(att.grappa.GrappaListener)
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaPanel10_OrgModel.java	getGraphPanel
+			att_grappa_GrappaPanel12_ClusterNode.java	getClusterGraphPanel
+			att_grappa_GrappaPanel21_VizGraph.java	visualizeLayout
+			att_grappa_GrappaPanel25_Visualizer.java	generateGraphPanel
+	Method ID: 53 java.awt.geom.AffineTransform,getTransform()
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaPanel13_PerformanceAnalysisGUI.java	grappaReleased
+			att_grappa_GrappaPanel4_GraphPanel.java	scrollToCenterPoint
+	Method ID: 65 double,multiplyScaleFactor(double)
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaPanel4_GraphPanel.java	setGraph
+	Method ID: 60 void,resetZoom()
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaPanel4_GraphPanel.java	actionPerformed
+	Method ID: 58 void,setScaleToSize(java.awt.geom.Dimension2D)
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaPanel23_JpgEncodeGraph.java	JpgEncodeGraph
+	Method ID: 89 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaBox
+	Method ID: 32 att.grappa.GrappaBox,CONSTRUCTOR()
+	Method ID: 33 att.grappa.GrappaBox,CONSTRUCTOR(java.awt.geom.Rectangle2D)
+	Method ID: 34 att.grappa.GrappaBox,CONSTRUCTOR(double,double,double,double)
+	Method ID: 35 att.grappa.GrappaBox,CONSTRUCTOR(java.lang.String,boolean)
+	Method ID: 36 att.grappa.GrappaBox,CONSTRUCTOR(java.lang.String)
+	Method ID: 37 java.lang.String,toAttributeString()
+	Method ID: 38 java.lang.String,toFormattedString(java.lang.String)
+	Method ID: 39 java.lang.String,toString()
+	Method ID: 40 boolean,isDimensioned()
+	Method ID: 41 void,#ExtendsOrImplements#()
+Class: att.grappa.AttributeHandler
+	Method ID: 102 java.lang.String,convertValue(int,java.lang.String,java.lang.Object,int)
+	Method ID: 103 java.lang.Object,convertStringValue(int,java.lang.String,java.lang.String,int)
+	Method ID: 104 java.lang.Object,copyValue(int,java.lang.String,java.lang.Object,int)
+	Method ID: 105 void,#ExtendsOrImplements#()
+Class: att.grappa.PrintfParser
+	Method ID: 92 void,#ExtendsOrImplements#()
+Class: att.grappa.Edge
+	Instantiation Code Examples (Templates): 
+		att_grappa_Edge27_SimpleGraph.java	buildGraph
+		att_grappa_Edge28_Graph.java	createFromGraphMaker
+	Method ID: 482 att.grappa.Edge,CONSTRUCTOR(att.grappa.Subgraph,att.grappa.Node,java.lang.String,att.grappa.Node,java.lang.String)
+	Method ID: 483 att.grappa.Edge,CONSTRUCTOR(att.grappa.Subgraph,att.grappa.Node,java.lang.String,att.grappa.Node,java.lang.String,java.lang.String)
+	Method ID: 484 att.grappa.Edge,CONSTRUCTOR(att.grappa.Subgraph,att.grappa.Node,att.grappa.Node,java.lang.String)
+	Method ID: 485 att.grappa.Edge,CONSTRUCTOR(att.grappa.Subgraph,att.grappa.Node,java.lang.String,att.grappa.Node,java.lang.String,java.lang.String,java.lang.String)
+	Method ID: 486 att.grappa.Edge,findEdgeByKey(att.grappa.Node,att.grappa.Node,java.lang.String)
+	Method ID: 487 boolean,isEdge()
+	Method ID: 488 int,getType()
+	Method ID: 489 java.lang.String,getKey()
+	Method ID: 491 java.lang.String,getHeadPortId()
+	Method ID: 493 java.lang.String,getTailPortId()
+	Method ID: 494 java.lang.String,toString()
+	Method ID: 495 void,printEdge(java.io.PrintWriter)
+	Method ID: 496 boolean,goesForward()
+	Method ID: 497 boolean,goesReverse()
+	Method ID: 498 int,attributeType(java.lang.String)
+	Method ID: 499 java.util.Enumeration,findEdgesByEnds(att.grappa.Node,att.grappa.Node)
+	Method ID: 500 void,#ExtendsOrImplements#()
+	Method ID: 490 att.grappa.Node,getHead()
+		Invocation Code Examples (Templates): 
+			att_grappa_Edge10_MyGraphUtil.java	hasEdge
+			att_grappa_Edge14_PetriNetNavigation.java	getTransition
+			att_grappa_Edge21_MyGraphUtil.java	hasEdge
+	Method ID: 492 att.grappa.Node,getTail()
+		Invocation Code Examples (Templates): 
+			att_grappa_Edge10_MyGraphUtil.java	hasEdge
+			att_grappa_Edge14_PetriNetNavigation.java	getTransition
+			att_grappa_Edge21_MyGraphUtil.java	hasEdge
+	Method ID: 481 att.grappa.Edge,CONSTRUCTOR(att.grappa.Subgraph,att.grappa.Node,att.grappa.Node)
+		Invocation Code Examples (Templates): 
+			att_grappa_Edge27_SimpleGraph.java	buildGraph
+Class: att.grappa.GrappaLine
+	Method ID: 421 att.grappa.GrappaLine,CONSTRUCTOR(att.grappa.GrappaPoint[],int)
+	Method ID: 422 att.grappa.GrappaLine,CONSTRUCTOR(java.lang.String)
+	Method ID: 423 boolean,equals(java.lang.Object)
+	Method ID: 424 int,getArrowType()
+	Method ID: 425 int,getWindingRule()
+	Method ID: 426 boolean,startsNear(java.awt.geom.Point2D)
+	Method ID: 427 java.lang.String,toAttributeString()
+	Method ID: 428 java.lang.String,toFormattedString(java.lang.String)
+	Method ID: 429 java.lang.String,toString()
+	Method ID: 430 boolean,changeArrowType(int)
+	Method ID: 431 java.lang.Object,clone()
+	Method ID: 432 boolean,contains(double,double)
+	Method ID: 433 boolean,contains(double,double,double,double)
+	Method ID: 434 boolean,contains(java.awt.geom.Point2D)
+	Method ID: 435 boolean,contains(java.awt.geom.Rectangle2D)
+	Method ID: 436 java.awt.Rectangle,getBounds()
+	Method ID: 437 java.awt.geom.Rectangle2D,getBounds2D()
+	Method ID: 438 java.awt.geom.PathIterator,getPathIterator()
+	Method ID: 439 java.awt.geom.PathIterator,getPathIterator(java.awt.geom.AffineTransform)
+	Method ID: 440 java.awt.geom.PathIterator,getPathIterator(java.awt.geom.AffineTransform,double)
+	Method ID: 441 boolean,intersects(double,double,double,double)
+	Method ID: 442 boolean,intersects(java.awt.geom.Rectangle2D)
+	Method ID: 443 void,#ExtendsOrImplements#()
+Class: att.grappa.ExceptionDisplay
+	Method ID: 444 att.grappa.ExceptionDisplay,CONSTRUCTOR(java.lang.String)
+	Method ID: 445 void,displayException(java.lang.Exception)
+	Method ID: 446 void,displayException(java.lang.Exception,java.lang.String)
+	Method ID: 447 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaListener
+	Method ID: 100 java.lang.String,grappaTip(att.grappa.Subgraph,att.grappa.Element,att.grappa.GrappaPoint,int,att.grappa.GrappaPanel)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\Grappa\att_grappa_GrappaListener//1_OwlsvizGrappaAdapter.java	NA
+	Method ID: 99 void,grappaDragged(att.grappa.Subgraph,att.grappa.GrappaPoint,int,att.grappa.Element,att.grappa.GrappaPoint,int,att.grappa.GrappaBox,att.grappa.GrappaPanel)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\Grappa\att_grappa_GrappaListener//1_OwlsvizGrappaAdapter.java	NA
+	Method ID: 98 void,grappaReleased(att.grappa.Subgraph,att.grappa.Element,att.grappa.GrappaPoint,int,att.grappa.Element,att.grappa.GrappaPoint,int,att.grappa.GrappaBox,att.grappa.GrappaPanel)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\Grappa\att_grappa_GrappaListener//1_OwlsvizGrappaAdapter.java	NA
+	Method ID: 97 void,grappaPressed(att.grappa.Subgraph,att.grappa.Element,att.grappa.GrappaPoint,int,att.grappa.GrappaPanel)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\Grappa\att_grappa_GrappaListener//1_OwlsvizGrappaAdapter.java	NA
+	Method ID: 96 void,grappaClicked(att.grappa.Subgraph,att.grappa.Element,att.grappa.GrappaPoint,int,int,att.grappa.GrappaPanel)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\Grappa\att_grappa_GrappaListener//1_OwlsvizGrappaAdapter.java	NA
+	Method ID: 101 void,#ExtendsOrImplements#()
+Class: att.grappa.GrappaAdapter
+	Instantiation Code Examples (Templates): 
+		att_grappa_GrappaAdapter0_ClusterNode.java	getClusterGraphPanel
+		att_grappa_GrappaAdapter6_Visualizer.java	generateGraphPanel
+	Extension Code Examples (Hooks): 
+		att_grappa_GrappaAdapter1_PerformanceAnalysisGUI.java	NA
+	Method ID: 234 void,grappaPressed(att.grappa.Subgraph,att.grappa.Element,att.grappa.GrappaPoint,int,att.grappa.GrappaPanel)
+	Method ID: 236 void,grappaDragged(att.grappa.Subgraph,att.grappa.GrappaPoint,int,att.grappa.Element,att.grappa.GrappaPoint,int,att.grappa.GrappaBox,att.grappa.GrappaPanel)
+	Method ID: 237 java.lang.String,grappaTip(att.grappa.Subgraph,att.grappa.Element,att.grappa.GrappaPoint,int,att.grappa.GrappaPanel)
+	Method ID: 238 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 239 void,drillDown(att.grappa.Subgraph,java.util.Vector,int,int)
+	Method ID: 233 void,grappaClicked(att.grappa.Subgraph,att.grappa.Element,att.grappa.GrappaPoint,int,int,att.grappa.GrappaPanel)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\Grappa\att_grappa_GrappaAdapter//1_PerformanceAnalysisGUI.java	NA
+	Method ID: 235 void,grappaReleased(att.grappa.Subgraph,att.grappa.Element,att.grappa.GrappaPoint,int,att.grappa.Element,att.grappa.GrappaPoint,int,att.grappa.GrappaBox,att.grappa.GrappaPanel)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\Grappa\att_grappa_GrappaAdapter//1_PerformanceAnalysisGUI.java	NA
+	Method ID: 240 void,#ExtendsOrImplements#()
+Class: att.grappa.GraphParserException
+	Method ID: 286 att.grappa.GraphParserException,CONSTRUCTOR()
+	Method ID: 287 att.grappa.GraphParserException,CONSTRUCTOR(java.lang.String)
+	Method ID: 288 void,#ExtendsOrImplements#()
+Class: att.grappa.Element
+	Method ID: 303 att.grappa.Element,CONSTRUCTOR()
+	Method ID: 304 att.grappa.Element,CONSTRUCTOR(int,att.grappa.Subgraph)
+	Method ID: 308 boolean,isSubgraph()
+	Method ID: 310 void,attrOfInterest(java.lang.String)
+	Method ID: 311 void,attrNotOfInterest(java.lang.String)
+	Method ID: 312 java.util.Enumeration,listAttrsOfInterest()
+	Method ID: 313 boolean,isOfInterest(java.lang.String)
+	Method ID: 314 java.lang.Object,setAttribute(att.grappa.Attribute)
+	Method ID: 316 java.lang.Object,setDefaultAttribute(java.lang.String,java.lang.Object)
+	Method ID: 317 java.lang.Object,setDefaultAttribute(int,java.lang.String,java.lang.Object)
+	Method ID: 318 java.lang.Object,setDefaultAttribute(att.grappa.Attribute)
+	Method ID: 319 java.lang.Object,setDefaultAttribute(int,att.grappa.Attribute)
+	Method ID: 321 java.util.Enumeration,getLocalAttributePairs()
+	Method ID: 324 att.grappa.Attribute,getThisAttribute(java.lang.String)
+	Method ID: 325 java.lang.Object,getThisAttributeValue(java.lang.String)
+	Method ID: 326 att.grappa.Attribute,getDefaultAttribute(int,java.lang.String)
+	Method ID: 327 att.grappa.Attribute,getDefaultAttribute(java.lang.String)
+	Method ID: 330 boolean,hasAttributeForKey(java.lang.String)
+	Method ID: 332 att.grappa.Subgraph,getSubgraph()
+	Method ID: 333 void,setSubgraph(att.grappa.Subgraph)
+	Method ID: 334 void,clearBBox()
+	Method ID: 335 int,getId()
+	Method ID: 337 void,setIdKey(int)
+	Method ID: 338 void,printElement(java.io.PrintWriter)
+	Method ID: 339 java.lang.String,toString()
+	Method ID: 340 java.lang.String,canonString(java.lang.String)
+	Method ID: 341 java.lang.String,typeString(int,boolean)
+	Method ID: 342 java.lang.String,canonValue(java.lang.String)
+	Method ID: 344 void,addTag(java.lang.String)
+	Method ID: 345 boolean,hasTag(java.lang.String)
+	Method ID: 346 boolean,hasLocalTag(java.lang.String)
+	Method ID: 347 boolean,hasDefaultTag(java.lang.String)
+	Method ID: 348 boolean,hasTags()
+	Method ID: 349 boolean,hasLocalTags()
+	Method ID: 350 boolean,hasDefaultTags()
+	Method ID: 351 void,removeTags()
+	Method ID: 352 void,removeTag(java.lang.String)
+	Method ID: 353 int,setUserAttributeType(java.lang.String,int)
+	Method ID: 354 int,attributeType(java.lang.String)
+	Method ID: 355 void,buildShape()
+	Method ID: 357 java.util.Vector,bdfs(int)
+	Method ID: 358 void,#ExtendsOrImplements#()
+	Method ID: 309 java.lang.String,getName()
+		Invocation Code Examples (Templates): 
+			att_grappa_Element0_GraphPanel.java	getPerformForNode
+			att_grappa_Element17_JTelosUtil.java	update
+			att_grappa_Graph47_VizGraph.java	visualizeLayout
+			att_grappa_Node22_Component.java	clone
+			att_grappa_Node23_MyGraphUtil.java	myNodeId
+			att_grappa_Node29_CSMARTGraph.java	CSMARTGraph
+			att_grappa_Node9_MyGraphUtil.java	myNodeId
+	Method ID: 315 java.lang.Object,setAttribute(java.lang.String,java.lang.Object)
+		Invocation Code Examples (Templates): 
+			att_grappa_Edge27_SimpleGraph.java	buildGraph
+			att_grappa_Node27_ShowWindow.java	changeColorNode
+			att_grappa_Node29_CSMARTGraph.java	CSMARTGraph
+			att_grappa_Node35_SimpleGraph.java	buildGraph
+	Method ID: 322 java.util.Enumeration,getAttributePairs()
+		Invocation Code Examples (Templates): 
+			att_grappa_Element18_CSMARTGraph.java	getNodesByRegex
+			att_grappa_Element9_CSMARTGraph.java	getNodesByRegex
+			att_grappa_Node29_CSMARTGraph.java	CSMARTGraph
+	Method ID: 343 boolean,delete()
+		Invocation Code Examples (Templates): 
+			att_grappa_Element18_CSMARTGraph.java	removeInvisibleElements
+			att_grappa_Element9_CSMARTGraph.java	removeInvisibleElements
+			att_grappa_Node29_CSMARTGraph.java	removeNodesWorker
+	Method ID: 328 att.grappa.Attribute,getAttribute(java.lang.String)
+		Invocation Code Examples (Templates): 
+			att_grappa_Edge28_Graph.java	drawGraph
+			att_grappa_Node29_CSMARTGraph.java	createGraphFromDotFile
+	Method ID: 329 java.lang.Object,getAttributeValue(java.lang.String)
+		Invocation Code Examples (Templates): 
+			att_grappa_Element18_CSMARTGraph.java	getNodesByComparison
+			att_grappa_Element9_CSMARTGraph.java	getNodesByComparison
+	Method ID: 323 att.grappa.Attribute,getLocalAttribute(java.lang.String)
+		Invocation Code Examples (Templates): 
+			att_grappa_Element1_OwlsvizGrappaAdapter.java	grappaTip
+			att_grappa_Node31_ULPlanTableModel.java	addAttribute
+	Method ID: 336 java.lang.Long,getIdKey()
+		Invocation Code Examples (Templates): 
+			att_grappa_Edge15_EPCToPetriNetConverter.java	convert
+			att_grappa_Edge5_EPCToPetriNetConverter.java	convert
+	Method ID: 356 att.grappa.GrappaNexus,getGrappaNexus()
+		Invocation Code Examples (Templates): 
+			att_grappa_Element0_GraphPanel.java	scrollToCenterPoint
+			att_grappa_Node30_CSMARTFrame.java	scrollToSelected
+	Method ID: 306 boolean,isNode()
+		Invocation Code Examples (Templates): 
+			att_grappa_Element17_JTelosUtil.java	update
+			att_grappa_Element1_OwlsvizGrappaAdapter.java	grappaClicked
+	Method ID: 307 boolean,isEdge()
+		Invocation Code Examples (Templates): 
+			att_grappa_Element17_JTelosUtil.java	update
+			att_grappa_Element8_JTelosUtil.java	update
+	Method ID: 305 int,getType()
+		Invocation Code Examples (Templates): 
+			att_grappa_Element18_CSMARTGraph.java	isNodeSelected
+			att_grappa_Element9_CSMARTGraph.java	isNodeSelected
+	Method ID: 331 att.grappa.Graph,getGraph()
+		Invocation Code Examples (Templates): 
+			att_grappa_Subgraph3_PerformanceAnalysisGUI.java	grappaClicked
+	Method ID: 320 java.util.Enumeration,getLocalAttributeKeys()
+		Invocation Code Examples (Templates): 
+			att_grappa_Node31_ULPlanTableModel.java	ULPlanTableModel
+Class: att.grappa.GrappaColor
+	Method ID: 43 java.awt.Color,getColor(java.lang.String,java.awt.Color)
+	Method ID: 44 java.lang.String,getColorName(java.awt.Color)
+	Method ID: 45 void,#ExtendsOrImplements#()
+	Method ID: 42 void,addColor(java.lang.String,java.awt.Color)
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaColor0_XMLMarker.java	XMLMarker
+Class: att.grappa.GrappaSupport
+	Method ID: 289 int,xlateDirString(java.lang.String)
+	Method ID: 290 java.lang.String,xlateDir(int)
+	Method ID: 291 int,xlateFontStyleString(java.lang.String)
+	Method ID: 292 java.lang.String,xlateFontStyle(int)
+	Method ID: 293 java.lang.String,canonize(java.lang.String)
+	Method ID: 294 att.grappa.GrappaBox,boxFromCorners(double,double,double,double)
+	Method ID: 295 att.grappa.GrappaBox,boxFromCorners(att.grappa.GrappaBox,double,double,double,double)
+	Method ID: 296 att.grappa.Element,findContainingElement(att.grappa.Subgraph,java.awt.geom.Point2D)
+	Method ID: 297 java.util.Vector,findContainedElements(att.grappa.Subgraph,att.grappa.GrappaBox)
+	Method ID: 298 void,setHighlight(att.grappa.Element,int,int)
+	Method ID: 300 boolean,filterGraph(att.grappa.Graph,java.lang.Object,java.lang.String)
+	Method ID: 301 boolean,centerPanel(java.awt.geom.Point2D,att.grappa.GrappaPanel)
+	Method ID: 302 void,#ExtendsOrImplements#()
+	Method ID: 299 boolean,filterGraph(att.grappa.Graph,java.lang.Object)
+		Invocation Code Examples (Templates): 
+			att_grappa_GrappaSupport2_GraphPanel.java	displayGraph
+Class: java_cup.runtime.lr_parser
+	Method ID: 504 java_cup.runtime.lr_parser,CONSTRUCTOR()
+	Method ID: 505 java_cup.runtime.lr_parser,CONSTRUCTOR(java_cup.runtime.Scanner)
+	Method ID: 506 int,error_sync_size()
+	Method ID: 507 short[][],production_table()
+	Method ID: 508 short[][],action_table()
+	Method ID: 509 short[][],reduce_table()
+	Method ID: 510 int,start_state()
+	Method ID: 511 int,start_production()
+	Method ID: 512 int,EOF_sym()
+	Method ID: 513 int,error_sym()
+	Method ID: 514 void,done_parsing()
+	Method ID: 515 void,setScanner(java_cup.runtime.Scanner)
+	Method ID: 516 java_cup.runtime.Scanner,getScanner()
+	Method ID: 517 java_cup.runtime.Symbol,do_action(int,java_cup.runtime.lr_parser,java.util.Stack,int)
+	Method ID: 518 void,user_init()
+	Method ID: 519 void,init_actions()
+	Method ID: 520 java_cup.runtime.Symbol,scan()
+	Method ID: 521 void,report_fatal_error(java.lang.String,java.lang.Object)
+	Method ID: 522 void,report_error(java.lang.String,java.lang.Object)
+	Method ID: 523 void,syntax_error(java_cup.runtime.Symbol)
+	Method ID: 524 void,unrecovered_syntax_error(java_cup.runtime.Symbol)
+	Method ID: 525 short,get_action(int,int)
+	Method ID: 526 short,get_reduce(int,int)
+	Method ID: 528 void,debug_message(java.lang.String)
+	Method ID: 529 void,dump_stack()
+	Method ID: 530 void,debug_reduce(int,int,int)
+	Method ID: 531 void,debug_shift(java_cup.runtime.Symbol)
+	Method ID: 532 void,debug_stack()
+	Method ID: 533 java_cup.runtime.Symbol,debug_parse()
+	Method ID: 534 boolean,error_recovery(boolean)
+	Method ID: 535 boolean,shift_under_error()
+	Method ID: 536 boolean,find_recovery_config(boolean)
+	Method ID: 537 void,read_lookahead()
+	Method ID: 538 java_cup.runtime.Symbol,cur_err_token()
+	Method ID: 539 boolean,advance_lookahead()
+	Method ID: 540 void,restart_lookahead()
+	Method ID: 541 boolean,try_parse_ahead(boolean)
+	Method ID: 542 void,parse_lookahead(boolean)
+	Method ID: 543 short[][],unpackFromStrings(java.lang.String[])
+	Method ID: 544 void,#ExtendsOrImplements#()
+	Method ID: 527 java_cup.runtime.Symbol,parse()
+		Invocation Code Examples (Templates): 
+			att_grappa_Parser11_MyGraphUtil.java	readGraph
+			att_grappa_Parser15_JTelosUtil.java	doParse
+			att_grappa_Parser16_VizGraph.java	visualizeLayout
+			att_grappa_Parser18_Graphe.java	Graphe
+			att_grappa_Parser19_Visualizer.java	generateGraphPanel
+			att_grappa_Parser2_GraphDisplay.java	displayGraph
+Class: att.grappa.ExceptionDisplay.Display
+	Method ID: 448 void,#ExtendsOrImplements#()
+Class: att.grappa.Lexer
+	Method ID: 13 att.grappa.Lexer,CONSTRUCTOR(java.io.Reader,java.io.PrintWriter)
+	Method ID: 14 void,init()
+	Method ID: 15 void,advance()
+	Method ID: 16 java.lang.String,getLocation()
+	Method ID: 17 boolean,id_char(int)
+	Method ID: 18 boolean,id_char(char)
+	Method ID: 19 java_cup.runtime.Symbol,next_token(int)
+	Method ID: 20 void,#ExtendsOrImplements#()
+Class: att.grappa.Parser
+	Instantiation Code Examples (Templates): 
+		att_grappa_Parser11_MyGraphUtil.java	readGraph
+		att_grappa_Parser15_JTelosUtil.java	doParse
+		att_grappa_Parser16_VizGraph.java	visualizeLayout
+		att_grappa_Parser18_Graphe.java	Graphe
+		att_grappa_Parser19_Visualizer.java	generateGraphPanel
+		att_grappa_Parser2_GraphDisplay.java	displayGraph
+	Method ID: 202 att.grappa.Parser,CONSTRUCTOR()
+	Method ID: 203 att.grappa.Parser,CONSTRUCTOR(java_cup.runtime.Scanner)
+	Method ID: 204 short[][],production_table()
+	Method ID: 205 short[][],action_table()
+	Method ID: 206 short[][],reduce_table()
+	Method ID: 207 void,init_actions()
+	Method ID: 208 java_cup.runtime.Symbol,do_action(int,java_cup.runtime.lr_parser,java.util.Stack,int)
+	Method ID: 209 int,start_state()
+	Method ID: 210 int,start_production()
+	Method ID: 211 int,EOF_sym()
+	Method ID: 212 int,error_sym()
+	Method ID: 213 void,user_init()
+	Method ID: 214 java_cup.runtime.Symbol,scan()
+	Method ID: 215 att.grappa.Parser,CONSTRUCTOR(java.io.Reader,java.io.PrintWriter,att.grappa.Graph)
+	Method ID: 216 att.grappa.Parser,CONSTRUCTOR(java.io.Reader,java.io.PrintWriter)
+	Method ID: 217 att.grappa.Parser,CONSTRUCTOR(java.io.Reader)
+	Method ID: 218 att.grappa.Parser,CONSTRUCTOR(java.io.InputStream,java.io.OutputStream,att.grappa.Graph)
+	Method ID: 219 att.grappa.Parser,CONSTRUCTOR(java.io.InputStream,java.io.OutputStream)
+	Method ID: 221 att.grappa.Lexer,getLexer()
+	Method ID: 222 java.io.PrintWriter,getErrorWriter()
+	Method ID: 223 int,getDebugLevel()
+	Method ID: 224 void,report_error(java.lang.String,java.lang.Object)
+	Method ID: 225 void,report_warning(java.lang.String,java.lang.Object)
+	Method ID: 226 void,debug_message(java.lang.String)
+	Method ID: 227 void,debug_message(int,java.lang.String)
+	Method ID: 228 java_cup.runtime.Symbol,debug_parse(int)
+	Method ID: 230 void,#ExtendsOrImplements#()
+	Method ID: 229 att.grappa.Graph,getGraph()
+		Invocation Code Examples (Templates): 
+			att_grappa_Parser11_MyGraphUtil.java	readGraph
+			att_grappa_Parser15_JTelosUtil.java	doParse
+			att_grappa_Parser16_VizGraph.java	visualizeLayout
+			att_grappa_Parser18_Graphe.java	Graphe
+			att_grappa_Parser19_Visualizer.java	generateGraphPanel
+			att_grappa_Parser2_GraphDisplay.java	displayGraph
+	Method ID: 220 att.grappa.Parser,CONSTRUCTOR(java.io.InputStream)
+		Invocation Code Examples (Templates): 
+			att_grappa_Parser18_Graphe.java	Graphe
+			att_grappa_Parser8_Graphe.java	Graphe
+Class: att.grappa.Symbols
+	Method ID: 93 void,#ExtendsOrImplements#()
+Class: att.grappa.Subgraph
+	Method ID: 132 att.grappa.Subgraph,CONSTRUCTOR(att.grappa.Subgraph,java.lang.String)
+	Method ID: 133 att.grappa.Subgraph,CONSTRUCTOR(att.grappa.Subgraph)
+	Method ID: 134 boolean,isSubgraph()
+	Method ID: 135 int,getType()
+	Method ID: 136 void,setName(java.lang.String)
+	Method ID: 137 boolean,isCluster()
+	Method ID: 138 boolean,isRoot()
+	Method ID: 139 att.grappa.Attribute,getNodeAttribute(java.lang.String)
+	Method ID: 140 java.lang.Object,getNodeAttributeValue(java.lang.String)
+	Method ID: 141 java.util.Enumeration,getNodeAttributeKeys()
+	Method ID: 142 java.util.Enumeration,getNodeAttributePairs()
+	Method ID: 143 java.lang.Object,setNodeAttribute(att.grappa.Attribute)
+	Method ID: 145 java.lang.Object,setEdgeAttribute(att.grappa.Attribute)
+	Method ID: 146 java.lang.Object,setEdgeAttribute(java.lang.String,java.lang.Object)
+	Method ID: 147 java.lang.Object,setAttribute(att.grappa.Attribute)
+	Method ID: 149 att.grappa.Attribute,getEdgeAttribute(java.lang.String)
+	Method ID: 150 java.lang.Object,getEdgeAttributeValue(java.lang.String)
+	Method ID: 151 java.util.Enumeration,getEdgeAttributeKeys()
+	Method ID: 152 java.util.Enumeration,getEdgeAttributePairs()
+	Method ID: 154 java.awt.geom.Rectangle2D,resetBoundingBox()
+	Method ID: 155 void,printSubgraph(java.io.PrintWriter)
+	Method ID: 156 int,attributeType(java.lang.String)
+	Method ID: 159 att.grappa.Subgraph,findSubgraphByName(java.lang.String)
+	Method ID: 160 att.grappa.Element,createElement(int,java.lang.Object[],att.grappa.Attribute[])
+	Method ID: 161 void,addNode(att.grappa.Node)
+	Method ID: 162 att.grappa.Node,removeNode(java.lang.String)
+	Method ID: 164 att.grappa.Edge,removeEdge(java.lang.String)
+	Method ID: 165 void,addSubgraph(att.grappa.Subgraph)
+	Method ID: 166 att.grappa.Subgraph,removeSubgraph(java.lang.String)
+	Method ID: 167 boolean,setShowSubgraphLabels(boolean)
+	Method ID: 168 boolean,setShowNodeLabels(boolean)
+	Method ID: 169 boolean,setShowEdgeLabels(boolean)
+	Method ID: 170 boolean,getShowSubgraphLabels()
+	Method ID: 171 boolean,getShowNodeLabels()
+	Method ID: 172 boolean,getShowEdgeLabels()
+	Method ID: 173 boolean,isLR()
+	Method ID: 174 void,addTypeTag(int,java.lang.String)
+	Method ID: 175 boolean,hasTypeTag(int,java.lang.String)
+	Method ID: 176 boolean,hasTypeTags(int)
+	Method ID: 177 void,removeTypeTags(int)
+	Method ID: 178 void,removeTypeTag(int,java.lang.String)
+	Method ID: 179 int,countOfLocalElements(int)
+	Method ID: 180 int,countOfElements(int)
+	Method ID: 181 void,removeEmptySubgraphs()
+	Method ID: 182 boolean,hasEmptySubgraphs()
+	Method ID: 183 void,clearPatchWork()
+	Method ID: 184 void,patchWork(java.awt.geom.Rectangle2D.Double,boolean,int)
+	Method ID: 185 double,preparePatchWork(int)
+	Method ID: 186 void,computePatchWork(java.awt.geom.Rectangle2D.Double,boolean)
+	Method ID: 187 int,compare(java.lang.Object,java.lang.Object)
+	Method ID: 188 boolean,equals(java.lang.Object)
+	Method ID: 192 att.grappa.GraphEnumeration,elements(int)
+	Method ID: 194 java.util.Vector,vectorOfElements(int)
+	Method ID: 195 void,#ExtendsOrImplements#()
+	Method ID: 153 java.awt.geom.Rectangle2D,getBoundingBox()
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph34_ShowWindow.java	doDemo
+			att_grappa_Graph35_JTelosUtil.java	backToOME
+			att_grappa_Graph4_GraphPanel.java	setGraph
+	Method ID: 190 java.util.Enumeration,edgeElements()
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph11_MyGraphUtil.java	hasEdge
+			att_grappa_Graph30_MyGraphUtil.java	hasEdge
+			att_grappa_Subgraph3_PerformanceAnalysisGUI.java	buildGraphMapping
+	Method ID: 189 java.util.Enumeration,nodeElements()
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph11_MyGraphUtil.java	readGraph
+			att_grappa_Graph30_MyGraphUtil.java	readGraph
+			att_grappa_Subgraph3_PerformanceAnalysisGUI.java	buildGraphMapping
+	Method ID: 157 att.grappa.Node,findNodeByName(java.lang.String)
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph34_ShowWindow.java	changeColorNode
+			att_grappa_Graph4_GraphPanel.java	selectNodeOrEdge
+	Method ID: 193 att.grappa.GraphEnumeration,elements()
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph35_JTelosUtil.java	update
+	Method ID: 191 java.util.Enumeration,subgraphElements()
+		Invocation Code Examples (Templates): 
+			att_grappa_Subgraph3_PerformanceAnalysisGUI.java	buildGraphMapping
+	Method ID: 163 void,addEdge(att.grappa.Edge)
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph46_Graph.java	drawGraph
+	Method ID: 158 att.grappa.Edge,findEdgeByName(java.lang.String)
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph4_GraphPanel.java	selectNodeOrEdge
+	Method ID: 148 java.lang.Object,setAttribute(java.lang.String,java.lang.Object)
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph39_SimpleGraph.java	buildGraph
+	Method ID: 144 java.lang.Object,setNodeAttribute(java.lang.String,java.lang.Object)
+		Invocation Code Examples (Templates): 
+			att_grappa_Graph19_LATLParseReader.java	read
+Class: att.grappa.GrappaSupportRects
+	Method ID: 478 java.lang.Object[],parseRecordInfo(att.grappa.Node)
+	Method ID: 479 void,#ExtendsOrImplements#()

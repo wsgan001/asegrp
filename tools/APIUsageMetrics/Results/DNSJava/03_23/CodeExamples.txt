@@ -1,0 +1,3069 @@
+Class: org.xbill.DNS.security.DSASignature
+	Method ID: 1550 byte[],fromDNS(byte[])
+	Method ID: 1551 byte[],toDNS(java.security.interfaces.DSAParams,byte[])
+	Method ID: 1552 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ZoneTransferException
+	Method ID: 1206 org.xbill.DNS.ZoneTransferException,CONSTRUCTOR()
+	Method ID: 1207 org.xbill.DNS.ZoneTransferException,CONSTRUCTOR(java.lang.String)
+	Method ID: 1208 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Flags
+	Method ID: 1293 java.lang.String,string(int)
+	Method ID: 1294 int,value(java.lang.String)
+	Method ID: 1295 boolean,isFlag(int)
+	Method ID: 1296 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SerialTest
+	Method ID: 442 void,test_compare_NegativeArg1()
+	Method ID: 443 void,test_compare_OOBArg1()
+	Method ID: 444 void,test_compare_NegativeArg2()
+	Method ID: 445 void,test_compare_OOBArg2()
+	Method ID: 446 void,test_compare_Arg1Greater()
+	Method ID: 447 void,test_compare_Arg2Greater()
+	Method ID: 448 void,test_compare_ArgsEqual()
+	Method ID: 449 void,test_compare_boundary()
+	Method ID: 450 void,test_increment_NegativeArg()
+	Method ID: 451 void,test_increment_OOBArg()
+	Method ID: 452 void,test_increment_reset()
+	Method ID: 453 void,test_increment_normal()
+	Method ID: 454 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.KEYRecord
+	Method ID: 1119 org.xbill.DNS.KEYRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,int,int,byte[])
+	Method ID: 1120 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.LOCRecord
+	Method ID: 678 org.xbill.DNS.LOCRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,double,double,double,double,double,double)
+	Method ID: 679 double,getLatitude()
+	Method ID: 680 double,getLongitude()
+	Method ID: 681 double,getAltitude()
+	Method ID: 682 double,getSize()
+	Method ID: 683 double,getHPrecision()
+	Method ID: 684 double,getVPrecision()
+	Method ID: 685 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SingleNameBase
+	Method ID: 790 org.xbill.DNS.SingleNameBase,CONSTRUCTOR()
+	Method ID: 791 org.xbill.DNS.SingleNameBase,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long)
+	Method ID: 792 org.xbill.DNS.SingleNameBase,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,org.xbill.DNS.Name,java.lang.String)
+	Method ID: 793 org.xbill.DNS.Name,getSingleName()
+	Method ID: 794 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.RecordTest.SubRecord
+	Method ID: 1095 org.xbill.DNS.RecordTest.SubRecord,CONSTRUCTOR()
+	Method ID: 1096 org.xbill.DNS.RecordTest.SubRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long)
+	Method ID: 1097 org.xbill.DNS.Record,getObject()
+	Method ID: 1098 void,rrFromWire(org.xbill.DNS.DNSInput)
+	Method ID: 1099 java.lang.String,rrToString()
+	Method ID: 1100 void,rdataFromString(org.xbill.DNS.Tokenizer,org.xbill.DNS.Name)
+	Method ID: 1101 void,rrToWire(org.xbill.DNS.DNSOutput,org.xbill.DNS.Compression,boolean)
+	Method ID: 1102 byte[],byteArrayFromString(java.lang.String)
+	Method ID: 1103 java.lang.String,byteArrayToString(byte[],boolean)
+	Method ID: 1104 java.lang.String,unknownToString(byte[])
+	Method ID: 1105 java.lang.Object,clone()
+	Method ID: 1106 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.InvalidDClassException
+	Method ID: 1107 org.xbill.DNS.InvalidDClassException,CONSTRUCTOR(int)
+	Method ID: 1108 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Zone.ZoneIterator
+	Method ID: 766 boolean,hasNext()
+	Method ID: 767 java.lang.Object,next()
+	Method ID: 768 void,remove()
+	Method ID: 769 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ReverseMap
+	Method ID: 770 org.xbill.DNS.Name,fromAddress(byte[])
+	Method ID: 773 org.xbill.DNS.Name,fromAddress(java.lang.String,int)
+	Method ID: 775 void,#ExtendsOrImplements#()
+	Method ID: 772 org.xbill.DNS.Name,fromAddress(java.net.InetAddress)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_ReverseMap2_DNSJavaResolver.java	doReverseLookup
+			org_xbill_DNS_ReverseMap3_AddrTools.java	doReverseLookup
+			org_xbill_DNS_ReverseMap7_DNSServer.java	getHostName
+	Method ID: 774 org.xbill.DNS.Name,fromAddress(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_ReverseMap6_DNSLinkedList.java	DoreverseDns
+	Method ID: 771 org.xbill.DNS.Name,fromAddress(int[])
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_ReverseMap0_DNSJavaInetAddressImpl.java	getHostByAddr
+Class: org.xbill.DNS.KEYBaseTest.TestClass
+	Method ID: 349 org.xbill.DNS.KEYBaseTest.TestClass,CONSTRUCTOR()
+	Method ID: 350 org.xbill.DNS.KEYBaseTest.TestClass,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,int,int,int,byte[])
+	Method ID: 351 org.xbill.DNS.Record,getObject()
+	Method ID: 352 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Message
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_Message22_ErrorMessages.java	makeFormatErrorMessage
+		org_xbill_DNS_Message26_Server.java	errorMessage
+		org_xbill_DNS_Message36_CachingDNSMetadataLocator.java	getNAPTRs
+		org_xbill_DNS_Message40_ErrorMessages.java	makeFormatErrorMessage
+		org_xbill_DNS_Message46_UDPConnection.java	doRead
+		org_xbill_DNS_Message50_UDPConnection.java	doRead
+		org_xbill_DNS_Message57_DNScatServer.java	serveUDP
+		org_xbill_DNS_Message6_DNSServer.java	doAXFR
+	Extension Code Examples (Hooks): 
+		org_xbill_DNS_Message23_Response.java	NA
+		org_xbill_DNS_Message39_Response.java	NA
+	Method ID: 372 org.xbill.DNS.Message,newUpdate(org.xbill.DNS.Name)
+	Method ID: 379 boolean,findRecord(org.xbill.DNS.Record,int)
+	Method ID: 380 boolean,findRecord(org.xbill.DNS.Record)
+	Method ID: 382 boolean,findRRset(org.xbill.DNS.Name,int)
+	Method ID: 385 boolean,isSigned()
+	Method ID: 386 boolean,isVerified()
+	Method ID: 390 org.xbill.DNS.RRset[],getSectionRRsets(int)
+	Method ID: 393 void,setTSIG(org.xbill.DNS.TSIG,int,org.xbill.DNS.TSIGRecord)
+	Method ID: 394 int,numBytes()
+	Method ID: 395 java.lang.String,sectionToString(int)
+	Method ID: 375 org.xbill.DNS.Header,getHeader()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message18_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Message19_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Message20_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Message22_ErrorMessages.java	makeErrorMessage
+			org_xbill_DNS_Message24_SmartTransport.java	rawDNSLookup
+			org_xbill_DNS_Message26_Server.java	errorMessage
+			org_xbill_DNS_Message2_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Message34_DNSJavaInetAddressImpl.java	doQuery
+			org_xbill_DNS_Message37_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Message39_Response.java	truncate
+			org_xbill_DNS_Message42_Transaction.java	dataAvailable
+			org_xbill_DNS_Message56_DNScatClient.java	transmitRequest
+			org_xbill_DNS_Message6_DNSServer.java	addAnswer
+	Method ID: 371 org.xbill.DNS.Message,newQuery(org.xbill.DNS.Record)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message0_DNSJavaInetAddressImpl.java	getHostByAddr
+			org_xbill_DNS_Message17_DNSCollector.java	init
+			org_xbill_DNS_Message18_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Message19_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Message20_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Message21_DNSQueryThread.java	lookup
+			org_xbill_DNS_Message24_SmartTransport.java	rawDNSLookup
+			org_xbill_DNS_Message28_DNSQueryThread.java	lookup
+			org_xbill_DNS_Message2_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Message37_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Message48_PortTest.java	getQuery
+			org_xbill_DNS_Message49_DNSLinkedList.java	DoreverseDns
+			org_xbill_DNS_Message56_DNScatClient.java	transmitRequest
+	Method ID: 391 byte[],toWire()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message23_Response.java	wireLength
+			org_xbill_DNS_Message26_Server.java	errorMessage
+			org_xbill_DNS_Message39_Response.java	wireLength
+			org_xbill_DNS_Message46_UDPConnection.java	doRead
+			org_xbill_DNS_Message50_UDPConnection.java	doRead
+			org_xbill_DNS_Message57_DNScatServer.java	buildErrorMessage
+			org_xbill_DNS_Message6_DNSServer.java	doAXFR
+	Method ID: 388 int,getRcode()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message12_DigTest.java	main
+			org_xbill_DNS_Message21_DNSQueryThread.java	lookup
+			org_xbill_DNS_Message27_DigTest.java	main
+			org_xbill_DNS_Message35_DNSBindingIPImpl.java	sendUpdate
+			org_xbill_DNS_Message38_DNSSDResourcePublisher.java	registerResource
+			org_xbill_DNS_Message9_DigTest.java	main
+	Method ID: 370 org.xbill.DNS.Message,CONSTRUCTOR()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message22_ErrorMessages.java	makeFormatErrorMessage
+			org_xbill_DNS_Message36_CachingDNSMetadataLocator.java	getNAPTRs
+			org_xbill_DNS_Message40_ErrorMessages.java	makeFormatErrorMessage
+			org_xbill_DNS_Message57_DNScatServer.java	buildErrorMessage
+			org_xbill_DNS_Message6_DNSServer.java	buildErrorMessage
+	Method ID: 396 java.lang.String,toString()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message12_DigTest.java	main
+			org_xbill_DNS_Message27_DigTest.java	main
+			org_xbill_DNS_Message38_DNSSDResourcePublisher.java	registerResource
+			org_xbill_DNS_Message9_DigTest.java	main
+	Method ID: 378 void,removeAllRecords(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message22_ErrorMessages.java	makeFormatErrorMessage
+			org_xbill_DNS_Message40_ErrorMessages.java	makeFormatErrorMessage
+			org_xbill_DNS_Message57_DNScatServer.java	buildErrorMessage
+			org_xbill_DNS_Message6_DNSServer.java	buildErrorMessage
+	Method ID: 374 void,setHeader(org.xbill.DNS.Header)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message22_ErrorMessages.java	makeFormatErrorMessage
+			org_xbill_DNS_Message40_ErrorMessages.java	makeFormatErrorMessage
+			org_xbill_DNS_Message57_DNScatServer.java	buildErrorMessage
+			org_xbill_DNS_Message6_DNSServer.java	buildErrorMessage
+	Method ID: 389 org.xbill.DNS.Record[],getSectionArray(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message23_Response.java	truncateSection
+			org_xbill_DNS_Message39_Response.java	truncateSection
+			org_xbill_DNS_Message48_PortTest.java	getPortFromResponse
+			org_xbill_DNS_Message6_DNSServer.java	addAdditional2
+	Method ID: 373 org.xbill.DNS.Message,CONSTRUCTOR(byte[])
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message46_UDPConnection.java	doRead
+			org_xbill_DNS_Message50_UDPConnection.java	doRead
+			org_xbill_DNS_Message57_DNScatServer.java	serveUDP
+			org_xbill_DNS_Message6_DNSServer.java	serveUDP
+	Method ID: 383 org.xbill.DNS.Record,getQuestion()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message26_Server.java	versionResponse
+			org_xbill_DNS_Message56_DNScatClient.java	transmitRequest
+			org_xbill_DNS_Message6_DNSServer.java	generateReply
+	Method ID: 392 byte[],toWire(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message26_Server.java	processRequest
+			org_xbill_DNS_Message57_DNScatServer.java	generateReply
+			org_xbill_DNS_Message6_DNSServer.java	generateReply
+	Method ID: 369 org.xbill.DNS.Message,CONSTRUCTOR(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message26_Server.java	errorMessage
+			org_xbill_DNS_Message57_DNScatServer.java	generateReply
+			org_xbill_DNS_Message6_DNSServer.java	doAXFR
+	Method ID: 387 org.xbill.DNS.OPTRecord,getOPT()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message26_Server.java	getMaximumPayloadSize
+			org_xbill_DNS_Message57_DNScatServer.java	generateReply
+			org_xbill_DNS_Message6_DNSServer.java	generateReply
+	Method ID: 377 boolean,removeRecord(org.xbill.DNS.Record,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message23_Response.java	truncateSection
+			org_xbill_DNS_Message39_Response.java	truncateSection
+	Method ID: 398 void,#ExtendsOrImplements#()
+	Method ID: 384 org.xbill.DNS.TSIGRecord,getTSIG()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message6_DNSServer.java	doAXFR
+	Method ID: 376 void,addRecord(org.xbill.DNS.Record,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message6_DNSServer.java	addRRset
+	Method ID: 397 java.lang.Object,clone()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message26_Server.java	versionResponse
+	Method ID: 381 boolean,findRRset(org.xbill.DNS.Name,int,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Message6_DNSServer.java	addRRset
+Class: org.xbill.DNS.ExtendedResolver.Resolution
+	Method ID: 1341 org.xbill.DNS.ExtendedResolver.Resolution,CONSTRUCTOR(org.xbill.DNS.ExtendedResolver,org.xbill.DNS.Message)
+	Method ID: 1342 void,send(int)
+	Method ID: 1343 org.xbill.DNS.Message,start()
+	Method ID: 1344 void,startAsync(org.xbill.DNS.ResolverListener)
+	Method ID: 1345 void,receiveMessage(java.lang.Object,org.xbill.DNS.Message)
+	Method ID: 1346 void,handleException(java.lang.Object,java.lang.Exception)
+	Method ID: 1347 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.GPOSRecordTest.Test_Ctor_6arg_doubles
+	Method ID: 300 void,setUp()
+	Method ID: 301 void,test_basic()
+	Method ID: 302 void,test_toosmall_longitude()
+	Method ID: 303 void,test_toobig_longitude()
+	Method ID: 304 void,test_toosmall_latitude()
+	Method ID: 305 void,test_toobig_latitude()
+	Method ID: 306 void,test_invalid_string()
+	Method ID: 307 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.EmptyRecord
+	Method ID: 698 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SetResponseTest
+	Method ID: 1529 void,test_ctor_1arg()
+	Method ID: 1530 void,test_ctor_1arg_toosmall()
+	Method ID: 1531 void,test_ctor_1arg_toobig()
+	Method ID: 1532 void,test_ctor_2arg()
+	Method ID: 1533 void,test_ctor_2arg_toosmall()
+	Method ID: 1534 void,test_ctor_2arg_toobig()
+	Method ID: 1535 void,test_ofType_basic()
+	Method ID: 1536 void,test_ofType_singleton()
+	Method ID: 1537 void,test_ofType_toosmall()
+	Method ID: 1538 void,test_ofType_toobig()
+	Method ID: 1539 void,test_addRRset()
+	Method ID: 1540 void,test_addRRset_multiple()
+	Method ID: 1541 void,test_answers_nonSUCCESSFUL()
+	Method ID: 1542 void,test_getCNAME()
+	Method ID: 1543 void,test_getDNAME()
+	Method ID: 1544 void,test_toString()
+	Method ID: 1545 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NSRecord
+	Method ID: 1450 org.xbill.DNS.NSRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name)
+	Method ID: 1452 org.xbill.DNS.Name,getAdditionalName()
+	Method ID: 1453 void,#ExtendsOrImplements#()
+	Method ID: 1451 org.xbill.DNS.Name,getTarget()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_NSRecord10_DelegationDNSCache.java	findDelegation
+			org_xbill_DNS_NSRecord1_DelegationDNSCache.java	findDelegation
+			org_xbill_DNS_NSRecord5_CacheUtils.java	isRelevantGlue
+Class: org.xbill.DNS.MXRecordTest
+	Method ID: 1227 void,test_getObject()
+	Method ID: 1228 void,test_ctor_5arg()
+	Method ID: 1229 void,test_rrToWire()
+	Method ID: 1230 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SRVRecord
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_SRVRecord12_DNSRecordImpl.java	DNSRecordSRV
+		org_xbill_DNS_SRVRecord15_DNSSDResourcePublisher.java	registerResource
+		org_xbill_DNS_SRVRecord24_DNSRecordImpl.java	DNSRecordSRV
+		org_xbill_DNS_SRVRecord30_DNSSDResourcePublisher.java	registerResource
+		org_xbill_DNS_SRVRecord9_DNSRecordImpl.java	DNSRecordSRV
+	Method ID: 671 org.xbill.DNS.SRVRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,int,int,org.xbill.DNS.Name)
+	Method ID: 676 org.xbill.DNS.Name,getAdditionalName()
+	Method ID: 677 void,#ExtendsOrImplements#()
+	Method ID: 675 org.xbill.DNS.Name,getTarget()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SRVRecord0_IrisUri.java	resolve
+			org_xbill_DNS_SRVRecord10_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_SRVRecord13_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_SRVRecord17_ServerPool.java	getServers
+			org_xbill_DNS_SRVRecord18_IrisUri.java	resolve
+			org_xbill_DNS_SRVRecord28_Connection.java	resolve
+			org_xbill_DNS_SRVRecord29_IrisUri.java	directResolution
+	Method ID: 674 int,getPort()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SRVRecord0_IrisUri.java	resolve
+			org_xbill_DNS_SRVRecord10_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_SRVRecord13_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_SRVRecord17_ServerPool.java	getServers
+			org_xbill_DNS_SRVRecord18_IrisUri.java	resolve
+			org_xbill_DNS_SRVRecord28_Connection.java	resolve
+			org_xbill_DNS_SRVRecord29_IrisUri.java	directResolution
+	Method ID: 672 int,getPriority()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SRVRecord0_IrisUri.java	resolve
+			org_xbill_DNS_SRVRecord10_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_SRVRecord13_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_SRVRecord16_DNSSRVComparator.java	compare
+			org_xbill_DNS_SRVRecord18_IrisUri.java	resolve
+			org_xbill_DNS_SRVRecord29_IrisUri.java	compare
+	Method ID: 673 int,getWeight()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SRVRecord0_IrisUri.java	resolve
+			org_xbill_DNS_SRVRecord10_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_SRVRecord13_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_SRVRecord16_DNSSRVComparator.java	compare
+			org_xbill_DNS_SRVRecord18_IrisUri.java	resolve
+Class: org.xbill.DNS.DNAMERecordTest
+	Method ID: 1401 void,test_ctor_0arg()
+	Method ID: 1402 void,test_ctor_4arg()
+	Method ID: 1403 void,test_getObject()
+	Method ID: 1404 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.CNAMERecordTest
+	Method ID: 1525 void,test_ctor_0arg()
+	Method ID: 1526 void,test_ctor_4arg()
+	Method ID: 1527 void,test_getObject()
+	Method ID: 1528 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNSKEYRecord.Protocol
+	Method ID: 433 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.WKSRecord.Service
+	Method ID: 235 java.lang.String,string(int)
+	Method ID: 236 int,value(java.lang.String)
+	Method ID: 237 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.KEYRecordTest
+	Method ID: 621 void,test_ctor_0arg()
+	Method ID: 622 void,test_getObject()
+	Method ID: 623 void,test_ctor_7arg()
+	Method ID: 624 void,test_Protocol_string()
+	Method ID: 625 void,test_Protocol_value()
+	Method ID: 626 void,test_Flags_value()
+	Method ID: 627 void,test_rdataFromString()
+	Method ID: 628 void,#ExtendsOrImplements#()
+Class: update
+	Method ID: 21 org.xbill.DNS.Message,newMessage()
+	Method ID: 22 update,CONSTRUCTOR(java.io.InputStream)
+	Method ID: 23 void,main(java.lang.String)
+	Method ID: 24 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.FormattedTimeTest
+	Method ID: 1360 void,test_format()
+	Method ID: 1361 void,test_parse()
+	Method ID: 1362 void,test_parse_invalid()
+	Method ID: 1363 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SOARecordTest.Test_rdataFromString
+	Method ID: 161 void,setUp()
+	Method ID: 162 void,test_valid()
+	Method ID: 163 void,test_relative_name()
+	Method ID: 164 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SSHFPRecord.Algorithm
+	Method ID: 573 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SOARecord
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_SOARecord2_DNScatServer.java	DNScatServer
+	Method ID: 815 org.xbill.DNS.SOARecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name,org.xbill.DNS.Name,long,long,long,long,long)
+	Method ID: 816 org.xbill.DNS.Name,getHost()
+	Method ID: 817 org.xbill.DNS.Name,getAdmin()
+	Method ID: 818 long,getSerial()
+	Method ID: 819 long,getRefresh()
+	Method ID: 820 long,getRetry()
+	Method ID: 821 long,getExpire()
+	Method ID: 822 long,getMinimum()
+	Method ID: 823 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.RelativeNameException
+	Method ID: 1126 org.xbill.DNS.RelativeNameException,CONSTRUCTOR(org.xbill.DNS.Name)
+	Method ID: 1127 org.xbill.DNS.RelativeNameException,CONSTRUCTOR(java.lang.String)
+	Method ID: 1128 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NXTRecord
+	Method ID: 869 org.xbill.DNS.NXTRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name,java.util.BitSet)
+	Method ID: 870 org.xbill.DNS.Name,getNext()
+	Method ID: 871 java.util.BitSet,getBitmap()
+	Method ID: 872 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.A6Record
+	Method ID: 82 org.xbill.DNS.A6Record,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,java.net.InetAddress,org.xbill.DNS.Name)
+	Method ID: 83 int,getPrefixBits()
+	Method ID: 85 org.xbill.DNS.Name,getPrefix()
+	Method ID: 86 void,#ExtendsOrImplements#()
+	Method ID: 84 java.net.InetAddress,getSuffix()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_A6Record0_DNSJavaInetAddressImpl.java	lookupAllHostAddr
+Class: org.xbill.DNS.TSIG
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_TSIG0_DNSServer.java	addTSIG
+		org_xbill_DNS_TSIG1_DNSSDResourcePublisher.java	getResolver
+		org_xbill_DNS_TSIG5_DNSSDResourcePublisher.java	getResolver
+	Method ID: 1297 org.xbill.DNS.TSIG,CONSTRUCTOR(org.xbill.DNS.Name,org.xbill.DNS.Name,byte[])
+	Method ID: 1298 org.xbill.DNS.TSIG,CONSTRUCTOR(org.xbill.DNS.Name,byte[])
+	Method ID: 1301 org.xbill.DNS.TSIG,CONSTRUCTOR(java.lang.String,java.lang.String)
+	Method ID: 1302 org.xbill.DNS.TSIG,fromString(java.lang.String)
+	Method ID: 1303 org.xbill.DNS.TSIGRecord,generate(org.xbill.DNS.Message,byte[],int,org.xbill.DNS.TSIGRecord)
+	Method ID: 1304 void,apply(org.xbill.DNS.Message,int,org.xbill.DNS.TSIGRecord)
+	Method ID: 1305 void,apply(org.xbill.DNS.Message,org.xbill.DNS.TSIGRecord)
+	Method ID: 1307 byte,verify(org.xbill.DNS.Message,byte[],int,org.xbill.DNS.TSIGRecord)
+	Method ID: 1308 int,verify(org.xbill.DNS.Message,byte[],org.xbill.DNS.TSIGRecord)
+	Method ID: 1309 int,recordLength()
+	Method ID: 1310 void,#ExtendsOrImplements#()
+	Method ID: 1300 org.xbill.DNS.TSIG,CONSTRUCTOR(java.lang.String,java.lang.String,java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_TSIG0_DNSServer.java	addTSIG
+			org_xbill_DNS_TSIG1_DNSSDResourcePublisher.java	getResolver
+	Method ID: 1306 void,applyStream(org.xbill.DNS.Message,org.xbill.DNS.TSIGRecord,boolean)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_TSIG0_DNSServer.java	doAXFR
+	Method ID: 1299 org.xbill.DNS.TSIG,CONSTRUCTOR(org.xbill.DNS.Name,java.lang.String,java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_TSIG5_DNSSDResourcePublisher.java	getResolver
+Class: org.xbill.DNS.MDRecordTest
+	Method ID: 1209 void,test_ctor_0arg()
+	Method ID: 1210 void,test_ctor_4arg()
+	Method ID: 1211 void,test_getObject()
+	Method ID: 1212 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MINFORecord
+	Method ID: 61 org.xbill.DNS.MINFORecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name,org.xbill.DNS.Name)
+	Method ID: 62 org.xbill.DNS.Name,getResponsibleAddress()
+	Method ID: 63 org.xbill.DNS.Name,getErrorAddress()
+	Method ID: 64 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Cache.NegativeElement
+	Method ID: 560 org.xbill.DNS.Cache.NegativeElement,CONSTRUCTOR(org.xbill.DNS.Name,int,org.xbill.DNS.SOARecord,int,long)
+	Method ID: 561 int,getType()
+	Method ID: 562 boolean,expired()
+	Method ID: 563 int,compareCredibility(int)
+	Method ID: 564 java.lang.String,toString()
+	Method ID: 565 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ResolverConfig
+	Method ID: 1389 org.xbill.DNS.ResolverConfig,CONSTRUCTOR()
+	Method ID: 1390 java.lang.String[],servers()
+	Method ID: 1391 java.lang.String,server()
+	Method ID: 1392 org.xbill.DNS.Name[],searchPath()
+	Method ID: 1394 void,refresh()
+	Method ID: 1395 void,#ExtendsOrImplements#()
+	Method ID: 1393 org.xbill.DNS.ResolverConfig,getCurrentConfig()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_ResolverConfig0_DNSServer.java	configure
+			org_xbill_DNS_ResolverConfig1_DNSCollector.java	getResolver
+			org_xbill_DNS_ResolverConfig2_DNSServer.java	configure
+			org_xbill_DNS_ResolverConfig3_FetchDNS.java	storeDNSRecord
+			org_xbill_DNS_ResolverConfig4_FetchDNS.java	storeDNSRecord
+			org_xbill_DNS_ResolverConfig5_DNSServer.java	configure
+			org_xbill_DNS_ResolverConfig7_DNSCollector.java	getResolver
+Class: org.xbill.DNS.DSRecordTest
+	Method ID: 724 void,test_ctor_0arg()
+	Method ID: 725 void,test_getObject()
+	Method ID: 726 void,test_rrFromWire()
+	Method ID: 727 void,test_rdataFromString()
+	Method ID: 728 void,test_rrToString()
+	Method ID: 729 void,test_rrToWire()
+	Method ID: 730 junit.framework.Test,suite()
+	Method ID: 731 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ReverseMapTest
+	Method ID: 1037 void,test_fromAddress_ipv4()
+	Method ID: 1038 void,test_fromAddress_ipv6()
+	Method ID: 1039 void,test_fromAddress_invalid()
+	Method ID: 1040 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.RRSIGRecord
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_RRSIGRecord11_SignUtils.java	generatePreRRSIG
+		org_xbill_DNS_RRSIGRecord2_SignUtils.java	generatePreRRSIG
+		org_xbill_DNS_RRSIGRecord4_SignUtils.java	generatePreRRSIG
+	Method ID: 119 org.xbill.DNS.RRSIGRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,int,long,java.util.Date,java.util.Date,int,org.xbill.DNS.Name,byte[])
+	Method ID: 120 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.KXRecord
+	Method ID: 845 org.xbill.DNS.KXRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,org.xbill.DNS.Name)
+	Method ID: 846 org.xbill.DNS.Name,getTarget()
+	Method ID: 847 int,getPreference()
+	Method ID: 848 org.xbill.DNS.Name,getAdditionalName()
+	Method ID: 849 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NameTest.Test_DNSInput_init
+	Method ID: 988 void,test_basic()
+	Method ID: 989 void,test_incomplete()
+	Method ID: 990 void,test_root()
+	Method ID: 991 void,test_invalid_length()
+	Method ID: 992 void,test_max_label_length()
+	Method ID: 993 void,test_max_name()
+	Method ID: 994 void,test_toolong_name()
+	Method ID: 995 void,test_max_labels()
+	Method ID: 996 void,test_toomany_labels()
+	Method ID: 997 void,test_basic_compression()
+	Method ID: 998 void,test_two_pointer_compression()
+	Method ID: 999 void,test_two_part_compression()
+	Method ID: 1000 void,test_long_jump_compression()
+	Method ID: 1001 void,test_bad_compression()
+	Method ID: 1002 void,test_basic_compression_state_restore()
+	Method ID: 1003 void,test_two_part_compression_state_restore()
+	Method ID: 1004 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.utils.base64Test
+	Method ID: 1617 org.xbill.DNS.utils.base64Test,CONSTRUCTOR(java.lang.String)
+	Method ID: 1618 void,test_toString_empty()
+	Method ID: 1619 void,test_toString_basic1()
+	Method ID: 1620 void,test_toString_basic2()
+	Method ID: 1621 void,test_toString_basic3()
+	Method ID: 1622 void,test_toString_basic4()
+	Method ID: 1623 void,test_toString_basic5()
+	Method ID: 1624 void,test_toString_basic6()
+	Method ID: 1625 void,test_formatString_empty1()
+	Method ID: 1626 void,test_formatString_shorter()
+	Method ID: 1627 void,test_formatString_sameLength()
+	Method ID: 1628 void,test_formatString_oneBreak()
+	Method ID: 1629 void,test_formatString_twoBreaks1()
+	Method ID: 1630 void,test_formatString_twoBreaks2()
+	Method ID: 1631 void,test_formatString_shorterWithPrefix()
+	Method ID: 1632 void,test_formatString_sameLengthWithPrefix()
+	Method ID: 1633 void,test_formatString_oneBreakWithPrefix()
+	Method ID: 1634 void,test_formatString_twoBreaks1WithPrefix()
+	Method ID: 1635 void,test_formatString_twoBreaks2WithPrefix()
+	Method ID: 1636 void,test_formatString_shorterWithPrefixAndClose()
+	Method ID: 1637 void,test_formatString_sameLengthWithPrefixAndClose()
+	Method ID: 1638 void,test_formatString_oneBreakWithPrefixAndClose()
+	Method ID: 1639 void,test_formatString_twoBreaks1WithPrefixAndClose()
+	Method ID: 1640 void,test_formatString_twoBreaks2WithPrefixAndClose()
+	Method ID: 1641 void,test_fromString_empty1()
+	Method ID: 1642 void,test_fromString_basic1()
+	Method ID: 1643 void,test_fromString_basic2()
+	Method ID: 1644 void,test_fromString_basic3()
+	Method ID: 1645 void,test_fromString_basic4()
+	Method ID: 1646 void,test_fromString_basic5()
+	Method ID: 1647 void,test_fromString_basic6()
+	Method ID: 1648 void,test_fromString_invalid1()
+	Method ID: 1649 void,test_fromString_invalid2()
+	Method ID: 1650 void,test_fromString_invalid3()
+	Method ID: 1651 void,test_fromString_invalid4()
+	Method ID: 1652 void,test_fromString_invalid5()
+	Method ID: 1653 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.InvalidTypeException
+	Method ID: 28 org.xbill.DNS.InvalidTypeException,CONSTRUCTOR(int)
+	Method ID: 29 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ISDNRecord
+	Method ID: 798 org.xbill.DNS.ISDNRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.lang.String,java.lang.String)
+	Method ID: 799 java.lang.String,getAddress()
+	Method ID: 800 java.lang.String,getSubAddress()
+	Method ID: 801 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DClass.DClassMnemonic
+	Method ID: 1048 org.xbill.DNS.DClass.DClassMnemonic,CONSTRUCTOR()
+	Method ID: 1049 void,check(int)
+	Method ID: 1050 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.A6RecordTest
+	Method ID: 110 void,setUp()
+	Method ID: 111 void,test_ctor_0arg()
+	Method ID: 112 void,test_getObject()
+	Method ID: 113 void,test_ctor_6arg()
+	Method ID: 114 void,test_rrFromWire()
+	Method ID: 115 void,test_rdataFromString()
+	Method ID: 116 void,test_rrToString()
+	Method ID: 117 void,test_rrToWire()
+	Method ID: 118 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNSSEC.Algorithm
+	Method ID: 1054 java.lang.String,string(int)
+	Method ID: 1055 int,value(java.lang.String)
+	Method ID: 1056 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Cache.CacheMap
+	Method ID: 566 boolean,removeEldestEntry(java.util.Map.Entry)
+	Method ID: 567 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NSAPRecord
+	Method ID: 1405 org.xbill.DNS.NSAPRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.lang.String)
+	Method ID: 1406 java.lang.String,getAddress()
+	Method ID: 1407 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.APLRecord.Element
+	Method ID: 1283 org.xbill.DNS.APLRecord.Element,CONSTRUCTOR(boolean,java.net.InetAddress,int)
+	Method ID: 1284 java.lang.String,toString()
+	Method ID: 1285 boolean,equals(java.lang.Object)
+	Method ID: 1286 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.X25Record
+	Method ID: 1277 org.xbill.DNS.X25Record,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.lang.String)
+	Method ID: 1278 java.lang.String,getAddress()
+	Method ID: 1279 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Type.TypeMnemonic
+	Method ID: 719 org.xbill.DNS.Type.TypeMnemonic,CONSTRUCTOR()
+	Method ID: 720 void,add(int,java.lang.String,org.xbill.DNS.Record)
+	Method ID: 721 void,check(int)
+	Method ID: 722 org.xbill.DNS.Record,getProto(int)
+	Method ID: 723 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ExtendedResolver
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_ExtendedResolver0_DNSJavaInetAddressImpl.java	getHostByAddr
+		org_xbill_DNS_ExtendedResolver2_DNSServer.java	initialize
+		org_xbill_DNS_ExtendedResolver5_DNSServer.java	initialize
+		org_xbill_DNS_ExtendedResolver8_DNSServer.java	initialize
+		org_xbill_DNS_ExtendedResolver9_DNSServer.java	initialize
+	Method ID: 1322 org.xbill.DNS.ExtendedResolver,CONSTRUCTOR(java.lang.String[])
+	Method ID: 1323 org.xbill.DNS.ExtendedResolver,CONSTRUCTOR(org.xbill.DNS.Resolver[])
+	Method ID: 1324 void,setPort(int)
+	Method ID: 1325 void,setTCP(boolean)
+	Method ID: 1326 void,setIgnoreTruncation(boolean)
+	Method ID: 1327 void,setEDNS(int)
+	Method ID: 1328 void,setEDNS(int,int,int,java.util.List)
+	Method ID: 1329 void,setTSIGKey(org.xbill.DNS.TSIG)
+	Method ID: 1330 void,setTimeout(int,int)
+	Method ID: 1331 void,setTimeout(int)
+	Method ID: 1333 java.lang.Object,sendAsync(org.xbill.DNS.Message,org.xbill.DNS.ResolverListener)
+	Method ID: 1334 org.xbill.DNS.Resolver,getResolver(int)
+	Method ID: 1335 org.xbill.DNS.Resolver[],getResolvers()
+	Method ID: 1336 void,addResolver(org.xbill.DNS.Resolver)
+	Method ID: 1337 void,deleteResolver(org.xbill.DNS.Resolver)
+	Method ID: 1338 void,setLoadBalance(boolean)
+	Method ID: 1339 void,setRetries(int)
+	Method ID: 1340 void,#ExtendsOrImplements#()
+	Method ID: 1332 org.xbill.DNS.Message,send(org.xbill.DNS.Message)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_ExtendedResolver0_DNSJavaInetAddressImpl.java	getHostByAddr
+			org_xbill_DNS_ExtendedResolver2_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_ExtendedResolver5_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_ExtendedResolver8_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_ExtendedResolver9_DNSServer.java	rawDNSLookup
+	Method ID: 1321 org.xbill.DNS.ExtendedResolver,CONSTRUCTOR()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_ExtendedResolver0_DNSJavaInetAddressImpl.java	getHostByAddr
+Class: org.xbill.DNS.tests.primary
+	Method ID: 1608 void,main(java.lang.String[])
+	Method ID: 1609 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Type
+	Method ID: 715 int,value(java.lang.String,boolean)
+	Method ID: 718 void,#ExtendsOrImplements#()
+	Method ID: 714 java.lang.String,string(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Type15_DelegationDNSCache.java	toString
+			org_xbill_DNS_Type34_TypeMap.java	toString
+			org_xbill_DNS_Type37_DNSQueryThread.java	queryDns
+			org_xbill_DNS_Type46_DelegationDNSCache.java	toString
+			org_xbill_DNS_Type72_DelegationDNSCache.java	toString
+			org_xbill_DNS_Type78_TypeMap.java	toString
+	Method ID: 716 int,value(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Type18_DigTest.java	parseCommandLine
+			org_xbill_DNS_Type26_DigTest.java	parseCommandLine
+			org_xbill_DNS_Type32_DNSCollector.java	init
+	Method ID: 717 boolean,isRR(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Type14_DNSServer.java	generateReply
+			org_xbill_DNS_Type70_DNSServer.java	generateReply
+Class: org.xbill.DNS.APLRecord
+	Method ID: 1280 org.xbill.DNS.APLRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.util.List)
+	Method ID: 1281 java.util.List,getElements()
+	Method ID: 1282 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Generator
+	Method ID: 1519 boolean,supportedType(int)
+	Method ID: 1520 org.xbill.DNS.Generator,CONSTRUCTOR(long,long,long,java.lang.String,int,int,long,java.lang.String,org.xbill.DNS.Name)
+	Method ID: 1521 org.xbill.DNS.Record,nextRecord()
+	Method ID: 1522 org.xbill.DNS.Record[],expand()
+	Method ID: 1523 java.lang.String,toString()
+	Method ID: 1524 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NameTest.Test_equals
+	Method ID: 1021 void,test_same()
+	Method ID: 1022 void,test_null()
+	Method ID: 1023 void,test_notName()
+	Method ID: 1024 void,test_abs()
+	Method ID: 1025 void,test_rel()
+	Method ID: 1026 void,test_mixed()
+	Method ID: 1027 void,test_weird()
+	Method ID: 1028 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DClass
+	Method ID: 1047 void,#ExtendsOrImplements#()
+	Method ID: 1045 java.lang.String,string(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DClass15_DelegationDNSCache.java	toString
+			org_xbill_DNS_DClass23_IterativeResolver.java	primeRoot
+			org_xbill_DNS_DClass36_DelegationDNSCache.java	toString
+			org_xbill_DNS_DClass63_DelegationDNSCache.java	toString
+	Method ID: 1046 int,value(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DClass17_DigTest.java	parseCommandLine
+			org_xbill_DNS_DClass22_DigTest.java	parseCommandLine
+			org_xbill_DNS_DClass39_DigTest.java	parseCommandLine
+Class: org.xbill.DNS.KEYRecord.Flags
+	Method ID: 1124 int,value(java.lang.String)
+	Method ID: 1125 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNSKEYRecord.Flags
+	Method ID: 434 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.KEYRecord.Protocol
+	Method ID: 1121 java.lang.String,string(int)
+	Method ID: 1122 int,value(java.lang.String)
+	Method ID: 1123 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.CNAMERecord
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_CNAMERecord21_DNScatServer.java	generateReply
+		org_xbill_DNS_CNAMERecord4_DNSServer.java	addAnswer
+	Method ID: 1273 org.xbill.DNS.CNAMERecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name)
+	Method ID: 1276 void,#ExtendsOrImplements#()
+	Method ID: 1274 org.xbill.DNS.Name,getTarget()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_CNAMERecord10_IterativeResolver.java	handleCNAMEResponse
+			org_xbill_DNS_CNAMERecord16_DNSServer.java	findMXRecords
+			org_xbill_DNS_CNAMERecord18_DNSJavaInetAddressImpl.java	doQuery
+			org_xbill_DNS_CNAMERecord3_DNSServer.java	findMXRecords
+			org_xbill_DNS_CNAMERecord4_DNSServer.java	addAnswer
+			org_xbill_DNS_CNAMERecord5_ResponseType.java	typeCacheResponse
+	Method ID: 1275 org.xbill.DNS.Name,getAlias()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_CNAMERecord19_DNSLookup.java	main
+			org_xbill_DNS_CNAMERecord20_DNScatClient.java	transmitRequest
+Class: org.xbill.DNS.NameTest.Test_String_init
+	Method ID: 952 void,setUp()
+	Method ID: 953 void,test_ctor_empty()
+	Method ID: 954 void,test_ctor_at_null_origin()
+	Method ID: 955 void,test_ctor_at_abs_origin()
+	Method ID: 956 void,test_ctor_at_rel_origin()
+	Method ID: 957 void,test_ctor_dot()
+	Method ID: 958 void,test_ctor_wildcard()
+	Method ID: 959 void,test_ctor_abs()
+	Method ID: 960 void,test_ctor_rel()
+	Method ID: 961 void,test_ctor_7label()
+	Method ID: 962 void,test_ctor_8label()
+	Method ID: 963 void,test_ctor_abs_abs_origin()
+	Method ID: 964 void,test_ctor_abs_rel_origin()
+	Method ID: 965 void,test_ctor_rel_abs_origin()
+	Method ID: 966 void,test_ctor_invalid_label()
+	Method ID: 967 void,test_ctor_max_label()
+	Method ID: 968 void,test_ctor_toobig_label()
+	Method ID: 969 void,test_ctor_max_length_rel()
+	Method ID: 970 void,test_ctor_max_length_abs()
+	Method ID: 971 void,test_ctor_escaped()
+	Method ID: 972 void,test_ctor_escaped_end()
+	Method ID: 973 void,test_ctor_short_escaped()
+	Method ID: 974 void,test_ctor_short_escaped_end()
+	Method ID: 975 void,test_ctor_empty_escaped_end()
+	Method ID: 976 void,test_ctor_toobig_escaped()
+	Method ID: 977 void,test_ctor_toobig_escaped_end()
+	Method ID: 978 void,test_ctor_max_label_escaped()
+	Method ID: 979 void,test_ctor_max_labels()
+	Method ID: 980 void,test_ctor_toobig_label_escaped_end()
+	Method ID: 981 void,test_ctor_toobig_label_escaped()
+	Method ID: 982 void,test_fromString()
+	Method ID: 983 void,test_fromString_at()
+	Method ID: 984 void,test_fromString_dot()
+	Method ID: 985 void,test_fromConstantString()
+	Method ID: 986 void,test_fromConstantString_invalid()
+	Method ID: 987 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NSAP_PTRRecord
+	Method ID: 708 org.xbill.DNS.NSAP_PTRRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name)
+	Method ID: 709 org.xbill.DNS.Name,getTarget()
+	Method ID: 710 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.WKSRecord
+	Method ID: 227 org.xbill.DNS.WKSRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.net.InetAddress,int,int[])
+	Method ID: 228 java.net.InetAddress,getAddress()
+	Method ID: 229 int,getProtocol()
+	Method ID: 230 int[],getServices()
+	Method ID: 231 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.AFSDBRecord
+	Method ID: 1287 org.xbill.DNS.AFSDBRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,org.xbill.DNS.Name)
+	Method ID: 1288 int,getSubtype()
+	Method ID: 1289 org.xbill.DNS.Name,getHost()
+	Method ID: 1290 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SingleNameBaseTest.TestClass
+	Method ID: 337 org.xbill.DNS.SingleNameBaseTest.TestClass,CONSTRUCTOR()
+	Method ID: 338 org.xbill.DNS.SingleNameBaseTest.TestClass,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long)
+	Method ID: 339 org.xbill.DNS.SingleNameBaseTest.TestClass,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,org.xbill.DNS.Name,java.lang.String)
+	Method ID: 340 org.xbill.DNS.Name,getSingleName()
+	Method ID: 341 org.xbill.DNS.Record,getObject()
+	Method ID: 342 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.RecordTest
+	Method ID: 1060 void,test_ctor_0arg()
+	Method ID: 1061 void,test_ctor_4arg()
+	Method ID: 1062 void,test_ctor_4arg_invalid()
+	Method ID: 1063 void,test_newRecord_3arg()
+	Method ID: 1064 void,test_newRecord_4arg()
+	Method ID: 1065 void,test_newRecord_5arg()
+	Method ID: 1066 void,test_newRecord_6arg()
+	Method ID: 1067 void,test_newRecord_6arg_invalid()
+	Method ID: 1068 void,test_fromWire()
+	Method ID: 1069 void,test_toWire()
+	Method ID: 1070 void,test_toWireCanonical()
+	Method ID: 1071 void,test_rdataToWireCanonical()
+	Method ID: 1072 void,test_rdataToString()
+	Method ID: 1073 void,test_toString()
+	Method ID: 1074 void,test_byteArrayFromString()
+	Method ID: 1075 void,test_byteArrayFromString_invalid()
+	Method ID: 1076 void,test_byteArrayToString()
+	Method ID: 1077 void,test_unknownToString()
+	Method ID: 1078 void,test_fromString()
+	Method ID: 1079 void,test_fromString_invalid()
+	Method ID: 1080 void,test_getRRsetType()
+	Method ID: 1081 void,test_sameRRset()
+	Method ID: 1082 void,test_equals()
+	Method ID: 1083 void,test_hashCode()
+	Method ID: 1084 void,test_cloneRecord()
+	Method ID: 1085 void,test_withName()
+	Method ID: 1086 void,test_withDClass()
+	Method ID: 1087 void,test_setTTL()
+	Method ID: 1088 void,test_compareTo()
+	Method ID: 1089 void,test_getAdditionalName()
+	Method ID: 1090 void,test_checkU8()
+	Method ID: 1091 void,test_checkU16()
+	Method ID: 1092 void,test_checkU32()
+	Method ID: 1093 void,test_checkName()
+	Method ID: 1094 void,#ExtendsOrImplements#()
+Class: jnamed
+	Method ID: 3 jnamed,CONSTRUCTOR(java.lang.String)
+	Method ID: 4 void,addPrimaryZone(java.lang.String,java.lang.String)
+	Method ID: 5 void,addSecondaryZone(java.lang.String,java.lang.String)
+	Method ID: 6 void,addTSIG(java.lang.String,java.lang.String,java.lang.String)
+	Method ID: 7 org.xbill.DNS.Cache,getCache(int)
+	Method ID: 8 org.xbill.DNS.Zone,findBestZone(org.xbill.DNS.Name)
+	Method ID: 9 org.xbill.DNS.RRset,findExactMatch(org.xbill.DNS.Name,int,int,boolean)
+	Method ID: 10 byte[],formerrMessage(byte[])
+	Method ID: 11 byte[],errorMessage(org.xbill.DNS.Message,int)
+	Method ID: 12 void,TCPclient(java.net.Socket)
+	Method ID: 13 void,serveTCP(java.net.InetAddress,int)
+	Method ID: 14 void,serveUDP(java.net.InetAddress,int)
+	Method ID: 15 void,addTCP(java.net.InetAddress,int)
+	Method ID: 16 void,addUDP(java.net.InetAddress,int)
+	Method ID: 17 void,main(java.lang.String[])
+	Method ID: 18 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MBRecord
+	Method ID: 435 org.xbill.DNS.MBRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name)
+	Method ID: 436 org.xbill.DNS.Name,getMailbox()
+	Method ID: 437 org.xbill.DNS.Name,getAdditionalName()
+	Method ID: 438 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SOARecordTest.Test_rrFromWire
+	Method ID: 158 void,setUp()
+	Method ID: 159 void,test()
+	Method ID: 160 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.U16NameBaseTest
+	Method ID: 477 void,test_ctor_0arg()
+	Method ID: 478 void,test_ctor_4arg()
+	Method ID: 479 void,test_ctor_8arg()
+	Method ID: 480 void,test_rrFromWire()
+	Method ID: 481 void,test_rdataFromString()
+	Method ID: 482 void,test_rrToString()
+	Method ID: 483 void,test_rrToWire()
+	Method ID: 484 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.U16NameBase
+	Method ID: 130 org.xbill.DNS.U16NameBase,CONSTRUCTOR()
+	Method ID: 131 org.xbill.DNS.U16NameBase,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long)
+	Method ID: 132 org.xbill.DNS.U16NameBase,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,int,java.lang.String,org.xbill.DNS.Name,java.lang.String)
+	Method ID: 133 int,getU16Field()
+	Method ID: 134 org.xbill.DNS.Name,getNameField()
+	Method ID: 135 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Cache.Element
+	Method ID: 550 boolean,expired()
+	Method ID: 551 int,compareCredibility(int)
+	Method ID: 552 int,getType()
+	Method ID: 553 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.TTL
+	Method ID: 106 long,parse(java.lang.String,boolean)
+	Method ID: 107 long,parseTTL(java.lang.String)
+	Method ID: 108 java.lang.String,format(long)
+	Method ID: 109 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.OPTRecord.Option
+	Method ID: 1486 org.xbill.DNS.OPTRecord.Option,CONSTRUCTOR(int,byte[])
+	Method ID: 1487 java.lang.String,toString()
+	Method ID: 1488 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.TXTRecord
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_TXTRecord12_DNSSDResourcePublisher.java	registerResource
+		org_xbill_DNS_TXTRecord2_DNSRecordImpl.java	DNSRecordTXT
+		org_xbill_DNS_TXTRecord5_DNSRecordImpl.java	DNSRecordTXT
+		org_xbill_DNS_TXTRecord8_DNSSDResourcePublisher.java	registerResource
+	Method ID: 1318 org.xbill.DNS.TXTRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.util.List)
+	Method ID: 1319 org.xbill.DNS.TXTRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.lang.String)
+	Method ID: 1320 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.UDPClient
+	Method ID: 136 org.xbill.DNS.UDPClient,CONSTRUCTOR(long)
+	Method ID: 137 void,#ExtendsOrImplements#()
+Class: lookup
+	Method ID: 0 void,printAnswer(java.lang.String,org.xbill.DNS.Lookup)
+	Method ID: 1 void,main(java.lang.String[])
+	Method ID: 2 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.APLRecordTest.Test_Element_init
+	Method ID: 175 void,setUp()
+	Method ID: 176 void,test_valid_IPv4()
+	Method ID: 177 void,test_invalid_IPv4()
+	Method ID: 178 void,test_valid_IPv6()
+	Method ID: 179 void,test_invalid_IPv6()
+	Method ID: 180 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ARecord
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_ARecord12_ProxyLoadBalancer.java	updateDNSRecords
+		org_xbill_DNS_ARecord26_DNSRecordImpl.java	validLookup
+		org_xbill_DNS_ARecord28_DNSRecordImpl.java	validLookup
+		org_xbill_DNS_ARecord38_ProxyLoadBalancer.java	updateDNSRecords
+		org_xbill_DNS_ARecord55_DNScatServer.java	generateReply
+	Method ID: 695 org.xbill.DNS.ARecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.net.InetAddress)
+	Method ID: 697 void,#ExtendsOrImplements#()
+	Method ID: 696 java.net.InetAddress,getAddress()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_ARecord0_DNSJavaInetAddressImpl.java	getHostByName
+			org_xbill_DNS_ARecord17_AddrTools.java	doReverseLookup
+			org_xbill_DNS_ARecord22_JSNaptr.java	resolve
+			org_xbill_DNS_ARecord27_DNSServiceImpl.java	findAddress
+			org_xbill_DNS_ARecord29_DNSServiceImpl.java	findAddress
+			org_xbill_DNS_ARecord30_FetchDNS.java	storeDNSRecord
+			org_xbill_DNS_ARecord31_Utils.java	dnsLookup
+			org_xbill_DNS_ARecord32_ServerPool.java	getServers
+			org_xbill_DNS_ARecord33_IPLookup.java	getA
+			org_xbill_DNS_ARecord43_AddrTools.java	doReverseLookup
+			org_xbill_DNS_ARecord44_Connection.java	resolve
+			org_xbill_DNS_ARecord52_DNSLookup.java	main
+			org_xbill_DNS_ARecord53_FetchDNS.java	storeDNSRecord
+			org_xbill_DNS_ARecord56_IpCacher.java	run
+Class: org.xbill.DNS.RcodeTest
+	Method ID: 473 void,test_string()
+	Method ID: 474 void,test_TSIGstring()
+	Method ID: 475 void,test_value()
+	Method ID: 476 void,#ExtendsOrImplements#()
+Class: dig
+	Method ID: 19 void,main(java.lang.String)
+	Method ID: 20 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MRRecord
+	Method ID: 30 org.xbill.DNS.MRRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name)
+	Method ID: 31 org.xbill.DNS.Name,getNewName()
+	Method ID: 32 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NSRecordTest
+	Method ID: 885 void,test_ctor_0arg()
+	Method ID: 886 void,test_ctor_4arg()
+	Method ID: 887 void,test_getObject()
+	Method ID: 888 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.GPOSRecordTest.Test_Ctor_6arg_Strings
+	Method ID: 308 void,setUp()
+	Method ID: 309 void,test_basic()
+	Method ID: 310 void,test_toosmall_longitude()
+	Method ID: 311 void,test_toobig_longitude()
+	Method ID: 312 void,test_toosmall_latitude()
+	Method ID: 313 void,test_toobig_latitude()
+	Method ID: 314 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SingleNameBaseTest
+	Method ID: 331 void,test_ctor()
+	Method ID: 332 void,test_rrFromWire()
+	Method ID: 333 void,test_rdataFromString()
+	Method ID: 334 void,test_rrToString()
+	Method ID: 335 void,test_rrToWire()
+	Method ID: 336 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SOARecordTest.Test_rrToString
+	Method ID: 165 void,setUp()
+	Method ID: 166 void,test_singleLine()
+	Method ID: 167 void,test_multiLine()
+	Method ID: 168 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.AAAARecordTest
+	Method ID: 1213 void,setUp()
+	Method ID: 1214 void,test_ctor_0arg()
+	Method ID: 1215 void,test_getObject()
+	Method ID: 1216 void,test_ctor_4arg()
+	Method ID: 1217 void,test_rrFromWire()
+	Method ID: 1218 void,test_rdataFromString()
+	Method ID: 1219 void,test_rrToString()
+	Method ID: 1220 void,test_rrToWire()
+	Method ID: 1221 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.APLRecordTest
+	Method ID: 173 junit.framework.Test,suite()
+	Method ID: 174 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.OpcodeTest
+	Method ID: 866 void,test_string()
+	Method ID: 867 void,test_value()
+	Method ID: 868 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.tests.xfrin
+	Method ID: 1606 void,main(java.lang.String[])
+	Method ID: 1607 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ARecordTest
+	Method ID: 699 void,setUp()
+	Method ID: 700 void,test_ctor_0arg()
+	Method ID: 701 void,test_getObject()
+	Method ID: 702 void,test_ctor_4arg()
+	Method ID: 703 void,test_rrFromWire()
+	Method ID: 704 void,test_rdataFromString()
+	Method ID: 705 void,test_rrToString()
+	Method ID: 706 void,test_rrToWire()
+	Method ID: 707 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNSKEYRecordTest
+	Method ID: 1489 void,test_ctor_0arg()
+	Method ID: 1490 void,test_getObject()
+	Method ID: 1491 void,test_ctor_7arg()
+	Method ID: 1492 void,test_rdataFromString()
+	Method ID: 1493 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.EmptyRecordTest
+	Method ID: 492 void,test_ctor()
+	Method ID: 493 void,test_getObject()
+	Method ID: 494 void,test_rrFromWire()
+	Method ID: 495 void,test_rdataFromString()
+	Method ID: 496 void,test_rrToString()
+	Method ID: 497 void,test_rrToWire()
+	Method ID: 498 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Name
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_Name104_DNScatServer.java	generateReply
+		org_xbill_DNS_Name18_DNSServer.java	findBestZone
+		org_xbill_DNS_Name21_StandardKeyCache.java	find
+		org_xbill_DNS_Name31_DelegationDNSCache.java	findDelegation
+		org_xbill_DNS_Name61_DelegationDNSCache.java	findDelegation
+		org_xbill_DNS_Name68_DNSServer.java	rawDNSLookup
+		org_xbill_DNS_Name80_CachingDNSMetadataLocator.java	getNAPTRs
+	Method ID: 647 org.xbill.DNS.Name,CONSTRUCTOR(org.xbill.DNS.DNSInput)
+	Method ID: 648 org.xbill.DNS.Name,CONSTRUCTOR(byte[])
+	Method ID: 656 short,length()
+	Method ID: 660 byte[],getLabel(int)
+	Method ID: 661 java.lang.String,getLabelString(int)
+	Method ID: 662 void,toWire(org.xbill.DNS.DNSOutput,org.xbill.DNS.Compression)
+	Method ID: 663 byte[],toWire()
+	Method ID: 664 void,toWireCanonical(org.xbill.DNS.DNSOutput)
+	Method ID: 666 void,toWire(org.xbill.DNS.DNSOutput,org.xbill.DNS.Compression,boolean)
+	Method ID: 667 boolean,equals(java.lang.Object)
+	Method ID: 668 int,hashCode()
+	Method ID: 669 int,compareTo(java.lang.Object)
+	Method ID: 670 void,#ExtendsOrImplements#()
+	Method ID: 645 org.xbill.DNS.Name,fromString(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name101_DNSSDPublisherTest.java	testUnsecure
+			org_xbill_DNS_Name103_DNScatClient.java	DNScatClient
+			org_xbill_DNS_Name16_DNSServerTest.java	testINARecords
+			org_xbill_DNS_Name23_DigTest.java	parseCommandLine
+			org_xbill_DNS_Name39_DigTest.java	parseCommandLine
+			org_xbill_DNS_Name45_DNSServerTest.java	testINARecords
+			org_xbill_DNS_Name47_ZoneCrawler.java	ZoneCrawler
+			org_xbill_DNS_Name53_KeyGen.java	execute
+			org_xbill_DNS_Name60_SignZone.java	getNameList
+			org_xbill_DNS_Name67_DNSJavaInetAddressImpl.java	doQuery
+			org_xbill_DNS_Name81_DNSSDResourcePublisher.java	registerResource
+			org_xbill_DNS_Name86_SignZone.java	getNameList
+			org_xbill_DNS_Name90_DNSServerTest.java	loadZone
+			org_xbill_DNS_Name98_SignZone.java	getNameList
+	Method ID: 659 java.lang.String,toString()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name103_DNScatClient.java	transmitRequest
+			org_xbill_DNS_Name31_DelegationDNSCache.java	nameToString
+			org_xbill_DNS_Name47_ZoneCrawler.java	getNextDomainName
+			org_xbill_DNS_Name56_Util.java	nameToString
+			org_xbill_DNS_Name69_DNSRecordImpl.java	reverseAddress
+			org_xbill_DNS_Name75_DNSRecordImpl.java	reverseAddress
+			org_xbill_DNS_Name91_DNSServer.java	configure
+	Method ID: 658 boolean,subdomain(org.xbill.DNS.Name)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name103_DNScatClient.java	transmitRequest
+			org_xbill_DNS_Name20_NullDNSCache.java	findDelegation
+			org_xbill_DNS_Name36_ResponseType.java	typeWireResponse
+			org_xbill_DNS_Name57_Response.java	typeWireResponse
+			org_xbill_DNS_Name69_DNSRecordImpl.java	createUpdate
+			org_xbill_DNS_Name75_DNSRecordImpl.java	createUpdate
+	Method ID: 655 boolean,isAbsolute()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name55_SignZone.java	getNameList
+			org_xbill_DNS_Name60_SignZone.java	getNameList
+			org_xbill_DNS_Name67_DNSJavaInetAddressImpl.java	lookupAllHostAddr
+			org_xbill_DNS_Name86_SignZone.java	getNameList
+			org_xbill_DNS_Name98_SignZone.java	getNameList
+	Method ID: 657 int,labels()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name18_DNSServer.java	findBestZone
+			org_xbill_DNS_Name21_StandardKeyCache.java	find
+			org_xbill_DNS_Name31_DelegationDNSCache.java	findDelegation
+			org_xbill_DNS_Name61_DelegationDNSCache.java	findDelegation
+	Method ID: 649 org.xbill.DNS.Name,CONSTRUCTOR(org.xbill.DNS.Name,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name18_DNSServer.java	findBestZone
+			org_xbill_DNS_Name21_StandardKeyCache.java	find
+			org_xbill_DNS_Name31_DelegationDNSCache.java	findDelegation
+			org_xbill_DNS_Name61_DelegationDNSCache.java	findDelegation
+	Method ID: 644 org.xbill.DNS.Name,fromString(java.lang.String,org.xbill.DNS.Name)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name102_DNSSDResourcePublisher.java	registerResource
+			org_xbill_DNS_Name103_DNScatClient.java	transmitRequest
+			org_xbill_DNS_Name49_DNSQueryThread.java	queryDns
+			org_xbill_DNS_Name81_DNSSDResourcePublisher.java	registerResource
+	Method ID: 650 org.xbill.DNS.Name,concatenate(org.xbill.DNS.Name,org.xbill.DNS.Name)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name23_DigTest.java	main
+			org_xbill_DNS_Name39_DigTest.java	main
+			org_xbill_DNS_Name67_DNSJavaInetAddressImpl.java	doQuery
+	Method ID: 654 boolean,isWild()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name18_DNSServer.java	addRRset
+			org_xbill_DNS_Name48_ZoneAnalyzer.java	NameStats
+	Method ID: 665 byte[],toWireCanonical()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name26_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_Name38_SignUtils.java	generatePreSigRdata
+	Method ID: 652 org.xbill.DNS.Name,wild(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name26_SignUtils.java	generateCanonicalRRsetData
+			org_xbill_DNS_Name38_SignUtils.java	generateCanonicalRRsetData
+	Method ID: 643 org.xbill.DNS.Name,CONSTRUCTOR(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name68_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Name80_CachingDNSMetadataLocator.java	getNAPTRs
+	Method ID: 651 org.xbill.DNS.Name,relativize(org.xbill.DNS.Name)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name103_DNScatClient.java	transmitRequest
+	Method ID: 642 org.xbill.DNS.Name,CONSTRUCTOR(java.lang.String,org.xbill.DNS.Name)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name104_DNScatServer.java	generateReply
+	Method ID: 653 org.xbill.DNS.Name,fromDNAME(org.xbill.DNS.DNAMERecord)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name18_DNSServer.java	addAnswer
+	Method ID: 646 org.xbill.DNS.Name,fromConstantString(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Name102_DNSSDResourcePublisher.java	getAlgorithmName
+Class: org.xbill.DNS.SOARecordTest
+	Method ID: 138 junit.framework.Test,suite()
+	Method ID: 139 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Cache
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_Cache11_DNSServer.java	initialize
+		org_xbill_DNS_Cache12_DefaultDnsServer.java	initialize
+		org_xbill_DNS_Cache14_DNSServer.java	initialize
+		org_xbill_DNS_Cache16_MailModule.java	start
+		org_xbill_DNS_Cache2_DNSServer.java	initialize
+		org_xbill_DNS_Cache3_DNSServer.java	initialize
+		org_xbill_DNS_Cache4_DNSServer.java	DNSServer
+		org_xbill_DNS_Cache5_DNSServer.java	initialize
+		org_xbill_DNS_Cache7_AddrTools.java	_getDNSCache
+		org_xbill_DNS_Cache9_DNSServer.java	initialize
+	Extension Code Examples (Hooks): 
+		org_xbill_DNS_Cache13_DNSServerTest.java	NA
+	Method ID: 528 org.xbill.DNS.Cache,CONSTRUCTOR(java.lang.String)
+	Method ID: 548 java.lang.String,toString()
+	Method ID: 537 org.xbill.DNS.SetResponse,addMessage(org.xbill.DNS.Message)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Cache11_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Cache12_DefaultDnsServer.java	rawDNSLookup
+			org_xbill_DNS_Cache16_MailModule.java	performMXLookup
+			org_xbill_DNS_Cache2_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Cache3_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Cache5_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Cache8_DNSJavaInetAddressImpl.java	doQuery
+			org_xbill_DNS_Cache9_DNSServer.java	rawDNSLookup
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 546 void,setMaxEntries(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Cache14_DNSServer.java	initialize
+			org_xbill_DNS_Cache2_DNSServer.java	initialize
+			org_xbill_DNS_Cache5_DNSServer.java	initialize
+			org_xbill_DNS_Cache7_AddrTools.java	_getDNSCache
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 534 org.xbill.DNS.SetResponse,lookupRecords(org.xbill.DNS.Name,int,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Cache2_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Cache3_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_Cache5_DNSServer.java	rawDNSLookup
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 542 void,setMaxCache(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Cache10_DNSJavaHandler.java	setup
+			org_xbill_DNS_Cache7_AddrTools.java	_getDNSCache
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 540 void,setMaxNCache(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Cache10_DNSJavaHandler.java	setup
+			org_xbill_DNS_Cache7_AddrTools.java	_getDNSCache
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 536 org.xbill.DNS.RRset[],findAnyRecords(org.xbill.DNS.Name,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Cache4_DNSServer.java	findExactMatch
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 535 org.xbill.DNS.RRset[],findRecords(org.xbill.DNS.Name,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Cache4_DNSServer.java	findExactMatch
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 529 void,clearCache()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Cache16_MailModule.java	clearDNSCache
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 526 org.xbill.DNS.Cache,CONSTRUCTOR(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Cache4_DNSServer.java	DNSServer
+	Method ID: 547 int,getDClass()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 545 int,getMaxEntries()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 544 int,getSize()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 543 int,getMaxCache()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 541 int,getMaxNCache()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 539 void,flushName(org.xbill.DNS.Name)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 538 void,flushSet(org.xbill.DNS.Name,int)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 533 org.xbill.DNS.SetResponse,lookup(org.xbill.DNS.Name,int,int)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 532 void,addNegative(org.xbill.DNS.Name,int,org.xbill.DNS.SOARecord,int)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 531 void,addRRset(org.xbill.DNS.RRset,int)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 530 void,addRecord(org.xbill.DNS.Record,int,java.lang.Object)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_Cache//13_DNSServerTest.java	NA
+	Method ID: 527 org.xbill.DNS.Cache,CONSTRUCTOR()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Cache16_MailModule.java	start
+	Method ID: 549 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.GPOSRecordTest.Test_rrFromWire
+	Method ID: 315 void,test_basic()
+	Method ID: 316 void,test_longitude_toosmall()
+	Method ID: 317 void,test_longitude_toobig()
+	Method ID: 318 void,test_latitude_toosmall()
+	Method ID: 319 void,test_latitude_toobig()
+	Method ID: 320 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.UNKRecord
+	Method ID: 68 byte[],getData()
+	Method ID: 69 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.GPOSRecordTest.Test_rdataFromString
+	Method ID: 321 void,test_basic()
+	Method ID: 322 void,test_longitude_toosmall()
+	Method ID: 323 void,test_longitude_toobig()
+	Method ID: 324 void,test_latitude_toosmall()
+	Method ID: 325 void,test_latitude_toobig()
+	Method ID: 326 void,test_invalid_string()
+	Method ID: 327 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Zone
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_Zone0_DNSServerTest.java	testINARecords
+		org_xbill_DNS_Zone2_DNSServer.java	addPrimaryZone
+		org_xbill_DNS_Zone3_DNSServerTest.java	testINARecords
+		org_xbill_DNS_Zone4_DNSServerTest.java	loadZone
+	Method ID: 749 org.xbill.DNS.Zone,CONSTRUCTOR(org.xbill.DNS.Name,org.xbill.DNS.Record[])
+	Method ID: 750 org.xbill.DNS.Zone,CONSTRUCTOR(org.xbill.DNS.ZoneTransferIn)
+	Method ID: 751 org.xbill.DNS.Zone,CONSTRUCTOR(org.xbill.DNS.Name,int,java.lang.String)
+	Method ID: 755 int,getDClass()
+	Method ID: 759 void,addRecord(org.xbill.DNS.Record)
+	Method ID: 760 void,removeRecord(org.xbill.DNS.Record)
+	Method ID: 761 java.util.Iterator,iterator()
+	Method ID: 763 java.lang.String,toMasterFile()
+	Method ID: 764 java.lang.String,toString()
+	Method ID: 765 void,#ExtendsOrImplements#()
+	Method ID: 748 org.xbill.DNS.Zone,CONSTRUCTOR(org.xbill.DNS.Name,java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Zone0_DNSServerTest.java	testINARecords
+			org_xbill_DNS_Zone2_DNSServer.java	addPrimaryZone
+			org_xbill_DNS_Zone3_DNSServerTest.java	testINARecords
+			org_xbill_DNS_Zone4_DNSServerTest.java	loadZone
+	Method ID: 756 org.xbill.DNS.SetResponse,findRecords(org.xbill.DNS.Name,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Zone0_DNSServerTest.java	lookup
+			org_xbill_DNS_Zone2_DNSServer.java	addAnswer
+			org_xbill_DNS_Zone3_DNSServerTest.java	lookup
+			org_xbill_DNS_Zone4_DNSServerTest.java	lookupRecords
+	Method ID: 762 java.util.Iterator,AXFR()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Zone2_DNSServer.java	doAXFR
+	Method ID: 758 void,addRRset(org.xbill.DNS.RRset)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Zone1_ProxyLoadBalancer.java	updateDNSRecords
+	Method ID: 757 org.xbill.DNS.RRset,findExactMatch(org.xbill.DNS.Name,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Zone2_DNSServer.java	findExactMatch
+	Method ID: 754 org.xbill.DNS.SOARecord,getSOA()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Zone2_DNSServer.java	addSOA
+	Method ID: 753 org.xbill.DNS.RRset,getNS()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Zone2_DNSServer.java	addNS
+	Method ID: 752 org.xbill.DNS.Name,getOrigin()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Zone2_DNSServer.java	addPrimaryZone
+Class: org.xbill.DNS.MGRecord
+	Method ID: 276 org.xbill.DNS.MGRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name)
+	Method ID: 277 org.xbill.DNS.Name,getMailbox()
+	Method ID: 278 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.RTRecord
+	Method ID: 638 org.xbill.DNS.RTRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,org.xbill.DNS.Name)
+	Method ID: 639 int,getPreference()
+	Method ID: 640 org.xbill.DNS.Name,getIntermediateHost()
+	Method ID: 641 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.AddressTest
+	Method ID: 575 void,test_toByteArray_invalid()
+	Method ID: 576 void,test_toByteArray_IPv4()
+	Method ID: 577 void,test_toByteArray_IPv4_invalid()
+	Method ID: 578 void,test_toByteArray_IPv6()
+	Method ID: 579 void,test_toByteArray_IPv6_invalid()
+	Method ID: 580 void,test_toArray()
+	Method ID: 581 void,test_toArray_invalid()
+	Method ID: 582 void,test_isDottedQuad()
+	Method ID: 583 void,test_toDottedQuad()
+	Method ID: 584 void,test_addressLength()
+	Method ID: 585 void,test_getByName()
+	Method ID: 586 void,test_getByName_invalid()
+	Method ID: 587 void,test_getAllByName()
+	Method ID: 588 void,test_getAllByName_invalid()
+	Method ID: 589 void,test_familyOf()
+	Method ID: 590 void,test_getHostName()
+	Method ID: 591 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NSECRecord
+	Method ID: 74 org.xbill.DNS.NSECRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name,int[])
+	Method ID: 75 org.xbill.DNS.Name,getNext()
+	Method ID: 76 int[],getTypes()
+	Method ID: 77 boolean,hasType(int)
+	Method ID: 78 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SetResponse
+	Method ID: 1144 java.lang.String,toString()
+	Method ID: 1145 void,#ExtendsOrImplements#()
+	Method ID: 1139 boolean,isSuccessful()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse0_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse10_VirtualDNS.java	generateReply
+			org_xbill_DNS_SetResponse12_MailModule.java	performMXLookup
+			org_xbill_DNS_SetResponse2_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse3_DNSServer.java	addAnswer
+			org_xbill_DNS_SetResponse4_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse6_VirtualDNS.java	generateReply
+			org_xbill_DNS_SetResponse7_DNSJavaInetAddressImpl.java	doQuery
+			org_xbill_DNS_SetResponse8_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse9_DNSServer.java	rawDNSLookup
+	Method ID: 1140 org.xbill.DNS.RRset[],answers()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse0_DNSServer.java	processSetResponse
+			org_xbill_DNS_SetResponse10_VirtualDNS.java	generateReply
+			org_xbill_DNS_SetResponse12_MailModule.java	performMXLookup
+			org_xbill_DNS_SetResponse2_DNSServer.java	processSetResponse
+			org_xbill_DNS_SetResponse3_DNSServer.java	addAnswer
+			org_xbill_DNS_SetResponse4_DNSServer.java	processSetResponse
+			org_xbill_DNS_SetResponse6_VirtualDNS.java	generateReply
+			org_xbill_DNS_SetResponse7_DNSJavaInetAddressImpl.java	doQuery
+			org_xbill_DNS_SetResponse8_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse9_DNSServer.java	rawDNSLookup
+	Method ID: 1134 boolean,isNXDOMAIN()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse0_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse10_VirtualDNS.java	generateReply
+			org_xbill_DNS_SetResponse2_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse3_DNSServer.java	addAnswer
+			org_xbill_DNS_SetResponse4_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse6_VirtualDNS.java	generateReply
+			org_xbill_DNS_SetResponse8_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse9_DNSServer.java	rawDNSLookup
+	Method ID: 1135 boolean,isNXRRSET()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse0_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse2_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse3_DNSServer.java	addAnswer
+			org_xbill_DNS_SetResponse4_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse7_DNSJavaInetAddressImpl.java	doQuery
+			org_xbill_DNS_SetResponse8_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_SetResponse9_DNSServer.java	rawDNSLookup
+	Method ID: 1142 org.xbill.DNS.DNAMERecord,getDNAME()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse3_DNSServer.java	addAnswer
+			org_xbill_DNS_SetResponse7_DNSJavaInetAddressImpl.java	doQuery
+	Method ID: 1141 org.xbill.DNS.CNAMERecord,getCNAME()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse3_DNSServer.java	addAnswer
+			org_xbill_DNS_SetResponse7_DNSJavaInetAddressImpl.java	doQuery
+	Method ID: 1138 boolean,isDNAME()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse3_DNSServer.java	addAnswer
+			org_xbill_DNS_SetResponse7_DNSJavaInetAddressImpl.java	doQuery
+	Method ID: 1137 boolean,isCNAME()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse3_DNSServer.java	addAnswer
+			org_xbill_DNS_SetResponse7_DNSJavaInetAddressImpl.java	doQuery
+	Method ID: 1143 org.xbill.DNS.RRset,getNS()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse3_DNSServer.java	addCacheNS
+	Method ID: 1136 boolean,isDelegation()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse3_DNSServer.java	addCacheNS
+	Method ID: 1133 boolean,isUnknown()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SetResponse3_DNSServer.java	addAnswer
+Class: org.xbill.DNS.DSRecord
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_DSRecord12_SignUtils.java	calculateDSRecord
+		org_xbill_DNS_DSRecord7_SignUtils.java	calculateDSRecord
+	Method ID: 33 org.xbill.DNS.DSRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,int,int,byte[])
+	Method ID: 38 void,#ExtendsOrImplements#()
+	Method ID: 35 int,getDigestID()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DSRecord0_ValUtils.java	dssetIsUsable
+			org_xbill_DNS_DSRecord10_ValUtils.java	dssetIsUsable
+			org_xbill_DNS_DSRecord3_ValUtils.java	dssetIsUsable
+			org_xbill_DNS_DSRecord6_DSTool.java	execute
+	Method ID: 34 int,getAlgorithm()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DSRecord0_ValUtils.java	dssetIsUsable
+			org_xbill_DNS_DSRecord10_ValUtils.java	dssetIsUsable
+			org_xbill_DNS_DSRecord3_ValUtils.java	dssetIsUsable
+			org_xbill_DNS_DSRecord6_DSTool.java	execute
+	Method ID: 37 int,getFootprint()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DSRecord0_ValUtils.java	verifyNewDNSKEYs
+			org_xbill_DNS_DSRecord10_ValUtils.java	verifyNewDNSKEYs
+			org_xbill_DNS_DSRecord3_ValUtils.java	verifyNewDNSKEYs
+			org_xbill_DNS_DSRecord6_DSTool.java	execute
+	Method ID: 36 byte[],getDigest()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DSRecord0_ValUtils.java	verifyNewDNSKEYs
+			org_xbill_DNS_DSRecord10_ValUtils.java	verifyNewDNSKEYs
+			org_xbill_DNS_DSRecord3_ValUtils.java	verifyNewDNSKEYs
+			org_xbill_DNS_DSRecord6_DSTool.java	execute
+Class: org.xbill.DNS.FlagsTest
+	Method ID: 121 void,test_string()
+	Method ID: 122 void,test_value()
+	Method ID: 123 void,test_isFlag()
+	Method ID: 124 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.WireParseException
+	Method ID: 439 org.xbill.DNS.WireParseException,CONSTRUCTOR()
+	Method ID: 440 org.xbill.DNS.WireParseException,CONSTRUCTOR(java.lang.String)
+	Method ID: 441 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SingleCompressedNameBaseTest
+	Method ID: 459 void,test_ctor()
+	Method ID: 460 void,test_rrToWire()
+	Method ID: 461 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.utils.base64
+	Method ID: 1611 java.lang.String,formatString(byte[],int,java.lang.String,boolean)
+	Method ID: 1612 byte[],fromString(java.lang.String)
+	Method ID: 1613 void,#ExtendsOrImplements#()
+	Method ID: 1610 java.lang.String,toString(byte[])
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_utils_base6439_FlowerBed.java	makeSimpleBagMD5
+Class: org.xbill.DNS.Options
+	Method ID: 686 void,refresh()
+	Method ID: 687 void,clear()
+	Method ID: 688 void,set(java.lang.String)
+	Method ID: 689 void,set(java.lang.String,java.lang.String)
+	Method ID: 690 void,unset(java.lang.String)
+	Method ID: 691 boolean,check(java.lang.String)
+	Method ID: 692 java.lang.String,value(java.lang.String)
+	Method ID: 693 int,intValue(java.lang.String)
+	Method ID: 694 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.TSIGRecord
+	Method ID: 357 org.xbill.DNS.TSIGRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name,java.util.Date,int,byte[],int,int,byte)
+	Method ID: 358 org.xbill.DNS.Name,getAlgorithm()
+	Method ID: 359 java.util.Date,getTimeSigned()
+	Method ID: 360 int,getFudge()
+	Method ID: 361 byte[],getSignature()
+	Method ID: 362 int,getOriginalID()
+	Method ID: 363 int,getError()
+	Method ID: 364 byte[],getOther()
+	Method ID: 365 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ExceptionTest
+	Method ID: 914 void,test_InvalidDClassException()
+	Method ID: 915 void,test_InvalidTTLException()
+	Method ID: 916 void,test_InvalidTypeException()
+	Method ID: 917 void,test_NameTooLongException()
+	Method ID: 918 void,test_RelativeNameException()
+	Method ID: 919 void,test_TextParseException()
+	Method ID: 920 void,test_WireParseException()
+	Method ID: 921 void,test_ZoneTransferException()
+	Method ID: 922 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SimpleResolver
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_SimpleResolver0_DNSJavaResolver.java	initPlugin
+		org_xbill_DNS_SimpleResolver10_DNSViewImpl.java	getResolver
+		org_xbill_DNS_SimpleResolver13_msg13880.java	getDNSServiceFakeServer
+		org_xbill_DNS_SimpleResolver15_DNSViewImpl.java	getResolver
+		org_xbill_DNS_SimpleResolver18_DNSSDResourcePublisher.java	getResolver
+		org_xbill_DNS_SimpleResolver23_ResolverImpl.java	addDnsServer
+		org_xbill_DNS_SimpleResolver24_DNSSDResourcePublisher.java	getResolver
+		org_xbill_DNS_SimpleResolver3_DNSCollector.java	getResolver
+		org_xbill_DNS_SimpleResolver4_DNSQueryThread.java	lookup
+		org_xbill_DNS_SimpleResolver5_DNSQueryThread.java	lookup
+	Method ID: 505 void,setDefaultResolver(java.lang.String)
+	Method ID: 507 void,setAddress(java.net.InetSocketAddress)
+	Method ID: 508 void,setAddress(java.net.InetAddress)
+	Method ID: 509 void,setLocalAddress(java.net.InetSocketAddress)
+	Method ID: 510 void,setLocalAddress(java.net.InetAddress)
+	Method ID: 512 void,setIgnoreTruncation(boolean)
+	Method ID: 513 void,setEDNS(int,int,int,java.util.List)
+	Method ID: 514 void,setEDNS(int)
+	Method ID: 516 void,setTimeout(int,int)
+	Method ID: 519 java.lang.Object,sendAsync(org.xbill.DNS.Message,org.xbill.DNS.ResolverListener)
+	Method ID: 520 void,#ExtendsOrImplements#()
+	Method ID: 503 org.xbill.DNS.SimpleResolver,CONSTRUCTOR(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SimpleResolver0_DNSJavaResolver.java	initPlugin
+			org_xbill_DNS_SimpleResolver10_DNSViewImpl.java	getResolver
+			org_xbill_DNS_SimpleResolver13_msg13880.java	getDNSServiceFakeServer
+			org_xbill_DNS_SimpleResolver15_DNSViewImpl.java	getResolver
+			org_xbill_DNS_SimpleResolver18_DNSSDResourcePublisher.java	getResolver
+			org_xbill_DNS_SimpleResolver23_ResolverImpl.java	addDnsServer
+			org_xbill_DNS_SimpleResolver24_DNSSDResourcePublisher.java	getResolver
+			org_xbill_DNS_SimpleResolver3_DNSCollector.java	getResolver
+			org_xbill_DNS_SimpleResolver4_DNSQueryThread.java	lookup
+			org_xbill_DNS_SimpleResolver5_DNSQueryThread.java	lookup
+	Method ID: 506 void,setPort(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SimpleResolver11_DNSServiceImpl.java	getResolver
+			org_xbill_DNS_SimpleResolver13_msg13880.java	getDNSServiceFakeServer
+			org_xbill_DNS_SimpleResolver16_DNSServiceImpl.java	getResolver
+			org_xbill_DNS_SimpleResolver18_DNSSDResourcePublisher.java	getResolver
+			org_xbill_DNS_SimpleResolver24_DNSSDResourcePublisher.java	getResolver
+			org_xbill_DNS_SimpleResolver3_DNSCollector.java	getResolver
+			org_xbill_DNS_SimpleResolver6_JSNaptr.java	doLookup
+	Method ID: 511 void,setTCP(boolean)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SimpleResolver10_DNSViewImpl.java	getResolver
+			org_xbill_DNS_SimpleResolver15_DNSViewImpl.java	getResolver
+			org_xbill_DNS_SimpleResolver18_DNSSDResourcePublisher.java	getResolver
+			org_xbill_DNS_SimpleResolver24_DNSSDResourcePublisher.java	getResolver
+			org_xbill_DNS_SimpleResolver4_DNSQueryThread.java	lookup
+			org_xbill_DNS_SimpleResolver5_DNSQueryThread.java	lookup
+	Method ID: 518 org.xbill.DNS.Message,send(org.xbill.DNS.Message)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SimpleResolver3_DNSCollector.java	collect
+			org_xbill_DNS_SimpleResolver4_DNSQueryThread.java	lookup
+			org_xbill_DNS_SimpleResolver5_DNSQueryThread.java	lookup
+	Method ID: 504 org.xbill.DNS.SimpleResolver,CONSTRUCTOR()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SimpleResolver4_DNSQueryThread.java	lookup
+			org_xbill_DNS_SimpleResolver5_DNSQueryThread.java	lookup
+	Method ID: 515 void,setTSIGKey(org.xbill.DNS.TSIG)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SimpleResolver18_DNSSDResourcePublisher.java	getResolver
+			org_xbill_DNS_SimpleResolver24_DNSSDResourcePublisher.java	getResolver
+	Method ID: 517 void,setTimeout(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_SimpleResolver3_DNSCollector.java	getResolver
+Class: org.xbill.DNS.Header
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_Header20_DNScatServer.java	formerrMessage
+		org_xbill_DNS_Header4_DNSServer.java	formerrMessage
+	Method ID: 603 org.xbill.DNS.Header,CONSTRUCTOR(int)
+	Method ID: 604 org.xbill.DNS.Header,CONSTRUCTOR()
+	Method ID: 605 org.xbill.DNS.Header,CONSTRUCTOR(byte[])
+	Method ID: 606 byte[],toWire()
+	Method ID: 607 void,setFlag(int)
+	Method ID: 608 void,unsetFlag(int)
+	Method ID: 609 boolean,getFlag(int)
+	Method ID: 611 void,setID(int)
+	Method ID: 614 void,setOpcode(int)
+	Method ID: 616 int,getCount(int)
+	Method ID: 617 java.lang.String,printFlags()
+	Method ID: 618 java.lang.String,toString()
+	Method ID: 619 java.lang.Object,clone()
+	Method ID: 620 void,#ExtendsOrImplements#()
+	Method ID: 612 void,setRcode(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Header13_Util.java	errorMessage
+			org_xbill_DNS_Header20_DNScatServer.java	buildErrorMessage
+			org_xbill_DNS_Header4_DNSServer.java	buildErrorMessage
+			org_xbill_DNS_Header5_Util.java	errorMessage
+			org_xbill_DNS_Header8_Util.java	errorMessage
+	Method ID: 610 int,getID()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Header14_Util.java	errorMessage
+			org_xbill_DNS_Header5_Util.java	errorMessage
+			org_xbill_DNS_Header8_Util.java	errorMessage
+	Method ID: 615 int,getOpcode()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Header20_DNScatServer.java	generateReply
+			org_xbill_DNS_Header4_DNSServer.java	generateReply
+	Method ID: 613 int,getRcode()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Header20_DNScatServer.java	generateReply
+			org_xbill_DNS_Header4_DNSServer.java	generateReply
+Class: org.xbill.DNS.TTLTest
+	Method ID: 909 void,test_parseTTL()
+	Method ID: 910 void,test_parseTTL_invalid()
+	Method ID: 911 void,test_format()
+	Method ID: 912 void,test_format_invalid()
+	Method ID: 913 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NameTooLongException
+	Method ID: 79 org.xbill.DNS.NameTooLongException,CONSTRUCTOR()
+	Method ID: 80 org.xbill.DNS.NameTooLongException,CONSTRUCTOR(java.lang.String)
+	Method ID: 81 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ExtendedFlags
+	Method ID: 65 java.lang.String,string(int)
+	Method ID: 66 int,value(java.lang.String)
+	Method ID: 67 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.CERTRecord.CertificateType
+	Method ID: 273 java.lang.String,string(int)
+	Method ID: 274 int,value(java.lang.String)
+	Method ID: 275 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Compression.Entry
+	Method ID: 129 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NameTest.Test_toWire
+	Method ID: 1005 void,test_rel()
+	Method ID: 1006 void,test_null_Compression()
+	Method ID: 1007 void,test_empty_Compression()
+	Method ID: 1008 void,test_with_exact_Compression()
+	Method ID: 1009 void,test_with_partial_Compression()
+	Method ID: 1010 void,test_0arg_rel()
+	Method ID: 1011 void,test_0arg()
+	Method ID: 1012 void,test_root()
+	Method ID: 1013 void,test_3arg()
+	Method ID: 1014 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Section
+	Method ID: 1222 java.lang.String,string(int)
+	Method ID: 1223 java.lang.String,longString(int)
+	Method ID: 1224 java.lang.String,updString(int)
+	Method ID: 1225 int,value(java.lang.String)
+	Method ID: 1226 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNSOutput
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_DNSOutput12_TypeMap.java	toWire
+		org_xbill_DNS_DNSOutput13_SignUtils.java	generatePreSigRdata
+		org_xbill_DNS_DNSOutput19_TypeMap.java	toWire
+		org_xbill_DNS_DNSOutput5_SignUtils.java	generatePreSigRdata
+		org_xbill_DNS_DNSOutput9_SignUtils.java	generatePreSigRdata
+	Method ID: 1158 org.xbill.DNS.DNSOutput,CONSTRUCTOR(int)
+	Method ID: 1160 int,current()
+	Method ID: 1161 void,jump(int)
+	Method ID: 1162 void,save()
+	Method ID: 1163 void,restore()
+	Method ID: 1166 void,writeU32(long)
+	Method ID: 1167 void,writeByteArray(byte[],int,int)
+	Method ID: 1169 void,writeCountedString(byte[])
+	Method ID: 1171 void,#ExtendsOrImplements#()
+	Method ID: 1164 void,writeU8(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSOutput12_TypeMap.java	mapToWire
+			org_xbill_DNS_DNSOutput13_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_DNSOutput19_TypeMap.java	mapToWire
+			org_xbill_DNS_DNSOutput5_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_DNSOutput9_SignUtils.java	generatePreSigRdata
+	Method ID: 1170 byte[],toByteArray()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSOutput12_TypeMap.java	toWire
+			org_xbill_DNS_DNSOutput13_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_DNSOutput19_TypeMap.java	toWire
+			org_xbill_DNS_DNSOutput5_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_DNSOutput9_SignUtils.java	generatePreSigRdata
+	Method ID: 1159 org.xbill.DNS.DNSOutput,CONSTRUCTOR()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSOutput12_TypeMap.java	toWire
+			org_xbill_DNS_DNSOutput13_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_DNSOutput19_TypeMap.java	toWire
+			org_xbill_DNS_DNSOutput5_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_DNSOutput9_SignUtils.java	generatePreSigRdata
+	Method ID: 1165 void,writeU16(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSOutput13_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_DNSOutput5_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_DNSOutput9_SignUtils.java	generatePreSigRdata
+	Method ID: 1168 void,writeByteArray(byte[])
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSOutput13_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_DNSOutput5_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_DNSOutput9_SignUtils.java	generatePreSigRdata
+Class: org.xbill.DNS.MBRecordTest
+	Method ID: 70 void,test_ctor_0arg()
+	Method ID: 71 void,test_ctor_4arg()
+	Method ID: 72 void,test_getObject()
+	Method ID: 73 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.RTRecordTest
+	Method ID: 795 void,test_getObject()
+	Method ID: 796 void,test_ctor_5arg()
+	Method ID: 797 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.GPOSRecordTest
+	Method ID: 294 void,test_ctor_0arg()
+	Method ID: 295 void,test_getObject()
+	Method ID: 296 void,test_rrToString()
+	Method ID: 297 void,test_rrToWire()
+	Method ID: 298 junit.framework.Test,suite()
+	Method ID: 299 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.KEYBaseTest
+	Method ID: 343 void,test_ctor()
+	Method ID: 344 void,test_rrFromWire()
+	Method ID: 345 void,test_rrToString()
+	Method ID: 346 void,test_getFootprint()
+	Method ID: 347 void,test_rrToWire()
+	Method ID: 348 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.FormattedTime
+	Method ID: 711 java.lang.String,format(java.util.Date)
+	Method ID: 712 java.util.Date,parse(java.lang.String)
+	Method ID: 713 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MXRecord
+	Method ID: 810 org.xbill.DNS.MXRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,org.xbill.DNS.Name)
+	Method ID: 813 org.xbill.DNS.Name,getAdditionalName()
+	Method ID: 814 void,#ExtendsOrImplements#()
+	Method ID: 812 int,getPriority()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_MXRecord0_DNSServer.java	compare
+			org_xbill_DNS_MXRecord10_DNSServer.java	compare
+			org_xbill_DNS_MXRecord11_DefaultDnsServer.java	compare
+			org_xbill_DNS_MXRecord12_DefaultDnsServer.java	compare
+			org_xbill_DNS_MXRecord20_SortableMXRecord.java	compareTo
+			org_xbill_DNS_MXRecord22_DNSServer.java	compare
+			org_xbill_DNS_MXRecord3_SortableMXRecord.java	compareTo
+			org_xbill_DNS_MXRecord5_MailCatcherContext.java	getMailServers
+			org_xbill_DNS_MXRecord6_DNSServer.java	compare
+	Method ID: 811 org.xbill.DNS.Name,getTarget()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_MXRecord13_DNSJavaResolver.java	getMXEntries
+			org_xbill_DNS_MXRecord15_IPLookup.java	getMX
+			org_xbill_DNS_MXRecord24_MailModule.java	mxLookup
+			org_xbill_DNS_MXRecord5_MailCatcherContext.java	getMailServers
+Class: org.xbill.DNS.APLRecordTest.Test_init
+	Method ID: 181 void,setUp()
+	Method ID: 182 void,test_0arg()
+	Method ID: 183 void,test_getObject()
+	Method ID: 184 void,test_4arg_basic()
+	Method ID: 185 void,test_4arg_empty_elements()
+	Method ID: 186 void,test_4arg_relative_name()
+	Method ID: 187 void,test_4arg_invalid_elements()
+	Method ID: 188 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NAPTRRecord
+	Method ID: 824 org.xbill.DNS.NAPTRRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,int,java.lang.String,java.lang.String,java.lang.String,org.xbill.DNS.Name)
+	Method ID: 831 org.xbill.DNS.Name,getAdditionalName()
+	Method ID: 832 void,#ExtendsOrImplements#()
+	Method ID: 830 org.xbill.DNS.Name,getReplacement()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_NAPTRRecord0_IrisUri.java	sNaptrLookup
+			org_xbill_DNS_NAPTRRecord5_NAPTRRule.java	getReplacement
+	Method ID: 828 java.lang.String,getService()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_NAPTRRecord0_IrisUri.java	naptrLookup
+			org_xbill_DNS_NAPTRRecord5_NAPTRRule.java	getServices
+	Method ID: 827 java.lang.String,getFlags()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_NAPTRRecord0_IrisUri.java	naptrLookup
+			org_xbill_DNS_NAPTRRecord5_NAPTRRule.java	getFlags
+	Method ID: 829 java.lang.String,getRegexp()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_NAPTRRecord0_IrisUri.java	naptrLookup
+			org_xbill_DNS_NAPTRRecord5_NAPTRRule.java	getRegexp
+	Method ID: 826 int,getPreference()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_NAPTRRecord0_IrisUri.java	naptrLookup
+	Method ID: 825 int,getOrder()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_NAPTRRecord0_IrisUri.java	naptrLookup
+Class: org.xbill.DNS.Opcode
+	Method ID: 279 java.lang.String,string(int)
+	Method ID: 280 int,value(java.lang.String)
+	Method ID: 281 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Rcode
+	Method ID: 354 java.lang.String,TSIGstring(int)
+	Method ID: 355 int,value(java.lang.String)
+	Method ID: 356 void,#ExtendsOrImplements#()
+	Method ID: 353 java.lang.String,string(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Rcode26_DNSBindingIPImpl.java	sendUpdate
+			org_xbill_DNS_Rcode28_DNScatClient.java	transmitRequest
+Class: org.xbill.DNS.utils.HMACTest.test_data
+	Method ID: 1698 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.TKEYRecord
+	Method ID: 1109 org.xbill.DNS.TKEYRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name,java.util.Date,java.util.Date,int,int,byte[],byte)
+	Method ID: 1110 java.lang.String,modeString()
+	Method ID: 1111 org.xbill.DNS.Name,getAlgorithm()
+	Method ID: 1112 java.util.Date,getTimeInception()
+	Method ID: 1113 java.util.Date,getTimeExpire()
+	Method ID: 1114 int,getMode()
+	Method ID: 1115 int,getError()
+	Method ID: 1116 byte[],getKey()
+	Method ID: 1117 byte[],getOther()
+	Method ID: 1118 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ZoneTransferIn.Delta
+	Method ID: 105 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.TypeTest
+	Method ID: 241 void,test_string()
+	Method ID: 242 void,test_value()
+	Method ID: 243 void,test_value_2arg()
+	Method ID: 244 void,test_isRR()
+	Method ID: 245 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.RRsetTest
+	Method ID: 873 void,setUp()
+	Method ID: 874 void,test_ctor_0arg()
+	Method ID: 875 void,test_basics()
+	Method ID: 876 void,test_ctor_1arg()
+	Method ID: 877 void,test_toString()
+	Method ID: 878 void,test_addRR_invalidType()
+	Method ID: 879 void,test_addRR_invalidName()
+	Method ID: 880 void,test_addRR_invalidDClass()
+	Method ID: 881 void,test_TTLcalculation()
+	Method ID: 882 void,test_Record_placement()
+	Method ID: 883 void,test_noncycling_iterator()
+	Method ID: 884 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Tokenizer
+	Method ID: 399 org.xbill.DNS.Tokenizer,CONSTRUCTOR(java.io.InputStream)
+	Method ID: 400 org.xbill.DNS.Tokenizer,CONSTRUCTOR(java.lang.String)
+	Method ID: 401 org.xbill.DNS.Tokenizer,CONSTRUCTOR(java.io.File)
+	Method ID: 402 org.xbill.DNS.Tokenizer.Token,get(boolean,boolean)
+	Method ID: 403 org.xbill.DNS.Tokenizer.Token,get()
+	Method ID: 404 void,unget()
+	Method ID: 405 java.lang.String,getString()
+	Method ID: 406 java.lang.String,getIdentifier()
+	Method ID: 407 long,getLong()
+	Method ID: 408 long,getUInt32()
+	Method ID: 409 int,getUInt16()
+	Method ID: 410 int,getUInt8()
+	Method ID: 411 long,getTTL()
+	Method ID: 412 long,getTTLLike()
+	Method ID: 413 org.xbill.DNS.Name,getName(org.xbill.DNS.Name)
+	Method ID: 414 java.net.InetAddress,getAddress(int)
+	Method ID: 415 void,getEOL()
+	Method ID: 416 byte[],getBase64(boolean)
+	Method ID: 417 byte[],getBase64()
+	Method ID: 418 byte[],getHex(boolean)
+	Method ID: 419 byte[],getHex()
+	Method ID: 420 org.xbill.DNS.TextParseException,exception(java.lang.String)
+	Method ID: 421 void,close()
+	Method ID: 422 void,finalize()
+	Method ID: 423 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.security.KEYConverter
+	Method ID: 1561 java.security.PublicKey,parseRecord(org.xbill.DNS.KEYRecord)
+	Method ID: 1562 org.xbill.DNS.KEYRecord,buildRecord(org.xbill.DNS.Name,int,long,int,int,java.security.PublicKey)
+	Method ID: 1563 org.xbill.DNS.Record,buildRecord(org.xbill.DNS.Name,int,int,long,int,int,int,java.security.PublicKey)
+	Method ID: 1564 void,#ExtendsOrImplements#()
+	Method ID: 1560 java.security.PublicKey,parseRecord(org.xbill.DNS.DNSKEYRecord)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_security_KEYConverter0_DnsKeyConverter.java	parseDNSKEYRecord
+			org_xbill_DNS_security_KEYConverter1_DnsKeyConverter.java	parseDNSKEYRecord
+Class: org.xbill.DNS.Lookup
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_Lookup0_DNSJavaInetAddressImpl.java	getHostByName
+		org_xbill_DNS_Lookup14_AddrTools.java	hasARecordQuick
+		org_xbill_DNS_Lookup15_DNSNamedImpl.java	status
+		org_xbill_DNS_Lookup19_DNSNamedImpl.java	status
+		org_xbill_DNS_Lookup22_FetchDNS.java	innerProcess
+		org_xbill_DNS_Lookup24_Utils.java	dnsLookup
+		org_xbill_DNS_Lookup25_DNSDatabase.java	lookup
+		org_xbill_DNS_Lookup27_ServerPool.java	getServers
+		org_xbill_DNS_Lookup28_DNSMetadata.java	lookup
+		org_xbill_DNS_Lookup30_DNSServer.java	lookup
+		org_xbill_DNS_Lookup32_IPLookup.java	get
+		org_xbill_DNS_Lookup33_Connection.java	resolve
+		org_xbill_DNS_Lookup38_FetchDNS.java	innerProcess
+		org_xbill_DNS_Lookup40_NameLookup.java	main
+		org_xbill_DNS_Lookup42_DNSLookup.java	main
+		org_xbill_DNS_Lookup44_FetchDNS.java	innerProcess
+		org_xbill_DNS_Lookup49_FetchDNS.java	innerProcess
+		org_xbill_DNS_Lookup51_DNSSDPublisherTest.java	testUnsecure
+		org_xbill_DNS_Lookup53_IpCacher.java	run
+		org_xbill_DNS_Lookup54_SendEmail.java	getHostName
+		org_xbill_DNS_Lookup7_DNSServiceXBillImplTest.java	testGetLocalDomainNames
+		org_xbill_DNS_Lookup9_MailCatcherContext.java	getMailServers
+	Method ID: 1494 void,refreshDefault()
+	Method ID: 1497 org.xbill.DNS.Cache,getDefaultCache(int)
+	Method ID: 1498 void,setDefaultCache(org.xbill.DNS.Cache,int)
+	Method ID: 1501 void,setDefaultSearchPath(java.lang.String[])
+	Method ID: 1502 org.xbill.DNS.Lookup,CONSTRUCTOR(org.xbill.DNS.Name,int,int)
+	Method ID: 1504 org.xbill.DNS.Lookup,CONSTRUCTOR(org.xbill.DNS.Name)
+	Method ID: 1505 org.xbill.DNS.Lookup,CONSTRUCTOR(java.lang.String,int,int)
+	Method ID: 1509 void,setSearchPath(org.xbill.DNS.Name[])
+	Method ID: 1510 void,setSearchPath(java.lang.String[])
+	Method ID: 1518 void,#ExtendsOrImplements#()
+	Method ID: 1513 org.xbill.DNS.Record[],run()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup0_DNSJavaInetAddressImpl.java	getHostByName
+			org_xbill_DNS_Lookup14_AddrTools.java	doQuickLookupWithTunedCache
+			org_xbill_DNS_Lookup15_DNSNamedImpl.java	status
+			org_xbill_DNS_Lookup19_DNSNamedImpl.java	status
+			org_xbill_DNS_Lookup22_FetchDNS.java	innerProcess
+			org_xbill_DNS_Lookup24_Utils.java	dnsLookup
+			org_xbill_DNS_Lookup25_DNSDatabase.java	lookup
+			org_xbill_DNS_Lookup27_ServerPool.java	getServers
+			org_xbill_DNS_Lookup28_DNSMetadata.java	lookup
+			org_xbill_DNS_Lookup30_DNSServer.java	lookup
+			org_xbill_DNS_Lookup32_IPLookup.java	get
+			org_xbill_DNS_Lookup33_Connection.java	resolve
+			org_xbill_DNS_Lookup38_FetchDNS.java	innerProcess
+			org_xbill_DNS_Lookup40_NameLookup.java	main
+			org_xbill_DNS_Lookup42_DNSLookup.java	main
+			org_xbill_DNS_Lookup44_FetchDNS.java	innerProcess
+			org_xbill_DNS_Lookup49_FetchDNS.java	innerProcess
+			org_xbill_DNS_Lookup51_DNSSDPublisherTest.java	testUnsecure
+			org_xbill_DNS_Lookup53_IpCacher.java	run
+			org_xbill_DNS_Lookup54_SendEmail.java	getHostName
+			org_xbill_DNS_Lookup7_DNSServiceXBillImplTest.java	testGetLocalDomainNames
+			org_xbill_DNS_Lookup9_MailCatcherContext.java	getMailServers
+	Method ID: 1516 int,getResult()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup0_DNSJavaInetAddressImpl.java	getHostByName
+			org_xbill_DNS_Lookup15_DNSNamedImpl.java	status
+			org_xbill_DNS_Lookup19_DNSNamedImpl.java	status
+			org_xbill_DNS_Lookup30_DNSServer.java	lookup
+			org_xbill_DNS_Lookup40_NameLookup.java	printAnswer
+			org_xbill_DNS_Lookup53_IpCacher.java	run
+			org_xbill_DNS_Lookup8_DNSServiceXBillImpl.java	getRecords
+			org_xbill_DNS_Lookup9_MailCatcherContext.java	getMailServers
+	Method ID: 1508 void,setResolver(org.xbill.DNS.Resolver)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup14_AddrTools.java	doQuickLookupWithTunedCache
+			org_xbill_DNS_Lookup15_DNSNamedImpl.java	status
+			org_xbill_DNS_Lookup19_DNSNamedImpl.java	status
+			org_xbill_DNS_Lookup30_DNSServer.java	lookup
+			org_xbill_DNS_Lookup51_DNSSDPublisherTest.java	testUnsecure
+			org_xbill_DNS_Lookup6_DNSJavaResolver.java	doSingleMXLookup
+	Method ID: 1514 org.xbill.DNS.Record[],getAnswers()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup0_DNSJavaInetAddressImpl.java	getHostByName
+			org_xbill_DNS_Lookup16_DNSRecordImpl.java	validateLookup
+			org_xbill_DNS_Lookup20_DNSRecordImpl.java	validateLookup
+			org_xbill_DNS_Lookup40_NameLookup.java	printAnswer
+			org_xbill_DNS_Lookup53_IpCacher.java	run
+			org_xbill_DNS_Lookup9_MailCatcherContext.java	getMailServers
+	Method ID: 1496 void,setDefaultResolver(org.xbill.DNS.Resolver)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup13_DNSServer.java	initialize
+			org_xbill_DNS_Lookup18_msg13880.java	getDNSServiceFakeServer
+			org_xbill_DNS_Lookup29_DNSServerTest.java	tearDown
+			org_xbill_DNS_Lookup2_DNSServer.java	initialize
+			org_xbill_DNS_Lookup52_ResolverImpl.java	addDnsServer
+	Method ID: 1503 org.xbill.DNS.Lookup,CONSTRUCTOR(org.xbill.DNS.Name,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup16_DNSRecordImpl.java	validateLookup
+			org_xbill_DNS_Lookup20_DNSRecordImpl.java	validateLookup
+	Method ID: 1517 java.lang.String,getErrorString()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup0_DNSJavaInetAddressImpl.java	getHostByName
+			org_xbill_DNS_Lookup40_NameLookup.java	printAnswer
+	Method ID: 1511 void,setCache(org.xbill.DNS.Cache)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup14_AddrTools.java	doQuickLookupWithTunedCache
+			org_xbill_DNS_Lookup30_DNSServer.java	lookup
+	Method ID: 1506 org.xbill.DNS.Lookup,CONSTRUCTOR(java.lang.String,int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup30_DNSServer.java	lookup
+			org_xbill_DNS_Lookup8_DNSServiceXBillImpl.java	getRecords
+	Method ID: 1507 org.xbill.DNS.Lookup,CONSTRUCTOR(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup24_Utils.java	dnsLookup
+			org_xbill_DNS_Lookup53_IpCacher.java	main
+	Method ID: 1500 void,setDefaultSearchPath(org.xbill.DNS.Name[])
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup18_msg13880.java	getDNSServiceFakeServer
+			org_xbill_DNS_Lookup29_DNSServerTest.java	setUp
+	Method ID: 1495 org.xbill.DNS.Resolver,getDefaultResolver()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup29_DNSServerTest.java	setUp
+			org_xbill_DNS_Lookup8_DNSServiceXBillImpl.java	getRecords
+	Method ID: 1515 org.xbill.DNS.Name[],getAliases()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup53_IpCacher.java	run
+	Method ID: 1512 void,setCredibility(int)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup30_DNSServer.java	lookup
+	Method ID: 1499 org.xbill.DNS.Name[],getDefaultSearchPath()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Lookup29_DNSServerTest.java	setUp
+Class: org.xbill.DNS.DSRecordTest.Test_Ctor_7arg
+	Method ID: 732 void,setUp()
+	Method ID: 733 void,test_basic()
+	Method ID: 734 void,test_toosmall_footprint()
+	Method ID: 735 void,test_toobig_footprint()
+	Method ID: 736 void,test_toosmall_algorithm()
+	Method ID: 737 void,test_toobig_algorithm()
+	Method ID: 738 void,test_toosmall_digestid()
+	Method ID: 739 void,test_toobig_digestid()
+	Method ID: 740 void,test_null_digest()
+	Method ID: 741 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MnemonicTest
+	Method ID: 854 org.xbill.DNS.MnemonicTest,CONSTRUCTOR(java.lang.String)
+	Method ID: 855 void,setUp()
+	Method ID: 856 void,test_toInteger()
+	Method ID: 857 void,test_no_maximum()
+	Method ID: 858 void,test_setMaximum()
+	Method ID: 859 void,test_setPrefix()
+	Method ID: 860 void,test_basic_operation()
+	Method ID: 861 void,test_basic_operation_lower()
+	Method ID: 862 void,test_basic_operation_sensitive()
+	Method ID: 863 void,test_invalid_numeric()
+	Method ID: 864 void,test_addAll()
+	Method ID: 865 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.utils.base16Test
+	Method ID: 1654 org.xbill.DNS.utils.base16Test,CONSTRUCTOR(java.lang.String)
+	Method ID: 1655 void,test_toString_emptyArray()
+	Method ID: 1656 void,test_toString_singleByte1()
+	Method ID: 1657 void,test_toString_singleByte2()
+	Method ID: 1658 void,test_toString_singleByte3()
+	Method ID: 1659 void,test_toString_array1()
+	Method ID: 1660 void,test_fromString_emptyString()
+	Method ID: 1661 void,test_fromString_invalidStringLength()
+	Method ID: 1662 void,test_fromString_nonHexChars()
+	Method ID: 1663 void,test_fromString_normal()
+	Method ID: 1664 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNSOutputTest
+	Method ID: 246 void,setUp()
+	Method ID: 247 void,test_default_ctor()
+	Method ID: 248 void,test_initial_state()
+	Method ID: 249 void,test_writeU8_basic()
+	Method ID: 250 void,test_writeU8_expand()
+	Method ID: 251 void,test_writeU8_max()
+	Method ID: 252 void,test_writeU8_toobig()
+	Method ID: 253 void,test_writeU16_basic()
+	Method ID: 254 void,test_writeU16_max()
+	Method ID: 255 void,test_writeU16_toobig()
+	Method ID: 256 void,test_writeU32_basic()
+	Method ID: 257 void,test_writeU32_max()
+	Method ID: 258 void,test_writeU32_toobig()
+	Method ID: 259 void,test_jump_basic()
+	Method ID: 260 void,test_writeByteArray_1arg()
+	Method ID: 261 void,test_writeByteArray_3arg()
+	Method ID: 262 void,test_writeCountedString_basic()
+	Method ID: 263 void,test_writeCountedString_empty()
+	Method ID: 264 void,test_writeCountedString_toobig()
+	Method ID: 265 void,test_save_restore()
+	Method ID: 266 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.utils.hexdumpTest
+	Method ID: 1665 org.xbill.DNS.utils.hexdumpTest,CONSTRUCTOR(java.lang.String)
+	Method ID: 1666 void,test_shortform()
+	Method ID: 1667 void,test_0()
+	Method ID: 1668 void,test_1()
+	Method ID: 1669 void,test_2()
+	Method ID: 1670 void,test_3()
+	Method ID: 1671 void,test_4()
+	Method ID: 1672 void,test_5()
+	Method ID: 1673 void,test_6()
+	Method ID: 1674 void,test_7()
+	Method ID: 1675 void,test_8()
+	Method ID: 1676 void,test_9()
+	Method ID: 1677 void,test_10()
+	Method ID: 1678 void,test_11()
+	Method ID: 1679 void,test_12()
+	Method ID: 1680 void,test_13()
+	Method ID: 1681 void,test_14()
+	Method ID: 1682 void,test_15()
+	Method ID: 1683 void,test_default_constructor()
+	Method ID: 1684 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.RRset
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_RRset19_JCEDnsSecSigner.java	makeKeySet
+		org_xbill_DNS_RRset23_SignZone.java	signZone
+		org_xbill_DNS_RRset7_DNSServer.java	addAnswer
+	Extension Code Examples (Hooks): 
+		org_xbill_DNS_RRset8_WeightedRRSet.java	NA
+	Method ID: 893 org.xbill.DNS.RRset,CONSTRUCTOR(org.xbill.DNS.Record)
+	Method ID: 894 org.xbill.DNS.RRset,CONSTRUCTOR(org.xbill.DNS.RRset)
+	Method ID: 907 java.lang.String,toString()
+	Method ID: 899 java.util.Iterator,rrs()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset10_SignUtils.java	generateCanonicalRRsetData
+			org_xbill_DNS_RRset18_DNSServer.java	processSetResponse
+			org_xbill_DNS_RRset19_JCEDnsSecSigner.java	addRRset
+			org_xbill_DNS_RRset23_SignZone.java	addRRset
+			org_xbill_DNS_RRset33_DNSJavaInetAddressImpl.java	doQuery
+			org_xbill_DNS_RRset34_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_RRset35_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_RRset36_DefaultDnsServer.java	rawDNSLookup
+			org_xbill_DNS_RRset5_DNSServer.java	processSetResponse
+			org_xbill_DNS_RRset7_DNSServer.java	addRRset
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_RRset//8_WeightedRRSet.java	NA
+	Method ID: 901 int,size()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset18_DNSServer.java	processSetResponse
+			org_xbill_DNS_RRset21_SignUtils.java	assembleIntoRRsets
+			org_xbill_DNS_RRset23_SignZone.java	signZone
+			org_xbill_DNS_RRset34_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_RRset35_DNSServer.java	rawDNSLookup
+			org_xbill_DNS_RRset36_DefaultDnsServer.java	rawDNSLookup
+			org_xbill_DNS_RRset5_DNSServer.java	processSetResponse
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_RRset//8_WeightedRRSet.java	NA
+	Method ID: 902 org.xbill.DNS.Name,getName()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset10_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_RRset14_CacheUtils.java	isRelevantGlue
+			org_xbill_DNS_RRset19_JCEDnsSecSigner.java	addRRset
+			org_xbill_DNS_RRset23_SignZone.java	addRRset
+			org_xbill_DNS_RRset37_ZoneUtils.java	findZoneName
+			org_xbill_DNS_RRset7_DNSServer.java	addNS
+	Method ID: 903 int,getType()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset10_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_RRset14_CacheUtils.java	isRelevantGlue
+			org_xbill_DNS_RRset19_JCEDnsSecSigner.java	addRRset
+			org_xbill_DNS_RRset23_SignZone.java	addRRset
+			org_xbill_DNS_RRset37_ZoneUtils.java	findZoneName
+			org_xbill_DNS_RRset7_DNSServer.java	addRRset
+	Method ID: 900 java.util.Iterator,sigs()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset14_CacheUtils.java	minSigTTL
+			org_xbill_DNS_RRset23_SignZone.java	verifyZoneSigs
+			org_xbill_DNS_RRset7_DNSServer.java	addRRset
+			org_xbill_DNS_RRset9_CacheUtils.java	minSigTTL
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_RRset//8_WeightedRRSet.java	NA
+	Method ID: 905 long,getTTL()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset10_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_RRset14_CacheUtils.java	trimRRsetTTL
+			org_xbill_DNS_RRset19_JCEDnsSecSigner.java	signRRset
+			org_xbill_DNS_RRset26_SignUtils.java	generatePreRRSIG
+	Method ID: 895 void,addRR(org.xbill.DNS.Record)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset19_JCEDnsSecSigner.java	makeKeySet
+			org_xbill_DNS_RRset23_SignZone.java	signZone
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_RRset//8_WeightedRRSet.java	NA
+	Method ID: 904 int,getDClass()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset10_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_RRset19_JCEDnsSecSigner.java	signZone
+			org_xbill_DNS_RRset23_SignZone.java	signZone
+	Method ID: 897 void,clear()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset19_JCEDnsSecSigner.java	signZone
+			org_xbill_DNS_RRset23_SignZone.java	signZone
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_RRset//8_WeightedRRSet.java	NA
+	Method ID: 892 org.xbill.DNS.RRset,CONSTRUCTOR()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset19_JCEDnsSecSigner.java	makeKeySet
+			org_xbill_DNS_RRset23_SignZone.java	signZone
+	Method ID: 898 java.util.Iterator,rrs(boolean)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRset8_WeightedRRSet.java	rrs
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_RRset//8_WeightedRRSet.java	NA
+	Method ID: 906 org.xbill.DNS.Record,first()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_RRset//8_WeightedRRSet.java	NA
+	Method ID: 896 void,deleteRR(org.xbill.DNS.Record)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\DNSJava2_0_6\org_xbill_DNS_RRset//8_WeightedRRSet.java	NA
+	Method ID: 908 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Tokenizer.TokenizerException
+	Method ID: 428 org.xbill.DNS.Tokenizer.TokenizerException,CONSTRUCTOR(java.lang.String,int,java.lang.String)
+	Method ID: 429 java.lang.String,getBaseMessage()
+	Method ID: 430 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.TextParseException
+	Method ID: 366 org.xbill.DNS.TextParseException,CONSTRUCTOR()
+	Method ID: 367 org.xbill.DNS.TextParseException,CONSTRUCTOR(java.lang.String)
+	Method ID: 368 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.security.DSAPubKey
+	Method ID: 1573 org.xbill.DNS.security.DSAPubKey,CONSTRUCTOR(java.math.BigInteger,java.math.BigInteger,java.math.BigInteger,java.math.BigInteger)
+	Method ID: 1574 java.math.BigInteger,getY()
+	Method ID: 1575 java.security.interfaces.DSAParams,getParams()
+	Method ID: 1576 java.lang.String,getAlgorithm()
+	Method ID: 1577 java.lang.String,getFormat()
+	Method ID: 1578 byte[],getEncoded()
+	Method ID: 1579 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ResolveThread
+	Method ID: 842 org.xbill.DNS.ResolveThread,CONSTRUCTOR(org.xbill.DNS.Resolver,org.xbill.DNS.Message,java.lang.Object,org.xbill.DNS.ResolverListener)
+	Method ID: 843 void,run()
+	Method ID: 844 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.security.DSAPubKey.SimpleDSAParams
+	Method ID: 1580 org.xbill.DNS.security.DSAPubKey.SimpleDSAParams,CONSTRUCTOR(java.math.BigInteger,java.math.BigInteger,java.math.BigInteger)
+	Method ID: 1581 java.math.BigInteger,getP()
+	Method ID: 1582 java.math.BigInteger,getQ()
+	Method ID: 1583 java.math.BigInteger,getG()
+	Method ID: 1584 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.IPSECKEYRecord.Gateway
+	Method ID: 1388 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SIGRecord
+	Method ID: 1291 org.xbill.DNS.SIGRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,int,long,java.util.Date,java.util.Date,int,org.xbill.DNS.Name,byte[])
+	Method ID: 1292 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.RPRecord
+	Method ID: 1546 org.xbill.DNS.RPRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name,org.xbill.DNS.Name)
+	Method ID: 1547 org.xbill.DNS.Name,getMailbox()
+	Method ID: 1548 org.xbill.DNS.Name,getTextDomain()
+	Method ID: 1549 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.HINFORecord
+	Method ID: 1129 org.xbill.DNS.HINFORecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.lang.String,java.lang.String)
+	Method ID: 1130 java.lang.String,getCPU()
+	Method ID: 1131 java.lang.String,getOS()
+	Method ID: 1132 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MFRecordTest
+	Method ID: 592 void,test_ctor_0arg()
+	Method ID: 593 void,test_ctor_4arg()
+	Method ID: 594 void,test_getObject()
+	Method ID: 595 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.PTRRecord
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_PTRRecord3_DNSRecordImpl.java	validLookup
+		org_xbill_DNS_PTRRecord5_DNSRecordImpl.java	validLookup
+		org_xbill_DNS_PTRRecord7_DNSSDResourcePublisher.java	registerResource
+	Method ID: 745 org.xbill.DNS.PTRRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name)
+	Method ID: 747 void,#ExtendsOrImplements#()
+	Method ID: 746 org.xbill.DNS.Name,getTarget()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_PTRRecord1_AddrTools.java	doReverseLookup
+			org_xbill_DNS_PTRRecord4_DNSServiceImpl.java	findAllServices
+			org_xbill_DNS_PTRRecord6_DNSServiceImpl.java	findAllServices
+			org_xbill_DNS_PTRRecord8_DNSLookup.java	main
+Class: org.xbill.DNS.ExtendedFlagsTest
+	Method ID: 25 void,test_string()
+	Method ID: 26 void,test_value()
+	Method ID: 27 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.utils.HMACTest
+	Method ID: 1693 org.xbill.DNS.utils.HMACTest,CONSTRUCTOR(java.lang.String)
+	Method ID: 1694 void,test_ctor_digest_key()
+	Method ID: 1695 void,test_ctor_digestName_key()
+	Method ID: 1696 void,test_ctor_digestName_key_invalid()
+	Method ID: 1697 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.security.DNSSECVerifier
+	Method ID: 1589 org.xbill.DNS.security.DNSSECVerifier,CONSTRUCTOR()
+	Method ID: 1590 void,addTrustedKey(org.xbill.DNS.DNSKEYRecord)
+	Method ID: 1591 void,addTrustedKey(org.xbill.DNS.Name,int,java.security.PublicKey)
+	Method ID: 1592 int,verify(org.xbill.DNS.RRset,org.xbill.DNS.Cache)
+	Method ID: 1593 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.HINFORecordTest
+	Method ID: 282 void,test_ctor_0arg()
+	Method ID: 283 void,test_getObject()
+	Method ID: 284 void,test_ctor_5arg()
+	Method ID: 285 void,test_ctor_5arg_invalid_CPU()
+	Method ID: 286 void,test_ctor_5arg_invalid_OS()
+	Method ID: 287 void,test_rrFromWire()
+	Method ID: 288 void,test_rdataFromString()
+	Method ID: 289 void,test_rdataFromString_invalid_CPU()
+	Method ID: 290 void,test_rdataFromString_invalid_OS()
+	Method ID: 291 void,test_rrToString()
+	Method ID: 292 void,test_rrToWire()
+	Method ID: 293 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.security.RSAPubKey
+	Method ID: 1553 org.xbill.DNS.security.RSAPubKey,CONSTRUCTOR(java.math.BigInteger,java.math.BigInteger)
+	Method ID: 1554 java.math.BigInteger,getModulus()
+	Method ID: 1555 java.math.BigInteger,getPublicExponent()
+	Method ID: 1556 java.lang.String,getAlgorithm()
+	Method ID: 1557 java.lang.String,getFormat()
+	Method ID: 1558 byte[],getEncoded()
+	Method ID: 1559 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.HeaderTest
+	Method ID: 1455 void,setUp()
+	Method ID: 1456 void,test_fixture_state()
+	Method ID: 1457 void,test_ctor_0arg()
+	Method ID: 1458 void,test_ctor_DNSInput()
+	Method ID: 1459 void,test_toWire()
+	Method ID: 1460 void,test_flags()
+	Method ID: 1461 void,test_flags_invalid()
+	Method ID: 1462 void,test_ID()
+	Method ID: 1463 void,test_setID_invalid()
+	Method ID: 1464 void,test_Rcode()
+	Method ID: 1465 void,test_setRcode_invalid()
+	Method ID: 1466 void,test_Opcode()
+	Method ID: 1467 void,test_setOpcode_invalid()
+	Method ID: 1468 void,test_Count()
+	Method ID: 1469 void,test_setCount_invalid()
+	Method ID: 1470 void,test_getCount_invalid()
+	Method ID: 1471 void,test_incCount_invalid()
+	Method ID: 1472 void,test_decCount_invalid()
+	Method ID: 1473 void,test_toString()
+	Method ID: 1474 void,test_clone()
+	Method ID: 1475 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.PXRecord
+	Method ID: 1153 org.xbill.DNS.PXRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,org.xbill.DNS.Name,org.xbill.DNS.Name)
+	Method ID: 1154 int,getPreference()
+	Method ID: 1155 org.xbill.DNS.Name,getMap822()
+	Method ID: 1156 org.xbill.DNS.Name,getMapX400()
+	Method ID: 1157 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SOARecordTest.Test_init
+	Method ID: 140 void,setUp()
+	Method ID: 141 void,test_0arg()
+	Method ID: 142 void,test_getObject()
+	Method ID: 143 void,test_10arg()
+	Method ID: 144 void,test_10arg_relative_name()
+	Method ID: 145 void,test_10arg_relative_host()
+	Method ID: 146 void,test_10arg_relative_admin()
+	Method ID: 147 void,test_10arg_negative_serial()
+	Method ID: 148 void,test_10arg_toobig_serial()
+	Method ID: 149 void,test_10arg_negative_refresh()
+	Method ID: 150 void,test_10arg_toobig_refresh()
+	Method ID: 151 void,test_10arg_negative_retry()
+	Method ID: 152 void,test_10arg_toobig_retry()
+	Method ID: 153 void,test_10arg_negative_expire()
+	Method ID: 154 void,test_10arg_toobig_expire()
+	Method ID: 155 void,test_10arg_negative_minimun()
+	Method ID: 156 void,test_10arg_toobig_minimum()
+	Method ID: 157 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.security.DHPubKey
+	Method ID: 1565 org.xbill.DNS.security.DHPubKey,CONSTRUCTOR(java.math.BigInteger,java.math.BigInteger,java.math.BigInteger)
+	Method ID: 1566 java.math.BigInteger,getY()
+	Method ID: 1567 javax.crypto.spec.DHParameterSpec,getParams()
+	Method ID: 1568 java.lang.String,getAlgorithm()
+	Method ID: 1569 java.lang.String,getFormat()
+	Method ID: 1570 byte[],getEncoded()
+	Method ID: 1571 java.lang.String,toString()
+	Method ID: 1572 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Compression
+	Method ID: 125 org.xbill.DNS.Compression,CONSTRUCTOR()
+	Method ID: 126 void,add(int,org.xbill.DNS.Name)
+	Method ID: 127 int,get(org.xbill.DNS.Name)
+	Method ID: 128 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.IPSECKEYRecord.Algorithm
+	Method ID: 1387 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.TCPClient
+	Method ID: 1271 org.xbill.DNS.TCPClient,CONSTRUCTOR(long)
+	Method ID: 1272 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNSKEYRecord
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_DNSKEYRecord14_DnsKeyConverter.java	generateDNSKEYRecord
+		org_xbill_DNS_DNSKEYRecord6_DnsKeyConverter.java	parseDNSKEYRecord
+	Method ID: 432 void,#ExtendsOrImplements#()
+	Method ID: 431 org.xbill.DNS.DNSKEYRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,int,int,byte[])
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSKEYRecord18_DnsKeyConverter.java	parseDNSKEYRecord
+			org_xbill_DNS_DNSKEYRecord6_DnsKeyConverter.java	parseDNSKEYRecord
+Class: org.xbill.DNS.APLRecordTest.Test_rdataFromString
+	Method ID: 198 void,setUp()
+	Method ID: 199 void,test_validIPv4()
+	Method ID: 200 void,test_valid_multi()
+	Method ID: 201 void,test_validIPv6()
+	Method ID: 202 void,test_no_colon()
+	Method ID: 203 void,test_colon_and_slash_swapped()
+	Method ID: 204 void,test_no_slash()
+	Method ID: 205 void,test_empty_family()
+	Method ID: 206 void,test_malformed_family()
+	Method ID: 207 void,test_invalid_family()
+	Method ID: 208 void,test_empty_prefix()
+	Method ID: 209 void,test_malformed_prefix()
+	Method ID: 210 void,test_invalid_prefix()
+	Method ID: 211 void,test_empty_address()
+	Method ID: 212 void,test_malformed_address()
+	Method ID: 213 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Update
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_Update0_DNSRecordImpl.java	createUpdate
+		org_xbill_DNS_Update4_DNSRecordImpl.java	createUpdate
+		org_xbill_DNS_Update8_DNSSDResourcePublisher.java	registerResource
+		org_xbill_DNS_Update9_DNSSDResourcePublisher.java	registerResource
+	Method ID: 1179 org.xbill.DNS.Update,CONSTRUCTOR(org.xbill.DNS.Name,int)
+	Method ID: 1181 void,present(org.xbill.DNS.Name)
+	Method ID: 1182 void,present(org.xbill.DNS.Name,int)
+	Method ID: 1183 void,present(org.xbill.DNS.Name,int,java.lang.String)
+	Method ID: 1184 void,present(org.xbill.DNS.Name,int,org.xbill.DNS.Tokenizer)
+	Method ID: 1185 void,present(org.xbill.DNS.Record)
+	Method ID: 1186 void,absent(org.xbill.DNS.Name)
+	Method ID: 1187 void,absent(org.xbill.DNS.Name,int)
+	Method ID: 1188 void,add(org.xbill.DNS.Name,int,long,java.lang.String)
+	Method ID: 1189 void,add(org.xbill.DNS.Name,int,long,org.xbill.DNS.Tokenizer)
+	Method ID: 1190 void,add(org.xbill.DNS.Record)
+	Method ID: 1192 void,add(org.xbill.DNS.RRset)
+	Method ID: 1193 void,delete(org.xbill.DNS.Name)
+	Method ID: 1194 void,delete(org.xbill.DNS.Name,int)
+	Method ID: 1196 void,delete(org.xbill.DNS.Name,int,org.xbill.DNS.Tokenizer)
+	Method ID: 1197 void,delete(org.xbill.DNS.Record)
+	Method ID: 1199 void,delete(org.xbill.DNS.RRset)
+	Method ID: 1200 void,replace(org.xbill.DNS.Name,int,long,java.lang.String)
+	Method ID: 1201 void,replace(org.xbill.DNS.Name,int,long,org.xbill.DNS.Tokenizer)
+	Method ID: 1202 void,replace(org.xbill.DNS.Record)
+	Method ID: 1203 void,replace(org.xbill.DNS.Record[])
+	Method ID: 1204 void,replace(org.xbill.DNS.RRset)
+	Method ID: 1205 void,#ExtendsOrImplements#()
+	Method ID: 1198 void,delete(org.xbill.DNS.Record[])
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Update8_DNSSDResourcePublisher.java	registerResource
+			org_xbill_DNS_Update9_DNSSDResourcePublisher.java	registerResource
+	Method ID: 1195 void,delete(org.xbill.DNS.Name,int,java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Update0_DNSRecordImpl.java	createUpdate
+			org_xbill_DNS_Update4_DNSRecordImpl.java	createUpdate
+	Method ID: 1191 void,add(org.xbill.DNS.Record[])
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Update8_DNSSDResourcePublisher.java	registerResource
+			org_xbill_DNS_Update9_DNSSDResourcePublisher.java	registerResource
+	Method ID: 1180 org.xbill.DNS.Update,CONSTRUCTOR(org.xbill.DNS.Name)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Update0_DNSRecordImpl.java	createUpdate
+			org_xbill_DNS_Update4_DNSRecordImpl.java	createUpdate
+Class: org.xbill.DNS.NSAP_PTRRecordTest
+	Method ID: 499 void,test_ctor_0arg()
+	Method ID: 500 void,test_ctor_4arg()
+	Method ID: 501 void,test_getObject()
+	Method ID: 502 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.security.SIG0Signer
+	Method ID: 1594 org.xbill.DNS.security.SIG0Signer,CONSTRUCTOR(int,java.security.PrivateKey,org.xbill.DNS.Name,int)
+	Method ID: 1595 org.xbill.DNS.security.SIG0Signer,CONSTRUCTOR(int,java.security.PrivateKey,org.xbill.DNS.Name,java.security.PublicKey)
+	Method ID: 1596 void,apply(org.xbill.DNS.Message,byte[])
+	Method ID: 1597 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Client
+	Method ID: 1146 org.xbill.DNS.Client,CONSTRUCTOR(java.nio.channels.SelectableChannel,long)
+	Method ID: 1147 void,blockUntil(java.nio.channels.SelectionKey,long)
+	Method ID: 1148 void,verboseLog(java.lang.String,byte[])
+	Method ID: 1149 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.spi.DNSJavaNameService
+	Method ID: 1598 org.xbill.DNS.spi.DNSJavaNameService,CONSTRUCTOR()
+	Method ID: 1599 byte[][],lookupAllHostAddr(java.lang.String)
+	Method ID: 1600 java.lang.String,getHostByAddr(byte[])
+	Method ID: 1601 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ZoneTransferIn
+	Method ID: 87 org.xbill.DNS.ZoneTransferIn,newAXFR(org.xbill.DNS.Name,java.net.SocketAddress,org.xbill.DNS.TSIG)
+	Method ID: 88 org.xbill.DNS.ZoneTransferIn,newAXFR(org.xbill.DNS.Name,java.lang.String,int,org.xbill.DNS.TSIG)
+	Method ID: 89 org.xbill.DNS.ZoneTransferIn,newAXFR(org.xbill.DNS.Name,java.lang.String,org.xbill.DNS.TSIG)
+	Method ID: 90 org.xbill.DNS.ZoneTransferIn,newIXFR(org.xbill.DNS.Name,long,boolean,java.net.SocketAddress,org.xbill.DNS.TSIG)
+	Method ID: 91 org.xbill.DNS.ZoneTransferIn,newIXFR(org.xbill.DNS.Name,long,boolean,java.lang.String,int,org.xbill.DNS.TSIG)
+	Method ID: 92 org.xbill.DNS.ZoneTransferIn,newIXFR(org.xbill.DNS.Name,long,boolean,java.lang.String,org.xbill.DNS.TSIG)
+	Method ID: 93 org.xbill.DNS.Name,getName()
+	Method ID: 94 int,getType()
+	Method ID: 95 void,setTimeout(int)
+	Method ID: 96 void,setDClass(int)
+	Method ID: 97 void,setLocalAddress(java.net.SocketAddress)
+	Method ID: 98 java.util.List,run()
+	Method ID: 99 boolean,isAXFR()
+	Method ID: 100 java.util.List,getAXFR()
+	Method ID: 101 boolean,isIXFR()
+	Method ID: 102 java.util.List,getIXFR()
+	Method ID: 103 boolean,isCurrent()
+	Method ID: 104 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SSHFPRecord
+	Method ID: 568 org.xbill.DNS.SSHFPRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,int,byte[])
+	Method ID: 569 int,getAlgorithm()
+	Method ID: 570 int,getDigestType()
+	Method ID: 571 byte[],getFingerPrint()
+	Method ID: 572 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.CERTRecord
+	Method ID: 267 org.xbill.DNS.CERTRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,int,int,byte[])
+	Method ID: 269 int,getKeyTag()
+	Method ID: 270 int,getAlgorithm()
+	Method ID: 272 void,#ExtendsOrImplements#()
+	Method ID: 271 byte[],getCert()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_CERTRecord0_DNSMetadata.java	verifyWithCERTs
+	Method ID: 268 int,getCertType()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_CERTRecord0_DNSMetadata.java	verifyWithCERTs
+Class: org.xbill.DNS.Resolver
+	Method ID: 599 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.OptionsTest
+	Method ID: 629 void,setUp()
+	Method ID: 630 void,test_set_1arg()
+	Method ID: 631 void,test_set_2arg()
+	Method ID: 632 void,test_check()
+	Method ID: 633 void,test_unset()
+	Method ID: 634 void,test_value()
+	Method ID: 635 void,test_intValue()
+	Method ID: 636 void,test_systemProperty()
+	Method ID: 637 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SingleCompressedNameBase
+	Method ID: 1150 org.xbill.DNS.SingleCompressedNameBase,CONSTRUCTOR()
+	Method ID: 1151 org.xbill.DNS.SingleCompressedNameBase,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,org.xbill.DNS.Name,java.lang.String)
+	Method ID: 1152 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.AAAARecord
+	Method ID: 1057 org.xbill.DNS.AAAARecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.net.InetAddress)
+	Method ID: 1059 void,#ExtendsOrImplements#()
+	Method ID: 1058 java.net.InetAddress,getAddress()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_AAAARecord10_DNSJavaInetAddressImpl.java	lookupAllHostAddr
+			org_xbill_DNS_AAAARecord11_Connection.java	resolve
+			org_xbill_DNS_AAAARecord3_Util.java	getInetAddressFromAAAA
+Class: org.xbill.DNS.SIGBase
+	Method ID: 1348 org.xbill.DNS.SIGBase,CONSTRUCTOR()
+	Method ID: 1349 org.xbill.DNS.SIGBase,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,int,int,long,java.util.Date,java.util.Date,int,org.xbill.DNS.Name,byte[])
+	Method ID: 1358 byte[],getSignature()
+	Method ID: 1359 void,#ExtendsOrImplements#()
+	Method ID: 1350 int,getTypeCovered()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord2_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord9_RecordComparator.java	compare
+	Method ID: 1354 java.util.Date,getExpire()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRSIGRecord0_CacheUtils.java	maxSigExp
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generatePreSigRdata
+	Method ID: 1353 long,getOrigTTL()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord1_IterUtils.java	setPrivateTTL
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generatePreSigRdata
+	Method ID: 1357 org.xbill.DNS.Name,getSigner()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord2_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generatePreSigRdata
+	Method ID: 1356 int,getFootprint()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord2_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generatePreSigRdata
+	Method ID: 1355 java.util.Date,getTimeSigned()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord2_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generatePreSigRdata
+	Method ID: 1352 int,getLabels()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord2_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generatePreSigRdata
+	Method ID: 1351 int,getAlgorithm()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord2_SignUtils.java	generatePreSigRdata
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generatePreSigRdata
+Class: org.xbill.DNS.Tokenizer.Token
+	Method ID: 424 java.lang.String,toString()
+	Method ID: 425 boolean,isString()
+	Method ID: 426 boolean,isEOL()
+	Method ID: 427 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.GPOSRecord
+	Method ID: 833 org.xbill.DNS.GPOSRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,double,double,double)
+	Method ID: 834 org.xbill.DNS.GPOSRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.lang.String,java.lang.String,java.lang.String)
+	Method ID: 835 java.lang.String,getLongitudeString()
+	Method ID: 836 double,getLongitude()
+	Method ID: 837 java.lang.String,getLatitudeString()
+	Method ID: 838 double,getLatitude()
+	Method ID: 839 java.lang.String,getAltitudeString()
+	Method ID: 840 double,getAltitude()
+	Method ID: 841 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DClassTest
+	Method ID: 889 void,test_string()
+	Method ID: 890 void,test_value()
+	Method ID: 891 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.InvalidTTLException
+	Method ID: 1399 org.xbill.DNS.InvalidTTLException,CONSTRUCTOR(long)
+	Method ID: 1400 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MessageTest.Test_init
+	Method ID: 469 void,test_0arg()
+	Method ID: 470 void,test_1arg()
+	Method ID: 471 void,test_newQuery()
+	Method ID: 472 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.APLRecordTest.Test_rrToWire
+	Method ID: 217 void,setUp()
+	Method ID: 218 void,test_empty()
+	Method ID: 219 void,test_basic()
+	Method ID: 220 void,test_non_IP()
+	Method ID: 221 void,test_address_with_embedded_zero()
+	Method ID: 222 void,test_short_address()
+	Method ID: 223 void,test_wildcard_address()
+	Method ID: 224 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MDRecord
+	Method ID: 1041 org.xbill.DNS.MDRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name)
+	Method ID: 1042 org.xbill.DNS.Name,getMailAgent()
+	Method ID: 1043 org.xbill.DNS.Name,getAdditionalName()
+	Method ID: 1044 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.IPSECKEYRecord
+	Method ID: 1380 org.xbill.DNS.IPSECKEYRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,int,int,int,java.lang.Object,byte[])
+	Method ID: 1381 int,getPrecedence()
+	Method ID: 1382 int,getGatewayType()
+	Method ID: 1383 int,getAlgorithmType()
+	Method ID: 1384 java.lang.Object,getGateway()
+	Method ID: 1385 byte[],getKey()
+	Method ID: 1386 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NULLRecord
+	Method ID: 742 org.xbill.DNS.NULLRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,byte[])
+	Method ID: 743 byte[],getData()
+	Method ID: 744 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Cache.CacheRRset
+	Method ID: 554 org.xbill.DNS.Cache.CacheRRset,CONSTRUCTOR(org.xbill.DNS.Record,int,long)
+	Method ID: 555 org.xbill.DNS.Cache.CacheRRset,CONSTRUCTOR(org.xbill.DNS.RRset,int,long)
+	Method ID: 556 boolean,expired()
+	Method ID: 557 int,compareCredibility(int)
+	Method ID: 558 java.lang.String,toString()
+	Method ID: 559 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Verifier
+	Method ID: 225 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NameTest.Test_compareTo
+	Method ID: 1029 void,test_notName()
+	Method ID: 1030 void,test_same()
+	Method ID: 1031 void,test_equal()
+	Method ID: 1032 void,test_close()
+	Method ID: 1033 void,test_disjoint()
+	Method ID: 1034 void,test_label_prefix()
+	Method ID: 1035 void,test_more_labels()
+	Method ID: 1036 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Mnemonic
+	Method ID: 1231 org.xbill.DNS.Mnemonic,CONSTRUCTOR(java.lang.String,int)
+	Method ID: 1232 void,setMaximum(int)
+	Method ID: 1233 void,setPrefix(java.lang.String)
+	Method ID: 1234 void,setNumericAllowed(boolean)
+	Method ID: 1235 java.lang.Integer,toInteger(int)
+	Method ID: 1236 void,check(int)
+	Method ID: 1237 void,add(int,java.lang.String)
+	Method ID: 1238 void,addAlias(int,java.lang.String)
+	Method ID: 1239 void,addAll(org.xbill.DNS.Mnemonic)
+	Method ID: 1240 java.lang.String,getText(int)
+	Method ID: 1241 int,getValue(java.lang.String)
+	Method ID: 1242 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MRRecordTest
+	Method ID: 1314 void,test_ctor_0arg()
+	Method ID: 1315 void,test_ctor_4arg()
+	Method ID: 1316 void,test_getObject()
+	Method ID: 1317 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.OPTRecord
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_OPTRecord0_DNSServer.java	generateReply
+		org_xbill_DNS_OPTRecord1_DNScatServer.java	generateReply
+	Method ID: 1476 org.xbill.DNS.OPTRecord,CONSTRUCTOR(int,int,int,int,java.util.List)
+	Method ID: 1477 org.xbill.DNS.OPTRecord,CONSTRUCTOR(int,int,int,int)
+	Method ID: 1478 org.xbill.DNS.OPTRecord,CONSTRUCTOR(int,int,int)
+	Method ID: 1480 int,getExtendedRcode()
+	Method ID: 1483 java.util.List,getOptions()
+	Method ID: 1484 java.util.List,getOptions(int)
+	Method ID: 1485 void,#ExtendsOrImplements#()
+	Method ID: 1482 int,getFlags()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_OPTRecord0_DNSServer.java	generateReply
+	Method ID: 1481 int,getVersion()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_OPTRecord0_DNSServer.java	generateReply
+	Method ID: 1479 int,getPayloadSize()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_OPTRecord0_DNSServer.java	generateReply
+Class: org.xbill.DNS.TokenizerTest
+	Method ID: 39 void,setUp()
+	Method ID: 40 void,test_get()
+	Method ID: 41 void,test_get_invalid()
+	Method ID: 42 void,test_File_input()
+	Method ID: 43 void,test_unwanted_comment()
+	Method ID: 44 void,test_unwanted_ungotten_whitespace()
+	Method ID: 45 void,test_unwanted_ungotten_comment()
+	Method ID: 46 void,test_empty_string()
+	Method ID: 47 void,test_multiple_ungets()
+	Method ID: 48 void,test_getString()
+	Method ID: 49 void,test_getIdentifier()
+	Method ID: 50 void,test_getLong()
+	Method ID: 51 void,test_getUInt32()
+	Method ID: 52 void,test_getUInt16()
+	Method ID: 53 void,test_getUInt8()
+	Method ID: 54 void,test_getTTL()
+	Method ID: 55 void,test_getTTLLike()
+	Method ID: 56 void,test_getName()
+	Method ID: 57 void,test_getEOL()
+	Method ID: 58 void,test_getBase64()
+	Method ID: 59 void,test_getHex()
+	Method ID: 60 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SOARecordTest.Test_rrToWire
+	Method ID: 169 void,setUp()
+	Method ID: 170 void,test_canonical()
+	Method ID: 171 void,test_case_sensitive()
+	Method ID: 172 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SingleCompressedNameBaseTest.TestClass
+	Method ID: 462 org.xbill.DNS.SingleCompressedNameBaseTest.TestClass,CONSTRUCTOR()
+	Method ID: 463 org.xbill.DNS.SingleCompressedNameBaseTest.TestClass,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,org.xbill.DNS.Name,java.lang.String)
+	Method ID: 464 org.xbill.DNS.Name,getSingleName()
+	Method ID: 465 org.xbill.DNS.Record,getObject()
+	Method ID: 466 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.TXTBase
+	Method ID: 1172 org.xbill.DNS.TXTBase,CONSTRUCTOR()
+	Method ID: 1173 org.xbill.DNS.TXTBase,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long)
+	Method ID: 1174 org.xbill.DNS.TXTBase,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,java.util.List)
+	Method ID: 1175 org.xbill.DNS.TXTBase,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,java.lang.String)
+	Method ID: 1177 java.util.List,getStringsAsByteArrays()
+	Method ID: 1178 void,#ExtendsOrImplements#()
+	Method ID: 1176 java.util.List,getStrings()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_TXTRecord3_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_TXTRecord6_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+Class: org.xbill.DNS.spi.DNSJavaNameServiceDescriptor
+	Method ID: 1602 sun.net.spi.nameservice.NameService,createNameService()
+	Method ID: 1603 java.lang.String,getType()
+	Method ID: 1604 java.lang.String,getProviderName()
+	Method ID: 1605 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Credibility
+	Method ID: 1454 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.security.CERTConverter
+	Method ID: 1585 java.security.cert.Certificate,parseRecord(org.xbill.DNS.CERTRecord)
+	Method ID: 1586 org.xbill.DNS.CERTRecord,buildRecord(org.xbill.DNS.Name,int,long,java.security.cert.Certificate,int,int)
+	Method ID: 1587 org.xbill.DNS.CERTRecord,buildRecord(org.xbill.DNS.Name,int,long,java.security.cert.Certificate)
+	Method ID: 1588 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.APLRecordTest.Test_rrFromWire
+	Method ID: 189 void,setUp()
+	Method ID: 190 void,test_validIPv4()
+	Method ID: 191 void,test_validIPv4_short_address()
+	Method ID: 192 void,test_invalid_IPv4_prefix()
+	Method ID: 193 void,test_invalid_IPv4_length()
+	Method ID: 194 void,test_multiple_validIPv4()
+	Method ID: 195 void,test_validIPv6()
+	Method ID: 196 void,test_valid_nonIP()
+	Method ID: 197 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NameTest.Test_toWireCanonical
+	Method ID: 1015 void,test_basic()
+	Method ID: 1016 void,test_0arg()
+	Method ID: 1017 void,test_root()
+	Method ID: 1018 void,test_empty()
+	Method ID: 1019 void,test_3arg()
+	Method ID: 1020 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNSSEC
+	Method ID: 1051 byte[],digestRRset(org.xbill.DNS.RRSIGRecord,org.xbill.DNS.RRset)
+	Method ID: 1052 byte[],digestMessage(org.xbill.DNS.SIGRecord,org.xbill.DNS.Message,byte[])
+	Method ID: 1053 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.WKSRecord.Protocol
+	Method ID: 232 java.lang.String,string(int)
+	Method ID: 233 int,value(java.lang.String)
+	Method ID: 234 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MGRecordTest
+	Method ID: 1446 void,test_ctor_0arg()
+	Method ID: 1447 void,test_ctor_4arg()
+	Method ID: 1448 void,test_getObject()
+	Method ID: 1449 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SSHFPRecord.Digest
+	Method ID: 574 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Master
+	Instantiation Code Examples (Templates): 
+		org_xbill_DNS_Master0_ZoneFormat.java	readZoneFile
+		org_xbill_DNS_Master11_ZoneUtils.java	readZoneFile
+		org_xbill_DNS_Master3_ZoneCrawler.java	ZoneCrawler
+		org_xbill_DNS_Master4_ZoneFormat.java	readZoneFile
+	Method ID: 1408 org.xbill.DNS.Master,CONSTRUCTOR(java.lang.String,org.xbill.DNS.Name,long)
+	Method ID: 1411 org.xbill.DNS.Master,CONSTRUCTOR(java.io.InputStream,org.xbill.DNS.Name,long)
+	Method ID: 1412 org.xbill.DNS.Master,CONSTRUCTOR(java.io.InputStream,org.xbill.DNS.Name)
+	Method ID: 1413 org.xbill.DNS.Master,CONSTRUCTOR(java.io.InputStream)
+	Method ID: 1414 org.xbill.DNS.Record,_nextRecord()
+	Method ID: 1416 void,expandGenerate(boolean)
+	Method ID: 1417 java.util.Iterator,generators()
+	Method ID: 1418 void,finalize()
+	Method ID: 1419 void,#ExtendsOrImplements#()
+	Method ID: 1415 org.xbill.DNS.Record,nextRecord()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Master0_ZoneFormat.java	readZoneFile
+			org_xbill_DNS_Master11_ZoneUtils.java	readZoneFile
+			org_xbill_DNS_Master3_ZoneCrawler.java	nextDomainName
+			org_xbill_DNS_Master4_ZoneFormat.java	readZoneFile
+	Method ID: 1410 org.xbill.DNS.Master,CONSTRUCTOR(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Master0_ZoneFormat.java	readZoneFile
+			org_xbill_DNS_Master12_ZoneFormat.java	readZoneFile
+			org_xbill_DNS_Master4_ZoneFormat.java	readZoneFile
+	Method ID: 1409 org.xbill.DNS.Master,CONSTRUCTOR(java.lang.String,org.xbill.DNS.Name)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Master11_ZoneUtils.java	readZoneFile
+			org_xbill_DNS_Master1_ZoneUtils.java	readZoneFile
+			org_xbill_DNS_Master8_ZoneUtils.java	readZoneFile
+Class: org.xbill.DNS.KXRecordTest
+	Method ID: 600 void,test_getObject()
+	Method ID: 601 void,test_ctor_5arg()
+	Method ID: 602 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.MessageTest
+	Method ID: 467 junit.framework.Test,suite()
+	Method ID: 468 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Record
+	Method ID: 1243 org.xbill.DNS.Record,CONSTRUCTOR()
+	Method ID: 1244 org.xbill.DNS.Record,newRecord(org.xbill.DNS.Name,int,int,long,int,byte[])
+	Method ID: 1246 org.xbill.DNS.Record,newRecord(org.xbill.DNS.Name,int,int,long)
+	Method ID: 1247 org.xbill.DNS.Record,newRecord(org.xbill.DNS.Name,int,int)
+	Method ID: 1248 org.xbill.DNS.Record,fromWire(byte[],int)
+	Method ID: 1249 byte[],toWire(int)
+	Method ID: 1254 byte[],byteArrayFromString(java.lang.String)
+	Method ID: 1255 java.lang.String,byteArrayToString(byte[],boolean)
+	Method ID: 1256 java.lang.String,unknownToString(byte[])
+	Method ID: 1257 org.xbill.DNS.Record,fromString(org.xbill.DNS.Name,int,int,long,org.xbill.DNS.Tokenizer,org.xbill.DNS.Name)
+	Method ID: 1258 org.xbill.DNS.Record,fromString(org.xbill.DNS.Name,int,int,long,java.lang.String,org.xbill.DNS.Name)
+	Method ID: 1261 int,getRRsetType()
+	Method ID: 1264 boolean,sameRRset(org.xbill.DNS.Record)
+	Method ID: 1265 boolean,equals(java.lang.Object)
+	Method ID: 1266 int,hashCode()
+	Method ID: 1268 int,compareTo(java.lang.Object)
+	Method ID: 1270 void,#ExtendsOrImplements#()
+	Method ID: 1259 org.xbill.DNS.Name,getName()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSKEYRecord0_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_DNSKEYRecord11_BINDKeyUtils.java	keyFileBase
+			org_xbill_DNS_DNSKEYRecord15_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_DNSKEYRecord3_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_DSRecord11_DSTool.java	execute
+			org_xbill_DNS_DSRecord6_DSTool.java	execute
+			org_xbill_DNS_Record0_DNSJavaInetAddressImpl.java	getHostByAddr
+			org_xbill_DNS_Record102_RecordComparator.java	compare
+			org_xbill_DNS_Record125_ZoneUtils.java	findZoneName
+			org_xbill_DNS_Record139_DNScatServer.java	generateReply
+			org_xbill_DNS_Record18_DNSServer.java	addRRset
+			org_xbill_DNS_Record22_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record29_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record44_JCEDnsSecSigner.java	signZone
+			org_xbill_DNS_Record50_ZoneCrawler.java	nextDomainName
+			org_xbill_DNS_Record53_RecordComparator.java	compare
+			org_xbill_DNS_Record97_DNSServer.java	addRRset
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generateRRSIG
+			org_xbill_DNS_RRSIGRecord2_SignUtils.java	generateRRSIG
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generateRRSIG
+			org_xbill_DNS_SRVRecord10_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_SRVRecord13_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_SRVRecord25_DNSServiceInstanceImpl.java	DNSServiceInstanceImpl
+			org_xbill_DNS_TSIGRecord0_DNSServer.java	generateReply
+	Method ID: 1262 int,getDClass()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSKEYRecord18_DnsKeyConverter.java	parseDNSKEYRecord
+			org_xbill_DNS_DNSKEYRecord6_DnsKeyConverter.java	parseDNSKEYRecord
+			org_xbill_DNS_DSRecord11_DSTool.java	execute
+			org_xbill_DNS_DSRecord6_DSTool.java	execute
+			org_xbill_DNS_Record103_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record129_JCEDnsSecSigner.java	signZone
+			org_xbill_DNS_Record139_DNScatServer.java	generateReply
+			org_xbill_DNS_Record18_DNSServer.java	generateReply
+			org_xbill_DNS_Record22_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record29_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record44_JCEDnsSecSigner.java	signZone
+			org_xbill_DNS_Record56_SignZone.java	signZone
+			org_xbill_DNS_Record97_DNSServer.java	generateReply
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generateRRSIG
+			org_xbill_DNS_RRSIGRecord2_SignUtils.java	generateRRSIG
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generateRRSIG
+	Method ID: 1263 long,getTTL()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_ARecord30_FetchDNS.java	storeDNSRecord
+			org_xbill_DNS_ARecord32_ServerPool.java	getServers
+			org_xbill_DNS_ARecord53_FetchDNS.java	storeDNSRecord
+			org_xbill_DNS_DNSKEYRecord13_DSTool.java	execute
+			org_xbill_DNS_DNSKEYRecord6_DnsKeyConverter.java	parseDNSKEYRecord
+			org_xbill_DNS_DSRecord11_DSTool.java	execute
+			org_xbill_DNS_DSRecord6_DSTool.java	execute
+			org_xbill_DNS_Record103_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record131_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record21_CacheUtils.java	minSigTTL
+			org_xbill_DNS_Record29_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record46_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record60_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_RRSIGRecord11_SignUtils.java	generateRRSIG
+			org_xbill_DNS_RRSIGRecord2_SignUtils.java	generateRRSIG
+			org_xbill_DNS_RRSIGRecord4_SignUtils.java	generateRRSIG
+	Method ID: 1260 int,getType()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Record100_BINDKeyUtils.java	loadPublicKeyFile
+			org_xbill_DNS_Record112_FetchDNS.java	getFirstARecord
+			org_xbill_DNS_Record113_DNSJavaUtil.java	getHostAddress
+			org_xbill_DNS_Record125_ZoneUtils.java	findZoneName
+			org_xbill_DNS_Record134_FetchDNS.java	getFirstARecord
+			org_xbill_DNS_Record139_DNScatServer.java	generateReply
+			org_xbill_DNS_Record18_DNSServer.java	generateReply
+			org_xbill_DNS_Record22_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record29_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_Record44_JCEDnsSecSigner.java	signZone
+			org_xbill_DNS_Record51_DNSQueryThread.java	queryDns
+			org_xbill_DNS_Record53_RecordComparator.java	compare
+			org_xbill_DNS_Record68_FetchDNS.java	getFirstARecord
+			org_xbill_DNS_Record97_DNSServer.java	generateReply
+	Method ID: 1252 java.lang.String,rdataToString()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Record108_DNSJavaResolver.java	doReverseLookup
+			org_xbill_DNS_Record117_IPLookup.java	getLoc
+			org_xbill_DNS_Record135_DNSCollector.java	collect
+			org_xbill_DNS_Record38_DNSCollector.java	collect
+			org_xbill_DNS_SRVRecord12_DNSRecordImpl.java	DNSRecordSRV
+			org_xbill_DNS_SRVRecord24_DNSRecordImpl.java	DNSRecordSRV
+			org_xbill_DNS_SRVRecord9_DNSRecordImpl.java	DNSRecordSRV
+			org_xbill_DNS_TXTRecord10_DNSServer.java	findTXTRecords
+			org_xbill_DNS_TXTRecord2_DNSRecordImpl.java	DNSRecordTXT
+			org_xbill_DNS_TXTRecord5_DNSRecordImpl.java	DNSRecordTXT
+	Method ID: 1253 java.lang.String,toString()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Record112_FetchDNS.java	getDNSRecord
+			org_xbill_DNS_Record128_ZoneFormat.java	formatZone
+			org_xbill_DNS_Record134_FetchDNS.java	getDNSRecord
+			org_xbill_DNS_Record42_ZoneFormat.java	formatZone
+			org_xbill_DNS_Record58_ZoneFormat.java	formatZone
+			org_xbill_DNS_Record68_FetchDNS.java	getDNSRecord
+			org_xbill_DNS_Record99_ZoneFormat.java	formatZone
+	Method ID: 1250 byte[],toWireCanonical()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Record103_SignUtils.java	generateCanonicalRRsetData
+			org_xbill_DNS_Record131_SignUtils.java	generateCanonicalRRsetData
+			org_xbill_DNS_Record22_SignUtils.java	generateCanonicalRRsetData
+			org_xbill_DNS_Record29_SignUtils.java	generateCanonicalRRsetData
+			org_xbill_DNS_Record42_ZoneFormat.java	readZoneFile
+			org_xbill_DNS_Record60_SignUtils.java	generateCanonicalRRsetData
+	Method ID: 1251 byte[],rdataToWireCanonical()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Record102_RecordComparator.java	compareRDATA
+			org_xbill_DNS_Record130_RecordComparator.java	compareRDATA
+			org_xbill_DNS_Record22_SignUtils.java	generateCanonicalRRsetData
+			org_xbill_DNS_Record29_SignUtils.java	generateCanonicalRRsetData
+			org_xbill_DNS_Record47_RecordComparator.java	compareRDATA
+	Method ID: 1269 org.xbill.DNS.Name,getAdditionalName()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Record114_NameLookup.java	printAnswer
+			org_xbill_DNS_Record18_DNSServer.java	addAdditional2
+			org_xbill_DNS_Record97_DNSServer.java	addAdditional2
+	Method ID: 1267 org.xbill.DNS.Record,withName(org.xbill.DNS.Name)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Record18_DNSServer.java	addRRset
+			org_xbill_DNS_Record97_DNSServer.java	addRRset
+	Method ID: 1245 org.xbill.DNS.Record,newRecord(org.xbill.DNS.Name,int,int,long,byte[])
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Record22_SignUtils.java	generateCanonicalRRsetData
+			org_xbill_DNS_Record29_SignUtils.java	generateCanonicalRRsetData
+Class: org.xbill.DNS.MFRecord
+	Method ID: 850 org.xbill.DNS.MFRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name)
+	Method ID: 851 org.xbill.DNS.Name,getMailAgent()
+	Method ID: 852 org.xbill.DNS.Name,getAdditionalName()
+	Method ID: 853 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.APLRecordTest.Test_rrToString
+	Method ID: 214 void,setUp()
+	Method ID: 215 void,test()
+	Method ID: 216 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.SPFRecord
+	Method ID: 238 org.xbill.DNS.SPFRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.util.List)
+	Method ID: 239 org.xbill.DNS.SPFRecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,java.lang.String)
+	Method ID: 240 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.ResolverListener
+	Method ID: 226 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.TSIG.StreamVerifier
+	Method ID: 1311 org.xbill.DNS.TSIG.StreamVerifier,CONSTRUCTOR(org.xbill.DNS.TSIG,org.xbill.DNS.TSIGRecord)
+	Method ID: 1312 int,verify(org.xbill.DNS.Message,byte[])
+	Method ID: 1313 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.utils.HMAC
+	Method ID: 1685 org.xbill.DNS.utils.HMAC,CONSTRUCTOR(java.security.MessageDigest,byte[])
+	Method ID: 1686 org.xbill.DNS.utils.HMAC,CONSTRUCTOR(java.lang.String,byte[])
+	Method ID: 1687 void,update(byte[],int,int)
+	Method ID: 1688 void,update(byte[])
+	Method ID: 1689 byte[],sign()
+	Method ID: 1690 boolean,verify(byte[])
+	Method ID: 1691 void,clear()
+	Method ID: 1692 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.U16NameBaseTest.TestClass
+	Method ID: 485 org.xbill.DNS.U16NameBaseTest.TestClass,CONSTRUCTOR()
+	Method ID: 486 org.xbill.DNS.U16NameBaseTest.TestClass,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long)
+	Method ID: 487 org.xbill.DNS.U16NameBaseTest.TestClass,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,int,java.lang.String,org.xbill.DNS.Name,java.lang.String)
+	Method ID: 488 int,getU16Field()
+	Method ID: 489 org.xbill.DNS.Name,getNameField()
+	Method ID: 490 org.xbill.DNS.Record,getObject()
+	Method ID: 491 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.NameTest
+	Method ID: 923 void,test_init_from_name()
+	Method ID: 924 void,test_init_from_name_root()
+	Method ID: 925 void,test_init_from_name_empty()
+	Method ID: 926 void,test_concatenate_basic()
+	Method ID: 927 void,test_concatenate_abs_prefix()
+	Method ID: 928 void,test_concatenate_too_long()
+	Method ID: 929 void,test_relativize()
+	Method ID: 930 void,test_relativize_null_origin()
+	Method ID: 931 void,test_relativize_disjoint()
+	Method ID: 932 void,test_relativize_root()
+	Method ID: 933 void,test_wild()
+	Method ID: 934 void,test_wild_abs()
+	Method ID: 935 void,test_wild_toobig()
+	Method ID: 936 void,test_wild_toosmall()
+	Method ID: 937 void,test_fromDNAME()
+	Method ID: 938 void,test_fromDNAME_toobig()
+	Method ID: 939 void,test_fromDNAME_disjoint()
+	Method ID: 940 void,test_subdomain_abs()
+	Method ID: 941 void,test_subdomain_rel()
+	Method ID: 942 void,test_subdomain_equal()
+	Method ID: 943 void,test_toString_abs()
+	Method ID: 944 void,test_toString_rel()
+	Method ID: 945 void,test_toString_at()
+	Method ID: 946 void,test_toString_root()
+	Method ID: 947 void,test_toString_wild()
+	Method ID: 948 void,test_toString_escaped()
+	Method ID: 949 void,test_toString_special_char()
+	Method ID: 950 junit.framework.Test,suite()
+	Method ID: 951 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Serial
+	Method ID: 596 int,compare(long,long)
+	Method ID: 597 long,increment(long)
+	Method ID: 598 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.utils.hexdump
+	Method ID: 1699 java.lang.String,dump(java.lang.String,byte[],int,int)
+	Method ID: 1700 java.lang.String,dump(java.lang.String,byte[])
+	Method ID: 1701 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNSInputTest
+	Method ID: 1420 void,setUp()
+	Method ID: 1421 void,test_initial_state()
+	Method ID: 1422 void,test_jump1()
+	Method ID: 1423 void,test_jump2()
+	Method ID: 1424 void,test_jump_invalid()
+	Method ID: 1425 void,test_setActive()
+	Method ID: 1426 void,test_setActive_boundary1()
+	Method ID: 1427 void,test_setActive_boundary2()
+	Method ID: 1428 void,test_setActive_invalid()
+	Method ID: 1429 void,test_clearActive()
+	Method ID: 1430 void,test_restore_invalid()
+	Method ID: 1431 void,test_save_restore()
+	Method ID: 1432 void,test_readU8_basic()
+	Method ID: 1433 void,test_readU8_maxval()
+	Method ID: 1434 void,test_readU16_basic()
+	Method ID: 1435 void,test_readU16_maxval()
+	Method ID: 1436 void,test_readU32_basic()
+	Method ID: 1437 void,test_readU32_maxval()
+	Method ID: 1438 void,test_readByteArray_0arg()
+	Method ID: 1439 void,test_readByteArray_0arg_boundary()
+	Method ID: 1440 void,test_readByteArray_1arg()
+	Method ID: 1441 void,test_readByteArray_1arg_boundary()
+	Method ID: 1442 void,test_readByteArray_1arg_invalid()
+	Method ID: 1443 void,test_readByteArray_3arg()
+	Method ID: 1444 void,test_readCountedSting()
+	Method ID: 1445 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.KEYBase
+	Method ID: 802 org.xbill.DNS.KEYBase,CONSTRUCTOR()
+	Method ID: 803 org.xbill.DNS.KEYBase,CONSTRUCTOR(org.xbill.DNS.Name,int,int,long,int,int,int,byte[])
+	Method ID: 809 void,#ExtendsOrImplements#()
+	Method ID: 807 byte[],getKey()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSKEYRecord11_BINDKeyUtils.java	DNSKEYtoString
+			org_xbill_DNS_DNSKEYRecord14_DnsKeyConverter.java	parseDNSKEYRecord
+			org_xbill_DNS_KEYRecord0_DnsKeyConverter.java	generateDNSKEYRecord
+			org_xbill_DNS_KEYRecord1_DnsKeyConverter.java	generateDNSKEYRecord
+			org_xbill_DNS_KEYRecord5_DnsKeyConverter.java	generateDNSKEYRecord
+	Method ID: 806 int,getAlgorithm()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSKEYRecord0_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_DNSKEYRecord11_BINDKeyUtils.java	keyFileBase
+			org_xbill_DNS_DNSKEYRecord15_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_DNSKEYRecord3_SignUtils.java	generatePreRRSIG
+	Method ID: 808 int,getFootprint()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSKEYRecord0_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_DNSKEYRecord11_BINDKeyUtils.java	keyFileBase
+			org_xbill_DNS_DNSKEYRecord15_SignUtils.java	generatePreRRSIG
+			org_xbill_DNS_DNSKEYRecord3_SignUtils.java	generatePreRRSIG
+	Method ID: 804 int,getFlags()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSKEYRecord11_BINDKeyUtils.java	DNSKEYtoString
+			org_xbill_DNS_DNSKEYRecord12_SignZone.java	execute
+	Method ID: 805 int,getProtocol()
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_DNSKEYRecord11_BINDKeyUtils.java	DNSKEYtoString
+			org_xbill_DNS_DNSKEYRecord17_BINDKeyUtils.java	DNSKEYtoString
+Class: org.xbill.DNS.SectionTest
+	Method ID: 521 void,test_string()
+	Method ID: 522 void,test_value()
+	Method ID: 523 void,test_longString()
+	Method ID: 524 void,test_updString()
+	Method ID: 525 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.CompressionTest
+	Method ID: 1396 void,setUp()
+	Method ID: 1397 void,test()
+	Method ID: 1398 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNSInput
+	Method ID: 1364 org.xbill.DNS.DNSInput,CONSTRUCTOR(byte[])
+	Method ID: 1365 int,current()
+	Method ID: 1366 int,remaining()
+	Method ID: 1367 void,setActive(int)
+	Method ID: 1368 void,clearActive()
+	Method ID: 1369 void,jump(int)
+	Method ID: 1370 void,save()
+	Method ID: 1371 void,restore()
+	Method ID: 1372 int,readU8()
+	Method ID: 1373 int,readU16()
+	Method ID: 1374 long,readU32()
+	Method ID: 1375 void,readByteArray(byte[],int,int)
+	Method ID: 1376 byte[],readByteArray(int)
+	Method ID: 1377 byte[],readByteArray()
+	Method ID: 1378 byte[],readCountedString()
+	Method ID: 1379 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.DNAMERecord
+	Method ID: 455 org.xbill.DNS.DNAMERecord,CONSTRUCTOR(org.xbill.DNS.Name,int,long,org.xbill.DNS.Name)
+	Method ID: 456 org.xbill.DNS.Name,getTarget()
+	Method ID: 457 org.xbill.DNS.Name,getAlias()
+	Method ID: 458 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.utils.base16
+	Method ID: 1614 java.lang.String,toString(byte[])
+	Method ID: 1615 byte[],fromString(java.lang.String)
+	Method ID: 1616 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.AFSDBRecordTest
+	Method ID: 328 void,test_getObject()
+	Method ID: 329 void,test_ctor_5arg()
+	Method ID: 330 void,#ExtendsOrImplements#()
+Class: org.xbill.DNS.Address
+	Method ID: 776 int[],toArray(java.lang.String,int)
+	Method ID: 777 int[],toArray(java.lang.String)
+	Method ID: 778 byte[],toByteArray(java.lang.String,int)
+	Method ID: 780 java.lang.String,toDottedQuad(byte[])
+	Method ID: 781 java.lang.String,toDottedQuad(int[])
+	Method ID: 785 java.net.InetAddress,getByAddress(java.lang.String,int)
+	Method ID: 787 int,familyOf(java.net.InetAddress)
+	Method ID: 788 int,addressLength(int)
+	Method ID: 789 void,#ExtendsOrImplements#()
+	Method ID: 782 java.net.InetAddress,getByName(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Address0_IPAddr.java	getConvertedIP
+			org_xbill_DNS_Address1_DNSServer.java	getByName
+			org_xbill_DNS_Address22_DNSJavaHandler.java	getInetAddress
+			org_xbill_DNS_Address24_ExternalGeoLocationDecideRule.java	evaluate
+			org_xbill_DNS_Address25_ExternalGeoLocationDecideRule.java	evaluate
+			org_xbill_DNS_Address29_MuffinResolver.java	getByName
+			org_xbill_DNS_Address2_DNSServer.java	getByName
+			org_xbill_DNS_Address33_MuffinResolver.java	getByName
+			org_xbill_DNS_Address4_IPAddr.java	getConvertedIP
+	Method ID: 779 boolean,isDottedQuad(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Address10_IrisUri.java	parseAuthority
+			org_xbill_DNS_Address12_IrisUri.java	IrisUri
+			org_xbill_DNS_Address1_DNSServer.java	allowIPLiteral
+			org_xbill_DNS_Address26_IPv4AddressParameter.java	IPv4AddressParameter
+			org_xbill_DNS_Address2_DNSServer.java	allowIPLiteral
+			org_xbill_DNS_Address30_DNSServer.java	allowIPLiteral
+			org_xbill_DNS_Address8_ZoneAnalyzer.java	analyzeData
+	Method ID: 784 java.net.InetAddress,getByAddress(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Address30_DNSServer.java	getByName
+			org_xbill_DNS_Address3_DNSServer.java	DNSServer
+	Method ID: 783 java.net.InetAddress[],getAllByName(java.lang.String)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Address1_DNSServer.java	getAllByName
+			org_xbill_DNS_Address2_DNSServer.java	getAllByName
+	Method ID: 786 java.lang.String,getHostName(java.net.InetAddress)
+		Invocation Code Examples (Templates): 
+			org_xbill_DNS_Address23_ServerPool.java	getServers

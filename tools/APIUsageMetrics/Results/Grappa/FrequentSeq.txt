@@ -1,0 +1,109 @@
+Frequent Usage Scenario: 1
+	 att.grappa.Element : java.util.Enumeration,getAttributePairs()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//18_CSMARTGraph.java MethodName : CSMARTGraph
+Frequent Usage Scenario: 2
+	 att.grappa.Element : boolean,delete()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//18_CSMARTGraph.java MethodName : removeNamedNodes
+Frequent Usage Scenario: 3
+	 att.grappa.Parser : att.grappa.Graph,getGraph()
+	 att.grappa.GrappaPanel : att.grappa.GrappaListener,addGrappaListener(att.grappa.GrappaListener)
+	 att.grappa.Graph : java.io.PrintWriter,setErrorWriter(java.io.PrintWriter)
+	 att.grappa.Graph : boolean,setEditable(boolean)
+	 java_cup.runtime.lr_parser : java_cup.runtime.Symbol,parse()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Graph//47_VizGraph.java MethodName : getPanel
+Frequent Usage Scenario: 4
+	 att.grappa.Element : att.grappa.GrappaNexus,getGrappaNexus()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Node//30_CSMARTFrame.java MethodName : actionPerformed
+Frequent Usage Scenario: 5
+	 att.grappa.Element : java.lang.Object,getAttributeValue(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//18_CSMARTGraph.java MethodName : CSMARTGraph
+Frequent Usage Scenario: 6
+	 att.grappa.Graph : void,repaint()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Graph//34_ShowWindow.java MethodName : changeColorNode
+Frequent Usage Scenario: 7
+	 att.grappa.Element : att.grappa.Graph,getGraph()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Node//36_GrappaSelector.java MethodName : grappaReleased
+Frequent Usage Scenario: 8
+	 java_cup.runtime.Symbol : java.lang.String,toString()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_lr_parser//205_RelAlgParser.java MethodName : report_error
+Frequent Usage Scenario: 9
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int)
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int)
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Symbol//1487_Lexer.java MethodName : next_token
+Frequent Usage Scenario: 10
+	 att.grappa.Subgraph : att.grappa.GraphEnumeration,elements()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//18_CSMARTGraph.java MethodName : createGraphFromDotFile
+Frequent Usage Scenario: 11
+	 att.grappa.Element : java.lang.Object,setAttribute(java.lang.String,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Grappa//50_DGDemo.java MethodName : DFS
+Frequent Usage Scenario: 12
+	 att.grappa.Node : java.util.Enumeration,inEdgeElements()
+	 att.grappa.Node : java.util.Enumeration,outEdgeElements()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//18_CSMARTGraph.java MethodName : addObjects
+Frequent Usage Scenario: 13
+	 att.grappa.Node : att.grappa.Node,CONSTRUCTOR(att.grappa.Subgraph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Edge//27_SimpleGraph.java MethodName : buildGraph
+Frequent Usage Scenario: 14
+	 att.grappa.GraphEnumeration : att.grappa.Element,nextGraphElement()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//18_CSMARTGraph.java MethodName : CSMARTGraph
+Frequent Usage Scenario: 15
+	 att.grappa.Subgraph : void,addEdge(att.grappa.Edge)
+	 att.grappa.Graph : att.grappa.Graph,CONSTRUCTOR(java.lang.String,boolean,boolean)
+	 att.grappa.Element : att.grappa.Attribute,getAttribute(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Edge//28_Graph.java MethodName : drawGraph
+Frequent Usage Scenario: 16
+	 att.grappa.Edge : att.grappa.Node,getTail()
+	 att.grappa.Edge : att.grappa.Node,getHead()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Grappa//50_DGDemo.java MethodName : DFS
+Frequent Usage Scenario: 17
+	 att.grappa.Graph : void,paintImmediately()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//0_GraphPanel.java MethodName : actionPerformed
+Frequent Usage Scenario: 18
+	 att.grappa.GrappaPanel : java.awt.geom.AffineTransform,getTransform()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//0_GraphPanel.java MethodName : selectMultiple
+Frequent Usage Scenario: 19
+	 att.grappa.Parser : att.grappa.Graph,getGraph()
+	 att.grappa.GrappaPanel : att.grappa.GrappaPanel,CONSTRUCTOR(att.grappa.Subgraph)
+	 att.grappa.Graph : java.io.PrintWriter,setErrorWriter(java.io.PrintWriter)
+	 att.grappa.Graph : boolean,setEditable(boolean)
+	 java_cup.runtime.lr_parser : java_cup.runtime.Symbol,parse()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Graph//47_VizGraph.java MethodName : getPanel
+Frequent Usage Scenario: 20
+	 att.grappa.Subgraph : java.util.Enumeration,subgraphElements()
+	 att.grappa.Subgraph : java.util.Enumeration,edgeElements()
+	 att.grappa.Subgraph : java.util.Enumeration,nodeElements()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Edge//16_PerformanceAnalysisGUI.java MethodName : PerformanceAnalysisGUI
+Frequent Usage Scenario: 21
+	 att.grappa.Element : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Node//30_CSMARTFrame.java MethodName : actionPerformed
+Frequent Usage Scenario: 22
+	 att.grappa.Graph : boolean,setMenuable(boolean)
+	 att.grappa.GrappaPanel : void,setScaleToFit(boolean)
+	 att.grappa.GrappaPanel : att.grappa.GrappaListener,addGrappaListener(att.grappa.GrappaListener)
+	 att.grappa.GrappaPanel : att.grappa.GrappaPanel,CONSTRUCTOR(att.grappa.Subgraph)
+	 att.grappa.Graph : java.io.PrintWriter,setErrorWriter(java.io.PrintWriter)
+	 att.grappa.Graph : boolean,setEditable(boolean)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Graph//25_ClusterNode.java MethodName : getClusterGraphPanel
+Frequent Usage Scenario: 23
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,java.lang.Object)
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Scanner//35_XPathLexer.java MethodName : disambiguateAxisOrFunction
+Frequent Usage Scenario: 24
+	 java_cup.runtime.Scanner : java_cup.runtime.Symbol,next_token()
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int)
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Symbol//1380_lr_parser.java MethodName : parse
+Frequent Usage Scenario: 25
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int)
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int)
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Symbol//1380_lr_parser.java MethodName : parse
+Frequent Usage Scenario: 26
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,java.lang.Object)
+	 java_cup.runtime.lr_parser : void,done_parsing()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_lr_parser//50_ASTParser.java MethodName : CUP$ASTParser$do_action
+Frequent Usage Scenario: 27
+	 java_cup.runtime.lr_parser : void,done_parsing()
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_lr_parser//72_TdfParser.java MethodName : CUP$TdfParser$do_action

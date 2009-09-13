@@ -1,0 +1,1615 @@
+Class: org.jgrapht.util.ArrayUtil.ToStringFunctor
+	Method ID: 1130 java.lang.String,toString(java.lang.Object)
+	Method ID: 1131 void,#ExtendsOrImplements#()
+	Method ID: 1132 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DefaultGraphMapping
+	Method ID: 685 org.jgrapht.graph.DefaultGraphMapping,CONSTRUCTOR(java.util.Map<V,V>,java.util.Map<V,V>,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	Method ID: 686 E,getEdgeCorrespondence(E,boolean)
+	Method ID: 687 V,getVertexCorrespondence(V,boolean)
+	Method ID: 688 void,#ExtendsOrImplements#()
+	Method ID: 689 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.ListenableUndirectedWeightedGraph
+	Method ID: 674 org.jgrapht.graph.ListenableUndirectedWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 675 org.jgrapht.graph.ListenableUndirectedWeightedGraph,CONSTRUCTOR(org.jgrapht.WeightedGraph<V,E>)
+	Method ID: 676 void,#ExtendsOrImplements#()
+	Method ID: 677 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DirectedWeightedMultigraph
+	Method ID: 906 org.jgrapht.graph.DirectedWeightedMultigraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 907 org.jgrapht.graph.DirectedWeightedMultigraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 908 void,#ExtendsOrImplements#()
+	Method ID: 909 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.BellmanFordPathElement
+	Method ID: 158 org.jgrapht.alg.BellmanFordPathElement,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.alg.BellmanFordPathElement<V,E>,E,double)
+	Method ID: 159 org.jgrapht.alg.BellmanFordPathElement,CONSTRUCTOR(V)
+	Method ID: 160 double,getCost()
+	Method ID: 161 boolean,improve(org.jgrapht.alg.BellmanFordPathElement<V,E>,E,double)
+	Method ID: 162 void,#ExtendsOrImplements#()
+	Method ID: 163 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.alg.color.GreedyColoring
+	Method ID: 317 org.jgrapht.experimental.alg.color.GreedyColoring,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 318 org.jgrapht.experimental.alg.color.GreedyColoring,CONSTRUCTOR(org.jgrapht.Graph<V,E>,int)
+	Method ID: 319 java.lang.Integer,getLowerBound(java.util.Map<V,java.lang.Object>)
+	Method ID: 320 java.lang.Integer,getUpperBound(java.util.Map<V,java.lang.Object>)
+	Method ID: 321 boolean,isExact()
+	Method ID: 322 void,BEST_ORDER()
+	Method ID: 323 void,NATURAL_ORDER()
+	Method ID: 324 void,SMALLEST_DEGREE_LAST_ORDER()
+	Method ID: 325 void,LARGEST_SATURATION_FIRST_ORDER()
+	Method ID: 326 void,#ExtendsOrImplements#()
+	Method ID: 327 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.isomorphism.GraphOrdering.LabelsEdge
+	Method ID: 371 org.jgrapht.experimental.isomorphism.GraphOrdering.LabelsEdge,CONSTRUCTOR(int,int)
+	Method ID: 372 boolean,equals(java.lang.Object)
+	Method ID: 373 int,hashCode()
+	Method ID: 374 java.lang.String,toString()
+	Method ID: 375 void,#ExtendsOrImplements#()
+	Method ID: 376 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.JGraphModelAdapter.CellFactory
+	Method ID: 529 org.jgraph.graph.DefaultEdge,createEdgeCell(EE)
+	Method ID: 530 org.jgraph.graph.DefaultGraphCell,createVertexCell(VV)
+	Method ID: 531 void,#ExtendsOrImplements#()
+	Method ID: 532 void,#ExceptionHandler#()
+Class: org.jgrapht.event.EdgeTraversalEvent
+	Method ID: 225 org.jgrapht.event.EdgeTraversalEvent,CONSTRUCTOR(java.lang.Object,E)
+	Method ID: 227 void,#ExtendsOrImplements#()
+	Method ID: 228 void,#ExceptionHandler#()
+	Method ID: 226 E,getEdge()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_event_EdgeTraversalEvent0_HierarchicalTreeLayout.java	edgeTraversed
+Class: org.jgrapht.traverse.CrossComponentIterator.DirectedSpecifics
+	Method ID: 1017 org.jgrapht.traverse.CrossComponentIterator.DirectedSpecifics,CONSTRUCTOR(org.jgrapht.DirectedGraph<VV,EE>)
+	Method ID: 1018 java.util.Set<? extends EE>,edgesOf(VV)
+	Method ID: 1019 void,#ExtendsOrImplements#()
+	Method ID: 1020 void,#ExceptionHandler#()
+Class: org.jgrapht.event.ConnectedComponentTraversalEvent
+	Method ID: 255 org.jgrapht.event.ConnectedComponentTraversalEvent,CONSTRUCTOR(java.lang.Object,int)
+	Method ID: 256 int,getType()
+	Method ID: 257 void,CONNECTED_COMPONENT_STARTED()
+	Method ID: 258 void,CONNECTED_COMPONENT_FINISHED()
+	Method ID: 259 void,#ExtendsOrImplements#()
+	Method ID: 260 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.NeighborIndex.Neighbors
+	Method ID: 78 org.jgrapht.alg.NeighborIndex.Neighbors,CONSTRUCTOR(V,java.util.Collection<V>)
+	Method ID: 79 void,addNeighbor(V)
+	Method ID: 80 void,removeNeighbor(V)
+	Method ID: 81 java.util.Set<V>,getNeighbors()
+	Method ID: 82 java.util.List<V>,getNeighborList()
+	Method ID: 83 void,#ExtendsOrImplements#()
+	Method ID: 84 void,#ExceptionHandler#()
+Class: org.jgrapht.GraphMapping
+	Method ID: 60 V,getVertexCorrespondence(V,boolean)
+	Method ID: 61 E,getEdgeCorrespondence(E,boolean)
+	Method ID: 62 void,#ExtendsOrImplements#()
+	Method ID: 63 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DefaultListenableGraph.FlyweightEdgeEvent
+	Method ID: 657 org.jgrapht.graph.DefaultListenableGraph.FlyweightEdgeEvent,CONSTRUCTOR(java.lang.Object,int,EE)
+	Method ID: 658 void,setEdge(EE)
+	Method ID: 659 void,setType(int)
+	Method ID: 660 void,#ExtendsOrImplements#()
+	Method ID: 661 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.StringEdgeNameProvider
+	Method ID: 553 org.jgrapht.ext.StringEdgeNameProvider,CONSTRUCTOR()
+	Method ID: 554 java.lang.String,getEdgeName(E)
+	Method ID: 555 void,#ExtendsOrImplements#()
+	Method ID: 556 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.UniformRandomGraphGenerator
+	Method ID: 276 org.jgrapht.experimental.UniformRandomGraphGenerator,CONSTRUCTOR(int,int)
+	Method ID: 277 void,generateGraph(org.jgrapht.Graph,org.jgrapht.VertexFactory,java.util.Map)
+	Method ID: 278 void,#ExtendsOrImplements#()
+	Method ID: 279 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.CycleDetector.ProbeIterator
+	Method ID: 138 void,encounterVertexAgain(V,E)
+	Method ID: 139 V,provideNextVertex()
+	Method ID: 140 void,#ExtendsOrImplements#()
+	Method ID: 141 void,#ExceptionHandler#()
+Class: org.jgrapht.Graph
+	Method ID: 12 java.util.Set<E>,getAllEdges(V,V)
+	Method ID: 13 E,getEdge(V,V)
+	Method ID: 14 org.jgrapht.EdgeFactory<V,E>,getEdgeFactory()
+	Method ID: 16 boolean,addEdge(V,V,E)
+	Method ID: 19 boolean,containsEdge(E)
+	Method ID: 20 boolean,containsVertex(V)
+	Method ID: 23 boolean,removeAllEdges(java.util.Collection<? extends E>)
+	Method ID: 24 java.util.Set<E>,removeAllEdges(V,V)
+	Method ID: 25 boolean,removeAllVertices(java.util.Collection<? extends V>)
+	Method ID: 26 E,removeEdge(V,V)
+	Method ID: 27 boolean,removeEdge(E)
+	Method ID: 28 boolean,removeVertex(V)
+	Method ID: 32 double,getEdgeWeight(E)
+	Method ID: 33 void,#ExtendsOrImplements#()
+	Method ID: 34 void,#ExceptionHandler#()
+	Method ID: 29 java.util.Set<V>,vertexSet()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_DirectedGraph2_DuplicateEdgeChecker.java	check
+			org_jgrapht_DirectedGraph5_DuplicateEdgeChecker.java	check
+			org_jgrapht_Graph10_GraphIO.java	saveGraph
+			org_jgrapht_Graph13_GraphUtilities.java	isFullyConnected
+			org_jgrapht_UndirectedGraph1_RandomTree.java	prufer
+			org_jgrapht_UndirectedGraph2_GraphUtilities.java	getSubgraphs
+	Method ID: 18 boolean,containsEdge(V,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_Graph13_GraphUtilities.java	isFullyConnected
+			org_jgrapht_Graph15_GWizRandomGraphGenerator.java	createEdges
+			org_jgrapht_Graph21_Pair.java	isConnected
+			org_jgrapht_UndirectedGraph3_CompatibilityPartitioner.java	isFullyConnected2
+	Method ID: 17 boolean,addVertex(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_DirectedGraph0_ShibbolethAttributeResolver.java	addVertex
+			org_jgrapht_DirectedGraph3_ShibbolethAttributeResolver.java	addVertex
+			org_jgrapht_Graph15_GWizRandomGraphGenerator.java	generateGraph
+	Method ID: 15 E,addEdge(V,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_DirectedGraph0_ShibbolethAttributeResolver.java	addVertex
+			org_jgrapht_DirectedGraph3_ShibbolethAttributeResolver.java	addVertex
+			org_jgrapht_Graph15_GWizRandomGraphGenerator.java	generateGraph
+	Method ID: 30 V,getEdgeSource(E)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_DirectedGraph2_DuplicateEdgeChecker.java	check
+			org_jgrapht_DirectedGraph5_DuplicateEdgeChecker.java	check
+			org_jgrapht_Graph10_GraphIO.java	saveGraph
+	Method ID: 31 V,getEdgeTarget(E)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_DirectedGraph7_HierarchicalTreeLayout.java	edgeTraversed
+			org_jgrapht_Graph10_GraphIO.java	saveGraph
+	Method ID: 21 java.util.Set<E>,edgeSet()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_Graph10_GraphIO.java	saveGraph
+			org_jgrapht_UndirectedGraph1_RandomTree.java	main
+	Method ID: 22 java.util.Set<E>,edgesOf(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_UndirectedGraph2_GraphUtilities.java	getSubgraphs
+Class: org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator
+	Method ID: 415 org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator,CONSTRUCTOR()
+	Method ID: 416 boolean,equivalenceCompare(V,V,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	Method ID: 417 int,equivalenceHashcode(V,org.jgrapht.Graph<V,E>)
+	Method ID: 418 org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator<V,E>.InOutDegrees,getInOutDegrees(org.jgrapht.Graph<V,E>,V)
+	Method ID: 419 void,#ExtendsOrImplements#()
+	Method ID: 420 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.JGraphModelAdapter.JGraphListener
+	Method ID: 537 void,graphChanged(org.jgraph.event.GraphModelEvent)
+	Method ID: 538 void,#ExtendsOrImplements#()
+	Method ID: 539 void,#ExceptionHandler#()
+Class: org.jgrapht.generate.WheelGraphGenerator
+	Method ID: 608 org.jgrapht.generate.WheelGraphGenerator,CONSTRUCTOR(int)
+	Method ID: 609 org.jgrapht.generate.WheelGraphGenerator,CONSTRUCTOR(int,boolean)
+	Method ID: 610 void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+	Method ID: 611 void,HUB_VERTEX()
+	Method ID: 612 void,#ExtendsOrImplements#()
+	Method ID: 613 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.UnmodifiableGraph
+	Method ID: 693 org.jgrapht.graph.UnmodifiableGraph,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 694 E,addEdge(V,V)
+	Method ID: 695 boolean,addEdge(V,V,E)
+	Method ID: 696 boolean,addVertex(V)
+	Method ID: 697 boolean,removeAllEdges(java.util.Collection<? extends E>)
+	Method ID: 698 java.util.Set<E>,removeAllEdges(V,V)
+	Method ID: 699 boolean,removeAllVertices(java.util.Collection<? extends V>)
+	Method ID: 700 boolean,removeEdge(E)
+	Method ID: 701 E,removeEdge(V,V)
+	Method ID: 702 boolean,removeVertex(V)
+	Method ID: 703 void,UNMODIFIABLE()
+	Method ID: 704 void,#ExtendsOrImplements#()
+	Method ID: 705 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.GraphTests
+	Method ID: 269 boolean,isEmpty(org.jgrapht.Graph<V,E>)
+	Method ID: 270 boolean,isComplete(org.jgrapht.Graph<V,E>)
+	Method ID: 271 boolean,isConnected(org.jgrapht.Graph<V,E>)
+	Method ID: 272 boolean,isTree(org.jgrapht.Graph<V,E>)
+	Method ID: 273 boolean,isBipartite(org.jgrapht.Graph<V,E>)
+	Method ID: 274 void,#ExtendsOrImplements#()
+	Method ID: 275 void,#ExceptionHandler#()
+Class: org.jgrapht.DirectedGraph
+	Method ID: 8 int,outDegreeOf(V)
+	Method ID: 9 java.util.Set<E>,outgoingEdgesOf(V)
+	Method ID: 10 void,#ExtendsOrImplements#()
+	Method ID: 11 void,#ExceptionHandler#()
+	Method ID: 7 java.util.Set<E>,incomingEdgesOf(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_DirectedGraph2_DuplicateEdgeChecker.java	check
+			org_jgrapht_DirectedGraph5_DuplicateEdgeChecker.java	check
+	Method ID: 6 int,inDegreeOf(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_DirectedGraph6_GraphTutils.java	getVerticesInDegreeOf
+Class: org.jgrapht.traverse.CrossComponentIterator.Specifics
+	Method ID: 1006 java.util.Set<? extends EE>,edgesOf(VV)
+	Method ID: 1007 void,#ExtendsOrImplements#()
+	Method ID: 1008 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.ClassBasedEdgeFactory
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_graph_ClassBasedEdgeFactory0_DefaultDirectedMultigraph.java	DefaultDirectedMultigraph
+	Method ID: 682 E,createEdge(V,V)
+	Method ID: 683 void,#ExtendsOrImplements#()
+	Method ID: 684 void,#ExceptionHandler#()
+	Method ID: 681 org.jgrapht.graph.ClassBasedEdgeFactory,CONSTRUCTOR(java.lang.Class<? extends E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ClassBasedEdgeFactory0_DefaultDirectedMultigraph.java	DefaultDirectedMultigraph
+Class: org.jgrapht.alg.VertexCovers
+	Method ID: 85 java.util.Set<V>,find2ApproximationCover(org.jgrapht.Graph<V,E>)
+	Method ID: 86 java.util.Set<V>,findGreedyCover(org.jgrapht.UndirectedGraph<V,E>)
+	Method ID: 87 void,#ExtendsOrImplements#()
+	Method ID: 88 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.Subgraph
+	Method ID: 871 org.jgrapht.graph.Subgraph,CONSTRUCTOR(G,java.util.Set<V>,java.util.Set<E>)
+	Method ID: 872 org.jgrapht.graph.Subgraph,CONSTRUCTOR(G,java.util.Set<V>)
+	Method ID: 873 java.util.Set<E>,getAllEdges(V,V)
+	Method ID: 874 E,getEdge(V,V)
+	Method ID: 875 org.jgrapht.EdgeFactory<V,E>,getEdgeFactory()
+	Method ID: 876 E,addEdge(V,V)
+	Method ID: 877 boolean,addEdge(V,V,E)
+	Method ID: 878 boolean,addVertex(V)
+	Method ID: 879 boolean,containsEdge(E)
+	Method ID: 880 boolean,containsVertex(V)
+	Method ID: 881 java.util.Set<E>,edgeSet()
+	Method ID: 882 java.util.Set<E>,edgesOf(V)
+	Method ID: 883 boolean,removeEdge(E)
+	Method ID: 884 E,removeEdge(V,V)
+	Method ID: 885 boolean,removeVertex(V)
+	Method ID: 886 java.util.Set<V>,vertexSet()
+	Method ID: 887 V,getEdgeSource(E)
+	Method ID: 888 V,getEdgeTarget(E)
+	Method ID: 889 G,getBase()
+	Method ID: 890 double,getEdgeWeight(E)
+	Method ID: 891 void,setEdgeWeight(E,double)
+	Method ID: 892 void,NO_SUCH_EDGE_IN_BASE()
+	Method ID: 893 void,NO_SUCH_VERTEX_IN_BASE()
+	Method ID: 894 void,#ExtendsOrImplements#()
+	Method ID: 895 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.ListenableUndirectedGraph
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_graph_ListenableUndirectedGraph0_CompatibilityPartitioner.java	main
+	Method ID: 839 org.jgrapht.graph.ListenableUndirectedGraph,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+	Method ID: 840 void,#ExtendsOrImplements#()
+	Method ID: 841 void,#ExceptionHandler#()
+	Method ID: 838 org.jgrapht.graph.ListenableUndirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableUndirectedGraph0_CompatibilityPartitioner.java	main
+Class: org.jgrapht.graph.AbstractBaseGraph.DirectedEdgeContainer
+	Method ID: 754 java.util.Set<EE>,getUnmodifiableIncomingEdges()
+	Method ID: 755 java.util.Set<EE>,getUnmodifiableOutgoingEdges()
+	Method ID: 756 void,addIncomingEdge(EE)
+	Method ID: 757 void,addOutgoingEdge(EE)
+	Method ID: 758 void,removeIncomingEdge(EE)
+	Method ID: 759 void,removeOutgoingEdge(EE)
+	Method ID: 760 void,#ExtendsOrImplements#()
+	Method ID: 761 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.AbstractBaseGraph.Specifics
+	Method ID: 737 void,addVertex(V)
+	Method ID: 738 java.util.Set<V>,getVertexSet()
+	Method ID: 739 java.util.Set<E>,getAllEdges(V,V)
+	Method ID: 740 E,getEdge(V,V)
+	Method ID: 741 void,addEdgeToTouchingVertices(E)
+	Method ID: 742 int,degreeOf(V)
+	Method ID: 743 java.util.Set<E>,edgesOf(V)
+	Method ID: 744 int,inDegreeOf(V)
+	Method ID: 745 java.util.Set<E>,incomingEdgesOf(V)
+	Method ID: 746 int,outDegreeOf(V)
+	Method ID: 747 java.util.Set<E>,outgoingEdgesOf(V)
+	Method ID: 748 void,removeEdgeFromTouchingVertices(E)
+	Method ID: 749 void,#ExtendsOrImplements#()
+	Method ID: 750 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.ListenableDirectedWeightedGraph
+	Extension Code Examples (Hooks): 
+		org_jgrapht_graph_ListenableDirectedWeightedGraph0_GWizGraph.java	NA
+	Method ID: 914 org.jgrapht.graph.ListenableDirectedWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 915 org.jgrapht.graph.ListenableDirectedWeightedGraph,CONSTRUCTOR(org.jgrapht.WeightedGraph<V,E>)
+	Method ID: 917 void,#ExceptionHandler#()
+	Method ID: 916 void,#ExtendsOrImplements#()
+Class: org.jgrapht.experimental.GraphSquare
+	Method ID: 293 org.jgrapht.experimental.GraphSquare,CONSTRUCTOR(org.jgrapht.Graph<V,E>,boolean)
+	Method ID: 294 E,addEdge(V,V)
+	Method ID: 295 boolean,addEdge(V,V,E)
+	Method ID: 296 boolean,addVertex(V)
+	Method ID: 297 boolean,removeAllEdges(java.util.Collection<? extends E>)
+	Method ID: 298 java.util.Set<E>,removeAllEdges(V,V)
+	Method ID: 299 boolean,removeAllVertices(java.util.Collection<? extends V>)
+	Method ID: 300 boolean,removeEdge(E)
+	Method ID: 301 E,removeEdge(V,V)
+	Method ID: 302 boolean,removeVertex(V)
+	Method ID: 303 void,UNMODIFIABLE()
+	Method ID: 304 void,#ExtendsOrImplements#()
+	Method ID: 305 void,#ExceptionHandler#()
+Class: org.jgrapht.GraphHelper
+	Method ID: 67 void,#ExtendsOrImplements#()
+	Method ID: 68 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.BronKerboschCliqueFinder
+	Method ID: 96 org.jgrapht.alg.BronKerboschCliqueFinder,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 97 java.util.Collection<java.util.Set<V>>,getAllMaximalCliques()
+	Method ID: 98 java.util.Collection<java.util.Set<V>>,getBiggestMaximalCliques()
+	Method ID: 99 void,#ExtendsOrImplements#()
+	Method ID: 100 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.SimpleDirectedGraph
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_graph_SimpleDirectedGraph0_ShibbolethAttributeResolver.java	validate
+	Method ID: 618 org.jgrapht.graph.SimpleDirectedGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 619 void,#ExtendsOrImplements#()
+	Method ID: 620 void,#ExceptionHandler#()
+	Method ID: 617 org.jgrapht.graph.SimpleDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_SimpleDirectedGraph0_ShibbolethAttributeResolver.java	validate
+Class: org.jgrapht.experimental.isomorphism.GraphOrdering
+	Method ID: 364 org.jgrapht.experimental.isomorphism.GraphOrdering,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 365 org.jgrapht.experimental.isomorphism.GraphOrdering,CONSTRUCTOR(org.jgrapht.Graph<V,E>,java.util.Set<V>,java.util.Set<E>)
+	Method ID: 366 boolean,equalsByEdgeOrder(org.jgrapht.experimental.isomorphism.GraphOrdering)
+	Method ID: 367 java.util.Set<org.jgrapht.experimental.isomorphism.GraphOrdering<V,E>.LabelsEdge>,getLabelsEdgesSet()
+	Method ID: 368 java.lang.String,toString()
+	Method ID: 369 void,#ExtendsOrImplements#()
+	Method ID: 370 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.DirectedNeighborIndex
+	Method ID: 118 org.jgrapht.alg.DirectedNeighborIndex,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 119 java.util.Set<V>,predecessorsOf(V)
+	Method ID: 120 java.util.List<V>,predecessorListOf(V)
+	Method ID: 121 java.util.Set<V>,successorsOf(V)
+	Method ID: 122 java.util.List<V>,successorListOf(V)
+	Method ID: 123 void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	Method ID: 124 void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	Method ID: 125 void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	Method ID: 126 void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	Method ID: 127 void,#ExtendsOrImplements#()
+	Method ID: 128 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.alg.ApproximationAlgorithm
+	Method ID: 311 void,#ExtendsOrImplements#()
+	Method ID: 312 void,#ExceptionHandler#()
+Class: org.jgrapht.traverse.AbstractGraphIterator
+	Method ID: 970 void,setCrossComponentTraversal(boolean)
+	Method ID: 971 boolean,isCrossComponentTraversal()
+	Method ID: 972 void,setReuseEvents(boolean)
+	Method ID: 973 boolean,isReuseEvents()
+	Method ID: 975 void,remove()
+	Method ID: 976 void,removeTraversalListener(org.jgrapht.event.TraversalListener<V,E>)
+	Method ID: 977 void,fireConnectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	Method ID: 978 void,fireConnectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	Method ID: 979 void,fireEdgeTraversed(org.jgrapht.event.EdgeTraversalEvent<V,E>)
+	Method ID: 980 void,fireVertexTraversed(org.jgrapht.event.VertexTraversalEvent<V>)
+	Method ID: 981 void,fireVertexFinished(org.jgrapht.event.VertexTraversalEvent<V>)
+	Method ID: 982 void,#ExtendsOrImplements#()
+	Method ID: 983 void,#ExceptionHandler#()
+	Method ID: 974 void,addTraversalListener(org.jgrapht.event.TraversalListener<V,E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_traverse_BreadthFirstIterator0_HierarchicalTreeLayout.java	setGraph
+Class: org.jgrapht.graph.AsUndirectedGraph
+	Method ID: 801 org.jgrapht.graph.AsUndirectedGraph,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 802 java.util.Set<E>,getAllEdges(V,V)
+	Method ID: 803 E,getEdge(V,V)
+	Method ID: 804 E,addEdge(V,V)
+	Method ID: 805 boolean,addEdge(V,V,E)
+	Method ID: 806 int,degreeOf(V)
+	Method ID: 807 int,inDegreeOf(V)
+	Method ID: 808 java.util.Set<E>,incomingEdgesOf(V)
+	Method ID: 809 int,outDegreeOf(V)
+	Method ID: 810 java.util.Set<E>,outgoingEdgesOf(V)
+	Method ID: 811 java.lang.String,toString()
+	Method ID: 812 void,NO_EDGE_ADD()
+	Method ID: 813 void,UNDIRECTED()
+	Method ID: 814 void,#ExtendsOrImplements#()
+	Method ID: 815 void,#ExceptionHandler#()
+Class: org.jgrapht.demo.JGraphAdapterDemo.ListenableDirectedMultigraph
+	Method ID: 207 void,#ExtendsOrImplements#()
+	Method ID: 208 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.UndirectedSubgraph
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_graph_UndirectedSubgraph0_GraphUtilities.java	getSubgraphs
+	Method ID: 821 int,degreeOf(V)
+	Method ID: 822 void,#ExtendsOrImplements#()
+	Method ID: 823 void,#ExceptionHandler#()
+	Method ID: 820 org.jgrapht.graph.UndirectedSubgraph,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_UndirectedSubgraph0_GraphUtilities.java	getSubgraphs
+Class: org.jgrapht.alg.BellmanFordShortestPath
+	Method ID: 151 org.jgrapht.alg.BellmanFordShortestPath,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	Method ID: 152 org.jgrapht.alg.BellmanFordShortestPath,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V,int)
+	Method ID: 153 double,getCost(V)
+	Method ID: 154 java.util.List<E>,getPathEdgeList(V)
+	Method ID: 155 java.util.List<E>,findPathBetween(org.jgrapht.Graph<V,E>,V,V)
+	Method ID: 156 void,#ExtendsOrImplements#()
+	Method ID: 157 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.isomorphism.PermutationIsomorphismInspector
+	Method ID: 409 org.jgrapht.experimental.isomorphism.PermutationIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<? super V,? super E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<? super V,? super E>>)
+	Method ID: 410 org.jgrapht.experimental.isomorphism.PermutationIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	Method ID: 411 org.jgrapht.experimental.permutation.CollectionPermutationIter<V>,createPermutationIterator(java.util.Set<V>,java.util.Set<V>)
+	Method ID: 412 boolean,areVertexSetsOfTheSameEqualityGroup(java.util.Set<V>,java.util.Set<V>)
+	Method ID: 413 void,#ExtendsOrImplements#()
+	Method ID: 414 void,#ExceptionHandler#()
+Class: org.jgrapht.util.FibonacciHeapNode
+	Method ID: 1088 org.jgrapht.util.FibonacciHeapNode,CONSTRUCTOR(T,double)
+	Method ID: 1089 double,getKey()
+	Method ID: 1090 T,getData()
+	Method ID: 1091 java.lang.String,toString()
+	Method ID: 1092 void,#ExtendsOrImplements#()
+	Method ID: 1093 void,#ExceptionHandler#()
+Class: org.jgrapht.util.ArrayUtil
+	Method ID: 1125 java.lang.String,toString(int[])
+	Method ID: 1126 java.lang.String,toString(java.lang.Object[],org.jgrapht.util.ArrayUtil.ToStringFunctor)
+	Method ID: 1127 java.lang.String,toString(java.lang.Object[])
+	Method ID: 1128 void,#ExtendsOrImplements#()
+	Method ID: 1129 void,#ExceptionHandler#()
+Class: org.jgrapht.util.FibonacciHeap
+	Method ID: 1094 org.jgrapht.util.FibonacciHeap,CONSTRUCTOR()
+	Method ID: 1095 boolean,isEmpty()
+	Method ID: 1096 void,clear()
+	Method ID: 1097 void,decreaseKey(org.jgrapht.util.FibonacciHeapNode<T>,double)
+	Method ID: 1098 void,delete(org.jgrapht.util.FibonacciHeapNode<T>)
+	Method ID: 1099 void,insert(org.jgrapht.util.FibonacciHeapNode<T>,double)
+	Method ID: 1100 org.jgrapht.util.FibonacciHeapNode<T>,min()
+	Method ID: 1101 org.jgrapht.util.FibonacciHeapNode<T>,removeMin()
+	Method ID: 1102 int,size()
+	Method ID: 1103 org.jgrapht.util.FibonacciHeap<T>,union(org.jgrapht.util.FibonacciHeap<T>,org.jgrapht.util.FibonacciHeap<T>)
+	Method ID: 1104 java.lang.String,toString()
+	Method ID: 1105 void,cascadingCut(org.jgrapht.util.FibonacciHeapNode<T>)
+	Method ID: 1106 void,consolidate()
+	Method ID: 1107 void,cut(org.jgrapht.util.FibonacciHeapNode<T>,org.jgrapht.util.FibonacciHeapNode<T>)
+	Method ID: 1108 void,link(org.jgrapht.util.FibonacciHeapNode<T>,org.jgrapht.util.FibonacciHeapNode<T>)
+	Method ID: 1109 void,#ExtendsOrImplements#()
+	Method ID: 1110 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.NeighborIndex
+	Method ID: 69 org.jgrapht.alg.NeighborIndex,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 70 java.util.Set<V>,neighborsOf(V)
+	Method ID: 71 java.util.List<V>,neighborListOf(V)
+	Method ID: 72 void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	Method ID: 73 void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	Method ID: 74 void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	Method ID: 75 void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	Method ID: 76 void,#ExtendsOrImplements#()
+	Method ID: 77 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.alg.color.BrownBacktrackColoring
+	Method ID: 313 org.jgrapht.experimental.alg.color.BrownBacktrackColoring,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 314 java.lang.Integer,getResult(java.util.Map<V,java.lang.Object>)
+	Method ID: 315 void,#ExtendsOrImplements#()
+	Method ID: 316 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.StrongConnectivityInspector.VertexData
+	Method ID: 149 void,#ExtendsOrImplements#()
+	Method ID: 150 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DirectedMultigraph
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_graph_DirectedMultigraph0_MsAccessAdapter.java	getJoinClause
+	Method ID: 957 org.jgrapht.graph.DirectedMultigraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 958 void,#ExtendsOrImplements#()
+	Method ID: 959 void,#ExceptionHandler#()
+	Method ID: 956 org.jgrapht.graph.DirectedMultigraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DirectedMultigraph0_MsAccessAdapter.java	getJoinClause
+Class: org.jgrapht.experimental.permutation.IntegerPermutationIter
+	Method ID: 463 org.jgrapht.experimental.permutation.IntegerPermutationIter,CONSTRUCTOR(int)
+	Method ID: 464 org.jgrapht.experimental.permutation.IntegerPermutationIter,CONSTRUCTOR(int[])
+	Method ID: 465 boolean,hasNext()
+	Method ID: 466 java.lang.Object,next()
+	Method ID: 467 int[],getNext()
+	Method ID: 468 int[],getCurrent()
+	Method ID: 469 java.lang.String,toString(int[])
+	Method ID: 470 void,remove()
+	Method ID: 471 int[],nextPermutation()
+	Method ID: 472 boolean,hasNextPermutaions()
+	Method ID: 473 void,#ExtendsOrImplements#()
+	Method ID: 474 void,#ExceptionHandler#()
+Class: org.jgrapht.traverse.CrossComponentIterator.UndirectedSpecifics
+	Method ID: 1021 org.jgrapht.traverse.CrossComponentIterator.UndirectedSpecifics,CONSTRUCTOR(org.jgrapht.Graph<VV,EE>)
+	Method ID: 1022 java.util.Set<EE>,edgesOf(VV)
+	Method ID: 1023 void,#ExtendsOrImplements#()
+	Method ID: 1024 void,#ExceptionHandler#()
+Class: org.jgrapht.traverse.GraphIterator
+	Method ID: 962 boolean,isCrossComponentTraversal()
+	Method ID: 963 void,setReuseEvents(boolean)
+	Method ID: 964 boolean,isReuseEvents()
+	Method ID: 965 void,addTraversalListener(org.jgrapht.event.TraversalListener<V,E>)
+	Method ID: 966 void,remove()
+	Method ID: 967 void,removeTraversalListener(org.jgrapht.event.TraversalListener<V,E>)
+	Method ID: 968 void,#ExtendsOrImplements#()
+	Method ID: 969 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.Subgraph.BaseGraphListener
+	Method ID: 896 void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	Method ID: 897 void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	Method ID: 898 void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	Method ID: 899 void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	Method ID: 900 void,#ExtendsOrImplements#()
+	Method ID: 901 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.IntrusiveEdge
+	Method ID: 667 java.lang.Object,clone()
+	Method ID: 668 void,#ExtendsOrImplements#()
+	Method ID: 669 void,#ExceptionHandler#()
+Class: org.jgrapht.traverse.TopologicalOrderIterator.LinkedListQueue
+	Method ID: 1055 T,element()
+	Method ID: 1056 boolean,offer(T)
+	Method ID: 1057 T,peek()
+	Method ID: 1058 T,poll()
+	Method ID: 1059 T,remove()
+	Method ID: 1060 void,#ExtendsOrImplements#()
+	Method ID: 1061 void,#ExceptionHandler#()
+Class: org.jgrapht.ListenableGraph
+	Method ID: 55 void,addVertexSetListener(org.jgrapht.event.VertexSetListener<V>)
+	Method ID: 56 void,removeGraphListener(org.jgrapht.event.GraphListener<V,E>)
+	Method ID: 57 void,removeVertexSetListener(org.jgrapht.event.VertexSetListener<V>)
+	Method ID: 58 void,#ExtendsOrImplements#()
+	Method ID: 59 void,#ExceptionHandler#()
+	Method ID: 54 void,addGraphListener(org.jgrapht.event.GraphListener<V,E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_ListenableGraph9_GWizModelAdapter.java	GWizModelAdapter
+Class: org.jgrapht.traverse.ClosestFirstIterator.QueueEntry
+	Method ID: 1037 void,#ExtendsOrImplements#()
+	Method ID: 1038 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.isomorphism.IsomorphismRelation
+	Method ID: 425 org.jgrapht.experimental.isomorphism.IsomorphismRelation,CONSTRUCTOR(java.util.List<V>,java.util.List<V>,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	Method ID: 426 java.lang.String,toString()
+	Method ID: 427 V,getVertexCorrespondence(V,boolean)
+	Method ID: 428 E,getEdgeCorrespondence(E,boolean)
+	Method ID: 429 void,#ExtendsOrImplements#()
+	Method ID: 430 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.WeightedMultigraph
+	Method ID: 670 org.jgrapht.graph.WeightedMultigraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 671 org.jgrapht.graph.WeightedMultigraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 672 void,#ExtendsOrImplements#()
+	Method ID: 673 void,#ExceptionHandler#()
+Class: org.jgrapht.traverse.TopologicalOrderIterator
+	Method ID: 1047 org.jgrapht.traverse.TopologicalOrderIterator,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 1048 org.jgrapht.traverse.TopologicalOrderIterator,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>,java.util.Queue<V>)
+	Method ID: 1049 boolean,isConnectedComponentExhausted()
+	Method ID: 1050 void,encounterVertex(V,E)
+	Method ID: 1051 void,encounterVertexAgain(V,E)
+	Method ID: 1052 V,provideNextVertex()
+	Method ID: 1053 void,#ExtendsOrImplements#()
+	Method ID: 1054 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DefaultDirectedGraph
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_graph_DefaultDirectedGraph0_MigrationPath.java	buildGraph
+		org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	DGBModel
+	Method ID: 903 org.jgrapht.graph.DefaultDirectedGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 904 void,#ExtendsOrImplements#()
+	Method ID: 905 void,#ExceptionHandler#()
+	Method ID: 902 org.jgrapht.graph.DefaultDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph0_MigrationPath.java	buildGraph
+			org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	DGBModel
+Class: org.jgrapht.graph.DefaultWeightedEdge
+	Extension Code Examples (Hooks): 
+		org_jgrapht_graph_DefaultWeightedEdge2_GWizEdge.java	NA
+	Method ID: 961 void,#ExceptionHandler#()
+	Method ID: 960 void,#ExtendsOrImplements#()
+Class: org.jgrapht.experimental.equivalence.EquivalenceSetCreator
+	Method ID: 357 org.jgrapht.experimental.equivalence.EquivalenceSet[],createEqualityGroupOrderedArray(EE[],org.jgrapht.experimental.equivalence.EquivalenceComparator<? super EE,? super CC>,CC)
+	Method ID: 358 org.jgrapht.experimental.equivalence.EquivalenceSet[],createEqualityGroupOrderedArray(java.util.Collection<EE>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super EE,? super CC>,CC)
+	Method ID: 359 void,#ExtendsOrImplements#()
+	Method ID: 360 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.BellmanFordIterator
+	Method ID: 174 org.jgrapht.alg.BellmanFordIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	Method ID: 175 org.jgrapht.alg.BellmanFordPathElement<V,E>,getPathElement(V)
+	Method ID: 176 boolean,hasNext()
+	Method ID: 177 java.util.List<V>,next()
+	Method ID: 178 void,remove()
+	Method ID: 179 void,assertValidEdge(E)
+	Method ID: 180 double,calculatePathCost(V,E)
+	Method ID: 181 java.util.Iterator<E>,edgesOfIterator(V)
+	Method ID: 182 org.jgrapht.alg.BellmanFordPathElement<V,E>,getPrevSeenData(V)
+	Method ID: 183 org.jgrapht.alg.BellmanFordPathElement<V,E>,getSeenData(V)
+	Method ID: 184 boolean,isSeenVertex(V)
+	Method ID: 185 org.jgrapht.alg.BellmanFordPathElement<V,E>,putPrevSeenData(V,org.jgrapht.alg.BellmanFordPathElement<V,E>)
+	Method ID: 186 org.jgrapht.alg.BellmanFordPathElement<V,E>,putSeenData(V,org.jgrapht.alg.BellmanFordPathElement<V,E>)
+	Method ID: 187 void,NEGATIVE_UNDIRECTED_EDGE()
+	Method ID: 188 void,#ExtendsOrImplements#()
+	Method ID: 189 void,#ExceptionHandler#()
+Class: org.jgrapht.VertexFactory
+	Method ID: 37 void,#ExceptionHandler#()
+	Method ID: 35 V,createVertex()
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_VertexFactory//0_GWizVertex.java	NA
+	Method ID: 36 void,#ExtendsOrImplements#()
+Class: org.jgrapht.experimental.touchgraph.SimpleTouchgraphApplet
+	Method ID: 482 org.jgrapht.Graph<java.lang.String,org.jgrapht.graph.DefaultEdge>,createSamplegraph()
+	Method ID: 483 void,init()
+	Method ID: 484 void,main(java.lang.String[])
+	Method ID: 485 void,#ExtendsOrImplements#()
+	Method ID: 486 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.AbstractBaseGraph.DirectedSpecifics
+	Method ID: 762 void,addVertex(V)
+	Method ID: 763 java.util.Set<V>,getVertexSet()
+	Method ID: 764 java.util.Set<E>,getAllEdges(V,V)
+	Method ID: 765 E,getEdge(V,V)
+	Method ID: 766 void,addEdgeToTouchingVertices(E)
+	Method ID: 767 int,degreeOf(V)
+	Method ID: 768 java.util.Set<E>,edgesOf(V)
+	Method ID: 769 int,inDegreeOf(V)
+	Method ID: 770 java.util.Set<E>,incomingEdgesOf(V)
+	Method ID: 771 int,outDegreeOf(V)
+	Method ID: 772 java.util.Set<E>,outgoingEdgesOf(V)
+	Method ID: 773 void,removeEdgeFromTouchingVertices(E)
+	Method ID: 774 void,NOT_IN_DIRECTED_GRAPH()
+	Method ID: 775 void,#ExtendsOrImplements#()
+	Method ID: 776 void,#ExceptionHandler#()
+Class: org.jgrapht.Graphs
+	Method ID: 38 E,addEdge(org.jgrapht.Graph<V,E>,V,V,double)
+	Method ID: 39 E,addEdgeWithVertices(org.jgrapht.Graph<V,E>,V,V)
+	Method ID: 40 boolean,addEdgeWithVertices(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,E)
+	Method ID: 41 E,addEdgeWithVertices(org.jgrapht.Graph<V,E>,V,V,double)
+	Method ID: 42 boolean,addGraph(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	Method ID: 43 void,addGraphReversed(org.jgrapht.DirectedGraph<V,E>,org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 44 boolean,addAllEdges(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,java.util.Collection<? extends E>)
+	Method ID: 45 boolean,addAllVertices(org.jgrapht.Graph<V,E>,java.util.Collection<? extends V>)
+	Method ID: 46 java.util.List<V>,neighborListOf(org.jgrapht.Graph<V,E>,V)
+	Method ID: 49 org.jgrapht.UndirectedGraph<V,E>,undirectedGraph(org.jgrapht.Graph<V,E>)
+	Method ID: 50 boolean,testIncidence(org.jgrapht.Graph<V,E>,E,V)
+	Method ID: 52 void,#ExtendsOrImplements#()
+	Method ID: 53 void,#ExceptionHandler#()
+	Method ID: 51 V,getOppositeVertex(org.jgrapht.Graph<V,E>,E,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_Graphs0_HumanOrgansGraph.java	HumanOrgansGraph
+			org_jgrapht_Graphs2_HumanOrgansGraph.java	HumanOrgansGraph
+	Method ID: 48 java.util.List<V>,successorListOf(org.jgrapht.DirectedGraph<V,E>,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_Graphs5_GraphTutils.java	getNextDependencyLevel
+	Method ID: 47 java.util.List<V>,predecessorListOf(org.jgrapht.DirectedGraph<V,E>,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_Graphs5_GraphTutils.java	getNextDependencyLevel
+Class: org.jgrapht.traverse.BreadthFirstIterator
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_traverse_BreadthFirstIterator0_HierarchicalTreeLayout.java	setGraph
+	Method ID: 1040 org.jgrapht.traverse.BreadthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	Method ID: 1041 boolean,isConnectedComponentExhausted()
+	Method ID: 1042 void,encounterVertex(V,E)
+	Method ID: 1043 void,encounterVertexAgain(V,E)
+	Method ID: 1044 V,provideNextVertex()
+	Method ID: 1045 void,#ExtendsOrImplements#()
+	Method ID: 1046 void,#ExceptionHandler#()
+	Method ID: 1039 org.jgrapht.traverse.BreadthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_traverse_BreadthFirstIterator0_HierarchicalTreeLayout.java	setGraph
+Class: org.jgrapht.WeightedGraph
+	Method ID: 64 void,setEdgeWeight(E,double)
+	Method ID: 65 void,#ExtendsOrImplements#()
+	Method ID: 66 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.equivalence.EquivalenceComparatorChain
+	Method ID: 328 void,appendComparator(org.jgrapht.experimental.equivalence.EquivalenceComparator)
+	Method ID: 329 void,#ExtendsOrImplements#()
+	Method ID: 330 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DefaultDirectedWeightedGraph
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	createGraph
+	Method ID: 847 org.jgrapht.graph.DefaultDirectedWeightedGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 848 void,#ExtendsOrImplements#()
+	Method ID: 849 void,#ExceptionHandler#()
+	Method ID: 846 org.jgrapht.graph.DefaultDirectedWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	createGraph
+Class: org.jgrapht.experimental.permutation.PermutationFactory
+	Method ID: 459 org.jgrapht.experimental.permutation.ArrayPermutationsIter,createRegular(int[])
+	Method ID: 460 org.jgrapht.experimental.permutation.ArrayPermutationsIter,createByGroups(int[])
+	Method ID: 461 void,#ExtendsOrImplements#()
+	Method ID: 462 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.GraphMLExporter
+	Method ID: 548 org.jgrapht.ext.GraphMLExporter,CONSTRUCTOR()
+	Method ID: 549 org.jgrapht.ext.GraphMLExporter,CONSTRUCTOR(org.jgrapht.ext.VertexNameProvider<V>,org.jgrapht.ext.VertexNameProvider<V>,org.jgrapht.ext.EdgeNameProvider<E>,org.jgrapht.ext.EdgeNameProvider<E>)
+	Method ID: 550 void,export(java.io.Writer,org.jgrapht.Graph<V,E>)
+	Method ID: 551 void,#ExtendsOrImplements#()
+	Method ID: 552 void,#ExceptionHandler#()
+Class: org.jgrapht.traverse.DepthFirstIterator
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_traverse_DepthFirstIterator0_GraphUtilities.java	getSubgraphs
+	Method ID: 1062 org.jgrapht.traverse.DepthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 1064 boolean,isConnectedComponentExhausted()
+	Method ID: 1065 void,encounterVertex(V,E)
+	Method ID: 1066 void,encounterVertexAgain(V,E)
+	Method ID: 1067 V,provideNextVertex()
+	Method ID: 1068 void,#ExtendsOrImplements#()
+	Method ID: 1069 void,#ExceptionHandler#()
+	Method ID: 1063 org.jgrapht.traverse.DepthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_traverse_DepthFirstIterator0_GraphUtilities.java	getSubgraphs
+Class: org.jgrapht.experimental.GraphReader.IntVertexFactory
+	Method ID: 290 java.lang.Integer,createVertex()
+	Method ID: 291 void,#ExtendsOrImplements#()
+	Method ID: 292 void,#ExceptionHandler#()
+Class: org.jgrapht.demo.HelloJGraphT
+	Method ID: 198 void,main(java.lang.String[])
+	Method ID: 199 void,#ExtendsOrImplements#()
+	Method ID: 200 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.permutation.ArrayPermutationsIter
+	Method ID: 475 int[],nextPermutation()
+	Method ID: 476 boolean,hasNextPermutaions()
+	Method ID: 477 void,#ExtendsOrImplements#()
+	Method ID: 478 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.AbstractBaseGraph.UndirectedSpecifics
+	Method ID: 783 void,addVertex(V)
+	Method ID: 784 java.util.Set<V>,getVertexSet()
+	Method ID: 785 java.util.Set<E>,getAllEdges(V,V)
+	Method ID: 786 E,getEdge(V,V)
+	Method ID: 787 void,addEdgeToTouchingVertices(E)
+	Method ID: 788 int,degreeOf(V)
+	Method ID: 789 java.util.Set<E>,edgesOf(V)
+	Method ID: 790 int,inDegreeOf(V)
+	Method ID: 791 java.util.Set<E>,incomingEdgesOf(V)
+	Method ID: 792 int,outDegreeOf(V)
+	Method ID: 793 java.util.Set<E>,outgoingEdgesOf(V)
+	Method ID: 794 void,removeEdgeFromTouchingVertices(E)
+	Method ID: 795 void,NOT_IN_UNDIRECTED_GRAPH()
+	Method ID: 796 void,#ExtendsOrImplements#()
+	Method ID: 797 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.equivalence.EquivalenceSetCreator.EqGroupSizeComparator
+	Method ID: 361 int,compare(org.jgrapht.experimental.equivalence.EquivalenceSet,org.jgrapht.experimental.equivalence.EquivalenceSet)
+	Method ID: 362 void,#ExtendsOrImplements#()
+	Method ID: 363 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector.NextFunctor
+	Method ID: 406 org.jgrapht.experimental.isomorphism.IsomorphismRelation,nextElement()
+	Method ID: 407 void,#ExtendsOrImplements#()
+	Method ID: 408 void,#ExceptionHandler#()
+Class: org.jgrapht.EdgeFactory
+	Method ID: 5 void,#ExceptionHandler#()
+	Method ID: 3 E,createEdge(V,V)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_EdgeFactory//2_GraphFunctions.java	NA
+	Method ID: 4 void,#ExtendsOrImplements#()
+Class: org.jgrapht.traverse.CrossComponentIterator
+	Method ID: 984 org.jgrapht.traverse.CrossComponentIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	Method ID: 985 org.jgrapht.Graph<V,E>,getGraph()
+	Method ID: 988 boolean,isConnectedComponentExhausted()
+	Method ID: 989 void,encounterVertex(V,E)
+	Method ID: 990 V,provideNextVertex()
+	Method ID: 991 D,getSeenData(V)
+	Method ID: 992 boolean,isSeenVertex(java.lang.Object)
+	Method ID: 993 void,encounterVertexAgain(V,E)
+	Method ID: 994 D,putSeenData(V,D)
+	Method ID: 995 void,finishVertex(V)
+	Method ID: 996 void,CCS_BEFORE_COMPONENT()
+	Method ID: 997 void,CCS_WITHIN_COMPONENT()
+	Method ID: 998 void,CCS_AFTER_COMPONENT()
+	Method ID: 999 void,#ExtendsOrImplements#()
+	Method ID: 1000 void,#ExceptionHandler#()
+	Method ID: 987 V,next()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_traverse_BreadthFirstIterator0_HierarchicalTreeLayout.java	setGraph
+			org_jgrapht_traverse_DepthFirstIterator0_GraphUtilities.java	getSubgraphs
+	Method ID: 986 boolean,hasNext()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_traverse_BreadthFirstIterator0_HierarchicalTreeLayout.java	setGraph
+			org_jgrapht_traverse_DepthFirstIterator0_GraphUtilities.java	getSubgraphs
+Class: org.jgrapht.graph.AbstractBaseGraph.ArrayListFactory
+	Method ID: 751 java.util.Set<EE>,createEdgeSet(VV)
+	Method ID: 752 void,#ExtendsOrImplements#()
+	Method ID: 753 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.alg.ExactAlgorithm
+	Method ID: 306 void,#ExtendsOrImplements#()
+	Method ID: 307 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DefaultListenableGraph.FlyweightVertexEvent
+	Method ID: 662 org.jgrapht.graph.DefaultListenableGraph.FlyweightVertexEvent,CONSTRUCTOR(java.lang.Object,int,VV)
+	Method ID: 663 void,setType(int)
+	Method ID: 664 void,setVertex(VV)
+	Method ID: 665 void,#ExtendsOrImplements#()
+	Method ID: 666 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.permutation.CollectionPermutationIter
+	Method ID: 438 org.jgrapht.experimental.permutation.CollectionPermutationIter,CONSTRUCTOR(java.util.Set<E>)
+	Method ID: 439 org.jgrapht.experimental.permutation.CollectionPermutationIter,CONSTRUCTOR(java.util.List<E>)
+	Method ID: 440 org.jgrapht.experimental.permutation.CollectionPermutationIter,CONSTRUCTOR(java.util.List<E>,org.jgrapht.experimental.permutation.ArrayPermutationsIter)
+	Method ID: 441 boolean,hasNext()
+	Method ID: 442 java.util.List<E>,getNextArray()
+	Method ID: 443 java.util.Set<E>,getNextSet()
+	Method ID: 444 int[],getCurrentPermutationArray()
+	Method ID: 445 java.lang.String,toString()
+	Method ID: 446 void,#ExtendsOrImplements#()
+	Method ID: 447 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.JGraphModelAdapter.DefaultCellFactory
+	Method ID: 533 org.jgraph.graph.DefaultEdge,createEdgeCell(EE)
+	Method ID: 534 org.jgraph.graph.DefaultGraphCell,createVertexCell(VV)
+	Method ID: 535 void,#ExtendsOrImplements#()
+	Method ID: 536 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.equivalence.EquivalenceComparator
+	Method ID: 350 void,#ExceptionHandler#()
+	Method ID: 348 int,equivalenceHashcode(E,C)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_experimental_equivalence_EquivalenceComparator//0_Mod3GroupComparator.java	NA
+	Method ID: 347 boolean,equivalenceCompare(E,E,C,C)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_experimental_equivalence_EquivalenceComparator//0_Mod3GroupComparator.java	NA
+	Method ID: 349 void,#ExtendsOrImplements#()
+Class: org.jgrapht.ext.GmlExporter
+	Method ID: 503 org.jgrapht.ext.GmlExporter,CONSTRUCTOR()
+	Method ID: 504 void,export(java.io.Writer,org.jgrapht.UndirectedGraph<V,E>)
+	Method ID: 505 void,export(java.io.Writer,org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 506 void,setPrintLabels(java.lang.Integer)
+	Method ID: 507 java.lang.Integer,getPrintLabels()
+	Method ID: 508 void,PRINT_NO_LABELS()
+	Method ID: 509 void,PRINT_EDGE_LABELS()
+	Method ID: 510 void,PRINT_EDGE_VERTEX_LABELS()
+	Method ID: 511 void,PRINT_VERTEX_LABELS()
+	Method ID: 512 void,#ExtendsOrImplements#()
+	Method ID: 513 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.JGraphModelAdapter.ShieldedGraph
+	Method ID: 546 void,#ExtendsOrImplements#()
+	Method ID: 547 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DefaultListenableGraph
+	Method ID: 636 org.jgrapht.graph.DefaultListenableGraph,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 637 org.jgrapht.graph.DefaultListenableGraph,CONSTRUCTOR(org.jgrapht.Graph<V,E>,boolean)
+	Method ID: 638 void,setReuseEvents(boolean)
+	Method ID: 639 boolean,isReuseEvents()
+	Method ID: 644 void,addVertexSetListener(org.jgrapht.event.VertexSetListener<V>)
+	Method ID: 645 java.lang.Object,clone()
+	Method ID: 646 E,removeEdge(V,V)
+	Method ID: 648 void,removeGraphListener(org.jgrapht.event.GraphListener<V,E>)
+	Method ID: 650 void,removeVertexSetListener(org.jgrapht.event.VertexSetListener<V>)
+	Method ID: 651 void,fireEdgeAdded(E)
+	Method ID: 652 void,fireEdgeRemoved(E)
+	Method ID: 653 void,fireVertexAdded(V)
+	Method ID: 654 void,fireVertexRemoved(V)
+	Method ID: 655 void,#ExtendsOrImplements#()
+	Method ID: 656 void,#ExceptionHandler#()
+	Method ID: 643 boolean,addVertex(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph1_HumanOrgansGraph.java	HumanOrgansGraph
+			org_jgrapht_graph_ListenableDirectedGraph3_Constraint.java	addVisualsToSketch
+			org_jgrapht_graph_ListenableUndirectedGraph0_CompatibilityPartitioner.java	main
+	Method ID: 640 E,addEdge(V,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph1_HumanOrgansGraph.java	HumanOrgansGraph
+			org_jgrapht_graph_ListenableUndirectedGraph0_CompatibilityPartitioner.java	main
+	Method ID: 649 boolean,removeVertex(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph3_Constraint.java	setVisible
+			org_jgrapht_graph_ListenableDirectedWeightedGraph1_GWizGraph.java	clear
+	Method ID: 642 void,addGraphListener(org.jgrapht.event.GraphListener<V,E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph5_SketchAdapter.java	SketchAdapter
+	Method ID: 641 boolean,addEdge(V,V,E)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph3_Constraint.java	addVisualsToSketch
+	Method ID: 647 boolean,removeEdge(E)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph5_SketchAdapter.java	removeJGraphEdge
+Class: org.jgrapht.graph.EdgeReversedGraph
+	Method ID: 824 org.jgrapht.graph.EdgeReversedGraph,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 825 E,getEdge(V,V)
+	Method ID: 826 E,addEdge(V,V)
+	Method ID: 827 boolean,addEdge(V,V,E)
+	Method ID: 828 int,inDegreeOf(V)
+	Method ID: 829 int,outDegreeOf(V)
+	Method ID: 830 java.util.Set<E>,incomingEdgesOf(V)
+	Method ID: 831 java.util.Set<E>,outgoingEdgesOf(V)
+	Method ID: 832 E,removeEdge(V,V)
+	Method ID: 833 V,getEdgeSource(E)
+	Method ID: 834 V,getEdgeTarget(E)
+	Method ID: 835 java.lang.String,toString()
+	Method ID: 836 void,#ExtendsOrImplements#()
+	Method ID: 837 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.isomorphism.AdaptiveIsomorphismInspectorFactory
+	Method ID: 380 org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createIsomorphismInspector(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+	Method ID: 381 org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createIsomorphismInspector(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	Method ID: 382 org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createIsomorphismInspectorByType(int,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+	Method ID: 383 org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createIsomorphismInspectorByType(int,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	Method ID: 384 org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createAppropriateConcreteInspector(int,org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+	Method ID: 385 void,assertUnsupportedGraphTypes(org.jgrapht.Graph)
+	Method ID: 386 int,checkGraphsType(org.jgrapht.Graph,org.jgrapht.Graph)
+	Method ID: 387 org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector,createTopologicalExhaustiveInspector(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<V,E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+	Method ID: 388 void,GRAPH_TYPE_ARBITRARY()
+	Method ID: 389 void,GRAPH_TYPE_PLANAR()
+	Method ID: 390 void,GRAPH_TYPE_TREE()
+	Method ID: 391 void,GRAPH_TYPE_MULTIGRAPH()
+	Method ID: 392 void,#ExtendsOrImplements#()
+	Method ID: 393 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DirectedPseudograph
+	Method ID: 864 org.jgrapht.graph.DirectedPseudograph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 865 org.jgrapht.graph.DirectedPseudograph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 866 void,#ExtendsOrImplements#()
+	Method ID: 867 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.Multigraph
+	Method ID: 842 org.jgrapht.graph.Multigraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 843 org.jgrapht.graph.Multigraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 844 void,#ExtendsOrImplements#()
+	Method ID: 845 void,#ExceptionHandler#()
+Class: org.jgrapht.util.MathUtil
+	Method ID: 1122 long,factorial(int)
+	Method ID: 1123 void,#ExtendsOrImplements#()
+	Method ID: 1124 void,#ExceptionHandler#()
+Class: org.jgrapht.traverse.CrossComponentIterator.SimpleContainer
+	Method ID: 1001 boolean,isEmpty()
+	Method ID: 1002 void,add(T)
+	Method ID: 1003 T,remove()
+	Method ID: 1004 void,#ExtendsOrImplements#()
+	Method ID: 1005 void,#ExceptionHandler#()
+Class: org.jgrapht.event.GraphListener
+	Method ID: 224 void,#ExceptionHandler#()
+	Method ID: 222 void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_event_GraphListener//2_SketchAdapter.java	NA
+	Method ID: 221 void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_event_GraphListener//2_SketchAdapter.java	NA
+	Method ID: 223 void,#ExtendsOrImplements#()
+Class: org.jgrapht.util.ArrayUnenforcedSet.SetForEquality
+	Method ID: 1118 java.util.Iterator<E>,iterator()
+	Method ID: 1119 int,size()
+	Method ID: 1120 void,#ExtendsOrImplements#()
+	Method ID: 1121 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.UndirectedWeightedSubgraph
+	Method ID: 868 org.jgrapht.graph.UndirectedWeightedSubgraph,CONSTRUCTOR(org.jgrapht.WeightedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+	Method ID: 869 void,#ExtendsOrImplements#()
+	Method ID: 870 void,#ExceptionHandler#()
+Class: org.jgrapht.event.TraversalListener
+	Method ID: 254 void,#ExceptionHandler#()
+	Method ID: 252 void,vertexFinished(org.jgrapht.event.VertexTraversalEvent<V>)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_event_TraversalListener//0_HierarchicalTreeLayout.java	NA
+	Method ID: 251 void,vertexTraversed(org.jgrapht.event.VertexTraversalEvent<V>)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_event_TraversalListener//0_HierarchicalTreeLayout.java	NA
+	Method ID: 250 void,edgeTraversed(org.jgrapht.event.EdgeTraversalEvent<V,E>)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_event_TraversalListener//0_HierarchicalTreeLayout.java	NA
+	Method ID: 249 void,connectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_event_TraversalListener//0_HierarchicalTreeLayout.java	NA
+	Method ID: 248 void,connectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_event_TraversalListener//0_HierarchicalTreeLayout.java	NA
+	Method ID: 253 void,#ExtendsOrImplements#()
+Class: org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector
+	Method ID: 431 org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<? super V,? super E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<? super V,? super E>>)
+	Method ID: 432 org.jgrapht.experimental.isomorphism.EquivalenceIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	Method ID: 433 org.jgrapht.experimental.permutation.CollectionPermutationIter<V>,createPermutationIterator(java.util.Set<V>,java.util.Set<V>)
+	Method ID: 434 void,fillElementsflatArray(org.jgrapht.experimental.equivalence.EquivalenceSet[],java.lang.Object[])
+	Method ID: 435 boolean,areVertexSetsOfTheSameEqualityGroup(java.util.Set,java.util.Set)
+	Method ID: 436 void,#ExtendsOrImplements#()
+	Method ID: 437 void,#ExceptionHandler#()
+Class: org.jgrapht.util.PrefetchIterator.NextElementFunctor
+	Method ID: 1142 EE,nextElement()
+	Method ID: 1143 void,#ExtendsOrImplements#()
+	Method ID: 1144 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.WeightedPseudograph
+	Method ID: 853 org.jgrapht.graph.WeightedPseudograph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 854 org.jgrapht.graph.WeightedPseudograph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 855 void,#ExtendsOrImplements#()
+	Method ID: 856 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.AbstractPathElement
+	Method ID: 164 org.jgrapht.alg.AbstractPathElement,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.alg.AbstractPathElement<V,E>,E)
+	Method ID: 165 org.jgrapht.alg.AbstractPathElement,CONSTRUCTOR(org.jgrapht.alg.AbstractPathElement<V,E>)
+	Method ID: 166 org.jgrapht.alg.AbstractPathElement,CONSTRUCTOR(V)
+	Method ID: 167 java.util.List<E>,createEdgeListPath()
+	Method ID: 168 int,getHopCount()
+	Method ID: 169 E,getPrevEdge()
+	Method ID: 170 org.jgrapht.alg.AbstractPathElement<V,E>,getPrevPathElement()
+	Method ID: 171 V,getVertex()
+	Method ID: 172 void,#ExtendsOrImplements#()
+	Method ID: 173 void,#ExceptionHandler#()
+Class: org.jgrapht.util.TypeUtil
+	Method ID: 1145 T,uncheckedCast(java.lang.Object,org.jgrapht.util.TypeUtil<T>)
+	Method ID: 1146 void,#ExtendsOrImplements#()
+	Method ID: 1147 void,#ExceptionHandler#()
+Class: org.jgrapht.util.ArrayUnenforcedSet
+	Method ID: 1111 org.jgrapht.util.ArrayUnenforcedSet,CONSTRUCTOR()
+	Method ID: 1112 org.jgrapht.util.ArrayUnenforcedSet,CONSTRUCTOR(java.util.Collection<? extends E>)
+	Method ID: 1113 org.jgrapht.util.ArrayUnenforcedSet,CONSTRUCTOR(int)
+	Method ID: 1114 boolean,equals(java.lang.Object)
+	Method ID: 1115 int,hashCode()
+	Method ID: 1116 void,#ExtendsOrImplements#()
+	Method ID: 1117 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DirectedSubgraph
+	Method ID: 918 org.jgrapht.graph.DirectedSubgraph,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+	Method ID: 919 int,inDegreeOf(V)
+	Method ID: 920 java.util.Set<E>,incomingEdgesOf(V)
+	Method ID: 921 int,outDegreeOf(V)
+	Method ID: 922 java.util.Set<E>,outgoingEdgesOf(V)
+	Method ID: 923 void,#ExtendsOrImplements#()
+	Method ID: 924 void,#ExceptionHandler#()
+Class: org.jgrapht.event.GraphChangeEvent
+	Method ID: 261 org.jgrapht.event.GraphChangeEvent,CONSTRUCTOR(java.lang.Object,int)
+	Method ID: 262 int,getType()
+	Method ID: 263 void,#ExtendsOrImplements#()
+	Method ID: 264 void,#ExceptionHandler#()
+Class: org.jgrapht.traverse.ClosestFirstIterator
+	Method ID: 1025 org.jgrapht.traverse.ClosestFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 1026 org.jgrapht.traverse.ClosestFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	Method ID: 1027 org.jgrapht.traverse.ClosestFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V,double)
+	Method ID: 1028 void,setCrossComponentTraversal(boolean)
+	Method ID: 1029 double,getShortestPathLength(V)
+	Method ID: 1030 E,getSpanningTreeEdge(V)
+	Method ID: 1031 boolean,isConnectedComponentExhausted()
+	Method ID: 1032 void,encounterVertex(V,E)
+	Method ID: 1033 void,encounterVertexAgain(V,E)
+	Method ID: 1034 V,provideNextVertex()
+	Method ID: 1035 void,#ExtendsOrImplements#()
+	Method ID: 1036 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.ConnectivityInspector.MyTraversalListener
+	Method ID: 113 void,connectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	Method ID: 114 void,connectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	Method ID: 115 void,vertexTraversed(org.jgrapht.event.VertexTraversalEvent<V>)
+	Method ID: 116 void,#ExtendsOrImplements#()
+	Method ID: 117 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.UnmodifiableDirectedGraph
+	Method ID: 690 org.jgrapht.graph.UnmodifiableDirectedGraph,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 691 void,#ExtendsOrImplements#()
+	Method ID: 692 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.GraphReader
+	Method ID: 285 org.jgrapht.experimental.GraphReader,CONSTRUCTOR(java.lang.String)
+	Method ID: 286 void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+	Method ID: 287 void,main(java.lang.String[])
+	Method ID: 288 void,#ExtendsOrImplements#()
+	Method ID: 289 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.VisioExporter
+	Method ID: 569 org.jgrapht.ext.VisioExporter,CONSTRUCTOR(org.jgrapht.ext.VertexNameProvider<V>)
+	Method ID: 570 org.jgrapht.ext.VisioExporter,CONSTRUCTOR()
+	Method ID: 571 void,export(java.io.OutputStream,org.jgrapht.Graph<V,E>)
+	Method ID: 572 void,#ExtendsOrImplements#()
+	Method ID: 573 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.StrongConnectivityInspector
+	Method ID: 142 org.jgrapht.alg.StrongConnectivityInspector,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 143 org.jgrapht.DirectedGraph<V,E>,getGraph()
+	Method ID: 144 boolean,isStronglyConnected()
+	Method ID: 145 java.util.List<java.util.Set<V>>,stronglyConnectedSets()
+	Method ID: 146 java.util.List<org.jgrapht.graph.DirectedSubgraph<V,E>>,stronglyConnectedSubgraphs()
+	Method ID: 147 void,#ExtendsOrImplements#()
+	Method ID: 148 void,#ExceptionHandler#()
+Class: org.jgrapht.generate.EmptyGraphGenerator
+	Method ID: 581 org.jgrapht.generate.EmptyGraphGenerator,CONSTRUCTOR(int)
+	Method ID: 582 void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+	Method ID: 583 void,#ExtendsOrImplements#()
+	Method ID: 584 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.StringNameProvider
+	Method ID: 565 org.jgrapht.ext.StringNameProvider,CONSTRUCTOR()
+	Method ID: 566 java.lang.String,getVertexName(V)
+	Method ID: 567 void,#ExtendsOrImplements#()
+	Method ID: 568 void,#ExceptionHandler#()
+Class: org.jgrapht.util.PrefetchIterator
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_util_PrefetchIterator0_PrefetchIterator.java	iteratorExample
+	Method ID: 1136 boolean,isEnumerationStartedEmpty()
+	Method ID: 1137 boolean,hasNext()
+	Method ID: 1138 E,next()
+	Method ID: 1139 void,remove()
+	Method ID: 1140 void,#ExtendsOrImplements#()
+	Method ID: 1141 void,#ExceptionHandler#()
+	Method ID: 1135 boolean,hasMoreElements()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_util_PrefetchIterator0_PrefetchIterator.java	hasMoreElements
+	Method ID: 1134 E,nextElement()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_util_PrefetchIterator0_PrefetchIterator.java	nextElement
+	Method ID: 1133 org.jgrapht.util.PrefetchIterator,CONSTRUCTOR(org.jgrapht.util.PrefetchIterator.NextElementFunctor<E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_util_PrefetchIterator0_PrefetchIterator.java	iteratorExample
+Class: org.jgrapht.graph.AbstractGraph
+	Method ID: 621 org.jgrapht.graph.AbstractGraph,CONSTRUCTOR()
+	Method ID: 624 java.util.Set<E>,removeAllEdges(V,V)
+	Method ID: 626 java.lang.String,toString()
+	Method ID: 627 boolean,assertVertexExist(V)
+	Method ID: 628 boolean,removeAllEdges(E[])
+	Method ID: 629 java.lang.String,toStringFromSets(java.util.Collection<? extends V>,java.util.Collection<? extends E>,boolean)
+	Method ID: 630 void,#ExtendsOrImplements#()
+	Method ID: 631 void,#ExceptionHandler#()
+	Method ID: 622 boolean,containsEdge(V,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableUndirectedGraph0_CompatibilityPartitioner.java	main
+			org_jgrapht_graph_SimpleGraph2_SocialNetwork.java	pickRandom2HopsConnectedPair
+	Method ID: 623 boolean,removeAllEdges(java.util.Collection<? extends E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph3_Constraint.java	setVisible
+	Method ID: 625 boolean,removeAllVertices(java.util.Collection<? extends V>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableUndirectedGraph0_CompatibilityPartitioner.java	main
+Class: org.jgrapht.generate.RandomGraphGenerator.DefaultEdgeTopologyFactory
+	Method ID: 603 void,createEdges(org.jgrapht.Graph<VV,EE>,java.util.Map<java.lang.Integer,VV>,int,java.util.Random)
+	Method ID: 604 boolean,isNumberOfEdgesValid(org.jgrapht.Graph<VV,EE>,int)
+	Method ID: 605 int,getMaxEdgesForVertexNum(org.jgrapht.Graph<VV,EE>)
+	Method ID: 606 void,#ExtendsOrImplements#()
+	Method ID: 607 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.DOTExporter
+	Method ID: 560 org.jgrapht.ext.DOTExporter,CONSTRUCTOR()
+	Method ID: 561 org.jgrapht.ext.DOTExporter,CONSTRUCTOR(org.jgrapht.ext.VertexNameProvider<V>,org.jgrapht.ext.VertexNameProvider<V>,org.jgrapht.ext.EdgeNameProvider<E>)
+	Method ID: 562 void,export(java.io.Writer,org.jgrapht.Graph<V,E>)
+	Method ID: 563 void,#ExtendsOrImplements#()
+	Method ID: 564 void,#ExceptionHandler#()
+Class: org.jgrapht.generate.RandomGraphGenerator.EdgeTopologyFactory
+	Method ID: 599 void,createEdges(org.jgrapht.Graph<VV,EE>,java.util.Map<java.lang.Integer,VV>,int,java.util.Random)
+	Method ID: 600 boolean,isNumberOfEdgesValid(org.jgrapht.Graph<VV,EE>,int)
+	Method ID: 601 void,#ExtendsOrImplements#()
+	Method ID: 602 void,#ExceptionHandler#()
+Class: org.jgrapht.UndirectedGraph
+	Method ID: 0 int,degreeOf(V)
+	Method ID: 1 void,#ExtendsOrImplements#()
+	Method ID: 2 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.AbstractBaseGraph.UndirectedEdgeContainer
+	Method ID: 777 java.util.Set<EE>,getUnmodifiableVertexEdges()
+	Method ID: 778 void,addEdge(EE)
+	Method ID: 779 int,edgeCount()
+	Method ID: 780 void,removeEdge(EE)
+	Method ID: 781 void,#ExtendsOrImplements#()
+	Method ID: 782 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.DijkstraShortestPath
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_alg_DijkstraShortestPath1_Experiment1.java	deltaDist
+	Method ID: 90 org.jgrapht.alg.DijkstraShortestPath,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V,V,double)
+	Method ID: 91 java.util.List<E>,getPathEdgeList()
+	Method ID: 94 void,#ExtendsOrImplements#()
+	Method ID: 95 void,#ExceptionHandler#()
+	Method ID: 92 double,getPathLength()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_alg_DijkstraShortestPath1_Experiment1.java	deltaDist
+	Method ID: 89 org.jgrapht.alg.DijkstraShortestPath,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_alg_DijkstraShortestPath1_Experiment1.java	deltaDist
+	Method ID: 93 java.util.List<E>,findPathBetween(org.jgrapht.Graph<V,E>,V,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_alg_DijkstraShortestPath0_MigrationPath.java	path
+Class: org.jgrapht.generate.LinearGraphGenerator
+	Method ID: 589 org.jgrapht.generate.LinearGraphGenerator,CONSTRUCTOR(int)
+	Method ID: 590 void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+	Method ID: 591 void,START_VERTEX()
+	Method ID: 592 void,END_VERTEX()
+	Method ID: 593 void,#ExtendsOrImplements#()
+	Method ID: 594 void,#ExceptionHandler#()
+Class: org.jgrapht.event.VertexTraversalEvent
+	Method ID: 229 org.jgrapht.event.VertexTraversalEvent,CONSTRUCTOR(java.lang.Object,V)
+	Method ID: 230 V,getVertex()
+	Method ID: 231 void,#ExtendsOrImplements#()
+	Method ID: 232 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator.InOutDegrees
+	Method ID: 421 org.jgrapht.experimental.isomorphism.VertexDegreeEquivalenceComparator.InOutDegrees,CONSTRUCTOR(int,int)
+	Method ID: 422 boolean,equals(java.lang.Object)
+	Method ID: 423 void,#ExtendsOrImplements#()
+	Method ID: 424 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.CycleDetector
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_alg_CycleDetector0_ShibbolethAttributeResolver.java	validate
+		org_jgrapht_alg_CycleDetector1_GraphFunctions.java	main
+	Method ID: 131 boolean,detectCyclesContainingVertex(V)
+	Method ID: 132 java.util.Set<V>,findCycles()
+	Method ID: 133 java.util.Set<V>,findCyclesContainingVertex(V)
+	Method ID: 134 void,#ExtendsOrImplements#()
+	Method ID: 135 void,#ExceptionHandler#()
+	Method ID: 130 boolean,detectCycles()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_alg_CycleDetector0_ShibbolethAttributeResolver.java	validate
+			org_jgrapht_alg_CycleDetector1_GraphFunctions.java	main
+	Method ID: 129 org.jgrapht.alg.CycleDetector,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_alg_CycleDetector0_ShibbolethAttributeResolver.java	validate
+			org_jgrapht_alg_CycleDetector1_GraphFunctions.java	main
+Class: org.jgrapht.experimental.RandomGraphHelper
+	Method ID: 265 void,addEdges(org.jgrapht.Graph,java.util.List,java.util.List,int)
+	Method ID: 266 java.lang.Object[],addVertices(org.jgrapht.Graph,org.jgrapht.VertexFactory,int)
+	Method ID: 267 void,#ExtendsOrImplements#()
+	Method ID: 268 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.isomorphism.GraphIsomorphismInspector
+	Method ID: 377 boolean,isIsomorphic()
+	Method ID: 378 void,#ExtendsOrImplements#()
+	Method ID: 379 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.equivalence.EquivalenceSet
+	Method ID: 335 org.jgrapht.experimental.equivalence.EquivalenceSet,CONSTRUCTOR(E,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super C>,C)
+	Method ID: 336 E,getRepresentative()
+	Method ID: 337 C,getContext()
+	Method ID: 338 int,size()
+	Method ID: 339 void,add(E)
+	Method ID: 340 boolean,equivalentTo(E,C)
+	Method ID: 341 boolean,equals(java.lang.Object)
+	Method ID: 342 int,hashCode()
+	Method ID: 343 java.lang.String,toString()
+	Method ID: 344 java.lang.Object[],toArray()
+	Method ID: 345 void,#ExtendsOrImplements#()
+	Method ID: 346 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.IntegerNameProvider
+	Method ID: 492 void,clear()
+	Method ID: 494 void,#ExtendsOrImplements#()
+	Method ID: 495 void,#ExceptionHandler#()
+	Method ID: 493 java.lang.String,getVertexName(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_ext_IntegerNameProvider0_GraphViewer.java	createVertexCell
+Class: org.jgrapht.graph.GraphDelegator
+	Method ID: 929 org.jgrapht.graph.GraphDelegator,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 930 java.util.Set<E>,getAllEdges(V,V)
+	Method ID: 931 E,getEdge(V,V)
+	Method ID: 932 org.jgrapht.EdgeFactory<V,E>,getEdgeFactory()
+	Method ID: 933 E,addEdge(V,V)
+	Method ID: 934 boolean,addEdge(V,V,E)
+	Method ID: 935 boolean,addVertex(V)
+	Method ID: 936 boolean,containsEdge(E)
+	Method ID: 937 boolean,containsVertex(V)
+	Method ID: 938 int,degreeOf(V)
+	Method ID: 941 int,inDegreeOf(V)
+	Method ID: 942 java.util.Set<E>,incomingEdgesOf(V)
+	Method ID: 943 int,outDegreeOf(V)
+	Method ID: 944 java.util.Set<E>,outgoingEdgesOf(V)
+	Method ID: 945 boolean,removeEdge(E)
+	Method ID: 946 E,removeEdge(V,V)
+	Method ID: 947 boolean,removeVertex(V)
+	Method ID: 948 java.lang.String,toString()
+	Method ID: 952 double,getEdgeWeight(E)
+	Method ID: 953 void,setEdgeWeight(E,double)
+	Method ID: 954 void,#ExtendsOrImplements#()
+	Method ID: 955 void,#ExceptionHandler#()
+	Method ID: 949 java.util.Set<V>,vertexSet()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph5_SketchAdapter.java	SketchAdapter
+			org_jgrapht_graph_ListenableDirectedWeightedGraph1_GWizGraph.java	clear
+	Method ID: 940 java.util.Set<E>,edgesOf(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph1_HumanOrgansGraph.java	HumanOrgansGraph
+			org_jgrapht_graph_ListenableDirectedGraph5_SketchAdapter.java	removeJGraphVertex
+	Method ID: 950 V,getEdgeSource(E)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph4_Sketch.java	removeEntity
+	Method ID: 951 V,getEdgeTarget(E)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph4_Sketch.java	removeEntity
+	Method ID: 939 java.util.Set<E>,edgeSet()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph5_SketchAdapter.java	SketchAdapter
+Class: org.jgrapht.experimental.equivalence.UniformEquivalenceComparator
+	Method ID: 331 boolean,equivalenceCompare(E,E,C,C)
+	Method ID: 332 int,equivalenceHashcode(E,C)
+	Method ID: 333 void,#ExtendsOrImplements#()
+	Method ID: 334 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.Pseudograph
+	Method ID: 816 org.jgrapht.graph.Pseudograph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 817 org.jgrapht.graph.Pseudograph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 818 void,#ExtendsOrImplements#()
+	Method ID: 819 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.JGraphModelAdapter
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_ext_JGraphModelAdapter0_HumanOrgansView.java	HumanOrgansView
+		org_jgrapht_ext_JGraphModelAdapter2_GraphViewer.java	GraphViewer
+	Method ID: 514 org.jgrapht.ext.JGraphModelAdapter,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 515 org.jgrapht.ext.JGraphModelAdapter,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgraph.graph.AttributeMap,org.jgraph.graph.AttributeMap)
+	Method ID: 517 org.jgraph.graph.AttributeMap,createDefaultEdgeAttributes(org.jgrapht.Graph<V,E>)
+	Method ID: 518 org.jgraph.graph.AttributeMap,createDefaultVertexAttributes()
+	Method ID: 519 org.jgrapht.ext.JGraphModelAdapter.CellFactory<V,E>,getCellFactory()
+	Method ID: 520 void,setDefaultEdgeAttributes(org.jgraph.graph.AttributeMap)
+	Method ID: 521 org.jgraph.graph.AttributeMap,getDefaultEdgeAttributes()
+	Method ID: 522 void,setDefaultVertexAttributes(org.jgraph.graph.AttributeMap)
+	Method ID: 523 org.jgraph.graph.AttributeMap,getDefaultVertexAttributes()
+	Method ID: 524 org.jgraph.graph.DefaultEdge,getEdgeCell(E)
+	Method ID: 525 org.jgraph.graph.DefaultGraphCell,getVertexCell(java.lang.Object)
+	Method ID: 526 org.jgraph.graph.DefaultPort,getVertexPort(java.lang.Object)
+	Method ID: 527 void,#ExtendsOrImplements#()
+	Method ID: 528 void,#ExceptionHandler#()
+	Method ID: 516 org.jgrapht.ext.JGraphModelAdapter,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgraph.graph.AttributeMap,org.jgraph.graph.AttributeMap,org.jgrapht.ext.JGraphModelAdapter.CellFactory<V,E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_ext_JGraphModelAdapter2_GraphViewer.java	GraphViewer
+Class: org.jgrapht.graph.DirectedWeightedSubgraph
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_graph_DirectedWeightedSubgraph0_InsetProcessor.java	removeCycles
+	Method ID: 851 void,#ExtendsOrImplements#()
+	Method ID: 852 void,#ExceptionHandler#()
+	Method ID: 850 org.jgrapht.graph.DirectedWeightedSubgraph,CONSTRUCTOR(org.jgrapht.WeightedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DirectedWeightedSubgraph0_InsetProcessor.java	removeCycles
+Class: org.jgrapht.graph.AbstractBaseGraph
+	Extension Code Examples (Hooks): 
+		org_jgrapht_graph_AbstractBaseGraph0_DefaultDirectedMultigraph.java	NA
+	Method ID: 706 org.jgrapht.graph.AbstractBaseGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>,boolean,boolean)
+	Method ID: 708 boolean,isAllowingLoops()
+	Method ID: 709 boolean,isAllowingMultipleEdges()
+	Method ID: 711 org.jgrapht.EdgeFactory<V,E>,getEdgeFactory()
+	Method ID: 712 void,setEdgeSetFactory(org.jgrapht.graph.EdgeSetFactory<V,E>)
+	Method ID: 718 java.lang.Object,clone()
+	Method ID: 719 boolean,containsEdge(E)
+	Method ID: 720 boolean,containsVertex(V)
+	Method ID: 721 int,degreeOf(V)
+	Method ID: 729 boolean,removeEdge(E)
+	Method ID: 734 void,LOOPS_NOT_ALLOWED()
+	Method ID: 736 void,#ExceptionHandler#()
+	Method ID: 715 boolean,addVertex(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph0_MigrationPath.java	buildGraph
+			org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	addConcept
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	createGraph
+			org_jgrapht_graph_DirectedMultigraph0_MsAccessAdapter.java	getJoinClause
+			org_jgrapht_graph_SimpleGraph0_GraphDemo1.java	main
+			org_jgrapht_graph_SimpleGraph2_SocialNetwork.java	initialize
+			org_jgrapht_graph_SimpleGraph3_CompatibilityPartitioner.java	partition
+	Method ID: 731 java.util.Set<V>,vertexSet()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	getConcepts
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	removeCycle
+			org_jgrapht_graph_DirectedMultigraph0_MsAccessAdapter.java	getJoinClause
+			org_jgrapht_graph_SimpleGraph1_RandomTree.java	randomTree
+	Method ID: 713 E,addEdge(V,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph3_ModelDrivenWorkspace.java	addInclusion
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	createGraph
+			org_jgrapht_graph_SimpleGraph0_GraphDemo1.java	main
+			org_jgrapht_graph_SimpleGraph3_CompatibilityPartitioner.java	partition
+	Method ID: 714 boolean,addEdge(V,V,E)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph0_MigrationPath.java	buildGraph
+			org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	addEdge
+			org_jgrapht_graph_DirectedMultigraph0_MsAccessAdapter.java	getJoinClause
+			org_jgrapht_graph_SimpleGraph2_SocialNetwork.java	initialize
+	Method ID: 717 V,getEdgeTarget(E)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	getTargetConcepts
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	getInset
+			org_jgrapht_graph_SimpleGraph2_SocialNetwork.java	getNeighbourhood
+	Method ID: 716 V,getEdgeSource(E)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	getSourceConcepts
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	removeCycle
+			org_jgrapht_graph_SimpleGraph2_SocialNetwork.java	getNeighbourhood
+	Method ID: 710 E,getEdge(V,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph2_Graph.java	getEdgeAnnotation
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	removeCycles
+			org_jgrapht_graph_SimpleGraph2_SocialNetwork.java	getCrossNeighbourhoodEdges
+	Method ID: 727 java.util.Set<E>,outgoingEdgesOf(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	getTargetConcepts
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	getInset
+	Method ID: 725 java.util.Set<E>,incomingEdgesOf(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	getSourceConcepts
+			org_jgrapht_graph_DirectedMultigraph0_MsAccessAdapter.java	getJoinClause
+	Method ID: 728 E,removeEdge(V,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph3_ModelDrivenWorkspace.java	removeInclusion
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	removeCycle
+	Method ID: 722 java.util.Set<E>,edgeSet()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	getEdges
+	Method ID: 707 java.util.Set<E>,getAllEdges(V,V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedGraph1_DGBModel.java	hasEdge
+	Method ID: 733 void,setEdgeWeight(E,double)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	createGraph
+	Method ID: 732 double,getEdgeWeight(E)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	removeCycles
+	Method ID: 730 boolean,removeVertex(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	removeCycle
+	Method ID: 726 int,outDegreeOf(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	removeCycle
+	Method ID: 724 int,inDegreeOf(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_DefaultDirectedWeightedGraph1_InsetProcessor.java	removeCycle
+	Method ID: 723 java.util.Set<E>,edgesOf(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_SimpleGraph2_SocialNetwork.java	getNeighbourhood
+	Method ID: 735 void,#ExtendsOrImplements#()
+Class: org.jgrapht.event.GraphVertexChangeEvent
+	Method ID: 233 org.jgrapht.event.GraphVertexChangeEvent,CONSTRUCTOR(java.lang.Object,int,V)
+	Method ID: 235 void,BEFORE_VERTEX_ADDED()
+	Method ID: 236 void,BEFORE_VERTEX_REMOVED()
+	Method ID: 237 void,VERTEX_ADDED()
+	Method ID: 238 void,VERTEX_REMOVED()
+	Method ID: 239 void,#ExtendsOrImplements#()
+	Method ID: 240 void,#ExceptionHandler#()
+	Method ID: 234 V,getVertex()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_event_GraphVertexChangeEvent0_SketchAdapter.java	vertexAdded
+Class: org.jgrapht.event.TraversalListenerAdapter
+	Method ID: 241 void,connectedComponentFinished(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	Method ID: 242 void,connectedComponentStarted(org.jgrapht.event.ConnectedComponentTraversalEvent)
+	Method ID: 243 void,edgeTraversed(org.jgrapht.event.EdgeTraversalEvent<V,E>)
+	Method ID: 244 void,vertexTraversed(org.jgrapht.event.VertexTraversalEvent<V>)
+	Method ID: 245 void,vertexFinished(org.jgrapht.event.VertexTraversalEvent<V>)
+	Method ID: 246 void,#ExtendsOrImplements#()
+	Method ID: 247 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.UnmodifiableUndirectedGraph
+	Method ID: 798 org.jgrapht.graph.UnmodifiableUndirectedGraph,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+	Method ID: 799 void,#ExtendsOrImplements#()
+	Method ID: 800 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.touchgraph.TouchgraphConverter
+	Method ID: 479 com.touchgraph.graphlayout.Node,convertToTouchGraph(org.jgrapht.Graph<V,E>,com.touchgraph.graphlayout.TGPanel,boolean)
+	Method ID: 480 void,#ExtendsOrImplements#()
+	Method ID: 481 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.DefaultEdge
+	Extension Code Examples (Hooks): 
+		org_jgrapht_graph_DefaultEdge7_MigrationPath.java	NA
+	Method ID: 863 void,#ExceptionHandler#()
+	Method ID: 861 java.lang.String,toString()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_graph_DefaultWeightedEdge//2_GWizEdge.java	NA
+	Method ID: 862 void,#ExtendsOrImplements#()
+Class: org.jgrapht.generate.GraphGenerator
+	Method ID: 614 void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,T>)
+	Method ID: 615 void,#ExtendsOrImplements#()
+	Method ID: 616 void,#ExceptionHandler#()
+Class: org.jgrapht.traverse.CrossComponentIterator.FlyweightEdgeEvent
+	Method ID: 1009 org.jgrapht.traverse.CrossComponentIterator.FlyweightEdgeEvent,CONSTRUCTOR(java.lang.Object,localE)
+	Method ID: 1010 void,setEdge(localE)
+	Method ID: 1011 void,#ExtendsOrImplements#()
+	Method ID: 1012 void,#ExceptionHandler#()
+Class: org.jgrapht.event.GraphEdgeChangeEvent
+	Method ID: 213 org.jgrapht.event.GraphEdgeChangeEvent,CONSTRUCTOR(java.lang.Object,int,E)
+	Method ID: 215 void,BEFORE_EDGE_ADDED()
+	Method ID: 216 void,BEFORE_EDGE_REMOVED()
+	Method ID: 217 void,EDGE_ADDED()
+	Method ID: 218 void,EDGE_REMOVED()
+	Method ID: 219 void,#ExtendsOrImplements#()
+	Method ID: 220 void,#ExceptionHandler#()
+	Method ID: 214 E,getEdge()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_event_GraphEdgeChangeEvent0_SketchAdapter.java	edgeAdded
+Class: org.jgrapht.ext.JGraphModelAdapter.JGraphTListener
+	Method ID: 540 void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	Method ID: 541 void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	Method ID: 542 void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	Method ID: 543 void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	Method ID: 544 void,#ExtendsOrImplements#()
+	Method ID: 545 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.IntegerEdgeNameProvider
+	Method ID: 574 void,clear()
+	Method ID: 575 java.lang.String,getEdgeName(E)
+	Method ID: 576 void,#ExtendsOrImplements#()
+	Method ID: 577 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.SimpleWeightedGraph
+	Method ID: 857 org.jgrapht.graph.SimpleWeightedGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 858 org.jgrapht.graph.SimpleWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 859 void,#ExtendsOrImplements#()
+	Method ID: 860 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.touchgraph.TouchgraphPanel
+	Method ID: 487 org.jgrapht.experimental.touchgraph.TouchgraphPanel,CONSTRUCTOR(org.jgrapht.Graph<V,E>,boolean)
+	Method ID: 488 void,preinitialize()
+	Method ID: 489 void,initialize()
+	Method ID: 490 void,#ExtendsOrImplements#()
+	Method ID: 491 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.alg.IntArrayGraphAlgorithm
+	Method ID: 308 org.jgrapht.experimental.alg.IntArrayGraphAlgorithm,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	Method ID: 309 void,#ExtendsOrImplements#()
+	Method ID: 310 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.VertexNameProvider
+	Method ID: 558 void,#ExtendsOrImplements#()
+	Method ID: 559 void,#ExceptionHandler#()
+	Method ID: 557 java.lang.String,getVertexName(V)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_ext_VertexNameProvider0_InsetProcessor.java	toString
+Class: org.jgrapht.graph.SimpleDirectedWeightedGraph
+	Method ID: 910 org.jgrapht.graph.SimpleDirectedWeightedGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	Method ID: 911 org.jgrapht.graph.SimpleDirectedWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 912 void,#ExtendsOrImplements#()
+	Method ID: 913 void,#ExceptionHandler#()
+Class: org.jgrapht.demo.PerformanceDemo
+	Method ID: 195 void,main(java.lang.String[])
+	Method ID: 196 void,#ExtendsOrImplements#()
+	Method ID: 197 void,#ExceptionHandler#()
+Class: org.jgrapht.demo.JGraphAdapterDemo
+	Method ID: 201 void,main(java.lang.String[])
+	Method ID: 202 void,init()
+	Method ID: 203 void,DEFAULT_BG_COLOR()
+	Method ID: 204 void,DEFAULT_SIZE()
+	Method ID: 205 void,#ExtendsOrImplements#()
+	Method ID: 206 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.equivalence.EquivalenceComparatorChainBase
+	Method ID: 351 org.jgrapht.experimental.equivalence.EquivalenceComparatorChainBase,CONSTRUCTOR(org.jgrapht.experimental.equivalence.EquivalenceComparator<E,C>)
+	Method ID: 352 void,appendComparator(org.jgrapht.experimental.equivalence.EquivalenceComparator)
+	Method ID: 353 boolean,equivalenceCompare(E,E,C,C)
+	Method ID: 354 int,equivalenceHashcode(E,C)
+	Method ID: 355 void,#ExtendsOrImplements#()
+	Method ID: 356 void,#ExceptionHandler#()
+Class: org.jgrapht.generate.RingGraphGenerator
+	Method ID: 585 org.jgrapht.generate.RingGraphGenerator,CONSTRUCTOR(int)
+	Method ID: 586 void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+	Method ID: 587 void,#ExtendsOrImplements#()
+	Method ID: 588 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.util.VertexDegreeComparator
+	Method ID: 190 org.jgrapht.alg.util.VertexDegreeComparator,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+	Method ID: 191 org.jgrapht.alg.util.VertexDegreeComparator,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>,boolean)
+	Method ID: 192 int,compare(V,V)
+	Method ID: 193 void,#ExtendsOrImplements#()
+	Method ID: 194 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.ListenableDirectedGraph
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_graph_ListenableDirectedGraph0_HumanOrgansView.java	HumanOrgansView
+	Extension Code Examples (Hooks): 
+		org_jgrapht_graph_ListenableDirectedGraph6_ListenableDirectedMultigraph.java	NA
+	Method ID: 926 org.jgrapht.graph.ListenableDirectedGraph,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 928 void,#ExceptionHandler#()
+	Method ID: 925 org.jgrapht.graph.ListenableDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_ListenableDirectedGraph0_HumanOrgansView.java	HumanOrgansView
+	Method ID: 927 void,#ExtendsOrImplements#()
+Class: org.jgrapht.event.VertexSetListener
+	Method ID: 211 void,#ExtendsOrImplements#()
+	Method ID: 212 void,#ExceptionHandler#()
+	Method ID: 210 void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_event_GraphListener//2_SketchAdapter.java	NA
+	Method ID: 209 void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\JGrapht\org_jgrapht_event_GraphListener//2_SketchAdapter.java	NA
+Class: org.jgrapht.ext.EdgeNameProvider
+	Method ID: 578 java.lang.String,getEdgeName(E)
+	Method ID: 579 void,#ExtendsOrImplements#()
+	Method ID: 580 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.PartiteRandomGraphGenerator
+	Method ID: 280 org.jgrapht.experimental.PartiteRandomGraphGenerator,CONSTRUCTOR(int,int,int)
+	Method ID: 281 org.jgrapht.experimental.PartiteRandomGraphGenerator,CONSTRUCTOR(int[],int)
+	Method ID: 282 void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,java.lang.Object[]>)
+	Method ID: 283 void,#ExtendsOrImplements#()
+	Method ID: 284 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector
+	Method ID: 394 org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super V,? super org.jgrapht.Graph<? super V,? super E>>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<? super V,? super E>>)
+	Method ID: 395 org.jgrapht.experimental.isomorphism.AbstractExhaustiveIsomorphismInspector,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgrapht.Graph<V,E>)
+	Method ID: 396 org.jgrapht.experimental.permutation.CollectionPermutationIter<V>,createPermutationIterator(java.util.Set<V>,java.util.Set<V>)
+	Method ID: 397 boolean,areVertexSetsOfTheSameEqualityGroup(java.util.Set<V>,java.util.Set<V>)
+	Method ID: 398 boolean,areAllEdgesEquivalent(org.jgrapht.experimental.isomorphism.IsomorphismRelation<V,E>,org.jgrapht.experimental.equivalence.EquivalenceComparator<? super E,? super org.jgrapht.Graph<V,E>>)
+	Method ID: 399 org.jgrapht.experimental.isomorphism.IsomorphismRelation,nextIsoRelation()
+	Method ID: 400 boolean,isIsomorphic()
+	Method ID: 401 boolean,hasNext()
+	Method ID: 402 org.jgrapht.experimental.isomorphism.IsomorphismRelation,next()
+	Method ID: 403 void,remove()
+	Method ID: 404 void,#ExtendsOrImplements#()
+	Method ID: 405 void,#ExceptionHandler#()
+Class: org.jgrapht.util.ModifiableInteger
+	Method ID: 1070 org.jgrapht.util.ModifiableInteger,CONSTRUCTOR()
+	Method ID: 1071 org.jgrapht.util.ModifiableInteger,CONSTRUCTOR(int)
+	Method ID: 1072 void,setValue(int)
+	Method ID: 1073 int,getValue()
+	Method ID: 1074 void,increment()
+	Method ID: 1075 void,decrement()
+	Method ID: 1076 int,compareTo(org.jgrapht.util.ModifiableInteger)
+	Method ID: 1077 int,compareTo(java.lang.Object)
+	Method ID: 1078 double,doubleValue()
+	Method ID: 1079 boolean,equals(java.lang.Object)
+	Method ID: 1080 float,floatValue()
+	Method ID: 1081 int,hashCode()
+	Method ID: 1082 int,intValue()
+	Method ID: 1083 long,longValue()
+	Method ID: 1084 java.lang.Integer,toInteger()
+	Method ID: 1085 java.lang.String,toString()
+	Method ID: 1086 void,#ExtendsOrImplements#()
+	Method ID: 1087 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.CycleDetector.CycleDetectedException
+	Method ID: 136 void,#ExtendsOrImplements#()
+	Method ID: 137 void,#ExceptionHandler#()
+Class: org.jgrapht.ext.MatrixExporter
+	Method ID: 496 org.jgrapht.ext.MatrixExporter,CONSTRUCTOR()
+	Method ID: 497 void,exportAdjacencyMatrix(java.io.Writer,org.jgrapht.UndirectedGraph<V,E>)
+	Method ID: 498 void,exportAdjacencyMatrix(java.io.Writer,org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 499 void,exportLaplacianMatrix(java.io.Writer,org.jgrapht.UndirectedGraph<V,E>)
+	Method ID: 500 void,exportNormalizedLaplacianMatrix(java.io.Writer,org.jgrapht.UndirectedGraph<V,E>)
+	Method ID: 501 void,#ExtendsOrImplements#()
+	Method ID: 502 void,#ExceptionHandler#()
+Class: org.jgrapht.generate.RandomGraphGenerator
+	Method ID: 595 org.jgrapht.generate.RandomGraphGenerator,CONSTRUCTOR(int,int)
+	Method ID: 596 void,generateGraph(org.jgrapht.Graph<V,E>,org.jgrapht.VertexFactory<V>,java.util.Map<java.lang.String,V>)
+	Method ID: 597 void,#ExtendsOrImplements#()
+	Method ID: 598 void,#ExceptionHandler#()
+Class: org.jgrapht.experimental.permutation.CompoundPermutationIter
+	Method ID: 448 org.jgrapht.experimental.permutation.CompoundPermutationIter,CONSTRUCTOR(int[])
+	Method ID: 449 java.lang.Object,next()
+	Method ID: 450 int[],getNext()
+	Method ID: 451 int[],getPermAsArray()
+	Method ID: 452 boolean,hasNext()
+	Method ID: 453 int,getMax()
+	Method ID: 454 int[],nextPermutation()
+	Method ID: 455 boolean,hasNextPermutaions()
+	Method ID: 456 void,remove()
+	Method ID: 457 void,#ExtendsOrImplements#()
+	Method ID: 458 void,#ExceptionHandler#()
+Class: org.jgrapht.alg.ConnectivityInspector
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_alg_ConnectivityInspector0_GraphDemo2.java	main
+		org_jgrapht_alg_ConnectivityInspector1_InsetProcessor.java	getInset
+	Method ID: 102 org.jgrapht.alg.ConnectivityInspector,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	Method ID: 103 boolean,isGraphConnected()
+	Method ID: 104 java.util.Set<V>,connectedSetOf(V)
+	Method ID: 106 void,edgeAdded(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	Method ID: 107 void,edgeRemoved(org.jgrapht.event.GraphEdgeChangeEvent<V,E>)
+	Method ID: 108 boolean,pathExists(V,V)
+	Method ID: 109 void,vertexAdded(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	Method ID: 110 void,vertexRemoved(org.jgrapht.event.GraphVertexChangeEvent<V>)
+	Method ID: 111 void,#ExtendsOrImplements#()
+	Method ID: 112 void,#ExceptionHandler#()
+	Method ID: 105 java.util.List<java.util.Set<V>>,connectedSets()
+		Invocation Code Examples (Templates): 
+			org_jgrapht_alg_ConnectivityInspector0_GraphDemo2.java	main
+			org_jgrapht_alg_ConnectivityInspector1_InsetProcessor.java	getInset
+	Method ID: 101 org.jgrapht.alg.ConnectivityInspector,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_alg_ConnectivityInspector0_GraphDemo2.java	main
+			org_jgrapht_alg_ConnectivityInspector1_InsetProcessor.java	getInset
+Class: org.jgrapht.graph.EdgeSetFactory
+	Method ID: 678 java.util.Set<E>,createEdgeSet(V)
+	Method ID: 679 void,#ExtendsOrImplements#()
+	Method ID: 680 void,#ExceptionHandler#()
+Class: org.jgrapht.graph.SimpleGraph
+	Instantiation Code Examples (Templates): 
+		org_jgrapht_graph_SimpleGraph0_GraphDemo1.java	main
+		org_jgrapht_graph_SimpleGraph3_CompatibilityPartitioner.java	partition
+	Extension Code Examples (Hooks): 
+		org_jgrapht_graph_SimpleGraph2_SocialNetwork.java	NA
+	Method ID: 633 org.jgrapht.graph.SimpleGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	Method ID: 635 void,#ExceptionHandler#()
+	Method ID: 632 org.jgrapht.graph.SimpleGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+		Invocation Code Examples (Templates): 
+			org_jgrapht_graph_SimpleGraph0_GraphDemo1.java	main
+			org_jgrapht_graph_SimpleGraph3_CompatibilityPartitioner.java	partition
+	Method ID: 634 void,#ExtendsOrImplements#()
+Class: org.jgrapht.traverse.CrossComponentIterator.FlyweightVertexEvent
+	Method ID: 1013 org.jgrapht.traverse.CrossComponentIterator.FlyweightVertexEvent,CONSTRUCTOR(java.lang.Object,VV)
+	Method ID: 1014 void,setVertex(VV)
+	Method ID: 1015 void,#ExtendsOrImplements#()
+	Method ID: 1016 void,#ExceptionHandler#()

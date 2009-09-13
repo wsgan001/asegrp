@@ -1,0 +1,467 @@
+Frequent Usage Scenario: 1
+	 javassist.CtClass : boolean,isArray()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//285_JavassistUtils.java MethodName : isClassLoader
+Frequent Usage Scenario: 2
+	 javassist.ClassPool : javassist.CtClass,makeClass(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//445_GoogleBeanConverter.java MethodName : _getConverterClass
+Frequent Usage Scenario: 3
+	 javassist.bytecode.annotation.StringMemberValue : java.lang.String,getValue()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_AnnotationsAttribute//16_EJB3Util.java MethodName : getAspectDomain
+Frequent Usage Scenario: 4
+	 javassist.Modifier : boolean,isNative(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtMethod//366_Reflection.java MethodName : processMethods
+Frequent Usage Scenario: 5
+	 javassist.Modifier : boolean,isPublic(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : addMethodsAndMixins
+Frequent Usage Scenario: 6
+	 javassist.bytecode.MethodInfo : javassist.bytecode.ConstPool,getConstPool()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_runtime_Cflow//25_CtBehavior.java MethodName : useCflow
+Frequent Usage Scenario: 7
+	 javassist.CtClass : javassist.CtField,getDeclaredField(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//333_ScenarioRunner.java MethodName : interceptPerClassLoadBefore
+Frequent Usage Scenario: 8
+	 javassist.ClassPool : javassist.ClassPath,insertClassPath(javassist.ClassPath)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//445_GoogleBeanConverter.java MethodName : _getConverterClass
+Frequent Usage Scenario: 9
+	 javassist.bytecode.ClassFile : java.util.List,getFields()
+	 javassist.bytecode.FieldInfo : java.lang.String,getName()
+	 javassist.bytecode.ClassFile : java.lang.String,getName()
+	 javassist.bytecode.AnnotationsAttribute : javassist.bytecode.annotation.Annotation,getAnnotation(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_AnnotationsAttribute//21_AspectAnnotationLoader.java MethodName : deployInputStreamIterator
+Frequent Usage Scenario: 10
+	 javassist.compiler.CompileError : javassist.compiler.CompileError,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_Bytecode//11_JvstCodeGen.java MethodName : atMethodCall
+Frequent Usage Scenario: 11
+	 javassist.CtClass : boolean,subtypeOf(javassist.CtClass)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtMethod//366_Reflection.java MethodName : makeReflective
+Frequent Usage Scenario: 12
+	 javassist.bytecode.ClassFile : javassist.bytecode.ConstPool,getConstPool()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_annotation_ClassMemberValue//3_AspectWeavingClassFileTransformer.java MethodName : transform
+Frequent Usage Scenario: 13
+	 javassist.bytecode.Bytecode : void,addAload(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_runtime_Cflow//13_CtBehavior.java MethodName : useCflow
+Frequent Usage Scenario: 14
+	 javassist.CtMember : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_expr_Expr//51_Dissect.java MethodName : edit
+Frequent Usage Scenario: 15
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 16
+	 javassist.CtClass : javassist.CtMethod[],getDeclaredMethods()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//424_Instrumentor.java MethodName : transform
+Frequent Usage Scenario: 17
+	 javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	 javassist.CtMethod : java.lang.String,getName()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtNewMethod//14_ModelClassFactory.java MethodName : getInstanceClass
+Frequent Usage Scenario: 18
+	 javassist.CtBehavior : void,instrument(javassist.expr.ExprEditor)
+	 javassist.expr.ExprEditor : javassist.expr.ExprEditor,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//424_Instrumentor.java MethodName : instrumentMethods
+Frequent Usage Scenario: 19
+	 javassist.CtClass : void,addConstructor(javassist.CtConstructor)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//445_GoogleBeanConverter.java MethodName : _getConverterClass
+Frequent Usage Scenario: 20
+	 javassist.CtBehavior : void,setBody(java.lang.String)
+	 javassist.CtMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_Modifier//10_DynamicAppletGenerator.java MethodName : generateNewAppletCapability
+Frequent Usage Scenario: 21
+	 javassist.CtBehavior : void,setBody(java.lang.String)
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_MethodInfo//15_Main.java MethodName : main
+Frequent Usage Scenario: 22
+	 javassist.NotFoundException : javassist.NotFoundException,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_Descriptor//31_CompileTimeClass.java MethodName : getField
+Frequent Usage Scenario: 23
+	 javassist.bytecode.Bytecode : javassist.bytecode.Bytecode,CONSTRUCTOR(javassist.bytecode.ConstPool,int,int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_runtime_Cflow//13_CtBehavior.java MethodName : addCatch
+Frequent Usage Scenario: 24
+	 javassist.CtClass : int,getModifiers()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtNewMethod//35_ClassicInstrumentor.java MethodName : createInstanceAdvisorClass
+Frequent Usage Scenario: 25
+	 javassist.CannotCompileException : javassist.CannotCompileException,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_Modifier//66_CtBehavior.java MethodName : insertAfter
+Frequent Usage Scenario: 26
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtMethod : java.lang.String,getName()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_expr_MethodCall//47_MethodPattern.java MethodName : include
+Frequent Usage Scenario: 27
+	 javassist.CtClass : void,defrost()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_CodeAttribute//32_InlineJutta.java MethodName : process
+Frequent Usage Scenario: 28
+	 javassist.bytecode.MethodInfo : java.lang.String,getName()
+	 javassist.bytecode.MethodInfo : java.lang.String,getDescriptor()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_ClassFile//61_ClassFileWriter.java MethodName : print
+Frequent Usage Scenario: 29
+	 javassist.ClassPool : javassist.ClassPool,getDefault()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//445_GoogleBeanConverter.java MethodName : _getConverterClass
+Frequent Usage Scenario: 30
+	 javassist.bytecode.annotation.Annotation : javassist.bytecode.annotation.MemberValue,getMemberValue(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_annotation_MemberValue//17_ClassInfoPool.java MethodName : getAnnotation
+Frequent Usage Scenario: 31
+	 javassist.bytecode.MethodInfo : java.lang.String,getName()
+	 javassist.bytecode.ClassFile : java.util.List,getMethods()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_AccessFlag//31_FieldTransformer.java MethodName : transform
+Frequent Usage Scenario: 32
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtMethod : java.lang.String,getName()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//424_Instrumentor.java MethodName : instrumentMethods
+Frequent Usage Scenario: 33
+	 javassist.CtClass : void,addField(javassist.CtField,java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//59_PrepareAdvisedClassTransformer.java MethodName : transform
+Frequent Usage Scenario: 34
+	 javassist.CtBehavior : javassist.bytecode.MethodInfo,getMethodInfo2()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//246_SecurityClassMetaDataLoader.java MethodName : bind
+Frequent Usage Scenario: 35
+	 javassist.CtBehavior : void,setBody(java.lang.String)
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_Loader//85_BehaviorEnhancer.java MethodName : enhance
+Frequent Usage Scenario: 36
+	 javassist.CtField : javassist.CtClass,getType()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 37
+	 javassist.bytecode.CodeAttribute : int,getMaxLocals()
+	 javassist.bytecode.CodeAttribute : javassist.bytecode.CodeIterator,iterator()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_runtime_Cflow//25_CtBehavior.java MethodName : useCflow
+Frequent Usage Scenario: 38
+	 javassist.bytecode.CodeIterator : int,next()
+	 javassist.bytecode.CodeIterator : boolean,hasNext()
+	 javassist.bytecode.CodeIterator : int,byteAt(int)
+	 javassist.bytecode.CodeAttribute : javassist.bytecode.CodeIterator,iterator()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_runtime_Cflow//25_CtBehavior.java MethodName : useCflow
+Frequent Usage Scenario: 39
+	 javassist.bytecode.MethodInfo : javassist.bytecode.CodeAttribute,getCodeAttribute()
+	 javassist.bytecode.CodeAttribute : javassist.bytecode.CodeIterator,iterator()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_runtime_Cflow//25_CtBehavior.java MethodName : useCflow
+Frequent Usage Scenario: 40
+	 javassist.bytecode.CodeAttribute : int,getMaxStack()
+	 javassist.bytecode.CodeAttribute : javassist.bytecode.CodeIterator,iterator()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_runtime_Cflow//25_CtBehavior.java MethodName : useCflow
+Frequent Usage Scenario: 41
+	 javassist.CtBehavior : void,setModifiers(int)
+	 javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 42
+	 javassist.bytecode.ClassFile : java.util.List,getMethods()
+	 javassist.bytecode.ClassFile : java.lang.String,getName()
+	 javassist.bytecode.AnnotationsAttribute : javassist.bytecode.annotation.Annotation,getAnnotation(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_AnnotationsAttribute//21_AspectAnnotationLoader.java MethodName : deployInputStreamIterator
+Frequent Usage Scenario: 43
+	 javassist.CtField : java.lang.String,getName()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_Modifier//130_FieldJoinPointGenerator.java MethodName : debugFields
+Frequent Usage Scenario: 44
+	 javassist.CtField : int,getModifiers()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 45
+	 javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 46
+	 javassist.CtClass : javassist.ClassPool,getClassPool()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//59_PrepareAdvisedClassTransformer.java MethodName : transform
+Frequent Usage Scenario: 47
+	 javassist.CtMember : javassist.CtClass,getDeclaringClass()
+	 javassist.CtMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//424_Instrumentor.java MethodName : instrumentMethods
+Frequent Usage Scenario: 48
+	 javassist.CtClass : javassist.CtClass,getSuperclass()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 49
+	 javassist.CtClass : javassist.CtClass[],getInterfaces()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 50
+	 javassist.CtClass : byte[],toBytecode()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//424_Instrumentor.java MethodName : transform
+Frequent Usage Scenario: 51
+	 javassist.CtClass : boolean,isInterface()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//59_PrepareAdvisedClassTransformer.java MethodName : transform
+Frequent Usage Scenario: 52
+	 javassist.CtClass : void,defrost()
+	 javassist.CtClass : byte[],toBytecode()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_AnnotationsAttribute//19_Instrumentor.java MethodName : interceptorChainsUpdated
+Frequent Usage Scenario: 53
+	 javassist.CtBehavior : void,setModifiers(int)
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtMethod : java.lang.String,getName()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtMethod//366_Reflection.java MethodName : processMethods
+Frequent Usage Scenario: 54
+	 javassist.CtField : javassist.CtField,make(java.lang.String,javassist.CtClass)
+	 javassist.CtClass : void,addField(javassist.CtField)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_LoaderClassPath//53_JavassistLearningTest.java MethodName : testAddFieldAndMethod
+Frequent Usage Scenario: 55
+	 javassist.CtBehavior : void,setModifiers(int)
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 56
+	 javassist.CtClass : javassist.CtClass[],getInterfaces()
+	 javassist.CtClass : javassist.CtClass,getSuperclass()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : addMethodsAndMixins
+Frequent Usage Scenario: 57
+	 javassist.CtBehavior : void,setModifiers(int)
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtMethod//366_Reflection.java MethodName : processMethods
+Frequent Usage Scenario: 58
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 59
+	 javassist.CtClass : void,addField(javassist.CtField)
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 60
+	 javassist.CtClass : javassist.CtMethod[],getDeclaredMethods()
+	 javassist.CtMethod : java.lang.String,getName()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtNewMethod//35_ClassicInstrumentor.java MethodName : implementInstanceAdvisorMethods
+Frequent Usage Scenario: 61
+	 javassist.CtNewMethod : javassist.CtMethod,make(java.lang.String,javassist.CtClass)
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//445_GoogleBeanConverter.java MethodName : _getConverterClass
+Frequent Usage Scenario: 62
+	 javassist.CtClass : javassist.CtClass,getSuperclass()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : addMethodsAndMixins
+Frequent Usage Scenario: 63
+	 javassist.Modifier : boolean,isStatic(int)
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_MethodInfo//15_Main.java MethodName : main
+Frequent Usage Scenario: 64
+	 javassist.CtBehavior : void,setModifiers(int)
+	 javassist.CtBehavior : void,setBody(java.lang.String)
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_MethodInfo//15_Main.java MethodName : main
+Frequent Usage Scenario: 65
+	 javassist.bytecode.MethodInfo : java.lang.String,getName()
+	 javassist.bytecode.ClassFile : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_AccessFlag//31_FieldTransformer.java MethodName : transform
+Frequent Usage Scenario: 66
+	 javassist.CtClass : javassist.CtConstructor[],getDeclaredConstructors()
+	 javassist.CtClass : javassist.CtMethod[],getDeclaredMethods()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtField//62_APIDeclarationsTestCase.java MethodName : verifyClassList
+Frequent Usage Scenario: 67
+	 javassist.CtClass : javassist.CtClass,getSuperclass()
+	 javassist.CtClass : javassist.CtMethod[],getDeclaredMethods()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//424_Instrumentor.java MethodName : transform
+Frequent Usage Scenario: 68
+	 javassist.CtClass : javassist.CtField[],getDeclaredFields()
+	 javassist.CtClass : javassist.CtMethod[],getDeclaredMethods()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//424_Instrumentor.java MethodName : transform
+Frequent Usage Scenario: 69
+	 javassist.CtBehavior : java.lang.String,getSignature()
+	 javassist.CtMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : addMethodsAndMixins
+Frequent Usage Scenario: 70
+	 javassist.CtBehavior : void,setBody(java.lang.String)
+	 javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtMethod//214_GeneratedAdvisorConstructionTransformer.java MethodName : insertInterception
+Frequent Usage Scenario: 71
+	 javassist.CtMember : javassist.CtClass,getDeclaringClass()
+	 javassist.Modifier : boolean,isStatic(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtMethod//366_Reflection.java MethodName : processMethods
+Frequent Usage Scenario: 72
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 73
+	 javassist.CtClass : javassist.CtClass,getSuperclass()
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : addMethodsAndMixins
+Frequent Usage Scenario: 74
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : addMethodsAndMixins
+Frequent Usage Scenario: 75
+	 javassist.Modifier : boolean,isStatic(int)
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtMethod : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : addMethodsAndMixins
+Frequent Usage Scenario: 76
+	 javassist.CtClass : javassist.CtMethod,getDeclaredMethod(java.lang.String)
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 77
+	 javassist.CtField : int,getModifiers()
+	 javassist.CtField : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_Modifier//130_FieldJoinPointGenerator.java MethodName : debugFields
+Frequent Usage Scenario: 78
+	 javassist.CtField : java.lang.String,getName()
+	 javassist.CtClass : javassist.CtField[],getDeclaredFields()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_Modifier//10_DynamicAppletGenerator.java MethodName : generateNewAppletCapability
+Frequent Usage Scenario: 79
+	 javassist.CtField : int,getModifiers()
+	 javassist.CtClass : javassist.CtField[],getDeclaredFields()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_ConstantAttribute//4_RefineWeaver.java MethodName : copyFields
+Frequent Usage Scenario: 80
+	 javassist.CtBehavior : void,setModifiers(int)
+	 javassist.CtBehavior : void,setBody(java.lang.String)
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.CtBehavior : int,getModifiers()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_MethodInfo//15_Main.java MethodName : main
+Frequent Usage Scenario: 81
+	 javassist.CtClass : javassist.CtField[],getDeclaredFields()
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//424_Instrumentor.java MethodName : transform
+Frequent Usage Scenario: 82
+	 javassist.CtClass : javassist.CtMethod[],getDeclaredMethods()
+	 javassist.CtBehavior : int,getModifiers()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_expr_ExprEditor//97_RefineWeaver.java MethodName : weave
+Frequent Usage Scenario: 83
+	 javassist.CtBehavior : void,setBody(java.lang.String)
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_MethodInfo//15_Main.java MethodName : main
+Frequent Usage Scenario: 84
+	 javassist.CtMember : javassist.CtClass,getDeclaringClass()
+	 javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtMethod//366_Reflection.java MethodName : processMethods
+Frequent Usage Scenario: 85
+	 javassist.Modifier : boolean,isStatic(int)
+	 javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : addMethodsAndMixins
+Frequent Usage Scenario: 86
+	 javassist.CtMember : javassist.CtClass,getDeclaringClass()
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_expr_MethodCall//47_MethodPattern.java MethodName : include
+Frequent Usage Scenario: 87
+	 javassist.CtBehavior : javassist.bytecode.MethodInfo,getMethodInfo()
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_CtNewMethod//27_FieldGenerator.java MethodName : processMethod
+Frequent Usage Scenario: 88
+	 javassist.CtBehavior : void,setBody(java.lang.String)
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_bytecode_MethodInfo//15_Main.java MethodName : main
+Frequent Usage Scenario: 89
+	 javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtMethod : java.lang.String,getName()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : addMethodsAndMixins
+Frequent Usage Scenario: 90
+	 javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : addMethodsAndMixins
+Frequent Usage Scenario: 91
+	 javassist.CtBehavior : void,setModifiers(int)
+	 javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 92
+	 javassist.CtClass : javassist.CtMethod[],getMethods()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : overrideSpecialMethods
+Frequent Usage Scenario: 93
+	 javassist.CtBehavior : void,setModifiers(int)
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 94
+	 javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	 javassist.CtMethod : javassist.CtClass,getReturnType()
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.CtMethod : java.lang.String,getName()
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : overrideSpecialMethods
+Frequent Usage Scenario: 95
+	 javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 96
+	 javassist.CtBehavior : int,getModifiers()
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 97
+	 javassist.CtBehavior : void,setModifiers(int)
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 98
+	 javassist.CtClass : void,addField(javassist.CtField)
+	 javassist.CtField : javassist.CtField,CONSTRUCTOR(javassist.CtClass,java.lang.String,javassist.CtClass)
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//322_SesamePropertyEnhancer.java MethodName : overrideMethod
+Frequent Usage Scenario: 99
+	 javassist.CtClass : byte[],toBytecode()
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//280_ClassLoaderGenerator.java MethodName : main
+Frequent Usage Scenario: 100
+	 javassist.CtClass : javassist.CtMethod,getDeclaredMethod(java.lang.String)
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 101
+	 javassist.ClassPool : javassist.ClassPath,appendClassPath(javassist.ClassPath)
+	 javassist.LoaderClassPath : javassist.LoaderClassPath,CONSTRUCTOR(java.lang.ClassLoader)
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_LoaderClassPath//53_JavassistLearningTest.java MethodName : testAddFieldAndMethod
+Frequent Usage Scenario: 102
+	 javassist.CtClass : void,addInterface(javassist.CtClass)
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass
+Frequent Usage Scenario: 103
+	 javassist.CtField : javassist.CtField,CONSTRUCTOR(javassist.CtClass,java.lang.String,javassist.CtClass)
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_NotFoundException//322_SesamePropertyEnhancer.java MethodName : overrideMethod
+Frequent Usage Scenario: 104
+	 javassist.CtBehavior : void,setBody(java.lang.String)
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_Modifier//89_Thrower.java MethodName : init
+Frequent Usage Scenario: 105
+	 javassist.CtClass : void,addMethod(javassist.CtMethod)
+	 javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+	 javassist.CtClass : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JavaAssist\javassist_SerialVersionUID//6_ContainerProxyFactory.java MethodName : createProxyCtClass

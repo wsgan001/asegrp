@@ -1,0 +1,132 @@
+Sequence 1
+	javassist.CtField : javassist.CtClass,getType()
+Sequence 2
+	javassist.CtClass : javassist.CtField,getDeclaredField(java.lang.String)
+Sequence 3
+	javassist.expr.ExprEditor : javassist.expr.ExprEditor,CONSTRUCTOR()
+Sequence 4
+	javassist.CtClass : javassist.CtMethod[],getMethods()
+Sequence 5
+	javassist.CtClass : javassist.CtMethod,getDeclaredMethod(java.lang.String)
+Sequence 6
+	javassist.bytecode.CodeAttribute : javassist.bytecode.CodeIterator,iterator()
+Sequence 7
+	javassist.ClassPool : javassist.ClassPool,getDefault()
+Sequence 8
+	javassist.LoaderClassPath : javassist.LoaderClassPath,CONSTRUCTOR(java.lang.ClassLoader)
+Sequence 9
+	javassist.CtClass : void,addInterface(javassist.CtClass)
+Sequence 10
+	javassist.bytecode.ClassFile : java.util.List,getFields()
+	javassist.bytecode.ClassFile : java.lang.String,getName()
+	javassist.bytecode.AnnotationsAttribute : javassist.bytecode.annotation.Annotation,getAnnotation(java.lang.String)
+Sequence 11
+	javassist.CtClass : javassist.ClassPool,getClassPool()
+Sequence 12
+	javassist.CtMethod : java.lang.String,getName()
+	javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+	javassist.CtClass : java.lang.String,getName()
+Sequence 13
+	javassist.CtClass : javassist.CtClass[],getInterfaces()
+	javassist.CtClass : java.lang.String,getName()
+Sequence 14
+	javassist.CtClass : byte[],toBytecode()
+Sequence 15
+	javassist.CtClass : javassist.CtMethod[],getDeclaredMethods()
+	javassist.CtClass : java.lang.String,getName()
+Sequence 16
+	javassist.CtClass : boolean,isInterface()
+	javassist.CtClass : java.lang.String,getName()
+Sequence 17
+	javassist.CtBehavior : javassist.bytecode.MethodInfo,getMethodInfo()
+Sequence 18
+	javassist.bytecode.ClassFile : java.util.List,getFields()
+	javassist.bytecode.FieldInfo : java.lang.String,getName()
+Sequence 19
+	javassist.CtMethod : javassist.CtClass,getReturnType()
+	javassist.CtBehavior : int,getModifiers()
+	javassist.CtMethod : java.lang.String,getName()
+Sequence 20
+	javassist.CtClass : void,addField(javassist.CtField)
+Sequence 21
+	javassist.CtClass : javassist.CtClass,getSuperclass()
+	javassist.CtClass : java.lang.String,getName()
+Sequence 22
+	javassist.CtField : javassist.CtField,CONSTRUCTOR(javassist.CtClass,java.lang.String,javassist.CtClass)
+Sequence 23
+	javassist.Modifier : boolean,isStatic(int)
+	javassist.CtMethod : javassist.CtClass,getReturnType()
+	javassist.CtBehavior : int,getModifiers()
+Sequence 24
+	javassist.CtBehavior : void,setBody(java.lang.String)
+	javassist.CtClass : void,addMethod(javassist.CtMethod)
+Sequence 25
+	javassist.CtBehavior : void,setModifiers(int)
+	javassist.CtBehavior : void,setBody(java.lang.String)
+Sequence 26
+	javassist.CtField : int,getModifiers()
+	javassist.CtField : java.lang.String,getName()
+Sequence 27
+	javassist.CtClass : javassist.CtField[],getDeclaredFields()
+Sequence 28
+	javassist.CtClass : void,addMethod(javassist.CtMethod)
+	javassist.CtBehavior : int,getModifiers()
+Sequence 29
+	javassist.bytecode.FieldInfo : java.lang.String,getName()
+	javassist.bytecode.ClassFile : java.lang.String,getName()
+Sequence 30
+	javassist.CtNewMethod : javassist.CtMethod,make(java.lang.String,javassist.CtClass)
+	javassist.CtClass : void,addMethod(javassist.CtMethod)
+Sequence 31
+	javassist.CtBehavior : void,setModifiers(int)
+	javassist.CtBehavior : int,getModifiers()
+Sequence 32
+	javassist.CtBehavior : void,setModifiers(int)
+	javassist.CtClass : void,addMethod(javassist.CtMethod)
+Sequence 33
+	javassist.CtClass : void,addMethod(javassist.CtMethod)
+	javassist.CtClass : java.lang.String,getName()
+Sequence 34
+	javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	javassist.CtMethod : javassist.CtClass,getReturnType()
+	javassist.CtBehavior : int,getModifiers()
+	javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Sequence 35
+	javassist.Modifier : boolean,isStatic(int)
+	javassist.CtBehavior : int,getModifiers()
+	javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Sequence 36
+	javassist.Modifier : boolean,isStatic(int)
+	javassist.CtMethod : javassist.CtClass,getReturnType()
+	javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Sequence 37
+	javassist.CtMember : javassist.CtClass,getDeclaringClass()
+	javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Sequence 38
+	javassist.CtBehavior : int,getModifiers()
+	javassist.CtMethod : java.lang.String,getName()
+	javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Sequence 39
+	javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	javassist.CtMethod : javassist.CtClass,getReturnType()
+	javassist.CtMethod : java.lang.String,getName()
+	javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Sequence 40
+	javassist.CtClass : void,addMethod(javassist.CtMethod)
+	javassist.CtMethod : java.lang.String,getName()
+	javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Sequence 41
+	javassist.CtBehavior : javassist.CtClass[],getExceptionTypes()
+	javassist.CtMethod : javassist.CtClass,getReturnType()
+	javassist.CtClass : void,addMethod(javassist.CtMethod)
+	javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+Sequence 42
+	javassist.CtBehavior : int,getModifiers()
+	javassist.CtBehavior : javassist.CtClass[],getParameterTypes()
+	javassist.CtClass : java.lang.String,getName()
+Sequence 43
+	javassist.CtClass : void,addMethod(javassist.CtMethod)
+	javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+Sequence 44
+	javassist.ClassPool : javassist.CtClass,get(java.lang.String)
+	javassist.CtClass : java.lang.String,getName()

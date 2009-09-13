@@ -1,0 +1,6 @@
+A sample hotspot cluster:
+
+junit.framework.TestSuite:junit.framework.TestSuite,CONSTRUCTOR()
+junit.framework.TestSuite:void,addTest(junit.framework.Test)
+junit.framework.TestSuite:void,run(junit.framework.TestResult)
+	Needs overloading of : void,runTest(junit.framework.Test,junit.framework.TestResult)

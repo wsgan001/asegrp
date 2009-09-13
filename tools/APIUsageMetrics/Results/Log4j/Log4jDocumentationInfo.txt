@@ -1,0 +1,67 @@
+
+
+Classes given the log4j application in the documentation link:
+
+http://logging.apache.org/log4j/1.2/manual.html
+
+pubic class Category {
+
+    // printing methods:
+    public void trace(Object message);
+    public void debug(Object message);
+    public void info(Object message);
+    public void warn(Object message);
+    public void error(Object message);
+    public void fatal(Object message);
+}
+
+Rank: 1, Template
+
+public class Logger {
+
+    // Creation & retrieval methods:
+    public static Logger getRootLogger();
+    public static Logger getLogger(String name);
+
+    // generic printing method:
+    public void log(Level l, Object message);
+    public void setLevel();
+}
+
+Rank: 7, Hook
+
+org.apache.log4j.Level {
+
+}
+
+Rank: 12, Hook
+
+
+Appenders:
+appenders exist for the console, files, GUI components, remote socket servers, JMS,  NT Event Loggers, and remote UNIX Syslog daemons.
+The addAppender method adds an appender to a given logger.
+
+One popular appender: 
+Console Appender, Rank: 8, Template
+File Appender, Rank: 16,  
+
+Layouts:
+For example, the PatternLayout with the conversion pattern "%r [%t] %-5p %c - %m%n" will output something akin to:
+
+SimpleLayout: Rank: 11, Template
+PatternLayout: Rank: 4, Template
+
+Configurators:
+BasicConfigurator.configure();   Rank: 2, Template
+PropertyConfigurator.configure(args[0]);  Rank: 3, Template
+DOMConfigurator, Rank: 5, Template
+
+Loaders:
+Loader.getResource(java.lang.String)
+Rank: 31, 
+
+NDC: Nested Diagnostic Contexts
+Rank: 10.
+
+Performance:
+Using isDebugEnabled() etc., functions.

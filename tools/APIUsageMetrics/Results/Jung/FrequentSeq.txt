@@ -1,0 +1,620 @@
+Frequent Usage Scenario: 1
+	 edu.uci.ics.jung.visualization.contrib.DAGLayout : edu.uci.ics.jung.visualization.contrib.DAGLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_contrib_DAGLayout//11_TestDag.java MethodName : main
+Frequent Usage Scenario: 2
+	 edu.uci.ics.jung.utils.Pair : java.lang.Object,getFirst()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_Edge//88_GraphMLToNWB.java MethodName : execute
+Frequent Usage Scenario: 3
+	 edu.uci.ics.jung.random.generators.EppsteinPowerLawGenerator : edu.uci.ics.jung.graph.ArchetypeGraph,generateGraph()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_random_generators_EppsteinPowerLawGenerator//2_TestEppsteinPowerLawGenerator.java MethodName : testPowerLawProperties
+Frequent Usage Scenario: 4
+	 edu.uci.ics.jung.graph.filters.GeneralEdgeAcceptFilter : edu.uci.ics.jung.graph.filters.UnassembledGraph,filter(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_filters_impl_WeightedEdgeGraphFilter//3_FilterTest.java MethodName : testLabels
+Frequent Usage Scenario: 5
+	 edu.uci.ics.jung.graph.decorators.EllipseVertexShapeFunction : java.awt.Shape,getShape(edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_ConstantEdgeFontFunction//1_MyRenderer.java MethodName : paintEdge
+Frequent Usage Scenario: 6
+	 edu.uci.ics.jung.visualization.control.PickingGraphMousePlugin : edu.uci.ics.jung.visualization.control.PickingGraphMousePlugin,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_control_PickingGraphMousePlugin//0_Visualiser.java MethodName : Visualiser
+Frequent Usage Scenario: 7
+	 edu.uci.ics.jung.visualization.Coordinates : edu.uci.ics.jung.visualization.Coordinates,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_utils_UserData//47_ARFLayout.java MethodName : ARFLayout
+Frequent Usage Scenario: 8
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setGraphLayout(edu.uci.ics.jung.visualization.Layout)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_VisualizationViewer//38_OntologyVisualizationViewer.java MethodName : NA
+Frequent Usage Scenario: 9
+	 edu.uci.ics.jung.utils.GraphUtils : void,copyLabels(edu.uci.ics.jung.graph.decorators.StringLabeller,edu.uci.ics.jung.graph.decorators.StringLabeller)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_exceptions_ConstraintViolationException//0_TopicGraphAction.java MethodName : execute
+Frequent Usage Scenario: 10
+	 edu.uci.ics.jung.algorithms.importance.VoltageRanker : void,calculateVoltages(edu.uci.ics.jung.graph.Graph,java.util.Set,java.util.Set)
+	 edu.uci.ics.jung.graph.decorators.NumberEdgeValueStringer : edu.uci.ics.jung.graph.decorators.NumberEdgeValueStringer,CONSTRUCTOR(edu.uci.ics.jung.graph.decorators.NumberEdgeValue)
+	 edu.uci.ics.jung.graph.decorators.NumberVertexValueStringer : edu.uci.ics.jung.graph.decorators.NumberVertexValueStringer,CONSTRUCTOR(edu.uci.ics.jung.graph.decorators.NumberVertexValue)
+	 edu.uci.ics.jung.graph.impl.UndirectedSparseEdge : edu.uci.ics.jung.graph.impl.UndirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_importance_VoltageRanker//3_PluggableRendererDemo.java MethodName : start
+Frequent Usage Scenario: 11
+	 edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getEdges()
+	 edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_Layout//41_AestheticSpringVisualizer.java MethodName : AestheticSpringVisualizer
+Frequent Usage Scenario: 12
+	 edu.uci.ics.jung.visualization.FRLayout : void,update()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_StringLabeller//73_GraphFrame.java MethodName : createGraph
+Frequent Usage Scenario: 13
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : void,setLabel(edu.uci.ics.jung.graph.Vertex,java.lang.String)
+	 edu.uci.ics.jung.graph.impl.SparseVertex : edu.uci.ics.jung.graph.impl.SparseVertex,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.impl.AbstractSparseGraph : edu.uci.ics.jung.graph.Vertex,addVertex(edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_impl_DirectedSparseEdge//45_Test2.java MethodName : process
+Frequent Usage Scenario: 14
+	 edu.uci.ics.jung.visualization.PickedInfo : boolean,isPicked(edu.uci.ics.jung.graph.ArchetypeEdge)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_Vertex//157_PickingGraphMousePluginDrag.java MethodName : mousePressed
+Frequent Usage Scenario: 15
+	 edu.uci.ics.jung.graph.filters.UnassembledGraph : java.util.Set,getUntouchedVertices()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_filters_impl_WeightedEdgeGraphFilter//3_FilterTest.java MethodName : testBasicFilterUndirected
+Frequent Usage Scenario: 16
+	 edu.uci.ics.jung.visualization.VisualizationViewer : boolean,isVisRunnerRunning()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_VisualizationViewer//38_OntologyVisualizationViewer.java MethodName : NA
+Frequent Usage Scenario: 17
+	 edu.uci.ics.jung.utils.TestGraphs : edu.uci.ics.jung.graph.impl.AbstractSparseGraph,createTestGraph(boolean)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_filters_impl_WeightedEdgeGraphFilter//3_FilterTest.java MethodName : testLabels
+Frequent Usage Scenario: 18
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_predicates_SelfLoopEdgePredicate//1_MilanoGraphView.java MethodName : setContents
+Frequent Usage Scenario: 19
+	 edu.uci.ics.jung.graph.impl.AbstractArchetypeGraph : java.util.Collection,getEdgeConstraints()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_utils_TypedVertexGenerator//16_DemoPrettyRenderer.java MethodName : main
+Frequent Usage Scenario: 20
+	 edu.uci.ics.jung.graph.decorators.EdgePaintFunction : java.awt.Paint,getDrawPaint(edu.uci.ics.jung.graph.Edge)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_importance_VoltageRanker//1_Pomo.java MethodName : getDrawPaint
+Frequent Usage Scenario: 21
+	 edu.uci.ics.jung.graph.decorators.Indexer : edu.uci.ics.jung.graph.decorators.Indexer,getIndexer(edu.uci.ics.jung.graph.ArchetypeGraph)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_predicates_ConnectedGraphPredicate//0_GraphPredicateTest.java MethodName : setUp
+Frequent Usage Scenario: 22
+	 edu.uci.ics.jung.visualization.Layout : double,getY(edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.visualization.Layout : double,getX(edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_Layout//41_AestheticSpringVisualizer.java MethodName : NA
+Frequent Usage Scenario: 23
+	 edu.uci.ics.jung.graph.decorators.EdgeWeightLabeller : edu.uci.ics.jung.graph.decorators.EdgeWeightLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_filters_impl_WeightedEdgeGraphFilter//3_FilterTest.java MethodName : testLabels
+Frequent Usage Scenario: 24
+	 edu.uci.ics.jung.io.PajekNetReader : edu.uci.ics.jung.io.PajekNetReader,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_io_PajekNetReader//14_ReflectiveLayoutDemo.java MethodName : main
+Frequent Usage Scenario: 25
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_GraphDraw//37_HmmComponent.java MethodName : HmmComponent
+Frequent Usage Scenario: 26
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_ArchetypeVertex//53_ScrolledPropertiesBlock.java MethodName : createMasterPart
+Frequent Usage Scenario: 27
+	 edu.uci.ics.jung.graph.filters.impl.KNeighborhoodFilter : edu.uci.ics.jung.graph.filters.UnassembledGraph,filter(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_filters_impl_KNeighborhoodFilter//2_FastScalableMDSPrototype.java MethodName : createFiltrations
+Frequent Usage Scenario: 28
+	 edu.uci.ics.jung.visualization.contrib.TreeLayout : edu.uci.ics.jung.visualization.contrib.TreeLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.impl.SparseTree)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_VertexStringer//30_MappingTool.java MethodName : DietPanel
+Frequent Usage Scenario: 29
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : java.lang.String,getLabel(edu.uci.ics.jung.graph.ArchetypeVertex)
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_filters_impl_WeightedEdgeGraphFilter//3_FilterTest.java MethodName : testLabels
+Frequent Usage Scenario: 30
+	 edu.uci.ics.jung.graph.filters.UnassembledGraph : edu.uci.ics.jung.graph.Graph,assemble()
+	 edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_exceptions_FatalException//12_NewFilterTest.java MethodName : testPairOfFiltersInefficient
+Frequent Usage Scenario: 31
+	 edu.uci.ics.jung.graph.Vertex : int,inDegree()
+	 edu.uci.ics.jung.graph.Vertex : int,outDegree()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_utils_GraphUtils//22_BasicGraphTest.java MethodName : testSimpleDirectedGraphEdges
+Frequent Usage Scenario: 32
+	 edu.uci.ics.jung.graph.filters.impl.AlphabeticVertexFilter : edu.uci.ics.jung.graph.filters.impl.AlphabeticVertexFilter,CONSTRUCTOR(java.lang.String,edu.uci.ics.jung.graph.decorators.StringLabeller,boolean)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_StringLabeller//33_LayoutTester.java MethodName : testFilter
+Frequent Usage Scenario: 33
+	 edu.uci.ics.jung.visualization.VisualizationViewer : java.awt.geom.Point2D,transform(java.awt.geom.Point2D)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickSupport,getPickSupport()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_VisualizationViewer//38_OntologyVisualizationViewer.java MethodName : NA
+Frequent Usage Scenario: 34
+	 edu.uci.ics.jung.graph.impl.SparseGraph : edu.uci.ics.jung.graph.impl.SparseGraph,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_utils_GraphUtils//22_BasicGraphTest.java MethodName : testEquality
+Frequent Usage Scenario: 35
+	 edu.uci.ics.jung.graph.filters.impl.WeightedEdgeGraphFilter : edu.uci.ics.jung.graph.filters.impl.WeightedEdgeGraphFilter,CONSTRUCTOR(int,edu.uci.ics.jung.graph.decorators.EdgeWeightLabeller)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_filters_impl_WeightedEdgeGraphFilter//3_FilterTest.java MethodName : testLabels
+Frequent Usage Scenario: 36
+	 edu.uci.ics.jung.graph.impl.UndirectedSparseEdge : edu.uci.ics.jung.graph.impl.UndirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.graph.impl.AbstractSparseGraph : edu.uci.ics.jung.graph.Vertex,addVertex(edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_utils_GraphUtils//22_BasicGraphTest.java MethodName : testUndirectedGraph
+Frequent Usage Scenario: 37
+	 edu.uci.ics.jung.graph.Element : edu.uci.ics.jung.graph.ArchetypeGraph,getGraph()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_AbstractRenderer//7_BasicRenderer.java MethodName : paintVertex
+Frequent Usage Scenario: 38
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_Edge//1_GenericGraph.java MethodName : GenericGraph
+Frequent Usage Scenario: 39
+	 edu.uci.ics.jung.algorithms.importance.BetweennessCentrality : edu.uci.ics.jung.algorithms.importance.BetweennessCentrality,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph,boolean)
+	 edu.uci.ics.jung.algorithms.importance.AbstractRanker : java.util.List,getRankings()
+	 edu.uci.ics.jung.algorithms.importance.AbstractRanker : void,setRemoveRankScoresOnFinalize(boolean)
+	 edu.uci.ics.jung.algorithms.IterativeProcess : void,evaluate()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_filters_impl_DropSoloNodesFilter//13_TestVis.java MethodName : main
+Frequent Usage Scenario: 40
+	 edu.uci.ics.jung.graph.Vertex : edu.uci.ics.jung.graph.Edge,findEdge(edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_GraphDraw//37_HmmComponent.java MethodName : hmmToGraph
+Frequent Usage Scenario: 41
+	 edu.uci.ics.jung.graph.impl.UndirectedSparseGraph : edu.uci.ics.jung.graph.impl.UndirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_ToolTipFunction//5_JungGUI.java MethodName : JungGUI
+Frequent Usage Scenario: 42
+	 edu.uci.ics.jung.utils.UserDataDelegate : java.lang.Object,getUserDatum(java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_Edge//1_GenericGraph.java MethodName : addToGraph
+Frequent Usage Scenario: 43
+	 edu.uci.ics.jung.visualization.SpringLayout : void,setRepulsionRange(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_ToolTipFunction//5_JungGUI.java MethodName : JungGUI
+Frequent Usage Scenario: 44
+	 edu.uci.ics.jung.graph.impl.AbstractSparseGraph : java.util.Set,getEdges()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_predicates_SelfLoopEdgePredicate//1_MilanoGraphView.java MethodName : setContents
+Frequent Usage Scenario: 45
+	 edu.uci.ics.jung.graph.impl.AbstractArchetypeGraph : void,removeAllVertices()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_predicates_IsolatedVertexPredicate//0_VertexPredicateTest.java MethodName : testEnforcesVertexPredicate
+Frequent Usage Scenario: 46
+	 edu.uci.ics.jung.visualization.GraphDraw : edu.uci.ics.jung.visualization.VisualizationViewer,getVisualizationViewer()
+	 edu.uci.ics.jung.visualization.GraphDraw : edu.uci.ics.jung.visualization.GraphDraw,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_VertexColorFunction//11_TMAMiniGraph.java MethodName : TMAMiniGraph
+Frequent Usage Scenario: 47
+	 edu.uci.ics.jung.algorithms.cluster.EdgeBetweennessClusterer : java.util.List,getEdgesRemoved()
+	 edu.uci.ics.jung.algorithms.cluster.ClusterSet : java.util.Iterator,iterator()
+	 edu.uci.ics.jung.algorithms.cluster.EdgeBetweennessClusterer : edu.uci.ics.jung.algorithms.cluster.ClusterSet,extract(edu.uci.ics.jung.graph.ArchetypeGraph)
+	 edu.uci.ics.jung.algorithms.cluster.EdgeBetweennessClusterer : edu.uci.ics.jung.algorithms.cluster.EdgeBetweennessClusterer,CONSTRUCTOR(int)
+	 edu.uci.ics.jung.visualization.LayoutDecorator : edu.uci.ics.jung.graph.Graph,getGraph()
+	 edu.uci.ics.jung.visualization.subLayout.SubLayoutDecorator : void,removeAllSubLayouts()
+	 edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getEdges()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_cluster_ClusterSet//0_SocialNetworkAnalysisUI.java MethodName : SocialNetworkAnalysisUI
+Frequent Usage Scenario: 48
+	 edu.uci.ics.jung.graph.decorators.NumberEdgeValue : java.lang.Number,getNumber(edu.uci.ics.jung.graph.ArchetypeEdge)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_DirectedEdge//19_PageRankRanker.java MethodName : getNumber
+Frequent Usage Scenario: 49
+	 edu.uci.ics.jung.graph.impl.AbstractSparseGraph : java.util.Set,getVertices()
+	 edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_Graph//82_SubclassGraphTest.java MethodName : testSubclass
+Frequent Usage Scenario: 50
+	 edu.uci.ics.jung.exceptions.FatalException : edu.uci.ics.jung.exceptions.FatalException,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_exceptions_FatalException//0_OntologyVisualizationViewer.java MethodName : restart
+Frequent Usage Scenario: 51
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,addPostRenderPaintable(edu.uci.ics.jung.visualization.VisualizationViewer.Paintable)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_VisualizationViewer//38_OntologyVisualizationViewer.java MethodName : NA
+Frequent Usage Scenario: 52
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.Vertex,getVertex(java.lang.String)
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_io_GraphMLFile//7_TestGraphMLFile.java MethodName : testLoad
+Frequent Usage Scenario: 53
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_impl_DirectedSparseEdge//65_AddNodeDemo.java MethodName : GraphZoomScrollPaneDemo
+Frequent Usage Scenario: 54
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : void,setLabel(edu.uci.ics.jung.graph.Vertex,java.lang.String)
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_ToStringLabeller//1_TestMultiLabeller.java MethodName : testToLabeller
+Frequent Usage Scenario: 55
+	 edu.uci.ics.jung.graph.impl.SparseVertex : edu.uci.ics.jung.graph.impl.SparseVertex,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_utils_GraphUtils//22_BasicGraphTest.java MethodName : testEquality
+Frequent Usage Scenario: 56
+	 edu.uci.ics.jung.graph.ArchetypeVertex : int,degree()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_Layout//41_AestheticSpringVisualizer.java MethodName : relaxEdges
+Frequent Usage Scenario: 57
+	 edu.uci.ics.jung.graph.ArchetypeVertex : edu.uci.ics.jung.graph.ArchetypeVertex,getEqualVertex(edu.uci.ics.jung.graph.ArchetypeGraph)
+	 edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_transformation_DirectionTransformer//13_TestGraphUtils.java MethodName : testCopyLabels
+Frequent Usage Scenario: 58
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_Vertex//119_JpegWriter.java MethodName : write
+Frequent Usage Scenario: 59
+	 edu.uci.ics.jung.visualization.Layout : boolean,isIncremental()
+	 edu.uci.ics.jung.visualization.Layout : void,advancePositions()
+	 edu.uci.ics.jung.visualization.Layout : boolean,incrementsAreDone()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_Layout//41_AestheticSpringVisualizer.java MethodName : NA
+Frequent Usage Scenario: 60
+	 edu.uci.ics.jung.graph.impl.DirectedSparseVertex : edu.uci.ics.jung.graph.impl.DirectedSparseVertex,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.impl.AbstractSparseGraph : edu.uci.ics.jung.graph.Vertex,addVertex(edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_predicates_SelfLoopEdgePredicate//1_MilanoGraphView.java MethodName : setContents
+Frequent Usage Scenario: 61
+	 edu.uci.ics.jung.graph.ArchetypeVertex : java.util.Set,getNeighbors()
+	 edu.uci.ics.jung.visualization.PickedInfo : boolean,isPicked(edu.uci.ics.jung.graph.ArchetypeVertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_importance_VoltageRanker//1_Pomo.java MethodName : getStroke
+Frequent Usage Scenario: 62
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_importance_VoltageRanker//3_PluggableRendererDemo.java MethodName : start
+Frequent Usage Scenario: 63
+	 edu.uci.ics.jung.visualization.SpringLayout : edu.uci.ics.jung.visualization.SpringLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_Graph//20_SwirlNeighbor.java MethodName : main
+Frequent Usage Scenario: 64
+	 edu.uci.ics.jung.utils.GraphUtils : void,addVertices(edu.uci.ics.jung.graph.Graph,int)
+	 edu.uci.ics.jung.utils.GraphUtils : edu.uci.ics.jung.graph.Edge,addEdge(edu.uci.ics.jung.graph.Graph,edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.graph.decorators.Indexer : edu.uci.ics.jung.graph.ArchetypeVertex,getVertex(int)
+	 edu.uci.ics.jung.graph.decorators.Indexer : edu.uci.ics.jung.graph.decorators.Indexer,getIndexer(edu.uci.ics.jung.graph.ArchetypeGraph)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_predicates_ConnectedGraphPredicate//0_GraphPredicateTest.java MethodName : setUp
+Frequent Usage Scenario: 65
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setGraphLayout(edu.uci.ics.jung.visualization.Layout,boolean)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,stop()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,restart()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_ArchetypeEdge//0_DependencyView.java MethodName : actionPerformed
+Frequent Usage Scenario: 66
+	 edu.uci.ics.jung.graph.decorators.NumberVertexValue : java.lang.Number,getNumber(edu.uci.ics.jung.graph.ArchetypeVertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_DirectedEdge//19_PageRankRanker.java MethodName : advance
+Frequent Usage Scenario: 67
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_importance_VoltageRanker//3_PluggableRendererDemo.java MethodName : start
+Frequent Usage Scenario: 68
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_importance_VoltageRanker//3_PluggableRendererDemo.java MethodName : start
+Frequent Usage Scenario: 69
+	 edu.uci.ics.jung.graph.Graph : edu.uci.ics.jung.graph.Vertex,addVertex(edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.graph.impl.SparseVertex : edu.uci.ics.jung.graph.impl.SparseVertex,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_impl_SparseVertex//18_CliquePredicateTest.java MethodName : test3Vertices
+Frequent Usage Scenario: 70
+	 edu.uci.ics.jung.graph.ArchetypeGraph : int,numVertices()
+	 edu.uci.ics.jung.graph.ArchetypeGraph : int,numEdges()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_utils_GraphUtils//22_BasicGraphTest.java MethodName : testSimpleDirectedGraph
+Frequent Usage Scenario: 71
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,stop()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,restart()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_VisualizationViewer//38_OntologyVisualizationViewer.java MethodName : NA
+Frequent Usage Scenario: 72
+	 edu.uci.ics.jung.visualization.VisualizationViewer : java.awt.geom.Point2D,inverseViewTransform(java.awt.geom.Point2D)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickSupport,getPickSupport()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_control_PickingGraphMousePlugin//9_MyPickingGraphMousePlugin.java MethodName : mousePressed
+Frequent Usage Scenario: 73
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setGraphMouse(edu.uci.ics.jung.visualization.VisualizationViewer.GraphMouse)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_VertexStringer//15_RouteTableVisualizer.java MethodName : RouteTableVisualizer
+Frequent Usage Scenario: 74
+	 edu.uci.ics.jung.graph.impl.AbstractSparseGraph : edu.uci.ics.jung.graph.Vertex,addVertex(edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_utils_GraphUtils//22_BasicGraphTest.java MethodName : testDirectedGraph
+Frequent Usage Scenario: 75
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setGraphLabelRenderer(edu.uci.ics.jung.visualization.GraphLabelRenderer)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_VertexStringer//30_MappingTool.java MethodName : G5kPanel
+Frequent Usage Scenario: 76
+	 edu.uci.ics.jung.graph.decorators.EllipseVertexShapeFunction : edu.uci.ics.jung.graph.decorators.EllipseVertexShapeFunction,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setGraphLabelRenderer(edu.uci.ics.jung.visualization.GraphLabelRenderer)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_VertexStringer//30_MappingTool.java MethodName : G5kPanel
+Frequent Usage Scenario: 77
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickedState(edu.uci.ics.jung.visualization.PickedState)
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_cluster_EdgeBetweennessClusterer//2_ClusteringDemo.java MethodName : start
+Frequent Usage Scenario: 78
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_importance_VoltageRanker//3_PluggableRendererDemo.java MethodName : start
+Frequent Usage Scenario: 79
+	 edu.uci.ics.jung.visualization.ZoomPanGraphMouse : edu.uci.ics.jung.visualization.ZoomPanGraphMouse,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.graph.impl.AbstractSparseGraph : java.util.Set,getVertices()
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_predicates_SelfLoopEdgePredicate//1_MilanoGraphView.java MethodName : setContents
+Frequent Usage Scenario: 80
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickedState(edu.uci.ics.jung.visualization.PickedState)
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_cluster_EdgeBetweennessClusterer//2_ClusteringDemo.java MethodName : start
+Frequent Usage Scenario: 81
+	 edu.uci.ics.jung.graph.decorators.EllipseVertexShapeFunction : edu.uci.ics.jung.graph.decorators.EllipseVertexShapeFunction,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_impl_DirectedSparseGraph//19_View.java MethodName : init
+Frequent Usage Scenario: 82
+	 edu.uci.ics.jung.visualization.contrib.KKLayout : edu.uci.ics.jung.visualization.contrib.KKLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexFontFunction(edu.uci.ics.jung.graph.decorators.VertexFontFunction)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_AbstractVertexShapeFunction//1_Pomo.java MethodName : start
+Frequent Usage Scenario: 83
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_impl_DirectedSparseEdge//65_AddNodeDemo.java MethodName : GraphZoomScrollPaneDemo
+Frequent Usage Scenario: 84
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setGraphLabelRenderer(edu.uci.ics.jung.visualization.GraphLabelRenderer)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_VertexStringer//30_MappingTool.java MethodName : G5kPanel
+Frequent Usage Scenario: 85
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setGraphLabelRenderer(edu.uci.ics.jung.visualization.GraphLabelRenderer)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_VertexStringer//30_MappingTool.java MethodName : G5kPanel
+Frequent Usage Scenario: 86
+	 edu.uci.ics.jung.utils.TestGraphs : edu.uci.ics.jung.graph.Graph,getOneComponentGraph()
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_control_CrossoverScalingControl//32_SatelliteViewDemo.java MethodName : SatelliteViewDemo
+Frequent Usage Scenario: 87
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setGraphMouse(edu.uci.ics.jung.visualization.VisualizationViewer.GraphMouse)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_impl_DirectedSparseGraph//19_View.java MethodName : init
+Frequent Usage Scenario: 88
+	 edu.uci.ics.jung.utils.TestGraphs : edu.uci.ics.jung.graph.Graph,generateMixedRandomGraph(edu.uci.ics.jung.graph.decorators.NumberEdgeValue,int,boolean)
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_UserDatumNumberEdgeValue//11_Test1.java MethodName : getGraphPanel
+Frequent Usage Scenario: 89
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_importance_VoltageRanker//3_PluggableRendererDemo.java MethodName : start
+Frequent Usage Scenario: 90
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_predicates_SelfLoopEdgePredicate//1_MilanoGraphView.java MethodName : setContents
+Frequent Usage Scenario: 91
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeArrowPredicate(org.apache.commons.collections.Predicate)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeFontFunction(edu.uci.ics.jung.graph.decorators.EdgeFontFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeIncludePredicate(org.apache.commons.collections.Predicate)
+	 edu.uci.ics.jung.visualization.control.PluggableGraphMouse : void,add(edu.uci.ics.jung.visualization.control.GraphMousePlugin)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.transform.MutableTransformer,getLayoutTransformer()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexIncludePredicate(org.apache.commons.collections.Predicate)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStrokeFunction(edu.uci.ics.jung.graph.decorators.VertexStrokeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexFontFunction(edu.uci.ics.jung.graph.decorators.VertexFontFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgePaintFunction(edu.uci.ics.jung.graph.decorators.EdgePaintFunction)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStringer(edu.uci.ics.jung.graph.decorators.EdgeStringer)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_AbstractVertexShapeFunction//1_Pomo.java MethodName : start
+Frequent Usage Scenario: 92
+	 edu.uci.ics.jung.visualization.contrib.KKLayout : edu.uci.ics.jung.visualization.contrib.KKLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.control.PluggableGraphMouse : void,add(edu.uci.ics.jung.visualization.control.GraphMousePlugin)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_ToolTipFunction//5_JungGUI.java MethodName : JungGUI
+Frequent Usage Scenario: 93
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setGraphLabelRenderer(edu.uci.ics.jung.visualization.GraphLabelRenderer)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_VertexStringer//30_MappingTool.java MethodName : G5kPanel
+Frequent Usage Scenario: 94
+	 edu.uci.ics.jung.visualization.contrib.CircleLayout : edu.uci.ics.jung.visualization.contrib.CircleLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_visualization_GraphDraw//37_HmmComponent.java MethodName : HmmComponent
+Frequent Usage Scenario: 95
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_impl_DirectedSparseEdge//65_AddNodeDemo.java MethodName : GraphZoomScrollPaneDemo
+Frequent Usage Scenario: 96
+	 edu.uci.ics.jung.graph.impl.UndirectedSparseGraph : edu.uci.ics.jung.graph.impl.UndirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_VertexStringer//41_UndirectedGraph.java MethodName : draw
+Frequent Usage Scenario: 97
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_ArchetypeVertex//53_ScrolledPropertiesBlock.java MethodName : createMasterPart
+Frequent Usage Scenario: 98
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgePaintFunction(edu.uci.ics.jung.graph.decorators.EdgePaintFunction)
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_importance_VoltageRanker//3_PluggableRendererDemo.java MethodName : start
+Frequent Usage Scenario: 99
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_Graph//34_DependencyView.java MethodName : onApplicationEvent
+Frequent Usage Scenario: 100
+	 edu.uci.ics.jung.visualization.contrib.KKLayout : edu.uci.ics.jung.visualization.contrib.KKLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgePaintFunction(edu.uci.ics.jung.graph.decorators.EdgePaintFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_AbstractVertexShapeFunction//1_Pomo.java MethodName : start
+Frequent Usage Scenario: 101
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeIncludePredicate(org.apache.commons.collections.Predicate)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStrokeFunction(edu.uci.ics.jung.graph.decorators.VertexStrokeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	 edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_algorithms_importance_VoltageRanker//3_PluggableRendererDemo.java MethodName : start
+Frequent Usage Scenario: 102
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_Vertex//119_JpegWriter.java MethodName : write
+Frequent Usage Scenario: 103
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_predicates_SelfLoopEdgePredicate//1_MilanoGraphView.java MethodName : setContents
+Frequent Usage Scenario: 104
+	 edu.uci.ics.jung.visualization.control.SatelliteVisualizationViewer : edu.uci.ics.jung.visualization.control.SatelliteVisualizationViewer,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer,edu.uci.ics.jung.visualization.Layout,edu.uci.ics.jung.visualization.Renderer)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.VisualizationViewer,CONSTRUCTOR(edu.uci.ics.jung.visualization.Layout,edu.uci.ics.jung.visualization.Renderer,java.awt.Dimension)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.VisualizationModel,getModel()
+	 edu.uci.ics.jung.graph.decorators.EllipseVertexShapeFunction : edu.uci.ics.jung.graph.decorators.EllipseVertexShapeFunction,CONSTRUCTOR(edu.uci.ics.jung.graph.decorators.VertexSizeFunction,edu.uci.ics.jung.graph.decorators.VertexAspectRatioFunction)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Renderer,getRenderer()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexLabelCentering(boolean)
+	 edu.uci.ics.jung.visualization.FRLayout : void,setMaxIterations(int)
+	 edu.uci.ics.jung.graph.decorators.ConstantVertexFontFunction : edu.uci.ics.jung.graph.decorators.ConstantVertexFontFunction,CONSTRUCTOR(java.awt.Font)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.transform.MutableTransformer,getLayoutTransformer()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,stop()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexIncludePredicate(org.apache.commons.collections.Predicate)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStrokeFunction(edu.uci.ics.jung.graph.decorators.VertexStrokeFunction)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,restart()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexFontFunction(edu.uci.ics.jung.graph.decorators.VertexFontFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgePaintFunction(edu.uci.ics.jung.graph.decorators.EdgePaintFunction)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStringer(edu.uci.ics.jung.graph.decorators.EdgeStringer)
+	 edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	 edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	 edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	 edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	 edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	 edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+	 edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+	 edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_decorators_ConstantEdgeStringer//11_navGraphPanel.java MethodName : navGraphPanel
+Frequent Usage Scenario: 105
+	 edu.uci.ics.jung.utils.UserDataContainer : java.lang.Object,getUserDatum(java.lang.Object)
+	 edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Jung\edu_uci_ics_jung_graph_DirectedEdge//47_JungTutorial1.java MethodName : main

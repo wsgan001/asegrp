@@ -1,0 +1,338 @@
+Sequence 1
+	edu.uci.ics.jung.graph.decorators.StringLabeller : void,setLabel(edu.uci.ics.jung.graph.Vertex,java.lang.String)
+		Optional Hook: edu.uci.ics.jung.graph.Element : edu.uci.ics.jung.graph.ArchetypeGraph,getGraph() Category: 0
+Sequence 2
+	edu.uci.ics.jung.visualization.contrib.KKLayout : edu.uci.ics.jung.visualization.contrib.KKLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+Sequence 3
+	edu.uci.ics.jung.visualization.contrib.CircleLayout : edu.uci.ics.jung.visualization.contrib.CircleLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+Sequence 4
+	edu.uci.ics.jung.graph.decorators.Indexer : edu.uci.ics.jung.graph.ArchetypeVertex,getVertex(int)
+	edu.uci.ics.jung.graph.decorators.Indexer : edu.uci.ics.jung.graph.decorators.Indexer,getIndexer(edu.uci.ics.jung.graph.ArchetypeGraph)
+Sequence 5
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickSupport,getPickSupport()
+Sequence 6
+	edu.uci.ics.jung.graph.ArchetypeVertex : java.util.Set,getNeighbors()
+Sequence 7
+	edu.uci.ics.jung.graph.ArchetypeGraph : int,numVertices()
+Sequence 8
+	edu.uci.ics.jung.utils.UserDataContainer : java.lang.Object,getUserDatum(java.lang.Object)
+Sequence 9
+	edu.uci.ics.jung.graph.impl.UndirectedSparseGraph : edu.uci.ics.jung.graph.impl.UndirectedSparseGraph,CONSTRUCTOR()
+		Optional Hook: edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Collection,getEdgeConstraints() Category: 0
+Sequence 10
+	edu.uci.ics.jung.graph.impl.DirectedSparseVertex : edu.uci.ics.jung.graph.impl.DirectedSparseVertex,CONSTRUCTOR()
+	edu.uci.ics.jung.graph.impl.AbstractSparseGraph : edu.uci.ics.jung.graph.Vertex,addVertex(edu.uci.ics.jung.graph.Vertex)
+	edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+Sequence 11
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+Sequence 12
+	edu.uci.ics.jung.graph.impl.SparseGraph : edu.uci.ics.jung.graph.impl.SparseGraph,CONSTRUCTOR()
+Sequence 13
+	edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+		Optional Hook: edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Collection,getEdgeConstraints() Category: 0
+	edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+Sequence 14
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.VisualizationModel,getModel()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStringer(edu.uci.ics.jung.graph.decorators.EdgeStringer)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+Sequence 15
+	edu.uci.ics.jung.graph.impl.AbstractSparseGraph : java.util.Set,getVertices()
+Sequence 16
+	edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+Sequence 17
+	edu.uci.ics.jung.visualization.control.SatelliteVisualizationViewer : edu.uci.ics.jung.visualization.control.SatelliteVisualizationViewer,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer,edu.uci.ics.jung.visualization.Layout,edu.uci.ics.jung.visualization.Renderer)
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.VisualizationModel,getModel()
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Renderer,getRenderer()
+Sequence 18
+	edu.uci.ics.jung.graph.impl.SparseVertex : edu.uci.ics.jung.graph.impl.SparseVertex,CONSTRUCTOR()
+Sequence 19
+	edu.uci.ics.jung.visualization.PickedInfo : boolean,isPicked(edu.uci.ics.jung.graph.ArchetypeVertex)
+Sequence 20
+	edu.uci.ics.jung.graph.ArchetypeGraph : int,numEdges()
+Sequence 21
+	edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.Vertex,getVertex(java.lang.String)
+Sequence 22
+	edu.uci.ics.jung.graph.impl.UndirectedSparseEdge : edu.uci.ics.jung.graph.impl.UndirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+	edu.uci.ics.jung.graph.impl.DirectedSparseEdge : edu.uci.ics.jung.graph.impl.DirectedSparseEdge,CONSTRUCTOR(edu.uci.ics.jung.graph.Vertex,edu.uci.ics.jung.graph.Vertex)
+Sequence 23
+	edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+		Optional Hook: edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Collection,getEdgeConstraints() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+Sequence 24
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 25
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.VisualizationViewer,CONSTRUCTOR(edu.uci.ics.jung.visualization.Layout,edu.uci.ics.jung.visualization.Renderer,java.awt.Dimension)
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 26
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.transform.MutableTransformer,getLayoutTransformer()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexIncludePredicate(org.apache.commons.collections.Predicate)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStrokeFunction(edu.uci.ics.jung.graph.decorators.VertexStrokeFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexFontFunction(edu.uci.ics.jung.graph.decorators.VertexFontFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgePaintFunction(edu.uci.ics.jung.graph.decorators.EdgePaintFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStringer(edu.uci.ics.jung.graph.decorators.EdgeStringer)
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 27
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.VisualizationModel,getModel()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgePaintFunction(edu.uci.ics.jung.graph.decorators.EdgePaintFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStringer(edu.uci.ics.jung.graph.decorators.EdgeStringer)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+Sequence 28
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+Sequence 29
+	edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+Sequence 30
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.VisualizationModel,getModel()
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+Sequence 31
+	edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 32
+	edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+Sequence 33
+	edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+		Optional Hook: edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Collection,getEdgeConstraints() Category: 0
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+Sequence 34
+	edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+		Optional Hook: edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Collection,getEdgeConstraints() Category: 0
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+Sequence 35
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexIncludePredicate(org.apache.commons.collections.Predicate)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStrokeFunction(edu.uci.ics.jung.graph.decorators.VertexStrokeFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgePaintFunction(edu.uci.ics.jung.graph.decorators.EdgePaintFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 36
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgePaintFunction(edu.uci.ics.jung.graph.decorators.EdgePaintFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStringer(edu.uci.ics.jung.graph.decorators.EdgeStringer)
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 37
+	edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+		Optional Hook: edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Collection,getEdgeConstraints() Category: 0
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 38
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.transform.MutableTransformer,getLayoutTransformer()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 39
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.transform.MutableTransformer,getLayoutTransformer()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 40
+	edu.uci.ics.jung.visualization.control.PluggableGraphMouse : void,add(edu.uci.ics.jung.visualization.control.GraphMousePlugin)
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 41
+	edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 42
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 43
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+		Optional Hook: edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Collection,getEdgeConstraints() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 44
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.graph.impl.DirectedSparseGraph : edu.uci.ics.jung.graph.impl.DirectedSparseGraph,CONSTRUCTOR()
+		Optional Hook: edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Collection,getEdgeConstraints() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 45
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 46
+	edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 47
+	edu.uci.ics.jung.visualization.control.AbstractModalGraphMouse : javax.swing.JComboBox,getModeComboBox()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 48
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexFontFunction(edu.uci.ics.jung.graph.decorators.VertexFontFunction)
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setToolTipFunction(edu.uci.ics.jung.graph.decorators.ToolTipFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse : edu.uci.ics.jung.visualization.control.DefaultModalGraphMouse,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 49
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.VisualizationViewer,CONSTRUCTOR(edu.uci.ics.jung.visualization.Layout,edu.uci.ics.jung.visualization.Renderer,java.awt.Dimension)
+	edu.uci.ics.jung.visualization.ShapePickSupport : edu.uci.ics.jung.visualization.ShapePickSupport,CONSTRUCTOR()
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,setPickSupport(edu.uci.ics.jung.visualization.PickSupport)
+	edu.uci.ics.jung.visualization.GraphZoomScrollPane : edu.uci.ics.jung.visualization.GraphZoomScrollPane,CONSTRUCTOR(edu.uci.ics.jung.visualization.VisualizationViewer)
+		Optional Hook: edu.uci.ics.jung.visualization.Layout : java.awt.Dimension,getCurrentSize() Category: 0
+		Optional Hook: edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Layout,getGraphLayout() Category: 0
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+Sequence 50
+	edu.uci.ics.jung.graph.decorators.EllipseVertexShapeFunction : edu.uci.ics.jung.graph.decorators.EllipseVertexShapeFunction,CONSTRUCTOR(edu.uci.ics.jung.graph.decorators.VertexSizeFunction,edu.uci.ics.jung.graph.decorators.VertexAspectRatioFunction)
+	edu.uci.ics.jung.visualization.FRLayout : void,setMaxIterations(int)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexLabelCentering(boolean)
+	edu.uci.ics.jung.graph.decorators.ConstantVertexFontFunction : edu.uci.ics.jung.graph.decorators.ConstantVertexFontFunction,CONSTRUCTOR(java.awt.Font)
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,stop()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexIncludePredicate(org.apache.commons.collections.Predicate)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStrokeFunction(edu.uci.ics.jung.graph.decorators.VertexStrokeFunction)
+	edu.uci.ics.jung.visualization.VisualizationViewer : void,restart()
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexFontFunction(edu.uci.ics.jung.graph.decorators.VertexFontFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStrokeFunction(edu.uci.ics.jung.graph.decorators.EdgeStrokeFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgePaintFunction(edu.uci.ics.jung.graph.decorators.EdgePaintFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexShapeFunction(edu.uci.ics.jung.graph.decorators.VertexShapeFunction)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setEdgeStringer(edu.uci.ics.jung.graph.decorators.EdgeStringer)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexPaintFunction(edu.uci.ics.jung.graph.decorators.VertexPaintFunction)
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.PickedState,getPickedState()
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.PluggableRenderer : void,setVertexStringer(edu.uci.ics.jung.graph.decorators.VertexStringer)
+	edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Sequence 51
+	edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getEdges()
+	edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Sequence 52
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.transform.MutableTransformer,getLayoutTransformer()
+	edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Sequence 53
+	edu.uci.ics.jung.visualization.VisualizationViewer : edu.uci.ics.jung.visualization.Renderer,getRenderer()
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Sequence 54
+	edu.uci.ics.jung.visualization.FRLayout : edu.uci.ics.jung.visualization.FRLayout,CONSTRUCTOR(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.visualization.PluggableRenderer : edu.uci.ics.jung.visualization.PluggableRenderer,CONSTRUCTOR()
+	edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()
+Sequence 55
+	edu.uci.ics.jung.graph.decorators.StringLabeller : edu.uci.ics.jung.graph.decorators.StringLabeller,getLabeller(edu.uci.ics.jung.graph.Graph)
+	edu.uci.ics.jung.graph.ArchetypeGraph : java.util.Set,getVertices()

@@ -1,0 +1,119 @@
+Frequent Usage Scenario: 1
+	 org.apache.log4j.Category : org.apache.log4j.Level,getLevel()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_net_SyslogAppender//20_LoggingAdmin.java MethodName : updateLoggerData
+Frequent Usage Scenario: 2
+	 org.apache.log4j.spi.LoggingEvent : org.apache.log4j.spi.ThrowableInformation,getThrowableInformation()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_spi_LoggingEvent//227_vnd.java MethodName : RemoteLogEvent
+Frequent Usage Scenario: 3
+	 org.apache.log4j.Category : void,setAdditivity(boolean)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_WriterAppender//82_LoggingTest.java MethodName : setUp
+Frequent Usage Scenario: 4
+	 org.apache.log4j.BasicConfigurator : void,configure(org.apache.log4j.Appender)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//196_SchemaGenerator.java MethodName : main
+Frequent Usage Scenario: 5
+	 org.apache.log4j.LogManager : org.apache.log4j.spi.LoggerRepository,getLoggerRepository()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_spi_LoggerRepository//113_CommHandler.java MethodName : CommHandler
+Frequent Usage Scenario: 6
+	 org.apache.log4j.Category : boolean,isDebugEnabled()
+	 org.apache.log4j.Category : void,debug(java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//353_ChibaServlet.java MethodName : init
+Frequent Usage Scenario: 7
+	 org.apache.log4j.spi.LoggingEvent : java.lang.Object,getMessage()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_spi_LoggingEvent//646_MockLogAppenderTest.java MethodName : testWarnLimit
+Frequent Usage Scenario: 8
+	 org.apache.log4j.Category : void,fatal(java.lang.Object,java.lang.Throwable)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//184_SnmpTrapAppenderTest.java MethodName : SnmpTrapAppenderTest
+Frequent Usage Scenario: 9
+	 org.apache.log4j.Category : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_RollingFileAppender//53_DeliverContextListener.java MethodName : getDeliverCategory
+Frequent Usage Scenario: 10
+	 org.apache.log4j.PropertyConfigurator : void,configure(java.util.Properties)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//339_Log4jService.java MethodName : Log4jLoggerFactory
+Frequent Usage Scenario: 11
+	 org.apache.log4j.Category : void,setLevel(org.apache.log4j.Level)
+	 org.apache.log4j.Category : void,addAppender(org.apache.log4j.Appender)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//336_java_logger_log4j.java MethodName : methode4
+Frequent Usage Scenario: 12
+	 org.apache.log4j.Category : void,log(org.apache.log4j.Priority,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//334_CreateLog.java MethodName : run
+Frequent Usage Scenario: 13
+	 org.apache.log4j.Category : java.util.Enumeration,getAllAppenders()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_PropertyConfigurator//529_SbmlMatlabTest.java MethodName : configureLog4J
+Frequent Usage Scenario: 14
+	 org.apache.log4j.BasicConfigurator : void,configure()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_spi_LoggingEvent//467_ProtegeApplication.java MethodName : initApplication
+Frequent Usage Scenario: 15
+	 org.apache.log4j.Category : org.apache.log4j.Level,getEffectiveLevel()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_spi_LoggerRepository//113_CommHandler.java MethodName : CommHandler
+Frequent Usage Scenario: 16
+	 org.apache.log4j.Category : org.apache.log4j.Category,getRoot()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_spi_LoggingEvent//467_ProtegeApplication.java MethodName : initApplication
+Frequent Usage Scenario: 17
+	 org.apache.log4j.spi.LoggingEvent : org.apache.log4j.Level,getLevel()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_spi_LoggingEvent//646_MockLogAppenderTest.java MethodName : testWarnLimit
+Frequent Usage Scenario: 18
+	 org.apache.log4j.Category : void,fatal(java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//431_ExecutionerUtil.java MethodName : loadConfiguration
+Frequent Usage Scenario: 19
+	 org.apache.log4j.Category : org.apache.log4j.Category,getInstance(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//446_Log4JWrapper.java MethodName : warn
+Frequent Usage Scenario: 20
+	 org.apache.log4j.Category : void,info(java.lang.Object,java.lang.Throwable)
+	 org.apache.log4j.Category : void,warn(java.lang.Object,java.lang.Throwable)
+	 org.apache.log4j.Category : void,error(java.lang.Object,java.lang.Throwable)
+	 org.apache.log4j.Category : void,debug(java.lang.Object,java.lang.Throwable)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_Priority//584_PatternTest.java MethodName : main
+Frequent Usage Scenario: 21
+	 org.apache.log4j.Logger : org.apache.log4j.Logger,getLogger(java.lang.String)
+	 org.apache.log4j.Category : void,debug(java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_XMLLayout//35_ViewCreateLayoutAction.java MethodName : WhiteboardServerThread
+Frequent Usage Scenario: 22
+	 org.apache.log4j.NDC : java.lang.String,pop()
+	 org.apache.log4j.NDC : void,push(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_NDC//66_ConfigurationFileParsing.java MethodName : main
+Frequent Usage Scenario: 23
+	 org.apache.log4j.Category : void,log(java.lang.String,org.apache.log4j.Priority,java.lang.Object,java.lang.Throwable)
+	 org.apache.log4j.Logger : org.apache.log4j.Logger,getLogger(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_Appender//366_Debug.java MethodName : log
+Frequent Usage Scenario: 24
+	 org.apache.log4j.PropertyConfigurator : void,configure(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_SimpleLayout//125_MigrationFrame.java MethodName : MigrationFrame
+Frequent Usage Scenario: 25
+	 org.apache.log4j.AppenderSkeleton : void,setName(java.lang.String)
+	 org.apache.log4j.PatternLayout : org.apache.log4j.PatternLayout,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_PropertyConfigurator//451_LoggingContextListener.java MethodName : configureTransactionLog
+Frequent Usage Scenario: 26
+	 org.apache.log4j.ConsoleAppender : org.apache.log4j.ConsoleAppender,CONSTRUCTOR(org.apache.log4j.Layout)
+	 org.apache.log4j.PatternLayout : org.apache.log4j.PatternLayout,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//336_java_logger_log4j.java MethodName : methode4
+Frequent Usage Scenario: 27
+	 org.apache.log4j.PatternLayout : org.apache.log4j.PatternLayout,CONSTRUCTOR(java.lang.String)
+	 org.apache.log4j.Logger : org.apache.log4j.Logger,getRootLogger()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//196_SchemaGenerator.java MethodName : main
+Frequent Usage Scenario: 28
+	 org.apache.log4j.Category : void,addAppender(org.apache.log4j.Appender)
+	 org.apache.log4j.PatternLayout : org.apache.log4j.PatternLayout,CONSTRUCTOR(java.lang.String)
+	 org.apache.log4j.Logger : org.apache.log4j.Logger,getLogger(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_RollingFileAppender//86_DqcServlet.java MethodName : init
+Frequent Usage Scenario: 29
+	 org.apache.log4j.Logger : org.apache.log4j.Logger,getRootLogger()
+	 org.apache.log4j.Logger : org.apache.log4j.Logger,getLogger(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//196_SchemaGenerator.java MethodName : main
+Frequent Usage Scenario: 30
+	 org.apache.log4j.Category : void,setLevel(org.apache.log4j.Level)
+	 org.apache.log4j.Logger : org.apache.log4j.Logger,getLogger(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_PropertyConfigurator//740_LPDContext.java MethodName : loadLPDConfig
+Frequent Usage Scenario: 31
+	 org.apache.log4j.Category : boolean,isInfoEnabled()
+	 org.apache.log4j.Category : void,info(java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_RollingFileAppender//156_EventsArchiver.java MethodName : init
+Frequent Usage Scenario: 32
+	 org.apache.log4j.Logger : org.apache.log4j.Logger,getLogger(java.lang.String)
+	 org.apache.log4j.Category : void,info(java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_XMLLayout//35_ViewCreateLayoutAction.java MethodName : WhiteboardServerThread
+Frequent Usage Scenario: 33
+	 org.apache.log4j.Category : void,warn(java.lang.Object)
+	 org.apache.log4j.Category : void,error(java.lang.Object)
+	 org.apache.log4j.Category : void,info(java.lang.Object)
+	 org.apache.log4j.Category : void,debug(java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Log4j\org_apache_log4j_xml_DOMConfigurator//430_ConfigTest.java MethodName : main

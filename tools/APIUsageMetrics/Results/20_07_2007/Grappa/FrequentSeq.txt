@@ -1,0 +1,38 @@
+Sequence 1
+	java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,java.lang.Object)
+Sequence 2
+	att.grappa.Element : java.lang.String,getName()
+Sequence 3
+	att.grappa.GrappaPanel : void,setScaleToFit(boolean)
+	att.grappa.GrappaPanel : att.grappa.GrappaListener,addGrappaListener(att.grappa.GrappaListener)
+	att.grappa.GrappaPanel : att.grappa.GrappaPanel,CONSTRUCTOR(att.grappa.Subgraph)
+	att.grappa.Graph : java.io.PrintWriter,setErrorWriter(java.io.PrintWriter)
+	att.grappa.Graph : boolean,setEditable(boolean)
+Sequence 4
+	att.grappa.Subgraph : java.util.Enumeration,subgraphElements()
+	att.grappa.Subgraph : java.util.Enumeration,edgeElements()
+	att.grappa.Subgraph : java.util.Enumeration,nodeElements()
+Sequence 5
+	att.grappa.Parser : att.grappa.Graph,getGraph()
+	att.grappa.Graph : java.io.PrintWriter,setErrorWriter(java.io.PrintWriter)
+	att.grappa.Graph : boolean,setEditable(boolean)
+	java_cup.runtime.lr_parser : java_cup.runtime.Symbol,parse()
+		Strict Hook: java_cup.runtime.lr_parser : java_cup.runtime.Symbol,do_action(int,java_cup.runtime.lr_parser,java.util.Stack,int) Category: 1
+		Strict Hook: java_cup.runtime.lr_parser : void,unrecovered_syntax_error(java_cup.runtime.Symbol) Category: 0
+		Strict Hook: java_cup.runtime.lr_parser : void,user_init() Category: 0
+		Strict Hook: java_cup.runtime.lr_parser : short[][],production_table() Category: 1
+		Strict Hook: java_cup.runtime.lr_parser : void,init_actions() Category: 1
+		Strict Hook: java_cup.runtime.lr_parser : int,start_state() Category: 1
+		Strict Hook: java_cup.runtime.lr_parser : java_cup.runtime.Symbol,scan() Category: 0
+		Strict Hook: java_cup.runtime.lr_parser : short[][],action_table() Category: 1
+		Optional Hook: java_cup.runtime.lr_parser : void,syntax_error(java_cup.runtime.Symbol) Category: 0
+		Strict Hook: java_cup.runtime.lr_parser : short[][],reduce_table() Category: 1
+Sequence 6
+	java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int)
+	java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int,java.lang.Object)
+Sequence 7
+	java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int)
+	java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int)
+Sequence 8
+	java_cup.runtime.lr_parser : void,done_parsing()
+	java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int,java.lang.Object)

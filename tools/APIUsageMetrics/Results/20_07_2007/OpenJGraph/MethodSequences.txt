@@ -1,0 +1,3028 @@
+Sequence 1
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 2
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 3
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 4
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 5
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 6
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 7
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 8
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 9
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 10
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 11
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 12
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphImpl : java.util.Set,getVertexSet()
+Sequence 13
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 14
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 15
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 16
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 17
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 18
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 19
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 20
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 21
+	salvo.jesus.graph.algorithm.DepthFirstDirectedGraphTraversal : salvo.jesus.graph.algorithm.DepthFirstDirectedGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.DirectedGraph)
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex)
+Sequence 22
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 23
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 24
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 25
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 26
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 27
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 28
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 29
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 30
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 31
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 32
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 33
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 34
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 35
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 36
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 37
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 38
+	salvo.jesus.graph.algorithm.ShortestPathAlgorithm : salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+Sequence 39
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+Sequence 40
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+Sequence 41
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 42
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 43
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 44
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 45
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 46
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.DirectedGraph : salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 47
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 48
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 49
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 50
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 51
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 52
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 53
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 54
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 55
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : salvo.jesus.graph.DirectedAcyclicGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : java.util.List,reverseTopologicalSort()
+Sequence 56
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : salvo.jesus.graph.DirectedAcyclicGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : java.util.List,reverseTopologicalSort()
+Sequence 57
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 58
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 59
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 60
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 61
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 62
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : salvo.jesus.graph.DirectedAcyclicGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : java.util.List,reverseTopologicalSort()
+Sequence 63
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : salvo.jesus.graph.DirectedAcyclicGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : java.util.List,reverseTopologicalSort()
+Sequence 64
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 65
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 66
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 67
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 68
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 69
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.DirectedGraph : salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 70
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 71
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 72
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 73
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 74
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 75
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 76
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 77
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 78
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 79
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 80
+	salvo.jesus.graph.DirectedEdge : int,getDirection()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+Sequence 81
+	salvo.jesus.graph.DirectedEdge : int,getDirection()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+Sequence 82
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+Sequence 83
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+Sequence 84
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+Sequence 85
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 86
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 87
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+Sequence 88
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 89
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 90
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 91
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 92
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 93
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 94
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.DirectedGraph : salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 95
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 96
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 97
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 98
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 99
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 100
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 101
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 102
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 103
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.DirectedGraph : salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 104
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 105
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 106
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 107
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 108
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 109
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 110
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 111
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 112
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 113
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 114
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+Sequence 115
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 116
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 117
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 118
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 119
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 120
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 121
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : void,remove(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex) Category: 0 Type : 3
+Sequence 122
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 123
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 124
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 125
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 126
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 127
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 128
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 129
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 130
+	salvo.jesus.graph.DirectedEdge : int,getDirection()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 131
+	salvo.jesus.graph.DirectedEdge : int,getDirection()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+Sequence 132
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+Sequence 133
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+Sequence 134
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 135
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+Sequence 136
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 137
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 138
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+Sequence 139
+	salvo.jesus.graph.Graph : void,addEdge(salvo.jesus.graph.Edge)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 140
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 141
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 142
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 143
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 144
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 145
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 146
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 147
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 148
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 149
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 150
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 151
+	salvo.jesus.graph.algorithm.DepthFirstDirectedGraphTraversal : salvo.jesus.graph.algorithm.DepthFirstDirectedGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.DirectedGraph)
+Sequence 152
+	salvo.jesus.graph.DirectedEdgeImpl : salvo.jesus.graph.DirectedEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 153
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 154
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 155
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 156
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 157
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 158
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 159
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 160
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 161
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 162
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 163
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 164
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 165
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+Sequence 166
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 167
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 168
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 169
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 170
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 171
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 172
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : void,remove(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex) Category: 0 Type : 3
+Sequence 173
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 174
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 175
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 176
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 177
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 178
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 179
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 180
+	salvo.jesus.graph.algorithm.DepthFirstDirectedGraphTraversal : salvo.jesus.graph.algorithm.DepthFirstDirectedGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.DirectedGraph)
+Sequence 181
+	salvo.jesus.graph.DirectedEdgeImpl : salvo.jesus.graph.DirectedEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 182
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 183
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 184
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Sequence 185
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+Sequence 186
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+Sequence 187
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Sequence 188
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+Sequence 189
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+Sequence 190
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Sequence 191
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Sequence 192
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 193
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 194
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 195
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 196
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 197
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 198
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 199
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.DirectedGraph : salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 200
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 201
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 202
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 203
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 204
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 205
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 206
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 207
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 208
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 209
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 210
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 211
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 212
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 213
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 214
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+	salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+Sequence 215
+	salvo.jesus.graph.algorithm.DepthFirstDirectedGraphTraversal : salvo.jesus.graph.algorithm.DepthFirstDirectedGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.DirectedGraph)
+Sequence 216
+	salvo.jesus.graph.DirectedEdgeImpl : salvo.jesus.graph.DirectedEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 217
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 218
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 219
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 220
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 221
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 222
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 223
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 224
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 225
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 226
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 227
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 228
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 229
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 230
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 231
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 232
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 233
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 234
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 235
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 236
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 237
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphImpl : java.util.Set,getVertexSet()
+Sequence 238
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 239
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 240
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 241
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 242
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 243
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 244
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 245
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 246
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 247
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 248
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 249
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 250
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 251
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 252
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 253
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 254
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : int,getEdgesCount()
+Sequence 255
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 256
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 257
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 258
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 259
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 260
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.DirectedGraph : salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 261
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 262
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 263
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 264
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Sequence 265
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 266
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+Sequence 267
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 268
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+Sequence 269
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+Sequence 270
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 271
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 272
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 273
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 274
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 275
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 276
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 277
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 278
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 279
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 280
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 281
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 282
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 283
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 284
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 285
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 286
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 287
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 288
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 289
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 290
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 291
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 292
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 293
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 294
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphImpl : java.util.Set,getVertexSet()
+Sequence 295
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 296
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 297
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 298
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 299
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 300
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 301
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 302
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 303
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 304
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 305
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 306
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 307
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 308
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 309
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 310
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 311
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : salvo.jesus.graph.algorithm.DepthFirstGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 312
+	salvo.jesus.graph.GraphAddVertexListener : void,vertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+Sequence 313
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 314
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 315
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 316
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphRemoveVertexEvent : salvo.jesus.graph.GraphRemoveVertexEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphRemoveVertexListener : void,vertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+Sequence 317
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 318
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 319
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 320
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 321
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 322
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex)
+Sequence 323
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 324
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 325
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 326
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+Sequence 327
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 328
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 329
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 330
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 331
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 332
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 333
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : void,remove(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex) Category: 0 Type : 3
+Sequence 334
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : salvo.jesus.graph.algorithm.DepthFirstGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 335
+	salvo.jesus.graph.GraphAddVertexListener : void,vertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+Sequence 336
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 337
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 338
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 339
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphRemoveVertexEvent : salvo.jesus.graph.GraphRemoveVertexEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphRemoveVertexListener : void,vertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+Sequence 340
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 341
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 342
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 343
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 344
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 345
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex)
+Sequence 346
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 347
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 348
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 349
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 350
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 351
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 352
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 353
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 354
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 355
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 356
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : salvo.jesus.graph.algorithm.DepthFirstGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 357
+	salvo.jesus.graph.GraphAddVertexListener : void,vertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+Sequence 358
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 359
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 360
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 361
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphRemoveVertexEvent : salvo.jesus.graph.GraphRemoveVertexEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphRemoveVertexListener : void,vertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+Sequence 362
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 363
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 364
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 365
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 366
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 367
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex)
+Sequence 368
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 369
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 370
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+Sequence 371
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 372
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 373
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 374
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 375
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 376
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Sequence 377
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 378
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+Sequence 379
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 380
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+Sequence 381
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+Sequence 382
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 383
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 384
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 385
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 386
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 387
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 388
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 389
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 390
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 391
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 392
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 393
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 394
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 395
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 396
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 397
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 398
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 399
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 400
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphImpl : java.util.Set,getVertexSet()
+Sequence 401
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 402
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 403
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 404
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 405
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 406
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 407
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 408
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 409
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 410
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 411
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 412
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : salvo.jesus.graph.algorithm.DepthFirstGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 413
+	salvo.jesus.graph.GraphAddVertexListener : void,vertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+Sequence 414
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 415
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 416
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 417
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphRemoveVertexEvent : salvo.jesus.graph.GraphRemoveVertexEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphRemoveVertexListener : void,vertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+Sequence 418
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 419
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 420
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 421
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 422
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 423
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex)
+Sequence 424
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 425
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 426
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 427
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 428
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 429
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : salvo.jesus.graph.algorithm.DepthFirstGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 430
+	salvo.jesus.graph.GraphAddVertexListener : void,vertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+Sequence 431
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 432
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 433
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 434
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphRemoveVertexEvent : salvo.jesus.graph.GraphRemoveVertexEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphRemoveVertexListener : void,vertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+Sequence 435
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 436
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 437
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 438
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 439
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 440
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex)
+Sequence 441
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 442
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 443
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 444
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 445
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 446
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : salvo.jesus.graph.algorithm.DepthFirstGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 447
+	salvo.jesus.graph.GraphAddVertexListener : void,vertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+Sequence 448
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 449
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 450
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Sequence 451
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphRemoveVertexEvent : salvo.jesus.graph.GraphRemoveVertexEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphRemoveVertexListener : void,vertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+Sequence 452
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 453
+	salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 454
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 455
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 456
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 457
+	salvo.jesus.graph.algorithm.DepthFirstGraphTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex)
+Sequence 458
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 459
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 460
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 461
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 462
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 463
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 464
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 465
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 466
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 467
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 468
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 469
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 470
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 471
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 472
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 473
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 474
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 475
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphImpl : java.util.Set,getVertexSet()
+Sequence 476
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 477
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 478
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 479
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 480
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 481
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 482
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 483
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 484
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 485
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 486
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphImpl : java.util.Set,getVertexSet()
+Sequence 487
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 488
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 489
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 490
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 491
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 492
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 493
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Sequence 494
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 495
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+Sequence 496
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 497
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+Sequence 498
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+Sequence 499
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 500
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 501
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 502
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 503
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 504
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 505
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 506
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : salvo.jesus.graph.DirectedAcyclicGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : java.util.List,reverseTopologicalSort()
+Sequence 507
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : salvo.jesus.graph.DirectedAcyclicGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.DirectedAcyclicGraphImpl : java.util.List,reverseTopologicalSort()
+Sequence 508
+	salvo.jesus.graph.Graph : void,addEdge(salvo.jesus.graph.Edge)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 509
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 510
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 511
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 512
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 513
+	salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Sequence 514
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 515
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 516
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 517
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 518
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 519
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 520
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 521
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 522
+	salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Sequence 523
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 524
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 525
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 526
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 527
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+Sequence 528
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 529
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 530
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 531
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 532
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 533
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 534
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 535
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 536
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 537
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 538
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 539
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 540
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 541
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 542
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 543
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 544
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 545
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 546
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 547
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 548
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 549
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 550
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 551
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 552
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 553
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 554
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 555
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 556
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 557
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.GraphImpl : java.util.Set,getVertexSet()
+Sequence 558
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 559
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 560
+	salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Sequence 561
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 562
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 563
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 564
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 565
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 566
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+	salvo.jesus.graph.WeightedEdgeImpl : salvo.jesus.graph.WeightedEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 567
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 568
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 569
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 570
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 571
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 572
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 573
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 574
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 575
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 576
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 577
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 578
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 579
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 580
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 581
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 582
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex)
+Sequence 583
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 584
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 585
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 586
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 587
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 588
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 589
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 590
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 591
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 592
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 593
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 594
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+	salvo.jesus.graph.WeightedEdgeImpl : salvo.jesus.graph.WeightedEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 595
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 596
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 597
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 598
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 599
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 600
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 601
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 602
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 603
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 604
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 605
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 606
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 607
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 608
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 609
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 610
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex)
+Sequence 611
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 612
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 613
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 614
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 615
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 616
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 617
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 618
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 619
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 620
+	salvo.jesus.graph.visual.ToolBarNormalButtonListener : salvo.jesus.graph.visual.ToolBarNormalButtonListener,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+	salvo.jesus.graph.visual.ToolBarEdgeButtonListener : salvo.jesus.graph.visual.ToolBarEdgeButtonListener,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+Sequence 621
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.Graph,getGraph()
+Sequence 622
+	salvo.jesus.graph.visual.GraphPanelNormalState : salvo.jesus.graph.visual.GraphPanelNormalState,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanel)
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 623
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 624
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 625
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	salvo.jesus.graph.visual.VisualGraph : void,add(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex) Category: 1 Type : 3
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 626
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.StraightLineLayout : salvo.jesus.graph.visual.layout.StraightLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+Sequence 627
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 628
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 629
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 630
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 631
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 632
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 633
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 634
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 635
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 636
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 637
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 638
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 639
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 640
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 641
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 642
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+Sequence 643
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 644
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 645
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 646
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 647
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 648
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 649
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : void,remove(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex) Category: 0 Type : 3
+Sequence 650
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 651
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 652
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 653
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 654
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 655
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : int,getDegree(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : java.awt.Rectangle,getBounds()
+	salvo.jesus.graph.visual.VisualVertex : void,setLocation(int,int)
+Sequence 656
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 657
+	salvo.jesus.graph.Graph : int,getDegree(salvo.jesus.graph.Vertex)
+Sequence 658
+	salvo.jesus.graph.visual.VisualVertex : boolean,contains(double,double)
+	salvo.jesus.graph.visual.VisualVertex : salvo.jesus.graph.Vertex,getVertex()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : void,setLabel(java.lang.String)
+	salvo.jesus.graph.visual.VisualVertex : void,rescale()
+		Hook: salvo.jesus.graph.visual.drawing.VisualVertexPainter : void,rescale(salvo.jesus.graph.visual.VisualVertex) Category: 0 Type : 2
+Sequence 659
+	salvo.jesus.graph.visual.VisualVertex : boolean,contains(double,double)
+	salvo.jesus.graph.visual.VisualVertex : salvo.jesus.graph.Vertex,getVertex()
+	salvo.jesus.graph.visual.VisualVertex : void,rescale()
+		Hook: salvo.jesus.graph.visual.drawing.VisualVertexPainter : void,rescale(salvo.jesus.graph.visual.VisualVertex) Category: 0 Type : 2
+Sequence 660
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setFillcolor(java.awt.Color)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setOutlinecolor(java.awt.Color)
+Sequence 661
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setFillcolor(java.awt.Color)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setOutlinecolor(java.awt.Color)
+Sequence 662
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 663
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 664
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 665
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 666
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+	salvo.jesus.graph.WeightedEdgeImpl : salvo.jesus.graph.WeightedEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 667
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 668
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 669
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 670
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 671
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 672
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 673
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 674
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 675
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 676
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 677
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 678
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 679
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 680
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 681
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 682
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex)
+Sequence 683
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 684
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 685
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 686
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 687
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 688
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 689
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 690
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 691
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 692
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 693
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+	salvo.jesus.graph.WeightedEdgeImpl : salvo.jesus.graph.WeightedEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 694
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 695
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 696
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 697
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 698
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 699
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 700
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 701
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 702
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 703
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Sequence 704
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 705
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 706
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 707
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 708
+	salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 709
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex)
+Sequence 710
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.WeightedEdge : double,getWeight()
+Sequence 711
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 712
+	salvo.jesus.graph.WeightedGraphImpl : salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 713
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 714
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.WeightedGraph : salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+Sequence 715
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 716
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 717
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 718
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 719
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+Sequence 720
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 721
+	salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 722
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 723
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 724
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 725
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+Sequence 726
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 727
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.Graph,getGraph()
+Sequence 728
+	salvo.jesus.graph.visual.GraphPanelNormalState : salvo.jesus.graph.visual.GraphPanelNormalState,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanel)
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 729
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 730
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 731
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 732
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 733
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 734
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+Sequence 735
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 736
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 737
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 738
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 739
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 740
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 741
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : void,remove(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex) Category: 0 Type : 3
+Sequence 742
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.Graph,getGraph()
+Sequence 743
+	salvo.jesus.graph.visual.GraphPanelNormalState : salvo.jesus.graph.visual.GraphPanelNormalState,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanel)
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 744
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 745
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 746
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.StraightLineLayout : salvo.jesus.graph.visual.layout.StraightLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+Sequence 747
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.StraightLineLayout : salvo.jesus.graph.visual.layout.StraightLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+Sequence 748
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	salvo.jesus.graph.visual.VisualGraph : void,add(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex) Category: 1 Type : 3
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 749
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+Sequence 750
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+Sequence 751
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.Graph,getGraph()
+Sequence 752
+	salvo.jesus.graph.visual.GraphPanelNormalState : salvo.jesus.graph.visual.GraphPanelNormalState,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanel)
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 753
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 754
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 755
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+Sequence 756
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+Sequence 757
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.Graph,getGraph()
+Sequence 758
+	salvo.jesus.graph.visual.GraphPanelNormalState : salvo.jesus.graph.visual.GraphPanelNormalState,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanel)
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 759
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 760
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 761
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	salvo.jesus.graph.visual.VisualGraph : void,add(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex) Category: 1 Type : 3
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 762
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+Sequence 763
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+Sequence 764
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	salvo.jesus.graph.visual.VisualGraph : void,add(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex) Category: 1 Type : 3
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 765
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.StraightLineLayout : salvo.jesus.graph.visual.layout.StraightLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+Sequence 766
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : salvo.jesus.graph.visual.layout.ForceDirectedLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+	salvo.jesus.graph.visual.VisualGraph : void,repaint()
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 767
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : salvo.jesus.graph.visual.layout.ForceDirectedLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+	salvo.jesus.graph.visual.VisualGraph : void,repaint()
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 768
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+Sequence 769
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+Sequence 770
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+Sequence 771
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+Sequence 772
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 773
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 774
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 775
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 776
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.Graph,getGraph()
+Sequence 777
+	salvo.jesus.graph.visual.GraphPanelNormalState : salvo.jesus.graph.visual.GraphPanelNormalState,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanel)
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 778
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 779
+	salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Sequence 780
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : salvo.jesus.graph.visual.layout.ForceDirectedLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+	salvo.jesus.graph.visual.VisualGraph : void,repaint()
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 781
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : salvo.jesus.graph.visual.layout.ForceDirectedLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+	salvo.jesus.graph.visual.VisualGraph : void,repaint()
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 782
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+Sequence 783
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+Sequence 784
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+Sequence 785
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+Sequence 786
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 787
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : salvo.jesus.graph.visual.layout.ForceDirectedLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+	salvo.jesus.graph.visual.VisualGraph : void,repaint()
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 788
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : salvo.jesus.graph.visual.layout.ForceDirectedLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+	salvo.jesus.graph.visual.VisualGraph : void,repaint()
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 789
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+Sequence 790
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+Sequence 791
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+Sequence 792
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+Sequence 793
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 794
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.StraightLineLayout : salvo.jesus.graph.visual.layout.StraightLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+Sequence 795
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 796
+	salvo.jesus.graph.visual.VisualVertex : boolean,contains(double,double)
+	salvo.jesus.graph.visual.VisualVertex : salvo.jesus.graph.Vertex,getVertex()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : void,setLabel(java.lang.String)
+	salvo.jesus.graph.visual.VisualVertex : void,rescale()
+		Hook: salvo.jesus.graph.visual.drawing.VisualVertexPainter : void,rescale(salvo.jesus.graph.visual.VisualVertex) Category: 0 Type : 2
+Sequence 797
+	salvo.jesus.graph.visual.VisualVertex : boolean,contains(double,double)
+	salvo.jesus.graph.visual.VisualVertex : salvo.jesus.graph.Vertex,getVertex()
+	salvo.jesus.graph.visual.VisualVertex : void,rescale()
+		Hook: salvo.jesus.graph.visual.drawing.VisualVertexPainter : void,rescale(salvo.jesus.graph.visual.VisualVertex) Category: 0 Type : 2
+Sequence 798
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setFillcolor(java.awt.Color)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setOutlinecolor(java.awt.Color)
+Sequence 799
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setFillcolor(java.awt.Color)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setOutlinecolor(java.awt.Color)
+Sequence 800
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 801
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 802
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 803
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+Sequence 804
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 805
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 806
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 807
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 808
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 809
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 810
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : void,remove(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex) Category: 0 Type : 3
+Sequence 811
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : salvo.jesus.graph.visual.layout.ForceDirectedLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+	salvo.jesus.graph.visual.VisualGraph : void,repaint()
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 812
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : salvo.jesus.graph.visual.layout.ForceDirectedLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+	salvo.jesus.graph.visual.VisualGraph : void,repaint()
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 813
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+Sequence 814
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+Sequence 815
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+Sequence 816
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+Sequence 817
+	salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+Sequence 818
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 819
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+Sequence 820
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : void,setGraph(salvo.jesus.graph.Graph)
+		Hook: salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex) Category: 1 Type : 3
+		Hook: salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator() Category: 0 Type : 3
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualVertex : void,setLocation(int,int)
+Sequence 821
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 822
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	salvo.jesus.graph.visual.VisualGraph : void,add(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex) Category: 1 Type : 3
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 823
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.visual.layout.StraightLineLayout : salvo.jesus.graph.visual.layout.StraightLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+Sequence 824
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 825
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 826
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 827
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 828
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 829
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : int,getDegree(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : java.awt.Rectangle,getBounds()
+	salvo.jesus.graph.visual.VisualVertex : void,setLocation(int,int)
+Sequence 830
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 831
+	salvo.jesus.graph.Graph : int,getDegree(salvo.jesus.graph.Vertex)
+Sequence 832
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 833
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR()
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Sequence 834
+	salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 835
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Sequence 836
+	salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+Sequence 837
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 838
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 839
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 840
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 841
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 842
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Sequence 843
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualGraph : void,remove(salvo.jesus.graph.Vertex)
+		Hook: salvo.jesus.graph.Graph : void,remove(salvo.jesus.graph.Vertex) Category: 0 Type : 3
+Sequence 844
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Sequence 845
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 846
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+Sequence 847
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 848
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+Sequence 849
+	salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+Sequence 850
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 851
+	salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Sequence 852
+	salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Sequence 853
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	salvo.jesus.graph.visual.VisualGraph : void,setGraph(salvo.jesus.graph.Graph)
+		Hook: salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex) Category: 1 Type : 3
+		Hook: salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator() Category: 0 Type : 3
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.VisualVertex : void,setLocation(int,int)
+Sequence 854
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+Sequence 855
+	salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+Sequence 856
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 857
+	salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 858
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 859
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 860
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Sequence 861
+	salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+	salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : int,getDegree(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : java.awt.Rectangle,getBounds()
+	salvo.jesus.graph.visual.VisualVertex : void,setLocation(int,int)
+Sequence 862
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 863
+	salvo.jesus.graph.Graph : int,getDegree(salvo.jesus.graph.Vertex)
+Sequence 864
+	salvo.jesus.graph.visual.VisualVertex : boolean,contains(double,double)
+	salvo.jesus.graph.visual.VisualVertex : salvo.jesus.graph.Vertex,getVertex()
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : void,setLabel(java.lang.String)
+	salvo.jesus.graph.visual.VisualVertex : void,rescale()
+		Hook: salvo.jesus.graph.visual.drawing.VisualVertexPainter : void,rescale(salvo.jesus.graph.visual.VisualVertex) Category: 0 Type : 2
+Sequence 865
+	salvo.jesus.graph.visual.VisualVertex : boolean,contains(double,double)
+	salvo.jesus.graph.visual.VisualVertex : salvo.jesus.graph.Vertex,getVertex()
+	salvo.jesus.graph.visual.VisualVertex : void,rescale()
+		Hook: salvo.jesus.graph.visual.drawing.VisualVertexPainter : void,rescale(salvo.jesus.graph.visual.VisualVertex) Category: 0 Type : 2
+Sequence 866
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setFillcolor(java.awt.Color)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setOutlinecolor(java.awt.Color)
+Sequence 867
+	salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setFillcolor(java.awt.Color)
+	salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,setOutlinecolor(java.awt.Color)
+Sequence 868
+	salvo.jesus.graph.VertexImpl : void,setLabel(java.lang.String)
+Sequence 869
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : java.lang.String,toString()
+Sequence 870
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : java.lang.String,toString()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 871
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 872
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 873
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : java.lang.String,toString()
+Sequence 874
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+Sequence 875
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 876
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 877
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 878
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : java.lang.String,toString()
+Sequence 879
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 880
+	salvo.jesus.graph.EdgeImpl : java.lang.String,toString()
+Sequence 881
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 882
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 883
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 884
+	salvo.jesus.graph.VertexImpl : void,setLabel(java.lang.String)
+Sequence 885
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : java.lang.String,toString()
+Sequence 886
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : java.lang.String,toString()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 887
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 888
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 889
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : java.lang.String,toString()
+Sequence 890
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+Sequence 891
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 892
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 893
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 894
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : java.lang.String,toString()
+Sequence 895
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 896
+	salvo.jesus.graph.EdgeImpl : java.lang.String,toString()
+Sequence 897
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 898
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 899
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 900
+	salvo.jesus.graph.VertexImpl : void,setLabel(java.lang.String)
+Sequence 901
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : java.lang.String,toString()
+Sequence 902
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.graph.VertexImpl : java.lang.String,toString()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 903
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 904
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+Sequence 905
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : java.lang.String,toString()
+Sequence 906
+	salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+Sequence 907
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 908
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 909
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 910
+	salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.Graph : int,getVerticesCount()
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : java.lang.String,toString()
+Sequence 911
+	salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Sequence 912
+	salvo.jesus.graph.EdgeImpl : java.lang.String,toString()
+Sequence 913
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 914
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 915
+	salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+Sequence 916
+	salvo.jesus.util.PrintUtilities : void,printComponent(java.awt.Component)
+Sequence 917
+	salvo.jesus.graph.visual.XMLFileFilter : salvo.jesus.graph.visual.XMLFileFilter,CONSTRUCTOR()
+	salvo.jesus.graph.xml.XGMMLContentHandler : salvo.jesus.graph.xml.XGMMLContentHandler,CONSTRUCTOR()
+	salvo.jesus.graph.xml.XMLToGraphReader : salvo.jesus.graph.xml.XMLToGraphReader,CONSTRUCTOR(java.io.InputStream,salvo.jesus.graph.xml.XMLToGraphHandler)
+Sequence 918
+	salvo.jesus.graph.visual.XMLFileFilter : salvo.jesus.graph.visual.XMLFileFilter,CONSTRUCTOR()
+	salvo.jesus.graph.xml.GraphToXMLEventGeneratorImpl : salvo.jesus.graph.xml.GraphToXMLEventGeneratorImpl,CONSTRUCTOR()
+	salvo.jesus.graph.xml.GraphToXGMMLSAXHandler : salvo.jesus.graph.xml.GraphToXGMMLSAXHandler,CONSTRUCTOR(salvo.jesus.graph.xml.GraphToXMLEventGenerator,org.apache.xml.serialize.XMLSerializer)

@@ -1,0 +1,92 @@
+
+Hotspot Alignment of DNSJava with James application:
+
+Rationale behind the selection of James application: One of the example applications mentioned in the DNSJava webpage.
+
+org.xbill.DNS.CNAMERecord
+	Rank: 24
+	getTarget() : Yes
+
+org.xbill.DNS.Cache
+	Rank: 25
+	setMaxEntries() : Yes
+	lookupRecords() : No
+	addMessage() : Yes
+
+org.xbill.DNS.Credibility
+	Rank: 29
+	No methods are invoked. Only two static variables of this class are used. Below are the contants used:
+	AUTH_ANSWER : Yes
+	NONAUTH_ANSWER : Yes
+
+org.xbill.DNS.DClass
+	Rank: 2
+	No methods are invoked. Only two static variables of this class are used. Below are the constants used:
+	IN : Yes
+
+org.xbill.DNS.ExtendedResolver
+	Rank: 35
+	send(Message) : Yes
+
+org.xbill.DNS.Lookup;
+	Rank: 3
+	setDefaultResolver(Resolver) : Yes	//Seems a static method
+	setDefaultCache(Cache, DCLASS.IN) : No  //Seems a static method
+
+org.xbill.DNS.Message;
+	Rank: 10
+	newQuery(Record) : Yes	
+	getHeader() : Yes
+
+org.xbill.DNS.MXRecord;
+	Rank: 13
+	getTarget() : Yes
+
+org.xbill.DNS.Name;
+	Rank: 7
+	fromString(String, Name.root) : Yes	//A static method
+	
+org.xbill.DNS.Rcode;
+	Rank: 14
+	No methods are invoked. Only two static variables of this class are used. Below are the constants used:
+	NOERROR : Yes
+	NXDOMAIN : Yes
+
+org.xbill.DNS.Record;
+	Rank: 1
+	This is a parent class of MXRecord. No additional methods on this class are used.
+
+org.xbill.DNS.Resolver;
+	Rank: None
+	This is a parent class of ExtendedResolver. 
+	send(Message) : Yes, Although this method is invoked on the parent class type, usually we try to detect the runtime type of a class
+			and hence detected as ExtendedResolver in this case.
+
+org.xbill.DNS.RRset;
+	Rank: 11
+	rrs() : Yes	//Returns set of records contained in this set
+
+org.xbill.DNS.ResolverConfig;
+	Rank: 27
+	getCurrentConfig() : Yes
+
+org.xbill.DNS.SetResponse;
+	Rank: 15
+	isSuccessful() : Yes
+	isNXDOMAIN() : Yes
+	isNXRRSET() : Yes
+	
+org.xbill.DNS.TextParseException;
+	Rank: 8
+	No methods are invoked. This is only an exception thrown by "Name.fromString" method invocation
+
+org.xbill.DNS.Type;
+	Rank: 4
+	No methods are invoked. Only two static variables of this class are used.
+	MX : Yes
+	CNAME : Yes
+
+org.xbill.DNS.Zone;
+	Rank: 49
+	findRecords(Name, int) : Yes
+	--> Captured dependency between Name and Zone correctly through a TEMPLATE_TEMPLATE dependency.

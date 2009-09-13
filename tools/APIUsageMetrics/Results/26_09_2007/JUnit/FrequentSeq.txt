@@ -1,0 +1,80 @@
+Frequent Usage Scenario: 1
+	 junit.framework.TestResult : void,addListener(junit.framework.TestListener)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_swingui_TestRunContext//2_TestHierarchyRunView.java MethodName : aboutToStart
+Frequent Usage Scenario: 2
+	 junit.framework.TestResult : boolean,wasSuccessful()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_runner_BaseTestRunner//58_JUnitRunner.java MethodName : runTest
+Frequent Usage Scenario: 3
+	 junit.awtui.TestRunner : void,main(java.lang.String[])
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_awtui_TestRunner//12_TestJetspeedLink.java MethodName : main
+Frequent Usage Scenario: 4
+	 junit.framework.Assert : void,assertNotNull(java.lang.String,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//1505_JaxWsWebServiceInvocationTest.java MethodName : invoke
+Frequent Usage Scenario: 5
+	 junit.textui.TestRunner : void,main(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_extensions_ActiveTestSuite//2_IndexedDiskCacheNoMemoryUnitTest.java MethodName : main
+Frequent Usage Scenario: 6
+	 junit.framework.Assert : void,assertEquals(java.lang.String,java.lang.Object,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//1465_StaxVerifier.java MethodName : verify
+Frequent Usage Scenario: 7
+	 junit.framework.TestSuite : void,addTestSuite(java.lang.Class)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//171_AllTests.java MethodName : suite
+Frequent Usage Scenario: 8
+	 junit.swingui.TestRunner : void,run(java.lang.Class)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_awtui_TestRunner//201_JUnitTests.java MethodName : main
+Frequent Usage Scenario: 9
+	 junit.framework.Assert : void,assertEquals(int,int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//270_ConnectorTest.java MethodName : testTCP
+Frequent Usage Scenario: 10
+	 junit.framework.Assert : void,assertEquals(java.lang.Object,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//1465_StaxVerifier.java MethodName : verify
+Frequent Usage Scenario: 11
+	 junit.textui.TestRunner : void,run(java.lang.Class)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_TestResult//370_AsyncExecTest.java MethodName : main
+Frequent Usage Scenario: 12
+	 junit.textui.TestRunner : junit.framework.TestResult,run(junit.framework.Test)
+	 junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR(java.lang.Class)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_TestResult//193_StandaloneTestRunner.java MethodName : StandaloneTestRunner
+Frequent Usage Scenario: 13
+	 junit.framework.Assert : void,fail(java.lang.String)
+	 junit.framework.TestSuite : void,addTest(junit.framework.Test)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//1338_JMLDataGroup_JML_Test.java MethodName : addTestSuiteForEachMethod
+Frequent Usage Scenario: 14
+	 junit.framework.Assert : void,assertTrue(java.lang.String,boolean)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_Assert//1505_JaxWsWebServiceInvocationTest.java MethodName : invoke
+Frequent Usage Scenario: 15
+	 junit.framework.TestResult : java.util.Enumeration,failures()
+	 junit.framework.Test : void,run(junit.framework.TestResult)
+	 junit.framework.TestResult : junit.framework.TestResult,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_runner_BaseTestRunner//58_JUnitRunner.java MethodName : runTest
+Frequent Usage Scenario: 16
+	 junit.framework.AssertionFailedError : junit.framework.AssertionFailedError,CONSTRUCTOR(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_runner_BaseTestRunner//59_FailureRunView.java MethodName : FailureRunView
+Frequent Usage Scenario: 17
+	 junit.framework.Assert : void,assertTrue(boolean)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//270_ConnectorTest.java MethodName : testTCP
+Frequent Usage Scenario: 18
+	 junit.framework.TestResult : int,runCount()
+	 junit.framework.TestResult : int,failureCount()
+	 junit.framework.TestResult : int,errorCount()
+	 junit.framework.TestResult : junit.framework.TestResult,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_TestResult//497_JUnitServlet.java MethodName : ServletTestRunner
+Frequent Usage Scenario: 19
+	 junit.framework.Test : void,run(junit.framework.TestResult)
+	 junit.framework.TestResult : int,failureCount()
+	 junit.framework.TestResult : int,errorCount()
+	 junit.framework.TestResult : junit.framework.TestResult,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_framework_TestResult//497_JUnitServlet.java MethodName : ServletTestRunner
+Frequent Usage Scenario: 20
+	 junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR()
+	 junit.framework.TestSuite : void,addTest(junit.framework.Test)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_runner_LoadingTestCollector//0_AllJUnitTests.java MethodName : suite
+Frequent Usage Scenario: 21
+	 junit.framework.TestSuite : junit.framework.TestSuite,CONSTRUCTOR(java.lang.String)
+	 junit.framework.TestSuite : void,addTest(junit.framework.Test)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Junit\junit_textui_TestRunner//171_AllTests.java MethodName : suite
+Frequent Usage Scenario: 22
+	 junit.framework.TestCase : void,tearDown()
+	 junit.framework.TestCase : void,setUp()
+	 junit.framework.TestCase : 
+Scenario Type : ExtendsUS FileName : C:\APIUsage\Junit\junit_framework_TestResult//349_CoreRenderKitTest.java MethodName : NA

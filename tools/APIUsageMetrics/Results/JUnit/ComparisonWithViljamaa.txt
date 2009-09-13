@@ -1,0 +1,26 @@
+
+Classes and methods used by Viljamaa's approach:
+
+1. Class: TestCase
+	Rank: 2
+	Methods: setUp : Yes
+
+2. Class: TestSuite
+	Rank: 5
+
+3. Class: BaseTestRunner, TestRunner
+	Rank: 12
+	Methods: TestRunner.run : Yes
+
+4. Class: TestDecorator
+	Rank: 16
+	Methods: TestDecorator.run : No
+
+5. Class: RepeatedTest
+	Rank: 11
+	
+6. Class: ActiveTestSuite
+	Rank: 17
+
+7. Class: ExceptionTestCase
+

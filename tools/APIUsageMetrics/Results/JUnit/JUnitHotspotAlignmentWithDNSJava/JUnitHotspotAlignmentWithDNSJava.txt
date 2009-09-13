@@ -1,0 +1,9 @@
+
+The objective is to see whether the way JUnit APIs used by DNSJava are captured by our hotspots.
+So, we collect all the JUnit classes used by DNSJava and see whether those classes are captured by JUnit hotspots correctly.
+
+
+1. junit.framework.TestCase
+2. junit.framework.Test
+3. junit.framework.TestSuite
+

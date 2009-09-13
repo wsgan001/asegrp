@@ -1,0 +1,93 @@
+Sequence 1
+	org.jgrapht.event.GraphEdgeChangeEvent : E,getEdge()
+Sequence 2
+	org.jgrapht.alg.CycleDetector : boolean,detectCycles()
+	org.jgrapht.graph.SimpleDirectedGraph : org.jgrapht.graph.SimpleDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.alg.CycleDetector : org.jgrapht.alg.CycleDetector,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	org.jgrapht.Graph : E,addEdge(V,V)
+	org.jgrapht.Graph : boolean,addVertex(V)
+Sequence 3
+	org.jgrapht.Graph : boolean,containsEdge(V,V)
+	org.jgrapht.Graph : java.util.Set<V>,vertexSet()
+Sequence 4
+	org.jgrapht.Graph : V,getEdgeSource(E)
+	org.jgrapht.Graph : java.util.Set<E>,edgeSet()
+	org.jgrapht.Graph : V,getEdgeTarget(E)
+	org.jgrapht.Graph : java.util.Set<V>,vertexSet()
+Sequence 5
+	org.jgrapht.graph.DefaultListenableGraph : E,addEdge(V,V)
+Sequence 6
+	org.jgrapht.graph.ListenableUndirectedGraph : org.jgrapht.graph.ListenableUndirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.ext.JGraphModelAdapter : org.jgrapht.ext.JGraphModelAdapter,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	org.jgrapht.graph.DefaultListenableGraph : boolean,addVertex(V)
+Sequence 7
+	org.jgrapht.graph.ListenableDirectedGraph : org.jgrapht.graph.ListenableDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+Sequence 8
+	org.jgrapht.graph.GraphDelegator : E,getEdge(V,V)
+	org.jgrapht.graph.DefaultListenableGraph : boolean,removeVertex(V)
+		Optional Hook: org.jgrapht.Graph : boolean,removeAllEdges(java.util.Collection<? extends E>) Category: 0
+	org.jgrapht.graph.DefaultListenableGraph : boolean,removeEdge(E)
+Sequence 9
+	org.jgrapht.event.GraphVertexChangeEvent : V,getVertex()
+Sequence 10
+	org.jgrapht.graph.SimpleGraph : org.jgrapht.graph.SimpleGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	org.jgrapht.graph.AbstractBaseGraph : E,addEdge(V,V)
+	org.jgrapht.graph.AbstractBaseGraph : boolean,addVertex(V)
+Sequence 11
+	org.jgrapht.traverse.CrossComponentIterator : V,next()
+		Strict Hook: org.jgrapht.traverse.CrossComponentIterator : V,provideNextVertex() Category: 0
+	org.jgrapht.traverse.DepthFirstIterator : org.jgrapht.traverse.DepthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	org.jgrapht.traverse.CrossComponentIterator : boolean,hasNext()
+		Strict Hook: org.jgrapht.traverse.CrossComponentIterator : boolean,isConnectedComponentExhausted() Category: 0
+		Strict Hook: org.jgrapht.traverse.CrossComponentIterator : void,encounterVertex(V,E) Category: 0
+	org.jgrapht.graph.SimpleGraph : org.jgrapht.graph.SimpleGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	org.jgrapht.graph.AbstractBaseGraph : boolean,addVertex(V)
+Sequence 12
+	org.jgrapht.graph.GraphDelegator : java.util.Set<E>,edgesOf(V)
+Sequence 13
+	org.jgrapht.graph.GraphDelegator : V,getEdgeTarget(E)
+	org.jgrapht.graph.GraphDelegator : V,getEdgeSource(E)
+	org.jgrapht.graph.GraphDelegator : java.util.Set<E>,edgeSet()
+Sequence 14
+	org.jgrapht.graph.GraphDelegator : java.util.Set<V>,vertexSet()
+	org.jgrapht.graph.GraphDelegator : java.util.Set<E>,edgeSet()
+Sequence 15
+	org.jgrapht.alg.ConnectivityInspector : org.jgrapht.alg.ConnectivityInspector,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+	org.jgrapht.graph.AbstractBaseGraph : E,addEdge(V,V)
+	org.jgrapht.graph.AbstractBaseGraph : boolean,addVertex(V)
+Sequence 16
+	org.jgrapht.graph.DefaultDirectedGraph : org.jgrapht.graph.DefaultDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.AbstractBaseGraph : boolean,addEdge(V,V,E)
+	org.jgrapht.graph.AbstractBaseGraph : boolean,addVertex(V)
+Sequence 17
+	org.jgrapht.graph.DefaultListenableGraph : boolean,addEdge(V,V,E)
+	org.jgrapht.graph.DefaultListenableGraph : boolean,addVertex(V)
+Sequence 18
+	org.jgrapht.graph.AbstractBaseGraph : V,getEdgeTarget(E)
+	org.jgrapht.graph.AbstractBaseGraph : boolean,removeVertex(V)
+	org.jgrapht.graph.AbstractBaseGraph : int,outDegreeOf(V)
+	org.jgrapht.graph.AbstractBaseGraph : int,inDegreeOf(V)
+	org.jgrapht.ext.VertexNameProvider : java.lang.String,getVertexName(V)
+	org.jgrapht.graph.AbstractBaseGraph : java.util.Set<V>,vertexSet()
+Sequence 19
+	org.jgrapht.graph.DirectedMultigraph : org.jgrapht.graph.DirectedMultigraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.AbstractBaseGraph : java.util.Set<E>,incomingEdgesOf(V)
+	org.jgrapht.Graph : V,getEdgeTarget(E)
+	org.jgrapht.graph.AbstractBaseGraph : java.util.Set<V>,vertexSet()
+Sequence 20
+	org.jgrapht.graph.AbstractBaseGraph : java.util.Set<E>,edgeSet()
+	org.jgrapht.graph.AbstractBaseGraph : java.util.Set<V>,vertexSet()
+Sequence 21
+	org.jgrapht.graph.DirectedWeightedSubgraph : org.jgrapht.graph.DirectedWeightedSubgraph,CONSTRUCTOR(org.jgrapht.WeightedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+	org.jgrapht.alg.CycleDetector : java.util.Set<V>,findCyclesContainingVertex(V)
+	org.jgrapht.alg.CycleDetector : java.util.Set<V>,findCycles()
+	org.jgrapht.graph.DefaultDirectedWeightedGraph : org.jgrapht.graph.DefaultDirectedWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	org.jgrapht.graph.AbstractBaseGraph : void,setEdgeWeight(E,double)
+	org.jgrapht.graph.AbstractBaseGraph : boolean,removeVertex(V)
+	org.jgrapht.graph.AbstractBaseGraph : int,outDegreeOf(V)
+	org.jgrapht.graph.AbstractBaseGraph : int,inDegreeOf(V)
+	org.jgrapht.ext.VertexNameProvider : java.lang.String,getVertexName(V)
+	org.jgrapht.alg.CycleDetector : org.jgrapht.alg.CycleDetector,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	org.jgrapht.graph.AbstractBaseGraph : E,addEdge(V,V)
+	org.jgrapht.graph.AbstractBaseGraph : java.util.Set<V>,vertexSet()
+	org.jgrapht.graph.AbstractBaseGraph : boolean,addVertex(V)

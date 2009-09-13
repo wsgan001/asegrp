@@ -1,0 +1,2031 @@
+Class: salvo.jesus.util.HeapNodeComparator
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_util_HeapNodeComparator5_PeopleGraph.java	getBetweennessOfEdges
+	Method ID: 1611 int,compare(java.lang.Object,java.lang.Object)
+	Method ID: 1612 boolean,equals(java.lang.Object)
+	Method ID: 1613 void,#ExtendsOrImplements#()
+	Method ID: 1614 void,#ExceptionHandler#()
+	Method ID: 1610 salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_util_HeapNodeComparator5_PeopleGraph.java	getBetweennessOfEdges
+Class: salvo.jesus.graph.GraphAddVertexListener
+	Method ID: 441 void,#ExtendsOrImplements#()
+	Method ID: 442 void,#ExceptionHandler#()
+	Method ID: 440 void,vertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_GraphAddVertexListener7_HashedGraphImpl.java	add
+Class: salvo.jesus.graph.listener.AbstractPathListener
+	Method ID: 738 salvo.jesus.graph.Vertex,getFirstVertex()
+	Method ID: 739 salvo.jesus.graph.Vertex,getLastVertex()
+	Method ID: 740 void,#ExtendsOrImplements#()
+	Method ID: 741 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.XMLToGraphReader
+	Method ID: 1547 salvo.jesus.graph.xml.XMLToGraphReader,CONSTRUCTOR(java.io.InputStream,salvo.jesus.graph.xml.XMLToGraphHandler)
+	Method ID: 1548 salvo.jesus.graph.xml.XMLToGraphReader,CONSTRUCTOR(java.io.Reader,salvo.jesus.graph.xml.XMLToGraphHandler)
+	Method ID: 1549 void,parse()
+	Method ID: 1550 void,#ExtendsOrImplements#()
+	Method ID: 1551 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.Grid
+	Method ID: 1316 salvo.jesus.graph.visual.layout.Grid,CONSTRUCTOR(java.util.List)
+	Method ID: 1317 salvo.jesus.graph.visual.layout.Grid,CONSTRUCTOR(java.util.List,int,int)
+	Method ID: 1318 void,initGrid(int,int)
+	Method ID: 1319 void,initGrid()
+	Method ID: 1320 int,getGridSize()
+	Method ID: 1321 int,getStartingXGridPoint()
+	Method ID: 1322 int,getStartingYGridPoint()
+	Method ID: 1323 int,getWidth()
+	Method ID: 1324 int,getHeight()
+	Method ID: 1325 void,setGridPoint(int,int,salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1326 salvo.jesus.graph.visual.VisualVertex,getGridPoint(int,int)
+	Method ID: 1327 java.awt.Point,findVisualVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1328 void,appendToRight(salvo.jesus.graph.visual.layout.Grid)
+	Method ID: 1329 void,appendToBottom(salvo.jesus.graph.visual.layout.Grid)
+	Method ID: 1330 void,insertEmptyGrid(int)
+	Method ID: 1331 java.lang.String,toString()
+	Method ID: 1332 void,#ExtendsOrImplements#()
+	Method ID: 1333 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.adaptor.DirectedGraphDelegator
+	Method ID: 496 salvo.jesus.graph.adaptor.DirectedGraphDelegator,CONSTRUCTOR(salvo.jesus.graph.DirectedGraph)
+	Method ID: 497 salvo.jesus.graph.DirectedGraph,getDirectedGraph()
+	Method ID: 498 java.util.List,getOutgoingEdges(salvo.jesus.graph.Vertex)
+	Method ID: 499 java.util.List,getIncomingEdges(salvo.jesus.graph.Vertex)
+	Method ID: 500 java.util.List,getOutgoingAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 501 java.util.List,getIncomingAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 502 salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 503 boolean,isPath(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 504 boolean,isCycle(salvo.jesus.graph.Vertex)
+	Method ID: 505 void,#ExtendsOrImplements#()
+	Method ID: 506 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedAcyclicGraphImpl
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_DirectedAcyclicGraphImpl0_MakeModuleScopesVisitor.java	visit
+	Extension Code Examples (Hooks): 
+		salvo_jesus_graph_DirectedAcyclicGraphImpl4_DirectedModel.java	NA
+	Method ID: 324 java.util.List,getRoot()
+	Method ID: 325 java.util.List,topologicalSort()
+	Method ID: 327 java.util.List,topologicalSort(salvo.jesus.graph.Vertex)
+	Method ID: 328 java.util.List,reverseTopologicalSort(salvo.jesus.graph.Vertex)
+	Method ID: 330 void,#ExceptionHandler#()
+	Method ID: 326 java.util.List,reverseTopologicalSort()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedAcyclicGraphImpl0_MakeModuleScopesVisitor.java	visit
+	Method ID: 323 salvo.jesus.graph.DirectedAcyclicGraphImpl,CONSTRUCTOR()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedAcyclicGraphImpl0_MakeModuleScopesVisitor.java	visit
+	Method ID: 329 void,#ExtendsOrImplements#()
+Class: salvo.jesus.graph.visual.drawing.VisualVertexPainterImpl
+	Method ID: 1166 salvo.jesus.graph.visual.drawing.VisualVertexPainterImpl,CONSTRUCTOR()
+	Method ID: 1167 void,paint(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1168 void,paintOutline(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1169 void,paintFill(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1170 void,paintText(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1171 void,rescale(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1172 void,#ExtendsOrImplements#()
+	Method ID: 1173 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXGMMLSAXHandler.VisualGraphHandler
+	Method ID: 1415 salvo.jesus.graph.xml.GraphToXGMMLSAXHandler.VisualGraphHandler,CONSTRUCTOR(salvo.jesus.graph.xml.GraphToXMLEventGenerator,org.apache.xml.serialize.XMLSerializer,salvo.jesus.graph.xml.GraphToXGMMLSAXHandler.CommonHandler)
+	Method ID: 1416 void,startSerialize(salvo.jesus.graph.Graph)
+	Method ID: 1417 void,startSerialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1418 void,serializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1419 void,endSerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1420 void,serializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1421 void,endSerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1422 void,endSerialize()
+	Method ID: 1423 void,#ExtendsOrImplements#()
+	Method ID: 1424 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.AbstractVisualGraphComponent
+	Method ID: 871 java.lang.String,getLabel()
+	Method ID: 872 java.awt.Color,getFillcolor()
+	Method ID: 873 java.awt.Color,getOutlinecolor()
+	Method ID: 874 java.awt.Font,getFont()
+	Method ID: 875 java.awt.FontMetrics,getFontMetrics()
+	Method ID: 876 java.awt.Color,getFontcolor()
+	Method ID: 877 java.awt.geom.GeneralPath,getGeneralPath()
+	Method ID: 878 salvo.jesus.graph.visual.drawing.Painter,getPainter()
+	Method ID: 879 salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	Method ID: 880 void,setFillcolor(java.awt.Color)
+	Method ID: 881 void,setLabel(java.lang.String)
+	Method ID: 882 void,setOutlinecolor(java.awt.Color)
+	Method ID: 883 void,setFont(java.awt.Font)
+	Method ID: 884 void,setFontcolor(java.awt.Color)
+	Method ID: 885 void,setGeneralPath(java.awt.geom.GeneralPath)
+	Method ID: 886 void,setGeneralPath(java.awt.geom.PathIterator)
+	Method ID: 887 void,setPainter(salvo.jesus.graph.visual.drawing.Painter)
+	Method ID: 888 java.awt.Rectangle,getBounds()
+	Method ID: 889 java.awt.geom.Rectangle2D,getBounds2D()
+	Method ID: 890 void,addMouseListener(java.awt.event.MouseListener)
+	Method ID: 891 void,addMouseMotionListener(java.awt.event.MouseMotionListener)
+	Method ID: 892 void,removeMouseListener(java.awt.event.MouseListener)
+	Method ID: 893 void,removeMouseMotionListener(java.awt.event.MouseMotionListener)
+	Method ID: 894 void,processMouseEvent(java.awt.event.MouseEvent)
+	Method ID: 895 void,processMouseMotionEvent(java.awt.event.MouseEvent)
+	Method ID: 896 void,processKeyEvent(java.awt.event.KeyEvent)
+	Method ID: 897 void,#ExtendsOrImplements#()
+	Method ID: 898 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.GraphToolBar
+	Extension Code Examples (Hooks): 
+		salvo_jesus_graph_visual_GraphToolBar1_ToolBar.java	NA
+	Method ID: 824 void,#ExceptionHandler#()
+	Method ID: 823 void,#ExtendsOrImplements#()
+Class: salvo.jesus.graph.visual.ChangeStateEvent
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_visual_ChangeStateEvent0_ToolBar.java	actionPerformed
+	Method ID: 1013 salvo.jesus.graph.visual.GraphPanelState,getRequestedState()
+	Method ID: 1014 void,#ExtendsOrImplements#()
+	Method ID: 1015 void,#ExceptionHandler#()
+	Method ID: 1012 salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_ChangeStateEvent0_ToolBar.java	actionPerformed
+Class: salvo.jesus.graph.algorithm.HeapNodeObjectComparator
+	Method ID: 628 int,compare(java.lang.Object,java.lang.Object)
+	Method ID: 629 void,#ExtendsOrImplements#()
+	Method ID: 630 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.Graph
+	Method ID: 363 salvo.jesus.graph.GraphFactory,getGraphFactory()
+	Method ID: 364 void,setGraphFactory(salvo.jesus.graph.GraphFactory)
+	Method ID: 366 void,remove(salvo.jesus.graph.Vertex)
+	Method ID: 367 java.util.Iterator,getVerticesIterator()
+	Method ID: 368 java.util.List,cloneVertices()
+	Method ID: 371 void,addEdge(salvo.jesus.graph.Edge)
+	Method ID: 372 void,removeEdge(salvo.jesus.graph.Edge)
+	Method ID: 373 void,removeEdges(salvo.jesus.graph.Vertex)
+	Method ID: 374 java.util.Set,getEdgeSet()
+	Method ID: 375 int,getEdgesCount()
+	Method ID: 376 int,getDegree()
+	Method ID: 377 int,getDegree(salvo.jesus.graph.Vertex)
+	Method ID: 378 java.util.Set,getVertices(int)
+	Method ID: 379 java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	Method ID: 380 java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 381 java.util.Set,getAdjacentVertices(java.util.List)
+	Method ID: 382 java.util.Collection,getConnectedSet()
+	Method ID: 383 java.util.Set,getConnectedSet(salvo.jesus.graph.Vertex)
+	Method ID: 384 java.util.List,traverse(salvo.jesus.graph.Vertex)
+	Method ID: 385 salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	Method ID: 386 void,setTraversal(salvo.jesus.graph.algorithm.GraphTraversal)
+	Method ID: 387 boolean,isConnected(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 388 void,addListener(salvo.jesus.graph.GraphListener)
+	Method ID: 389 void,removeListener(salvo.jesus.graph.GraphListener)
+	Method ID: 390 void,addGraphAddVertexListener(salvo.jesus.graph.GraphAddVertexListener)
+	Method ID: 391 void,addGraphAddEdgeListener(salvo.jesus.graph.GraphAddEdgeListener)
+	Method ID: 392 void,addGraphRemoveEdgeListener(salvo.jesus.graph.GraphRemoveEdgeListener)
+	Method ID: 393 void,addGraphRemoveVertexListener(salvo.jesus.graph.GraphRemoveVertexListener)
+	Method ID: 394 void,removeGraphAddVertexListener(salvo.jesus.graph.GraphAddVertexListener)
+	Method ID: 395 void,removeGraphAddEdgeListener(salvo.jesus.graph.GraphAddEdgeListener)
+	Method ID: 396 void,removeGraphRemoveEdgeListener(salvo.jesus.graph.GraphRemoveEdgeListener)
+	Method ID: 397 void,removeGraphRemoveVertexListener(salvo.jesus.graph.GraphRemoveVertexListener)
+	Method ID: 398 void,#ExtendsOrImplements#()
+	Method ID: 399 void,#ExceptionHandler#()
+	Method ID: 370 salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedAcyclicGraph7_ConstructExtendsGraphVisitor.java	visit
+			salvo_jesus_graph_Graph78_JunctionTreeInferencer.java	connectNeighbors
+	Method ID: 369 java.util.Set,getVertexSet()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_Graph78_JunctionTreeInferencer.java	contains
+	Method ID: 365 void,add(salvo.jesus.graph.Vertex)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedAcyclicGraph7_ConstructExtendsGraphVisitor.java	getSigVertex
+	Method ID: 362 int,getVerticesCount()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_Graph78_JunctionTreeInferencer.java	graphToJt
+Class: salvo.jesus.util.HeapNode
+	Method ID: 1618 salvo.jesus.util.HeapNode,CONSTRUCTOR(java.lang.Object,double)
+	Method ID: 1619 java.lang.Object,getObject()
+	Method ID: 1620 double,getPriority()
+	Method ID: 1621 void,setPriority(double)
+	Method ID: 1622 java.lang.String,toString()
+	Method ID: 1623 void,#ExtendsOrImplements#()
+	Method ID: 1624 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.GraphTraversal
+	Method ID: 579 salvo.jesus.graph.algorithm.GraphTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 580 int,traverse(salvo.jesus.graph.Vertex,java.util.List,salvo.jesus.graph.Visitor)
+	Method ID: 581 java.util.List,traverse(salvo.jesus.graph.Vertex)
+	Method ID: 582 java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+	Method ID: 583 void,TERMINATEDBYVISITOR()
+	Method ID: 584 void,OK()
+	Method ID: 585 void,#ExtendsOrImplements#()
+	Method ID: 586 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.VertexComparator
+	Method ID: 1349 int,compare(java.lang.Object,java.lang.Object)
+	Method ID: 1350 boolean,equals(java.lang.Object)
+	Method ID: 1351 void,#ExtendsOrImplements#()
+	Method ID: 1352 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.GraphEditor
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_visual_GraphEditor2_AnnotatedOntology.java	AnnotatedOntology
+	Method ID: 1031 salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanelState)
+	Method ID: 1032 salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR(salvo.jesus.graph.visual.GraphScrollPane)
+	Method ID: 1033 salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1034 salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 1035 salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanelState,salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1036 salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanelState,salvo.jesus.graph.Graph)
+	Method ID: 1037 void,setLeftPanel(java.awt.Component)
+	Method ID: 1039 salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	Method ID: 1041 void,setGraph(salvo.jesus.graph.Graph)
+	Method ID: 1042 void,paintComponent(java.awt.Graphics)
+	Method ID: 1043 void,setGraphLayoutManager(salvo.jesus.graph.visual.layout.GraphLayoutManager)
+	Method ID: 1045 void,#ExtendsOrImplements#()
+	Method ID: 1046 void,#ExceptionHandler#()
+	Method ID: 1044 salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_GraphEditor6_ToolBar.java	actionPerformed
+	Method ID: 1040 void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_GraphEditor2_AnnotatedOntology.java	setGraph
+	Method ID: 1038 salvo.jesus.graph.Graph,getGraph()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_GraphEditor6_ToolBar.java	actionPerformed
+	Method ID: 1030 salvo.jesus.graph.visual.GraphEditor,CONSTRUCTOR()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_GraphEditor2_AnnotatedOntology.java	AnnotatedOntology
+Class: salvo.jesus.graph.GraphRemoveEdgeEvent
+	Method ID: 465 salvo.jesus.graph.GraphRemoveEdgeEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.Edge,salvo.jesus.graph.Vertex)
+	Method ID: 466 salvo.jesus.graph.Edge,getEdge()
+	Method ID: 467 salvo.jesus.graph.Vertex,getVertex()
+	Method ID: 468 void,#ExtendsOrImplements#()
+	Method ID: 469 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.VisualGraphComponentPropertiesDialog
+	Method ID: 1090 salvo.jesus.graph.visual.VisualGraphComponentPropertiesDialog,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanel,salvo.jesus.graph.visual.VisualGraphComponent)
+	Method ID: 1091 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 1092 void,#ExtendsOrImplements#()
+	Method ID: 1093 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedGraphWeakImpl
+	Method ID: 155 salvo.jesus.graph.DirectedGraphWeakImpl,CONSTRUCTOR(salvo.jesus.graph.GraphImpl)
+	Method ID: 156 salvo.jesus.graph.DirectedGraphWeakImpl.DirectedVertexData,getVertexData(salvo.jesus.graph.Vertex)
+	Method ID: 157 java.util.List,getOutgoingEdges(salvo.jesus.graph.Vertex)
+	Method ID: 158 java.util.List,getIncomingEdges(salvo.jesus.graph.Vertex)
+	Method ID: 159 java.util.List,getOutgoingAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 160 java.util.List,getIncomingAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 161 salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 162 boolean,isPath(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 163 boolean,isCycle(salvo.jesus.graph.Vertex)
+	Method ID: 164 void,beforeVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 165 void,beforeVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 166 void,beforeEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 167 void,beforeEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 168 void,afterVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 169 void,afterVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 170 void,afterEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 171 void,afterEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 172 void,#ExtendsOrImplements#()
+	Method ID: 173 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.GraphContractionAlgorithm
+	Method ID: 557 salvo.jesus.graph.algorithm.GraphContractionAlgorithm,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 558 salvo.jesus.graph.Graph,getGraph()
+	Method ID: 559 void,contractVertexPair(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 560 void,contractVertices(java.util.Collection)
+	Method ID: 561 void,contractEdges(java.util.Collection)
+	Method ID: 562 salvo.jesus.graph.Vertex,getContractionVertex(salvo.jesus.graph.Vertex)
+	Method ID: 563 salvo.jesus.graph.Edge,getContractionEdge(salvo.jesus.graph.Edge)
+	Method ID: 564 salvo.jesus.graph.GraphComponent,getContractionResult(salvo.jesus.graph.GraphComponent)
+	Method ID: 565 boolean,shouldBeSelfLoop(salvo.jesus.graph.Edge)
+	Method ID: 566 salvo.jesus.graph.Edge,copyEdge(salvo.jesus.graph.Edge,salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 567 void,#ExtendsOrImplements#()
+	Method ID: 568 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.OrthogonalLineLayout
+	Extension Code Examples (Hooks): 
+		salvo_jesus_graph_visual_layout_OrthogonalLineLayout0_TileGridLayout.java	NA
+	Method ID: 1180 salvo.jesus.graph.visual.layout.OrthogonalLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1181 salvo.jesus.graph.visual.layout.OrthogonalLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.GraphScrollPane)
+	Method ID: 1182 salvo.jesus.graph.visual.layout.OrthogonalLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+	Method ID: 1183 void,initGraphLayout()
+	Method ID: 1184 void,addVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1185 void,removeVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1186 void,addEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1187 void,removeEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1188 void,routeEdge(java.awt.Graphics2D,salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1189 void,routeEdges()
+	Method ID: 1190 void,routeEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1191 void,layout()
+	Method ID: 1193 void,#ExceptionHandler#()
+	Method ID: 1192 void,#ExtendsOrImplements#()
+Class: salvo.jesus.graph.visual.ToolBarPrintButtonListener
+	Method ID: 841 salvo.jesus.graph.visual.ToolBarPrintButtonListener,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+	Method ID: 842 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 843 void,#ExtendsOrImplements#()
+	Method ID: 844 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXGMMLDOMHandler.GraphHandler
+	Method ID: 1517 salvo.jesus.graph.xml.GraphToXGMMLDOMHandler.GraphHandler,CONSTRUCTOR(salvo.jesus.graph.xml.GraphToXMLEventGenerator,org.apache.xml.serialize.XMLSerializer,salvo.jesus.graph.xml.GraphToXGMMLDOMHandler.CommonHandler)
+	Method ID: 1518 void,startSerialize(salvo.jesus.graph.Graph)
+	Method ID: 1519 void,serializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1520 void,endSerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1521 void,serializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1522 void,endSerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1523 void,endSerialize()
+	Method ID: 1524 void,#ExtendsOrImplements#()
+	Method ID: 1525 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.listener.CyclePathListener
+	Method ID: 761 salvo.jesus.graph.listener.CyclePathListener,CONSTRUCTOR(salvo.jesus.graph.CyclePath,boolean)
+	Method ID: 762 void,beforeEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 763 void,#ExtendsOrImplements#()
+	Method ID: 764 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.XGMML
+	Method ID: 1425 salvo.jesus.graph.xml.XGMML,CONSTRUCTOR()
+	Method ID: 1426 void,PUBLIC_ID()
+	Method ID: 1427 void,SYSTEM_ID()
+	Method ID: 1428 void,DOCTYPE_NAME()
+	Method ID: 1429 void,GRAPH_ELEMENT_LITERAL()
+	Method ID: 1430 void,VENDOR_ATTRIBUTE_LITERAL()
+	Method ID: 1431 void,DIRECTED_ATTRIBUTE_LITERAL()
+	Method ID: 1432 void,GRAPHIC_ATTRIBUTE_LITERAL()
+	Method ID: 1433 void,ATT_ELEMENT_LITERAL()
+	Method ID: 1434 void,ATT_ELEMENT_NAME_ATTRIBUTE_VALUE_WEIGHTED()
+	Method ID: 1435 void,ATT_ELEMENT_NAME_ATTRIBUTE_VALUE_DAG()
+	Method ID: 1436 void,TYPE_ATTRIBUTE_LITERAL()
+	Method ID: 1437 void,NAME_ATTRIBUTE_LITERAL()
+	Method ID: 1438 void,VALUE_ATTRIBUTE_LITERAL()
+	Method ID: 1439 void,NODE_ELEMENT_LITERAL()
+	Method ID: 1440 void,EDGE_ELEMENT_LITERAL()
+	Method ID: 1441 void,SOURCE_ATTRIBUTE_LITERAL()
+	Method ID: 1442 void,TARGET_ATTRIBUTE_LITERAL()
+	Method ID: 1443 void,WEIGHT_ATTRIBUTE_LITERAL()
+	Method ID: 1444 void,ID_ATTRIBUTE_LITERAL()
+	Method ID: 1445 void,LABEL_ATTRIBUTE_LITERAL()
+	Method ID: 1446 void,GRAPHICS_ELEMENT_LITERAL()
+	Method ID: 1447 void,WIDTH_ATTRIBUTE_LITERAL()
+	Method ID: 1448 void,HEIGHT_ATTRIBUTE_LITERAL()
+	Method ID: 1449 void,FONT_ATTRIBUTE_LITERAL()
+	Method ID: 1450 void,VISIBLE_ATTRIBUTE_LITERAL()
+	Method ID: 1451 void,FILL_ATTRIBUTE_LITERAL()
+	Method ID: 1452 void,OUTLINE_ATTRIBUTE_LITERAL()
+	Method ID: 1453 void,CENTER_ELEMENT_LITERAL()
+	Method ID: 1454 void,X_ATTRIBUTE_LITERAL()
+	Method ID: 1455 void,Y_ATTRIBUTE_LITERAL()
+	Method ID: 1456 void,Z_ATTRIBUTE_LITERAL()
+	Method ID: 1457 void,LINE_ELEMENT_LITERAL()
+	Method ID: 1458 void,POINT_ELEMENT_LITERAL()
+	Method ID: 1459 void,ATT_ELEMENT_NAME_ATTRIBUTE_VALUE_GRAPHFACTORY()
+	Method ID: 1460 void,ATT_ELEMENT_NAME_ATTRIBUTE_VALUE_TRAVERSAL()
+	Method ID: 1461 void,#ExtendsOrImplements#()
+	Method ID: 1462 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.ShapePanel
+	Method ID: 1062 void,apply()
+	Method ID: 1063 void,ok()
+	Method ID: 1064 void,#ExtendsOrImplements#()
+	Method ID: 1065 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.LabeledGraphComponent
+	Method ID: 189 boolean,hasLabel()
+	Method ID: 190 java.lang.String,getLabel()
+	Method ID: 192 void,#ExtendsOrImplements#()
+	Method ID: 193 void,#ExceptionHandler#()
+	Method ID: 191 void,setLabel(java.lang.String)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_Edge13_JuxMemWorld.java	addPeer
+			salvo_jesus_graph_Vertex16_JuxMemWorld.java	JuxMemWorld
+Class: salvo.jesus.graph.listener.PathListener
+	Method ID: 722 salvo.jesus.graph.listener.PathListener,CONSTRUCTOR(salvo.jesus.graph.Path)
+	Method ID: 723 salvo.jesus.graph.Vertex,getFirstVertex()
+	Method ID: 724 salvo.jesus.graph.Vertex,getLastVertex()
+	Method ID: 725 void,afterVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 726 void,afterVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 727 void,beforeEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 728 void,afterEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 729 void,beforeEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 730 salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	Method ID: 731 void,#ExtendsOrImplements#()
+	Method ID: 732 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.VertexImpl
+	Method ID: 308 salvo.jesus.graph.VertexImpl,CONSTRUCTOR()
+	Method ID: 309 salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+	Method ID: 311 void,setObject(java.lang.Object)
+	Method ID: 312 boolean,hasLabel()
+	Method ID: 313 java.lang.String,getLabel()
+	Method ID: 315 java.lang.String,toString()
+	Method ID: 316 void,#ExtendsOrImplements#()
+	Method ID: 317 void,#ExceptionHandler#()
+	Method ID: 310 java.lang.Object,getObject()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_VertexImpl1_GOLEM.java	actionPerformed
+	Method ID: 314 void,setLabel(java.lang.String)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_VertexImpl1_GOLEM.java	mouseClicked
+Class: salvo.jesus.graph.visual.drawing.VisualDirectedEdgePainterWeakImpl
+	Method ID: 1122 salvo.jesus.graph.visual.drawing.VisualDirectedEdgePainterWeakImpl,CONSTRUCTOR()
+	Method ID: 1123 void,paint(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1124 void,paintText(java.awt.Graphics2D,java.awt.Font,java.awt.Color,java.lang.String,float,float)
+	Method ID: 1125 void,paintArrowHead(salvo.jesus.graph.visual.VisualEdge,java.awt.Graphics2D)
+	Method ID: 1126 void,#ExtendsOrImplements#()
+	Method ID: 1127 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.CycleCheckVisitor
+	Method ID: 28 boolean,visit(salvo.jesus.graph.Vertex)
+	Method ID: 29 void,#ExtendsOrImplements#()
+	Method ID: 30 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.VisualEdge
+	Method ID: 1070 salvo.jesus.graph.visual.VisualEdge,CONSTRUCTOR(salvo.jesus.graph.Edge,salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1071 salvo.jesus.graph.Edge,getEdge()
+	Method ID: 1072 salvo.jesus.graph.visual.VisualVertex,getVisualVertexA()
+	Method ID: 1073 salvo.jesus.graph.visual.VisualVertex,getVisualVertexB()
+	Method ID: 1074 void,setLinetype(int)
+	Method ID: 1075 void,setOrthogonalLine()
+	Method ID: 1076 void,setStraightLine()
+	Method ID: 1077 void,setFromPortAssignment(java.awt.geom.Point2D)
+	Method ID: 1078 void,setToPortAssignment(java.awt.geom.Point2D)
+	Method ID: 1079 java.awt.geom.Point2D.Double,getFromPortAssignment()
+	Method ID: 1080 java.awt.geom.Point2D.Double,getToPortAssignment()
+	Method ID: 1081 java.lang.String,toString()
+	Method ID: 1082 double,ptSegDist(int,int)
+	Method ID: 1083 void,paint(java.awt.Graphics2D,salvo.jesus.graph.visual.layout.GraphLayoutManager)
+	Method ID: 1084 void,rescale()
+	Method ID: 1085 float,getEdgeLength(salvo.jesus.graph.visual.VisualEdge,java.awt.Point,java.awt.Point)
+	Method ID: 1086 void,STRAIGHT_LINE()
+	Method ID: 1087 void,ORTHOGONAL_LINE()
+	Method ID: 1088 void,#ExtendsOrImplements#()
+	Method ID: 1089 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphRemoveVertexEvent
+	Method ID: 146 salvo.jesus.graph.GraphRemoveVertexEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.Vertex)
+	Method ID: 147 salvo.jesus.graph.Vertex,getVertex()
+	Method ID: 148 void,#ExtendsOrImplements#()
+	Method ID: 149 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.SimplePathImpl
+	Method ID: 331 salvo.jesus.graph.SimplePathImpl,CONSTRUCTOR()
+	Method ID: 332 void,#ExtendsOrImplements#()
+	Method ID: 333 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphImpl.AddEdgeListenerAdaptor
+	Method ID: 86 void,afterEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 87 void,#ExtendsOrImplements#()
+	Method ID: 88 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.WeightedEdgeWeakImpl
+	Method ID: 277 salvo.jesus.graph.WeightedEdgeWeakImpl,CONSTRUCTOR(double)
+	Method ID: 278 void,setWeight(double)
+	Method ID: 279 double,getWeight()
+	Method ID: 280 salvo.jesus.graph.Vertex,getVertexA()
+	Method ID: 281 salvo.jesus.graph.Vertex,getVertexB()
+	Method ID: 282 salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 283 boolean,hasLabel()
+	Method ID: 284 java.lang.String,getLabel()
+	Method ID: 285 void,setLabel(java.lang.String)
+	Method ID: 286 boolean,isFollowVertexLabel()
+	Method ID: 287 void,setFollowVertexLabel(boolean)
+	Method ID: 288 void,#ExtendsOrImplements#()
+	Method ID: 289 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.SimplePath
+	Method ID: 343 void,#ExtendsOrImplements#()
+	Method ID: 344 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.CyclePath
+	Method ID: 99 void,closeCycle()
+	Method ID: 100 void,#ExtendsOrImplements#()
+	Method ID: 101 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedAcyclicGraphImplFactory
+	Method ID: 141 salvo.jesus.graph.DirectedAcyclicGraphImplFactory,CONSTRUCTOR()
+	Method ID: 142 salvo.jesus.graph.Vertex,createVertex()
+	Method ID: 143 salvo.jesus.graph.Edge,createEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 144 void,#ExtendsOrImplements#()
+	Method ID: 145 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.XMLFileFilter
+	Method ID: 853 salvo.jesus.graph.visual.XMLFileFilter,CONSTRUCTOR()
+	Method ID: 854 boolean,accept(java.io.File)
+	Method ID: 855 java.lang.String,getDescription()
+	Method ID: 856 void,XGMML_EXTENSION()
+	Method ID: 857 void,XGMML_DESCRIPTION()
+	Method ID: 858 void,#ExtendsOrImplements#()
+	Method ID: 859 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.listener.DirectedAcyclicGraphListener
+	Method ID: 772 salvo.jesus.graph.listener.DirectedAcyclicGraphListener,CONSTRUCTOR(salvo.jesus.graph.DirectedAcyclicGraph)
+	Method ID: 773 void,beforeEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 774 java.util.List,getRoot()
+	Method ID: 775 void,#ExtendsOrImplements#()
+	Method ID: 776 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.VisualVertex
+	Method ID: 993 salvo.jesus.graph.visual.VisualVertex,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 994 salvo.jesus.graph.visual.VisualVertex,CONSTRUCTOR(salvo.jesus.graph.Vertex,java.awt.Font,salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 995 salvo.jesus.graph.visual.VisualVertex,CONSTRUCTOR(salvo.jesus.graph.Vertex,java.awt.Shape,java.awt.Color,java.awt.Color,java.awt.Font,salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 996 salvo.jesus.graph.Vertex,getVertex()
+	Method ID: 997 void,setGeneralPath(java.awt.geom.GeneralPath)
+	Method ID: 998 void,setVertex(salvo.jesus.graph.Vertex)
+	Method ID: 999 boolean,contains(double,double)
+	Method ID: 1000 void,setLocation(int,int)
+	Method ID: 1001 void,setLocation(double,double)
+	Method ID: 1002 void,setLocationDelta(int,int)
+	Method ID: 1003 void,setLocationDelta(double,double)
+	Method ID: 1004 java.lang.String,toString()
+	Method ID: 1005 void,paint(java.awt.Graphics2D)
+	Method ID: 1006 void,rescale()
+	Method ID: 1007 void,#ExtendsOrImplements#()
+	Method ID: 1008 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.VisualGraphComponentPropertiesPanel
+	Method ID: 1094 salvo.jesus.graph.visual.VisualGraphComponentPropertiesPanel,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraphComponent)
+	Method ID: 1095 void,addApplyActionListener(java.awt.event.ActionListener)
+	Method ID: 1096 void,addOKActionListener(java.awt.event.ActionListener)
+	Method ID: 1097 void,addCancelActionListener(java.awt.event.ActionListener)
+	Method ID: 1098 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 1099 void,APPLY()
+	Method ID: 1100 void,OK()
+	Method ID: 1101 void,CANCEL()
+	Method ID: 1102 void,#ExtendsOrImplements#()
+	Method ID: 1103 void,#ExceptionHandler#()
+Class: salvo.jesus.util.StringComparator
+	Method ID: 1590 salvo.jesus.util.StringComparator,CONSTRUCTOR()
+	Method ID: 1591 int,compare(java.lang.Object,java.lang.Object)
+	Method ID: 1592 boolean,equals(java.lang.Object)
+	Method ID: 1593 void,#ExtendsOrImplements#()
+	Method ID: 1594 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.VertexDegrees
+	Method ID: 1211 void,#ExtendsOrImplements#()
+	Method ID: 1212 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualWeightedEdgePainter
+	Method ID: 1131 void,#ExtendsOrImplements#()
+	Method ID: 1132 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.WeightedGraphWeakImpl
+	Method ID: 252 salvo.jesus.graph.WeightedGraphWeakImpl,CONSTRUCTOR(salvo.jesus.graph.GraphImpl,salvo.jesus.graph.algorithm.MinimumSpanningTreeAlgorithm,salvo.jesus.graph.algorithm.ShortestPathAlgorithm)
+	Method ID: 253 salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+	Method ID: 254 void,addEdge(salvo.jesus.graph.Edge)
+	Method ID: 255 void,setMinimumSpanningTreeAlgorithm(salvo.jesus.graph.algorithm.MinimumSpanningTreeAlgorithm)
+	Method ID: 256 void,setShortestPathAlgorithm(salvo.jesus.graph.algorithm.ShortestPathAlgorithm)
+	Method ID: 257 salvo.jesus.graph.Vertex,getClosest(salvo.jesus.graph.Vertex)
+	Method ID: 258 salvo.jesus.graph.WeightedGraph,minimumSpanningTree()
+	Method ID: 259 salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	Method ID: 260 void,#ExtendsOrImplements#()
+	Method ID: 261 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualVertexPainterFactoryImpl
+	Method ID: 1109 salvo.jesus.graph.visual.drawing.VisualVertexPainterFactoryImpl,getInstance()
+	Method ID: 1110 salvo.jesus.graph.visual.drawing.Painter,getPainter(salvo.jesus.graph.visual.VisualGraphComponent)
+	Method ID: 1111 void,#ExtendsOrImplements#()
+	Method ID: 1112 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphAddVertexEvent
+	Method ID: 237 salvo.jesus.graph.GraphAddVertexEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.Vertex,salvo.jesus.graph.Edge)
+	Method ID: 238 salvo.jesus.graph.Vertex,getVertex()
+	Method ID: 239 salvo.jesus.graph.Edge,getEdge()
+	Method ID: 240 void,#ExtendsOrImplements#()
+	Method ID: 241 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.WeightedEdge
+	Method ID: 198 double,getWeight()
+	Method ID: 199 void,setWeight(double)
+	Method ID: 200 void,#ExtendsOrImplements#()
+	Method ID: 201 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.AbstractPathImpl
+	Method ID: 420 void,setListener(salvo.jesus.graph.listener.AbstractPathListener)
+	Method ID: 421 salvo.jesus.graph.Vertex,getFirstVertex()
+	Method ID: 422 salvo.jesus.graph.Vertex,getLastVertex()
+	Method ID: 423 void,add(salvo.jesus.graph.Vertex)
+	Method ID: 424 void,remove()
+	Method ID: 425 java.lang.String,toString()
+	Method ID: 426 void,#ExtendsOrImplements#()
+	Method ID: 427 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXGMMLDOMHandler
+	Method ID: 1491 salvo.jesus.graph.xml.GraphToXGMMLDOMHandler,CONSTRUCTOR(salvo.jesus.graph.xml.GraphToXMLEventGenerator,org.apache.xml.serialize.XMLSerializer)
+	Method ID: 1492 void,startSerialize(salvo.jesus.graph.Graph)
+	Method ID: 1493 void,startSerialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1494 void,serializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1495 void,endSerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1496 void,serializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1497 void,endSerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1498 void,endSerialize()
+	Method ID: 1499 salvo.jesus.graph.xml.GraphToXMLEventGenerator,getEventGenerator()
+	Method ID: 1500 void,#ExtendsOrImplements#()
+	Method ID: 1501 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.adaptor.DirectedAcyclicGraphAdaptor
+	Method ID: 487 salvo.jesus.graph.adaptor.DirectedAcyclicGraphAdaptor,CONSTRUCTOR(salvo.jesus.graph.DirectedGraph)
+	Method ID: 488 void,destroy()
+	Method ID: 489 java.util.List,getRoot()
+	Method ID: 490 java.util.List,topologicalSort()
+	Method ID: 491 java.util.List,reverseTopologicalSort()
+	Method ID: 492 java.util.List,topologicalSort(salvo.jesus.graph.Vertex)
+	Method ID: 493 java.util.List,reverseTopologicalSort(salvo.jesus.graph.Vertex)
+	Method ID: 494 void,#ExtendsOrImplements#()
+	Method ID: 495 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.EmptyTreeException
+	Method ID: 404 void,#ExtendsOrImplements#()
+	Method ID: 405 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.Visitor
+	Method ID: 234 boolean,visit(salvo.jesus.graph.Vertex)
+	Method ID: 235 void,#ExtendsOrImplements#()
+	Method ID: 236 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.PathImpl
+	Method ID: 213 salvo.jesus.graph.PathImpl,CONSTRUCTOR()
+	Method ID: 214 void,#ExtendsOrImplements#()
+	Method ID: 215 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphImpl.VertexData
+	Method ID: 74 void,#ExtendsOrImplements#()
+	Method ID: 75 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.GraphPanel
+	Method ID: 904 void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph,salvo.jesus.graph.visual.GraphScrollPane)
+	Method ID: 905 void,setGraph(salvo.jesus.graph.Graph,salvo.jesus.graph.visual.GraphScrollPane)
+	Method ID: 907 void,setNormalMode()
+	Method ID: 908 void,setVertexMode()
+	Method ID: 909 void,setEdgeMode()
+	Method ID: 910 void,setGraphLayoutManager(salvo.jesus.graph.visual.layout.GraphLayoutManager)
+	Method ID: 911 void,paintComponent(java.awt.Graphics)
+	Method ID: 912 void,mouseDragged(java.awt.event.MouseEvent)
+	Method ID: 913 void,mousePressed(java.awt.event.MouseEvent)
+	Method ID: 914 void,mouseReleased(java.awt.event.MouseEvent)
+	Method ID: 915 void,mouseEntered(java.awt.event.MouseEvent)
+	Method ID: 916 void,mouseExited(java.awt.event.MouseEvent)
+	Method ID: 917 void,mouseClicked(java.awt.event.MouseEvent)
+	Method ID: 918 void,mouseMoved(java.awt.event.MouseEvent)
+	Method ID: 919 void,keyPressed(java.awt.event.KeyEvent)
+	Method ID: 920 void,keyReleased(java.awt.event.KeyEvent)
+	Method ID: 921 void,keyTyped(java.awt.event.KeyEvent)
+	Method ID: 922 void,finalize()
+	Method ID: 923 salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+	Method ID: 924 void,#ExtendsOrImplements#()
+	Method ID: 925 void,#ExceptionHandler#()
+	Method ID: 906 salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_GraphPanel1_IqasGraphPanelEdgeState.java	mousePressed
+Class: salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm
+	Method ID: 624 salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	Method ID: 625 salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	Method ID: 626 void,#ExtendsOrImplements#()
+	Method ID: 627 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.EdgeComparator
+	Method ID: 1477 int,compare(java.lang.Object,java.lang.Object)
+	Method ID: 1478 boolean,equals(java.lang.Object)
+	Method ID: 1479 void,#ExtendsOrImplements#()
+	Method ID: 1480 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedWeightedEdgeImpl
+	Extension Code Examples (Hooks): 
+		salvo_jesus_graph_DirectedWeightedEdgeImpl2_PathwayEdge.java	NA
+	Method ID: 428 salvo.jesus.graph.DirectedWeightedEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+	Method ID: 430 double,getWeight()
+	Method ID: 431 void,setWeight(double)
+	Method ID: 434 int,getDirection()
+	Method ID: 436 void,#ExceptionHandler#()
+	Method ID: 433 salvo.jesus.graph.Vertex,getSink()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedWeightedEdgeImpl2_PathwayEdge.java	toString
+	Method ID: 432 salvo.jesus.graph.Vertex,getSource()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedWeightedEdgeImpl2_PathwayEdge.java	toString
+	Method ID: 429 java.lang.String,toString()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedWeightedEdgeImpl//2_PathwayEdge.java	NA
+	Method ID: 435 void,#ExtendsOrImplements#()
+Class: salvo.jesus.graph.visual.VisualGraphComponent
+	Method ID: 795 java.lang.String,getLabel()
+	Method ID: 796 java.awt.Color,getFillcolor()
+	Method ID: 797 java.awt.Color,getOutlinecolor()
+	Method ID: 798 java.awt.Font,getFont()
+	Method ID: 799 java.awt.FontMetrics,getFontMetrics()
+	Method ID: 800 java.awt.Color,getFontcolor()
+	Method ID: 801 java.awt.geom.GeneralPath,getGeneralPath()
+	Method ID: 802 salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	Method ID: 803 void,setLabel(java.lang.String)
+	Method ID: 804 void,setFillcolor(java.awt.Color)
+	Method ID: 805 void,setOutlinecolor(java.awt.Color)
+	Method ID: 806 void,setFont(java.awt.Font)
+	Method ID: 807 void,setFontcolor(java.awt.Color)
+	Method ID: 808 void,setGeneralPath(java.awt.geom.GeneralPath)
+	Method ID: 809 void,setGeneralPath(java.awt.geom.PathIterator)
+	Method ID: 810 java.awt.Rectangle,getBounds()
+	Method ID: 811 void,rescale()
+	Method ID: 812 java.awt.geom.Rectangle2D,getBounds2D()
+	Method ID: 813 java.lang.String,toString()
+	Method ID: 814 void,addMouseListener(java.awt.event.MouseListener)
+	Method ID: 815 void,addMouseMotionListener(java.awt.event.MouseMotionListener)
+	Method ID: 816 void,removeMouseListener(java.awt.event.MouseListener)
+	Method ID: 817 void,removeMouseMotionListener(java.awt.event.MouseMotionListener)
+	Method ID: 818 void,processMouseEvent(java.awt.event.MouseEvent)
+	Method ID: 819 void,processMouseMotionEvent(java.awt.event.MouseEvent)
+	Method ID: 820 void,processKeyEvent(java.awt.event.KeyEvent)
+	Method ID: 821 void,#ExtendsOrImplements#()
+	Method ID: 822 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.Painter
+	Method ID: 1155 void,paint(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1156 void,#ExtendsOrImplements#()
+	Method ID: 1157 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.TopologicalSorting.RefCount
+	Method ID: 605 void,#ExtendsOrImplements#()
+	Method ID: 606 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.Tree
+	Method ID: 15 void,setRoot(salvo.jesus.graph.Vertex)
+	Method ID: 16 salvo.jesus.graph.Vertex,getRoot()
+	Method ID: 17 salvo.jesus.graph.Vertex,getParent(salvo.jesus.graph.Vertex)
+	Method ID: 18 java.util.List,getChildren(salvo.jesus.graph.Vertex)
+	Method ID: 19 salvo.jesus.graph.Tree,getSubTree(salvo.jesus.graph.Vertex)
+	Method ID: 20 int,getDepth(salvo.jesus.graph.Vertex)
+	Method ID: 21 java.util.List,getLeaves()
+	Method ID: 22 int,getHeight()
+	Method ID: 23 salvo.jesus.graph.Edge,addNode(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 24 boolean,isLeaf(salvo.jesus.graph.Vertex)
+	Method ID: 25 salvo.jesus.graph.Tree,createTree()
+	Method ID: 26 void,#ExtendsOrImplements#()
+	Method ID: 27 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.CycleDetectionAlgorithmDFS
+	Method ID: 611 salvo.jesus.graph.algorithm.CycleDetectionAlgorithmDFS,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 612 void,findCycleSubgraph(salvo.jesus.graph.Graph)
+	Method ID: 613 void,findCycleSubgraph(salvo.jesus.graph.Graph,salvo.jesus.graph.Vertex)
+	Method ID: 614 void,findCycleSubgraph(salvo.jesus.graph.Graph,salvo.jesus.graph.Edge)
+	Method ID: 615 boolean,detectCycles()
+	Method ID: 616 boolean,detectCycles(salvo.jesus.graph.Vertex)
+	Method ID: 617 boolean,detectCycles(salvo.jesus.graph.Edge)
+	Method ID: 618 void,#ExtendsOrImplements#()
+	Method ID: 619 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.WeightedEdgeImpl
+	Method ID: 290 salvo.jesus.graph.WeightedEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+	Method ID: 291 double,getWeight()
+	Method ID: 292 void,setWeight(double)
+	Method ID: 293 java.lang.String,toString()
+	Method ID: 294 void,#ExtendsOrImplements#()
+	Method ID: 295 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphException
+	Method ID: 202 salvo.jesus.graph.GraphException,CONSTRUCTOR()
+	Method ID: 203 salvo.jesus.graph.GraphException,CONSTRUCTOR(java.lang.String)
+	Method ID: 204 void,#ExtendsOrImplements#()
+	Method ID: 205 void,#ExceptionHandler#()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_GraphException5_TrimmedGraphTest.java	test01NotEmpty
+Class: salvo.jesus.graph.visual.VisualGraph
+	Method ID: 926 salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	Method ID: 927 salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 928 java.util.List,getContainers()
+	Method ID: 929 void,addContainer(java.awt.Container)
+	Method ID: 930 void,removeContainer(java.awt.Container)
+	Method ID: 931 java.awt.Dimension,getMaxSize()
+	Method ID: 932 java.awt.Point,getStartDrawPoint()
+	Method ID: 933 void,repaint()
+	Method ID: 934 salvo.jesus.graph.Graph,getGraph()
+	Method ID: 935 void,setGraph(salvo.jesus.graph.Graph)
+	Method ID: 936 salvo.jesus.graph.visual.layout.GraphLayoutManager,getGraphLayoutManager()
+	Method ID: 937 void,setGraphLayoutManager(salvo.jesus.graph.visual.layout.GraphLayoutManager)
+	Method ID: 938 salvo.jesus.graph.visual.drawing.VisualVertexPainterFactory,getVisualVertexPainterFactory()
+	Method ID: 939 void,setVisualVertexPainterFactory(salvo.jesus.graph.visual.drawing.VisualVertexPainterFactory)
+	Method ID: 940 salvo.jesus.graph.visual.drawing.VisualEdgePainterFactory,getVisualEdgePainterFactory()
+	Method ID: 941 void,setVisualEdgePainterFactory(salvo.jesus.graph.visual.drawing.VisualEdgePainterFactory)
+	Method ID: 942 salvo.jesus.graph.visual.VisualGraphComponentEditorFactory,getVisualGraphComponentEditorFactory()
+	Method ID: 943 void,setVisualGraphComponentEditorFactory(salvo.jesus.graph.visual.VisualGraphComponentEditorFactory)
+	Method ID: 944 java.util.List,getVisualVertices()
+	Method ID: 945 java.util.List,getVisualEdges()
+	Method ID: 946 void,setOrthogonalLine()
+	Method ID: 947 void,setStraightLine()
+	Method ID: 948 void,layout()
+	Method ID: 949 salvo.jesus.graph.visual.VisualEdge,getVisualEdge(salvo.jesus.graph.Edge)
+	Method ID: 950 void,setVisualEdge(salvo.jesus.graph.Edge,salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 951 salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	Method ID: 952 void,setVisualVertex(salvo.jesus.graph.Vertex,salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 953 salvo.jesus.graph.visual.VisualEdge,getVisualEdge(int,int)
+	Method ID: 954 void,add(salvo.jesus.graph.Vertex)
+	Method ID: 955 void,add(salvo.jesus.graph.Vertex,java.awt.Font)
+	Method ID: 956 void,addEdge(salvo.jesus.graph.visual.VisualVertex,salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 957 void,remove(salvo.jesus.graph.Vertex)
+	Method ID: 958 void,remove(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 959 void,removeEdge(salvo.jesus.graph.Edge)
+	Method ID: 960 void,removeEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 961 salvo.jesus.graph.visual.VisualVertex,getNode(int,int)
+	Method ID: 962 java.util.List,translateToVisualVertices(java.util.Collection)
+	Method ID: 963 java.util.List,translateToVertices(java.util.Collection)
+	Method ID: 964 java.util.List,translateToVisualEdges(java.util.List)
+	Method ID: 965 void,paint(java.awt.Graphics2D,salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 966 void,paint(java.awt.Graphics2D)
+	Method ID: 967 void,paint(java.awt.Graphics2D,java.awt.geom.Line2D)
+	Method ID: 968 void,afterVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 969 void,afterEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 970 void,afterVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 971 void,afterEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 972 void,emphasizeSubGraph(salvo.jesus.graph.Graph,salvo.jesus.graph.visual.drawing.VisualVertexPainter,salvo.jesus.graph.visual.drawing.VisualEdgePainter)
+	Method ID: 973 void,emphasizeSubGraph(salvo.jesus.graph.Graph,salvo.jesus.graph.visual.drawing.VisualVertexPainter,salvo.jesus.graph.visual.drawing.VisualEdgePainter,salvo.jesus.graph.visual.drawing.VisualVertexPainter,salvo.jesus.graph.visual.drawing.VisualEdgePainter)
+	Method ID: 974 void,#ExtendsOrImplements#()
+	Method ID: 975 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.CycleException
+	Method ID: 108 salvo.jesus.graph.CycleException,CONSTRUCTOR()
+	Method ID: 109 salvo.jesus.graph.CycleException,CONSTRUCTOR(java.lang.String)
+	Method ID: 110 void,#ExtendsOrImplements#()
+	Method ID: 111 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.StopAtVisitor
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_StopAtVisitor3_IqasGraphWeakImpl.java	isPath
+	Method ID: 129 boolean,visit(salvo.jesus.graph.Vertex)
+	Method ID: 130 boolean,wasFound()
+	Method ID: 131 void,#ExtendsOrImplements#()
+	Method ID: 132 void,#ExceptionHandler#()
+	Method ID: 128 salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_StopAtVisitor3_IqasGraphWeakImpl.java	isPath
+Class: salvo.jesus.graph.visual.drawing.VisualVertexPainter
+	Method ID: 1149 void,paintOutline(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1150 void,paintFill(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1151 void,paintText(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1152 void,rescale(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1153 void,#ExtendsOrImplements#()
+	Method ID: 1154 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.LayeredTreeLayout
+	Method ID: 1213 salvo.jesus.graph.visual.layout.LayeredTreeLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1214 void,layout()
+	Method ID: 1215 boolean,visit(salvo.jesus.graph.Vertex)
+	Method ID: 1216 void,routeEdge(java.awt.Graphics2D,salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1217 void,addVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1218 void,removeEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1219 void,removeVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1220 void,addEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1221 void,#ExtendsOrImplements#()
+	Method ID: 1222 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphUtil.EdgeContractionRule
+	Method ID: 416 boolean,shouldBeSelfLoop(salvo.jesus.graph.Edge)
+	Method ID: 417 salvo.jesus.graph.Edge,cloneEdge(salvo.jesus.graph.Edge,salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 418 void,#ExtendsOrImplements#()
+	Method ID: 419 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.javax.swing.JButtonColorListener
+	Method ID: 680 salvo.jesus.graph.javax.swing.JButtonColorListener,CONSTRUCTOR(java.awt.Component,salvo.jesus.graph.javax.swing.JColor,javax.swing.JButton)
+	Method ID: 681 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 682 void,#ExtendsOrImplements#()
+	Method ID: 683 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualDirectedEdgePainterImpl
+	Method ID: 1117 salvo.jesus.graph.visual.drawing.VisualDirectedEdgePainterImpl,CONSTRUCTOR()
+	Method ID: 1118 void,paint(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1119 void,paintArrowHead(salvo.jesus.graph.visual.VisualEdge,java.awt.Graphics2D)
+	Method ID: 1120 void,#ExtendsOrImplements#()
+	Method ID: 1121 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.CycleDetectionAlgorithm
+	Method ID: 587 salvo.jesus.graph.algorithm.CycleDetectionAlgorithm,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 588 void,findCycleSubgraph(salvo.jesus.graph.Graph)
+	Method ID: 589 void,findCycleSubgraph(salvo.jesus.graph.Graph,salvo.jesus.graph.Vertex)
+	Method ID: 590 void,findCycleSubgraph(salvo.jesus.graph.Graph,salvo.jesus.graph.Edge)
+	Method ID: 591 boolean,detectCycles()
+	Method ID: 592 boolean,detectCycles(salvo.jesus.graph.Vertex)
+	Method ID: 593 boolean,detectCycles(salvo.jesus.graph.Edge)
+	Method ID: 594 void,#ExtendsOrImplements#()
+	Method ID: 595 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedAcyclicGraph
+	Method ID: 475 java.util.List,getRoot()
+	Method ID: 476 java.util.List,topologicalSort()
+	Method ID: 478 java.util.List,topologicalSort(salvo.jesus.graph.Vertex)
+	Method ID: 479 java.util.List,reverseTopologicalSort(salvo.jesus.graph.Vertex)
+	Method ID: 480 void,#ExtendsOrImplements#()
+	Method ID: 481 void,#ExceptionHandler#()
+	Method ID: 477 java.util.List,reverseTopologicalSort()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedAcyclicGraph7_ConstructExtendsGraphVisitor.java	getSortedSigs
+Class: salvo.jesus.graph.algorithm.TopologicalSorting
+	Method ID: 596 salvo.jesus.graph.algorithm.TopologicalSorting,CONSTRUCTOR(salvo.jesus.graph.DirectedAcyclicGraph)
+	Method ID: 597 int,traverse(salvo.jesus.graph.Vertex,java.util.List,salvo.jesus.graph.Visitor)
+	Method ID: 598 java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+	Method ID: 599 java.util.List,traverse(salvo.jesus.graph.Vertex)
+	Method ID: 600 java.util.List,reverseTraverse(salvo.jesus.graph.Vertex)
+	Method ID: 601 java.util.List,traverse()
+	Method ID: 602 java.util.List,reverseTraverse()
+	Method ID: 603 void,#ExtendsOrImplements#()
+	Method ID: 604 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.Arrowhead
+	Method ID: 899 salvo.jesus.graph.visual.Arrowhead,CONSTRUCTOR(java.awt.geom.Line2D.Double,java.awt.Point)
+	Method ID: 900 java.awt.Point,getBase1()
+	Method ID: 901 java.awt.Point,getBase2()
+	Method ID: 902 void,#ExtendsOrImplements#()
+	Method ID: 903 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.GraphGridLayoutManager
+	Method ID: 1258 void,setStartAt(java.awt.Point)
+	Method ID: 1259 void,setXGridDistance(int)
+	Method ID: 1260 void,setYGridDistance(int)
+	Method ID: 1261 void,setDrawGrid(boolean)
+	Method ID: 1262 salvo.jesus.graph.visual.layout.Grid,getGrid()
+	Method ID: 1263 java.awt.Point,getStartAt()
+	Method ID: 1264 int,getXGridDistance()
+	Method ID: 1265 int,getYGridDistance()
+	Method ID: 1266 boolean,getDrawgrid()
+	Method ID: 1267 void,#ExtendsOrImplements#()
+	Method ID: 1268 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.LabeledEdgeImpl
+	Method ID: 206 salvo.jesus.graph.LabeledEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Edge)
+	Method ID: 207 boolean,isFollowVertexLabel()
+	Method ID: 208 void,setFollowVertexLabel(boolean)
+	Method ID: 209 java.lang.String,getLabel()
+	Method ID: 210 void,setLabel(java.lang.String)
+	Method ID: 211 void,#ExtendsOrImplements#()
+	Method ID: 212 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXGMMLSAXHandler.GraphHandler
+	Method ID: 1405 salvo.jesus.graph.xml.GraphToXGMMLSAXHandler.GraphHandler,CONSTRUCTOR(salvo.jesus.graph.xml.GraphToXMLEventGenerator,org.apache.xml.serialize.XMLSerializer,salvo.jesus.graph.xml.GraphToXGMMLSAXHandler.CommonHandler)
+	Method ID: 1406 void,startSerialize(salvo.jesus.graph.Graph)
+	Method ID: 1407 void,startSerialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1408 void,serializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1409 void,endSerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1410 void,serializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1411 void,endSerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1412 void,endSerialize()
+	Method ID: 1413 void,#ExtendsOrImplements#()
+	Method ID: 1414 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.listener.NullGraphListener
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_listener_NullGraphListener5_UndirectedModel.java	UndirectedModel
+	Method ID: 751 void,beforeVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 752 void,afterVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 753 void,beforeVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 754 void,afterVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 755 void,beforeEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 756 void,afterEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 757 void,beforeEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 758 void,afterEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 759 void,#ExtendsOrImplements#()
+	Method ID: 760 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualWeightedEdgePainterWeakImpl
+	Method ID: 1133 salvo.jesus.graph.visual.drawing.VisualWeightedEdgePainterWeakImpl,CONSTRUCTOR()
+	Method ID: 1134 void,paint(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1135 void,paintText(java.awt.Graphics2D,java.awt.Font,java.awt.Color,java.lang.String,float,float)
+	Method ID: 1136 void,#ExtendsOrImplements#()
+	Method ID: 1137 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXGMMLSAXHandler.CommonHandler
+	Method ID: 1390 salvo.jesus.graph.xml.GraphToXGMMLSAXHandler.CommonHandler,CONSTRUCTOR(salvo.jesus.graph.xml.GraphToXMLEventGenerator,org.apache.xml.serialize.XMLSerializer)
+	Method ID: 1391 void,startSerialize(salvo.jesus.graph.Graph)
+	Method ID: 1392 void,startSerialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1393 void,serializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1394 void,endSerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1395 void,serializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1396 void,endSerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1397 void,endSerialize()
+	Method ID: 1398 org.xml.sax.helpers.XMLReaderAdapter,getReaderAdapter()
+	Method ID: 1399 java.util.TreeMap,getVertexIDMap()
+	Method ID: 1400 long,getCurrentIDAttribute()
+	Method ID: 1401 void,incremenetIDAttribute()
+	Method ID: 1402 void,serializeOtherGraphMetaInformation()
+	Method ID: 1403 void,#ExtendsOrImplements#()
+	Method ID: 1404 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.GraphLayoutManager
+	Method ID: 1334 boolean,isInitialized()
+	Method ID: 1335 void,layout()
+	Method ID: 1336 void,addVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1337 void,removeVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1338 void,addEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1339 void,removeEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1340 void,routeEdge(java.awt.Graphics2D,salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1341 void,drawLayout()
+	Method ID: 1342 void,#ExtendsOrImplements#()
+	Method ID: 1343 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphImplFactory
+	Method ID: 334 salvo.jesus.graph.GraphImplFactory,CONSTRUCTOR()
+	Method ID: 335 salvo.jesus.graph.Vertex,createVertex()
+	Method ID: 336 salvo.jesus.graph.Edge,createEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 337 void,#ExtendsOrImplements#()
+	Method ID: 338 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.GraphLayoutEvent
+	Method ID: 1194 salvo.jesus.graph.visual.layout.GraphLayoutEvent,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph,salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1195 salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	Method ID: 1196 salvo.jesus.graph.visual.VisualVertex,getVisualVertex()
+	Method ID: 1197 void,#ExtendsOrImplements#()
+	Method ID: 1198 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphAddEdgeEvent
+	Method ID: 347 salvo.jesus.graph.GraphAddEdgeEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.Edge,boolean,boolean)
+	Method ID: 348 salvo.jesus.graph.Edge,getEdge()
+	Method ID: 349 boolean,isAddingVertexA()
+	Method ID: 350 boolean,isAddingVertexB()
+	Method ID: 351 void,#ExtendsOrImplements#()
+	Method ID: 352 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.listener.ConnectedSetListener
+	Method ID: 742 salvo.jesus.graph.listener.ConnectedSetListener,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 743 java.util.Set,getConnectedSet(salvo.jesus.graph.Vertex)
+	Method ID: 744 java.util.Collection,getConnectedSets()
+	Method ID: 745 void,afterEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 746 void,afterVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 747 void,afterEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 748 void,afterVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 749 void,#ExtendsOrImplements#()
+	Method ID: 750 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.GraphScrollPane
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_visual_GraphScrollPane3_JuxMemInterface.java	setupGraphComponent
+	Method ID: 860 salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR()
+	Method ID: 861 salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanelState)
+	Method ID: 863 salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanelState,salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 864 salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	Method ID: 865 void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 866 void,setGraph(salvo.jesus.graph.Graph)
+	Method ID: 867 void,setGraphLayoutManager(salvo.jesus.graph.visual.layout.GraphLayoutManager)
+	Method ID: 868 salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+	Method ID: 869 void,#ExtendsOrImplements#()
+	Method ID: 870 void,#ExceptionHandler#()
+	Method ID: 862 salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_GraphScrollPane3_JuxMemInterface.java	setupGraphComponent
+Class: salvo.jesus.graph.LabeledEdge
+	Method ID: 456 boolean,isFollowVertexLabel()
+	Method ID: 458 void,#ExtendsOrImplements#()
+	Method ID: 459 void,#ExceptionHandler#()
+	Method ID: 457 void,setFollowVertexLabel(boolean)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_Edge13_JuxMemWorld.java	addPeer
+Class: salvo.jesus.graph.LabeledGraphComponentImpl
+	Method ID: 92 int,compareTo(java.lang.Object)
+	Method ID: 93 void,setLabel(java.lang.String)
+	Method ID: 94 boolean,hasLabel()
+	Method ID: 95 java.lang.String,getLabel()
+	Method ID: 96 java.lang.String,toString()
+	Method ID: 97 void,#ExtendsOrImplements#()
+	Method ID: 98 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualVertexPainterFactory
+	Method ID: 1142 void,#ExtendsOrImplements#()
+	Method ID: 1143 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXMLEventGenerator
+	Method ID: 1368 void,addHandler(salvo.jesus.graph.xml.GraphToXMLHandler)
+	Method ID: 1369 void,removeHandler(salvo.jesus.graph.xml.GraphToXMLHandler)
+	Method ID: 1370 void,serialize(salvo.jesus.graph.Graph)
+	Method ID: 1371 void,serialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1372 void,notifyStartSerialize(salvo.jesus.graph.Graph)
+	Method ID: 1373 void,notifyStartSerialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1374 void,notifySerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1375 void,notifySerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1376 void,notifyEndSerialize()
+	Method ID: 1377 void,#ExtendsOrImplements#()
+	Method ID: 1378 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedEdge
+	Method ID: 133 salvo.jesus.graph.Vertex,getSource()
+	Method ID: 134 salvo.jesus.graph.Vertex,getSink()
+	Method ID: 135 int,getDirection()
+	Method ID: 136 void,DIRECTION_A_TO_B()
+	Method ID: 137 void,DIRECTION_B_TO_A()
+	Method ID: 138 void,NODIRECTION()
+	Method ID: 139 void,#ExtendsOrImplements#()
+	Method ID: 140 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.FontChooserPanel
+	Method ID: 1058 void,apply()
+	Method ID: 1059 void,ok()
+	Method ID: 1060 void,#ExtendsOrImplements#()
+	Method ID: 1061 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedWeightedEdge
+	Method ID: 153 void,#ExtendsOrImplements#()
+	Method ID: 154 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.DTDResolver
+	Method ID: 1488 org.xml.sax.InputSource,resolveEntity(java.lang.String,java.lang.String)
+	Method ID: 1489 void,#ExtendsOrImplements#()
+	Method ID: 1490 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.GraphPanelVertexState
+	Extension Code Examples (Hooks): 
+		salvo_jesus_graph_visual_GraphPanelVertexState0_IqasGraphPanelVertexState.java	NA
+	Method ID: 1025 salvo.jesus.graph.visual.GraphPanelVertexState,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanel)
+	Method ID: 1027 void,paint(java.awt.Graphics2D)
+	Method ID: 1029 void,#ExceptionHandler#()
+	Method ID: 1026 salvo.jesus.graph.visual.GraphPanelState,mousePressed(java.awt.event.MouseEvent)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_visual_GraphPanelVertexState//0_IqasGraphPanelVertexState.java	NA
+	Method ID: 1028 void,#ExtendsOrImplements#()
+Class: salvo.jesus.graph.CyclePathImpl
+	Method ID: 400 salvo.jesus.graph.CyclePathImpl,CONSTRUCTOR()
+	Method ID: 401 void,closeCycle()
+	Method ID: 402 void,#ExtendsOrImplements#()
+	Method ID: 403 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.GraphUnionAlgorithm
+	Method ID: 635 salvo.jesus.graph.algorithm.GraphUnionAlgorithm,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 636 salvo.jesus.graph.Graph,getGraph()
+	Method ID: 637 void,union(salvo.jesus.graph.Graph)
+	Method ID: 638 void,#ExtendsOrImplements#()
+	Method ID: 639 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.listener.SimplePathListener
+	Method ID: 707 salvo.jesus.graph.listener.SimplePathListener,CONSTRUCTOR(salvo.jesus.graph.SimplePath)
+	Method ID: 708 salvo.jesus.graph.Vertex,getFirstVertex()
+	Method ID: 709 salvo.jesus.graph.Vertex,getLastVertex()
+	Method ID: 710 salvo.jesus.graph.SimplePath,getPath()
+	Method ID: 711 void,remove()
+	Method ID: 712 void,beforeVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 713 void,afterVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 714 void,afterVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 715 void,beforeEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 716 void,afterEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 717 boolean,isEndpoint(salvo.jesus.graph.Vertex)
+	Method ID: 718 void,beforeEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 719 void,afterEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 720 void,#ExtendsOrImplements#()
+	Method ID: 721 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXMLHandler
+	Method ID: 1358 void,startSerialize(salvo.jesus.graph.Graph)
+	Method ID: 1359 void,startSerialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1360 void,serializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1361 void,endSerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1362 void,serializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1363 void,endSerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1364 void,endSerialize()
+	Method ID: 1365 salvo.jesus.graph.xml.GraphToXMLEventGenerator,getEventGenerator()
+	Method ID: 1366 void,#ExtendsOrImplements#()
+	Method ID: 1367 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedGraphImplFactory
+	Method ID: 357 salvo.jesus.graph.DirectedGraphImplFactory,CONSTRUCTOR()
+	Method ID: 358 salvo.jesus.graph.Vertex,createVertex()
+	Method ID: 359 salvo.jesus.graph.Edge,createEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 360 void,#ExtendsOrImplements#()
+	Method ID: 361 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.EulerCircleFinder
+	Method ID: 573 salvo.jesus.graph.Path,find(salvo.jesus.graph.Graph)
+	Method ID: 574 salvo.jesus.graph.Graph,clone(salvo.jesus.graph.Graph)
+	Method ID: 575 void,#ExtendsOrImplements#()
+	Method ID: 576 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedGraphImpl
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_DirectedGraphImpl5_DataFlowGraph.java	DataFlowGraph
+	Extension Code Examples (Hooks): 
+		salvo_jesus_graph_DirectedGraphImpl0_DirectedGraphWithDictImpl.java	NA
+	Method ID: 301 java.util.List,getOutgoingAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 302 java.util.List,getIncomingAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 303 salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 304 boolean,isPath(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 305 boolean,isCycle(salvo.jesus.graph.Vertex)
+	Method ID: 307 void,#ExceptionHandler#()
+	Method ID: 300 java.util.List,getIncomingEdges(salvo.jesus.graph.Vertex)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedGraphImpl0_DirectedGraphWithDictImpl.java	getInDegree
+	Method ID: 299 java.util.List,getOutgoingEdges(salvo.jesus.graph.Vertex)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedGraphImpl0_DirectedGraphWithDictImpl.java	getOutDegree
+	Method ID: 298 salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedGraphImpl5_DataFlowGraph.java	DataFlowGraph
+	Method ID: 306 void,#ExtendsOrImplements#()
+Class: salvo.jesus.geom.Intersection
+	Method ID: 0 java.awt.Point,getIntersection(java.awt.geom.Line2D,java.awt.geom.Line2D)
+	Method ID: 1 java.awt.Point,getIntersection(java.awt.geom.Line2D,java.awt.geom.GeneralPath)
+	Method ID: 2 void,#ExtendsOrImplements#()
+	Method ID: 3 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.ToolBarLayoutButtonListener
+	Method ID: 837 salvo.jesus.graph.visual.ToolBarLayoutButtonListener,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+	Method ID: 838 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 839 void,#ExtendsOrImplements#()
+	Method ID: 840 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.java.awt.Fonts
+	Method ID: 647 salvo.jesus.graph.java.awt.Fonts,instance()
+	Method ID: 648 java.lang.String[],getFonts()
+	Method ID: 649 void,#ExtendsOrImplements#()
+	Method ID: 650 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualWeightedEdgePainterImpl
+	Method ID: 1138 salvo.jesus.graph.visual.drawing.VisualWeightedEdgePainterImpl,CONSTRUCTOR()
+	Method ID: 1139 void,paint(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1140 void,#ExtendsOrImplements#()
+	Method ID: 1141 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.FringeObject
+	Method ID: 631 salvo.jesus.graph.algorithm.FringeObject,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.WeightedEdge)
+	Method ID: 632 java.lang.String,toString()
+	Method ID: 633 void,#ExtendsOrImplements#()
+	Method ID: 634 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.TreeImpl
+	Method ID: 220 salvo.jesus.graph.TreeImpl,CONSTRUCTOR()
+	Method ID: 221 void,setRoot(salvo.jesus.graph.Vertex)
+	Method ID: 222 salvo.jesus.graph.Vertex,getRoot()
+	Method ID: 223 boolean,isLeaf(salvo.jesus.graph.Vertex)
+	Method ID: 224 salvo.jesus.graph.Vertex,getParent(salvo.jesus.graph.Vertex)
+	Method ID: 225 java.util.List,getChildren(salvo.jesus.graph.Vertex)
+	Method ID: 226 salvo.jesus.graph.Tree,getSubTree(salvo.jesus.graph.Vertex)
+	Method ID: 227 int,getDepth(salvo.jesus.graph.Vertex)
+	Method ID: 228 java.util.List,getLeaves()
+	Method ID: 229 int,getHeight()
+	Method ID: 230 salvo.jesus.graph.Tree,createTree()
+	Method ID: 231 salvo.jesus.graph.Edge,addNode(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 232 void,#ExtendsOrImplements#()
+	Method ID: 233 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.XMLToGraphDelegatorHandler
+	Method ID: 1481 salvo.jesus.graph.xml.XMLToGraphDelegatorHandler,CONSTRUCTOR(salvo.jesus.graph.xml.XMLToGraphHandler)
+	Method ID: 1482 void,startDocument()
+	Method ID: 1483 void,endDocument()
+	Method ID: 1484 void,startElement(java.lang.String,java.lang.String,java.lang.String,org.xml.sax.Attributes)
+	Method ID: 1485 void,endElement(java.lang.String,java.lang.String,java.lang.String)
+	Method ID: 1486 void,#ExtendsOrImplements#()
+	Method ID: 1487 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.GraphTabbedPane
+	Method ID: 1055 salvo.jesus.graph.visual.GraphTabbedPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraphComponent)
+	Method ID: 1056 void,#ExtendsOrImplements#()
+	Method ID: 1057 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.GraphPanelState
+	Method ID: 976 void,setGraphPanel(salvo.jesus.graph.visual.GraphPanel)
+	Method ID: 977 salvo.jesus.graph.visual.GraphPanelState,recommendState(salvo.jesus.graph.visual.ChangeStateEvent)
+	Method ID: 978 salvo.jesus.graph.visual.GraphPanelState,mousePressed(java.awt.event.MouseEvent)
+	Method ID: 979 salvo.jesus.graph.visual.GraphPanelState,mouseReleased(java.awt.event.MouseEvent)
+	Method ID: 980 salvo.jesus.graph.visual.GraphPanelState,mouseDragged(java.awt.event.MouseEvent)
+	Method ID: 981 salvo.jesus.graph.visual.GraphPanelState,mouseEntered(java.awt.event.MouseEvent)
+	Method ID: 982 salvo.jesus.graph.visual.GraphPanelState,mouseExited(java.awt.event.MouseEvent)
+	Method ID: 983 salvo.jesus.graph.visual.GraphPanelState,mouseClicked(java.awt.event.MouseEvent)
+	Method ID: 984 salvo.jesus.graph.visual.GraphPanelState,mouseMoved(java.awt.event.MouseEvent)
+	Method ID: 985 salvo.jesus.graph.visual.GraphPanelState,keyPressed(java.awt.event.KeyEvent)
+	Method ID: 986 salvo.jesus.graph.visual.GraphPanelState,keyReleased(java.awt.event.KeyEvent)
+	Method ID: 987 salvo.jesus.graph.visual.GraphPanelState,keyTyped(java.awt.event.KeyEvent)
+	Method ID: 989 void,informTargetVisualGraphComponentOfKeyEvent(java.awt.event.KeyEvent)
+	Method ID: 990 void,paint(java.awt.Graphics2D)
+	Method ID: 991 void,#ExtendsOrImplements#()
+	Method ID: 992 void,#ExceptionHandler#()
+	Method ID: 988 void,informTargetVisualGraphComponentOfMouseEvent(java.awt.event.MouseEvent)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_GraphPanelEdgeState0_IqasGraphPanelEdgeState.java	mousePressed
+			salvo_jesus_graph_visual_GraphPanelVertexState0_IqasGraphPanelVertexState.java	mousePressed
+Class: salvo.jesus.graph.xml.XGMMLReader
+	Method ID: 1353 salvo.jesus.graph.xml.XGMMLReader,CONSTRUCTOR(java.io.InputStream,salvo.jesus.graph.xml.XGMMLContentHandler)
+	Method ID: 1354 salvo.jesus.graph.xml.XGMMLReader,CONSTRUCTOR(java.io.Reader,salvo.jesus.graph.xml.XGMMLContentHandler)
+	Method ID: 1355 salvo.jesus.graph.Graph,parse()
+	Method ID: 1356 void,#ExtendsOrImplements#()
+	Method ID: 1357 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.FollowVertexLabelCheckBoxListener
+	Method ID: 1066 salvo.jesus.graph.visual.FollowVertexLabelCheckBoxListener,CONSTRUCTOR(salvo.jesus.graph.Edge,javax.swing.JTextArea)
+	Method ID: 1067 void,itemStateChanged(java.awt.event.ItemEvent)
+	Method ID: 1068 void,#ExtendsOrImplements#()
+	Method ID: 1069 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualEdgePainterFactoryImpl
+	Method ID: 1176 salvo.jesus.graph.visual.drawing.VisualEdgePainterFactoryImpl,getInstance()
+	Method ID: 1177 salvo.jesus.graph.visual.drawing.Painter,getPainter(salvo.jesus.graph.visual.VisualGraphComponent)
+	Method ID: 1178 void,#ExtendsOrImplements#()
+	Method ID: 1179 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.WeightedGraphImplFactory
+	Method ID: 470 salvo.jesus.graph.WeightedGraphImplFactory,CONSTRUCTOR()
+	Method ID: 471 salvo.jesus.graph.Vertex,createVertex()
+	Method ID: 472 salvo.jesus.graph.Edge,createEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 473 void,#ExtendsOrImplements#()
+	Method ID: 474 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXMLEventGeneratorImpl
+	Method ID: 1535 salvo.jesus.graph.xml.GraphToXMLEventGeneratorImpl,CONSTRUCTOR()
+	Method ID: 1536 void,addHandler(salvo.jesus.graph.xml.GraphToXMLHandler)
+	Method ID: 1537 void,removeHandler(salvo.jesus.graph.xml.GraphToXMLHandler)
+	Method ID: 1538 void,serialize(salvo.jesus.graph.Graph)
+	Method ID: 1539 void,serialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1540 void,notifyStartSerialize(salvo.jesus.graph.Graph)
+	Method ID: 1541 void,notifyStartSerialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1542 void,notifySerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1543 void,notifySerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1544 void,notifyEndSerialize()
+	Method ID: 1545 void,#ExtendsOrImplements#()
+	Method ID: 1546 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualEdgePainterFactory
+	Method ID: 1174 void,#ExtendsOrImplements#()
+	Method ID: 1175 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.StraightLineLayout
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_visual_layout_StraightLineLayout0_Graph.java	init
+	Method ID: 1229 salvo.jesus.graph.visual.layout.StraightLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.GraphScrollPane)
+	Method ID: 1230 salvo.jesus.graph.visual.layout.StraightLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+	Method ID: 1231 void,routeEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1232 void,#ExtendsOrImplements#()
+	Method ID: 1233 void,#ExceptionHandler#()
+	Method ID: 1228 salvo.jesus.graph.visual.layout.StraightLineLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_layout_StraightLineLayout0_Graph.java	init
+Class: salvo.jesus.graph.adaptor.GraphDelegator
+	Method ID: 507 salvo.jesus.graph.adaptor.GraphDelegator,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 508 salvo.jesus.graph.Graph,getGraph()
+	Method ID: 509 java.util.Set,getVertexSet()
+	Method ID: 510 java.util.Set,getEdgeSet()
+	Method ID: 511 int,getEdgesCount()
+	Method ID: 512 int,getVerticesCount()
+	Method ID: 513 salvo.jesus.graph.GraphFactory,getGraphFactory()
+	Method ID: 514 void,setGraphFactory(salvo.jesus.graph.GraphFactory)
+	Method ID: 515 void,add(salvo.jesus.graph.Vertex)
+	Method ID: 516 void,remove(salvo.jesus.graph.Vertex)
+	Method ID: 517 java.util.Iterator,getVerticesIterator()
+	Method ID: 518 java.util.List,cloneVertices()
+	Method ID: 519 salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 520 void,addEdge(salvo.jesus.graph.Edge)
+	Method ID: 521 void,removeEdge(salvo.jesus.graph.Edge)
+	Method ID: 522 void,removeEdges(salvo.jesus.graph.Vertex)
+	Method ID: 523 int,getDegree()
+	Method ID: 524 int,getDegree(salvo.jesus.graph.Vertex)
+	Method ID: 525 java.util.Set,getVertices(int)
+	Method ID: 526 java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	Method ID: 527 java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 528 java.util.Set,getAdjacentVertices(java.util.List)
+	Method ID: 529 java.util.Collection,getConnectedSet()
+	Method ID: 530 java.util.Set,getConnectedSet(salvo.jesus.graph.Vertex)
+	Method ID: 531 java.util.List,traverse(salvo.jesus.graph.Vertex)
+	Method ID: 532 salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	Method ID: 533 void,setTraversal(salvo.jesus.graph.algorithm.GraphTraversal)
+	Method ID: 534 boolean,isConnected(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 535 void,addListener(salvo.jesus.graph.GraphListener)
+	Method ID: 536 void,removeListener(salvo.jesus.graph.GraphListener)
+	Method ID: 537 void,addGraphAddVertexListener(salvo.jesus.graph.GraphAddVertexListener)
+	Method ID: 538 void,addGraphAddEdgeListener(salvo.jesus.graph.GraphAddEdgeListener)
+	Method ID: 539 void,addGraphRemoveEdgeListener(salvo.jesus.graph.GraphRemoveEdgeListener)
+	Method ID: 540 void,addGraphRemoveVertexListener(salvo.jesus.graph.GraphRemoveVertexListener)
+	Method ID: 541 void,removeGraphAddVertexListener(salvo.jesus.graph.GraphAddVertexListener)
+	Method ID: 542 void,removeGraphAddEdgeListener(salvo.jesus.graph.GraphAddEdgeListener)
+	Method ID: 543 void,removeGraphRemoveEdgeListener(salvo.jesus.graph.GraphRemoveEdgeListener)
+	Method ID: 544 void,removeGraphRemoveVertexListener(salvo.jesus.graph.GraphRemoveVertexListener)
+	Method ID: 545 void,#ExtendsOrImplements#()
+	Method ID: 546 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphAddEdgeListener
+	Method ID: 103 void,#ExtendsOrImplements#()
+	Method ID: 104 void,#ExceptionHandler#()
+	Method ID: 102 void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_GraphAddEdgeListener7_HashedGraphImpl.java	addEdge
+Class: salvo.jesus.graph.xml.StackEntry
+	Method ID: 1344 salvo.jesus.graph.xml.StackEntry,CONSTRUCTOR(java.lang.String,org.xml.sax.Attributes)
+	Method ID: 1345 java.lang.String,getElementName()
+	Method ID: 1346 org.xml.sax.Attributes,getElementAttributes()
+	Method ID: 1347 void,#ExtendsOrImplements#()
+	Method ID: 1348 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.listener.ImmutableGraphListener
+	Method ID: 765 salvo.jesus.graph.listener.ImmutableGraphListener,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 766 void,beforeEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 767 void,beforeVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 768 void,beforeEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 769 void,beforeVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 770 void,#ExtendsOrImplements#()
+	Method ID: 771 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.javax.swing.JColor
+	Method ID: 684 salvo.jesus.graph.javax.swing.JColor,CONSTRUCTOR(java.awt.Color)
+	Method ID: 685 java.awt.Color,getColor()
+	Method ID: 686 void,setColor(java.awt.Color)
+	Method ID: 687 void,addActionListener(java.awt.event.ActionListener)
+	Method ID: 688 void,removeActionListener(java.awt.event.ActionListener)
+	Method ID: 689 void,#ExtendsOrImplements#()
+	Method ID: 690 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.BinaryTree
+	Method ID: 437 boolean,isComplete()
+	Method ID: 438 void,#ExtendsOrImplements#()
+	Method ID: 439 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.MinimumSpanningTreeKruskalAlgorithm
+	Method ID: 569 salvo.jesus.graph.algorithm.MinimumSpanningTreeKruskalAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph)
+	Method ID: 570 salvo.jesus.graph.WeightedGraph,minimumSpanningTree()
+	Method ID: 571 void,#ExtendsOrImplements#()
+	Method ID: 572 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphComponent
+	Method ID: 345 void,#ExtendsOrImplements#()
+	Method ID: 346 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphRemoveVertexListener
+	Method ID: 187 void,#ExtendsOrImplements#()
+	Method ID: 188 void,#ExceptionHandler#()
+	Method ID: 186 void,vertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_GraphRemoveVertexListener7_HashedGraphImpl.java	remove
+Class: salvo.jesus.graph.GraphUtil
+	Method ID: 406 void,mergeInto(salvo.jesus.graph.Graph,salvo.jesus.graph.Graph)
+	Method ID: 407 void,addVertex(salvo.jesus.graph.Graph,salvo.jesus.graph.Vertex)
+	Method ID: 408 void,addEdge(salvo.jesus.graph.Graph,salvo.jesus.graph.Edge)
+	Method ID: 409 void,addEdge(salvo.jesus.graph.Graph,salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 410 void,removeVertex(salvo.jesus.graph.Graph,salvo.jesus.graph.Vertex)
+	Method ID: 411 void,removeEdge(salvo.jesus.graph.Graph,salvo.jesus.graph.Edge)
+	Method ID: 412 void,contractVertices(salvo.jesus.graph.Graph,salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,salvo.jesus.graph.GraphUtil.EdgeContractionRule)
+	Method ID: 413 boolean,detectCycles(salvo.jesus.graph.DirectedGraph)
+	Method ID: 414 void,#ExtendsOrImplements#()
+	Method ID: 415 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXGMMLDOMHandler.VisualGraphHandler
+	Method ID: 1526 salvo.jesus.graph.xml.GraphToXGMMLDOMHandler.VisualGraphHandler,CONSTRUCTOR(salvo.jesus.graph.xml.GraphToXMLEventGenerator,org.apache.xml.serialize.XMLSerializer,salvo.jesus.graph.xml.GraphToXGMMLDOMHandler.CommonHandler)
+	Method ID: 1527 void,startSerialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1528 void,serializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1529 void,endSerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1530 void,serializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1531 void,endSerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1532 void,endSerialize()
+	Method ID: 1533 void,#ExtendsOrImplements#()
+	Method ID: 1534 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.ForceDirectedLayout
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_visual_layout_ForceDirectedLayout0_JuxMemInterface.java	setupGraphComponent
+	Method ID: 1235 double,getSpringLength()
+	Method ID: 1236 double,getStiffness()
+	Method ID: 1237 double,getEletricalRepulsion()
+	Method ID: 1238 double,getIncrement()
+	Method ID: 1243 void,addFixedVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1244 boolean,isVertexFixed(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1245 void,removeFixedVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1246 boolean,isInitialized()
+	Method ID: 1247 void,paintEdge(java.awt.Graphics2D,salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1248 void,routeEdge(java.awt.Graphics2D,salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1250 void,drawLayout()
+	Method ID: 1251 void,addVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1252 void,removeEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1253 void,removeVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1254 void,addEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1255 void,run()
+	Method ID: 1256 void,#ExtendsOrImplements#()
+	Method ID: 1257 void,#ExceptionHandler#()
+	Method ID: 1249 void,layout()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_layout_ForceDirectedLayout0_JuxMemInterface.java	setupGraphComponent
+	Method ID: 1234 salvo.jesus.graph.visual.layout.ForceDirectedLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_layout_ForceDirectedLayout0_JuxMemInterface.java	setupGraphComponent
+	Method ID: 1242 void,setIncrement(double)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_layout_ForceDirectedLayout0_JuxMemInterface.java	setGraphLayoutIncrement
+	Method ID: 1241 void,setEletricalRepulsion(double)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_layout_ForceDirectedLayout0_JuxMemInterface.java	setGraphLayoutElectricalRepulsion
+	Method ID: 1240 void,setStiffness(double)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_layout_ForceDirectedLayout0_JuxMemInterface.java	setGraphLayoutStiffness
+	Method ID: 1239 void,setSpringLength(double)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_layout_ForceDirectedLayout0_JuxMemInterface.java	setGraphLayoutSpringLength
+Class: salvo.jesus.graph.DirectedGraphWeakImpl.DirectedVertexData
+	Method ID: 174 java.util.List,getUnmodifiableIncomingEdges()
+	Method ID: 175 java.util.List,getUnmodifiableOutgoingEdges()
+	Method ID: 176 void,#ExtendsOrImplements#()
+	Method ID: 177 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.NoSuchVertexException
+	Method ID: 194 salvo.jesus.graph.NoSuchVertexException,CONSTRUCTOR()
+	Method ID: 195 salvo.jesus.graph.NoSuchVertexException,CONSTRUCTOR(java.lang.String)
+	Method ID: 196 void,#ExtendsOrImplements#()
+	Method ID: 197 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.FinalPlacedComparator
+	Method ID: 1292 salvo.jesus.graph.visual.layout.FinalPlacedComparator,CONSTRUCTOR(java.util.List)
+	Method ID: 1293 int,compare(java.lang.Object,java.lang.Object)
+	Method ID: 1294 boolean,equals(java.lang.Object)
+	Method ID: 1295 void,#ExtendsOrImplements#()
+	Method ID: 1296 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphImpl.RemoveVertexListenerAdaptor
+	Method ID: 83 void,beforeVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 84 void,#ExtendsOrImplements#()
+	Method ID: 85 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedEdgeWeakImpl
+	Method ID: 112 salvo.jesus.graph.DirectedEdgeWeakImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 113 salvo.jesus.graph.Vertex,getSource()
+	Method ID: 114 salvo.jesus.graph.Vertex,getSink()
+	Method ID: 115 int,getDirection()
+	Method ID: 116 salvo.jesus.graph.Vertex,getVertexA()
+	Method ID: 117 salvo.jesus.graph.Vertex,getVertexB()
+	Method ID: 118 void,setObject(java.lang.Object)
+	Method ID: 119 java.lang.Object,getObject()
+	Method ID: 120 salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 121 boolean,hasLabel()
+	Method ID: 122 java.lang.String,getLabel()
+	Method ID: 123 void,setLabel(java.lang.String)
+	Method ID: 124 boolean,isFollowVertexLabel()
+	Method ID: 125 void,setFollowVertexLabel(boolean)
+	Method ID: 126 void,#ExtendsOrImplements#()
+	Method ID: 127 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.GraphLayoutListener
+	Method ID: 1313 void,layoutVisualVertex(salvo.jesus.graph.visual.layout.GraphLayoutEvent)
+	Method ID: 1314 void,#ExtendsOrImplements#()
+	Method ID: 1315 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.listener.PathListener.PathTraversal
+	Method ID: 733 int,traverse(salvo.jesus.graph.Vertex,java.util.List,salvo.jesus.graph.Visitor)
+	Method ID: 734 java.util.List,traverse(salvo.jesus.graph.Vertex)
+	Method ID: 735 java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+	Method ID: 736 void,#ExtendsOrImplements#()
+	Method ID: 737 void,#ExceptionHandler#()
+Class: salvo.jesus.util.Heap
+	Method ID: 1595 salvo.jesus.util.Heap,CONSTRUCTOR()
+	Method ID: 1596 salvo.jesus.util.Heap,CONSTRUCTOR(salvo.jesus.util.HeapNodeComparator)
+	Method ID: 1597 void,insert(salvo.jesus.util.HeapNode)
+	Method ID: 1598 salvo.jesus.util.HeapNode,remove()
+	Method ID: 1599 void,setPriority(salvo.jesus.util.HeapNode,double)
+	Method ID: 1600 void,clear()
+	Method ID: 1601 boolean,isEmpty()
+	Method ID: 1602 salvo.jesus.util.HeapNode,contains(java.lang.Object,java.util.Comparator)
+	Method ID: 1603 java.lang.String,toString()
+	Method ID: 1604 void,#ExtendsOrImplements#()
+	Method ID: 1605 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.Path
+	Method ID: 482 salvo.jesus.graph.Vertex,getFirstVertex()
+	Method ID: 483 salvo.jesus.graph.Vertex,getLastVertex()
+	Method ID: 484 void,remove()
+	Method ID: 485 void,#ExtendsOrImplements#()
+	Method ID: 486 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphImpl.AddVertexListenerAdaptor
+	Method ID: 80 void,afterVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 81 void,#ExtendsOrImplements#()
+	Method ID: 82 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.javax.swing.JGraphColorChooser
+	Method ID: 664 salvo.jesus.graph.javax.swing.JGraphColorChooser,CONSTRUCTOR()
+	Method ID: 665 salvo.jesus.graph.javax.swing.JGraphColorChooser,CONSTRUCTOR(java.awt.Color)
+	Method ID: 666 salvo.jesus.graph.javax.swing.JGraphColorChooser,CONSTRUCTOR(javax.swing.colorchooser.ColorSelectionModel)
+	Method ID: 667 void,#ExtendsOrImplements#()
+	Method ID: 668 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.VisualVertexPositionComparator
+	Method ID: 1307 salvo.jesus.graph.visual.layout.VisualVertexPositionComparator,CONSTRUCTOR(salvo.jesus.graph.visual.layout.Grid)
+	Method ID: 1308 void,setCompareXY(int)
+	Method ID: 1309 int,compare(java.lang.Object,java.lang.Object)
+	Method ID: 1310 boolean,equals(java.lang.Object)
+	Method ID: 1311 void,#ExtendsOrImplements#()
+	Method ID: 1312 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphRemoveEdgeListener
+	Method ID: 151 void,#ExtendsOrImplements#()
+	Method ID: 152 void,#ExceptionHandler#()
+	Method ID: 150 void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_GraphRemoveEdgeListener7_HashedGraphImpl.java	removeEdge
+Class: salvo.jesus.graph.GraphImpl.RemoveEdgeListenerAdaptor
+	Method ID: 89 void,beforeEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 90 void,#ExtendsOrImplements#()
+	Method ID: 91 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphFactory
+	Method ID: 219 void,#ExceptionHandler#()
+	Method ID: 217 salvo.jesus.graph.Edge,createEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_GraphFactory//0_PathwayFactory.java	NA
+	Method ID: 216 salvo.jesus.graph.Vertex,createVertex()
+		Implementation Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_GraphFactory//0_PathwayFactory.java	NA
+	Method ID: 218 void,#ExtendsOrImplements#()
+Class: salvo.jesus.graph.java.awt.geom.SerializablePathIterator
+	Method ID: 655 salvo.jesus.graph.java.awt.geom.SerializablePathIterator,CONSTRUCTOR(java.awt.geom.PathIterator)
+	Method ID: 656 int,getWindingRule()
+	Method ID: 657 boolean,isDone()
+	Method ID: 658 void,next()
+	Method ID: 659 int,currentSegment(float[])
+	Method ID: 660 int,currentSegment(double[])
+	Method ID: 661 void,SEG_END()
+	Method ID: 662 void,#ExtendsOrImplements#()
+	Method ID: 663 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualEdgePainterImpl
+	Method ID: 1161 salvo.jesus.graph.visual.drawing.VisualEdgePainterImpl,CONSTRUCTOR()
+	Method ID: 1162 void,paint(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1163 void,paintText(java.awt.Graphics2D,java.awt.Font,java.awt.Color,java.lang.String,float,float)
+	Method ID: 1164 void,#ExtendsOrImplements#()
+	Method ID: 1165 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.ShortestPathAlgorithm
+	Method ID: 607 salvo.jesus.graph.algorithm.ShortestPathAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph)
+	Method ID: 608 salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	Method ID: 609 void,#ExtendsOrImplements#()
+	Method ID: 610 void,#ExceptionHandler#()
+Class: salvo.jesus.util.Queue
+	Method ID: 1581 salvo.jesus.util.Queue,CONSTRUCTOR()
+	Method ID: 1582 void,put(java.lang.Object)
+	Method ID: 1583 java.lang.Object,get()
+	Method ID: 1584 boolean,isEmpty()
+	Method ID: 1585 void,clear()
+	Method ID: 1586 boolean,isQueued(java.lang.Object)
+	Method ID: 1587 java.lang.String,toString()
+	Method ID: 1588 void,#ExtendsOrImplements#()
+	Method ID: 1589 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXGMMLSAXHandler
+	Method ID: 1379 salvo.jesus.graph.xml.GraphToXGMMLSAXHandler,CONSTRUCTOR(salvo.jesus.graph.xml.GraphToXMLEventGenerator,org.apache.xml.serialize.XMLSerializer)
+	Method ID: 1380 void,startSerialize(salvo.jesus.graph.Graph)
+	Method ID: 1381 void,startSerialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1382 void,serializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1383 void,endSerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1384 void,serializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1385 void,endSerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1386 void,endSerialize()
+	Method ID: 1387 salvo.jesus.graph.xml.GraphToXMLEventGenerator,getEventGenerator()
+	Method ID: 1388 void,#ExtendsOrImplements#()
+	Method ID: 1389 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.ToolBarEdgeButtonListener
+	Method ID: 833 salvo.jesus.graph.visual.ToolBarEdgeButtonListener,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+	Method ID: 834 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 835 void,#ExtendsOrImplements#()
+	Method ID: 836 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.VisualGraphComponentEditorFactory
+	Method ID: 1009 salvo.jesus.graph.javax.swing.JTabPanel[],getTabEditors(salvo.jesus.graph.visual.VisualGraphComponent)
+	Method ID: 1010 void,#ExtendsOrImplements#()
+	Method ID: 1011 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.javax.swing.JTabPanel
+	Method ID: 703 void,apply()
+	Method ID: 704 void,ok()
+	Method ID: 705 void,#ExtendsOrImplements#()
+	Method ID: 706 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.ThreadQueue
+	Method ID: 1302 salvo.jesus.graph.visual.layout.ThreadQueue,CONSTRUCTOR()
+	Method ID: 1303 void,add(java.lang.Object)
+	Method ID: 1304 java.lang.Object,remove()
+	Method ID: 1305 void,#ExtendsOrImplements#()
+	Method ID: 1306 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.XGMMLContentHandler
+	Method ID: 1552 salvo.jesus.graph.xml.XGMMLContentHandler,CONSTRUCTOR()
+	Method ID: 1553 void,instantiateGraph()
+	Method ID: 1554 void,instantiateVertex()
+	Method ID: 1555 void,startGraphElement(org.xml.sax.Attributes)
+	Method ID: 1556 void,startAttElement(org.xml.sax.Attributes)
+	Method ID: 1557 void,startNodeElement(org.xml.sax.Attributes)
+	Method ID: 1558 void,endNodeElement()
+	Method ID: 1559 void,startEdgeElement(org.xml.sax.Attributes)
+	Method ID: 1560 void,endEdgeElement()
+	Method ID: 1561 void,startGraphicsElement(org.xml.sax.Attributes)
+	Method ID: 1562 void,startCenterElement(org.xml.sax.Attributes)
+	Method ID: 1563 void,startLineElement(org.xml.sax.Attributes)
+	Method ID: 1564 void,startPointElement(org.xml.sax.Attributes)
+	Method ID: 1565 void,instantiateEdge()
+	Method ID: 1566 void,processNodeAttElement(org.xml.sax.Attributes)
+	Method ID: 1567 void,processEdgeAttElement(org.xml.sax.Attributes)
+	Method ID: 1568 void,processGraphicsAttElement(org.xml.sax.Attributes)
+	Method ID: 1569 java.lang.String,getVertexElementName()
+	Method ID: 1570 java.lang.String,getEdgeElementName()
+	Method ID: 1571 void,#ExtendsOrImplements#()
+	Method ID: 1572 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualDirectedWeightedEdgePainter
+	Method ID: 1107 void,#ExtendsOrImplements#()
+	Method ID: 1108 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.NumberofEdgesComparator
+	Method ID: 1288 int,compare(java.lang.Object,java.lang.Object)
+	Method ID: 1289 boolean,equals(java.lang.Object)
+	Method ID: 1290 void,#ExtendsOrImplements#()
+	Method ID: 1291 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualDirectedEdgePainter
+	Method ID: 1104 void,paintArrowHead(salvo.jesus.graph.visual.VisualEdge,java.awt.Graphics2D)
+	Method ID: 1105 void,#ExtendsOrImplements#()
+	Method ID: 1106 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.ToolBarVertexButtonListener
+	Method ID: 829 salvo.jesus.graph.visual.ToolBarVertexButtonListener,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+	Method ID: 830 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 831 void,#ExtendsOrImplements#()
+	Method ID: 832 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.OpenButtonListener
+	Method ID: 845 salvo.jesus.graph.visual.OpenButtonListener,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+	Method ID: 846 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 847 void,#ExtendsOrImplements#()
+	Method ID: 848 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.PainterFactory
+	Method ID: 1128 salvo.jesus.graph.visual.drawing.Painter,getPainter(salvo.jesus.graph.visual.VisualGraphComponent)
+	Method ID: 1129 void,#ExtendsOrImplements#()
+	Method ID: 1130 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.NoEulerCircleException
+	Method ID: 577 void,#ExtendsOrImplements#()
+	Method ID: 578 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.javax.swing.GeneralPathPanel
+	Method ID: 691 salvo.jesus.graph.javax.swing.GeneralPathPanel,CONSTRUCTOR(java.awt.geom.GeneralPath,java.awt.Color)
+	Method ID: 692 void,setGeneralPath(java.awt.geom.GeneralPath)
+	Method ID: 693 void,setOutlineColor(java.awt.Color)
+	Method ID: 694 void,setScrollPane(javax.swing.JScrollPane)
+	Method ID: 695 java.util.Vector,getSegmentVector()
+	Method ID: 696 void,setSelectedSegment(int)
+	Method ID: 697 java.awt.Dimension,getGeneralPathDimension()
+	Method ID: 698 void,paint(java.awt.Graphics)
+	Method ID: 699 void,MINIMUM_WIDTH()
+	Method ID: 700 void,MINIMUM_HEIGHT()
+	Method ID: 701 void,#ExtendsOrImplements#()
+	Method ID: 702 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.SaveButtonListener
+	Method ID: 849 salvo.jesus.graph.visual.SaveButtonListener,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+	Method ID: 850 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 851 void,#ExtendsOrImplements#()
+	Method ID: 852 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.javax.swing.JFontChooser
+	Method ID: 669 salvo.jesus.graph.javax.swing.JFontChooser,CONSTRUCTOR()
+	Method ID: 670 salvo.jesus.graph.javax.swing.JFontChooser,CONSTRUCTOR(java.awt.Font)
+	Method ID: 671 java.awt.Font,getSelectedFont()
+	Method ID: 672 void,#ExtendsOrImplements#()
+	Method ID: 673 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualEdgeNullPainter
+	Method ID: 1113 void,paint(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1114 void,paintText(java.awt.Graphics2D,java.awt.Font,java.awt.Color,java.lang.String,float,float)
+	Method ID: 1115 void,#ExtendsOrImplements#()
+	Method ID: 1116 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.Edge
+	Method ID: 463 void,#ExtendsOrImplements#()
+	Method ID: 464 void,#ExceptionHandler#()
+	Method ID: 461 salvo.jesus.graph.Vertex,getVertexB()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_Edge1_DirectedGraphWithDictImpl.java	removeEdge
+	Method ID: 460 salvo.jesus.graph.Vertex,getVertexA()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_Edge1_DirectedGraphWithDictImpl.java	removeEdge
+	Method ID: 462 salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_Edge25_HashedDirectedGraphWeakImpl.java	getAdjacentVertices
+Class: salvo.jesus.graph.algorithm.MinimumSpanningTreeAlgorithm
+	Method ID: 620 salvo.jesus.graph.algorithm.MinimumSpanningTreeAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph)
+	Method ID: 621 salvo.jesus.graph.WeightedGraph,minimumSpanningTree()
+	Method ID: 622 void,#ExtendsOrImplements#()
+	Method ID: 623 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.ThreadQueueObject
+	Method ID: 1297 salvo.jesus.graph.visual.layout.ThreadQueueObject,CONSTRUCTOR(java.util.List,salvo.jesus.graph.visual.layout.Grid)
+	Method ID: 1298 java.util.List,getConnectedset()
+	Method ID: 1299 salvo.jesus.graph.visual.layout.Grid,getGrid()
+	Method ID: 1300 void,#ExtendsOrImplements#()
+	Method ID: 1301 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.XMLToGraphHandler
+	Method ID: 1463 salvo.jesus.graph.xml.XMLToGraphHandler,CONSTRUCTOR()
+	Method ID: 1464 void,startDocument()
+	Method ID: 1465 void,startElement(java.lang.String,java.lang.String,java.lang.String,org.xml.sax.Attributes)
+	Method ID: 1466 void,endElement(java.lang.String,java.lang.String,java.lang.String)
+	Method ID: 1467 salvo.jesus.graph.Graph,getGraph()
+	Method ID: 1468 salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+	Method ID: 1469 void,instantiateVertex()
+	Method ID: 1470 void,instantiateEdge()
+	Method ID: 1471 void,instantiateGraph()
+	Method ID: 1472 void,mapIDToVertex(java.lang.String,salvo.jesus.graph.Vertex)
+	Method ID: 1473 java.lang.String,getVertexElementName()
+	Method ID: 1474 java.lang.String,getEdgeElementName()
+	Method ID: 1475 void,#ExtendsOrImplements#()
+	Method ID: 1476 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.DepthFirstDirectedGraphTraversal
+	Method ID: 553 salvo.jesus.graph.algorithm.DepthFirstDirectedGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.DirectedGraph)
+	Method ID: 554 java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 555 void,#ExtendsOrImplements#()
+	Method ID: 556 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.WeightedGraphImpl
+	Method ID: 6 salvo.jesus.graph.WeightedGraphImpl,CONSTRUCTOR()
+	Method ID: 7 salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+	Method ID: 8 salvo.jesus.graph.Vertex,getClosest(salvo.jesus.graph.Vertex)
+	Method ID: 9 salvo.jesus.graph.WeightedGraph,minimumSpanningTree()
+	Method ID: 10 salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	Method ID: 11 void,setMinimumSpanningTreeAlgorithm(salvo.jesus.graph.algorithm.MinimumSpanningTreeAlgorithm)
+	Method ID: 12 void,setShortestPathAlgorithm(salvo.jesus.graph.algorithm.ShortestPathAlgorithm)
+	Method ID: 13 void,#ExtendsOrImplements#()
+	Method ID: 14 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.NullVisitor
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_NullVisitor5_DepthFirstIqasTraversal.java	traverse
+	Method ID: 105 boolean,visit(salvo.jesus.graph.Vertex)
+	Method ID: 106 void,#ExtendsOrImplements#()
+	Method ID: 107 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.listener.TreeListener
+	Method ID: 777 salvo.jesus.graph.listener.TreeListener,CONSTRUCTOR(salvo.jesus.graph.Tree)
+	Method ID: 778 void,beforeVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 779 void,afterVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 780 void,beforeVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 781 void,afterVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 782 void,beforeEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 783 void,beforeEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 784 void,setRoot(salvo.jesus.graph.Vertex)
+	Method ID: 785 salvo.jesus.graph.Vertex,getRoot()
+	Method ID: 786 boolean,isLeaf(salvo.jesus.graph.Vertex)
+	Method ID: 787 salvo.jesus.graph.Vertex,getParent(salvo.jesus.graph.Vertex)
+	Method ID: 788 java.util.List,getChildren(salvo.jesus.graph.Vertex)
+	Method ID: 789 salvo.jesus.graph.Tree,getSubTree(salvo.jesus.graph.Vertex)
+	Method ID: 790 int,getDepth(salvo.jesus.graph.Vertex)
+	Method ID: 791 java.util.List,getLeaves()
+	Method ID: 792 int,getHeight()
+	Method ID: 793 void,#ExtendsOrImplements#()
+	Method ID: 794 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.DirectedGraph
+	Method ID: 268 java.util.List,getOutgoingEdges(salvo.jesus.graph.Vertex)
+	Method ID: 269 java.util.List,getIncomingEdges(salvo.jesus.graph.Vertex)
+	Method ID: 270 java.util.List,getOutgoingAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 271 java.util.List,getIncomingAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 273 boolean,isPath(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 274 boolean,isCycle(salvo.jesus.graph.Vertex)
+	Method ID: 275 void,#ExtendsOrImplements#()
+	Method ID: 276 void,#ExceptionHandler#()
+	Method ID: 272 salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedAcyclicGraph7_ConstructExtendsGraphVisitor.java	visit
+Class: salvo.jesus.graph.visual.drawing.VisualDirectedWeightedEdgePainterImpl
+	Method ID: 1144 salvo.jesus.graph.visual.drawing.VisualDirectedWeightedEdgePainterImpl,CONSTRUCTOR()
+	Method ID: 1145 void,paint(salvo.jesus.graph.visual.VisualGraphComponent,java.awt.Graphics2D)
+	Method ID: 1146 void,paintArrowHead(salvo.jesus.graph.visual.VisualEdge,java.awt.Graphics2D)
+	Method ID: 1147 void,#ExtendsOrImplements#()
+	Method ID: 1148 void,#ExceptionHandler#()
+Class: salvo.jesus.geom.MultipleIntersectionException
+	Method ID: 4 void,#ExtendsOrImplements#()
+	Method ID: 5 void,#ExceptionHandler#()
+Class: salvo.jesus.util.PrintUtilities
+	Method ID: 1574 salvo.jesus.util.PrintUtilities,CONSTRUCTOR(java.awt.Component)
+	Method ID: 1575 void,print()
+	Method ID: 1576 int,print(java.awt.Graphics,java.awt.print.PageFormat,int)
+	Method ID: 1577 void,disableDoubleBuffering(java.awt.Component)
+	Method ID: 1578 void,enableDoubleBuffering(java.awt.Component)
+	Method ID: 1579 void,#ExtendsOrImplements#()
+	Method ID: 1580 void,#ExceptionHandler#()
+	Method ID: 1573 void,printComponent(java.awt.Component)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_util_PrintUtilities0_ComponentGraphToolBar.java	actionPerformed
+Class: salvo.jesus.graph.visual.GraphPanelNormalState
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_visual_GraphPanelNormalState0_ToolBar.java	actionPerformed
+	Method ID: 1017 salvo.jesus.graph.visual.GraphPanelNormalState,CONSTRUCTOR()
+	Method ID: 1018 salvo.jesus.graph.visual.GraphPanelState,mousePressed(java.awt.event.MouseEvent)
+	Method ID: 1019 salvo.jesus.graph.visual.GraphPanelState,mouseReleased(java.awt.event.MouseEvent)
+	Method ID: 1020 salvo.jesus.graph.visual.GraphPanelState,mouseDragged(java.awt.event.MouseEvent)
+	Method ID: 1021 salvo.jesus.graph.visual.GraphPanelState,mouseMoved(java.awt.event.MouseEvent)
+	Method ID: 1022 void,paint(java.awt.Graphics2D)
+	Method ID: 1023 void,#ExtendsOrImplements#()
+	Method ID: 1024 void,#ExceptionHandler#()
+	Method ID: 1016 salvo.jesus.graph.visual.GraphPanelNormalState,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanel)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_visual_GraphPanelNormalState0_ToolBar.java	actionPerformed
+Class: salvo.jesus.graph.IllegalPathException
+	Method ID: 353 salvo.jesus.graph.IllegalPathException,CONSTRUCTOR()
+	Method ID: 354 salvo.jesus.graph.IllegalPathException,CONSTRUCTOR(java.lang.String)
+	Method ID: 355 void,#ExtendsOrImplements#()
+	Method ID: 356 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.WeightedGraph
+	Method ID: 262 salvo.jesus.graph.WeightedEdge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex,double)
+	Method ID: 263 salvo.jesus.graph.Vertex,getClosest(salvo.jesus.graph.Vertex)
+	Method ID: 264 salvo.jesus.graph.WeightedGraph,minimumSpanningTree()
+	Method ID: 265 salvo.jesus.graph.WeightedGraph,shortestPath(salvo.jesus.graph.Vertex)
+	Method ID: 266 void,#ExtendsOrImplements#()
+	Method ID: 267 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.DepthFirstGraphTraversal
+	Method ID: 640 salvo.jesus.graph.algorithm.DepthFirstGraphTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	Method ID: 641 int,traverse(salvo.jesus.graph.Vertex,java.util.List,salvo.jesus.graph.Visitor)
+	Method ID: 642 java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+	Method ID: 643 java.util.List,traverse(salvo.jesus.graph.Vertex)
+	Method ID: 644 java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+	Method ID: 645 void,#ExtendsOrImplements#()
+	Method ID: 646 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.algorithm.BreadthFirstTraversal
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_algorithm_BreadthFirstTraversal2_JunctionTreeInferencer.java	graphToJt
+	Method ID: 548 int,traverse(salvo.jesus.graph.Vertex,java.util.List,salvo.jesus.graph.Visitor)
+	Method ID: 550 java.util.List,traverse(salvo.jesus.graph.Vertex)
+	Method ID: 551 void,#ExtendsOrImplements#()
+	Method ID: 552 void,#ExceptionHandler#()
+	Method ID: 549 java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_algorithm_BreadthFirstTraversal2_JunctionTreeInferencer.java	graphToJt
+	Method ID: 547 salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_algorithm_BreadthFirstTraversal2_JunctionTreeInferencer.java	graphToJt
+Class: salvo.jesus.graph.DirectedEdgeImpl
+	Method ID: 178 salvo.jesus.graph.DirectedEdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 179 salvo.jesus.graph.Vertex,getSource()
+	Method ID: 180 salvo.jesus.graph.Vertex,getSink()
+	Method ID: 181 int,getDirection()
+	Method ID: 182 java.lang.String,toString()
+	Method ID: 183 java.lang.Object,clone()
+	Method ID: 184 void,#ExtendsOrImplements#()
+	Method ID: 185 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.IllegalTreeException
+	Method ID: 339 salvo.jesus.graph.IllegalTreeException,CONSTRUCTOR()
+	Method ID: 340 salvo.jesus.graph.IllegalTreeException,CONSTRUCTOR(java.lang.String)
+	Method ID: 341 void,#ExtendsOrImplements#()
+	Method ID: 342 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.ToolBarNormalButtonListener
+	Method ID: 825 salvo.jesus.graph.visual.ToolBarNormalButtonListener,CONSTRUCTOR(salvo.jesus.graph.visual.GraphEditor)
+	Method ID: 826 void,actionPerformed(java.awt.event.ActionEvent)
+	Method ID: 827 void,#ExtendsOrImplements#()
+	Method ID: 828 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.xml.GraphToXGMMLDOMHandler.CommonHandler
+	Method ID: 1502 salvo.jesus.graph.xml.GraphToXGMMLDOMHandler.CommonHandler,CONSTRUCTOR(salvo.jesus.graph.xml.GraphToXMLEventGenerator,org.apache.xml.serialize.XMLSerializer)
+	Method ID: 1503 void,startSerialize(salvo.jesus.graph.Graph)
+	Method ID: 1504 void,startSerialize(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1505 void,endSerialize()
+	Method ID: 1506 void,serializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1507 void,endSerializeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 1508 void,serializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1509 void,endSerializeEdge(salvo.jesus.graph.Edge)
+	Method ID: 1510 org.w3c.dom.Document,getDocument()
+	Method ID: 1511 org.w3c.dom.Element,getRootElement()
+	Method ID: 1512 java.util.TreeMap,getVertexIDMap()
+	Method ID: 1513 long,getCurrentIDAttribute()
+	Method ID: 1514 void,incremenetIDAttribute()
+	Method ID: 1515 void,#ExtendsOrImplements#()
+	Method ID: 1516 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.AbstractGridLayout
+	Method ID: 1269 salvo.jesus.graph.visual.layout.AbstractGridLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1270 void,setStartAt(java.awt.Point)
+	Method ID: 1271 void,setXGridDistance(int)
+	Method ID: 1272 void,setYGridDistance(int)
+	Method ID: 1273 void,setDrawGrid(boolean)
+	Method ID: 1274 java.awt.Point,getStartAt()
+	Method ID: 1275 int,getXGridDistance()
+	Method ID: 1276 int,getYGridDistance()
+	Method ID: 1277 boolean,getDrawgrid()
+	Method ID: 1278 salvo.jesus.graph.visual.layout.Grid,getGrid()
+	Method ID: 1279 void,setGraphLayoutListener(salvo.jesus.graph.visual.layout.GraphLayoutListener)
+	Method ID: 1280 void,layout()
+	Method ID: 1282 boolean,isInitialized()
+	Method ID: 1283 salvo.jesus.graph.visual.VisualVertex,generalPosition(java.util.List,salvo.jesus.graph.visual.layout.Grid)
+	Method ID: 1284 void,medianPlacement()
+	Method ID: 1285 void,run()
+	Method ID: 1286 void,#ExtendsOrImplements#()
+	Method ID: 1287 void,#ExceptionHandler#()
+	Method ID: 1281 void,drawLayout()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_visual_layout_OrthogonalLineLayout//0_TileGridLayout.java	NA
+Class: salvo.jesus.graph.GraphListener
+	Method ID: 242 void,beforeVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 243 void,afterVertexAdded(salvo.jesus.graph.GraphAddVertexEvent)
+	Method ID: 244 void,beforeVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 245 void,afterVertexRemoved(salvo.jesus.graph.GraphRemoveVertexEvent)
+	Method ID: 246 void,beforeEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 247 void,afterEdgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+	Method ID: 248 void,beforeEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 249 void,afterEdgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	Method ID: 250 void,#ExtendsOrImplements#()
+	Method ID: 251 void,#ExceptionHandler#()
+Class: salvo.jesus.util.Collections
+	Method ID: 1606 java.util.Set,subset(java.util.Collection,java.lang.Object,java.util.Comparator)
+	Method ID: 1607 java.lang.Object,contains(java.util.Collection,java.lang.Object,java.util.Comparator)
+	Method ID: 1608 void,#ExtendsOrImplements#()
+	Method ID: 1609 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.GraphImpl
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_GraphImpl0_JuxMemInterface.java	setupGraphComponent
+	Extension Code Examples (Hooks): 
+		salvo_jesus_graph_GraphImpl4_IqasGraphImpl.java	NA
+	Method ID: 32 salvo.jesus.graph.GraphFactory,getGraphFactory()
+	Method ID: 33 void,setGraphFactory(salvo.jesus.graph.GraphFactory)
+	Method ID: 36 java.util.Set,getVertexSet()
+	Method ID: 37 java.util.Set,getEdgeSet()
+	Method ID: 38 boolean,containsVertex(salvo.jesus.graph.Vertex)
+	Method ID: 39 boolean,containsEdge(salvo.jesus.graph.Edge)
+	Method ID: 40 java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	Method ID: 46 void,removeEdges(salvo.jesus.graph.Vertex)
+	Method ID: 48 int,getEdgesCount()
+	Method ID: 49 java.util.Set,getVertices(int)
+	Method ID: 51 java.util.Set,getAdjacentVertices(java.util.List)
+	Method ID: 52 java.util.Collection,getConnectedSet()
+	Method ID: 53 java.util.Set,getConnectedSet(salvo.jesus.graph.Vertex)
+	Method ID: 54 void,forgetConnectedSets()
+	Method ID: 55 java.util.List,traverse(salvo.jesus.graph.Vertex)
+	Method ID: 57 void,setTraversal(salvo.jesus.graph.algorithm.GraphTraversal)
+	Method ID: 58 boolean,isConnected(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 59 int,getDegree()
+	Method ID: 61 void,addListener(salvo.jesus.graph.GraphListener)
+	Method ID: 62 void,removeListener(salvo.jesus.graph.GraphListener)
+	Method ID: 63 void,addGraphAddVertexListener(salvo.jesus.graph.GraphAddVertexListener)
+	Method ID: 64 void,addGraphAddEdgeListener(salvo.jesus.graph.GraphAddEdgeListener)
+	Method ID: 65 void,addGraphRemoveEdgeListener(salvo.jesus.graph.GraphRemoveEdgeListener)
+	Method ID: 66 void,addGraphRemoveVertexListener(salvo.jesus.graph.GraphRemoveVertexListener)
+	Method ID: 67 void,removeGraphAddVertexListener(salvo.jesus.graph.GraphAddVertexListener)
+	Method ID: 68 void,removeGraphAddEdgeListener(salvo.jesus.graph.GraphAddEdgeListener)
+	Method ID: 69 void,removeGraphRemoveEdgeListener(salvo.jesus.graph.GraphRemoveEdgeListener)
+	Method ID: 70 void,removeGraphRemoveVertexListener(salvo.jesus.graph.GraphRemoveVertexListener)
+	Method ID: 73 void,#ExceptionHandler#()
+	Method ID: 41 void,add(salvo.jesus.graph.Vertex)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedAcyclicGraphImpl0_MakeModuleScopesVisitor.java	visit
+			salvo_jesus_graph_GraphImpl4_IqasGraphImpl.java	add
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedGraphImpl//0_DirectedGraphWithDictImpl.java	NA
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_GraphImpl//4_IqasGraphImpl.java	NA
+	Method ID: 42 salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedAcyclicGraphImpl0_MakeModuleScopesVisitor.java	visit
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_GraphImpl//4_IqasGraphImpl.java	NA
+	Method ID: 34 java.util.Iterator,getVerticesIterator()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedGraphImpl0_DirectedGraphWithDictImpl.java	getNodeSWithRegExp
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedGraphImpl//0_DirectedGraphWithDictImpl.java	NA
+	Method ID: 45 void,removeEdge(salvo.jesus.graph.Edge)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedGraphImpl//0_DirectedGraphWithDictImpl.java	NA
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_GraphImpl//4_IqasGraphImpl.java	NA
+	Method ID: 44 void,remove(salvo.jesus.graph.Vertex)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedGraphImpl//0_DirectedGraphWithDictImpl.java	NA
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_GraphImpl//4_IqasGraphImpl.java	NA
+	Method ID: 43 void,addEdge(salvo.jesus.graph.Edge)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedGraphImpl//0_DirectedGraphWithDictImpl.java	NA
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_GraphImpl//4_IqasGraphImpl.java	NA
+	Method ID: 47 int,getVerticesCount()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedGraphImpl0_DirectedGraphWithDictImpl.java	equalsWithPossibleComments
+	Method ID: 31 salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_GraphImpl0_JuxMemInterface.java	setupGraphComponent
+	Method ID: 71 java.lang.String,toString()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_GraphImpl//4_IqasGraphImpl.java	NA
+	Method ID: 60 int,getDegree(salvo.jesus.graph.Vertex)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedGraphImpl//0_DirectedGraphWithDictImpl.java	NA
+	Method ID: 56 salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_GraphImpl5_IqasGraphWeakImpl.java	isPath
+	Method ID: 50 java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedGraphImpl0_DirectedGraphWithDictImpl.java	remove
+	Method ID: 35 java.util.List,cloneVertices()
+		Invocation Code Examples (Templates): 
+			salvo_jesus_graph_DirectedGraphImpl0_DirectedGraphWithDictImpl.java	equalsWithPossibleComments
+	Method ID: 72 void,#ExtendsOrImplements#()
+Class: salvo.jesus.graph.Vertex
+	Instantiation Code Examples (Templates): 
+		salvo_jesus_graph_Vertex32_ConstructExtendsGraphVisitor.java	getSigVertex
+	Implementation Code Examples (Hooks): 
+		salvo_jesus_graph_Vertex0_NamedVertex.java	NA
+	Method ID: 296 void,#ExtendsOrImplements#()
+	Method ID: 297 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.EdgeImpl
+	Method ID: 443 salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 444 salvo.jesus.graph.Vertex,getVertexA()
+	Method ID: 445 salvo.jesus.graph.Vertex,getVertexB()
+	Method ID: 446 salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	Method ID: 447 boolean,hasLabel()
+	Method ID: 448 java.lang.String,getLabel()
+	Method ID: 449 void,setLabel(java.lang.String)
+	Method ID: 450 boolean,isFollowVertexLabel()
+	Method ID: 451 void,setFollowVertexLabel(boolean)
+	Method ID: 452 java.lang.String,toString()
+	Method ID: 454 void,#ExtendsOrImplements#()
+	Method ID: 455 void,#ExceptionHandler#()
+	Method ID: 453 java.lang.Object,clone()
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedWeightedEdgeImpl//2_PathwayEdge.java	NA
+Class: salvo.jesus.graph.GraphImpl.ListenerAdaptor
+	Method ID: 76 salvo.jesus.graph.GraphImpl.ListenerAdaptor,CONSTRUCTOR(java.lang.Object)
+	Method ID: 77 boolean,equals(java.lang.Object)
+	Method ID: 78 void,#ExtendsOrImplements#()
+	Method ID: 79 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.layout.TreeGridAdjuster
+	Method ID: 1223 salvo.jesus.graph.visual.layout.TreeGridAdjuster,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph,salvo.jesus.graph.Vertex,salvo.jesus.graph.visual.layout.Grid,int)
+	Method ID: 1224 void,adjust()
+	Method ID: 1225 boolean,visit(salvo.jesus.graph.Vertex)
+	Method ID: 1226 void,#ExtendsOrImplements#()
+	Method ID: 1227 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.javax.swing.GeneralPathPanelList
+	Method ID: 674 salvo.jesus.graph.javax.swing.GeneralPathPanelList,CONSTRUCTOR(java.awt.geom.GeneralPath,java.awt.Color)
+	Method ID: 675 void,valueChanged(javax.swing.event.ListSelectionEvent)
+	Method ID: 676 void,setGeneralPath(java.awt.geom.GeneralPath)
+	Method ID: 677 void,setOutlineColor(java.awt.Color)
+	Method ID: 678 void,#ExtendsOrImplements#()
+	Method ID: 679 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.GraphPanelEdgeState
+	Extension Code Examples (Hooks): 
+		salvo_jesus_graph_visual_GraphPanelEdgeState0_IqasGraphPanelEdgeState.java	NA
+	Method ID: 1047 salvo.jesus.graph.visual.GraphPanelEdgeState,CONSTRUCTOR(salvo.jesus.graph.visual.GraphPanel)
+	Method ID: 1050 salvo.jesus.graph.visual.GraphPanelState,mouseDragged(java.awt.event.MouseEvent)
+	Method ID: 1051 salvo.jesus.graph.visual.GraphPanelState,mouseMoved(java.awt.event.MouseEvent)
+	Method ID: 1052 void,paint(java.awt.Graphics2D)
+	Method ID: 1054 void,#ExceptionHandler#()
+	Method ID: 1049 salvo.jesus.graph.visual.GraphPanelState,mouseReleased(java.awt.event.MouseEvent)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_visual_GraphPanelEdgeState//0_IqasGraphPanelEdgeState.java	NA
+	Method ID: 1048 salvo.jesus.graph.visual.GraphPanelState,mousePressed(java.awt.event.MouseEvent)
+		Extension Code Examples (Hooks): 
+			C:\APIUsage\OpenJGraph\salvo_jesus_graph_visual_GraphPanelEdgeState//0_IqasGraphPanelEdgeState.java	NA
+	Method ID: 1053 void,#ExtendsOrImplements#()
+Class: salvo.jesus.graph.visual.layout.RadialTreeLayout
+	Method ID: 1199 salvo.jesus.graph.visual.layout.RadialTreeLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	Method ID: 1200 boolean,isInitialized()
+	Method ID: 1201 void,layout()
+	Method ID: 1202 boolean,visit(salvo.jesus.graph.Vertex)
+	Method ID: 1203 void,addVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1204 void,removeEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1205 void,removeVertex(salvo.jesus.graph.visual.VisualVertex)
+	Method ID: 1206 void,addEdge(salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1207 void,routeEdge(java.awt.Graphics2D,salvo.jesus.graph.visual.VisualEdge)
+	Method ID: 1208 void,drawLayout()
+	Method ID: 1209 void,#ExtendsOrImplements#()
+	Method ID: 1210 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.TreeImplFactory
+	Method ID: 318 salvo.jesus.graph.TreeImplFactory,CONSTRUCTOR()
+	Method ID: 319 salvo.jesus.graph.Vertex,createVertex()
+	Method ID: 320 salvo.jesus.graph.Edge,createEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	Method ID: 321 void,#ExtendsOrImplements#()
+	Method ID: 322 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.java.awt.geom.Point2DDouble
+	Method ID: 651 salvo.jesus.graph.java.awt.geom.Point2DDouble,CONSTRUCTOR()
+	Method ID: 652 salvo.jesus.graph.java.awt.geom.Point2DDouble,CONSTRUCTOR(double,double)
+	Method ID: 653 void,#ExtendsOrImplements#()
+	Method ID: 654 void,#ExceptionHandler#()
+Class: salvo.jesus.util.EmptyQueueException
+	Method ID: 1615 salvo.jesus.util.EmptyQueueException,CONSTRUCTOR()
+	Method ID: 1616 void,#ExtendsOrImplements#()
+	Method ID: 1617 void,#ExceptionHandler#()
+Class: salvo.jesus.graph.visual.drawing.VisualEdgePainter
+	Method ID: 1158 void,paintText(java.awt.Graphics2D,java.awt.Font,java.awt.Color,java.lang.String,float,float)
+	Method ID: 1159 void,#ExtendsOrImplements#()
+	Method ID: 1160 void,#ExceptionHandler#()

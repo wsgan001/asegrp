@@ -1,0 +1,68 @@
+2007-09-09 23:11:40,453  WARN (AnamolyDetector.java:63) - TIMING: Start of process: 1189393900453
+2007-09-09 23:11:40,468  WARN (AnamolyDetector.java:85) - TIMING: Start of library scanner: 1189393900468
+2007-09-09 23:11:40,968  WARN (AnamolyDetector.java:89) - TIMING: End of library scanner: 1189393900968
+2007-09-09 23:11:40,968  WARN (AnamolyDetector.java:163) - TIMING: Start of CodeDownloader: 1189393900968
+2007-09-09 23:11:41,140  WARN (AnamolyDetector.java:167) - TIMING: End of CodeDownloader: 1189393901140
+2007-09-09 23:11:41,140  WARN (AnamolyDetector.java:168) - TIMING: Total number of samples downloaded: 0
+2007-09-09 23:11:41,140  WARN (AnamolyDetector.java:170) - TIMING: Start of Mine Patters: 1189393901140
+2007-09-09 23:11:41,140  WARN (RepositoryAnalyzer.java:164) - Analyzing directory java_util_Stack
+2007-09-09 23:11:41,203  WARN (GCodeAnalyzer.java:146) - Analyzing condition-methodcases.java
+2007-09-09 23:14:55,484  WARN (RepositoryAnalyzer.java:202) - TIMING: Start of report generation and analysis of patterns: 1189394095484
+2007-09-09 23:14:55,546  WARN (RepositoryAnalyzer.java:326) - TIMING: End of report generation and analysis of patterns: 1189394095546
+2007-09-09 23:14:55,546  WARN (AnamolyDetector.java:172) - TIMING: End of Mine Patterns: 1189394095546
+2007-09-09 23:14:55,562  WARN (AnamolyDetector.java:173) - TIMING: Total number of samples analyzed for mining: 1
+2007-09-09 23:14:55,562  WARN (AnamolyDetector.java:176) - TIMING: Start of finding violations: 1189394095562
+2007-09-09 23:15:02,500  WARN (RepositoryAnalyzer.java:164) - Analyzing directory java_util_Stack
+2007-09-09 23:15:02,500  WARN (GCodeAnalyzer.java:146) - Analyzing condition-methodcases.java
+2007-09-09 23:15:19,078  WARN (AnamolyDetector.java:178) - TIMING: End of finding violations: 1189394119078
+2007-09-09 23:15:19,078  WARN (AnamolyDetector.java:144) - TIMING: End of complete process: 1189394119078
+2007-09-09 23:16:31,406  WARN (AnamolyDetector.java:63) - TIMING: Start of process: 1189394191406
+2007-09-09 23:16:31,406  WARN (AnamolyDetector.java:85) - TIMING: Start of library scanner: 1189394191406
+2007-09-09 23:16:31,531  WARN (AnamolyDetector.java:89) - TIMING: End of library scanner: 1189394191531
+2007-09-09 23:16:31,546  WARN (AnamolyDetector.java:163) - TIMING: Start of CodeDownloader: 1189394191546
+2007-09-09 23:16:31,625  WARN (AnamolyDetector.java:167) - TIMING: End of CodeDownloader: 1189394191625
+2007-09-09 23:16:31,625  WARN (AnamolyDetector.java:168) - TIMING: Total number of samples downloaded: 0
+2007-09-09 23:16:31,640  WARN (AnamolyDetector.java:170) - TIMING: Start of Mine Patters: 1189394191640
+2007-09-09 23:16:31,640  WARN (RepositoryAnalyzer.java:164) - Analyzing directory java_util_Stack
+2007-09-09 23:16:31,640  WARN (GCodeAnalyzer.java:146) - Analyzing condition-methodcases.java
+2007-09-09 23:17:55,468  WARN (RepositoryAnalyzer.java:202) - TIMING: Start of report generation and analysis of patterns: 1189394275468
+2007-09-09 23:17:55,484  WARN (RepositoryAnalyzer.java:326) - TIMING: End of report generation and analysis of patterns: 1189394275484
+2007-09-09 23:17:55,484  WARN (AnamolyDetector.java:172) - TIMING: End of Mine Patterns: 1189394275484
+2007-09-09 23:17:55,500  WARN (AnamolyDetector.java:173) - TIMING: Total number of samples analyzed for mining: 1
+2007-09-09 23:17:55,500  WARN (AnamolyDetector.java:176) - TIMING: Start of finding violations: 1189394275500
+2007-09-09 23:17:55,625  WARN (RepositoryAnalyzer.java:164) - Analyzing directory java_util_Stack
+2007-09-09 23:17:55,625  WARN (GCodeAnalyzer.java:146) - Analyzing condition-methodcases.java
+2007-09-09 23:17:56,328  WARN (AnamolyDetector.java:178) - TIMING: End of finding violations: 1189394276328
+2007-09-09 23:17:56,328  WARN (AnamolyDetector.java:144) - TIMING: End of complete process: 1189394276328
+2007-09-09 23:18:13,125  WARN (AnamolyDetector.java:63) - TIMING: Start of process: 1189394293125
+2007-09-09 23:18:13,125  WARN (AnamolyDetector.java:85) - TIMING: Start of library scanner: 1189394293125
+2007-09-09 23:18:13,218  WARN (AnamolyDetector.java:89) - TIMING: End of library scanner: 1189394293218
+2007-09-09 23:18:13,234  WARN (AnamolyDetector.java:163) - TIMING: Start of CodeDownloader: 1189394293234
+2007-09-09 23:18:13,312  WARN (AnamolyDetector.java:167) - TIMING: End of CodeDownloader: 1189394293312
+2007-09-09 23:18:13,312  WARN (AnamolyDetector.java:168) - TIMING: Total number of samples downloaded: 0
+2007-09-09 23:18:13,312  WARN (AnamolyDetector.java:170) - TIMING: Start of Mine Patters: 1189394293312
+2007-09-09 23:18:13,312  WARN (RepositoryAnalyzer.java:164) - Analyzing directory java_util_Stack
+2007-09-09 23:18:13,312  WARN (GCodeAnalyzer.java:146) - Analyzing condition-methodcases.java
+2007-09-09 23:19:25,375  WARN (RepositoryAnalyzer.java:202) - TIMING: Start of report generation and analysis of patterns: 1189394365375
+2007-09-09 23:19:25,390  WARN (RepositoryAnalyzer.java:326) - TIMING: End of report generation and analysis of patterns: 1189394365390
+2007-09-09 23:19:25,390  WARN (AnamolyDetector.java:172) - TIMING: End of Mine Patterns: 1189394365390
+2007-09-09 23:19:25,390  WARN (AnamolyDetector.java:173) - TIMING: Total number of samples analyzed for mining: 1
+2007-09-09 23:19:25,390  WARN (AnamolyDetector.java:176) - TIMING: Start of finding violations: 1189394365390
+2007-09-09 23:19:25,500  WARN (RepositoryAnalyzer.java:164) - Analyzing directory java_util_Stack
+2007-09-09 23:19:25,500  WARN (GCodeAnalyzer.java:146) - Analyzing condition-methodcases.java
+2007-09-09 23:19:26,171  WARN (AnamolyDetector.java:178) - TIMING: End of finding violations: 1189394366171
+2007-09-09 23:19:26,171  WARN (AnamolyDetector.java:144) - TIMING: End of complete process: 1189394366171
+2007-09-09 23:19:50,703  WARN (AnamolyDetector.java:63) - TIMING: Start of process: 1189394390703
+2007-09-09 23:19:50,703  WARN (AnamolyDetector.java:85) - TIMING: Start of library scanner: 1189394390703
+2007-09-09 23:19:50,750  WARN (AnamolyDetector.java:89) - TIMING: End of library scanner: 1189394390750
+2007-09-09 23:19:50,765  WARN (AnamolyDetector.java:163) - TIMING: Start of CodeDownloader: 1189394390765
+2007-09-09 23:19:50,890  WARN (AnamolyDetector.java:167) - TIMING: End of CodeDownloader: 1189394390890
+2007-09-09 23:19:50,890  WARN (AnamolyDetector.java:168) - TIMING: Total number of samples downloaded: 0
+2007-09-09 23:19:50,890  WARN (AnamolyDetector.java:170) - TIMING: Start of Mine Patters: 1189394390890
+2007-09-09 23:19:50,890  WARN (RepositoryAnalyzer.java:164) - Analyzing directory java_util_Stack
+2007-09-09 23:19:50,906  WARN (GCodeAnalyzer.java:146) - Analyzing condition-methodcases.java
+2007-09-09 23:21:15,953  WARN (RepositoryAnalyzer.java:202) - TIMING: Start of report generation and analysis of patterns: 1189394475953
+2007-09-09 23:21:15,984  WARN (RepositoryAnalyzer.java:326) - TIMING: End of report generation and analysis of patterns: 1189394475984
+2007-09-09 23:21:15,984  WARN (AnamolyDetector.java:172) - TIMING: End of Mine Patterns: 1189394475984
+2007-09-09 23:21:15,984  WARN (AnamolyDetector.java:173) - TIMING: Total number of samples analyzed for mining: 1
+2007-09-09 23:21:15,984  WARN (AnamolyDetector.java:176) - TIMING: Start of finding violations: 1189394475984

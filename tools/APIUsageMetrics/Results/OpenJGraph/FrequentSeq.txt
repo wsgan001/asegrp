@@ -1,0 +1,161 @@
+Frequent Usage Scenario: 1
+	 salvo.jesus.graph.Graph : int,getDegree(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_VertexImpl//2_GOLayout.java MethodName : layout
+Frequent Usage Scenario: 2
+	 salvo.jesus.graph.EdgeImpl : java.lang.String,toString()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_util_Heap//9_PeopleGraph.java MethodName : clusterByBetweenness
+Frequent Usage Scenario: 3
+	 salvo.jesus.graph.visual.layout.ForceDirectedLayout : salvo.jesus.graph.visual.layout.ForceDirectedLayout,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	 salvo.jesus.graph.visual.VisualGraph : void,repaint()
+	 salvo.jesus.graph.visual.GraphScrollPane : salvo.jesus.graph.visual.GraphScrollPane,CONSTRUCTOR(salvo.jesus.graph.visual.VisualGraph)
+	 salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	 salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,layout()
+	 salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setIncrement(double)
+	 salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setEletricalRepulsion(double)
+	 salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setStiffness(double)
+	 salvo.jesus.graph.visual.layout.ForceDirectedLayout : void,setSpringLength(double)
+	 salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_Graph//102_JuxMemInterface.java MethodName : JuxMemInterface
+Frequent Usage Scenario: 4
+	 salvo.jesus.graph.GraphAddEdgeListener : void,edgeAdded(salvo.jesus.graph.GraphAddEdgeEvent)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_Graph//104_HashedGraphImpl.java MethodName : addEdge
+Frequent Usage Scenario: 5
+	 salvo.jesus.graph.StopAtVisitor : salvo.jesus.graph.StopAtVisitor,CONSTRUCTOR(salvo.jesus.graph.Vertex)
+	 salvo.jesus.graph.GraphImpl : salvo.jesus.graph.algorithm.GraphTraversal,getTraversal()
+	 salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_algorithm_GraphTraversal//12_IqasGraphWeakImpl.java MethodName : isCycle
+Frequent Usage Scenario: 6
+	 salvo.jesus.graph.Graph : java.util.Set,getVertexSet()
+	 salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+	 salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	 salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_algorithm_BreadthFirstTraversal//3_TRP.java MethodName : graphToTree
+Frequent Usage Scenario: 7
+	 salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.EdgeImpl,CONSTRUCTOR(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_Graph//104_HashedGraphImpl.java MethodName : createEdge
+Frequent Usage Scenario: 8
+	 salvo.jesus.graph.Visitor : boolean,visit(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_algorithm_GraphTraversal//13_DepthFirstIqasTraversal.java MethodName : traverse
+Frequent Usage Scenario: 9
+	 salvo.jesus.graph.Graph : java.util.List,getAdjacentVertices(salvo.jesus.graph.Vertex)
+	 salvo.jesus.graph.Graph : java.util.Iterator,getVerticesIterator()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedEdge//16_TrimmedGraph.java MethodName : makeGraph
+Frequent Usage Scenario: 10
+	 salvo.jesus.graph.GraphImpl : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	 salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_GraphImpl//4_IqasGraphImpl.java MethodName : NA
+Frequent Usage Scenario: 11
+	 salvo.jesus.graph.Tree : salvo.jesus.graph.Vertex,getRoot()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_algorithm_BreadthFirstTraversal//3_TRP.java MethodName : computeMarginals
+Frequent Usage Scenario: 12
+	 salvo.jesus.graph.visual.GraphPanel : salvo.jesus.graph.visual.VisualGraph,getVisualGraph()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_VertexImpl//8_IqasGraphPanelVertexState.java MethodName : mousePressed
+Frequent Usage Scenario: 13
+	 salvo.jesus.util.HeapNodeComparator : salvo.jesus.util.HeapNodeComparator,CONSTRUCTOR(int)
+	 salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm : salvo.jesus.graph.algorithm.ShortestPathDijkstraAlgorithm,CONSTRUCTOR(salvo.jesus.graph.WeightedGraph,salvo.jesus.util.HeapNodeComparator)
+	 salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_util_Heap//9_PeopleGraph.java MethodName : clusterByBetweenness
+Frequent Usage Scenario: 14
+	 salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	 salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+	 salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	 salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	 salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_algorithm_BreadthFirstTraversal//3_TRP.java MethodName : nextTree
+Frequent Usage Scenario: 15
+	 salvo.jesus.graph.DirectedAcyclicGraph : java.util.List,reverseTopologicalSort()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedAcyclicGraph//11_ConstructInvocationGraphVisitor.java MethodName : getSortedInvocables
+Frequent Usage Scenario: 16
+	 salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSink()
+	 salvo.jesus.graph.DirectedEdge : salvo.jesus.graph.Vertex,getSource()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedEdge//18_CallAnalyzer.java MethodName : mergeCallGraph
+Frequent Usage Scenario: 17
+	 salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	 salvo.jesus.graph.Graph : int,getVerticesCount()
+	 salvo.jesus.graph.algorithm.BreadthFirstTraversal : java.util.List,traverse(salvo.jesus.graph.Vertex,salvo.jesus.graph.Visitor)
+	 salvo.jesus.graph.algorithm.BreadthFirstTraversal : salvo.jesus.graph.algorithm.BreadthFirstTraversal,CONSTRUCTOR(salvo.jesus.graph.Graph)
+	 salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_algorithm_BreadthFirstTraversal//3_TRP.java MethodName : nextTree
+Frequent Usage Scenario: 18
+	 salvo.jesus.graph.visual.ChangeStateEvent : salvo.jesus.graph.visual.ChangeStateEvent,CONSTRUCTOR(java.lang.Object,salvo.jesus.graph.visual.GraphPanelState)
+	 salvo.jesus.graph.visual.GraphEditor : salvo.jesus.graph.visual.GraphPanelState,processChangeStateEvent(salvo.jesus.graph.visual.ChangeStateEvent)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_VertexImpl//11_ToolBar.java MethodName : actionPerformed
+Frequent Usage Scenario: 19
+	 salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	 salvo.jesus.graph.DirectedGraphImpl : salvo.jesus.graph.DirectedGraphImpl,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedGraph//7_AnnotatedOntology.java MethodName : AnnotatedOntology
+Frequent Usage Scenario: 20
+	 salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+	 salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedGraph//7_AnnotatedOntology.java MethodName : populateGraphWithAllNodes
+Frequent Usage Scenario: 21
+	 salvo.jesus.graph.VertexImpl : salvo.jesus.graph.VertexImpl,CONSTRUCTOR(java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_Vertex//65_CorefCluster.java MethodName : constructEdgesUsingTrainedClusterer
+Frequent Usage Scenario: 22
+	 salvo.jesus.graph.GraphImpl : void,remove(salvo.jesus.graph.Vertex)
+	 salvo.jesus.graph.GraphImpl : boolean,containsVertex(salvo.jesus.graph.Vertex)
+	 salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+	 salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_Graph//56_JuxMemWorld.java MethodName : disconnectPeer
+Frequent Usage Scenario: 23
+	 salvo.jesus.graph.visual.GraphEditor : void,setVisualGraph(salvo.jesus.graph.visual.VisualGraph)
+	 salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_VertexImpl//9_Graph.java MethodName : init
+Frequent Usage Scenario: 24
+	 salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	 salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	 salvo.jesus.graph.visual.AbstractVisualGraphComponent : void,addMouseListener(java.awt.event.MouseListener)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_Graph//56_JuxMemWorld.java MethodName : addPeer
+Frequent Usage Scenario: 25
+	 salvo.jesus.graph.Graph : int,getVerticesCount()
+	 salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_algorithm_BreadthFirstTraversal//3_TRP.java MethodName : nextTree
+Frequent Usage Scenario: 26
+	 salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+	 salvo.jesus.graph.Graph : int,getVerticesCount()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_util_Heap//9_PeopleGraph.java MethodName : clusterByBetweenness
+Frequent Usage Scenario: 27
+	 salvo.jesus.graph.EdgeImpl : salvo.jesus.graph.Vertex,getOppositeVertex(salvo.jesus.graph.Vertex)
+	 salvo.jesus.graph.Graph : java.util.List,getEdges(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_util_Heap//9_PeopleGraph.java MethodName : clusterByBetweenness
+Frequent Usage Scenario: 28
+	 salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualGraph,CONSTRUCTOR()
+	 salvo.jesus.graph.visual.VisualGraph : salvo.jesus.graph.visual.VisualVertex,getVisualVertex(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_visual_VisualGraph//31_Main.java MethodName : outputGraph
+Frequent Usage Scenario: 29
+	 salvo.jesus.graph.GraphImpl : void,addEdge(salvo.jesus.graph.Edge)
+	 salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	 salvo.jesus.graph.LabeledEdge : void,setFollowVertexLabel(boolean)
+	 salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_Graph//56_JuxMemWorld.java MethodName : addPeer
+Frequent Usage Scenario: 30
+	 salvo.jesus.graph.DirectedGraph : salvo.jesus.graph.DirectedEdge,getEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	 salvo.jesus.graph.Graph : salvo.jesus.graph.Edge,addEdge(salvo.jesus.graph.Vertex,salvo.jesus.graph.Vertex)
+	 salvo.jesus.graph.Graph : void,add(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedAcyclicGraph//12_ConstructExtendsGraphVisitor.java MethodName : visit
+Frequent Usage Scenario: 31
+	 salvo.jesus.graph.Graph : int,getEdgesCount()
+	 salvo.jesus.graph.Graph : int,getVerticesCount()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_DirectedEdge//13_CallAnalyzerTest.java MethodName : testSingleMethodAnalysis
+Frequent Usage Scenario: 32
+	 salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphFactory,getGraphFactory()
+	 salvo.jesus.graph.LabeledGraphComponent : void,setLabel(java.lang.String)
+	 salvo.jesus.graph.GraphImpl : void,add(salvo.jesus.graph.Vertex)
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_Graph//56_JuxMemWorld.java MethodName : addPeer
+Frequent Usage Scenario: 33
+	 salvo.jesus.graph.GraphImpl : java.util.Set,getVertexSet()
+	 salvo.jesus.graph.Graph : java.util.Set,getEdgeSet()
+	 salvo.jesus.graph.GraphImpl : salvo.jesus.graph.GraphImpl,CONSTRUCTOR()
+	 salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	 salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_algorithm_BreadthFirstTraversal//3_TRP.java MethodName : nextGraph
+Frequent Usage Scenario: 34
+	 salvo.jesus.graph.GraphRemoveEdgeListener : void,edgeRemoved(salvo.jesus.graph.GraphRemoveEdgeEvent)
+	 salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	 salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_graph_Graph//104_HashedGraphImpl.java MethodName : remove
+Frequent Usage Scenario: 35
+	 salvo.jesus.graph.VertexImpl : java.lang.Object,getObject()
+	 salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexB()
+	 salvo.jesus.graph.Edge : salvo.jesus.graph.Vertex,getVertexA()
+Scenario Type : InvokesUS FileName : C:\APIUsage\OpenJGraph\salvo_jesus_util_Heap//9_PeopleGraph.java MethodName : printAllStatistics

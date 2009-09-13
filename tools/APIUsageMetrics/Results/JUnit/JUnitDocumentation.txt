@@ -1,0 +1,30 @@
+
+http://junit.sourceforge.net/doc/cookstour/cookstour.htm
+
+Classes given in the documentation are:
+
+1. junit.framework.Test (An interface)
+
+2. junit.framework.Testcase	(An abstract class)
+	Methods: 
+		run
+		runTest
+		setUp
+		tearDown	
+		createResult
+
+3. junit.framework.TestResult
+	Methods:
+		startTest
+		addFailure
+		addError
+
+4. junit.framework.AssertionFailedError
+
+5. junit.framework.TestFailure
+
+6. junit.framework.TestSuite
+	Methods:
+		addTest(Test)
+		run(TestResult)
+

@@ -1,0 +1,3049 @@
+Class: junit.awtui.Logo
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.awtui.Logo,CONSTRUCTOR()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.awt.Image,loadImage(java.lang.String)]
+
+	java.awt.Image,loadImage(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,paint(java.awt.Graphics)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,paintBackground(java.awt.Graphics)]
+
+	void,paintBackground(java.awt.Graphics)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.DefaultFailureDetailView.StackTraceListModel
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	java.lang.Object,getElementAt(int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	int,getSize()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,setTrace(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,clear()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.framework.AssertionFailedError
+	Instances Created: 105
+	Extensions : 17
+	Implements : 0
+	junit.framework.AssertionFailedError,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 16, Overrides: 0, Implements: 0
+			 LocalInvocations: 26, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.AssertionFailedError,CONSTRUCTOR(java.lang.String)
+		 -> Type: 1 Invocations: 94, Overrides: 0, Implements: 0
+			 LocalInvocations: 263, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 17, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.LoadingTestCollector
+	Instances Created: 2
+	Extensions : 1
+	Implements : 0
+	junit.runner.LoadingTestCollector,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 2, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	boolean,isTestClass(java.lang.String)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.extensions.ActiveTestSuite
+	Instances Created: 11
+	Extensions : 0
+	Implements : 0
+	junit.extensions.ActiveTestSuite,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 8, Overrides: 0, Implements: 0
+			 LocalInvocations: 9, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.extensions.ActiveTestSuite,CONSTRUCTOR(java.lang.Class)
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 4, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.extensions.ActiveTestSuite,CONSTRUCTOR(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.extensions.ActiveTestSuite,CONSTRUCTOR(java.lang.Class,java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,run(junit.framework.TestResult)
+		 -> Type: 1 Invocations: 3, Overrides: 0, Implements: 0
+			 LocalInvocations: 15, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,runTest(junit.framework.Test,junit.framework.TestResult)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,runFinished(junit.framework.Test)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.extensions.TestDecorator
+	Instances Created: 4
+	Extensions : 10
+	Implements : 0
+	junit.extensions.TestDecorator,CONSTRUCTOR(junit.framework.Test)
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 4, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,basicRun(junit.framework.TestResult)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult)]
+
+	int,countTestCases()
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 6, LocalOverrides: 3, LocalImplements: 0
+		 Invoked Methods[int,countTestCases(), int,countTestCases(), int,countTestCases(), int,countTestCases(), int,countTestCases()]
+
+	void,run(junit.framework.TestResult)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 19, LocalOverrides: 13, LocalImplements: 0
+		 Invoked Methods[void,basicRun(junit.framework.TestResult)]
+
+	java.lang.String,toString()
+		 -> Type: 3 Invocations: 2, Overrides: 2, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 3, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.Test,getTest()
+		 -> Type: 3 Invocations: 12, Overrides: 1, Implements: 0
+			 LocalInvocations: 18, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 10, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.awtui.ProgressBar
+	Instances Created: 1
+	Extensions : 0
+	Implements : 0
+	junit.awtui.ProgressBar,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,paint(java.awt.Graphics)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,paintBackground(java.awt.Graphics), void,paintStatus(java.awt.Graphics)]
+
+	void,paintBackground(java.awt.Graphics)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,paintStatus(java.awt.Graphics)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,reset()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,paint(java.awt.Graphics)]
+
+	int,scale(int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,setBounds(int,int,int,int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[int,scale(int)]
+
+	void,start(int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,reset()]
+
+	void,step(boolean)
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[int,scale(int)]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.framework.Protectable
+	Instances Created: 11
+	Extensions : 0
+	Implements : 4
+	void,protect()
+		 -> Type: 3 Invocations: 3, Overrides: 0, Implements: 1
+			 LocalInvocations: 3, LocalOverrides: 0, LocalImplements: 5
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 4
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.framework.TestCase
+	Instances Created: 7
+	Extensions : 219
+	Implements : 0
+	junit.framework.TestCase,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 12, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.TestCase,CONSTRUCTOR(java.lang.String)
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 6, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	int,countTestCases()
+		 -> Type: 3 Invocations: 2, Overrides: 1, Implements: 0
+			 LocalInvocations: 8, LocalOverrides: 3, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.TestResult,createResult()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.TestResult,run()
+		 -> Type: 1 Invocations: 2, Overrides: 0, Implements: 0
+			 LocalInvocations: 10, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,run(junit.framework.TestResult), junit.framework.TestResult,createResult()]
+
+	void,run(junit.framework.TestResult)
+		 -> Type: 3 Invocations: 7, Overrides: 1, Implements: 0
+			 LocalInvocations: 29, LocalOverrides: 6, LocalImplements: 0
+		 Invoked Methods[void,run(junit.framework.TestCase)]
+
+	void,runBare()
+		 -> Type: 3 Invocations: 1, Overrides: 1, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 3, LocalImplements: 0
+		 Invoked Methods[void,tearDown(), void,runTest(), void,setUp()]
+
+	void,runTest()
+		 -> Type: 3 Invocations: 3, Overrides: 1, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 9, LocalImplements: 0
+		 Invoked Methods[void,fail(java.lang.String), void,assertNotNull(java.lang.Object)]
+
+	void,setUp()
+		 -> Type: 3 Invocations: 6, Overrides: 2, Implements: 0
+			 LocalInvocations: 7, LocalOverrides: 507, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,tearDown()
+		 -> Type: 3 Invocations: 6, Overrides: 1, Implements: 0
+			 LocalInvocations: 7, LocalOverrides: 283, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,toString()
+		 -> Type: 3 Invocations: 4, Overrides: 1, Implements: 0
+			 LocalInvocations: 7, LocalOverrides: 3, LocalImplements: 0
+		 Invoked Methods[java.lang.String,getName()]
+
+	java.lang.String,getName()
+		 -> Type: 3 Invocations: 37, Overrides: 1, Implements: 0
+			 LocalInvocations: 75, LocalOverrides: 6, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,setName(java.lang.String)
+		 -> Type: 3 Invocations: 12, Overrides: 1, Implements: 0
+			 LocalInvocations: 22, LocalOverrides: 5, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 219, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.extensions.ExceptionTestCase
+	Instances Created: 0
+	Extensions : 5
+	Implements : 0
+	junit.extensions.ExceptionTestCase,CONSTRUCTOR(java.lang.String,java.lang.Class)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.extensions.ExceptionTestCase,CONSTRUCTOR(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,runTest()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,fail(java.lang.String)]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 5, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestTreeModel
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.swingui.TestTreeModel,CONSTRUCTOR(junit.framework.Test)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,addTreeModelListener(javax.swing.event.TreeModelListener)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,removeTreeModelListener(javax.swing.event.TreeModelListener)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	int,findTest(junit.framework.Test,junit.framework.Test,java.util.Vector)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[junit.framework.Test,testAt(int), int,findTest(junit.framework.Test,junit.framework.Test,java.util.Vector)]
+
+	void,fireNodeChanged(javax.swing.tree.TreePath,int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.Object,getChild(java.lang.Object,int)]
+
+	java.lang.Object,getChild(java.lang.Object,int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[junit.framework.Test,testAt(int)]
+
+	int,getChildCount(java.lang.Object)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[int,testCount()]
+
+	int,getIndexOfChild(java.lang.Object,java.lang.Object)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.util.Enumeration,tests()]
+
+	java.lang.Object,getRoot()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	boolean,isLeaf(java.lang.Object)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,valueForPathChanged(javax.swing.tree.TreePath,java.lang.Object)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.Sorter.Swapper
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	void,swap(java.util.Vector,int,int)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.ReloadingTestSuiteLoader
+	Instances Created: 1
+	Extensions : 0
+	Implements : 0
+	java.lang.Class,load(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.Class,loadClass(java.lang.String,boolean), junit.runner.TestCaseClassLoader,createLoader()]
+
+	java.lang.Class,reload(java.lang.Class)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.Class,loadClass(java.lang.String,boolean), junit.runner.TestCaseClassLoader,createLoader()]
+
+	junit.runner.TestCaseClassLoader,createLoader()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.StatusLine
+	Instances Created: 2
+	Extensions : 0
+	Implements : 0
+	junit.swingui.StatusLine,CONSTRUCTOR(int)
+		 -> Type: 1 Invocations: 2, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,showInfo(java.lang.String)
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,showError(java.lang.String)
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,clear()
+		 -> Type: 1 Invocations: 2, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.awtui.AboutDialog
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.awtui.AboutDialog,CONSTRUCTOR(java.awt.Frame)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.TestSuiteLoader
+	Instances Created: 0
+	Extensions : 0
+	Implements : 11
+	java.lang.Class,load(java.lang.String)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 1
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 12
+		 Invoked Methods[]
+
+	java.lang.Class,reload(java.lang.Class)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 1
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 12
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 11
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestSuitePanel
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.swingui.TestSuitePanel,CONSTRUCTOR()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,addError(junit.framework.Test,java.lang.Throwable)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 11, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,endTest(junit.framework.Test)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,startTest(junit.framework.Test)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.Test,getSelectedTest()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	javax.swing.JTree,getTree()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,showTestTree(junit.framework.Test)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.textui.TestRunner
+	Instances Created: 9
+	Extensions : 4
+	Implements : 0
+	junit.textui.TestRunner,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 5, Overrides: 0, Implements: 0
+			 LocalInvocations: 5, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.textui.TestRunner,CONSTRUCTOR(java.io.PrintStream)
+		 -> Type: 1 Invocations: 3, Overrides: 0, Implements: 0
+			 LocalInvocations: 5, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.textui.TestRunner,CONSTRUCTOR(junit.textui.ResultPrinter)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,run(java.lang.Class)
+		 -> Type: 1 Invocations: 99, Overrides: 0, Implements: 0
+			 LocalInvocations: 387, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[junit.framework.TestResult,run(junit.framework.Test)]
+
+	junit.framework.TestResult,run(junit.framework.Test)
+		 -> Type: 3 Invocations: 129, Overrides: 1, Implements: 0
+			 LocalInvocations: 364, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[junit.framework.TestResult,doRun(junit.framework.Test)]
+
+	void,runAndWait(junit.framework.Test)
+		 -> Type: 1 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[junit.framework.TestResult,doRun(junit.framework.Test,boolean)]
+
+	junit.runner.TestSuiteLoader,getLoader()
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testFailed(int,junit.framework.Test,java.lang.Throwable)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testStarted(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testEnded(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.TestResult,createTestResult()
+		 -> Type: 1 Invocations: 2, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.TestResult,doRun(junit.framework.Test)
+		 -> Type: 3 Invocations: 9, Overrides: 1, Implements: 0
+			 LocalInvocations: 23, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[junit.framework.TestResult,doRun(junit.framework.Test,boolean)]
+
+	junit.framework.TestResult,doRun(junit.framework.Test,boolean)
+		 -> Type: 3 Invocations: 2, Overrides: 1, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,pause(boolean), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), junit.framework.TestResult,createTestResult(), void,run(junit.framework.TestResult), void,addListener(junit.framework.TestListener), void,run(junit.framework.TestResult)]
+
+	void,pause(boolean)
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,main(java.lang.String)
+		 -> Type: 3 Invocations: 33, Overrides: 1, Implements: 0
+			 LocalInvocations: 142, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[boolean,wasSuccessful()]
+
+	junit.framework.TestResult,start(java.lang.String)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[java.lang.String,extractClassName(java.lang.String), java.lang.String,id(), junit.framework.TestResult,doRun(junit.framework.Test,boolean), junit.framework.Test,getTest(java.lang.String)]
+
+	void,runFailed(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,setPrinter(junit.textui.ResultPrinter)
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 9, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 4, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.extensions.RepeatedTest
+	Instances Created: 23
+	Extensions : 0
+	Implements : 0
+	junit.extensions.RepeatedTest,CONSTRUCTOR(junit.framework.Test,int)
+		 -> Type: 1 Invocations: 19, Overrides: 0, Implements: 0
+			 LocalInvocations: 53, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	int,countTestCases()
+		 -> Type: 1 Invocations: 5, Overrides: 0, Implements: 0
+			 LocalInvocations: 18, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,run(junit.framework.TestResult)
+		 -> Type: 1 Invocations: 5, Overrides: 0, Implements: 0
+			 LocalInvocations: 24, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[boolean,shouldStop()]
+
+	java.lang.String,toString()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.framework.Assert
+	Instances Created: 0
+	Extensions : 48
+	Implements : 0
+	junit.framework.Assert,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertTrue(java.lang.String,boolean)
+		 -> Type: 3 Invocations: 187, Overrides: 1, Implements: 0
+			 LocalInvocations: 1950, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[void,fail(java.lang.String)]
+
+	void,assertTrue(boolean)
+		 -> Type: 3 Invocations: 225, Overrides: 1, Implements: 0
+			 LocalInvocations: 4720, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertFalse(java.lang.String,boolean)
+		 -> Type: 3 Invocations: 54, Overrides: 1, Implements: 0
+			 LocalInvocations: 185, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[void,assertTrue(java.lang.String,boolean)]
+
+	void,assertFalse(boolean)
+		 -> Type: 3 Invocations: 97, Overrides: 1, Implements: 0
+			 LocalInvocations: 1085, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,fail(java.lang.String)
+		 -> Type: 3 Invocations: 168, Overrides: 1, Implements: 0
+			 LocalInvocations: 1351, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,fail()
+		 -> Type: 3 Invocations: 37, Overrides: 1, Implements: 0
+			 LocalInvocations: 148, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,java.lang.Object,java.lang.Object)
+		 -> Type: 3 Invocations: 140, Overrides: 1, Implements: 0
+			 LocalInvocations: 1335, LocalOverrides: 7, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.Object,java.lang.Object)
+		 -> Type: 3 Invocations: 243, Overrides: 2, Implements: 0
+			 LocalInvocations: 3581, LocalOverrides: 4, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,java.lang.String,java.lang.String)
+		 -> Type: 1 Invocations: 2, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,java.lang.String)
+		 -> Type: 1 Invocations: 3, Overrides: 0, Implements: 0
+			 LocalInvocations: 6, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,double,double,double)
+		 -> Type: 3 Invocations: 6, Overrides: 1, Implements: 0
+			 LocalInvocations: 21, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(double,double,double)
+		 -> Type: 3 Invocations: 6, Overrides: 1, Implements: 0
+			 LocalInvocations: 34, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,float,float,float)
+		 -> Type: 3 Invocations: 2, Overrides: 1, Implements: 0
+			 LocalInvocations: 6, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(float,float,float)
+		 -> Type: 3 Invocations: 3, Overrides: 1, Implements: 0
+			 LocalInvocations: 14, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,long,long)
+		 -> Type: 3 Invocations: 10, Overrides: 1, Implements: 0
+			 LocalInvocations: 31, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(long,long)
+		 -> Type: 3 Invocations: 18, Overrides: 1, Implements: 0
+			 LocalInvocations: 50, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,boolean,boolean)
+		 -> Type: 3 Invocations: 37, Overrides: 1, Implements: 0
+			 LocalInvocations: 112, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(boolean,boolean)
+		 -> Type: 3 Invocations: 42, Overrides: 1, Implements: 0
+			 LocalInvocations: 728, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,byte,byte)
+		 -> Type: 3 Invocations: 13, Overrides: 1, Implements: 0
+			 LocalInvocations: 35, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(byte,byte)
+		 -> Type: 3 Invocations: 17, Overrides: 2, Implements: 0
+			 LocalInvocations: 123, LocalOverrides: 5, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,char,char)
+		 -> Type: 3 Invocations: 7, Overrides: 1, Implements: 0
+			 LocalInvocations: 9, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(char,char)
+		 -> Type: 3 Invocations: 7, Overrides: 1, Implements: 0
+			 LocalInvocations: 11, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,short,short)
+		 -> Type: 3 Invocations: 8, Overrides: 1, Implements: 0
+			 LocalInvocations: 24, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(short,short)
+		 -> Type: 3 Invocations: 6, Overrides: 1, Implements: 0
+			 LocalInvocations: 22, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(java.lang.String,int,int)
+		 -> Type: 3 Invocations: 124, Overrides: 1, Implements: 0
+			 LocalInvocations: 827, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertEquals(int,int)
+		 -> Type: 3 Invocations: 172, Overrides: 2, Implements: 0
+			 LocalInvocations: 2374, LocalOverrides: 4, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertNotNull(java.lang.Object)
+		 -> Type: 3 Invocations: 96, Overrides: 1, Implements: 0
+			 LocalInvocations: 535, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertNotNull(java.lang.String,java.lang.Object)
+		 -> Type: 3 Invocations: 59, Overrides: 1, Implements: 0
+			 LocalInvocations: 386, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[void,assertTrue(java.lang.String,boolean)]
+
+	void,assertNull(java.lang.Object)
+		 -> Type: 3 Invocations: 92, Overrides: 1, Implements: 0
+			 LocalInvocations: 606, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertNull(java.lang.String,java.lang.Object)
+		 -> Type: 3 Invocations: 35, Overrides: 1, Implements: 0
+			 LocalInvocations: 114, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[void,assertTrue(java.lang.String,boolean)]
+
+	void,assertSame(java.lang.String,java.lang.Object,java.lang.Object)
+		 -> Type: 3 Invocations: 9, Overrides: 1, Implements: 0
+			 LocalInvocations: 15, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertSame(java.lang.Object,java.lang.Object)
+		 -> Type: 3 Invocations: 22, Overrides: 1, Implements: 0
+			 LocalInvocations: 65, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertNotSame(java.lang.String,java.lang.Object,java.lang.Object)
+		 -> Type: 3 Invocations: 3, Overrides: 1, Implements: 0
+			 LocalInvocations: 6, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,assertNotSame(java.lang.Object,java.lang.Object)
+		 -> Type: 3 Invocations: 17, Overrides: 1, Implements: 0
+			 LocalInvocations: 33, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 48, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.DefaultFailureDetailView.StackEntryRenderer
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	java.awt.Component,getListCellRendererComponent(javax.swing.JList,java.lang.Object,int,boolean,boolean)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestSuitePanel.TestTreeCellRenderer
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	java.awt.Component,getTreeCellRendererComponent(javax.swing.JTree,java.lang.Object,boolean,boolean,boolean,int,boolean)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.TestCollector
+	Instances Created: 0
+	Extensions : 0
+	Implements : 7
+	java.util.Enumeration,collectTests()
+		 -> Type: 3 Invocations: 9, Overrides: 0, Implements: 1
+			 LocalInvocations: 9, LocalOverrides: 0, LocalImplements: 8
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 7
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.framework.Test
+	Instances Created: 1
+	Extensions : 0
+	Implements : 10
+	int,countTestCases()
+		 -> Type: 3 Invocations: 4, Overrides: 0, Implements: 1
+			 LocalInvocations: 6, LocalOverrides: 0, LocalImplements: 17
+		 Invoked Methods[]
+
+	void,run(junit.framework.TestResult)
+		 -> Type: 3 Invocations: 13, Overrides: 0, Implements: 1
+			 LocalInvocations: 19, LocalOverrides: 0, LocalImplements: 17
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 10
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestHierarchyRunView
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.swingui.TestHierarchyRunView,CONSTRUCTOR(junit.swingui.TestRunContext)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[javax.swing.JTree,getTree()]
+
+	void,addTab(javax.swing.JTabbedPane)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[javax.swing.Icon,getIconResource(java.lang.Class,java.lang.String)]
+
+	junit.framework.Test,getSelectedTest()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[junit.framework.Test,getSelectedTest()]
+
+	void,activate()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,testSelected()]
+
+	void,revealFailure(junit.framework.Test)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[javax.swing.JTree,getTree(), java.lang.Object,getRoot(), int,findTest(junit.framework.Test,junit.framework.Test,java.util.Vector), java.lang.Object,getChild(java.lang.Object,int)]
+
+	void,aboutToStart(junit.framework.Test,junit.framework.TestResult)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,showTestTree(junit.framework.Test), void,addListener(junit.framework.TestListener)]
+
+	void,runFinished(junit.framework.Test,junit.framework.TestResult)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,removeListener(junit.framework.TestListener)]
+
+	void,testSelected()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[junit.framework.Test,getSelectedTest(), void,handleTestSelected(junit.framework.Test), void,handleTestSelected(junit.framework.Test)]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.ProgressBar
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.swingui.ProgressBar,CONSTRUCTOR()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,reset()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,start(int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,reset()]
+
+	void,step(int,boolean)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.framework.TestFailure
+	Instances Created: 1
+	Extensions : 1
+	Implements : 0
+	junit.framework.TestFailure,CONSTRUCTOR(junit.framework.Test,java.lang.Throwable)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.Test,failedTest()
+		 -> Type: 1 Invocations: 11, Overrides: 0, Implements: 0
+			 LocalInvocations: 23, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.Throwable,thrownException()
+		 -> Type: 1 Invocations: 16, Overrides: 0, Implements: 0
+			 LocalInvocations: 38, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,toString()
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,trace()
+		 -> Type: 3 Invocations: 4, Overrides: 1, Implements: 0
+			 LocalInvocations: 12, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[java.lang.Throwable,thrownException()]
+
+	java.lang.String,exceptionMessage()
+		 -> Type: 1 Invocations: 8, Overrides: 0, Implements: 0
+			 LocalInvocations: 11, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.Throwable,thrownException()]
+
+	boolean,isFailure()
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.Throwable,thrownException()]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestSelector
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.swingui.TestSelector,CONSTRUCTOR(java.awt.Frame,junit.runner.TestCollector)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,centerWindow(java.awt.Component)
+		 -> Type: 1 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,checkEnableOK(javax.swing.event.ListSelectionEvent)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,okSelected()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	boolean,isEmpty()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,keySelectTestClass(char)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,getSelectedItem()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.framework.ComparisonFailure
+	Instances Created: 12
+	Extensions : 0
+	Implements : 0
+	junit.framework.ComparisonFailure,CONSTRUCTOR(java.lang.String,java.lang.String,java.lang.String)
+		 -> Type: 1 Invocations: 9, Overrides: 0, Implements: 0
+			 LocalInvocations: 22, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,getMessage()
+		 -> Type: 1 Invocations: 3, Overrides: 0, Implements: 0
+			 LocalInvocations: 23, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.framework.TestSuite
+	Instances Created: 165
+	Extensions : 32
+	Implements : 0
+	junit.framework.TestSuite,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 76, Overrides: 0, Implements: 0
+			 LocalInvocations: 163, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.TestSuite,CONSTRUCTOR(java.lang.Class,java.lang.String)
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,setName(java.lang.String)]
+
+	junit.framework.TestSuite,CONSTRUCTOR(java.lang.Class)
+		 -> Type: 1 Invocations: 129, Overrides: 0, Implements: 0
+			 LocalInvocations: 576, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.reflect.Constructor,getTestConstructor(java.lang.Class), void,addTest(junit.framework.Test)]
+
+	junit.framework.TestSuite,CONSTRUCTOR(java.lang.String)
+		 -> Type: 1 Invocations: 59, Overrides: 0, Implements: 0
+			 LocalInvocations: 97, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,setName(java.lang.String)]
+
+	void,addTest(junit.framework.Test)
+		 -> Type: 1 Invocations: 95, Overrides: 0, Implements: 0
+			 LocalInvocations: 753, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,addTest(junit.framework.TestCase)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,addTestSuite(java.lang.Class)
+		 -> Type: 3 Invocations: 42, Overrides: 1, Implements: 0
+			 LocalInvocations: 144, LocalOverrides: 3, LocalImplements: 0
+		 Invoked Methods[void,addTest(junit.framework.Test)]
+
+	junit.framework.Test,createTest(java.lang.Class,java.lang.String)
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.reflect.Constructor,getTestConstructor(java.lang.Class), void,setName(java.lang.String)]
+
+	int,countTestCases()
+		 -> Type: 1 Invocations: 7, Overrides: 0, Implements: 0
+			 LocalInvocations: 14, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.util.Enumeration,tests(), int,countTestCases(), int,countTestCases(), int,countTestCases(), int,countTestCases(), int,countTestCases()]
+
+	java.lang.reflect.Constructor,getTestConstructor(java.lang.Class)
+		 -> Type: 3 Invocations: 3, Overrides: 1, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,run(junit.framework.TestResult)
+		 -> Type: 3 Invocations: 8, Overrides: 1, Implements: 0
+			 LocalInvocations: 31, LocalOverrides: 6, LocalImplements: 0
+		 Invoked Methods[boolean,shouldStop(), java.util.Enumeration,tests(), void,runTest(junit.framework.Test,junit.framework.TestResult)]
+
+	void,runTest(junit.framework.Test,junit.framework.TestResult)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult), void,run(junit.framework.TestResult)]
+
+	junit.framework.Test,testAt(int)
+		 -> Type: 1 Invocations: 2, Overrides: 0, Implements: 0
+			 LocalInvocations: 4, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	int,testCount()
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 6, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.util.Enumeration,tests()
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 13, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,toString()
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[java.lang.String,getName()]
+
+	void,setName(java.lang.String)
+		 -> Type: 3 Invocations: 18, Overrides: 1, Implements: 0
+			 LocalInvocations: 35, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,getName()
+		 -> Type: 3 Invocations: 9, Overrides: 1, Implements: 0
+			 LocalInvocations: 33, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 32, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestRunner
+	Instances Created: 13
+	Extensions : 4
+	Implements : 0
+	junit.swingui.TestRunner,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 13, Overrides: 0, Implements: 0
+			 LocalInvocations: 14, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,main(java.lang.String[])
+		 -> Type: 1 Invocations: 28, Overrides: 0, Implements: 0
+			 LocalInvocations: 72, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,start(java.lang.String[])]
+
+	void,run(java.lang.Class)
+		 -> Type: 1 Invocations: 141, Overrides: 0, Implements: 0
+			 LocalInvocations: 516, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,main(java.lang.String[])]
+
+	void,testFailed(int,junit.framework.Test,java.lang.Throwable)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testStarted(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testEnded(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,setSuite(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,aboutToStart(junit.framework.Test)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,aboutToStart(junit.framework.Test,junit.framework.TestResult), void,aboutToStart(junit.framework.Test,junit.framework.TestResult), void,aboutToStart(junit.framework.Test,junit.framework.TestResult)]
+
+	void,runFinished(junit.framework.Test)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.swingui.CounterPanel,createCounterPanel()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	javax.swing.JPanel,createFailedPanel()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.runner.FailureDetailView,createFailureDetailView()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.String,getPreference(java.lang.String)]
+
+	javax.swing.JMenu,createJUnitMenu()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	javax.swing.JFrame,createFrame()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	javax.swing.JLabel,createLogo()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.String,id(), javax.swing.Icon,getIconResource(java.lang.Class,java.lang.String)]
+
+	void,createMenus(javax.swing.JMenuBar)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[javax.swing.JMenu,createJUnitMenu()]
+
+	javax.swing.JCheckBox,createUseLoaderCheckBox()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[boolean,useReloadingTestSuiteLoader(), boolean,inVAJava()]
+
+	javax.swing.JButton,createQuitButton()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	javax.swing.JButton,createRunButton()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.awt.Component,createBrowseButton()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.swingui.StatusLine,createStatusLine()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	javax.swing.JComboBox,createSuiteCombo()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	javax.swing.JTabbedPane,createTestRunViews()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,addTab(javax.swing.JTabbedPane), void,addTab(javax.swing.JTabbedPane)]
+
+	void,testViewChanged()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,activate(), void,activate(), void,activate()]
+
+	junit.framework.TestResult,createTestResult()
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	javax.swing.JFrame,createUI(java.lang.String)
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 4, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.awt.Component,getComponent(), javax.swing.JLabel,createLogo(), javax.swing.JButton,createRunButton(), javax.swing.JPanel,createFailedPanel(), junit.runner.FailureDetailView,createFailureDetailView(), javax.swing.JFrame,createFrame(), java.awt.Component,getComponent(), javax.swing.JButton,createQuitButton(), javax.swing.JComboBox,createSuiteCombo(), java.awt.Component,createBrowseButton(), javax.swing.JCheckBox,createUseLoaderCheckBox(), junit.swingui.CounterPanel,createCounterPanel(), javax.swing.JTabbedPane,createTestRunViews(), void,createMenus(javax.swing.JMenuBar), junit.swingui.StatusLine,createStatusLine()]
+
+	java.lang.String,getSuiteText()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	javax.swing.ListModel,getFailures()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,insertUpdate(javax.swing.event.DocumentEvent)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,textChanged()]
+
+	void,browseTestClasses()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.String,getSelectedItem(), boolean,isEmpty(), void,setSuite(java.lang.String)]
+
+	void,removeUpdate(javax.swing.event.DocumentEvent)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,textChanged()]
+
+	void,reset()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,clear(), void,reset(), void,reset(), void,clear()]
+
+	void,runFailed(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,runSuite()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,setLoading(boolean), void,stop(), java.lang.String,getSuiteText(), void,reset(), junit.framework.Test,getTest(java.lang.String)]
+
+	void,runTest(junit.framework.Test)
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 4, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,stop(), void,reset()]
+
+	void,handleTestSelected(junit.framework.Test)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,start(java.lang.String[])
+		 -> Type: 1 Invocations: 9, Overrides: 0, Implements: 0
+			 LocalInvocations: 10, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,runSuite(), javax.swing.JFrame,createUI(java.lang.String), void,setSuite(java.lang.String), java.lang.String,processArguments(java.lang.String[])]
+
+	void,terminate()
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,textChanged()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,clearStatus(), java.lang.String,getSuiteText()]
+
+	void,clearStatus()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,clear()]
+
+	javax.swing.Icon,getIconResource(java.lang.Class,java.lang.String)
+		 -> Type: 1 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 4, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.CounterPanel
+	Instances Created: 1
+	Extensions : 0
+	Implements : 0
+	junit.swingui.CounterPanel,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,addToGrid(java.awt.Component,int,int,int,int,double,double,int,int,java.awt.Insets)]
+
+	void,addToGrid(java.awt.Component,int,int,int,int,double,double,int,int,java.awt.Insets)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,reset()
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,setTotal(int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,setRunValue(int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,setErrorValue(int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,setFailureValue(int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestSelector.DoubleClickListener
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	void,mouseClicked(java.awt.event.MouseEvent)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.TestCaseClassLoader
+	Instances Created: 7
+	Extensions : 1
+	Implements : 0
+	junit.runner.TestCaseClassLoader,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 6, Overrides: 0, Implements: 0
+			 LocalInvocations: 7, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.runner.TestCaseClassLoader,CONSTRUCTOR(java.lang.String)
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 5, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.net.URL,getResource(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.io.InputStream,getResourceAsStream(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	boolean,isExcluded(java.lang.String)
+		 -> Type: 1 Invocations: 3, Overrides: 0, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.Class,loadClass(java.lang.String,boolean)
+		 -> Type: 3 Invocations: 5, Overrides: 1, Implements: 0
+			 LocalInvocations: 9, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[boolean,isExcluded(java.lang.String)]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestSelector.ParallelSwapper
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	void,swap(java.util.Vector,int,int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.extensions.TestSetup
+	Instances Created: 29
+	Extensions : 28
+	Implements : 0
+	junit.extensions.TestSetup,CONSTRUCTOR(junit.framework.Test)
+		 -> Type: 1 Invocations: 28, Overrides: 0, Implements: 0
+			 LocalInvocations: 65, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,run(junit.framework.TestResult)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 3, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,setUp()
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 41, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,tearDown()
+		 -> Type: 3 Invocations: 1, Overrides: 1, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 39, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 28, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.StandardTestSuiteLoader
+	Instances Created: 4
+	Extensions : 0
+	Implements : 0
+	java.lang.Class,load(java.lang.String)
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.Class,reload(java.lang.Class)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.SimpleTestCollector
+	Instances Created: 6
+	Extensions : 0
+	Implements : 0
+	junit.runner.SimpleTestCollector,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 6, Overrides: 0, Implements: 0
+			 LocalInvocations: 7, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	boolean,isTestClass(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.Sorter
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	void,sortStrings(java.util.Vector,int,int,junit.runner.Sorter.Swapper)
+		 -> Type: 1 Invocations: 5, Overrides: 0, Implements: 0
+			 LocalInvocations: 5, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.ClassPathTestCollector
+	Instances Created: 0
+	Extensions : 6
+	Implements : 0
+	junit.runner.ClassPathTestCollector,CONSTRUCTOR()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.util.Enumeration,collectTests()
+		 -> Type: 3 Invocations: 2, Overrides: 1, Implements: 0
+			 LocalInvocations: 11, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[java.util.Hashtable,collectFilesInPath(java.lang.String)]
+
+	java.util.Hashtable,collectFilesInPath(java.lang.String)
+		 -> Type: 1 Invocations: 8, Overrides: 0, Implements: 0
+			 LocalInvocations: 15, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	boolean,isTestClass(java.lang.String)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 8, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,classNameFromFile(java.lang.String)
+		 -> Type: 1 Invocations: 6, Overrides: 0, Implements: 0
+			 LocalInvocations: 7, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 6, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.DefaultFailureDetailView
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	java.awt.Component,getComponent()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,showFailure(junit.framework.TestFailure)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,clear()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.framework.TestListener
+	Instances Created: 6
+	Extensions : 0
+	Implements : 27
+	void,addError(junit.framework.Test,java.lang.Throwable)
+		 -> Type: 3 Invocations: 3, Overrides: 0, Implements: 1
+			 LocalInvocations: 3, LocalOverrides: 0, LocalImplements: 45
+		 Invoked Methods[]
+
+	void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError)
+		 -> Type: 3 Invocations: 9, Overrides: 0, Implements: 1
+			 LocalInvocations: 11, LocalOverrides: 0, LocalImplements: 55
+		 Invoked Methods[]
+
+	void,endTest(junit.framework.Test)
+		 -> Type: 3 Invocations: 2, Overrides: 0, Implements: 1
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 45
+		 Invoked Methods[]
+
+	void,startTest(junit.framework.Test)
+		 -> Type: 3 Invocations: 2, Overrides: 0, Implements: 1
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 45
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 27
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestRunContext
+	Instances Created: 0
+	Extensions : 0
+	Implements : 1
+	void,handleTestSelected(junit.framework.Test)
+		 -> Type: 3 Invocations: 1, Overrides: 0, Implements: 1
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 1
+		 Invoked Methods[]
+
+	javax.swing.ListModel,getFailures()
+		 -> Type: 3 Invocations: 1, Overrides: 0, Implements: 1
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 1
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 1
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.Version
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	java.lang.String,id()
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 10, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestRunView
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.framework.Test,getSelectedTest()
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,activate()
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,revealFailure(junit.framework.Test)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,addTab(javax.swing.JTabbedPane)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,aboutToStart(junit.framework.Test,junit.framework.TestResult)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,runFinished(junit.framework.Test,junit.framework.TestResult)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.BaseTestRunner
+	Instances Created: 0
+	Extensions : 20
+	Implements : 0
+	void,startTest(junit.framework.Test)
+		 -> Type: 3 Invocations: 1, Overrides: 1, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 10, LocalImplements: 0
+		 Invoked Methods[void,testStarted(java.lang.String), void,testStarted(java.lang.String), void,testStarted(java.lang.String), void,testStarted(java.lang.String)]
+
+	void,setPreferences(java.util.Properties)
+		 -> Type: 1 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.util.Properties,getPreferences()
+		 -> Type: 1 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,savePreferences()
+		 -> Type: 1 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.util.Properties,getPreferences()]
+
+	void,setPreference(java.lang.String,java.lang.String)
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.util.Properties,getPreferences()]
+
+	void,endTest(junit.framework.Test)
+		 -> Type: 3 Invocations: 1, Overrides: 1, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 9, LocalImplements: 0
+		 Invoked Methods[void,testEnded(java.lang.String), void,testEnded(java.lang.String), void,testEnded(java.lang.String), void,testEnded(java.lang.String)]
+
+	void,addError(junit.framework.Test,java.lang.Throwable)
+		 -> Type: 3 Invocations: 0, Overrides: 2, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 10, LocalImplements: 0
+		 Invoked Methods[void,testFailed(int,junit.framework.Test,java.lang.Throwable), void,testFailed(int,junit.framework.Test,java.lang.Throwable), void,testFailed(int,junit.framework.Test,java.lang.Throwable), void,testFailed(int,junit.framework.Test,java.lang.Throwable)]
+
+	void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError)
+		 -> Type: 3 Invocations: 0, Overrides: 2, Implements: 0
+			 LocalInvocations: 11, LocalOverrides: 10, LocalImplements: 0
+		 Invoked Methods[void,testFailed(int,junit.framework.Test,java.lang.Throwable), void,testFailed(int,junit.framework.Test,java.lang.Throwable), void,testFailed(int,junit.framework.Test,java.lang.Throwable), void,testFailed(int,junit.framework.Test,java.lang.Throwable)]
+
+	void,testStarted(java.lang.String)
+		 -> Type: 2 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 20, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testEnded(java.lang.String)
+		 -> Type: 2 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 20, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testFailed(int,junit.framework.Test,java.lang.Throwable)
+		 -> Type: 2 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 20, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.Test,getTest(java.lang.String)
+		 -> Type: 3 Invocations: 13, Overrides: 1, Implements: 0
+			 LocalInvocations: 14, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[void,runFailed(java.lang.String), void,runFailed(java.lang.String), void,clearStatus(), void,runFailed(java.lang.String), void,runFailed(java.lang.String), java.lang.Class,loadSuiteClass(java.lang.String)]
+
+	java.lang.String,elapsedTimeAsString(long)
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,processArguments(java.lang.String[])
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,setLoading(boolean), java.lang.String,extractClassName(java.lang.String)]
+
+	void,setLoading(boolean)
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 5, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,extractClassName(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,truncate(java.lang.String)
+		 -> Type: 1 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,runFailed(java.lang.String)
+		 -> Type: 2 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 22, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.Class,loadSuiteClass(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[junit.runner.TestSuiteLoader,getLoader(), java.lang.Class,load(java.lang.String), java.lang.Class,load(java.lang.String), java.lang.Class,load(java.lang.String)]
+
+	void,clearStatus()
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.runner.TestSuiteLoader,getLoader()
+		 -> Type: 3 Invocations: 1, Overrides: 1, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 11, LocalImplements: 0
+		 Invoked Methods[boolean,useReloadingTestSuiteLoader()]
+
+	boolean,useReloadingTestSuiteLoader()
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[java.lang.String,getPreference(java.lang.String), boolean,inVAJava()]
+
+	java.lang.String,getPreference(java.lang.String)
+		 -> Type: 1 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.util.Properties,getPreferences()]
+
+	int,getPreference(java.lang.String,int)
+		 -> Type: 1 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.String,getPreference(java.lang.String)]
+
+	boolean,inVAJava()
+		 -> Type: 1 Invocations: 5, Overrides: 0, Implements: 0
+			 LocalInvocations: 5, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.String,getFilteredTrace(java.lang.Throwable)
+		 -> Type: 3 Invocations: 7, Overrides: 1, Implements: 0
+			 LocalInvocations: 9, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[java.lang.String,getFilteredTrace(java.lang.String)]
+
+	java.lang.String,getFilteredTrace(java.lang.String)
+		 -> Type: 3 Invocations: 3, Overrides: 2, Implements: 0
+			 LocalInvocations: 3, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[boolean,showStackRaw()]
+
+	boolean,showStackRaw()
+		 -> Type: 1 Invocations: 2, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.String,getPreference(java.lang.String)]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 20, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.textui.ResultPrinter
+	Instances Created: 2
+	Extensions : 18
+	Implements : 0
+	junit.textui.ResultPrinter,CONSTRUCTOR(java.io.PrintStream)
+		 -> Type: 1 Invocations: 2, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,printHeader(long)
+		 -> Type: 3 Invocations: 2, Overrides: 1, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 4, LocalImplements: 0
+		 Invoked Methods[java.io.PrintStream,getWriter(), java.lang.String,elapsedTimeAsString(long)]
+
+	void,printErrors(junit.framework.TestResult)
+		 -> Type: 3 Invocations: 4, Overrides: 1, Implements: 0
+			 LocalInvocations: 4, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[int,errorCount(), java.util.Enumeration,errors(), void,printDefects(java.util.Enumeration,int,java.lang.String)]
+
+	void,printFailures(junit.framework.TestResult)
+		 -> Type: 3 Invocations: 4, Overrides: 1, Implements: 0
+			 LocalInvocations: 4, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[void,printDefects(java.util.Enumeration,int,java.lang.String), java.util.Enumeration,failures(), int,failureCount()]
+
+	void,printDefects(java.util.Enumeration,int,java.lang.String)
+		 -> Type: 3 Invocations: 3, Overrides: 1, Implements: 0
+			 LocalInvocations: 4, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[java.io.PrintStream,getWriter(), void,printDefect(junit.framework.TestFailure,int)]
+
+	void,printDefect(junit.framework.TestFailure,int)
+		 -> Type: 3 Invocations: 1, Overrides: 1, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[void,printDefectTrace(junit.framework.TestFailure), void,printDefectHeader(junit.framework.TestFailure,int)]
+
+	void,printDefectHeader(junit.framework.TestFailure,int)
+		 -> Type: 3 Invocations: 1, Overrides: 1, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[java.io.PrintStream,getWriter(), junit.framework.Test,failedTest()]
+
+	void,printDefectTrace(junit.framework.TestFailure)
+		 -> Type: 3 Invocations: 1, Overrides: 1, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[java.io.PrintStream,getWriter(), java.lang.String,trace(), java.lang.String,getFilteredTrace(java.lang.String)]
+
+	void,printFooter(junit.framework.TestResult)
+		 -> Type: 3 Invocations: 4, Overrides: 1, Implements: 0
+			 LocalInvocations: 4, LocalOverrides: 7, LocalImplements: 0
+		 Invoked Methods[int,errorCount(), int,runCount(), java.io.PrintStream,getWriter(), int,failureCount(), boolean,wasSuccessful()]
+
+	java.lang.String,elapsedTimeAsString(long)
+		 -> Type: 3 Invocations: 4, Overrides: 1, Implements: 0
+			 LocalInvocations: 6, LocalOverrides: 8, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.io.PrintStream,getWriter()
+		 -> Type: 3 Invocations: 11, Overrides: 1, Implements: 0
+			 LocalInvocations: 103, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,addError(junit.framework.Test,java.lang.Throwable)
+		 -> Type: 3 Invocations: 1, Overrides: 1, Implements: 0
+			 LocalInvocations: 4, LocalOverrides: 9, LocalImplements: 0
+		 Invoked Methods[java.io.PrintStream,getWriter()]
+
+	void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 11, LocalOverrides: 9, LocalImplements: 0
+		 Invoked Methods[java.io.PrintStream,getWriter()]
+
+	void,endTest(junit.framework.Test)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 7, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,startTest(junit.framework.Test)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 7, LocalImplements: 0
+		 Invoked Methods[java.io.PrintStream,getWriter()]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 18, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.TestRunListener
+	Instances Created: 0
+	Extensions : 0
+	Implements : 1
+	void,testRunStarted(java.lang.String,int)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testRunEnded(long)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testRunStopped(long)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testStarted(java.lang.String)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testEnded(java.lang.String)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testFailed(int,java.lang.String,java.lang.String)
+		 -> Type: 2 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 1
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.framework.TestResult
+	Instances Created: 69
+	Extensions : 10
+	Implements : 0
+	junit.framework.TestResult,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 69, Overrides: 0, Implements: 0
+			 LocalInvocations: 200, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,addError(junit.framework.Test,java.lang.Throwable)
+		 -> Type: 3 Invocations: 12, Overrides: 1, Implements: 0
+			 LocalInvocations: 24, LocalOverrides: 7, LocalImplements: 0
+		 Invoked Methods[void,addError(junit.framework.Test,java.lang.Throwable), void,addError(junit.framework.Test,java.lang.Throwable), void,addError(junit.framework.Test,java.lang.Throwable), void,addError(junit.framework.Test,java.lang.Throwable)]
+
+	void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError)
+		 -> Type: 3 Invocations: 15, Overrides: 1, Implements: 0
+			 LocalInvocations: 17, LocalOverrides: 7, LocalImplements: 0
+		 Invoked Methods[void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError), void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError), void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError), void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError)]
+
+	void,addListener(junit.framework.TestListener)
+		 -> Type: 3 Invocations: 37, Overrides: 1, Implements: 0
+			 LocalInvocations: 59, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,removeListener(junit.framework.TestListener)
+		 -> Type: 3 Invocations: 6, Overrides: 1, Implements: 0
+			 LocalInvocations: 6, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,endTest(junit.framework.Test)
+		 -> Type: 3 Invocations: 31, Overrides: 1, Implements: 0
+			 LocalInvocations: 38, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[void,endTest(junit.framework.Test), void,endTest(junit.framework.Test), void,endTest(junit.framework.Test), void,endTest(junit.framework.Test)]
+
+	int,errorCount()
+		 -> Type: 3 Invocations: 60, Overrides: 1, Implements: 0
+			 LocalInvocations: 225, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.util.Enumeration,errors()
+		 -> Type: 3 Invocations: 49, Overrides: 1, Implements: 0
+			 LocalInvocations: 80, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	int,failureCount()
+		 -> Type: 3 Invocations: 61, Overrides: 1, Implements: 0
+			 LocalInvocations: 219, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.util.Enumeration,failures()
+		 -> Type: 3 Invocations: 44, Overrides: 1, Implements: 0
+			 LocalInvocations: 72, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,run(junit.framework.TestCase)
+		 -> Type: 3 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 3, LocalImplements: 0
+		 Invoked Methods[void,startTest(junit.framework.Test)]
+
+	int,runCount()
+		 -> Type: 3 Invocations: 42, Overrides: 1, Implements: 0
+			 LocalInvocations: 141, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,runProtected(junit.framework.Test,junit.framework.Protectable)
+		 -> Type: 3 Invocations: 19, Overrides: 1, Implements: 0
+			 LocalInvocations: 23, LocalOverrides: 2, LocalImplements: 0
+		 Invoked Methods[void,protect(), void,addError(junit.framework.Test,java.lang.Throwable), void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError)]
+
+	boolean,shouldStop()
+		 -> Type: 3 Invocations: 17, Overrides: 1, Implements: 0
+			 LocalInvocations: 20, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,startTest(junit.framework.Test)
+		 -> Type: 3 Invocations: 30, Overrides: 1, Implements: 0
+			 LocalInvocations: 36, LocalOverrides: 3, LocalImplements: 0
+		 Invoked Methods[int,countTestCases(), void,startTest(junit.framework.Test), int,countTestCases(), int,countTestCases(), int,countTestCases(), void,startTest(junit.framework.Test), void,startTest(junit.framework.Test), void,startTest(junit.framework.Test), int,countTestCases()]
+
+	void,stop()
+		 -> Type: 3 Invocations: 12, Overrides: 1, Implements: 0
+			 LocalInvocations: 23, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[]
+
+	boolean,wasSuccessful()
+		 -> Type: 3 Invocations: 49, Overrides: 1, Implements: 0
+			 LocalInvocations: 91, LocalOverrides: 1, LocalImplements: 0
+		 Invoked Methods[int,errorCount(), int,failureCount()]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 10, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestSelector.TestCellRenderer
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.swingui.TestSelector.TestCellRenderer,CONSTRUCTOR()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.awt.Component,getListCellRendererComponent(javax.swing.JList,java.lang.Object,int,boolean,boolean)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.String,displayString(java.lang.String)]
+
+	java.lang.String,displayString(java.lang.String)
+		 -> Type: 1 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	boolean,matchesKey(java.lang.String,char)
+		 -> Type: 1 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.AboutDialog
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.swingui.AboutDialog,CONSTRUCTOR(javax.swing.JFrame)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	javax.swing.JLabel,createLogo()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[javax.swing.Icon,getIconResource(java.lang.Class,java.lang.String)]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.FailureRunView
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	junit.swingui.FailureRunView,CONSTRUCTOR(junit.swingui.TestRunContext)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	junit.framework.Test,getSelectedTest()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,activate()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,addTab(javax.swing.JTabbedPane)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,revealFailure(junit.framework.Test)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,aboutToStart(junit.framework.Test,junit.framework.TestResult)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,runFinished(junit.framework.Test,junit.framework.TestResult)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testSelected()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.runner.FailureDetailView
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	java.awt.Component,getComponent()
+		 -> Type: 3 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,showFailure(junit.framework.TestFailure)
+		 -> Type: 3 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 1, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,clear()
+		 -> Type: 3 Invocations: 1, Overrides: 0, Implements: 0
+			 LocalInvocations: 2, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.TestSelector.KeySelectListener
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	void,keyTyped(java.awt.event.KeyEvent)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.awtui.TestRunner
+	Instances Created: 5
+	Extensions : 1
+	Implements : 0
+	junit.awtui.TestRunner,CONSTRUCTOR()
+		 -> Type: 1 Invocations: 5, Overrides: 0, Implements: 0
+			 LocalInvocations: 28, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testStarted(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,testEnded(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[int,runCount(), boolean,wasSuccessful(), void,step(boolean)]
+
+	void,testFailed(int,junit.framework.Test,java.lang.Throwable)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[int,errorCount(), int,failureCount()]
+
+	void,addGrid(java.awt.Panel,java.awt.Component,int,int,int,int,double,int)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.awt.Menu,createJUnitMenu()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,createMenus(java.awt.MenuBar)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.awt.Menu,createJUnitMenu()]
+
+	junit.framework.TestResult,createTestResult()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.awt.Frame,createUI(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.awt.Panel,createCounterPanel()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,failureSelected()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	java.lang.Thread,getRunner()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,main(java.lang.String[])
+		 -> Type: 1 Invocations: 36, Overrides: 0, Implements: 0
+			 LocalInvocations: 267, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,start(java.lang.String[])]
+
+	void,run(java.lang.Class)
+		 -> Type: 1 Invocations: 20, Overrides: 0, Implements: 0
+			 LocalInvocations: 60, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,main(java.lang.String[])]
+
+	void,rerun()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,reset()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,reset()]
+
+	void,runFailed(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,runSuite()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,setLoading(boolean), void,stop(), void,reset(), junit.framework.Test,getTest(java.lang.String)]
+
+	void,setSuiteName(java.lang.String)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,clearStatus()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+	void,start(java.lang.String[])
+		 -> Type: 1 Invocations: 4, Overrides: 0, Implements: 0
+			 LocalInvocations: 27, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[void,setSuiteName(java.lang.String), void,runSuite(), java.awt.Frame,createUI(java.lang.String), java.lang.String,processArguments(java.lang.String[])]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 1, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+Class: junit.swingui.FailureRunView.FailureListCellRenderer
+	Instances Created: 0
+	Extensions : 0
+	Implements : 0
+	java.awt.Component,getListCellRendererComponent(javax.swing.JList,java.lang.Object,int,boolean,boolean)
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[java.lang.String,exceptionMessage(), boolean,isFailure(), junit.framework.Test,failedTest(), java.lang.String,truncate(java.lang.String)]
+
+	void,#ExtendsOrImplements#()
+		 -> Type: 0 Invocations: 0, Overrides: 0, Implements: 0
+			 LocalInvocations: 0, LocalOverrides: 0, LocalImplements: 0
+		 Invoked Methods[]
+
+
+
+Total number of classes 56
+Total number of methods 437
+
+
+
+********* APIs in sorted order ************
+ID: 132 Class: junit.framework.Assert Method: void,assertEquals(java.lang.Object,java.lang.Object) Usages: 245 Percentage: 5.233924375133518% Additional info:{junit.framework.TestCase=150, junit.extensions.TestDecorator=1, junit.framework.Assert=94}
+ID: 126 Class: junit.framework.Assert Method: void,assertTrue(boolean) Usages: 226 Percentage: 4.828028199102756% Additional info:{junit.framework.TestCase=135, junit.extensions.ExceptionTestCase=2, junit.extensions.TestDecorator=1, junit.framework.Assert=88}
+ID: 173 Class: junit.framework.TestCase Method: void,#ExtendsOrImplements#() Usages: 219 Percentage: 4.67848750267037% Additional info:{}
+ID: 125 Class: junit.framework.Assert Method: void,assertTrue(java.lang.String,boolean) Usages: 188 Percentage: 4.016235847041231% Additional info:{junit.extensions.TestSetup=2, junit.framework.TestCase=105, junit.extensions.TestDecorator=1, junit.framework.Assert=80}
+ID: 150 Class: junit.framework.Assert Method: void,assertEquals(int,int) Usages: 174 Percentage: 3.717154454176458% Additional info:{junit.framework.TestCase=115, junit.extensions.ExceptionTestCase=2, junit.extensions.TestDecorator=1, junit.framework.Assert=56}
+ID: 129 Class: junit.framework.Assert Method: void,fail(java.lang.String) Usages: 169 Percentage: 3.610339671010468% Additional info:{junit.extensions.TestSetup=2, junit.framework.TestCase=86, junit.extensions.TestDecorator=1, junit.framework.Assert=80}
+ID: 131 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,java.lang.Object,java.lang.Object) Usages: 141 Percentage: 3.012176885280923% Additional info:{junit.extensions.TestSetup=1, junit.framework.TestCase=71, junit.extensions.TestDecorator=1, junit.framework.Assert=68}
+ID: 293 Class: junit.swingui.TestRunner Method: void,run(java.lang.Class) Usages: 141 Percentage: 3.012176885280923% Additional info:{junit.swingui.TestRunner=141}
+ID: 422 Class: junit.textui.TestRunner Method: junit.framework.TestResult,run(junit.framework.Test) Usages: 130 Percentage: 2.7771843623157446% Additional info:{junit.textui.TestRunner=130}
+ID: 70 Class: junit.framework.TestSuite Method: junit.framework.TestSuite,CONSTRUCTOR(java.lang.Class) Usages: 129 Percentage: 2.7558214056825467% Additional info:{junit.framework.TestSuite=129}
+ID: 149 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,int,int) Usages: 125 Percentage: 2.6703695791497544% Additional info:{junit.extensions.TestSetup=1, junit.framework.TestCase=84, junit.extensions.TestDecorator=1, junit.framework.Assert=39}
+ID: 421 Class: junit.textui.TestRunner Method: void,run(java.lang.Class) Usages: 99 Percentage: 2.1149327066866053% Additional info:{junit.textui.TestRunner=99}
+ID: 128 Class: junit.framework.Assert Method: void,assertFalse(boolean) Usages: 98 Percentage: 2.0935697500534074% Additional info:{junit.extensions.TestSetup=1, junit.framework.TestCase=70, junit.framework.Assert=27}
+ID: 151 Class: junit.framework.Assert Method: void,assertNotNull(java.lang.Object) Usages: 97 Percentage: 2.0722067934202095% Additional info:{junit.framework.TestCase=58, junit.framework.Assert=39}
+ID: 72 Class: junit.framework.TestSuite Method: void,addTest(junit.framework.Test) Usages: 95 Percentage: 2.0294808801538133% Additional info:{junit.framework.TestSuite=89, junit.extensions.ActiveTestSuite=6}
+ID: 117 Class: junit.framework.AssertionFailedError Method: junit.framework.AssertionFailedError,CONSTRUCTOR(java.lang.String) Usages: 94 Percentage: 2.0081179235206155% Additional info:{junit.framework.AssertionFailedError=94}
+ID: 153 Class: junit.framework.Assert Method: void,assertNull(java.lang.Object) Usages: 93 Percentage: 1.9867549668874174% Additional info:{junit.framework.TestCase=67, junit.framework.Assert=26}
+ID: 68 Class: junit.framework.TestSuite Method: junit.framework.TestSuite,CONSTRUCTOR() Usages: 76 Percentage: 1.6235847041230507% Additional info:{junit.framework.TestSuite=76}
+ID: 98 Class: junit.framework.TestResult Method: junit.framework.TestResult,CONSTRUCTOR() Usages: 69 Percentage: 1.4740440076906645% Additional info:{junit.framework.TestResult=69}
+ID: 106 Class: junit.framework.TestResult Method: int,failureCount() Usages: 62 Percentage: 1.3245033112582782% Additional info:{junit.framework.TestResult=62}
+ID: 104 Class: junit.framework.TestResult Method: int,errorCount() Usages: 61 Percentage: 1.3031403546250802% Additional info:{junit.framework.TestResult=61}
+ID: 152 Class: junit.framework.Assert Method: void,assertNotNull(java.lang.String,java.lang.Object) Usages: 60 Percentage: 1.281777397991882% Additional info:{junit.framework.TestCase=30, junit.framework.Assert=30}
+ID: 71 Class: junit.framework.TestSuite Method: junit.framework.TestSuite,CONSTRUCTOR(java.lang.String) Usages: 59 Percentage: 1.2604144413586842% Additional info:{junit.framework.TestSuite=59}
+ID: 127 Class: junit.framework.Assert Method: void,assertFalse(java.lang.String,boolean) Usages: 55 Percentage: 1.174962614825892% Additional info:{junit.framework.TestCase=33, junit.framework.Assert=22}
+ID: 114 Class: junit.framework.TestResult Method: boolean,wasSuccessful() Usages: 50 Percentage: 1.0681478316599018% Additional info:{junit.framework.TestResult=50}
+ID: 105 Class: junit.framework.TestResult Method: java.util.Enumeration,errors() Usages: 50 Percentage: 1.0681478316599018% Additional info:{junit.framework.TestResult=50}
+ID: 159 Class: junit.framework.Assert Method: void,#ExtendsOrImplements#() Usages: 48 Percentage: 1.0254219183935056% Additional info:{}
+ID: 107 Class: junit.framework.TestResult Method: java.util.Enumeration,failures() Usages: 45 Percentage: 0.9613330484939117% Additional info:{junit.framework.TestResult=45}
+ID: 142 Class: junit.framework.Assert Method: void,assertEquals(boolean,boolean) Usages: 43 Percentage: 0.9186071352275156% Additional info:{junit.framework.TestCase=25, junit.extensions.TestDecorator=1, junit.framework.Assert=17}
+ID: 74 Class: junit.framework.TestSuite Method: void,addTestSuite(java.lang.Class) Usages: 43 Percentage: 0.9186071352275156% Additional info:{junit.framework.TestSuite=42, junit.extensions.ActiveTestSuite=1}
+ID: 109 Class: junit.framework.TestResult Method: int,runCount() Usages: 43 Percentage: 0.9186071352275156% Additional info:{junit.framework.TestResult=43}
+ID: 130 Class: junit.framework.Assert Method: void,fail() Usages: 38 Percentage: 0.8117923520615253% Additional info:{junit.framework.TestCase=23, junit.framework.Assert=15}
+ID: 141 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,boolean,boolean) Usages: 38 Percentage: 0.8117923520615253% Additional info:{junit.extensions.TestSetup=1, junit.framework.TestCase=22, junit.extensions.TestDecorator=1, junit.framework.Assert=14}
+ID: 171 Class: junit.framework.TestCase Method: java.lang.String,getName() Usages: 38 Percentage: 0.8117923520615253% Additional info:{junit.framework.TestCase=38}
+ID: 101 Class: junit.framework.TestResult Method: void,addListener(junit.framework.TestListener) Usages: 38 Percentage: 0.8117923520615253% Additional info:{junit.framework.TestResult=38}
+ID: 29 Class: junit.awtui.TestRunner Method: void,main(java.lang.String[]) Usages: 36 Percentage: 0.7690664387951293% Additional info:{junit.awtui.TestRunner=36}
+ID: 154 Class: junit.framework.Assert Method: void,assertNull(java.lang.String,java.lang.Object) Usages: 36 Percentage: 0.7690664387951293% Additional info:{junit.framework.TestCase=21, junit.framework.Assert=15}
+ID: 432 Class: junit.textui.TestRunner Method: void,main(java.lang.String) Usages: 34 Percentage: 0.7263405255287332% Additional info:{junit.textui.TestRunner=34}
+ID: 103 Class: junit.framework.TestResult Method: void,endTest(junit.framework.Test) Usages: 32 Percentage: 0.6836146122623371% Additional info:{junit.framework.TestResult=32}
+ID: 86 Class: junit.framework.TestSuite Method: void,#ExtendsOrImplements#() Usages: 32 Percentage: 0.6836146122623371% Additional info:{}
+ID: 112 Class: junit.framework.TestResult Method: void,startTest(junit.framework.Test) Usages: 31 Percentage: 0.6622516556291391% Additional info:{junit.framework.TestResult=31}
+ID: 292 Class: junit.swingui.TestRunner Method: void,main(java.lang.String[]) Usages: 28 Percentage: 0.598162785729545% Additional info:{junit.swingui.TestRunner=28}
+ID: 51 Class: junit.extensions.TestSetup Method: junit.extensions.TestSetup,CONSTRUCTOR(junit.framework.Test) Usages: 28 Percentage: 0.598162785729545% Additional info:{junit.extensions.TestSetup=28}
+ID: 55 Class: junit.extensions.TestSetup Method: void,#ExtendsOrImplements#() Usages: 28 Percentage: 0.598162785729545% Additional info:{}
+ID: 123 Class: junit.framework.TestListener Method: void,#ExtendsOrImplements#() Usages: 27 Percentage: 0.576799829096347% Additional info:{}
+ID: 156 Class: junit.framework.Assert Method: void,assertSame(java.lang.Object,java.lang.Object) Usages: 23 Percentage: 0.4913480025635548% Additional info:{junit.framework.TestCase=12, junit.framework.Assert=11}
+ID: 30 Class: junit.awtui.TestRunner Method: void,run(java.lang.Class) Usages: 20 Percentage: 0.4272591326639607% Additional info:{junit.awtui.TestRunner=20}
+ID: 110 Class: junit.framework.TestResult Method: void,runProtected(junit.framework.Test,junit.framework.Protectable) Usages: 20 Percentage: 0.4272591326639607% Additional info:{junit.framework.TestResult=20}
+ID: 247 Class: junit.runner.BaseTestRunner Method: void,#ExtendsOrImplements#() Usages: 20 Percentage: 0.4272591326639607% Additional info:{}
+ID: 144 Class: junit.framework.Assert Method: void,assertEquals(byte,byte) Usages: 19 Percentage: 0.40589617603076267% Additional info:{junit.framework.TestCase=10, junit.framework.Assert=9}
+ID: 63 Class: junit.extensions.RepeatedTest Method: junit.extensions.RepeatedTest,CONSTRUCTOR(junit.framework.Test,int) Usages: 19 Percentage: 0.40589617603076267% Additional info:{junit.extensions.RepeatedTest=19}
+ID: 140 Class: junit.framework.Assert Method: void,assertEquals(long,long) Usages: 19 Percentage: 0.40589617603076267% Additional info:{junit.framework.TestCase=15, junit.framework.Assert=4}
+ID: 84 Class: junit.framework.TestSuite Method: void,setName(java.lang.String) Usages: 19 Percentage: 0.40589617603076267% Additional info:{junit.framework.TestSuite=19}
+ID: 158 Class: junit.framework.Assert Method: void,assertNotSame(java.lang.Object,java.lang.Object) Usages: 18 Percentage: 0.38453321939756463% Additional info:{junit.framework.TestCase=13, junit.framework.Assert=5}
+ID: 111 Class: junit.framework.TestResult Method: boolean,shouldStop() Usages: 18 Percentage: 0.38453321939756463% Additional info:{junit.framework.TestResult=18}
+ID: 417 Class: junit.textui.ResultPrinter Method: void,#ExtendsOrImplements#() Usages: 18 Percentage: 0.38453321939756463% Additional info:{}
+ID: 118 Class: junit.framework.AssertionFailedError Method: void,#ExtendsOrImplements#() Usages: 17 Percentage: 0.3631702627643666% Additional info:{}
+ID: 92 Class: junit.framework.TestFailure Method: java.lang.Throwable,thrownException() Usages: 16 Percentage: 0.34180730613116855% Additional info:{junit.framework.TestFailure=16}
+ID: 116 Class: junit.framework.AssertionFailedError Method: junit.framework.AssertionFailedError,CONSTRUCTOR() Usages: 16 Percentage: 0.34180730613116855% Additional info:{junit.framework.AssertionFailedError=16}
+ID: 100 Class: junit.framework.TestResult Method: void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError) Usages: 16 Percentage: 0.34180730613116855% Additional info:{junit.framework.TestResult=16}
+ID: 143 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,byte,byte) Usages: 14 Percentage: 0.2990813928647725% Additional info:{junit.extensions.TestSetup=1, junit.framework.TestCase=8, junit.framework.Assert=5}
+ID: 88 Class: junit.framework.Test Method: void,run(junit.framework.TestResult) Usages: 14 Percentage: 0.2990813928647725% Additional info:{junit.framework.Test=14}
+ID: 230 Class: junit.runner.BaseTestRunner Method: junit.framework.Test,getTest(java.lang.String) Usages: 14 Percentage: 0.2990813928647725% Additional info:{junit.textui.TestRunner=1, junit.runner.BaseTestRunner=13}
+ID: 99 Class: junit.framework.TestResult Method: void,addError(junit.framework.Test,java.lang.Throwable) Usages: 13 Percentage: 0.27771843623157444% Additional info:{junit.framework.TestResult=13}
+ID: 172 Class: junit.framework.TestCase Method: void,setName(java.lang.String) Usages: 13 Percentage: 0.27771843623157444% Additional info:{junit.framework.TestCase=13}
+ID: 113 Class: junit.framework.TestResult Method: void,stop() Usages: 13 Percentage: 0.27771843623157444% Additional info:{junit.framework.TestResult=13}
+ID: 61 Class: junit.extensions.TestDecorator Method: junit.framework.Test,getTest() Usages: 13 Percentage: 0.27771843623157444% Additional info:{junit.extensions.TestSetup=3, junit.extensions.TestDecorator=10}
+ID: 291 Class: junit.swingui.TestRunner Method: junit.swingui.TestRunner,CONSTRUCTOR() Usages: 13 Percentage: 0.27771843623157444% Additional info:{junit.swingui.TestRunner=13}
+ID: 412 Class: junit.textui.ResultPrinter Method: java.io.PrintStream,getWriter() Usages: 12 Percentage: 0.2563554795983764% Additional info:{junit.textui.ResultPrinter=12}
+ID: 139 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,long,long) Usages: 11 Percentage: 0.2349925229651784% Additional info:{junit.extensions.TestSetup=1, junit.framework.TestCase=6, junit.framework.Assert=4}
+ID: 91 Class: junit.framework.TestFailure Method: junit.framework.Test,failedTest() Usages: 11 Percentage: 0.2349925229651784% Additional info:{junit.framework.TestFailure=11}
+ID: 212 Class: junit.runner.TestSuiteLoader Method: void,#ExtendsOrImplements#() Usages: 11 Percentage: 0.2349925229651784% Additional info:{}
+ID: 120 Class: junit.framework.TestListener Method: void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError) Usages: 10 Percentage: 0.21362956633198035% Additional info:{junit.framework.TestListener=10}
+ID: 85 Class: junit.framework.TestSuite Method: java.lang.String,getName() Usages: 10 Percentage: 0.21362956633198035% Additional info:{junit.framework.TestSuite=10}
+ID: 429 Class: junit.textui.TestRunner Method: junit.framework.TestResult,doRun(junit.framework.Test) Usages: 10 Percentage: 0.21362956633198035% Additional info:{junit.textui.TestRunner=10}
+ID: 208 Class: junit.runner.TestCollector Method: java.util.Enumeration,collectTests() Usages: 10 Percentage: 0.21362956633198035% Additional info:{junit.runner.TestCollector=10}
+ID: 155 Class: junit.framework.Assert Method: void,assertSame(java.lang.String,java.lang.Object,java.lang.Object) Usages: 10 Percentage: 0.21362956633198035% Additional info:{junit.framework.TestCase=1, junit.framework.Assert=9}
+ID: 115 Class: junit.framework.TestResult Method: void,#ExtendsOrImplements#() Usages: 10 Percentage: 0.21362956633198035% Additional info:{}
+ID: 89 Class: junit.framework.Test Method: void,#ExtendsOrImplements#() Usages: 10 Percentage: 0.21362956633198035% Additional info:{}
+ID: 62 Class: junit.extensions.TestDecorator Method: void,#ExtendsOrImplements#() Usages: 10 Percentage: 0.21362956633198035% Additional info:{}
+ID: 78 Class: junit.framework.TestSuite Method: void,run(junit.framework.TestResult) Usages: 9 Percentage: 0.19226660969878231% Additional info:{junit.framework.TestSuite=9}
+ID: 147 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,short,short) Usages: 9 Percentage: 0.19226660969878231% Additional info:{junit.extensions.TestSetup=1, junit.framework.TestCase=4, junit.framework.Assert=4}
+ID: 174 Class: junit.framework.ComparisonFailure Method: junit.framework.ComparisonFailure,CONSTRUCTOR(java.lang.String,java.lang.String,java.lang.String) Usages: 9 Percentage: 0.19226660969878231% Additional info:{junit.framework.ComparisonFailure=9}
+ID: 327 Class: junit.swingui.TestRunner Method: void,start(java.lang.String[]) Usages: 9 Percentage: 0.19226660969878231% Additional info:{junit.swingui.TestRunner=9}
+ID: 168 Class: junit.framework.TestCase Method: void,setUp() Usages: 8 Percentage: 0.17090365306558428% Additional info:{junit.framework.TestCase=7, junit.extensions.ExceptionTestCase=1}
+ID: 165 Class: junit.framework.TestCase Method: void,run(junit.framework.TestResult) Usages: 8 Percentage: 0.17090365306558428% Additional info:{junit.framework.TestCase=8}
+ID: 188 Class: junit.runner.ClassPathTestCollector Method: java.util.Hashtable,collectFilesInPath(java.lang.String) Usages: 8 Percentage: 0.17090365306558428% Additional info:{junit.runner.SimpleTestCollector=6, junit.runner.ClassPathTestCollector=2}
+ID: 146 Class: junit.framework.Assert Method: void,assertEquals(char,char) Usages: 8 Percentage: 0.17090365306558428% Additional info:{junit.framework.TestCase=4, junit.framework.Assert=4}
+ID: 95 Class: junit.framework.TestFailure Method: java.lang.String,exceptionMessage() Usages: 8 Percentage: 0.17090365306558428% Additional info:{junit.framework.TestFailure=8}
+ID: 145 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,char,char) Usages: 8 Percentage: 0.17090365306558428% Additional info:{junit.framework.TestCase=1, junit.framework.Assert=7}
+ID: 244 Class: junit.runner.BaseTestRunner Method: java.lang.String,getFilteredTrace(java.lang.Throwable) Usages: 8 Percentage: 0.17090365306558428% Additional info:{junit.runner.BaseTestRunner=8}
+ID: 43 Class: junit.extensions.ActiveTestSuite Method: junit.extensions.ActiveTestSuite,CONSTRUCTOR() Usages: 8 Percentage: 0.17090365306558428% Additional info:{junit.extensions.ActiveTestSuite=8}
+ID: 169 Class: junit.framework.TestCase Method: void,tearDown() Usages: 7 Percentage: 0.14954069643238624% Additional info:{junit.framework.TestCase=7}
+ID: 136 Class: junit.framework.Assert Method: void,assertEquals(double,double,double) Usages: 7 Percentage: 0.14954069643238624% Additional info:{junit.framework.TestCase=3, junit.framework.Assert=4}
+ID: 148 Class: junit.framework.Assert Method: void,assertEquals(short,short) Usages: 7 Percentage: 0.14954069643238624% Additional info:{junit.framework.TestCase=3, junit.framework.Assert=4}
+ID: 135 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,double,double,double) Usages: 7 Percentage: 0.14954069643238624% Additional info:{junit.framework.TestCase=3, junit.framework.Assert=4}
+ID: 76 Class: junit.framework.TestSuite Method: int,countTestCases() Usages: 7 Percentage: 0.14954069643238624% Additional info:{junit.framework.TestSuite=7}
+ID: 102 Class: junit.framework.TestResult Method: void,removeListener(junit.framework.TestListener) Usages: 7 Percentage: 0.14954069643238624% Additional info:{junit.framework.TestResult=7}
+ID: 209 Class: junit.runner.TestCollector Method: void,#ExtendsOrImplements#() Usages: 7 Percentage: 0.14954069643238624% Additional info:{}
+ID: 206 Class: junit.runner.TestCaseClassLoader Method: java.lang.Class,loadClass(java.lang.String,boolean) Usages: 6 Percentage: 0.1281777397991882% Additional info:{junit.runner.TestCaseClassLoader=6}
+ID: 190 Class: junit.runner.ClassPathTestCollector Method: java.lang.String,classNameFromFile(java.lang.String) Usages: 6 Percentage: 0.1281777397991882% Additional info:{junit.runner.LoadingTestCollector=1, junit.runner.ClassPathTestCollector=5}
+ID: 192 Class: junit.runner.SimpleTestCollector Method: junit.runner.SimpleTestCollector,CONSTRUCTOR() Usages: 6 Percentage: 0.1281777397991882% Additional info:{junit.runner.SimpleTestCollector=6}
+ID: 201 Class: junit.runner.TestCaseClassLoader Method: junit.runner.TestCaseClassLoader,CONSTRUCTOR() Usages: 6 Percentage: 0.1281777397991882% Additional info:{junit.runner.TestCaseClassLoader=6}
+ID: 191 Class: junit.runner.ClassPathTestCollector Method: void,#ExtendsOrImplements#() Usages: 6 Percentage: 0.1281777397991882% Additional info:{}
+ID: 17 Class: junit.awtui.TestRunner Method: junit.awtui.TestRunner,CONSTRUCTOR() Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.awtui.TestRunner=5}
+ID: 65 Class: junit.extensions.RepeatedTest Method: void,run(junit.framework.TestResult) Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.extensions.RepeatedTest=5}
+ID: 87 Class: junit.framework.Test Method: int,countTestCases() Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.framework.Test=5}
+ID: 64 Class: junit.extensions.RepeatedTest Method: int,countTestCases() Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.extensions.RepeatedTest=5}
+ID: 411 Class: junit.textui.ResultPrinter Method: java.lang.String,elapsedTimeAsString(long) Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.textui.ResultPrinter=5}
+ID: 94 Class: junit.framework.TestFailure Method: java.lang.String,trace() Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.framework.TestFailure=5}
+ID: 410 Class: junit.textui.ResultPrinter Method: void,printFooter(junit.framework.TestResult) Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.textui.ResultPrinter=5}
+ID: 170 Class: junit.framework.TestCase Method: java.lang.String,toString() Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.framework.TestCase=5}
+ID: 405 Class: junit.textui.ResultPrinter Method: void,printFailures(junit.framework.TestResult) Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.textui.ResultPrinter=5}
+ID: 404 Class: junit.textui.ResultPrinter Method: void,printErrors(junit.framework.TestResult) Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.textui.ResultPrinter=5}
+ID: 245 Class: junit.runner.BaseTestRunner Method: java.lang.String,getFilteredTrace(java.lang.String) Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.textui.TestRunner=2, junit.runner.BaseTestRunner=3}
+ID: 243 Class: junit.runner.BaseTestRunner Method: boolean,inVAJava() Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.runner.BaseTestRunner=5}
+ID: 248 Class: junit.runner.Sorter Method: void,sortStrings(java.util.Vector,int,int,junit.runner.Sorter.Swapper) Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.runner.Sorter=5}
+ID: 418 Class: junit.textui.TestRunner Method: junit.textui.TestRunner,CONSTRUCTOR() Usages: 5 Percentage: 0.10681478316599018% Additional info:{junit.textui.TestRunner=5}
+ID: 42 Class: junit.extensions.ExceptionTestCase Method: void,#ExtendsOrImplements#() Usages: 5 Percentage: 0.10681478316599018% Additional info:{}
+ID: 119 Class: junit.framework.TestListener Method: void,addError(junit.framework.Test,java.lang.Throwable) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.framework.TestListener=4}
+ID: 37 Class: junit.awtui.TestRunner Method: void,start(java.lang.String[]) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.awtui.TestRunner=4}
+ID: 138 Class: junit.framework.Assert Method: void,assertEquals(float,float,float) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.framework.TestCase=2, junit.framework.Assert=2}
+ID: 82 Class: junit.framework.TestSuite Method: java.util.Enumeration,tests() Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.framework.TestSuite=4}
+ID: 167 Class: junit.framework.TestCase Method: void,runTest() Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.framework.TestCase=4}
+ID: 160 Class: junit.framework.TestCase Method: junit.framework.TestCase,CONSTRUCTOR() Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.framework.TestCase=4}
+ID: 217 Class: junit.runner.Version Method: java.lang.String,id() Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.runner.Version=4}
+ID: 435 Class: junit.textui.TestRunner Method: void,setPrinter(junit.textui.ResultPrinter) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.textui.TestRunner=4}
+ID: 177 Class: junit.framework.Protectable Method: void,protect() Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.framework.Protectable=4}
+ID: 157 Class: junit.framework.Assert Method: void,assertNotSame(java.lang.String,java.lang.Object,java.lang.Object) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.framework.TestCase=1, junit.framework.Assert=3}
+ID: 81 Class: junit.framework.TestSuite Method: int,testCount() Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.framework.TestSuite=4}
+ID: 161 Class: junit.framework.TestCase Method: junit.framework.TestCase,CONSTRUCTOR(java.lang.String) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.framework.TestCase=4}
+ID: 60 Class: junit.extensions.TestDecorator Method: java.lang.String,toString() Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.extensions.TestSetup=2, junit.extensions.TestDecorator=2}
+ID: 406 Class: junit.textui.ResultPrinter Method: void,printDefects(java.util.Enumeration,int,java.lang.String) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.textui.ResultPrinter=4}
+ID: 233 Class: junit.runner.BaseTestRunner Method: void,setLoading(boolean) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.swingui.TestRunner=4}
+ID: 202 Class: junit.runner.TestCaseClassLoader Method: junit.runner.TestCaseClassLoader,CONSTRUCTOR(java.lang.String) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.runner.TestCaseClassLoader=4}
+ID: 77 Class: junit.framework.TestSuite Method: java.lang.reflect.Constructor,getTestConstructor(java.lang.Class) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.framework.TestSuite=4}
+ID: 325 Class: junit.swingui.TestRunner Method: void,runTest(junit.framework.Test) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.swingui.TestRunner=4}
+ID: 316 Class: junit.swingui.TestRunner Method: javax.swing.JFrame,createUI(java.lang.String) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.swingui.TestRunner=4}
+ID: 56 Class: junit.extensions.TestDecorator Method: junit.extensions.TestDecorator,CONSTRUCTOR(junit.framework.Test) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.extensions.TestDecorator=4}
+ID: 44 Class: junit.extensions.ActiveTestSuite Method: junit.extensions.ActiveTestSuite,CONSTRUCTOR(java.lang.Class) Usages: 4 Percentage: 0.08545182653279214% Additional info:{junit.extensions.ActiveTestSuite=4}
+ID: 332 Class: junit.swingui.TestRunner Method: void,#ExtendsOrImplements#() Usages: 4 Percentage: 0.08545182653279214% Additional info:{}
+ID: 436 Class: junit.textui.TestRunner Method: void,#ExtendsOrImplements#() Usages: 4 Percentage: 0.08545182653279214% Additional info:{}
+ID: 178 Class: junit.framework.Protectable Method: void,#ExtendsOrImplements#() Usages: 4 Percentage: 0.08545182653279214% Additional info:{}
+ID: 122 Class: junit.framework.TestListener Method: void,startTest(junit.framework.Test) Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.framework.TestListener=3}
+ID: 121 Class: junit.framework.TestListener Method: void,endTest(junit.framework.Test) Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.framework.TestListener=3}
+ID: 175 Class: junit.framework.ComparisonFailure Method: java.lang.String,getMessage() Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.framework.ComparisonFailure=3}
+ID: 47 Class: junit.extensions.ActiveTestSuite Method: void,run(junit.framework.TestResult) Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.extensions.ActiveTestSuite=3}
+ID: 187 Class: junit.runner.ClassPathTestCollector Method: java.util.Enumeration,collectTests() Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.runner.LoadingTestCollector=2, junit.runner.ClassPathTestCollector=1}
+ID: 162 Class: junit.framework.TestCase Method: int,countTestCases() Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.framework.TestCase=3}
+ID: 137 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,float,float,float) Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.framework.TestCase=2, junit.framework.Assert=1}
+ID: 403 Class: junit.textui.ResultPrinter Method: void,printHeader(long) Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.textui.ResultPrinter=3}
+ID: 134 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,java.lang.String) Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.framework.TestCase=1, junit.framework.Assert=2}
+ID: 419 Class: junit.textui.TestRunner Method: junit.textui.TestRunner,CONSTRUCTOR(java.io.PrintStream) Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.textui.TestRunner=3}
+ID: 430 Class: junit.textui.TestRunner Method: junit.framework.TestResult,doRun(junit.framework.Test,boolean) Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.textui.TestRunner=3}
+ID: 205 Class: junit.runner.TestCaseClassLoader Method: boolean,isExcluded(java.lang.String) Usages: 3 Percentage: 0.0640888698995941% Additional info:{junit.runner.TestCaseClassLoader=3}
+ID: 54 Class: junit.extensions.TestSetup Method: void,tearDown() Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.extensions.TestSetup=2}
+ID: 226 Class: junit.runner.BaseTestRunner Method: void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.swingui.TestRunner=1, junit.runner.BaseTestRunner=1}
+ID: 413 Class: junit.textui.ResultPrinter Method: void,addError(junit.framework.Test,java.lang.Throwable) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.textui.ResultPrinter=2}
+ID: 225 Class: junit.runner.BaseTestRunner Method: void,addError(junit.framework.Test,java.lang.Throwable) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.swingui.TestRunner=1, junit.runner.BaseTestRunner=1}
+ID: 219 Class: junit.runner.BaseTestRunner Method: void,startTest(junit.framework.Test) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.runner.BaseTestRunner=2}
+ID: 239 Class: junit.runner.BaseTestRunner Method: junit.runner.TestSuiteLoader,getLoader() Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.runner.BaseTestRunner=2}
+ID: 224 Class: junit.runner.BaseTestRunner Method: void,endTest(junit.framework.Test) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.runner.BaseTestRunner=2}
+ID: 164 Class: junit.framework.TestCase Method: junit.framework.TestResult,run() Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.extensions.ExceptionTestCase=2}
+ID: 166 Class: junit.framework.TestCase Method: void,runBare() Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.framework.TestCase=2}
+ID: 80 Class: junit.framework.TestSuite Method: junit.framework.Test,testAt(int) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.framework.TestSuite=2}
+ID: 408 Class: junit.textui.ResultPrinter Method: void,printDefectHeader(junit.framework.TestFailure,int) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.textui.ResultPrinter=2}
+ID: 407 Class: junit.textui.ResultPrinter Method: void,printDefect(junit.framework.TestFailure,int) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.textui.ResultPrinter=2}
+ID: 358 Class: junit.swingui.TestRunContext Method: javax.swing.ListModel,getFailures() Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.swingui.TestRunContext=2}
+ID: 357 Class: junit.swingui.TestRunContext Method: void,handleTestSelected(junit.framework.Test) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.swingui.TestRunContext=2}
+ID: 409 Class: junit.textui.ResultPrinter Method: void,printDefectTrace(junit.framework.TestFailure) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.textui.ResultPrinter=2}
+ID: 402 Class: junit.textui.ResultPrinter Method: junit.textui.ResultPrinter,CONSTRUCTOR(java.io.PrintStream) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.textui.ResultPrinter=2}
+ID: 246 Class: junit.runner.BaseTestRunner Method: boolean,showStackRaw() Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.textui.TestRunner=1, junit.runner.BaseTestRunner=1}
+ID: 133 Class: junit.framework.Assert Method: void,assertEquals(java.lang.String,java.lang.String,java.lang.String) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.framework.Assert=2}
+ID: 428 Class: junit.textui.TestRunner Method: junit.framework.TestResult,createTestResult() Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.textui.TestRunner=2}
+ID: 267 Class: junit.swingui.StatusLine Method: void,clear() Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.swingui.StatusLine=2}
+ID: 264 Class: junit.swingui.StatusLine Method: junit.swingui.StatusLine,CONSTRUCTOR(int) Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.swingui.StatusLine=2}
+ID: 198 Class: junit.runner.LoadingTestCollector Method: junit.runner.LoadingTestCollector,CONSTRUCTOR() Usages: 2 Percentage: 0.04272591326639607% Additional info:{junit.runner.LoadingTestCollector=2}
+ID: 53 Class: junit.extensions.TestSetup Method: void,setUp() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.extensions.TestSetup=1}
+ID: 59 Class: junit.extensions.TestDecorator Method: void,run(junit.framework.TestResult) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.extensions.TestDecorator=1}
+ID: 236 Class: junit.runner.BaseTestRunner Method: void,runFailed(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.BaseTestRunner=1}
+ID: 414 Class: junit.textui.ResultPrinter Method: void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.textui.ResultPrinter=1}
+ID: 229 Class: junit.runner.BaseTestRunner Method: void,testFailed(int,junit.framework.Test,java.lang.Throwable) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.BaseTestRunner=1}
+ID: 228 Class: junit.runner.BaseTestRunner Method: void,testEnded(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.BaseTestRunner=1}
+ID: 227 Class: junit.runner.BaseTestRunner Method: void,testStarted(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.BaseTestRunner=1}
+ID: 211 Class: junit.runner.TestSuiteLoader Method: java.lang.Class,reload(java.lang.Class) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.TestSuiteLoader=1}
+ID: 210 Class: junit.runner.TestSuiteLoader Method: java.lang.Class,load(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.TestSuiteLoader=1}
+ID: 416 Class: junit.textui.ResultPrinter Method: void,startTest(junit.framework.Test) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.textui.ResultPrinter=1}
+ID: 415 Class: junit.textui.ResultPrinter Method: void,endTest(junit.framework.Test) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.textui.ResultPrinter=1}
+ID: 58 Class: junit.extensions.TestDecorator Method: int,countTestCases() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.extensions.TestDecorator=1}
+ID: 189 Class: junit.runner.ClassPathTestCollector Method: boolean,isTestClass(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.ClassPathTestCollector=1}
+ID: 108 Class: junit.framework.TestResult Method: void,run(junit.framework.TestCase) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.framework.TestResult=1}
+ID: 52 Class: junit.extensions.TestSetup Method: void,run(junit.framework.TestResult) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.extensions.TestSetup=1}
+ID: 124 Class: junit.framework.Assert Method: junit.framework.Assert,CONSTRUCTOR() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.extensions.TestSetup=1}
+ID: 215 Class: junit.runner.FailureDetailView Method: void,clear() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.FailureDetailView=1}
+ID: 238 Class: junit.runner.BaseTestRunner Method: void,clearStatus() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.BaseTestRunner=1}
+ID: 83 Class: junit.framework.TestSuite Method: java.lang.String,toString() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.framework.TestSuite=1}
+ID: 69 Class: junit.framework.TestSuite Method: junit.framework.TestSuite,CONSTRUCTOR(java.lang.Class,java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.framework.TestSuite=1}
+ID: 96 Class: junit.framework.TestFailure Method: boolean,isFailure() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.framework.TestFailure=1}
+ID: 93 Class: junit.framework.TestFailure Method: java.lang.String,toString() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.framework.TestFailure=1}
+ID: 424 Class: junit.textui.TestRunner Method: junit.runner.TestSuiteLoader,getLoader() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.textui.TestRunner=1}
+ID: 57 Class: junit.extensions.TestDecorator Method: void,basicRun(junit.framework.TestResult) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.extensions.TestSetup=1}
+ID: 214 Class: junit.runner.FailureDetailView Method: void,showFailure(junit.framework.TestFailure) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.FailureDetailView=1}
+ID: 213 Class: junit.runner.FailureDetailView Method: java.awt.Component,getComponent() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.FailureDetailView=1}
+ID: 240 Class: junit.runner.BaseTestRunner Method: boolean,useReloadingTestSuiteLoader() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.BaseTestRunner=1}
+ID: 235 Class: junit.runner.BaseTestRunner Method: java.lang.String,truncate(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.BaseTestRunner=1}
+ID: 231 Class: junit.runner.BaseTestRunner Method: java.lang.String,elapsedTimeAsString(long) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.BaseTestRunner=1}
+ID: 223 Class: junit.runner.BaseTestRunner Method: void,setPreference(java.lang.String,java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.BaseTestRunner=1}
+ID: 195 Class: junit.runner.StandardTestSuiteLoader Method: java.lang.Class,load(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.StandardTestSuiteLoader=1}
+ID: 258 Class: junit.swingui.CounterPanel Method: void,reset() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.swingui.CounterPanel=1}
+ID: 256 Class: junit.swingui.CounterPanel Method: junit.swingui.CounterPanel,CONSTRUCTOR() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.swingui.CounterPanel=1}
+ID: 328 Class: junit.swingui.TestRunner Method: void,terminate() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.swingui.TestRunner=1}
+ID: 315 Class: junit.swingui.TestRunner Method: junit.framework.TestResult,createTestResult() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.swingui.TestRunner=1}
+ID: 79 Class: junit.framework.TestSuite Method: void,runTest(junit.framework.Test,junit.framework.TestResult) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.framework.TestSuite=1}
+ID: 75 Class: junit.framework.TestSuite Method: junit.framework.Test,createTest(java.lang.Class,java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.framework.TestSuite=1}
+ID: 433 Class: junit.textui.TestRunner Method: junit.framework.TestResult,start(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.textui.TestRunner=1}
+ID: 431 Class: junit.textui.TestRunner Method: void,pause(boolean) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.textui.TestRunner=1}
+ID: 266 Class: junit.swingui.StatusLine Method: void,showError(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.swingui.StatusLine=1}
+ID: 265 Class: junit.swingui.StatusLine Method: void,showInfo(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.swingui.StatusLine=1}
+ID: 8 Class: junit.awtui.ProgressBar Method: void,step(boolean) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.awtui.ProgressBar=1}
+ID: 0 Class: junit.awtui.ProgressBar Method: junit.awtui.ProgressBar,CONSTRUCTOR() Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.awtui.ProgressBar=1}
+ID: 199 Class: junit.runner.LoadingTestCollector Method: boolean,isTestClass(java.lang.String) Usages: 1 Percentage: 0.021362956633198035% Additional info:{junit.runner.LoadingTestCollector=1}
+ID: 38 Class: junit.awtui.TestRunner Method: void,#ExtendsOrImplements#() Usages: 1 Percentage: 0.021362956633198035% Additional info:{}
+ID: 185 Class: junit.runner.TestRunListener Method: void,#ExtendsOrImplements#() Usages: 1 Percentage: 0.021362956633198035% Additional info:{}
+ID: 359 Class: junit.swingui.TestRunContext Method: void,#ExtendsOrImplements#() Usages: 1 Percentage: 0.021362956633198035% Additional info:{}
+ID: 207 Class: junit.runner.TestCaseClassLoader Method: void,#ExtendsOrImplements#() Usages: 1 Percentage: 0.021362956633198035% Additional info:{}
+ID: 97 Class: junit.framework.TestFailure Method: void,#ExtendsOrImplements#() Usages: 1 Percentage: 0.021362956633198035% Additional info:{}
+ID: 200 Class: junit.runner.LoadingTestCollector Method: void,#ExtendsOrImplements#() Usages: 1 Percentage: 0.021362956633198035% Additional info:{}
+ID: 374 Class: junit.swingui.TestSuitePanel Method: void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 373 Class: junit.swingui.TestSuitePanel Method: void,addError(junit.framework.Test,java.lang.Throwable) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 41 Class: junit.extensions.ExceptionTestCase Method: void,runTest() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 271 Class: junit.swingui.DefaultFailureDetailView Method: void,clear() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 326 Class: junit.swingui.TestRunner Method: void,handleTestSelected(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 318 Class: junit.swingui.TestRunner Method: javax.swing.ListModel,getFailures() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 66 Class: junit.extensions.RepeatedTest Method: java.lang.String,toString() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 376 Class: junit.swingui.TestSuitePanel Method: void,startTest(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 375 Class: junit.swingui.TestSuitePanel Method: void,endTest(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 270 Class: junit.swingui.DefaultFailureDetailView Method: void,showFailure(junit.framework.TestFailure) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 269 Class: junit.swingui.DefaultFailureDetailView Method: java.awt.Component,getComponent() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 290 Class: junit.swingui.FailureRunView.FailureListCellRenderer Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 289 Class: junit.swingui.FailureRunView.FailureListCellRenderer Method: java.awt.Component,getListCellRendererComponent(javax.swing.JList,java.lang.Object,int,boolean,boolean) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 36 Class: junit.awtui.TestRunner Method: void,clearStatus() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 35 Class: junit.awtui.TestRunner Method: void,setSuiteName(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 34 Class: junit.awtui.TestRunner Method: void,runSuite() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 33 Class: junit.awtui.TestRunner Method: void,runFailed(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 32 Class: junit.awtui.TestRunner Method: void,reset() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 31 Class: junit.awtui.TestRunner Method: void,rerun() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 28 Class: junit.awtui.TestRunner Method: java.lang.Thread,getRunner() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 27 Class: junit.awtui.TestRunner Method: void,failureSelected() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 26 Class: junit.awtui.TestRunner Method: java.awt.Panel,createCounterPanel() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 25 Class: junit.awtui.TestRunner Method: java.awt.Frame,createUI(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 24 Class: junit.awtui.TestRunner Method: junit.framework.TestResult,createTestResult() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 23 Class: junit.awtui.TestRunner Method: void,createMenus(java.awt.MenuBar) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 22 Class: junit.awtui.TestRunner Method: java.awt.Menu,createJUnitMenu() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 21 Class: junit.awtui.TestRunner Method: void,addGrid(java.awt.Panel,java.awt.Component,int,int,int,int,double,int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 20 Class: junit.awtui.TestRunner Method: void,testFailed(int,junit.framework.Test,java.lang.Throwable) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 19 Class: junit.awtui.TestRunner Method: void,testEnded(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 18 Class: junit.awtui.TestRunner Method: void,testStarted(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 399 Class: junit.swingui.TestSelector.KeySelectListener Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 398 Class: junit.swingui.TestSelector.KeySelectListener Method: void,keyTyped(java.awt.event.KeyEvent) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 216 Class: junit.runner.FailureDetailView Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 288 Class: junit.swingui.FailureRunView Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 287 Class: junit.swingui.FailureRunView Method: void,testSelected() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 286 Class: junit.swingui.FailureRunView Method: void,runFinished(junit.framework.Test,junit.framework.TestResult) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 285 Class: junit.swingui.FailureRunView Method: void,aboutToStart(junit.framework.Test,junit.framework.TestResult) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 284 Class: junit.swingui.FailureRunView Method: void,revealFailure(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 283 Class: junit.swingui.FailureRunView Method: void,addTab(javax.swing.JTabbedPane) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 282 Class: junit.swingui.FailureRunView Method: void,activate() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 281 Class: junit.swingui.FailureRunView Method: junit.framework.Test,getSelectedTest() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 280 Class: junit.swingui.FailureRunView Method: junit.swingui.FailureRunView,CONSTRUCTOR(junit.swingui.TestRunContext) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 371 Class: junit.swingui.AboutDialog Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 370 Class: junit.swingui.AboutDialog Method: javax.swing.JLabel,createLogo() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 369 Class: junit.swingui.AboutDialog Method: junit.swingui.AboutDialog,CONSTRUCTOR(javax.swing.JFrame) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 395 Class: junit.swingui.TestSelector.TestCellRenderer Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 394 Class: junit.swingui.TestSelector.TestCellRenderer Method: boolean,matchesKey(java.lang.String,char) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 393 Class: junit.swingui.TestSelector.TestCellRenderer Method: java.lang.String,displayString(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 392 Class: junit.swingui.TestSelector.TestCellRenderer Method: java.awt.Component,getListCellRendererComponent(javax.swing.JList,java.lang.Object,int,boolean,boolean) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 391 Class: junit.swingui.TestSelector.TestCellRenderer Method: junit.swingui.TestSelector.TestCellRenderer,CONSTRUCTOR() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 184 Class: junit.runner.TestRunListener Method: void,testFailed(int,java.lang.String,java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 183 Class: junit.runner.TestRunListener Method: void,testEnded(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 182 Class: junit.runner.TestRunListener Method: void,testStarted(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 181 Class: junit.runner.TestRunListener Method: void,testRunStopped(long) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 180 Class: junit.runner.TestRunListener Method: void,testRunEnded(long) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 179 Class: junit.runner.TestRunListener Method: void,testRunStarted(java.lang.String,int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 242 Class: junit.runner.BaseTestRunner Method: int,getPreference(java.lang.String,int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 241 Class: junit.runner.BaseTestRunner Method: java.lang.String,getPreference(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 237 Class: junit.runner.BaseTestRunner Method: java.lang.Class,loadSuiteClass(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 234 Class: junit.runner.BaseTestRunner Method: java.lang.String,extractClassName(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 232 Class: junit.runner.BaseTestRunner Method: java.lang.String,processArguments(java.lang.String[]) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 222 Class: junit.runner.BaseTestRunner Method: void,savePreferences() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 221 Class: junit.runner.BaseTestRunner Method: java.util.Properties,getPreferences() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 220 Class: junit.runner.BaseTestRunner Method: void,setPreferences(java.util.Properties) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 356 Class: junit.swingui.TestRunView Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 355 Class: junit.swingui.TestRunView Method: void,runFinished(junit.framework.Test,junit.framework.TestResult) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 354 Class: junit.swingui.TestRunView Method: void,aboutToStart(junit.framework.Test,junit.framework.TestResult) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 353 Class: junit.swingui.TestRunView Method: void,addTab(javax.swing.JTabbedPane) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 352 Class: junit.swingui.TestRunView Method: void,revealFailure(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 351 Class: junit.swingui.TestRunView Method: void,activate() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 350 Class: junit.swingui.TestRunView Method: junit.framework.Test,getSelectedTest() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 218 Class: junit.runner.Version Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 272 Class: junit.swingui.DefaultFailureDetailView Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 186 Class: junit.runner.ClassPathTestCollector Method: junit.runner.ClassPathTestCollector,CONSTRUCTOR() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 249 Class: junit.runner.Sorter Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 194 Class: junit.runner.SimpleTestCollector Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 193 Class: junit.runner.SimpleTestCollector Method: boolean,isTestClass(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 197 Class: junit.runner.StandardTestSuiteLoader Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 196 Class: junit.runner.StandardTestSuiteLoader Method: java.lang.Class,reload(java.lang.Class) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 401 Class: junit.swingui.TestSelector.ParallelSwapper Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 400 Class: junit.swingui.TestSelector.ParallelSwapper Method: void,swap(java.util.Vector,int,int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 204 Class: junit.runner.TestCaseClassLoader Method: java.io.InputStream,getResourceAsStream(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 203 Class: junit.runner.TestCaseClassLoader Method: java.net.URL,getResource(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 397 Class: junit.swingui.TestSelector.DoubleClickListener Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 396 Class: junit.swingui.TestSelector.DoubleClickListener Method: void,mouseClicked(java.awt.event.MouseEvent) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 263 Class: junit.swingui.CounterPanel Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 262 Class: junit.swingui.CounterPanel Method: void,setFailureValue(int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 261 Class: junit.swingui.CounterPanel Method: void,setErrorValue(int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 260 Class: junit.swingui.CounterPanel Method: void,setRunValue(int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 259 Class: junit.swingui.CounterPanel Method: void,setTotal(int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 257 Class: junit.swingui.CounterPanel Method: void,addToGrid(java.awt.Component,int,int,int,int,double,double,int,int,java.awt.Insets) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 331 Class: junit.swingui.TestRunner Method: javax.swing.Icon,getIconResource(java.lang.Class,java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 330 Class: junit.swingui.TestRunner Method: void,clearStatus() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 329 Class: junit.swingui.TestRunner Method: void,textChanged() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 324 Class: junit.swingui.TestRunner Method: void,runSuite() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 323 Class: junit.swingui.TestRunner Method: void,runFailed(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 322 Class: junit.swingui.TestRunner Method: void,reset() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 321 Class: junit.swingui.TestRunner Method: void,removeUpdate(javax.swing.event.DocumentEvent) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 320 Class: junit.swingui.TestRunner Method: void,browseTestClasses() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 319 Class: junit.swingui.TestRunner Method: void,insertUpdate(javax.swing.event.DocumentEvent) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 317 Class: junit.swingui.TestRunner Method: java.lang.String,getSuiteText() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 314 Class: junit.swingui.TestRunner Method: void,testViewChanged() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 313 Class: junit.swingui.TestRunner Method: javax.swing.JTabbedPane,createTestRunViews() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 312 Class: junit.swingui.TestRunner Method: javax.swing.JComboBox,createSuiteCombo() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 311 Class: junit.swingui.TestRunner Method: junit.swingui.StatusLine,createStatusLine() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 310 Class: junit.swingui.TestRunner Method: java.awt.Component,createBrowseButton() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 309 Class: junit.swingui.TestRunner Method: javax.swing.JButton,createRunButton() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 308 Class: junit.swingui.TestRunner Method: javax.swing.JButton,createQuitButton() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 307 Class: junit.swingui.TestRunner Method: javax.swing.JCheckBox,createUseLoaderCheckBox() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 306 Class: junit.swingui.TestRunner Method: void,createMenus(javax.swing.JMenuBar) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 305 Class: junit.swingui.TestRunner Method: javax.swing.JLabel,createLogo() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 304 Class: junit.swingui.TestRunner Method: javax.swing.JFrame,createFrame() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 303 Class: junit.swingui.TestRunner Method: javax.swing.JMenu,createJUnitMenu() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 302 Class: junit.swingui.TestRunner Method: junit.runner.FailureDetailView,createFailureDetailView() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 301 Class: junit.swingui.TestRunner Method: javax.swing.JPanel,createFailedPanel() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 300 Class: junit.swingui.TestRunner Method: junit.swingui.CounterPanel,createCounterPanel() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 299 Class: junit.swingui.TestRunner Method: void,runFinished(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 298 Class: junit.swingui.TestRunner Method: void,aboutToStart(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 297 Class: junit.swingui.TestRunner Method: void,setSuite(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 296 Class: junit.swingui.TestRunner Method: void,testEnded(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 295 Class: junit.swingui.TestRunner Method: void,testStarted(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 294 Class: junit.swingui.TestRunner Method: void,testFailed(int,junit.framework.Test,java.lang.Throwable) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 73 Class: junit.framework.TestSuite Method: void,addTest(junit.framework.TestCase) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 176 Class: junit.framework.ComparisonFailure Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 390 Class: junit.swingui.TestSelector Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 389 Class: junit.swingui.TestSelector Method: java.lang.String,getSelectedItem() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 388 Class: junit.swingui.TestSelector Method: void,keySelectTestClass(char) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 387 Class: junit.swingui.TestSelector Method: boolean,isEmpty() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 386 Class: junit.swingui.TestSelector Method: void,okSelected() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 385 Class: junit.swingui.TestSelector Method: void,checkEnableOK(javax.swing.event.ListSelectionEvent) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 384 Class: junit.swingui.TestSelector Method: void,centerWindow(java.awt.Component) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 383 Class: junit.swingui.TestSelector Method: junit.swingui.TestSelector,CONSTRUCTOR(java.awt.Frame,junit.runner.TestCollector) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 90 Class: junit.framework.TestFailure Method: junit.framework.TestFailure,CONSTRUCTOR(junit.framework.Test,java.lang.Throwable) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 349 Class: junit.swingui.ProgressBar Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 348 Class: junit.swingui.ProgressBar Method: void,step(int,boolean) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 347 Class: junit.swingui.ProgressBar Method: void,start(int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 346 Class: junit.swingui.ProgressBar Method: void,reset() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 345 Class: junit.swingui.ProgressBar Method: junit.swingui.ProgressBar,CONSTRUCTOR() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 368 Class: junit.swingui.TestHierarchyRunView Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 367 Class: junit.swingui.TestHierarchyRunView Method: void,testSelected() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 366 Class: junit.swingui.TestHierarchyRunView Method: void,runFinished(junit.framework.Test,junit.framework.TestResult) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 365 Class: junit.swingui.TestHierarchyRunView Method: void,aboutToStart(junit.framework.Test,junit.framework.TestResult) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 364 Class: junit.swingui.TestHierarchyRunView Method: void,revealFailure(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 363 Class: junit.swingui.TestHierarchyRunView Method: void,activate() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 362 Class: junit.swingui.TestHierarchyRunView Method: junit.framework.Test,getSelectedTest() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 361 Class: junit.swingui.TestHierarchyRunView Method: void,addTab(javax.swing.JTabbedPane) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 360 Class: junit.swingui.TestHierarchyRunView Method: junit.swingui.TestHierarchyRunView,CONSTRUCTOR(junit.swingui.TestRunContext) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 382 Class: junit.swingui.TestSuitePanel.TestTreeCellRenderer Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 381 Class: junit.swingui.TestSuitePanel.TestTreeCellRenderer Method: java.awt.Component,getTreeCellRendererComponent(javax.swing.JTree,java.lang.Object,boolean,boolean,boolean,int,boolean) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 279 Class: junit.swingui.DefaultFailureDetailView.StackEntryRenderer Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 278 Class: junit.swingui.DefaultFailureDetailView.StackEntryRenderer Method: java.awt.Component,getListCellRendererComponent(javax.swing.JList,java.lang.Object,int,boolean,boolean) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 67 Class: junit.extensions.RepeatedTest Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 434 Class: junit.textui.TestRunner Method: void,runFailed(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 427 Class: junit.textui.TestRunner Method: void,testEnded(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 426 Class: junit.textui.TestRunner Method: void,testStarted(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 425 Class: junit.textui.TestRunner Method: void,testFailed(int,junit.framework.Test,java.lang.Throwable) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 423 Class: junit.textui.TestRunner Method: void,runAndWait(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 420 Class: junit.textui.TestRunner Method: junit.textui.TestRunner,CONSTRUCTOR(junit.textui.ResultPrinter) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 380 Class: junit.swingui.TestSuitePanel Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 379 Class: junit.swingui.TestSuitePanel Method: void,showTestTree(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 378 Class: junit.swingui.TestSuitePanel Method: javax.swing.JTree,getTree() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 377 Class: junit.swingui.TestSuitePanel Method: junit.framework.Test,getSelectedTest() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 372 Class: junit.swingui.TestSuitePanel Method: junit.swingui.TestSuitePanel,CONSTRUCTOR() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 11 Class: junit.awtui.AboutDialog Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 10 Class: junit.awtui.AboutDialog Method: junit.awtui.AboutDialog,CONSTRUCTOR(java.awt.Frame) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 268 Class: junit.swingui.StatusLine Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 255 Class: junit.runner.ReloadingTestSuiteLoader Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 254 Class: junit.runner.ReloadingTestSuiteLoader Method: junit.runner.TestCaseClassLoader,createLoader() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 253 Class: junit.runner.ReloadingTestSuiteLoader Method: java.lang.Class,reload(java.lang.Class) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 252 Class: junit.runner.ReloadingTestSuiteLoader Method: java.lang.Class,load(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 251 Class: junit.runner.Sorter.Swapper Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 250 Class: junit.runner.Sorter.Swapper Method: void,swap(java.util.Vector,int,int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 344 Class: junit.swingui.TestTreeModel Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 343 Class: junit.swingui.TestTreeModel Method: void,valueForPathChanged(javax.swing.tree.TreePath,java.lang.Object) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 342 Class: junit.swingui.TestTreeModel Method: boolean,isLeaf(java.lang.Object) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 341 Class: junit.swingui.TestTreeModel Method: java.lang.Object,getRoot() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 340 Class: junit.swingui.TestTreeModel Method: int,getIndexOfChild(java.lang.Object,java.lang.Object) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 339 Class: junit.swingui.TestTreeModel Method: int,getChildCount(java.lang.Object) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 338 Class: junit.swingui.TestTreeModel Method: java.lang.Object,getChild(java.lang.Object,int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 337 Class: junit.swingui.TestTreeModel Method: void,fireNodeChanged(javax.swing.tree.TreePath,int) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 336 Class: junit.swingui.TestTreeModel Method: int,findTest(junit.framework.Test,junit.framework.Test,java.util.Vector) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 335 Class: junit.swingui.TestTreeModel Method: void,removeTreeModelListener(javax.swing.event.TreeModelListener) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 334 Class: junit.swingui.TestTreeModel Method: void,addTreeModelListener(javax.swing.event.TreeModelListener) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 333 Class: junit.swingui.TestTreeModel Method: junit.swingui.TestTreeModel,CONSTRUCTOR(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 40 Class: junit.extensions.ExceptionTestCase Method: junit.extensions.ExceptionTestCase,CONSTRUCTOR(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 39 Class: junit.extensions.ExceptionTestCase Method: junit.extensions.ExceptionTestCase,CONSTRUCTOR(java.lang.String,java.lang.Class) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 163 Class: junit.framework.TestCase Method: junit.framework.TestResult,createResult() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 9 Class: junit.awtui.ProgressBar Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 7 Class: junit.awtui.ProgressBar Method: void,start(int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 6 Class: junit.awtui.ProgressBar Method: void,setBounds(int,int,int,int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 5 Class: junit.awtui.ProgressBar Method: int,scale(int) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 4 Class: junit.awtui.ProgressBar Method: void,reset() Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 3 Class: junit.awtui.ProgressBar Method: void,paintStatus(java.awt.Graphics) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 2 Class: junit.awtui.ProgressBar Method: void,paintBackground(java.awt.Graphics) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 1 Class: junit.awtui.ProgressBar Method: void,paint(java.awt.Graphics) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 50 Class: junit.extensions.ActiveTestSuite Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 49 Class: junit.extensions.ActiveTestSuite Method: void,runFinished(junit.framework.Test) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 48 Class: junit.extensions.ActiveTestSuite Method: void,runTest(junit.framework.Test,junit.framework.TestResult) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 46 Class: junit.extensions.ActiveTestSuite Method: junit.extensions.ActiveTestSuite,CONSTRUCTOR(java.lang.Class,java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 45 Class: junit.extensions.ActiveTestSuite Method: junit.extensions.ActiveTestSuite,CONSTRUCTOR(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 277 Class: junit.swingui.DefaultFailureDetailView.StackTraceListModel Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 276 Class: junit.swingui.DefaultFailureDetailView.StackTraceListModel Method: void,clear() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 275 Class: junit.swingui.DefaultFailureDetailView.StackTraceListModel Method: void,setTrace(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 274 Class: junit.swingui.DefaultFailureDetailView.StackTraceListModel Method: int,getSize() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 273 Class: junit.swingui.DefaultFailureDetailView.StackTraceListModel Method: java.lang.Object,getElementAt(int) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 16 Class: junit.awtui.Logo Method: void,#ExtendsOrImplements#() Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 15 Class: junit.awtui.Logo Method: void,paintBackground(java.awt.Graphics) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 14 Class: junit.awtui.Logo Method: void,paint(java.awt.Graphics) Usages: 0 Percentage: 0.0% Additional info:{}
+ID: 13 Class: junit.awtui.Logo Method: java.awt.Image,loadImage(java.lang.String) Usages: 0 Percentage: 0.0% Additional info:{} : DEADSPOT 
+ID: 12 Class: junit.awtui.Logo Method: junit.awtui.Logo,CONSTRUCTOR() Usages: 0 Percentage: 0.0% Additional info:{}
+/*** Template Hierarchy Lists ***/
+Hierarchy :  3
+	Class: junit.swingui.TestRunner Rank: 3
+	Methods: 
+		8 void,run(java.lang.Class)
+		42 void,main(java.lang.String[])
+		68 junit.swingui.TestRunner,CONSTRUCTOR()
+		84 void,start(java.lang.String[])
+Hierarchy :  4
+	Class: junit.textui.TestRunner Rank: 4
+	Methods: 
+		9 junit.framework.TestResult,run(junit.framework.Test)
+		12 void,run(java.lang.Class)
+		38 void,main(java.lang.String)
+		75 junit.framework.TestResult,doRun(junit.framework.Test)
+Hierarchy :  5
+	Class: junit.framework.TestSuite Rank: 5
+	Methods: 
+		10 junit.framework.TestSuite,CONSTRUCTOR(java.lang.Class)
+		15 void,addTest(junit.framework.Test)
+		18 junit.framework.TestSuite,CONSTRUCTOR()
+		23 junit.framework.TestSuite,CONSTRUCTOR(java.lang.String)
+		30 void,addTestSuite(java.lang.Class)
+		40 void,#ExtendsOrImplements#()
+		53 void,setName(java.lang.String)
+		74 java.lang.String,getName()
+		81 void,run(junit.framework.TestResult)
+		97 int,countTestCases()
+	Class: junit.extensions.ActiveTestSuite Rank: 21
+	Methods: 
+		92 junit.extensions.ActiveTestSuite,CONSTRUCTOR()
+Hierarchy :  6
+	Class: junit.framework.AssertionFailedError Rank: 6
+	Methods: 
+		16 junit.framework.AssertionFailedError,CONSTRUCTOR(java.lang.String)
+		57 void,#ExtendsOrImplements#()
+		59 junit.framework.AssertionFailedError,CONSTRUCTOR()
+	Class: junit.framework.ComparisonFailure Rank: 19
+	Methods: 
+		83 junit.framework.ComparisonFailure,CONSTRUCTOR(java.lang.String,java.lang.String,java.lang.String)
+Hierarchy :  7
+	Class: junit.framework.TestResult Rank: 7
+	Methods: 
+		19 junit.framework.TestResult,CONSTRUCTOR()
+		20 int,failureCount()
+		21 int,errorCount()
+		25 boolean,wasSuccessful()
+		26 java.util.Enumeration,errors()
+		28 java.util.Enumeration,failures()
+		31 int,runCount()
+		35 void,addListener(junit.framework.TestListener)
+		39 void,endTest(junit.framework.Test)
+		41 void,startTest(junit.framework.Test)
+		48 void,runProtected(junit.framework.Test,junit.framework.Protectable)
+		55 boolean,shouldStop()
+		60 void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError)
+		64 void,addError(junit.framework.Test,java.lang.Throwable)
+		66 void,stop()
+		78 void,#ExtendsOrImplements#()
+		98 void,removeListener(junit.framework.TestListener)
+Hierarchy :  8
+	Class: junit.awtui.TestRunner Rank: 8
+	Methods: 
+		36 void,main(java.lang.String[])
+		47 void,run(java.lang.Class)
+		105 junit.awtui.TestRunner,CONSTRUCTOR()
+Hierarchy :  9
+	Class: junit.extensions.TestSetup Rank: 9
+	Methods: 
+		43 junit.extensions.TestSetup,CONSTRUCTOR(junit.framework.Test)
+		44 void,#ExtendsOrImplements#()
+Hierarchy :  12
+	Class: junit.extensions.RepeatedTest Rank: 12
+	Methods: 
+		51 junit.extensions.RepeatedTest,CONSTRUCTOR(junit.framework.Test,int)
+		106 void,run(junit.framework.TestResult)
+		108 int,countTestCases()
+Hierarchy :  14
+	Class: junit.framework.TestFailure Rank: 14
+	Methods: 
+		58 java.lang.Throwable,thrownException()
+		71 junit.framework.Test,failedTest()
+		89 java.lang.String,exceptionMessage()
+		110 java.lang.String,trace()
+Hierarchy :  22
+	Class: junit.runner.TestCaseClassLoader Rank: 22
+	Methods: 
+		100 java.lang.Class,loadClass(java.lang.String,boolean)
+		103 junit.runner.TestCaseClassLoader,CONSTRUCTOR()
+Hierarchy :  23
+	Class: junit.runner.SimpleTestCollector Rank: 23
+	Methods: 
+		102 junit.runner.SimpleTestCollector,CONSTRUCTOR()
+/*** Hook Hierarchy Lists ***/
+Hierarchy :  1
+	Class: junit.framework.Assert Rank: 1
+	Methods: 
+		1 void,assertEquals(java.lang.Object,java.lang.Object)
+		2 void,assertTrue(boolean)
+		4 void,assertTrue(java.lang.String,boolean)
+		5 void,assertEquals(int,int)
+		6 void,fail(java.lang.String)
+		7 void,assertEquals(java.lang.String,java.lang.Object,java.lang.Object)
+		11 void,assertEquals(java.lang.String,int,int)
+		13 void,assertFalse(boolean)
+		14 void,assertNotNull(java.lang.Object)
+		17 void,assertNull(java.lang.Object)
+		22 void,assertNotNull(java.lang.String,java.lang.Object)
+		24 void,assertFalse(java.lang.String,boolean)
+		27 void,#ExtendsOrImplements#()
+		29 void,assertEquals(boolean,boolean)
+		32 void,fail()
+		33 void,assertEquals(java.lang.String,boolean,boolean)
+		37 void,assertNull(java.lang.String,java.lang.Object)
+		46 void,assertSame(java.lang.Object,java.lang.Object)
+		50 void,assertEquals(byte,byte)
+		52 void,assertEquals(long,long)
+		54 void,assertNotSame(java.lang.Object,java.lang.Object)
+		61 void,assertEquals(java.lang.String,byte,byte)
+		70 void,assertEquals(java.lang.String,long,long)
+		77 void,assertSame(java.lang.String,java.lang.Object,java.lang.Object)
+		82 void,assertEquals(java.lang.String,short,short)
+		88 void,assertEquals(char,char)
+		90 void,assertEquals(java.lang.String,char,char)
+		94 void,assertEquals(double,double,double)
+		95 void,assertEquals(short,short)
+		96 void,assertEquals(java.lang.String,double,double,double)
+	Class: junit.framework.TestCase Rank: 2
+	Methods: 
+		3 void,#ExtendsOrImplements#()
+		34 java.lang.String,getName()
+		65 void,setName(java.lang.String)
+		85 void,setUp()
+		86 void,run(junit.framework.TestResult)
+		93 void,tearDown()
+	Class: junit.extensions.TestDecorator Rank: 16
+	Methods: 
+		67 junit.framework.Test,getTest()
+		80 void,#ExtendsOrImplements#()
+	Class: junit.framework.Test Rank: 15
+	Methods: 
+		62 void,run(junit.framework.TestResult)
+		79 void,#ExtendsOrImplements#()
+		107 int,countTestCases()
+Hierarchy :  10
+	Class: junit.runner.BaseTestRunner Rank: 11
+	Methods: 
+		49 void,#ExtendsOrImplements#()
+		63 junit.framework.Test,getTest(java.lang.String)
+		91 java.lang.String,getFilteredTrace(java.lang.Throwable)
+	Class: junit.framework.TestListener Rank: 10
+	Methods: 
+		45 void,#ExtendsOrImplements#()
+		73 void,addFailure(junit.framework.Test,junit.framework.AssertionFailedError)
+Hierarchy :  13
+	Class: junit.textui.ResultPrinter Rank: 13
+	Methods: 
+		56 void,#ExtendsOrImplements#()
+		69 java.io.PrintStream,getWriter()
+		109 java.lang.String,elapsedTimeAsString(long)
+Hierarchy :  17
+	Class: junit.runner.TestSuiteLoader Rank: 17
+	Methods: 
+		72 void,#ExtendsOrImplements#()
+Hierarchy :  18
+	Class: junit.runner.ClassPathTestCollector Rank: 20
+	Methods: 
+		87 java.util.Hashtable,collectFilesInPath(java.lang.String)
+		101 java.lang.String,classNameFromFile(java.lang.String)
+		104 void,#ExtendsOrImplements#()
+	Class: junit.runner.TestCollector Rank: 18
+	Methods: 
+		76 java.util.Enumeration,collectTests()
+		99 void,#ExtendsOrImplements#()
+
+
+/**** Hierarchy dependencies ****/
+
+Type: 2 Parent: 5 Child: 12
+Type: 1 Parent: 7 Child: 1
+Type: 2 Parent: 9 Child: 12
+Type: 2 Parent: 12 Child: 9
+Type: 1 Parent: 7 Child: 13
+Type: 1 Parent: 9 Child: 1
+Type: 1 Parent: 4 Child: 1
+Type: 2 Parent: 5 Child: 9
+Type: 1 Parent: 7 Child: 10
+Type: 1 Parent: 12 Child: 1
+Type: 1 Parent: 5 Child: 1
+/*** DEADSPOT classes ***/
+[junit.awtui.Logo, junit.swingui.DefaultFailureDetailView.StackTraceListModel, junit.swingui.TestSelector.TestCellRenderer, junit.swingui.AboutDialog, junit.swingui.TestHierarchyRunView, junit.swingui.ProgressBar, junit.swingui.FailureRunView, junit.swingui.TestSelector, junit.swingui.TestSelector.KeySelectListener, junit.extensions.ExceptionTestCase, junit.swingui.TestTreeModel, junit.runner.Sorter.Swapper, junit.awtui.AboutDialog, junit.swingui.TestSelector.DoubleClickListener, junit.swingui.FailureRunView.FailureListCellRenderer, junit.swingui.TestRunView, junit.runner.TestRunListener, junit.swingui.TestSelector.ParallelSwapper, junit.swingui.DefaultFailureDetailView.StackEntryRenderer, junit.swingui.TestSuitePanel.TestTreeCellRenderer]
+Number of Deadspot classes 20
+
+
+/*** DEADSPOT packages ***/

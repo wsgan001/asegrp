@@ -1,0 +1,126 @@
+Frequent Usage Scenario: 1
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Scanner//33_XPathLexer.java MethodName : disambiguateAxisOrFunction
+Frequent Usage Scenario: 2
+	 att.grappa.Element : att.grappa.Attribute,getAttribute(java.lang.String)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//19_CSMARTGraph.java MethodName : deletePseudoEdges
+Frequent Usage Scenario: 3
+	 att.grappa.Graph : void,paintImmediately()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//1_GraphPanel.java MethodName : actionPerformed
+Frequent Usage Scenario: 4
+	 att.grappa.GrappaPanel : java.awt.geom.AffineTransform,getTransform()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//1_GraphPanel.java MethodName : selectMultiple
+Frequent Usage Scenario: 5
+	 att.grappa.Element : java.lang.String,getName()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//19_CSMARTGraph.java MethodName : addNodeToSubgraph
+Frequent Usage Scenario: 6
+	 att.grappa.Graph : boolean,setMenuable(boolean)
+	 att.grappa.GrappaPanel : void,setScaleToFit(boolean)
+	 att.grappa.GrappaPanel : att.grappa.GrappaListener,addGrappaListener(att.grappa.GrappaListener)
+	 att.grappa.GrappaPanel : att.grappa.GrappaPanel,CONSTRUCTOR(att.grappa.Subgraph)
+	 att.grappa.Graph : java.io.PrintWriter,setErrorWriter(java.io.PrintWriter)
+	 att.grappa.Graph : boolean,setEditable(boolean)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Graph//16_SpareClusterGraph.java MethodName : getGraphPanel
+Frequent Usage Scenario: 7
+	 att.grappa.Subgraph : java.util.Enumeration,subgraphElements()
+	 att.grappa.Subgraph : java.util.Enumeration,edgeElements()
+	 att.grappa.Subgraph : java.util.Enumeration,nodeElements()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Edge//13_PerformanceAnalysisGUI.java MethodName : PerformanceAnalysisGUI
+Frequent Usage Scenario: 8
+	 att.grappa.Parser : att.grappa.Graph,getGraph()
+	 att.grappa.Graph : java.io.PrintWriter,setErrorWriter(java.io.PrintWriter)
+	 att.grappa.Graph : boolean,setEditable(boolean)
+	 java_cup.runtime.lr_parser : java_cup.runtime.Symbol,parse()
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\att_grappa_Element//1_GraphPanel.java MethodName : run
+Frequent Usage Scenario: 9
+	 java_cup.runtime.Scanner : java_cup.runtime.Symbol,next_token()
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_lr_parser//132_lr_parser.java MethodName : scan
+Frequent Usage Scenario: 10
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int)
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Symbol//152_Scanner.java MethodName : yylex
+Frequent Usage Scenario: 11
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int)
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Symbol//152_Scanner.java MethodName : yylex
+Frequent Usage Scenario: 12
+	 java_cup.runtime.Scanner : 
+	 java_cup.runtime.Scanner : java_cup.runtime.Symbol,next_token()
+Scenario Type : ImplementsUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Scanner//101_Yylex.java MethodName : NA
+Frequent Usage Scenario: 13
+	 java_cup.runtime.lr_parser : void,user_init()
+	 java_cup.runtime.lr_parser : java_cup.runtime.Symbol,scan()
+	 java_cup.runtime.lr_parser : void,report_fatal_error(java.lang.String,java.lang.Object)
+	 java_cup.runtime.lr_parser : void,report_error(java.lang.String,java.lang.Object)
+	 java_cup.runtime.lr_parser : void,init_actions()
+	 java_cup.runtime.lr_parser : java_cup.runtime.Symbol,do_action(int,java_cup.runtime.lr_parser,java.util.Stack,int)
+	 java_cup.runtime.lr_parser : int,error_sym()
+	 java_cup.runtime.lr_parser : int,EOF_sym()
+	 java_cup.runtime.lr_parser : int,start_production()
+	 java_cup.runtime.lr_parser : int,start_state()
+	 java_cup.runtime.lr_parser : short[][],reduce_table()
+	 java_cup.runtime.lr_parser : short[][],action_table()
+	 java_cup.runtime.lr_parser : short[][],production_table()
+	 java_cup.runtime.lr_parser : 
+Scenario Type : ExtendsUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Symbol//386_parser.java MethodName : NA
+Frequent Usage Scenario: 14
+	 java_cup.runtime.lr_parser : void,syntax_error(java_cup.runtime.Symbol)
+	 java_cup.runtime.lr_parser : java_cup.runtime.Symbol,scan()
+	 java_cup.runtime.lr_parser : void,init_actions()
+	 java_cup.runtime.lr_parser : java_cup.runtime.Symbol,do_action(int,java_cup.runtime.lr_parser,java.util.Stack,int)
+	 java_cup.runtime.lr_parser : int,error_sym()
+	 java_cup.runtime.lr_parser : int,EOF_sym()
+	 java_cup.runtime.lr_parser : int,start_production()
+	 java_cup.runtime.lr_parser : int,start_state()
+	 java_cup.runtime.lr_parser : short[][],reduce_table()
+	 java_cup.runtime.lr_parser : short[][],action_table()
+	 java_cup.runtime.lr_parser : short[][],production_table()
+	 java_cup.runtime.lr_parser : 
+Scenario Type : ExtendsUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Symbol//386_parser.java MethodName : NA
+Frequent Usage Scenario: 15
+	 java_cup.runtime.lr_parser : void,syntax_error(java_cup.runtime.Symbol)
+	 java_cup.runtime.lr_parser : void,report_error(java.lang.String,java.lang.Object)
+	 java_cup.runtime.lr_parser : void,init_actions()
+	 java_cup.runtime.lr_parser : java_cup.runtime.Symbol,do_action(int,java_cup.runtime.lr_parser,java.util.Stack,int)
+	 java_cup.runtime.lr_parser : int,error_sym()
+	 java_cup.runtime.lr_parser : int,EOF_sym()
+	 java_cup.runtime.lr_parser : int,start_production()
+	 java_cup.runtime.lr_parser : int,start_state()
+	 java_cup.runtime.lr_parser : short[][],reduce_table()
+	 java_cup.runtime.lr_parser : short[][],action_table()
+	 java_cup.runtime.lr_parser : short[][],production_table()
+	 java_cup.runtime.lr_parser : 
+Scenario Type : ExtendsUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Symbol//386_parser.java MethodName : NA
+Frequent Usage Scenario: 16
+	 java_cup.runtime.lr_parser : void,syntax_error(java_cup.runtime.Symbol)
+	 java_cup.runtime.lr_parser : void,report_fatal_error(java.lang.String,java.lang.Object)
+	 java_cup.runtime.lr_parser : void,init_actions()
+	 java_cup.runtime.lr_parser : java_cup.runtime.Symbol,do_action(int,java_cup.runtime.lr_parser,java.util.Stack,int)
+	 java_cup.runtime.lr_parser : int,error_sym()
+	 java_cup.runtime.lr_parser : int,EOF_sym()
+	 java_cup.runtime.lr_parser : int,start_production()
+	 java_cup.runtime.lr_parser : int,start_state()
+	 java_cup.runtime.lr_parser : short[][],reduce_table()
+	 java_cup.runtime.lr_parser : short[][],action_table()
+	 java_cup.runtime.lr_parser : short[][],production_table()
+	 java_cup.runtime.lr_parser : 
+Scenario Type : ExtendsUS FileName : C:\APIUsage\Grappa\java_cup_runtime_Symbol//386_parser.java MethodName : NA
+Frequent Usage Scenario: 17
+	 java_cup.runtime.lr_parser : void,unrecovered_syntax_error(java_cup.runtime.Symbol)
+	 java_cup.runtime.lr_parser : void,syntax_error(java_cup.runtime.Symbol)
+	 java_cup.runtime.lr_parser : void,init_actions()
+	 java_cup.runtime.lr_parser : java_cup.runtime.Symbol,do_action(int,java_cup.runtime.lr_parser,java.util.Stack,int)
+	 java_cup.runtime.lr_parser : int,error_sym()
+	 java_cup.runtime.lr_parser : int,EOF_sym()
+	 java_cup.runtime.lr_parser : int,start_production()
+	 java_cup.runtime.lr_parser : int,start_state()
+	 java_cup.runtime.lr_parser : short[][],reduce_table()
+	 java_cup.runtime.lr_parser : short[][],action_table()
+	 java_cup.runtime.lr_parser : short[][],production_table()
+	 java_cup.runtime.lr_parser : 
+Scenario Type : ExtendsUS FileName : C:\APIUsage\Grappa\java_cup_runtime_lr_parser//110_ExpressionsParser.java MethodName : NA
+Frequent Usage Scenario: 18
+	 java_cup.runtime.lr_parser : void,done_parsing()
+	 java_cup.runtime.Symbol : java_cup.runtime.Symbol,CONSTRUCTOR(int,int,int,java.lang.Object)
+Scenario Type : InvokesUS FileName : C:\APIUsage\Grappa\java_cup_runtime_lr_parser//100_parser.java MethodName : CUP$parser$do_action

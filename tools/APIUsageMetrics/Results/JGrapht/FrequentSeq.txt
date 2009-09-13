@@ -1,0 +1,174 @@
+Frequent Usage Scenario: 1
+	 org.jgrapht.alg.CycleDetector : boolean,detectCycles()
+	 org.jgrapht.graph.SimpleDirectedGraph : org.jgrapht.graph.SimpleDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	 org.jgrapht.alg.CycleDetector : org.jgrapht.alg.CycleDetector,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	 org.jgrapht.Graph : E,addEdge(V,V)
+	 org.jgrapht.Graph : boolean,addVertex(V)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_alg_CycleDetector//0_ShibbolethAttributeResolver.java MethodName : validate
+Frequent Usage Scenario: 2
+	 org.jgrapht.ext.JGraphModelAdapter : org.jgrapht.ext.JGraphModelAdapter,CONSTRUCTOR(org.jgrapht.Graph<V,E>,org.jgraph.graph.AttributeMap,org.jgraph.graph.AttributeMap,org.jgrapht.ext.JGraphModelAdapter.CellFactory<V,E>)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_ext_IntegerNameProvider//0_GraphViewer.java MethodName : GraphViewer
+Frequent Usage Scenario: 3
+	 org.jgrapht.ext.IntegerNameProvider : java.lang.String,getVertexName(V)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_ext_IntegerNameProvider//0_GraphViewer.java MethodName : createVertexCell
+Frequent Usage Scenario: 4
+	 org.jgrapht.VertexFactory : V,createVertex()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_generate_GraphGenerator//0_GWizRandomGraphGenerator.java MethodName : generateGraph
+Frequent Usage Scenario: 5
+	 org.jgrapht.Graph : boolean,containsEdge(V,V)
+	 org.jgrapht.Graph : java.util.Set<V>,vertexSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//13_GraphUtilities.java MethodName : isFullyConnected
+Frequent Usage Scenario: 6
+	 org.jgrapht.graph.UndirectedSubgraph : org.jgrapht.graph.UndirectedSubgraph,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+	 org.jgrapht.traverse.DepthFirstIterator : org.jgrapht.traverse.DepthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	 org.jgrapht.traverse.CrossComponentIterator : boolean,hasNext()
+	 org.jgrapht.Graph : java.util.Set<V>,vertexSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//13_GraphUtilities.java MethodName : getSubgraphs
+Frequent Usage Scenario: 7
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<E>,getAllEdges(V,V)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//51_DGBModel.java MethodName : hasEdge
+Frequent Usage Scenario: 8
+	 org.jgrapht.graph.ClassBasedEdgeFactory : org.jgrapht.graph.ClassBasedEdgeFactory,CONSTRUCTOR(java.lang.Class<? extends E>)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_DirectedGraph//15_DefaultDirectedMultigraph.java MethodName : DefaultDirectedMultigraph
+Frequent Usage Scenario: 9
+	 org.jgrapht.ext.JGraphModelAdapter.CellFactory : org.jgraph.graph.DefaultEdge,createEdgeCell(EE)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_event_GraphListener//2_SketchAdapter.java MethodName : SketchAdapter
+Frequent Usage Scenario: 10
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<E>,edgeSet()
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<V>,vertexSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_DirectedGraph//13_Graph.java MethodName : clone
+Frequent Usage Scenario: 11
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<E>,edgeSet()
+	 org.jgrapht.graph.AbstractBaseGraph : V,getEdgeTarget(E)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_DirectedGraph//13_Graph.java MethodName : clone
+Frequent Usage Scenario: 12
+	 org.jgrapht.Graph : java.util.Set<E>,edgeSet()
+	 org.jgrapht.Graph : V,getEdgeSource(E)
+	 org.jgrapht.Graph : V,getEdgeTarget(E)
+	 org.jgrapht.Graph : java.util.Set<V>,vertexSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//10_GraphIO.java MethodName : saveGraph
+Frequent Usage Scenario: 13
+	 org.jgrapht.alg.DijkstraShortestPath : java.util.List<E>,findPathBetween(org.jgrapht.Graph<V,E>,V,V)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_alg_DijkstraShortestPath//0_MigrationPath.java MethodName : path
+Frequent Usage Scenario: 14
+	 org.jgrapht.graph.GraphDelegator : E,getEdge(V,V)
+	 org.jgrapht.graph.DefaultListenableGraph : boolean,removeVertex(V)
+	 org.jgrapht.graph.DefaultListenableGraph : boolean,removeEdge(E)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//57_Sketch.java MethodName : removeEdge
+Frequent Usage Scenario: 15
+	 org.jgrapht.traverse.BreadthFirstIterator : org.jgrapht.traverse.BreadthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	 org.jgrapht.traverse.AbstractGraphIterator : void,addTraversalListener(org.jgrapht.event.TraversalListener<V,E>)
+	 org.jgrapht.traverse.CrossComponentIterator : V,next()
+	 org.jgrapht.traverse.CrossComponentIterator : boolean,hasNext()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_DirectedGraph//12_HierarchicalTreeLayout.java MethodName : setGraph
+Frequent Usage Scenario: 16
+	 org.jgrapht.event.GraphEdgeChangeEvent : E,getEdge()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_event_GraphEdgeChangeEvent//0_SketchAdapter.java MethodName : edgeAdded
+Frequent Usage Scenario: 17
+	 org.jgrapht.Graph : java.util.Set<E>,edgeSet()
+	 org.jgrapht.graph.SimpleGraph : org.jgrapht.graph.SimpleGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	 org.jgrapht.Graph : java.util.Set<V>,vertexSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//11_RandomTree.java MethodName : main
+Frequent Usage Scenario: 18
+	 org.jgrapht.event.GraphVertexChangeEvent : V,getVertex()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_event_GraphEdgeChangeEvent//0_SketchAdapter.java MethodName : vertexAdded
+Frequent Usage Scenario: 19
+	 org.jgrapht.graph.AbstractBaseGraph : E,removeEdge(V,V)
+	 org.jgrapht.graph.AbstractBaseGraph : boolean,removeVertex(V)
+	 org.jgrapht.graph.AbstractBaseGraph : int,outDegreeOf(V)
+	 org.jgrapht.graph.AbstractBaseGraph : int,inDegreeOf(V)
+	 org.jgrapht.ext.VertexNameProvider : java.lang.String,getVertexName(V)
+	 org.jgrapht.graph.AbstractBaseGraph : V,getEdgeTarget(E)
+	 org.jgrapht.graph.AbstractBaseGraph : V,getEdgeSource(E)
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<V>,vertexSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_alg_ConnectivityInspector//1_InsetProcessor.java MethodName : removeCycle
+Frequent Usage Scenario: 20
+	 org.jgrapht.graph.GraphDelegator : V,getEdgeTarget(E)
+	 org.jgrapht.graph.GraphDelegator : V,getEdgeSource(E)
+	 org.jgrapht.graph.GraphDelegator : java.util.Set<E>,edgeSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//27_MetaComponentSimple.java MethodName : process
+Frequent Usage Scenario: 21
+	 org.jgrapht.graph.DefaultListenableGraph : void,addGraphListener(org.jgrapht.event.GraphListener<V,E>)
+	 org.jgrapht.graph.GraphDelegator : java.util.Set<V>,vertexSet()
+	 org.jgrapht.graph.GraphDelegator : java.util.Set<E>,edgeSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_event_GraphEdgeChangeEvent//0_SketchAdapter.java MethodName : SketchAdapter
+Frequent Usage Scenario: 22
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<E>,incomingEdgesOf(V)
+	 org.jgrapht.graph.AbstractBaseGraph : V,getEdgeSource(E)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//50_ModelDrivenWorkspace.java MethodName : removeInclusion
+Frequent Usage Scenario: 23
+	 org.jgrapht.graph.GraphDelegator : java.util.Set<E>,edgesOf(V)
+	 org.jgrapht.graph.DefaultListenableGraph : boolean,removeVertex(V)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_event_GraphEdgeChangeEvent//0_SketchAdapter.java MethodName : removeJGraphVertex
+Frequent Usage Scenario: 24
+	 org.jgrapht.graph.ListenableUndirectedGraph : org.jgrapht.graph.ListenableUndirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	 org.jgrapht.ext.JGraphModelAdapter : org.jgrapht.ext.JGraphModelAdapter,CONSTRUCTOR(org.jgrapht.Graph<V,E>)
+	 org.jgrapht.graph.DefaultListenableGraph : boolean,addVertex(V)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//14_CompatibilityPartitioner.java MethodName : main
+Frequent Usage Scenario: 25
+	 org.jgrapht.graph.DirectedMultigraph : org.jgrapht.graph.DirectedMultigraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	 org.jgrapht.Graph : V,getEdgeTarget(E)
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<E>,incomingEdgesOf(V)
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<V>,vertexSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_graph_DefaultEdge//24_MsAccessAdapter.java MethodName : getCreateView
+Frequent Usage Scenario: 26
+	 org.jgrapht.alg.ConnectivityInspector : org.jgrapht.alg.ConnectivityInspector,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+	 org.jgrapht.graph.SimpleGraph : org.jgrapht.graph.SimpleGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_graph_SimpleGraph//0_GraphDemo1.java MethodName : main
+Frequent Usage Scenario: 27
+	 org.jgrapht.graph.DefaultListenableGraph : boolean,addEdge(V,V,E)
+	 org.jgrapht.graph.DefaultListenableGraph : boolean,addVertex(V)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//55_Constraint.java MethodName : setVisible
+Frequent Usage Scenario: 28
+	 org.jgrapht.graph.DefaultListenableGraph : boolean,removeEdge(E)
+	 org.jgrapht.graph.DefaultListenableGraph : boolean,addEdge(V,V,E)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_event_GraphEdgeChangeEvent//0_SketchAdapter.java MethodName : graphChanged
+Frequent Usage Scenario: 29
+	 org.jgrapht.Graphs : V,getOppositeVertex(org.jgrapht.Graph<V,E>,E,V)
+	 org.jgrapht.graph.DefaultListenableGraph : E,addEdge(V,V)
+	 org.jgrapht.graph.GraphDelegator : java.util.Set<E>,edgesOf(V)
+	 org.jgrapht.graph.ListenableDirectedGraph : org.jgrapht.graph.ListenableDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	 org.jgrapht.graph.DefaultListenableGraph : boolean,addVertex(V)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//26_HumanOrgansGraph.java MethodName : HumanOrgansGraph
+Frequent Usage Scenario: 30
+	 org.jgrapht.event.EdgeTraversalEvent : E,getEdge()
+	 org.jgrapht.Graph : V,getEdgeSource(E)
+	 org.jgrapht.Graph : V,getEdgeTarget(E)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_DirectedGraph//12_HierarchicalTreeLayout.java MethodName : edgeTraversed
+Frequent Usage Scenario: 31
+	 org.jgrapht.traverse.DepthFirstIterator : org.jgrapht.traverse.DepthFirstIterator,CONSTRUCTOR(org.jgrapht.Graph<V,E>,V)
+	 org.jgrapht.traverse.CrossComponentIterator : V,next()
+	 org.jgrapht.traverse.CrossComponentIterator : boolean,hasNext()
+	 org.jgrapht.graph.SimpleGraph : org.jgrapht.graph.SimpleGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	 org.jgrapht.graph.AbstractBaseGraph : boolean,addVertex(V)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//14_CompatibilityPartitioner.java MethodName : partition
+Frequent Usage Scenario: 32
+	 org.jgrapht.graph.AbstractBaseGraph : boolean,addEdge(V,V,E)
+	 org.jgrapht.graph.DefaultDirectedGraph : org.jgrapht.graph.DefaultDirectedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	 org.jgrapht.graph.AbstractBaseGraph : boolean,addVertex(V)
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_alg_DijkstraShortestPath//0_MigrationPath.java MethodName : MigrationPath
+Frequent Usage Scenario: 33
+	 org.jgrapht.graph.SimpleGraph : org.jgrapht.graph.SimpleGraph,CONSTRUCTOR(org.jgrapht.EdgeFactory<V,E>)
+	 org.jgrapht.graph.AbstractBaseGraph : E,addEdge(V,V)
+	 org.jgrapht.graph.AbstractBaseGraph : boolean,addVertex(V)
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<V>,vertexSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_Graph//11_RandomTree.java MethodName : randomTree
+Frequent Usage Scenario: 34
+	 org.jgrapht.alg.ConnectivityInspector : java.util.List<java.util.Set<V>>,connectedSets()
+	 org.jgrapht.alg.ConnectivityInspector : org.jgrapht.alg.ConnectivityInspector,CONSTRUCTOR(org.jgrapht.UndirectedGraph<V,E>)
+	 org.jgrapht.graph.DirectedWeightedSubgraph : org.jgrapht.graph.DirectedWeightedSubgraph,CONSTRUCTOR(org.jgrapht.WeightedGraph<V,E>,java.util.Set<V>,java.util.Set<E>)
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<E>,outgoingEdgesOf(V)
+	 org.jgrapht.alg.CycleDetector : java.util.Set<V>,findCyclesContainingVertex(V)
+	 org.jgrapht.alg.CycleDetector : java.util.Set<V>,findCycles()
+	 org.jgrapht.graph.DefaultDirectedWeightedGraph : org.jgrapht.graph.DefaultDirectedWeightedGraph,CONSTRUCTOR(java.lang.Class<? extends E>)
+	 org.jgrapht.graph.AbstractBaseGraph : void,setEdgeWeight(E,double)
+	 org.jgrapht.graph.AbstractBaseGraph : boolean,removeVertex(V)
+	 org.jgrapht.graph.AbstractBaseGraph : int,outDegreeOf(V)
+	 org.jgrapht.graph.AbstractBaseGraph : int,inDegreeOf(V)
+	 org.jgrapht.ext.VertexNameProvider : java.lang.String,getVertexName(V)
+	 org.jgrapht.graph.AbstractBaseGraph : V,getEdgeTarget(E)
+	 org.jgrapht.graph.AbstractBaseGraph : E,addEdge(V,V)
+	 org.jgrapht.alg.CycleDetector : org.jgrapht.alg.CycleDetector,CONSTRUCTOR(org.jgrapht.DirectedGraph<V,E>)
+	 org.jgrapht.graph.AbstractBaseGraph : boolean,addVertex(V)
+	 org.jgrapht.graph.AbstractBaseGraph : java.util.Set<V>,vertexSet()
+Scenario Type : InvokesUS FileName : C:\APIUsage\JGrapht\org_jgrapht_alg_ConnectivityInspector//1_InsetProcessor.java MethodName : getInset

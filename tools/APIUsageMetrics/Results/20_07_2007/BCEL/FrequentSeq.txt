@@ -1,0 +1,179 @@
+Sequence 1
+	org.apache.bcel.classfile.ClassParser : org.apache.bcel.classfile.JavaClass,parse()
+Sequence 2
+	org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getPrev()
+Sequence 3
+	org.apache.bcel.classfile.AccessFlags : boolean,isNative()
+Sequence 4
+	org.apache.bcel.generic.INVOKEINTERFACE : org.apache.bcel.generic.INVOKEINTERFACE,CONSTRUCTOR(int,int)
+Sequence 5
+	org.apache.bcel.generic.ISTORE : org.apache.bcel.generic.ISTORE,CONSTRUCTOR(int)
+Sequence 6
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle[],getInstructionHandles()
+Sequence 7
+	org.apache.bcel.classfile.Method : org.apache.bcel.classfile.Code,getCode()
+Sequence 8
+	org.apache.bcel.classfile.JavaClass : org.apache.bcel.classfile.Field[],getFields()
+Sequence 9
+	org.apache.bcel.generic.BranchHandle : void,setTarget(org.apache.bcel.generic.InstructionHandle)
+Sequence 10
+	org.apache.bcel.generic.DUP : org.apache.bcel.generic.DUP,CONSTRUCTOR()
+Sequence 11
+	org.apache.bcel.generic.Type : org.apache.bcel.generic.Type,getType(java.lang.String)
+Sequence 12
+	org.apache.bcel.generic.FieldOrMethod : java.lang.String,getSignature(org.apache.bcel.generic.ConstantPoolGen)
+Sequence 13
+	org.apache.bcel.classfile.AccessFlags : boolean,isAbstract()
+Sequence 14
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getEnd()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Sequence 15
+	org.apache.bcel.generic.LocalVariableGen : int,getIndex()
+Sequence 16
+	org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+	org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.Instruction,getInstruction()
+Sequence 17
+	org.apache.bcel.generic.Instruction : int,consumeStack(org.apache.bcel.generic.ConstantPoolGen)
+Sequence 18
+	org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionTargeter[],getTargeters()
+Sequence 19
+	org.apache.bcel.classfile.JavaClass : java.lang.String,getSuperclassName()
+Sequence 20
+	org.apache.bcel.generic.MethodGen : int,getMaxLocals()
+Sequence 21
+	org.apache.bcel.generic.ConstantPoolGen : int,addMethodref(java.lang.String,java.lang.String,java.lang.String)
+Sequence 22
+	org.apache.bcel.generic.ClassGen : org.apache.bcel.classfile.JavaClass,getJavaClass()
+Sequence 23
+	org.apache.bcel.generic.InstructionFactory : org.apache.bcel.generic.InstructionFactory,CONSTRUCTOR(org.apache.bcel.generic.ClassGen)
+	org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+Sequence 24
+	org.apache.bcel.generic.ILOAD : org.apache.bcel.generic.ILOAD,CONSTRUCTOR(int)
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Sequence 25
+	org.apache.bcel.generic.ClassGen : org.apache.bcel.classfile.Method[],getMethods()
+Sequence 26
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+	org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.Instruction,getInstruction()
+Sequence 27
+	org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+	org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getName()
+Sequence 28
+	org.apache.bcel.generic.ClassGen : void,addField(org.apache.bcel.classfile.Field)
+	org.apache.bcel.generic.FieldGen : org.apache.bcel.classfile.Field,getField()
+Sequence 29
+	org.apache.bcel.generic.INVOKEVIRTUAL : org.apache.bcel.generic.INVOKEVIRTUAL,CONSTRUCTOR(int)
+Sequence 30
+	org.apache.bcel.classfile.AccessFlags : boolean,isInterface()
+Sequence 31
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)
+Sequence 32
+	org.apache.bcel.classfile.AccessFlags : boolean,isStatic()
+Sequence 33
+	org.apache.bcel.Repository : org.apache.bcel.classfile.JavaClass,lookupClass(java.lang.String)
+		Optional Hook: org.apache.bcel.util.Repository : org.apache.bcel.classfile.JavaClass,loadClass(java.lang.String) Category: 0
+Sequence 34
+	org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getSignature()
+	org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getName()
+Sequence 35
+	org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.MethodGen,CONSTRUCTOR(org.apache.bcel.classfile.Method,java.lang.String,org.apache.bcel.generic.ConstantPoolGen)
+	org.apache.bcel.generic.MethodGen : org.apache.bcel.generic.InstructionList,getInstructionList()
+Sequence 36
+	org.apache.bcel.classfile.JavaClass : org.apache.bcel.classfile.Method[],getMethods()
+	org.apache.bcel.classfile.FieldOrMethod : java.lang.String,getName()
+Sequence 37
+	org.apache.bcel.generic.PUSH : org.apache.bcel.generic.PUSH,CONSTRUCTOR(org.apache.bcel.generic.ConstantPoolGen,int)
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+		Strict Hook: org.apache.bcel.generic.CompoundInstruction : org.apache.bcel.generic.InstructionList,getInstructionList() Category: 0
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Sequence 38
+	org.apache.bcel.classfile.JavaClass : org.apache.bcel.classfile.Method[],getMethods()
+	org.apache.bcel.classfile.JavaClass : java.lang.String,getClassName()
+Sequence 39
+	org.apache.bcel.generic.PUSH : org.apache.bcel.generic.PUSH,CONSTRUCTOR(org.apache.bcel.generic.ConstantPoolGen,java.lang.String)
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+		Strict Hook: org.apache.bcel.generic.CompoundInstruction : org.apache.bcel.generic.InstructionList,getInstructionList() Category: 0
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Sequence 40
+	org.apache.bcel.generic.ClassGen : java.lang.String,getClassName()
+	org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+		Optional Hook: org.apache.bcel.generic.IndexedInstruction : int,getIndex() Category: 0
+		Optional Hook: org.apache.bcel.generic.TypedInstruction : org.apache.bcel.generic.Type,getType(org.apache.bcel.generic.ConstantPoolGen) Category: 0
+Sequence 41
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,getStart()
+	org.apache.bcel.generic.InstructionHandle : org.apache.bcel.generic.InstructionHandle,getNext()
+Sequence 42
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+		Strict Hook: org.apache.bcel.generic.CompoundInstruction : org.apache.bcel.generic.InstructionList,getInstructionList() Category: 0
+Sequence 43
+	org.apache.bcel.generic.ASTORE : org.apache.bcel.generic.ASTORE,CONSTRUCTOR(int)
+	org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+Sequence 44
+	org.apache.bcel.generic.ClassGen : org.apache.bcel.generic.ConstantPoolGen,getConstantPool()
+	org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Sequence 45
+	org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Sequence 46
+	org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+		Optional Hook: org.apache.bcel.generic.IndexedInstruction : int,getIndex() Category: 0
+		Optional Hook: org.apache.bcel.generic.TypedInstruction : org.apache.bcel.generic.Type,getType(org.apache.bcel.generic.ConstantPoolGen) Category: 0
+	org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Sequence 47
+	org.apache.bcel.generic.InstructionList : void,dispose()
+	org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+		Optional Hook: org.apache.bcel.generic.IndexedInstruction : int,getIndex() Category: 0
+		Optional Hook: org.apache.bcel.generic.TypedInstruction : org.apache.bcel.generic.Type,getType(org.apache.bcel.generic.ConstantPoolGen) Category: 0
+	org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Sequence 48
+	org.apache.bcel.generic.ClassGen : java.lang.String,getClassName()
+	org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+Sequence 49
+	org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Sequence 50
+	org.apache.bcel.generic.INVOKESPECIAL : org.apache.bcel.generic.INVOKESPECIAL,CONSTRUCTOR(int)
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+Sequence 51
+	org.apache.bcel.generic.ClassGen : void,addMethod(org.apache.bcel.classfile.Method)
+	org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+		Optional Hook: org.apache.bcel.generic.IndexedInstruction : int,getIndex() Category: 0
+		Optional Hook: org.apache.bcel.generic.TypedInstruction : org.apache.bcel.generic.Type,getType(org.apache.bcel.generic.ConstantPoolGen) Category: 0
+	org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Sequence 52
+	org.apache.bcel.generic.MethodGen : void,setMaxStack()
+	org.apache.bcel.generic.MethodGen : void,setMaxLocals()
+		Optional Hook: org.apache.bcel.generic.IndexedInstruction : int,getIndex() Category: 0
+		Optional Hook: org.apache.bcel.generic.TypedInstruction : org.apache.bcel.generic.Type,getType(org.apache.bcel.generic.ConstantPoolGen) Category: 0
+	org.apache.bcel.generic.MethodGen : org.apache.bcel.classfile.Method,getMethod()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Sequence 53
+	org.apache.bcel.generic.ObjectType : org.apache.bcel.generic.ObjectType,CONSTRUCTOR(java.lang.String)
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Sequence 54
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.CompoundInstruction)
+		Strict Hook: org.apache.bcel.generic.CompoundInstruction : org.apache.bcel.generic.InstructionList,getInstructionList() Category: 0
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Sequence 55
+	org.apache.bcel.generic.ALOAD : org.apache.bcel.generic.ALOAD,CONSTRUCTOR(int)
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
+Sequence 56
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.Instruction)
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionList,CONSTRUCTOR()
+	org.apache.bcel.generic.InstructionList : org.apache.bcel.generic.InstructionHandle,append(org.apache.bcel.generic.InstructionList)
