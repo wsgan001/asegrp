@@ -15,9 +15,6 @@ Figure~\ref{fig:approach} shows the overview of MAM.
 %Finally, MAM mines mapping relations of API
 %methods (Section~\ref{sec:approach:mappingmethods}) defined by the mapped
 %API classes.
-
-
-
 %-------------------------------------------------------------------
 \subsection{Aligning API Client Code}
 \label{sec:approach:acc}
@@ -428,14 +425,11 @@ in the corresponding ATGs, respectively, and attempts to map merged API methods.
 methods $M$ combined by inputs and outputs, so the $t$ behavior of
 $cm$ is the combination of $M$. For $L_1$, consider an API method $m_1$ defined in classes $c_1$ and an API method $m_2$ defined in $c_2$ with the following signatures:
 
-
 \CodeIn{$m_1$ signature: $o_1$ $c_1$.$m_1$($inp_1^1$, $inp_2^1$,
 ..., $inp_m^1$)}
 
-
 \CodeIn{$m_2$ signature: $o_2$ $c_2$.$m_2$($inp_1^2$, $inp_2^2$,
 ..., $inp_n^2$)}
-
 
 Our algorithm merges methods $m_1$ and $m_2$ to create a new \emph{merged API
 method} $m_{new}$ if the output $o_1$ of $m_1$ is used either as a
@@ -443,10 +437,8 @@ receiver or as a parameter for $m_2$ (\emph{i.e.}, $o_1$ == $c_2$ or $o_1$
 == $inp_i^2$) in client code. The signature of the new merged API
 method $m_{new}$ is shown below:
 
-
 \CodeIn{$m_{new}$ signature: $o_2$ $m_{new}$($inp_1^1$, $inp_2^1$,
 ..., $inp_m^1$, \\ $inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
-
 
 For example, our algorithm merges the API methods shown in Figure~\ref{fig:graph}a to two merged API methods as follows.
 
@@ -499,7 +491,8 @@ that maps parameters, Step 3 maps returns of API methods. In
 this step, if MAM is not able to map returns, MAM merges the next API method (Section~\ref{sec:mapping}) and
 then attempts to map returns of merged API methods. In our current example shown in
 Figure~\ref{fig:graph}, the return of \CodeIn{System.IO.FileInfo.FileInfo()}
-cannot be mapped to the return of \CodeIn{java.io.File.File()}. Therefore, MAM merges subsequent API methods in the ATG till the \CodeIn{Exists}
+cannot be mapped to the return of \CodeIn{java.io.File.File()}. Therefore, 
+MAM merges subsequent API methods in the ATG till the \CodeIn{Exists}
 API method, since the returns (shown as \CodeIn{Boolean}) can be mapped
 only after the \CodeIn{Exists} API method. Figure~\ref{fig:graph}
 shows Step 3 along with the mapped returns.

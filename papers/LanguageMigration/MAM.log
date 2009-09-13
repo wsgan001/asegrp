@@ -1,31 +1,33 @@
-This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.10.7)  5 SEP 2009 12:09
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.1)  7 SEP 2009 01:11
 entering extended mode
 **MaM.tex
-(MaM.tex
+(G:\GoogleSVN\papers\LanguageMigration\MaM.tex
 LaTeX2e <2005/12/01>
-Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman, ngerman, french, loaded.
-(sig-alternate.cls ("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\epsfig.sty"
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
+(G:\GoogleSVN\papers\LanguageMigration\sig-alternate.cls
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphicx.sty"
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphics.sty"
 Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: dvips.def on input line 90.
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\dvips.def"
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\dvips.def"
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen102
@@ -34,35 +36,35 @@ File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 \epsfxsize=\dimen104
 \epsfysize=\dimen105
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\amsfonts\amssymb.sty"
-Package: amssymb 2002/01/22 v2.2d
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\amsfonts\amsfonts.sty"
-Package: amsfonts 2001/10/25 v2.2f
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-("C:\Program Files\MiKTeX 2.6\tex\latex\amsmath\amsmath.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.6\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen106
 ))
-("C:\Program Files\MiKTeX 2.6\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen107
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count79
@@ -133,7 +135,7 @@ Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
 \titleboxnoteflag=\count99
 Document Class: sig-alternate 2007/06/07 - V2.3 - based on acmproc.cls V1.3 <No
 v. 30 '99>
-("C:\Program Files\MiKTeX 2.6\tex\latex\base\latexsym.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\latexsym.sty"
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
@@ -164,25 +166,26 @@ Using 'Abbrev' bibliography style
 \acmcopyr=\toks33
 \boilerplate=\toks34
 \copyrightetc=\toks35
-("C:\Program Files\MiKTeX 2.6\tex\latex\base\fontenc.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\base\t1enc.def"
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )
 LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\ae\t1aer.fd"
+("C:\Program Files\MiKTeX 2.8\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
-("C:\Program Files\MiKTeX 2.6\tex\latex\ltxmisc\url.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip11
-Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\times.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
-) (diagrams.sty
+)
+(G:\GoogleSVN\papers\LanguageMigration\diagrams.sty
 <Paul Taylor's commutative diagrams, version 3.90, 11 April 2004>
 ##===============================================================##
 ........PostScript mode (dvips) is now the default...............
@@ -259,24 +262,24 @@ Package: diagrams 2004/04/11 v3.90 Paul Taylor's commutative diagrams
 \CD@hH=\toks52
 LaTeX Font Info:    Try loading font information for U+msa on input line 1881.
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 1881.
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+lasy on input line 1881.
 
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\base\ulasy.fd"
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ))
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xy.sty"
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xy.tex" Bootstrap'ing:
-catcodes, docmode, ("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xyrecat.tex"
-) ("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xyidioms.tex")
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xy.sty"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xy.tex" Bootstrap'ing:
+catcodes, docmode, ("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyrecat.tex"
+) ("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyidioms.tex")
 
  Xy-pic version 3.7 <1999/02/16>
  Copyright (c) 1991-1998 by Kristoffer H. Rose <krisrose@ens-lyon.fr>
@@ -341,9 +344,9 @@ decorations; kernel objects: directionals, circles, text; options;
 algorithms: directions, edges, connections;  Xy-pic loaded)
 Package: xy 1999/02/16 Xy-pic version 3.7
 
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xyall.tex"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyall.tex"
  Xy-pic option: All features v.3.3
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xycurve.tex"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xycurve.tex"
  Xy-pic option: Curve and Spline extension v.3.7 curve,
 \crv@cnt@=\count129
 \crvpts@=\toks57
@@ -355,21 +358,21 @@ Package: xy 1999/02/16 Xy-pic version 3.7
  circles,
 \L@=\dimen176
  loaded)
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xyframe.tex"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyframe.tex"
  Xy-pic option: Frame and Bracket extension v.3.7 loaded)
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xycmtip.tex"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xycmtip.tex"
  Xy-pic option: Computer Modern tip extension v.3.3
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xytips.tex"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xytips.tex"
  Xy-pic option: More Tips extension v.3.3 loaded) loaded)
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xyline.tex"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyline.tex"
  Xy-pic option: Line styles extension v.3.6
 \xylinethick@=\dimen177
  loaded)
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xyrotate.tex"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyrotate.tex"
  Xy-pic option: Rotate and Scale extension v.3.3 loaded)
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xycolor.tex"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xycolor.tex"
  Xy-pic option: Colour extension v.3.3 loaded)
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xymatrix.tex"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xymatrix.tex"
  Xy-pic option: Matrix feature v.3.4
 \Row=\count130
 \Col=\count131
@@ -379,20 +382,21 @@ Package: xy 1999/02/16 Xy-pic version 3.7
 \qcount@@=\count133
 \matrixsize@=\count134
  loaded)
-("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xyarrow.tex"
+("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyarrow.tex"
  Xy-pic option: Arrow and Path feature v.3.5 path,
 
 Xy-pic Warning: `\labelstyle' redefined.
 
-\ar, loaded) ("C:\Program Files\MiKTeX 2.6\tex\generic\xypic\xygraph.tex"
- Xy-pic option: Graph feature v.3.7 loaded) loaded)) (algorithm2e.sty
+\ar, loaded) ("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xygraph.tex"
+ Xy-pic option: Graph feature v.3.7 loaded) loaded))
+(G:\GoogleSVN\papers\LanguageMigration\algorithm2e.sty
 Package: algorithm2e 2005/10/04 v3.9 algorithms environments
 \c@AlgoLine=\count135
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\base\ifthen.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\tools\xspace.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\tools\xspace.sty"
 Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
 )
 ********************************************************
@@ -421,15 +425,16 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count137
 \algocf@algoframe=\box48
 \algocf@algobox=\box49
-) ("C:\Program Files\MiKTeX 2.6\tex\latex\float\float.sty"
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count138
 \float@exts=\toks60
 \float@box=\box50
 \@float@everytoks=\toks61
 \@floatcapt=\box51
-) (macros.tex
-("C:\Program Files\MiKTeX 2.6\tex\latex\epsf\epsf.sty"
+)
+(G:\GoogleSVN\papers\LanguageMigration\macros.tex
+(C:\Users\Suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\epsf\epsf.sty
 This is `epsf.tex' v2.7.3 <23 July 2005>
 \epsffilein=\read2
 \epsfframemargin=\dimen181
@@ -440,32 +445,33 @@ This is `epsf.tex' v2.7.3 <23 July 2005>
 \epsfxsize=\dimen186
 \epsfysize=\dimen187
 \pspoints=\dimen188
-) ("C:\Program Files\MiKTeX 2.6\tex\latex\tools\verbatim.sty"
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\tools\verbatim.sty"
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks62
 \verbatim@line=\toks63
 \verbatim@in@stream=\read3
-) (psfig.sty)
-("C:\Program Files\MiKTeX 2.6\tex\latex\cite\cite.sty"
-LaTeX Info: Redefining \cite on input line 149.
-LaTeX Info: Redefining \nocite on input line 214.
-Package: cite 2003/11/04  v 4.01
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\color.sty"
+(G:\GoogleSVN\papers\LanguageMigration\psfig.sty)
+(C:\Users\Suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\cite\cite.sty
+LaTeX Info: Redefining \cite on input line 242.
+LaTeX Info: Redefining \nocite on input line 313.
+Package: cite 2009/04/29  v 5.1
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\00miktex\color.cfg"
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: dvips.def on input line 130.
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\dvipsnam.def"
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-("C:\Program Files\MiKTeX 2.6\tex\latex\base\alltt.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\alltt.sty"
 Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\tools\longtable.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\tools\longtable.sty"
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip53
 \LTright=\skip54
@@ -483,10 +489,10 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count143
 \LT@p@ftn=\toks64
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\lscape.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\slashbox\slashbox.sty"
+(C:\Users\Suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\slashbox\slashbox.sty
 slashbox style by K.Yasuoka, May 1993.
 \@slashboxa=\box56
 \@slashboxb=\box57
@@ -495,13 +501,13 @@ slashbox style by K.Yasuoka, May 1993.
 \@slashboxht=\count145
 \@slashsepl=\dimen190
 \@slashsepr=\dimen191
-) ("C:\Program Files\MiKTeX 2.6\tex\latex\multirow\multirow.sty"
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen192
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\colortbl\colortbl.sty"
+(C:\Users\Suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\colortbl\colortbl.sty
 Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\tools\array.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\tools\array.sty"
 Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
 \col@sep=\dimen193
 \extrarowheight=\dimen194
@@ -512,12 +518,13 @@ Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
 \everycr=\toks66
 \minrowclearance=\skip59
 )
-("C:\Program Files\MiKTeX 2.6\tex\latex\jknappen\mathrsfs.sty"
+("C:\Program Files\MiKTeX 2.8\tex\latex\jknappen\mathrsfs.sty"
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup7
 )
 \c@definition=\count146
-) (MaM.aux)
+)
+(G:\GoogleSVN\papers\LanguageMigration\MaM.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
@@ -532,142 +539,105 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 25.
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\t1ptm.fd"
+("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 LaTeX Font Info:    Try loading font information for U+rsfs on input line 41.
 
-("C:\Program Files\MiKTeX 2.6\tex\latex\jknappen\ursfs.fd"
+("C:\Program Files\MiKTeX 2.8\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 63.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 57.
 
-(body\introduction.tex
+(G:\GoogleSVN\papers\LanguageMigration\body/introduction.tex
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 9.
- ("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\t1pcr.fd"
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Overfull \hbox (3.59215pt too wide) in paragraph at lines 39--64
-\T1/ptm/m/n/9 lan-guage trans-la-tion. For ex-am-ple, Terekhov and Ver-hoef [10
+Overfull \hbox (4.5003pt too wide) in paragraph at lines 4--27
+\T1/ptm/m/n/9 ter-nal pro-gram-mers of-ten cre-ate their ver-sions in dif-fer-e
+nt lan-guages.
+ []
+
+
+Overfull \hbox (3.59215pt too wide) in paragraph at lines 39--63
+\T1/ptm/m/n/9 lan-guage trans-la-tion. For ex-am-ple, Terekhov and Ver-hoef [11
 ] stated
  []
 
 [1
 
 
-]
-Overfull \hbox (2.80888pt too wide) in paragraph at lines 129--138
-\T1/ptm/m/n/9 ing trans-la-tion of projects from Java to C# us-ing Java2CSharp.
- 
- []
-
-) (body\mapping.tex
-Overfull \hbox (62.08775pt too wide) in paragraph at lines 37--51
-\T1/ptm/b/n/9 or \T1/pcr/m/n/8 System.Collections.Generic. List \T1/ptm/m/n/9 o
-f C#, whereas \T1/pcr/m/n/8 java.lang.System
+]) (G:\GoogleSVN\papers\LanguageMigration\body/mapping.tex
+Overfull \hbox (2.31613pt too wide) in paragraph at lines 38--44
+\T1/pcr/m/n/8 Collections.ArrayList \T1/ptm/b/n/9 or \T1/pcr/m/n/8 System.Colle
+ctions.Generic.
  []
 
 
-Overfull \hbox (9.46141pt too wide) in paragraph at lines 37--51
-\T1/ptm/m/n/9 of Java is mapped to \T1/pcr/m/n/8 System.DataTime \T1/ptm/b/n/9 
-and \T1/pcr/m/n/8 System.Environment
+Overfull \hbox (2.96603pt too wide) in paragraph at lines 50--55
+\T1/ptm/m/n/9 set-tings in \T1/pcr/m/n/8 java.lang.System \T1/ptm/m/n/9 is stor
+ed in \T1/pcr/m/n/8 System.Environment
  []
 
-
-Overfull \hbox (16.72617pt too wide) in paragraph at lines 37--51
-\T1/ptm/m/n/9 when client code uses APIs to get the cur-rent time, \T1/pcr/m/n/
-8 java.lang.System
- []
-
-
-Overfull \hbox (11.4702pt too wide) in paragraph at lines 37--51
-\T1/ptm/m/n/9 uses APIs to get en-vi-ron-ment set-tings, \T1/pcr/m/n/8 java.lan
-g.System \T1/ptm/m/n/9 is mapped
- []
-
-) (body\example.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
+) (G:\GoogleSVN\papers\LanguageMigration\body/example.tex [2]
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <7> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 7.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 36.
 
-Overfull \hbox (3.59982pt too wide) in paragraph at lines 34--34
+Overfull \hbox (3.59982pt too wide) in paragraph at lines 64--64
 [][]\T1/pcr/m/n/7 11   internal static readonly System.IO.FileInfo INDEX_DIR[] 
 
  []
 
+
+Overfull \hbox (1.04947pt too wide) in paragraph at lines 124--136
+\T1/pcr/m/n/8 java.io.File.Exists \T1/ptm/m/n/9 method in Java to the \T1/pcr/m
+/n/8 System.IO.File.
+ []
+
 File: figure/sample.eps Graphic file (type eps)
 <figure/sample.eps>
-Overfull \hbox (2.20409pt too wide) in paragraph at lines 138--139
+Overfull \hbox (2.20409pt too wide) in paragraph at lines 139--140
  [][][] 
  []
 
-) (body\approach.tex [3]
+) (G:\GoogleSVN\papers\LanguageMigration\body/approach.tex
 File: figure/approach.eps Graphic file (type eps)
- <figure/approach.eps>
-Overfull \hbox (1.08974pt too wide) in paragraph at lines 39--52
-\T1/ptm/m/n/9 ap-proach, we have two dif-fer-ent kinds of en-tity names: en-tit
-y names
+
+<figure/approach.eps> [3]
+Overfull \hbox (2.33162pt too wide) in paragraph at lines 52--62
+\T1/ptm/m/n/9 sim-i-lar-ity greater than a given thresh-old, re-ferred to as \T
+1/ptm/m/it/9 SIM_THRES-
  []
 
 
-Overfull \hbox (1.67401pt too wide) in paragraph at lines 79--97
-[][]\T1/ptm/m/n/9 In this step, our ap-proach mines map-ping re-la-tions of API
- classes.
- []
-
-
-Overfull \hbox (11.27452pt too wide) in paragraph at lines 79--97
-\T1/ptm/m/n/9 a-lyzes each lo-cal vari-able pair $\OMS/cmsy/m/n/9 h\OML/cmm/m/i
-t/9 var[]; var[]\OMS/cmsy/m/n/9 i$ \T1/ptm/m/n/9 and con-sid-ers $\OMS/cmsy/m/n
-/9 h\OML/cmm/m/it/9 var[]:type;$
- []
-
-
-Overfull \hbox (9.72795pt too wide) in paragraph at lines 79--97
-\T1/ptm/m/n/9 when the sim-i-lar-ity be-tween $\OML/cmm/m/it/9 para[]:name$ \T1
-/ptm/m/n/9 and $\OML/cmm/m/it/9 para[]:name$ \T1/ptm/m/n/9 is greater
- []
-
-
-Overfull \hbox (14.52817pt too wide) in paragraph at lines 98--105
-\T1/ptm/m/n/9 map-ping re-la-tion be-tween \T1/pcr/m/n/8 java.io.File \T1/ptm/m
-/n/9 and \T1/pcr/m/n/8 System.IO.FileInfo
- []
-
-File: figure/algorithm1.eps Graphic file (type eps)
-<figure/algorithm1.eps>
-Overfull \hbox (2.9075pt too wide) in paragraph at lines 132--134
- [][][] 
+Overfull \hbox (1.84451pt too wide) in paragraph at lines 77--91
+\T1/ptm/m/n/9 MAM mines map-ping re-la-tions of API classes based on how aligne
+d
  []
 
 File: figure/graph.eps Graphic file (type eps)
 <figure/graph.eps>
-Overfull \hbox (3.60919pt too wide) in paragraph at lines 157--162
-\T1/ptm/m/n/9 the two ma-jor chal-lenges. (1) Map-ping pa-ram-e-ters of an API 
-method
- []
-
-[4]
 File: figure/rule2.eps Graphic file (type eps)
  <figure/rule2.eps>
 File: figure/rule3.eps Graphic file (type eps)
  <figure/rule3.eps>
 File: figure/rule4.eps Graphic file (type eps)
  <figure/rule4.eps>
+[4]
 File: figure/rule5.eps Graphic file (type eps)
-
-<figure/rule5.eps>
+ <figure/rule5.eps>
 File: figure/rule6.eps Graphic file (type eps)
  <figure/rule6.eps>
 File: figure/rule7.eps Graphic file (type eps)
  <figure/rule7.eps>
 File: figure/rule8.eps Graphic file (type eps)
- <figure/rule8.eps>
-Overfull \hbox (8.28941pt too wide) in paragraph at lines 306--313
-[][]$\OMS/cmsy/m/n/9 8$ \T1/ptm/m/n/9 state-ments of the form $\OML/cmm/m/it/9 
+
+<figure/rule8.eps>
+Overfull \hbox (7.79436pt too wide) in paragraph at lines 315--322
+[][]$\OMS/cmsy/m/n/9 8$ \T1/ptm/m/n/9 state-ments in the form $\OML/cmm/m/it/9 
 x \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 y op z op  [] ; op \OMS/cmsy/m/n/9 2 f\OT1/c
 mr/m/n/9 +\OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9 
 \OML/cmm/m/it/9 ; =\OMS/cmsy/m/n/9 g$\T1/ptm/m/n/9 ,
@@ -677,90 +647,121 @@ File: figure/rule9.eps Graphic file (type eps)
 <figure/rule9.eps>
 File: figure/algorithm2.eps Graphic file (type eps)
  <figure/algorithm2.eps>
-Overfull \hbox (3.91125pt too wide) in paragraph at lines 374--376
+Overfull \hbox (1.90375pt too wide) in paragraph at lines 380--382
  [][][] 
  []
 
-[5]) (body\experiment.tex [6]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 20.
-LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 22.
+[5]
+Overfull \hbox (1.41614pt too wide) in paragraph at lines 411--415
+\T1/ptm/m/n/9 name of $\OML/cmm/m/it/9 jm$ \T1/ptm/m/n/9 and the name of $\OML/
+cmm/m/it/9 sm$ \T1/ptm/m/n/9 is greater than \T1/ptm/m/it/9 SIM_THRESHOLD\T1/pt
+m/m/n/9 . 
+ []
 
-Overfull \hbox (14.97722pt too wide) in paragraph at lines 85--88
+
+Overfull \hbox (4.5809pt too wide) in paragraph at lines 437--442
+[][]\T1/ptm/m/n/9 Our al-go-rithm merges meth-ods $\OML/cmm/m/it/9 m[]$ \T1/ptm
+/m/n/9 and $\OML/cmm/m/it/9 m[]$ \T1/ptm/m/n/9 to cre-ate a new \T1/ptm/m/it/9 
+merged
+ []
+
+
+Overfull \hbox (7.79982pt too wide) in paragraph at lines 451--451
+[][]\T1/pcr/m/n/7 cm_2:Boolean {FileInfo,getFullFile,Directory.Exist}(String)[]
+ 
+ []
+
+) (G:\GoogleSVN\papers\LanguageMigration\body/experiment.tex
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 22.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
+ [6]
+Overfull \hbox (14.97722pt too wide) in paragraph at lines 87--90
 \T1/ptm/m/n/9 of our eval-u-a-tion re-sults are avail-able at $\T1/pcr/m/n/9 ht
 tps : / / sites . google .
  []
 
 
-Overfull \hbox (2.85942pt too wide) in paragraph at lines 146--175
+Overfull \hbox (5.86871pt too wide) in paragraph at lines 94--96
+[][]\T1/ptm/m/n/9 To in-ves-ti-gate the first re-search ques-tion, we use the t
+op 10 projects
+ []
+
+
+Overfull \hbox (2.85942pt too wide) in paragraph at lines 148--177
  [][][] 
  []
 
 
-Overfull \hbox (1.34998pt too wide) in paragraph at lines 101--179
-\T1/ptm/m/n/9 ``Java ver-sion'', sub-column ``\T1/ptm/m/it/9 %C\T1/ptm/m/n/9 ''
- lists the per-cent-age of the aligned
- []
-
-
-Overfull \hbox (1.91675pt too wide) in paragraph at lines 101--179
-\T1/ptm/m/n/9 ``\T1/ptm/m/it/9 %M\T1/ptm/m/n/9 '' lists the per-cent-age of the
- aligned meth-ods among to-tal meth-
- []
-
-
-Overfull \hbox (4.35588pt too wide) in paragraph at lines 101--179
-\T1/ptm/m/n/9 lists the per-cent-age of aligned meth-ods/classes among the to-t
-al meth-
+Overfull \hbox (7.209pt too wide) in paragraph at lines 103--181
+\T1/ptm/m/n/9 Sub-column ``\T1/ptm/m/it/9 %M\T1/ptm/m/n/9 '' lists the per-cent
+-age of the aligned meth-ods among
  []
 
 [7]
-Overfull \hbox (4.05142pt too wide) in paragraph at lines 340--367
+Overfull \hbox (4.55125pt too wide) in paragraph at lines 282--289
+[][]\T1/ptm/m/n/9 This item de-scribes API map-ping re-la-tions be-tween the \T
+1/pcr/m/n/8 multiply
+ []
+
+
+Overfull \hbox (1.27888pt too wide) in paragraph at lines 302--313
+[][]\T1/ptm/m/n/9 To com-pare with man-u-ally writ-ten map-ping files of Java2C
+Sharp,
+ []
+
+
+Overfull \hbox (4.05142pt too wide) in paragraph at lines 339--366
  [][][] 
  []
 
 
-Overfull \hbox (3.83032pt too wide) in paragraph at lines 398--412
+Overfull \hbox (3.83032pt too wide) in paragraph at lines 396--410
 \T1/ptm/m/n/9 ping re-la-tion be-tween \T1/pcr/m/n/8 java.util.ResourceBundle \
 T1/ptm/m/n/9 and \T1/pcr/m/n/8 System.
  []
 
 
-Overfull \hbox (7.06027pt too wide) in paragraph at lines 398--412
+Overfull \hbox (7.06027pt too wide) in paragraph at lines 396--410
 \T1/ptm/m/n/9 fails to mine the map-ping re-la-tions be-tween \T1/pcr/m/n/8 jav
 a.util.getTime()
  []
 
 [8]
-Overfull \hbox (24.13918pt too wide) in paragraph at lines 423--440
+Overfull \hbox (6.6586pt too wide) in paragraph at lines 430--430
+[]|[]\T1/ptm/m/n/8 simmetrics| 
+ []
+
+
+Overfull \hbox (17.48058pt too wide) in paragraph at lines 421--438
  [][][] 
  []
 
-) (body\discussion.tex
-File: figure/n2n.eps Graphic file (type eps)
- <figure/n2n.eps> [9]) (body\related.tex
-Overfull \hbox (2.59322pt too wide) in paragraph at lines 5--21
-[][]\T1/ptm/b/n/9 Language mi-gra-tion. \T1/ptm/m/n/9 To re-duce ef-fort of lan
--guage mi-gra-tion [9],
+
+Overfull \hbox (11.91614pt too wide) in paragraph at lines 446--453
+\T1/ptm/m/n/9 API map-ping re-la-tions to the Java2CSharp tool and in-ves-ti-ga
+te whether
  []
 
-) (body\conclusion.tex
-Overfull \hbox (5.2122pt too wide) in paragraph at lines 22--1
-\T1/ptm/m/n/9 prob-lem, some ap-proaches have been pro-posed. In par-tic-u-lar,
- Henkel
+
+Overfull \hbox (7.79982pt too wide) in paragraph at lines 470--470
+[][] \T1/pcr/m/n/7 totalDistance = (float)Java.Lang.Math.Sqrt(totalDistance);[]
+ 
  []
 
-) (MaM.bbl [10]) [11
-
-] (MaM.aux) ) 
+) (G:\GoogleSVN\papers\LanguageMigration\body/discussion.tex [9])
+(G:\GoogleSVN\papers\LanguageMigration\body/related.tex)
+(G:\GoogleSVN\papers\LanguageMigration\body/conclusion.tex)
+(G:\GoogleSVN\papers\LanguageMigration\MaM.bbl) [10]
+(G:\GoogleSVN\papers\LanguageMigration\MaM.aux) ) 
 Here is how much of TeX's memory you used:
- 8231 strings out of 95296
- 85352 string characters out of 1184885
- 222448 words of memory out of 1207716
- 10969 multiletter control sequences out of 60000
- 52257 words of font info for 82 fonts, out of 1000000 for 2000
+ 7988 strings out of 495286
+ 89033 string characters out of 3180415
+ 229768 words of memory out of 3000000
+ 11002 multiletter control sequences out of 15000+200000
+ 52239 words of font info for 82 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,13n,26p,461b,333s stack positions out of 5000i,500n,10000p,200000b,32768s
+ 39i,13n,26p,718b,331s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on MaM.dvi (11 pages, 109412 bytes).
+Output written on MaM.dvi (10 pages, 120512 bytes).
