@@ -1,0 +1,53 @@
+%-----------------------------------------------------------------------------
+%
+%               Template for LaTeX Class/Style File
+%
+% Name:         sigplanconf-template.tex
+% Purpose:      A template for sigplanconf.cls, which is a LaTeX 2e class
+%               file for SIGPLAN conference proceedings.
+%
+% Author:       Suresh Thummalapenta
+%               Department of Computer Science
+%               919 274 2896
+%               sthumma@ncsu.edu
+%
+% Created:      27 June 2007
+%
+%-----------------------------------------------------------------------------
+
+
+\documentclass{sigplanconf}
+
+\input{macros} 
+\usepackage{amsmath}
+
+
+\begin{document}
+
+\conferenceinfo{OOPSLA}{'07 Montreal, Canada}
+\copyrightyear{200X} 
+\copyrightdata{X-XXXXX-XX-X/XX/XX} 
+
+%\titlebanner{banner above paper title}        % These are ignored unless
+%\preprintfooter{short description of paper}   % 'preprint' option specified.
+
+\title{Exploiting Code Search Engines to Improve Programmer Productivity}
+
+\authorinfo{Suresh Thummalapenta}
+           {Department of Computer Science\\North Carolina State University\\Raleigh, USA}
+           {sthumma@ncsu.edu}
+\maketitle
+
+\input{abstract}
+
+\category{D.2.3}{Software Engineering}{Coding Tools and Techniques}[Object-oriented programming] 
+{\bf General Terms:} Languages, Experimentation.\\
+{\bf Keywords:} Code reuse, Code search engine, Code examples, hotspots
+
+
+\input{intro}
+\input{framework}
+\input{conclusion}
+\bibliographystyle{abbrv}
+\bibliography{sthumma-oopslasrc07}
+\end{document}

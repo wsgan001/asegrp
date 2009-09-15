@@ -1,0 +1,334 @@
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.10.7)  10 SEP 2008 11:48
+entering extended mode
+**sthumma-SpotWeb-ASE08.tex
+(sthumma-SpotWeb-ASE08.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+(IEEEtran.cls
+Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 366.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using DVI output.
+\@IEEEnormalsizeunitybaselineskip=\dimen104
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen105
+\CLASSINFOnormalsizeunitybaselineskip=\dimen106
+\IEEEnormaljot=\dimen107
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+\IEEEilabelindentA=\dimen108
+\IEEEilabelindentB=\dimen109
+\IEEEilabelindent=\dimen110
+\IEEEelabelindent=\dimen111
+\IEEEdlabelindent=\dimen112
+\IEEElabelindent=\dimen113
+\IEEEiednormlabelsep=\dimen114
+\IEEEiedmathlabelsep=\dimen115
+\IEEEiedtopsep=\skip41
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
+\@IEEEtmpitemindent=\dimen116
+\c@IEEEbiography=\count90
+\@IEEEtranrubishbin=\box26
+) (macros.tex ("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 149.
+LaTeX Info: Redefining \nocite on input line 214.
+Package: cite 2003/11/04  v 4.01
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\alltt.sty"
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+) (algorithm2e.sty
+Package: algorithm2e 2005/10/04 v3.9 algorithms environments
+\c@AlgoLine=\count91
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\tools\xspace.sty"
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+********************************************************
+Package `algorithm2e' Release 3.9 -- october 04 2005 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip44
+\skiprule=\skip45
+\skiphlne=\skip46
+\skiptext=\skip47
+\skiplength=\skip48
+\algomargin=\skip49
+\skipalgocfslide=\skip50
+\algowidth=\dimen119
+\inoutsize=\dimen120
+\inoutline=\dimen121
+\algocf@inoutbox=\box27
+\algocf@inputbox=\box28
+\AlCapSkip=\skip51
+\AlCapHSkip=\skip52
+\algocf@capbox=\box29
+\c@algocfline=\count92
+\c@algocf=\count93
+\algocf@algoframe=\box30
+\algocf@algobox=\box31
+)) (sthumma-SpotWeb-ASE08.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+ (abstract.tex) (intro.tex [1
+
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 65.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 65.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 66.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 66.
+) (example.tex
+File: figs/examplehotspot_final.eps Graphic file (type eps)
+
+<figs/examplehotspot_final.eps>
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 25.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 2735) in paragraph at lines 84--92
+\OT1/ptm/m/n/10 cap-tures the us-age re-la-tion-ships among hotspot classes
+ []
+
+
+Underfull \hbox (badness 1762) in paragraph at lines 84--92
+\OT1/ptm/m/n/10 through de-pen-den-cies. For ex-am-ple, Hi-er-ar-chy $\OT1/cmr/
+m/n/10 5$ \OT1/ptm/m/n/10 has a
+ []
+
+[2]
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 97.
+ ("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\omspcr.fd"
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
+
+Overfull \hbox (1.88095pt too wide) in paragraph at lines 122--122
+[][]\OT1/pcr/m/n/9 04:| TestSuite suite = new TestSuite("axis");[] 
+ []
+
+) (approach.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+File: Framework_overview1.eps Graphic file (type eps)
+
+<Framework_overview1.eps>
+Underfull \hbox (badness 4913) in paragraph at lines 21--32
+\OT1/ptm/m/n/10 load rel-e-vant code ex-am-ples. For ex-am-ple, the code
+ []
+
+
+Underfull \hbox (badness 6708) in paragraph at lines 21--32
+\OT1/ptm/m/n/10 down-loader con-structs a query such as ``\OT1/pcr/m/n/9 lang:j
+ava
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 85.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 85.
+("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--107
+
+ []
+
+File: figs/Approach_Example1.eps Graphic file (type eps)
+<figs/Approach_Example1.eps> [4]
+Underfull \hbox (badness 10000) in paragraph at lines 202--216
+
+ []
+
+[5]) (eval.tex
+File: figs/hotanddeadstats.eps Graphic file (type eps)
+ <figs/hotanddeadstats.eps>
+Overfull \hbox (11.58226pt too wide) in paragraph at lines 104--105
+ [][][] 
+ []
+
+
+Underfull \hbox (badness 5064) in paragraph at lines 128--138
+\OT1/ptm/m/n/10 tected for the four graph li-braries JGraphT, Grappa,
+ []
+
+
+Underfull \hbox (badness 2961) in paragraph at lines 128--138
+\OT1/ptm/m/n/10 Open-J-Graph, and Grappa. Each graph li-brary pro-vides
+ []
+
+
+Underfull \hbox (badness 7649) in paragraph at lines 128--138
+\OT1/ptm/m/n/10 sev-eral dif-fer-ent types of graphs. For ex-am-ple, the
+ []
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 128--138
+\OT1/pcr/m/n/9 ArchetypeGraph\OT1/ptm/m/n/10 , and \OT1/pcr/m/n/9 HyperGraph\OT
+1/ptm/m/n/10 . SpotWeb iden-ti-fied
+ []
+
+
+Underfull \hbox (badness 1571) in paragraph at lines 128--138
+\OT1/ptm/m/n/10 the graph type that is com-monly used among all dif-
+ []
+
+
+Underfull \hbox (badness 5878) in paragraph at lines 128--138
+\OT1/ptm/m/n/10 fer-ent types pro-vided by each li-brary. For ex-am-ple,
+ []
+
+[6] [7]
+File: figs/junit.eps Graphic file (type eps)
+ <figs/junit.eps>
+File: figs/log4j.eps Graphic file (type eps)
+ <figs/log4j.eps>
+File: figs/dnsjava.eps Graphic file (type eps)
+ <figs/dnsjava.eps>) (discussion.tex)
+(relatedwork.tex [8]) (conclusion.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+(sthumma-SpotWeb-ASE08.bbl
+Underfull \hbox (badness 1701) in paragraph at lines 41--45
+[][]\OT1/ptm/m/n/8 S. Thum-malapenta and T. Xie, ``SpotWeb: De-tect-ing Frame-w
+ork
+ []
+
+)
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[10
+
+] (sthumma-SpotWeb-ASE08.aux) ) 
+Here is how much of TeX's memory you used:
+ 2742 strings out of 95296
+ 37082 string characters out of 1184885
+ 118383 words of memory out of 1108259
+ 5812 multiletter control sequences out of 60000
+ 29460 words of font info for 67 fonts, out of 1000000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 27i,8n,20p,244b,317s stack positions out of 5000i,500n,10000p,200000b,32768s
+
+Output written on sthumma-SpotWeb-ASE08.dvi (10 pages, 76460 bytes).

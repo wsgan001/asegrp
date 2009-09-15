@@ -1,0 +1,199 @@
+First reviewer's review:
+
+         >>> Summary of the submission <<<
+
+The authors extend previous work on mining exception handling rules from source code. They identify the need for 
+"conditional association rules" to capture variations in exception processing based on the presence or absence of
+specific calls prior to the exception throw. The authors exploit existing approaches to mining sequence
+databases applied to call sequences extracted from large volumes of code. The technique is evaluated by revisiting
+a study from previous work in order to directly compare the benefits of the new technique. The study indicates that
+this work improves on the state-of-the-art in mining exception rules.
+
+         >>> Evaluation <<<
+
+This paper represents a solid increment over previous work.
+
+The authors leverage developments in sequence mining and in the availability of open source code search engines. These
+appear to be the key technical innovations of the work. Despite this modest technical delta, there is no denying that
+the study demonstrates that the technique is more effective than previous techniques and for that reason I quite like the
+paper.
+
+I found the studies in the paper to be quite comprehensive, but the authors MUST provide a substantive comparison with the significant body
+of literature on temporal specification mining (e.g., Yang et. als work in ICSE'06 and Gabel and Su's work in FSE"08).  Exception-mining
+rules are a subset of the more general rules that these techniques can infer and it is unclear why you don't just use those techniques.
+Will you be more precise, more efficient, or what?  I strongly urge you to make this a significant emphasis of your revision process or
+you will run the risk of uncomfortable questioning at the meeting in May.
+
+The authors never really explain why the normal and exceptional call sequences must be of the same length. Is this a limitation
+of the mining techniques? It would seem more general to look for rules of the form: 
+(FC^1_c \ldots FC^n_c) \wedge FC_a \Rightarrow (FC^1_e \ldots FC^m_w)
+
+In describing the "General Algorithm" (page 3), I was surprised that the combined database SDB_{1,2} is not comprised of all pairs of prefixes
+from SDB_1 and suffixes from SDB_2. The first sentence of that section states this to be the case, but Figure 2. shows that there is some type
+of restricted product (where only prefixes and suffixes with the same database index are concatenated).  You claim this is a "novel way
+of using annotations", so you must describe this clearly in your paper or else readers will not be able to replicate your results.
+
+In section 3.3, you never mention the (lack of) need for inter-procedural flow graph construction. Are you claiming that exception rules never
+span call boundaries? I can see this for simple rules, but not for conditional rules.
+
+You cavalierly dismiss control flow inside of exception blocks. This would seem to give rise to variants of exception rules and
+is a potentially problematic for your technique. This type of branching would occur when performing data dependent throwing.
+What do you do if you encounter this type of branching?
+
+In section 3.5, you never discuss aliasing. In calculating dependences on generally must consider aliasing, but you somehow sidestep the
+issue. Does it just not come up in the fragments of code that correspond to exception rules (seems unlikely)?
+
+You fail to clearly explain how you process the code fragments returned from Google searches.  Those fragments are not readily
+compilable, so you can't simply apply the methods you have described in the paper.
+
+The effect of this lack of detail is that the reader is left wondering what you have
+actually implemented.  There is no good reason to have left these details out of
+your paper. Once again I urge you to include them in your revised paper or you
+run the risk of being put in an uncomfortable position at the meeting in May.
+
+Given the high false positive rate, you must show the ranking data for all of the applications. Clearly the ranking works
+well for the Axion rules, but we need evidence of the generality of the technique.
+
+What is the point of the discussion of fixed, deleted, open in table 4? Given the low number of fixed defects one might conclude
+that the rules you mined were unimportant from the point of view of developers. How do you explain this?
+
+There are numerous small grammatical errors in the text - please do a careful reading looking for errors in tense and missing articles.
+
+*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*
+
+Second reviewer's review:
+
+         >>> Summary of the submission <<<
+
+Conditional association rules for mining exception-handling in programs were proposed. The existing approaches of mining
+exception-handling are based on non-conditional association rules and there are some limitation to mine exception-handling. The proposed
+conditional association rules are generalization of the existing ones. Five real applications were given as case studies of a proposed
+mining tool based on the proposed rules.
+
+         >>> Evaluation <<<
+
+The proposed conditional association rules and its implementation can well treat several exception-handling which were not treated well by
+the existing methods and tools. The presentation of the paper is based on an example which is simple but enough to explain how to mine
+exception-handling by the proposed method, and is helpful to understand. Case studies are chosen from real applications, and
+comparisons with the existing tool are well done.
+
+In summary, the paper report interesting research achievement in a reasonably clear fashion.
+
+The followings are some miner comments which may improve the paper:
+
+- page 3, Problem Domain: The I and J look like to have same elements
+ FC_1, FC_2, etc. Maybe, they should be I = {FC_i1, FC_i2,...} and J
+ = {FC_j1, FC_j2,...}.
+
+- page 3, Problem Domain: {FC_6,FC_8,FC_9} \in I should be
+ {FC_6,FC_8,FC_9} \subseteq I.
+
+- page 6: Table 2 appeared before Table 1. Arrange them in order.
+
+- page 9, Figure 6: What is XWeb? It should be CAR, I guess.
+
+*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*
+
+Third reviewer's review:
+
+         >>> Summary of the submission <<<
+
+This paper proposes an approach to mine specifications of exception handling protocols (sequence of calls taking part in exception
+handling). The mined specifications are association rules that, as opposed to previous work, can involve multiple antecedents and
+consequents. Rules are mined from a code based that includes the target program and additional examples retrieved from Google Code
+Search. Exception-Flow-Graphs (EFG) are constructed from the code samples, and from the EFT sequences of calls are extracted and fed to
+a common mining algorithm (closed frequent subsequence mining). The authors compared their approach with a related approach
+on five opensource systems and found that they could find more rules than the
+previous approach. They also reported that they identified and
+reported real defects using their approach.
+
+         >>> Evaluation <<<
+
+The paper presents a complete and appealing approach to discover
+exception handling protocols and possible violations of said
+protocols, and compares the work with related approaches. Although
+many of the developments are based on previous ideas and use tools
+previously developed by the authors, the paper nevertheless reports on
+a significant amount of work and has clear strengths.
+
+First, although the technical challenges in implementing this solution
+are numerous (automatically using a code search engine, partial type
+inference, exception flow graph building, data flow analysis,
+association rule mining, etc.), the technique is well explained and
+easy to follow thanks to running examples.
+
+Second, the evaluation covered many aspects of the approach and
+demonstrated that it was superior to previous work, could mine real
+exception handling rules (although the number of false positives is
+high) and could detect real defects. By evaluating the same programs
+as a related approach, the comparison was fair and
+revealing. Reporting the defects found and getting the input from the
+developers of hsqlDB is also a good way of validating the usefulness
+and correctness of the results.
+
+Weaknesses and other issues that could have benefited from additional
+clarifications include:
+
+First it is not clear if all types of applications require exception
+handling protocols. It seems that only frameworks/libraries dealing
+with resources need this kind of specification. The systems analyzed
+during the evaluation tends to point in that direction: Axion, HsqlDB
+and Hibernate, three programs dealing with databases, had far more
+rules than the two other systems.
+
+Second, the paper does not clearly explain how partial code snippets
+obtained from Google are analyzed. It is not clear how unresolved types
+impacted data flow analysis or signature matching. My guess is that
+the authors only matched method names and the number of parameters
+without looking at the type of the receiver or the parameters. This
+would also explain why polymorphism was not discussed (usually,
+techniques analyzing method calls use CHA, RTA or points-to analysis
+to get the set of possible method calls). In any cases, a short
+discussion on this typing issue would be necessary to avoid any
+confusion.
+
+Third, it was not clear how the FCa functions were chosen: does
+the approach try to find association rules for all statements that
+could throw an exception in a program? How were catch-all statements
+(e.g., catch(Exception e)) handled?
+
+Fourth, the evaluation illustrated that conditional rules (a new feature
+brought by this approach) accounted for 20% of the mined
+rules. However, it was not indicated how many of these rules were
+false positives, so it is not clear if these types of rules are really
+an improvement. Getting code examples from google code search, as
+opposed to only analyzing the input program, was clearly an
+improvement as shown by Figure 8.
+
+Fifth, the process used to evaluate whether a rule is a "real" rule
+or a false positive is not explained. This becomes an even bigger
+problem when the authors say that they looked more closely at the
+Axion application results to produce Figure 5. This figure provides
+the classification of each result according to their rank, a
+classification that the authors had to produce for the other four
+systems. Although there is not space for five such figures, it is
+highly suspicious that the results for the other systems are not
+provided. We can expect that the Axion results were the best, but how
+much worse were the results for the other systems?
+
+Presentation issues:
+
+o p.1 Statement.executionQuery should be ...executedQuery
+
+o p.3, in "Problem Domain", "where {FC6,FC8,FC9} \in I" should it not
+be "\subset I", because the elements are in a set?
+
+o Table 1 should appear before Table 2.
+
+o Figure 4 is just a different representation of Table 2. The ratios
+could be put in Table 2 to save space.
+
+o Column URL does not appear in table 1 (mentioned at the end of 4.1).
+
+o It would be helpful to the read to know more about the strategy used
+ by WN-miner before comparing the results. The differences in the
+ strategy used by CAR-miner and WN-miner are only explained after the
+ results and in the related work, so it is hard to assess whether the
+ results make sense up front.
+
+*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*

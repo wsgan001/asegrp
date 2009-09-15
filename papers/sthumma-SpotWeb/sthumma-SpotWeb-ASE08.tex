@@ -1,0 +1,72 @@
+
+%
+%  $Description: Author guidelines and sample document in LaTeX 2.09$
+%
+%  $Author: ienne $
+%  $Date: 1995/09/15 15:20:59 $
+%  $Revision: 1.4 $
+%
+
+%\documentclass[times, 10pt,twocolumn]{article}
+\documentclass[conference]{IEEEtran}
+\input{macros}
+%\usepackage{latex8}
+%\usepackage{times}
+
+%\documentstyle[times,art10,twocolumn,latex8]{article}
+
+%-------------------------------------------------------------------------
+% take the % away on next line to produce the final camera-ready version
+\pagestyle{empty}
+
+%-------------------------------------------------------------------------
+\begin{document}
+
+\title{SpotWeb: Detecting Framework Hotspots and Coldspots via Mining Open Source Code on the Web}
+
+\author{Suresh Thummalapenta\\
+Department of Computer Science\\ North Carolina State University \\
+Raleigh, USA\\ sthumma@ncsu.edu\\
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+\and
+Tao Xie\\
+Department of Computer Science\\ North Carolina State University \\
+Raleigh, USA\\ xie@csc.ncsu.edu\\
+}
+
+\maketitle
+\thispagestyle{empty}
+
+\input{abstract}
+\Comment{
+\vspace{1mm} \noindent {\bf Categories and Subject Descriptors:}
+D.2.3 {[Software Engineering]}: {Coding Tools and
+Techniques---\emph{Object-oriented programming}}; D.2.6 {[Software Engineering]}: {Programming
+Environments---\emph{Integrated environments}};
+
+\vspace{1mm} \noindent {\bf General Terms:} Languages,
+Experimentation.
+
+\vspace{1mm} \noindent {\bf Keywords:} Hotspots, Coldspots, Code search
+engine, Code reuse
+}
+\input{intro}
+\input{example}
+\input{approach}
+\input{eval}
+\input{discussion}
+\input{relatedwork}
+\input{conclusion}
+
+\section*{Acknowledgments}
+
+This work is supported in part by NSF grants CNS-0720641 and
+CCF-0725190, and Army Research Office grant W911NF-07-1-0431.
+
+\bibliographystyle{IEEEtran}
+\bibliography{sthumma-SpotWeb-ASE08}
+
+\end{document}

@@ -1,0 +1,64 @@
+\section{Example}
+\label{sec:example}
+We next use an example to illustrate our approach and how our
+approach can help in reducing programmers' effort when reusing
+existing frameworks or libraries. We use object types
+\CodeIn{QueueConnectionFactory} and \CodeIn{QueueSender} from the
+OpenJMS library\footnote{\url{http://java.sun.com/products/jms}},
+which is an open source implementation of Sun's Java Message Service
+API 1.1 Specification. \Comment{This library can be used to send and receive
+messages in both synchronous and asynchronous modes. }Consider that a
+programmer has an object of type \CodeIn{QueueConnectionFactory} and
+does not know how to write code to get a \CodeIn{QueueSender}
+object, which is required for sending messages.
+
+To address the problem, the programmer can use our PARSEWeb tool
+(implemented for our approach) in the following way. The
+programmer first translates the problem into
+a ``\CodeIn{QueueConnectionFactory} $\rightarrow$
+\CodeIn{QueueSender}'' query. Given this query, PARSEWeb
+requests GCSE for relevant code samples with usages of the given
+\emph{Source} and \emph{Destination} object types, and downloads the
+code samples to form a local source code repository. The downloaded
+code samples are often partial and not compilable as GCSE retrieves
+(and subsequently PARSEWeb downloads) only source files with usages
+of the given object types instead of entire projects. PARSEWeb
+analyzes each partial code sample using an Abstract Syntax Tree
+(AST) and builds a Directed Acyclic Graph (DAG) that represents each
+given code sample in order to capture control-flow information in
+the code example. PARSEWeb traverses this DAG to extract MISs that
+take \CodeIn{QueueConnectionFactory} as input and result
+in an object of \CodeIn{QueueSender}. The output of
+PARSEWeb for the given query is shown in Figure~\ref{fig:sampleoutput}.
+The sequence starts with the invocation of
+the \CodeIn{createQueueConnection} method that results in
+an instance of \CodeIn{QueueConnection} type. Similarly, by following
+other method invocations, the method sequence finally results in the
+\CodeIn{QueueSender} object, which is the desired
+destination object of the given query.
+
+The sample output also shows additional details 
+such as \CodeIn{FileName}, \CodeIn{MethodName}, \CodeIn{Rank}, and \CodeIn{NumberOfOccurrences}. 
+The details \CodeIn{FileName} and
+\CodeIn{MethodName} indicate the source file that the programmer can
+browse to find a relevant code sample for this MIS. For example, a
+code sample of the given query can be found in method
+\CodeIn{ingest} of file \CodeIn{0\_UserBean.java}. The prefix of the
+file name gives the index of the source file that contained the
+suggested solution among the results of GCSE. In this example, the
+code sample for the suggested method-invocation sequence can be
+found in the first source file returned by GCSE as the prefix value
+is zero. Generally, many queries result in more than one possible
+solution. The \CodeIn{Rank} attribute gives the rank of the
+corresponding MIS among the complete set of results. PARSEWeb
+derives the rank of a MIS based on the \CodeIn{NumberOfOccurrences}
+attribute and some other heuristics described in
+Section~\ref{sec:rankingCriteria}. The suggested MIS contains all
+necessary information for the programmer to write code for getting
+the \emph{Destination} object from the given \emph{Source} object.
+The suggested MIS can be transformed to equivalent Java code by
+introducing required intermediate variables. The code sample
+suggested along with the MIS can assist programmers in gathering
+this additional information regarding the intermediate variables.
+Figure~\ref{fig:javacode} shows equivalent Java code for the
+suggested MIS.

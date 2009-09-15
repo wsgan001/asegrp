@@ -1,0 +1,282 @@
+\section{Approach}
+\label{sec:approach}
+\vspace*{-2ex}
+Our CAR-Miner approach accepts an application under analysis and mines exception-handling rules
+for all function calls in the application. CAR-Miner detects violations of the mined exception-handling
+rules. We next present the details of each phase in our approach.
+
+%--------------------------------------------------------------------------------------------
+\subsection{Input Application Analysis}
+\label{sec:gatherce}
+\vspace*{-2ex}
+CAR-Miner accepts an application under analysis and parses the application to collect
+each function call, say $FC_a$, in the application from the call sites in the application. 
+For example, CAR-Miner collects
+the function call \CodeIn{Statement.executeUpdate} as an $FC_a$ from Line 1.9 
+in Scenario 1. We denote the set of all function calls as $FCS$. CAR-Miner
+mines exception-handling rules for all these function calls.
+
+%--------------------------------------------------------------------------------------------
+\vspace*{-1.5ex}
+\subsection{Code-Sample Collection}
+\label{sec:gatherce}
+\vspace*{-2ex}
+To mine exception-handling rules for the function call $FC_a$, we need code samples
+that already reuse the function. To collect such relevant code samples,
+we interact with a code search engine (CSE) such as Google code search~\cite{GCSE} and download
+code samples returned by the CSE. For example, we construct
+the query ``\CodeIn{lang:java java.sql.Statement executeUpdate}'' to collect
+code samples of the $FC_a$ \CodeIn{Statement.executeUpdate}. Often code samples
+gathered from a CSE are partial as the CSE returns individual source
+files instead of complete projects. We use partial-program analysis 
+developed in our previous approach~\cite{thummalapenta07:parseweb} to resolve
+object types such as receiver or argument types of function calls in code samples. 
+More details of our partial-program analysis are available in our previous paper~\cite{thummalapenta07:parseweb}.
+As we collect relevant code samples from other open source projects that already reuse a function, our
+approach has an advantage of being able to detect additional rules that do not have enough
+supporting samples in the application under analysis.
+%-----------------------------------------------------------------
+\vspace*{-1ex}
+\subsection{Exception-Flow-Graph Construction}
+\vspace*{-2ex}
+We next analyze the collected code samples and the application to generate traces in the form
+of sequence of function calls. Initially, we construct Exception-Flow Graphs (EFG),
+which are an extended form of Control-Flow Graphs (CFG).
+An EFG provides a graphical representation of all paths
+that might be traversed during the execution of a program, including exception paths. 
+Construction of an EFG is non-trivial due to the existence of additional paths
+that transfer control to exception-handling blocks 
+defined in the form of \CodeIn{catch} or \CodeIn{finally} in Java.
+We develop an algorithm inspired by Sinha and Harrold~\cite{exception:sinha}
+for constructing EFGs with additional paths that describe
+exception conditions. Figure~\ref{fig:approchex}a shows the constructed
+EFG for Scenario 2, where each node is denoted with the corresponding 
+line number of Scenario 2 in Figure~\ref{fig:threescenarios}.
+
+Initially, we build a CFG that represents flow of control during
+normal execution and augment the constructed CFG with
+additional edges that represent flow of control after exceptions occur. 
+We refer to these additional edges as \emph{exception} edges
+and all other edges as \emph{normal} edges. In the figure, 
+\emph{normal} and \emph{exception} edges are shown in solid and
+dotted lines, respectively. For example, an exception
+edge is added from Node 5 to Node 13 as the program can follow
+this path when \CodeIn{IOException} occurs while creating a \CodeIn{BufferedWriter}
+object. As code inside a \CodeIn{catch} or 
+a \CodeIn{finally} block gets executed after exceptions occur,
+we consider edges between the statements within \CodeIn{catch} and \CodeIn{finally} blocks also
+as exception edges. We show nodes related to function calls in normal
+paths such as those in a \CodeIn{try} block in white and function calls in exception paths
+such as those in a \CodeIn{catch} block in grey. Although function calls in a \CodeIn{finally}
+block belong to both normal and exception paths, we consider these paths as exception paths
+and show the associated nodes in grey. For simplicity, we ignore the control flow inside
+exception blocks.
+
+In the constructed EFG, there is an exception edge from Node 5 to Node 13,
+but there is no exception edge from Node 6 to Node 13. The reason is that Node 13
+handles a checked exception \CodeIn{IOException}, which is never raised by
+function call \CodeIn{DriverManager.getConnection} of Node 6. 
+Therefore, we prevent such infeasible control flow through a sound
+static analysis tool, called Jex~\cite{Jex:Robillard}.
+Jex analyzes source code statically and provides possible exceptions raised by each function call. 
+For example, Jex provides that \CodeIn{IOException} can be raised by
+\CodeIn{BufferedWriter.Constructor} but not \CodeIn{DriverManager.getConnection}.
+While adding \emph{exception} edges, we add only those edges
+from a function call to a \CodeIn{catch} block where 
+the exception handled by the \CodeIn{catch} block
+belongs to the set of possible exceptions thrown by the function call. 
+This additional check helps reduce potential false positives by preventing
+infeasible exception paths. If the \CodeIn{catch} block
+handles \CodeIn{Exception} (the super class of all exception types), we add 
+exception edges from each function call to the \CodeIn{catch} block.
+We consider a \CodeIn{finally} block as similar to 
+a \CodeIn{catch} block that handles \CodeIn{Exception}, and 
+add exception edges from each function call to the \CodeIn{finally} block.
+
+As gathered code samples are partial, we use intra-procedural 
+analysis for constructing EFGs. Furthermore, before constructing an EFG
+for a code sample, we also check whether the code sample includes
+any $FC_a$ $\in$ $FCS$. If the code sample does not include any $FC_a$,
+we skip the EFG construction for that code sample.
+\vspace*{-2ex}
+%-----------------------------------------------------------------
+\subsection{Static Trace Generation}
+\vspace*{-2ex}
+
+We next capture static traces that include
+actions that should be taken when exceptions occur while executing
+function calls such as $FC_a$ $\in$ $FCS$. For example, consider
+the $FC_a$ ``\CodeIn{Connection.createStatement}'' and its corresponding
+Node 7 in the EFG. A trace generated for this node is shown in Figure~\ref{fig:approchex}b.
+The trace includes three sections: \emph{normal function-call
+sequence} ($FC_c^1$...$FC_c^n$), $FC_a$, \emph{exception function-call sequence} ($FC_e^1$...$FC_e^m$).
+
+The $FC_c^1$...$FC_c^n$ sequence starts from the beginning of the 
+body of the enclosing function (i.e., caller) of the $FC_a$ function call
+to the call site of $FC_a$. The $FC_e^1$...$FC_e^m$ sequence 
+includes the longest exception path that starts from the call site of $FC_a$
+and terminates either at the end of the enclosing function body 
+or at a node in EFG whose outgoing edges are all normal edges. We generate such traces 
+from code samples and input application for each $FC_a$ $\in$ $FCS$.
+
+%-----------------------------------------------------------------
+\subsection{Trace Post-Processing}
+\vspace*{-2ex}
+
+We next identify function calls in $FC_c^1$...$FC_c^n$ or $FC_e^1$...$FC_e^m$
+that are not related to $FC_a$ through data-dependency, and 
+remove such function calls from each trace. Failing to remove
+such unrelated function calls can result in many false positives 
+due to frequent occurrences of unrelated function 
+calls as shown in the evaluation of PR-Miner~\cite{Zhenmin2005PRMiner}. 
+For example, in the trace shown in Figure~\ref{fig:approchex}b,
+function calls in the normal function-call sequence related to Nodes 4 and 5
+are unrelated to the $FC_a$ of Node 7. Similarly, Node 17 in the exception function-call 
+sequence is also unrelated to $FC_a$. 
+
+Figure~\ref{fig:approchex}c shows an example of our data-dependency analysis.
+Initially, we generate two kinds of relationships: var dependency of a variable 
+and function association of a function call. 
+The var dependency of a variable represents the set of variables on which a given variable is dependent upon.
+Similarly, a function association of a function call represents the set of variables on which 
+a function call is associated with. 
+
+First, we compute the var-dependency relationship information from assignment statements.
+For example, in Scenario 2, we identify that the variable \CodeIn{res} is dependent on 
+the variable \CodeIn{stmt} from Line 2.8 and is transitively dependent on \CodeIn{conn}
+as \CodeIn{stmt} is dependent on \CodeIn{conn} from Line 2.7. 
+We compute the function-association relationship based on the var-dependency relationship.
+In particular, we identify that a function call is associated with all its variables including the
+receiver, arguments, and the return variable, and their transitively dependent variables.
+For example, applying the preceding analysis to the function call of Node 7, 
+we identify that the associated variables are \CodeIn{conn} and \CodeIn{stmt}.
+
+We use variables associated with each function call to 
+identify function calls in the normal function-call sequence $FC_c^1$...$FC_c^n$ or 
+the exception function-call sequence $FC_e^1$...$FC_e^m$
+that are not related to $FC_a$. 
+Starting from $FC_a$, we perform a backward traversal of the trace to filter out function calls
+in $FC_c^1$...$FC_c^n$ and a forward traversal to filter out function calls
+in $FC_e^1$...$FC_e^m$. 
+Assume that variables associated with $FC_a$
+are \{$V_a^1$, $V_a^2$,$\ldots$, $V_a^s$\}. Assume that variables associated
+with a function call, say $FC_{ce}^k$, in the normal or exception function-call
+sequence are \{$V_{ce}^1$, $V_{ce}^2$,$\ldots$, $V_{ce}^t$\}.
+
+In each traversal, we compute an intersection of associated variable sets
+of $FC_a$ and $FC_{ce}^k$. If the intersection \{$V_a^1$, $V_a^2$,$\ldots$, $V_a^s$\} $\cap$
+\{$V_{ce}^1$, $V_{ce}^2$,$\ldots$, $V_{ce}^t$\} $\neq$ $\phi$, 
+we keep the $FC_{ce}^k$ function call (either in the normal or exception function-
+call sequence) in the trace; otherwise, we filter out the $FC_{ce}^k$ function call
+from the trace. The rationale behind our analysis is that if the intersection
+is a non-empty set, it indicates that the $FC_a$ 
+is directly or indirectly related to the $FC_{ce}^k$ function call. For example,
+the intersection of associated variables for Nodes 6 and 7 is non-empty.
+In contrast, the intersection of associated variables for Nodes 5 and 7 is 
+empty. Therefore, we keep Node 6 in the trace and filter out Node 5 during backward traversal.
+Similarly, during forward traversal, we ignore Node 17 
+since the intersection is an empty set. The resulting trace
+of ``4,5,6,7,15,16,17'' is ``6,7,15,16'', where
+
+\begin{CodeOut}
+\begin{alltt}
+\hspace*{0.2in}6 : DriverManager.getConnection
+\hspace*{0.2in}7 : Connection.createStatement 
+\hspace*{0.2in}15 : Statement.close
+\hspace*{0.2in}16 : Connection.close
+\end{alltt}
+\end{CodeOut}
+
+%-----------------------------------------------------------------
+\subsection{Static Trace Mining}
+\vspace*{-2ex}
+We apply our new mining algorithm described in Section~\ref{sec:condrules} on the set of 
+static traces collected for each $FC_a$. We apply mining on the
+traces of each $FC_a$ individually. The reason is that if we apply
+mining on all traces together, rules related to a $FC_a$
+with only a small number of traces can be missed due to rules related to other $FC_a$
+with a large number of traces. 
+
+In the phase of static trace mining, we first transform traces suitable for
+our mining algorithm. More specifically, as each trace includes 
+a normal function-call sequence and an exception function-call sequence,
+we build two sequence databases with normal and exception function-call sequences,
+respectively, from all the traces of a $FC_a$ function call. 
+
+We next apply our mining algorithm that initially annotates corresponding normal
+and exception function-call sequences and combines the annotated 
+sequences into a single call sequence. The mining
+algorithm produces sequence association rules of the form $FC_c^1$...$FC_c^n$ $\Rightarrow$
+$FC_e^1$...$FC_e^m$. As this sequence association rule is specific
+to $FC_a$, we add $FC_a$ to the rule as 
+($FC_c^1$...$FC_c^n$) $\wedge$ $FC_a$ $\Rightarrow$ ($FC_e^1$...$FC_e^m$).
+The preceding sequence association rule describes that
+the function call $FC_a$ should be followed by $FC_e^1$...$FC_e^m$
+in exception paths only when preceded by $FC_c^1$...$FC_c^n$ in normal paths.
+In our approach, we use the frequent closed subsequence mining tool, called
+BIDE, developed by Wang and Han~\cite{wang:bide}.
+We used the \emph{min\_sup} value as $0.4$, which is set based on our initial empirical experience. 
+We repeat the preceding process for each $FC_a$ and rank all final sequence
+association rules based on their support values assigned by the frequent subsequence 
+miner.
+
+
+\Comment{
+%-----------------------------------------------------------------
+\subsubsection{Frequent Itemset Miner}
+Let \emph{I} = \{$i_{1}$, $i_{2}$, ..., $i_{n}$\} be the set of all items in 
+a given database. Let \emph{min\_sup} is the given user-specified minimum
+support threshold. Any sub-set of the given set is referred as an \emph{itemset}.
+The support for an \emph{itemset} X, say \emph{sup(X)}, is defined as the 
+number of items \emph{Y} in the given database, such that X $\subseteq$ Y.
+An \emph{itemset X} is known as frequent is \emph{sup(X)} $\geq$ \emph{min\_sup}.
+The \emph{itemset X} is referred as closed frequent itemset if X is frequent and
+no superset of X is frequent.
+
+In our approach, the frequent itemset miner gives the frequent sets of function calls 
+that often appear in the exception paths. However, as the frequent itemset miner discards
+the order of function calls in the traces given as input, some of these frequent itemsets
+may be invalid. The primary reason is that each identified static trace starts with
+a normal function call $N_i$ followed by method-invocations $E_i$ that appear in the
+exception paths. As the itemset miner discards the order, the resulting frequent itemsets
+might not contain the $N_i$ associated with the original trace. Therefore, our approach
+initially stores all $N_i$ and classifies the frequent itemsets that do not contain
+any $N_i$ as invalid.
+%-----------------------------------------------------------------
+\subsubsection{Frequent Subsequence Miner}
+%-----------------------------------------------------------------
+\subsubsection{Association Rule Miner}
+An association rule represents the association among
+data between two different groups. Given two subsets \emph{X} and \emph{Y} of set \emph{I} 
+(\emph{X} $\subset$ \emph{I}, \emph{Y} $\subset$ \emph{I}, and \emph{X} $\cap$ \emph{Y} = $\phi$),
+an association rule is expressed as \emph{X} $\rightarrow$ \emph{Y} (\emph{c}\%), where \emph{c}
+gives the confidence of the rule. The confidence of the association rule \emph{X} $\rightarrow$ \emph{Y} 
+is defined as the ratio of transactions including both \emph{X} and \emph{Y} to all the 
+transactions that include \emph{X}. The \emph{sup(X)} is defined as the proportion 
+of the transactions accessing \emph{X} to the whole transactions. An association rule 
+is defined as frequent, if \emph{sup(X)} $\geq$ \emph{min\_sup}. 
+}
+
+%---------------------------------------------------------------------
+\subsection{Anomaly Detection}
+
+To show the usefulness of our mined exception-handling rules, we apply these
+rules on the application under analysis to detect violations. Initially, from each
+call site of $FC_a$ in the application, we extract the normal function-call 
+sequence, say $C_c^1$$C_c^2$$\ldots$$C_c^a$, from the beginning of 
+the body of enclosing function of $FC_a$ to the call site of $FC_a$.
+If $FC_c^1$$\dots$$FC_c^n$ $\sqsubseteq$ $C_c^1$$C_c^2$$\ldots$$C_c^a$,
+then we extract the exception function-call sequence, say $C_e^1$$C_e^2$$\ldots$$C_e^b$,
+from the call site of $FC_a$ to the end of the enclosing function body 
+or to a node (in the EFG) whose outgoing edges are all normal edges.
+We do not report a violation if $FC_e^1$$\ldots$$FC_e^m$ $\sqsubseteq$ $C_e^1$$C_e^2$$\ldots$$C_e^b$;
+otherwise, we report a violation in the application under analysis.
+We rank all detected violations based on 
+a similar criterion used for ranking exception-handling rules. 
+
+\Comment{We initially capture the context function-call sequence from the call-sites
+of $FC_a$ in the input application and find whether the context matches with the context
+of any exception-handling rules. If a context match is found,
+we check whether the exception path of $FC_a$ includes all function calls
+defined by that exception-handling rule. Any missing function call
+in the exception function-call sequence is reported as a violation.}

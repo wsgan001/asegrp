@@ -1,0 +1,27 @@
+\Comment{\section {Discussion and Future Work}
+\label{sec:discussion}
+
+In our current implementation, our tool interacts with the Google
+Code Search Engine~\cite{GCSE} for gathering relevant code examples
+for all classes and interfaces of the given input library.
+Therefore, our current results are dependent on code examples
+returned by the GCSE. In future work, we plan to extend our tool to
+collect code examples from other CSEs such as Koders~\cite{KODERS}
+and Krugle~\cite{KRUGLE}, and analyze the results to compare the
+effectiveness of different CSEs.}
+
+\section{Threats to Validity}
+\label{sec:threats}
+The threats to external validity primarily include the degree to
+which the subject programs and used CSE are representative of true
+practice. The current subjects range from small-scale applications
+such as Grappa to large-scale applications such as BCEL and JUNG. In
+SpotWeb, we used only one CSE, i.e., Google code search. We plan to
+reduce these threats by conducting more experiments on wider types
+of subjects and by using other CSEs in future work. The threats to
+internal validity are instrumentation effects that can bias our
+results. Faults in our SpotWeb prototype might cause such effects
+while detecting hotspots and coldspots. To reduce these threats, we
+inspected some code examples gathered from the CSE to double check
+the metrics computed by SpotWeb for these code examples.
+

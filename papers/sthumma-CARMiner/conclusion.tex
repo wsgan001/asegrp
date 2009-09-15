@@ -1,0 +1,20 @@
+\section{Conclusion}
+\label{sec:conclusion}
+\vspace*{-2ex}
+We have developed an approach, called CAR-Miner, that mines exception-handling 
+rules in the form of sequence association rules. Unlike simple association
+rules of the form ``$FC_a$ $\Rightarrow$ $FC_e$'', these sequence association rules
+of the form ``($FC_c^1$...$FC_c^n$) $\wedge$ $FC_a$ $\Rightarrow$ ($FC_e^1$...$FC_e^m$)''
+can characterize more complex exception-handling rules. As existing
+mining algorithms cannot mine these sequence association rules, we proposed a novel mining
+algorithm based on frequent closed subsequence mining. CAR-Miner
+also tries to address the problems of limited data scopes faced 
+by existing approaches by expanding the data scope to open source projects available on the web.
+We have evaluated our approach with five real-world open source applications
+and shown that CAR-Miner mined $294$ real exception-handling rules. 
+We have also shown that CAR-Miner finds $160$ defects, where $87$ are new defects,
+not being found by a previous related approach~\cite{WeimerN05}. 
+Our approach takes a step forward in the direction 
+of developing new mining algorithms to address
+unique requirements in mining software engineering data, beyond being limited
+by existing off-the-shelf mining algorithms.

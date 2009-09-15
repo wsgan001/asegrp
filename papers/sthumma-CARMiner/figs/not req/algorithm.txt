@@ -1,0 +1,39 @@
+\begin{algorithm}[t]
+\begin{CodeOut}
+\SetLine
+\KwIn{\{($RC_1$, $S_1$), ..., ($RC_n$, $S_n$)\}, $NEPC$, $LT$, $UT$}
+\KwOut{Mined usage scenarios}
+Initialize $MPSet$;\\
+//Step 1\\
+\If{($NEPC$ $\geq$ $UT$) or (All $S_i$ $<$ $LT$)}{
+\Return $null$;
+}
+//Step 2\\
+\If{Any $S_i$ $\geq$ $UT$}{
+Append all $RC_i$ whose $S_i$ $\geq$ $UT$ to $MPSet$;\\
+Set Confidence of those $RC_i$ to $HIGH$;\\
+\Return $MPSet$;
+}
+Set $MAX\_SUP$ to \textbf{max}\{$S_1$, ..., $S_n$\};\\
+//Step 3\\
+\If{$NEPC$ $<$ $LT$}{
+\For{each $RC_i$}{
+\If{$S_i$ $<$ $LT$} { continue; }
+Append $RC_i$ to $MCPSet$;\\
+\If{$S_i$ == $MAX\_SUP$}{
+Set confidence of $RC_i$ to $HIGH$;\\
+} \Else{\If{$S_i$ $\geq$ $NEPC$}{Set confidence of $RC_i$ to $AVERAGE$;}
+\Else{Set confidence of $RC_i$ to $LOW$;}}  
+}}
+\Else{
+\For{each $RC_i$}{
+\If{$S_i$ $<$ $LT$} { continue; }
+\If{$S_i$ == $MAX\_SUP$}{
+Set confidence of $RC_i$ to $AVERAGE$;
+}\Else{Set confidence of $RC_i$ to $LOW$;}
+}
+}
+\Return $MCPSet$;
+\end{CodeOut}
+\caption{Mining algorithm used by XWeb.} \label{alg:miningalg}
+\end{algorithm}

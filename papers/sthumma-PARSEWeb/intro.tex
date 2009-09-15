@@ -1,0 +1,142 @@
+%-------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:introduction}
+
+The primary goal of software development is to deliver high-quality
+software efficiently and in the least amount of time whenever
+possible. To achieve the preceding goal, programmers often want to
+reuse existing frameworks or libraries instead of developing similar
+code artifacts from scratch. The challenging aspect for
+programmers in reusing the existing frameworks or libraries is to
+understand the usage of Application Programming Interfaces (APIs)
+exposed by those frameworks or libraries, because many of the
+existing frameworks or libraries are not well-documented. Even when
+such documentations exist, they are often outdated~\cite{document:leth}.
+
+In general, the reuse of existing frameworks or libraries involve
+instantiation of several object types of those frameworks or
+libraries. For example, consider the programming task of parsing
+code in a dirty editor (editor whose content is not yet saved) of
+the Eclipse IDE framework. As a dirty editor is represented as an
+object of the \CodeIn{IEditorPart} type and the programmer needs an
+object of \CodeIn{ICompilationUnit} for parsing, the programmer has
+to identify a method sequence that takes the \CodeIn{IEditorPart} object
+as input and results in an object of \CodeIn{ICompilationUnit}. One
+such possible method sequence is shown below:
+
+\begin{CodeOut}
+\begin{alltt}
+IEditorPart iep = ...
+IEditorInput editorInp = iep.getEditorInput();
+IWorkingCopyManager wcm = JavaUI.getWorkingCopyManager();
+ICompilationUnit icu = wcm.getWorkingCopy(editorInp);
+\end{alltt}
+\end{CodeOut}
+
+The code sample shown above exhibits the difficulties faced by
+programmers in reusing the existing frameworks or libraries. A
+programmer unfamiliar to Eclipse may take
+long time to identify that an \CodeIn{IWorkingCopyManager} object 
+is needed for getting the
+\CodeIn{ICompilationUnit} object from an object of the
+\CodeIn{IEditorInput} type. Furthermore, it is not trivial to find
+an appropriate way of instantiating the
+\CodeIn{IWorkingCopyManager} object as the instantiation requires a static
+method invocation on the \CodeIn{JavaUI} class.
+
+In many such situations, programmers know what type of object that
+they need to instantiate (like \CodeIn{ICompilationUnit}), but do
+not know how to write code to get that object from a known object
+type (like \CodeIn{IEditorPart}). For simplicity, we refer the known
+object type as \emph{Source} and the required object type as
+\emph{Destination}. Therefore, the proposed problem can be
+translated to a query of the form ``\emph{Source} $\rightarrow$
+\emph{Destination}''. There are several existing
+approaches~\cite{prospector:jungloid, strathcona:se, xsnippet:saha}
+that address the described problem. But the common issue faced by
+these existing approaches is that the scope of these approaches is
+limited to the information available in a fixed (often small) set of
+applications reusing the frameworks or libraries of interest.
+%-------------------------------------------------------------------------
+\begin{figure*}[t]
+\begin{CodeOut}
+\begin{alltt}
+\hspace*{0.6in}01:\textbf{FileName}:0\_UserBean.java \textbf{MethodName}:ingest  \textbf{Rank}:1 \textbf{NumberOfOccurrences}:6
+\hspace*{0.6in}02:QueueConnectionFactory,createQueueConnection() \textbf{ReturnType}:QueueConnection
+\hspace*{0.6in}03:QueueConnection,createQueueSession(boolean,Session.AUTO\_ACKNOWLEDGE) \textbf{ReturnType}:QueueSession
+\hspace*{0.6in}04:QueueSession,createSender(Queue) \textbf{ReturnType}:QueueSender
+\end{alltt}
+\end{CodeOut}
+\vspace*{-4ex} \Caption{\label{fig:sampleoutput} Method sequence
+suggested by PARSEWeb.}
+%-------------------------------------------------------------------------
+%\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+\hspace*{0.6in}01:QueueConnectionFactory qcf;
+\hspace*{0.6in}02:QueueConnection queueConn = qcf.createQueueConnection();
+\hspace*{0.6in}03:QueueSession qs = queueConn.createQueueSession(true,Session.AUTO\_ACKNOWLEDGE);
+\hspace*{0.6in}04:QueueSender queueSender = qs.createSender(new Queue());
+\end{alltt}
+\end{CodeOut}\vspace*{-4ex}
+\Caption{\label{fig:javacode} Equivalent Java code for the method sequence suggested by PARSEWeb.} \vspace*{-3ex}
+\end{figure*}
+%-------------------------------------------------------------------------
+Many code search engines (CSE) such as Google~\cite{GCSE} and
+Koders~\cite{KODERS}\Comment{, and Krugle~\cite{KRUGLE}} are
+available on the web. These CSEs can be used to assist programmers
+by providing relevant code examples with usages of the given query
+from a large number of publicly accessible source code repositories.
+For the preceding example, programmers can issue the query
+``\CodeIn{IEditorPart} \CodeIn{ICompilationUnit}'' to gather
+relevant code samples with usages of the object types
+\CodeIn{IEditorPart} and \CodeIn{ICompilationUnit}. However, these
+CSEs are not quite helpful in addressing the described problem
+because we observed that Google Code Search Engine (GCSE)
+~\cite{GCSE} returns nearly $100$ results for this
+query and the desired method sequence shown above is present in the
+$25^{th}$ source file among those results.
+
+Our approach addresses the described problem by accepting
+queries of the form ``\emph{Source} $\rightarrow$
+\emph{Destination}'' and suggests frequently used Method-Invocation
+Sequences (MIS) that can transform an object of the \emph{Source}
+type to an object of the \emph{Destination} type. Our approach also
+suggests relevant code samples that are extracted from a large
+number of publicly accessible source code repositories. These
+suggested MISs along with the code samples can help programmers in
+addressing the described problem and thereby help reduce
+programmers' effort in reusing existing frameworks or libraries.
+
+We have implemented the proposed approach with a tool called
+PARSEWeb for helping reuse Java code. PARSEWeb interacts with
+GCSE~\cite{GCSE} to search for code samples with the usages of the
+given \emph{Source} and \emph{Destination} object types, and
+downloads the code example results to form a local source code
+repository. PARSEWeb analyzes the local source code repository to
+extract different MISs and clusters similar MISs using a
+sequence postprocessor. These extracted MISs can serve as a solution for
+the given query. PARSEWeb also sorts the final set of MISs using
+several ranking heuristics. PARSEWeb uses an additional heuristic
+called query splitting that helps address the problem where
+code samples for the given query are split among different source
+files.
+
+This paper makes the following main contributions:\vspace*{-1ex}
+\begin{itemize}
+\item An approach for reducing programmers' effort while reusing existing frameworks or libraries by providing frequently used MISs and relevant code samples.
+\item A technique for collecting relevant code samples dynamically from the web. This contribution has an added advantage of not limiting the scope of the approach to any specific set of frameworks or libraries.
+\item A technique for analyzing partial code samples through Abstract Syntax Trees (AST) and Directed Acyclic Graphs (DAG) that can handle control-flow information and method inlining.
+\item An Eclipse plugin tool implemented for the proposed approach
+and several evaluations to assess the effectiveness of the tool.
+\end{itemize}
+
+The rest of the paper is organized as follows. Section
+~\ref{sec:example} explains the approach through an example.
+Section~\ref{sec:relatedwork} presents related work.
+Section~\ref{sec:summary} describes key aspects of the approach.
+Section~\ref{sec:implementation} describes implementation details.
+Section~\ref{sec:evaluation} discusses evaluation results.
+Section~\ref{sec:discussion} discusses limitations and future work.
+Finally, Section~\ref{sec:conclusion} concludes.\vspace*{-1ex}
+%-------------------------------------------------------------------------

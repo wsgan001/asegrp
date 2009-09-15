@@ -1,0 +1,28 @@
+\begin{abstract}
+Code Search Engines (CSE) can serve as powerful resources of open
+source code, as they can search in billions of lines of open source
+code available on the web. The strength of CSEs can be used for
+several tasks like searching relevant code samples, identifying
+hotspots, and finding bugs. However, the major limitations in using
+CSEs for these tasks are that the returned samples are too many and
+they are often partial. Our framework addresses the preceding
+limitations and thereby helps in using CSEs for these tasks. We
+showed the effectiveness of our framework with two tools developed
+based on our framework.
+
+\Comment{CSEs are often used by programmers to search for relevant
+code samples from publicly accessible source code. However, CSEs are not quite
+helpful in practice because the number of returned samples are too many and
+the desired code sample is often not available among the first several results.
+Apart from using CSEs for searching relevant code samples, CSEs can also be used
+for several other applications like identifying framework hotspots and finding bugs
+in software. Exploiting CSEs for these applications requires analysis of
+the code samples returned by CSEs. This analysis is non-trivial because the code samples
+returned by CSEs are often partial.\Comment{, as CSEs retrieve
+only source files with usages of the given query instead of entire projects.}
+In this paper, we propose an extensible framework that addresses the preceding limitations
+and thereby helps in exploiting CSEs for several applications that can help improve the
+productivity of programmers. Our framework performs static analysis over code samples gathered from a CSE by
+using several heuristics and transforms those samples into graph representations that can be directly
+used for other applications. }
+\end{abstract}

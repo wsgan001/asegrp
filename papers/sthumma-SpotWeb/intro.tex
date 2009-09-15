@@ -1,0 +1,94 @@
+\section {Introduction}
+
+Reuse of existing open source frameworks or libraries (referred as frameworks)
+has become a common practice in the
+current software development process due to several factors such as low
+cost and high efficiency. However, existing frameworks often offer
+complex procedures that pose challenges to developers for effective reuse.
+This complexity also makes the documentation of the framework a
+vital resource. However, the documentation is often missing for many
+existing frameworks and even if such documentation exists, it
+is often outdated~\cite{document:leth}.
+
+In general, frameworks expose certain areas (API classes and methods) of
+flexibility that are intended for reuse by their users. Software
+developers who reuse classes and methods of these frameworks must be aware of
+these flexible areas for effective reuse of frameworks. These
+areas of flexibility are often referred as \Intro{hotspots}.
+As described by Pree~\cite{pree:metapatterns}, hotspots depict a framework's
+flexibility and proneness to reuse. The foundations of hotspots are
+built upon the Open-Closed principle by Martin~\cite{martin:open}.
+The Open-Closed principle encompasses two main definitions: the
+``open'' and the ``closed'' parts. The ``open'' parts (referred as \Intro{hooks}) represent
+areas that are flexible and variant, whereas the ``closed'' parts (referred as \Intro{templates}) 
+represent areas that are immutable in the given framework. 
+A \Intro{hotspot} is defined as a combination of templates and hooks.
+
+Hotspots are useful to both users and developers of the framework
+in several ways. First, new users can browse and inspect hotspots to understand commonly
+reused classes and find out the classes that the users want to reuse.
+Second, users may have more confidence or tendencies in
+reusing hotspots because generally bugs in these hotspots may be
+fewer (or more easily exposed previously) than the ones in
+non-hotspots; we can view the application code that reuses framework hotspots to be a special
+type of test code that can help expose bugs in
+hotspots. Third, developers or maintainers of these frameworks can choose to
+invest their improvement efforts (e.g., performance improvement or bug fixing) 
+on these hotspots because the resulting returns on
+investment may be substantial.
+
+In contrast to hotspots, we call a framework's areas that
+are rarely used by users as \Intro{coldspots}.
+The concept of coldspots is introduced by our approach and these
+coldspots can serve as caveats to users of the given framework.
+As coldspots represent the rarely used classes and methods, there can be difficulties
+in identifying relevant code examples that can help users in reusing
+those classes and methods. Moreover, coldspots are generally less tested compared to hotspots
+with regards to the ``testing'' conducted by API client code as
+test code.
+
+Detecting hotspots and coldspots of an input framework requires domain knowledge of how the API classes
+and methods of the input framework are reused by applications, referred as client
+applications. Various open source projects that reuse classes of a given input framework
+are available on the web and these open source projects
+can serve as a basis for gathering the information of how classes of the
+input framework are reused, and hence can help in detecting hotspots and coldspots.
+Therefore, our approach, called SpotWeb, leverages a code search engine (CSE) to gather
+relevant code examples of classes of the input framework from these open source
+projects. Given a query, a CSE can extract code examples
+with usages of the query from open source projects available on the web. Our approach analyzes
+gathered code examples statically and detects hotspots and coldspots of the
+given framework. Our approach tackles
+the problems related to the quality of code examples gathered
+from a CSE by capturing the most common usages of classes through mining.
+
+The paper\footnote{An earlier version of this work is described in a 4-page position paper
+presented at MSR 2008~\cite{thummalapenta08:spotweb}.}makes the following main contributions:
+\vspace{2ex}
+\begin{Itemize}
+
+\Item An approach for detecting hotspots of a given framework by analyzing relevant
+code examples gathered from a CSE.
+\vspace{3ex}
+\Item An approach for detecting coldspots of a given framework.
+\vspace{2ex}
+\Item An Eclipse plugin implemented for the proposed approach 
+and several evaluations to assess the effectiveness of the tool. In our evaluation,
+SpotWeb detects hotspots and coldspots of eight widely used open source frameworks
+by analyzing a total of $7.8$ million lines of code. We show the utility of 
+detected hotspots by comparing detected hotspots
+of a framework with a real application reusing that framework. We also compare our
+results with the results of a previous related approach by Viljamaa~\cite{viljamaa:reverse}.
+\end{Itemize}
+\vspace{2ex}
+
+The rest of the paper is organized as follows. 
+Section~\ref{sec:example} explains our approach through an illustrative example.
+Section~\ref{sec:specapproach} describes key aspects of the approach.
+Section~\ref{sec:eval} discusses evaluation results.
+Section~\ref{sec:threats} presents threats to validity.
+\Comment{Section~\ref{sec:discussion} presents limitations and future work.}
+Section~\ref{sec:related} presents related work.
+Finally, Section~\ref{sec:conclusion} concludes.
+
+

@@ -1,0 +1,60 @@
+\section {Related Work}
+\label{sec:related}
+We used CSEs for gathering related code examples in our 
+previous approaches called MAPO~\cite{mapo:xie} and PARSEWeb~\cite{thummalapenta07:parseweb}.
+With MAPO and PARSEWeb, SpotWeb shares \emph{only} the code downloader component that is used for gathering
+related code examples. As each approach targets
+a different problem, each approach has different techniques 
+in analyzing gathered code examples to address the
+challenges of that problem. MAPO and PARSEWeb focus on mining
+API usage patterns to assist programmers to write effective API client code.
+Given an API, MAPO identifies the frequent usage patterns of that API from
+gathered code examples. PARSEWeb analyzes each gathered code example and builds
+a CFG, which includes only method-invocation nodes, and captures sequences
+that serve as solutions for the queries of the form ``Source $\rightarrow$ Destination''.
+The SpotWeb approach is significantly different from these approaches as SpotWeb targets at capturing
+\emph{UsageMetrics} of classes and methods of a given input framework and uses
+these metrics to detect hotspots and coldspots.
+
+An approach by Viljamaa~\cite{viljamaa:reverse} also recovers the hotspots of a framework
+by using the source code of the input framework and a set of available example applications. Their approach
+uses concept analysis~\cite{ganter:concept} for uncovering hotspots of the framework. One major
+problem with their approach is that applying concept analysis to the entire input source code
+can result in a huge pattern that is not useful in practice. To
+address the preceding problem, their approach 
+suggests to select only those program elements 
+that are relevant to the hotspot \emph{h} at hand. Therefore, their
+approach requires the users to have some initial knowledge of the structure
+and hotspots of the framework under analysis. In contrast,
+our approach uses simple statistical analysis and can handle an entire input
+framework. Furthermore, SpotWeb does not require
+the users to have any knowledge of the input framework. Moreover,
+our approach performs better than their approach as shown in our evaluation.
+
+Mendonca et al.~\cite{mendoca:instantiation} proposed an approach to
+assist framework instantiation and to understand the intricate
+details surrounding the framework design.
+However, their approach requires framework developers to
+manually specify the framework design in a specific process
+language, called Reuse Definition Language, proposed by their approach.
+
+Holmes and Walker~\cite{holmes:apiusage} proposed an approach 
+that quantitatively determines how existing APIs are used. Their approach
+gathers a few applications that already reuse those existing APIs
+and computes metrics to detect how existing APIs are used by those applications.
+SpotWeb differs from their approach in three main aspects. First, their approach 
+expects the framework users to have knowledge 
+of the APIs of the framework. Therfore, their approach is mainly useful to users who are already
+familiar with those framework APIs. Second, their approach presents only the
+number of times that the APIs are reused. Third, their approach computes metrics
+from a limited data scope. In contrast, SpotWeb does not require the users
+to have the knowledge of APIs of the input framework and presents information
+in a more comprehensive form through templates and hooks.
+
+Baxter et al.~\cite{baxter:shape} proposed an approach to discover
+the structure of Java programs and the way that the classes relate
+to each other through inheritance and composition. Their study is
+useful for the framework developers who can evaluate the structural
+features of their own programming practice and optimize their
+performance. In contrast, SpotWeb is useful for the framework users
+in effectively reusing the APIs of the framework.

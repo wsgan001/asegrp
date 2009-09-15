@@ -1,0 +1,63 @@
+\Comment{
+\setlength{\tabcolsep}{1pt}
+\begin{table*}[t]
+\begin{SmallOut}
+\begin{CodeOut}
+\begin{center}
+\centering \caption {\label{tab:contextsig} Code examples showing significance of resource-manipulation action.}
+\begin {tabular} {|l|l|}
+\hline
+Scenario 1&Scenario 2\\
+\hline	
+...&...\\
+Connection conn = null;&Connection conn = null;\\
+Statement stmt = null;&Statement stmt = null;\\
+try \{&try \{\\
+\hspace*{0.2in}conn = DriverManager.getConnection(``jdbc:pl:db'', ``ps'', ``ps'');&\hspace*{0.2in}conn = DriverManager.getConnection(``jdbc:pl:db'', ``ps'', ``ps'');\\
+\hspace*{0.2in}stmt = conn.createStatement();&\hspace*{0.2in}Statement stmt = conn.createStatement();\\
+\hspace*{0.2in}stmt.executeUpdate(``DELETE FROM Table1'');&\hspace*{0.2in}ResultSet res = stmt.executeQuery(``SELECT Path FROM Files'');\\
+\hspace*{0.2in}conn.commit();&\hspace*{0.2in}while (res.next()) \{\\
+\} catch(SQLException se) \{&\hspace*{0.4in}System.out.println(res.getString(1));\\
+\hspace*{0.2in}if(conn != null) conn.rollback();&\hspace*{0.2in}\}\\
+\} finally \{&\hspace*{0.2in}res.close();\\
+\hspace*{0.2in}if(stmt != null) stmt.close();&\} finally \{\\
+\hspace*{0.2in}if(conn != null) conn.close();&\hspace*{0.2in}if(stmt != null) stmt.close();\\
+\}&\hspace*{0.2in}if(conn != null) conn.close();\\
+...&\}\\
+&...\\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\end{SmallOut}
+\end{table*}}
+
+
+%----------------------------------------------------------------------------------------------------
+\section{Candidate Specification}
+\label{sec:candspec}
+
+A resource-exception model includes describes several resource-cleanup actions that
+should be executed after a resource-manipulation statement. We define a candidate specification
+for each such cleanup action. In our approach, we mine these candidate specifications
+and apply mined specifications to detect violations. The formal definition of 
+candidate specification is given as below:
+
+\textbf{Definition 1:} \emph{A candidate specification is a three-tuple (RM, RC, TP), where \\
+\hspace*{0.4in}RM: resource manipulation action\\
+\hspace*{0.4in}RC: resource cleanup action\\
+\hspace*{0.4in}TP: trigger path\\
+}
+
+We represent the trigger path in the form of a sequence of method invocations. The candidate
+specification for the resource-manipulation action \CodeIn{Statement.executeUpdate} (Statement 9) and
+the resource-cleanup action \CodeIn{OracleDataSource.close} (Statement 17) shown in Figure~\ref{fig:examplecode} is
+
+\begin{CodeOut}
+\begin{alltt}
+<Statement.executeUpdate(),OracleDataSource.close(),
+\hspace*{0.2in}OracleDataSource.getConnection():Connection -> 
+\hspace*{0.2in}Connection.createStatement():Statement>
+\end{alltt}
+\end{CodeOut}
+

@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+
+\bibitem{java:eclipse}
+J.~Anjou, S.~Fairbrother, D.~Kehn, J.~Kellerman, and P.~McCarthy.
+\newblock {\em The {J}ava Developer's Guide to Eclipse}.
+\newblock Addison-Wesley Professional, 2004.
+
+\bibitem{sourcerer:baj}
+S.~Bajracharya, T.~Ngo, E.~Linstead, Y.~Dou, P.~Rigor, P.~Baldi, and C.~Lopes.
+\newblock {S}ourcerer: A search engine for open source code supporting
+  structure-based search.
+\newblock In {\em Proc. of OOPSLA Companion}, 2006.
+
+\bibitem{BCELForum}
+{J}akarta {BCEL} user forum, 2001.
+\newblock
+  \url{http://mail-archives.apache.org/mod_mbox/jakarta-bcel-user/200609.mbox/%
+thread}.
+
+\bibitem{BEAForum}
+Dev2{D}ev {N}ewsgroups by developers, for developers, 2006.
+\newblock
+  \url{http://forums.bea.com/bea/message.jspa?messageID=202265042&tstart=0}.
+
+\bibitem{GCSE}
+Google {C}ode {S}earch {E}ngine, 2006.
+\newblock \url{http://www.google.com/codesearch}.
+
+\bibitem{strathcona:se}
+R.~Holmes and G.~Murphy.
+\newblock Using structural context to recommend source code examples.
+\newblock In {\em Proc. of ICSE}, pages 117--125, 2005.
+
+\bibitem{Jung}
+Jung — the {J}ava {U}niversal {N}etwork/{G}raph {F}ramework, 2005.
+\newblock \url{http://jung.sourceforge.net/}.
+
+\bibitem{KODERS}
+The {K}oders source code search engine, 2005.
+\newblock \url{http://www.koders.com}.
+
+\bibitem{document:leth}
+T.~Lethbridge, J.~Singer, and A.~Forward.
+\newblock How software engineers use documentation: The state of the practice.
+\newblock In {\em IEEE Software}, pages 35--39, 2003.
+
+\bibitem{Logic}
+{L}ogic {P}roject based on {E}clipse {G}{E}{F}, 2006.
+\newblock
+  \url{http://www.eclipse.org/downloads/download.php?file=/tools/gef/downloads%
+/drops/R-3.2.1-&200609211617/GEF-examples-3.2.1.zip}.
+
+\bibitem{prospector:jungloid}
+D.~Mandelin, L.~Xu, R.~Bodik, and D.~Kimelman.
+\newblock Jungloid mining: helping to navigate the {API} jungle.
+\newblock In {\em Proc. of PLDI}, pages 48--61, 2005.
+
+\bibitem{softwarefactory:mat}
+Y.~Matsumoto.
+\newblock {\em A Software Factory: An Overall Approach to Software Production}.
+\newblock In P. Freeman ed., Software Reusability. IEEE CS Press, 1987.
+
+\bibitem{sager-msr06-clsim}
+T.~Sager, A.~Bernstein, M.~Pinzger, and C.~Kiefer.
+\newblock Detecting similar {J}ava classes using tree algorithms.
+\newblock In {\em Proc. of MSR}, pages 65--71, 2006.
+
+\bibitem{xsnippet:saha}
+N.~Sahavechaphan and K.~Claypool.
+\newblock {X}{S}nippet: Mining for sample code.
+\newblock In {\em Proc. of OOPSLA}, pages 413--430, 2006.
+
+\bibitem{mapo:xie}
+T.~Xie and J.~Pei.
+\newblock M{A}{P}{O}: Mining {A}{P}{I} usages from open source repositories.
+\newblock In {\em Proc. of MSR}, pages 54--57, 2006.
+
+\bibitem{sfreuse:ye}
+Y.~Ye and G.~Fischer.
+\newblock Supporting reuse by delivering taskrelevant and personalized
+  information.
+\newblock In {\em Proc. of ICSE}, pages 513--523, 2002.
+
+\end{thebibliography}

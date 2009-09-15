@@ -1,0 +1,345 @@
+First reviewer's review:
+
+          >>> Summary of the paper <<<
+
+This paper presents PARSEWeb as a technique that can assist application
+developers to understand how to get a particular object type from a known
+object type through a specific method sequence. For this purpose, users
+provide queries in the form of Source Object Type ---> Destination Object
+Type. Then, PARSEWeb leverages Google Code Search Engine (GCSE) to find
+relevant code examples that include Source and Destination object types.
+Then, it applies control flow analysis and sequence mining on the code
+samples to determine the method sequence.
+
+
+
+          >>> Comments <<<
+
+General:
+
+The work addresses a significant practical problem. Although knowing how to
+obtain an object of a target type from an object of a source type seems
+like a small part of the overall API usage challenge, the problem is
+notorious and frequent in practice. The paper is well written and easy to
+read.
+
+However, a better motivation needs to be provided. Some of the reasoning in
+the current intro is weird, e.g.:  
+
+?€?In general, reuse of existing frameworks or libraries involve
+instantiations of several object types of those frameworks or libraries.
+Therefore, the common problem faced by the programmers is that the
+programmers often know what type of object they need to instantiate, but do
+not know how to write code to get that object from a known object type.?€?
+-> I don?€?t think that the programmers knowing what type of object they
+need follows from the first sentence.
+--> DONE
+
+What is the connection between the example with the 3000 results from GCSE
+and the source->target kind of query? This is puzzling...
+--> DONE
+
+Can you provide a better illustration of the problem? For example, what
+percentage of the queries that developers would run would be of that form?
+--> TODO LATER
+
+Also, the intro argues that relying on a fixed set of sample applications
+would be a problem. Why is that? If the applications have what I?€?m
+looking for, this should be fine.
+--> DONE
+
+Besides, sometimes Source is not known or is not applicable, but one still
+would like to know how to get a particular object.
+--> DONE (Added description in DISCUSSION section for this)
+
+
+Detailed:
+
+* Section 1, Paragraph 1: Without providing any evidence or motivating
+examples, it is mentioned that programmers write code to get an object type
+from a known object. Please provide some examples and motivate the reader.
+I myself referred to one of the references of the paper (ref. [16]) to get
+some motivating examples.
+--> DONE
+
+Also the phrase "proposed problem" sounds weird. Problems usually get
+selected and solution get proposed.
+--> DONE
+
+* Figures 1-2: Write the suggested MIS and its equivalent Java code in a
+cleaner way. Provide each statement in a separate line and probably with
+line numbering.
+--> DONE
+
+* Section 2, Last Paragraph: It is mentioned that the suggested MIS can be
+easily transformed to equivalent Java code by introducing required
+intermediate variables. I believe this statement is not true. For example,
+as the authors also mention later in the paper, sometimes the type of the
+method return value is UNKNOWN. Furthermore, some variables might be passed
+to methods as parameters. Is there a way to understand what variables to
+pass?
+
+--> DONE (Can be derived from the code sample)
+
+* Section 3.4 (Sequence Miner): This section should be one of the main
+sections of the paper that describes the actual sequence mining and
+therefore has to provide much more details. However, this section is
+written in a general and vague manner. For example, which clustering
+algorithm is used? What mining algorithm is conducted? The same as MAPO,
+mining the frequent closed sequential patterns technique is applied? What
+is the relationship between the two heuristics in Section 3.4.1 and the
+mining technique?
+
+--> I expect that the word Miner has caused this confusion to the reviewer.
+Therefore, it makes sense to rename the component to the Sequence Postprocessor
+--> DONE (Renamed SequenceMiner to SequencePostprocessor)
+
+* Section 4: remove the statement that mentions the PARSEWeb tool can be
+invoked from the Eclipse IDE menu. It is useless. 
+--> Done
+
+* Sections 5.1.1 ?€? 5.1.3: All these sections mention that the query is
+identified based on the description of the problem. Is it possible to
+briefly provide the description of the problem and how it is converted to
+the queries? As I asked earlier, how the Sources of the queries are
+identified? Are there any recommendations or guidelines for that? I have
+the same questions for Section 5.2 (GEF). What the authors mean by the
+statement "first ten available queries in the beginning of the class?" How
+those queries are identified?
+
+--> DONE
+
+
+* Section 5.1.2: What was the feedback of developers in the forum? If no
+feedback is provided yet, it is not true to provide this experiment as an
+evidence of the soundness of the approach.  
+--> DONE (Commented the section)
+
+* Section 6, Paragraph 2: What are Tin and Tout parameters? Furthermore,
+since PARSEWeb is compared with Prospector and Strathcona approaches in
+Section 5, it is better to describe them a little bit more there to make
+the readers familiar with those two techniques first.
+--> DONE (Moved related work to the beginning to make reader familiar
+with Prospector and Strathcona before evaluation).
+
+* Section 6, Last Paragraph: It is mentioned that to be able to use MAPO,
+programmers need to know the API. In MAPO, an API is characterized by a
+method, class, or package. However, also in PARSEWeb, we need to identify
+the Source and Destination object types. Therefore, from this point of
+view, there is no difference between MAPO and PARSEWeb. Overall, I believe
+this work is very similar to MAPO except that control flow from the Source
+to the Destination is considered as well.
+
+--> DONE (No change is required for this)
+
+
+
+ =*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=
+
+Second reviewer's review:
+
+          >>> Summary of the paper <<<
+
+The paper presents an approach to help developers to understand software
+libraries. The preceding assumption of the paper is that developers often
+face the following problem when they want to reuse software libraries: They
+need an instance of a specific type of object but developers do not know
+how to use the API of a software library to get that instance. The approach
+presented in this paper takes queries of the form "Source Object Type ->
+Destination Object Type" and suggests method invocation sequences using the
+library that start with the source object type and return the destination
+object type. The authors implement their approach in an Eclipse plug-in
+called PARSEWeb. PARSEWeb can be fed with queries "Source Object Type ->
+Destination Object Type". It uses Google Code Search Engine to harvest code
+samples that match the queries. PARSEWeb incorporates several heuristics,
+e.g., ranking heuristic or clustering heuristic to prepare and process the
+results returned by the code search engine before into more meaningful
+results. The approach and PARSEWeb is evaluated and compared to similar
+tools in case studies.
+
+
+
+          >>> Comments <<<
+
+The paper has a clear and good motivation since it wants to provide a way
+to reuse open source libraries more efficiently. Also the the results of
+the case studies seem promising. But the approach is bound to the
+assumption that a programmer knows the source object type as well as the
+destination object type. Therefore programmers need already an idea of the
+library and the programming task to specify a query "Source Object Type ->
+Destination Object Type". Unfortunately the case studies do not show how
+concrete the idea must be respectively how close the source type must be to
+the destination type so that PARSEWeb would be still able to find method
+invocation sequences that connect these types. Is there a critical
+'distance' between source and destination that jeopardizes the usefulness
+of the results of PARSEWeb?
+
+--> Dr. Xie
+
+The paper has a clear structure but it is sometimes hard to read and to
+understand as it sometimes lacks details when explaining concepts of the
+approach. In section 3.4.1 for instance Clustering Heuristic 2 uses the
+term cluster precision value but it is not further explained: Is it an term
+valid in the context of this paper? If it is a common term of the research
+field of the paper then I miss a reference.   
+--> DONE.
+
+Further, I would have liked to see more details on the heuristics;
+currently only 2 categories are described. How many categories are there
+and how many heuristics in total? Maybe some part of the evaluation can be
+shortened in favor of more technical background for the heuristics.
+--> DONE (Just added few sentences.. Don't know whether enough or not)
+
+Specific comments: 1. Introduction: - "An approach for reducing
+programmers?€? e??€ort while reusing existing frameworks or libraries....."
+Has this statement been validated, e.g., by user studies?
+
+--> CANNOT BE DONE.. Dr. Xie
+
+
+2. Example: - "The MIS shown in the ???gure is self-explanatory." Dismiss
+this sentence.		
+--> DONE
+
+3. Approach: - "Figure 3 shows an overview of all components and ???ows
+among di??€erent components." What kind of flows: data-flows or work-flows
+or ...? - It would be useful for understanding if the phases mentioned in
+the text were also included in the figure.
+
+--> DONE
+
+3.1 Code Search Engine - missing arrow in the example query - You say that
+you use CSE because its is not practical to maintain a huge repository of
+all framework and library yourself. But still if you had your repository
+you would need a CSE to crawl and search your own repository. I get your
+point: You need those specific CSE's because they can access various
+distributed repositories. It's questions what kind of repository a CSE can
+access and not whether a repository is maintained by yourself. What is that
+'alternative' your mentioning? Naming the 'alternative' concretely might
+clarify your point
+
+--> DONE
+
+3.3 Approach
+
+- "Considering these statements once can help generate the MIS associated
+with the loop." I don't understand this sentence. - "Therefore, our
+approach treats the statements inside loops like while and for as a group
+of statements that are executed either once or not." What are the
+implications or consequences for the approach? How do you treat statements
+in if/else if/else condition branches?
+
+--> TODO LATER
+
+
+- "...performs method inlining by replacing the method invocations of the
+current class with the body of the corresponding method declarations." What
+means current class?--> Class that is currently analyzed? What exactly is
+the benefit of inlining? May an example would help
+
+--> DONE
+
+- Parent context: How do you handle inlining abstract classes respectively
+their abstract methods? If there is a method invocation but the called
+method is abstract in this class and must be implemented by subclasses, you
+can not inline anymore unless you have the subclasses as well.
+
+--> DONE
+
+
+- "(where each statement consists of receiver type, method name and
+signature, and return type)" The method name is part of the method
+signature.
+
+--> DONE
+
+3.3.1 Sequence Miner - Major vs. minor heuristics?
+--> DONE
+
+3.4.1 Sequence Clustering - "These two sequences can be considered similar
+because di??€erent programmers may write intermediate statements in
+di??€erent orders and these statements may be independent from one
+another." What if they are not independent? What is the impact of switched
+statements especially in long MIS'S?
+
+--> TODO LATER
+
+- Clustering Heuristic 2 uses the term cluster precision value but it is
+not further explained: Is it an term valid in the context of this paper? If
+it is a common term of the research field of the paper then I miss a
+reference. Is there are threshold for which MIS's are not similar anymore?
+--> DONE
+
+3.4.2 Sequence Ranking - Major vs. minor heuristics?
+--> DONE
+
+3.5 Query Splitter - It would help if variable names of the pseudo-code in
+figure 4, e.g., lastMI were used in the text when explaining the algorithm.
+--> DONE
+
+5. Evaluation
+
+- I would like a list at the beginning of the evaluation section of the
+criteria that you use to compare the different tools respectively their
+results.
+
+--> CANNOT BE DONE as the criteria are different for different evaluations
+and is already explained in the relavant section.
+
+5.2 Real Project - "We next show that PARSEWeb-suggested MISs exist in..."
+existing or that exist - "Graphical Editing Framework (GEF). The reason for
+choosing Logic for evaluation is that Logic is one of the example projects
+provided by the Eclipse GEF itself." I don't understand this sentence.
+
+--> DONE (Made the sentence more clear)
+
+          >>> Points in favour or against <<<
+
++) Clear and straightforward approach +) Automated implementation that is
+integrated in the Eclipse IDE -) Lack of more detailed information about
+the approach (heuristics, etc.)
+
+
+
+ =*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=
+
+Third reviewer's review:
+
+          >>> Summary of the paper <<<
+
+This paper describes an open source repository query tool built on top of
+Google Code Search engine and providing an Eclipse environment plug-in to
+run searches and browse results. The authors describe the motivation for
+their work, the essence of their approach, their prototype tool
+implementation, and a detailed comparison of their search tool compared to
+Prospector and Strathcona.
+
+
+
+          >>> Comments <<<
+
+This is a very nice paper. I really enjoyed reading about your new code
+search tool and its approach and performance compared to other well-known
+code repository search tools.
+
+Overall the paper reads very well and I got a lot from it. You describe
+your approach, motivation, algorithm and prototype technical details very
+well. I found the empirical evaluation very interesting along with the
+discussion of tool performance and reasons. Great stuff!
+
+i would have liked to see a summary of qualatative feedback from users as
+well as quantitative e.g. what did they think of your Eclipse interface to
+your search tool compared to the others? Which did they THINK performed
+best FOR THEM? What did they like/not like? Find worked well/not well? If
+possible including this information in the final paper to complement the
+retreival performane would be very nice.  
+
+--> CANNOT BE DONE AS THIS NEEDS A CASESTUDY
+
+          >>> Points in favour or against <<<
+
++ strong need for practical tool in this area + interesting approach to
+indexing/retreiving + solid implementation & evaluated + excellent
+quantitative evalution of prototype performance
+
+- not much...!!

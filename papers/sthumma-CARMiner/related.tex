@@ -1,0 +1,98 @@
+\section{Related Work}
+\label{sec:related}
+\vspace*{-1ex}
+WN-miner by Weimer and Necula~\cite{WeimerN05} extracts simple association rules of the form
+``$FC_a$ $\Rightarrow$ $FC_e$'', when $FC_e$ is found at least once in exception-handling
+blocks (i.e., \CodeIn{catch} or \CodeIn{finally} blocks). 
+Their approach mines and ranks these rules based on the number of times
+$FC_e$ appears after $FC_a$ in normal paths. Due to their ranking criteria,
+their approach cannot mine rules that include a $FC_e$ function call such
+as \CodeIn{Connection.rollback}, where $FC_e$ can appear \emph{only} in exception
+paths. Acharya and Xie~\cite{acharya07techreporterrorhandling} later
+proposed a similar approach for detecting API error-handling defects
+in C code. Our approach significantly differs and improves upon these previous approaches
+as we mine sequence association rules of the form ``($FC_c^1$...$FC_c^n$) $\wedge$ $FC_a$ $\Rightarrow$ ($FC_e^1$...$FC_e^m$)'' that can characterize more exception-handling rules.
+Our approach also addresses the problem of lacking enough supporting
+samples for these rules in the application under analysis by expanding the data scope to open source repositories
+through a code search engine. 
+
+\Comment{Acharya and Xie~\cite{acharya07techreporterrorhandling} 
+proposed an approach for detecting API error-handling bugs in C code by approximating
+run-time API error behaviors through a push-down model checker. Their approach is
+also based on a similar technique used by Weimer and Necula for mining rules. Therefore,
+their approach also cannot detect the types of defects where $FC_e$ appears only in
+exception paths. Furthermore, their approach is limited to certain types of defects, 
+referred as critical defects, because their approach extracts rules from only those paths
+that exit the entire application. Our approach can detect more-general 
+types of defects in exception paths that violate mined rules.}
+
+CodeWeb~\cite{Michail:mining} mines association rules
+from source code as framework reuse patterns. 
+CodeWeb mines association rules such as application classes inheriting
+from a library class often create objects of another class.
+PR-Miner~\cite{Zhenmin2005PRMiner} uses frequent itemset
+mining to extract implicit programming rules in large C code bases and detects
+violations. DynaMine~\cite{livshits05dynamine} 
+uses association rule mining to extract simple rules from version
+histories for Java code and detects rule violations. Engler et al.~\cite{Engler2001deviant} 
+proposed a general approach for finding defects in C code by applying statistical
+analysis to rank deviations from programmer beliefs inferred from source code.
+Wasylkowski et al.~\cite{wasylkowski07:detecting} mines rules that include
+pairs of API calls and detect violations. 
+Perracotta~\cite{Yang06perracotta:mining} mines patterns such as $(ab)^*$ and 
+includes techniques for handling imperfect traces.
+Sch\"{a}fer et al.~\cite{thorsten:mining} mine 
+association rules that describe usage changes in framework evolution.
+All these preceding approaches mine simple association rules that are often not
+sufficient to characterize complex real rules as shown in our approach. 
+In contrast, our approach can mine more complex
+rules in the form of sequence association rules.
+
+Our approach is also related to other approaches that analyze exception behavior
+of programs. Fu and Ryder~\cite{Fu:exception-chain} proposed an exception-flow analysis
+that computes chains of semantically related exception-flow links across procedures.
+Our approach uses intra-procedural analysis for constructing exception-flow graphs. 
+The Jex~\cite{Jex:Robillard} tool statically analyzes exception flow
+in Java code and provides a precise set of exceptions that can be raised by a
+function call. We use Jex in our approach to prevent infeasible exception edges
+in a constructed EFG. Fu et al.~\cite{Fu:web-service-testing} present a 
+\emph{def-use}-based approach that helps gather error-recovery code-coverage information. 
+Our approach is different from their approach as our approach detects defects that violate mined
+rules rather than focusing on coverage of exception-handling code. 
+\Comment{Robillard and Murphy~\cite{robillard:robust} developed an approach
+to simplify the exception structure at the design level and thereby improve the robustness
+and changeability of the program. In contrast, our approach targets at detecting
+exception-handling defects at the implementation level.}
+
+Chang et al.~\cite{chang07:finding} applies frequent subgraph mining on C code
+to mine implicit condition rules and detect neglected conditions.
+Their approach targets at different types of defects called neglected conditions.
+Moreover, their approach does not scale to large code bases as graph mining algorithms
+suffer from scalability issues. Finally, DeLine and F\"{a}hndrich~\cite{deline:high-level} proposed an approach 
+that allows programmers to manually specify resource management protocols
+that can be statically enforced by a compiler. However, their approach requires manual
+effort from programmers and also requires the knowledge of the \emph{Vault} specification
+language to specify domain-specific protocols. In contrast, our approach 
+does not require any manual effort or the knowledge of any specific specification languages.
+
+Javert~\cite{gabel:javert} uses a pattern-based specification
+miner to mine smaller patterns such as $(ab)^*$, called \emph{micro patterns},
+and then compose these patterns into larger specifications. Their approach does not
+require the user to provide any templates. Similar to their approach, our approach
+also does not require the user to provide any templates. 
+However, their mined patterns cannot characterize exception-handling rules
+mined by our approach.
+
+Our previous approaches PARSEWeb~\cite{thummalapenta07:parseweb} 
+and SpotWeb~\cite{thummalapenta08:spotweb} also exploit code search engines for gathering related code samples. 
+PARSEWeb accepts queries of the form ``\emph{Source} $\rightarrow$ \emph{Destination}'' 
+and mines frequent function-call sequences that accept
+\emph{Source} and produce \emph{Destination}. SpotWeb accepts an input framework
+and detects hotspot classes and functions of the framework. Our new approach CAR-Miner
+significantly differs from these previous approaches.
+CAR-Miner constructs EFGs and includes new techniques for
+collecting and post-processing static traces related to exception handling. Furthermore, CAR-Miner 
+incorporates our new mining algorithm for detecting exception-handling rules
+as sequence association rules.
+
+ 

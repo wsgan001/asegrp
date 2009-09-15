@@ -1,0 +1,38 @@
+\section {Background}\vspace*{-2ex}
+\label{sec:background} 
+We next present definitions of keywords such
+as hotspots, templates, hooks, and coldspots that are used in our
+approach and other related background information.
+
+%--------------------------------------------------------------------------------------
+\textbf{Hotspots, Templates, and Hooks:} 
+As described by Pree~\cite{pree:metapatterns} and Flores et
+al.~\cite{flores:hotspotter}, hotspots depict an application's
+flexibility and proneness to reuse. The foundations of hotspots are
+built upon the Open-Closed Principle by Martin~\cite{martic:openclosed}.
+The Open-Closed principle encompasses two main definitions: the
+``closed'' and the ``open'' parts. The ``open'' parts represent
+areas that are flexible and variant, whereas the ``closed'' parts
+represent areas that are immutable in the given application. The
+``closed'' parts are commonly referred as ``templates'' as they
+group the open parts together and the ``open'' parts are referred as
+``hooks'' as the users can redefine the behavior of these
+parts. The combination of templates and hooks, referred as \Intro{hotspots}, 
+supports adherence to the Open-Closed
+principle of Martin. These hotspots can serve as starting
+points for the users when reusing a given application.
+
+%--------------------------------------------------------------------------------------
+\textbf{Coldspots:}
+We introduce a new concept called coldspots; these
+coldspots are areas (API classes and methods) that are rarely used
+by the users. We identify an API as a coldspot, if the API method
+is neither directly nor indirectly used by the users. A
+direct usage refers to the scenario where the API is directly used
+by the users. An indirect usage refers to the scenario where
+the users use some other API, which in turn uses the
+current API of interest. The consideration of indirect usage helps
+to reduce false positives while detecting coldspots. In general,
+coldspots serve as caveats for the users as there can be difficulties
+in gathering related code examples and are less tested compared
+to hotspots.

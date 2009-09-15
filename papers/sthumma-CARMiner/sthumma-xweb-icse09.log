@@ -1,0 +1,314 @@
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.10.7)  13 FEB 2009 21:05
+entering extended mode
+**sthumma-xweb-icse09.tex
+(sthumma-xweb-icse09.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\article.cls"
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\size10.clo"
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (latex8.sty
+IEEE 8.5 x 11-Inch Proceedings Style `latex8.sty'.
+\@ctmp=\skip43
+\@figindent=\skip44
+) ("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\times.sty"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+\@input{macros.aux}
+(macros.tex ("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 149.
+LaTeX Info: Redefining \nocite on input line 214.
+Package: cite 2003/11/04  v 4.01
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\alltt.sty"
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+) (algorithm2e.sty
+Package: algorithm2e 2005/10/04 v3.9 algorithms environments
+\c@AlgoLine=\count87
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\tools\xspace.sty"
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+********************************************************
+Package `algorithm2e' Release 3.9 -- october 04 2005 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip45
+\skiprule=\skip46
+\skiphlne=\skip47
+\skiptext=\skip48
+\skiplength=\skip49
+\algomargin=\skip50
+\skipalgocfslide=\skip51
+\algowidth=\dimen105
+\inoutsize=\dimen106
+\inoutline=\dimen107
+\algocf@inoutbox=\box26
+\algocf@inputbox=\box27
+\AlCapSkip=\skip52
+\AlCapHSkip=\skip53
+\algocf@capbox=\box28
+\c@algocfline=\count88
+\c@algocf=\count89
+\algocf@algoframe=\box29
+\algocf@algobox=\box30
+)
+\c@definition=\count90
+)
+
+LaTeX Warning: Unused global option(s):
+    [times].
+
+(sthumma-xweb-icse09.aux
+
+LaTeX Warning: Label `sec:gatherce' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 22.
+ ("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 39.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 50.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 50.
+ (intro.tex
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 5.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+File: figs/three-code-examples1.eps Graphic file (type eps)
+
+<figs/three-code-examples1.eps>
+Overfull \hbox (1.3027pt too wide) in paragraph at lines 42--43
+ [][][] 
+ []
+
+
+Underfull \hbox (badness 2368) in paragraph at lines 46--61
+\OT1/ptm/m/n/10 through the func-tion call \OT1/pcr/m/n/9 Statement.executeQuer
+y
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 46--61
+\OT1/ptm/m/n/10 (Line 2.8). Con-sider a sim-ple spec-i-fi-ca-tion in the
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 46--61
+\OT1/pcr/m/n/9 Connection rollback\OT1/ptm/m/n/10 ''. This rule de-scribes that
+ a
+ []
+
+
+Underfull \vbox (badness 2828) has occurred while \output is active []
+
+ [1
+
+
+
+
+]
+Underfull \hbox (badness 2326) in paragraph at lines 77--84
+\OT1/ptm/m/n/10 in an ex-cep-tion path and (2) the re-ceiver ob-ject of
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 133.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
+
+Underfull \hbox (badness 1009) in paragraph at lines 145--148
+\OT1/ptm/m/n/10 open source projects that help de-tect new re-lated
+ []
+
+
+Underfull \hbox (badness 1077) in paragraph at lines 145--148
+\OT1/ptm/m/n/10 exception-handling rules that do not have enough
+ []
+
+[2]) (assocrules.tex
+File: figs/conditionalassorules1.eps Graphic file (type eps)
+ <figs/conditionalassorules1.eps>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 26.
+File: figs/forexamplesec1.eps Graphic file (type eps)
+
+<figs/forexamplesec1.eps>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 74.
+ [3]) (approach.tex
+Underfull \hbox (badness 1571) in paragraph at lines 75--95
+\OT1/ptm/m/n/10 trol flow through a sound static anal-y-sis tool, called
+ []
+
+
+Underfull \hbox (badness 3354) in paragraph at lines 75--95
+\OT1/ptm/m/n/10 Jex [14]. Jex an-a-lyzes source code stat-i-cally and
+ []
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 75--95
+\OT1/ptm/m/n/10 pro-vides pos-si-ble ex-cep-tions raised by each func-tion
+ []
+
+[4]
+Underfull \hbox (badness 2285) in paragraph at lines 126--136
+[][]\OT1/ptm/m/n/10 We next iden-tify func-tion calls in $\OML/cmm/m/it/10 FC[]
+$\OT1/ptm/m/n/10 ...$\OML/cmm/m/it/10 FC[]$ \OT1/ptm/m/n/10 or
+ []
+
+[5]) (eval.tex
+File: charts/axion-pattern-distribution.eps Graphic file (type eps)
+ <charts/axion-pattern-distribution.eps> [6]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
+ [7]
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
+[][]$\OT1/pcr/m/n/8 http : / / sourceforge . net / tracker / ?group _ id =
+ []
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 273--279
+[]\OT1/ptm/m/n/10 We next present the com-par-i-son re-sults of exception-
+ []
+
+[8]
+File: charts/XWeb-Weimer-Patterns.eps Graphic file (type eps)
+ <charts/XWeb-Weimer-Patterns.eps>
+File: charts/trigger-path.eps Graphic file (type eps)
+ <charts/trigger-path.eps>
+File: charts/data-scope.eps Graphic file (type eps)
+
+<charts/data-scope.eps>
+Overfull \hbox (1.81421pt too wide) in paragraph at lines 373--384
+ [][][] 
+ []
+
+
+Underfull \vbox (badness 5592) has occurred while \output is active []
+
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 406.
+
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\psnfss\omspcr.fd"
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 406.
+ [9]) (threats.tex)
+(related.tex
+Underfull \vbox (badness 1496) has occurred while \output is active []
+
+ [10]
+Underfull \hbox (badness 10000) in paragraph at lines 86--97
+[][]\OT1/ptm/m/n/10 Our pre-vi-ous ap-proaches PARSEWeb [17] and
+ []
+
+) (conclusion.tex)
+Underfull \hbox (badness 3758) in paragraph at lines 4--74
+\OT1/ptm/m/n/10 ap-pli-ca-tions and shown that CAR-Miner mined $\OT1/cmr/m/n/10
+ 294$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--74
+
+ []
+
+(sthumma-xweb-icse09.bbl
+Underfull \hbox (badness 1694) in paragraph at lines 48--50
+[][]\OT1/ptm/m/n/9 Google Code Search En-gine, 2006.  $\OT1/pcr/m/n/9 http : / 
+/ www .
+ []
+
+) [11] (sthumma-xweb-icse09.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2178 strings out of 95296
+ 25204 string characters out of 1184885
+ 106564 words of memory out of 1094904
+ 5226 multiletter control sequences out of 60000
+ 15501 words of font info for 44 fonts, out of 1000000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 29i,8n,22p,305b,373s stack positions out of 5000i,500n,10000p,200000b,32768s
+
+Output written on sthumma-xweb-icse09.dvi (11 pages, 88604 bytes).

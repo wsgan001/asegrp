@@ -1,0 +1,22 @@
+%-------------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have developed PARSEWeb, an approach for addressing problems
+faced by programmers in reusing existing frameworks or libraries.
+Our approach accepts queries of the form ``\emph{Source}
+$\rightarrow$ \emph{Destination}'' as input and suggests
+method-invocation sequences that can take the \emph{Source} object
+type as input and result in the \emph{Destination} object type. Our
+approach collects the relevant code samples, which include
+\emph{Source} and \emph{Destination} object types, on demand from CSE.
+This new idea of collecting sources on demand makes our approach 
+independent of any specific set of
+frameworks or libraries. Our approach includes several heuristics to
+deal with partial and non-compilable code downloaded from CSE. Our 
+query splitting heuristic addresses the problem of lack of
+code samples by splitting the given query into multiple sub-queries.
+We have conducted four different evaluations on our
+approach. Through these evaluations, we showed that our approach is effective
+in addressing the issues faced by programmers and performed
+better than existing related tools.

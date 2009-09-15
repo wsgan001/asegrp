@@ -1,0 +1,83 @@
+
+%
+%  $Description: Author guidelines and sample document in LaTeX 2.09$ 
+%
+%  $Author: ienne $
+%  $Date: 1995/09/15 15:20:59 $
+%  $Revision: 1.4 $
+%
+
+%\documentstyle[times,art10,twocolumn,latex8]{article}
+\documentclass[times, 10pt,twocolumn]{article} 
+\usepackage{latex8}
+\usepackage{times}
+\include{macros}
+
+
+%------------------------------------------------------------------------- 
+% take the % away on next line to produce the final camera-ready version 
+%\pagestyle{empty}
+
+%------------------------------------------------------------------------- 
+\begin{document}
+
+\title{Mining Exception-Handling Rules as Sequence Association Rules}
+
+
+\author{Suresh Thummalapenta\\
+Department of Computer Science\\ 
+North Carolina State University, USA\\ sthumma@ncsu.edu\\
+% For a paper whose authors are all at the same institution, 
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'', 
+% just like the second author.
+\and
+Tao Xie\\
+Department of Computer Science\\ 
+North Carolina State University, USA\\ xie@csc.ncsu.edu\\
+}
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+\begin{abstract}\vspace*{-1ex}
+Programming languages such as Java and C++ provide exception-handling 
+constructs to handle exception conditions.
+Applications are expected to handle these exception conditions and take necessary recovery
+actions such as releasing opened database connections. 
+However, exception-handling rules that describe these necessary recovery actions
+are often not available in practice. To address this issue, we develop a novel 
+approach that mines exception-handling rules as sequence association rules 
+of the form ``($FC_c^1$...$FC_c^n$) $\wedge$ $FC_a$ $\Rightarrow$ ($FC_e^1$...$FC_e^m$)''.
+This rule describes that function call $FC_a$ should be followed by a sequence of 
+function calls ($FC_e^1$...$FC_e^m$) when $FC_a$ is preceded by a sequence of function calls
+($FC_c^1$...$FC_c^n$). Such form of rules is required to characterize common exception-handling rules.
+We show the usefulness of these mined rules by applying them on five real-world applications (including $285$ KLOC)
+to detect violations in our evaluation.
+Our empirical results show that our approach mines $294$ real exception-handling
+rules in these five applications  and 
+also detects $160$ defects, where $87$ defects are new defects that are not found by a previous related approach.
+\end{abstract}
+\vspace*{-4ex}
+
+\input{intro}\vspace*{-2ex}
+%\input{example}\vspace*{-2ex}
+\input{assocrules}\vspace*{-2ex}
+%\input{exceptionmodel}\vspace*{-2ex}
+\input{approach}\vspace*{-2ex}
+%\input{implementation}
+\input{eval}\vspace*{-2ex}
+%\input{discussion}\vspace*{-2ex}
+\input{threats}\vspace*{-2ex}
+\input{related}\vspace*{-2ex}
+\input{conclusion}
+\newline
+
+\section*{Acknowledgments} 
+This work is supported in part by NSF grant
+CCF-0725190 and ARO grant W911NF-08-1-0443.
+
+\bibliographystyle{latex8}
+\bibliography{sthumma-xweb-icse09}
+
+\end{document}
+

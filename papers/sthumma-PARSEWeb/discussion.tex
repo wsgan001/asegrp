@@ -1,0 +1,71 @@
+%-----------------------------------------------------------------------------
+\section{Discussion and Future work}
+\label{sec:discussion} In our current implementation, PARSEWeb
+interacts with Google Code Search Engine~\cite{GCSE} for gathering
+relevant code samples. Therefore, our current results are dependent
+on code samples returned by GCSE. We observed that PARSEWeb is not
+able to suggest solutions for some of the queries due to lack of
+relevant code samples in the results returned by GCSE. We found this
+limitation when we evaluated with open source projects
+\emph{ASTView}\footnote{\url{http://www.eclipse.org/jdt/ui/astview/index.php}}
+and
+\emph{Flow4j}\footnote{\url{http://sourceforge.net/projects/flow4jeclipse}},
+where Prospector or Strathcona also could not work well. We
+alleviated this problem to a certain extent through the query
+splitting heuristic. To address the problem further, We plan to
+extend our tool to collect code samples from other CSEs such as
+Koders~\cite{KODERS}\Comment{ and Krugle~\cite{KRUGLE}}, and analyze
+the results to compare different CSEs. We expect that the addition
+of new source code repositories to CSEs can also help in alleviating
+the current problem.
+
+As our approach deals with code samples that are often partial and not
+compilable, there are a few limitations in inferring the information
+related to method invocations. We explain the limitation of our
+approach through the code sample shown below:
+
+\vspace*{-1ex}
+\begin{CodeOut}
+\begin{alltt}
+QueueConnectionFactory factory = jndiContext.lookup("t");
+QueueSession session = factory.createQueueConnection()
+\hspace*{0.2in}.createQueueSession(false,Session.AUTOACKNOWLEDGE);
+\end{alltt}
+\end{CodeOut}
+\vspace*{-1ex}
+
+In the second expression of this code sample, our heuristics cannot
+infer the receiver type of the \CodeIn{createQueueSession} method
+and the return type of the \CodeIn{createQueueConnection} method.
+The reason is lack of information regarding the intermediate object
+returned by the \CodeIn{createQueueConnection} method. If this intermediate
+object is either \emph{Source} or \emph{Destination} of the given
+query, we cannot suggest this MIS as a solution. 
+Because of this limitation, our approach could not suggest
+solutions to some of the queries used in evaluation.
+
+Another issue addressed by our approach is the processing of data
+returned by GCSE~\cite{GCSE}. A query such as
+``\CodeIn{Enumeration} $\rightarrow$ \CodeIn{Iterator}'' results in
+nearly $22,000$ entries. To avoid high runtime costs of downloading and analyzing
+the code samples, PARSEWeb downloads only a fixed number of
+samples, say $N$. This parameter $N$ is made as a configurable
+parameter. The default value of $N$ is set to $200$, which is derived
+from our experiments and identified to be large enough to make sure
+that only little useful information is lost during downloading.
+
+The current implementation of PARSEWeb can also accept queries
+including only the \emph{Destination} object type. Such queries can
+help programmers if they are not aware of the \emph{Source} object
+type. However, the number of results returned by PARSEWeb for such
+queries are often large ($10$ to $50$) due to lack of knowledge of
+the \emph{Source} object type. Therefore, to reduce the number of
+results and help programmers in quickly identifying the desired MIS,
+we plan to extend our tool to infer the \emph{Source} object type
+from the given code context. We also plan to extend our tool to
+automatically generate compilable source code from the selected MIS.
+ \Comment{Our current implementation cannot effectively handle
+sequences that involve primitive data types as connector objects
+between the given \emph{Source} and \emph{Destination} object types.
+We plan to extend our approach to match on variable names also along
+with data types to effectively handle primitive data types.}

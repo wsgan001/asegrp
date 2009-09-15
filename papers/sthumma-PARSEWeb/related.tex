@@ -1,0 +1,69 @@
+%-------------------------------------------------------------------------
+\section{Related Work}
+\label{sec:relatedwork}
+The problems faced by programmers in reusing existing frameworks or
+libraries are addressed by different approaches. Earlier research in
+this area mainly concentrated on identifying related samples by
+matching keywords~\cite{softwarefactory:mat} or comments~\cite{sfreuse:ye
+\Comment{,integrate:ye}}. But solutions suggested based on these approaches
+often cannot effectively help programmers in reusing the existing
+code samples.
+
+Mandelin et al. developed Prospector~\cite{prospector:jungloid}, a
+tool that accepts queries in the form of a pair ($T_{in}, T_{out}$),
+where $T_{in}$ and $T_{out}$ are class types,
+and suggests solutions by traversing all paths among types of
+API signatures between $T_{in}$ and
+$T_{out}$. A solution to the query is a synthesized code sample that takes 
+an input object of type $T_{in}$ and returns an
+output object of type $T_{out}$. Their approach uses API signatures for suggesting
+solutions to the given query. As API signatures are used for
+addressing the query, Prospector returns many irrelevant examples,
+as shown in our evaluation. Our approach is different
+from Prospector as Prospector uses API signatures, whereas our
+approach uses code samples for solving the given query. This feature
+helps PARSEWeb in identifying more relevant code samples by giving
+higher preference to code samples that are often used.\Comment{
+Another approach by Zaremski and Wing~\cite{signature:zaremski} also
+uses signature matching techniques and has similar problems.
+Ans: I took this from XSnippet. I am also not sure. I will check in detail,
+and will add it later, if it is related.}
+
+Strathcona developed by Holmes and Murphy~\cite{strathcona:se}
+maintains an example repository and compares the context of the code
+under development with the code samples in the example repository,
+and recommends relevant examples. Both PARSEWeb and Strathcona
+suggest relevant code samples, but the Strathcona approach is
+based on heuristics that are generic and are not tuned for
+addressing the described problem. This limitation often results in
+irrelevant examples as shown in our evaluation. \Comment{Another related
+approach by Sindhgatta~\cite{examples:renuka} also suggests relevant
+code examples from a preprocessed repository. One main objective of
+this approach is to address the scalability issues in maintaining
+the repository. Our approach does not face the scalability issue in
+repository maintenance as we do not maintain any repositories.}
+XSnippet developed by Sahavechaphan and Claypool~\cite{xsnippet:saha} also tries to
+address the described problem by suggesting relevant code snippets
+for the object instantiation task at hand. These suggested code snippets are selected
+from a sample repository. The major problem with both Strathcona and XSnippet
+is the availability of limited code samples stored in the repository.
+
+Coogle developed by Sager et al.~\cite{sager-msr06-clsim} extends
+the concept of similarity measures (often used to find similar
+documents for a given query) to source code repositories. Their
+approach detects similar Java classes in software projects using
+tree similarity algorithms. Both PARSEWeb and Coogle use ASTs for
+parsing Java code, but a structural similarity at the Java class
+level may not effectively address the described problem. Similar to
+Strathcona, Coogle may also result in many irrelevant examples.
+
+Another related tool MAPO, developed by Xie and Pei~\cite{mapo:xie},
+generates frequent usage patterns of an API by extracting and mining
+code samples from open source repositories through CSEs. Both MAPO and PARSEWeb exploit CSEs for
+gathering relevant code samples, but MAPO cannot solve queries of
+the form ``\emph{Source} $\rightarrow$ \emph{Destination}''.
+Programmers need to know the API to be used for using MAPO to
+identify usage patterns of that API. Moreover, our approach is more
+effective than MAPO as we consider control-flow information while
+generating MISs for the given query, whereas MAPO does not consider
+the control-flow information.

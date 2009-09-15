@@ -1,0 +1,39 @@
+%-------------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+Various Code Search Engines (CSEs)\footnote{\url{http://gonzui.sourceforge.net/links.html}}
+are available on the web that can search in billions of lines of available open source code. 
+\Comment{Some of these CSEs like Google, Koders, DocJar, Codease, and Krugle are non-academic. SPARS-J and 
+Sourcerer are two of the few academic code search engines.} Given a query, CSEs 
+can suggest relevant code samples with usages of keywords in the given query. But these CSEs
+are not quite helpful in practice, as they often produce a large number of code
+examples for a given query and the desired code sample is often not available 
+among the first several results. For example, the Google Code Search Engine
+(GCSE)\footnote{\url{http://www.google.com/codesearch}} 
+returns near 3000 samples for the query \CodeIn{lang:java
+java.sql.Statement executeUpdate}.\Comment{; this query can be used to
+extract information regarding the usage of Application Programming Interface (API) 
+\CodeIn{executeUpdate} of \CodeIn{java.sql.Statement} class of JDBC.}
+
+Along with assisting programmers in reusing code samples
+from existing frameworks or libraries, the code samples 
+returned by CSEs can also be used for other tasks 
+like identifying framework hotspots and finding bugs in projects 
+that reuse open source frameworks or libraries. 
+Exploiting CSEs for these tasks requires analysis of 
+code samples returned by CSEs. This analysis of code samples 
+is non-trivial because the code samples returned by CSEs are often partial. 
+The reason for partial code samples is that CSEs retrieve 
+only source files with usages of the given query instead of entire projects. 
+Due to the preceding limitations, traditional code analysis cannot be applied 
+for analyzing the gathered code samples. Therefore, our framework 
+uses several heuristics (Section ~\ref{sec:framework}) 
+for analyzing these code samples and transforms them into 
+an intermediate form. We used the Directed Acyclic Graph
+(DAG) as an intermediate form because the DAG represents control-flow information
+through its branches and joins, and provides effective traversal mechanisms. 
+
+We developed two tools by extending our framework: PARSEWeb
+and Hotspotter. We showed the effectiveness of our framework by comparing the results 
+of developed tools with the results of related tools.

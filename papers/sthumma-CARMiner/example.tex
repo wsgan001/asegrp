@@ -1,0 +1,119 @@
+\section{Motivating Example}
+\label{sec:example}
+
+We next present example scenarios where simple association
+rules of the form ``$FC_a$ $\Rightarrow$ $FC_e$'' are not sufficient to 
+characterize exception-handling rules. We use Scenarios 1 and 2 
+in Figure~\ref{fig:threescenarios} as illustrative examples. We use
+these two scenarios to explain other concepts in the rest of the paper.
+
+Scenarios 1 and 2 show code examples where a \CodeIn{connection} resource is created through 
+the function calls \CodeIn{OracleDataSource}.\CodeIn{getConnection} (Line 1.7)
+and \CodeIn{DriverManager.getConnection} (Line 2.6), respectively. Scenario 1
+attempts to modify the contents of the database through the function call
+\CodeIn{Statement.executeUpdate} (Line 1.9), whereas Scenario 2 attempts to read contents
+of the database through the function call \CodeIn{Statement.executeQuery} (Line 2.8).
+
+From Scenario 1, an association rule ``\CodeIn{OracleDataSource}.\CodeIn{getConnection}
+$\rightarrow$ \CodeIn{Connection.rollback}'' can be inferred.
+This rule describes that when ever a connection object is created, 
+the function call \CodeIn{rollback} (Line 1.12) should be invoked during exception conditions.
+However, this \CodeIn{rollback} function call does not apply to Scenario 2, where there are no modifications
+to the contents of the database. One naive approach to handle the preceding issue is to mine
+association rule ``\CodeIn{Statement.executeUpdate} $\rightarrow$
+\CodeIn{Connection.rollback}''. The rationale is that \CodeIn{Statement.executeUpdate}
+is the primary reason to have \CodeIn{Connection.rollback} in the exception path
+and the \CodeIn{statement} object is dependent on the \CodeIn{conn} object.
+However, this naive approach also results in another association rule 
+``\CodeIn{Connection.createStatement} $\rightarrow$ \CodeIn{OracleDataSource.close}''
+from Scenario 1. But the preceding rule is not applicable to the 
+Scenario 2. The primary reason is that the \CodeIn{connection}
+resource is created through different function calls in Scenarios 1 and 2. 
+
+To address these preceding issues, we mine sequence association rules of
+the form ``$FC_a$ $\wedge$ ($FC_c^1$...$FC_c^n$) $\Rightarrow$ ($FC_e^1$...$FC_e^m$)''
+rather than simple association rules. For example, we identify
+a sequence association-rule candidate ``$FC_a$ $\wedge$ $FC_c^1$$FC_c^2$ $\Rightarrow$ $FC_e^1$$FC_e^2$
+$FC_e^3$'' from Scenario 1, where
+
+\begin{CodeOut}
+$FC_a$ : Connection.createStatement \\
+\hspace*{0.3in}$FC_c^1$ : OracleDataSource.Constructor \\
+\hspace*{0.3in}$FC_c^2$ : OracleDataSource.getConnection \\
+\hspace*{0.3in}$FC_e^1$ : Statement.close \\
+\hspace*{0.3in}$FC_e^2$ : Connection.close \\
+\hspace*{0.3in}$FC_e^3$ : OracleDataSource.close
+\end{CodeOut}
+
+The preceding rule candidate describes that \CodeIn{Connection.createStatement}
+should be followed by function calls $FC_e^1$$FC_e^2$$FC_e^3$
+in exception paths, only when the \CodeIn{Connection}
+object is obtained from \CodeIn{OracleDataSource} through the function-call sequence
+$FC_c^1$$FC_c^2$. The same rule does not apply to Scenario 2 as the context
+function-call sequence is different in Scenario 2.
+
+\Comment{
+We next describe our CAR-Miner approach through the code example shown in Scenario 1
+of Figure~\ref{fig:threescenarios}. Initially, CAR-Miner accepts a given input application and gathers
+classes and methods from the call sites in the input application.
+CAR-Miner interacts with a CSE such as Google code search~\cite{GCSE} 
+and gathers related code examples for all classes. 
+A code example gathered from Google code search is shown in Scenario 1 of Figure~\ref{fig:threescenarios}.
+CAR-Miner analyzes both the input application and gathered code examples statically 
+and builds control-flow graphs (CFG). As code examples gathered
+from CSE are partial, CAR-Miner uses several heuristics for resolving object types. In contrast,
+as the entire source code of the input application is available, CAR-Miner resolves
+object types by directly looking up the method signatures. 
+
+After type resolution, CAR-Miner constructs CFGs that represent flow of control 
+during \emph{normal} and \emph{exception} cases. The constructed CFG for Scenario 1 is also shown
+in Figure~\ref{fig:threescenarios}. We show normal and exception edges in solid
+and dotted lines, respectively.	For example, the exception edge ``9 $\rightarrow$ 12''
+shows that the method-invocation \CodeIn{Connection}.\CodeIn{rollback} (Line 12) should be executed
+when \CodeIn{SQLException} occurs after executing \CodeIn{Statement}.\CodeIn{executeUpdate} (Line 9).
+Our approach tries to reduce the number of false positives among extracted rule candidates
+by preventing infeasible edges in the constructed CFG. For example,
+there are no exception edges from Node 6 as our static analysis determines that the method invocation \CodeIn{setURL}
+does not raise any exceptions. We extract several resource-exception models for each 
+method invocation in the normal execution path such as 
+\CodeIn{Statement.executeUpdate} (being treated as a resource-manipulation action, say \emph{RM}) from the constructed CFG. 
+For example, the resource-exception model for the method invocation in Line 9 includes all incoming normal 
+paths to Node 9 and all outgoing exception paths from Node 9 in the constructed CFG.
+Figure~\ref{fig:resourcemanip} shows the resource-exception model for \CodeIn{Statement.executeUpdate}.
+
+We next pair the \emph{RM} action with each method invocation in the exception paths
+(treated as a resource-cleanup action, say \emph{RC}) and verify
+whether there is an indirect data dependency between these two actions.
+We verify the indirect data dependency by traversing the normal path 
+in the reverse direction starting from the \emph{RM} node in the CFG and collect
+a method invocation that shares the same receiver object of \emph{RC} and has 
+a transitive data dependency with \emph{RM}.
+We treat such method invocation as a resource-creation action, say \emph{RT},
+and the common receiver object between \emph{RC} and \emph{RT} as a resource.
+If such an \emph{RT} method invocation is found,
+we create a rule candidate with \emph{RM} and \emph{RC}
+actions. We associate the method-invocation sequence that describe the transitive data dependency as
+a \emph{trigger} path (\emph{TP}) for the rule candidate. A rule candidate $<$\emph{RM}, \emph{RC}, \emph{TP}$>$
+for Statements 9 and 12 is $<$\CodeIn{Statement.executeUpdate}, \CodeIn{Connection.rollback},
+\CodeIn{Connection.createStatement}$>$. The rule candidate describes that the cleanup action 
+\CodeIn{Connection.rollback} should be executed after exceptions occur while
+executing the \CodeIn{Statement.executeUpdate} action. The preceding rule candidate is applicable
+only when the \CodeIn{Statement} object is created through \CodeIn{Connection.createStatement}.
+
+CAR-Miner mines extracted rule candidates to identify frequent rules, referred
+as exception-handling rules. CAR-Miner uses mined exception-handling rules 
+to detect violations in the given application. For example, CAR-Miner detects a violation
+when \CodeIn{Connection.rollback} does not appear in an exception path of \CodeIn{Statement.executeUpdate},
+where the \CodeIn{Statement} object is created through \CodeIn{Connection.createStatement}.
+
+This example motivates the idea of exploiting a CSE for gathering related code examples 
+and applying analysis techniques to compute resource-exception models. 
+However, there are many other issues that are
+not obvious in this illustrative example, as described next.
+(1) How do we analyze partial code examples and build
+a CFG that represents both normal and exception cases? (2) How do we 
+compute data dependency between resource-manipulation and resource-cleanup actions? 
+(3) What heuristics can we use for reducing
+the number of false positives that can occur due to intra-procedural
+analysis among detected violations? We address these issues in
+the subsequent section, where we present key aspects of our CAR-Miner approach.}

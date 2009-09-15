@@ -1,0 +1,87 @@
+﻿marta station
+
+
+N7 - Buckhead Station
+Rail Line: North
+Address:
+    3360 Peachtree Road, NE
+    Atlanta, GA 30326
+
+
+Address of my hotel to get back:
+
+
+Extended Stay Hotel Delux at Lenox.
+3967 Peachtree Rd NE
+Atlanta, GA 30319
+(404) 237-9100
+
+
+
+Google interview: Wednesday, November 7, 2007 at 2:00 PM
+
+---------------------------------------------
+
+Rough timings:
+
+5min: Finish example    Slide 5
+15min: Approach		Slide 19
+23min: Evaluation	Slide 26
+26min: Related work, Discussion and Conclusion
+
+
+
+Questions:
+----------
+
+1. Have you conducted any case studies?
+
+   We haven't conducted any formal case studies. However, we are using the tool internally in our group and I am getting feedback from them of how i can improve so that we can release the tool officially. 
+   One of our future work, Inferring source object from the context is a result of feedback and there are several others related to front-end interface.
+   Something like automatically insert the selected code into the editor.
+
+2. What is the difference between MAPO and PARSEWeb? Both exploits code search engines.
+   
+   MAPO can be used to know how an API can be used. In particular, what needs to be invoked before that API and what can be invoked after that API. In a way, PARSEWeb and MAPO complement each other. For example, if you identified how to use an API by using MAPO and that API requires some non-primitive arguments, then the question is how to get those arguments? In that you can use PARSEWeb to get those arguments from some of the known objects.
+
+   Furthermore, our approach also considers control-flow information that cannot be handled by MAPO.
+
+3. What if i don't know the destination object? How difficult is it to get the destination object?
+ 
+   In our experience, we think that getting to know what is the destination object is much easier compared to identifying how to write code to get that object. For example, if you are working with BCEL, and you want methods of a class, by a quick search in the BCEL classes, you can quickly find that MethodGen is the object used to represent method, but it is more difficult now how to get the methodgen. You need to look into constructors or the situation could be more worse if the methodgen is obtained via a static method as shown in our example.
+
+
+4. In the logic project evaluation, you said you identified top 10 queries? Can you explain that?
+
+Refer to the slide after questions.
+
+5. How many type are you currently using?
+   
+   Currently in our prototype we have five heuristics for receiver and argument types, and ten heuristics for identifying the return type. These heuristics are recursively used to handle several different constructs. They are based on how a compiler performs type checking. They are not exhaustive.
+
+
+6. In your query splitting, upto what level you are using currently?
+   In our prototype, we are using only one level splitting. That is we consider the most immediate objects that result in the required destination object. We can configure the level but it is a trade-off from the performance. Because more the levels, higher is the amount of time it takes.
+
+7. You haven't talked about the performance? How much is the average time it takes?
+   On an average, for queries our approach takes around 25 to 30 sec. But the time mainly depends on the internet connection used by the client machine. In our prototype we limited the number of samples to 200 and our tool can analyse all 200 samples in 2 to 3 sec. 
+
+
+8. What is the significance of the tasks used in your evaluation "Comparison with prospector"?
+   
+   The main reason is that these tasks cover several Java programming aspects like object instantiation via a constructor, a static method, and a non-static method from a parent class. The tasks also involve downcasts, which are one of the challenges for our approches.    
+
+9. Can you provide a better illustration of the problem? For example, what percentage of the queries that developers would run would be of that form?
+
+   Although, we don't have any quantitative analysis for confirming this fact, we have identified from the "Logic" project evaluation is that this kind of problem is quite often. In a single source file, we could identify possible queries that can encountered by a programmer around 50, where we picked only the first 10.
+
+10. Also, the intro argues that relying on a fixed set of sample applications would be a problem. Why is that? If the applications have what I’m
+looking for, this should be fine.
+
+   How do you ensure that the applications have what you are looking for? As shown in our evaluation with Strathcona, due to limited examples, it cannot identify solutions for some sequences.
+
+
+
+11. What is the maximum length of sequences that you have detected?
+   In our evaluation we found sequences that involve upto 5 method invocations in the sequence,
+    

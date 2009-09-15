@@ -1,0 +1,37 @@
+\section {Implementation}
+\label {sec:impl}
+
+We developed an Eclipse plugin tool for our approach, which
+identifies hotspots and coldspots in libraries developed in the Java
+programming language. Our tool takes the input library in the form
+of an Eclipse project. Our tool requires the input library to be
+compilable, i.e., all dependent jars have to be specified in
+classpath of the input library. Our tool can be invoked by selecting
+the menu item provided as a pop up menu over the Eclipse project.
+The computed \emph{UsageMetrics} as well as the identified hotspots
+and coldspots are presented in the form of text files. In our implementation, 
+GCSE~\cite{GCSE} is used as an underlying CSE. As GCSE provides code
+examples in the HTML format, the code downloader invokes a
+postprocessor written in the Perl programming language to transform
+HTML files into Java source code examples.
+
+The library reader and the code analyzer components use Eclipse JDT
+Compiler~\cite{EclipseJDT} for building ASTs from the downloaded
+Java files. We used a Directed Acyclic Graph (DAG) for representing
+the intermediate form used for analysis, because DAG provides an
+easy mechanism for traversing different paths that are used to
+identify groups of APIs of the given library. We used the
+Jung~\cite{Jung} library for building the DAG for each code sample.
+\Comment{
+Mining Maximal Frequent Itemsets (MAFIA)~\cite{burick:mafia} is used
+as a frequent item set miner for mining frequent usage scenarios
+from the entire set of gathered usage scenarios. MAFIA performs a
+depth-first traversal of the item set lattice and incorporates
+effective pruning mechanisms. The primary reason for choosing MAFIA
+among available frequent item set miners is that MAFIA performs
+better than other efficient frequent item set miners such as DepthFirst
+by a factor of three to five on average. We used a support threshold
+value of 0.01, which is low enough to identify a good number of 
+frequent usage scenarios. The threshold value is derived based on our
+evaluation results with JUnit and Log4j libraries. The mined frequent 
+usage scenarios are sorted with respect to their corresponding support values.}

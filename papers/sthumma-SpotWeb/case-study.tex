@@ -1,0 +1,67 @@
+\section {Evaluation}
+\label{sec:case study}
+
+\New{In our evaluation, we address the following research questions.
+(1) What is the percentage of hotspots and coldspots among the classes of a given framework?
+This question helps to signify the approximate efforts required for a programmer unfamiliar
+with the framework to start reusing that framework.
+(2) How close the detected hotspots align with the instantiation code? In this evaluation,
+an application using a given framework is used a test application. Hotspots
+of the framework are detected using a code search engine, by excluding 
+that specific test application. The detected hotspots
+are later verified against the test application.
+(3) Does any relationship exists between changes made in source files among several
+versions and hotspots? This question is to confirm our claim whether
+changes made among versions often include changes among hotspots?}
+
+We evaluated SpotWeb with JUnit and Log4j frameworks to show
+that our approach can detect hotspots described in their respective documentations.
+We also explain how SpotWeb results can be used by a framework user.
+The primary reason for selecting Log4j\footnote{\url{http://logging.apache.org/log4j/docs/manual.html}}
+and JUnit\footnote{\url{http://junit.sourceforge.net/doc/cookstour/cookstour.htm}}
+for analysis is the availability of their documentation that can
+help validate the detected hotspots.
+
+\setlength{\tabcolsep}{1pt}
+\begin{table}[t]
+\begin{CodeOut}
+\begin{center}
+\begin {tabular} {|l|c|c|c|c|c|c|}
+\hline
+Subject&\# Classes&\multicolumn{5}{|c|}{Hotspots}\\
+\cline{3-7}
+&&\# Classes&\%&\# Templ&\# Hooks&\# Depend\\
+\hline JUnit            &56&23&41.07&11&5&11\\
+\hline Log4j        &207&74&35.74&49&13&44\\
+\hline
+\end{tabular}\vspace*{-3ex}
+\centering \caption {\label{tab:hotresults} Evaluation results with JUnit and Log4j}
+\end{center}
+\end{CodeOut}\vspace*{-8ex}
+\end{table}
+
+Table~\ref{tab:hotresults} shows the number of hotspots detected in each framework.
+The table also shows the number of templates, hooks, and the number of dependencies among 
+templates and hooks. SpotWeb detected all hotspots described in documentations
+of JUnit and Log4j resulting in a recall of 100\%. SpotWeb detected a few other hotspots that are not 
+described in documentation, resulting in a precision of 26.08\% for JUnit and
+16.21\% for Log4j. \Comment{However, the real hotspots could be beyond the starting points 
+described in the documentation and our real precision could be much higher 
+than the one calculated based on the documentation. }
+
+We next explain hotspots detected in the JUnit framework.
+
+We next describe the detected hotspots in the Log4j framework.
+Log4j provides several features such as Appenders and Layouts, and
+for each such feature, Log4j provides several classes.
+Among those several classes, a few classes are much more often 
+used than other classes. SpotWeb correctly detected the classes that
+are often used for each such feature. For example, SpotWeb detected that
+\CodeIn{ConsoleAppender} and \CodeIn{FileAppender} are the commonly used
+classes for the Appender feature. SpotWeb also captured the dependency 
+information that is described in the documentation.
+For example, the appender classes of the Log4j library require layout classes.
+SpotWeb correctly identified a \CodeIn{TEMPLATE\_TEMPLATE} dependency between appenders
+and layouts. The dependency describes that the user needs an instance of
+layouts such as \CodeIn{PatternLayout} or \CodeIn{SimpleLayout} to create an instance of appenders
+such as \CodeIn{ConsoleAppender} or \CodeIn{FileAppender}.

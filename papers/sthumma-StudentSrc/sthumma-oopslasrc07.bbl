@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{strathcona:se}
+R.~Holmes and G.~Murphy.
+\newblock Using structural context to recommend source code examples.
+\newblock In {\em Proc. of ICSE}, pages 117--125, 2005.
+
+\bibitem{prospector:jungloid}
+D.~Mandelin, L.~Xu, R.~Bodik, and D.~Kimelman.
+\newblock Jungloid mining: helping to navigate the {API} jungle.
+\newblock In {\em Proc. of PLDI}, pages 48--61, 2005.
+
+\bibitem{xsnippet:saha}
+N.~Sahavechaphan and K.~Claypool.
+\newblock {X}{S}nippet: Mining for sample code.
+\newblock In {\em Proc. of OOPSLA}, pages 413--430, 2006.
+
+\end{thebibliography}

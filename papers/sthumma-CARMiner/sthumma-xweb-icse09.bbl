@@ -1,0 +1,126 @@
+\begin{thebibliography}{10}\setlength{\itemsep}{-1ex}\small
+
+\bibitem{acharya07techreporterrorhandling}
+M.~Acharya and T.~Xie.
+\newblock Mining {API} error-handling specifications from source code.
+\newblock In {\em Proc. FASE}, 2009.
+
+\bibitem{agarwal:association}
+R.~Agrawal and R.~Srikant.
+\newblock Fast algorithms for mining association rules in large databases.
+\newblock In {\em Proc. VLDB}, pages 487--499, 1994.
+
+\bibitem{chang07:finding}
+R.-Y. Chang, A.~Podgurski, and J.~Yang.
+\newblock {Finding what's not there: a new approach to revealing neglected
+  conditions in software}.
+\newblock In {\em Proc. ISSTA}, pages 163--173, 2007.
+
+\bibitem{deline:high-level}
+R.~DeLine and M.~F\"{a}hndrich.
+\newblock Enforcing high-level protocols in low-level software.
+\newblock In {\em Proc. PLDI}, pages 59--69, 2001.
+
+\bibitem{Engler2001deviant}
+D.~Engler, D.~Y. Chen, S.~Hallem, A.~Chou, and B.~Chelf.
+\newblock {Bugs as deviant behavior: a general approach to inferring errors in
+  systems code}.
+\newblock In {\em Proc. SOSP}, pages 57--72, 2001.
+
+\bibitem{Fu:exception-chain}
+C.~Fu and B.~G. Ryder.
+\newblock Exception-chain analysis: Revealing exception handling architecture
+  in {J}ava server applications.
+\newblock In {\em Proc. ICSE}, pages 230--239, 2007.
+
+\bibitem{Fu:web-service-testing}
+C.~Fu, B.~G. Ryder, A.~Milanova, and D.~Wonnacott.
+\newblock Testing of {J}ava web services for robustness.
+\newblock In {\em Proc. ISSTA}, pages 23--33, 2004.
+
+\bibitem{gabel:javert}
+M.~Gabel and Z.~Su.
+\newblock {Javert: fully automatic mining of general temporal properties from
+  dynamic traces}.
+\newblock In {\em Proc. FSE}, pages 339--349, 2008.
+
+\bibitem{GCSE}
+Google {C}ode {S}earch {E}ngine, 2006.
+\newblock \url{http://www.google.com/codesearch}.
+
+\bibitem{document:leth}
+T.~Lethbridge, J.~Singer, and A.~Forward.
+\newblock How software engineers use documentation: The state of the practice.
+\newblock In {\em IEEE Software}, pages 35--39, 2003.
+
+\bibitem{Zhenmin2005PRMiner}
+Z.~Li and Y.~Zhou.
+\newblock {PR-Miner}: Automatically extracting implicit programming rules and
+  detecting violations in large software codes.
+\newblock In {\em Proc. ESEC/FSE}, pages 306--315, 2005.
+
+\bibitem{livshits05dynamine}
+V.~B. Livshits and T.~Zimmermann.
+\newblock {DynaMine}: Finding common error patterns by mining software revision
+  histories.
+\newblock In {\em Proc. ESEC/FSE}, pages 296--305, 2005.
+
+\bibitem{Michail:mining}
+A.~Michail.
+\newblock Data mining library reuse patterns using generalized association
+  rules.
+\newblock In {\em Proc. ICSE}, pages 167--176, 2000.
+
+\bibitem{Jex:Robillard}
+M.~P. Robillard and G.~C. Murphy.
+\newblock Analyzing exception flow in {J}ava programs.
+\newblock In {\em Proc. ESEC/FSE}, pages 322--337, 1999.
+
+\bibitem{thorsten:mining}
+T.~Sch\"{a}fer, J.~Jonas, and M.~Mezini.
+\newblock Mining framework usage changes from instantiation code.
+\newblock In {\em Proc. ICSE}, pages 471--480, 2008.
+
+\bibitem{exception:sinha}
+S.~Sinha and M.~Harrold.
+\newblock Analysis and testing of programs with exception handling constructs.
+\newblock {\em IEEE Trans. Softw. Eng.}, 26(9):849--871, 2000.
+
+\bibitem{thummalapenta07:parseweb}
+S.~Thummalapenta and T.~Xie.
+\newblock {PARSEWeb}: A programmer assistant for reusing open source code on
+  the web.
+\newblock In {\em Proc. ASE}, pages 204--213, 2007.
+
+\bibitem{thummalapenta08:spotweb}
+S.~Thummalapenta and T.~Xie.
+\newblock {SpotWeb}: Detecting framework hotspots and coldspots via mining open
+  source code on the web.
+\newblock In {\em Proc. ASE}, pages 327--336, 2008.
+
+\bibitem{wang:bide}
+J.~Wang and J.~Han.
+\newblock {BIDE}: Efficient mining of frequent closed sequences.
+\newblock In {\em Proc. ICDE}, pages 79--88, 2004.
+
+\bibitem{wasylkowski07:detecting}
+A.~Wasylkowski, A.~Zeller, and C.~Lindig.
+\newblock Detecting object usage anomalies.
+\newblock In {\em Proc. ESEC/FSE}, pages 35--44, 2007.
+
+\bibitem{Weimer04}
+W.~Weimer and G.~Necula.
+\newblock Finding and preventing run-time error handling mistakes.
+\newblock In {\em Proc. OOPSLA}, pages 419--431, 2004.
+
+\bibitem{WeimerN05}
+W.~Weimer and G.~Necula.
+\newblock Mining temporal specifications for error detection.
+\newblock In {\em Proc. TACAS}, pages 461--476, 2005.
+
+\bibitem{Yang06perracotta:mining}
+J.~Yang and D.~Evans.
+\newblock {Perracotta: mining temporal API rules from imperfect traces}.
+\newblock In {\em Proc. ICSE}, pages 282--291, 2006.
+
+\end{thebibliography}
