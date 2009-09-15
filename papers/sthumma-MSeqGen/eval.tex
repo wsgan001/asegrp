@@ -1,0 +1,155 @@
+\section{Evaluation}
+\label{sec:eval}
+
+We conducted three different evaluations to show the effectiveness of our $\smoot$ approach. In our evaluations, we used two popular .NET applications: QuickGraph~\cite{QUICKGRAPH} and Facebook~\cite{FACEBOOK}. Our empirical results show that $\smoot$ handles large code bases and extracts sequences that can help achieve target states. Our empirical results also show that our approach can effectively assist random and DSE-based approaches in achieving higher branch coverage. The details of subjects and results of our evaluation are available at \url{http://research.csc.ncsu.edu/ase/projects/mseqgen/}. \\ All experiments were conducted on a machine with 1.6GHz Xeon processor and 1GB RAM. We next present research questions addressed in our evaluations.
+
+%------------------------------------------------------------------------
+\subsection{Research Questions}
+
+In our evaluations, we address the following research questions.\vspace*{-1ex}
+
+\begin{itemize}
+\item RQ1: Can our approach handle large code bases in gathering sequences for target classes of subject applications?
+\item RQ2: Can our approach assist a random approach in achieving higher code coverage of the code under test than without the assistance of our approach?
+\item RQ3: Can our approach assist a DSE-based approach in achieving higher code coverage of the code under test than without the assistance of our approach?
+\end{itemize}
+
+%------------------------------------------------------------------------
+\subsection{Subject Applications}
+
+We used two popular .NET applications for evaluating our $\smoot$ approach: QuickGraph~\cite{QUICKGRAPH} and Facebook~\cite{FACEBOOK}. QuickGraph is a C\# graph library that provides various directed/undirected graph data structures. QuickGraph also provides algorithms such as depth-first search, breadth-first search, and A* search~\cite{thomas:algos}. 
+QuickGraph includes 165 classes and interfaces with 5 KLOC. Facebook is a popular social network website that connects people with friends and others whom they work, study, and live around. In our evaluation, we use a Facebook developer toolkit that provides APIs necessary for developing Facebook applications. The Facebook developer toolkit includes 285 classes and interfaces with 40 KLOC.
+
+%------------------------------------------------------------------------
+\subsection{RQ1: Gathering Sequences}
+
+We next address the first research question on whether our approach can handle large code bases in gathering sequences for target classes of the QuickGraph and Facebook applications. For QuickGraph and Facebook, we use code bases including 3.85 MB and 5 MB of .NET assembly code, respectively. Our approach extracted 167 sequences for QuickGraph with a maximum length of 12 method calls for the \CodeIn{AdjacencyGraph} class. Our approach took 5.2 minutes for analyzing code bases related to QuickGraph. For Facebook, our approach extracted 355 sequences with a maximum length of 51 method calls for the \CodeIn{Hashtable} class.  Although the sequence extracted for \CodeIn{Hashtable} is long, this sequence includes method calls such as \CodeIn{Add} for multiple times. Our approach took 4.5 minutes for analyzing code bases related to Facebook and to gather these sequences. Our results show that our approach can mine large code bases for gathering sequences to help achieve target states.
+
+%------------------------------------------------------------------------
+\subsection{RQ2: Assisting Random Approach}
+
+We next address the second research question on whether our approach helps increase branch coverage achieved by a state-of-the-art random approach, called Randoop~\cite{pacheco:feedback}. To address this research question, we first run Randoop on QuickGraph and Facebook applications, and generate test inputs. Randoop generates test inputs in the form of sequences of method calls. We execute generated test inputs and measure branch coverage using a coverage measurement tool, called NCover\footnote{\url{http://www.ncover.com/}}. This measured coverage forms a baseline for comparing Randoop with and without the assistance from our approach. In our evaluation, we use default configurations provided by the Randoop developers. For each namespace of the subject application, we ran Randoop for a maximum of 130 seconds.
+
+To assist Randoop with our extracted sequences, we synthesize static method bodies that include our gathered sequences and return objects of target classes of our subject applications. For example, if a target class $TC_j$ has four sequences, we synthesize four static method bodies where each method body returns an object of $TC_j$ by executing a gathered sequence for $TC_j$. If a sequence for $TC_j$ requires other objects of non-primitive or primitive types (whose values are not known in gathered sequences due to static analysis), we add those non-primitive and primitive types as arguments for the method bodies. For primitive types, Randoop randomly generates some values. For non-primitive types, Randoop randomly generates a new sequence or selects some other method body (synthesized by our approach) that produces that non-primitive type. We gather newly generated test inputs that include the method bodies synthesized by $\smoot$ and add these new test inputs to existing tests to measure the increase in the branch coverage. 
+
+\setlength{\tabcolsep}{1pt}
+\begin{table*}[t]
+\begin{SmallOut}
+\begin{CodeOut}
+\begin{center}
+\begin {tabular} {|l|c|c|c|c|c|}
+\hline
+\textbf{Application} & \textbf{\#} of & \textbf{Test Code} & \textbf{Random} & \textbf{Random + $\smoot$} & \textbf{\% Increase in }\\
+ & \textbf{classes} & \textbf{T} & \textbf{R} & \textbf{R + M} & \textbf{Branch coverage}\\
+\hline
+\hline QuickGraph.Algorithms & 104 & 18.4 & 63.3 & 63.3 & - \\
+\hline QuickGraph.Algorithms.Search & 11 & 40.3 & 33.3 & 47.6 & \textbf{14.3} \\
+\hline QuickGraph.Algorithms.ShortestPath & 4 & 0 & 29.3 & 30.2 & 0.9 \\
+\hline QuickGraph.Algorithms.Visitors & 11 & 0 & 86.4 & 86.4 & - \\
+\hline QuickGraph.Collections & 19 & 11.2 & 74.0 & 83.3 & 9.3 \\
+\hline QuickGraph.Exceptions & 3 & 40.0 & 100.0 & 100.0 & - \\
+\hline QuickGraph.Predicates & 9 & 8.6 & 43.1 & 48.3 & 5.2 \\
+\hline QuickGraph.Providers & 1 & 100.0 & 80.0 & 100.0 & \textbf{20.0} \\
+\hline QuickGraph.Representations & 3 & 43.1 & 35.1 & 49.0 & \textbf{13.9} \\
+\hline facebook & 25 & 48.9 & 14.0 & 23.3 & 9.3 \\
+\hline facebook.Components & 3 & 0 & 30.7 & 30.7 & - \\
+\hline facebook.desktop & 14 & 0 & 18.5 & 21.0 & 2.5 \\
+\hline facebook.Forms & 4 & 0 & 11.1 & 11.1 & - \\
+\hline facebook.Properties & 1 & 31.3 & 37.5 & 37.5 & - \\
+\hline facebook.Schema & 216 & 6.1 & 20.8 & 24.8 & 4.1 \\
+\hline facebook.Types & 1 & 0 & 100.0 & 100.0 & - \\
+\hline facebook.Utility & 8 & 49.1 & 22.6 & 37.7 & \textbf{15.1} \\
+\hline facebook.web & 12 & 0 & 3.3 & 4.5 & 1.2 \\
+%\hline \textbf{AVERAGE} &  & 22 & 44.61 & 49.92 &  \\
+\hline \textbf{AVERAGE} &  &  &  &  & \textbf{8.7} \\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\end{SmallOut}\vspace*{-4ex}
+\centering \caption {\label{tab:premresults} Evaluation results showing higher branch coverage achieved by Randoop with the assistance of $\smoot$. \CodeIn{T: Test code, R: Randoop, M: $\smoot$}}
+\end{table*}
+
+Table~\ref{tab:premresults} shows the results of our evaluation with both subject applications. The table shows the results for all namespaces of the subject applications. As we include test code available with subject applications in code bases used for extracting sequences, we show branch coverage achieved by the test code alone in Column ``T''. Column ``R'' shows branch coverage achieved by Randoop. Column ``R + M'' shows branch coverage achieved by Randoop with the assistance of our $\smoot$ approach. Column ``Increase in Branch Coverage'' shows additional branch coverage achieved with the assistance from our $\smoot$ approach. As shown in our results, ``R + M'' achieved higher coverage than Randoop and test code (except for namespaces \CodeIn{facebook} and \CodeIn{facebook.Utility}). There are two primary reasons for lower coverage of ``R + M'' for these two namespaces: the random mechanism of Randoop and limitations of our current implementation. Due to the random mechanism used by Randoop, various method calls used in test code that contributed to higher coverage achieved by the test code are not used by Randoop in generating test inputs. Section~\ref{sec:future} presents limitations of our current implementation on why ``R + M'' achieved lower coverage than existing test code for namespaces \CodeIn{facebook} and \CodeIn{facebook.Utility}. Our results show that there is a considerable increase of 8.7\% on average\footnote{We compute average from those namespaces that have a non-zero increase in the branch coverage} (with a maximum of 20\%) in branch coverage achieved by Randoop with assistance from our approach. 
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+00:class BidirectionalGraph \{ ...
+01:\hspace*{0.1in}public IEdge AddEdge(IVertex src, IVertex tg) \{
+02:\hspace*{0.2in}// look for the vertex in the list
+03:\hspace*{0.2in}if (!VertexInEdges.ContainsKey(src))
+04:\hspace*{0.3in}throw new VertexNotFoundException 
+\hspace*{0.5in}("Could not find source");
+05:\hspace*{0.2in}if (!VertexInEdges.ContainsKey(tg))
+06:\hspace*{0.3in}throw new VertexNotFoundException 
+\hspace*{0.5in}("Could not find target");
+07:\hspace*{0.2in}// create edge
+08:\hspace*{0.2in}IEdge e = base.AddEdge(src, tg);
+09:\hspace*{0.2in}VertexInEdges[target].Add(e);
+10:\hspace*{0.2in}return e;
+11:\hspace*{0.1in}\}
+12:\}
+\end{alltt}
+\end{CodeOut} \vspace*{-5ex}
+\Caption{\label{fig:vidMUT} A MUT \CodeIn{AddEdge} in the \CodeIn{BidirectionalGraph} class of QuickGraph.} \vspace*{-5ex}
+\end{figure}
+
+We next provide examples to describe scenarios where our approach can assist random approaches. We also describe scenarios where our approach cannot assist random approaches. We use a MUT, called \CodeIn{AddEdge}, in the \CodeIn{BidirectionalGraph} class of the \CodeIn{QuickGraph.Representations} namespace (shown in Figure~\ref{fig:vidMUT}). Although Randoop generated three test inputs (in the form of sequences) for the \CodeIn{AddEdge} MUT, Randoop achieved low branch coverage of 40.0\% (2 out of 5 branches). The reason for not achieving high coverage for the \CodeIn{AddEdge} MUT is that the \CodeIn{AddEdge} MUT requires a specific receiver object state. To reach Statement 8 of the MUT, the \CodeIn{VertexInEdges} field should include the new vertices represented by \CodeIn{src} and \CodeIn{tg} that are passed as arguments. With the sequences extracted by our approach, Randoop achieved a branch coverage of 80.0\% (4 out of 5 branches). As our sequences are extracted from code bases that include usage scenarios on how these method calls are used in real practice, our sequences helped achieve high coverage for the \CodeIn{AddEdge} MUT. 
+
+Although Randoop achieved higher branch coverage with the assistance from our approach, the test inputs generated by Randoop did not cover the \CodeIn{true} branch of Statement 5 to reach Statement 6. The reason is that our sequences do not include a usage scenario where the \CodeIn{AddEdge} MUT is invoked with one vertex in \CodeIn{VertexInEdges} and the other vertex not in \CodeIn{VertexInEdges}. Such usage scenarios rarely exist in code bases that are used for extracting sequences as these usage scenarios are related to testing the MUT for negative cases rather than reusing the MUT in real practice. However, a more systematic approach such as a DSE-based approach can cover such not-covered branches with the assistance from our approach.
+
+%------------------------------------------------------------------------
+\subsection{RQ3: Assisting DSE-based Approaches}
+
+We next address the third research question on whether our approach can help increase branch coverage achieved by a DSE-based approach. To address this research question, we use a state-of-the-art DSE-based approach called Pex~\cite{tillman:pexwhite}. Pex accepts PUTs as input and generates conventional unit tests from these PUTs using DSE. As PUTs are not available with our subject applications, we generated PUTs for each public method in our subject applications using the \emph{PexWizard} tool. PexWizard is a tool provided with Pex and this tool automatically generates PUTs for each public method in the application given as input. A PUT generated for the \CodeIn{Compute} MUT (Figure~\ref{fig:mut}) is shown below.
+
+\begin{CodeOut}
+\begin{alltt}
+00:[PexMethod]
+01:public void Compute01(
+02:\hspace*{0.3in}[PexAssumeUnderTest]UndirectedDFS target,
+03:\hspace*{0.3in}[PexAssumeUnderTest]Vertex s) \{
+04:\hspace*{0.1in}target.Compute(s);
+05:\hspace*{0.1in}Assert.Inconclusive("this test has to be reviewed");
+06:\}
+\end{alltt}
+\end{CodeOut}
+
+The receiver object and argument objects required for the \CodeIn{Compute} MUT are accepted as arguments for the PUT. Pex generates skeletons for the non-primitive arguments by using a heuristic-based approach (Section~\ref{sec:pex}). For this evaluation, we used only the QuickGraph application. The reason is that Pex does not terminate in generating unit tests for the Facebook application. In future work, we plan to investigate the issues with Pex and apply Pex on the Facebook application. To provide a baseline for showing the effectiveness of our approach, we first applied Pex on PUTs generated for the QuickGraph application. We executed generated unit tests and measured branch coverage achieved by these unit tests for different namespaces in the QuickGraph application. In our evaluation, we use default configurations of Pex.
+
+We next used our extracted sequences to assist Pex. Pex provides a feature called \emph{factory} methods, which allow programmers to provide assistance to Pex in generating non-primitive object types. We used this feature by converting our extracted sequences into factory methods. One issue with factory methods is that the current Pex allows only one factory method for a non-primitive object type. As our approach can extract multiple sequences for creating an object of a non-primitive type, we combine all sequences related to a non-primitive type into one factory method by using a \CodeIn{switch} statement. We next apply Pex on the subject application with new factory methods created based on our extracted sequences. We again generate unit tests using Pex and measure new branch coverage. 
+
+\setlength{\tabcolsep}{1pt}
+\begin{table}[t]
+\begin{SmallOut}
+\begin{CodeOut}
+\begin{center}
+\begin {tabular} {|l|c|c|c|c|}
+\hline
+\textbf{Application} & \textbf{\# C} & \textbf{P} & \textbf{P + M} & \textbf{Increase}\\
+ &  &  &  & \textbf{\%}\\
+\hline
+\hline QuickGraph.Algorithms & 104 & 8.2 & 30.6 & \textbf{22.5}\\
+\hline QuickGraph.Algorithms.Search & 11 & 0 & 13.9 & \textbf{13.9}\\
+\hline QuickGraph.Algorithms.ShortestPath & 4 & 1.9 & 1.9 & -\\
+\hline QuickGraph.Algorithms.Visitors & 11 & 50.0 & 50.0 & -\\
+\hline QuickGraph.Collections & 19 & 14.9 & 29.0 & \textbf{14.1}\\
+\hline QuickGraph.Exceptions & 3 & 60.0 & 60.0 & -\\
+\hline QuickGraph.Predicates & 9 & 31.0 & 31.0 & -\\
+\hline QuickGraph.Representations & 1 & 2.7 & 21.6 & \textbf{19.2}\\
+\hline \textbf{AVERAGE} &  & & & \textbf{17.4}\\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\end{SmallOut}\vspace*{-4ex}
+\centering \caption {\label{tab:pexresults} Evaluation results showing higher branch coverage achieved by Pex with the assistance of $\smoot$. \CodeIn{\# C: number of classes, P: Pex, M: $\smoot$}}\vspace*{-3ex}
+\end{table}
+
+Table~\ref{tab:pexresults} shows our results by applying Pex with and without our sequences on the QuickGraph application. On average, our approach helped increase the branch coverage by 17.4\% (with a maximum increase of 22.5\% for one namespace). Although there is a considerable increase in branch coverage with the assistance from our approach, overall Pex still achieved low branch coverage. This result is due to a limitation with the current Pex that cannot automatically identify implementing classes for interfaces and use their related factory methods. Often, factory methods created by our approach accept interfaces as arguments. Therefore, Pex is not able to identify relevant factory methods for interfaces, although factory methods for their implementing classes are created by our approach. In future work, we plan to address this limitation and we expect that our results can be much better after addressing this limitation of Pex.
+
+We next present example scenarios where our approach is quite useful in achieving higher branch coverage with Pex. We use the  \CodeIn{TopologicalSortAlgorithm} class in the \CodeIn{QuickGraph.Algorithms} namespace as an illustrative example. Without the assistance from our approach, Pex did not achieve any coverage of the \CodeIn{TopologicalSortAlgorithm} class as Pex was not able to generate any sequences for creating objects of the \CodeIn{TopologicalSortAlgorithm} class. The reason for not able to generate any sequences is that the constructor of \CodeIn{TopologicalSortAlgorithm} accepts an interface as input. Using the factory methods generated by our approach, Pex achieved a branch coverage of 57.9\% (11 out of 19 branches). Our results show that our approach can assist DSE-based approaches in achieving higher code coverage than without using our approach.
+
+%TODO: *. You should emphasize the improving the branch coverage achieved by Randoop or Pex is not trivial. The remaining not-covered branches are challenging to cover. See some arguments from the Evacon paper. Some reviewers may say that improvement of 15% or 20% is not a big deal. We want to argue against them before they speak out.
+

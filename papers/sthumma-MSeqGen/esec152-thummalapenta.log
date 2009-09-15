@@ -1,0 +1,372 @@
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.6) (preloaded format=latex 2007.10.7)  4 SEP 2009 01:31
+entering extended mode
+**esec152-thummalapenta.tex
+(esec152-thummalapenta.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+(sig-alternate.cls ("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+\epsfxsize=\dimen104
+\epsfysize=\dimen105
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2002/01/22 v2.2d
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+))
+("C:\Program Files\MiKTeX 2.6\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip41
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.6\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen106
+))
+("C:\Program Files\MiKTeX 2.6\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen107
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks17
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks18
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks19
+\multlinegap=\skip42
+\multlinetaggap=\skip43
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+Document Class 'sig-alternate' <7th. June '07>. Modified by G.K.M. Tobin/Gerry 
+Murray
+Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
+shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
+Excerpts were taken from (Journal Style) 'esub2acm.cls'.
+****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.ac
+m.org ******
+Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
+
+\footheight=\dimen115
+\@maxsep=\dimen116
+\@dblmaxsep=\dimen117
+\aucount=\count91
+\originalaucount=\count92
+\auwidth=\dimen118
+\auskip=\dimen119
+\auskipcount=\count93
+\auskip=\dimen120
+\allauboxes=\dimen121
+\addauthors=\toks21
+\addauflag=\count94
+\subtitletext=\toks22
+\savesection=\count95
+\sectioncntr=\count96
+\c@figure=\count97
+\c@table=\count98
+\titleboxnotes=\toks23
+\titleboxnoteflag=\count99
+Document Class: sig-alternate 2007/06/07 - V2.3 - based on acmproc.cls V1.3 <No
+v. 30 '99>
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+\@acmtitlebox=\box28
+\titlenotecount=\count100
+\tntoks=\toks24
+\tntokstwo=\toks25
+\tntoksthree=\toks26
+\tntoksfour=\toks27
+\tntoksfive=\toks28
+\catcount=\count101
+\copyrightnotice=\toks29
+\conf=\toks30
+\confinfo=\toks31
+\c@part=\count102
+\c@section=\count103
+\c@subsection=\count104
+\c@subsubsection=\count105
+\c@paragraph=\count106
+
+Using 'Abbrev' bibliography style
+\bibindent=\dimen122
+\colcntr=\count107
+\savebox=\box29
+\copyrtyr=\toks32
+\acmcopyr=\toks33
+\boilerplate=\toks34
+\copyrightetc=\toks35
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\ae\t1aer.fd"
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))
+\@input{macros.aux}
+(macros.tex ("C:\Program Files\MiKTeX 2.6\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 149.
+LaTeX Info: Redefining \nocite on input line 214.
+Package: cite 2003/11/04  v 4.01
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\alltt.sty"
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+) (algorithm2e.sty
+Package: algorithm2e 2005/10/04 v3.9 algorithms environments
+\c@AlgoLine=\count108
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.6\tex\latex\tools\xspace.sty"
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+********************************************************
+Package `algorithm2e' Release 3.9 -- october 04 2005 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip44
+\skiprule=\skip45
+\skiphlne=\skip46
+\skiptext=\skip47
+\skiplength=\skip48
+\algomargin=\skip49
+\skipalgocfslide=\skip50
+\algowidth=\dimen123
+\inoutsize=\dimen124
+\inoutline=\dimen125
+\algocf@inoutbox=\box30
+\algocf@inputbox=\box31
+\AlCapSkip=\skip51
+\AlCapHSkip=\skip52
+\algocf@capbox=\box32
+\c@algocfline=\count109
+\c@algocf=\count110
+\algocf@algoframe=\box33
+\algocf@algobox=\box34
+)
+\c@definition=\count111
+) (esec152-thummalapenta.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 108.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 108.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 108.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+Overfull \hbox (3.64297pt too wide) in paragraph at lines 108--108
+ [][] 
+ []
+
+LaTeX Font Info:    Try loading font information for T1+aess on input line 110.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\ae\t1aess.fd"
+File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
+)
+Overfull \hbox (2.9416pt too wide) in paragraph at lines 113--117
+\T1/aer/m/n/9 En-gi-neer-ing]: Cod-ing Tools and Techniques---\T1/aer/m/it/9 Ob
+ject-oriented
+ []
+
+LaTeX Font Info:    Try loading font information for T1+aett on input line 126.
+
+("C:\Program Files\MiKTeX 2.6\tex\latex\ae\t1aett.fd"
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+Overfull \hbox (2.13084pt too wide) in paragraph at lines 131--131
+[][]\T1/aett/m/n/8 //UndirectedDFS: Short form of UndirectedDepthFirstSearch[] 
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+
+
+
+]
+Overfull \hbox (1.28455pt too wide) in paragraph at lines 172--173
+[][]\T1/aer/m/n/9 A com-mon char-ac-ter-is-tic among these pre-vi-ous ap-proach
+es
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+
+LaTeX Warning: Reference `sec:related' on page \thepage  undefined on input lin
+e 203.
+
+
+Overfull \hbox (4.94621pt too wide) in paragraph at lines 210--211
+\T1/aer/m/n/9 dom and DSE-based ap-proaches, re-spec-tively. We next briefly
+ []
+
+
+Overfull \hbox (5.36028pt too wide) in paragraph at lines 215--216
+\T1/aer/m/n/9 lected method call, Ran-doop finds ar-gu-ments from previously-
+ []
+
+
+Underfull \vbox (badness 1281) has occurred while \output is active []
+
+ [3]
+
+LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
+(Font)              using `T1/aett/m/n' instead on input line 255.
+
+File: figs/architecture1.eps Graphic file (type eps)
+<figs/architecture1.eps>
+Overfull \hbox (1.82524pt too wide) in paragraph at lines 279--280
+\T1/aer/m/n/9 into skele-tons by re-plac-ing con-stant val-ues for prim-i-tive 
+types
+ []
+
+
+Overfull \hbox (10.03241pt too wide) in paragraph at lines 310--311
+\T1/aer/m/n/9 intra-procedural anal-y-sis is more scal-able than inter-procedur
+al
+ []
+
+[4]
+Overfull \hbox (10.97768pt too wide) in paragraph at lines 341--342
+\T1/aer/m/n/9 se-quences for gen-er-at-ing re-lated ad-di-tional non-primitive 
+types.
+ []
+
+[5] [6] [7]
+Overfull \hbox (8.79677pt too wide) in paragraph at lines 552--568
+ [][] 
+ []
+
+
+Overfull \hbox (5.911pt too wide) in paragraph at lines 576--577
+\T1/aett/bx/n/8 Graph.Algorithms \T1/aer/m/n/9 names-pace as an il-lus-tra-tive
+ ex-am-ple. With-
+ []
+
+[8]
+Underfull \vbox (badness 1755) has occurred while \output is active []
+
+ [9]
+[10] (esec152-thummalapenta.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3327 strings out of 95296
+ 36372 string characters out of 1184885
+ 120736 words of memory out of 1109076
+ 6355 multiletter control sequences out of 60000
+ 61636 words of font info for 76 fonts, out of 1000000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 39i,11n,26p,2021b,404s stack positions out of 5000i,500n,10000p,200000b,32768s
+
+Output written on esec152-thummalapenta.dvi (10 pages, 99632 bytes).

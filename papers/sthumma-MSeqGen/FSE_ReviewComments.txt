@@ -1,0 +1,86 @@
+First reviewer's review:
+
+         >>> Summary of the submission <<<
+
+An approach called MSeqGen is proposed that improves unit test automation by extracting usage information from a base of existing code that accesses the software to be tested. The approach thus can help derive a sequence of test cases that is then combined with other approaches for test input data derivation. In particular, in the paper the combination of MSeqGen is demonstrated with Randoop and Pex, showing interesting improvement of coverage in both cases.
+
+         >>> Evaluation <<<
+
+The paper introduces a smart and interesting idea. Perhaps, the real achievement -which is useful- is a little overstated in the paper. A limitation of the approach is obviously that it can only be applied where a code base (already) exist, so for instance cannot be applied during development. Moreover, it is obvious that the coverage that can be achieved is limited superiorly by the coverage that was achieved by the mined application. The approach still has some open issues that are fixed manually, but is in my opinion a nice work already for presentation at ESEC/FSE. The paper is generally well written, even though in some places it is redundant. For example, some paragraphs are repeated verbatim between the Introduction and Section 3. Section 4.4 is quite verbose to express a simple concept. Section 5.6 in my opinion could/should be compacted with Section 7, as also 5.6 points to future work. The current separation is confusing.
+
+--> Fixed
+
+Some minor issues:
+- CTi (bottom of first column page 5) should be CBi
+--> Fixed
+- references for DFS, BFS and A* (section 5.2) should be given
+--> Fixed
+- maybe I missed it, but OI believe that Figure 8 is not referenced
+--> Fixed
+
+*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*
+
+Second reviewer's review:
+
+         >>> Summary of the submission <<<
+
+The paper brings together source code mining and automated test generation. The idea is to use methods calls used in code bases to guide automated test generation approaches in the generation of complex parameter types needed to increase coverage. The proposed technique is evaluated as an add-on to two state of the art tools and it shows potential to increase branch coverage.
+
+         >>> Evaluation <<<
+
+Strengths
+
+- The idea is novel. It proposes a relative inexpensive mechanism based on existing code bases to better search a potentially large space to generate the "right" object
+to increase coverage
+
+- A lot of engineering seems to have been invested in building the tool, and integrating it with other state of the art tools to show what it can do in practice through a very good initial evaluation
+
+
+Weaknesses
+
+- Presentation style. Some of the content seems to be over-sold. For example, the list of "major" contributions in page 2 seems overblown. Each one of these is not really that major (except perhaps for the last 1 or 2) but their integration is what makes the contribution major and unique. The same over-the-top tone is used when Pex is mentioned. I recommend changing these elements of the paper to really highlight the contribution.
+
+- For how long was Randoop ran? This is a random generation approach that is cheap to run and whose effectiveness depends on the the time you run it. This is not specified in Section 3 of the study in Section 5 (it is mentioned that the default settings were used, but I am not sure if that includes timing or what is the default value)
+I am not aware if this is an element that affects Pex as well, but it should be specified.
+
+- Section 4 is a bit sloppy and the lack of details leaves me guessing a bit how the approach works. For example, in section 4.2 I am not really sure what data flow analysis is applied or how you handle loops. And an even Bigger one is that I am not sure how you make sure that the sequences you combine are somewhat "compatible". I understand  that the generalization process (changing primitives with symbolic) could take care of some of that, but there could be constraints among the values of different objects that require distinct object sequences. I cannot see how/if you are taking care of those. If you are not, then one thing that might be happening is that you might be reaching a branch with an invalid object, thinking that you covered it properly when you really did not, right?
+
+Minor
+
+- Introduction could just say that there are "4 major categories for automatic test generation" (instead of 3) and include DSE in the list instead of separately
+
+- MSeqGen is introduced in page 3 without a previous definition except for the title. It would help to introduce it earlier as the name of the approach.
+--> Fixed
+- Section 4, line 4: I think you meant "classes" instead of "applications" 
+--> Fixed
+- Section 4.3: does generalization reduces the number of duplicated sequences? Was that an issue at all during the study?
+
+- Table 1: add "-" to the rows that produce a "decrease" (facebook, and util)
+--> Fixed
+- One idea: I am wondering whether you could use the code base to extract some form of oracle for DSE tests... This is the other major problem we have with them now.
+--> Good point, can be used for future work.
+*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*
+
+Third reviewer's review:
+
+         >>> Summary of the submission <<<
+
+When generating tests, it can be helpful to know how objects are normally used. This paper suggests to mine code bases to extract typical call sequences for objects and  parameter types. Using such sequences enhances the branch coverage of random testing and symbolic execution testing alike.
+
+         >>> Evaluation <<<
+
+This is a nice combination of two major research areas, namely Mining Software Archives to extract typical method call sequences and Test generation. I have only minor issues about the paper.
+
+I am impressed at how the mined sequences help improving code coverage. However, it may be that testing for situations that are already found in other pieces of code produces a bias towards typical usage. Such a bias is not necessarily a bad thing, as typical usage would be tested more thoroughly; if one wants testing to check for uncommon usage, such a bias may be harmful. Please discuss.
+
+--> TODO
+
+Points in favor:
++ original and elegant combination of two techniques 
++ well-written and well-organized
++ results are promising
+
+Points against:
+- Risk of bias
+
+*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*=--=*

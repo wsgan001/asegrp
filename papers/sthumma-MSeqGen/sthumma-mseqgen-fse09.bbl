@@ -1,0 +1,157 @@
+\begin{thebibliography}{10}
+
+\bibitem{acharya06:mining}
+M.~Acharya, T.~Xie, and J.~Xu.
+\newblock {Mining Interface Specifications for Generating Checkable Robustness
+  Properties}.
+\newblock In {\em Proc. ISSRE}, pages 311--320, 2006.
+
+\bibitem{agarwal:association}
+R.~Agrawal and R.~Srikant.
+\newblock Fast algorithms for mining association rules in large databases.
+\newblock In {\em Proc. VLDB}, pages 487--499, 1994.
+
+\bibitem{Clarke:symbolic}
+L.~Clarke.
+\newblock {A System to Generate Test Data and Symbolically Execute Programs}.
+\newblock {\em IEEE Trans. Softw. Eng.}, 2(3):215--222, 1976.
+
+\bibitem{thomas:algos}
+T.~H. Cormen, C.~Stein, R.~L. Rivest, and C.~E. Leiserson.
+\newblock {\em Introduction to Algorithms}.
+\newblock McGraw-Hill Higher Education, 2001.
+
+\bibitem{csallner:jcrasher}
+C.~Csallner and Y.~Smaragdakis.
+\newblock {JC}rasher: an automatic robustness tester for {J}ava.
+\newblock {\em Softw. Pract. Exper.}, 34(11):1025--1050, 2004.
+
+\bibitem{random:duran}
+J.~Duran and M.~Ntafos.
+\newblock An evaluation of random testing.
+\newblock {\em IEEE Trans. Softw. Eng.}, 10(4):438--444, 1984.
+
+\bibitem{Elbaum:capture}
+S.~Elbaum, H.~N. Chin, M.~B. Dwyer, and J.~Dokulil.
+\newblock {Carving differential unit test cases from system test cases}.
+\newblock In {\em Proc. FSE}, pages 253--264, 2006.
+
+\bibitem{Engler2001deviant}
+D.~Engler, D.~Y. Chen, S.~Hallem, A.~Chou, and B.~Chelf.
+\newblock {Bugs as deviant behavior: a general approach to inferring errors in
+  systems code}.
+\newblock In {\em Proc. SOSP}, pages 57--72, 2001.
+
+\bibitem{FACEBOOK}
+Facebook developer toolkit, 2008.
+\newblock \url{http://www.codeplex.com/FacebookToolkit}.
+
+\bibitem{godefroid:dart}
+P.~Godefroid, N.~Klarlund, and K.~Sen.
+\newblock {DART}: {D}irected automated random testing.
+\newblock In {\em Proc. PLDI}, pages 213--223, 2005.
+
+\bibitem{inkumsah08:improving}
+K.~Inkumsah and T.~Xie.
+\newblock Improving structural testing of object-oriented programs via
+  integrating evolutionary testing and symbolic execution.
+\newblock In {\em Proc. ASE}, pages 297--306, 2008.
+
+\bibitem{JTEST}
+Parasoft. {J}test manuals version 5.1. {O}nline manual, 2006.
+\newblock \url{http://www.parasoft.com}.
+
+\bibitem{khurshid:symbolic}
+S.~Khurshid, C.~S. Pasareanu, and W.~Visser.
+\newblock {Generalized symbolic execution for model checking and testing}.
+\newblock In {\em Proc. TACAS}, pages 553--568, 2003.
+
+\bibitem{king:symex}
+J.~C. King.
+\newblock {Symbolic Execution and Program Testing}.
+\newblock {\em Communications of the ACM}, 19(7):385--394, 1976.
+
+\bibitem{koushik:cute}
+S.~Koushik, M.~Darko, and A.~Gul.
+\newblock {CUTE: a concolic unit testing engine for C}.
+\newblock In {\em Proc. ESEC/FSE}, pages 263--272, 2005.
+
+\bibitem{Xiyang:fitness}
+X.~Liu, H.~Liu, B.~Wang, P.~Chen, and X.~Cai.
+\newblock {A unified fitness function calculation rule for flag conditions to
+  improve evolutionary testing}.
+\newblock In {\em Proc. ASE}, pages 337--341, 2005.
+
+\bibitem{orso:capture}
+A.~Orso and B.~Kennedy.
+\newblock {Selective capture and replay of program executions}.
+\newblock {\em SIGSOFT Softw. Eng. Notes}, 30(4):1--7, 2005.
+
+\bibitem{pacheco:eclat}
+C.~Pacheco and M.~D. Ernst.
+\newblock Eclat: Automatic generation and classification of test inputs.
+\newblock In {\em Proc. ECOOP}, pages 504--527, 2005.
+
+\bibitem{pacheco:feedback}
+C.~Pacheco, S.~K. Lahiri, M.~D. Ernst, and T.~Ball.
+\newblock Feedback-directed random test generation.
+\newblock In {\em Proc. ICSE}, pages 75--84, 2007.
+
+\bibitem{QUICKGRAPH}
+{QuickGraph: A 100\% C\# graph library with Graphviz Support, Version 2.0},
+  2008.
+\newblock \url{http://www.codeproject.com/KB/miscctrl/quickgraph.aspx}.
+
+\bibitem{david:java}
+D.~Saff, S.~Artzi, J.~H. Perkins, and M.~D. Ernst.
+\newblock {Automatic test factoring for Java}.
+\newblock In {\em Proc. ASE}, pages 114--123, 2005.
+
+\bibitem{song07:unitplus}
+Y.~Song, S.~Thummalapenta, and T.~Xie.
+\newblock {UnitPlus}: Assisting developer testing in eclipse.
+\newblock In {\em Proc. ETX}, pages 26--30, 2007.
+
+\bibitem{thummalapenta07:parseweb}
+S.~Thummalapenta and T.~Xie.
+\newblock {PARSEWeb}: A programmer assistant for reusing open source code on
+  the web.
+\newblock In {\em Proc. ASE}, pages 204--213, 2007.
+
+\bibitem{thummalapenta09:mining}
+S.~Thummalapenta and T.~Xie.
+\newblock {M}ining exception-handling rules as sequence association rules.
+\newblock In {\em Proc. ICSE}, pages 496--506, 2009.
+
+\bibitem{tillman:pexwhite}
+N.~Tillmann and J.~de~Halleux.
+\newblock Pex white box test generation for .{NET}.
+\newblock In {\em Proc. TAP}, pages 134--153, 2008.
+
+\bibitem{tillmann05:parameterized}
+N.~Tillmann and W.~Schulte.
+\newblock {Parameterized Unit Tests}.
+\newblock In {\em Proc. ESEC/FSE}, pages 253--262, 2005.
+
+\bibitem{tonella:etoc}
+P.~Tonella.
+\newblock Evolutionary testing of classes.
+\newblock In {\em Proc. ISSTA}, pages 119--128, 2004.
+
+\bibitem{wang:bide}
+J.~Wang and J.~Han.
+\newblock {BIDE}: Efficient mining of frequent closed sequences.
+\newblock In {\em Proc. ICDE}, pages 79 -- 88, 2004.
+
+\bibitem{wasylkowski07:detecting}
+A.~Wasylkowski, A.~Zeller, and C.~Lindig.
+\newblock Detecting object usage anomalies.
+\newblock In {\em Proc. ESEC/FSE}, pages 35--44, 2007.
+
+\bibitem{xie:rostra}
+T.~Xie, D.~Marinov, and D.~Notkin.
+\newblock Rostra: A framework for detecting redundant object-oriented unit
+  tests.
+\newblock In {\em Proc. ASE}, pages 196--205, 2004.
+
+\end{thebibliography}

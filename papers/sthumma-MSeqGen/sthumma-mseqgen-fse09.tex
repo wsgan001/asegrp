@@ -1,0 +1,297 @@
+% THIS IS SIGPROC-SP.TEX - VERSION 3.0
+% WORKS WITH V3.1SP OF ACM_PROC_ARTICLE-SP.CLS
+% JUNE 2007
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V3.1SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V3.1SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@acm.org
+%
+% For tracking purposes - this is V3.0SP - JUNE 2007
+
+\documentclass{sig-alternate}
+
+\include{macros}
+
+\begin{document}
+
+\conferenceinfo{ESEC-FSE'09,} {August 23--28, 2009, Amsterdam, The Netherlands.} 
+\CopyrightYear{2009}
+\crdata{978-1-60558-001-2/09/08} 
+
+\title{MSeqGen: Object-Oriented Unit-Test Generation via Mining Source Code\titlenote{This work is supported in part by NSF grant CCF-0725190 and Army Research Office grant W911NF-08-1-0443.}}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{1} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+
+\author{Suresh Thummalapenta$^1$, Tao Xie$^1$, Nikolai Tillmann$^2$, Jonathan de Halleux$^2$, Wolfram Schulte$^2$\\
+\affaddr{$^1$Department of Computer Science, North Carolina State University, Raleigh}\\
+\affaddr{$^2$Microsoft Research, One Microsoft Way, Redmond}\\
+\email{$^1$\{sthumma, txie\}@ncsu.edu, $^2$\{nikolait, jhalleux, schulte\}@microsoft.com}\\
+}
+
+%\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+%\alignauthor
+%Suresh Thummalapenta\\
+%       \affaddr{Department of Computer Science}\\
+%       \affaddr{North Carolina State University}\\
+%       \affaddr{Raleigh, USA}\\
+%       \email{sthumma@ncsu.edu}
+%% 2nd. author
+%\alignauthor
+%Tao Xie\\
+%			 \affaddr{Department of Computer Science}\\
+%       \affaddr{North Carolina State University}\\
+%       \affaddr{Raleigh, USA}\\
+%       \email{xie@csc.ncsu.edu}% 3rd. author
+%\and
+%\alignauthor Nikolai Tillmann, Jonathan de Halleux, Wolfram Schulte\\
+%       \affaddr{Microsoft Research}\\
+%       \affaddr{One Microsoft Way, Redmond, USA}\\
+%       \email{\{nikolait, jhalleux, schulte\}@microsoft.com}  
+%}
+
+\maketitle
+\begin{abstract}
+An objective of unit testing is to achieve high structural coverage of the code under test. Achieving high structural coverage of object-oriented code requires desirable method-call sequences that create and mutate objects. These sequences help generate target object states such as argument or receiver object states (in short as target states) of a method under test. Automatic generation of sequences for achieving target states is often challenging due to a large search space of possible sequences. On the other hand, code bases using object types (such as receiver or argument object types) include sequences that can be used to assist automatic test-generation approaches in achieving target states. In this paper, we propose a novel approach, called $\smoot$, that mines code bases and extracts sequences related to receiver or argument object types of a method under test. Our approach uses these extracted sequences to enhance two state-of-the-art test-generation approaches: random testing and dynamic symbolic execution. We conduct two evaluations to show the effectiveness of our approach. Using sequences extracted by our approach, we show that a random testing approach achieves 8.7\% (with a maximum of 20.0\% for one namespace) higher branch coverage and a dynamic-symbolic-execution-based approach achieves 17.4\% (with a maximum of 22.5\% for one namespace) higher branch coverage than without using our approach. Such an improvement is significant as the branches that are not covered by these state-of-the-art approaches are generally quite difficult to cover.
+\end{abstract}
+
+\vspace{1mm} \noindent {\bf Categories and Subject Descriptors:}
+D.2.3 {[Software Engineering]}: {Coding Tools and
+Techniques---\emph{Object-oriented programming}}; D.2.6 {[Software Engineering]}: {Programming
+Environments---\emph{Integrated environments}};
+
+\vspace{1mm} \noindent {\bf General Terms:} Languages,
+Experimentation
+
+\vspace{1mm} \noindent {\bf Keywords:} Object-oriented testing, Sequence mining
+
+\input{intro}
+\input{background}
+\input{example}
+\input{approach}
+\input{eval}
+\input{threats}
+\input{future}
+\input{related}
+\input{conclusion}
+
+\section*{Acknowledgments}
+
+We thank Shuvendu Lahiri and Thomas Ball for sharing Randoop used in our evaluations.
+
+\bibliographystyle{abbrv}
+\begin{thebibliography}{10}
+
+\bibitem{acharya06:mining}
+M.~Acharya, T.~Xie, and J.~Xu.
+\newblock {Mining Interface Specifications for Generating Checkable Robustness
+  Properties}.
+\newblock In {\em Proc. ISSRE}, pages 311--320, 2006.
+
+\bibitem{agarwal:association}
+R.~Agrawal and R.~Srikant.
+\newblock Fast algorithms for mining association rules in large databases.
+\newblock In {\em Proc. VLDB}, pages 487--499, 1994.
+
+\bibitem{Clarke:symbolic}
+L.~Clarke.
+\newblock {A System to Generate Test Data and Symbolically Execute Programs}.
+\newblock {\em IEEE Trans. Softw. Eng.}, 2(3):215--222, 1976.
+
+\bibitem{thomas:algos}
+T.~H. Cormen, C.~Stein, R.~L. Rivest, and C.~E. Leiserson.
+\newblock {\em Introduction to Algorithms}.
+\newblock McGraw-Hill Higher Education, 2001.
+
+\bibitem{csallner:jcrasher}
+C.~Csallner and Y.~Smaragdakis.
+\newblock {JC}rasher: an automatic robustness tester for {J}ava.
+\newblock {\em Softw. Pract. Exper.}, 34(11):1025--1050, 2004.
+
+\bibitem{random:duran}
+J.~Duran and M.~Ntafos.
+\newblock An evaluation of random testing.
+\newblock {\em IEEE Trans. Softw. Eng.}, 10(4):438--444, 1984.
+
+\bibitem{Elbaum:capture}
+S.~Elbaum, H.~N. Chin, M.~B. Dwyer, and J.~Dokulil.
+\newblock {Carving differential unit test cases from system test cases}.
+\newblock In {\em Proc. FSE}, pages 253--264, 2006.
+
+\bibitem{Engler2001deviant}
+D.~Engler, D.~Y. Chen, S.~Hallem, A.~Chou, and B.~Chelf.
+\newblock {Bugs as deviant behavior: a general approach to inferring errors in
+  systems code}.
+\newblock In {\em Proc. SOSP}, pages 57--72, 2001.
+
+\bibitem{FACEBOOK}
+Facebook developer toolkit, 2008.
+\newblock \url{http://www.codeplex.com/FacebookToolkit}.
+
+\bibitem{godefroid:dart}
+P.~Godefroid, N.~Klarlund, and K.~Sen.
+\newblock {DART}: {D}irected automated random testing.
+\newblock In {\em Proc. PLDI}, pages 213--223, 2005.
+
+\bibitem{inkumsah08:improving}
+K.~Inkumsah and T.~Xie.
+\newblock Improving structural testing of object-oriented programs via
+  integrating evolutionary testing and symbolic execution.
+\newblock In {\em Proc. ASE}, pages 297--306, 2008.
+
+\vfill\eject
+
+\bibitem{JTEST}
+Parasoft. {J}test manuals version 5.1. {O}nline manual, 2006.
+\newblock \url{http://www.parasoft.com}.
+
+\bibitem{khurshid:symbolic}
+S.~Khurshid, C.~S. Pasareanu, and W.~Visser.
+\newblock {Generalized symbolic execution for model checking and testing}.
+\newblock In {\em Proc. TACAS}, pages 553--568, 2003.
+
+\bibitem{king:symex}
+J.~C. King.
+\newblock {Symbolic Execution and Program Testing}.
+\newblock {\em Communications of the ACM}, 19(7):385--394, 1976.
+
+\bibitem{koushik:cute}
+S.~Koushik, M.~Darko, and A.~Gul.
+\newblock {CUTE: a concolic unit testing engine for C}.
+\newblock In {\em Proc. ESEC/FSE}, pages 263--272, 2005.
+
+\bibitem{Xiyang:fitness}
+X.~Liu, H.~Liu, B.~Wang, P.~Chen, and X.~Cai.
+\newblock {A unified fitness function calculation rule for flag conditions to
+  improve evolutionary testing}.
+\newblock In {\em Proc. ASE}, pages 337--341, 2005.
+
+\bibitem{orso:capture}
+A.~Orso and B.~Kennedy.
+\newblock {Selective capture and replay of program executions}.
+\newblock {\em SIGSOFT Softw. Eng. Notes}, 30(4):1--7, 2005.
+
+\bibitem{pacheco:eclat}
+C.~Pacheco and M.~D. Ernst.
+\newblock Eclat: Automatic generation and classification of test inputs.
+\newblock In {\em Proc. ECOOP}, pages 504--527, 2005.
+
+\bibitem{pacheco:feedback}
+C.~Pacheco, S.~K. Lahiri, M.~D. Ernst, and T.~Ball.
+\newblock Feedback-directed random test generation.
+\newblock In {\em Proc. ICSE}, pages 75--84, 2007.
+
+\bibitem{QUICKGRAPH}
+{QuickGraph: A 100\% C\# graph library with Graphviz Support, Version 2.0},
+  2008.
+\newblock \url{http://www.codeproject.com/KB/miscctrl/quickgraph.aspx}.
+
+\bibitem{david:java}
+D.~Saff, S.~Artzi, J.~H. Perkins, and M.~D. Ernst.
+\newblock {Automatic test factoring for Java}.
+\newblock In {\em Proc. ASE}, pages 114--123, 2005.
+
+\bibitem{song07:unitplus}
+Y.~Song, S.~Thummalapenta, and T.~Xie.
+\newblock {UnitPlus}: Assisting developer testing in eclipse.
+\newblock In {\em Proc. ETX}, pages 26--30, 2007.
+
+\bibitem{thummalapenta07:parseweb}
+S.~Thummalapenta and T.~Xie.
+\newblock {PARSEWeb}: A programmer assistant for reusing open source code on
+  the web.
+\newblock In {\em Proc. ASE}, pages 204--213, 2007.
+
+\bibitem{thummalapenta09:mining}
+S.~Thummalapenta and T.~Xie.
+\newblock {M}ining exception-handling rules as sequence association rules.
+\newblock In {\em Proc. ICSE}, pages 496--506, 2009.
+
+\bibitem{tillman:pexwhite}
+N.~Tillmann and J.~de~Halleux.
+\newblock Pex white box test generation for .{NET}.
+\newblock In {\em Proc. TAP}, pages 134--153, 2008.
+
+\bibitem{tillmann05:parameterized}
+N.~Tillmann and W.~Schulte.
+\newblock {Parameterized Unit Tests}.
+\newblock In {\em Proc. ESEC/FSE}, pages 253--262, 2005.
+
+\bibitem{tonella:etoc}
+P.~Tonella.
+\newblock Evolutionary testing of classes.
+\newblock In {\em Proc. ISSTA}, pages 119--128, 2004.
+
+\bibitem{wang:bide}
+J.~Wang and J.~Han.
+\newblock {BIDE}: Efficient mining of frequent closed sequences.
+\newblock In {\em Proc. ICDE}, pages 79 -- 88, 2004.
+
+\bibitem{wasylkowski07:detecting}
+A.~Wasylkowski, A.~Zeller, and C.~Lindig.
+\newblock Detecting object usage anomalies.
+\newblock In {\em Proc. ESEC/FSE}, pages 35--44, 2007.
+
+\bibitem{xie:rostra}
+T.~Xie, D.~Marinov, and D.~Notkin.
+\newblock Rostra: A framework for detecting redundant object-oriented unit
+  tests.
+\newblock In {\em Proc. ASE}, pages 196--205, 2004.
+
+\end{thebibliography}
+\end{document}
