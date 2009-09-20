@@ -1,0 +1,625 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>README - Data Structures and Algorithms (DSA)</title>
+    <style type="text/css">
+    h1 
+    {
+    	font-weight: normal;
+    }
+        .note
+        {
+            font-style: italic;
+        }
+        .style1
+        {
+            font-weight: bold;
+        }
+        .footer 
+        {
+        	background-color: #EFEFEF;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Data Structures and Algorithms (DSA)</h1>
+    <p><span lang="en-gb">Welcome to the <a href="http://codeplex.com/dsa">Data Structures and Algorithms (DSA)</a> project. 
+        DSA attempts to address the omission of certain key data structures and 
+        algorithms in the .NET 3.5 framework. In some cases we also provide alternative implementations to that which is offered
+		in the BCL.</span></p>
+    <p><span lang="en-gb">DSA is licensed under the Microsoft Public License 
+        (Ms-PL).</span></p>
+    <b>Installation</b><span lang="en-gb">:</span><ul>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#binaries">Runtime binaries</a></li>
+        <li><a href="#source">Compiling the source code</a></li>
+    </ul>
+    <p>
+        <span class="style1" lang="en-gb">Release history:</span></p>
+    <ul>
+		<li><a href="#0.6">DSA 0.6</a></li>
+        <li><a href="#0.5"><span lang="en-gb">DSA 0.5</span></a></li>
+        <li><a href="#0.4"><span lang="en-gb">DSA 0.4</span></a></li>
+        <li><a href="#0.3"><span lang="en-gb">DSA 0.3</span></a></li>
+        <li><a href="#0.2.3"><span lang="en-gb">DSA 0.2.3</span></a></li>
+        <li><a href="#0.2.2"><span lang="en-gb">DSA 0.2.2</span></a></li>
+        <li><a href="#0.2.1"><span lang="en-gb">DSA 0.2.1</span></a></li>
+        <li><a href="#0.2"><span lang="en-gb">DSA 0.2</span></a></li>
+        <li><a href="#0.1"><span lang="en-gb">DSA 0.1</span></a></li>
+    </ul>
+    <h2 id="requirements">
+        Requirements</h2>
+    <ul>
+        <li>.NET 3.5</li>
+        <li>Visual Studio 2008 (only required if you want to build the source code)</li>
+    </ul>
+    <h2 id="binaries">
+        Runtime binaries</h2>
+    <p>
+        Each release of <span lang="en-gb">DSA</span> contains <span lang="en-gb">a 
+        single binary:</span></p>
+    <ul>
+        <li><span lang="en-gb">Dsa.dll</span></li>
+    </ul>
+    <p>
+        <span class="note" lang="en-gb">Note: Dsa.dll is strongy named so it can be 
+        installed in the global assembly cache (GAC).</span></p>
+    <h2 id="source">
+        Compiling the source code</h2>
+    <p>
+        <span class="note">Note: the steps outlined here refer not only to building the 
+        source code of a release, but also the source code of any change set.</span></p>
+    <p>
+        <span lang="en-gb">The source code for the DSA project contains a single Visual 
+        Studio 2008 solution, which in turn contains two C# projects:</span></p>
+    <ul>
+        <li><span lang="en-gb">Dsa</span></li>
+        <li><span lang="en-gb">Dsa.Test</span></li>
+    </ul>
+    <p>
+        <span lang="en-gb">Now follow the steps below:</span></p>
+    <ol>
+        <li><span lang="en-gb">Build the entire solution (Please select the correct target 
+            platform for your machine, by default x86 is the target - this is to support 
+            NCover)</span></li>
+        <li><span lang="en-gb">Run all the unit tests</span></li>
+    </ol>
+    <p>
+        <span class="note" lang="en-gb">Note: if you encounter problems with either of 
+        the steps please inform us via the projects homepage.</span></p>
+    <h2>
+        <span lang="en-gb">Release history</span></h2>
+<p>
+        <span lang="en-gb">All change sets are moderatley stable, however if you want to 
+        download the most stable bits please download the latest available release.</span></p>
+		
+		<h3 id="0.6">
+        <span lang="en-gb">DSA 0.6</span></h3>
+    <p>
+        <span lang="en-gb">Release Date: 12/09/08<br />
+        Release URL:
+        <a href="http://www.codeplex.com/dsa/Release/ProjectReleases.aspx?ReleaseId=13900">
+        http://www.codeplex.com/dsa/Release/ProjectReleases.aspx?ReleaseId=13900</a>&nbsp; </span></p>
+    <h4>
+        <span lang="en-gb">Added Features</span></h4>
+
+<table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%">2875</td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%">AVL Tree</td>
+        </tr>
+        <tr>
+            <td width="10%">5160</td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%">Radix sort (strings)</td>
+        </tr>
+        <tr>
+            <td width="10%">5171</td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%">Copy constructors</td>
+        </tr>
+        <tr>
+            <td width="10%">5921</td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%">Deque</td>
+        </tr>
+        </table>
+
+    <p>
+        &nbsp;</p>
+		
+		<h3 id="0.5">
+        <span lang="en-gb">DSA 0.5</span></h3>
+    <p>
+        <span lang="en-gb">Release Date: 30/05/08<br />
+        Release URL:
+        <a href="http://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&ReleaseId=10756">
+        http://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&ReleaseId=10756</a> </span></p>
+    <h4>
+        <span lang="en-gb">Added Features</span></h4>
+
+<table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">3770</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">Priority Queue</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">3942</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">IsPrime</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">3943</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Set permutations</span></td>
+        </tr>
+        </table>
+
+    <h3 id="0.4">
+        <span lang="en-gb">DSA 0.4</span></h3>
+    <p>
+        <span lang="en-gb">Release Date: 21/02/08<br />
+        Release URL:
+        <a href="https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=9403">
+        https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=9403</a> </span></p>
+    <h4>
+        <span lang="en-gb">Added Features</span></h4>
+
+<table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">2095</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Quick sort</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">2518</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Support IList for sorting algorithms</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">2873</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">UnorderedSet&lt;T&gt;</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">2874</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">Heap</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">2876</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Shell sort</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">2877</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Insertion sort</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">3108</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">Support IList&lt;T&gt; for searching algorithms</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">3559</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Repeated word count</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">3573</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">ToBaseN algorithms (ToBinary, ToOctal, ToHex)</span></td>
+        </tr>
+        </table>
+
+<h4>
+    <span lang="en-gb">Issues</span></h4>
+<p>
+    <span lang="en-gb">Fixed:</span></p>
+
+    <table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">3088</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%">Recursive function refactoring</td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">3179</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%">Make Intersection and Union methods generic</td>
+        </tr>
+    </table>
+    
+<h3 id="0.3">
+        <span lang="en-gb">DSA 0.3</h3>
+    <p>
+        <span lang="en-gb">Release Date: 24/12/07<br />
+        Release URL:
+        <a href="https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=7657">
+        https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=7657</a>
+        </span>
+    </p>
+    <h4>
+        <span lang="en-gb">Added Features</span></h4>
+
+<table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1770</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Probability search</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1790</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Power</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1802</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Greatest common denominator</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1803</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Reverse words</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1862</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">Set</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1907</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Sequential search</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">2094</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">IComparer - user defined implementations</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">2096</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Merge sort</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">2820</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Merge ordered</span></td>
+        </tr>
+        </table>
+
+<h4>
+    <span lang="en-gb">Issues</span></h4>
+<p>
+    <span lang="en-gb">Fixed:</span></p>
+
+    <table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1827</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%">Perf Issue: ArrayList<T>.Add() Title is required </td>
+        </tr>
+    </table>
+    
+
+<h3 id="0.2.3">
+        <span lang="en-gb">DSA 0.2.3</h3>
+    <p>
+        <span lang="en-gb">Release Date: 18/10/07<br />
+        Release URL:
+        <a href="https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=7291">
+        https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=7291</a>
+        </span>
+    </p>
+    <h4>
+        <span lang="en-gb">Added Features</span></h4>
+
+<table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1550</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">BinaryTreeNode&lt;T&gt;</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1570</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Bubblesort - sort asc or desc</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1551</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">BinarySearchTree&lt;T&gt;</span></td>
+        </tr>
+        </table>
+
+<h4>
+    <span lang="en-gb">Issues</span></h4>
+<p>
+    <span lang="en-gb">Fixed:</span></p>
+
+    <table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1906</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%">default items are not returned when calling GetEnumerator on 
+                ArrayList</td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">2142</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%">ArrayList<T>.Clear doesn&#39;t reset the array to default capacity Title 
+                is required </td>
+        </tr>
+    </table>
+    
+
+    <h3 id="0.2.2">
+        &nbsp;</h3>
+<h3>
+        <span lang="en-gb">DSA 0.2.2</span></h3>
+    <p>
+        <span lang="en-gb">Release Date: 30/09/07<br />
+        Release URL:
+        </span>
+        <a href="https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=7405">
+        https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=7405</a><span 
+            lang="en-gb"> </span>
+    </p>
+    <h4>
+        <span lang="en-gb">Added Features</span></h4>
+
+<table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1552</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Bubblesort</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1553</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Fibonacci</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1584</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Factorial</span></td>
+        </tr>
+        </table>
+
+<h3 id="0.2.1">
+        <span lang="en-gb">DSA 0.2.1</h3>
+    <p>
+        <span lang="en-gb">Release Date: 21/09/07<br />
+        Release URL:
+        <a href="https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=7078">
+        https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=7078</a>
+        </span>
+    </p>
+    <h4>
+        <span lang="en-gb">Added Features</span></h4>
+
+<table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1334</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">IsPalindrome</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1337</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">WordCount</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1457</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Strip</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1501</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%">ArrayListCollection(Of T) - set default capacity</td>
+        </tr>
+        </table>
+
+<h4>
+    <span lang="en-gb">Issues</span></h4>
+<p>
+    <span lang="en-gb">Fixed:</span></p>
+
+    <table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1450</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%">IsPalindrome - whitespace and punctuation not ignored Title is 
+                required </td>
+        </tr>
+    </table>
+    
+<h3 id="0.2">
+        <span lang="en-gb">DSA 0.2</h3>
+    <p>
+        <span lang="en-gb">Release Date: 13/09/07<br />
+        Release URL:
+        <a href="https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=6894">
+        https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=6894</a>
+        </span>
+    </p>
+    <h4>
+        <span lang="en-gb">Added Features</span></h4>
+
+<table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1335</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Any</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1336</span></td>
+            <td width="10%"><span lang="en-gb">Algorithms</span></td>
+            <td width="80%"><span lang="en-gb">Reverse</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1338</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">ArrayList&lt;T&gt;</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1339</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">DoublyLinkedList&lt;T&gt;</span></td>
+        </tr>
+        </table>
+
+<h4>
+    <span lang="en-gb">Issues</span></h4>
+<p>
+    <span lang="en-gb">Fixed:</span></p>
+
+    <table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1401</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%">ArrayListCollection(Of T) - Setting value of previously unset index 
+                does not increment count Title is required </td>
+        </tr>
+    </table>
+    
+<h3 id="0.1">
+        <span lang="en-gb">DSA 0.1</h3>
+    <p>
+        <span lang="en-gb">Release Date: 07/09/07<br />
+        Release URL:
+        <a href="https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=6683">
+        https://www.codeplex.com/Release/ProjectReleases.aspx?ProjectName=dsa&amp;ReleaseId=6683</a>
+        </span>
+    </p>
+    <h4>
+        <span lang="en-gb">Added Features</span></h4>
+
+<table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1048</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">SinglyLinkedList&lt;T&gt;</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1075</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">Queue&lt;T&gt;</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1249</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%"><span lang="en-gb">S</span>t<span lang="en-gb">ack&lt;T&gt;</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1291</span></td>
+            <td width="10%"><span lang="en-gb">DSA</span></td>
+            <td width="80%"><span lang="en-gb">VS Debugging Visualizer</span></td>
+        </tr>
+        </table>
+
+<h4>
+    <span lang="en-gb">Issues</span></h4>
+<p>
+    <span lang="en-gb">Fixed:</span></p>
+
+    <table width="100%">
+        <tr>
+            <td width="10%"><span lang="en-gb" class="style1">Work item no.</span></td>
+            <td width="10%"><span lang="en-gb" class="style1">Component</span></td>
+            <td width="80%"><span class="style1" lang="en-gb">Work item title</span></td>
+        </tr>
+        <tr>
+            <td width="10%"><span lang="en-gb">1166</span></td>
+            <td width="10%"><span lang="en-gb">Data Structures</span></td>
+            <td width="80%">CollectionDebugView - Items not appearing in Locals window Title is 
+                required </td>
+        </tr>
+    </table>
+
+<p class="footer">
+    <span lang="en-gb"><a href="http://codeplex.com/dsa">Data Structures and 
+    Algorithms (DSA)</a> is authored by <a href="http://msmvps.com/blogs/gbarnett">
+    Granville Barnett</a> and <a href="http://blogs.ugidotnet.org/wetblog/">Luca Del Tongo</a>.</span></p>
+    
+
+</body>
+</html>
+
