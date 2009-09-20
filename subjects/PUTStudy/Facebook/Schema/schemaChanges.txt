@@ -1,0 +1,34 @@
+1: Remove both data_getObject_response xsd:elements. Replace with:
+
+	<xsd:element name="data_getObject_response" type="container" />
+
+	<xsd:element name="data_getObjects_response">
+		<xsd:complexType>
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="container" type="container" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+			<xsd:attribute name="list" type="xsd:boolean" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="container">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string" />
+			<xsd:element name="assoc_type" type="xsd:int" />
+			<xsd:element name="assoc_info1" type="assoc_object_type" />
+			<xsd:element name="assoc_info2" type="assoc_object_type" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+
+2: Add this element:
+
+	<xsd:element name="feed_publishTemplatizedAction_response" type="xsd:boolean" />
+	
+3: Replace application_getPublicInfo_response
+	with <xsd:element name="application_getPublicInfo_response" type="app_info" />
+
+4. Change datatype on uid and nid from "xsd:int" to "xsd:long".
+
+5. Replace profile_getInfo_response with:
+	<xsd:element name="profile_getInfo_response" type="user_info" />

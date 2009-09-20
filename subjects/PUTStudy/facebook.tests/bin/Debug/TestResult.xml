@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="facebook.tests.dll" total="0" failures="0" not-run="0" date="2009-03-12" time="23:31:02">
+  <environment nunit-version="2.4.8.0" clr-version="2.0.50727.1433" os-version="Microsoft Windows NT 5.1.2600 Service Pack 3" platform="Win32NT" cwd="C:\Suresh\MicrosoftPex\Evaluation\Subjects\Facebook\LibrarySource\Source\facebook.tests\bin\Debug" machine-name="SURESH" user="suresh_thummalapenta" user-domain="SURESH" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="facebook.tests.dll" success="True" time="0.031" asserts="0">
+    <results />
+  </test-suite>
+</test-results>
