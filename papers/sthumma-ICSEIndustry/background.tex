@@ -1,0 +1,27 @@
+\section{Background}
+\label{sec:background}
+
+TODO: Needs to re-write the sentences.
+In this paper, we use Pex as a dynamic symbolic execution tool. Pex~\cite{tillman:pexwhite} 
+is an automatic unit-test-generation tool from Microsoft. Pex accepts 
+parameterized unit tests (PUT)~\cite{tillmann05:parameterized} as input; 
+PUTs are a new advancement in unit testing and these PUTs accept parameters 
+unlike conventional unit tests, which do not accept any parameters. 
+From these PUTs, Pex generates conventional unit tests that can achieve high 
+structural coverage of the code under test. More specifically, Pex is a 
+DSE-based approach~\cite{godefroid:dart} that initially executes the code 
+under test with arbitrary inputs. During execution, Pex collects symbolic 
+constraints on inputs obtained from predicates in branch statements along 
+the execution. Pex uses a constraint solver to compute variations of the 
+previous inputs to guide future program executions along different paths. 
+As PUTs also accept non-primitive types as arguments, Pex uses a combination 
+of static and dynamic analysis techniques for generating sequences 
+for those non-primitive types. Using static analysis, Pex determines 
+possible constructors and other methods of a class that set values 
+to different fields of that class. Based on constraints collected 
+during execution of the code under test, Pex determines which 
+methods can set values for required fields and tries to cover target 
+branches by combining constructors and method calls.
+
+TODO: Dynamic code coverage needs to be explained here and why we
+use this criteria?
