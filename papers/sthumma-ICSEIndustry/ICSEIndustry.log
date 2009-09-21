@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.8)  20 SEP 2009 02:35
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.8)  20 SEP 2009 02:44
 entering extended mode
 **ICSEIndustry.tex
-(G:\NCSUASE\MSRInternship\ICSEIndustry\ICSEIndustry.tex
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
-(G:\NCSUASE\MSRInternship\ICSEIndustry\sig-alternate.cls
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\sig-alternate.cls
 ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
@@ -179,7 +179,7 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
 \@input{macros.aux}
-(G:\NCSUASE\MSRInternship\ICSEIndustry\macros.tex
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\macros.tex
 (C:\Users\Suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\cite\cite.sty
 LaTeX Info: Redefining \cite on input line 242.
 LaTeX Info: Redefining \nocite on input line 313.
@@ -192,7 +192,7 @@ Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 ("C:\Program Files\MiKTeX 2.8\tex\latex\base\alltt.sty"
 Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
-(G:\NCSUASE\MSRInternship\ICSEIndustry\algorithm2e.sty
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\algorithm2e.sty
 Package: algorithm2e 2005/10/04 v3.9 algorithms environments
 \c@AlgoLine=\count108
 
@@ -230,7 +230,7 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \algocf@algobox=\box34
 )
 \c@definition=\count111
-) (G:\NCSUASE\MSRInternship\ICSEIndustry\ICSEIndustry.aux)
+) (G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
@@ -258,33 +258,25 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 103.
 ("C:\Program Files\MiKTeX 2.8\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-(G:\NCSUASE\MSRInternship\ICSEIndustry\introduction.tex
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\introduction.tex
 
-LaTeX Warning: Reference `fig:sampleunittest' on page \thepage  undefined on in
-put line 18.
-
-LaTeX Font Info:    Try loading font information for T1+aett on input line 27.
-("C:\Program Files\MiKTeX 2.8\tex\latex\ae\t1aett.fd"
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-
-LaTeX Warning: Reference `' on page \thepage  undefined on input line 58.
+LaTeX Warning: Reference `' on page \thepage  undefined on input line 44.
 
 
-Overfull \hbox (3.65259pt too wide) in paragraph at lines 61--63
+Overfull \hbox (3.65259pt too wide) in paragraph at lines 47--49
 [][]\T1/aer/m/n/9 TODO: To de-scribe about happy paths cov-ered by recorded
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+LaTeX Font Info:    Try loading font information for T1+aett on input line 56.
+("C:\Program Files\MiKTeX 2.8\tex\latex\ae\t1aett.fd"
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+) [1
 
 
 
 
 ])
-(G:\NCSUASE\MSRInternship\ICSEIndustry\background.tex
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\background.tex
 
 LaTeX Warning: Citation `tillman:pexwhite' on page \thepage  undefined on input
  line 5.
@@ -297,8 +289,8 @@ on input line 7.
 LaTeX Warning: Citation `godefroid:dart' on page \thepage  undefined on input l
 ine 12.
 
-) (G:\NCSUASE\MSRInternship\ICSEIndustry\example.tex)
-(G:\NCSUASE\MSRInternship\ICSEIndustry\approach.tex
+) (G:\GoogleSVN\papers\sthumma-ICSEIndustry\example.tex)
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\approach.tex
 
 LaTeX Warning: Reference `' on page \thepage  undefined on input line 4.
 
@@ -324,12 +316,19 @@ File: figs/PUTsAndUT1.eps Graphic file (type eps)
 LaTeX Warning: Reference `' on page \thepage  undefined on input line 109.
 
 
+Underfull \vbox (badness 2073) has occurred while \output is active []
+
+
 Overfull \hbox (19.12248pt too wide) in paragraph at lines 180--180
 [][]\T1/aett/m/n/8 00: [PexRaisedException(typeof(ArgumentOutOfRangeException))
 ][] 
  []
 
-[3]) (G:\NCSUASE\MSRInternship\ICSEIndustry\eval.tex
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3])
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\eval.tex
 File: figs/RQ2_1.eps Graphic file (type eps)
  <figs/RQ2_1.eps>
 Overfull \hbox (12.56229pt too wide) in paragraph at lines 31--33
@@ -342,9 +341,10 @@ LaTeX Warning: Reference `' on page \thepage  undefined on input line 38.
 
 LaTeX Warning: Reference `' on page \thepage  undefined on input line 75.
 
-[4]
-Underfull \vbox (badness 3396) has occurred while \output is active []
 
+Underfull \vbox (badness 1242) has occurred while \output is active []
+
+ [4]
 File: figs/RQ3_1.eps Graphic file (type eps)
 
 <figs/RQ3_1.eps>
@@ -352,26 +352,23 @@ File: figs/RQ4_1_1.eps Graphic file (type eps)
  <figs/RQ4_1_1.eps>
 File: figs/RQ4_2_1.eps Graphic file (type eps)
  <figs/RQ4_2_1.eps>)
-(G:\NCSUASE\MSRInternship\ICSEIndustry\related.tex [5])
-(G:\NCSUASE\MSRInternship\ICSEIndustry\discussion.tex)
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\related.tex)
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\discussion.tex [5])
 No file ICSEIndustry.bbl.
 [6
 
-] [7] (G:\NCSUASE\MSRInternship\ICSEIndustry\ICSEIndustry.aux)
+] [7] (G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.aux)
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  3200 strings out of 495286
- 37655 string characters out of 3180415
- 118285 words of memory out of 3000000
+ 37736 string characters out of 3180415
+ 118294 words of memory out of 3000000
  6332 multiletter control sequences out of 15000+200000
  45114 words of font info for 62 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,11n,26p,470b,374s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ICSEIndustry.dvi (7 pages, 47776 bytes).
+Output written on ICSEIndustry.dvi (7 pages, 48204 bytes).
