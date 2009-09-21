@@ -39,163 +39,164 @@
 \small{$^2$Microsoft Research, One Microsoft Way, Redmond, WA}\\
 \small{$^1$\{mrmarri, sthumma, txie\}@ncsu.edu, $^2$\{nikolait, jhalleux\}@microsoft.com}\\}
 \maketitle
-\begin{abstract}
-Owing to the significance of unit testing in the software development life cycle, unit testing has been widely adopted by software industry to ensure high-quality software. It is labor-intensive to write high-covering tests to ensure the software quality and therefore calls for automation. One such automatic testing technique to achieve high-covering tests is to write Parameterized Unit Tests (PUTs) and use them in combination with a test generation tool that accepts these PUTs. PUTs are a generalized form of conventional unit tests that accept parameters and where programmers can describe the expected behavior or
-specifications in a generic manner. An automatic test generation tool such as Pex from Microsoft Research accepts these PUTs and generates a set of conventional unit tests to achieve a high code coverage. We conduct an empirical study to investigate the utility of PUTs to generate high-covering conventional unit tests. In our empirical study, we use an open source C\# project, called NUnit, to study 
-the benefits of PUTs over conventional unit tests. In this paper, we present our empirical study carried out in two phases: test generalization (transforming existing manually written conventional unit tests to PUTs) and writing new PUTs (to cover the code portions under test that are not covered by the transformed PUTs). In our study, we found that test generalization increased the average block coverage by $9.68$\% with a maximum increase of $45.26\%$ for one class under test. Writing new PUTs resulted in a total increase of $17.41$\% on an average. We also found that testing with PUTs detected $7$ new defects that were not detected by the existing conventional unit tests.
-\end{abstract}
+%\begin{abstract}
+%Owing to the significance of unit testing in the software development life cycle, unit testing has been widely adopted by software industry to ensure high-quality software. It is labor-intensive to write high-covering tests to ensure the software quality and therefore calls for automation. One such automatic testing technique to achieve high-covering tests is to write Parameterized Unit Tests (PUTs) and use them in combination with a test generation tool that accepts these PUTs. PUTs are a generalized form of conventional unit tests that accept parameters and where programmers can describe the expected behavior or specifications in a generic manner. An automatic test generation tool such as Pex from Microsoft Research accepts these PUTs and generates a set of conventional unit tests to achieve a high code coverage. We conduct an empirical study to investigate the utility of PUTs to generate high-covering conventional unit tests. In our empirical study, we use an open source C\# project, called NUnit, to study the benefits of PUTs over conventional unit tests. In this paper, we present our empirical study carried out in two phases: test generalization (transforming existing manually written conventional unit tests to PUTs) and writing new PUTs (to cover the code portions under test that are not covered by the transformed PUTs). In our study, we found that test generalization increased the average block coverage by $9.68$\% with a maximum increase of $45.26\%$ for one class under test. Writing new PUTs resulted in a total increase of $17.41$\% on an average. We also found that testing with PUTs detected $7$ new defects that were not detected by the existing conventional unit tests.
+%\end{abstract}
 %\vspace*{-4ex}
 %----------------------------------------------------------------------------------------------
-\input{introduction}
+%\input{introduction}
 %----------------------------------------------------------------------------------------------
-\input{projectundertest}
+%\input{projectundertest}
 %----------------------------------------------------------------------------------------------
-\input{methodologies}
+%\input{methodologies}
 %----------------------------------------------------------------------------------------------
-\input{example}
+%\input{example}
 %----------------------------------------------------------------------------------------------
-\input{categorization}
+%\input{categorization}
 %----------------------------------------------------------------------------------------------
-\input{helper}
+%\input{helper}
 %----------------------------------------------------------------------------------------------
-\input{NewBenefits}
+%\input{NewBenefits}
 %----------------------------------------------------------------------------------------------
-\input{notamenable}
+%\input{notamenable}
 %----------------------------------------------------------------------------------------------
-\input{limitations}
+%\input{limitations}
 %----------------------------------------------------------------------------------------------
-\input{related}
+%\input{related}
 %----------------------------------------------------------------------------------------------
-\input{tov}
+%\input{tov}
 %----------------------------------------------------------------------------------------------
-\input{conclusion}
+%\input{conclusion}
+%----------------------------------------------------------------------------------------------
+\input{DoE}
 %----------------------------------------------------------------------------------------------
 \bibliographystyle{abbrv}
-\begin{thebibliography}{10}
 
-\bibitem{nunit}
-{{NUnit}}, 2002.
-\newblock \url{http://nunit.com/index.php}.
+%\begin{thebibliography}{10}
 
-\bibitem{PEXDOC}
-{Pex Documentation}, 2006.
-\newblock \url{http://research.microsoft.com/Pex/documentation.aspx}.
-
-\bibitem{TDD}
-{Test-Driven Development in {.NET}, The {NUnit} Testing Framework}, 2006.
-\newblock
-  \url{http://www.developerfusion.com/article/5240/testdriven-development-in-n%
-et/2/}.
-
-\bibitem{JUnit}
-{JUnit for Test Driven Development}, 2008.
-\newblock \url{http://www.junit.org/}.
-
-\bibitem{jtest}
-{Parasoft {Jtest}}, 2008.
-\newblock \url{http://www.parasoft.com/jsp/products/home.jsp?product=Jtest}.
-
-\bibitem{codepro}
-{CodePro AnalytiX}, 2009.
-\newblock
-  \url{http://www.eclipse-plugins.info/eclipse/plugin_details.jsp?id=943}.
-
-\bibitem{pex:rel}
-{Pex - Automated White box Testing for .NET}, 2009.
-\newblock \url{http://research.microsoft.com/Pex/}.
-
-\bibitem{paul:offut}
-P.~Ammann and J.~Offutt.
-\newblock {\em {Introduction to Software Testing}}.
-\newblock {Cambridge University Press}, 2008.
-
-\bibitem{csallner:jcrasher}
-C.~Csallner and Y.~Smaragdakis.
-\newblock {{JC}rasher: an automatic robustness tester for {J}ava}.
-\newblock {\em Software Practice and Experience}, 34(11), 2004.
-
-\bibitem{halleux08:putpatterns}
-J.~de~Halleux and N.~Tillmann.
-\newblock {Parameterized Test Patterns For Effective Testing with {Pex}}, 2008.
-\newblock
-  \url{http://research.microsoft.com/en-us/projects/pex/pexpatterns.pdf}.
-
-\bibitem{godefroid05:dart}
-P.~Godefroid, N.~Klarlund, and K.~Sen.
-\newblock {{DART}: Directed Automated Random Testing}.
-\newblock In {\em Proceedings of the 2005 ACM SIGPLAN Conference on Programming
-  Language Design and Implementation (PLDI)}, pages 213--223, 2005.
-
-\bibitem{khurshid:symbolic}
-S.~Khurshid, C.~S. Pasareanu, and W.~Visser.
-\newblock {Generalized symbolic execution for model checking and testing}.
-\newblock In {\em Proceedings of International Conference on Tools and
-  Algorithms for the Construction and Analysis of Systems (TACAS)}, pages
-  553--568, 2003.
-
-\bibitem{king:symex}
-J.~C. King.
-\newblock {Symbolic Execution and Program Testing}.
-\newblock {\em Communications of the ACM}, 19(7):385--394, 1976.
-
-\vfill\eject
-\bibitem{marri09:empirical}
-M.~R. Marri, T.~Xie, N.~Tillmann, J.~de~Halleux, and W.~Schulte.
-\newblock An empirical study of testing file-system-dependent software with
-  mock objects.
-\newblock In {\em Proceedings of the 2009 International Workshop on Automation
-  of Software Test (AST), Business and Industry Case Studies (to appear)},
-  2009.
-
-\bibitem{dbc}
-B.~Meyer.
-\newblock {\em {Object-Oriented Software Construction}}.
-\newblock Prentice Hall PTR, 2000.
-
-\bibitem{pacheco:feedback}
-C.~Pacheco, S.~K. Lahiri, M.~D. Ernst, and T.~Ball.
-\newblock Feedback-directed random test generation.
-\newblock In {\em Proceedings of the 2007 International Conference on Software
-  Engineering (ICSE)}, pages 75--84, 2007.
-
-\bibitem{ernst:theory}
-D.~Saff, M.~Boshernitsan, and M.~D. Ernst.
-\newblock {Theories in Practice: Easy-to-write Specifications that Catch
-  Bugs},.
-\newblock Technical report.
-
-\bibitem{sen07:cute}
-K.~Sen, D.~Marinov, and G.~Agha.
-\newblock {CUTE: a concolic Unit Testing Engine for C}.
-\newblock In {\em Proceedings of the 2005 joint meetings of the European
-  Software Engineering Conference and the ACM SIGSOFT Symposium on the
-  Foundations of Software Engineering (ESEC/FSE)}, pages 263--272, 2005.
-
-\bibitem{tillmann08:pex}
-N.~Tillmann and J.~de~Halleux.
-\newblock {Pex - White Box Test Generation for {.NET}}.
-\newblock In {\em Proceedings of the 2008 International Conference on Tests and
-  Proofs (TAP)}, pages 134--153, 2008.
-
-\bibitem{tillmann05:parameterized}
-N.~Tillmann and W.~Schulte.
-\newblock {Parameterized Unit Tests}.
-\newblock In {\em Proceedings of the 2005 joint meetings of the European
-  Software Engineering Conference and the ACM SIGSOFT Symposium on the
-  Foundations of Software Engineering (ESEC/FSE)}, pages 253--262, 2005.
-
-\bibitem{tillmann06:unit}
-N.~Tillmann and W.~Schulte.
-\newblock {Unit Tests Reloaded: Parameterized Unit Testing with Symbolic
-  Execution}.
-\newblock {\em IEEE Software}, 23(4):38--47, 2006.
-
-\bibitem{xie09:mutation}
-T.~Xie, N.~Tillmann, P.~de~Halleux, and W.~Schulte.
-\newblock Mutation analysis of parameterized unit tests.
-\newblock In {\em Proceedings of the 2009 International Workshop on Mutation
-  Analysis (Mutation) (to appear)}, 2009.
-
-\end{thebibliography}
-%\bibliography{references}
+%\bibitem{nunit}
+%{{NUnit}}, 2002.
+%\newblock \url{http://nunit.com/index.php}.
+%
+%\bibitem{PEXDOC}
+%{Pex Documentation}, 2006.
+%\newblock \url{http://research.microsoft.com/Pex/documentation.aspx}.
+%
+%\bibitem{TDD}
+%{Test-Driven Development in {.NET}, The {NUnit} Testing Framework}, 2006.
+%\newblock
+%  \url{http://www.developerfusion.com/article/5240/testdriven-development-in-n%
+%et/2/}.
+%
+%\bibitem{JUnit}
+%{JUnit for Test Driven Development}, 2008.
+%\newblock \url{http://www.junit.org/}.
+%
+%\bibitem{jtest}
+%{Parasoft {Jtest}}, 2008.
+%\newblock \url{http://www.parasoft.com/jsp/products/home.jsp?product=Jtest}.
+%
+%\bibitem{codepro}
+%{CodePro AnalytiX}, 2009.
+%\newblock
+%  \url{http://www.eclipse-plugins.info/eclipse/plugin_details.jsp?id=943}.
+%
+%\bibitem{pex:rel}
+%{Pex - Automated White box Testing for .NET}, 2009.
+%\newblock \url{http://research.microsoft.com/Pex/}.
+%
+%\bibitem{paul:offut}
+%P.~Ammann and J.~Offutt.
+%\newblock {\em {Introduction to Software Testing}}.
+%\newblock {Cambridge University Press}, 2008.
+%
+%\bibitem{csallner:jcrasher}
+%C.~Csallner and Y.~Smaragdakis.
+%\newblock {{JC}rasher: an automatic robustness tester for {J}ava}.
+%\newblock {\em Software Practice and Experience}, 34(11), 2004.
+%
+%\bibitem{halleux08:putpatterns}
+%J.~de~Halleux and N.~Tillmann.
+%\newblock {Parameterized Test Patterns For Effective Testing with {Pex}}, 2008.
+%\newblock
+%  \url{http://research.microsoft.com/en-us/projects/pex/pexpatterns.pdf}.
+%
+%\bibitem{godefroid05:dart}
+%P.~Godefroid, N.~Klarlund, and K.~Sen.
+%\newblock {{DART}: Directed Automated Random Testing}.
+%\newblock In {\em Proceedings of the 2005 ACM SIGPLAN Conference on Programming
+%  Language Design and Implementation (PLDI)}, pages 213--223, 2005.
+%
+%\bibitem{khurshid:symbolic}
+%S.~Khurshid, C.~S. Pasareanu, and W.~Visser.
+%\newblock {Generalized symbolic execution for model checking and testing}.
+%\newblock In {\em Proceedings of International Conference on Tools and
+%  Algorithms for the Construction and Analysis of Systems (TACAS)}, pages
+%  553--568, 2003.
+%
+%\bibitem{king:symex}
+%J.~C. King.
+%\newblock {Symbolic Execution and Program Testing}.
+%\newblock {\em Communications of the ACM}, 19(7):385--394, 1976.
+%
+%\vfill\eject
+%\bibitem{marri09:empirical}
+%M.~R. Marri, T.~Xie, N.~Tillmann, J.~de~Halleux, and W.~Schulte.
+%\newblock An empirical study of testing file-system-dependent software with
+%  mock objects.
+%\newblock In {\em Proceedings of the 2009 International Workshop on Automation
+%  of Software Test (AST), Business and Industry Case Studies (to appear)},
+%  2009.
+%
+%\bibitem{dbc}
+%B.~Meyer.
+%\newblock {\em {Object-Oriented Software Construction}}.
+%\newblock Prentice Hall PTR, 2000.
+%
+%\bibitem{pacheco:feedback}
+%C.~Pacheco, S.~K. Lahiri, M.~D. Ernst, and T.~Ball.
+%\newblock Feedback-directed random test generation.
+%\newblock In {\em Proceedings of the 2007 International Conference on Software
+%  Engineering (ICSE)}, pages 75--84, 2007.
+%
+%\bibitem{ernst:theory}
+%D.~Saff, M.~Boshernitsan, and M.~D. Ernst.
+%\newblock {Theories in Practice: Easy-to-write Specifications that Catch
+%  Bugs},.
+%\newblock Technical report.
+%
+%\bibitem{sen07:cute}
+%K.~Sen, D.~Marinov, and G.~Agha.
+%\newblock {CUTE: a concolic Unit Testing Engine for C}.
+%\newblock In {\em Proceedings of the 2005 joint meetings of the European
+%  Software Engineering Conference and the ACM SIGSOFT Symposium on the
+%  Foundations of Software Engineering (ESEC/FSE)}, pages 263--272, 2005.
+%
+%\bibitem{tillmann08:pex}
+%N.~Tillmann and J.~de~Halleux.
+%\newblock {Pex - White Box Test Generation for {.NET}}.
+%\newblock In {\em Proceedings of the 2008 International Conference on Tests and
+%  Proofs (TAP)}, pages 134--153, 2008.
+%
+%\bibitem{tillmann05:parameterized}
+%N.~Tillmann and W.~Schulte.
+%\newblock {Parameterized Unit Tests}.
+%\newblock In {\em Proceedings of the 2005 joint meetings of the European
+%  Software Engineering Conference and the ACM SIGSOFT Symposium on the
+%  Foundations of Software Engineering (ESEC/FSE)}, pages 253--262, 2005.
+%
+%\bibitem{tillmann06:unit}
+%N.~Tillmann and W.~Schulte.
+%\newblock {Unit Tests Reloaded: Parameterized Unit Testing with Symbolic
+%  Execution}.
+%\newblock {\em IEEE Software}, 23(4):38--47, 2006.
+%
+%\bibitem{xie09:mutation}
+%T.~Xie, N.~Tillmann, P.~de~Halleux, and W.~Schulte.
+%\newblock Mutation analysis of parameterized unit tests.
+%\newblock In {\em Proceedings of the 2009 International Workshop on Mutation
+%  Analysis (Mutation) (to appear)}, 2009.
+%
+%\end{thebibliography}
+\bibliography{references}
 \end{document}
