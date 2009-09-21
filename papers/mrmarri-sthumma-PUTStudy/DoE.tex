@@ -1,5 +1,14 @@
 \section{Design of Experiments}
 
-\include{coverage}
-\include{defects}
-\include{maintenance}
+We conduct an empirical study using three real world applications to study the benefits of PUTs over CUTs. 
+In our empirical study, we compare 
+the generalized CUTs i.e., PUTs and existing CUTs in terms of coverage achieved, defects found, and lines and complexity of test code. In particular, through this case study we intend to address the following three research questions:
+\begin{itemize}
+	\item \textbf{RQ1.} PUTs are generalized unit tests and therefore appear to be able to achieve higher coverage than CUTs. Practically, what is the improvement in coverage achieved by PUTs over existing CUTs?
+	\item \textbf{RQ2.} Are PUTs more effective in finding more defects when compared to the existing CUTs?
+	\item \textbf{RQ3.} What is the effect on test code maintenance when using PUTs over CUTs?
+\end{itemize}
+
+\input{coverage}
+\input{defects}
+\input{maintenance}

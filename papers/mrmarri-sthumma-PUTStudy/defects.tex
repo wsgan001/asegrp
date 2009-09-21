@@ -1,1 +1,5 @@
 \subsection{Defects}
+
+To address RQ2, we first measure the real defects identified by PUTs. Since we are using the CUTs that are available with the sources, we did not find any failing CUTs, i.e., no defects are reported by the existing test suite. Therefore, any failing unit tests resulting when testing using PUTs are accounted as defects that are not found by the CUTs. However, before confirming the failing test case implies a defect in the code under test, we manually confirm that the generated test inputs are valid and that it is not a false positive due to an ineffective PUT. 
+
+Furthermore, since the existing CUTs do not surface any defect in the code under test, we seed defects i.e., introduce mutants, in the code under test and test using the existing CUTs and the generalized CUTs, i.e., PUTs. We then validate the effectiveness of PUTs over CUTs based on the number of mutants killed by both the test cases. For introducing the mutants, we will choose the code under test based on the following criterion (1) Code under test should not have any defects that are already found by PUTs (2)  ....
