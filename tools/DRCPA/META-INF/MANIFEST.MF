@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transaction Plug-in
+Bundle-SymbolicName: tool_DRCPA;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: rpt.ncsu.transaction.Activator
+Bundle-Vendor: ncsu.ase
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.jface.text
+Bundle-ClassPath: lib/xercesImpl.jar,
+ lib/xercesSamples.jar,
+ lib/xml-apis.jar,
+ .
