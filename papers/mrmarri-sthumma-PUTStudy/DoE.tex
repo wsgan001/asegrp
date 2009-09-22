@@ -1,12 +1,13 @@
-\section{Design of Experiments}
+\section{Design of Empirical Study}
 
-We conduct an empirical study using three real world applications to study the benefits of PUTs over CUTs. 
-In our empirical study, we compare 
-the generalized CUTs i.e., PUTs and existing CUTs in terms of coverage achieved, defects found, and lines and complexity of test code. In particular, through this case study we intend to address the following three research questions:
+We conduct an empirical study using three real world applications to study the benefits of Parameterized Unit Tests (PUT) over Conventional Unit Tests (CUT). 
+In our empirical study, we show the benefits of PUTs over existing CUTs in terms of three factors: code coverage, defects, and complexity of test code. 
+In particular, we address the following three research questions through our empirical study:
+
 \begin{itemize}
-	\item \textbf{RQ1.} PUTs are generalized unit tests and therefore appear to be able to achieve higher coverage than CUTs. Practically, what is the improvement in coverage achieved by PUTs over existing CUTs?
-	\item \textbf{RQ2.} Are PUTs more effective in finding more defects when compared to the existing CUTs?
-	\item \textbf{RQ3.} What is the effect on test code maintenance when using PUTs over CUTs?
+	\item \textbf{RQ1.} How much higher percentage of code coverage is achieved by PUTs compared to existing CUTs? Since PUTs are a generalized form of CUTs, this research question helps to address whether PUTs can achieve additional coverage compared to CUTs.
+	\item \textbf{RQ2.} How many new defects (that are not detected by CUTs) are detected by PUTs and vice-versa? This research question helps to address whether PUTs have more fault-detection capabilities compared to CUTs.
+	\item \textbf{RQ3.} How many number of tests and lines of test code are reduced by generalizing CUTs to PUTs? This research question helps to address whether PUTs require lesser efforts for maintaining test code compared to CUTs.
 \end{itemize}
 
 \input{coverage}

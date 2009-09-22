@@ -1,5 +1,16 @@
 \subsection{Defects}
 
-To address RQ2, we first measure the real defects identified by PUTs. Since we are using the CUTs that are available with the sources, we did not find any failing CUTs, i.e., no defects are reported by the existing test suite. Therefore, any failing unit tests resulting when testing using PUTs are accounted as defects that are not found by the CUTs. However, before confirming the failing test case implies a defect in the code under test, we manually confirm that the generated test inputs are valid and that it is not a false positive due to an ineffective PUT. 
+To address RQ2, we conduct two evaluations. In the first evaluation, we identify the number of real defects detected by PUTs. Since we are using the CUTs that are available with the sources, we did not find any failing CUTs, i.e., no defects are reported by the existing test suite. Therefore, any failing unit tests resulting when testing using PUTs are considered as defects that are not found by the CUTs. However, before confirming the failing test case implies a defect in the code under test, we manually verify that the generated test inputs are valid and that it is not a false positive due to an ineffective PUT. 
 
-Furthermore, since the existing CUTs do not surface any defect in the code under test, we seed defects i.e., introduce mutants, in the code under test and test using the existing CUTs and the generalized CUTs, i.e., PUTs. We then validate the effectiveness of PUTs over CUTs based on the number of mutants killed by both the test cases. For introducing the mutants, we will choose the code under test based on the following criterion (1) Code under test should not have any defects that are already found by PUTs (2)  ....
+We conduct second evaluation based on mutation testing to further show the effectiveness of PUTs in detecting defects compared to CUTs. The reason for the second evaluation is that the existing CUTs do not detect any defects in the code under test. In this evaluation, we seed defects in the code under test using a mutation testing tool and verify
+how many mutants are killed by existing CUTs and PUTs. We consider that a mutant is killed if any previously passing test fails after executed with the seeded fault. 
+
+We use the following five basic mutation operators, recommended by Offutt, for seeding defects in the code under test.
+
+\begin{itemize}
+\item ABS: Forces each arithmetic expression to take values zero, positive and negative values.
+\item AOR: Replaces each arithmetic operator with every syntactically legal operator.
+\item LCR: Replaces logical connector (AND and OR) with other kinds of logical operators.
+\item ROR: Replaces each relational operator with other relational operators.
+\item UOI: Inserts unary operators in front of expressions.
+\end{itemize}
