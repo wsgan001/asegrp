@@ -5,13 +5,15 @@
 <font NAME="SansSerif" SIZE="18"/>
 <node CREATED="1253668905421" ID="_" MODIFIED="1253669157390" POSITION="right" TEXT="Subjects">
 <node CREATED="1253669165484" ID="Freemind_Link_1197149574" MODIFIED="1253669173656" TEXT="Plants By WebSphere"/>
-<node CREATED="1253669294140" ID="Freemind_Link_979481479" MODIFIED="1253669310062" TEXT="Sample Applications from IBM RPT Team (?)"/>
+<node CREATED="1253669294140" ID="Freemind_Link_979481479" MODIFIED="1253679270358" TEXT="Sample Applications from IBM RPT Team (?)">
+<icon BUILTIN="help"/>
+</node>
 <node CREATED="1253670288218" ID="Freemind_Link_407140216" MODIFIED="1253670644875" TEXT="Is there a simple/good example that can be used in the Example section?">
 <icon BUILTIN="help"/>
 </node>
 </node>
 <node CREATED="1253668948328" ID="Freemind_Link_778019407" MODIFIED="1253669025578" POSITION="left" TEXT="Existing performance testing tools">
-<node CREATED="1253669062375" ID="Freemind_Link_606611451" MODIFIED="1253670906609" TEXT="IBM Rational Performance Tester (ARM Instrumented)">
+<node CREATED="1253669062375" ID="Freemind_Link_606611451" MODIFIED="1253679197106" TEXT="IBM Rational Performance Tester (ARM Instrumented)">
 <node CREATED="1253670912218" ID="Freemind_Link_960995555" MODIFIED="1253670925750" TEXT="Collecting full trace data is a burde"/>
 </node>
 <node CREATED="1253669084062" ID="Freemind_Link_1327287753" MODIFIED="1253669089296" TEXT="HP LoadRunner">
@@ -42,6 +44,11 @@
 <node CREATED="1253669322781" ID="Freemind_Link_822797977" MODIFIED="1253669333281" TEXT="WebSphere Application Server"/>
 <node CREATED="1253669336406" ID="Freemind_Link_89399721" MODIFIED="1253669370765" TEXT="Ratonal Performance Tester"/>
 <node CREATED="1253669355015" ID="Freemind_Link_1129165756" MODIFIED="1253669365703" TEXT="Eclipse TPTP"/>
+<node CREATED="1253679227545" ID="Freemind_Link_1385086486" MODIFIED="1253679252249" TEXT="Java 1.5 (or lower) - JITI/JVMPI">
+<node CREATED="1253679322551" ID="Freemind_Link_1181767639" MODIFIED="1253679337983" TEXT="Why not JVMTI?">
+<icon BUILTIN="help"/>
+</node>
+</node>
 </node>
 </node>
 <node CREATED="1253670057015" ID="Freemind_Link_111647824" MODIFIED="1253670068156" POSITION="right" TEXT="Eclipse plugin">
@@ -53,12 +60,13 @@
 <node CREATED="1253670554312" ID="Freemind_Link_196305091" MODIFIED="1253670704406" TEXT="Can the RPT team provide template plugin for the integration">
 <icon BUILTIN="help"/>
 </node>
-<node CREATED="1253670711046" ID="Freemind_Link_1609019994" MODIFIED="1253670739296" TEXT="What&apos;s their requirements?">
+<node CREATED="1253670711046" ID="Freemind_Link_1609019994" MODIFIED="1253679306314" TEXT="What&apos;s their requirements?">
 <icon BUILTIN="help"/>
-<node CREATED="1253670755265" ID="Freemind_Link_1480422761" MODIFIED="1253670755265" TEXT=""/>
+<icon BUILTIN="xmag"/>
 </node>
-<node CREATED="1253670761578" ID="Freemind_Link_1250150551" MODIFIED="1253670781109" TEXT="What&apos;s their suggestions/idea?">
+<node CREATED="1253670761578" ID="Freemind_Link_1250150551" MODIFIED="1253679311433" TEXT="What&apos;s their suggestions/idea?">
 <icon BUILTIN="help"/>
+<icon BUILTIN="xmag"/>
 </node>
 </node>
 </node>
@@ -69,6 +77,7 @@
 <node CREATED="1253671479906" ID="Freemind_Link_1039876620" MODIFIED="1253671489656" TEXT="PerfTest - Setup (TPTP)"/>
 <node CREATED="1253671499781" ID="Freemind_Link_560527046" MODIFIED="1253671515531" TEXT="PerfTest - Profiling via RPT"/>
 <node CREATED="1253671517984" ID="Freemind_Link_1169092110" MODIFIED="1253671526078" TEXT="PerfTest - Profiling via TPTP"/>
+<node CREATED="1253679135693" ID="Freemind_Link_1643752163" MODIFIED="1253679144480" TEXT="PerfTest - Implementation"/>
 </node>
 </node>
 </map>
