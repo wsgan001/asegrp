@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.8)  20 SEP 2009 02:44
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.8)  22 SEP 2009 23:09
 entering extended mode
 **ICSEIndustry.tex
 (G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.tex
@@ -259,116 +259,135 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 103.
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 (G:\GoogleSVN\papers\sthumma-ICSEIndustry\introduction.tex
+LaTeX Font Info:    Try loading font information for T1+aett on input line 50.
 
-LaTeX Warning: Reference `' on page \thepage  undefined on input line 44.
-
-
-Overfull \hbox (3.65259pt too wide) in paragraph at lines 47--49
-[][]\T1/aer/m/n/9 TODO: To de-scribe about happy paths cov-ered by recorded
- []
-
-LaTeX Font Info:    Try loading font information for T1+aett on input line 56.
 ("C:\Program Files\MiKTeX 2.8\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [1
+)
+
+LaTeX Warning: Reference `sec:background' on page \thepage  undefined on input 
+line 54.
+
+[1
 
 
 
 
-])
-(G:\GoogleSVN\papers\sthumma-ICSEIndustry\background.tex
-
-LaTeX Warning: Citation `tillman:pexwhite' on page \thepage  undefined on input
- line 5.
-
-
-LaTeX Warning: Citation `tillmann05:parameterized' on page \thepage  undefined 
-on input line 7.
-
-
-LaTeX Warning: Citation `godefroid:dart' on page \thepage  undefined on input l
-ine 12.
-
-) (G:\GoogleSVN\papers\sthumma-ICSEIndustry\example.tex)
-(G:\GoogleSVN\papers\sthumma-ICSEIndustry\approach.tex
-
-LaTeX Warning: Reference `' on page \thepage  undefined on input line 4.
-
-
-Overfull \hbox (6.37875pt too wide) in paragraph at lines 38--38
-[][]\T1/aett/m/n/8 02: Match mc = ((Regex)tagex).Match("<% Page..u000a",108);[]
- 
- []
-
-
-Overfull \hbox (2.13084pt too wide) in paragraph at lines 65--65
-[][]\T1/aett/m/n/8 03:    Match mc = ((Regex)tagex).Match($VAL_1$, $VAL_2$);[] 
+]
+Overfull \hbox (1.77054pt too wide) in paragraph at lines 120--122
+[][]\T1/aer/m/n/9 A dis-tributed setup for the par-al-lel ex-plo-ration of PUTs
 
  []
 
 
-LaTeX Warning: Reference `' on page \thepage  undefined on input line 86.
+Overfull \hbox (10.16843pt too wide) in paragraph at lines 122--127
+\T1/aer/m/n/9 ap-proach gen-er-ated 501,799 re-gres-sion tests that achieved
+ []
+
+
+LaTeX Warning: Reference `sec:background' on page \thepage  undefined on input 
+line 130.
+
+
+LaTeX Warning: Reference `sec:example' on page \thepage  undefined on input lin
+e 131.
+
+
+LaTeX Warning: Reference `sec:eval' on page \thepage  undefined on input line 1
+33.
+
+
+LaTeX Warning: Reference `sec:threats' on page \thepage  undefined on input lin
+e 134.
+
+
+LaTeX Warning: Reference `sec:future' on page \thepage  undefined on input line
+ 135.
+
+
+LaTeX Warning: Reference `sec:related' on page \thepage  undefined on input lin
+e 136.
+
+
+LaTeX Warning: Reference `sec:concl' on page \thepage  undefined on input line 
+137.
+
+) (G:\GoogleSVN\papers\sthumma-ICSEIndustry\approach.tex
+File: figs/approach1.eps Graphic file (type eps)
+ <figs/approach1.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 65--72
+
+ []
 
 [2]
-File: figs/PUTsAndUT1.eps Graphic file (type eps)
- <figs/PUTsAndUT1.eps>
+Underfull \hbox (badness 10000) in paragraph at lines 113--153
 
-LaTeX Warning: Reference `' on page \thepage  undefined on input line 109.
-
-
-Underfull \vbox (badness 2073) has occurred while \output is active []
-
-
-Overfull \hbox (19.12248pt too wide) in paragraph at lines 180--180
-[][]\T1/aett/m/n/8 00: [PexRaisedException(typeof(ArgumentOutOfRangeException))
-][] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 113--153
 
- [3])
-(G:\GoogleSVN\papers\sthumma-ICSEIndustry\eval.tex
-File: figs/RQ2_1.eps Graphic file (type eps)
- <figs/RQ2_1.eps>
-Overfull \hbox (12.56229pt too wide) in paragraph at lines 31--33
-\T1/aer/m/n/9 cov-er-age? This re-search ques-tion helps to ad-dress whether
  []
 
 
-LaTeX Warning: Reference `' on page \thepage  undefined on input line 38.
+Underfull \hbox (badness 10000) in paragraph at lines 113--153
+
+ []
 
 
-LaTeX Warning: Reference `' on page \thepage  undefined on input line 75.
+Underfull \hbox (badness 10000) in paragraph at lines 113--153
+
+ []
 
 
-Underfull \vbox (badness 1242) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
+[][]$\T1/aett/m/n/9 http : / / msdn . microsoft . com / en-[]us / library /
+ []
 
- [4]
-File: figs/RQ3_1.eps Graphic file (type eps)
 
-<figs/RQ3_1.eps>
-File: figs/RQ4_1_1.eps Graphic file (type eps)
- <figs/RQ4_1_1.eps>
-File: figs/RQ4_2_1.eps Graphic file (type eps)
- <figs/RQ4_2_1.eps>)
-(G:\GoogleSVN\papers\sthumma-ICSEIndustry\related.tex)
-(G:\GoogleSVN\papers\sthumma-ICSEIndustry\discussion.tex [5])
-No file ICSEIndustry.bbl.
-[6
+Overfull \hbox (2.83319pt too wide) in paragraph at lines 191--202
+\T1/aer/m/n/9 symbolic-execution-based ap-proach in two ma-jor ways. First,
+ []
 
-] [7] (G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.aux)
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 214--237
+
+ []
+
+
+Overfull \hbox (12.39613pt too wide) in paragraph at lines 214--237
+\T1/aer/m/n/8 00: [PexRaisedEx-cep-tion(typeof(ArgumentOutOfRangeException))] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--237
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--237
+
+ []
+
+
+Underfull \vbox (badness 2443) has occurred while \output is active []
+
+)
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.bbl [4]) [5
+
+]
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3200 strings out of 495286
- 37736 string characters out of 3180415
- 118294 words of memory out of 3000000
- 6332 multiletter control sequences out of 15000+200000
- 45114 words of font info for 62 fonts, out of 3000000 for 9000
+ 3191 strings out of 495286
+ 37409 string characters out of 3180415
+ 117274 words of memory out of 3000000
+ 6339 multiletter control sequences out of 15000+200000
+ 46616 words of font info for 63 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,11n,26p,470b,374s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,11n,26p,470b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ICSEIndustry.dvi (7 pages, 48204 bytes).
+Output written on ICSEIndustry.dvi (5 pages, 35660 bytes).

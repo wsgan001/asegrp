@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+
+\bibitem{Clarke:symbolic}
+L.~Clarke.
+\newblock {A System to Generate Test Data and Symbolically Execute Programs}.
+\newblock {\em IEEE Trans. Softw. Eng.}, 2(3):215--222, 1976.
+
+\bibitem{csallner:jcrasher}
+C.~Csallner and Y.~Smaragdakis.
+\newblock {JC}rasher: an automatic robustness tester for {J}ava.
+\newblock {\em Softw. Pract. Exper.}, 34(11):1025--1050, 2004.
+
+\bibitem{godefroid:dart}
+P.~Godefroid, N.~Klarlund, and K.~Sen.
+\newblock {DART}: {D}irected automated random testing.
+\newblock In {\em Proc. PLDI}, pages 213--223, 2005.
+
+\bibitem{patrice08:whitebox}
+P.~Godefroid, M.~Y. Levin, and D.~Molnar.
+\newblock Automated whitebox fuzz testing.
+\newblock In {\em Proc. NDSS}, 2008.
+
+\bibitem{inkumsah08:improving}
+K.~Inkumsah and T.~Xie.
+\newblock Improving structural testing of object-oriented programs via
+  integrating evolutionary testing and symbolic execution.
+\newblock In {\em Proc. ASE}, pages 297--306, 2008.
+
+\bibitem{JTEST}
+Parasoft. {J}test manuals version 5.1. {O}nline manual, 2006.
+\newblock \url{http://www.parasoft.com}.
+
+\bibitem{khurshid:symbolic}
+S.~Khurshid, C.~S. Pasareanu, and W.~Visser.
+\newblock {Generalized symbolic execution for model checking and testing}.
+\newblock In {\em Proc. TACAS}, pages 553--568, 2003.
+
+\bibitem{king:symex}
+J.~C. King.
+\newblock {Symbolic Execution and Program Testing}.
+\newblock {\em Communications of the ACM}, 19(7):385--394, 1976.
+
+\bibitem{koushik:cute}
+S.~Koushik, M.~Darko, and A.~Gul.
+\newblock {CUTE: a concolic unit testing engine for C}.
+\newblock In {\em Proc. ESEC/FSE}, pages 263--272, 2005.
+
+\bibitem{pacheco:feedback}
+C.~Pacheco, S.~K. Lahiri, M.~D. Ernst, and T.~Ball.
+\newblock Feedback-directed random test generation.
+\newblock In {\em Proc. ICSE}, pages 75--84, 2007.
+
+\bibitem{rosenblum96:regression}
+D.~S. Rosenblum and E.~J. Weyuker.
+\newblock Predicting the cost-effectiveness of regression testing strategies.
+\newblock {\em SIGSOFT Softw. Eng. Notes}, 21(6):118--126, 1996.
+
+\bibitem{thummalapenta09:mseqgen}
+S.~Thummalapenta, T.~Xie, N.~Tillmann, J.~de~Halleux, and W.~Schulte.
+\newblock Mseqgen: object-oriented unit-test generation via mining source code.
+\newblock In {\em Proc. ESEC/FSE}, pages 193--202, 2009.
+
+\bibitem{tillman:pexwhite}
+N.~Tillmann and J.~de~Halleux.
+\newblock Pex white box test generation for .{NET}.
+\newblock In {\em Proc. TAP}, pages 134--153, 2008.
+
+\bibitem{tillmann05:parameterized}
+N.~Tillmann and W.~Schulte.
+\newblock {Parameterized Unit Tests}.
+\newblock In {\em Proc. ESEC/FSE}, pages 253--262, 2005.
+
+\bibitem{tonella:etoc}
+P.~Tonella.
+\newblock Evolutionary testing of classes.
+\newblock In {\em Proc. ISSTA}, pages 119--128, 2004.
+
+\bibitem{xie:rostra}
+T.~Xie, D.~Marinov, and D.~Notkin.
+\newblock Rostra: A framework for detecting redundant object-oriented unit
+  tests.
+\newblock In {\em Proc. ASE}, pages 196--205, 2004.
+
+\end{thebibliography}
