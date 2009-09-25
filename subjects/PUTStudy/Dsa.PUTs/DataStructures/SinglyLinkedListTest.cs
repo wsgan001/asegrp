@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Dsa.DataStructures;
 using Microsoft.Pex.Framework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Pex.Framework.Validation;
 
 namespace Dsa.Test.DataStructures
 {
@@ -241,6 +242,7 @@ namespace Dsa.Test.DataStructures
         /// Summary
         /// Time: 2 min 11 sec
         /// Pattern: State Relation, AAAA
+        /// Combines two unit tests into one
         public void RemoveOnlyNodeInListTest([PexAssumeUnderTest] SinglyLinkedList<int> actual, int newNode )
         {
             PexAssume.IsTrue(actual.Count == 0);
@@ -282,27 +284,29 @@ namespace Dsa.Test.DataStructures
         /// </summary>
         [PexMethod]
         /// Summary
-        /// Time: 0 min 36 sec
+        /// Time: 1 min 03 sec
         /// Pattern: Constructor Test
-        public void RemoveFirstEmptyListTest()
+        /// Combines two unit tests into PUT
+        public void RemoveFirstEmptyListTest(int value)
         {
             SinglyLinkedList<int> sll = new SinglyLinkedList<int>();
             PexAssert.IsFalse(sll.RemoveFirst());
+            PexAssert.IsFalse(sll.Remove(value));
         }
 
         /// <summary>
         /// Check to see that calling the Clear method resets the SinglyLinkedListCollection object's internal state.
         /// </summary>
-        [TestMethod]
-        public void ClearTest()
+        [PexMethod]
+        /// Summary
+        /// Time: 1 min 03 sec
+        /// Pattern: AAA, State Relation
+        public void ClearTest([PexAssumeUnderTest]SinglyLinkedList<int> sll )
         {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
-
             sll.Clear();
-
-            Assert.AreEqual(0, sll.Count);
-            Assert.IsNull(sll.Head);
-            Assert.IsNull(sll.Tail);
+            PexAssert.AreEqual(0, sll.Count);
+            PexAssert.IsNull(sll.Head);
+            PexAssert.IsNull(sll.Tail);
         }
 
         /// <summary>
@@ -322,210 +326,275 @@ namespace Dsa.Test.DataStructures
         /// Check to see that the correct exception is raised when using a negative index for the arrayIndex parameter
         /// for CopyTo.
         /// </summary>
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void CopyToInvalidIndexTest()
+        [PexMethod]
+        [PexAllowedException(typeof(ArgumentOutOfRangeException))]
+        /// Summary
+        /// Time: 7 min 29 sec
+        /// Pattern: AAA, RoundTrip
+        /// Combines three unit tests into PUT
+        public void CopyToInvalidIndexTest([PexAssumeUnderTest]int[] melements, int position)
         {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
-            int[] myArray = new int[sll.Count];
+            PexAssume.IsTrue(position >= -1 && position < melements.Length);
+            PexAssume.IsTrue(melements.Length > 0);
+            SinglyLinkedList<int> sll = new SinglyLinkedList<int>(melements);
+            int[] myArray = new int[sll.Count + position];
+            sll.CopyTo(myArray, position);
 
-            sll.CopyTo(myArray, -1);
+            int compPosition = position;
+            if (position == -1)
+                compPosition = 0;
+
+            for (int i = position, j = 0; i < sll.Count; i++)
+            {
+                PexAssert.AreEqual(myArray[i], melements[i]);
+            }
         }
 
         /// <summary>
         /// Check to see that passing in an index that is equal to or greater than the array size throws
         /// the correct exception.
         /// </summary>
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void CopyToIndexGteThanArrayTest()
-        {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
-            int[] myArray = new int[sll.Count];
+        //[PexMethod]
+        //[PexAllowedException(typeof(ArgumentException))]
+        //public void CopyToIndexGteThanArrayTest()
+        //{
+        //    SinglyLinkedList<int> sll = new SinglyLinkedList<int> { 10, 20, 30 };
+        //    int[] myArray = new int[sll.Count];
 
-            sll.CopyTo(myArray, 2);
-        }
+        //    sll.CopyTo(myArray, 2);
+        //}
 
         /// <summary>
         /// Check to see that CopyTo copies all items of SinglyLinkedListCollection to an array beginning at a specified index.
         /// </summary>
-        [TestMethod]
-        public void ArrayCopyWithDefinedStartIndexTest()
-        {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
-            int[] actual = new int[10];
+        //[TestMethod]
+        //public void ArrayCopyWithDefinedStartIndexTest()
+        //{
+        //    SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
+        //    int[] actual = new int[10];
 
-            sll.CopyTo(actual, 6);
+        //    sll.CopyTo(actual, 6);
 
-            Assert.AreEqual(10, actual[6]);
-            Assert.AreEqual(20, actual[7]);
-            Assert.AreEqual(30, actual[8]);
-        }
+        //    Assert.AreEqual(10, actual[6]);
+        //    Assert.AreEqual(20, actual[7]);
+        //    Assert.AreEqual(30, actual[8]);
+        //}
 
         /// <summary>
         /// Check to see that the correct exception is raised when attempting to remove an item from an empty
         /// SinglyLinkedListCollection.
         /// </summary>
-        [TestMethod]
-        public void RemoveItemFromEmptySinglyLinkedListCollection()
-        {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int>();
-            
-            Assert.IsFalse(sll.Remove(10));
-        }
+        //[PexMethod]
+        //public void RemoveItemFromEmptySinglyLinkedListCollection()
+        //{
+        //    SinglyLinkedList<int> sll = new SinglyLinkedList<int>();            
+        //    PexAssert.IsFalse(sll.Remove(10));
+        //}
 
         /// <summary>
         /// Check to see that Remove leaves the SinglyLinkedListCollection in the correct state where the value of Remove
         /// is equal to that of the head node.
         /// </summary>
-        [TestMethod]
-        public void RemoveHeadItemTest()
-        {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
+        //[TestMethod]
+        //public void RemoveHeadItemTest()
+        //{
+        //    SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
 
-            bool actual = sll.Remove(10);
+        //    bool actual = sll.Remove(10);
 
-            Assert.AreEqual(20, sll.Head.Value);
-            Assert.AreEqual(30, sll.Tail.Value);
-            Assert.AreEqual(30, sll.Head.Next.Value);
-            Assert.AreEqual(2, sll.Count);
-            Assert.IsTrue(actual);
-        }
+        //    Assert.AreEqual(20, sll.Head.Value);
+        //    Assert.AreEqual(30, sll.Tail.Value);
+        //    Assert.AreEqual(30, sll.Head.Next.Value);
+        //    Assert.AreEqual(2, sll.Count);
+        //    Assert.IsTrue(actual);
+        //}
 
         /// <summary>
         /// Check to see that Remove leaves the SinglyLinkedListCollection in the correct state, when remove is any node but head or tail.
+        /// TODO: Can be given as an example for minor difficulties in writing PUTs
         /// </summary>
-        [TestMethod]
-        public void RemoveMiddleItemTest()
+        [PexMethod]
+        /// Summary
+        /// Time: 15 min 29 sec
+        /// Pattern: AAA, RoundTrip
+        /// Combines three unit tests into PUT
+        public void RemoveMiddleItemTest([PexAssumeUnderTest]int[] newElements, int position)
         {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
+            PexAssume.IsTrue(newElements.Length > 0);
+            PexAssume.IsTrue(position >= 0 && position < newElements.Length);
 
-            bool actual = sll.Remove(20);
+            //Requires the elements to be unique
+            for (int i = 0; i < newElements.Length; i++)
+                for (int j = i + 1; j < newElements.Length; j++)
+                    PexAssume.IsTrue(newElements[i] != newElements[j]);
 
-            Assert.AreEqual(30, sll.Head.Next.Value);
-            Assert.AreEqual(10, sll.Head.Value);
-            Assert.AreEqual(30, sll.Tail.Value);
-            Assert.AreEqual(2, sll.Count);
-            Assert.IsTrue(actual);
+            SinglyLinkedList<int> sll = new SinglyLinkedList<int>();
+
+            for (int i = 0; i < newElements.Length; i++)
+            {
+                sll.Add(newElements[i]);
+            }
+
+            bool actual = sll.Remove(newElements[position]);
+
+            if (position > 0 && position < newElements.Length - 1)
+            {
+                PexAssert.AreEqual(newElements[0], sll.Head.Value);
+                PexAssert.AreEqual(newElements[newElements.Length - 1], sll.Tail.Value);
+            }
+            PexAssert.AreEqual(newElements.Length - 1, sll.Count);
+            PexAssert.IsTrue(actual);
         }
 
         /// <summary>
         /// Check to see that Remove leaves the SinglyLinkedListCollection in the correct state where the value of Remove
         /// is equal to that of the tail node.
         /// </summary>
-        [TestMethod]
-        public void RemoveTailItemTest()
-        {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
+        //[TestMethod]
+        //public void RemoveTailItemTest()
+        //{
+        //    SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
 
-            bool actual = sll.Remove(30);
+        //    bool actual = sll.Remove(30);
 
-            Assert.AreEqual(10, sll.Head.Value);
-            Assert.AreEqual(20, sll.Head.Next.Value);
-            Assert.AreEqual(20, sll.Tail.Value);
-            Assert.AreEqual(2, sll.Count);
-            Assert.IsNull(sll.Tail.Next);
-            Assert.IsTrue(actual);
-        }
+        //    Assert.AreEqual(10, sll.Head.Value);
+        //    Assert.AreEqual(20, sll.Head.Next.Value);
+        //    Assert.AreEqual(20, sll.Tail.Value);
+        //    Assert.AreEqual(2, sll.Count);
+        //    Assert.IsNull(sll.Tail.Next);
+        //    Assert.IsTrue(actual);
+        //}
 
         /// <summary>
         /// Check to see that when calling the Remove method passing in a value that is not contained in the SinglyLinkedListCollection
         /// returns false.
         /// </summary>
-        [TestMethod]
-        public void RemoveWithNoMatchTest()
+        [PexMethod]
+        /// Summary
+        /// Time: 7 min 28 sec
+        /// Pattern: AAAA, State Relation
+        /// Failing Tests - When the list includes a null value, Remove() returns true event if the inputval does not exist in the linked list
+        public void RemoveWithNoMatchTest([PexAssumeUnderTest]List<string> list, string inputval)
         {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {20, 30, 50};
-
-            Assert.AreEqual(3, sll.Count);
-            Assert.IsFalse(sll.Remove(110));
+            PexAssume.IsFalse(list.Contains(inputval));
+            SinglyLinkedList<string> sll = new SinglyLinkedList<string> (list);
+            PexAssert.AreEqual(list.Count, sll.Count);
+            PexAssert.IsFalse(sll.Remove(inputval));
         }
 
         /// <summary>
         /// Check to see that the head and tail nodes are correct after adding a node after the only node in the SinglyLinkedListCollection.
         /// </summary>
-        [TestMethod]
-        public void AddAfterOnlyOneNodeInListTest()
+        [PexMethod(MaxRunsWithoutNewTests = 200)]
+        /// Summary
+        /// Time: 3 min46 sec
+        /// Pattern: AAAA, State Relation, Round Trip
+        public void AddAfterOnlyOneNodeInListTest([PexAssumeUnderTest]SinglyLinkedList<int> sll, int newelement)
         {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10};
+            PexAssume.IsTrue(sll.Count == 1);
 
-            sll.AddAfter(sll.Head, 20);
+            int prevHead = sll.Head.Value;
+            sll.AddAfter(sll.Head, newelement);
 
-            Assert.AreEqual(20, sll.Tail.Value);
-            Assert.AreEqual(10, sll.Head.Value);
-            Assert.AreEqual(20, sll.Head.Next.Value);
-            Assert.AreEqual(2, sll.Count);
+            PexAssert.AreEqual(newelement, sll.Tail.Value);
+            PexAssert.AreEqual(prevHead, sll.Head.Value);
+            PexAssert.AreEqual(newelement, sll.Head.Next.Value);
+            PexAssert.AreEqual(2, sll.Count);
         }
 
         /// <summary>
         /// Check to see that the tail node is updated after adding a node after the tail in the SinglyLinkedListCollection.
         /// </summary>
-        [TestMethod]
-        public void AddAfterTailTest()
+        [PexMethod]
+        [PexAllowedException(typeof(ArgumentNullException))]
+        /// Summary
+        /// Time: 2 min 17 sec
+        /// Pattern: AAA, State Relation, Round Trip
+        public void AddAfterTailTest([PexAssumeUnderTest]SinglyLinkedList<string> sll, string newelement)
         {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20};
+            int prevCount = sll.Count;
+            sll.AddAfter(sll.Tail, newelement);
 
-            sll.AddAfter(sll.Tail, 30);
-
-            Assert.AreEqual(30, sll.Tail.Value);
-            Assert.AreEqual(30, sll.Head.Next.Next.Value);
-            Assert.AreEqual(3, sll.Count);
+            PexAssert.AreEqual(newelement, sll.Tail.Value);
+            //Assert.AreEqual(30, sll.Head.Next.Next.Value);
+            PexAssert.AreEqual(prevCount + 1, sll.Count);
         }
 
         /// <summary>
         /// Check to see that adding a node somewhere in the middle of the SinglyLinkedListCollection leaves the SinglyLinkedListCollection
         /// in the correct state.
         /// </summary>
-        [TestMethod]
-        public void AddAfterMiddleNodeTest()
+        [PexMethod]
+        /// Summary
+        /// Time: 5 min 20 sec
+        /// Pattern: AAA, State Relation, Round Trip
+        public void AddAfterMiddleNodeTest([PexAssumeUnderTest]SinglyLinkedList<int> sll, int newelement)
         {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
+            PexAssume.IsTrue(sll.Count > 1);
+            int prevHead = sll.Head.Value;            
+            int prevCount = sll.Count;
+            sll.AddAfter(sll.Head.Next, newelement);
 
-            sll.AddAfter(sll.Head.Next, 25);
-
-            Assert.AreEqual(25, sll.Head.Next.Next.Value);
-            Assert.AreEqual(30, sll.Head.Next.Next.Next.Value);
-            Assert.AreEqual(4, sll.Count);
+            PexAssert.AreEqual(newelement, sll.Head.Next.Next.Value);
+            PexAssert.AreEqual(prevHead, sll.Head.Value);
+            PexAssert.AreEqual(prevCount + 1, sll.Count);
         }
 
         /// <summary>
         /// Check to see that the correct exception is raised when trying to add after a null node (in this case the list is empty so head is null).
         /// </summary>
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void AddAfterEmptyNullNodeTest()
+        [PexMethod]
+        [PexAllowedException(typeof(ArgumentNullException))]
+        /// Summary
+        /// Time: 1 min 31 sec
+        /// Pattern: Constructor Test, Allowed Exception
+        public void AddAfterEmptyNullNodeTest(int elementToAdd)
         {
             SinglyLinkedList<int> sll = new SinglyLinkedList<int>();
-
-            sll.AddAfter(sll.Head, 10);
+            sll.AddAfter(sll.Head, elementToAdd);
         }
 
         /// <summary>
         /// Check to see that AddBefore when passing in the head node of the SinglyLinkedListCollection results in the expected state.
         /// </summary>
-        [TestMethod]
-        public void AddBeforeHeadTest()
+        [PexMethod]
+        /// Summary
+        /// Time: 2 min 20 sec
+        /// Pattern: AAA, State Relation, Round Trip
+        public void AddBeforeHeadTest([PexAssumeUnderTest]SinglyLinkedList<string> sll, string newElement)
         {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
-
-            sll.AddBefore(sll.Head, 5);
-
-            Assert.AreEqual(5, sll.Head.Value);
-            Assert.AreEqual(10, sll.Head.Next.Value);
-            Assert.AreEqual(4, sll.Count);
+            PexAssume.IsTrue(sll.Count > 0);
+            string prevValue = sll.Head.Value;
+            int prevCount = sll.Count;
+            sll.AddBefore(sll.Head, newElement);
+            PexAssert.AreEqual(newElement, sll.Head.Value);
+            PexAssert.AreEqual(prevValue, sll.Head.Next.Value);
+            PexAssert.AreEqual(prevCount + 1, sll.Count);
         }
 
         /// <summary>
         /// Check to make sure that adding before tail results in the expected object state.
         /// </summary>
-        [TestMethod]
-        public void AddBeforeTailTest()
+        [PexMethod]
+        public void AddBeforeTailTest([PexAssumeUnderTest]SinglyLinkedList<int> sll, int positionToAdd, int elemToAdd)
         {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30, 40};
+            PexAssume.IsTrue(positionToAdd >= 0 && positionToAdd < sll.Count);
 
-            sll.AddBefore(sll.Head.Next.Next.Next, 35);
+            //Add it to the position specified
+            //SinglyLinkedList<int> nextnode = sll.Head.Next;
+            //for (int i = 0; i < positionToAdd; i++)
+            //{
+            //    nextnode = nextnode.Next;
+            //}
 
-            Assert.AreEqual(35, sll.Head.Next.Next.Next.Value);
+            //sll.AddBefore(nextnode, elemToAdd);
+            //nextnode = sll.Head.Next;
+            //for (int i = 0; i < positionToAdd - 1; i++)
+            //{
+            //    nextnode = nextnode.Next;
+            //}
+
+            //Assert.AreEqual(elemToAdd, sll.Head.Next.Next.Next.Value);
         }
 
         /// <summary>
@@ -546,75 +615,82 @@ namespace Dsa.Test.DataStructures
         /// <summary>
         /// Check to see that the correct exception is raised when calling AddBefore on a SinglyLinkedListCollection with no nodes.
         /// </summary>
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void AddBeforeEmptyListTest()
+        [PexMethod]
+        [PexAllowedException(typeof(ArgumentNullException))]
+        /// Summary
+        /// Time: 0 min 45 sec
+        /// Pattern: Allowed Exception        
+        public void AddBeforeEmptyListTest(int newElement)
         {
             SinglyLinkedList<int> sll = new SinglyLinkedList<int>();
-
-            sll.AddBefore(sll.Head, 10);
+            sll.AddBefore(sll.Head, newElement);
         }
 
         /// <summary>
         /// Check to make sure that IEnumerable.GetEnumerator returns an IEnumerator that is not null.
         /// </summary>
-        [TestMethod]
-        public void GetEnumeratorTest()
-        {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int>();
-            IEnumerable enumerSll = sll;
-
-            sll.Add(10);
-
-            Assert.IsNotNull(enumerSll.GetEnumerator());
+        [PexMethod]
+        /// Summary
+        /// Time: 1 min 03 sec
+        /// Pattern: AAA, State Relation
+        /// Combines two unit tests: GetEnumeratorTest and GetReverseEnumeratorTest into one PUT
+        public void GetEnumeratorTest([PexAssumeUnderTest]SinglyLinkedList<int> sll)
+        {             
+            IEnumerable enumerSll = sll;            
+            PexAssert.IsNotNull(enumerSll.GetEnumerator());
+            PexAssert.IsNotNull(sll.GetReverseEnumerator());
         }
 
         /// <summary>
         /// Check to make sure that GetReverseEnumerator returns a non-null IEnumerator(Of T) object.
         /// </summary>
-        [TestMethod]
-        public void GetReverseEnumeratorTest()
-        {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
-
-            Assert.IsNotNull(sll.GetReverseEnumerator());
-        }
+        //[TestMethod]
+        //public void GetReverseEnumeratorTest()
+        //{
+        //    SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
+        //    Assert.IsNotNull(sll.GetReverseEnumerator());
+        //}
 
         /// <summary>
         /// Check to see that the correct array is returned from a call to ToReverseArray.
         /// </summary>
-        [TestMethod]
-        public void ToReverseArrayTest()
+        [PexMethod]
+        /// Summary
+        /// Time: 4 min 41 sec
+        /// Pattern: Commutative Diagram
+        /// Generalizes ToReverseArrayTest and ToReverseArrayNoItemsTest (two unit tests) into one PUT
+        public void ToReverseArrayTest([PexAssumeUnderTest] SinglyLinkedList<int> sll)
         {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
-
-            int[] expected = { 30, 20, 10 };
-
-            CollectionAssert.AreEqual(expected, sll.ToReverseArray());
+            int[] initial = sll.ToArray();
+            ArrayList arr = new ArrayList(initial);
+            arr.Reverse();
+            CollectionAssert.AreEqual(arr.ToArray(), sll.ToReverseArray());
+            PexAssert.AreEqual(arr.Count, sll.Count);
         }
 
         /// <summary>
         /// Check to see that calling ToReverseArray on a SinglyLinkedListCollection with no items raises the correct
         /// exception.
         /// </summary>
-        [TestMethod]
-        public void ToReverseArrayNoItemsTest()
-        {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int>();
+        //[TestMethod]
+        //public void ToReverseArrayNoItemsTest()
+        //{
+        //    SinglyLinkedList<int> sll = new SinglyLinkedList<int>();
 
-            Assert.AreEqual(0, sll.ToReverseArray().Length);
-        }
+        //    Assert.AreEqual(0, sll.ToReverseArray().Length);
+        //}
 
         /// <summary>
         /// Check to see that the linked list is in the correct state when passing in an IEnumerable.
         /// </summary>
-        [TestMethod]
-        public void CopyConstructorTest()
-        {
-            List<string> collection = new List<string> { "Granville", "Barnett", "Luca", "Del", "Tongo" };
+        [PexMethod]
+        /// Summary
+        /// Time: 1 min 20 sec
+        /// Pattern: AAA, Constructor Test
+        public void CopyConstructorTest([PexAssumeUnderTest]List<string> collection)
+        {            
             SinglyLinkedList<string> actual = new SinglyLinkedList<string>(collection);
-
-            Assert.AreEqual(5, actual.Count);
+            PexAssert.AreEqual(collection.Count, actual.Count);
         }
     }
 }

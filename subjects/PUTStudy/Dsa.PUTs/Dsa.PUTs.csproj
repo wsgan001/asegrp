@@ -92,8 +92,38 @@
     <Compile Include="Algorithms\StringsTest.ReverseWordsPUT.g.cs">
       <DependentUpon>StringsTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataStructures\SinglyLinkedListTest.AddAfterEmptyNullNodeTest.g.cs">
+      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructures\SinglyLinkedListTest.AddAfterMiddleNodeTest.g.cs">
+      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructures\SinglyLinkedListTest.AddAfterOnlyOneNodeInListTest.g.cs">
+      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructures\SinglyLinkedListTest.AddAfterTailTest.g.cs">
+      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructures\SinglyLinkedListTest.AddBeforeEmptyListTest.g.cs">
+      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructures\SinglyLinkedListTest.AddBeforeHeadTest.g.cs">
+      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructures\SinglyLinkedListTest.CopyConstructorTest.g.cs">
+      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataStructures\SinglyLinkedListTest.cs" />
-    <Compile Include="DataStructures\SinglyLinkedListTest.RemoveFirstTest.g.cs">
+    <Compile Include="DataStructures\SinglyLinkedListTest.GetEnumeratorTest.g.cs">
+      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructures\SinglyLinkedListTest.RemoveMiddleItemTest.g.cs">
+      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructures\SinglyLinkedListTest.RemoveWithNoMatchTest.g.cs">
+      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructures\SinglyLinkedListTest.ToReverseArrayTest.g.cs">
       <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Factories\OrderedSetFactory.cs" />
