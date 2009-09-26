@@ -576,41 +576,32 @@ namespace Dsa.Test.DataStructures
         /// Check to make sure that adding before tail results in the expected object state.
         /// </summary>
         [PexMethod]
+        /// Summary
+        /// Time: 12 min 35 sec
+        /// Pattern: Round Trip
+        /// Combines two tests AddBeforeTailTest and AddBeforeMiddleNodeTest into one single PUT
         public void AddBeforeTailTest([PexAssumeUnderTest]SinglyLinkedList<int> sll, int positionToAdd, int elemToAdd)
         {
+            PexAssume.IsTrue(sll.Count > 3);
             PexAssume.IsTrue(positionToAdd >= 0 && positionToAdd < sll.Count);
-
-            //Add it to the position specified
-            //SinglyLinkedList<int> nextnode = sll.Head.Next;
-            //for (int i = 0; i < positionToAdd; i++)
-            //{
-            //    nextnode = nextnode.Next;
-            //}
-
-            //sll.AddBefore(nextnode, elemToAdd);
-            //nextnode = sll.Head.Next;
-            //for (int i = 0; i < positionToAdd - 1; i++)
-            //{
-            //    nextnode = nextnode.Next;
-            //}
-
-            //Assert.AreEqual(elemToAdd, sll.Head.Next.Next.Next.Value);
+            sll.AddBefore(sll.Head.Next.Next.Next, elemToAdd);
+            PexAssert.AreEqual(elemToAdd, sll.Head.Next.Next.Next.Value);
         }
 
         /// <summary>
         /// Check to see that AddBefore a middle node results in the expected state of the SinglyLinkedListCollection.
         /// </summary>
-        [TestMethod]
-        public void AddBeforeMiddleNodeTest()
-        {
-            SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
+        //[TestMethod]
+        //public void AddBeforeMiddleNodeTest()
+        //{
+        //    SinglyLinkedList<int> sll = new SinglyLinkedList<int> {10, 20, 30};
 
-            sll.AddBefore(sll.Head.Next, 15);
+        //    sll.AddBefore(sll.Head.Next, 15);
 
-            Assert.AreEqual(15, sll.Head.Next.Value);
-            Assert.AreEqual(20, sll.Head.Next.Next.Value);
-            Assert.AreEqual(4, sll.Count);
-        }
+        //    Assert.AreEqual(15, sll.Head.Next.Value);
+        //    Assert.AreEqual(20, sll.Head.Next.Next.Value);
+        //    Assert.AreEqual(4, sll.Count);
+        //}
 
         /// <summary>
         /// Check to see that the correct exception is raised when calling AddBefore on a SinglyLinkedListCollection with no nodes.
