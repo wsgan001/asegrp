@@ -102,16 +102,29 @@
 
 \maketitle
 \begin{abstract}
-
+An important aspect of software maintenance is to ensure that the
+changes made in the new version of software do not introduce
+any unwanted side effects. Regression testing is a testing 
+methodology that aims at exposing such unwanted side effects introduced
+in the new version of software. In this paper, we present
+a novel scalable approach that automatically generates regression 
+tests without requiring any manual efforts. Our approach
+generates parameterized unit tests via mining dynamic traces recorded during program executions.
+Our approach next uses dynamic symbolic execution to generate regression
+tests that achieve a high coverage of the code under test. In our evaluations, 
+we show that our approach records $\approx$ 1.5GB of dynamic traces and 
+generates $\approx$ 500,000 regression tests on ten .NET 2.0 framework base class libraries. 
+These numbers show that our approach is scalable and can be used in practice to deal with large real-world applications.
 \end{abstract}
 
 \input{introduction}
-%\input{background}
+\input{background}
 %\input{example}
 \input{approach}
 \input{eval}
 %\input{related}
 %\input{discussion}
+\input{conclusion}
 
 \bibliographystyle{abbrv}
 \bibliography{ICSEIndustry}
