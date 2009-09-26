@@ -45,7 +45,6 @@
     <Compile Include="Algorithms\SetsTest.cs" />
     <Compile Include="Algorithms\SortingTest.cs" />
     <Compile Include="Algorithms\StringsTest.cs" />
-<<<<<<< .mine
     <Compile Include="DataStructures\AvlTreeNodeTest.cs" />
     <Compile Include="DataStructures\AvlTreeTest.cs" />
     <Compile Include="DataStructures\BinarySearchTreeTest.cs" />
@@ -54,78 +53,11 @@
     <Compile Include="DataStructures\DoublyLinkedListNodeTest.cs" />
     <Compile Include="DataStructures\DoublyLinkedListTest.cs" />
     <Compile Include="DataStructures\HeapTest.cs" />
-    <Compile Include="DataStructures\OrderedSetTest.cs" />
     <Compile Include="DataStructures\PriorityQueueTest.cs" />
     <Compile Include="DataStructures\SinglyLinkedListNodeTest.cs" />
-=======
-    <Compile Include="Algorithms\StringsTest.RepeatedWordCountPUT.g.cs">
-      <DependentUpon>StringsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\StringsTest.RepeatedWordCountWithPunctuationTest.g.cs">
-      <DependentUpon>StringsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\StringsTest.ReverseWordsPUT.g.cs">
-      <DependentUpon>StringsTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\BinarySearchTreeTest.cs" />
-    <Compile Include="DataStructures\BinarySearchTreeTest.FindParentLeftSubTreeTest.g.cs">
-      <DependentUpon>BinarySearchTreeTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\BinarySearchTreeTest.FindParentNoItemsInBstTest.g.cs">
-      <DependentUpon>BinarySearchTreeTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\BinarySearchTreeTest.FindParentRootNodeTest.g.cs">
-      <DependentUpon>BinarySearchTreeTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\BinarySearchTreeTest.RemoveNodeNotFoundTest.g.cs">
-      <DependentUpon>BinarySearchTreeTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\BinarySearchTreeTest.RemoveNodeWithBothSubtreesTest.g.cs">
-      <DependentUpon>BinarySearchTreeTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\BinarySearchTreeTest.RemoveNodeWithLeftSubtreeOnlyChildGreaterThanOrEqualToParentTest.g.cs">
-      <DependentUpon>BinarySearchTreeTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataStructures\OrderedSetTest.cs" />
-    <Compile Include="DataStructures\PriorityQueueTest.cs" />
-    <Compile Include="DataStructures\SinglyLinkedListNodeTest.cs" />
-    <Compile Include="DataStructures\SinglyLinkedListNodeTest.NextTest.g.cs">
-      <DependentUpon>SinglyLinkedListNodeTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListNodeTest.ValueIntTest.g.cs">
-      <DependentUpon>SinglyLinkedListNodeTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListNodeTest.ValueStringTest.g.cs">
-      <DependentUpon>SinglyLinkedListNodeTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.AddAfterEmptyNullNodeTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.AddAfterMiddleNodeTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.AddAfterOnlyOneNodeInListTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.AddAfterTailTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.AddBeforeEmptyListTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.AddBeforeHeadTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.AddBeforeTailTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.CopyConstructorTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
->>>>>>> .r227
     <Compile Include="DataStructures\SinglyLinkedListTest.cs" />
     <Compile Include="Factories\CollectionFactory.cs" />
-    <Compile Include="Factories\HashSetFactory.cs" />
     <Compile Include="Factories\HashSetFactory.cs" />
     <Compile Include="Factories\OrderedSetFactory.cs" />
     <Compile Include="Factories\PriorityQueueFactory.cs" />
