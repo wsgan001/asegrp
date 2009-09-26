@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuickGraph</name>
+    </assembly>
+    <members>
+        <member name="T:QuickGraph.Vertex">
+            <summary>
+            A Graph Vertex.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Vertex.#ctor">
+            <summary>
+            Builds a new vertex
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Vertex.CompareTo(System.Object)">
+            <summary>
+            Compares two vertices
+            </summary>
+            <param name="obj">vertex to compare</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">obj is not of type Vertex</exception>
+        </member>
+        <member name="T:QuickGraph.Edge">
+            <summary>
+            A graph edge
+            </summary>
+            <remarks>
+            This class represents a directed edge. It links
+            a source <seealso cref="T:QuickGraph.Vertex"/> to a target <seealso cref="T:QuickGraph.Vertex"/>.
+            
+            The source and target vertices can be accessed as properties.
+            </remarks>
+            <example>
+            This sample shows a basic usage of an edge:
+            <code>
+            Vertex v;   // vertex
+            foreach(Edge e in v.InEdges)
+            {
+                Console.WriteLine("{0} -&gt; {1}",
+            		e.Source.GetHashCode(),
+            		e.Target.GetHashCode()
+            		);
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:QuickGraph.Edge.#ctor(QuickGraph.Vertex,QuickGraph.Vertex)">
+            <summary>
+            Builds an edge from source to target
+            </summary>
+            <param name="source">Source vertex</param>
+            <param name="target">Target vertex</param>
+            <exception cref="T:System.ArgumentNullException">Source or Target is null</exception>
+        </member>
+        <member name="M:QuickGraph.Edge.CompareTo(System.Object)">
+            <summary>
+            Compares two edges
+            </summary>
+            <param name="obj">Edge to compare</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">obj is not of type Edge.</exception>
+        </member>
+        <member name="P:QuickGraph.Edge.Source">
+            <summary>
+            Source vertex
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Edge.Target">
+            <summary>
+            Target Vertex
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Providers.VertexAndEdgeProvider">
+            <summary>
+            Description résumée de VertexAndEdgeGenerator.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Providers.VertexAndEdgeProvider.ProvideVertex">
+            <summary>
+            Creates a new vertex
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QuickGraph.Providers.VertexAndEdgeProvider.ProvideEdge(QuickGraph.Vertex,QuickGraph.Vertex)">
+            <summary>
+            Creates a new edge
+            </summary>
+            <param name="u"></param>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuickGraph.Exceptions</name>
+    </assembly>
+    <members>
+        <member name="T:QuickGraph.Exceptions.NonAcyclicGraphException">
+            <summary>
+            Not a acyclic graph execption
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Exceptions.NonAcyclicGraphException.#ctor">
+            <summary>
+            Default consturctor
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Exceptions.NonAcyclicGraphException.#ctor(System.String)">
+            <summary>
+            Constructor with message
+            </summary>
+            <param name="name">message</param>
+        </member>
+        <member name="T:QuickGraph.Exceptions.VertexNotFoundException">
+            <summary>
+            Exception throwed when not finding a vertex.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Exceptions.VertexNotFoundException.#ctor(System.String)">
+            <summary>
+            Build a new exception
+            </summary>
+            <param name="name">vertex name</param>
+        </member>
+        <member name="T:QuickGraph.Exceptions.ParrallelEdgeNotAllowedException">
+            <summary>
+            ParrallelEdgeNotAllowedException.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Exceptions.ParrallelEdgeNotAllowedException.#ctor">
+            <summary>
+            Default construcotr
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Exceptions.ParrallelEdgeNotAllowedException.#ctor(System.String)">
+            <summary>
+            Constructor with message
+            </summary>
+            <param name="name">Additional message</param>
+        </member>
+    </members>
+</doc>

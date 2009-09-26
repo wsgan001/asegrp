@@ -1,0 +1,61 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGraph", "QuickGraph.csproj", "{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGraph.Algorithms", "..\QuickGraph.Algorithms\QuickGraph.Algorithms.csproj", "{EB884293-9316-41E5-A026-8A0F036E5887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGraph.Collections", "..\QuickGraph.Collections\QuickGraph.Collections.csproj", "{CBED5772-5130-4507-A992-56DBA9E4906A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGraph.Concepts", "..\QuickGraph.Concepts\QuickGraph.Concepts.csproj", "{247010DA-C052-46E6-8C02-BF616DF38960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGraph.Exceptions", "..\QuickGraph.Exceptions\QuickGraph.Exceptions.csproj", "{CA7F6FC6-CA25-4592-9133-C5CBDDA7E2BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGraph.Predicates", "..\QuickGraph.Predicates\QuickGraph.Predicates.csproj", "{5D4BF201-84BB-4C39-817C-58F4A8CD085D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGraph.Representations", "..\QuickGraph.Representations\QuickGraph.Representations.csproj", "{34EA963A-01E0-45A9-85E1-B2C85BF50FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGraphNUnit", "..\QuickGraphNUnit\QuickGraphNUnit.csproj", "{784A584E-4A0E-4420-BE9A-70094BC0FF01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB884293-9316-41E5-A026-8A0F036E5887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB884293-9316-41E5-A026-8A0F036E5887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB884293-9316-41E5-A026-8A0F036E5887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB884293-9316-41E5-A026-8A0F036E5887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBED5772-5130-4507-A992-56DBA9E4906A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBED5772-5130-4507-A992-56DBA9E4906A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBED5772-5130-4507-A992-56DBA9E4906A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBED5772-5130-4507-A992-56DBA9E4906A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247010DA-C052-46E6-8C02-BF616DF38960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247010DA-C052-46E6-8C02-BF616DF38960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247010DA-C052-46E6-8C02-BF616DF38960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247010DA-C052-46E6-8C02-BF616DF38960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA7F6FC6-CA25-4592-9133-C5CBDDA7E2BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA7F6FC6-CA25-4592-9133-C5CBDDA7E2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA7F6FC6-CA25-4592-9133-C5CBDDA7E2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA7F6FC6-CA25-4592-9133-C5CBDDA7E2BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D4BF201-84BB-4C39-817C-58F4A8CD085D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D4BF201-84BB-4C39-817C-58F4A8CD085D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D4BF201-84BB-4C39-817C-58F4A8CD085D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D4BF201-84BB-4C39-817C-58F4A8CD085D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34EA963A-01E0-45A9-85E1-B2C85BF50FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34EA963A-01E0-45A9-85E1-B2C85BF50FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34EA963A-01E0-45A9-85E1-B2C85BF50FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34EA963A-01E0-45A9-85E1-B2C85BF50FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{784A584E-4A0E-4420-BE9A-70094BC0FF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{784A584E-4A0E-4420-BE9A-70094BC0FF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{784A584E-4A0E-4420-BE9A-70094BC0FF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{784A584E-4A0E-4420-BE9A-70094BC0FF01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

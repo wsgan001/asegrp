@@ -1,0 +1,1508 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuickGraph.Collections</name>
+    </assembly>
+    <members>
+        <member name="T:QuickGraph.Collections.VertexCollection">
+            <summary>
+            A collection of elements of type Vertex
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.#ctor">
+            <summary>
+            Initializes a new empty instance of the VertexCollection class.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.#ctor(QuickGraph.Concepts.IVertex[])">
+            <summary>
+            Initializes a new instance of the VertexCollection class, containing elements
+            copied from an array.
+            </summary>
+            <param name="items">
+            The array whose elements are to be added to the new VertexCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.#ctor(QuickGraph.Collections.VertexCollection)">
+            <summary>
+            Initializes a new instance of the VertexCollection class, containing elements
+            copied from another instance of VertexCollection
+            </summary>
+            <param name="items">
+            The VertexCollection whose elements are to be added to the new VertexCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.AddRange(QuickGraph.Concepts.IVertex[])">
+            <summary>
+            Adds the elements of an array to the end of this VertexCollection.
+            </summary>
+            <param name="items">
+            The array whose elements are to be added to the end of this VertexCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.AddRange(QuickGraph.Collections.VertexCollection)">
+            <summary>
+            Adds the elements of another VertexCollection to the end of this VertexCollection.
+            </summary>
+            <param name="items">
+            The VertexCollection whose elements are to be added to the end of this VertexCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.Add(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Adds an instance of type Vertex to the end of this VertexCollection.
+            </summary>
+            <param name="value">
+            The Vertex to be added to the end of this VertexCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.Contains(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether a specfic Vertex value is in this VertexCollection.
+            </summary>
+            <param name="value">
+            The Vertex value to locate in this VertexCollection.
+            </param>
+            <returns>
+            true if value is found in this VertexCollection;
+            false otherwise.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.IndexOf(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Return the zero-based index of the first occurrence of a specific value
+            in this VertexCollection
+            </summary>
+            <param name="value">
+            The Vertex value to locate in the VertexCollection.
+            </param>
+            <returns>
+            The zero-based index of the first occurrence of the _ELEMENT value if found;
+            -1 otherwise.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.Insert(System.Int32,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Inserts an element into the VertexCollection at the specified index
+            </summary>
+            <param name="index">
+            The index at which the Vertex is to be inserted.
+            </param>
+            <param name="value">
+            The Vertex to insert.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.Remove(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the first occurrence of a specific Vertex from this VertexCollection.
+            </summary>
+            <param name="value">
+            The Vertex value to remove from this VertexCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that can iterate through the elements of this VertexCollection.
+            </summary>
+            <returns>
+            An object that implements System.Collections.IEnumerator.
+            </returns>        
+        </member>
+        <member name="P:QuickGraph.Collections.VertexCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the Vertex at the given index in this VertexCollection.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.VertexCollection.Enumerator">
+            <summary>
+            Type-specific enumeration class, used by VertexCollection.GetEnumerator.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.Enumerator.#ctor(QuickGraph.Collections.VertexCollection)">
+            <summary>
+            Builds a enumerator on the collection
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.Enumerator.MoveNext">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexCollection.Enumerator.Reset">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexCollection.Enumerator.Current">
+            <summary>
+            Current vertex
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexCollection.Enumerator.System#Collections#IEnumerator#Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.FilteredEdgeEnumerable">
+            <summary>
+            Description résumée de FilteredEdgeCollection.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredEdgeEnumerable.#ctor(QuickGraph.Collections.EdgeCollection,QuickGraph.Concepts.Predicates.IEdgePredicate)">
+            <summary>
+            Filtered edge collection
+            </summary>
+            <param name="ec">base collection</param>
+            <param name="ep">filtering predicate</param>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredEdgeEnumerable.GetEnumerator">
+            <summary>
+            Returns the enumerator
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredEdgeEnumerable.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            IEnumerable implementation
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.FilteredEdgeEnumerable.BaseCollection">
+            <summary>
+            Base collection
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.FilteredEdgeEnumerable.EdgePredicate">
+            <summary>
+            Edge predicate
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.FilteredEdgeEnumerable.Count">
+            <summary>
+            Enumeration count
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.FilteredEdgeEnumerable.Enumerator">
+            <summary>
+            Filetred enumerator class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredEdgeEnumerable.Enumerator.#ctor(QuickGraph.Collections.EdgeCollection.Enumerator,QuickGraph.Concepts.Predicates.IEdgePredicate)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <param name="p"></param>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredEdgeEnumerable.Enumerator.Reset">
+            <summary>
+            Positions the cursor before the first element.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredEdgeEnumerable.Enumerator.MoveNext">
+            <summary>
+            Moves the cursor to the next in-edge.
+            </summary>
+            <returns>True if successful, false if the iteration ended.</returns>
+        </member>
+        <member name="P:QuickGraph.Collections.FilteredEdgeEnumerable.Enumerator.Current">
+            <summary>
+            Current edge
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.FilteredEdgeEnumerable.Enumerator.System#Collections#IEnumerator#Current">
+            <summary>
+            IEnumerator implementation
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.VertexEdgesDictionary">
+            <summary>
+            A dictionary with keys of type Vertex and values of type EdgeCollection
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgesDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the VertexEdgesDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgesDictionary.Add(QuickGraph.Concepts.IVertex,QuickGraph.Collections.EdgeCollection)">
+            <summary>
+            Adds an element with the specified key and value to this VertexEdgesDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to add.
+            </param>
+            <param name="value">
+            The EdgeCollection value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgesDictionary.Contains(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexEdgesDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexEdgesDictionary.
+            </param>
+            <returns>
+            true if this VertexEdgesDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgesDictionary.ContainsKey(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexEdgesDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexEdgesDictionary.
+            </param>
+            <returns>
+            true if this VertexEdgesDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgesDictionary.ContainsValue(QuickGraph.Collections.EdgeCollection)">
+            <summary>
+            Determines whether this VertexEdgesDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The EdgeCollection value to locate in this VertexEdgesDictionary.
+            </param>
+            <returns>
+            true if this VertexEdgesDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgesDictionary.Remove(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the element with the specified key from this VertexEdgesDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexEdgesDictionary.Item(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Gets or sets the EdgeCollection associated with the given Vertex
+            </summary>
+            <param name="key">
+            The Vertex whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexEdgesDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this VertexEdgesDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexEdgesDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this VertexEdgesDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.VertexColorDictionary">
+            <summary>
+            A dictionary with keys of type Vertex and values of type GraphColor
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexColorDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the VertexColorDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexColorDictionary.Add(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.GraphColor)">
+            <summary>
+            Adds an element with the specified key and value to this VertexColorDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to add.
+            </param>
+            <param name="value">
+            The GraphColor value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexColorDictionary.Contains(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexColorDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexColorDictionary.
+            </param>
+            <returns>
+            true if this VertexColorDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexColorDictionary.ContainsKey(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexColorDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexColorDictionary.
+            </param>
+            <returns>
+            true if this VertexColorDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexColorDictionary.ContainsValue(QuickGraph.Concepts.GraphColor)">
+            <summary>
+            Determines whether this VertexColorDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The GraphColor value to locate in this VertexColorDictionary.
+            </param>
+            <returns>
+            true if this VertexColorDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexColorDictionary.Remove(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the element with the specified key from this VertexColorDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexColorDictionary.Item(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Gets or sets the GraphColor associated with the given Vertex
+            </summary>
+            <param name="key">
+            The Vertex whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexColorDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this VertexColorDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexColorDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this VertexColorDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.EdgeCollection">
+            <summary>
+            A collection of elements of type Edge
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.#ctor">
+            <summary>
+            Initializes a new empty instance of the EdgeCollection class.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.#ctor(QuickGraph.Concepts.IEdge[])">
+            <summary>
+            Initializes a new instance of the EdgeCollection class, containing elements
+            copied from an array.
+            </summary>
+            <param name="items">
+            The array whose elements are to be added to the new EdgeCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.#ctor(QuickGraph.Collections.EdgeCollection)">
+            <summary>
+            Initializes a new instance of the EdgeCollection class, containing elements
+            copied from another instance of EdgeCollection
+            </summary>
+            <param name="items">
+            The EdgeCollection whose elements are to be added to the new EdgeCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.AddRange(QuickGraph.Concepts.IEdge[])">
+            <summary>
+            Adds the elements of an array to the end of this EdgeCollection.
+            </summary>
+            <param name="items">
+            The array whose elements are to be added to the end of this EdgeCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.AddRange(QuickGraph.Collections.EdgeCollection)">
+            <summary>
+            Adds the elements of another EdgeCollection to the end of this EdgeCollection.
+            </summary>
+            <param name="items">
+            The EdgeCollection whose elements are to be added to the end of this EdgeCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.Add(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Adds an instance of type Edge to the end of this EdgeCollection.
+            </summary>
+            <param name="value">
+            The Edge to be added to the end of this EdgeCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.Contains(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Determines whether a specfic Edge value is in this EdgeCollection.
+            </summary>
+            <param name="value">
+            The Edge value to locate in this EdgeCollection.
+            </param>
+            <returns>
+            true if value is found in this EdgeCollection;
+            false otherwise.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.IndexOf(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Return the zero-based index of the first occurrence of a specific value
+            in this EdgeCollection
+            </summary>
+            <param name="value">
+            The Edge value to locate in the EdgeCollection.
+            </param>
+            <returns>
+            The zero-based index of the first occurrence of the _ELEMENT value if found;
+            -1 otherwise.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.Insert(System.Int32,QuickGraph.Concepts.IEdge)">
+            <summary>
+            Inserts an element into the EdgeCollection at the specified index
+            </summary>
+            <param name="index">
+            The index at which the Edge is to be inserted.
+            </param>
+            <param name="value">
+            The Edge to insert.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.Remove(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Removes the first occurrence of a specific Edge from this EdgeCollection.
+            </summary>
+            <param name="value">
+            The Edge value to remove from this EdgeCollection.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that can iterate through the elements of this EdgeCollection.
+            </summary>
+            <returns>
+            An object that implements System.Collections.IEnumerator.
+            </returns>        
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the Edge at the given index in this EdgeCollection.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.EdgeCollection.Enumerator">
+            <summary>
+            Type-specific enumeration class, used by EdgeCollection.GetEnumerator.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.Enumerator.#ctor(QuickGraph.Collections.EdgeCollection)">
+            <summary>
+            Create a new enumerator on the collection
+            </summary>
+            <param name="collection">collection to enumerate</param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.Enumerator.MoveNext">
+            <summary>
+            Moves cursor to next element.
+            </summary>
+            <returns>true if current is valid, false otherwize</returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeCollection.Enumerator.Reset">
+            <summary>
+            Resets the cursor to the position before the first element.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeCollection.Enumerator.Current">
+            <summary>
+            The current element. 
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.VertexVertexDictionary">
+            <summary>
+            A dictionary with keys of type Vertex and values of type Vertex
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexVertexDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the VertexVertexDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexVertexDictionary.Add(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Adds an element with the specified key and value to this VertexVertexDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to add.
+            </param>
+            <param name="value">
+            The Vertex value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexVertexDictionary.Contains(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexVertexDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexVertexDictionary.
+            </param>
+            <returns>
+            true if this VertexVertexDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexVertexDictionary.ContainsKey(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexVertexDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexVertexDictionary.
+            </param>
+            <returns>
+            true if this VertexVertexDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexVertexDictionary.ContainsValue(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexVertexDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The Vertex value to locate in this VertexVertexDictionary.
+            </param>
+            <returns>
+            true if this VertexVertexDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexVertexDictionary.Remove(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the element with the specified key from this VertexVertexDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexVertexDictionary.Item(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Gets or sets the Vertex associated with the given Vertex
+            </summary>
+            <param name="key">
+            The Vertex whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexVertexDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this VertexVertexDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexVertexDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this VertexVertexDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.VertexBuffer">
+            <summary>
+            A vertex buffer that acts like a stack.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexBuffer.#ctor">
+            <summary>
+            Constructs an empty buffer
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexBuffer.Peek">
+            <summary>
+            Returns the latest vertex in the buffer. Leaves it in the buffer.
+            </summary>
+            <returns>Latest vertex</returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexBuffer.Push(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Pushes a new vertex at the end of the buffer:
+            </summary>
+            <param name="v">Vertex to push</param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexBuffer.Pop">
+            <summary>
+            Removes the latest vertex.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexBuffer.Sort(System.Collections.IComparer)">
+            <summary>
+            Sorts the buffer using the comparer
+            </summary>
+            <param name="comparer">Comparer used to sort the buffer</param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexBuffer.GetEnumerator">
+            <summary>
+            Returns an enumerator over the buffer
+            </summary>
+            <returns>Buffer enumerator</returns>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexBuffer.Count">
+            <summary>
+            The number of vertices in the buffer
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.PriorithizedVertexBuffer">
+            <summary>
+            A Priorithized (with respect to distance) vertex buffer.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.PriorithizedVertexBuffer.#ctor(QuickGraph.Collections.VertexDoubleDictionary)">
+            <summary>
+            Builds a priorithzied vertex buffer and fills a vertex distance map.
+            </summary>
+            <param name="distances">vertex distance map</param>
+        </member>
+        <member name="M:QuickGraph.Collections.PriorithizedVertexBuffer.Update(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Updates the buffer order
+            </summary>
+            <param name="v">modified vertex</param>
+        </member>
+        <member name="M:QuickGraph.Collections.PriorithizedVertexBuffer.Push(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Push a new vertex on the buffer.
+            </summary>
+            <param name="v">new vertex</param>
+        </member>
+        <member name="T:QuickGraph.Collections.EdgeColorDictionary">
+            <summary>
+            A dictionary with keys of type Edge and values of type GraphColor
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeColorDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the EdgeGraphColorDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeColorDictionary.Add(QuickGraph.Concepts.IEdge,QuickGraph.Concepts.GraphColor)">
+            <summary>
+            Adds an element with the specified key and value to this EdgeGraphColorDictionary.
+            </summary>
+            <param name="key">
+            The Edge key of the element to add.
+            </param>
+            <param name="value">
+            The GraphColor value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeColorDictionary.Contains(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Determines whether this EdgeGraphColorDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Edge key to locate in this EdgeGraphColorDictionary.
+            </param>
+            <returns>
+            true if this EdgeGraphColorDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeColorDictionary.ContainsKey(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Determines whether this EdgeGraphColorDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Edge key to locate in this EdgeGraphColorDictionary.
+            </param>
+            <returns>
+            true if this EdgeGraphColorDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeColorDictionary.ContainsValue(QuickGraph.Concepts.GraphColor)">
+            <summary>
+            Determines whether this EdgeGraphColorDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The GraphColor value to locate in this EdgeGraphColorDictionary.
+            </param>
+            <returns>
+            true if this EdgeGraphColorDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeColorDictionary.Remove(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Removes the element with the specified key from this EdgeGraphColorDictionary.
+            </summary>
+            <param name="key">
+            The Edge key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeColorDictionary.Item(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Gets or sets the GraphColor associated with the given Edge
+            </summary>
+            <param name="key">
+            The Edge whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeColorDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this EdgeGraphColorDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeColorDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this EdgeGraphColorDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.VertexObjectDictionary">
+            <summary>
+            A dictionary with keys of type Vertex and values of type Object
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexObjectDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the VertexObjectDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexObjectDictionary.Add(QuickGraph.Concepts.IVertex,System.Object)">
+            <summary>
+            Adds an element with the specified key and value to this VertexObjectDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to add.
+            </param>
+            <param name="value">
+            The Object value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexObjectDictionary.Contains(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexObjectDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexObjectDictionary.
+            </param>
+            <returns>
+            true if this VertexObjectDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexObjectDictionary.ContainsKey(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexObjectDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexObjectDictionary.
+            </param>
+            <returns>
+            true if this VertexObjectDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexObjectDictionary.ContainsValue(System.Object)">
+            <summary>
+            Determines whether this VertexObjectDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The Object value to locate in this VertexObjectDictionary.
+            </param>
+            <returns>
+            true if this VertexObjectDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexObjectDictionary.Remove(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the element with the specified key from this VertexObjectDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexObjectDictionary.Item(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Gets or sets the Object associated with the given Vertex
+            </summary>
+            <param name="key">
+            The Vertex whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexObjectDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this VertexObjectDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexObjectDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this VertexObjectDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.VertexEdgeDictionary">
+            <summary>
+            A dictionary with keys of type Vertex and values of type Edge
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgeDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the VertexEdgeDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgeDictionary.Add(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.IEdge)">
+            <summary>
+            Adds an element with the specified key and value to this VertexEdgeDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to add.
+            </param>
+            <param name="value">
+            The Edge value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgeDictionary.Contains(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexEdgeDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexEdgeDictionary.
+            </param>
+            <returns>
+            true if this VertexEdgeDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgeDictionary.ContainsKey(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexEdgeDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexEdgeDictionary.
+            </param>
+            <returns>
+            true if this VertexEdgeDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgeDictionary.ContainsValue(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Determines whether this VertexEdgeDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The Edge value to locate in this VertexEdgeDictionary.
+            </param>
+            <returns>
+            true if this VertexEdgeDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexEdgeDictionary.Remove(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the element with the specified key from this VertexEdgeDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexEdgeDictionary.Item(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Gets or sets the Edge associated with the given Vertex
+            </summary>
+            <param name="key">
+            The Vertex whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexEdgeDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this VertexEdgeDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexEdgeDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this VertexEdgeDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.EdgeObjectDictionary">
+            <summary>
+            A dictionary with keys of type Edge and values of type Object
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeObjectDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the EdgeObjectDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeObjectDictionary.Add(QuickGraph.Concepts.IEdge,System.Object)">
+            <summary>
+            Adds an element with the specified key and value to this EdgeObjectDictionary.
+            </summary>
+            <param name="key">
+            The Edge key of the element to add.
+            </param>
+            <param name="value">
+            The Object value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeObjectDictionary.Contains(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Determines whether this EdgeObjectDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Edge key to locate in this EdgeObjectDictionary.
+            </param>
+            <returns>
+            true if this EdgeObjectDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeObjectDictionary.ContainsKey(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Determines whether this EdgeObjectDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Edge key to locate in this EdgeObjectDictionary.
+            </param>
+            <returns>
+            true if this EdgeObjectDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeObjectDictionary.ContainsValue(System.Object)">
+            <summary>
+            Determines whether this EdgeObjectDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The Object value to locate in this EdgeObjectDictionary.
+            </param>
+            <returns>
+            true if this EdgeObjectDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeObjectDictionary.Remove(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Removes the element with the specified key from this EdgeObjectDictionary.
+            </summary>
+            <param name="key">
+            The Edge key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeObjectDictionary.Item(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Gets or sets the Object associated with the given Edge
+            </summary>
+            <param name="key">
+            The Edge whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeObjectDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this EdgeObjectDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeObjectDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this EdgeObjectDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.DistanceComparer">
+            <summary>
+            Given a Distance map, compare two vertex distance
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.DistanceComparer.#ctor(QuickGraph.Collections.VertexDoubleDictionary)">
+            <summary>
+            Builds a vertex distance comparer
+            </summary>
+            <param name="distances"></param>
+        </member>
+        <member name="M:QuickGraph.Collections.DistanceComparer.Compare(System.Object,System.Object)">
+            <summary>
+            Compare the distance between vertex x and y
+            </summary>
+            <param name="x">First vertex</param>
+            <param name="y">Second vertex</param>
+            <returns>-1 if d[x]&lt;d[y], 0 if d[x] equals d[y] and +1 if d[x] &gt; d[y]</returns>
+        </member>
+        <member name="T:QuickGraph.Collections.VertexIntDictionary">
+            <summary>
+            A dictionary with keys of type Vertex and values of type int
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexIntDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the VertexIntDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexIntDictionary.Add(QuickGraph.Concepts.IVertex,System.Int32)">
+            <summary>
+            Adds an element with the specified key and value to this VertexIntDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to add.
+            </param>
+            <param name="value">
+            The int value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexIntDictionary.Contains(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexIntDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexIntDictionary.
+            </param>
+            <returns>
+            true if this VertexIntDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexIntDictionary.ContainsKey(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexIntDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexIntDictionary.
+            </param>
+            <returns>
+            true if this VertexIntDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexIntDictionary.ContainsValue(System.Int32)">
+            <summary>
+            Determines whether this VertexIntDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The int value to locate in this VertexIntDictionary.
+            </param>
+            <returns>
+            true if this VertexIntDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexIntDictionary.Remove(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the element with the specified key from this VertexIntDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexIntDictionary.Item(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Gets or sets the int associated with the given Vertex
+            </summary>
+            <param name="key">
+            The Vertex whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexIntDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this VertexIntDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexIntDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this VertexIntDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.VertexStringDictionary">
+            <summary>
+            A dictionary with keys of type Vertex and values of type String
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexStringDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the VertexStringDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexStringDictionary.Add(QuickGraph.Concepts.IVertex,System.String)">
+            <summary>
+            Adds an element with the specified key and value to this VertexStringDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to add.
+            </param>
+            <param name="value">
+            The String value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexStringDictionary.Contains(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexStringDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexStringDictionary.
+            </param>
+            <returns>
+            true if this VertexStringDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexStringDictionary.ContainsKey(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexStringDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexStringDictionary.
+            </param>
+            <returns>
+            true if this VertexStringDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexStringDictionary.ContainsValue(System.String)">
+            <summary>
+            Determines whether this VertexStringDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The String value to locate in this VertexStringDictionary.
+            </param>
+            <returns>
+            true if this VertexStringDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexStringDictionary.Remove(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the element with the specified key from this VertexStringDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexStringDictionary.Item(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Gets or sets the String associated with the given Vertex
+            </summary>
+            <param name="key">
+            The Vertex whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexStringDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this VertexStringDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexStringDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this VertexStringDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.VertexDoubleDictionary">
+            <summary>
+            A dictionary with keys of type Vertex and values of type Double
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexDoubleDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the VertexDistanceDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexDoubleDictionary.Add(QuickGraph.Concepts.IVertex,System.Double)">
+            <summary>
+            Adds an element with the specified key and value to this VertexDistanceDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to add.
+            </param>
+            <param name="value">
+            The Double value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexDoubleDictionary.Contains(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexDistanceDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexDistanceDictionary.
+            </param>
+            <returns>
+            true if this VertexDistanceDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexDoubleDictionary.ContainsKey(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Determines whether this VertexDistanceDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Vertex key to locate in this VertexDistanceDictionary.
+            </param>
+            <returns>
+            true if this VertexDistanceDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexDoubleDictionary.ContainsValue(System.Double)">
+            <summary>
+            Determines whether this VertexDistanceDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The Double value to locate in this VertexDistanceDictionary.
+            </param>
+            <returns>
+            true if this VertexDistanceDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.VertexDoubleDictionary.Remove(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the element with the specified key from this VertexDistanceDictionary.
+            </summary>
+            <param name="key">
+            The Vertex key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexDoubleDictionary.Item(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Gets or sets the Double associated with the given Vertex
+            </summary>
+            <param name="key">
+            The Vertex whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexDoubleDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this VertexDistanceDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.VertexDoubleDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this VertexDistanceDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.EdgeStringDictionary">
+            <summary>
+            A dictionary with keys of type Edge and values of type String
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeStringDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the EdgeStringDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeStringDictionary.Add(QuickGraph.Concepts.IEdge,System.String)">
+            <summary>
+            Adds an element with the specified key and value to this EdgeStringDictionary.
+            </summary>
+            <param name="key">
+            The Edge key of the element to add.
+            </param>
+            <param name="value">
+            The String value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeStringDictionary.Contains(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Determines whether this EdgeStringDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Edge key to locate in this EdgeStringDictionary.
+            </param>
+            <returns>
+            true if this EdgeStringDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeStringDictionary.ContainsKey(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Determines whether this EdgeStringDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Edge key to locate in this EdgeStringDictionary.
+            </param>
+            <returns>
+            true if this EdgeStringDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeStringDictionary.ContainsValue(System.String)">
+            <summary>
+            Determines whether this EdgeStringDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The String value to locate in this EdgeStringDictionary.
+            </param>
+            <returns>
+            true if this EdgeStringDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeStringDictionary.Remove(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Removes the element with the specified key from this EdgeStringDictionary.
+            </summary>
+            <param name="key">
+            The Edge key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeStringDictionary.Item(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Gets or sets the String associated with the given Edge
+            </summary>
+            <param name="key">
+            The Edge whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeStringDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this EdgeStringDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeStringDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this EdgeStringDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.EdgeDoubleDictionary">
+            <summary>
+            A dictionary with keys of type Edge and values of type Double
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeDoubleDictionary.#ctor">
+            <summary>
+            Initializes a new empty instance of the EdgeDoubleDictionary class
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeDoubleDictionary.Add(QuickGraph.Concepts.IEdge,System.Double)">
+            <summary>
+            Adds an element with the specified key and value to this EdgeDoubleDictionary.
+            </summary>
+            <param name="key">
+            The Edge key of the element to add.
+            </param>
+            <param name="value">
+            The Double value of the element to add.
+            </param>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeDoubleDictionary.Contains(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Determines whether this EdgeDoubleDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Edge key to locate in this EdgeDoubleDictionary.
+            </param>
+            <returns>
+            true if this EdgeDoubleDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeDoubleDictionary.ContainsKey(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Determines whether this EdgeDoubleDictionary contains a specific key.
+            </summary>
+            <param name="key">
+            The Edge key to locate in this EdgeDoubleDictionary.
+            </param>
+            <returns>
+            true if this EdgeDoubleDictionary contains an element with the specified key;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeDoubleDictionary.ContainsValue(System.Double)">
+            <summary>
+            Determines whether this EdgeDoubleDictionary contains a specific value.
+            </summary>
+            <param name="value">
+            The Double value to locate in this EdgeDoubleDictionary.
+            </param>
+            <returns>
+            true if this EdgeDoubleDictionary contains an element with the specified value;
+            otherwise, false.
+            </returns>
+        </member>
+        <member name="M:QuickGraph.Collections.EdgeDoubleDictionary.Remove(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Removes the element with the specified key from this EdgeDoubleDictionary.
+            </summary>
+            <param name="key">
+            The Edge key of the element to remove.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeDoubleDictionary.Item(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Gets or sets the Double associated with the given Edge
+            </summary>
+            <param name="key">
+            The Edge whose value to get or set.
+            </param>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeDoubleDictionary.Keys">
+            <summary>
+            Gets a collection containing the keys in this EdgeDoubleDictionary.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.EdgeDoubleDictionary.Values">
+            <summary>
+            Gets a collection containing the values in this EdgeDoubleDictionary.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.FilteredVertexEnumerable">
+            <summary>
+            Filtered vertex collectiohn
+            </summary>
+            <remarks>
+            This colleciton is used to do filtered iteration.
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredVertexEnumerable.#ctor(QuickGraph.Collections.VertexCollection,QuickGraph.Concepts.Predicates.IVertexPredicate)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="ec">base collection</param>
+            <param name="ep">predicate</param>
+            <exception cref="T:System.ArgumentNullException">ec or ep null</exception>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredVertexEnumerable.GetEnumerator">
+            <summary>
+            Returns a filtered enumerator
+            </summary>
+            <returns>enumerator</returns>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredVertexEnumerable.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            IEnumerable implementation
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.FilteredVertexEnumerable.BaseCollection">
+            <summary>
+            Base collection
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.FilteredVertexEnumerable.VertexPredicate">
+            <summary>
+            Predicate
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Collections.FilteredVertexEnumerable.Enumerator">
+            <summary>
+            Filtered enumerator
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredVertexEnumerable.Enumerator.#ctor(QuickGraph.Collections.VertexCollection.Enumerator,QuickGraph.Concepts.Predicates.IVertexPredicate)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="e">Base enumerator</param>
+            <param name="p">predicate</param>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredVertexEnumerable.Enumerator.Reset">
+            <summary>
+            Positions the cursor before the first element.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Collections.FilteredVertexEnumerable.Enumerator.MoveNext">
+            <summary>
+            Moves the cursor to the next Vertex.
+            </summary>
+            <returns>True if successful, false if the iteration ended.</returns>
+        </member>
+        <member name="P:QuickGraph.Collections.FilteredVertexEnumerable.Enumerator.Current">
+            <summary>
+            Current Vertex
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Collections.FilteredVertexEnumerable.Enumerator.System#Collections#IEnumerator#Current">
+            <summary>
+            IEnumerator implementation
+            </summary>
+        </member>
+    </members>
+</doc>

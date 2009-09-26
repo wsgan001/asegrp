@@ -1,0 +1,1189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuickGraph.Algorithms</name>
+    </assembly>
+    <members>
+        <member name="T:QuickGraph.Algorithms.ConnectedComponentsAlgorithm">
+            <summary>
+            Connected component computation
+            </summary>
+            <remarks>
+            <para>
+            The ConnectedComponentsAlgorithm functions compute the connected 
+            components of an undirected graph using a DFS-based approach. 
+            </para>
+            <para>
+            A connected component of an undirected graph is a set of vertices that 
+            are all reachable from each other. 
+            </para>
+            <para>
+            If the connected components need to be maintained while a graph is 
+            growing the disjoint-set based approach of function 
+            IncrementalComponentsAlgorithm is faster. 
+            For ``static'' graphs this DFS-based approach is faster. 
+            </para>
+            <para>
+            The output of the algorithm is recorded in the component 
+            property Components, which will contain numbers giving the 
+            component number assigned to each vertex. 
+            </para>
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ConnectedComponentsAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexListGraph)">
+            <summary>
+            
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ConnectedComponentsAlgorithm.StartVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            Used internally
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ConnectedComponentsAlgorithm.DiscoverVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            Used internally
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ConnectedComponentsAlgorithm.Compute">
+            <summary>		
+            Executes the algorithm
+            </summary>
+            <returns>The total number of components is the return value of the function</returns>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ConnectedComponentsAlgorithm.VisitedGraph">
+            <summary>
+            Visited graph
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ConnectedComponentsAlgorithm.Components">
+            <summary>
+            Component map
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ConnectedComponentsAlgorithm.Count">
+            <summary>
+            Connected components count
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm">
+             <summary>
+             Performs a breadth-first traversal 
+             of a directed or undirected graph. 
+             </summary>
+             <remarks>
+             <para>
+             A breadth-first-search (BFS) traversal visits vertices that are closer to the 
+             source before visiting vertices that are further away. 
+             In this context ``distance'' is defined as the number of edges in the 
+             shortest path from the source vertex. 
+             </para>
+             <para>
+             The BFS can be used to compute the shortest 
+             path from the source to all reachable vertices and the resulting 
+             shortest-path distances.
+             </para>
+             <para>
+             BFS uses two data structures to to implement the traversal: 
+             a color marker for each vertex and a queue. 
+             White vertices are undiscovered while gray vertices are discovered 
+             but have undiscovered adjacent vertices. Black vertices are discovered 
+             and are adjacent to only other black or gray vertices. 
+             </para>
+             <para>
+             The algorithm proceeds by removing a vertex u from the queue and 
+             examining each out-edge (u,v). If an adjacent vertex v is not already 
+             discovered, it is colored gray and placed in the queue. After all of 
+             the out-edges are examined, vertex u is colored black and the process 
+             is repeated. Pseudo-code for the BFS algorithm is a listed below. 
+             </para>
+             <code>
+             Graph G;
+             BFS(Vertex s)
+             {
+            		// initialize vertices
+                 foreach(Vertex u in G.Vertices)
+                 {
+            			Colors[u] = White; 
+            			InitializeVertex(u);						// event
+            		}
+            		
+            		Visit(s);
+            	}
+            	
+            	Visit(Vertex s)
+            	{
+            		Colors[s]=GraphColor.Gray;
+            		DiscoverVertex(s);								//event
+            		
+            		m_Q.Push(s);
+            		while (m_Q.Count != 0)
+            		{
+            			Vertex u = m_Q.Peek(); 
+            			m_Q.Pop();
+            			ExamineVertex(u);							// event
+             
+            			foreach(Edge e in u.OutEdges)
+            			{
+            				ExamineEdge(e);							// event
+            
+            				GraphColor vColor = Colors[e.Target];
+            				if (vColor == GraphColor.White)
+            				{
+            					TreeEdge(e);						// event
+            					DiscoverVertex(v);					// event
+            					Colors[v]=GraphColor.Gray;
+            					m_Q.Push(v);
+            				}
+            				else
+            				{
+            					NonTreeEdge(e);
+            					if (vColor == GraphColor.Gray)
+            					{
+            						GrayTarget(e);					// event
+            					}
+            					else
+            					{
+            						BlackTarget(e);					//event
+            					}
+            				}
+            			}
+            			Colors[u]=GraphColor.Black;
+            			FinishVertex(this, uArgs);
+            		}
+            	}
+            </code>
+             <para>This algorithm is directly inspired from the
+             BoostGraphLibrary implementation.
+             </para> 
+             </remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexListGraph)">
+            <summary>
+            BreadthFirstSearch searcher constructor
+            </summary>
+            <param name="g">Graph to visit</param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexListGraph,QuickGraph.Collections.VertexBuffer,QuickGraph.Collections.VertexColorDictionary)">
+            <summary>
+            BreadthFirstSearch searcher contructor
+            </summary>
+            <param name="g">Graph to visit</param>
+            <param name="Q">Vertex buffer</param>
+            <param name="colors">Vertex color map</param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.Compute(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Computes the bfs starting at s
+            </summary>
+            <param name="s">starting vertex</param>
+            <exception cref="T:System.ArgumentNullException">s is null</exception>
+            <remarks>
+            This method initializes the color map before appliying the visit.
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.Visit(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Computes the bfs starting at s without initalization.
+            </summary>
+            <param name="s">starting vertex</param>
+            <exception cref="T:System.ArgumentNullException">s is null</exception>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.RegisterVertexColorizerHandlers(QuickGraph.Concepts.Visitors.IVertexColorizerVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.RegisterDistanceRecorderHandlers(QuickGraph.Concepts.Visitors.IDistanceRecorderVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.RegisterTreeEdgeBuilderHandlers(QuickGraph.Concepts.Visitors.ITreeEdgeBuilderVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.RegisterPredecessorRecorderHandlers(QuickGraph.Concepts.Visitors.IPredecessorRecorderVisitor)">
+            <summary>
+            Registers the predecessors handler
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.VisitedGraph">
+            <summary>
+            Visited graph
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.Colors">
+            <summary>
+            Vertex color map
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.InitializeVertex">
+            <summary>
+            Invoked on every vertex before the start of the search
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.ExamineVertex">
+            <summary>
+            Invoked in each vertex as it is removed from the queue
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.DiscoverVertex">
+            <summary>
+            Invoked the first time the algorithm encounters vertex u. 
+            All vertices closer to the source vertex have been discovered, 
+            and vertices further from the source have not yet been discovered.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.ExamineEdge">
+            <summary>
+            Invoked on every out-edge of each vertex immediately after the vertex is removed from the queue.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.TreeEdge">
+            <summary>
+            Invoked (in addition to ExamineEdge()) if the edge is a tree edge. 
+            The target vertex of edge e is discovered at this time.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.NonTreeEdge">
+            <summary>
+            Invoked (in addition to examine_edge()) if the edge is not a tree 
+            edge.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.GrayTarget">
+            <summary>
+            Invoked (in addition to non_tree_edge()) if the target vertex is 
+            colored gray at the time of examination. The color gray indicates 
+            that the vertex is currently in the queue.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.BlackTarget">
+            <summary>
+            Invoked (in addition to NonTreeEdge()) if the target vertex is 
+            colored black at the time of examination. The color black indicates 
+            that the vertex is no longer in the queue.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm.FinishVertex">
+            <summary>
+            Invoked after all of the out edges of u have been examined 
+            and all of the adjacent vertices have been discovered. 
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Algorithms.Visitors.DistanceRecorderVisitor">
+            <summary>
+            Records the vertex distance
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.DistanceRecorderVisitor.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.DistanceRecorderVisitor.#ctor(QuickGraph.Collections.VertexIntDictionary)">
+            <summary>
+            Uses the dictionary to record the distance
+            </summary>
+            <param name="distances">Distance dictionary</param>
+            <exception cref="T:System.ArgumentNullException">distances is null</exception>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.DistanceRecorderVisitor.InitializeVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            d[u] = + intfy
+            </summary>
+            <param name="sender">Algorithm using the visitor</param>
+            <param name="args">Contains the vertex</param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.DistanceRecorderVisitor.DiscoverVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            d[u] = 0;
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.DistanceRecorderVisitor.TreeEdge(System.Object,QuickGraph.Concepts.EdgeEventArgs)">
+            <summary>
+            Let e = (u,v), d[ v ] = d[ u ] + 1; 
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Visitors.DistanceRecorderVisitor.Distances">
+            <summary>
+            Vertex distance dictionary
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm">
+            <summary>
+            Dijkstra shortest path algorithm.
+            </summary>
+            <remarks>
+            This algorithm solves the single-source shortest-paths problem 
+            on a weighted, directed or undirected graph for the case where all 
+            edge weights are nonnegative. It is strongly inspired from the
+            Boost Graph Library implementation.
+            
+            Use the Bellman-Ford algorithm for the case when some edge weights are 
+            negative. 
+            Use breadth-first search instead of Dijkstra's algorithm when all edge 
+            weights are equal to one. 
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexListGraph,QuickGraph.Collections.EdgeDoubleDictionary)">
+            <summary>
+            Builds a new Dijsktra searcher.
+            </summary>
+            <param name="g">The graph</param>
+            <param name="weights">Edge weights</param>
+            <exception cref="T:System.ArgumentNullException">Any argument is null</exception>
+            <remarks>This algorithm uses the <seealso cref="T:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm"/>.</remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.TreeEdge(System.Object,QuickGraph.Concepts.EdgeEventArgs)">
+            <summary>
+            Checks for edge relation.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.GrayTarget(System.Object,QuickGraph.Concepts.EdgeEventArgs)">
+            <summary>
+            Checks for edge relation.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.Compute(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Computes all the shortest path from s to the oter vertices
+            </summary>
+            <param name="s">Start vertex</param>
+            <exception cref="T:System.ArgumentNullException">s is null</exception>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.RegisterVertexColorizerHandlers(QuickGraph.Concepts.Visitors.IVertexColorizerVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.VisitedGraph">
+            <summary>
+            Visited graph
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.Colors">
+            <summary>
+            Vertex color map
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.InitializeVertex">
+            <summary>
+            Invoked on each vertex in the graph before the start of the 
+            algorithm.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.DiscoverVertex">
+            <summary>
+            Invoked on vertex v when the edge (u,v) is examined and v is WHITE. 
+            Since a vertex is colored GRAY when it is discovered, each 
+            reachable vertex is discovered exactly once. This is also when the 
+            vertex is inserted into the priority queue. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.ExamineVertex">
+            <summary>
+            Invoked on a vertex as it is removed from the priority queue and 
+            added to set S. At this point we know that (p[u],u) is a 
+            shortest-paths tree edge so 
+            d[u] = delta(s,u) = d[p[u]] + w(p[u],u). 
+            Also, the distances of the examined vertices is monotonically 
+            increasing d[u1] &lt;= d[u2] &lt;= d[un]. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.ExamineEdge">
+            <summary>
+            Invoked on each out-edge of a vertex immediately after it has 
+            been added to set S. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.EdgeRelaxed">
+            <summary>
+            invoked on edge (u,v) if d[u] + w(u,v) &lt; d[v]. The edge (u,v) 
+            that participated in the last relaxation for vertex v is an edge 
+            in the shortest paths tree. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.EdgeNotRelaxed">
+            <summary>
+            Invoked if the edge is not relaxed. <seealso cref="E:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.EdgeRelaxed"/>.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.FinishVertex">
+            <summary>
+            Invoked on a vertex after all of its out edges have been examined.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.Distances">
+            <summary>
+            Constructed distance map
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.Predecessors">
+            <summary>
+            Constructed predecessor map
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ShortestPath.DijkstraShortestPathAlgorithm.VertexQueue">
+            <summary>
+            Vertex priorithized queue. Used internally.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Algorithms.Visitors.PredecessorRecorderVisitor">
+            <summary>
+            Visitor that computes the vertices predecessors.
+            </summary>
+            <remarks>
+             The visitor applies to any algorithm that implements the 
+             <seealso cref="T:QuickGraph.Concepts.Algorithms.IPredecessorRecorderAlgorithm"/> model.
+             </remarks>
+             <example>
+             This sample shows how to use the find the predecessor map using a
+             <seealso cref="T:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm"/>:
+             <code>
+             Graph g = ...;
+             
+             // creating dfs algorithm
+             DepthFirstSearchAlgorithm dfs = new DepthFirstSearchAlgorithm(g);
+             
+             // creating predecessor visitor
+             PredecessorVisitor pred = new PredecessorVisitor();
+             
+             // registering event handlers
+             pred.RegisterHandlers(dfs);
+             
+             //executing...
+             dfs.Compute();
+             
+             // pred.Predecessors now contains the map of predecessors.
+             </code>
+             </example>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.PredecessorRecorderVisitor.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.PredecessorRecorderVisitor.#ctor(QuickGraph.Collections.VertexEdgeDictionary)">
+            <summary>
+            Constructor, uses the given predecessor map.
+            </summary>
+            <param name="predecessors">Predecessor map</param>
+            <exception cref="T:System.ArgumentNullException">predecessors is null</exception>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.PredecessorRecorderVisitor.InitializeVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            Initializes each vertex predecessor
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.PredecessorRecorderVisitor.TreeEdge(System.Object,QuickGraph.Concepts.EdgeEventArgs)">
+            <summary>
+            Let e = (u,v), p[v]=u
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Visitors.PredecessorRecorderVisitor.Predecessors">
+            <summary>
+            Vertex Edge predecessor map.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm">
+            <summary>
+            Summary description for UndirectedDepthFirstSearch.
+            </summary>
+            <remarks>
+            <para>This algorithm is directly inspired from the
+            BoostGraphLibrary implementation.
+            </para> 
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexAndEdgeListGraph)">
+            <summary>
+            Create a undirected dfs algorithm
+            </summary>
+            <param name="g">Graph to search on.</param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.Compute">
+            <summary>
+            Computes the dfs
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.Compute(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Computes the dfs starting at s
+            </summary>
+            <param name="s">start vertex</param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.Visit(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Visits vertex s
+            </summary>
+            <param name="u">vertex to visit</param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.RegisterPredecessorRecorderHandlers(QuickGraph.Concepts.Visitors.IPredecessorRecorderVisitor)">
+            <summary>
+            Registers the predecessors handler
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.RegisterTimeStamperHandlers(QuickGraph.Concepts.Visitors.ITimeStamperVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.RegisterVertexColorizerHandlers(QuickGraph.Concepts.Visitors.IVertexColorizerVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.VisitedGraph">
+            <summary>
+            Visited graph
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.Colors">
+            <summary>
+            Vertex color map
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.EdgeColors">
+            <summary>
+            Edge color map
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.InitializeVertex">
+            <summary>
+            Invoked on every vertex of the graph before the start of the graph 
+            search.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.StartVertex">
+            <summary>
+            Invoked on the source vertex once before the start of the search. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.DiscoverVertex">
+            <summary>
+            Invoked when a vertex is encountered for the first time. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.ExamineEdge">
+            <summary>
+            Invoked on every out-edge of each vertex after it is discovered. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.TreeEdge">
+            <summary>
+            Invoked on each edge as it becomes a member of the edges that form 
+            the search tree. If you wish to record predecessors, do so at this 
+            event point. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.BackEdge">
+            <summary>
+            Invoked on the back edges in the graph. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.UndirectedDepthFirstSearchAlgorithm.FinishVertex">
+            <summary>
+            Invoked on a vertex after all of its out edges have been added to 
+            the search tree and all of the adjacent vertices have been 
+            discovered (but before their out-edges have been examined). 
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm">
+            <summary>
+            The DepthFirstSearchAlgorithm performs a depth-first traversal of the 
+            vertices in a directed graph.
+            </summary>
+            <remarks>
+            <para>
+            When possible, a depth-first traversal chooses a vertex adjacent to 
+            the current vertex to visit next. If all adjacent vertices have 
+            already been discovered, or there are no adjacent vertices, 
+            then the algorithm backtracks to the last vertex that had undiscovered 
+            neighbors. Once all reachable vertices have been visited, the algorithm 
+            selects from any remaining undiscovered vertices and continues the 
+            traversal. The algorithm finishes when all vertices have been visited. 
+            </para>
+            <para>
+            Depth-first search is useful for categorizing edges in a graph, 
+            and for imposing an ordering on the vertices.
+            </para>
+            <para>
+            Similar to the <seealso cref="T:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm"/>, color 
+            markers are used to keep track of which vertices have been discovered. 
+            White marks vertices that have yet to be discovered, 
+            gray marks a vertex that is discovered but still has vertices adjacent 
+            to it that are undiscovered. A black vertex is discovered vertex that 
+            is not adjacent to any white vertices. 
+            </para>
+            <para>The main loop pseudo-code is as follows:
+            <code>
+            Graph G;
+            DFS(Vertex s)
+            {
+                // initialize vertex colors
+                foreach(Vertex v in G.Vertices)
+                {
+                    Colors[v] = White;
+                    InitializeVertex(v); // event
+                }
+            
+                // if there is a starting vertex, visit it
+                if (s != null)
+                {
+                    StartVertex(s); // event
+                    Visit(s);
+                }
+            
+                // visit all vertices, if not previously visited
+                foreach(Vertex v in G.Vertices)
+                {
+                    if (Colors[v] != White)
+                    {
+                        StartVertex(v); // event
+                        Visit(v);
+                    }
+                }
+            }
+            </code>
+            </para>
+            <para>The Visit method pseudo-code is as follows:
+            <code>
+            Visit( Vertex u)
+            {
+                Colors[u] = Gray;
+                DiscoverVertex(u); // event
+                
+                // examine edges
+                foreach(Edge e in u.OutEdges)
+                {
+            		ExamineEdge(e); // event
+            		if (Colors[u] == White)
+            		{
+            		    TreeEdge(e); // event
+            		    Visit(e.Target);
+            		}
+            		else if (Colors[u] == Gray)
+            		{
+            		    BackEdge(e); // event
+            		}
+            		else
+            			ForwardOrCrossEdge(e); // event
+                }
+                
+                Colors[u] = Black;
+                FinishVertex(u); // event
+            }
+            </code>
+            </para>
+            <para>In itself the algorithm does not take action, it is the user
+            job to attach handlers to the different events that take part during
+            the algorithm:
+            <list type="bullet">
+            <listheader>
+            	<term>Event</term>
+            	<description>When</description>
+            </listheader>
+            <item>
+            	<term>InitializeVertex</term>
+            	<description>Invoked on every vertex of the graph before the start of the graph 
+            search.</description>
+            </item>
+            <item>
+            	<term>StartVertex</term>
+            	<description>Invoked on the source vertex once before the start of the search.</description>
+            </item>
+            <item>
+            	<term>DiscoverVertex</term>
+            	<description>Invoked when a vertex is encountered for the first time. </description>
+            </item>
+            <item>
+            	<term>ExamineEdge</term>
+            	<description>Invoked on every out-edge of each vertex after it is discovered.</description>
+            </item>
+            <item>
+            	<term>TreeEdge</term>
+            	<description>Invoked on each edge as it becomes a member of the edges that form 
+            the search tree. If you wish to record predecessors, do so at this 
+            event point. </description>
+            </item>
+            <item>
+            	<term>BackEdge</term>
+            	<description>Invoked on the back edges in the graph. </description>
+            </item>
+            <item>
+            	<term>FowardOrCrossEdge</term>
+            	<description>Invoked on forward or cross edges in the graph. 
+            (In an undirected graph this method is never called.)</description>
+            </item>
+            <item>
+            	<term>FinishVertex</term>
+            	<description>Invoked on a vertex after all of its out edges have been added to 
+            the search tree and all of the adjacent vertices have been 
+            discovered (but before their out-edges have been examined).</description>
+            </item>
+            </list>
+            </para>
+            <para>
+            Predifined visitors, such as <seealso cref="T:QuickGraph.Concepts.Visitors.IPredecessorRecorderVisitor"/>
+            and <seealso cref="T:QuickGraph.Concepts.Visitors.ITimeStamperVisitor"/>
+            can be used with this algorithm.
+            </para>
+            <para>This algorithm is directly inspired from the
+            BoostGraphLibrary implementation.
+            </para> 
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexListGraph)">
+            <summary>
+            A depth first search algorithm on a directed graph
+            </summary>
+            <param name="g">The graph to traverse</param>
+            <exception cref="T:System.ArgumentNullException">g is null</exception>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexListGraph,QuickGraph.Collections.VertexColorDictionary)">
+            <summary>
+            A depth first search algorithm on a directed graph
+            </summary>
+            <param name="g">The graph to traverse</param>
+            <param name="colors">vertex color map</param>
+            <exception cref="T:System.ArgumentNullException">g or colors are null</exception>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.Compute">
+            <summary>
+            Execute the DFS search.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.Compute(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Execute the DFS starting with the vertex s
+            </summary>
+            <param name="s">Starting vertex</param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.Visit(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Does a depth first search on the vertex u
+            </summary>
+            <param name="u">vertex to explore</param>
+            <exception cref="T:System.ArgumentNullException">u cannot be null</exception>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.RegisterPredecessorRecorderHandlers(QuickGraph.Concepts.Visitors.IPredecessorRecorderVisitor)">
+            <summary>
+            Registers the predecessors handler
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.RegisterTimeStamperHandlers(QuickGraph.Concepts.Visitors.ITimeStamperVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.RegisterVertexColorizerHandlers(QuickGraph.Concepts.Visitors.IVertexColorizerVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.RegisterTreeEdgeBuilderHandlers(QuickGraph.Concepts.Visitors.ITreeEdgeBuilderVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.VisitedGraph">
+            <summary>
+            Visited graph
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.Colors">
+            <summary>
+            Vertex color map
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.QuickGraph#Concepts#Algorithms#IVertexColorizerAlgorithm#Colors">
+            <summary>
+            IVertexColorizerAlgorithm implementation
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.InitializeVertex">
+            <summary>
+            Invoked on every vertex of the graph before the start of the graph 
+            search.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.StartVertex">
+            <summary>
+            Invoked on the source vertex once before the start of the search. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.DiscoverVertex">
+            <summary>
+            Invoked when a vertex is encountered for the first time. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.ExamineEdge">
+            <summary>
+            Invoked on every out-edge of each vertex after it is discovered. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.TreeEdge">
+            <summary>
+            Invoked on each edge as it becomes a member of the edges that form 
+            the search tree. If you wish to record predecessors, do so at this 
+            event point. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.BackEdge">
+            <summary>
+            Invoked on the back edges in the graph. 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.ForwardOrCrossEdge">
+            <summary>
+            Invoked on forward or cross edges in the graph. 
+            (In an undirected graph this method is never called.) 
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm.FinishVertex">
+            <summary>
+            Invoked on a vertex after all of its out edges have been added to 
+            the search tree and all of the adjacent vertices have been 
+            discovered (but before their out-edges have been examined). 
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm">
+            <summary>
+            Bellman Ford shortest path algorithm.
+            </summary>
+            <remarks>
+            <para>
+            The Bellman-Ford algorithm solves the single-source shortest paths 
+            problem for a graph with both positive and negative edge weights. 
+            </para>
+            <para>
+            If you only need to solve the shortest paths problem for positive 
+            edge weights, Dijkstra's algorithm provides a more efficient 
+            alternative. 
+            </para>
+            <para>
+            If all the edge weights are all equal to one then breadth-first search 
+            provides an even more efficient alternative. 
+            </para>
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexAndEdgeListGraph,QuickGraph.Collections.EdgeDoubleDictionary)">
+            <summary>
+            Builds a new Bellman Ford searcher.
+            </summary>
+            <param name="g">The graph</param>
+            <param name="weights">Edge weights</param>
+            <exception cref="T:System.ArgumentNullException">Any argument is null</exception>
+            <remarks>This algorithm uses the <seealso cref="T:QuickGraph.Algorithms.Search.BreadthFirstSearchAlgorithm"/>.</remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.Compute(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Computes all the shortest path from s to the oter vertices
+            </summary>
+            <param name="s">Start vertex</param>
+            <remarks>
+            Initializes the predecessor and distance map.
+            </remarks>
+            <returns>true if successful, false if there was a negative cycle.</returns>
+            <exception cref="T:System.ArgumentNullException">s is null</exception>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.Compute">
+            <summary>
+            Applies the Bellman Ford algorithm
+            </summary>
+            <remarks>
+            Does not initialize the predecessor and distance map.
+            </remarks>
+            <returns>true if successful, false if there was a negative cycle.</returns>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.Compare(System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.Combine(System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="d"></param>
+            <param name="w"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.Relax(QuickGraph.Concepts.IEdge)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.VisitedGraph">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.Colors">
+            <summary>
+            Vertex color map
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.InitializeVertex">
+            <summary>
+            Invoked on each vertex in the graph before the start of the 
+            algorithm.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.ExamineEdge">
+            <summary>
+            Invoked on every edge in the graph |V| times.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.EdgeRelaxed">
+            <summary>
+            Invoked when the distance label for the target vertex is decreased. 
+            The edge that participated in the last relaxation for vertex v is 
+            an edge in the shortest paths tree.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.EdgeNotRelaxed">
+            <summary>
+             Invoked if the distance label for the target vertex is not 
+             decreased.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.EdgeMinimized">
+            <summary>
+             Invoked during the second stage of the algorithm, 
+             during the test of whether each edge was minimized. 
+             
+             If the edge is minimized then this function is invoked.
+            </summary>
+        </member>
+        <member name="E:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.EdgeNotMinimized">
+            <summary>
+            Invoked during the second stage of the algorithm, 
+            during the test of whether each edge was minimized. 
+            
+            If the edge was not minimized, this function is invoked. 
+            This happens when there is a negative cycle in the graph. 
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.Distances">
+            <summary>
+            Constructed distance map
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.Predecessors">
+            <summary>
+            Constructed predecessor map
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.ShortestPath.BellmanFordShortestPathAlgorithm.Weights">
+            <summary>
+            Edge weights
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Algorithms.StrongComponentsAlgorithm">
+            <summary>
+            Computes the graph strong components.
+            </summary>
+            <remarks>
+            The strong_components() functions compute the strongly connected 
+            components of a directed graph using Tarjan's algorithm based on DFS.
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.StrongComponentsAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexListGraph)">
+            <summary>
+            
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.StrongComponentsAlgorithm.DiscoverVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            Used internally
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.StrongComponentsAlgorithm.FinishVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            Used internally
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.StrongComponentsAlgorithm.Compute">
+            <summary>
+            Executes the algorithm
+            </summary>
+            <remarks>
+            The output of the algorithm is recorded in the component property 
+            Components, which will contain numbers giving the component ID 
+            assigned to each vertex. 
+            </remarks>
+            <returns>The number of components is the return value of the function.</returns>
+        </member>
+        <member name="P:QuickGraph.Algorithms.StrongComponentsAlgorithm.VisitedGraph">
+            <summary>
+            Visited graph
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.StrongComponentsAlgorithm.Components">
+            <summary>
+            Component map
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.StrongComponentsAlgorithm.Roots">
+            <summary>
+            Root map
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.StrongComponentsAlgorithm.DiscoverTimes">
+            <summary>
+            Vertex discory times
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Algorithms.Visitors.TimeStamperVisitor">
+            <summary>
+            Description résumée de TimeStamperVisitor.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.TimeStamperVisitor.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.TimeStamperVisitor.DiscoverVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            Store the current time in the discover dictionary and increment
+            the current time.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.Visitors.TimeStamperVisitor.FinishVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            Store the current time in the finish dictionary and increment
+            the current time.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Visitors.TimeStamperVisitor.DiscoverTimes">
+            <summary>
+            Vertex discover time dictionary
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Visitors.TimeStamperVisitor.FinishTimes">
+            <summary>
+            Vertex finish time dictionary
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.Visitors.TimeStamperVisitor.Time">
+            <summary>
+            Current time
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Algorithms.TopologicalSortAlgorithm">
+            <summary>
+            Topological sort of the graph.
+            </summary>
+            <remarks>
+            <para>
+            The topological sort algorithm creates a linear ordering of the 
+            vertices such that if edge (u,v) appears in the graph, then v comes 
+            before u in the ordering.
+            </para>
+            <para>
+            The graph must be a directed acyclic graph 
+            (DAG). The implementation consists mainly of a call to 
+            <see cref="T:QuickGraph.Algorithms.Search.DepthFirstSearchAlgorithm"/>.
+            </para>
+            <para>This algorithm is directly inspired from the
+            BoostGraphLibrary implementation.
+            </para> 
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Algorithms.TopologicalSortAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexListGraph)">
+            <summary>
+            Builds a new sorter
+            </summary>
+            <param name="g">Graph to sort</param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.TopologicalSortAlgorithm.#ctor(QuickGraph.Concepts.Traversals.IVertexListGraph,System.Collections.IList)">
+            <summary>
+            Builds a new sorter
+            </summary>
+            <param name="g">Graph to sort</param>
+            <param name="vertices">vertices list</param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.TopologicalSortAlgorithm.BackEdge(System.Object,QuickGraph.Concepts.EdgeEventArgs)">
+            <summary>
+            Delegate event that detects cycle. <seealso cref="T:QuickGraph.Concepts.EdgeHandler"/>.
+            </summary>
+            <param name="sender">DepthFirstSearch algorithm</param>
+            <param name="args">Edge that produced the error</param>
+            <exception cref="T:System.Exception">Will always throw an exception.</exception>
+        </member>
+        <member name="M:QuickGraph.Algorithms.TopologicalSortAlgorithm.FinishVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            Delegate that adds the vertex to the vertex list. <seealso cref="T:QuickGraph.Concepts.VertexHandler"/>.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Algorithms.TopologicalSortAlgorithm.Compute">
+            <summary>
+            Computes the topological sort and stores it in the list.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Algorithms.TopologicalSortAlgorithm.Compute(System.Collections.IList)">
+            <summary>
+            Computes the topological sort and stores it in the list.
+            </summary>
+            <param name="vertices">Vertex list that will contain the results</param>
+        </member>
+        <member name="P:QuickGraph.Algorithms.TopologicalSortAlgorithm.VisitedGraph">
+            <summary>
+            Visited vertex list
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Algorithms.TopologicalSortAlgorithm.SortedVertices">
+            <summary>
+            Sorted vertices list
+            </summary>
+        </member>
+    </members>
+</doc>

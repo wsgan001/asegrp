@@ -1,0 +1,220 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{784A584E-4A0E-4420-BE9A-70094BC0FF01}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>QuickGraphNUnit</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>QuickGraphNUnit</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <Name>nunit.framework</Name>
+      <HintPath>..\..\..\..\..\..\Program Files\NUnit V2.1\bin\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\QuickGraph.Algorithms\QuickGraph.Algorithms.csproj">
+      <Name>QuickGraph.Algorithms</Name>
+      <Project>{EB884293-9316-41E5-A026-8A0F036E5887}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickGraph.Collections\QuickGraph.Collections.csproj">
+      <Name>QuickGraph.Collections</Name>
+      <Project>{CBED5772-5130-4507-A992-56DBA9E4906A}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickGraph.Concepts\QuickGraph.Concepts.csproj">
+      <Name>QuickGraph.Concepts</Name>
+      <Project>{247010DA-C052-46E6-8C02-BF616DF38960}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickGraph.Exceptions\QuickGraph.Exceptions.csproj">
+      <Name>QuickGraph.Exceptions</Name>
+      <Project>{CA7F6FC6-CA25-4592-9133-C5CBDDA7E2BB}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickGraph.Predicates\QuickGraph.Predicates.csproj">
+      <Name>QuickGraph.Predicates</Name>
+      <Project>{5D4BF201-84BB-4C39-817C-58F4A8CD085D}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickGraph.Representations\QuickGraph.Representations.csproj">
+      <Name>QuickGraph.Representations</Name>
+      <Project>{34EA963A-01E0-45A9-85E1-B2C85BF50FB7}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickGraph\QuickGraph.csproj">
+      <Project>{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}</Project>
+      <Name>QuickGraph %28Solution Items\QuickGraph\QuickGraph%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Compile Include="Algorithms\Search\BreadthFirstSearchAlgorithmTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Algorithms\Search\DepthFirstSearchAlgorithmTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Algorithms\TopologicalSortAlgorithmTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generators\BidirectionalGraphGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generators\IGraphGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generators\IIncidenceGraphGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generators\IMutableEdgeListGraphGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generators\IMutableGraphGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generators\IMutableIncidenceGraphGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generators\IncidenceGraphGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Generators\IVertexListGraphGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GraphConcepts\GraphTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GraphConcepts\IncidenceGraphTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GraphConcepts\MutableEdgeListGraphTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GraphConcepts\MutableGraphTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GraphConcepts\MutableIncidenceGraphTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GraphConcepts\VertexListGraphTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Algorithms\ShortestPath\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

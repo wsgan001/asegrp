@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGraph", "QuickGraph.csproj", "{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickGraphTest", "..\QuickGraphTest\QuickGraphTest.csproj", "{FD4D1ABC-3E00-44A9-A391-5346F3068576}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}.Debug.ActiveCfg = Debug|.NET
+		{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}.Debug.Build.0 = Debug|.NET
+		{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}.Release.ActiveCfg = Release|.NET
+		{5F42D0C5-A525-4891-9A5D-3D8BE4A21626}.Release.Build.0 = Release|.NET
+		{FD4D1ABC-3E00-44A9-A391-5346F3068576}.Debug.ActiveCfg = Debug|.NET
+		{FD4D1ABC-3E00-44A9-A391-5346F3068576}.Debug.Build.0 = Debug|.NET
+		{FD4D1ABC-3E00-44A9-A391-5346F3068576}.Release.ActiveCfg = Release|.NET
+		{FD4D1ABC-3E00-44A9-A391-5346F3068576}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

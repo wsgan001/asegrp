@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="QuickGraphNUnit.dll" total="37" failures="0" not-run="0" date="2009-03-09" time="01:10:36">
+  <environment nunit-version="2.4.8.0" clr-version="2.0.50727.1433" os-version="Microsoft Windows NT 5.1.2600 Service Pack 3" platform="Win32NT" cwd="C:\Suresh\MicrosoftPex\Evaluation\Subjects\QuickGraph\LibrarySource\QuickGraphNUnit\bin\Debug" machine-name="SURESH" user="suresh_thummalapenta" user-domain="SURESH" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="QuickGraphNUnit.dll" success="True" time="0.859" asserts="0">
+    <results>
+      <test-suite name="QuickGraphNUnit" success="True" time="0.844" asserts="0">
+        <results>
+          <test-suite name="Algorithms" success="True" time="0.688" asserts="0">
+            <results>
+              <test-suite name="Search" success="True" time="0.609" asserts="0">
+                <results>
+                  <test-suite name="BreadthFirstAlgorithmSearchTest" success="True" time="0.563" asserts="0">
+                    <results>
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTest.GraphWithSelfEdges" executed="True" success="True" time="0.516" asserts="80509" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="DepthFirstAlgorithmSearchTest" success="True" time="0.047" asserts="0">
+                    <results>
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTest.GraphWithoutSelfEdges" executed="True" success="True" time="0.031" asserts="922" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTest.GraphWithSelfEdges" executed="True" success="True" time="0.016" asserts="922" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite name="TopologicalSortAlgorithmTest" success="True" time="0.063" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTest.Sort" executed="True" success="True" time="0.000" asserts="5" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTest.SortCyclic" executed="True" success="True" time="0.063" asserts="0" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite name="GraphConcepts" success="True" time="0.156" asserts="0">
+            <results>
+              <test-suite name="AdjacencyGraphTest" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.AdjacencyGraphTest.AllowParallelEdges" executed="True" success="True" time="0.000" asserts="2" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.AdjacencyGraphTest.IsDirected" executed="True" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionaleAdjacencyGraphTest" success="True" time="0.016" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleAdjacencyGraphTest.TestOutDegree" executed="True" success="True" time="0.016" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionaleMutableAdjacencyGraphTest" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableAdjacencyGraphTest.RemoveOutEdgeIf" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionaleMutableEdgeListGraphTest" success="True" time="0.016" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf" executed="True" success="True" time="0.016" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionaleMutableGraphTest" success="True" time="0.078" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdge" executed="True" success="True" time="0.000" asserts="2" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertex" executed="True" success="True" time="0.063" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexSourceTarget" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexTargetSource" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdge" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionalGraphTest" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalGraphTest.AllowParallelEdges" executed="True" success="True" time="0.000" asserts="2" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalGraphTest.IsDirected" executed="True" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionalVertexListGraphTest" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalVertexListGraphTest.Count" executed="True" success="True" time="0.000" asserts="1" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalVertexListGraphTest.Iteration" executed="True" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite name="IncidenceAdjacencyGraphTest" success="True" time="0.016" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceAdjacencyGraphTest.TestOutDegree" executed="True" success="True" time="0.016" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="IncidenceMutableAdjacencyGraphTest" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableAdjacencyGraphTest.RemoveOutEdgeIf" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="IncidenceMutableEdgeListGraphTest" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableEdgeListGraphTest.RemoveEdgeIf" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="IncidenceMutableGraphTest" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdge" executed="True" success="True" time="0.000" asserts="2" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertex" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexSourceTarget" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexTargetSource" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdge" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="IncidenceVertexListGraphTest" success="True" time="0.016" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceVertexListGraphTest.Count" executed="True" success="True" time="0.000" asserts="1" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceVertexListGraphTest.Iteration" executed="True" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

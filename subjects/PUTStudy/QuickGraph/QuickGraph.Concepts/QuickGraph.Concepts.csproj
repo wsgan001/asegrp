@@ -1,0 +1,200 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{247010DA-C052-46E6-8C02-BF616DF38960}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>QuickGraph.Concepts</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>QuickGraph.Concepts</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>QuickGraph.Concepts.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algorithms\IAlgorithm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Algorithms\IDistanceRecorderAlgorithm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Algorithms\IEdgeColorizerAlgorithm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Algorithms\IPredecessorRecorderAlgorithm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Algorithms\ITimeStamperAlgorithm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Algorithms\ITreeEdgeBuilderAlgorithm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Algorithms\IVertexColorizerAlgorithm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Delegates.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GraphColor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEdge.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFilteredGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IVertex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modifications\IEdgeMutableGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modifications\IMutableBidirectionalGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modifications\IMutableEdgeListGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modifications\IMutableIncidenceGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modifications\IVertexMutableGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modifications\RandomGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Predicates\IEdgePredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Predicates\IVertexPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Providers\IEdgeProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Providers\IVertexAndEdgeProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Providers\IVertexProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Traversals\IAdjacencyGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Traversals\IBidirectionalGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Traversals\IEdgeListGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Traversals\IIncidenceGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Traversals\IVertexAndEdgeListGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Traversals\IVertexListGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Visitors\IDistanceRecorderVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Visitors\IPredecessorRecorderVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Visitors\ITimeStamperVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Visitors\ITreeEdgeBuilderVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Visitors\IVertexColorizerVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

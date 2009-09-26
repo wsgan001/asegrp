@@ -1,0 +1,659 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuickGraph.Concepts</name>
+    </assembly>
+    <members>
+        <member name="T:QuickGraph.Concepts.Visitors.IVertexColorizerVisitor">
+            <summary>
+            A vertex colorizer visitor
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.IVertexColorizerVisitor.InitializeVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.IVertexColorizerVisitor.DiscoverVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.IVertexColorizerVisitor.FinishVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Predicates.IVertexPredicate">
+            <summary>
+            A predicate applied to a vertex
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Predicates.IVertexPredicate.Test(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Tests the predicate and returns the result
+            </summary>
+            <param name="v">Vertex to test</param>
+            <returns>true if successful</returns>
+            <exception cref="T:System.ArgumentNullException">v is null</exception>
+        </member>
+        <member name="T:QuickGraph.Concepts.Modifications.IVertexMutableGraph">
+            <summary>
+             Defines a graph that can be modified by adding or removing vertices.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.IGraph">
+            <summary>
+            The Graph concept contains a few requirements that are common to all 
+            the graph concepts. 
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Concepts.IGraph.IsDirected">
+            <summary>
+            Directed or undirected graph
+            </summary>
+            <value>
+            True if directed graph
+            </value>
+        </member>
+        <member name="P:QuickGraph.Concepts.IGraph.AllowParallelEdges">
+            <summary>
+            Parallel edge handling
+            </summary>
+            <remarks>
+            This describes whether the graph class allows the insertion of 
+            parallel edges (edges with the same source and target). 
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.IVertexMutableGraph.AddVertex">
+            <summary>
+            Add a new vertex to the graph.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.IVertexMutableGraph.RemoveVertex(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Remove u from the vertex set of the graph. 
+            Note that undefined behavior may result if there are edges 
+            remaining in the graph who's target is u. 
+            
+            Typically the ClearVertex function should be called first.
+            </summary>
+            <param name="u">vertex to clear</param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Providers.IVertexAndEdgeProvider">
+            <summary>
+            A edge and vertex generator
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Providers.IVertexProvider">
+            <summary>
+            A vertex generator object
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Providers.IVertexProvider.ProvideVertex">
+            <summary>
+            Generates a new vertex
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Providers.IEdgeProvider">
+            <summary>
+            A edge generator
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Providers.IEdgeProvider.ProvideEdge(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns an edge e=(u,v)
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.GraphColor">
+            <summary>
+            Colors used to mark the vertex and edges in the algorithms
+            </summary>
+        </member>
+        <member name="F:QuickGraph.Concepts.GraphColor.White">
+            <summary>
+            White color, usually describes describes vertex.
+            </summary>
+        </member>
+        <member name="F:QuickGraph.Concepts.GraphColor.Black">
+            <summary>
+            Black color, usually describes finished vertex.
+            </summary>
+        </member>
+        <member name="F:QuickGraph.Concepts.GraphColor.Gray">
+            <summary>
+            Gray color
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.GraphColorConverter">
+            <summary>
+            Utility class for graph color conversion
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.GraphColorConverter.Convert(QuickGraph.Concepts.GraphColor)">
+            <summary>
+            Converts GraphColor to System.Drawing.Color
+            </summary>
+            <param name="c">graph color to convert</param>
+            <returns>corresponding Color</returns>
+        </member>
+        <member name="T:QuickGraph.Concepts.Algorithms.IEdgeColorizerAlgorithm">
+            <summary>
+            Edge colorzing algorithm
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Algorithms.IAlgorithm">
+            <summary>
+            IAlgorithm interface.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Concepts.Algorithms.IAlgorithm.VisitedGraph">
+            <summary>
+            Visited graph object
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Concepts.Algorithms.IEdgeColorizerAlgorithm.EdgeColors">
+            <summary>
+            Edge color map
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Modifications.IMutableIncidenceGraph">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Modifications.IEdgeMutableGraph">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.IEdgeMutableGraph.ClearVertex(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Remove all edges to and from vertex u from the graph.
+            </summary>
+            <param name="u"></param>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.IEdgeMutableGraph.AddEdge(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Inserts the edge (u,v) into the graph, and returns the new edge.
+            </summary>
+            <remarks>
+            <para>
+            This method attemps to insert the edge (u,v) into the graph, 
+            returning the inserted edge or a parrallel edge. If the insertion
+            was not successful, the returned edge is null.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.IEdgeMutableGraph.RemoveEdge(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Remove the edge (u,v) from the graph. 
+            If the graph allows parallel edges this remove all occurrences of 
+            (u,v).
+            </summary>
+            <param name="u">source vertex</param>
+            <param name="v">target vertex</param>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.IEdgeMutableGraph.RemoveEdge(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Removes the edge e
+            </summary>
+            <param name="e">edge to remove</param>
+            <exception cref="T:System.ArgumentException">Edge not found</exception>
+        </member>
+        <member name="T:QuickGraph.Concepts.Traversals.IIncidenceGraph">
+            <summary>
+            Access to each vertex out-edges.
+            </summary>
+            <remarks>
+            <para>
+            The IncidenceGraph concept provides an interface for efficient access 
+            to the out-edges of each vertex in the graph. 
+            </para>
+            <seealso cref="T:QuickGraph.Concepts.IGraph"/>
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Concepts.Traversals.IIncidenceGraph.OutDegree(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns the number of out-degree edges of v
+            </summary>
+            <param name="v">vertex to test</param>
+            <returns>out-degree</returns>
+        </member>
+        <member name="M:QuickGraph.Concepts.Traversals.IIncidenceGraph.OutEdges(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns an iterable collection of the out edges of v
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.IMutableIncidenceGraph.RemoveOutEdgeIf(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.Predicates.IEdgePredicate)">
+            <summary>
+            Remove all the out-edges of vertex u for which the predicate pred 
+            returns true.
+            </summary>
+            <param name="u">vertex</param>
+            <param name="pred">edge predicate</param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Modifications.IMutableBidirectionalGraph">
+            <summary>
+            Description résumée de IMutableBidirectionalGraph.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Traversals.IBidirectionalGraph">
+            <summary>
+            Adds access to in-edges.
+            </summary>
+            <remarks>
+            <para>
+            The BidirectionalGraph concept refines IncidenceGraph and adds the 
+            requirement for efficient access to the in-edges of each vertex.
+            </para>
+            <para>
+            This concept is separated from IncidenceGraph because for directed 
+            graphs efficient access to in-edges typically requires more storage 
+            space, and many algorithms do not require access to in-edges. 
+            </para>
+            <para>
+            For undirected graphs this is not an issue, 
+            since the InEdges and OutEdges functions are the same, 
+            they both return the edges incident to the vertex. 
+            </para>
+            <para>
+            The InEdges() function is required to be constant time. 
+            The InDegree and Degree properties functions must be linear in the 
+            number of in-edges (for directed graphs) or incident edges 
+            (for undirected graphs). 
+            </para>
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Concepts.Traversals.IBidirectionalGraph.InDegree(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns the number of in-edges (for directed graphs) or the number 
+            of incident edges (for undirected graphs) of vertex v in graph g.
+            </summary>
+            <param name="v">vertex to test</param>
+            <returns>out-degree</returns>
+        </member>
+        <member name="M:QuickGraph.Concepts.Traversals.IBidirectionalGraph.Degree(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns the number of in-edges plus out-edges (for directed graphs) 
+            or the number of incident edges (for undirected graphs) of 
+            vertex v in graph g.
+            </summary>
+            <param name="v">vertex to test</param>
+            <returns>out-degree</returns>
+        </member>
+        <member name="M:QuickGraph.Concepts.Traversals.IBidirectionalGraph.InEdges(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Enumerable collection of in-edges
+            </summary>
+            <remarks>
+            <para>
+            Returns an enumerable collection of in-edges (for directed graphs) 
+            or incident edges (for undirected graphs) of vertex v in graph g. 
+            </para>
+            <para>
+            For both directed and undirected graphs, the target of an out-edge 
+            is required to be vertex v and the source is required to be a 
+            vertex that is adjacent to v. 
+            </para>
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.IMutableBidirectionalGraph.RemoveInEdgeIf(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.Predicates.IEdgePredicate)">
+            <summary>
+            Remove all the in-edges of vertex u for which the predicate pred 
+            returns true.
+            </summary>
+            <param name="u">vertex</param>
+            <param name="pred">edge predicate</param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Visitors.IPredecessorRecorderVisitor">
+            <summary>
+            Description résumée de IPredecessorRecorderVisitor.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.IPredecessorRecorderVisitor.InitializeVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            Initialize vertex ma^p
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.IPredecessorRecorderVisitor.TreeEdge(System.Object,QuickGraph.Concepts.EdgeEventArgs)">
+            <summary>
+            Predecessor record
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Modifications.RandomGraph">
+            <summary>
+            Description résumée de RandomGraph.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.RandomGraph.Vertex(QuickGraph.Concepts.Traversals.IVertexListGraph,System.Random)">
+            <summary>
+            Picks a vertex randomly in the vertex list
+            </summary>
+            <param name="g">vertex list</param>
+            <param name="rnd">random generator</param>
+            <returns>randomaly chosen vertex</returns>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.RandomGraph.Edge(QuickGraph.Concepts.Traversals.IEdgeListGraph,System.Random)">
+            <summary>
+            Picks an edge randomly in the edge list
+            </summary>
+            <param name="g">edge list</param>
+            <param name="rnd">random generator</param>
+            <returns>randomaly chosen edge</returns>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.RandomGraph.Graph(QuickGraph.Concepts.Modifications.IEdgeMutableGraph,System.Int32,System.Int32,System.Random,System.Boolean)">
+            <summary>
+            Generates a random graph
+            </summary>
+            <param name="g">Graph to fill</param>
+            <param name="V">number of vertices</param>
+            <param name="E">number of edges</param>
+            <param name="rnd">random generator</param>
+            <param name="selfEdges">self edges allowed</param>
+        </member>
+        <member name="T:QuickGraph.Concepts.IEdge">
+            <summary>
+            Edge interface
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Concepts.IEdge.Source">
+            <summary>
+            Source vertex
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Concepts.IEdge.Target">
+            <summary>
+            Target vertex
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Algorithms.ITreeEdgeBuilderAlgorithm">
+            <summary>
+            An algorithm that implement TreeEdge event.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Algorithms.ITreeEdgeBuilderAlgorithm.RegisterTreeEdgeBuilderHandlers(QuickGraph.Concepts.Visitors.ITreeEdgeBuilderVisitor)">
+             <summary>
+            
+             </summary>
+             <param name="vis"></param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Algorithms.IPredecessorRecorderAlgorithm">
+            <summary>
+            Defines an algorithm that support predecessor recording.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Algorithms.IPredecessorRecorderAlgorithm.RegisterPredecessorRecorderHandlers(QuickGraph.Concepts.Visitors.IPredecessorRecorderVisitor)">
+            <summary>
+            Register the predecessor handlers
+            </summary>
+            <param name="vis">visitor</param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Traversals.IAdjacencyGraph">
+            <summary>
+            AdjacentGraph concept
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Traversals.IAdjacencyGraph.AdjacentVertices(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns a enumerable collection of adjacent vertices
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.VertexEventArgs">
+            <summary>
+            Event argument that contains a <seealso cref="P:QuickGraph.Concepts.VertexEventArgs.Vertex"/>.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.VertexEventArgs.#ctor(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Builds a new event argument object
+            </summary>
+            <param name="v">vertex to store</param>
+        </member>
+        <member name="P:QuickGraph.Concepts.VertexEventArgs.Vertex">
+            <summary>
+            Vertex passed to the event
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.VertexHandler">
+            <summary>
+            Delegate that handles an event that sends a vertex.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.EdgeEventArgs">
+            <summary>
+            Event argument that contains an <seealso cref="T:QuickGraph.Concepts.IEdge"/>.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.EdgeEventArgs.#ctor(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Create a new event argument
+            </summary>
+            <param name="e">edge to store</param>
+        </member>
+        <member name="P:QuickGraph.Concepts.EdgeEventArgs.Edge">
+            <summary>
+            Edge passed to the event
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.EdgeHandler">
+            <summary>
+            Delegate that handles an edge that sends a vertex.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Algorithms.IDistanceRecorderAlgorithm">
+            <summary>
+            Defines an algorithm that supports vertex distance recording.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Algorithms.IDistanceRecorderAlgorithm.RegisterDistanceRecorderHandlers(QuickGraph.Concepts.Visitors.IDistanceRecorderVisitor)">
+            <summary>
+            Add event handlers to the corresponding events.
+            </summary>
+            <param name="vis">Distance recorder visitor</param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Traversals.IVertexAndEdgeListGraph">
+            <summary>
+            Description résumée de IVertexAndEdgeListGraph.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Traversals.IVertexListGraph">
+            <summary>
+            The VertexListGraph concept refines the Graph concept, 
+            and adds the requirement for efficient traversal of all the vertices 
+            in the graph. 
+            </summary>
+            <remarks>
+            <para>
+            One issue in the design of this concept is whether to include the 
+            refinement from the IncidenceGraph
+            concepts. 
+            </para>
+            <para>
+            The ability to traverse the vertices of a graph is orthogonal to 
+            traversing out-edges, so it would make sense to have a VertexListGraph 
+            concept that only includes vertex traversal. 
+            </para>
+            <para>
+            However, such a concept would no longer really be a graph, 
+            but would just be a set, and the STL already has concepts for dealing 
+            with such things. However, there are many BGL algorithms that need to 
+            traverse the vertices and out-edges of a graph, so for convenience a 
+            concept is needed that groups these requirements together, 
+            hence the VertexListGraph concept. 
+            </para>
+            <seealso cref="T:QuickGraph.Concepts.IGraph"/>
+            <seealso cref="T:QuickGraph.Concepts.Traversals.IIncidenceGraph"/>
+            </remarks>
+        </member>
+        <member name="P:QuickGraph.Concepts.Traversals.IVertexListGraph.VerticesCount">
+            <summary>
+            Returns the number of vertices in the graph.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Concepts.Traversals.IVertexListGraph.Vertices">
+            <summary>
+            Returns an iterator-range providing access to all the vertices in 
+            the graph.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Traversals.IEdgeListGraph">
+            <summary>
+            The EdgeListGraph concept refines the Graph concept, 
+            and adds the requirement for efficient access to all the edges in the 
+            graph. 
+            </summary>
+            <remarks>
+            <seealso cref="T:QuickGraph.Concepts.IGraph"/>
+            </remarks>
+        </member>
+        <member name="P:QuickGraph.Concepts.Traversals.IEdgeListGraph.EdgesCount">
+            <summary>
+            Returns the number of edges in the graph.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Concepts.Traversals.IEdgeListGraph.Edges">
+            <summary>
+            Returns an enumerator providing access to all the edges in the graph.
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Modifications.IMutableEdgeListGraph">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Modifications.IMutableEdgeListGraph.RemoveEdgeIf(QuickGraph.Concepts.Predicates.IEdgePredicate)">
+            <summary>
+            Remove all the edges from graph g for which the predicate pred
+            returns true.
+            </summary>
+            <param name="pred">edge predicate</param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Visitors.ITreeEdgeBuilderVisitor">
+            <summary>
+            Tree edge visitor
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.ITreeEdgeBuilderVisitor.TreeEdge(System.Object,QuickGraph.Concepts.EdgeEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Visitors.ITimeStamperVisitor">
+            <summary>
+            Description résumée de ITimeStamperVisitior.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.ITimeStamperVisitor.DiscoverVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.ITimeStamperVisitor.FinishVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Visitors.IDistanceRecorderVisitor">
+            <summary>
+            A distance recorder visitor
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.IDistanceRecorderVisitor.InitializeVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.IDistanceRecorderVisitor.DiscoverVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QuickGraph.Concepts.Visitors.IDistanceRecorderVisitor.TreeEdge(System.Object,QuickGraph.Concepts.EdgeEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:QuickGraph.Concepts.Predicates.IEdgePredicate">
+            <summary>
+            A predicate applied to an edge
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Predicates.IEdgePredicate.Test(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Tests the predicate and returns the result
+            </summary>
+            <param name="e">edge to test</param>
+            <returns>true if successful</returns>
+            <exception cref="T:System.ArgumentNullException">e is null</exception>
+        </member>
+        <member name="T:QuickGraph.Concepts.IVertex">
+            <summary>
+            Empty interface
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.IFilteredGraph">
+            <summary>
+            Filtered graph concept
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Concepts.IFilteredGraph.EdgePredicate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Concepts.IFilteredGraph.VertexPredicate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Algorithms.IVertexColorizerAlgorithm">
+            <summary>
+            Description résumée de IVertexColorizerAlgorithm.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Algorithms.IVertexColorizerAlgorithm.RegisterVertexColorizerHandlers(QuickGraph.Concepts.Visitors.IVertexColorizerVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+        <member name="P:QuickGraph.Concepts.Algorithms.IVertexColorizerAlgorithm.Colors">
+            <summary>
+            Vertex color map
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Concepts.Algorithms.ITimeStamperAlgorithm">
+            <summary>
+            Defines an algorithm that supports time stamping.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Concepts.Algorithms.ITimeStamperAlgorithm.RegisterTimeStamperHandlers(QuickGraph.Concepts.Visitors.ITimeStamperVisitor)">
+            <summary>
+            
+            </summary>
+            <param name="vis"></param>
+        </member>
+    </members>
+</doc>
