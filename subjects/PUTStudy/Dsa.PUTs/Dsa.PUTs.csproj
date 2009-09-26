@@ -41,48 +41,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\NumbersTest.cs" />
-    <Compile Include="Algorithms\NumbersTest.FibonacciPUT.g.cs">
-      <DependentUpon>NumbersTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\NumbersTest.GcdTest.g.cs">
-      <DependentUpon>NumbersTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\NumbersTest.IsPrimeTest.g.cs">
-      <DependentUpon>NumbersTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\NumbersTest.PowerExponentLessThanZeroPUT.g.cs">
-      <DependentUpon>NumbersTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\NumbersTest.PowerExponentLessThanZeroTest.g.cs">
-      <DependentUpon>NumbersTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\NumbersTest.ToBaseTwoNegativeIntPUT.g.cs">
-      <DependentUpon>NumbersTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\NumbersTest.ToHexNegativeIntPUT.g.cs">
-      <DependentUpon>NumbersTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\NumbersTest.ToHexPUT.g.cs">
-      <DependentUpon>NumbersTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\NumbersTest.ToOctalNegativeIntTest.g.cs">
-      <DependentUpon>NumbersTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Algorithms\SearchingTest.cs" />
-    <Compile Include="Algorithms\SearchingTest.ProbabilitySearchListPUT.g.cs">
-      <DependentUpon>SearchingTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\SearchingTest.ProbabilitySearchListPUT1.g.cs">
-      <DependentUpon>SearchingTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\SearchingTest.SequentialSearchItemPUT.g.cs">
-      <DependentUpon>SearchingTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Algorithms\SetsTest.cs" />
-    <Compile Include="Algorithms\SetsTest.PerumtationsEmptySetPUT.g.cs">
-      <DependentUpon>SetsTest.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Algorithms\SortingTest.cs" />
     <Compile Include="Algorithms\StringsTest.cs" />
+<<<<<<< .mine
+    <Compile Include="DataStructures\AvlTreeNodeTest.cs" />
+    <Compile Include="DataStructures\AvlTreeTest.cs" />
+    <Compile Include="DataStructures\BinarySearchTreeTest.cs" />
+    <Compile Include="DataStructures\BinaryTreeNodeTest.cs" />
+    <Compile Include="DataStructures\DequeTest.cs" />
+    <Compile Include="DataStructures\DoublyLinkedListNodeTest.cs" />
+    <Compile Include="DataStructures\DoublyLinkedListTest.cs" />
+    <Compile Include="DataStructures\HeapTest.cs" />
+    <Compile Include="DataStructures\OrderedSetTest.cs" />
+    <Compile Include="DataStructures\PriorityQueueTest.cs" />
+    <Compile Include="DataStructures\SinglyLinkedListNodeTest.cs" />
+=======
     <Compile Include="Algorithms\StringsTest.RepeatedWordCountPUT.g.cs">
       <DependentUpon>StringsTest.cs</DependentUpon>
     </Compile>
@@ -147,19 +122,10 @@
     <Compile Include="DataStructures\SinglyLinkedListTest.CopyConstructorTest.g.cs">
       <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
     </Compile>
+>>>>>>> .r227
     <Compile Include="DataStructures\SinglyLinkedListTest.cs" />
-    <Compile Include="DataStructures\SinglyLinkedListTest.GetEnumeratorTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.RemoveMiddleItemTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.RemoveWithNoMatchTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataStructures\SinglyLinkedListTest.ToReverseArrayTest.g.cs">
-      <DependentUpon>SinglyLinkedListTest.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Factories\CollectionFactory.cs" />
+    <Compile Include="Factories\HashSetFactory.cs" />
     <Compile Include="Factories\HashSetFactory.cs" />
     <Compile Include="Factories\OrderedSetFactory.cs" />
     <Compile Include="Factories\PriorityQueueFactory.cs" />
