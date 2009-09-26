@@ -1,13 +1,12 @@
 %
-%  $Description: Author guidelines and sample document in LaTeX 2.09$
+%  $Description: PerfTest$
 %
-%  $Author: yoonki $
+%  $Author: Yoonki Song $
 %  $Date: 2009/09/09 18:00:00 $
 %  $Revision: 1.4 $
 %
 
 \documentclass{sig-alternate}
-%\documentclass{acm_proc_article-sp}
 
 \input{macros}
 %-- Begin patch area for accents in 'Author Block' area - may be needed by some authors / but not all
@@ -27,13 +26,14 @@ Yoonki Song\hspace*{0.3in}Tao Xie\\
 
 %-------------------------------------------------------------------------
 \maketitle
-%\thispagestyle{fancy}
 
 \input{abstract}              % abstract
 \input{introduction}          % 1. Introduction
-\input{approach}              % 2. Approach
+\input{example}               % 2. Example
+\input{approach}              % 3. Approach
+\input{evaluation}            % 4. Evaluation
+\input{conclusion}            % 5. Conclusion
 
 \bibliographystyle{is-abbrv}
-%\bibliographystyle{abbrv}
-\bibliography{yoonki-references,yoonki}  % sigproc.bib is the name of the Bibliography in this case
+\bibliography{yoonki-references,yoonki}
 \end{document}
