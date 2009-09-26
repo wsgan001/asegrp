@@ -15,7 +15,7 @@ namespace Dsa.PUTs.Algorithms
     public sealed partial class NumbersTest
     {
         /**
-       * Generalize FibonacciTest
+       * Generalize FibonacciTest, FibonacciNumberLessThanZeroTest
        * Time: 00:06:25
        * Instrumentation issue = 0
        * Patterns: Manual output, AllowedException
@@ -33,10 +33,8 @@ namespace Dsa.PUTs.Algorithms
             actual.Fibonacci();
         }
 
-        /** FibonacciNumberLessThanZeroTest - generalization not required, the previous PUT covered this case for positive numbers*/
-
         /**
-        * Generalize FactorialTest
+        * Generalize FactorialTest, FactorialNumberLessThanZeroTest
         * Time: 00:05:19
         * Instrumentation issue = 0
         * Patterns: AAA, AllowedException
@@ -63,12 +61,8 @@ namespace Dsa.PUTs.Algorithms
             }
         }
 
-        /**FactorialNumberLessThanZeroTest - generalization not required, the previous PUT covered this case for positive numbers*/
-        
-        /**PowerNotZeroTest - generalization not required, the following PUT covered this case for positive numbers */
-
         /**
-         * Generalize PowerExponentLessThanZeroTest
+         * Generalize PowerExponentLessThanZeroTest, PowerNotZeroTest
          * Time: 00:03:20
          * Instrumentation issue = 0
          * Patterns: AAAA, AllowedException
@@ -125,10 +119,8 @@ namespace Dsa.PUTs.Algorithms
             PexAssert.AreEqual(first, Numbers.GreatestCommonDenominator(first, second));
         }
 
-        /* ToBaseTwoTest - generalization not required, the following PUT covered this case for positive numbers */
-
         /**
-        * Generalize ToBaseTwoNegativeIntTest
+        * Generalize ToBaseTwoNegativeIntTest, ToBaseTwoTest
         * Time: 00:07:34
         * Instrumentation issue = 0
         * Patterns: AAA, Reachability, CD
@@ -158,10 +150,8 @@ namespace Dsa.PUTs.Algorithms
             }
         }
 
-        /**ToOctalTest() - generalization not required, the previous PUT covered this case for positive numbers*/
-
         /**
-         * Generalize ToOctalNegativeIntTest
+         * Generalize ToOctalNegativeIntTest, ToOctalTest()
          * Time: 00:09:08
          * Instrumentation issue = 0
          * Patterns: AAA, Reachability,CD
@@ -253,7 +243,7 @@ namespace Dsa.PUTs.Algorithms
          * Comments: Forced stop
          **/
         [PexMethod]
-        public void IsPrimeTest(int value)
+        public void IsPrimePUT(int value)
         {
             bool expected = true;
             if (value == 0 || value == 1)
@@ -306,6 +296,29 @@ namespace Dsa.PUTs.Algorithms
          * Dsa.Test.Algorithms.NumbersTest.MaxValueHexadecimalTest() 
          * Dsa.Test.Algorithms.NumbersTest.MaxValueOctalTest()
          **/
+        [PexMethod]
+        public void MaxValueHexadecimalTest()
+        {
+            Assert.AreEqual(255, Numbers.MaxValue(Base.Hexadecimal, 2));
+        }
+
+        [PexMethod]
+        public void MaxValueBinaryTest()
+        {
+            Assert.AreEqual(1023, Numbers.MaxValue(Base.Binary, 10));
+        }
+
+        [PexMethod]
+        public void MaxValueOctalTest()
+        {
+            Assert.AreEqual(32767, Numbers.MaxValue(Base.Octal, 5));
+        }
+        
+        [PexMethod]
+        public void MaxValueDecimalTest()
+        {
+            Assert.AreEqual(9999, Numbers.MaxValue(Base.Decimal, 4));
+        }
 
     }
 }
