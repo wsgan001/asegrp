@@ -41,6 +41,7 @@ namespace QuickGraphNUnit.Algorithms.Search
 	using QuickGraph.Collections;
 	using QuickGraph.Representations;
     using Microsoft.Pex.Framework;
+    using QuickGraph.Providers;
 	
 	[TestFixture]
     [PexClass]
@@ -162,13 +163,25 @@ namespace QuickGraphNUnit.Algorithms.Search
 			m_Time = 0;
 		}
 
-        [PexMethod(MaxBranches = 20000)]
+        [PexMethod(MaxBranches = 160000)]
         /// Summary
         /// Time: 2 min 42 sec
         /// Pattern: AAAA, Parameterized stub
-		public void GraphWithSelfEdgesPUT([PexAssumeUnderTest]AdjacencyGraph g, [PexAssumeUnderTest] Random rand)
+        /// Pex Limitations - Not able to generate any test due to the following issue:
+        /// <boundary> maxbranches - 40000 (maximum number of branches exceeded)
+        /// [execution] Please notice: A branch in the method System.Collections.Hashtable+HashtableEnumerator.MoveNext was executed 5777 times;
+        /// please check that the code is not stuck in an infinite loop.
+        /// [test] (run 1) GraphWithoutSelfEdgesPUT01, pathboundsexceeded (duplicate)
+        /// [execution] Please notice: A branch in the method System.Collections.Hashtable+HashtableEnumerator.MoveNext was executed 4344 times;
+        /// please check that the code is not stuck in an infinite loop.
+        /// [test] (run 2) GraphWithoutSelfEdgesPUT01, pathboundsexceeded (duplicate)        
+		public void GraphWithSelfEdgesPUT()
 		{
-            RandomGraph.Graph(g, 20, 100, rand, true);
+            AdjacencyGraph g = new AdjacencyGraph(
+                new QuickGraph.Providers.VertexAndEdgeProvider(),
+                true);            
+
+            RandomGraph.Graph(g, 20, 100, new Random(), true);
 
 			DepthFirstSearchAlgorithm dfs = new DepthFirstSearchAlgorithm(g);
 			dfs.StartVertex += new VertexHandler( this.StartVertex);
@@ -193,13 +206,24 @@ namespace QuickGraphNUnit.Algorithms.Search
 			CheckDfs(g,dfs);
 		}
 
-        [PexMethod(MaxBranches = 20000)]
+        [PexMethod(MaxBranches = 160000, MaxRunsWithoutNewTests = 200)]
         /// Summary
         /// Time: 2 min 00 sec
         /// Pattern: AAAA, Parameterized stub
-        public void GraphWithoutSelfEdgesPUT([PexAssumeUnderTest]AdjacencyGraph g, [PexAssumeUnderTest] Random rand)
+        /// Pex Limitations - Not able to generate any test due to the following issue:
+        /// <boundary> maxbranches - 40000 (maximum number of branches exceeded)
+        /// [execution] Please notice: A branch in the method System.Collections.Hashtable+HashtableEnumerator.MoveNext was executed 5777 times;
+        /// please check that the code is not stuck in an infinite loop.
+        /// [test] (run 1) GraphWithoutSelfEdgesPUT01, pathboundsexceeded (duplicate)
+        /// [execution] Please notice: A branch in the method System.Collections.Hashtable+HashtableEnumerator.MoveNext was executed 4344 times;
+        /// please check that the code is not stuck in an infinite loop.
+        /// [test] (run 2) GraphWithoutSelfEdgesPUT01, pathboundsexceeded (duplicate)        
+        public void GraphWithoutSelfEdgesPUT()
 		{
-			RandomGraph.Graph(g,20,100,rand,false);
+            AdjacencyGraph g = new AdjacencyGraph(
+                new QuickGraph.Providers.VertexAndEdgeProvider(),
+                true);
+            RandomGraph.Graph(g,20,100,new Random(),false);
 
 			DepthFirstSearchAlgorithm dfs = new DepthFirstSearchAlgorithm(g);
 			dfs.StartVertex += new VertexHandler( this.StartVertex);

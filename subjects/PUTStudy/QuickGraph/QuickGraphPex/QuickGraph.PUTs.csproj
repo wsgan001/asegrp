@@ -134,44 +134,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />
-    <Compile Include="Algorithms\Search\BreadthFirstAlgorithmSearchTest.GraphWithSelfEdges.g.cs">
-      <DependentUpon>BreadthFirstSearchAlgorithmTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\Search\BreadthFirstAlgorithmSearchTest.GraphWithSelfEdgesPUT.g.cs">
-      <DependentUpon>BreadthFirstSearchAlgorithmTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Algorithms\Search\BreadthFirstSearchAlgorithmTest.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Algorithms\Search\DepthFirstAlgorithmSearchTest.GraphWithoutSelfEdges.g.cs">
-      <DependentUpon>DepthFirstSearchAlgorithmTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\Search\DepthFirstAlgorithmSearchTest.GraphWithoutSelfEdgesPUT.g.cs">
-      <DependentUpon>DepthFirstSearchAlgorithmTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\Search\DepthFirstAlgorithmSearchTest.GraphWithSelfEdges.g.cs">
-      <DependentUpon>DepthFirstSearchAlgorithmTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\Search\DepthFirstAlgorithmSearchTest.GraphWithSelfEdgesPUT.g.cs">
-      <DependentUpon>DepthFirstSearchAlgorithmTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Algorithms\Search\DepthFirstSearchAlgorithmTest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Algorithms\TopologicalSortAlgorithmTest.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Algorithms\TopologicalSortAlgorithmTest.Sort.g.cs">
-      <DependentUpon>TopologicalSortAlgorithmTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\TopologicalSortAlgorithmTest.SortCyclic.g.cs">
-      <DependentUpon>TopologicalSortAlgorithmTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\TopologicalSortAlgorithmTest.SortCyclicPUT.g.cs">
-      <DependentUpon>TopologicalSortAlgorithmTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Algorithms\TopologicalSortAlgorithmTest.SortPUT.g.cs">
-      <DependentUpon>TopologicalSortAlgorithmTest.cs</DependentUpon>
     </Compile>
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -204,137 +174,11 @@
     <Compile Include="Generators\IVertexListGraphGenerator.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GraphConcepts\AdjacencyGraphTest.IsDirected.g.cs">
-      <DependentUpon>GraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleAdjacencyGraphTest.TestOutDegree.g.cs">
-      <DependentUpon>IncidenceGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableAdjacencyGraphTest.RemoveOutEdgeIf.g.cs">
-      <DependentUpon>MutableIncidenceGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf.g.cs">
-      <DependentUpon>MutableEdgeListGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableGraphTest.AddEdge.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableGraphTest.AddEdgeSourceNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableGraphTest.AddEdgeTargetNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableGraphTest.AddRemoveVertex.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableGraphTest.AddRemoveVertexNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableGraphTest.ClearVertexSourceTarget.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableGraphTest.ClearVertexTargetSource.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableGraphTest.RemoveEdge.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionaleMutableGraphTest.RemoveEdgeNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionalGraphTest.IsDirected.g.cs">
-      <DependentUpon>GraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\BidirectionalVertexListGraphTest.IterationPUT.g.cs">
-      <DependentUpon>VertexListGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericAdjacencyGraphTest.TestOutDegree.g.cs">
-      <DependentUpon>IncidenceGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericGraphTest.IsDirected.g.cs">
-      <DependentUpon>GraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableAdjacencyGraphTest.RemoveOutEdgeIf.g.cs">
-      <DependentUpon>MutableIncidenceGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableEdgeListGraphTest.RemoveEdgeIf.g.cs">
-      <DependentUpon>MutableEdgeListGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableGraphTest.AddEdge.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableGraphTest.AddEdgeSourceNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableGraphTest.AddEdgeTargetNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableGraphTest.AddRemoveVertex.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableGraphTest.AddRemoveVertexNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableGraphTest.ClearVertexSourceTarget.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableGraphTest.ClearVertexTargetSource.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableGraphTest.RemoveEdge.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericMutableGraphTest.RemoveEdgeNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\GenericVertexListGraphTest.IterationPUT.g.cs">
-      <DependentUpon>VertexListGraphTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="GraphConcepts\GraphTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GraphConcepts\IncidenceAdjacencyGraphTest.TestOutDegree.g.cs">
-      <DependentUpon>IncidenceGraphTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="GraphConcepts\IncidenceGraphTest.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableAdjacencyGraphTest.RemoveOutEdgeIf.g.cs">
-      <DependentUpon>MutableIncidenceGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableEdgeListGraphTest.RemoveEdgeIf.g.cs">
-      <DependentUpon>MutableEdgeListGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableGraphTest.AddEdge.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableGraphTest.AddEdgeSourceNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableGraphTest.AddEdgeTargetNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableGraphTest.AddRemoveVertex.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableGraphTest.AddRemoveVertexNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableGraphTest.ClearVertexSourceTarget.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableGraphTest.ClearVertexTargetSource.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableGraphTest.RemoveEdge.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceMutableGraphTest.RemoveEdgeNotFound.g.cs">
-      <DependentUpon>MutableGraphTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GraphConcepts\IncidenceVertexListGraphTest.IterationPUT.g.cs">
-      <DependentUpon>VertexListGraphTest.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphConcepts\MutableEdgeListGraphTest.cs">
       <SubType>Code</SubType>

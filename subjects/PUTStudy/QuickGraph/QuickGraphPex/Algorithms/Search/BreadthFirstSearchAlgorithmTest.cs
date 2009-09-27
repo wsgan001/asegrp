@@ -226,43 +226,54 @@ namespace QuickGraphNUnit.Algorithms.Search
 			m_Distances = new VertexIntDictionary();
 		}        
 
-        [PexMethod(MaxBranches = 20000)]
+        [PexMethod(MaxBranches = 200000)]
         /// Summary
         /// Time: 8 min 17 sec        
         /// Pattern: AAAA, Parameterized stub
-        public void GraphWithSelfEdgesPUT([PexAssumeUnderTest] Random rnd, int loopBound, [PexAssumeUnderTest] AdjacencyGraph g)
+        /// Pex Limitations - Not able to generate any test due to the following issue:
+        /// <boundary> maxbranches - 40000 (maximum number of branches exceeded)
+        /// [execution] Please notice: A branch in the method System.Collections.Hashtable+HashtableEnumerator.MoveNext was executed 5777 times;
+        /// please check that the code is not stuck in an infinite loop.
+        /// [test] (run 1) GraphWithoutSelfEdgesPUT01, pathboundsexceeded (duplicate)
+        /// [execution] Please notice: A branch in the method System.Collections.Hashtable+HashtableEnumerator.MoveNext was executed 4344 times;
+        /// please check that the code is not stuck in an infinite loop.
+        /// [test] (run 2) GraphWithoutSelfEdgesPUT01, pathboundsexceeded (duplicate)        
+        public void GraphWithSelfEdgesPUT(int loopBound)
 		{
+            Random rnd = new Random();
+
             for (int i = 0; i < loopBound; ++i)
-				for (int j = 0; j < i*i; ++j) 
-				{					
-					RandomGraph.Graph(g,i,j,rnd,true);
+                for (int j = 0; j < i * i; ++j)
+                {
+                    AdjacencyGraph g = new AdjacencyGraph(new QuickGraph.Providers.VertexAndEdgeProvider(), true);
+                    RandomGraph.Graph(g, i, j, rnd, true);
 
-					BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm(g);
-					bfs.InitializeVertex += new VertexHandler( this.InitializeVertex);
-					bfs.DiscoverVertex += new VertexHandler(this.DiscoverVertex);
-					bfs.ExamineEdge += new EdgeHandler(this.ExamineEdge);
-					bfs.ExamineVertex += new VertexHandler(this.ExamineVertex);
-					bfs.TreeEdge += new EdgeHandler(this.TreeEdge);
-					bfs.NonTreeEdge += new EdgeHandler(this.NonTreeEdge);
-					bfs.GrayTarget += new EdgeHandler(this.GrayTarget);
-					bfs.BlackTarget += new EdgeHandler(this.BlackTarget);
-					bfs.FinishVertex += new VertexHandler(this.FinishVertex);
+                    BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm(g);
+                    bfs.InitializeVertex += new VertexHandler(this.InitializeVertex);
+                    bfs.DiscoverVertex += new VertexHandler(this.DiscoverVertex);
+                    bfs.ExamineEdge += new EdgeHandler(this.ExamineEdge);
+                    bfs.ExamineVertex += new VertexHandler(this.ExamineVertex);
+                    bfs.TreeEdge += new EdgeHandler(this.TreeEdge);
+                    bfs.NonTreeEdge += new EdgeHandler(this.NonTreeEdge);
+                    bfs.GrayTarget += new EdgeHandler(this.GrayTarget);
+                    bfs.BlackTarget += new EdgeHandler(this.BlackTarget);
+                    bfs.FinishVertex += new VertexHandler(this.FinishVertex);
 
-					Parents.Clear();
-					Distances.Clear();
-					m_CurrentDistance = 0;
-					m_SourceVertex = RandomGraph.Vertex(g, rnd);
+                    Parents.Clear();
+                    Distances.Clear();
+                    m_CurrentDistance = 0;
+                    m_SourceVertex = RandomGraph.Vertex(g, rnd);
 
-					foreach(IVertex v in g.Vertices)
-					{
-						Distances[v]=int.MaxValue;
-						Parents[v]=v;
-					}
-					Distances[SourceVertex]=0;
-					bfs.Compute(SourceVertex);
-		        
-					CheckBfs(g,bfs);
-				}
+                    foreach (IVertex v in g.Vertices)
+                    {
+                        Distances[v] = int.MaxValue;
+                        Parents[v] = v;
+                    }
+                    Distances[SourceVertex] = 0;
+                    bfs.Compute(SourceVertex);
+
+                    CheckBfs(g, bfs);
+                }
 		}
 		
 
