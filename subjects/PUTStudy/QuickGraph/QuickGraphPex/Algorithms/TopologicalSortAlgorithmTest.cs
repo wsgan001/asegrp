@@ -40,8 +40,10 @@ namespace QuickGraphNUnit.Algorithms
 	using System.Collections;
     using Microsoft.Pex.Framework;
     using Microsoft.Pex.Framework.Validation;
+    using QuickGraph;
 
 	[TestFixture]
+    [PexClass]
     public partial class TopologicalSortAlgorithmTest
 	{
         [PexMethod(MaxConstraintSolverTime = 2, MaxBranches = 20000)]

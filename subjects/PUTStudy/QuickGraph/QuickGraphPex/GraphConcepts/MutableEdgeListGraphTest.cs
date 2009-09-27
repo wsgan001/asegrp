@@ -38,8 +38,10 @@ namespace QuickGraphNUnit.GraphConcepts
 	using QuickGraph.Exceptions;
     using Microsoft.Pex.Framework;
     using QuickGraph.Representations;
+using Microsoft.Pex.Framework.Validation;
 
     [PexClass]
+    [TestFixture]
     public partial class GenericMutableEdgeListGraphTest
 	{
 		private IMutableEdgeListGraphGenerator m_Generator;
@@ -78,10 +80,11 @@ namespace QuickGraphNUnit.GraphConcepts
 		}
 
 		[PexMethod]
+        [PexAllowedException(typeof(ArgumentNullException))]
         /// Summary
         /// Time: 4 min 52 sec
         /// Pattern: Parameterized stub
-		public void RemoveEdgeIf([PexAssumeUnderTest]BidirectionalGraph g)
+		public void RemoveEdgeIf(BidirectionalGraph g)
 		{			
 			IEdge e = RandomGraph.Edge(g, Rnd);
 

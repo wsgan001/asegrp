@@ -63,6 +63,7 @@ namespace QuickGraphNUnit.GraphConcepts
 	}
 
     [PexClass]
+    [TestFixture]
     public partial class GenericMutableGraphTest
 	{
 		private IMutableGraphGenerator m_Generator;

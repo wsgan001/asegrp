@@ -38,6 +38,7 @@ namespace QuickGraphNUnit.GraphConcepts
     using QuickGraph.Representations;
 
     [PexClass]
+    [TestFixture]
     public partial class GenericMutableAdjacencyGraphTest
 	{
 		private IMutableIncidenceGraphGenerator m_Generator;

@@ -36,6 +36,7 @@ namespace QuickGraphNUnit.GraphConcepts
     using Microsoft.Pex.Framework.Domains;
 
     [PexClass]
+    [TestFixture]
     public partial class GenericGraphTest
 	{
 		private IGraphGenerator m_Generator;
