@@ -1,0 +1,150 @@
+\section{Systematic Procedure}
+\label{sec:procedure}
+
+We next present our systematic procedure for generalizing conventional unit tests into PUTs using illustrative examples from the NUnit framework. Our systematic procedure includes four major steps. First, we promote concrete values and other local variables in the conventional unit test as parameters for PUTs. Second, we identify the test pattern for the conventional unit test. Identification of test pattern help ease the process of test generalization. Third, we use supporting techniques such as factory methods and mock objects to assist Pex while exploring PUTs. Fourth, we add necessary assumptions to guide Pex in generating legal values for both primitive and non-primitive types. We first present the open source project used in our procedure and next explain each step in detail.
+
+%--------------------------------------------------------------------------------------------------------
+\textbf{Open Source Project.} We use an open source project, called NUnit~\cite{nunit}, for developing our systematic procedure. NUnit, a counterpart of JUnit for Java~\cite{JUnit}, is a widely used open source unit-testing framework for all .NET languages. NUnit is written in C\# and uses attribute-based programming model~\cite{TDD} through a variety of attributes such as \CodeIn{[TestFixture]} and \CodeIn{[Test]}. The rationale behind choosing NUnit for test generalization is the large number of manually written unit tests available with the project. The source code of the entire project includes 560 files and 53 KLOC. The test code includes 264 source files with 25 KLOC. This significant amount of test code makes this project a desirable subject for our empirical study. For the purpose of the study, we use the util package (\CodeIn{nunit.util.dll}), which is one of the core components of the framework. The util package includes 7.2 KLOC with 72 classes and 326 methods. The number of test files, test methods, and test LOC in the util package are 32, 335, and 3.4 KLOC, respectively. We chose the \CodeIn{util} package in the study for two reasons: (1) it is one of the first modules being developed for the framework (2) it is an independent module and is not dependent on the other modules of the NUnit framework. Table~\ref{tab:utilmetrics} shows the characteristics of NUnit framework and the util package.
+
+\setlength{\tabcolsep}{3pt}
+\begin{table}[t]
+\begin{center}
+\centering
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Attribute} & \textbf{Value} \\
+\hline
+\# Total Files & 560\\
+\hline
+\# Files in NUnit.Util & 72\\
+\hline
+Total LOC & 53K\\
+\hline
+NUnit.Util LOC & 7.2K\\
+\hline
+\# Test Files of NUnit.Util & 32\\
+\hline
+\end{tabular}
+\end{center}
+%\end{SmallOut}
+\caption{Characteristics of the NUnit framework and the util package\label{tab:utilmetrics}}
+\end{table}
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+//st is of type \textbf{MemorySettingsStorage} and 
+//instantiated in the init() method of the test class
+01:public void SaveAndLoadSettings() \{
+02:\hspace*{0.1in}Assert.IsNull(st.GetSetting("X"));
+03:\hspace*{0.1in}Assert.IsNull(st.GetSetting("NAME"));
+04:\hspace*{0.1in}st.SaveSetting("X", 5);
+05:\hspace*{0.1in}st.SaveSetting("NAME", "Charlie");
+06:\hspace*{0.1in}Assert.AreEqual(5, st.GetSetting("X"));
+07:\hspace*{0.1in}Assert.AreEqual("Charlie", st.GetSetting("NAME"));
+08:\}
+\end{alltt}
+\end{CodeOut}
+\Caption{\label{fig:connuit} A conventional unit test from the \CodeIn{Util}
+package of the NUnit framework.}
+\end{figure}
+
+%------------------------------------------------------------------------------
+\textbf{Promoting Arguments and Local Variables.} We use an example unit test \CodeIn{SaveAndLoadSettings} shown in Figure~\ref{fig:connuit} as an illustrative example. The objective of the unit test is to verify the behavior of the \CodeIn{MemorySettingsStorage} class, which is primarily used for storage and retrieval of global values. To generalize this unit test, we first identify the concrete values used in the test case. For example, the unit test includes a concrete \CodeIn{string} value ``\CodeIn{X}'' in Statement 2. We replace these concrete values with symbolic values by promoting those values as arguments. The advantage of replacing these concrete values with symbolic values is that Pex can generate concrete values based on the constraints encountered in different paths of the code under test. For example, consider that there are two possible code paths in the \CodeIn{SaveSetting} method based on the value of first argument as ``\CodeIn{X}'' or ``\CodeIn{Y}''. By promoting the concrete value ``\CodeIn{X}'' as argument, Pex automatically generates the other value ``\CodeIn{Y}'' based on the code paths in the \CodeIn{SaveSetting} method. Therefore, a single PUT can achieve the same test effectiveness as multiple conventional unit tests with different concrete values. 
+
+Along with promoting concrete values as arguments of PUTs, we also promote other local variables such as the receiver object of the \CodeIn{SaveSetting} method as arguments for PUTs. In this example, the local variable is a non-primitive object. Promoting such receiver objects as arguments can help generate different states (for those receiver objects) that can help cover new paths in the code under test. For example, consider that there is a defect in the \CodeIn{SaveSetting} method that can be exposed when there are five elements in the \CodeIn{MemorySettingsStorage} object. Promoting the receiver object of \CodeIn{SaveSetting} as an argument can help generate such desirable object states. However, it is quite challenging to automatically generate method-call sequences that can create and mutate instances of non-primitive arguments~\cite{}. We address this issue by using a feature called \emph{factory} methods in Pex. Section~\ref{sec:supporting} provides more details on how we use factory methods.
+
+%--------------------------------------------------------------------------------
+\textbf{Identification of Test Pattern.} We next analyze the conventional unit test to identify a test pattern~\cite{PEXDOC} that the test belongs to. Identifying the test pattern can help in easy generalization of the conventional unit test. In our current conventional unit test, a setting is stored in the storage using the \CodeIn{SaveSetting} method and is verified with the \CodeIn{GetSetting} method. Such a conventional unit test belongs to the round-trip pattern, which applies to classes such as \CodeIn{MemorySettingsStorage} that has a method (such as \CodeIn{SaveSetting}) and an inverse method (such as \CodeIn{GetSetting}). Section~\ref{} presents more details on our test patterns that can be used during our generalization phase. In our empirical study, we identify that these patterns cover broad range of existing conventional unit tests.
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+00:[PexMethod]
+01:public void SaveAndLoadSettingsTest1(
+02:\hspace*{0.1in}MemorySettingsStorage st, String sn, Object sv) \{
+03:\hspace*{0.2in}//Define Pex Assumptions
+04:\hspace*{0.2in}st.SaveSetting(sn, sv);
+05:\hspace*{0.2in}PexAssert.AreEqual(sv, st.GetSetting(sn));
+06:\}
+\end{alltt}
+\end{CodeOut}
+\Caption{\label{fig:putskel} Partial PUT for the conventional unit test shown in Figure~\ref{fig:connuit}.}
+\end{figure}
+
+Figure~\ref{fig:putskel} shows the skeleton of the PUT after generalizing concrete values and the receiver object. Our PUT accepts three parameters: an instance of \CodeIn{MemorySettingsStorage}, name of the setting, and its value. The \CodeIn{SaveSetting} method can be used to save either an \CodeIn{integer} value or a \CodeIn{string} value (the method accepts both types for its arguments). Therefore, the conventional unit test requires two method calls shown in Statements 4 and 5 of Figure~\ref{fig:connuit} to verify whether the method under test handles both these types. On the other hand, only one method call is sufficient in the generalized PUT as the argument type is promoted to \CodeIn{Object}. Pex automatically explores the code under test and generates tests that can cover both \CodeIn{integer} and \CodeIn{string} type. Indeed, the \CodeIn{SaveSetting} method also accepts \CodeIn{bool} and \CodeIn{enum} types. Existing conventional unit tests do not include tests for verifying these two types. Our generalized PUT can automatically handle these additional types too, serving as a primary advantage of PUT as it helps reduce the test code significantly without reducing the behavior tested by the conventional unit test. We next transform the assertions in the conventional unit test into \CodeIn{PexAssert} assertions to assert the same behavior. Figure~\ref{fig:putcompl} shows the transformed PUT for the conventional unit test in Figure~\ref{fig:connuit}.
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+00:[PexFactoryMethod(typeof(MSS))]
+\hspace*{0.3in}//MSS: MemorySettingsStorage (class)
+\hspace*{0.3in}//PAUT: PexAssumeUnderTest	(Pex attribute)
+01:public static MSS Create([PAUT]String[] 
+02:\hspace*{0.3in}sn, [PexAssumeNotNull]Object[] sv) \{
+03:\hspace*{0.2in}PexAssume.IsTrue(sn.Length == sv.Length);
+04:\hspace*{0.2in}PexAssume.IsTrue(sn.Length > 0);
+05:\hspace*{0.2in}MSS mss = new MSS();
+06:\hspace*{0.2in}for (int count = 0; count < sn.Length; count++) \{
+07:\hspace*{0.3in}PexAssume.IsTrue(sv[count] is string ||
+08:\hspace*{0.4in}sv[count] is int || sv[count] is bool || 
+09:\hspace*{0.4in}sv[count] is Enum);
+10:\hspace*{0.3in}mss.SaveSetting(sn[count], sv[count]);
+11:\hspace*{0.2in}\}
+12:\hspace*{0.2in}return mss;            
+13:\}
+\end{alltt}
+\end{CodeOut}
+\Caption{\label{fig:factorymethd} A factory method to assist Pex.}
+\end{figure}
+
+%--------------------------------------------------------------------------------
+\textbf{Using Supporting Techniques.} The second challenge refers to handling parameters of non-primitive types. Pex can effectively handle primitive-type parameters such as \CodeIn{string} or \CodeIn{integer}. However, for non-primitive types, method-call sequences are required for generating desirable object states. These desirable object states are the states that help explore paths in the code under test by covering paths in the code under test. For example, an intention in our conventional unit test to have two \CodeIn{SaveSetting} method calls is to verify adding a new setting when there is already an existing setting in the storage. Consider that there is a defect in the  implementation of \CodeIn{SaveSetting} that can be exposed \emph{only} when there are five elements in the storage. The desirable state for such a non-primitive argument is to have five elements already present in the storage. Therefore, to test the method under test in various scenarios, generalizing the receiver object helps in this case. 
+
+The primary challenge in constructing desirable states for non-primitive arguments is to construct a sequence of method calls that create and mutate objects. However, similar to other state-of-the-art method-call sequence generation approaches~\cite{}, Pex also faces challenges in generating sequences for non-primitive types such as \CodeIn{st}. To address this issue, we use a concept, called factory methods, supported by Pex to assist Pex in generating effective method-call sequences that can help achieve desirable object states. Figure~\ref{fig:factorymethd} shows an example factory method written manually to assist Pex in generating effective method-call sequences. Our factory method accepts two arrays of setting names and values, and adds those entries to the storage. This factory method helps Pex to generate method-call sequences that can create desirable object states. For example, Pex can generate five names and five values as arguments to our factory method for creating a desirable object state with five elements in the storage. Along with factory methods, we use another supporting technique called mock objects. These mock objects help test features in isolation by mocking other methods associated with other features. Section~\ref{} provides more details on how we use these both factory methods and mock objects.
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+00:[PexMethod]
+\hspace*{0.3in}//MSS: MemorySettingsStorage (class)
+\hspace*{0.3in}//PAUT: PexAssumeUnderTest	(Pex attribute)
+01:public void SaveAndLoadSettingsPUT1([PAUT]
+02:\hspace*{0.1in}MSS st, [PAUT]String sn, [PAUT]Object sv) \{
+03:\hspace*{0.2in}PexAssume.IsFalse(sn.Equals(""));
+04:\hspace*{0.2in}PexAssume.IsTrue(st.GetSetting(sn) == null);
+05:\hspace*{0.2in}storage1.SaveSetting(sn, sv);
+06:\hspace*{0.2in}PexAssert.AreEqual(sv, st.GetSetting(sn));
+07:\}
+\end{alltt}
+\end{CodeOut}
+\Caption{\label{fig:putcompl} Complete PUT for the conventional unit test shown in Figure~\ref{fig:connuit}.}
+\end{figure}
+
+%-------------------------------------------------------------------------------
+\textbf{Adding Assumptions.} During test generalization, we identify that guidance is required for Pex in generating legal values for PUTs. We address this challenge in our systematic procedure by adding sufficient assumptions to PUTs. For example, without any assumptions provided, Pex by default generates \CodeIn{null} values for non-primitive arguments of PUTs. To address this issue, we annotate a PUT method argument with a tag \CodeIn{PexAssumeUnderTest}\footnote{\CodeIn{PexAssumeUnderTest} is a custom attribute provided by Pex.}, which describes that the argument should not be \CodeIn{null}. We add further assumptions based on the behavior verified by the conventional unit test. For example, the conventional unit test requires an assumption that the setting to be added should not already exist in the storage. We use \CodeIn{PexAssume} to add these additional assumptions to the PUT such as Statement 4 (in Figure~\ref{fig:putcompl}) in \CodeIn{SaveAndLoadSettingsPUT1}.
+
+Figure~\ref{} shows the conventional unit tests generated by Pex for the PUT. As shown, a single PUT can substitute multiple conventional unit tests, resulting in a better test code maintenance. Furthermore, the conventional unit test used for generalization has achieved a coverage of $0$\%, whereas the conventional unit tests generated from the generalized PUT has achieved the final coverage of $0$\%. 
+
+%In a few cases, we identify that direct generalization of conventional unit tests might not achieve 100\% block coverage. There could be several reasons such as the portions of 
+%the code are not covered by the behavior tested by conventional unit tests. In those cases, we identify the un-covered portions of the code and write new PUTs or modify the transformed PUTs to cover these code portions. Consider a sample code example shown in Figure~\ref{fig:handleexample}. We highlight 
+%the un-covered portion of the code in \textbf{bold}. The reason for the un-covered code portion in this code example is that the code portion requires a delegate handler to be defined in the class. A delegate handler can be treated as a pointer to a function. These delegates can be used to encapsulate a method with a specific signature and return type. To achieve 100\% coverage of the \CodeIn{RemoveSetting} method in the preceding code example, we created a trivial delegate handler and set the value to \CodeIn{Changed}.
+%We present details on the usage of supporting techniques in our study in Section~\ref{sec:helper}.
+%
+%\begin{figure}[t]
+%\begin{CodeOut}
+%\begin{alltt}
+%00:[PexMethod]
+%//MSS: MemorySettingsStorage (class)
+%//PAUT: PexAssumeUnderTest	(Pex attribute)
+%//Changed is of type Delegate
+%01:public void RemoveSetting(MSS st,
+%\hspace*{0.3in}[PAUT]string settingName) \{
+%02:\hspace*{0.1in}st.RemoveSetting( settingName );
+%03:\hspace*{0.1in}if (Changed != null)
+%04:\hspace*{0.2in}\textbf{Changed(this, new SettingsEventArgs(settingName))};
+%05:\}
+%\end{alltt}
+%\end{CodeOut}
+%\Caption{\label{fig:handleexample} A code sample with an un-covered portion (shown in bold) with PUTs written by transforming conventional unit tests.}
+%\end{figure}
