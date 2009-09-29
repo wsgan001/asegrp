@@ -1,14 +1,46 @@
 \begin{thebibliography}{10}
 
+\bibitem{acharya06:mining}
+M.~Acharya, T.~Xie, and J.~Xu.
+\newblock {Mining Interface Specifications for Generating Checkable Robustness
+  Properties}.
+\newblock In {\em Proc. ISSRE}, pages 311--320, 2006.
+
+\bibitem{agarwal:association}
+R.~Agrawal and R.~Srikant.
+\newblock Fast algorithms for mining association rules in large databases.
+\newblock In {\em Proc. VLDB}, pages 487--499, 1994.
+
 \bibitem{Clarke:symbolic}
 L.~Clarke.
-\newblock {A System to Generate Test Data and Symbolically Execute Programs}.
+\newblock A system to generate test data and symbolically execute programs.
 \newblock {\em IEEE Trans. Softw. Eng.}, 2(3):215--222, 1976.
 
 \bibitem{csallner:jcrasher}
 C.~Csallner and Y.~Smaragdakis.
 \newblock {JC}rasher: an automatic robustness tester for {J}ava.
 \newblock {\em Softw. Pract. Exper.}, 34(11):1025--1050, 2004.
+
+\bibitem{DeMillo91:constraint}
+R.~A. DeMillo and A.~J. Offutt.
+\newblock Constraint-based automatic test data generation.
+\newblock {\em IEEE Trans. Softw. Eng.}, 17(9):900--910, 1991.
+
+\bibitem{Elbaum:capture}
+S.~Elbaum, H.~N. Chin, M.~B. Dwyer, and J.~Dokulil.
+\newblock {Carving differential unit test cases from system test cases}.
+\newblock In {\em Proc. FSE}, pages 253--264, 2006.
+
+\bibitem{Engler2001deviant}
+D.~Engler, D.~Y. Chen, S.~Hallem, A.~Chou, and B.~Chelf.
+\newblock {Bugs as deviant behavior: a general approach to inferring errors in
+  systems code}.
+\newblock In {\em Proc. SOSP}, pages 57--72, 2001.
+
+\bibitem{evans07:differential}
+R.~B. Evans and A.~Savoia.
+\newblock Differential testing: a new approach to change detection.
+\newblock In {\em Proc. ESEC/FSE}, pages 549--552, 2007.
 
 \bibitem{godefroid:dart}
 P.~Godefroid, N.~Klarlund, and K.~Sen.
@@ -45,6 +77,16 @@ S.~Koushik, M.~Darko, and A.~Gul.
 \newblock {CUTE: a concolic unit testing engine for C}.
 \newblock In {\em Proc. ESEC/FSE}, pages 263--272, 2005.
 
+\bibitem{orso:capture}
+A.~Orso and B.~Kennedy.
+\newblock {Selective capture and replay of program executions}.
+\newblock {\em SIGSOFT Softw. Eng. Notes}, 30(4):1--7, 2005.
+
+\bibitem{pacheco:eclat}
+C.~Pacheco and M.~D. Ernst.
+\newblock Eclat: Automatic generation and classification of test inputs.
+\newblock In {\em Proc. ECOOP}, pages 504--527, 2005.
+
 \bibitem{pacheco:feedback}
 C.~Pacheco, S.~K. Lahiri, M.~D. Ernst, and T.~Ball.
 \newblock Feedback-directed random test generation.
@@ -54,6 +96,27 @@ C.~Pacheco, S.~K. Lahiri, M.~D. Ernst, and T.~Ball.
 D.~S. Rosenblum and E.~J. Weyuker.
 \newblock Predicting the cost-effectiveness of regression testing strategies.
 \newblock {\em SIGSOFT Softw. Eng. Notes}, 21(6):118--126, 1996.
+
+\bibitem{david:java}
+D.~Saff, S.~Artzi, J.~H. Perkins, and M.~D. Ernst.
+\newblock {Automatic test factoring for Java}.
+\newblock In {\em Proc. ASE}, pages 114--123, 2005.
+
+\bibitem{taneja08:diffgen}
+K.~Taneja and T.~Xie.
+\newblock {DiffGen}: Automated regression unit-test generation.
+\newblock In {\em Proc. ASE}, pages 407--410, 2008.
+
+\bibitem{thummalapenta07:parseweb}
+S.~Thummalapenta and T.~Xie.
+\newblock {PARSEWeb}: A programmer assistant for reusing open source code on
+  the web.
+\newblock In {\em Proc. ASE}, pages 204--213, 2007.
+
+\bibitem{thummalapenta09:mining}
+S.~Thummalapenta and T.~Xie.
+\newblock {M}ining exception-handling rules as sequence association rules.
+\newblock In {\em Proc. ICSE}, pages 496--506, 2009.
 
 \bibitem{thummalapenta09:mseqgen}
 S.~Thummalapenta, T.~Xie, N.~Tillmann, J.~de~Halleux, and W.~Schulte.
@@ -74,6 +137,22 @@ N.~Tillmann and W.~Schulte.
 P.~Tonella.
 \newblock Evolutionary testing of classes.
 \newblock In {\em Proc. ISSTA}, pages 119--128, 2004.
+
+\bibitem{wang:bide}
+J.~Wang and J.~Han.
+\newblock {BIDE}: Efficient mining of frequent closed sequences.
+\newblock In {\em Proc. ICDE}, pages 79 -- 88, 2004.
+
+\bibitem{wasylkowski07:detecting}
+A.~Wasylkowski, A.~Zeller, and C.~Lindig.
+\newblock Detecting object usage anomalies.
+\newblock In {\em Proc. ESEC/FSE}, pages 35--44, 2007.
+
+\bibitem{xie06:augmenting}
+T.~Xie.
+\newblock Augmenting automatically generated unit-test suites with regression
+  oracle checking.
+\newblock In {\em Proc. ECOOP}, pages 380--403, 2006.
 
 \bibitem{xie:rostra}
 T.~Xie, D.~Marinov, and D.~Notkin.

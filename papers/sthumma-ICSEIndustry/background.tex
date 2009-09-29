@@ -9,14 +9,15 @@ the paper: dynamic symbolic execution and dynamic code coverage.
 
 In our approach, we use Pex as an example state-of-the-art dynamic symbolic 
 execution tool. Pex~\cite{tillman:pexwhite} is an automatic unit-test-generation 
-tool developed by Microsoft. Unlike conventional unit tests, Pex accepts
-PUTs as input and generates conventional unit tests that can achieve high 
+tool developed by Microsoft. Pex accepts PUTs as input and generates conventional 
+unit tests that can achieve high 
 structural coverage of the code under test. Initially, Pex
 executes the code under test with random inputs. While executing
 the code under test, Pex collects constraints on inputs from predicates
 in branching statements. Pex next solves collected constraints
 to generate new test inputs that guide future executions along
-new paths. 
+new paths. Pex includes various optimization techniques such as
+reducing the size of the formula before giving it over constraint solver.
 
 %-----------------------------------------------------------------------------
 \subsection{Dynamic Code Coverage}

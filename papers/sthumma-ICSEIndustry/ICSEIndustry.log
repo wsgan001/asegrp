@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.8)  26 SEP 2009 02:08
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.8)  28 SEP 2009 21:49
 entering extended mode
 **ICSEIndustry.tex
 (G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.tex
@@ -275,24 +275,16 @@ Overfull \hbox (1.77054pt too wide) in paragraph at lines 120--122
  []
 
 
-LaTeX Warning: Reference `sec:example' on page \thepage  undefined on input lin
-e 131.
-
-
 LaTeX Warning: Reference `sec:threats' on page \thepage  undefined on input lin
-e 134.
+e 133.
 
 
 LaTeX Warning: Reference `sec:future' on page \thepage  undefined on input line
- 135.
-
-
-LaTeX Warning: Reference `sec:related' on page \thepage  undefined on input lin
-e 136.
+ 134.
 
 
 LaTeX Warning: Reference `sec:concl' on page \thepage  undefined on input line 
-137.
+136.
 
 ) (G:\GoogleSVN\papers\sthumma-ICSEIndustry\background.tex)
 (G:\GoogleSVN\papers\sthumma-ICSEIndustry\approach.tex
@@ -373,34 +365,41 @@ Overfull \hbox (1.45238pt too wide) in paragraph at lines 191--202
  [][] 
  []
 
-
-Underfull \vbox (badness 3407) has occurred while \output is active []
-
- [6]
+[6]
 File: figs/RQ3_1.eps Graphic file (type eps)
-
-<figs/RQ3_1.eps>
+ <figs/RQ3_1.eps>
 File: figs/RQ4_1_1.eps Graphic file (type eps)
  <figs/RQ4_1_1.eps>
 File: figs/RQ4_2_1.eps Graphic file (type eps)
  <figs/RQ4_2_1.eps>)
-(G:\GoogleSVN\papers\sthumma-ICSEIndustry\conclusion.tex)
-(G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.bbl) [7] [8]
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\related.tex
+Overfull \hbox (3.30984pt too wide) in paragraph at lines 14--15
+\T1/aer/m/n/9 from pre-vi-ously con-structed method-call se-quences while gen-
+ []
+
+) (G:\GoogleSVN\papers\sthumma-ICSEIndustry\conclusion.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7])
+(G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.bbl
+Underfull \vbox (badness 3724) has occurred while \output is active []
+
+ [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+) [9]
 (G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 3218 strings out of 495286
- 37966 string characters out of 3180415
- 121358 words of memory out of 3000000
- 6353 multiletter control sequences out of 15000+200000
+ 3235 strings out of 495286
+ 38345 string characters out of 3180415
+ 122434 words of memory out of 3000000
+ 6367 multiletter control sequences out of 15000+200000
  46616 words of font info for 63 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,11n,26p,470b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,11n,26p,1145b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ICSEIndustry.dvi (8 pages, 60836 bytes).
+Output written on ICSEIndustry.dvi (9 pages, 72848 bytes).
