@@ -25,12 +25,13 @@
 <node CREATED="1253669735593" ID="Freemind_Link_149026392" MODIFIED="1253670330750" TEXT="How can we compensate the imprecise trace data?">
 <icon BUILTIN="help"/>
 </node>
-<node CREATED="1253670398156" HGAP="21" ID="Freemind_Link_561551467" MODIFIED="1253671232515" TEXT="How can I use probe kit for the selected sampling">
+<node CREATED="1253670398156" ID="Freemind_Link_561551467" MODIFIED="1253821878468" TEXT="How can I use probe kit for the selected sampling" VSHIFT="10">
 <icon BUILTIN="help"/>
 <icon BUILTIN="pencil"/>
 <node CREATED="1253670436171" ID="Freemind_Link_1694212105" MODIFIED="1253670501000" TEXT="The selected sampling can affect the result of our experiment">
 <icon BUILTIN="messagebox_warning"/>
 </node>
+<node CREATED="1253821839734" ID="Freemind_Link_68241709" MODIFIED="1253821872500" TEXT="One common use of Probekit is to create lightweight profilers that collect only the data developers are intested" VSHIFT="17"/>
 </node>
 </node>
 <node CREATED="1253669188437" ID="Freemind_Link_815335089" MODIFIED="1253669831593" POSITION="right" TEXT="Experiment">
