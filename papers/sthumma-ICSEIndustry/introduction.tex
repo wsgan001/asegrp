@@ -1,19 +1,26 @@
 \section{Introduction}
 \label{sec:intro}
 
-Software maintenance is an important phase of software development 
+Software maintenance is an important phase of the software development 
 life cycle. Software maintenance involves maintaining programs that 
 evolve during their life time. One important aspect 
 of software maintenance is to make sure that the changes made 
 in the new version of software do not introduce any unwanted
 side effects in the existing functionality. Regression testing is a testing 
-methodology that aims at exposing such unwanted side effects introduced
+methodology that aims at exposing such unwanted side effects, referred to as regression faults, introduced
 in the new version of software. Rosenblum and Weyuker~\cite{rosenblum96:regression} describe
 that the majority of software maintenance costs is spent on regression testing.
 
-A regression test is a unit test (also referred to as a conventional unit test) that is created on one version of software 
-(often a stable version) and is executed on further versions of software
-to expose unwanted side effects. In general, a unit test includes three major components: test scenario, test data, and test
+The basis of regression testing is to have high-covering unit tests 
+on a stable version of software. It is essential to have high-covering unit tests 
+because many types of defects such as functional defects are difficult
+to be detected without executing the relevant portions in the code under test.
+These unit tests created on one version of software are executed 
+on the further versions of software to expose regression faults. 
+Although regression testing is our ultimate goal, in this paper, we address
+the challenge of generating high-covering unit tests on a given version of software.
+
+In general, a unit test includes three major components: test scenario, test data, and test
 assertions. Figure~\ref{fig:sampleunittest} shows an example unit test.
 In a unit test, test scenario refers to the method-call sequence shown in Statements
 1, 2, and 3. Test data refers to the concrete values (such as 7 and 3
@@ -49,19 +56,20 @@ by accepting parameters. Figure~\ref{fig:sampleput} shows a PUT for the unit
 test shown in Figure~\ref{fig:sampleunittest}, where concrete values in Statements 2 and 3
 are replaced by the parameters \CodeIn{x} and \CodeIn{y}. An approach, called dynamic symbolic
 execution~\cite{Clarke:symbolic, godefroid:dart, king:symex, koushik:cute},
-can be used to automatically generate a minimal set of conventional unit tests
+can be used to automatically generate a small set of conventional unit tests
 that achieve a high coverage of the code under test defined by PUT.
 Section~\ref{sec:background} provides more details 
 on how dynamic symbolic execution generates conventional unit tests from PUTs. 
-In our approach, we use Pex~\cite{tillman:pexwhite} as an example state-of-the-art 
-dynamic symbolic execution approach. A major advantage of PUTs compared to 
-conventional unit tests is that test data is automatically
-generated based on the code under test. However, writing good PUTs
-can still be challenging since PUTs require test scenarios (method-call sequences) to exercise the code under test. 
+In our approach, we use Pex~\cite{tillman:pexwhite}, a state-of-the-art 
+dynamic symbolic execution engine. However, our approach is not specific 
+to Pex, and can be used with any other test input generation engine.
+
+A major advantage of PUTs compared to conventional unit tests is that test data is automatically
+generated based on the code under test. However, writing meaningful PUTs
+can still be challenging since PUTs require realistic test scenarios (method-call sequences) to exercise the code under test. 
 Automatic generation of test scenarios is quite challenging due to a 
-large search space of possible scenarios and valid scenarios are quite small.
-In literature, there exist three major categories 
-of approaches that generate test scenarios in the form of method-call sequences:
+large search space of possible scenarios and only a few scenarios are meaningful in practice.
+In literature, there exist three major categories of approaches that generate test scenarios in the form of method-call sequences:
 bounded-exhaustive~\cite{khurshid:symbolic, xie:rostra}, evolutionary~\cite{inkumsah08:improving, tonella:etoc}, 
 and random~\cite{csallner:jcrasher, JTEST, pacheco:feedback}. In our previous
 work~\cite{thummalapenta09:mseqgen}, we show that these approaches are either not scalable or not
@@ -98,16 +106,15 @@ time in exploring those PUTs. To address this issue, we develop a
 distributed setup that allows parallel exploration of PUTs.
 To infer test assertions, we execute the generated regression
 tests on a stable version of software and capture the return values
-of observer methods. These observer methods are pure methods
-that do not change the state of their receiver or arguments. For example,
-\CodeIn{Hashset.Count} shown in Statement 4 of Figure~\ref{fig:sampleunittest} is
-an observer method.
+of method calls in the regression. We generate test assertions from these captured
+return values. These test assertions help detect regression faults by
+checking whether the new version of software also returns the same values.
 
 To the best of our knowledge, ours is the first scalable
 approach that automatically generates regression tests without 
-requiring any manual efforts. In our evaluations, we show that our approach handles 
+requiring any manual efforts. In our evaluations, we show that our approach records 
 $\approx$ 1.5GB of dynamic traces and generates $\approx$ 500,000 regression tests
-on ten .NET 2.0 framework base class libraries. These numbers show that our approach
+on two core libraries of .NET 2.0 framework. These statistics show that our approach
 is scalable and can be used in practice to deal with large real-world applications.
 
 In summary, this paper makes the following major contributions:
@@ -121,7 +128,7 @@ using static and dynamic analyses, respectively.
 unit tests.
 \item Three large-scale evaluations to show the effectiveness of our approach. 
 In our approach, we recorded $\approx$1.5 GB (including 433,809) of dynamic traces related
-to ten .NET framework base class libraries. From these PUTs,
+to two core libraries .NET framework. From these PUTs,
 our approach generated 501,799 regression tests that achieved a
 high code coverage of the ten .NET framework base class libraries. 
 \end{itemize}

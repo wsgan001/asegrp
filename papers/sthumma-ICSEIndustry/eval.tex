@@ -5,8 +5,8 @@ We conducted three evaluations to show the effectiveness of our approach in
 generating regression tests that achieve a high coverage of the code under test. 
 Our empirical results show that our approach is scalable and can automatically generate
 tests for large real-word applications without any manual efforts. In our evaluations, 
-we use ten .NET 2.0 framework base class libraries as subject applications. We next describe
-the research questions addressed in our evaluation and present our evaluation results.
+we use two core .NET 2.0 framework libraries\footnote{\url{http://msdn.microsoft.com/en-us/library/ms229335.aspx}} 
+as subject applications. We next describe the research questions addressed in our evaluation and present our evaluation results.
 
 \begin{figure*}[t]
 \centering
@@ -31,17 +31,15 @@ more coverage of the code under test?
 %---------------------------------------------------------------------------------------
 \subsection{Subject Applications}
 
-We used ten .NET 2.0 framework base class 
-libraries\footnote{\url{http://msdn.microsoft.com/en-us/library/ms229335.aspx}} as subject applications in our
-evaluations. We selected these libraries for two main reasons. First, these libraries
-are the core libraries of .NET framework and are used by thousands
-of developers and millions of end users. Therefore, these libraries can
-represent real-world applications. Second, these libraries are extensively
-tested over several years and are suitable for generating regression tests. 
-Table~\ref{tab:subjects} shows the ten libraries used in our 
-evaluations and their characteristics such as the number of classes and 
-methods. The table shows that these libraries include $0$ LOC with
-$0$ classes and $0$ methods.
+We used two core .NET 2.0 framework base class libraries as subject applications 
+in our evaluations. We selected these libraries because these libraries are shipped and maintained 
+in different distributions such as Version 2 and Version 4 of the ``desktop CLR'', 
+32-bit/64-bit Silverlight, and .NET compact framework.
+Therefore, it is paramount for the .NET product group to maintain identical behavior 
+and detect unwanted side effects between different versions of these base class libraries.
+Table~\ref{tab:subjects} shows the two libraries used in our evaluations 
+and their characteristics such as the number of classes and methods. 
+The table shows that these libraries include $0$ LOC with $0$ classes and $0$ methods.
 
 \setlength{\tabcolsep}{1pt}
 \begin{table}[t]
@@ -54,15 +52,7 @@ $0$ classes and $0$ methods.
  & & \textbf{classes} & \textbf{methods}\\ 
 \hline
 \hline  mscorlib & 185K & 1440 & 17800 \\
-\hline  System &  & & \\
-\hline  System.Windows.Forms & & & \\
-\hline  System.Drawing & & & \\
-\hline  System.Xml & 150K & 686 & 9920 \\
-\hline  System.Web.RegularExpressions & & & \\
-\hline  System.Configuration & & & \\
-\hline  System.Data & 196K & 648 & 11550 \\
-\hline  System.Web &  & & \\
-\hline  System.Transactions & & & \\
+\hline  System & & & \\
 \hline \textbf{TOTAL} &  &  &   \\
 \hline
 \end{tabular}

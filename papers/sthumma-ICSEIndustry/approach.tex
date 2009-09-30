@@ -32,12 +32,7 @@ values passed as arguments to those method calls. Figure~\ref{fig:dynamictrace} 
 an example dynamic trace recorded by the capture phase. Statement 2
 shows the concrete value ``\CodeIn{<\%\@ Page..$\backslash$u000a}'' passed as an argument
 for the \CodeIn{Match} method. Our recorded traces are complete and do not 
-require any other primitive values or non-primitive objects. Our recorded traces
-include two kinds of methods: state-modifying and observer methods. A method
-is referred to as a state-modifying method if the method affects (i.e., writes)
-at least one field of its declaring class. A method is referred to as an observer
-method if the method does not affect any fields of its declaring class and
-also returns a non-void type.
+require any other primitive values or non-primitive objects. 
 
 \begin{figure}[t]
 \begin{CodeOut}
@@ -53,7 +48,7 @@ the capture phase.}\vspace*{-1ex}
 Our approach next generates PUTs and seed tests from recorded traces. 
 To generate PUTs, our approach identifies all constant values
 and promotes those constant values as parameters. Furthermore, our approach identifies
-return values of observer methods in the PUT and
+return values of method calls in the PUT and
 promotes those return values as \CodeIn{OUT} parameters for the PUT. 
 In C\#, these \CodeIn{OUT} parameters represent the return values of a method.
 Our approach next generates seed tests that includes all concrete values
@@ -81,9 +76,8 @@ from the dynamic trace in Figure~\ref{fig:dynamictrace}.}\vspace*{-3ex}
 \end{figure}
 
 The generated PUT includes two parameters and one \CodeIn{OUT} parameter.
-The \CodeIn{OUT} parameter is the return value of the observer
-method \CodeIn{Capture.Index}. These \CodeIn{OUT} parameters are later
-used to generate test assertions in regression tests (Section~\ref{sec:explore}). 
+The \CodeIn{OUT} parameter is the return value of the method \CodeIn{Capture.Index}. 
+These \CodeIn{OUT} parameters are later used to generate test assertions in regression tests (Section~\ref{sec:explore}). 
 The figure also shows a seed test generated from the dynamic trace. 
 The seed test includes concrete values of the dynamic trace and invokes the generated PUT with those concrete values.
 
@@ -95,7 +89,8 @@ Our approach records dynamic traces during actual program executions. As the sam
 sequence of method calls can be invoked multiple times during program executions,
 we identify that there are many duplicates among recorded dynamic traces.
 Consequently, there are many duplicates among generated PUTs and seed tests. 
-In the minimize phase, our approach filters out duplicate PUTs and seed tests.
+For example, in our evaluations, we identify that $84$\% of PUTs and $70$\% of seed
+tests are duplicates. In the minimize phase, our approach filters out duplicate PUTs and seed tests.
 The primary reason for filtering out duplicates is that exploration of duplicate
 PUTs is redundant and can also lead to scalability issues while generating regression tests.
 
@@ -103,10 +98,13 @@ We first present our criteria for a duplicate PUT and a seed test and next expla
 how we filter out such duplicate PUTs and seed tests.
 
 \textbf{Duplicate PUT:} We consider a PUT, say $P_1$, as a duplicate
-of another PUT, say $P_2$, if both $P_1$ and $P_2$ have the same sequence of method calls. 
+of another PUT, say $P_2$, if both $P_1$ and $P_2$ have the same sequence of
+Microsoft Intermediate Language (MSIL)\footnote{\url{http://msdn.microsoft.com/en-us/library/c5tkafs1(VS.71).aspx}} 
+instructions.
 
 \textbf{Duplicate Seed Test:} We consider a seed test, say $S_1$, as a duplicate of 
 another seed test, say $S_2$, if both $S_1$ and $S_2$ exercise the same execution path.
+This execution path refers to the path that starts from the beginning of PUT and goes through all (transitive) method calls.
 
 \begin{figure}[t]
 \begin{CodeOut}
@@ -157,13 +155,10 @@ We use PUTs and seed tests shown in Figure~\ref{fig:samplePutAndUT} as
 illustrative examples. The figure shows two PUTs
 and three seed tests. Our approach uses static analysis to identify duplicate
 PUTs. For example, our approach compares the method bodies of \CodeIn{PUT1} and
-\CodeIn{PUT2} at the level of Microsoft Intermediate 
-Language\footnote{\url{http://msdn.microsoft.com/en-us/library/c5tkafs1(VS.71).aspx}}
-instructions. Our approach ignores any primitive values related to local
-variables in the PUTs while comparing instructions. 
-In this example, our approach considers \CodeIn{PUT2} as a duplicate of \CodeIn{PUT1},
-although the local variable \CodeIn{c} in Statement 9 of \CodeIn{PUT1} is assigned a different value
-in \CodeIn{PUT2}. As \CodeIn{PUT2} is a duplicate of \CodeIn{PUT1}, our approach automatically replaces
+\CodeIn{PUT2} at the level of MSIL instructions. In this example, 
+our approach considers \CodeIn{PUT2} as a duplicate of \CodeIn{PUT1}
+as both the PUTs have the same sequence of MSIL instructions.
+As \CodeIn{PUT2} is a duplicate of \CodeIn{PUT1}, our approach automatically replaces
 the \CodeIn{PUT2} method call in \CodeIn{SeedTest2} with \CodeIn{PUT1}.
 
 After filtering out duplicate PUTs, our approach uses dynamic analysis for filtering 
@@ -186,15 +181,18 @@ In the explore phase, our approach uses Pex to generate regression tests from PU
 seed tests generated in the capture phase can be used as regression tests, those
 seed tests exercise only the happy paths such as paths that do not include 
 error-handling code in the code under test. Therefore, these seed tests do not
-achieve a high coverage of the code under test. 
+achieve a high coverage of the code under test.
 
 To address this issue, we use Pex to explore generated PUTs. Inspired by Patrice et al.~\cite{patrice08:whitebox},
 we use seed tests to assist Pex during exploration of PUTs. Using seed tests increases
 the effectiveness of Pex or any other dynamic-symbolic-execution-based approach in two major ways. First,
-seed tests cover several paths in the code under test and Pex can start exploration
-from these covered paths rather than starting exploration from the beginning. This 
-would reduce the amount of time required in generating tests from PUTs. Second,
-seed tests can help cover certain paths that are hard to be covered without using
+with seed tests, Pex executes those seed tests and internally builds an execution
+tree with the paths covered by the seed tests. Pex starts exploration with this pre-populated tree
+and extends this tree by \emph{flipping} individual branch nodes via constraint solving.
+On the other hand, without any seed tests, Pex starts exploration with an empty
+execution tree. Therefore, using seed tests significantly reduce the 
+amount of time required in generating tests from PUTs. Second, seed tests can 
+help cover certain paths that are hard to be covered without using
 those tests. For example, it is quite challenging for Pex or any other 
 dynamic-symbolic-execution-based approach to generate concrete values for variables
 that require complex values such as IP addresses, URLs, doubles. In such scenarios,
@@ -240,9 +238,9 @@ the PUT shown in Figure~\ref{fig:putut}.}\vspace*{-5ex}
 Although Pex is effective in exploring PUTs and generating unit tests,
 we identify that Pex or any other dynamic-symbolic-execution-based approaches
 can lead to scalability issues when handling large number 
-of PUTs. To address this issue, our approach uses a distributed 
-setup where Pex can explore multiple PUTs in parallel. Our distributed
-setup allows to launch multiple Pex processes on several machines.
+of PUTs. To address this issue, our approach uses an enhanced distributed 
+setup originally proposed in our previous work~\cite{tillman:pexwhite}.
+Our distributed setup allows to launch multiple Pex processes on several machines.
 Once started, our distributed setup is designed to run forever in iterations. 
 The primary reason for such a setup is that it is hard to 
 decide when to stop exploring a PUT. For example, loops in the
@@ -262,5 +260,4 @@ To avoid Pex exploring the same paths that were explored in previous iterations,
 maintain a pool of all generated tests. We use the tests in the pool generated
 by previous iterations as a seed for further iterations.
 For example, tests generated in Iteration 1 are used as seed tests in Iteration 2. 
-Based on the amount of time available for generating tests,
-tests can be generated in further iterations.
+Based on the amount of time available for generating tests, tests can be generated in further iterations.

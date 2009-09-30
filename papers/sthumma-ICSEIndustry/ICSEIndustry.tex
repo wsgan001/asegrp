@@ -30,7 +30,7 @@
 \include{macros}
 \begin{document}
 
-\title{Automatic Generation of Regression Tests via Mining Gigabytes of Dynamic Traces}
+\title{Automatic Generation of High-Coverage Tests via Mining Gigabytes of Dynamic Traces}
 %
 % You need the command \numberofauthors to handle the 'placement
 % and alignment' of the authors beneath the title.
@@ -65,40 +65,8 @@
 \small{$^1$Department of Computer Science, North Carolina State University, Raleigh}\\
 \small{$^2$Microsoft Research, One Microsoft Way, Redmond}\\
 \small{$^3$Microsoft Corporation, One Microsoft Way, Redmond}\\
-\small{$^1$sthumma@ncsu.edu, $^2$\{jhalleux, nikolait\}@microsoft.com}, $^3$???\\
+\small{$^1$sthumma@ncsu.edu, $^2$\{jhalleux, nikolait\}@microsoft.com}, $^3$bwadswor@microsoft.com\\
 }
-
-%\author{
-% You can go ahead and credit any number of authors here,
-% e.g. one 'row of three' or two rows (consisting of one row of three
-% and a second row of one, two or three).
-%
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-%
-% 1st. author
-%\alignauthor
-%Suresh Thummalapenta\\
-%       \affaddr{Department of Computer Science}\\
-%       \affaddr{North Carolina State University}\\
-%       \affaddr{Raleigh, USA}\\
-%       \email{sthumma@ncsu.edu}
-%% 2nd. author
-%\alignauthor
-%Tao Xie\\
-%			 \affaddr{Department of Computer Science}\\
-%       \affaddr{North Carolina State University}\\
-%       \affaddr{Raleigh, USA}\\
-%       \email{xie@csc.ncsu.edu}% 3rd. author
-%\and
-%\alignauthor Nikolai Tillmann, Jonathan de Halleux, Wolfram Schulte\\
-%       \affaddr{Microsoft Research}\\
-%       \affaddr{One Microsoft Way, Redmond, USA}\\
-%       \email{\{nikolait, jhalleux, schulte\}@microsoft.com}  
-%}
 
 \maketitle
 \begin{abstract}
@@ -106,15 +74,17 @@ An important aspect of software maintenance is to ensure that the
 changes made in the new version of software do not introduce
 any unwanted side effects. Regression testing is a testing 
 methodology that aims at exposing such unwanted side effects introduced
-in the new version of software. In this paper, we present
-a novel scalable approach that automatically generates regression 
-tests without requiring any manual efforts. Our approach
+in the new version of software. Regression testing requires
+high-covering unit tests created on a stable version of software.
+In this paper, we present a novel scalable approach that automatically generates 
+high-covering unit tests on a given version without requiring any manual efforts. Our approach
 generates parameterized unit tests via mining dynamic traces recorded during program executions.
 Our approach next uses dynamic symbolic execution to generate regression
-tests that achieve a high coverage of the code under test. In our evaluations, 
+tests that achieve a high code coverage of the version of software under analysis. In our evaluations, 
 we show that our approach records $\approx$ 1.5GB of dynamic traces and 
-generates $\approx$ 500,000 regression tests on ten .NET 2.0 framework base class libraries. 
-These numbers show that our approach is scalable and can be used in practice to deal with large real-world applications.
+generates $\approx$ 500,000 regression tests on two core libraries of .NET 2.0 framework. 
+These statistics show that our approach is scalable and can be used in practice to deal 
+with large real-world applications.
 \end{abstract}
 
 \input{introduction}
