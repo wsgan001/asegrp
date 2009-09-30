@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="QuickGraph.Test.PUTs.dll" total="343" failures="48" not-run="2" date="2009-09-28" time="01:47:18">
+  <environment nunit-version="2.4.2.0" clr-version="2.0.50727.3074" os-version="Microsoft Windows NT 6.0.6001 Service Pack 1" platform="Win32NT" cwd="C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\bin\Debug" machine-name="AGNI" user="Madhuri" user-domain="AGNI" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite name="QuickGraph.Test.PUTs.dll" success="False" time="0.749" asserts="0">
+    <results>
+      <test-suite name="QuickGraphNUnit" success="False" time="0.747" asserts="0">
+        <results>
+          <test-suite name="Algorithms" success="True" time="0.290" asserts="0">
+            <results>
+              <test-suite name="Search" success="True" time="0.243" asserts="0">
+                <results>
+                  <test-suite name="BreadthFirstAlgorithmSearchTestNEW" success="True" time="0.200" asserts="0">
+                    <results>
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT01" executed="True" success="True" time="0.110" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT02" executed="True" success="True" time="0.000" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT03" executed="True" success="True" time="0.003" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT04" executed="True" success="True" time="0.014" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT05" executed="True" success="True" time="0.000" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT06" executed="True" success="True" time="0.049" asserts="29" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT07" executed="True" success="True" time="0.004" asserts="51" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT08" executed="True" success="True" time="0.001" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT09" executed="True" success="True" time="0.000" asserts="40" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT10" executed="True" success="True" time="0.001" asserts="59" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT101" executed="True" success="True" time="0.002" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT11" executed="True" success="True" time="0.000" asserts="58" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.BreadthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT201" executed="True" success="True" time="0.000" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite name="DepthFirstAlgorithmSearchTestNEW" success="True" time="0.031" asserts="0">
+                    <results>
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT01" executed="True" success="True" time="0.003" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT02" executed="True" success="True" time="0.000" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT03" executed="True" success="True" time="0.001" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT04" executed="True" success="True" time="0.001" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT05" executed="True" success="True" time="0.000" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT06" executed="True" success="True" time="0.000" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT07" executed="True" success="True" time="0.001" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT08" executed="True" success="True" time="0.009" asserts="56" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT09" executed="True" success="True" time="0.000" asserts="60" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT10" executed="True" success="True" time="0.001" asserts="58" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT101" executed="True" success="True" time="0.001" asserts="0" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT11" executed="True" success="True" time="0.000" asserts="62" />
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT12" executed="False">
+                        <reason>
+                          <message><![CDATA[the test state was: path bounds exceeded]]></message>
+                        </reason>
+                      </test-case>
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT13" executed="False">
+                        <reason>
+                          <message><![CDATA[the test state was: path bounds exceeded]]></message>
+                        </reason>
+                      </test-case>
+                      <test-case name="QuickGraphNUnit.Algorithms.Search.DepthFirstAlgorithmSearchTestNEW.GraphWithSelfEdgesPUT201" executed="True" success="True" time="0.001" asserts="0" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite name="TopologicalSortAlgorithmTestNEW" success="True" time="0.044" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW01" executed="True" success="True" time="0.003" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW04" executed="True" success="True" time="0.003" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW05" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW06" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW07" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW08" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW09" executed="True" success="True" time="0.002" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW10" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW11" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW12" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW13" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW14" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW15" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW16" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW17" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW18" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW19" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortCyclicPUT_NEW20" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortPUT_NEW01" executed="True" success="True" time="0.002" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortPUT_NEW02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortPUT_NEW03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortPUT_NEW04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortPUT_NEW05" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.Algorithms.TopologicalSortAlgorithmTestNEW.SortPUT_NEW06" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite name="GraphConcepts" success="False" time="0.448" asserts="0">
+            <results>
+              <test-suite name="AdjacencyGraphTest" success="True" time="0.004" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.AdjacencyGraphTest.IsDirected01" executed="True" success="True" time="0.002" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.AdjacencyGraphTest.IsDirected01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.AdjacencyGraphTest.IsDirected02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.AdjacencyGraphTest.IsDirected02" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionaleAdjacencyGraphTest" success="True" time="0.008" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleAdjacencyGraphTest.TestOutDegree01" executed="True" success="True" time="0.002" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleAdjacencyGraphTest.TestOutDegree01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleAdjacencyGraphTest.TestOutDegree02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleAdjacencyGraphTest.TestOutDegree02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleAdjacencyGraphTest.TestOutDegree03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleAdjacencyGraphTest.TestOutDegree03" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionaleMutableAdjacencyGraphTest" success="True" time="0.011" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableAdjacencyGraphTest.RemoveOutEdgeIf01" executed="True" success="True" time="0.004" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableAdjacencyGraphTest.RemoveOutEdgeIf01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableAdjacencyGraphTest.RemoveOutEdgeIf02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableAdjacencyGraphTest.RemoveOutEdgeIf02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableAdjacencyGraphTest.RemoveOutEdgeIf03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableAdjacencyGraphTest.RemoveOutEdgeIf03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableAdjacencyGraphTest.RemoveOutEdgeIf04" executed="True" success="True" time="0.001" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionaleMutableEdgeListGraphTest" success="True" time="0.014" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf01" executed="True" success="True" time="0.002" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf02" executed="True" success="True" time="0.005" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf04" executed="True" success="True" time="0.002" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableEdgeListGraphTest.RemoveEdgeIf05" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionaleMutableGraphTest" success="False" time="0.139" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdge01" executed="True" success="True" time="0.002" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdge01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdge02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdge02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdge03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdge03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdge04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdge04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound01" executed="True" success="False" time="0.005" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound01() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeSou.g.cs:line 26
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound01" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound01() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 26
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound02" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound02() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeSou.g.cs:line 37
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound02" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound02() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 37
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound03" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound03() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 48
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound03" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound03() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeSou.g.cs:line 48
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound04" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound04() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeSou.g.cs:line 59
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound04" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound04() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 59
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound05" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound05() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeSou.g.cs:line 70
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound06" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound06() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeSou.g.cs:line 81
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound07" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeSourceNotFound07() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeSou.g.cs:line 92
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound01" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound01() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 26
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound01" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound01() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeTar.g.cs:line 26
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound02" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound02() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 37
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound02" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound02() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeTar.g.cs:line 37
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound03" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound03() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeTar.g.cs:line 48
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound03" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound03() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 48
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound04" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound04() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 59
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound04" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddEdgeTargetNotFound04() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\BidirectionaleMutableGraphTestAddEdgeTar.g.cs:line 59
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertex01" executed="True" success="True" time="0.013" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertex01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertex02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertex02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertex03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertex03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound05" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound05" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound06" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.AddRemoveVertexNotFound07" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexSourceTarget01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexSourceTarget01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexSourceTarget02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexSourceTarget02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexSourceTarget03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexSourceTarget03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexSourceTarget04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexSourceTarget04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexTargetSource01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexTargetSource01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexTargetSource02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexTargetSource02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexTargetSource03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexTargetSource03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexTargetSource04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.ClearVertexTargetSource04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdge01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdge01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdge02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdge02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdge03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdge03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdge04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdge04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound05" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound05" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound06" executed="True" success="True" time="0.002" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound06" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound07" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound07" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound08" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionaleMutableGraphTest.RemoveEdgeNotFound08" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionalGraphTest" success="True" time="0.001" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalGraphTest.IsDirected01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalGraphTest.IsDirected01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalGraphTest.IsDirected02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalGraphTest.IsDirected02" executed="True" success="True" time="0.001" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="BidirectionalVertexListGraphTest" success="True" time="0.010" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalVertexListGraphTest.IterationPUT01" executed="True" success="True" time="0.003" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalVertexListGraphTest.IterationPUT01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalVertexListGraphTest.IterationPUT02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalVertexListGraphTest.IterationPUT02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalVertexListGraphTest.IterationPUT03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.BidirectionalVertexListGraphTest.IterationPUT03" executed="True" success="True" time="0.001" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="GenericAdjacencyGraphTest" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericAdjacencyGraphTest.TestOutDegree01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericAdjacencyGraphTest.TestOutDegree02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericAdjacencyGraphTest.TestOutDegree03" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="GenericGraphTest" success="True" time="0.001" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericGraphTest.IsDirected01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericGraphTest.IsDirected02" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="GenericMutableAdjacencyGraphTest" success="True" time="0.004" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableAdjacencyGraphTest.RemoveOutEdgeIf01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableAdjacencyGraphTest.RemoveOutEdgeIf02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableAdjacencyGraphTest.RemoveOutEdgeIf03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableAdjacencyGraphTest.RemoveOutEdgeIf04" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="GenericMutableEdgeListGraphTest" success="True" time="0.006" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableEdgeListGraphTest.RemoveEdgeIf01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableEdgeListGraphTest.RemoveEdgeIf02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableEdgeListGraphTest.RemoveEdgeIf03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableEdgeListGraphTest.RemoveEdgeIf04" executed="True" success="True" time="0.001" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="GenericMutableGraphTestNEW" success="False" time="0.048" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdge01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdge02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdge03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdge04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound01" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound01() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 26
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound02" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound02() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 37
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound03" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound03() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 48
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound04" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound04() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 59
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound01" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound01() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 26
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound02" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound02() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 37
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound03" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound03() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 48
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound04" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound04() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 59
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddRemoveVertex01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddRemoveVertex02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddRemoveVertex03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddRemoveVertexNotFound01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddRemoveVertexNotFound02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddRemoveVertexNotFound03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddRemoveVertexNotFound04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddRemoveVertexNotFound05" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.ClearVertexSourceTarget01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.ClearVertexSourceTarget02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.ClearVertexSourceTarget03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.ClearVertexSourceTarget04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.ClearVertexTargetSource01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.ClearVertexTargetSource02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.ClearVertexTargetSource03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.ClearVertexTargetSource04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdge01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdge02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdge03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdge04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdgeNotFound01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdgeNotFound02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdgeNotFound03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdgeNotFound04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdgeNotFound05" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdgeNotFound06" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdgeNotFound07" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.RemoveEdgeNotFound08" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="GenericVertexListGraphTest" success="True" time="0.001" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericVertexListGraphTest.IterationPUT01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericVertexListGraphTest.IterationPUT02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.GenericVertexListGraphTest.IterationPUT03" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="IncidenceAdjacencyGraphTest" success="True" time="0.008" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceAdjacencyGraphTest.TestOutDegree01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceAdjacencyGraphTest.TestOutDegree01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceAdjacencyGraphTest.TestOutDegree02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceAdjacencyGraphTest.TestOutDegree02" executed="True" success="True" time="0.002" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceAdjacencyGraphTest.TestOutDegree03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceAdjacencyGraphTest.TestOutDegree03" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="IncidenceMutableAdjacencyGraphTest" success="True" time="0.007" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableAdjacencyGraphTest.RemoveOutEdgeIf01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableAdjacencyGraphTest.RemoveOutEdgeIf01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableAdjacencyGraphTest.RemoveOutEdgeIf02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableAdjacencyGraphTest.RemoveOutEdgeIf02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableAdjacencyGraphTest.RemoveOutEdgeIf03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableAdjacencyGraphTest.RemoveOutEdgeIf04" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="IncidenceMutableEdgeListGraphTest" success="True" time="0.011" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableEdgeListGraphTest.RemoveEdgeIf01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableEdgeListGraphTest.RemoveEdgeIf01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableEdgeListGraphTest.RemoveEdgeIf02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableEdgeListGraphTest.RemoveEdgeIf02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableEdgeListGraphTest.RemoveEdgeIf03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableEdgeListGraphTest.RemoveEdgeIf03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableEdgeListGraphTest.RemoveEdgeIf04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableEdgeListGraphTest.RemoveEdgeIf04" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="IncidenceMutableGraphTest" success="False" time="0.131" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdge01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdge01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdge02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdge02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdge03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdge03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdge04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdge04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound01" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound01() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeSourceNo.g.cs:line 26
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound01" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound01() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 26
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound02" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound02() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeSourceNo.g.cs:line 37
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound02" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound02() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 37
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound03" executed="True" success="False" time="0.002" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound03() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeSourceNo.g.cs:line 48
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound03" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound03() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 48
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound04" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound04() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeSourceNo.g.cs:line 59
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound04" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound04() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeSourceN.g.cs:line 59
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound05" executed="True" success="False" time="0.003" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeSourceNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 151
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeSourceNotFound05() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeSourceNo.g.cs:line 70
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound01" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound01() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeTargetNo.g.cs:line 26
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound01" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound01() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 26
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound02" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound02() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeTargetNo.g.cs:line 37
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound02" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound02() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 37
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound03" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound03() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeTargetNo.g.cs:line 48
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound03" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound03() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 48
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound04" executed="True" success="False" time="0.000" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound04() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\GenericMutableGraphTestNEWAddEdgeTargetN.g.cs:line 59
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound04" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound04() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeTargetNo.g.cs:line 59
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound05" executed="True" success="False" time="0.003" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound05() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeTargetNo.g.cs:line 70
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound06" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound06() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeTargetNo.g.cs:line 81
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound07" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound07() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeTargetNo.g.cs:line 92
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound08" executed="True" success="False" time="0.001" asserts="0">
+                    <failure>
+                      <message><![CDATA[An unexpected exception type was thrown
+Expected: QuickGraph.Exceptions.VertexNotFoundException
+ but was: Microsoft.Pex.Framework.Exceptions.PexAssumeFailedException]]></message>
+                      <stack-trace><![CDATA[   at Microsoft.Pex.Framework.PexAssume.IsTrue(Boolean condition)
+   at QuickGraphNUnit.GraphConcepts.GenericMutableGraphTestNEW.AddEdgeTargetNotFound(AdjacencyGraph g) in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts\MutableGraphTestNEW.cs:line 167
+   at QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddEdgeTargetNotFound08() in C:\Users\Madhuri\Documents\ASE\Google_SVN_NEW\subjects\PUTStudy\QuickGraph.Test.PUTs\GraphConcepts.Generated\IncidenceMutableGraphTestAddEdgeTargetNo.g.cs:line 103
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertex01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertex01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertex02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertex02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertex03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertex03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound05" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound05" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound06" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.AddRemoveVertexNotFound07" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexSourceTarget01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexSourceTarget01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexSourceTarget02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexSourceTarget02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexSourceTarget03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexSourceTarget03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexSourceTarget04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexSourceTarget04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexTargetSource01" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexTargetSource01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexTargetSource02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexTargetSource02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexTargetSource03" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexTargetSource03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexTargetSource04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.ClearVertexTargetSource04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdge01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdge01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdge02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdge02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdge03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdge03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdge04" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdge04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound02" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound04" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound05" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound05" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound06" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound06" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound07" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound07" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound08" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound08" executed="True" success="True" time="0.001" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceMutableGraphTest.RemoveEdgeNotFound09" executed="True" success="True" time="0.001" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite name="IncidenceVertexListGraphTest" success="True" time="0.008" asserts="0">
+                <results>
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceVertexListGraphTest.IterationPUT01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceVertexListGraphTest.IterationPUT01" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceVertexListGraphTest.IterationPUT02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceVertexListGraphTest.IterationPUT02" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceVertexListGraphTest.IterationPUT03" executed="True" success="True" time="0.000" asserts="0" />
+                  <test-case name="QuickGraphNUnit.GraphConcepts.IncidenceVertexListGraphTest.IterationPUT03" executed="True" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

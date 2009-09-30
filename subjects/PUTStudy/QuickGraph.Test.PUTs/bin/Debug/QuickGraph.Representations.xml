@@ -1,0 +1,350 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuickGraph.Representations</name>
+    </assembly>
+    <members>
+        <member name="T:QuickGraph.Representations.BidirectionalGraph">
+            <summary>
+            A mutable bidirectional graph implemetation
+            </summary>
+            <remarks>
+            <seealso cref="T:QuickGraph.Representations.AdjacencyGraph"/>
+            <seealso cref="T:QuickGraph.Concepts.Traversals.IBidirectionalGraph"/>
+            <seealso cref="T:QuickGraph.Concepts.Modifications.IMutableBidirectionalGraph"/>
+            </remarks>
+        </member>
+        <member name="T:QuickGraph.Representations.AdjacencyGraph">
+            <summary>
+            A mutable incidence graph implemetation
+            </summary>
+            <remarks>
+            <seealso cref="T:QuickGraph.Concepts.Modifications.IVertexMutableGraph"/>
+            <seealso cref="T:QuickGraph.Concepts.Modifications.IMutableIncidenceGraph"/>
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.#ctor(QuickGraph.Concepts.Providers.IVertexAndEdgeProvider,System.Boolean)">
+            <summary>
+            Builds a new empty directed graph
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.Clear">
+            <summary>
+            Remove all of the edges and vertices from the graph.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.AddVertex">
+            <summary>
+            Add a new vertex to the graph and returns it.
+            
+            Complexity: 1 insertion.
+            </summary>
+            <returns>Create vertex</returns>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.AddEdge(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Add a new vertex from source to target
+             
+            Complexity: 2 search + 1 insertion
+            </summary>
+            <param name="source">Source vertex</param>
+            <param name="target">Target vertex</param>
+            <returns>Created Edge</returns>
+            <exception cref="T:System.ArgumentNullException">source or target is null</exception>
+            <exception cref="T:System.Exception">source or target are not part of the graph</exception>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.OutDegree(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns the number of out-degree edges of v
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.OutEdges(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns an iterable collection over the edge connected to v
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.QuickGraph#Concepts#Traversals#IIncidenceGraph#OutEdges(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Incidence graph implementation
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.RemoveVertex(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the vertex from the graph.
+            </summary>
+            <param name="v">vertex to remove</param>
+            <exception cref="T:System.ArgumentNullException">v is null</exception>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.ClearVertex(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Remove all edges to and from vertex u from the graph.
+            </summary>
+            <param name="v"></param>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.RemoveEdge(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Removes an edge from the graph.
+            
+            Complexity: 2 edges removed from the vertex edge list + 1 edge
+            removed from the edge list.
+            </summary>
+            <param name="e">edge to remove</param>
+            <exception cref="T:System.ArgumentNullException">e is null</exception>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.RemoveEdge(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Remove the edge (u,v) from the graph. 
+            If the graph allows parallel edges this remove all occurrences of 
+            (u,v).
+            </summary>
+            <param name="u">source vertex</param>
+            <param name="v">target vertex</param>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.RemoveEdgeIf(QuickGraph.Concepts.Predicates.IEdgePredicate)">
+            <summary>
+            Remove all the edges from graph g for which the predicate pred
+            returns true.
+            </summary>
+            <param name="pred">edge predicate</param>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.RemoveOutEdgeIf(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.Predicates.IEdgePredicate)">
+            <summary>
+            Remove all the out-edges of vertex u for which the predicate pred 
+            returns true.
+            </summary>
+            <param name="u">vertex</param>
+            <param name="pred">edge predicate</param>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.ContainsVertex(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Tests if a vertex is part of the graph
+            </summary>
+            <param name="v">Vertex to test</param>
+            <returns>true if is part of the graph, false otherwize</returns>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.ContainsEdge(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Tests if a edge is part of the graph
+            </summary>
+            <param name="v">Edge to test</param>
+            <returns>true if is part of the graph, false otherwize</returns>
+        </member>
+        <member name="M:QuickGraph.Representations.AdjacencyGraph.ContainsEdge(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Test is an edge (u,v) is part of the graph
+            </summary>
+            <param name="u">source vertex</param>
+            <param name="v">target vertex</param>
+            <returns>true if part of the graph</returns>
+        </member>
+        <member name="P:QuickGraph.Representations.AdjacencyGraph.IsDirected">
+            <summary>
+            
+            </summary>
+            <remarks>
+            <seealso cref="T:QuickGraph.Concepts.IGraph"/>
+            </remarks>
+        </member>
+        <member name="P:QuickGraph.Representations.AdjacencyGraph.AllowParallelEdges">
+            <summary>
+            
+            </summary>
+            <remarks>
+            <seealso cref="T:QuickGraph.Concepts.IGraph"/>
+            </remarks>
+        </member>
+        <member name="P:QuickGraph.Representations.AdjacencyGraph.VertexOutEdges">
+            <summary>
+            Vertex Out edges dictionary
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Representations.AdjacencyGraph.Provider">
+            <summary>
+            Vertex and edge provider
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Representations.AdjacencyGraph.VerticesCount">
+            <summary>
+            The number of vertices
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Representations.AdjacencyGraph.Vertices">
+            <summary>
+            Enumerable collection of vertices.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Representations.AdjacencyGraph.EdgesCount">
+            <summary>
+            Edge count
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Representations.AdjacencyGraph.Edges">
+            <summary>
+            Enumerable collection of edges.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Representations.AdjacencyGraph.QuickGraph#Concepts#Traversals#IEdgeListGraph#Edges">
+            <summary>
+            IEdgeListGraph implementation
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.#ctor(QuickGraph.Concepts.Providers.IVertexAndEdgeProvider,System.Boolean)">
+            <summary>
+            Builds a new empty graph
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.Clear">
+            <summary>
+            Remove all of the edges and vertices from the graph.
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.AddVertex">
+            <summary>
+            Add a new vertex to the graph and returns it.
+            
+            Complexity: 1 insertion.
+            </summary>
+            <returns>Create vertex</returns>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.AddEdge(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Add a new vertex from source to target
+             
+            Complexity: 2 search + 1 insertion
+            </summary>
+            <param name="source">Source vertex</param>
+            <param name="target">Target vertex</param>
+            <returns>Created Edge</returns>
+            <exception cref="T:System.ArgumentNullException">source or target is null</exception>
+            <exception cref="T:System.Exception">source or target are not part of the graph</exception>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.InDegree(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns the number of in-degree edges of v
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.InEdges(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns an iterable collection over the in-edge connected to v
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.QuickGraph#Concepts#Traversals#IBidirectionalGraph#InEdges(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Incidence graph implementation
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.RemoveVertex(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Removes the vertex from the graph.
+            </summary>
+            <param name="v">vertex to remove</param>
+            <exception cref="T:System.ArgumentNullException">v is null</exception>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.ClearVertex(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Remove all edges to and from vertex u from the graph.
+            </summary>
+            <param name="v"></param>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.RemoveEdge(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Removes an edge from the graph.
+            
+            Complexity: 2 edges removed from the vertex edge list + 1 edge
+            removed from the edge list.
+            </summary>
+            <param name="e">edge to remove</param>
+            <exception cref="T:System.ArgumentNullException">e is null</exception>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.RemoveEdge(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Remove the edge (u,v) from the graph. 
+            If the graph allows parallel edges this remove all occurrences of 
+            (u,v).
+            </summary>
+            <param name="u">source vertex</param>
+            <param name="v">target vertex</param>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.RemoveInEdgeIf(QuickGraph.Concepts.IVertex,QuickGraph.Concepts.Predicates.IEdgePredicate)">
+            <summary>
+            Remove all the out-edges of vertex u for which the predicate pred 
+            returns true.
+            </summary>
+            <param name="u">vertex</param>
+            <param name="pred">edge predicate</param>
+        </member>
+        <member name="M:QuickGraph.Representations.BidirectionalGraph.Degree(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Returns the number of in-edges plus out-edges.
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="P:QuickGraph.Representations.BidirectionalGraph.VertexInEdges">
+            <summary>
+            Vertex Out edges dictionary
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Representations.EdgeList">
+            <summary>
+            An edge-list representation of a graph is simply a sequence of edges,
+            where each edge is represented as a pair of vertex ID's.
+            </summary>
+            <remarks>
+            <para>
+            The EdgeList class is an adaptor that turns an edge collection
+            into a class that models IEdgeListGraph. 
+            The value type of the edge collection must be be inherited form IEdge.
+            </para>
+            <para>
+            An edge-list representation of a graph is simply a sequence of edges, 
+            where each edge is represented as a pair of vertex ID's. 
+            The memory required is only O(E). Edge insertion is typically O(1), 
+            though accessing a particular edge is O(E) (not efficient). 
+            </para>
+            <seealso cref="T:QuickGraph.Concepts.Traversals.IEdgeListGraph"/>
+            </remarks>
+        </member>
+        <member name="M:QuickGraph.Representations.EdgeList.#ctor(System.Collections.ICollection,System.Boolean,System.Boolean)">
+            <summary>
+            Builds an EdgeListGraph out of a edges collection
+            </summary>
+            <param name="edges"></param>
+            <param name="isDirected"></param>
+            <param name="allowParallelEdges"></param>
+        </member>
+        <member name="P:QuickGraph.Representations.EdgeList.IsDirected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Representations.EdgeList.AllowParallelEdges">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Representations.EdgeList.EdgesCount">
+            <summary>
+            Returns the number of edges in the graph.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Representations.EdgeList.Edges">
+            <summary>
+            Returns an enumerator providing access to all the edges in the graph.
+            </summary>
+        </member>
+        <member name="P:QuickGraph.Representations.EdgeList.QuickGraph#Concepts#Traversals#IEdgeListGraph#Edges">
+            <summary>
+            IEdgeListGraph implemetentation.
+            </summary>
+        </member>
+    </members>
+</doc>

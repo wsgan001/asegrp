@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuickGraph.Predicates</name>
+    </assembly>
+    <members>
+        <member name="T:QuickGraph.Predicates.InEdgePredicate">
+            <summary>
+            In edge predicate
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Predicates.InEdgePredicate.#ctor(QuickGraph.Concepts.Predicates.IEdgePredicate,QuickGraph.Concepts.Predicates.IVertexPredicate)">
+            <summary>
+            
+            </summary>
+            <param name="ep"></param>
+            <param name="vp"></param>
+        </member>
+        <member name="M:QuickGraph.Predicates.InEdgePredicate.Test(QuickGraph.Concepts.IEdge)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QuickGraph.Predicates.IsOutEdgePredicate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Predicates.IsOutEdgePredicate.#ctor(QuickGraph.Concepts.IVertex)">
+            <summary>
+            
+            </summary>
+            <param name="v"></param>
+        </member>
+        <member name="M:QuickGraph.Predicates.IsOutEdgePredicate.Test(QuickGraph.Concepts.IEdge)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QuickGraph.Predicates.VertexEqualPredicate">
+            <summary>
+            Predicate that checks to two vertex are equal
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Predicates.VertexEqualPredicate.#ctor(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="u">reference vertex</param>
+            <exception cref="T:System.ArgumentNullException">u is null</exception>
+        </member>
+        <member name="M:QuickGraph.Predicates.VertexEqualPredicate.Test(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Test if v == u
+            </summary>
+            <param name="v">vertex to test</param>
+            <returns>v == u</returns>
+        </member>
+        <member name="P:QuickGraph.Predicates.VertexEqualPredicate.ReferenceVertex">
+            <summary>
+            Reference vertex
+            </summary>
+        </member>
+        <member name="T:QuickGraph.Predicates.ResidualEdgePredicate">
+            <summary>
+            Predicate that test if an edge is residual
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Predicates.ResidualEdgePredicate.#ctor(QuickGraph.Collections.EdgeDoubleDictionary)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="residualCapacities">Residual Edge capacities map</param>
+            <exception cref="T:System.ArgumentNullException">residualCapacities is null</exception>
+        </member>
+        <member name="M:QuickGraph.Predicates.ResidualEdgePredicate.Test(QuickGraph.Concepts.IEdge)">
+            <summary>
+            Test if edge e has a positive residual capacity
+            </summary>
+            <param name="e">edge to test</param>
+            <returns>0 &gt; rc[e]</returns>
+        </member>
+        <member name="T:QuickGraph.Predicates.EdgePredicate">
+            <summary>
+            Edge predicate
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Predicates.EdgePredicate.#ctor(QuickGraph.Concepts.Predicates.IEdgePredicate,QuickGraph.Concepts.Predicates.IVertexPredicate)">
+            <summary>
+            
+            </summary>
+            <param name="ep"></param>
+            <param name="vp"></param>
+        </member>
+        <member name="M:QuickGraph.Predicates.EdgePredicate.Test(QuickGraph.Concepts.IEdge)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QuickGraph.Predicates.OutEdgePredicate">
+            <summary>
+            Out edge predicate
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Predicates.OutEdgePredicate.#ctor(QuickGraph.Concepts.Predicates.IEdgePredicate,QuickGraph.Concepts.Predicates.IVertexPredicate)">
+            <summary>
+            
+            </summary>
+            <param name="ep"></param>
+            <param name="vp"></param>
+        </member>
+        <member name="M:QuickGraph.Predicates.OutEdgePredicate.Test(QuickGraph.Concepts.IEdge)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QuickGraph.Predicates.IsInEdgePredicate">
+            <summary>
+            Predicate that checks if a edge is an inedge
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Predicates.IsInEdgePredicate.#ctor(QuickGraph.Concepts.IVertex)">
+            <summary>
+            
+            </summary>
+            <param name="v"></param>
+        </member>
+        <member name="M:QuickGraph.Predicates.IsInEdgePredicate.Test(QuickGraph.Concepts.IEdge)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QuickGraph.Predicates.IsAdjacentEdgePredicate">
+            <summary>
+            Predicate that checks if a edge is an edge
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Predicates.IsAdjacentEdgePredicate.#ctor(QuickGraph.Concepts.IVertex)">
+            <summary>
+            
+            </summary>
+            <param name="v"></param>
+        </member>
+        <member name="M:QuickGraph.Predicates.IsAdjacentEdgePredicate.Test(QuickGraph.Concepts.IEdge)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QuickGraph.Predicates.KeepAllVerticesPredicate">
+            <summary>
+            A dummy IVertex predicate
+            </summary>
+        </member>
+        <member name="M:QuickGraph.Predicates.KeepAllVerticesPredicate.Test(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Always returns true.
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
