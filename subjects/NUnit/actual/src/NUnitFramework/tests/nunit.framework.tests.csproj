@@ -1,0 +1,222 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C326431-AE57-4645-ACC1-A90A0B425129}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>nunit.framework.tests</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NUnit.Framework.Tests</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>618,672</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>618,672</NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\framework\nunit.framework.dll.csproj">
+      <Name>nunit.framework.dll</Name>
+      <Project>{83DD7E12-A705-4DBA-9D71-09C8973D9382}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ArrayEqualsFailureMessageFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ArrayEqualsFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ArrayNotEqualFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssertExtensionTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssertionTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssertSyntaxTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CollectionAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CollectionAssertTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConditionAssertTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\AndTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\CollectionConstraintTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\ComparisonConstraintTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\ConstraintTestBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\EmptyTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\EqualTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\NotTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\OrTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\SameAsTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\StringConstraintTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraints\TypeConstraintTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EqualsFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FailureMessageFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileAssertTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GreaterEqualFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GreaterFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LessEqualFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LessFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ListContentsTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MessageChecker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MsgUtilTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NotEqualFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NotSameFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SameFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StringAssertTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextMessageWriterTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TypeAssertTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="TestImage1.jpg" />
+    <EmbeddedResource Include="TestImage2.jpg" />
+    <EmbeddedResource Include="TestText1.txt" />
+    <EmbeddedResource Include="TestText2.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

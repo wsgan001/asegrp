@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="nunit_VS2005">
+</Property><Property Name="Solution File" Value="C:\Suresh\NCSU\Fall2008\CSC712\Homework3\NUnit-2.4.8-src\src\nunit_VS2005.sln">
+</Property><Property Name="Date" Value="Saturday, September 13, 2008">
+</Property><Property Name="Time" Value="20:42 PM">
+</Property></Properties><Event ErrorLevel="0" Project="test-utilities_VS2005" Source="tests\test-utilities\test-utilities_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="test-utilities_VS2005" Source="tests\test-utilities\test-utilities_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="mock-assembly_VS2005" Source="tests\mock-assembly\mock-assembly_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="mock-assembly_VS2005" Source="tests\mock-assembly\mock-assembly_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nonamespace-assembly_VS2005" Source="tests\nonamespace-assembly\nonamespace-assembly_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nonamespace-assembly_VS2005" Source="tests\nonamespace-assembly\nonamespace-assembly_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="timing-tests_VS2005" Source="tests\timing-tests\timing-tests_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="timing-tests_VS2005" Source="tests\timing-tests\timing-tests_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="notestfixtures-assembly_VS2005" Source="tests\notestfixtures-assembly\notestfixtures-assembly_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="notestfixtures-assembly_VS2005" Source="tests\notestfixtures-assembly\notestfixtures-assembly_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit-console_VS2005" Source="ConsoleRunner\nunit-console\nunit-console_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit-console_VS2005" Source="ConsoleRunner\nunit-console\nunit-console_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit-gui_VS2005" Source="GuiRunner\nunit-gui\nunit-gui_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit-gui_VS2005" Source="GuiRunner\nunit-gui\nunit-gui_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.mocks_VS2005" Source="NUnitMocks\mocks\nunit.mocks_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.mocks_VS2005" Source="NUnitMocks\mocks\nunit.mocks_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.uikit.dll_VS2005" Source="GuiComponents\UiKit\nunit.uikit.dll_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.uikit.dll_VS2005" Source="GuiComponents\UiKit\nunit.uikit.dll_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.util.dll_VS2005" Source="ClientUtilities\util\nunit.util.dll_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.util.dll_VS2005" Source="ClientUtilities\util\nunit.util.dll_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.framework.dll_VS2005" Source="NUnitFramework\framework\nunit.framework.dll_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.framework.dll_VS2005" Source="NUnitFramework\framework\nunit.framework.dll_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.mocks.tests_VS2005" Source="NUnitMocks\tests\nunit.mocks.tests_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.mocks.tests_VS2005" Source="NUnitMocks\tests\nunit.mocks.tests_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.uikit.tests_VS2005" Source="GuiComponents\tests\nunit.uikit.tests_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.uikit.tests_VS2005" Source="GuiComponents\tests\nunit.uikit.tests_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit-console.exe_VS2005" Source="ConsoleRunner\nunit-console-exe\nunit-console.exe_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit-console.exe_VS2005" Source="ConsoleRunner\nunit-console-exe\nunit-console.exe_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit-console.tests_VS2005" Source="ConsoleRunner\tests\nunit-console.tests_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit-console.tests_VS2005" Source="ConsoleRunner\tests\nunit-console.tests_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.util.tests_VS2005" Source="ClientUtilities\tests\nunit.util.tests_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.util.tests_VS2005" Source="ClientUtilities\tests\nunit.util.tests_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.framework.tests_VS2005" Source="NUnitFramework\tests\nunit.framework.tests_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.framework.tests_VS2005" Source="NUnitFramework\tests\nunit.framework.tests_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit-gui.exe_VS2005" Source="GuiRunner\nunit-gui-exe\nunit-gui.exe_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit-gui.exe_VS2005" Source="GuiRunner\nunit-gui-exe\nunit-gui.exe_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit-gui.tests_VS2005" Source="GuiRunner\tests\nunit-gui.tests_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit-gui.tests_VS2005" Source="GuiRunner\tests\nunit-gui.tests_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.extensions.tests_VS2005" Source="NUnitExtensions\tests\nunit.extensions.tests_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.extensions.tests_VS2005" Source="NUnitExtensions\tests\nunit.extensions.tests_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.core.extensions.dll_VS2005" Source="NUnitExtensions\core\nunit.core.extensions.dll_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.core.extensions.dll_VS2005" Source="NUnitExtensions\core\nunit.core.extensions.dll_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.core.dll_VS2005" Source="NUnitCore\core\nunit.core.dll_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.core.dll_VS2005" Source="NUnitCore\core\nunit.core.dll_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.core.tests_VS2005" Source="NUnitCore\tests\nunit.core.tests_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.core.tests_VS2005" Source="NUnitCore\tests\nunit.core.tests_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="test-assembly_VS2005" Source="tests\test-assembly\test-assembly_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="test-assembly_VS2005" Source="tests\test-assembly\test-assembly_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.framework.extensions.dll_VS2005" Source="NUnitExtensions\framework\nunit.framework.extensions.dll_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.framework.extensions.dll_VS2005" Source="NUnitExtensions\framework\nunit.framework.extensions.dll_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.core.interfaces.dll_VS2005" Source="NUnitCore\interfaces\nunit.core.interfaces.dll_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.core.interfaces.dll_VS2005" Source="NUnitCore\interfaces\nunit.core.interfaces.dll_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.fixtures_VS2005" Source="NUnitFixtures\fixtures\nunit.fixtures_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.fixtures_VS2005" Source="NUnitFixtures\fixtures\nunit.fixtures_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="nunit.fixtures.tests_VS2005" Source="NUnitFixtures\tests\nunit.fixtures.tests_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="nunit.fixtures.tests_VS2005" Source="NUnitFixtures\tests\nunit.fixtures.tests_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="loadtest-assembly_VS2005" Source="tests\loadtest-assembly\loadtest-assembly_VS2005.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="loadtest-assembly_VS2005" Source="tests\loadtest-assembly\loadtest-assembly_VS2005.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="nunit_VS2005.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="nunit_VS2005.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="test-utilities_VS2005" Source="tests\test-utilities\test-utilities_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="mock-assembly_VS2005" Source="tests\mock-assembly\mock-assembly_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nonamespace-assembly_VS2005" Source="tests\nonamespace-assembly\nonamespace-assembly_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="timing-tests_VS2005" Source="tests\timing-tests\timing-tests_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="notestfixtures-assembly_VS2005" Source="tests\notestfixtures-assembly\notestfixtures-assembly_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit-console_VS2005" Source="ConsoleRunner\nunit-console\nunit-console_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit-gui_VS2005" Source="GuiRunner\nunit-gui\nunit-gui_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.mocks_VS2005" Source="NUnitMocks\mocks\nunit.mocks_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.uikit.dll_VS2005" Source="GuiComponents\UiKit\nunit.uikit.dll_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.util.dll_VS2005" Source="ClientUtilities\util\nunit.util.dll_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.framework.dll_VS2005" Source="NUnitFramework\framework\nunit.framework.dll_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.mocks.tests_VS2005" Source="NUnitMocks\tests\nunit.mocks.tests_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.uikit.tests_VS2005" Source="GuiComponents\tests\nunit.uikit.tests_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit-console.exe_VS2005" Source="ConsoleRunner\nunit-console-exe\nunit-console.exe_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit-console.tests_VS2005" Source="ConsoleRunner\tests\nunit-console.tests_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.util.tests_VS2005" Source="ClientUtilities\tests\nunit.util.tests_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.framework.tests_VS2005" Source="NUnitFramework\tests\nunit.framework.tests_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit-gui.exe_VS2005" Source="GuiRunner\nunit-gui-exe\nunit-gui.exe_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit-gui.tests_VS2005" Source="GuiRunner\tests\nunit-gui.tests_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.extensions.tests_VS2005" Source="NUnitExtensions\tests\nunit.extensions.tests_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.core.extensions.dll_VS2005" Source="NUnitExtensions\core\nunit.core.extensions.dll_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.core.dll_VS2005" Source="NUnitCore\core\nunit.core.dll_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.core.tests_VS2005" Source="NUnitCore\tests\nunit.core.tests_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="test-assembly_VS2005" Source="tests\test-assembly\test-assembly_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.framework.extensions.dll_VS2005" Source="NUnitExtensions\framework\nunit.framework.extensions.dll_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.core.interfaces.dll_VS2005" Source="NUnitCore\interfaces\nunit.core.interfaces.dll_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.fixtures_VS2005" Source="NUnitFixtures\fixtures\nunit.fixtures_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="nunit.fixtures.tests_VS2005" Source="NUnitFixtures\tests\nunit.fixtures.tests_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="loadtest-assembly_VS2005" Source="tests\loadtest-assembly\loadtest-assembly_VS2005.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

@@ -1,0 +1,156 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34734263-6F6C-403D-AD8C-CE3F8E340EA9}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>loadtest-assembly</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NUnit.Tests.TimingTests</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\NUnitFramework\framework\nunit.framework.dll.csproj">
+      <Name>nunit.framework.dll</Name>
+      <Project>{83DD7E12-A705-4DBA-9D71-09C8973D9382}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AAA\Class1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AAA\Class2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AAA\Class3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AAA\Class4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AAA\Class5.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BBB\Class1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BBB\Class2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BBB\Class3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BBB\Class4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BBB\Class5.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CCC\Class1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CCC\Class2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CCC\Class3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CCC\Class4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CCC\Class5.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DDD\Class1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DDD\Class2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DDD\Class3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DDD\Class4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DDD\Class5.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

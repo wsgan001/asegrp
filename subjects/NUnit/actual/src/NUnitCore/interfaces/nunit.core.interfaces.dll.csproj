@@ -1,0 +1,222 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{435428F8-5995-4CE4-8022-93D595A8CC0F}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>nunit.core.interfaces</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NUnit.Core</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\nunit.core.interfaces.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\nunit.core.interfaces.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventListener.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\Addin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\AddinStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\ExtensionType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\IAddin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\IAddinRegistry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\IExtensionHost.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\IExtensionPoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\IFrameworkRegistry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\ISuiteBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\ITestCaseBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\ITestDecorator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\NUnitAddinAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensibility\TestFramework.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filters\AndFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filters\CategoryFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filters\NameFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filters\NotFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filters\OrFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filters\SimpleNameFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ITest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ITestFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ResultState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ResultVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RunState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RuntimeFramework.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestAssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestCaseResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestID.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestOutput.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestPackage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestRunner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestSuiteResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

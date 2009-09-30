@@ -1,0 +1,151 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77461311-D297-4718-B4C9-DCA2D959FB21}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NUnit.Utils.PUTs</RootNamespace>
+    <AssemblyName>NUnit.Utils.PUTs</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Pex.Framework, Version=0.16.40915.5, Culture=neutral, PublicKeyToken=76a274db078248c8, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLLs\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Factories\MemorySettingsStorageFactory.cs" />
+    <Compile Include="Factories\NUnitProjectSaveFactory.cs" />
+    <Compile Include="Factories\NUnitRegistryFactory.cs" />
+    <Compile Include="Factories\RemoteTestAgentFactory.cs" />
+    <Compile Include="MemorySettingsStorageTests_Pex.cs" />
+    <Compile Include="NUnitProjectSaveTests_Pex.cs" />
+    <Compile Include="NUnitProjectXml.cs" />
+    <Compile Include="NUnitRegistryTests_Pex.cs" />
+    <Compile Include="PathUtilTests_Pex.cs" />
+    <Compile Include="PathUtilTests_Windows.IsAssemblyFileTypePUT1.g.cs">
+      <DependentUpon>PathUtilTests_Pex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PathUtilTests_Windows.PathFromUriPUT1.g.cs">
+      <DependentUpon>PathUtilTests_Pex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessRunnerTests_Pex.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\PexAssemblyInfo.cs" />
+    <Compile Include="PUTs.Generated\MemorySettingsStorageTestsMakeStorage1.g.cs" />
+    <Compile Include="PUTs.Generated\MemorySettingsStorageTestsMakeSubStorage.g.cs" />
+    <Compile Include="PUTs.Generated\MemorySettingsStorageTestsRemoveSettings.g.cs" />
+    <Compile Include="PUTs.Generated\MemorySettingsStorageTestsSaveAndLoadSet.g.cs" />
+    <Compile Include="PUTs.Generated\MemorySettingsStorageTestsSubstorageSett.g.cs" />
+    <Compile Include="PUTs.Generated\NUnitProjectSaveTests_PexSaveEmptyConfig.g.cs" />
+    <Compile Include="PUTs.Generated\NUnitProjectSaveTests_PexSaveEmptyProjec.g.cs" />
+    <Compile Include="PUTs.Generated\NUnitProjectSaveTests_PexSaveNormalProje.g.cs" />
+    <Compile Include="PUTs.Generated\NUnitRegistryTestsCurrentUser9.g.cs" />
+    <Compile Include="PUTs.Generated\NUnitRegistryTestsCurrentUserTestMode10.g.cs" />
+    <Compile Include="PUTs.Generated\NUnitRegistryTestsCurrentUserTestModePUT.g.cs" />
+    <Compile Include="PUTs.Generated\NUnitRegistryTestsLocalMachine12.g.cs" />
+    <Compile Include="PUTs.Generated\NUnitRegistryTestsLocalMachinePUT1Boolea.g.cs" />
+    <Compile Include="PUTs.Generated\NUnitRegistryTestsTestClearRoutinesPUT3S.g.cs" />
+    <Compile Include="PUTs.Generated\NUnitRegistryTestsTestClearRoutinesPUT4S.g.cs" />
+    <Compile Include="PUTs.Generated\PathUtilTestsCheckDefaults16.g.cs" />
+    <Compile Include="PUTs.Generated\PathUtilTests_WindowsCanonicalize17.g.cs" />
+    <Compile Include="PUTs.Generated\PathUtilTests_WindowsIsAssemblyFileTypeP.g.cs" />
+    <Compile Include="PUTs.Generated\PathUtilTests_WindowsPathFromUriPUT1Stri.g.cs" />
+    <Compile Include="PUTs.Generated\PathUtilTests_WindowsRelativePath20.g.cs" />
+    <Compile Include="PUTs.Generated\PathUtilTests_WindowsSamePath21.g.cs" />
+    <Compile Include="PUTs.Generated\PathUtilTests_WindowsSamePathOrUnder22.g.cs" />
+    <Compile Include="PUTs.Generated\RecentFilesTestsAddItemsPUT1Int3223.g.cs" />
+    <Compile Include="PUTs.Generated\RecentFilesTestsCountPUT1Int3224.g.cs" />
+    <Compile Include="PUTs.Generated\RecentFilesTestsincreasePUT1Int32Int3229.g.cs" />
+    <Compile Include="PUTs.Generated\RecentFilesTestsincreasePUT2Int32Int3230.g.cs" />
+    <Compile Include="PUTs.Generated\RecentFilesTestsincreasePUT3Int32Int3231.g.cs" />
+    <Compile Include="PUTs.Generated\RecentFilesTestsincreasePUT4Int3232.g.cs" />
+    <Compile Include="PUTs.Generated\RecentFilesTestsRemovePUT1Int32Int3225.g.cs" />
+    <Compile Include="PUTs.Generated\RecentFilesTestsRemovePUT2Int32Int3226.g.cs" />
+    <Compile Include="PUTs.Generated\RecentFilesTestsReorderPUT1Int32Int3227.g.cs" />
+    <Compile Include="PUTs.Generated\RecentFilesTestsReorderPUT2Int32Int3228.g.cs" />
+    <Compile Include="PUTs.Generated\RegistrySettingsStorageTests_PexMakeSubS.g.cs" />
+    <Compile Include="PUTs.Generated\RegistrySettingsStorageTests_PexRemoveSe.g.cs" />
+    <Compile Include="PUTs.Generated\RegistrySettingsStorageTests_PexSaveAndL.g.cs" />
+    <Compile Include="PUTs.Generated\RegistrySettingsStorageTests_PexStorageH.g.cs" />
+    <Compile Include="PUTs.Generated\RegistrySettingsStorageTests_PexSubstora.g.cs" />
+    <Compile Include="PUTs.Generated\RegistrySettingsStorageTests_PexSubstora01.g.cs" />
+    <Compile Include="PUTs.Generated\RegistrySettingsStorageTests_PexTypeSafe.g.cs" />
+    <Compile Include="PUTs.Generated\RemoteTestAgentTestsAgentReturnsProcessI.g.cs" />
+    <Compile Include="PUTs.Generated\RemoteTestAgentTestsCanLocateAgentExecut.g.cs" />
+    <Compile Include="PUTs.Generated\ServerUtilityTestsCanGetTcpChannelOnSpec.g.cs" />
+    <Compile Include="PUTs.Generated\ServerUtilityTestsCanGetTcpChannelOnSpec01.g.cs" />
+    <Compile Include="PUTs.Generated\ServerUtilityTestsCanGetTcpChannelOnSpec02.g.cs" />
+    <Compile Include="PUTs.Generated\ServerUtilityTestsCanGetTcpChannelOnUnpe.g.cs" />
+    <Compile Include="PUTs.Generated\SettingsGroupTestsBadSettingPUT1Settings.g.cs" />
+    <Compile Include="PUTs.Generated\SettingsGroupTestsBadSettingPUT2Settings.g.cs" />
+    <Compile Include="PUTs.Generated\SettingsGroupTestsDefaultSettingsPUT1Str.g.cs" />
+    <Compile Include="PUTs.Generated\SettingsGroupTestsSubGroupSettingsPUT1Se.g.cs" />
+    <Compile Include="PUTs.Generated\SettingsGroupTestsSubGroupSettingsPUT2Se.g.cs" />
+    <Compile Include="PUTs.Generated\SettingsGroupTestsTopLevelSettingsPUT1Se.g.cs" />
+    <Compile Include="PUTs.Generated\SettingsGroupTestsTopLevelSettingsPUT2Se.g.cs" />
+    <Compile Include="RecentFilesTests_Pex.cs" />
+    <Compile Include="RegistrySettingsStorageTests_Pex.cs" />
+    <Compile Include="ServerUtilityTests.CanGetTcpChannelOnSpecifiedPortPUT2.g.cs">
+      <DependentUpon>ServerUtilityTests_Pex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerUtilityTests.CanGetTcpChannelOnSpecifiedPortPUT3.g.cs">
+      <DependentUpon>ServerUtilityTests_Pex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerUtilityTests.CanGetTcpChannelOnUnpecifiedPortPUT1.g.cs">
+      <DependentUpon>ServerUtilityTests_Pex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerUtilityTests_Pex.cs" />
+    <Compile Include="SettingsGroupTests_Pex.cs" />
+    <Compile Include="TestAgentTests_Pex.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringTests.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClientUtilities\util\nunit.util.dll.csproj">
+      <Project>{61CE9CE5-943E-44D4-A381-814DC1406767}</Project>
+      <Name>nunit.util.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NUnitCore\interfaces\nunit.core.interfaces.dll.csproj">
+      <Project>{435428F8-5995-4CE4-8022-93D595A8CC0F}</Project>
+      <Name>nunit.core.interfaces.dll</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
