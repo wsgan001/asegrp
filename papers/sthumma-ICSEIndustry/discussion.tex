@@ -1,7 +1,14 @@
 \section{Discussion and Future Work}
 \label{sec:discussion}
 
-1. Reason for not having complete coverage is due to lack of complete coverage of scenarios, not invoking
-all method calls.
-2. Many internal calls, not so easy in achieving such a high coverage.
+Although our generated tests achieved higher coverage (24.3\%) than the seed tests, the overall coverage
+is still not close to 100\% coverage. There are two main issues for not achieving coverage
+close to 100\%. First, our recorded dynamic traces do not cover all public methods of the libraries under analyses.
+In future work, we plan to address this issue by generating PUTs for all uncovered public methods. Second,
+the code under test includes a few branches that cannot be covered with the test scenarios recorded
+during program executions. To address this issue, we plan to generate new test scenarios
+from existing scenarios by using evolutionary techniques~\cite{tonella:etoc}.
 
+Although regression testing is our ultimate goal, in our current approach, we primarily focused on 
+generating high-covering regression tests for a given version of software. In future work, we plan to 
+execute these regression tests on new versions for detecting regression faults.

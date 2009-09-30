@@ -1,16 +1,4 @@
 \section{Conclusion}
-\label{sec:conclusion}
+\label{sec:concl}
 
-Regression testing is an important and yet challenging problem in the
-field of software maintenance. The quality of regression tests is based on
-the test scenarios (in the form of method-call sequences) used in the tests.
-Unlike existing approaches that generate test scenarios randomly, in this paper,
-we proposed a novel scalable approach that generates test scenarios via mining dynamic
-traces recorded during program execution. In our approach, we transform these generated
-test scenarios into PUTs and use dynamic symbolic execution to generate regression
-tests that achieve a high coverage of the code under test. In our evaluations,
-we show that our approach recorded $\approx$ 1.5GB of dynamic traces and 
-generated $\approx$ 500,000 regression tests on two core .NET 2.0 framework libraries. 
-These numbers show that our approach is highly scalable and can be used in practice to deal 
-with large real-world applications. In future work, we plan to generate new test scenarios
-via combining generated test scenarios using evolutionary strategies.
+Regression testing is an important and yet challenging problem in the field of software maintenance. The quality of regression tests is based on the test scenarios (in the form of method-call sequences) used in the tests. Unlike existing approaches that generate test scenarios randomly, in this paper, we proposed a novel scalable approach that generates test scenarios via mining dynamic traces recorded during program executions. In our approach, we transform these recorded traces into PUTs and use dynamic symbolic execution to generate regression tests that achieve a high coverage of the code under test. In our evaluations, we show that our approach recorded $\approx$ 1.5GB (size of C\# source code) of dynamic traces and generated $\approx$ 500,000 regression tests on two core .NET 2.0 framework libraries. These numbers show that our approach is highly scalable and can be used in practice to deal with large real-world applications. In future work, we plan to generate new test scenarios via combining generated test scenarios using evolutionary strategies.

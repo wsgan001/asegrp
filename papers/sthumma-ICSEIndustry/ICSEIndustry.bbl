@@ -4,12 +4,14 @@
 M.~Acharya, T.~Xie, and J.~Xu.
 \newblock {Mining Interface Specifications for Generating Checkable Robustness
   Properties}.
-\newblock In {\em Proc. ISSRE}, pages 311--320, 2006.
+\newblock In {\em Proceedings of the 17th International Symposium on Software
+  Reliability Engineering (ISSRE)}, pages 311--320, 2006.
 
 \bibitem{agarwal:association}
 R.~Agrawal and R.~Srikant.
 \newblock Fast algorithms for mining association rules in large databases.
-\newblock In {\em Proc. VLDB}, pages 487--499, 1994.
+\newblock In {\em Proceedings of the 20th International Conference on Very
+  Large Data Bases (VLDB)}, pages 487--499, 1994.
 
 \bibitem{Clarke:symbolic}
 L.~Clarke.
@@ -29,34 +31,41 @@ R.~A. DeMillo and A.~J. Offutt.
 \bibitem{Elbaum:capture}
 S.~Elbaum, H.~N. Chin, M.~B. Dwyer, and J.~Dokulil.
 \newblock {Carving differential unit test cases from system test cases}.
-\newblock In {\em Proc. FSE}, pages 253--264, 2006.
+\newblock In {\em Proceedings of 14th ACM SIGSOFT Symposium on Foundations of
+  Software Engineering (FSE)}, pages 253--264, 2006.
 
 \bibitem{Engler2001deviant}
 D.~Engler, D.~Y. Chen, S.~Hallem, A.~Chou, and B.~Chelf.
 \newblock {Bugs as deviant behavior: a general approach to inferring errors in
   systems code}.
-\newblock In {\em Proc. SOSP}, pages 57--72, 2001.
+\newblock In {\em Proceedings of 18th Symposium on Operating Systems Principles
+  (SOSP)}, pages 57--72, 2001.
 
 \bibitem{evans07:differential}
 R.~B. Evans and A.~Savoia.
 \newblock Differential testing: a new approach to change detection.
-\newblock In {\em Proc. ESEC/FSE}, pages 549--552, 2007.
+\newblock In {\em Proceedings of 6th joint meeting of the European Software
+  Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of
+  Software Engineering (ESEC/FSE)}, pages 549--552, 2007.
 
 \bibitem{godefroid:dart}
 P.~Godefroid, N.~Klarlund, and K.~Sen.
 \newblock {DART}: {D}irected automated random testing.
-\newblock In {\em Proc. PLDI}, pages 213--223, 2005.
+\newblock In {\em Proceedings of ACM SIGPLAN 2005 Conference on Programming
+  Language Design and Implementation (PLDI)}, pages 213--223, 2005.
 
 \bibitem{patrice08:whitebox}
 P.~Godefroid, M.~Y. Levin, and D.~Molnar.
 \newblock Automated whitebox fuzz testing.
-\newblock In {\em Proc. NDSS}, 2008.
+\newblock In {\em Proceedings of 16th Annual Network and Distributed System
+  Security Symposium (NDSS)}, 2008.
 
 \bibitem{inkumsah08:improving}
 K.~Inkumsah and T.~Xie.
 \newblock Improving structural testing of object-oriented programs via
   integrating evolutionary testing and symbolic execution.
-\newblock In {\em Proc. ASE}, pages 297--306, 2008.
+\newblock In {\em Proceedings of 23rd IEEE/ACM International Conference on
+  Automated Software Engineering (ASE)}, pages 297--306, 2008.
 
 \bibitem{JTEST}
 Parasoft. {J}test manuals version 5.1. {O}nline manual, 2006.
@@ -65,7 +74,9 @@ Parasoft. {J}test manuals version 5.1. {O}nline manual, 2006.
 \bibitem{khurshid:symbolic}
 S.~Khurshid, C.~S. Pasareanu, and W.~Visser.
 \newblock {Generalized symbolic execution for model checking and testing}.
-\newblock In {\em Proc. TACAS}, pages 553--568, 2003.
+\newblock In {\em Proceedings of 9th International Conference on Tools and
+  Algorithms for the Construction and Analysis of Systems}, pages 553--568,
+  2003.
 
 \bibitem{king:symex}
 J.~C. King.
@@ -75,7 +86,9 @@ J.~C. King.
 \bibitem{koushik:cute}
 S.~Koushik, M.~Darko, and A.~Gul.
 \newblock {CUTE: a concolic unit testing engine for C}.
-\newblock In {\em Proc. ESEC/FSE}, pages 263--272, 2005.
+\newblock In {\em Proceedings of 5th joint meeting of the European Software
+  Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of
+  Software Engineering (ESEC/FSE)}, pages 263--272, 2005.
 
 \bibitem{orso:capture}
 A.~Orso and B.~Kennedy.
@@ -85,12 +98,14 @@ A.~Orso and B.~Kennedy.
 \bibitem{pacheco:eclat}
 C.~Pacheco and M.~D. Ernst.
 \newblock Eclat: Automatic generation and classification of test inputs.
-\newblock In {\em Proc. ECOOP}, pages 504--527, 2005.
+\newblock In {\em Proceedings of 9th European Conference on Object-Oriented
+  Programming (ECOOP)}, pages 504--527, 2005.
 
 \bibitem{pacheco:feedback}
 C.~Pacheco, S.~K. Lahiri, M.~D. Ernst, and T.~Ball.
 \newblock Feedback-directed random test generation.
-\newblock In {\em Proc. ICSE}, pages 75--84, 2007.
+\newblock In {\em Proceedings of 29th International Conference on Software
+  Engineering}, pages 75--84, 2007.
 
 \bibitem{rosenblum96:regression}
 D.~S. Rosenblum and E.~J. Weyuker.
@@ -100,64 +115,66 @@ D.~S. Rosenblum and E.~J. Weyuker.
 \bibitem{david:java}
 D.~Saff, S.~Artzi, J.~H. Perkins, and M.~D. Ernst.
 \newblock {Automatic test factoring for Java}.
-\newblock In {\em Proc. ASE}, pages 114--123, 2005.
+\newblock In {\em Proceedings of 20th IEEE/ACM International Conference on
+  Automated Software Engineering (ASE)}, pages 114--123, 2005.
 
 \bibitem{taneja08:diffgen}
 K.~Taneja and T.~Xie.
 \newblock {DiffGen}: Automated regression unit-test generation.
-\newblock In {\em Proc. ASE}, pages 407--410, 2008.
-
-\bibitem{thummalapenta07:parseweb}
-S.~Thummalapenta and T.~Xie.
-\newblock {PARSEWeb}: A programmer assistant for reusing open source code on
-  the web.
-\newblock In {\em Proc. ASE}, pages 204--213, 2007.
-
-\bibitem{thummalapenta09:mining}
-S.~Thummalapenta and T.~Xie.
-\newblock {M}ining exception-handling rules as sequence association rules.
-\newblock In {\em Proc. ICSE}, pages 496--506, 2009.
+\newblock In {\em Proceedings of 23rd IEEE/ACM International Conference on
+  Automated Software Engineering (ASE)}, pages 407--410, 2008.
 
 \bibitem{thummalapenta09:mseqgen}
 S.~Thummalapenta, T.~Xie, N.~Tillmann, J.~de~Halleux, and W.~Schulte.
 \newblock Mseqgen: object-oriented unit-test generation via mining source code.
-\newblock In {\em Proc. ESEC/FSE}, pages 193--202, 2009.
+\newblock In {\em Proceedings of 7th joint meeting of the European Software
+  Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of
+  Software Engineering (ESEC/FSE)}, pages 193--202, 2009.
 
 \bibitem{tillman:pexwhite}
 N.~Tillmann and J.~de~Halleux.
 \newblock Pex white box test generation for .{NET}.
-\newblock In {\em Proc. TAP}, pages 134--153, 2008.
+\newblock In {\em Proceedings of 2nd International Conference on Tests and
+  Proofs (TAP)}, pages 134--153, 2008.
 
 \bibitem{tillmann05:parameterized}
 N.~Tillmann and W.~Schulte.
 \newblock {Parameterized Unit Tests}.
-\newblock In {\em Proc. ESEC/FSE}, pages 253--262, 2005.
+\newblock In {\em Proceedings of 5th joint meeting of the European Software
+  Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of
+  Software Engineering (ESEC/FSE)}, pages 253--262, 2005.
 
 \bibitem{tonella:etoc}
 P.~Tonella.
 \newblock Evolutionary testing of classes.
-\newblock In {\em Proc. ISSTA}, pages 119--128, 2004.
+\newblock In {\em Proceedings of International Symposium on Software Testing
+  and Analysis (ISSTA)}, pages 119--128, 2004.
 
 \bibitem{wang:bide}
 J.~Wang and J.~Han.
 \newblock {BIDE}: Efficient mining of frequent closed sequences.
-\newblock In {\em Proc. ICDE}, pages 79 -- 88, 2004.
+\newblock In {\em Proceedings of 20th International Conference on Data
+  Engineering (ICDE)}, pages 79 -- 88, 2004.
 
 \bibitem{wasylkowski07:detecting}
 A.~Wasylkowski, A.~Zeller, and C.~Lindig.
 \newblock Detecting object usage anomalies.
-\newblock In {\em Proc. ESEC/FSE}, pages 35--44, 2007.
+\newblock In {\em 6th joint meeting of the European Software Engineering
+  Conference and the ACM SIGSOFT Symposium on the Foundations of Software
+  Engineering (ESEC/FSE)}, pages 35--44, 2007.
 
 \bibitem{xie06:augmenting}
 T.~Xie.
 \newblock Augmenting automatically generated unit-test suites with regression
   oracle checking.
-\newblock In {\em Proc. ECOOP}, pages 380--403, 2006.
+\newblock In {\em Proceedings of 20th European Conference on Object-Oriented
+  Programming (ECOOP)}, pages 380--403, 2006.
 
 \bibitem{xie:rostra}
 T.~Xie, D.~Marinov, and D.~Notkin.
 \newblock Rostra: A framework for detecting redundant object-oriented unit
   tests.
-\newblock In {\em Proc. ASE}, pages 196--205, 2004.
+\newblock In {\em Proceedings of 19th IEEE International Conference on
+  Automated Software Engineering (ASE)}, pages 196--205, 2004.
 
 \end{thebibliography}

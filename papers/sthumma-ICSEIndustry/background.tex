@@ -17,7 +17,7 @@ the code under test, Pex collects constraints on inputs from predicates
 in branching statements. Pex next solves collected constraints
 to generate new test inputs that guide future executions along
 new paths. Pex includes various optimization techniques such as
-reducing the size of the formula before giving it over constraint solver.
+reducing the size of the formula before giving it over to the constraint solver.
 
 %-----------------------------------------------------------------------------
 \subsection{Dynamic Code Coverage}
@@ -26,5 +26,5 @@ In this paper, we use Pex generated reports for measuring coverage. These covera
 reports are called dynamic, because Pex knows only about the code that was already executed.
 As Pex is not aware of the code that is not yet executed, dynamic code coverage
 cannot give absolute values for the coverage. The primary reason for using
-dynamic code coverage in our paper is that C\# allows generate code during run time.
+dynamic code coverage in our paper is that C\# allows to generate code during run time.
 Therefore, it is often not possible to find out how much code exists beforehand.
