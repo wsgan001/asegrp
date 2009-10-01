@@ -5,9 +5,38 @@ Version=2
 [SessionInfo]
 ActiveTab=2
 FrameCount=9
-ActiveFrame=1
+ActiveFrame=2
 
 [Frame0]
+Columns=1
+Rows=1
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-8
+MaxPos.y=-28
+NormalPos.left=69
+NormalPos.top=69
+NormalPos.right=1349
+NormalPos.bottom=449
+Class=CLatexEdit
+Document=approach.tex
+
+[Frame0_Row0]
+cyCur=323
+cyMin=10
+
+[Frame0_Col0]
+cxCur=1243
+cxMin=10
+
+[Frame0_View0,0]
+Cursor.row=31
+Cursor.column=69
+TopSubLine=30
+
+[Frame1]
 Columns=1
 Rows=1
 Flags=0
@@ -23,53 +52,24 @@ NormalPos.bottom=403
 Class=CLatexEdit
 Document=introduction.tex
 
-[Frame0_Row0]
+[Frame1_Row0]
 cyCur=323
 cyMin=10
 
-[Frame0_Col0]
+[Frame1_Col0]
 cxCur=1243
 cxMin=10
 
-[Frame0_View0,0]
-Cursor.row=41
-Cursor.column=0
-TopSubLine=61
-
-[Frame1]
-Columns=1
-Rows=1
-Flags=2
-ShowCmd=3
-MinPos.x=-1
-MinPos.y=-1
-MaxPos.x=-8
-MaxPos.y=-28
-NormalPos.left=69
-NormalPos.top=69
-NormalPos.right=1349
-NormalPos.bottom=449
-Class=CLatexEdit
-Document=approach.tex
-
-[Frame1_Row0]
-cyCur=660
-cyMin=10
-
-[Frame1_Col0]
-cxCur=1453
-cxMin=10
-
 [Frame1_View0,0]
-Cursor.row=20
-Cursor.column=17
-TopSubLine=18
+Cursor.row=49
+Cursor.column=123
+TopSubLine=58
 
 [Frame2]
 Columns=1
 Rows=1
-Flags=0
-ShowCmd=1
+Flags=2
+ShowCmd=3
 MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-8
@@ -82,17 +82,17 @@ Class=CLatexEdit
 Document=ICSEIndustry.bib
 
 [Frame2_Row0]
-cyCur=408
+cyCur=587
 cyMin=10
 
 [Frame2_Col0]
-cxCur=1207
+cxCur=1453
 cxMin=10
 
 [Frame2_View0,0]
-Cursor.row=669
-Cursor.column=1
-TopSubLine=633
+Cursor.row=300
+Cursor.column=16
+TopSubLine=281
 
 [Frame3]
 Columns=1
@@ -119,8 +119,8 @@ cxCur=1207
 cxMin=10
 
 [Frame3_View0,0]
-Cursor.row=12
-Cursor.column=76
+Cursor.row=3
+Cursor.column=1070
 TopSubLine=0
 
 [Frame4]
@@ -148,9 +148,9 @@ cxCur=922
 cxMin=10
 
 [Frame4_View0,0]
-Cursor.row=0
-Cursor.column=0
-TopSubLine=0
+Cursor.row=28
+Cursor.column=57
+TopSubLine=17
 
 [Frame5]
 Columns=1
@@ -177,9 +177,9 @@ cxCur=1230
 cxMin=10
 
 [Frame5_View0,0]
-Cursor.row=98
-Cursor.column=400
-TopSubLine=96
+Cursor.row=162
+Cursor.column=0
+TopSubLine=192
 
 [Frame6]
 Columns=1
@@ -207,8 +207,8 @@ cxMin=10
 
 [Frame6_View0,0]
 Cursor.row=73
-Cursor.column=930
-TopSubLine=62
+Cursor.column=366
+TopSubLine=56
 
 [Frame7]
 Columns=1
@@ -235,8 +235,8 @@ cxCur=1243
 cxMin=10
 
 [Frame7_View0,0]
-Cursor.row=5
-Cursor.column=0
+Cursor.row=1
+Cursor.column=7
 TopSubLine=0
 
 [Frame8]
@@ -264,7 +264,7 @@ cxCur=1230
 cxMin=10
 
 [Frame8_View0,0]
-Cursor.row=0
-Cursor.column=0
-TopSubLine=0
+Cursor.row=15
+Cursor.column=159
+TopSubLine=16
 
