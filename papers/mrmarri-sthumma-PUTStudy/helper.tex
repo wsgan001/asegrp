@@ -20,56 +20,55 @@ We handled this situation of not being able to generalize due to a high dependen
 \begin{figure}
 \begin{CodeOut}
 \begin{alltt}
-.........
-.........
-01:\hspace*{0.1in}public MockXmlTextWriter(string filename,
-\hspace*{0.3in} Encoding encoding)
-02:\hspace*{0.1in}\{
-03:\hspace*{0.3in}this.fileName = filename;
-04:\hspace*{0.1in}\}
+01: public class MockXmlTextWriter\{ 
+02:\hspace*{0.1in}public MockXmlTextWriter(string filename,
+\hspace*{0.25in} Encoding encoding)
+03:\hspace*{0.1in}\{
+04:\hspace*{0.3in}this.fileName = filename;
+05:\hspace*{0.1in}\}
 
-05:\hspace*{0.1in}public void WriteAttributeString
+06:\hspace*{0.1in}public void WriteAttributeString
 \hspace*{0.3in}(string attributeName, string value)
-06:\hspace*{0.1in}\{
-07:\hspace*{0.3in}xmlString = xmlString + " " + attributeName 
+07:\hspace*{0.1in}\{
+08:\hspace*{0.3in}xmlString = xmlString + " " + attributeName 
 \hspace*{0.7in}+ "=" + "\"" + value + "\"";
-08:\hspace*{0.1in}\}
+09:\hspace*{0.1in}\}
 
-09:\hspace*{0.1in}public void WriteEndElement()
-10:\hspace*{0.1in}\{
-11:\hspace*{0.3in}xmlString = xmlString + " />";
-12:\hspace*{0.1in}\}
-
-13:\hspace*{0.1in}public void Close()
-14:\hspace*{0.1in}\{
-15:\hspace*{0.3in}xmlString = xmlString.Replace("/> />", "/>" + 
+10:\hspace*{0.1in}public void Close()
+11:\hspace*{0.1in}\{
+12:\hspace*{0.3in}xmlString = xmlString.Replace("/> />", "/>" + 
    \hspace*{0.5in}System.Environment.NewLine + "</" 
    \hspace*{0.7in}+ startString + ">");
-16:\hspace*{0.3in}CreatedProjects.currentProject = xmlString;
-17:\hspace*{0.1in}\}
-............
-............
+13:\hspace*{0.3in}CreatedProjects.currentProject = xmlString;
+14:\hspace*{0.1in}\}
+\hspace*{0.3in}............
+15: \}
 \end{alltt}
 \end{CodeOut}
-\caption{\label{fig:mockobject} Sample code from the \CodeIn{MockXmlTextWriter} mock object. \textit{In the \CodeIn{WriteAttributeString} method, we append the argument string to a global string \CodeIn{xmlString} and this global string represents the content written to the xml file.}}
+\caption{\label{fig:mockobject} Sample code from the \CodeIn{MockXmlTextWriter} mock object. In the \CodeIn{WriteAttributeString} method, the argument string is appended to a global string \CodeIn{xmlString} and this global string represents the content written to the xml file.}
 \end{figure}
+%%
+%09:\hspace*{0.1in}public void WriteEndElement()
+%10:\hspace*{0.1in}\{
+%11:\hspace*{0.3in}xmlString = xmlString + " />";
+%12:\hspace*{0.1in}\}
 
 By using the mock object technique, we were able to achieve generalization of both the existing tests of \CodeIn{SaveEmptyConfigs} and \CodeIn{SaveNormalProject}, resulting in a block coverage of $61.64$\% and $67.92$\%, respectively. Recall that we were not able to generalize the existing conventional unit tests when we did not use the mock object. 
 %------------------------------------------------------------------------------------------------------
 
-\subsection{Input-Space Partitioning}
-\label{sec:inputspace}
-
-Input-space partitioning~\cite{paul:offut} helps partition the input space into disjoint blocks,
-where the union of all the blocks should result in the complete input space.  
-We explain how we performed the input-space partitioning in our study to achieve
-a higher coverage of the method \CodeIn{SaveSetting} of the class
-\CodeIn{SettingsGroup}. The \CodeIn{SaveSetting} method accepts an argument of type
-\CodeIn{Object}. The method accepts several types such as \CodeIn{int}, \CodeIn{string},
-\CodeIn{bool}, and \CodeIn{enum}, and a different path of the code is covered for each type. Therefore, in order to achieve high code coverage, a PUT to test this method should be designed to generate conventional unit tests that take different types of the argument. For simplicity, we explain how we dealt with
-integers and strings only. We defined two partitions where the first partition includes
-integers and the second partition includes strings. We wrote separate PUTs for
-covering these partitions. We repeated the same procedure for other input types. Consequently, Pex achieved high coverage as it was able to generate different input types and cover several program paths.
+%\subsection{Input-Space Partitioning}
+%\label{sec:inputspace}
+%
+%Input-space partitioning~\cite{paul:offut} helps partition the input space into disjoint blocks,
+%where the union of all the blocks should result in the complete input space.  
+%We explain how we performed the input-space partitioning in our study to achieve
+%a higher coverage of the method \CodeIn{SaveSetting} of the class
+%\CodeIn{SettingsGroup}. The \CodeIn{SaveSetting} method accepts an argument of type
+%\CodeIn{Object}. The method accepts several types such as \CodeIn{int}, \CodeIn{string},
+%\CodeIn{bool}, and \CodeIn{enum}, and a different path of the code is covered for each type. Therefore, in order to achieve high code coverage, a PUT to test this method should be designed to generate conventional unit tests that take different types of the argument. For simplicity, we explain how we dealt with
+%integers and strings only. We defined two partitions where the first partition includes
+%integers and the second partition includes strings. We wrote separate PUTs for
+%covering these partitions. We repeated the same procedure for other input types. Consequently, Pex achieved high coverage as it was able to generate different input types and cover several program paths.
 %----------------------------------------------------------------------------
 %\subsection{Delegates} 
 %\label{sec:delegate}
