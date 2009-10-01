@@ -1,16 +1,55 @@
-\subsection{Defects}
+\subsection{RQ2: Defects}
 
-To address RQ2, we conduct two evaluations. In the first evaluation, we identify the number of real defects detected by PUTs. Since we are using the CUTs that are available with the sources, we did not find any failing CUTs, i.e., no defects are reported by the existing test suite. Therefore, any failing unit tests resulting when testing using PUTs are considered as defects that are not found by the CUTs. However, before confirming the failing test case implies a defect in the code under test, we manually verify that the generated test inputs are valid and that it is not a false positive due to an ineffective PUT. 
+To address RQ2, we identify the number of defects detected by PUTs. Since we are using the CUTs that are available with the sources, we did not find any failing CUTs, i.e., no defects are reported by the existing test suites of each of the subjects. Therefore, any failing unit tests resulting when testing using the test cases generated using PUTs are considered as defects that are not found by the CUTs. However, before confirming the failing test cases implies a defect in the code under test, we manually verify that the generated test inputs are valid and that it is not a false positive due to an ineffective PUT. 
 
-We conduct second evaluation based on mutation testing to further show the effectiveness of PUTs in detecting defects compared to CUTs. The reason for the second evaluation is that the existing CUTs do not detect any defects in the code under test. In this evaluation, we seed defects in the code under test using a mutation testing tool and verify
-how many mutants are killed by existing CUTs and PUTs. We consider that a mutant is killed if any previously passing test fails after executed with the seeded fault. 
+Through test generalization of the three subjects in our study, we found $13$ defects in the DSA application and $3$ defects in the NUnit application. Once we were sure that the resulting failing test cases were due to defects in the code under test, we reported the failing test scenarios on the hosting website and we are waiting for the confirmation from the developers\footnote{Reported bugs can be found at the CodePlex website with defect IDs from $8846$ to $8858$ and the SourceForge website with defect IDs from $0$ to $0$.}.  
 
-We use the following five basic mutation operators, recommended by Offutt, for seeding defects in the code under test.
+We next explain an example defect detected in the DSA application by our test generalization. The class \CodeIn{Heap} is a heap data structure implementation in the \CodeIn{DataStructure} namespace. This class includes methods to add, remove, and to heapify the elements in the heap. The \CodeIn{Remove} method of the class takes the item to remove as a paramter and returns \CodeIn{True} when the item to remove exists in the heap, and returns \CodeIn{False} otherwise. Figure~\ref{fig:defectCUT} shows the existing CUT in the application's source package that tests whether the \CodeIn{Remove} method returns \CodeIn{False} when an item that is not in the heap is passed as the parameter. On executing, this CUT passes indicating no defect in the code under test since there are no more CUTs in the test suite that test the behaviour of the method. However, on applying Pex using the PUT shown in Figure~\ref{fig:defectPUT}, a few of the generated test cases failed indicating the possibility of a defect in the \CodeIn{Remove} method. The test inputs for the failing test cases had the following common properties: the heap size is less than $4$ (\CodeIn{input} parameter of PUT is of size less than $4$), the item to remove is $0$ (\CodeIn{item} parameter of the PUT), and $0$ was not added to the heap (generated value for \CodeIn{input} did not contain $0$). When we manually analyzed the cause of the failing test cases, we found that in the constructor of the \CodeIn{Heap} class, a default array of size $4$ (of type \CodeIn{int}) is assigned to store the items. Due to such an assignment, there is always an item $0$ in the heap unless an input list of size is greater than or equal to $4$. Therefore, on calling the \CodeIn{Remove} method to remove the item $0$, even when there is no such item in the heap, the method returns \CodeIn{True} indicating the item has been successfully removed and causing the assertion statement to fail (statement $06$ of the PUT). However, this defect does not surface when testing the method using the CUT shown in Figure~\ref{fig:defectCUT} as the test case assigns the heap with $5$ elements (statement $02$) and therefore the defect-exposing scenario of heap size $< 4$ cannot be encountered. 
 
-\begin{itemize}
-\item ABS: Forces each arithmetic expression to take values zero, positive and negative values.
-\item AOR: Replaces each arithmetic operator with every syntactically legal operator.
-\item LCR: Replaces logical connector (AND and OR) with other kinds of logical operators.
-\item ROR: Replaces each relational operator with other relational operators.
-\item UOI: Inserts unary operators in front of expressions.
-\end{itemize}
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+//To test Remove item not present
+01: public void RemoveCUT()\{
+02: \hspace*{0.07in}Heap<int> actual = new Heap<int> \{2, 78, 1, 0, 56\};
+03: \hspace*{0.07in}Assert.IsFalse(actual.Remove(99));
+04: \hspace*{0.02in}\}
+\end{alltt}
+\end{CodeOut}
+\caption{Existing CUT to test the \CodeIn{Remove} method of the \CodeIn{Heap} class}
+\label{fig:defectCUT}
+\end{figure}
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+01: public void RemoveItemPUT(
+\hspace*{0.7in} [PAUT]List<int> input, int item) \{
+02: \hspace*{0.07in}Heap<int> actual = new Heap<int> (input);
+03: \hspace*{0.07in}if (input.Contains(item)) \{
+04: \hspace*{0.2in}..... \}
+05: \hspace*{0.07in}else \{
+06: \hspace*{0.2in}PexAssert.IsFalse(actual.Remove(randomPick));
+07: \hspace*{0.2in}PexAssert.AreEqual(input.Count, actual.Count);
+08: \hspace*{0.2in}CollectionAssert.AreEquivalent(actual, input);\}
+09: \hspace*{0.02in}\}
+\end{alltt}
+\end{CodeOut}
+\caption{Generalized PUT of the existing CUT shown in Figure~\ref{fig:defectCUT}.}
+\label{fig:defectPUT} 
+\end{figure}
+
+These example defect that surfaced in our study display the strength of generalized test cases such as PUTs. The $16$ defects reported in our study that were not found by the existing test suites show that PUTs can assist in unbiased test generation and are an effective means for rigourous testing of the code under test.  
+%------------------------------------------------------------------------------------------------------------------------------------------
+%We conduct second evaluation based on mutation testing to further show the effectiveness of PUTs in detecting defects compared to CUTs. The reason for the second evaluation is that the existing CUTs do not detect any defects in the code under test. In this evaluation, we seed defects in the code under test using a mutation testing tool and verify
+%how many mutants are killed by existing CUTs and PUTs. We consider that a mutant is killed if any previously passing test fails after executed with the seeded fault. 
+%
+%We use the following five basic mutation operators, recommended by Offutt, for seeding defects in the code under test.
+%
+%\begin{itemize}
+%\item ABS: Forces each arithmetic expression to take values zero, positive and negative values.
+%\item AOR: Replaces each arithmetic operator with every syntactically legal operator.
+%\item LCR: Replaces logical connector (AND and OR) with other kinds of logical operators.
+%\item ROR: Replaces each relational operator with other relational operators.
+%\item UOI: Inserts unary operators in front of expressions.
+%\end{itemize}
