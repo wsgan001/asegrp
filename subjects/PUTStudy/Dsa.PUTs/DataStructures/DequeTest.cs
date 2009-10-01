@@ -2,16 +2,14 @@
 using Dsa.DataStructures;
 using System;
 using Microsoft.Pex.Framework;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Microsoft.Pex.Framework.Validation;
 using System.Collections.ObjectModel;
 using Microsoft.Pex.Framework.Goals;
 
 namespace Dsa.PUTs.DataStructures
 {
-    /// <summary>
-    /// Tests for Deque.
-    /// </summary>
+    [TestFixture]
     [PexClass]
     public partial class DequeTest
     {
@@ -45,8 +43,10 @@ namespace Dsa.PUTs.DataStructures
         public void DequeueFrontEmptyDequePUT([PexAssumeNotNull]Collection<int> input)
         {
             Deque<int> actual = new Deque<int>(input);
+            CollectionAssert.AreEqual(input, actual);
             for (int i = 0; i < input.Count ; i++)
             {
+                PexAssert.AreEqual(input[i], actual.PeekFront());
                 PexAssert.AreEqual(input[i],actual.DequeueFront());
                 PexAssert.AreEqual(input.Count - (i + 1), actual.Count);
             }
@@ -55,6 +55,21 @@ namespace Dsa.PUTs.DataStructures
         }
         /**END ALL PUTs**/
 
+
+        [PexMethod]
+        [PexAllowedException(typeof(InvalidOperationException))]
+        public void DequeueBackEmptyDequePUT([PexAssumeNotNull]Collection<int> input)
+        {
+            Deque<int> actual = new Deque<int>(input);
+            int j = 0;
+            for (int i = input.Count - 1; i >= 0; i--)
+            {                
+                PexAssert.AreEqual(input[i], actual.DequeueBack());
+                PexAssert.AreEqual(input.Count - (j++ + 1), actual.Count);
+            }
+
+            PexObserve.ValueForViewing<Collection<int>>("Input Collection", input);
+        }
 
         /**
         * Generalize PeekFrontDequeEmptyTest

@@ -3,12 +3,14 @@ using Dsa.Utility;
 using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
 using Microsoft.Pex.Framework.Goals;
+using NUnit.Framework;
 
-namespace Dsa.Test.Utility
+namespace Dsa.PUTs.Utility
 {
     /// <summary>
     /// Test for the Guard family of methods.
     /// </summary>
+    [TestFixture]
     [PexClass]
     public sealed partial class GuardTest
     {

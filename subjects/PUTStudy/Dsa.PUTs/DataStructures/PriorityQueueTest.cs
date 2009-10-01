@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using Dsa.DataStructures;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
 using Microsoft.Pex.Framework.Goals;
+using NUnit.Framework;
 
-namespace Dsa.Test.DataStructures
+namespace Dsa.PUTs.DataStructures
 {
     /// <summary>
     /// Tests for PriorityQueue.
     /// </summary>
-    [TestClass]
+    [TestFixture]
+    [PexClass]
     public sealed partial class PriorityQueueTest
     {
         /// <summary>
@@ -148,7 +149,7 @@ namespace Dsa.Test.DataStructures
             elemList.Sort();
             int[] actual = queue.ToArray();
             PexObserve.ValueForViewing<int[]>("Actual", queue.ToArray()); 
-            //CollectionAssert.AreEqual(elemList.ToArray(), actual);
+            CollectionAssert.AreEquivalent(elemList, queue);
         }
 
         /// <summary>

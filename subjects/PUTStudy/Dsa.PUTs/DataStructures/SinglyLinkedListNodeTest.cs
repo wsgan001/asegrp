@@ -1,13 +1,14 @@
 ﻿using Dsa.DataStructures;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Microsoft.Pex.Framework;
 
-namespace Dsa.Test.DataStructures
+namespace Dsa.PUTs.DataStructures
 {
     /// <summary>
     /// Tests for SinglyLinkedListNode.
     /// </summary>
-    [TestClass]
+    [TestFixture]
+    [PexClass]
     public sealed partial class SinglyLinkedListNodeTest
     {
         /// <summary>

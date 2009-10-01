@@ -1,11 +1,13 @@
 ﻿using Dsa.DataStructures;
 using Microsoft.Pex.Framework;
+using NUnit.Framework;
 
-namespace Dsa.Test.DataStructures
+namespace Dsa.PUTs.DataStructures
 {
     /// <summary>
     /// Tests for DoublyLinkedListNode.
     /// </summary>
+    [TestFixture]
     [PexClass]
     public sealed partial class DoublyLinkedListNodeTest
     {

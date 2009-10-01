@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using Dsa.DataStructures;
-using Dsa.Test.Utility;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
 using System;
+using Dsa.PUTs.Utility;
 
-namespace Dsa.Test.DataStructures
+namespace Dsa.PUTs.DataStructures
 {
     /// <summary>
     /// Tests for OrderedSet.
     /// </summary>
-    [TestClass]
+    [TestFixture]
+    [PexClass]
     public sealed partial class SetTest
     {
         /// <summary>

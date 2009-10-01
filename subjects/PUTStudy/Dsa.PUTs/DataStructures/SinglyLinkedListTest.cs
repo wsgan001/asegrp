@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Dsa.DataStructures;
 using Microsoft.Pex.Framework;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Microsoft.Pex.Framework.Validation;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Dsa.Test.DataStructures
+namespace Dsa.PUTs.DataStructures
 {
     /// <summary>
     /// Tests for SinglyLinkedList.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     [PexClass]
     public sealed partial class SinglyLinkedListTest
     {

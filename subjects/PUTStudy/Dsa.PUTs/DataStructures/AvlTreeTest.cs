@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Dsa.DataStructures;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
 using System;
@@ -11,7 +11,7 @@ namespace Dsa.PUTs.DataStructures
     /// <summary>
     /// Tests for Avl tree.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     [PexClass]
     public partial class AvlTreeTest
     {

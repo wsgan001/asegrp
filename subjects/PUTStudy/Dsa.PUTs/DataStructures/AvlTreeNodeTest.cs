@@ -1,5 +1,5 @@
 ﻿using Dsa.DataStructures;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Microsoft.Pex.Framework;
 
 namespace Dsa.PUTs.DataStructures
@@ -7,7 +7,7 @@ namespace Dsa.PUTs.DataStructures
     /// <summary>
     /// Tests for AvlTreeNode.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     [PexClass]
     public sealed partial class AvlTreeNodeTest
     {

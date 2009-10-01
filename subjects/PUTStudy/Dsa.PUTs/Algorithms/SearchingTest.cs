@@ -3,14 +3,14 @@ using Dsa.Algorithms;
 using System.Collections;
 using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Dsa.PUTs.Algorithms
 {
     /// <summary>
     /// PUTs for Searching.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     [PexClass]
     public sealed partial class SearchingTest
     {

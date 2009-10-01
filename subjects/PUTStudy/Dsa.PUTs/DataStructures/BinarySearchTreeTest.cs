@@ -2,16 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using Dsa.DataStructures;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
+using System.Collections.ObjectModel;
+using NUnit.Framework;
 
-namespace Dsa.Test.DataStructures
+namespace Dsa.PUTs.DataStructures
 {
     /// <summary>
     /// Tests for BinarySearchTree.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     [PexClass]
     public sealed partial class BinarySearchTreeTest
     {
@@ -127,7 +128,7 @@ namespace Dsa.Test.DataStructures
         /// Summary
         /// Time: 1 min 27 sec
         /// Pattern: AAA,Constructor Test
-        public void IsSynchronizedTest([PexAssumeUnderTest]int[] elements)
+        public void IsSynchronizedTest([PexAssumeUnderTest]Collection<int> elements)
         {
             BinarySearchTree<int> bst = new BinarySearchTree<int>(elements);
             ICollection actual = bst;
@@ -324,7 +325,15 @@ namespace Dsa.Test.DataStructures
             PexAssume.IsTrue(position >= 0 && position <= 1000);
             BinarySearchTree<int> bst = new BinarySearchTree<int>(elements);
             int[] actual = new int[bst.Count + position];
-            bst.CopyTo(actual, position);
+
+            if (position == 0)
+            {
+                bst.CopyTo(actual);
+            }
+            else
+            {
+                bst.CopyTo(actual, position);
+            }
 
             //CollectionAssert.AreEqual(expected, actual);
             PexObserve.ValueForViewing<int[]>("SearchTree Contents", actual);

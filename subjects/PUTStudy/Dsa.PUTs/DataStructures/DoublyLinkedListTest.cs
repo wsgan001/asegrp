@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using Dsa.DataStructures;
 using Microsoft.Pex.Framework;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Microsoft.Pex.Framework.Validation;
 using Microsoft.Pex.Framework.Goals;
 
-namespace Dsa.Test.DataStructures
+namespace Dsa.PUTs.DataStructures
 {
     /// <summary>
     /// Tests for DoublyLinkedList.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     [PexClass]
     public sealed partial class DoublyLinkedListTest
     {

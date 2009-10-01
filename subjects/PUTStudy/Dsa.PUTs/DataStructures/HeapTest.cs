@@ -5,14 +5,15 @@ using Dsa.Algorithms;
 using Microsoft.Pex.Framework;
 using System.Collections.ObjectModel;
 using Microsoft.Pex.Framework.Validation;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Dsa.PUTs.DataStructures
 {
     /// <summary>
     /// Tests for Heap.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     [PexClass]
     public sealed partial class HeapTest
     {

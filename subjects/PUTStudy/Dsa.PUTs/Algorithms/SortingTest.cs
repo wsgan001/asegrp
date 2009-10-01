@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Dsa.Algorithms;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
 using System.Text.RegularExpressions;
@@ -13,7 +13,7 @@ namespace Dsa.PUTs.Algorithms
     /// <summary>
     /// Sorting tests.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     [PexClass]
     public sealed partial class SortingTest
     {

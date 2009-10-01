@@ -3,12 +3,14 @@ using Dsa.Algorithms;
 using Dsa.DataStructures;
 using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
+using NUnit.Framework;
 
 namespace Dsa.PUTs.Algorithms
 {
     /// <summary>
     /// Tests for Set algorithms
     /// </summary>
+    [TestFixture]
     [PexClass]
     public sealed partial class SetsTest
     {

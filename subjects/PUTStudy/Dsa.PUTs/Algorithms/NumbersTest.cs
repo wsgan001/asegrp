@@ -1,7 +1,7 @@
 ﻿using System;
 using Dsa.Algorithms;
 using Microsoft.Pex.Framework;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Microsoft.Pex.Framework.Goals;
 using Microsoft.Pex.Framework.Validation;
 
@@ -10,7 +10,7 @@ namespace Dsa.PUTs.Algorithms
     /// <summary>
     /// Numbers tests.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     [PexClass]
     public sealed partial class NumbersTest
     {
@@ -195,7 +195,7 @@ namespace Dsa.PUTs.Algorithms
             if (actual < 0)
                 try
                 {
-                    actual.ToString("X");
+                    actual.ToHex();
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {
@@ -239,7 +239,7 @@ namespace Dsa.PUTs.Algorithms
          * Instrumentation issue = 0
          * Patterns: AAA, StateRelation
          * Pex Limitations = 4 - related to floating point and Math functions
-         * Failing test cases = 1 - there is no guard against negative integers
+         * (SHOULD NOT BE THE CASE) Failing test cases = 1 - there is no guard against negative integers
          * Comments: Forced stop
          **/
         [PexMethod]

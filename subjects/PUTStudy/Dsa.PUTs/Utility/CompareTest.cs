@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using Dsa.Utility;
 using Microsoft.Pex.Framework;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
-namespace Dsa.Test.Utility
+namespace Dsa.PUTs.Utility
 {
     /// <summary>
     /// Tests for the compare methods.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     [PexClass]
     public sealed partial class CompareTest
     {

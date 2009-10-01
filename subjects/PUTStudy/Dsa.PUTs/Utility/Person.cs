@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dsa.Test.Utility
+namespace Dsa.PUTs.Utility
 {
     public sealed class Person : IComparable<Person>
     {

@@ -5,14 +5,16 @@ using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Pex.Framework.Validation;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+//using NUnit.Framework;
 
-namespace Dsa.Test.Algorithms
+namespace Dsa.PUTs.Algorithms
 {
     /// <summary>
     /// Tests for the Strings algorithms.
     /// </summary>
-    [TestClass]
+    [TestFixture]
+    //[TestClass]
     [PexClass]
     public sealed partial class StringsTest 
     {
@@ -129,8 +131,11 @@ namespace Dsa.Test.Algorithms
         public void StripPUT(string actual)
         {
             Regex charPattern = new Regex(@"[a-zA-Z]");
+           // char[] ch = {'\u0001'};
+            //actual = new string(ch);
             PexAssume.IsTrue(charPattern.IsMatch(actual));
             PexAssume.IsFalse(actual.Contains("\0"));
+            PexAssume.IsFalse(actual.Contains("\\"));
             string expected = Regex.Replace(actual, "[^a-zA-Z]", "");
             PexAssert.AreEqual(expected, actual.Strip());
         }
