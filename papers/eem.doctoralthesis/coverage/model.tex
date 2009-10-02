@@ -1,0 +1,162 @@
+\section{Access Control Policies and Policy Coverage}
+\label{sec:model}
+
+Besides XACML, a generic policy language, many access control policy
+languages have been proposed for different application domains.
+Policies in these languages are usually composed of a set of rules,
+which specify under what conditions a subject is allowed or denied
+access to certain objects in a system. To discuss policy coverage
+criteria in general, we model access requests and policies in this
+paper as follows.
+
+Let $\mathcal{S}$, $\mathcal{O}$ and $\mathcal{A}$ denote
+respectively the set of all the subjects, objects and actions in an
+access control system. Each subject, object, or action is associated
+with a set of attributes that may be used for access control
+decisions. For example, a subject's attributes may include a user's
+role, rank, and security clearance. An object's attributes may
+include a file's type, a document's security class, and a printer's
+location.
+
+An access request $q$ is a tuple $(s, o, a)$, where $s \in
+\mathcal{S}$, $o \in \mathcal{O}$ and $a \in \mathcal{A}$.
+A request $(s, o, a)$ means that
+subject $s$ requests to take action $a$ on object $o$.
+
+An access control policy $P$ is a sequence of rules, each of which
+is of the form $(Cond_s, Cond_o, Cond_a, decision, Cond_g)$.
+$Cond_s$, $Cond_o$ and $Cond_a$ are constraints over the attributes
+of a subject, object, and action, respectively. $Cond_g$ is a
+general constraint that may potentially be over all the attributes
+of subjects, objects, actions, and other properties of a system
+(e.g., the current time and the load of a system). A $decision$ is
+either $deny$ or $permit$. Given a request $(s,o,a)$, if
+$Cond_s(s)$, $Cond_o(o)$, $Cond_a(a)$, and $Cond_g$ are all
+evaluated to be $true$, then the request is either permitted or
+denied, according to $decision$ in the rule.
+
+One may wonder that since $Cond_g$ can be a general constraint over
+the attributes of subjects, objects, and actions as well as other
+properties of a system, why do we still need $Cond_s$, $Cond_o$, and
+$Cond_a$ in a rule? The reason is that, although conceptually those
+conditions can be merged with the general condition $Cond_g$, by
+separating them, it makes it easy to quickly locate relevant rules
+to a request. For example, given a request $(s,o,a)$, if one of
+$Cond_s$, $Cond_o$ and $Cond_a$ is evaluated to be false, then we do
+not need to further evaluate $Cond_g$ that sometimes may be much
+more complex than the former three. Such a form of access control
+rules is commonly supported in access control policy languages. If a
+request satisfies $Cond_s$, $Cond_o$ and $Cond_a$ of a rule, then we
+say the rule is {\em applicable} to the request.
+
+A policy may have multiple rules that are applicable to a request.
+These rules may in fact offer conflicting decisions. The final
+decision regarding the request depends on application-specific
+conflict resolution functions. Commonly used conflict resolution
+functions include denial overriding permission (where a request is
+denied if it is denied by at least one rule), permission overriding
+denial (where a request is permitted if it is permitted by at least
+one rule) and first applicable (where the final decision is the same
+as that of the first applicable rule in a sequence of rules whose
+condition $Cond_g$ is evaluated true). We use $PDP$ (Policy Decision
+Point) to denote the component of a system where final decisions are
+made according to the decision of each rule and a specific
+confliction resolution function. Conceptually, given a policy $P$
+and a request $q$, a PDP returns the access control decision of $q$.
+%One basic module of PDP is
+%$RuleEval$, which
+%takes a rule and a request, and returns the decision the rule's access control
+%decision on the request.
+%Another basic module is $CondEval$, which evaluates
+%whether a condition is true.
+
+Since we are interested in capturing potential errors in policy
+specifications, we assume that PDP is correctly implemented in the
+rest of the paper. In practice, generic PDP implementations are
+often available, which have been scrutinized by the public.
+
+We next start our discussion on policy testing based on the
+preceding model. The basic idea of policy testing is simple. Like
+software testing, given a policy, we would like to generate a set of
+requests, and check whether the access control decisions on these
+requests are expected. Any unexpected decision indicates potential
+errors in the specification of the policy.
+
+If no requests are evaluated against a rule during testing, then
+potential errors in that rule cannot be discovered. Thus, it is
+important to generate requests so that a large portion of rules are
+involved in the evaluation of at least one of the requests. In other
+words, we are interested in requests that cause a rule's conditions
+to be evaluated to be true. Recall that if a request satisfies
+$Cond_s$, $Cond_o$, and $Cond_a$ of a rule, then we say the rule is
+{\em applicable} to the request.
+
+\begin{definition}
+Given a request $q$ and a rule $m$ in a policy $P$, we say $q$ {\em covers}
+$m$ if $m$ is applicable to $q$.
+% and $RuleEval(m, r)$ is invoked by the
+%PDP when determining the final decision on $q$.
+Given a set of requests $\mathcal{Q}$, the
+rule coverage of $P$ by $\mathcal{Q}$ is the ratio between
+the number of rules covered by at least one request in $\mathcal{Q}$
+and the total number of rules in $P$.
+\end{definition}
+
+Intuitively, the higher the rule coverage of a set of requests, the
+better chance specification errors may be discovered. Like software
+testing, it is often infeasible to have exhausted policy testing
+when the space of possible requests is large. Therefore, policy
+specification errors may still exist even after testing with
+requests that cover all the rules.
+
+To improve the quality of policy testing, it helps to further examine potential errors
+in the specification of conditions in each rule, which can also be tested by requests.
+
+\begin{definition}
+Given a request $q$ and a rule $m(Cond_s, Cond_o, Cond_a,
+decision, Cond_g)$, we say $Cond_g$ is {\em positively
+(negatively) covered} by $q$ if $m$ is covered by $q$ and $Cond_g$
+is evaluated to be true (false). Given a set of requests
+$\mathcal{Q}$, the condition coverage of $P$ by $\mathcal{Q}$ is
+the ratio between the numbers of general conditions positively or
+negatively covered by at least one request in $\mathcal{Q}$ and
+two times of the total number of rules in $P$.
+\end{definition}
+
+\Comment{
+\begin{definition}
+Given a request $q$ and a rule $m(Cond_s, Cond_o, Cond_a, decision, Cond_g)$, we
+say $Cond_g$ is {\em positively (negatively) covered} by $q$ if $m$ is covered by $q$ and $Cond_g$ is evaluated
+to be true (false). Given a set of requests $\mathcal{Q}$, the
+positive (negative) condition coverage of $P$
+by $\mathcal{Q}$ is the ratio between the numbers of general conditions positively (negatively)
+covered by at least one request in $\mathcal{Q}$ and the total number of rules in $P$.
+The overall condition coverage is the average of the positive and negative condition coverage.
+\end{definition}
+}
+
+The intuition behinds the above definition is as follows.
+An error in the condition of a rule may have two types of impacts on a request. Suppose
+$Cond_g'$ is the condition when an error is introduced to the original condition $Cond_g$.
+Given a request $q$, $Cond_g'(q)$ may be evaluated to be true while $Cond_g(q)$ is false,
+or vice versa. That is why we concern with both
+ positive and negative coverage of a condition in the preceding definition.
+
+Our definition of condition coverage corresponds to clause coverage
+or condition coverage~\cite{myers79:art} in program testing. Note
+that there exist more complicated coverage criteria for logical
+expressions. For example, in program testing, predicate coverage
+(also called decision coverage or branch
+coverage)~\cite{myers79:art} requires to cover both true and false
+of compound conditions in a logical expression. In policy testing,
+predicate coverage requires that the whole compound condition for a
+rule needs to be evaluated to be true and false, respectively. In
+program testing, combinatorial coverage (also called multiple
+condition coverage)~\cite{myers79:art} requires to cover each
+possible combination of outcomes of each condition in a logical
+expression. In policy testing, combinatorial coverage requires to
+cover each possible combination of outcomes of each condition for a
+rule. In our existing approach, we use basic, simple criteria for
+conditions in rules; in future work, we plan to investigate these
+more complicated alternatives in terms of their effects on
+fault-detection capability.

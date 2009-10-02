@@ -1,0 +1,122 @@
+\section{Empirical Study of Manually Generated Requests' Policy Coverage}
+\label{sec:experimentalresults}
+
+We have applied the coverage-measurement tool on the whole set of
+the XACML committee specification conformance test
+suite~\cite{anderson02:xacml} and a conference paper review
+system's policy and its requests developed by Zhang et
+al.~\cite{zhang04:synthesis}.
+
+\begin{table}[t]
+\caption {\label{table:results} Policy coverage of the XACML
+conformance test suite}
+\begin{small}
+\begin{center}
+\centering
+\begin {tabular} {|l|r|r|r|r|r|} \hline
+type&\CenterCell{100\%}&\CenterCell{50\%}&\CenterCell{non-0\%}&\CenterCell{0\%}&\CenterCell{total}\\
+&\CenterCell{all}&\CenterCell{cond}&\CenterCell{rule/cond}&\CenterCell{rule/cond}&\\
+\hline policies&24&172&24&14&234\\
+\hline
+\hline Permit&31&144&6&&181\\
+\hline Deny&&&6&&6\\
+\hline NotApp&13&28&6&10&57\\
+\hline Indet&1&2&6&4&13\\
+\hline
+\end{tabular}
+\end{center}
+\end{small}
+\vspace*{-4.0ex}
+\end{table}
+
+The XACML conformance test suite includes 337 distinct
+policies\footnote{In the XACML conformance test suite, there are
+374 policies, each of which receives a single request. We have
+reduced those policies with the same policy content into a single
+policy, which can then receive multiple requests.}, 374 requests,
+their expected responses from the application of the policies.
+Among these 337 distinct policies, we show the results of 234
+policies in this section because for the requests of the remaining
+103 policies, Sun's XACML implementation~\cite{sun05:xacml}
+responded different decisions than the ones specified in their
+expected responses. Applying the requests on these 103 policies
+failed to conform with expected responses because Sun's XACML
+implementation does not support some optional features of XACML
+specifications.
+
+The conference paper review system's policy specified by Zhang et
+al.~\cite{zhang04:synthesis} has 11 requests and 15 rules, which
+have 10 conditions. These 10 conditions involve the execution of SQL
+statements that access an external database. Because it is not
+trivial to adapt Sun's XACML implementation to support these
+conditions, we simply remove these 10 conditions as well as some
+attributes that are not parsed by Sun's XACML implementation, in
+order to allow us to focus on the measurement of rule hit
+percentage.
+
+We fed 374 requests in the XACML conformance test suite to the
+coverage-measurement tool. Table~\ref{table:results} shows the
+reported statistics of policy coverage. Note that all policies in
+the conformance test suite are hit by the requests, achieving 100\%
+policy hit percentage. Column 1 shows the type of data and Columns
+2-5 show the data for different types of coverage. Row 2 shows the
+number of policies. Rows 3-6 show the number of requests whose
+returned decisions are \CodeIn{Permit}, \CodeIn{Deny},
+\CodeIn{NotApplicable}, and \CodeIn{Indeterminate}, respectively.
+When a data entry has a zero value, we do not show the zero value
+but leave the entry empty.
+
+Column 2 shows the data for policies whose policy, rule, and
+condition hit percentages reach 100\%. These policies have achieved
+the optimal policy coverage. Column 3 shows the data for policies
+whose policy and rule hit percentages reach 100\% but condition hit
+percentage reaches 50\%.\Comment{ These policies achieve
+almost-optimal policy coverage because sometimes it is not very
+essential to cause a condition of a rule to be evaluated to be
+false.} Column 4 shows the data for policies whose rule or condition
+hit percentage is less than 100\% but not equal to 0\% (but we do
+not include the cases shown in Column 3 here). The coverage of these
+policies needs to be improved. Column 5 shows the data for policies
+whose rule or condition hit percentage is equal to 0\%. These
+policies are especially in need for improvement. The last column
+shows the sum of all the data in Columns 2-5.
+
+From the results shown in Table~\ref{table:results}, we observed
+that a majority of policies fell into the category of Column 3,
+where policy and rule hit percentages reach 100\% but condition
+hit percentage reaches 50\%. Many polices in the XACML conformance
+test suite contain single rules each of which has a condition.
+Often each of these policies receives only one request, which
+basically cover the policy's rule and the rule's true condition.
+
+We took a close look at the details of 14 policies in Column 5. Two
+of them had 100\% for rule hit coverage but 0\% for condition hit
+percentage. Their coverage results were against our expectation
+because if their conditions were applicable, we expected that either
+a true or false condition would be hit. We inspected their requests
+and found that a subject's age was specified twice and their
+conditions access the subject's age. When evaluating the conditions,
+PDP encountered an error and returned a decision of
+\CodeIn{Indeterminate}; therefore, neither true or false condition
+was hit.
+
+Note that the XACML conformance test suite was not specifically
+constructed to achieve high coverage of policies but the
+measurement results still give us some insights of the common
+coverage distribution, reflecting policy portions that are
+commonly hit by manually created requests.
+
+After we fed to the coverage-measurement tool 11 requests for the
+conference paper review system's policy~\cite{zhang04:synthesis},
+73\% rule hit percentage was achieved: 4 out of 15 rules were not
+hit. These four uncovered rules included the case of permitting a PC
+chair to read papers and no request matched this case. Interestingly
+one of these uncovered four rules was the last rule, which has the
+effect of \CodeIn{Deny} and this rule's target can be matched by any
+request. This rule is often used for the \CodeIn{permit-overrides}
+rule combination algorithm~\cite{oasis05:xacml}. Given the
+measurement results of the coverage-measurement tool, we could
+construct new requests without much difficulty to cover these
+uncovered rules in the policy of the conference paper review system
+as well as those uncovered rules or conditions in many policies of
+the XACML conformance test suite.

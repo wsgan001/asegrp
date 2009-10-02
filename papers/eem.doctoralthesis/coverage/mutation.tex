@@ -1,0 +1,263 @@
+\section{Measuring Fault-Detection Capability}
+\label{sec:mutation}
+
+In order to investigate the effect of request reduction on
+fault-detection capabilities, we can inject faults into the original
+policy thereby creating faulty policies. Since fault detection is
+the central focus of any testing process, it provides an external
+measure of the effectiveness of that process. We aim to demonstrate
+that reduced request sets based on coverage can detect a large
+percentage of the faults detected by the original request set. We
+use mutation testing~\cite{demillo78:hints} as a mechanism to
+compare request sets in terms of fault detection.\Comment{ We first
+introduce the general concept of mutation testing and describe
+mutation testing for access control policies. We then present how to
+detect equivalent mutants among generated mutants. Finally, we
+present a set of mutation operators used by our automated policy
+mutator.}
+
+\Comment{ In mutation testing, the policy under test is mutated to
+introduce an error and a request set is evaluated against the mutant
+policy. If the request set produces any response that differs from
+the corresponding response produced by the original policy, then the
+mutant is killed.
+
+There are many studies concerned with the types and effectiveness of
+mutating general purpose programming
+languages~\cite{ma02:interclass, hennessy05:analysis}, however many
+of these do not directly apply to mutating policies.  We describe
+the types of mutation operators employed in our experiments in
+Table~\ref{table:mutation_types}.}
+
+%\subsection{Mutation Testing}
+
+Mutation testing~\cite{demillo78:hints} has historically been
+applied to general-purpose programming languages. The program under
+test is iteratively mutated to produce numerous mutants, each
+containing one fault. A test input is independently executed on the
+original program and each mutant program. If the output of a test
+executed on a mutant differs from the output of the same test
+executed on the original program, then the fault is detected and the
+mutant is said to be killed. The fundamental premise of mutation
+testing as stated by Geist et al.~\cite{geist92:estimation} is that,
+in practice, if the software contains a fault, there will usually be
+a set of mutants that can only be killed by a test that also detects
+that fault. In other words, the ability to detect small, minor
+faults such as mutants implies the ability to detect complex faults.
+Because fault detection is the central focus of any testing process,
+mutation testing provides an external measure of the effectiveness
+of that process. The higher the percentage of killed mutants, the
+more effective the test set is at fault detection.
+
+\begin{table}[t]
+    \begin{small}
+        \begin{center}
+        \caption{\label{table:mutationops}Index of mutation operators.}
+            \begin{tabular}{|l|l|}
+                \hline ID  & \CenterCell{Description}\\
+                \hline
+                \hline PSTT & Policy Set Target True. The policy set is applied to all requests.\\
+                \hline PSTF & Policy Set Target False. The policy set is not applied to any requests.\\
+                \hline PTT & Policy Target True. The policy is applied to all requests.\\
+                \hline PTF & Policy Target False. The policy is not applied to any requests.\\
+                \hline RTT & Rule Target True. The rule is applied to all requests.\\
+                \hline RTF & Rule Target False. The rule is not applied to any requests.\\
+                \hline RCT & Rule Condition True. The condition always evaluates to true.\\
+                \hline RCF & Rule Condition False. The condition always evaluated to false.\\
+                \hline CPC & Change Policy Combining Algorithm. Each policy combining algorithm is tried in turn.\\
+                \hline CRC & Change Rule Combining Algorithm. Each rule combining algorithm is tried in turn.\\
+                %\hline CPO & Change Policy Order\\
+                %\hline CRO & Change Rule Order\\
+                \hline CRE & Change Rule Effect. The rule effect is inverted (e.g. permit for deny).\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+In policy mutation testing, the program under test, test inputs, and
+test outputs correspond to the policy, requests, and responses,
+respectively. We first define a set of mutation operators shown in
+Table~\ref{table:mutationops}. Given a policy and a set of mutation
+operators, a mutator generates a number of mutant policies. Given a
+request set, we evaluate each request in the request set on both the
+original policy and a mutant policy. The request evaluation produces
+two responses for the request based on the original policy and the
+mutant policy, respectively. If these two responses are different,
+then we determine that the mutant policy is killed by the request;
+otherwise, the mutant policy is not killed.
+
+Unfortunately, there are various expenses and barriers associated
+with mutation testing. The first and foremost is the generation and
+execution of a large number of mutants.  For general-purpose
+programming languages, the number of mutants is proportional to the
+product of the number of data references and the number of data
+objects in the program~\cite{offutt00:mutation}.  For XACML
+policies, the number of mutants is proportional to the number of
+policy elements, namely policy sets, policies, targets, rules,
+conditions, and their associated attributes.
+
+\Comment{
+\subsection{Equivalent-Mutant Detection}
+
+Cost of mutation testing also includes detection of equivalent
+mutants~\cite{offutt00:mutation}. Although there are syntactic
+differences between an equivalent mutant and the program under test,
+the mutant is semantically identical to the original one. In other
+words, the mutant will produce the same result as the original one
+for all test inputs and thus provides no benefit. Equivalent-mutant
+detection provides a mechanism to better evaluate mutation operators
+and more efficiently perform mutation testing because computational
+resources will not be wasted in evaluating test inputs or comparing
+test outputs for equivalent mutants. Detecting such mutants in
+software is generally intractable~\cite{deMillo91:constraint} and
+historically has been done by hand~\cite{offutt00:mutation}. But
+using a change-impact analysis tool such as
+Margrave~\cite{fisler05:verification} allows us to detect equivalent
+mutants among generated mutants. We originally believed
+equivalent-mutant detection to be an important efficiency
+improvement though we found in practice that evaluating requests and
+comparing responses to be computationally cheaper than performing
+change-impact analysis with Margrave. Furthermore, limitations of
+Margrave prevented the detection of equivalent mutants for mutation
+operators on conditions and some combining algorithms. }
+
+\Comment{
+\subsection{Mutation Operators} \label{sec:operators}
+
+Previous studies~\cite{ma02:interclass, hennessy05:analysis} have
+been conducted to investigate the types and effectiveness of various
+mutation operators for general-purpose programming languages;
+however, these mutation operators often do not directly apply to
+mutating policies. This section describes the chosen mutation
+operators for XACML policies. An index of the mutation operators is
+listed in Table~\ref{table:mutationops} and their details are
+described as below.
+
+\begin{table}[t]
+    \begin{small}
+        \begin{center}
+        \caption{\label{table:mutationops}Index of mutation operators.}
+            \begin{tabular}{|l|l|}
+                \hline ID  & \CenterCell{Description}\\
+                \hline
+                \hline PSTT & Policy Set Target True\\
+                \hline PSTF & Policy Set Target False\\
+                \hline PTT & Policy Target True\\
+                \hline PTF & Policy Target False\\
+                \hline RTT & Rule Target True\\
+                \hline RTF & Rule Target False\\
+                \hline RCT & Rule Condition True\\
+                \hline RCF & Rule Condition False\\
+                \hline CPC & Change Policy Combining Algorithm\\
+                \hline CRC & Change Rule Combining Algorithm\\
+                %\hline CPO & Change Policy Order\\
+                %\hline CRO & Change Rule Order\\
+                \hline CRE & Change Rule Effect\\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\begin{enumerate}
+
+\item \Intro {Policy Set Target True (PSTT)}. Ensure that the
+policy set is applied to all requests by removing the
+\CodeIn{<Target>} tag of each \CodeIn{PolicySet} element. The number
+of mutants created by this operator is equal to the number of
+\CodeIn{PolicySet} elements with a \CodeIn{<Target>} tag. The number
+of equivalent mutants created depends on the specific policy under
+test.
+
+\item \Intro {Policy Set Target False (PSTF)}. Ensure that the
+policy set is never applied to a request by modifying the
+\CodeIn{<Target>} tag of each \CodeIn{PolicySet} element. The number
+of mutants created by this operator is equal to the number of
+\CodeIn{PolicySet} elements. The number of equivalent mutants
+created depends on the specific policy under test.
+
+\item \Intro{Policy Target True (PTT)}. Ensure that the policy is
+applied to all requests simply by removing the \CodeIn{<Target>} tag
+of each \CodeIn{Policy} element. The number of mutants created by
+this operator is equal to the number of \CodeIn{Policy} elements
+with a \CodeIn{<Target>} tag. The number of equivalent mutants
+created depends on the specific policy under test.
+
+\item \Intro{Policy Target False (PTF)}. Ensure that the policy is
+never applied to a request by modifying the \CodeIn{<Target>} tag of
+each \CodeIn{Policy} element. The number of mutants created by this
+operator is equal to the number of \CodeIn{Policy} elements. The
+number of equivalent mutants created depends on the specific policy
+under test.
+
+\item \Intro{Rule Target True (RTT)}. Ensure that the rule is
+applied to all requests simply by removing the \CodeIn{<Target>} tag
+of each \CodeIn{Rule} element. The number of mutants created by this
+operator is equal to the number of \CodeIn{Rule} elements with a
+\CodeIn{<Target>} tag. The number of equivalent mutants created
+depends on the specific policy under test.
+
+\item \Intro{Rule Target False (RTF)}. Ensure that the rule is
+never applied to a request by modifying the \CodeIn{<Target>} tag of
+each \CodeIn{Rule} element. The number of mutants created by this
+operator is equal to the number of \CodeIn{Rule} elements. The
+number of equivalent mutants created depends on the specific policy
+under test.
+
+\item \Intro{Rule Condition True (RCT)}. Ensure that the condition
+always evaluates to \CodeIn{True} simply by removing the condition
+of each \CodeIn{Rule} element. The number of mutants created by this
+operator is equal to the number of \CodeIn{Rule} elements with a
+\CodeIn{<Condition>} tag. The number of equivalent mutants created
+depends on the specific policy under test.
+
+\item \Intro{Rule Condition False (RCF)}. Ensure that the
+condition always evaluates to \CodeIn{False} by manipulating the
+condition value or the condition function. The number of mutants
+created by this operator is equal to the number of \CodeIn{Rule}
+elements. The number of equivalent mutants created depends on the
+specific policy under test.
+
+%    \Comment{ \item \Intro{Change Policy Order (CPO)}. Try all permutations of policy orderings.  This mutation operator is only meaningful if there is more than one policy and the policy combining algorithm is order sensitive. For instance, the permit-overrides combining algorithm is not order sensitive whereas the first-applicable algorithm is. The number of mutants created by this operator is zero when the combining algorithm is not order sensitive. The number of mutants created by this operator is $P!-1$, where $P$ is the number of \CodeIn{Policy} elements, when the combining algorithm is order sensitive. The number of equivalent mutants created depends on the specific policy under test.}
+
+%   \Comment{ \item \Intro{Change Rule Order (CRO)}. Try all permutations of rule orderings.  As for CPO, this mutation operator is only meaningful if there is more than one rule and the rule combining algorithm is order sensitive. The number of mutants created by this operator is zero when the combining algorithm is not order sensitive. The number of mutants created by this operator is $R!-1$, where $R$ is the number of \CodeIn{Rule} elements, when the rule combining algorithm is order sensitive. The number of equivalent mutants created depends on the specific policy under test.}
+
+\item \Intro{Change Policy Combining Algorithm (CPC)}. Try all
+possible policy combining algorithms. This high-level mutation may
+change the way that various policies interact. This operator is only
+meaningful if there is more than one \CodeIn{Policy} element in the
+policy under test. Currently there are six policy combining
+algorithms implemented in Sun's XACML
+implementation~\cite{sun05:xacml} but four of these algorithms
+semantically reduce to two, leaving only four policy combining
+algorithms, namely deny-overrides, permit-overrides,
+first-applicable, and only-one-applicable. The number of mutants
+created by this operator for policies with more than one
+\CodeIn{Policy} element is three and zero otherwise. The number of
+equivalent mutants created depends on the specific policy under
+test.
+
+\item \Intro{Change Rule Combining Algorithm (CRC)}. Try all
+possible rule combining algorithms. This high-level mutation may
+change the way that various rules interact. This operator is only
+meaningful if there is more than one \CodeIn{Rule} element in the
+policy under test. Currently there are five rule combining
+algorithms implemented in Sun's XACML
+implementation~\cite{sun05:xacml} but four of these algorithms
+semantically reduce to two, leaving only three rule combining
+algorithms, namely deny-overrides, permit-overrides, and
+first-applicable. The number of mutants created by this operator for
+policies with more than one \CodeIn{Rule} element is two and zero
+otherwise. The number of equivalent mutants created depends on the
+specific policy under test.
+
+\item \Intro{Change Rule Effect (CRE)}. Invert each rule's
+\CodeIn{Effect} by changing \CodeIn{Permit} to \CodeIn{Deny} or
+\CodeIn{Deny} to \CodeIn{Permit}. The number of mutants created by
+this operator is equal to the number of rules in the policy. This
+operator should never create equivalent mutants unless a rule is
+unreachable, in which case the rule should probably be removed.
+
+\end{enumerate}
+}

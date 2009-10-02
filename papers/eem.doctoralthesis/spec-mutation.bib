@@ -1,0 +1,259 @@
+% This file was created with JabRef 2.3.1.
+% Encoding: Cp1252
+
+@ARTICLE{abdurazik00:evaluation,
+  author = {Abdurazik, A. and Ammann, P. and Wei Ding and Offutt, J.},
+  title = {Evaluation of three specification-based testing criteria},
+  journal = {Engineering of Complex Computer Systems, 2000. ICECCS 2000. Proceedings.
+    Sixth IEEE International Conference on},
+  year = {2000},
+  pages = {179-187},
+  abstract = {This paper compares three specification-based testing criteria using
+    Mathur and Wong's PROBSUBSUMES measure. The three criteria are specification-mutation
+    coverage, full predicate coverage, and transition-pair coverage.
+    A novel aspect of the work is that each criterion is encoded in a
+    model checker, and the model checker is used first to generate test
+    sets for each criterion and then to evaluate test sets against alternate
+    criteria. Significantly, the use of the model checker for generation
+    of test sets eliminates human bias from this phase of the experiment.
+    The strengths and weaknesses of the criteria are discussed},
+  doi = {10.1109/ICECCS.2000.873943},
+  keywords = {algebraic specification, program testingPROBSUBSUMES measure, full
+    predicate coverage, model checker, specification-based testing, specification-mutation
+    coverage, testing criteria, transition-pair coverage},
+  owner = {Administrator},
+  timestamp = {2008.03.06}
+}
+
+@INPROCEEDINGS{ammann99:abstracting,
+  author = {Ammann, P. and Black, P.E.},
+  title = {Abstracting formal specifications to generate software tests via
+    model checking},
+  year = {1999},
+  volume = {2},
+  pages = {10.A.6-1-10.A.6-10 vol.2},
+  abstract = {A recent method combines model checkers with specification-based mutation
+    analysis to generate test cases from formal software specifications.
+    However high-level software specifications usually must be reduced
+    to make analysis with a model checker feasible. We propose a new
+    reduction, parts of which can be applied mechanically, to soundly
+    reduce some large, even infinite, state machines to manageable pieces.
+    Our work differs from other work in that we use the reduction for
+    generating test sets, as opposed to the typical goal of analyzing
+    for properties. Consequently, we have different criteria, and we
+    prove a different soundness rule. Informally the rule is that counterexamples
+    from the model checker are test cases for the original specification.
+    The reduction changes the state machine and temporal logic constraints
+    the model checking specification to avoid generating unsound test
+    cases. We use a Java virtual machine stack as an example of the reduction
+    and test generation},
+  doi = {10.1109/DASC.1999.822091},
+  journal = {Digital Avionics Systems Conference, 1999. Proceedings. 18th},
+  keywords = {abstract data types, constraint handling, formal specification, program
+    compilers, program testing, program verification, temporal logic,
+    virtual machinesJava virtual machine stack, abstracting formal specifications,
+    automatic test generation, finite focus, formal software specifications,
+    high-level software specifications, large state machines, reduction
+    soundness, software tests generation, specification-based mutation
+    analysis, symbolic model checking, temporal logic constraints},
+  owner = {Administrator},
+  timestamp = {2008.03.06}
+}
+
+@ARTICLE{ammann98:using,
+  author = {Ammann, P.E. and Black, P.E. and Majurski, W.},
+  title = {Using model checking to generate tests from specifications},
+  journal = {Formal Engineering Methods, 1998. Proceedings. Second International
+    Conference on},
+  year = {1998},
+  pages = {46-54},
+  month = {Dec},
+  abstract = {We apply a model checker to the problem of test generation using a
+    new application of mutation analysis. We define syntactic operators,
+    each of which produces a slight variation on a given model. The operators
+    define a form of mutation analysis at the level of the model checker
+    specification. A model checker generates countersamples which distinguish
+    the variations from the original specification. The countersamples
+    can easily be turned into complete test cases, that is, with inputs
+    and expected results. We define two classes of operators: those that
+    produce test cases from which a correct implementation must differ,
+    and those that produce test cases with which it must agree. There
+    are substantial advantages to combining a model checker with mutation
+    analysis. First, test case generation is automatic; each countersample
+    is a complete test case. Second, in sharp contrast to program-based
+    mutation analysis, equivalent mutant identification is also automatic.
+    We apply our method to an example specification and evaluate the
+    resulting test sets with coverage metrics on a Java implementation},
+  doi = {10.1109/ICFEM.1998.730569},
+  keywords = {Java, formal specification, object-oriented programming, program testing,
+    program verification, software metricsJava, coverage metrics, formal
+    specifications, model checker specification, model checking, mutation
+    analysis, syntactic operators, test generation},
+  owner = {Administrator},
+  review = {Ammann et al. apply a model checker to the problem of test generation
+    by mutating the model. The model mutants are then model checked against
+    the specification to produce concrete counterexamples or test cases.
+    The quality of the generated test suite is directly related to the
+    quality of the specification.},
+  timestamp = {2008.03.06}
+}
+
+@INPROCEEDINGS{ammann99:specification-based,
+  author = {Paul Ammann and Paul E. Black},
+  title = {A Specification-Based Coverage Metric to Evaluate Test Sets},
+  booktitle = {Proc. HASE},
+  year = {1999},
+  pages = {239--248},
+}
+
+@ARTICLE{black00:mutation,
+  author = {Black, P.E. and Okun, V. and Yesha, Y.},
+  title = {Mutation operators for specifications},
+  journal = {Automated Software Engineering, 2000. Proceedings ASE 2000. The Fifteenth
+    IEEE International Conference on},
+  year = {2000},
+  pages = {81-88},
+  abstract = {Testing has a vital support role in the software engineering process,
+    but developing tests often takes significant resources. A formal
+    specification is a repository of knowledge about a system, and a
+    recent method uses such specifications to automatically generate
+    complete test suites via mutation analysis. We define an extensive
+    set of mutation operators for use with this method. We report the
+    results of our theoretical and experimental investigation of the
+    relationships between the classes of faults detected by the various
+    operators. Finally, we recommend sets of mutation operators which
+    yield good test coverage at a reduced cost compared to using all
+    proposed operators},
+  doi = {10.1109/ASE.2000.873653},
+  keywords = {formal specification, program testing, program verificationformal
+    specification, mutation analysis, mutation operators, program testing,
+    software engineering, test coverage, test suites},
+  owner = {Administrator},
+  review = {Black et al. present a theoretical and experimental evaluation of
+    a set of mutation operators for specifications and recommend sets
+    of operators that yield good test coverage at a reduced cost.},
+  timestamp = {2008.03.06}
+}
+
+@ARTICLE{black01:winnowing,
+  author = {Black, P.E. and Ranville, S.},
+  title = {Winnowing tests: Getting quality coverage from a model checker without
+    quantity},
+  journal = {Digital Avionics Systems, 2001. DASC. The 20th Conference},
+  year = {2001},
+  volume = {2},
+  pages = {9B6/1-9B6/4 vol.2},
+  month = {Oct},
+  abstract = {Test generation is easy: we can generate piles of tests randomly,
+    by model checker mutation analysis of formal specifications, through
+    path coverage, etc. But just increasing the quantity of tests may
+    not be a cost-effective way of increasing the quality of the test.
+    The number of tests, and hence the cost of maintaining and running
+    large test sets, can increase exponentially with the increase in
+    real coverage. We present a number of automated methods to pick out
+    a smaller set of tests that still have good coverage. The first method
+    is finding a subset of tests with equal coverage for a test criterion.
+    To do this, we must measure the coverage for a test set, given a
+    test criterion. Some possible test criteria are path coverage, n-switch,
+    specification mutation, and branch coverage. We use a greedy algorithm
+    to choose tests satisfying requirements of the criterion. Second,
+    tests that are prefixes of other, longer tests or duplicates may
+    be dropped. Finally, the cross section of a requirement is the reciprocal
+    number of tests that satisfy it. We can choose tests with the highest
+    resolution, that is, tests satisfying requirements with the smallest
+    cross section, since these are likely to be the most sensitive tests},
+  doi = {10.1109/DASC.2001.964253},
+  keywords = {automatic test pattern generation, electronic equipment testingautomated
+    methods, branch coverage, greedy algorithm, n-switch, path coverage,
+    post-processing step, quality coverage, redundant test cases minimisation,
+    specification mutation, test coverage, test criterion, test generation,
+    winnowing},
+  owner = {Administrator},
+  timestamp = {2008.03.06}
+}
+
+@ARTICLE{budd85:program,
+  author = {Timothy A. Budd and Ajei S. Gopal},
+  title = {Program testing by specification mutation},
+  journal = {Computer Languages},
+  year = {1985},
+  volume = {10},
+  pages = {63--73},
+  number = {1},
+  abstract = {Both theoretical and empirical arguments suggest that specifications
+    and implementations are equally important sources of information
+    for generating test cases. Nevertheless, the majority of test generation
+    procedures described in the literature deal only with the program
+    source, ignoring specifications. The authors outline a procedure
+    for measuring test case effectiveness using specifications given
+    in predicate calculus form. This method is similar to the mutation
+    analysis method of testing programs.},
+  address = {Tarrytown, NY, USA},
+  doi = {http://dx.doi.org/10.1016/0096-0551(85)90011-6},
+  issn = {0096-0551},
+  owner = {Administrator},
+  publisher = {Pergamon Press, Inc.},
+  timestamp = {2008.03.06}
+}
+
+@INPROCEEDINGS{fraser06:using,
+  author = {Gordon Fraser and Franz Wotawa},
+  title = {Using Model-Checkers for Mutation-Based Test-Case Generation, Coverage
+    Analysis and Specification Analysis},
+  booktitle = {Proc. ICSEA},
+  year = {2006},
+  pages = {16--21},
+}
+
+@ARTICLE{offutt99:generatingsofl,
+  author = {A. Jefferson Offutt and Shaoying Liu},
+  title = {Generating test data from {SOFL} specifications},
+  journal = {The Journal of Systems and Software},
+  year = {1999},
+  volume = {49},
+  pages = {49--62},
+  number = {1},
+  owner = {Administrator},
+  timestamp = {2008.03.07},
+  url = {citeseer.ist.psu.edu/offutt99generating.html}
+}
+
+@ARTICLE{offutt99:generatinguml,
+  author = {Offutt, Jeff and Abdurazik, Aynur},
+  title = {Generating tests from {UML} specifications},
+  journal = {{UML}’99 - The Unified Modeling Language},
+  year = {1999},
+  pages = {76--76},
+  abstract = {Although most industry testing of complex software is conducted at
+    the system level, most formal research has focused on the unit level.
+    As a result, most system level testing techniques are only described
+    informally. This paper presents a novel technique that adapts pre-defined
+    state-based specification test data generation criteria to generate
+    test cases from UML statecharts. UML statecharts provide a solid
+    basis for test generation in a form that can be easily manipulated.
+    This technique includes coverage criteria that enable highly effective
+    tests to be developed. To demonstrate this technique, a tool has
+    been developed that uses UML statecharts produced by Rational Software
+    Corporation’s Rational Rose tool to generate test data. Experimental
+    results from using this tool are presented.},
+  doi = {10.1007/3-540-46852-8\_30},
+  keywords = {1999, tests, uml},
+  owner = {Administrator},
+  timestamp = {2008.03.07}
+}
+
+@INPROCEEDINGS{traon07:testing,
+  author = {Yves Le Traon and Tejeddine Mouelhi and Benoit Baudry},
+  title = {Testing Security Policies: Going Beyond Functional Testing},
+  booktitle = {Proc. ISSRE},
+  year = {2007},
+  pages = {93--102},
+}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_keywords:}
+
+@comment{jabref-meta: selector_journal:}

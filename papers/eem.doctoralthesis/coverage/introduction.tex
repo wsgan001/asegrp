@@ -1,0 +1,153 @@
+\section{Introduction}
+
+\label{sec:introduction}
+
+Access control is one of the most fundamental and widely used
+security mechanisms. It controls which principals (users, processes,
+etc.) have access to which resources in a system. To better manage
+access control, systems often explicitly specify access control
+policies using policy languages such as XACML~\cite{oasis05:xacml}
+and Ponder \cite{damianou01:ponder}. Whenever a principal requests
+access to a resource, that request is passed to a software component
+called a Policy Decision Point (PDP). PDP evaluates the request
+against access control policies, and grants or denies the request
+accordingly.
+
+The specification of access control policies is often a challenging
+problem. It is common that a system's security is compromised due to
+the misconfiguration of access control policies instead of the
+failure of cryptographic primitives or protocols. This problem
+becomes increasingly severe as software systems become more and more
+complex, and are deployed to manage a large amount of sensitive
+information and resources that are organized into sophisticated
+structures.
+
+Formal verification is an important means to ensuring the correct
+specification of access control
+policies\Comment{~\cite{jajodia97:logical, sandhu99:arbac}}.
+Recently, several tools have been developed to verify XACML access
+control policies against user-specified
+properties~\cite{hughes04:automated,fisler05:verification,zhang05:evaluating}.
+However, it is often beyond the capabilities of these tools to
+verify complex access control policies in large-scale information
+systems. Furthermore, user-specified properties are often not
+available~\cite{fisler05:verification}.
+
+Like in software development, errors in access control policies may
+also be discovered through testing. In fact, once access control
+policies are specified, they are often tested with some access
+requests so that security officers may manually check the PDP's
+responses against expected ones~\cite{anderson02:xacml}. However,
+current policy testing practice tends to be ad hoc. Although there
+exist various coverage criteria~\cite{zhu97:software} for software
+programs, there are no criteria or good heuristics to guide
+systematic generation of high-quality policy test suites. With an ad
+hoc policy testing, it is questionable that high confidence could be
+gained on the correctness of access control policies.
+
+This paper presents a first step toward systematic policy testing.
+We propose the concept of \Intro{policy coverage} to measure the
+quality of policy test suites, which are sets of request-response
+pairs. Intuitively, the more policy rules (as well as their
+components such as subjects, resources, and conditions) are involved
+when evaluating a test suite, the more likely it is to discover
+errors in access control policies. We have developed a
+coverage-measurement tool to measure the coverage of XACML policies
+achieved by a set of access requests. We have also developed a
+request-generation tool that randomly generates policy test suites
+for a given set of policies.
+
+Although the randomly generated test suites can achieve high policy
+coverage, and are effective in detecting a variety of policy
+specification errors, it may potentially include a huge number of
+requests, which makes it difficult to efficiently inspect and verify
+the correctness of responses from the PDP. To mitigate this problem,
+we further propose a request reduction technique to significantly
+reduce the size of a test suite while maintaining its policy
+coverage.
+
+Previous experiments~\cite{rothermel98:empirical} showed that test
+reduction based on program code coverage can severely compromise the
+fault-detection capabilities of the original test suite. To evaluate
+the impact of the proposed request reduction technique on the
+quality of policy testing, we conduct an experiment on a set of real
+policies with mutation testing~\cite{demillo78:hints}, which is a
+specific form of fault injection that consists of creating faulty
+versions of a policy by making small syntactic changes. In the
+experiment, we compare the fault-detection capabilities of the
+reduced set and original set of requests. Our experimental results
+show that our coverage-based request reduction technique can
+substantially reduce the size of generated requests but incur only
+relatively low loss in fault detection capabilities. We also conduct
+a study that measures the policy coverage of an XACML conformance
+test suite as well as a conference reviewing system's policy. Our
+results show that the measurement of policy coverage can effectively
+identify uncovered parts of policies. Such results can be used to
+guide the development of further test cases, significantly improving
+the quality of policy testing.
+
+\Comment{ This paper makes the following main contributions:
+\begin{itemize}
+\item We propose the concept of policy coverage based on
+a general access control model. We further instantiate this
+concept in the context of XACML, a widely used and standardized
+meta policy language
+for expressing domain-specific access control requirements.
+
+\item We develop a coverage-measurement tool for automatically
+measuring the coverage for XACML policies achieved by a given set
+of requests.
+
+\item We develop a request-generation tool for randomly generating
+requests for XACML policies and a request-reduction tool for
+greedily selecting a minimal set of requests for achieving the
+same policy coverage as the original set of requests.
+
+\item We develop initial mutation operators for XACML policies to
+conduct mutation testing. We conduct an experiment on a set of
+real policies to compare the effectiveness of the minimal set of
+requests with the original set of requests in terms of fault
+detection. We also conduct a study on policy coverage of existing
+manually generated requests.
+
+\end{itemize}
+}
+
+The rest of the paper is organized as follows. Section
+\ref{sec:xacml} presents background information on XACML, a widely
+used and standardized meta policy language for expressing
+domain-specific access control requirements.
+Section~\ref{sec:model} proposes the concept of policy testing and
+policy coverage based on a general access control model. In
+Section~\ref{sec:coverage}, we instantiate the concept of policy
+coverage in the context of XACML. We also present the design of a
+coverage measurement tool. Sections~\ref{sec:reqgen}
+and~\ref{sec:reqreduce} describe the request-generation tool and
+our request reduction technique, respectively.
+Section~\ref{sec:mutation} presents a set of initial mutation
+operators developed for policies. Section~\ref{sec:experiment}
+presents the experiment conducted to assess request reduction and
+its effect on fault detection capabilities.
+Section~\ref{sec:experimentalresults} illustrates the study of
+measuring the policy coverage achieved by manually generated
+requests. Section~\ref{sec:related} discusses related work and
+Section~\ref{sec:conclusion} concludes the paper with future
+directions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\sloppy

@@ -1,0 +1,144 @@
+\section{XACML}
+\label{sec:xacml}
+
+%%%%%%%%%%%%%%%%%%%%%%% added by Ting: start
+
+\Comment{In this section, we focus our discussion of policy testing
+on XACML (eXtensible Access Control Markup Language).} XACML
+(eXtensible Access Control Markup Language) is a language
+specification standard designed by OASIS. It can be used to express
+domain-specific access control policy languages as well as access
+request languages. Besides offering a large set of built-in
+functions, data types, and combining logic, XACML also provides
+standard extension interfaces for defining application-specific
+features. Since it was proposed, XACML has received much attention
+from both the academia and the industry. Many domain-specific access
+control languages have been developed using XACML
+\cite{moses03:xacml,lorch03:xacml}. Open source XACML
+implementations are also available for different platforms (e.g.,
+Sun's XACML implementation~\cite{sun05:xacml} and
+XACML.NET~\cite{net05:xacml}). Therefore, XACML provides an ideal
+platform for the development of policy testing techniques that can
+be easily applied to multiple domains and applications.\Comment{ In
+this section, we first give a brief introduction of XACML, and then
+discuss the policy coverage criteria for XACML.}
+
+
+%%%%%%%%%%%%%%%%%%%%%% added by ting: end
+
+The basic concepts of access control in XACML include
+\Intro{policies}, \Intro{rules}, \Intro{targets}, and
+\Intro{conditions}. A single access control policy is represented by
+a policy element, which includes a target element and one or more
+rule elements. A target element contains a set of constraints on the
+subject (e.g., the subject's role is equal to faculty), resources
+(e.g., the resource name is grade), and actions (e.g., the action
+name is assign)\footnote{Conditions of ``AnySubject'',
+``AnyResource'', and ``AnyAction'' can be satisfied by any subject,
+resource, or action, respectively.}. A target specifies to what
+kinds of requests a policy can be applied. If a request cannot
+satisfy the constraints in the target, then the whole policy element
+can be skipped without further examining its rules.
+
+%. To help determine which policies that apply
+%to a given request, policy writers can define a \Intro{target} for
+%a policy. A target defines a set of conditions for the
+%\Intro{subject} (e.g., faculty), \Intro{resource} (e.g., grades),
+%and \Intro{action} (e.g., assign) that should be
+%satisfied\footnote{Conditions of ``AnySubject'', ``AnyResource'',
+%and ``AnyAction'' can be satisfied by any subject, resource, or
+%action, respectively.} before applying a policy. If all the
+%conditions of a policy's target are satisfied by a request, the
+%policy is applied to the request.
+
+We next describe how a policy is applied to a request in details. A
+policy element contains a sequence of rule elements. Each rule also
+has its own target, which is used to determine whether the rule is
+applicable to a request. If a rule is applicable, a
+\Intro{condition} (a boolean function) associated with the rule is
+evaluated. If the condition is evaluated to be true, the rule's
+\Intro{effect} (\CodeIn{Permit} or \CodeIn{Deny}) is returned as a
+\Intro{decision}; otherwise, \CodeIn{NotApplicable} is returned as a
+decision. If an error occurs when a request is applied against
+policies or their rules, \CodeIn{Indeterminate} is returned as a
+decision.
+
+More than one rule in a policy may be applicable to a given request.
+To resolve conflicting decisions from different rules, a \Intro{rule
+combining algorithm} can be specified to combine multiple rule
+decisions into a single decision. For example, a deny overrides
+algorithm determines to return \CodeIn{Deny} if any rule evaluation
+returns \CodeIn{Deny} or no rule is applicable. A first applicable
+algorithm determines to return what the evaluation of the first
+applicable rule returns. In general, an XACML policy specification
+may also include multiple policies, which are included with a
+container element called \Intro{PolicySet}. When a request can also
+be applied to multiple policies, a \Intro{policy combining
+algorithm} can also be specified in a similar way.
+
+%\mbskip\mbskip\sbskip
+%\begin{figure}
+%\begin{alltt} \small
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+ 1<Policy PolicyId="demo" RuleCombinationAlgId="first-applicable">
+ 2 <Target>
+ 3   <Subjects> <AnySubjects/> </Subjects>
+ 4   <Resources>
+ 5    <Resource>
+ 6     <ResourceMatch MatchId="equal">
+ 7      <AttributeValue>demo:5</AttributeValue>
+ 8      <ResourceAttributeDesignator AttributeId="objectid"/>
+ 9     </ResourceMatch>
+10    </Resource>
+11   </Resources>
+12   <Actions> <AnyAction/></Actions>
+13 </Target>
+14 <Rule RuleId="1" Effect="Deny">
+15  <Target> <Subjects><AnySubject/></Subjects>
+16   <Resources> <AnyResource/> </Resources>
+17   <Actions>
+18    <Action>
+19     <ActionMatch MatchId="equal">
+20      <AttributeValue>Dissemination</AttributeValue>
+21      <ActionAttributeDesignator AttributeId="actionid"/>
+22     </ActionMatch>
+23    </Action>
+24   </Actions>
+25  </Target>
+26  <Condition FunctionId="not">
+27   <Apply FunctionId="at-least-one-member-of">
+28    <SubjectAttributeDesignator AttributeId="loginid"/>
+29    <Apply FunctionId="string-bag">
+30     <AttributeValue>testuser1</AttributeValue>
+31     <AttributeValue>testuser2</AttributeValue>
+32     <AttributeValue>fedoraAdmin</AttributeValue>
+33    </Apply>
+34   </Apply>
+35  </Condition>
+36 </Rule>
+37 <Rule RuleId="2" Effect="Permit"/>
+38</policy>
+\end{alltt}
+\end{CodeOut}
+\caption{An example XACML policy}
+ \label{fig:example}
+\end{figure}
+
+Figure \ref{fig:example} shows an example XACML policy, which is
+revised and simplified from a sample
+Fedora\footnote{\CodeIn{http://www.fedora.info}} policy (to be used
+in our experiment described in Section~\ref{sec:experiment}). This
+policy has one policy element which in turn contains two rules. The
+rule composition function is ``first-applicable'', whose meaning has
+been explained earlier. Lines 2-13 define the target of the policy,
+which indicates that this policy applies only to those access
+requests of an object ``demo:5''. The target of Rule 1 (Lines 15-25)
+further narrows the scope of applicable requests to those asking to
+perform a ``Dissemination'' action on object ``demo:5''. Its
+condition (Lines 26-35) indicates that if the subject's ``loginId''
+is ``testuser1'', ``testuser2'', or ``fedoraAdmin'', then the
+request should be denied. Otherwise, according to Rule 2 (Line 37)
+and the rule composition function of the policy (Line 1), a request
+applicable to the policy should be permitted.

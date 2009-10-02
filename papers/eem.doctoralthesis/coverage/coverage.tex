@@ -1,0 +1,91 @@
+
+% Tao, in the following, could you add something so that the following policy
+
+% coverage definitions are related to those abstract ones defined in section 3?
+
+\section{Policy Coverage in XACML}
+\label{sec:coverage}
+
+In XACML languages, we can see there are three major entities:
+policies, rules for each policy, and a condition for each rule. We
+define policy coverage as follows:
+
+\begin{itemize}
+
+\item \Intro{Policy hit percentage}. A policy is hit by a request
+if the policy is applicable to the request; in other words, all the
+conditions in the policy's target are satisfied by the request.
+Policy hit percentage is the number of hit policies divided by the
+number of total policies.
+
+\item \Intro{Rule hit percentage.} A rule for a policy is hit by a
+request if the rule is also applicable to the request; in other
+words, the policy is applicable to the request and all the
+conditions in the rule's target are satisfied by the request. Rule
+hit percentage is the number of hit rules divided by the number of
+total rules.
+
+\item \Intro{Condition hit percentage.} The evaluation of the
+condition for a rule has two outcomes: true and false, which are
+called as the true condition and false condition, respectively. A
+true condition for a rule is hit by a request if the rule is
+applicable to the request and the condition is evaluated to be true.
+A false condition for a rule is hit by a request if the rule is
+applicable to the request and the condition is evaluated to be
+false. Condition hit percentage is the number of hit true conditions
+and hit false conditions divided by twice of the number of total
+conditions.
+
+\end{itemize}
+
+Note that a policy has at least one rule but a rule can have no
+condition, indicating an implicit condition \CodeIn{true}, which is
+always satisfied when the rule is applicable. Therefore, when there
+are no conditions defined within the policies under consideration,
+the condition hit percentage is always the same as the rule hit
+percentage. Normally a policy tester shall be able to generate
+requests to achieve 100\% for all three types of policy coverage. In
+other words, all the to-be-covered entities defined in the policy
+coverage are feasible to be covered in principle; otherwise, those
+infeasible parts of policy specifications could be removed like dead
+code in programs.
+
+To automate the measurement of policy coverage, we have developed a
+measurement tool by instrumenting Sun's open source XACML
+implementation~\cite{sun05:xacml}. Sun's implementation facilitates
+the construction of a PDP. We instrument several methods throughout
+their implementation that collect policy, rule, and condition
+information when a policy is loaded into the PDP. Then coverage
+information is collected and stored in a singleton as requests are
+evaluated by a PDP against the policy under test.
+
+\Comment{ To automate the measurement of policy coverage, we have
+developed a measurement tool based on Sun's open source XACML
+implementation~\cite{sun05:xacml}, written in Java. Based on Sun's
+XACML implementation, we first built a Policy Decision Point (PDP),
+which receives an access request and returns an access decision. We
+then developed several public methods in a Java class for collecting
+runtime coverage and insert some call sites to these methods in
+several places in the code of Sun's XACML implementation. When PDP
+loads given policies, we insert a method call to collect all the
+policies, rules, and conditions in the given policies. Every time
+PDP determines that all the conditions in a policy's target are
+satisfied, we insert a method call to collect policy hit
+information. Every time PDP determines that all the conditions in a
+rule's target are satisfied, we insert a method call to collect rule
+hit information. Every time PDP determines that a condition for a
+rule is evaluated to be true or false, we insert a method call to
+collect condition hit information.}
+
+After the PDP returns the decision, we output the coverage
+information into a text file, whose name is determined by the names
+of given policies; if a text file with the same name exists, the
+coverage information in the text file is updated by incorporating
+the new coverage information. Therefore, when PDP receives several
+requests separately against the same set of policies, the aggregated
+coverage information achieved by these requests is collected.
+Besides the basic coverage information, we also output the details
+of covered entities and their covering requests as well as the
+details of uncovered entities. The extra information can help
+developers or external tools in generating or selecting requests for
+achieving higher policy coverage.

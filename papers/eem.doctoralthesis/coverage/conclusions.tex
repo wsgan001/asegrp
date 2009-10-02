@@ -1,0 +1,36 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+In this paper, we have developed a first step toward systematic
+policy testing by defining and measuring policy coverage. We have
+proposed the concept of policy testing and policy coverage based
+on a general access control model. We further defined three levels
+of specific policy coverage for XACML policies: policy hit
+percentage, rule hit percentage, and condition hit percentage. To
+support systematic policy testing based on policy coverage
+automatically, we have developed a coverage-measurement tool, a
+request-generation tool, and a request-reduction tool. By using
+mutation testing, we have conducted an experiment that assesses
+the coverage-based request reduction and its effect on
+fault-detection capabilities. The experimental results showed that
+the coverage-based request reduction substantially reduce the size
+of the request set but incur only relatively low loss of
+fault-detection capabilities. We also conducted a study on the
+policy coverage achieved by manually generated requests for
+policies in a conformance test suite for XACML
+specifications~\cite{anderson02:xacml} and a conference reviewing
+system~\cite{zhang04:synthesis}. Our results showed that our
+measurement results can pinpoint uncovered areas of policies and
+guide the development of new requests to achieve higher policy
+coverage.
+
+In future work, we plan to develop a comprehensive suite of
+techniques and tools for systematic policy testing. In particular,
+we plan to extend our policy coverage to consider cases that
+reflect the interactions of different rules or different policies,
+which are not focused by our existing policy coverage. We also
+plan to conduct experiments on a larger scope of policies.
+
+\Comment{
+Our policy-testing tools and experimental results are available at:\\
+\url{http://www.csc.ncsu.edu/faculty/xie/poco/}. }

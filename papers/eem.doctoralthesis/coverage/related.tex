@@ -1,0 +1,91 @@
+\section{Related Work}
+\label{sec:related}
+
+Much work has been done in the modeling and verification of access
+control policies. A variety of policy languages and models have been
+proposed. Some of them are generic~\cite{oasis05:xacml,
+jajodia97:logical,jajodia97:unified,damianou01:ponder,sandhu99:arbac}
+while others are designed for specific
+applications~\cite{bussler95:policy,ryutov00:representation,sirer02:access,anderson96:security}
+or data
+models~\cite{bertino99:logical,kudo00:xml,bertino01:specifying,griffiths76:authorization}.
+
+One important aspect of policy verification is to formally check
+general properties of access control policies, such as inconsistency
+and
+incompleteness~\cite{lupu99:conflict,kudo00:xml,jajodia97:logical,bonatti00:modular}.
+In the former case, an access request can be both accepted and
+denied according to the policy, while in the latter case the request
+is neither accepted nor denied.  Although efficient algorithms have
+been proposed to perform such verification for specific
+systems~\cite{jajodia97:unified,jaeger03:policy}, this problem can
+be intractable or even undecidable when dealing with policies that
+involve complex constraints.
+
+Besides the verification of general properties, several tools have
+been developed to verify properties for XACML
+policies~\cite{oasis05:xacml}. Hughes and Bultan translated XACML
+policies to the Alloy language~\cite{jackson01:micromodularity} and
+checked their properties using the Alloy Analyzer. Fisler et
+al.~\cite{fisler05:verification} developed a tool called Margrave
+that uses multi-terminal binary decision
+diagrams~\cite{clarke93:multi} to verify user-specified properties
+and perform change-impact analysis. Zhang et
+al~\cite{zhang05:evaluating} developed a model-checking algorithm
+and tool support to evaluate access control policies written in
+\Intro{RW} languages, which can be converted to
+XACML~\cite{zhang04:synthesis}. These existing approaches assume
+that policies are specified using a simplified version of XACML. It
+is challenging to generalize these verification approaches to
+support full-feature XACML policies with complex conditions. In
+addition, most of these approaches require users to specify a set of
+properties to be verified; however, policy properties often do not
+exist in practice. The systematic policy testing approach proposed
+in this paper works on full-feature XACML policies without requiring
+properties, complementing the existing policy verification
+approaches.
+
+A test adequacy or coverage criterion provides a stopping rule for
+testing and a measurement of a test suite's
+quality~\cite{zhu97:software}. A test coverage criterion can be
+used to guide test selection. A coverage criterion typically
+specifies testing requirements based on whether all the identified
+features in a program or specification have been fully exercised.
+Identified features in a program can be statements, branches,
+paths, or definition-use paths. Identified features in a
+specification can be choices for
+categories~\cite{amla92:using,ammann94:using} or
+conditions~\cite{chang99:structural} in specifications.
+
+The importance of test coverage criterion in fault detection can
+be shown through a fault propagation model such as the PIE
+(Propagation, Infection, and Execution) model~\cite{voas92:pie}.
+For example, in order to expose a bug in a statement in a program,
+a test needs to at least cover the buggy statement. Note that the
+coverage of a buggy statement is not a sufficient condition to
+expose the buggy behavior in program outputs; additionally the
+execution of the buggy statement needs to produce a wrong data
+state and the wrong data state needs to have an effect on program
+outputs.
+
+Within our knowledge, our approach is the first that proposes policy
+coverage and develops an automatic measurement tool and a request
+reduction tool for it. But there exist several approaches for
+defining and measuring coverage of rules for grammar-based software
+or SQL statements for database applications. For example, Hennessy
+and Power~\cite{hennessy05:analysis} defined rule coverage for
+context-free grammar and used rule coverage to reduce a test suite
+for grammar-based software such as C++ compilers. Suarez-Cabal and
+Tuya~\cite{cabal03:using} defined coverage of SQL queries and
+developed a tool to automate the measurement. Kapfhammer and
+Soffa~\cite{kapfhammer03:family} defined a family of test adequacy
+criteria for database-driven applications based on dataflow
+information that is associated with entities in a database.
+Different from these existing coverage measurement approaches for
+grammars, SQL queries, or database entities, our new approach
+defines and measures coverage information for policies.
+
+\Comment{The concept of policy coverage is independent of specific
+access control policy languages and models. Thus, it can be
+applied to access control policy testing of a large range of
+applications.}
