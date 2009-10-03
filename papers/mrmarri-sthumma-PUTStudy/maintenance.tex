@@ -6,13 +6,13 @@ The reason is that whenever the code under test is modified, all failing tests n
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.45,clip]{charts/CUTs_PUTs_1.eps}\vspace*{-1ex}
-\caption{\label{fig:cutsnputs}Comparison of the number of CUTs and PUTs}
+\caption{\label{fig:cutsnputs}Comparison of the number of CUTs and PUTs} \vspace*{-1ex}
 \end{figure}
 
 \begin{table}[t]
 \begin{CodeOut}
 \begin{center}
-\centering \caption {\label{tab:cutputmapping} Mapping of the number of CUTs and their transformed PUTs.}
+\centering 
 \begin {tabular} {|c|c|c|}
 \hline \textbf{CUT} & \textbf{PUT} & \textbf{\# of occurrences}\\
 \hline
@@ -29,7 +29,8 @@ The reason is that whenever the code under test is modified, all failing tests n
 \hline 9   & 1   & 1\\
 \hline 15   & 1   & 1\\
 \hline
-\end{tabular}\vspace*{-3ex}
+\end{tabular}\vspace*{-2ex}
+\caption {\label{tab:cutputmapping} Mapping of the number of CUTs and their transformed PUTs.} \vspace*{-5ex}
 \end{center}
 \end{CodeOut}
 \end{table}
@@ -52,7 +53,7 @@ public void AddFirstTest([PAUT]SinglyLinkedList<int> sll,
 \hspace*{0.2in}PexAssert.AreEqual(ne.Length, sll.Count);
 \}
 \end{alltt}
-\end{CodeOut}
+\end{CodeOut}\vspace*{-4ex}
 \Caption{\label{fig:transformedPUT} The \CodeIn{AddFirstTest} PUT for the \CodeIn{AddFirst} method under test.}
 \end{figure}
 
@@ -61,5 +62,5 @@ Figure~\ref{fig:loccomp} shows the results of comparing LOC of CUTs and PUTs. Fo
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.45,clip]{charts/LOC_1.eps}\vspace*{-1ex}
-\caption{\label{fig:loccomp}Comparison of Lines of Code of CUTs and PUTs}
+\caption{\label{fig:loccomp}Comparison of Lines of Code of CUTs and PUTs} \vspace*{-2ex}
 \end{figure}

@@ -29,7 +29,7 @@ In this section, we present how a developer can generalize existing CUTs to PUTs
 19:\}
 \end{alltt}
 \end{CodeOut}\vspace*{-4ex}
-\Caption{\label{fig:cut} The \CodeIn{SettingsGroup} class of the NUnit framework with the \CodeIn{SaveSetting} method under test.}\vspace*{-1ex}
+\Caption{\label{fig:cut} The \CodeIn{SettingsGroup} class of the NUnit framework with the \CodeIn{SaveSetting} method under test.}
 \begin{CodeOut}
 \begin{alltt}
 00://testGroup is of type SettingsGroup
@@ -42,7 +42,7 @@ In this section, we present how a developer can generalize existing CUTs to PUTs
 07:\}
 \end{alltt}
 \end{CodeOut}\vspace*{-4ex}
-\Caption{\label{fig:connuit} A CUT to test the \CodeIn{SaveSetting} method (shown in Figure~\ref{fig:cut})}\vspace*{-1ex}
+\Caption{\label{fig:connuit} A CUT to test the \CodeIn{SaveSetting} method (shown in Figure~\ref{fig:cut})}\vspace*{-2ex}
 \end{figure}
 
 %----------------------------------------------------------------------------------------------------------
@@ -51,6 +51,17 @@ In this section, we present how a developer can generalize existing CUTs to PUTs
 Figure~\ref{fig:cut} shows a method under test \CodeIn{SaveSetting} from the \CodeIn{SettingsGroup} class of the NUnit framework. The \CodeIn{SaveSetting} method accepts a setting name \CodeIn{sn} and a setting value \CodeIn{sv}, and stores the setting in a storage (represented by the member variable \CodeIn{storage}). The setting value can be of type \CodeIn{int}, \CodeIn{bool}, \CodeIn{string}, or \CodeIn{enum}. Before storing the value, \CodeIn{SaveSetting} checks whether the same value already exists for that setting in the storage. If the same value already exists for that setting, \CodeIn{SaveSetting} returns without making any changes to the storage.
 
 Figure~\ref{fig:connuit} shows a CUT for testing the \CodeIn{SaveSetting} method. The CUT saves two setting values (of types \CodeIn{int} and \CodeIn{string}) and verifies whether the values are set properly using the \CodeIn{GetSetting} method. The CUT verifies the expected behavior of the \CodeIn{SaveSetting} method only for the setting values of types \CodeIn{int} and \CodeIn{string}. This CUT is the only test for verifying \CodeIn{SaveSetting} and includes two major issues. First, the CUT does not verify the behavior for the types \CodeIn{bool} and \CodeIn{enum}. Second, the CUT does not cover the \CodeIn{true} branch in Statement 8 of Figure~\ref{fig:cut}. The reason is that the CUT does not invoke the \CodeIn{SaveSetting} method more than once with the same setting name. This CUT achieves $0$\% branch coverage of the \CodeIn{SaveSetting} method. We next explain how the developer can generalize CUT to a PUT and address these two major issues.
+
+%------------------------------------------------------------------------------
+\subsection{S1: Concrete values and Local Variables}
+
+To generalize this CUT, the developer first identifies concrete values and local variables in the CUT and promotes them as parameters. For example, the unit test includes a \CodeIn{string} ``\CodeIn{Charlie}'' in Statement 4. The developer replaces this concrete value with a symbolic value by promoting the value as a parameter for the PUT. The advantage of replacing concrete values with symbolic values is that Pex can generate concrete values based on the constraints encountered in different paths of the code under test. Here, the developer can promote the \CodeIn{string} ``\CodeIn{Charlie}'' and the \CodeIn{int} \CodeIn{5} as a single parameter of type \CodeIn{object} for the PUT since \CodeIn{SaveSetting} accepts the parameter of type \CodeIn{object}. Pex automatically identifies the possible types for the \CodeIn{object} type such as \CodeIn{int} or \CodeIn{bool} from the code under test and generates concrete values for those types. This example shows that a single PUT can achieve the same test effectiveness as multiple CUTs with different concrete values. In addition to promoting concrete values as parameters of PUTs, the developer promotes other local variables such as the receiver object (\CodeIn{testGroup}) of \CodeIn{SaveSetting} as parameters. Promoting such receiver objects as parameters can help generate different object states (for those receiver objects) that can help cover additional paths in the code under test. Figure~\ref{fig:putskel} shows the PUT generalized from the CUT shown in Figure~\ref{fig:connuit}.
+%For example, consider that there is a defect in the \CodeIn{SaveSetting} method that can be exposed when there are five elements in the storage. Promoting the receiver object of \CodeIn{SaveSetting} as a parameter can help generate such desirable object states and expose those related defects. 
+%However, it is quite challenging to automatically generate method-call sequences that can create and mutate instances of non-primitive parameters~\cite{}\textcolor{red}{to cite Suresh's FSE paper}. We address this issue by using a feature called \emph{factory} methods in Pex. Section~\ref{sec:supporting} provides more details on how we use factory methods.
+%--------------------------------------------------------------------------------
+\subsection{S2: Test Patterns and Test Oracles}
+
+The developer next analyzes the CUT to identify a test pattern~\cite{PEXDOC} for the PUT that best matches the existing CUT. Identifying the test pattern can help in generalization of the CUT since these patterns can serve as guidelines for adding test oracles. In our CUT, a setting is stored in the storage using \CodeIn{SaveSetting} and is verified using \CodeIn{GetSetting}. An analysis of the CUT suggests that the PUT can apply the round-trip pattern, which applies to classes such as \CodeIn{SettingsGroup} that has a method (such as \CodeIn{SaveSetting}) and an inverse method (such as \CodeIn{GetSetting}). Based on the identified pattern, the developer can find that the test oracle  includes the \CodeIn{GetSetting} method to assert the behavior of the \CodeIn{SaveSetting} method under test. Section~\ref{sec:helper} presents more details on our test patterns that are used during our generalization phase. In our empirical study, we identify that these patterns cover a broad range of CUTs and assist during test generalization.
 
 \begin{figure}[t]
 \begin{CodeOut}
@@ -64,20 +75,8 @@ Figure~\ref{fig:connuit} shows a CUT for testing the \CodeIn{SaveSetting} method
 05:\}
 \end{alltt}
 \end{CodeOut}\vspace*{-4ex}
-\Caption{\label{fig:putskel} A PUT for the CUT shown in Figure~\ref{fig:connuit}.}\vspace*{-4ex}
-\end{figure}
-%------------------------------------------------------------------------------
-\subsection{S1: Concrete values and Local Variables}
+\Caption{\label{fig:putskel} A PUT for the CUT shown in Figure~\ref{fig:connuit}.}
 
-To generalize this CUT, the developer first identifies concrete values and local variables in the CUT and promotes them as parameters. For example, the unit test includes a \CodeIn{string} ``\CodeIn{Charlie}'' in Statement 4. The developer replaces this concrete value with a symbolic value by promoting the value as a parameter for the PUT. The advantage of replacing concrete values with symbolic values is that Pex can generate concrete values based on the constraints encountered in different paths of the code under test. Here, the developer can promote the \CodeIn{string} ``\CodeIn{Charlie}'' and the \CodeIn{int} \CodeIn{5} as a single parameter of type \CodeIn{object} for the PUT since \CodeIn{SaveSetting} accepts the parameter of type \CodeIn{object}. Pex automatically identifies the possible types for the \CodeIn{object} type such as \CodeIn{int} or \CodeIn{bool} from the code under test and generates concrete values for those types. This example shows that a single PUT can achieve the same test effectiveness as multiple CUTs with different concrete values. In addition to promoting concrete values as parameters of PUTs, the developer promotes other local variables such as the receiver object (\CodeIn{testGroup}) of \CodeIn{SaveSetting} as parameters. Promoting such receiver objects as parameters can help generate different object states (for those receiver objects) that can help cover additional paths in the code under test. Figure~\ref{fig:putskel} shows the PUT generalized from the CUT shown in Figure~\ref{fig:connuit}.
-%For example, consider that there is a defect in the \CodeIn{SaveSetting} method that can be exposed when there are five elements in the storage. Promoting the receiver object of \CodeIn{SaveSetting} as a parameter can help generate such desirable object states and expose those related defects. 
-%However, it is quite challenging to automatically generate method-call sequences that can create and mutate instances of non-primitive parameters~\cite{}\textcolor{red}{to cite Suresh's FSE paper}. We address this issue by using a feature called \emph{factory} methods in Pex. Section~\ref{sec:supporting} provides more details on how we use factory methods.
-%--------------------------------------------------------------------------------
-\subsection{S2: Test Patterns and Test Oracles}
-
-The developer next analyzes the CUT to identify a test pattern~\cite{PEXDOC} for the PUT that best matches the existing CUT. Identifying the test pattern can help in generalization of the CUT since these patterns can serve as guidelines for adding test oracles. In our CUT, a setting is stored in the storage using \CodeIn{SaveSetting} and is verified using \CodeIn{GetSetting}. An analysis of the CUT suggests that the PUT can apply the round-trip pattern, which applies to classes such as \CodeIn{SettingsGroup} that has a method (such as \CodeIn{SaveSetting}) and an inverse method (such as \CodeIn{GetSetting}). Based on the identified pattern, the developer can find that the test oracle  includes the \CodeIn{GetSetting} method to assert the behavior of the \CodeIn{SaveSetting} method under test. Section~\ref{sec:helper} presents more details on our test patterns that are used during our generalization phase. In our empirical study, we identify that these patterns cover a broad range of CUTs and assist during test generalization.
-
-\begin{figure}[t]
 \begin{CodeOut}
 \begin{alltt}
 //MSS: MemorySettingsStorage (class)
@@ -95,7 +94,7 @@ The developer next analyzes the CUT to identify a test pattern~\cite{PEXDOC} for
 10:\}
 \end{alltt}
 \end{CodeOut}\vspace*{-4ex}
-\Caption{\label{fig:factorymethd} An example factory method for the type \CodeIn{MemorySettingsStorage}.}\vspace*{-4ex}
+\Caption{\label{fig:factorymethd} An example factory method for the type \CodeIn{MemorySettingsStorage}.} \vspace*{-1ex}
 \end{figure}
 
 %--------------------------------------------------------------------------------
