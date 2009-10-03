@@ -15,12 +15,10 @@ We next explain an example defect detected in the \CodeIn{Heap} class for the DS
 03: \hspace*{0.07in}Assert.IsFalse(actual.Remove(99));
 04: \hspace*{0.02in}\}
 \end{alltt}
-\end{CodeOut} \vspace*{-2ex}
-\caption{Existing CUT to test the \CodeIn{Remove} method of the \CodeIn{Heap} class}
+\end{CodeOut} \vspace*{-3ex}
+\caption{Existing CUT to test the \CodeIn{Remove} method of \CodeIn{Heap}.}
 \label{fig:defectCUT}
-\end{figure}
 
-\begin{figure}[t]
 \begin{CodeOut}
 \begin{alltt}
 01: public void RemoveItemPUT(
@@ -34,8 +32,8 @@ We next explain an example defect detected in the \CodeIn{Heap} class for the DS
 08: \hspace*{0.2in}CollectionAssert.AreEquivalent(actual, input);\}
 09: \hspace*{0.02in}\}
 \end{alltt}
-\end{CodeOut} \vspace*{-2ex}
-\caption{Generalized PUT of the existing CUT shown in Figure~\ref{fig:defectCUT}.} \vspace*{-2ex}
+\end{CodeOut} \vspace*{-3ex}
+\caption{Transformed PUT of the CUT shown in Figure~\ref{fig:defectCUT}.} \vspace*{-1ex}
 \label{fig:defectPUT} 
 \end{figure}
 
