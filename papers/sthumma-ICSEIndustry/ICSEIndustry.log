@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.8)  30 SEP 2009 22:35
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.8)  2 OCT 2009 22:38
 entering extended mode
 **ICSEIndustry.tex
 (G:\GoogleSVN\papers\sthumma-ICSEIndustry\ICSEIndustry.tex
@@ -274,80 +274,74 @@ Overfull \hbox (1.77054pt too wide) in paragraph at lines 52--53
 
  []
 
-
-Overfull \hbox (8.16913pt too wide) in paragraph at lines 53--54
-\T1/aer/m/n/9 work. From these PUTs, our ap-proach gen-er-ated 501,799
- []
-
 ) (G:\GoogleSVN\papers\sthumma-ICSEIndustry\background.tex)
 (G:\GoogleSVN\papers\sthumma-ICSEIndustry\approach.tex
 File: figs/approach1.eps Graphic file (type eps)
  <figs/approach1.eps>
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 36--43
+Underfull \hbox (badness 10000) in paragraph at lines 35--42
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 67--67
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
 [][]$\T1/aett/m/n/9 http : / / msdn . microsoft . com / en-[]us / library /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--112
+Underfull \hbox (badness 10000) in paragraph at lines 72--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--112
+Underfull \hbox (badness 10000) in paragraph at lines 72--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--112
+Underfull \hbox (badness 10000) in paragraph at lines 72--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--112
+Underfull \hbox (badness 10000) in paragraph at lines 72--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--112
+Underfull \hbox (badness 10000) in paragraph at lines 72--110
 
  []
 
 
-Overfull \hbox (2.83319pt too wide) in paragraph at lines 125--127
+Overfull \hbox (2.83319pt too wide) in paragraph at lines 123--125
 \T1/aer/m/n/9 symbolic-execution-based ap-proach in two ma-jor ways. First,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--156
-
- []
-
-
-Overfull \hbox (12.39613pt too wide) in paragraph at lines 133--156
-\T1/aer/m/n/8 00: [PexRaisedEx-cep-tion(typeof(ArgumentOutOfRangeException))] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--156
-
  []
 
 
 Underfull \vbox (badness 2443) has occurred while \output is active []
 
- [4])
-(G:\GoogleSVN\papers\sthumma-ICSEIndustry\eval.tex
+ [4]
+Underfull \hbox (badness 10000) in paragraph at lines 131--154
+
+ []
+
+
+Overfull \hbox (12.39613pt too wide) in paragraph at lines 131--154
+\T1/aer/m/n/8 00: [PexRaisedEx-cep-tion(typeof(ArgumentOutOfRangeException))] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--154
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--154
+
+ []
+
+) (G:\GoogleSVN\papers\sthumma-ICSEIndustry\eval.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--4
 [][]$\T1/aett/m/n/9 http : / / msdn . microsoft . com / en-[]us / library / ms2
 29335 .
@@ -390,10 +384,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Here is how much of TeX's memory you used:
  3234 strings out of 495286
  38390 string characters out of 3180415
- 120434 words of memory out of 3000000
+ 124434 words of memory out of 3000000
  6363 multiletter control sequences out of 15000+200000
  46616 words of font info for 63 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,11n,26p,1371b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ICSEIndustry.dvi (10 pages, 79444 bytes).
+Output written on ICSEIndustry.dvi (10 pages, 80432 bytes).

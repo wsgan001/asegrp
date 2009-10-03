@@ -15,8 +15,7 @@ the generated PUTs and seed tests also include duplicates. In the minimize phase
 \subsection{Capture Phase}
 \label{sec:capture}
 
-In the capture phase, our approach records dynamic traces from program executions. The capture phase uses a profiler that records method calls invoked by the application during execution. The capture phase records both the method calls invoked and the concrete values passed as arguments to those method calls. Figure~\ref{fig:dynamictrace} shows
-an example dynamic trace recorded by the capture phase. Statement 2 shows the concrete value ``\CodeIn{<\%\@ Page..$\backslash$u000a}'' passed as an argument for the \CodeIn{Match} method. Our recorded traces are complete and do not require any other primitive values or non-primitive objects. 
+In the capture phase, our approach records dynamic traces from program executions. The capture phase uses a profiler that records method calls invoked by the application during execution. The capture phase records both the method calls invoked and the concrete values passed as arguments to those method calls. Figure~\ref{fig:dynamictrace} shows an example dynamic trace recorded by the capture phase. Statement 2 shows the concrete value ``\CodeIn{<\%\@ Page..$\backslash$u000a}'' passed as an argument for the \CodeIn{Match} method. Our recorded traces are complete and do not require any other primitive values or non-primitive objects. 
 
 \begin{figure}[t]
 \begin{CodeOut}
@@ -34,11 +33,11 @@ Our approach uses a technique similar to Saff et al.~\cite{david:java} for trans
 \begin{figure}[t]
 \begin{CodeOut}
 \textbf{PUT:}\\
-00: public static void $F_1$(string $VAL_1$, int $VAL_2$, out int $OUT_1$)\\
+00: public static void $F_1$(string $val_1$, int $val_2$, out int $out_1$)\\
 01: \hspace*{0.2in}TagRegex tagex = new TagRegex();\\
-02: \hspace*{0.2in}Match mc = ((Regex)tagex).Match($VAL_1$, $VAL_2$);\\
+02: \hspace*{0.2in}Match mc = ((Regex)tagex).Match($val_1$, $val_2$);\\
 03: \hspace*{0.2in}Capture cap = (Capture) mc;\\
-04: \hspace*{0.2in}$OUT_1$ = cap.Index;\\
+04: \hspace*{0.2in}$out_1$ = cap.Index;\\
 05: \}\\
 
 \textbf{Seed Test:}\\
@@ -59,8 +58,7 @@ The seed test includes concrete values of the dynamic trace and invokes the gene
 \label{sec:minimize}
 
 Our approach records dynamic traces during actual program executions. As the same sequence of method calls can be invoked multiple times during program executions,
-we identify that there are many duplicates among recorded dynamic traces. Consequently, there are many duplicates among generated PUTs and seed tests. For example, in our evaluations, we identify that $84$\% of PUTs and $70$\% of seed tests are duplicates. In the minimize phase, our approach filters out duplicate PUTs and seed tests.
-The primary reason for filtering out duplicates is that exploration of duplicate PUTs is redundant and can also lead to scalability issues while generating regression tests.
+we identify that there are many duplicates among recorded dynamic traces. Consequently, there are many duplicates among generated PUTs and seed tests. For example, in our evaluations, we identify that $84$\% of PUTs and $70$\% of seed tests are classified as duplicates by our minimize phase. In the minimize phase, our approach filters out duplicate PUTs and seed tests. The primary reason for filtering out duplicates is that exploration of duplicate PUTs is redundant and can also lead to scalability issues while generating regression tests.
 
 We use PUTs and seed tests shown in Figure~\ref{fig:samplePutAndUT} as illustrative examples. The figure shows a method under test \CodeIn{foo}, two PUTs, and three seed tests. We use these examples primarily for explaining our minimization phase and our actual PUTs and seed tests are much more complex than these illustrative examples. We first present our criteria for a duplicate PUT and a seed test and next explain how we filter out such duplicate PUTs and seed tests.
 
@@ -120,7 +118,7 @@ After filtering out duplicate PUTs, our approach uses dynamic analysis for filte
 \subsection{Explore Phase}
 \label{sec:explore}
 
-In the explore phase, our approach uses Pex to generate regression tests from PUTs. Although seed tests generated in the capture phase can be considered as regression tests, most seed tests only exercise common happy paths such as paths that do not include error-handling code in the code under test. Therefore, these seed tests do not achieve high coverage of the corner cases and error handling of the code under test.
+In the explore phase, our approach uses Pex to generate regression tests from PUTs. Although seed tests generated in the capture phase can be considered as regression tests, most seed tests exercise common happy paths such as paths that do not include error-handling code in the code under test. In a few rare scenarios, seed tests may exercise the paths related to error-handling code, if such scenarios happen during program executions. Therefore, these seed tests do not achieve high coverage of the corner cases and error handling of the code under test.
 
 To address this issue, we use Pex to explore generated PUTs. Inspired by Patrice et al.~\cite{patrice08:whitebox}, we use seed tests to assist Pex during exploration of PUTs. Using seed tests increases the effectiveness of Pex or any other dynamic-symbolic-execution-based approach in two major ways. First, with seed tests, Pex executes those seed tests and internally builds an execution tree with the paths covered by the seed tests. Pex starts exploration with this pre-populated tree and extends this tree by \emph{flipping} individual branch nodes via constraint solving. On the other hand, without any seed tests, Pex starts exploration with an empty execution tree. Therefore, using seed tests significantly reduce the amount of time required in generating tests from PUTs. Second, seed tests can help cover certain paths that are hard to be covered without using those tests. For example, it is quite challenging for Pex or any other dynamic-symbolic-execution-based approach to generate concrete values for variables
 that require complex values such as IP addresses, URLs, doubles. In such scenarios, seed tests can help by providing desired concrete values to cover those paths.
