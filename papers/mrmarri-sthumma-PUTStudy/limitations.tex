@@ -11,7 +11,7 @@ public void Canonicalize() \{
 \hspace*{0.3in}../file.tmp")); 
 \}
 \end{alltt}
-\end{CodeOut}
+\end{CodeOut} \vspace*{-1.5ex}
 
 \noindent The \CodeIn{Canonicalize} method in \CodeIn{PathUtils} accepts a \CodeIn{string} parameter and uses a complex procedure to transform the input into a standard form. It is easy to identify the expected output for concrete strings such as \CodeIn{C:/folder1/.../folder2/.../file.tmp}. However, when the CUT is generalized with a parameter for the input string, it is challenging to identify the expected output. Although the developer can use our commutative diagram pattern and provide an alternative implementation for the \CodeIn{Canonicalize} method, the amount of effort required could be higher than the effort required to write the implementation of the actual method under test. In our empirical study, we still generalize these CUTs but do not generalize the test assertions, rather replace assertions with statements that print outputs suitable for manual review, i.e., use the Manual Output Review pattern of our proposed patterns. These PUTs can still help in detecting defects related to exceptions.
 
