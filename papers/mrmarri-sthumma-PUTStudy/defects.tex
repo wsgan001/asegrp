@@ -10,7 +10,7 @@ We next explain an example defect detected in the \CodeIn{Heap} class from the D
 \begin{CodeOut}
 \begin{alltt}
 //To test Remove item not present
-01: public void RemoveCUT()\{
+01: public void RemoveCUT() \{
 02: \hspace*{0.07in}Heap<int> actual = new Heap<int> \{2, 78, 1, 0, 56\};
 03: \hspace*{0.07in}Assert.IsFalse(actual.Remove(99));
 04: \hspace*{0.02in}\}
@@ -19,7 +19,7 @@ We next explain an example defect detected in the \CodeIn{Heap} class from the D
 \caption{\label{fig:defectCUT}Existing CUT to test the \CodeIn{Remove} method of \CodeIn{Heap}.}\vspace*{-1.5ex}
 \begin{CodeOut}
 \begin{alltt}
-01: public void RemoveItemPUT(
+01: public void RemoveItemPUT (
 \hspace*{0.7in} [PAUT]List<int> input, int item) \{
 02: \hspace*{0.07in}Heap<int> actual = new Heap<int> (input);
 03: \hspace*{0.07in}if (input.Contains(item)) \{

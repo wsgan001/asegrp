@@ -58,8 +58,7 @@ The remaining patterns listed in the table assist developers in writing test ora
 \begin{figure}
 \begin{CodeOut}        
 \begin{alltt}
-01: public void Clear()
-02: \{
+01: public void Clear() \{
 03: \hspace{0.07in}root = null;
 04: \hspace{0.07in}Count = 0;
 05: \}
@@ -70,9 +69,8 @@ The remaining patterns listed in the table assist developers in writing test ora
 
 \begin{CodeOut}        
 \begin{alltt}
-01: public void ClearCUT()
-02: \{
-03: \hspace{0.07in}AvlTree<int> actual = new AvlTree<int> \{ 1,3,5,6,9,7 \};
+01: public void ClearCUT() \{
+03: \hspace{0.07in}AvlTree<int> actual = new AvlTree<int>\{1,3,5,6,9,7\};
 04: \hspace{0.07in}Assert.AreEqual(6, actual.Count);
 05: \hspace{0.07in}actual.Clear();
 06: \hspace{0.07in}Assert.AreEqual(0, actual.Count);            
@@ -88,8 +86,7 @@ We next illustrate the use of PUT patterns in designing a PUT and in determining
 \begin{figure}
 \begin{CodeOut}        
 \begin{alltt}
-01: public void ClearPUT([PAUT]List<int> values)
-02: \{
+01: public void ClearPUT([PAUT]List<int> values) \{
 03: \hspace{0.07in}AvlTree<int> actual = new AvlTree<int>(values);
 04: \hspace{0.07in}PexAssert.AreEqual(values.Count, actual.Count);
 05: \hspace{0.07in}actual.Clear();
@@ -105,35 +102,33 @@ We next illustrate the use of PUT patterns in designing a PUT and in determining
 \subsection{Factory Methods}
 \label{sec:factory}
 
-Pex faces challenges in handling PUT parameters of non-primitive types, because these parameters require method-call sequences (that create and mutate objects of non-primitive types) to generate desirable object states. These desirable object states are the states that help explore new paths or branches in the code under test. For example, a desirable object state to cover the \CodeIn{true} branch of Statement 8 in Figure~\ref{fig:cut} is that the \CodeIn{storage} object should already include a value for the setting name \CodeIn{sn}. Although Pex includes a demand-driven strategy for generating method-call sequences, Pex's strategy can generate method-call sequences effectively in certain limited scenarios where the constructors either accept primitive parameters or explicitly state the actual type of the parameter.
+Pex often faces challenges in handling PUT parameters of complex non-primitive types, because these parameters require method-call sequences (that create and mutate objects of non-primitive types) to generate desirable object states. These desirable object states are the states that help explore new paths or branches in the code under test. For example, a desirable object state to cover the \CodeIn{true} branch of Statement 8 in Figure~\ref{fig:cut} is that the \CodeIn{storage} object should already include a value for the setting name \CodeIn{sn}. Althrough Pex includes static analysis to generate sequences of public method calls that aim at initializing all fields of an object, such a fixed sequence in not appropriate in all scenarios.
+%Although Pex includes a demand-driven strategy for generating method-call sequences, Pex's strategy can generate method-call sequences effectively in certain limited scenarios where the constructors either accept primitive parameters or explicitly state the actual type of the parameter.
 
-To assist Pex in generating effective method-call sequences that can help achieve desirable object states, developers can write method-call sequences inside factory methods, supported by Pex. Figure~\ref{fig:factorymethd} shows an example factory method for the \CodeIn{MemorySettingsStorage} class. The factory method accepts two arrays of setting names (\CodeIn{sn}) and values (\CodeIn{sv}) and adds these entries to the storage. This factory method helps Pex to generate method-call sequences that can create desirable object states. For example, Pex can generate five names and five values as arguments to the factory method for creating a desirable object state with five elements in the storage\footnote{Note that the factory methods provide only an assistance to Pex in achieving the desirable object states, and Pex generates these object states based on the branching conditions in the code under test.}. The same factory method can be reused for all other PUTs using the \CodeIn{MemorySettingsStorage} class as parameter types.
+To assist Pex in generating effective method-call sequences that can help achieve desirable object states, developers can write method-call sequences inside factory methods, supported by Pex. Such factory methods can have parameters, and then Pex determines a set of relevant argument values for factory methods just as Pex does for PUTs. Figure~\ref{fig:factorymethd} shows an example factory method for the \CodeIn{MemorySettingsStorage} class. The factory method accepts two arrays of setting names (\CodeIn{sn}) and values (\CodeIn{sv}) and adds these entries to the storage. This factory method helps Pex to generate method-call sequences that can create desirable object states. For example, Pex can generate five names and five values as arguments to the factory method for creating a desirable object state with five elements in the storage\footnote{Note that the factory methods provide only an assistance to Pex in achieving the desirable object states, and Pex generates these object states based on the branching conditions in the code under test.}. The same factory method can be reused for all other PUTs using the \CodeIn{MemorySettingsStorage} class as parameter types.
 
 %-------------------------------------------------------------------------
 \subsection{Mock Objects} 
 \label{sec:mock}
 
-A mock object~\cite{mockobjects} is an implementation for simulating environments such as file systems. Mock objects help test unit behaviors in isolation where the interactions of the unit under test with the real environment are replaced with the mock objects. Automatic test generation tools such as Pex could require various desirable environment states to generate high-covering unit tests. Creating these desirable environment states requires extensive test setup. Since such test setup can generate a lot of garbage in the environment (such as adding extra files in the file system), a significant amount of test cleanup is also required. We next describe how developers can use mock objects with an example from our study. 
+A mock object~\cite{mockobjects} is an implementation for simulating environments such as file systems. Mock objects help test unit behaviors in isolation where the interactions of the unit under test with the real environment are replaced with the mock objects\footnote{Unit tests with such mock objects do not replace integration tests. However, mock objects are the only way to test environment-dependent code in isolation in unit testing.}. Automatic test generation tools such as Pex could require various desirable environment states to generate unit tests that achieve high code coverage. Creating these desirable environment states requires extensive test setup. Since such test setup can generate a lot of garbage in the environment (such as adding extra files in the file system), a significant amount of test cleanup is also required. We next describe how developers can use mock objects with an example from our study. 
 
 \begin{figure}
 \begin{CodeOut}
 \begin{alltt}
-01: public class MockXmlTextWriter\{ 
+01: public class MockXmlTextWriter \{ 
 02:\hspace*{0.1in}public MockXmlTextWriter(string filename,
-\hspace*{0.25in} Encoding encoding)
-03:\hspace*{0.1in}\{
+\hspace*{0.25in} Encoding encoding) \{ 
 04:\hspace*{0.3in}this.fileName = filename;
 05:\hspace*{0.1in}\}
 
 06:\hspace*{0.1in}public void WriteAttributeString
-\hspace*{0.3in}(string attributeName, string value)
-07:\hspace*{0.1in}\{
+\hspace*{0.3in}(string attributeName, string value) \{
 08:\hspace*{0.3in}xmlString = xmlString + " " + attributeName 
 \hspace*{0.7in}+ "=" + "\"" + value + "\"";
 09:\hspace*{0.1in}\}
 
-10:\hspace*{0.1in}public void Close()
-11:\hspace*{0.1in}\{
+10:\hspace*{0.1in}public void Close() \{
 12:\hspace*{0.3in}xmlString = xmlString.Replace("/> />", "/>" + 
    \hspace*{0.5in}System.Environment.NewLine + "</" 
    \hspace*{0.7in}+ startString + ">");
