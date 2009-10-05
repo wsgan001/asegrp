@@ -1,13 +1,36 @@
 \section{Evaluations}
 \label{sec:eval}
 
-We conducted three evaluations to show the effectiveness of our approach in generating regression tests that achieve a high coverage of the code under test. Our empirical results show that our approach is scalable and can automatically generate tests for large real-word applications without any manual efforts. In our evaluations,  we use two core .NET 2.0 framework libraries\footnote{\url{http://msdn.microsoft.com/en-us/library/ms229335.aspx}} as subject applications. We next describe the research questions addressed in our evaluation and present our evaluation results.
+\setlength{\tabcolsep}{1pt}
+\begin{table}[t]
+\begin{SmallOut}
+\begin{CodeOut}
+\begin{center}
+\begin {tabular} {|l|c|c|c|}
+\hline
+\textbf{.NET libraries} & \textbf{KLOC} & \textbf{\# public} & \textbf{\# public}\\ 
+ & & \textbf{classes} & \textbf{methods}\\ 
+\hline
+\hline  mscorlib 											& 178 & 1316 & 13199 		\\
+\hline  System 												& 149 & 947  & 8458			\\
+\hline  System.Windows.Forms 					& 226	& 1403 & 17785		\\
+\hline  System.Drawing 								& 24	& 223  & 2823 		\\
+\hline  System.Xml 										& 122 & 270  & 5426			\\
+\hline  System.Web.RegularExpressions & 10  & 16   & 162  		\\
+\hline  System.Configuration 					& 17	& 105	 & 773			\\
+\hline  System.Data 									& 126 & 298  & 5464 		\\
+\hline  System.Web 										& 202 & 1140 & 11487		\\
+\hline  System.Transactions 					& 9.5	& 39	 & 405			\\
+\hline \textbf{TOTAL} 								& 1063& 5757 & 65982	  \\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\end{SmallOut}\vspace*{-4ex}
+\centering \caption {\label{tab:subjects}Ten .NET framework base class libraries used in our evaluations}
+\end{table}
 
-%\begin{figure*}[t]
-%\centering
-%\includegraphics[scale=0.70,clip]{figs/RQ2_1.eps}\vspace*{-1ex}
-%\caption{Comparison of base coverage and coverage achieved by regression tests of Mode 4 (WithSeeds Iteration 2).} \label{fig:rq2}
-%\end{figure*}
+We conducted three evaluations to show the effectiveness of our approach in generating regression tests that achieve a high coverage of the code under test. Our empirical results show that our approach is scalable and can automatically generate regression tests for large real-word applications without any manual efforts. In our evaluations,  we use two core .NET 2.0 framework libraries\footnote{\url{http://msdn.microsoft.com/en-us/library/ms229335.aspx}} as subject applications. We next describe the research questions addressed in our evaluation and present our evaluation results.
 
 %---------------------------------------------------------------------------------------
 \subsection{Research Questions}
@@ -24,36 +47,7 @@ We address the following three research questions in our evaluations.
 %---------------------------------------------------------------------------------------
 \subsection{Subject Applications}
 
-We used two core .NET 2.0 framework base class libraries as subject applications in our evaluations. We selected these libraries because these libraries are shipped and maintained in different distributions such as Version 2 and Version 4 of the ``desktop CLR'', 32-bit/64-bit Silverlight, and .NET compact framework. Therefore, it is paramount for the .NET product group to maintain identical behavior and detect any new defects between different versions of these base class libraries. Table~\ref{tab:subjects} shows the two libraries (mscorlib and System) used in our evaluations and their characteristics such as the number of classes and methods. The table also shows statistics of eight other libraries of .NET 2.0 framework. Although these other eight libraries are not our primary targets for generating regression tests, our generated regression tests include methods from these libraries since these libraries are developed based on the two core libraries: mscorlib and System. In our evaluations, we use these additional eight libraries also while presenting our coverage results. The table shows that these libraries include $0$ LOC with $0$ classes and $0$ methods.
-
-\setlength{\tabcolsep}{1pt}
-\begin{table}[t]
-\begin{SmallOut}
-\begin{CodeOut}
-\begin{center}
-\begin {tabular} {|l|c|c|c|}
-\hline
-\textbf{.NET libraries} & \textbf{LOC} & \textbf{\# public} & \textbf{\# public}\\ 
- & & \textbf{classes} & \textbf{methods}\\ 
-\hline
-\hline  mscorlib & 185K & 1440 & 17800 \\
-\hline  System & & & \\
-\hline  System.Windows.Forms & & & \\
-\hline  System.Drawing & & & \\
-\hline  System.Xml & 150K & 686 & 9920 \\
-\hline  System.Web.RegularExpressions & & & \\
-\hline  System.Configuration & & & \\
-\hline  System.Data & 196K & 648 & 11550 \\
-\hline  System.Web &  & & \\
-\hline  System.Transactions & & & \\
-\hline \textbf{TOTAL} &  &  &   \\
-\hline
-\end{tabular}
-\end{center}
-\end{CodeOut}
-\end{SmallOut}\vspace*{-4ex}
-\centering \caption {\label{tab:subjects}Ten .NET framework base class libraries used in our evaluations}
-\end{table}
+We used two core .NET 2.0 framework base class libraries as subject applications in our evaluations. We selected these libraries because these libraries are shipped and maintained in different distributions such as .NET Version 2 (in 32-bit and 64-bit) for clients and servers, Microsoft Silverlight, and .NET Compact Framework. Therefore, it is paramount for the .NET product group to maintain identical behavior and detect any new defects between different versions of these base class libraries. Table~\ref{tab:subjects} shows the two libraries (mscorlib and System) used in our evaluations and their characteristics such as the number of classes and methods. The table also shows statistics of eight other libraries of .NET 2.0 framework. Although these other eight libraries are not our primary targets for generating regression tests, our generated regression tests include methods from these libraries since these libraries are developed based on the two core libraries: mscorlib and System. In our evaluations, we use these additional eight libraries also while presenting our coverage results. The table shows that these libraries include $1,063$ KLOC with $5,757$ classes and $65,982$ methods.
 
 %---------------------------------------------------------------------------------------
 \subsection{Evaluation Setup}
@@ -84,11 +78,11 @@ In our approach, we used nine machines that can be classified into three configu
 \centering \caption {\label{tab:mconfig}Three categories of machine configurations used in our evaluations.}
 \end{table}
 
-As we used .NET framework base class libraries in our evaluations, the generated tests may invoke method calls that can can cause external side effects, and change the machine configuration. Therefore, while executing the code during exploration of PUTs or while running generated tests, we created a sand-box with the ``Internet'' security permission. This permission represents the default policy permission set for the content from an unknown origin. This permission blocks all operations that involve environment interactions such as file creations or registry accesses by throwing \CodeIn{SecurityException}. Since we use sand-box in our evaluations, the reported coverage is lower than the actual coverage that can be achieved by our generated regression tests.
+As we used .NET framework base class libraries in our evaluations, the generated tests may invoke method calls that can cause external side effects, and change the machine configuration. Therefore, while executing the code during exploration of PUTs or while running generated tests, we created a sand-box with the ``Internet'' security permission. This permission represents the default policy permission set for the content from an unknown origin. This permission blocks all operations that involve environment interactions such as file creations or registry accesses by throwing \CodeIn{SecurityException}. Since we use a sand-box in our evaluations, the reported coverage is lower than the actual coverage that can be achieved by our generated regression tests.
 
-To address our research questions, we first created a base line in terms of the code coverage achieved by the seed tests, referred to as \emph{base coverage}. In our evaluations, we use block coverage (Section~\ref{sec:blockcov}) as a coverage criteria. We report our coverage in terms of the number of blocks covered in the code under test. We don't give an upper bound on the number of reachable basic blocks, as we don't know which blocks are actually reachable from the given scenarios.
+To address our research questions, we first created a base line in terms of the code coverage achieved by the seed tests, referred to as \emph{base coverage}. In our evaluations, we use block coverage (Section~\ref{sec:blockcov}) as a coverage criteria. We report our coverage in terms of the number of blocks covered in the code under test. We don't give an upper bound on the number of reachable basic blocks, since we don't know which blocks are actually reachable from the given scenarios.
 
-We next generated regression tests in four different modes. In Mode 1 (referred to as \emph{WithoutSeeds Iteration 1}), we generated regression tests without using seed tests for one iteration. In Mode 2 (referred to as \emph{WithoutSeeds Iteration 2}), we generated regression tests without using seed tests for two iterations. The regression tests generated in Mode 2 are a super set of the regression tests generated in Mode 1. In Mode 3 (referred to as \emph{WithSeeds Iteration 1}), we generated regression tests with using seed tests for one iteration. Finally, in Mode 4 (referred to as \emph{WithSeeds Iteration 2}), we generated regression tests with using seed tests for two iterations. Modes 1 and 3 took one and half day for generating tests, whereas Modes 2 and 4 took three days since these modes correspond to Iteration 2.
+We next generated regression tests in four different modes. In Mode ``\emph{WithoutSeeds Iteration 1}'', we generated regression tests without using seed tests for one iteration. In Mode ``\emph{WithoutSeeds Iteration 2}'', we generated regression tests without using seed tests for two iterations. The regression tests generated in Mode ``WithoutSeeds Iteration 2'' are a super set of the regression tests generated in Mode ``WithoutSeeds Iteration 1''. In Mode ``\emph{WithSeeds Iteration 1}'', we generated regression tests with using seed tests for one iteration. Finally, in Mode ``\emph{WithSeeds Iteration 2}'', we generated regression tests with using seed tests for two iterations. Modes ``WithoutSeeds Iteration 1'' and ``WithSeeds Iteration 1'' took one and half day for generating tests, whereas Modes ``WithoutSeeds Iteration 2'' and ``WithSeeds Iteration 2'' took nearly three days since these modes correspond to Iteration 2.
 
 \setlength{\tabcolsep}{1pt}
 \begin{table}[t]
@@ -117,12 +111,12 @@ We next generated regression tests in four different modes. In Mode 1 (referred 
 
 We next address the first research question of whether our approach can handle large real-world applications in automatically generating regression tests. This research question helps to show that our approach can be used in practice and can address scalability issues in generating regression tests for large applications. We first present the statistics after each phase in our approach and next present the number of regression tests generated in each mode.
 
-In the capture phase, our approach recorded $\approx$1.50 GB C\# source code (including 433,809 traces) of dynamic traces for the two libraries. The average trace length includes $21$ method calls and the maximum trace length includes $52$ method calls. As our capture phase transforms each dynamic trace into a PUT and a seed test, the capture phase resulted in 433,809 PUTs and 433,809 seed tests. 
+In the capture phase, our approach recorded 433,809 dynamic traces and persisted them as C\# source code, resulting in $\approx$1.50 GB of C\# source code. The average trace includes $21$ method calls and the maximum trace includes $52$ method calls. As our capture phase transforms each dynamic trace into a PUT and a seed test, the capture phase resulted in 433,809 PUTs and 433,809 seed tests. 
 
 In the minimize phase, our approach uses static analysis to filter out duplicate PUTs. Our static analysis took 45 minutes and resulted in 68,575 unique PUTs. Our approach uses dynamic analysis to filter our duplicate seed tests. Our dynamic analysis took 5 hours and resulted in 128,185 unique seed tests. These results show that there are a large number of duplicate PUTs and seed tests, and show the significance of our minimize phase. We next measured the block coverage achieved by these 128,185 unique seed tests in the code under test and used this coverage as \emph{base coverage}. These tests covered 22,111 blocks in the code under test. 
 
 Table~\ref{tab:gentests} shows the number of regression tests generated in each mode along with the number of covered blocks. The table also shows the percentage of increase
-in the number of blocks compared to the base coverage. As shown in results, in Mode 4 (WithSeeds Iteration 2), our approach achieved 24.3\% higher coverage than the base coverage. Table~\ref{tab:detailedres} shows more detailed results of coverages achieved for all ten .NET libraries. Column ``.NET libraries'' shows the library under test. Column ``Base Coverage'' shows the number of blocks covered by seed tests for each library. Column ``WithOutSeeds Iteration 1'' shows the number of blocks covered (``\# blocks'') and the percentage of increase in the coverage (``\% increase'') with respect to the base coverage in this mode. Similarly, Columns ``WithOutSeeds Iteration 2'', ``WithSeeds Iteration 1'', and ``WithSeeds Iteration 2'' show the results of the other three modes. 
+in the number of blocks compared to the base coverage. As shown in results, in Mode ``WithSeeds Iteration 2'', our approach achieved 24.3\% higher coverage than the base coverage. Table~\ref{tab:detailedres} shows more detailed results of coverages achieved for all ten .NET libraries. Column ``.NET libraries'' shows the library under test. Column ``Base Coverage'' shows the number of blocks covered by seed tests for each library. Column ``WithOutSeeds Iteration 1'' shows the number of blocks covered (``\# blocks'') and the percentage of increase in the coverage (``\% increase'') with respect to the base coverage in this mode. Similarly, Columns ``WithOutSeeds Iteration 2'', ``WithSeeds Iteration 1'', and ``WithSeeds Iteration 2'' show the results for the other three modes. 
 
 As we use seed tests during our exploration in Mode ``WithSeeds Iteration 2'', the coverage achieved is either the same or higher than the base coverage. However, our approach has achieved significant higher coverages than base coverage for libraries mscorlib and System (in terms of the number of additional blocks covered). The primary reason is that most of the classes in these libraries are stateless and do not require environment interactions. The results show that our approach can handle large real-world applications and can generate large number of regression tests that achieve a high coverage of the code under test.
 
@@ -157,11 +151,22 @@ As we use seed tests during our exploration in Mode ``WithSeeds Iteration 2'', t
 \centering \caption {\label{tab:detailedres}Comparison of coverages achieved for ten .NET libraries used in our evaluation.}
 \end{table*}
 
+\begin{figure*}[t]
+\centering
+\includegraphics[scale=0.70,clip]{figs/RQ2_1.eps}\vspace*{-1ex}
+\caption{\label{fig:rq2}Comparison of coverage achieved by Mode ``WithSeeds Iteration 2'' and Mode ``WithoutSeeds Iteration 2''.} 
+\end{figure*}
+
 %---------------------------------------------------------------------------------------
 \subsection{RQ2: Using Seed Tests}
 
-We next address the second research question of whether seed tests help achieve higher code coverage compared to without using seed tests. To address this question, we compare the coverages achieved by generated tests in Modes ``WithoutSeeds Iteration 2'' and ``WithSeeds Iteration 2''. As shown in Table~\ref{tab:detailedres}, Mode ``WithSeeds Iteration 2'' always achieved higher coverage than Mode ``WithoutSeeds Iteration 2''. On average ``WithSeeds Iteration 2'' achieved 18.6\% higher coverage than Mode ``WithoutSeeds Iteration 2''. The table also shows that there is a significant increase in the coverage achieved for the \CodeIn{System.Web.RegularExpressions} library. 
-In Section~\ref{sec:explore}, we described one of the advantages of seed tests is that seed tests can help cover certain paths that are hard to be covered without using those tests. The \CodeIn{System.Web.RegularExpressions} library is an example for such paths since this library requires complex regular expressions to cover certain paths in the library. It is quite challenging for Pex or any other dynamic-symbolic-execution-based approach to generate concrete values that represent regular expressions. Therefore, concrete values in the seed tests helped achieve higher coverage for this library. In summary, the results show that seed tests help achieve higher coverages compared to without using seed tests.
+We next address the second research question of whether seed tests help achieve higher code coverage compared to without using seed tests. To address this question, we compare the coverages achieved by generated tests in Modes ``WithoutSeeds Iteration 2'' and ``WithSeeds Iteration 2''. Figure~\ref{fig:rq2} shows comparison of the coverages achieved in these two modes. The x-axis shows the library under test and y-axis shows the percentage of increase in the coverage with respect to the base coverage. As shown, Mode ``WithSeeds Iteration 2'' always achieved higher coverage than Mode ``WithoutSeeds Iteration 2''. On average ``WithSeeds Iteration 2'' achieved 18.6\% higher coverage than Mode ``WithoutSeeds Iteration 2''. The table also shows that there is a significant increase in the coverage achieved for the \CodeIn{System.Web.RegularExpressions} library. In Section~\ref{sec:explore}, we described one of the major advantages of seed tests is that seed tests can help cover certain paths that are hard to be covered without using those tests. The \CodeIn{System.Web.RegularExpressions} library is an example for such paths since this library requires complex regular expressions to cover certain paths in the library. It is quite challenging for Pex or any other dynamic-symbolic-execution-based approach to generate concrete values that represent regular expressions. The increase in the coverage for this library shows that concrete values in the seed tests helped achieve higher coverage. In summary, the results show that seed tests help achieve higher coverages compared to without using seed tests.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[scale=0.70,clip]{figs/RQ3_1_1.eps}\vspace*{-1ex}
+\caption{\label{fig:rq31}Comparison of code coverages achieved by Modes ``WithoutSeeds Iteration 1'' and ``WithoutSeeds Iteration 2''.} 
+\end{figure*}
 
 %\begin{figure*}[t]
 %\centering
@@ -172,25 +177,17 @@ In Section~\ref{sec:explore}, we described one of the advantages of seed tests i
 %---------------------------------------------------------------------------------------
 \subsection{RQ3: Using More Machine Power}
 
-We next address the third research question of whether more machine power helps to achieve more coverage. This research question helps to show that additional coverage can be achieved in further iterations of our approach. To address this question, we compare coverages achieved in Mode ``WithoutSeeds Iteration 1'' with Mode ``WithoutSeeds Iteration 2'', and Mode ``WithSeeds Iteration 2'' with Mode ``WithSeeds Iteration 2'' (shown in Table~\ref{tab:detailedres}). 
+We next address the third research question of whether more machine power helps to achieve more coverage. This research question helps to show that additional coverage can be achieved in further iterations of our approach. To address this question, we compare coverages achieved in Mode ``WithoutSeeds Iteration 1'' with Mode ``WithoutSeeds Iteration 2'', and Mode ``WithSeeds Iteration 1'' with Mode ``WithSeeds Iteration 2'' (shown in Table~\ref{tab:detailedres}). 
 
-On average, Mode ``WithoutSeeds Iteration 2'' achieved 5.73\% higher coverage than Mode 1. This result show that our approach can achieve additional coverage in further iterations. However, the coverage from Mode 1 to Mode 2 is not doubled. The primary reason is that it gets harder to cover new blocks in further iterations.
+Figure~\ref{fig:rq31} shows the comparison of coverages achieved in Modes ``WithoutSeeds Iteration 1'' and ``WithoutSeeds Iteration 2''. On average, Mode ``WithoutSeeds Iteration 2'' achieved 5.73\% higher coverage than Mode ``WithoutSeeds Iteration 1''. This result show that our approach can achieve additional coverage in further iterations. However, the coverage from Mode ``WithoutSeeds Iteration 1'' to Mode ``WithoutSeeds Iteration 1'' is not doubled. The primary reason is that it gets harder to cover new blocks in further iterations.
 
-Figure~\ref{fig:rq42} shows the comparison results of Mode 3 with Mode 4. On average, Mode 4 achieved 2.0\% higher coverage than Mode 3. As shown, the increase in coverage from Mode 3 to Mode 4 is less than the increase in the coverage from Mode 1 to Mode 2. This difference is due to seed tests that help achieve higher coverage during Mode 3, leaving more harder blocks to be covered in Mode 4. In summary, the results show that further iterations can help generate new regression tests that can achieve more coverage.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[scale=0.70,clip]{figs/RQ4_1_1.eps}\vspace*{-1ex}
-\caption{\label{fig:rq41}Comparison of code coverages achieved by Modes 1 (WithoutSeeds Iteration 1) and 2 (WithoutSeeds Iteration 2).} 
-\end{figure*}
-
+Figure~\ref{fig:rq32} shows the comparison of coverages achieved in Modes ``WithSeeds Iteration 1'' and ``WithSeeds Iteration 2''. On average, Mode ``WithSeeds Iteration 2'' achieved 2.0\% higher coverage than Mode ``WithSeeds Iteration 1''. As shown, the increase in coverage from Mode ``WithSeeds Iteration 1'' to Mode ``WithSeeds Iteration 2'' is less than the increase in the coverage from Mode ``WithoutSeeds Iteration 1'' to Mode ``WithoutSeeds Iteration 2''. This difference is due to seed tests that help achieve higher coverage during Mode ``WithSeeds Iteration 1'', leaving more harder blocks to be covered in Mode ``WithSeeds Iteration 2''. In summary, the results show that further iterations can help generate new regression tests that can achieve more coverage.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[scale=0.70,clip]{figs/RQ4_2_1.eps}\vspace*{-1ex}
-\caption{\label{fig:rq42}Comparison of code coverages achieved by Modes 3 (WithSeeds Iteration 1) and 4 (Withseeds Iteration 2).}
+\includegraphics[scale=0.70,clip]{figs/RQ3_2_1.eps}\vspace*{-1ex}
+\caption{\label{fig:rq32}Comparison of code coverages achieved by Modes ``WithSeeds Iteration 1'' and ``Withseeds Iteration 2''.}
 \end{figure*}
-
 
 %---------------------------------------------------------------------------------------
 %\subsection{Real Defects}
