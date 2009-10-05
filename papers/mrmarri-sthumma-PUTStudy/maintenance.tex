@@ -4,8 +4,8 @@ We next address RQ3 of whether test generalization can reduce the effort in main
 
 \begin{figure}[t]
 \centering
-\includegraphics[scale=0.60,clip,trim=200 200 00 150]{charts/CUTs_PUTs_1.eps}\vspace*{-3ex}
-\caption{\label{fig:cutsnputs}Comparison of the number of CUTs and PUTs} \vspace*{-2ex}
+\includegraphics[scale=0.60,clip,trim=200 200 00 150]{charts/CUTs_PUTs_1.eps}\vspace*{-4ex}
+\caption{\label{fig:cutsnputs}Comparison of the number of CUTs and PUTs} \vspace*{-4ex}
 \end{figure}
 
 \begin{table}[t]
@@ -28,7 +28,7 @@ We next address RQ3 of whether test generalization can reduce the effort in main
 \hline 15   & 1   & 1\\
 \hline
 \end{tabular}\vspace*{-2ex}
-\caption {\label{tab:cutputmapping} Mapping of the number of CUTs and their transformed PUTs.} \vspace*{-6ex}
+\caption {\label{tab:cutputmapping} Mapping of the number of CUTs and their transformed PUTs.} \vspace*{-4ex}
 \end{center}
 \end{CodeOut}
 \end{table}
@@ -52,8 +52,8 @@ public void AddFirstTest([PAUT]SinglyLinkedList<int> sll,
 \hspace*{0.2in}PexAssert.AreEqual(ne.Length, sll.Count);
 \}
 \end{alltt}
-\end{CodeOut}\vspace*{-5ex}
-\Caption{\label{fig:transformedPUT} PUT for the \CodeIn{AddFirst} method under test.} \vspace*{-1ex}
+\end{CodeOut}\vspace*{-4ex}
+\Caption{\label{fig:transformedPUT} PUT for the \CodeIn{AddFirst} method under test.} \vspace*{-3ex}
 \end{figure}
 
 Figure~\ref{fig:loccomp} shows the results of comparing the LOC of CUTs and PUTs. For DSA and QuickGraph, the LOC of PUTs is less than the LOC of CUTs, whereas for NUnit, the LOC of PUTs is slightly more than the LOC of CUTs. Section~\ref{sec:limitations} describes why the LOC of PUTs for NUnit is slightly more than the LOC of CUTs. As shown, for QuickGraph, although there is no reduction in the number of CUTs, the LOC of PUTs is reduced by 37\%, showing the significance of test generalization. For DSA, the reduction in the LOC (7.8\%) is not as significant as the reduction in the number of tests (50.2\%). We identify that among new LOC written for PUTs, many statements are related to the additional using statements or new annotations that do not effect the efforts in maintaining test code. Therefore, our results show that test generalization can help reduce the number of tests (and LOC) and thereby reduce the efforts in maintaining test code.

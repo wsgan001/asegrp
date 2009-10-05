@@ -41,7 +41,7 @@
 \maketitle
 
 \begin{abstract}
-Owing to the significance of unit testing in the software development life cycle, unit testing has been widely adopted by the software industry to ensure high-quality software. Recent advances in software testing introduced Parameterized Unit Tests (PUTs), which are a generalized form of Conventional Unit Tests (CUT). With PUTs, test data can be generated automatically using the Dynamic-Symbolic-Execution (DSE) approach. PUTs are powerful and provide an effective means of guided test generation when used with a DSE-based tool such as Pex from Microsoft Research. To leverage the benefits of PUTs in testing existing legacy applications in the software industry, we propose the first systematic procedure of test generalization (transforming existing CUTs to PUTs). We also conduct an empirical study, on three real-world applications, that shows benefits of test generalization. We show that test generalization reduces $407$ CUTs to $224$ PUTs (45\%), thereby reducing the effort of maintaining test code. Along with achieving higher code coverage (a maximum increase of 52\% for one class under test and 10\% for one application used in our study), test generalization helped detect $16$ new defects that are not detected by existing CUTs. A few of these defects are quite complex and are hard to be detected using CUTs. Given these benefits of test generalization, we expect that developers in software industry can use our systematic procedure to transform their CUTs to PUTs to exploit the benefits of PUTs, and thereby increase the quality of their developed software.
+Owing to the significance of unit testing in the software development life cycle, unit testing has been widely adopted by the software industry to ensure high-quality software. Recent advances in software testing introduced Parameterized Unit Tests (PUTs), which are a generalized form of Conventional Unit Tests (CUT). With PUTs, test data can be generated automatically using the Dyna- mic-Symbolic-Execution (DSE) approach. PUTs are powerful and provide an effective means of guided test generation when used with a DSE-based tool such as Pex from Microsoft Research. To leverage the benefits of PUTs in testing existing legacy applications in the software industry, we propose the first systematic procedure of test generalization (transforming existing CUTs to PUTs). We also conduct an empirical study, on three real-world applications, that shows benefits of test generalization. We show that test generalization reduces $407$ CUTs to $224$ PUTs (45\%), thereby reducing the effort of maintaining test code. Along with achieving higher code coverage (a maximum increase of 52\% for one class under test and 10\% for one application used in our study), test generalization helped detect $16$ new defects that are not detected by existing CUTs. A few of these defects are quite complex and are hard to be detected using CUTs. Given these benefits of test generalization, we expect that developers in software industry can use our systematic procedure to transform their CUTs to PUTs to exploit the benefits of PUTs, and thereby increase the quality of their developed software.
 
 %Although PUTs relieve developers from providing test data, PUTs still require test scenarios to exercise the code under test. On the other hand, most of the existing applications in software industry have CUTs that include valuable information of test scenarios. These CUTs can be transformed to PUTs (referred to as test generalization) to leverage the benefits of PUTs. In this paper, we propose the first systematic procedure that assists developers in performing test generalization. We also conduct an empirical study that shows benefits of the test generalization. We show that test generalization reduces $407$ CUTs to $224$ PUTs (45\%), thereby reducing the efforts of maintaining test code. Along with achieving higher code coverage (a maximum increase of 53\% for one class under test and 10\% for one application under analysis), test generalization detected $16$ new defects that are not detected by existing CUTs. A few of these defects are quite complex and are hard to be detected using CUTs. Given these benefits of test generalization, we expect that developers in the software industry can use our systematic procedure and transform their CUTs to PUTs to leverage the benefits of PUTs, and thereby increase the quality of their developed software.
 \end{abstract}
@@ -66,5 +66,138 @@ Owing to the significance of unit testing in the software development life cycle
 \input{conclusion}\vspace*{-1.5ex}
 %----------------------------------------------------------------------------------------------
 \bibliographystyle{abbrv}
-\bibliography{references}
+%\bibliography{references}
+\begin{thebibliography}{10}
+\begin{scriptsize}
+\bibitem{TDD}
+{Test-Driven Development in {.NET}, The {NUnit} Testing Framework}, 2006.
+\newblock
+  \url{http://www.developerfusion.com/article/5240/testdriven-development-in-n%
+et/2/}.
+
+\bibitem{JUnit}
+{JUnit for Test Driven Development}, 2008.
+\newblock \url{http://www.junit.org/}.
+
+\bibitem{jtest}
+{Parasoft {Jtest}}, 2008.
+\newblock \url{http://www.parasoft.com/jsp/products/home.jsp?product=Jtest}.
+
+\bibitem{codepro}
+{CodePro AnalytiX}, 2009.
+\newblock
+  \url{http://www.eclipse-plugins.info/eclipse/plugin_details.jsp?id=943}.
+
+\bibitem{pex:rel}
+Pex - automated white box testing for {.NET}, 2009.
+\newblock \url{http://research.microsoft.com/Pex/}.
+
+\bibitem{csallner:jcrasher}
+C.~Csallner and Y.~Smaragdakis.
+\newblock {{JC}rasher: an automatic robustness tester for {J}ava}.
+\newblock {\em Softw. Pract. Exper.}, 34(11), 2004.
+
+\bibitem{quickgraph}
+J.~de~Halleux.
+\newblock Quickgraph, graph data structures and algorithms for {.NET}, 2006.
+\newblock \url{http://quickgraph.codeplex.com/}.
+
+\bibitem{halleux08:putpatterns}
+J.~de~Halleux and N.~Tillmann.
+\newblock {Parameterized Test Patterns For Effective Testing with {Pex}
+  (Draft)}, 2008.
+\newblock
+  \url{http://research.microsoft.com/en-us/projects/pex/pexpatterns.pdf}.
+
+\bibitem{godefroid05:dart}
+P.~Godefroid, N.~Klarlund, and K.~Sen.
+\newblock {DART}: Directed automated random testing.
+\newblock In {\em Proc. PLDI}, pages 213--223, 2005.
+
+\bibitem{dsa}
+Granville and L.~D. Tongo.
+\newblock Data structures and algorithms, 2006.
+\newblock \url{http://dsa.codeplex.com/}.
+
+\bibitem{nunit}
+C.~P. Jamie~Cansdale, Gary~Feldman and M.~C. Two.
+\newblock {{NUnit}}, 2002.
+\newblock \url{http://nunit.com/index.php}.
+
+\bibitem{khurshid:symbolic}
+S.~Khurshid, C.~S. Pasareanu, and W.~Visser.
+\newblock {Generalized symbolic execution for model checking and testing}.
+\newblock In {\em Proc. TACAS)}, pages 553--568, 2003.
+
+\bibitem{king:symex}
+J.~C. King.
+\newblock Symbolic execution and program testing.
+\newblock {\em Communications of the ACM}, 19(7):385--394, 1976.
+
+\bibitem{mockobjects}
+T.~Mackinnon, S.~Freeman, and P.~Craig.
+\newblock Endo-testing: unit testing with mock objects.
+\newblock pages 287--301, 2001.
+
+\bibitem{marri09:empirical}
+M.~R. Marri, T.~Xie, N.~Tillmann, J.~de~Halleux, and W.~Schulte.
+\newblock An empirical study of testing file-system-dependent software with
+  mock objects.
+\newblock In {\em Proc. AST, Business and Industry Case Studies}, pages
+  149--153, 2009.
+
+\bibitem{dbc}
+B.~Meyer.
+\newblock {\em {Object-Oriented Software Construction}}.
+\newblock Prentice Hall PTR, 2000.
+
+\bibitem{pacheco:feedback}
+C.~Pacheco, S.~K. Lahiri, M.~D. Ernst, and T.~Ball.
+\newblock Feedback-directed random test generation.
+\newblock In {\em Proc. ICSE}, pages 75--84, 2007.
+
+\bibitem{ernst:theory}
+D.~Saff, M.~Boshernitsan, and M.~D. Ernst.
+\newblock Theories in practice: Easy-to-write specifications that catch bugs.
+\newblock Technical Report MIT-CSAIL-TR-2008-002, MIT Computer Science and
+  Artificial Intelligence Laboratory, 2008.
+\newblock
+  \url{http://www.cs.washington.edu/homes/mernst/pubs/testing-theories-tr002-a%
+bstract.html}.
+
+\bibitem{sen07:cute}
+K.~Sen, D.~Marinov, and G.~Agha.
+\newblock {CUTE}: a concolic unit testing engine for {C}.
+\newblock In {\em Proc. ESEC/FSE}, pages 263--272, 2005.
+
+\bibitem{thummalapenta09:mseqgen}
+S.~Thummalapenta, T.~Xie, N.~Tillmann, P.~de~Halleux, and W.~Schulte.
+\newblock {MSeqGen}: Object-oriented unit-test generation via mining source
+  code.
+\newblock In {\em Proc. ESEC/FSE}, pages 193--202, 2009.
+
+\bibitem{tillmann08:pex}
+N.~Tillmann and J.~de~Halleux.
+\newblock Pex - white box test generation for {.NET}.
+\newblock In {\em Proc. TAP}, pages 134--153, 2008.
+
+\bibitem{tillmann05:parameterized}
+N.~Tillmann and W.~Schulte.
+\newblock Parameterized unit tests.
+\newblock In {\em Proc. ESEC/FSE}, pages 253--262, 2005.
+
+\bibitem{tillmann06:unit}
+N.~Tillmann and W.~Schulte.
+\newblock Unit tests reloaded: {P}arameterized unit testing with symbolic
+  execution.
+\newblock {\em IEEE Software}, 23(4):38--47, 2006.
+
+\bibitem{xie09:mutation}
+T.~Xie, N.~Tillmann, P.~de~Halleux, and W.~Schulte.
+\newblock Mutation analysis of parameterized unit tests.
+\newblock In {\em Proc. Mutation}, pages 177--181, 2009.
+
+\end{scriptsize}
+\end{thebibliography}
+
 \end{document}
