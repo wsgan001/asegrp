@@ -6,7 +6,7 @@
 %----------------- HEADER ------------------------
 \hline
 Subject 		& Downloads 	& \multicolumn{5}{|c|}{Code Under Test} 															&	\multicolumn{3}{|c|}{Existing Test Code} 	\\ \cline{3-10}
-						& 						&	\#Classes	&	\#Methods	& \#KLOC	& Avg. Complexity & Max. Complexity	&	\#Classes	&	\#Methods &	\#KLOC						\\ \hline\hline
+						& 						&	\#Classes	&	\#Methods	& \#KLOC	& Avg. Complexity & Max. Complexity	&	\#Classes	&	\#CUTs	 	&	\#KLOC						\\ \hline\hline
 %----------------- END HEADER ------------------------ 
 NUnit				&		$193,563$\footnote{Number of reads as shown in sourceforge for the year 2009.}
 													&	9					&	87  			&		1.4		&				1.48 			& 14 							&			9			&			49		&		0.9							\\ \hline
@@ -25,7 +25,7 @@ QuickGraph	&		$7969$ 		&	56				&	463				&		6.2		&				1.79			& 16							&			9			&
 We conducted an empirical study using three real-world applications to show the benefits of generalizing CUTs to PUTs in specific and also to show the applicability of our systematic procedure in general. In our empirical study, we show the benefits of PUTs over existing CUTs in terms of three metrics: branch coverage, the number of detected defects, and the number of tests (their LOC) being reduced by test generalization. In particular, we address the following three research questions in our empirical study:
 
 \begin{itemize}
-	\item \textbf{RQ1: Branch Coverage.} How much higher percentage of \emph{branch coverage} is achieved by PUTs compared to existing CUTs? Since PUTs are a generalized form of CUTs, this research question helps to address whether PUTs can achieve additional code coverage compared to CUTs.
+	\item \textbf{RQ1: Branch Coverage.} How much higher percentage of \emph{branch coverage} is achieved by PUTs compared to existing CUTs? Since PUTs are a generalized form of CUTs, this research question helps to address whether PUTs can achieve additional branch code coverage compared to CUTs.
 	\item \textbf{RQ2: Defect Detection.} How many new \emph{defects} (that are not detected by CUTs) are detected by PUTs and vice-versa? This research question helps to address whether PUTs have higher fault-detection capabilities compared to CUTs.
 	\item \textbf{RQ3: Test-code maintenance.} How many tests are reduced by generalizing CUTs to PUTs? This research question helps to address whether PUTs require less effort in maintaining test code compared to CUTs.
 \end{itemize}
@@ -36,7 +36,7 @@ For measuring the branch coverage of the code under test, we use a coverage meas
 
 \subsection{Subject Applications}
 
-We use three open source applications in our study: NUnit~\cite{nunit}, DSA~\cite{dsa}, and Quickgraph~\cite{quickgraph}. The criteria for choosing these applications are (1) popular usage of these application in industry as shown by their download records in their hosting web sites, (2) the existing conventional unit tests, (3) the number of lines of the code under test of these applications, and (4) the code under test itself including non-trivial logic to validate the feasibility of our systematic procedure. Table~\ref{tab:subjectmetrics} shows the characteristics of the three subject applications. Column ``Subject'' gives the name of the subject application. Column ``Downloads'' gives the number of downloads of the application as listed in its hosting web site. Column ``Code Under Test'' gives details of the code under test (of the application) in terms of the number of classes (``\#Classes''), number of methods (``\#Methods''), number of lines of code (``\#LOC''), and the average complexity of the code under test. Column ``Existing Test Code'' provides details on the existing test code similar to the details of the code under test. Subcolumns ``\#Classes'', ``\#Methods'', and ``\#LOC'' give the corresponding metrics of the test code. We next provide details of all the subject applications.
+We use three open source applications in our study: NUnit~\cite{nunit}, DSA~\cite{dsa}, and Quickgraph~\cite{quickgraph}. The criteria for choosing these applications are (1) popular usage of these applications in industry as shown by their download records in their hosting web sites, (2) the existing CUTs, (3) the number of lines of the code under test of these applications, and (4) the code under test itself including non-trivial logic to validate the feasibility of our systematic procedure. Table~\ref{tab:subjectmetrics} shows the characteristics of the three subject applications. Column ``Subject'' gives the name of the subject application. Column ``Downloads'' gives the number of downloads of the application as listed in its hosting web site. Column ``Code Under Test'' gives details of the code under test (of the application) in terms of the number of classes (``\#Classes''), number of methods (``\#Methods''), number of lines of code (``\#LOC''), and the average complexity of the code under test. Column ``Existing Test Code'' provides details on the existing test code similar to the details of the code under test. Subcolumns ``\#Classes'', ``\#Methods'', and ``\#LOC'' give the corresponding metrics of the test code. We next provide details of all the subject applications.
 
 \subsubsection{NUnit}
 \label{sec:nunit}
@@ -48,7 +48,7 @@ Data Structures and Algorithms (DSA)~\cite{dsa} is a library that contains imple
 
 \subsubsection{QuickGraph}
 
-QuickGraph~\cite{quickgraph} is a C\# graph library that provides various directed/undirected graph data structures. QuickGraph also provides algorithms such as depth-first search, breadth-first search, and A* search. QuickGraph includes $56$ classes and interfaces with $6.2$ KLOC. The existing test suite available with the source code release of the library incldues $9$ test classes and $21$ CUTs. The existing test suite includes CUTs that primarily test two search algorithms, one sorting algorithm, and other graph concepts. We generalized only these existing CUTs of this subject application. Since QuickGraph includes graph search algorithms, the code under test includes non-trivial logic and is therefore a suitable subject for test generalization. QuickGraph is also popularly used as reflected by $7,969$ downloads (shown by CodePlex).
+QuickGraph~\cite{quickgraph} is a C\# graph library that provides various directed/undirected graph data structures. QuickGraph also provides algorithms such as depth-first search, breadth-first search, and A* search. The source code of QuickGraph (version $1.0$) used in our study includes $56$ classes and interfaces with $6.2$ KLOC. The existing test suite available with the source code release of the library includes $9$ test classes and $21$ CUTs. The existing test suite includes CUTs that primarily test two search algorithms, one sorting algorithm, and other graph concepts. We generalized only these existing CUTs of this subject application. Since QuickGraph includes graph search algorithms, the code under test includes non-trivial logic and is therefore a suitable subject for test generalization. QuickGraph is also popularly used as reflected by $7,969$ downloads (shown by CodePlex).
 
 \input{coverage}
 \input{defects}
