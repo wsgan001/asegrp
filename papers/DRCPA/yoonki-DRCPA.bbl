@@ -1,0 +1,40 @@
+\begin{thebibliography}{1}
+\ifx \showCODEN  \undefined \def \showCODEN #1{CODEN #1}  \fi
+\ifx \showISBN   \undefined \def \showISBN  #1{ISBN #1}   \fi
+\ifx \showISSN   \undefined \def \showISSN  #1{ISSN #1}   \fi
+\ifx \showLCCN   \undefined \def \showLCCN  #1{LCCN #1}   \fi
+\ifx \showPRICE  \undefined \def \showPRICE #1{#1}        \fi
+\ifx \showURL    \undefined \def \showURL {URL }          \fi
+\ifx \path       \undefined \input path.sty               \fi
+\ifx \ifshowURL \undefined
+     \newif \ifshowURL
+     \showURLtrue
+\fi
+
+\bibitem{ARM}
+{A}pplication {R}esponse {M}easurement.
+\newblock \url{http://www.opengroup.org/management/arm/}.
+
+\bibitem{emf}
+{E}clipse {M}odeling {F}ramework.
+\newblock \url{http://www.eclipse.org/emf/}.
+
+\bibitem{JVMTI}
+{J}ava {V}irtual {M}achine {T}ool {I}nterface.
+\newblock \url{http://www.j2ee.me/j2se/1.5.0/docs/guide/jvmti/}.
+
+\bibitem{LoadRunner}
+{HP} {L}oad{R}unner.
+\newblock
+  \url{https://h10078.www1.hp.com/cda/hpms/display/main/hpms_content.jsp?zn=bt%
+o&cp=1-11-126-17^8_4000_100__}.
+
+\bibitem{RPT}
+{IBM} {R}ational {P}erformance {T}ester.
+\newblock \url{http://www-01.ibm.com/software/awdtools/tester/performance}.
+
+\bibitem{TPTP}
+{T}est and {P}erformance {T}ools {P}latform.
+\newblock \url{http://www.eclipse.org/tptp/}.
+
+\end{thebibliography}
