@@ -1,0 +1,80 @@
+%\documentclass[conference]{IEEEtran}
+\documentclass{sig-alternate}
+
+%\input{macros}
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+%\ifCLASSINFOpdf
+%\else
+%\fi
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+%\def\baselinestretch{2}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+%\usepackage{amsmath}
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{MODA: Automated \underline{M}ock \underline{O}bject Generation for Testing \underline{D}atabase \underline{A}pplications}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{
+Kunal Taneja$^1$, \hspace{0.05in} Yi Zhang$^2$, \hspace{0.05in} Tao Xie$^1$\\
+       \small{$^1$Department of Computer Science, North Carolina State University, Raleigh, NC, 27695, USA}\\
+       \small{$^2$Center for Devices and
+Radiological Health, US Food and Drug Administration, Silver Spring, MD,
+20993, USA}\\
+       \small{$^1$\{ktaneja, txie\}@ncsu.edu, $^2$\{Yi.Zhang2\}@fda.hhs.gov} 
+}   
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3},
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+% make the title area
+\maketitle
+
+
+\input{abstract}
+\input{introduction}
+\input{example}
+\input{approach}
+
+\bibliographystyle{plain}
+\bibliography{mybib}
+
+\end{document}

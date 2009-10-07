@@ -5,7 +5,8 @@
 
 
 
-\\Our detailed approach is:
+
+Our detailed approach is:
 \begin{enumerate}
 \item Collects the branch coverage and find out the not covered branches. If the target statement of the not covered branch is covered, we simply filter out these not covered branches as it is useless for achieving higher coverage.
 \item For the not covered branch which involves non-primitive object fields, we will search the reported issues to see whether there is an object creation issue for these fields. If found, we will consider this object creation issue is the cause which disallows Pex to cover the specific branch and report them with the not covered branch. 
