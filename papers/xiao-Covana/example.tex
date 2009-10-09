@@ -1,16 +1,3 @@
 \section{Example}
 
-
-
-
-
-
-
-Our detailed approach is:
-\begin{enumerate}
-\item Collects the branch coverage and find out the not covered branches. If the target statement of the not covered branch is covered, we simply filter out these not covered branches as it is useless for achieving higher coverage.
-\item For the not covered branch which involves non-primitive object fields, we will search the reported issues to see whether there is an object creation issue for these fields. If found, we will consider this object creation issue is the cause which disallows Pex to cover the specific branch and report them with the not covered branch. 
-\item For the uninstrumented method, we will make the method's return value as a symbolic and keep track of it. If there are not coverd branches whose constraints involve the symbolic we tracked, we will report it as the issue of external library dependence. Otherwise we will ignore it and discard the related information.
-\item When DSE tool, like pex, fails to deal with the environment dependency or create an instance for some class which implements a specific interface, our tool will suggest user to use mock objects for solving these kind of problems.
-\item When there is a explosion of feasible paths caused by loops, we will suggest ? (needs more experiments)
-\end{enumerate}
+Will fill in later\ldots
