@@ -1,3 +1,54 @@
 \section{Example}
+In this section, we illustrates out approach with examples of four categories of issues: object creation issue, external library dependency issue, environment dependency issue and loop issue. 
+\subsection{Object Creation Issue}
+Figure \ref{fig:obj} shows an example program of a fixed size stack class with a parameterized unit test(PUT)\cite{PUT} for testing its Push method. To make it simple, we assume that the method Push is the only method that can add object to the stack. When applying DSE tool to generate test inputs for this PUT, it is not able to generate test inputs to cover the statement in line 9, which throws an exception to prevent inserting new item into full stack. To cover this statement, the generated object of stack for the PUT must have 10 objects, which requires invoking method Push for 10 times. This is a method sequence generation problem and most of current DSE tools have little support for it. However, this problem could be got around by providing a proper factory method\cite{HalleuxT08} for creating the object in a desired state. In order to better inform user the problem, our approach would first collects the branch coverage and locates the non-covered branch, which is the true branch of statement in line 6. The field access information is also collected since we need the type information of the fields involved in the constraint of the branch. In this example, the field information of branch in line 6 is ``items.Count'' and its type information is class stack. With this information, we then check whether there are complaints of the type stack. If yes, then we classifies this issue into object creation issue and reports the non-covered branch with it. 
+\begin{figure}
+\begin{CodeOut}
+\begin{alltt}
+1    public class Stack
+2    \{
+3        private List<object> items = new List<object>();
+4        public void Push(object item)
+5       \{
+6           if (items.Count >= 10)
+7          \{
+8              throw new Exception("full");
+9          \}
+10          items.Add(item);
+11      \}
+12   \}
+     \ldots
+13   public void TestPush(Stack stack,object item )
+14   \{
+15       stack.Push(item);            
+16   \}
+\end{alltt}
+\end{CodeOut}
+\Caption{Example of object creation issue}
+\label{fig:obj}
+\end{figure}
+\subsection{External library dependency issue}
+External library means the system library or third party library we use in the program and we do not have the source code for it. Normally, DSE tools do not monitor the execution of method calls from external library since it may take non-trivial time for some huge library, like system libraries of math. The program in Figure \ref{fig:external} illustrates the external library dependency issue. In line 1, the constraint of the branch depends on the property Valid of an external object, externalObj. In line 4, the program calls the Pow and Sqrt methods of the system's Math library and assigns the result to the variable length. As method calls from external library are not monitored by default, proper inputs for satisfying the constraint in line 1 will not be generated. To solve this problem, we could simply configure the tool to monitor both libraries. However, monitoring the math library used in line 4 is useless for user to increase coverage because it is not related to the non-covered branch in line 1. Thus, our approach keeps track of the return values of the method calls from external libraries and check whether they are involved in the non-covered branches. If not, then the non-covered branch should be related to other issues and this external library dependency issue could be ignored. By this way, we could safely remove the unrelevant issues and suggest the related ones to monitor.
+\begin{figure}
+\begin{CodeOut}
+\begin{alltt}
+1   if(externalObj.Valid)
+2   \{
+3       // do some thing
+4       double length = Math.Sqrt(Math.Pow(x1, 2) + Math.Pow(x2, 2);
+        \ldots
+5   \}
+6   else
+7   \{
+8       throw new Exception("too short");
+9   \}
+\end{alltt}
+\end{CodeOut}
+\Caption{Example of external library dependency issue}
+\label{fig:external}
+\end{figure}
+\subsection{Environment dependency issue}
+\subsection{Loop issue}
 
-Will fill in later\ldots
+
+   
