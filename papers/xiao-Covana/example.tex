@@ -1,5 +1,5 @@
 \section{Example}
-In this section, we illustrates out approach with examples of four categories of issues: object creation issue, external library dependency issue, environment dependency issue and loop issue. 
+In this section, we illustrates our approach with examples of four categories of issues: object creation issue, external library dependency issue, environment dependency issue and loop issue. 
 \subsection{Object Creation Issue}
 Figure \ref{fig:obj} shows an example program of a fixed size stack class with a parameterized unit test(PUT)\cite{PUT} for testing its Push method. To make it simple, we assume that the method Push is the only method that can add object to the stack. When applying DSE tool to generate test inputs for this PUT, it is not able to generate test inputs to cover the statement in line 9, which throws an exception to prevent inserting new item into full stack. To cover this statement, the generated object of stack for the PUT must have 10 objects, which requires invoking method Push for 10 times. This is a method sequence generation problem and most of current DSE tools have little support for it. However, this problem could be got around by providing a proper factory method\cite{HalleuxT08} for creating the object in a desired state. In order to better inform user the problem, our approach would first collects the branch coverage and locates the non-covered branch, which is the true branch of statement in line 6. The field access information is also collected since we need the type information of the fields involved in the constraint of the branch. In this example, the field information of branch in line 6 is ``items.Count'' and its type information is class stack. With this information, we then check whether there are complaints of the type stack. If yes, then we classifies this issue into object creation issue and reports the non-covered branch with it. 
 \begin{figure}
@@ -48,7 +48,9 @@ External library means the system library or third party library we use in the p
 \label{fig:external}
 \end{figure}
 \subsection{Environment dependency issue}
+Fill in later \ldots
 \subsection{Loop issue}
+Fill in later \ldots
 
 
    
