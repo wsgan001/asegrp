@@ -19,9 +19,20 @@
 {E}clipse {M}odeling {F}ramework.
 \newblock \url{http://www.eclipse.org/emf/}.
 
+\bibitem{JINSIGHT}
+{J}insight.
+\newblock \url{http://www.research.ibm.com/jinsight/}.
+
 \bibitem{JVMTI}
 {J}ava {V}irtual {M}achine {T}ool {I}nterface.
 \newblock \url{http://www.j2ee.me/j2se/1.5.0/docs/guide/jvmti/}.
+
+\bibitem{liang99:comprehensive}
+S.~Liang and D.~Viswanathan.
+\newblock Comprehensive profiling support in the javatm virtual machine.
+\newblock In {\em COOTS'99: Proceedings of the 5th conference on USENIX
+  Conference on Object-Oriented Technologies \& Systems}, page~17. Berkeley,
+  CA, USA, 1999.
 
 \bibitem{LoadRunner}
 {HP} {L}oad{R}unner.
@@ -32,6 +43,12 @@ o&cp=1-11-126-17^8_4000_100__}.
 \bibitem{RPT}
 {IBM} {R}ational {P}erformance {T}ester.
 \newblock \url{http://www-01.ibm.com/software/awdtools/tester/performance}.
+
+\bibitem{srivastava94:atom}
+A.~Srivastava and A.~Eustace.
+\newblock Atom: a system for building customized program analysis tools.
+\newblock {\em SIGPLAN Not.}, 39\penalty0 (4):\penalty0 528--539, 2004.
+\newblock \showISSN{0362-1340}.
 
 \bibitem{TPTP}
 {T}est and {P}erformance {T}ools {P}latform.
