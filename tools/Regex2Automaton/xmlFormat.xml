@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<parser-descriptor namespace="CommandParser">
+  <class-descriptor classname="Parser">
+    <states varname="_state" initstate="NOTHING" >
+    
+    </states>
+  </class-descriptor>
+</parser-descriptor>

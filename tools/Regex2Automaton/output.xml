@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<parser-descriptor namespace="NAMESPACE">
+<class-descriptor classname="CLASSNAME">
+<states varname="_state" initstate="STATE0" >
+<state name="STATE0">
+<input val="a" newstate="STATE1" />
+ </state>
+<state name="STATE1">
+<input val="c" newstate="STATE2" />
+<input val="b" newstate="STATE3" />
+ </state>
+<state name="STATE2">
+<input val="e" newstate="STATE4" />
+ </state>
+<state name="STATE3">
+<input val="d" newstate="STATE4" />
+ </state>
+<state name="STATE4">
+<input val="$" newstate="STATE5" />
+ </state>
+<state name="STATE5">
+ </state>
+</states>
+</class-descriptor>
+</parser-descriptor>
