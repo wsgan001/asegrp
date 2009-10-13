@@ -10,7 +10,7 @@
 % Introductory paragraph: Very briefly, what is the problem and why is it relevant to the audience attending *THIS CONFERENCE*?
 % Moreover, why is the problem hard, and what is your solution?
 Performance testing and analysis tools help testers to identify and diagnose the presence and cause of application or system bottlenecks. 
-In performance testing, testers create loads to expose problems and observe failures. 
+In performance testing, testers create loads to expose problems and observe failures, such as bottleneck (late response time), low throughput, and high resource utilization.
 In the analysis and diagnosis against the testing results, they try to get the location of the root causes of the observed failures. 
 Usually, deep root-cause performance analysis requires correlation of test results from the client side and traces/events information from the server side.
 
@@ -19,13 +19,15 @@ Usually, deep root-cause performance analysis requires correlation of test resul
 Many performance-testing tools \cite{RPT} \cite{LoadRunner} can measure client-side response time and correlated it with collected application transaction monitoring data from the server side. Application Response Measurement (ARM) \cite{ARM} used by the tools provides a common way to get profiling information and allows to measure application availability, application performance, and end-to-end transaction response time.
 
 For non ARM-instrumented servers running Java applications, 
-Java Virtual Machine Tool Interface (JVMTI) \cite{JVMTI} feature of Eclipse Test and Performance Tools Platform (TPTP) \cite{TPTP} allows performance-testing tool to collect full traces from the non ARM-instrumented servers. One problem is here is that the collection of full traces is expensive and slow. To reduce the cost of the collection of full traces from the servers, a selective instrumentation should be conducted. However, such an imprecise profiling mechanism poses challenges for performance analysis because it is difficult to identify the correlation between a transaction (or time-range) on the client and the profiling information at a server's JVM.
+Java Virtual Machine Tool Interface (JVMTI) \cite{JVMTI} feature of Eclipse Test and Performance Tools Platform (TPTP) \cite{TPTP} allows performance-testing tool to collect full traces from the non ARM-instrumented servers. One problem is here that the collection of full traces is expensive and slow, 
+because collecting full trace data incurs noticeable overhead, often not desirable during performance analysis.
+To reduce the cost of the collection of full traces from the servers, a selective instrumentation can be conducted. There runtime profiling is captured only at intervals, which define sampling rates. However, such an imprecise profiling mechanism poses challenges for performance analysis because it is difficult to identify the correlation between a transaction (or time-range) on the client and the profiling information at a server's JVM.
 
 % Summary of Approach and Implementation
 % Proposed solution and brief summary
 % Some reviewers don't like you to claim your own approach to be "novel"
 In our approach, we show that a technique to recover information that is available in full traces and necessary for performance analysis from sampled traces. 
-With the sampled traces, we show a robust technique for matching the sampled method calls with the start and end points identified
+With the sampled traces, we show a technique for matching the sampled method calls with the start and end points identified
 
 % identifies which methods change object states or not,
 %and to recommend assertions based on the side-effect analysis.
