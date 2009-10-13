@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?><html>
+<!-- saved from url=(0033)http://research.microsoft.com/pex -->
+<head><link rel="StyleSheet" href="../er.common.css" type="text/css" /><script src="../er.common.js" type="text/javascript"> </script><link rel="SHORTCUT ICON" href="favicon.ico" /><link rel="icon" href="favicon.ico" type="image/x-icon" /><link rel="StyleSheet" href="../log.css" type="text/css" /><link rel="StyleSheet" href="../pex.css" type="text/css" /><script src="../pex.js" type="text/javascript"> </script><title>Email1 Pex Report
+   </title></head><body onload="bodyOnLoad()"><div class="banner"><div class="imageleft"><a href="http://beta.research.microsoft.com/en-us/um/redmond/projects/pex/wiki/WebHome.html"><img class="button" src="../reportlogo.png" alt="logo" width="100" height="60" /></a></div>
+  
+  
+  Email1:
+1 exploration,
+  2 generated tests
+  (0 failing,
+   2 new), 00:00:02.53
+</div><h2 id="xID0EC"><span class="hint">|</span><a class="smallbutton" href="../cov\t84\cov.html">dynamic coverage</a><span class="hint">|</span><span class="button" onclick="toggleDiv('uninstrumentedID0EC')">uninstrumented methods</span></h2><div class="toggle" id="ID0EC"><div class="closedSection" id="uninstrumentedID0EC"><table><tr><th colspan="2">Uninstrumented Methods</th></tr><tr><th>Type</th><th>Method</th></tr><tr class="odd"><td>System.Text.RegularExpressions.Regex</td><td>Regex.IsMatch(String, String)</td></tr><tr class="even"><td>System.Text.RegularExpressions.Regex</td><td>Regex.IsMatch(String, String)</td></tr><tr class="odd"><td>System.Text.RegularExpressions.RegexCharClass+SingleRangeComparer</td><td>SingleRangeComparer.Compare(Object, Object)</td></tr></table></div><table id="testtableID0EC"><tr><th>
+      Name
+    </th><th>
+      Duration
+    </th><th>Tests</th><th colspan="2">Coverage</th><th>Log</th><th>Goals</th></tr><tr class="small"><td /><td /><td>total, failures, exceptions, inconclusive, duplicate</td><td>block</td><td>methods</td><td>critical, errors, warnings</td><td>missed, reached</td></tr><tr id="ID0ER" class="successodd"><td>Method1(String)<br /><span class="button" onclick="toggleDiv('logID0ER')"><b>log</b></span><span class="hint">|</span><span class="button" onclick="toggleDiv('paramvaluesID0ER')">
+        parameter values
+      </span><span class="hint">|</span><a class="smallbutton" href="../cov\e264\cov.html">dynamic coverage</a></td><td>00:00:02.38</td><td>2,
+    <span>0</span>,
+      0,
+      0,
+      0</td><td class="number"><span class="bad">0/0(0.00%)</span></td><td class="number"><span>0/0(0.00%)</span></td><td>
+      !<span>0</span>,
+      -<span>0</span>,
+      ~0</td><td>
+      !<span>0</span>,
+      <span>0</span></td></tr><tr><td colspan="8"><div class="closedSection" id="paramvaluesID0ER"><table id="tparamvaluesID0ER"><tr><th colspan="100">
+              Parameter Values
+              <span class="button" onclick="copySourceToClipboardFromId('tparamvaluesID0ER')">
+                Copy To Clipboard
+              </span></th></tr><tr><th>Run</th><th>s</th><th>result</th><th>Coverage</th><th>+/- Cov.</th><th>Summary/Exception</th><th>Test Name</th></tr><tr class="odd"><td class="number">1</td><td class="number">null</td><td class="number">false</td><td>0/0</td><td>-/-</td><td></td><td><span class="link" onclick="goAndShow('154d5b1e-435b-4985-9db3-ae1ccbd10044')">test</span></td></tr><tr class="even"><td class="number">2</td><td class="number">""</td><td class="number">false</td><td>0/0</td><td>-/-</td><td></td><td><span class="link" onclick="goAndShow('87bdf77a-e5dc-4023-a4cd-3c87221aa29b')">test</span></td></tr></table></div><div class="closedToggle" id="logID0ER"><table><tr class="repro"><td>repro:
+              pex.exe  /nf:inject.faults.email1 /tf:Email1! /mf:Method1!
+</td></tr>
+
+
+
+
+
+
+
+
+
+
+
+
+<tr id="154d5b1e-435b-4985-9db3-ae1ccbd10044"><td><div class="test"><span class="emphasis">
+                    Test</span><span class="hint">(1)</span>
+                  :
+                  Method101<div class="toggle"><pre class="console">bool b;
+b = this.Method1((string)null);
+Assert.AreEqual&lt;bool&gt;(false, b);
+</pre><div><span class="toggle" id="tgID0EIE" onclick="toggle('tgID0EIE','ID0EIE')">[+]</span><a href="http://research.microsoft.com/en-us/um/redmond/projects/pex/wiki/Path%20Condition.html">
+        Path condition
+      </a></div><div class="closedToggle" id="ID0EIE"><pre class="console">return s == (string)null;
+</pre></div></div></div></td></tr>
+<tr class="message"><td><span class="time">2009-09-12 20:21:17Z&gt;</span>could not load symbols for C:\Windows\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll</td></tr>
+<tr class="message"><td><span class="time">2009-09-12 20:21:17Z&gt;</span>search path: </td></tr>
+<tr id="ID0EXE"><td><div class="uninstrumented"><span class="toggle" id="tgstID0EXE" onclick="toggle('tgstID0EXE','stID0EXE')">[+]</span><a href="http://research.microsoft.com/en-us/um/redmond/projects/pex/wiki/Uninstrumented Method Called.html">Uninstrumented method 'System.Boolean System.Text.RegularExpressions.Regex.IsMatch(System.String input, System.String pattern)' called:
+              </a><div class="closedToggle" id="stID0EXE"><div class="toggle"><table><tr class="odd"><td>Int32.ToString(IFormatProvider)</td></tr><tr class="even"><td>Regex..ctor(String, RegexOptions, Boolean)</td></tr><tr class="odd"><td>Regex.IsMatch(String, String)</td></tr><tr class="even"><td><span class="toggle" id="tgID0EEEAC" onclick="toggle('tgID0EEEAC','ID0EEEAC')">[+]</span>Email1.Method1(String), C:\Users\Madhuri\Documents\ASE\Projects\Reggae\Reggae\Reggae\subjects\Email1.cs (19)<div class="closedToggle" id="ID0EEEAC"><pre class="coverage" xml:space="preserve">            {
+                if (s == null)
+                    return false;
+<span class="emphasized">                if (Regex.IsMatch(s, @"^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*$"))</span>
+                    return true;
+                else
+                    return false;</pre></div></td></tr></table></div></div></div></td></tr>
+<tr id="ID0EDGAC"><td><div class="uninstrumented"><span class="toggle" id="tgstID0EDGAC" onclick="toggle('tgstID0EDGAC','stID0EDGAC')">[+]</span><a href="http://research.microsoft.com/en-us/um/redmond/projects/pex/wiki/Uninstrumented Method Called.html">Uninstrumented method 'System.Int32 System.Text.RegularExpressions.RegexCharClass+SingleRangeComparer.Compare(System.Object x, System.Object y)' called:
+              </a><div class="closedToggle" id="stID0EDGAC"><div class="toggle"><table><tr class="odd"><td>SorterObjectArray.SwapIfGreaterWithItems(Int32, Int32)</td></tr><tr class="even"><td>SorterObjectArray.QuickSort(Int32, Int32)</td></tr><tr class="odd"><td>Array.Sort(Array, Array, Int32, Int32, IComparer)</td></tr><tr class="even"><td>Array.Sort(Array, Int32, Int32, IComparer)</td></tr><tr class="odd"><td>ArrayList.Sort(Int32, Int32, IComparer)</td></tr><tr class="even"><td>RegexCharClass.Canonicalize()</td></tr><tr class="odd"><td>RegexCharClass.ToStringClass()</td></tr><tr class="even"><td>RegexParser.ScanRegex()</td></tr><tr class="odd"><td>RegexParser.Parse(String, RegexOptions)</td></tr><tr class="even"><td>Regex..ctor(String, RegexOptions, Boolean)</td></tr><tr class="odd"><td>Regex.IsMatch(String, String)</td></tr><tr class="even"><td><span class="toggle" id="tgID0EUMAE" onclick="toggle('tgID0EUMAE','ID0EUMAE')">[+]</span>Email1.Method1(String), C:\Users\Madhuri\Documents\ASE\Projects\Reggae\Reggae\Reggae\subjects\Email1.cs (19)<div class="closedToggle" id="ID0EUMAE"><pre class="coverage" xml:space="preserve">            {
+                if (s == null)
+                    return false;
+<span class="emphasized">                if (Regex.IsMatch(s, @"^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*$"))</span>
+                    return true;
+                else
+                    return false;</pre></div></td></tr></table></div></div></div></td></tr>
+<tr id="ID0ETOAE"><td><div class="uninstrumented"><span class="toggle" id="tgstID0ETOAE" onclick="toggle('tgstID0ETOAE','stID0ETOAE')">[+]</span><a href="http://research.microsoft.com/en-us/um/redmond/projects/pex/wiki/Uninstrumented Method Called.html">Uninstrumented method 'System.Boolean System.Text.RegularExpressions.Regex.IsMatch(System.String input, System.String pattern)' called:
+              </a><div class="closedToggle" id="stID0ETOAE"><div class="toggle"><table><tr class="odd"><td><span class="toggle" id="tgID0ELQAE" onclick="toggle('tgID0ELQAE','ID0ELQAE')">[+]</span>Email1.Method1(String), C:\Users\Madhuri\Documents\ASE\Projects\Reggae\Reggae\Reggae\subjects\Email1.cs (19)<div class="closedToggle" id="ID0ELQAE"><pre class="coverage" xml:space="preserve">            {
+                if (s == null)
+                    return false;
+<span class="emphasized">                if (Regex.IsMatch(s, @"^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*$"))</span>
+                    return true;
+                else
+                    return false;</pre></div></td></tr></table></div></div></div></td></tr>
+
+<tr id="87bdf77a-e5dc-4023-a4cd-3c87221aa29b"><td><div class="test"><span class="emphasis">
+                    Test</span><span class="hint">(2)</span>
+                  :
+                  Method102<div class="toggle"><pre class="console">bool b;
+b = this.Method1("");
+Assert.AreEqual&lt;bool&gt;(false, b);
+</pre><div><span class="toggle" id="tgID0EGUAE" onclick="toggle('tgID0EGUAE','ID0EGUAE')">[+]</span><a href="http://research.microsoft.com/en-us/um/redmond/projects/pex/wiki/Path%20Condition.html">
+        Path condition
+      </a></div><div class="closedToggle" id="ID0EGUAE"><pre class="console">return s != (string)null;
+</pre></div></div></div></td></tr>
+
+
+
+
+
+</table></div></td></tr></table></div><hr /><table width="100%"><tr><td valign="top"><span class="copyright">Copyright (c) Microsoft Corporation. All rights reserved.</span><br /><span class="button" onclick="copySourceToClipboard()">Copy full source to clipboard</span><span class="hint">|</span><a class="smallbutton" href="http://research.microsoft.com/en-us/um/redmond/projects/pex/wiki/Creating A Stand Alone Repro.html">How to create a stand alone repro</a></td><td align="right" valign="top"><span class="copyright">
+            Pex v.
+          </span><br /></td></tr></table><div id="debugdiv"> </div></body></html>
