@@ -1,0 +1,28 @@
+
+/// COMPILED BY NUO
+1. collect regular expressions. 
+	(C:\RegExpTesting_workspace\AutomatonToCode\regexp)
+2. synthesize tested methods. one regular expression --> one method --> in one class, with a unique namespace
+	(C:\RegExpTesting_workspace\AutomatonToCode\subjects)
+3. synthesize an automaton (Regex.IsMatch(s, regexp)) for each regular expression, with the same namespace of the corresponding tested method.
+		3.1 automata XML 
+			(C:\RegExpTesting_workspace\AutomatonToCode\automaton.xml)
+		3.2 C\# file, with different file names  
+			(C:\RegExpTesting_workspace\AutomatonToCode\automaton.cs)
+4. Exclude synthesized automata from workspace, Pex generates test data without synthesized automata. Save the generated tests in somewhere else to avoid the tests are covered by new generated tests in step 5.
+5. Include synthesized automata into workspace, Pex generates test data with the synthesized automata.
+6. Run tests generated in Step 4, and collect the coverage statistics.
+7. Run tests generated in Step 5, and collect the coverage statistics.
+
+
+////BY MADHURI
+1. collect regular expressions. 
+2. Generate Automata: Run the Regex2Automaton.jar to get the corresponding 
+automaton in the form of an xml file.
+3. Generate Code From Automata: Run the AutomatonToCode.cs file in this project. 
+The above generated xml file is required. Make sure you change the baseDir string 
+variable in the class before running. 
+4. Write Regex.IsMatch with the generated code: synthesize an automaton (Regex.IsMatch(s, regexp)) for each regular expression, with the same namespace as the code under test. 
+(similar to RegexIsMatch_CreditAutomaton.cs)
+5. Let Pex generate tests when the code under test invokes the synethesized Regex class. 
+
