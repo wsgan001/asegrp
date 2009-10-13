@@ -32,6 +32,7 @@ public class Regex2Automaton {
 		String className = args[2];
 		String directory = args[3];
 		Automaton genAutomata = exp.toAutomaton();
+		
 		File tempFile = new File(directory,nameSpace+"."+className+".xml");
 		LinkedList<State> exploredStates = new LinkedList<State>();
 		visitedStates = new HashSet<Integer>();
@@ -66,6 +67,11 @@ public class Regex2Automaton {
 			buffWriter.append("</parser-descriptor>");
 			buffWriter.close();
 			System.out.println("Finished writing XML file");
+			System.out.print("Final States:");
+			for (State state : genAutomata.getAcceptStates()) {
+				System.out.print("STATE"+idMap.get(state.hashCode()).toString());
+				System.out.print(",");
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
