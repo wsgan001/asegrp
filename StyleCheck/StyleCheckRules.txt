@@ -16,3 +16,15 @@ can not % syntax cannot ##added by kunal
 [. ](because|Because|though|Though) %syntax  sentence cannot start with because##added by kunal 
 [ ]setup[ ] %syntax  set up##added by kunal 
 time[ ]consuming %syntax  time-consuming##added by kunal 
+post[ ]conditions %syntax  post-conditions##added by suresh
+well[ ]known %syntax  well-known##added by suresh
+Further %phrase  use Furthermore or Moreover##added by suresh
+high[ ]level %syntax  high-level##added by suresh
+in[ ]to %syntax into##added by suresh
+java %syntax Java##added by suresh
+real[ ]world %syntax real-world##added by suresh
+small[ ]scale %syntax small-scale##added by suresh
+with[ ]out %syntax without ##added by suresh
+same[ ]as %syntax the[ ]same[ ]as ##added by suresh
+[^a][ ]few %phrase few means no, a few means a small number ##added by suresh
+referred[ ]as %syntax referred to as ##added by suresh
