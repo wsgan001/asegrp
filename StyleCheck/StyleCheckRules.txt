@@ -34,4 +34,8 @@ uncover %phrase consider non-covered if you mean not covered ## added by xiao
 [.][ ]Whereas %Sentence should not start with conjunctions, use "In contrast," instead ## added by Madhuri
 [[f|F]or[ ]e[.]g[.] %Incorrect usage of e.g., should be For example ##added by Madhuri
 [ ]executed Pex %Tool is applied. should be "applied Pex" ##added by Madhuri
-
+[ ][,] %space before a comma is not required ##added by Madhuri
+[e|E]fforts %efforts to refer to effort required to do something is a wrong usage, use singular form ##added by Madhuri
+[ ]as[ ] % 'as' should not be used as a conjunction in the middle of the sentence. use 'since' instead ##added by Madhuri
+[(][ ] % avoid space after open paranthesis ##added by Madhuri
+[ ][)] % avoid spcae before close paranthesis ##added by Madhuri
