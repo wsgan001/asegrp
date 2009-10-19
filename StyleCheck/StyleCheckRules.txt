@@ -30,12 +30,12 @@ same[ ]as %syntax the[ ]same[ ]as##added by suresh
 referred[ ]as %syntax referred to as##added by suresh
 unrelevant %syntax irrelevant ## added by xiao
 uncover %phrase consider non-covered if you mean not covered ## added by xiao
-[.][ ]Though %Sentence should not start with conjunctions, use "Although" instead ## added by Madhuri
-[.][ ]Whereas %Sentence should not start with conjunctions, use "In contrast," instead ## added by Madhuri
-[[f|F]or[ ]e[.]g[.] %Incorrect usage of e.g., should be For example ##added by Madhuri
-[ ]executed Pex %Tool is applied. should be "applied Pex" ##added by Madhuri
-[ ][,] %space before a comma is not required ##added by Madhuri
-[e|E]fforts %efforts to refer to effort required to do something is a wrong usage, use singular form ##added by Madhuri
-[ ]as[ ] % 'as' should not be used as a conjunction in the middle of the sentence. use 'since' instead ##added by Madhuri
-[(][ ] % avoid space after open paranthesis ##added by Madhuri
-[ ][)] % avoid spcae before close paranthesis ##added by Madhuri
+[.][ ]Though %syntax Sentence should not start with conjunctions, use "Although" instead ## added by Madhuri
+[.][ ]Whereas %syntax Sentence should not start with conjunctions, use "In contrast," instead ## added by Madhuri
+[[f|F]or[ ]e[.]g[.] %syntax  Incorrect usage of e.g., should be For example ##added by Madhuri
+[ ]executed Pex % syntax Tool is applied. should be "applied Pex" ##added by Madhuri
+[ ][,] syntax %space before a comma is not required ##added by Madhuri
+[e|E]fforts %syntax  efforts to refer to effort required to do something is a wrong usage, use singular form ##added by Madhuri
+[ ]as[ ] % syntax 'as' should not be used as a conjunction in the middle of the sentence. use 'since' instead ##added by Madhuri
+[(][ ] % syntax space after open paranthesis ##added by Madhuri
+[ ][)] % syntax avoid spcae before close paranthesis ##added by Madhuri
