@@ -1,6 +1,0 @@
-\section{Discussion and Future Work}
-\label{sec:discussion}
-
-Although our generated tests achieved higher coverage (24.3\%) than the seed tests, the overall coverage is still not close to 100\% coverage. There are three main issues for not achieving coverage close to 100\%. First, using a sand-box reduces the amount of runnable code. Second, our recorded dynamic traces do not cover all public methods of the libraries under analyses. In future work, we plan to address this issue by generating PUTs for all uncovered public methods. Second, the code under test includes a few branches that cannot be covered with the test scenarios recorded during program executions. To address this issue, we plan to generate new test scenarios from existing scenarios by using evolutionary techniques~\cite{tonella:etoc}.
-
-Although regression testing is our ultimate goal, in our current approach, we primarily focused on generating regression tests that achieve a high code coverage of the given version of software. In future work, we plan to execute these regression tests on different versions in order to detect behavioral differences. Furthermore, in our evaluation, we used two libraries as subject applications. However, our approach is not specific for libraries and can be applied to any application in practice.
