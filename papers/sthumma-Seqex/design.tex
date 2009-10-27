@@ -39,7 +39,7 @@ The objective of this project is to automatically generate a method-call sequenc
 
 \subsection{Capture the desired object state}
 
-The first step of our approach is to capture the desired object state (with respect to fields in object types) from the branch that is not covered in the method under test. Figure~\ref{fig:condition} shows the object state captured by the current SeqEx approach. The field that is actually responsible for not able to cover the branch is \CodeIn{ArrayList.\_size}. First, it has to be identified that the uncovered branch (Statement 9) in the method under test is due to the desired condition shown in Figure~\ref{fig:condition}. We can use the approach Covana (developed by Xusheng) to address this issue. We next explain how to generate a method-call sequence for 
+The first step of our approach is to capture the desired object state (with respect to fields in object types) from the branch that is not covered in the method under test. Figure~\ref{fig:condition} shows the object state captured by the current SeqEx approach. The field that is actually responsible for not able to cover the branch is \CodeIn{ArrayList.\_size}. First, it has to be identified that the uncovered branch (Statement 9) in the method under test is due to the desired condition shown in Figure~\ref{fig:condition}. We can use the approach Covana (developed by Xusheng) to address this issue. We next explain how to generate a method-call sequence for achieving the desired object state.
 
 \begin{figure*}[t]
 \begin{CodeOut}
@@ -59,13 +59,29 @@ EdgeCollection s4 = s5 == (AdjacencyGraph)s7 ? s8 : s5.m_Edges;
 EdgeCollection s3 = s4;
 EdgeCollection s2 = s3 == s8 ? s8 : (EdgeCollection)(((CollectionBase)s3).list);
 EdgeCollection s1 = s2;
-int s0 = s1 == s8 ? 0 : ((ArrayList)s1)._size;
+int s0 = s1 == s8 ? 0 : ((ArrayList)s1).\_size;
 return -1 < -1 + s0;
 \end{alltt}
 \end{CodeOut}
 \Caption{\label{fig:condition} Desired object state captured by the current SeqEx approach.}
 \end{figure*}
 
+\subsection{Identifying methods of interest}
+
+Our approach will next identify the methods that modify the fields captured in the desired object state. To address this issue, we need several types of information, which can be gathered either dynamically or statically. In our approach, We plan to use a combination of dynamic and static analyses for achieving this purpose. The advantage of using dynamic analysis is that captured information is precise. However, only a limited information can be captured as dynamic analysis requires the relevant portions of the code to be executed. On the other hand, the information captured using static analysis is imprecise due to its conservative nature.
+
+In our approach, we need to capture the following types of information:
+
+\begin{itemize}
+\item Modified Fields: Includes information of which fields are modified by different methods of classes in the application under analysis. Useful for detecting the methods of interest.
+\item Read Fields: Includes information of which fields are read by different methods. This is useful to detect dependencies among methods.
+\item Caller/Callee Methods: Includes information of methods called by different methods.
+\end{itemize}
+
+Using \emph{Modified Fields}, it is possible to identify the methods that affect the \CodeIn{\_size} field as \CodeIn{Add} and \CodeIn{Remove} methods of the \CodeIn{ArrayList} class. In total, there are $0$ methods that modify the \CodeIn{\_size} field. It is required to identify which method to choose for achieving desired object state. We plan to use two techniques to precisely choose the method to achieve desired object state.
+
+The first technique is to prune out the methods of the \CodeIn{ArrayList} class that are not invoked by its callers in the application under analysis. 
+However, these methods cannot be directly invoked as the instance of the \CodeIn{ArrayList} class is not visible outside. Therefore, it is required to identify the object (which is visible) and also the method of the instance, which can be invoked. We plan to use the \emph{Called/Callee Methods} information to address this issue. More specifically, we construct a directed graph as shown in Figure~\ref{}. The objective of our algorithm is to identify an object whose level is as minimum as possible and an associated method of the object that 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PREVIOUS DESIGN BASED ON CONSTRAINT SOLVING
