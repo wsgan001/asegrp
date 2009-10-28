@@ -1,7 +1,7 @@
 \section{Design}
 \label{design}
 
-The objective of this project is to automatically generate a method-call sequence for a given desired object state. Figure~\ref{fig:mut} shows a method under test of the class \CodeIn{UndirectedDepthFirstSearchAlgorithm} of the QuickGraph library. To cover Statement 9 in the method under test, the field \CodeIn{VisitedGraph} should include edges. Currently, without any assistance Pex cannot cover Statement 9 as it is non-trivial to generate a graph instance with vertices and edges.
+The objective of this project is to automatically generate a method-call sequence for a given desired object state. Figure~\ref{fig:mut} shows a method under test of the class \CodeIn{UndirectedDepthFirstSearchAlgorithm} of the QuickGraph library. To cover Statement 9 in the method under test, the field \CodeIn{VisitedGraph} should include edges. Currently, without any assistance, Pex cannot cover Statement 9 as it is non-trivial to generate a graph instance with vertices and edges.
 
 \begin{figure}[t]
 \begin{CodeOut}
@@ -39,7 +39,7 @@ The objective of this project is to automatically generate a method-call sequenc
 
 \subsection{Capture the desired object state}
 
-The first step of our approach is to capture the desired object state (with respect to fields in object types) from the branch that is not covered in the method under test. Figure~\ref{fig:condition} shows the object state captured by the current SeqEx approach. The field that is actually responsible for not able to cover the branch is \CodeIn{ArrayList.\_size}. First, it has to be identified that the uncovered branch (Statement 9) in the method under test is due to the desired condition shown in Figure~\ref{fig:condition}. We can use the approach Covana (developed by Xusheng) to address this issue. We next explain how to generate a method-call sequence for achieving the desired object state.
+The first step of our approach is to capture the desired object state (with respect to fields in object types) from the branch that is not covered in the method under test. Figure~\ref{fig:condition} shows the object state captured by the current SeqEx approach. The field that is actually responsible for not able to cover the branch is \CodeIn{ArrayList.\_size}. First, it has to be identified that the not covered branch (Statement 9, Figure~\ref{fig:mut}) in the method under test is due to the desired condition shown in Figure~\ref{fig:condition}. We can use the approach Covana (developed by Xusheng) to address this issue. We next explain how to generate a method-call sequence for achieving the desired object state.
 
 \begin{figure*}[t]
 \begin{CodeOut}
@@ -68,7 +68,7 @@ return -1 < -1 + s0;
 
 \subsection{Identifying methods of interest}
 
-Our approach will next identify the methods that modify the fields captured in the desired object state. To address this issue, we need several types of information, which can be gathered either dynamically or statically. In our approach, We plan to use a combination of dynamic and static analyses for achieving this purpose. The advantage of using dynamic analysis is that captured information is precise. However, only a limited information can be captured as dynamic analysis requires the relevant portions of the code to be executed. On the other hand, the information captured using static analysis is imprecise due to its conservative nature.
+Our approach will next identify the methods that modify the fields captured in the desired object state. To address this issue, we need several types of information, which can be gathered either dynamically or statically. In our approach, we plan to use a combination of dynamic and static analyses for achieving this purpose. The advantage of using dynamic analysis is that captured information is precise. However, only a limited information can be captured as dynamic analysis requires the relevant portions of the code to be executed. On the other hand, the information captured using static analysis is imprecise due to its conservative nature.
 
 In our approach, we need to capture the following types of information:
 
@@ -78,10 +78,98 @@ In our approach, we need to capture the following types of information:
 \item Caller/Callee Methods: Includes information of methods called by different methods.
 \end{itemize}
 
-Using \emph{Modified Fields}, it is possible to identify the methods that affect the \CodeIn{\_size} field as \CodeIn{Add} and \CodeIn{Remove} methods of the \CodeIn{ArrayList} class. In total, there are $0$ methods that modify the \CodeIn{\_size} field. It is required to identify which method to choose for achieving desired object state. We plan to use two techniques to precisely choose the method to achieve desired object state.
+Using \emph{Modified Fields}, it is possible to identify the methods that affect the \CodeIn{\_size} field as \CodeIn{Add} and \CodeIn{Remove} methods of the \CodeIn{ArrayList} class. In total, there are $0$ methods that modify the \CodeIn{\_size} field. Given these large number of methods, it is required to identify which method to choose for achieving the desired object state. There will be two major issues that we need to address while identifying the desired method. First, the identified methods cannot be directly invoked as the associated instance is not visible outside the containing classes. Second, there can be many different methods that modify the target field, such as \CodeIn{\_size}, in this example.
 
-The first technique is to prune out the methods of the \CodeIn{ArrayList} class that are not invoked by its callers in the application under analysis. 
-However, these methods cannot be directly invoked as the instance of the \CodeIn{ArrayList} class is not visible outside. Therefore, it is required to identify the object (which is visible) and also the method of the instance, which can be invoked. We plan to use the \emph{Called/Callee Methods} information to address this issue. More specifically, we construct a directed graph as shown in Figure~\ref{}. The objective of our algorithm is to identify an object whose level is as minimum as possible and an associated method of the object that 
+Regarding the first issue, the methods such as \CodeIn{Add} cannot be directly invoked as the instance of the \CodeIn{ArrayList} class is not visible outside the class \CodeIn{UndirectedDepthFirstSearchAlgorithm}. Therefore, it is required to identify the object (which is visible) and also the method of the instance, which can be invoked. We plan to use the \emph{Called/Callee Methods} information to address this issue. More specifically, we will construct a directed graph as shown in Figure~\ref{}. The objective of our algorithm is to identify an object whose level is as minimum as possible and an associated method of the object that will help affect the target field. In this scenario, we can select the instance of \CodeIn{AdjacencyGraph} as it is visible outside \CodeIn{UndirectedDepthFirstSearchAlgorithm}. As shown in the graph, the constructed graph also helps prune out the methods of \CodeIn{ArrayList} class that are not directly invoked by the methods of the \CodeIn{AdjacencyGraph} instance.
+
+\begin{table*}[t]
+\begin{SmallOut}
+\begin{CodeOut}
+\begin{center}
+\centering \caption {\label{tab:results} Preliminary results of manual analysis.}
+\begin {tabular} {|l|c|c|c|}
+\hline
+Subject & Class Under Test & Before & After\\
+\hline
+\hline QuickGraph & UndirectedDepthFirstSearchAlgorithm & 21/81 (28.40\%) & 81/130 (62.31\%)\\
+\hline 						& TopologicalSortAlgorithm 						& 13/20 (65.00\%) & 16/23  (69.57\%)\\
+\hline						&	DepthFirstSearchAlgorithm						& 25/56 (44.64\%) & 66/105 (62.00\%)\\
+\hline NUnit		  & MemorySettingsStorage								& 16/31 (51.00\%) & 24/33  (72.73\%)\\
+\hline						& SettingsStorage											& 5/28  (17.86\%) & 15/28  (53.57\%)\\
+\hline NHibernate & Table																& 41/44 (93.18\%) & 43/44  (97.75\%)\\
+\hline						& ForeignKey 													& 30/43 (69.77\%) & 58/61  (95.08\%)\\
+\hline DSA			  & SinglyLinkedList									  & 8/28  (28.57\%) & 27/38  (71.05\%)\\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\end{SmallOut}\vspace*{-6ex}
+\end{table*}
+
+Although, some possible methods are pruned, still there can be several methods such as \CodeIn{AddEdge} or \CodeIn{RemoveEdge} of the \CodeIn{AdjacencyGraph} instance. We will use a fitness based strategy to identify which method is more suitable for achieving the desired object state among those possible methods.
+
+After the selection of the desired method such as \CodeIn{AddEdge} of the \CodeIn{AdjacencyGraph}, we can identify the call sites of the ongoing method and can direct Pex to execute the desired statements and thereby avoid exploring the other paths in these newly identified branches. Often, there can be new branches that need to be covered before successfully achieving the desired object state. In those scenarios, we can repeat the procedure for the new branches until a pre-configured number of times.
+
+\subsection{Getting an instance of class under test}
+
+Existing approaches such as Prospector~\cite{prospector:jungloid} or JCrasher~\cite{csallner:jcrasher} can be used to identify how to get an instance of the desired class under test. These approaches constructs a graph, referred to as signature graph, from the signatures of APIs. This signature graph helps to get an instance of the target class under test. Although these approaches help in getting target class under test, these approaches do not help in generating desired object state for the class under test. More specifically, their signature graphs often do not include the state-modifying methods of the class under test.
+
+\subsection{Inferring specification of class under test}
+
+It is often not sufficient to identify what are the methods of interest, since there can be several dependencies among methods. Due to those dependencies, it is often possible that the generated method-call sequences are not valid (i.e., they may result in compilation errors or throw run-time exceptions). For example, we also need information on the sequence of how to invoke the identified methods under test. Furthermore, it is required to capture any additional methods that have to be invoked before invoking the identified methods under test. For example, consider a variant of the class \CodeIn{InternalFields} shown in Figure~\ref{fig:iftest1}, which is more simpler than the original class. It is easy to identify that the desired object state can be achieved by invoking the method \CodeIn{IncrM1} five times. However, the method \CodeIn{IncrM2} should also be called five times along with the method \CodeIn{IncrM1}. Inferring specifications for the class under test can help address these issues. For example, a simple specification in terms of the finite automaton for the \CodeIn{MultiMethodsInLoop} is shown in Figure~\ref{fig:loopfsa}. The specification describes several aspects such as \CodeIn{IncrM2} should be called before \CodeIn{IncrM1}. The specification also shows that \CodeIn{IncrM2} should be called after \CodeIn{IncrM1} before invoking \CodeIn{IncrM1} again.
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+public class MultiMethodsInLoop \{
+\hspace*{0.2in}private int member1, member2, member3;
+\hspace*{0.2in}private bool localState;
+\hspace*{0.2in}bool m1set = true, m2set = false;
+        
+\hspace*{0.2in}public bool InternalState \{
+\hspace*{0.3in}get \{
+\hspace*{0.4in}return localState;
+\hspace*{0.3in}\}
+\hspace*{0.2in}\}
+
+\hspace*{0.2in}private void SetLocalState() \{
+\hspace*{0.3in}if (member1 == 5)
+\hspace*{0.4in}localState = true;
+\hspace*{0.2in}\}
+
+\hspace*{0.2in}public void IncrM1() \{
+\hspace*{0.3in}if (!m2set)
+\hspace*{0.4in}throw new Exception("Member2 is not set properly");
+\hspace*{0.3in}member1++;
+\hspace*{0.3in}SetLocalState();
+\hspace*{0.3in}m1set = true;
+\hspace*{0.3in}m2set = false;
+\hspace*{0.2in}\}
+
+\hspace*{0.2in}public void IncrM2() \{
+\hspace*{0.3in}if (!m1set)
+\hspace*{0.4in}throw new Exception("Member1 is not set properly");
+\hspace*{0.3in}m2set = true;
+\hspace*{0.3in}m1set = false;
+\hspace*{0.2in}\}
+\}
+\end{alltt}
+\end{CodeOut}
+\Caption{\label{fig:iftest1} \CodeIn{MultiMethodsInLoop} Class, which is a variant of \CodeIn{InternalFields}.}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.60,clip]{figs/MultiMethodsLoopFsa1.eps}
+\caption{\label{fig:loopfsa}Finite automaton for MultiMethodsLoop class.}
+\end{figure}
+
+These specifications can be inferred either by applying mining approaches on existing code bases~\cite{thummalapenta09:mseqgen} or from the implementation of the class under test~\cite{whaley02:interface}. Inferring complete specifications for all methods of the class under test can itself be a challenging problem that need to be addressed. For example, the approaches that infer specifications from the implementation are not scalable in practice. On the other hand, the approaches that infer specifications using mining approaches may not be able to infer specification for a method if that method is not used by any existing code bases. Therefore, a synergy of these two approaches can help effectively infer specifications.
+
+\subsection{Using specification for sequence generation}
+
+Our approach will next generate sequences that achieve desirable object states based on the inferred specification and the methods of interest. As we already know the methods of interest, the automaton representing can be pruned by not covering those paths that do not include our methods of interest. Next, our approach will explore this automaton to achieve the desired object state by visiting each method as desired number of times.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PREVIOUS DESIGN BASED ON CONSTRAINT SOLVING
