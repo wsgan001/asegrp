@@ -112,11 +112,22 @@ Subject & Class Under Test & Before & After\\
 \end{SmallOut}\vspace*{-6ex}
 \end{table*}
 
-Although, some possible methods are pruned, still there can be several methods such as \CodeIn{AddEdge} or \CodeIn{RemoveEdge} of the \CodeIn{AdjacencyGraph} instance. We will use a fitness based strategy to identify which method is more suitable for achieving the desired object state among those possible methods.
+Although, some possible methods are pruned, still there can be several methods such as \CodeIn{AddEdge} or \CodeIn{RemoveEdge} of the \CodeIn{AdjacencyGraph} instance. We will use a fitness based strategy to identify which method is more suitable for achieving the desired object state among those possible methods. Section~\ref{sec:fitness} presents more details of the fitness strategy.
 
 Several other heuristics can be used for further pruning of the selection of desired method. For example, we can select a method that affects the least number of fields or reads the least number of fields of the class under test. These heuristics can be identified during the development of the tool.
 
 After the selection of the desired method such as \CodeIn{AddEdge} of the \CodeIn{AdjacencyGraph}, we can identify the call sites of method call in the next level, such as \CodeIn{CollectionBase.Add} of Level 2 and can direct Pex to execute the desired statements and thereby avoid exploring the other paths in these newly identified branches. Often, there can be new branches that need to be covered before successfully achieving the desired object state. In those scenarios, we can repeat the procedure for the new branches for a pre-configured number of times.
+
+\subsection{Fitness strategy}
+\label{sec:fitness}
+
+The purpose of the fitness strategy is to primarily address the issue that there can be more than one method recommended by the preceding analysis in achieving the desired object state. Based on inferred methods, our approach constructs and returns factory methods for Pex. Our approach recommends \emph{n} factory methods, if our preceding analysis suggests \emph{n} methods. Pex uses these recommended factory methods during exploration of PUTs. There can be two different possibilities after Pex uses the recommended factory methods:
+
+\begin{itemize}
+\item \textbf{Branch covered}: This represents the scenario where the recommended factory method assisted Pex in successfully covering the previously uncovered branch.
+\item \textbf{Branch still not covered}: We use fitness strategy to compute fitness value for each factory method. The strategy is similar to the strategy used in Xie et al.'s fitnex approach. For example, if the predicate in the branching condition is \CodeIn{if (x == 100) ...}, the fitness function is defined as \CodeIn{|100 - x|}. The methods that result in lower fitness values are given higher importance. This fitness strategy helps in guiding the search towards achieving desirable object states. There can be other possibilities that the fitness value does not change even after invoking the recommended method. This scenario can happen if the relevant statement in the recommended method is not invoked. In this scenario, the old recommended factory method is enhanced to cover the newly encountered branching condition.
+\end{itemize}
+
 
 \subsection{Getting an instance of class under test}
 
