@@ -78,9 +78,15 @@ In our approach, we need to capture the following types of information:
 \item Caller/Callee Methods: Includes information of methods called by different methods.
 \end{itemize}
 
-Using \emph{Modified Fields}, it is possible to identify the methods that affect the \CodeIn{\_size} field as \CodeIn{Add} and \CodeIn{Remove} methods of the \CodeIn{ArrayList} class. In total, there are $0$ methods that modify the \CodeIn{\_size} field. Given these large number of methods, it is required to identify which method to choose for achieving the desired object state. There will be two major issues that we need to address while identifying the desired method. First, the identified methods cannot be directly invoked as the associated instance is not visible outside the containing classes. Second, there can be many different methods that modify the target field, such as \CodeIn{\_size}, in this example.
+Using \emph{Modified Fields}, it is possible to identify the methods that affect the \CodeIn{\_size} field as \CodeIn{Add} and \CodeIn{Remove} methods of the \CodeIn{ArrayList} class. In total, there are around $8$ methods that modify the \CodeIn{\_size} field. Given these large number of methods, it is required to identify which method to choose for achieving the desired object state. There will be two major issues that we need to address while identifying the desired method. First, the identified methods cannot be directly invoked as the associated instance is not visible outside the containing classes. Second, there can be many different methods that modify the target field, such as \CodeIn{\_size}, in this example.
 
-Regarding the first issue, the methods such as \CodeIn{Add} cannot be directly invoked as the instance of the \CodeIn{ArrayList} class is not visible outside the class \CodeIn{UndirectedDepthFirstSearchAlgorithm}. Therefore, it is required to identify the object (which is visible) and also the method of the instance, which can be invoked. We plan to use the \emph{Called/Callee Methods} information to address this issue. More specifically, we will construct a directed graph as shown in Figure~\ref{}. The objective of our algorithm is to identify an object whose level is as minimum as possible and an associated method of the object that will help affect the target field. In this scenario, we can select the instance of \CodeIn{AdjacencyGraph} as it is visible outside \CodeIn{UndirectedDepthFirstSearchAlgorithm}. As shown in the graph, the constructed graph also helps prune out the methods of \CodeIn{ArrayList} class that are not directly invoked by the methods of the \CodeIn{AdjacencyGraph} instance.
+\begin{figure*}[t]
+\centering
+\includegraphics[scale=0.60,clip]{figs/MethodChaining1.eps}
+\caption{\label{fig:mchain}Hierarchy of method calls.}
+\end{figure*}
+
+Regarding the first issue, the methods such as \CodeIn{Add} cannot be directly invoked as the instance of the \CodeIn{ArrayList} class is not visible outside the class \CodeIn{UndirectedDepthFirstSearchAlgorithm}. Therefore, it is required to identify the object (which is visible) and also the method of the instance, which can be invoked. We plan to use the \emph{Caller/Callee Methods} information to address this issue. More specifically, we will construct a directed graph as shown in Figure~\ref{fig:mchain}. The objective of our algorithm is to identify an object whose level is as minimum as possible and an associated method of the object that will help affect the target field. In this scenario, we can select the instance of \CodeIn{AdjacencyGraph} as it is visible outside \CodeIn{UndirectedDepthFirstSearchAlgorithm}. As shown in the graph, the constructed graph also helps prune out the methods of \CodeIn{ArrayList} class such as \CodeIn{RemoveAt} or \CodeIn{Insert} that are not directly invoked by the methods of the \CodeIn{AdjacencyGraph} instance.
 
 \begin{table*}[t]
 \begin{SmallOut}
@@ -108,7 +114,9 @@ Subject & Class Under Test & Before & After\\
 
 Although, some possible methods are pruned, still there can be several methods such as \CodeIn{AddEdge} or \CodeIn{RemoveEdge} of the \CodeIn{AdjacencyGraph} instance. We will use a fitness based strategy to identify which method is more suitable for achieving the desired object state among those possible methods.
 
-After the selection of the desired method such as \CodeIn{AddEdge} of the \CodeIn{AdjacencyGraph}, we can identify the call sites of the ongoing method and can direct Pex to execute the desired statements and thereby avoid exploring the other paths in these newly identified branches. Often, there can be new branches that need to be covered before successfully achieving the desired object state. In those scenarios, we can repeat the procedure for the new branches until a pre-configured number of times.
+Several other heuristics can be used for further pruning of the selection of desired method. For example, we can select a method that affects the least number of fields or reads the least number of fields of the class under test. These heuristics can be identified during the development of the tool.
+
+After the selection of the desired method such as \CodeIn{AddEdge} of the \CodeIn{AdjacencyGraph}, we can identify the call sites of method call in the next level, such as \CodeIn{CollectionBase.Add} of Level 2 and can direct Pex to execute the desired statements and thereby avoid exploring the other paths in these newly identified branches. Often, there can be new branches that need to be covered before successfully achieving the desired object state. In those scenarios, we can repeat the procedure for the new branches for a pre-configured number of times.
 
 \subsection{Getting an instance of class under test}
 
