@@ -15,60 +15,56 @@ libraries.
 
 The definitions of API library and client code are
 relative to each other. For example, Lucene uses classes and methods provided by
-J2SE\footnote{\url{http://java.sun.com/j2se/1.5.0/}}, so we consider Lucene as client code and J2SE as an API library. At the same time, Nutch\footnote{\url{http://lucene.apache.org/nutch/}} uses classes and methods provided by Lucene, so we consider Nutch as client code and Lucene as an API library. In
-general, for programmers of client code, source files of API libraries are often
-not available.
+J2SE\footnote{\url{http://java.sun.com/j2se/1.5.0/}}. Therefore, we consider Lucene as client code and J2SE as an API library. At the same time, Nutch\footnote{\url{http://lucene.apache.org/nutch/}} uses classes and methods provided by Lucene. Therefore, we consider Nutch as client code and Lucene as an API library. In
+general, for programmers of client code, source files of API libraries may not be available.
 
-\textbf{Mapping relation.} For a set of entities $E_1$ defined by a
-language $L_1$ and another set of entities $E_2$ defined by another
+\textbf{Mapping relation.} For entities $E_1$ (such as API classes and methods) in a
+language $L_1$ and entities $E_2$ in another
 language $L_2$, a mapping relation is a triple $\langle E_1, E_2,
-b_i \rangle$ where $E_1$ and $E_2$ have the same behavior $b_i$.
+b \rangle$ where translating between $E_1$ and $E_2$ maintains the $b$ behavior.
+The $b$ behavior is specific to the type of the entity.
+
+%\textbf{1-to-1 mapping relation of API classes.} For an API class
+%$c_1$ defined by $L_1$ and an API class $c_2$ defined by $L_2$, a
+%1-to-1 mapping relation of API classes is a triple $\langle c_1,
+%c_2, s \rangle$, where $s$ denotes the $s$ behavior.
+%
+%One API class defined by $L_1$ can have more than one 1-to-1 mapping
+%relation with API classes defined by $L_2$. For example, data in
+%\CodeIn{java.util.ArrayList} of Java can be stored in either
+%\CodeIn{System. Collections.ArrayList} \textbf{or}
+%\CodeIn{System.Collections.Generic. List} of C\#, so the Java class
+%has two 1-to-1 mapping relations with these two C\# classes.
+
+\textbf{Mapping relation of API classes.} For data entities whose type set is $C_1$ in $L_1$ and data entities whose type set is $C_2$ in
+$L_2$, a mapping relation of API classes is a triple
+$\langle C_1, C_2, s \rangle$, where translating between $C_1$ and $C_2$ maintains the $s$ behavior.
+
+Since we use mapping relations of API classes for translating data entities such as
+variables, parameters, and constants, we require that two mapped
+API classes have the same program behavior to store data, referred to as
+the $s$ behavior. For example, the current time in \CodeIn{java.lang.System} of Java
+is stored in \CodeIn{System.DateTime} of C\#, whereas the
+environment settings in \CodeIn{java.lang.System} of Java is stored in
+\CodeIn{System.Environment} of C\#. Therefore, the Java class has a
+one-to-many mapping relation with two C\# classes.
 
 
-We use mapping relations of API classes for translating data such as
-variables, parameters, and constants, so we require that two mapped
-API classes have the same programm behavior, referred to as
-the $s$ behavior.
 
-\textbf{1-to-1 mapping relation of API classes.} For an API class
-$c_1$ defined by $L_1$ and an API class $c_2$ defined by $L_2$, a
-1-to-1 mapping relation of API classes is a triple $\langle c_1,
-c_2, s \rangle$, where $s$ denotes the $s$ behavior.
+%\textbf{1-to-1 mapping relation of API methods.} For an API method
+%$m_1$ defined by $L_1$ and an API method $m_2$ defined by
+%$L_2$, a mapping relation of API methods is a triple $\langle m_1,
+%m_2, t \rangle$, where $t$ denotes the $t$ behavior.
+%
+%As one API class defined by $L_1$ can have more than one 1-to-1 mapping
+%relation with API classes defined by $L_2$, one API method defined by $L_1$ can have more than one 1-to-1 mapping relation with API methods defined by $L_2$.
 
-One API class defined by $L_1$ can have more than one 1-to-1 mapping
-relation with API classes defined by $L_2$. For example, data in
-\CodeIn{java.util.ArrayList} of Java can be stored in either
-\CodeIn{System. Collections.ArrayList} \textbf{or}
-\CodeIn{System.Collections.Generic. List} of C\#, so the Java class
-has two 1-to-1 mapping relations with these two C\# classes.
+\textbf{Mapping relation of API methods.} For invoked API methods
+$M_1$ in $L_1$ and invoked API methods $M_2$ in
+$L_2$, a mapping relation of API methods is a triple
+$\langle M_1, M_2, t \rangle$, where translating between $M_1$ and $M_2$ maintains the $t$ behavior.
 
-\textbf{Many-to-many mapping relation of API classes.} For a set of API classes
-$C_1$ defined by $L_1$ and a set of API classes $C_2$ defined by
-$L_2$, a many-to-many mapping relation of API classes is a triple
-$\langle C_1, C_2, s \rangle$, where $s$ denotes the $s$ behavior.
-
-For example, the current time in \CodeIn{java.lang.System} of Java
-is stored in \CodeIn{System.Environment} of C\#, whereas the
-environment settings in \CodeIn{java.lang.System} is stored in
-\CodeIn{System.Environment} of C\#, so the Java class has a
-many-to-many mapping relation with the two C\# classes.
-
-We use mapping relations of API methods for translating API methods
-that accept inputs to produce desirable outputs, so we require two
+Since we use mapping relations of API methods for translating API methods
+that accept inputs to produce desirable outputs, we require two
 mapped API methods have the same program behavior of inputs, outputs, and
-functionalities. We refer to this behavior as the \emph{t} behavior.
-
-\textbf{1-to-1 mapping relation of API methods.} For an API method
-$m_1$ defined by $L_1$ and an API method $m_2$ defined by
-$L_2$, a mapping relation of API methods is a triple $\langle m_1,
-m_2, t \rangle$, where $t$ denotes the $t$ behavior.
-
-As one API class defined by $L_1$ can have more than one 1-to-1 mapping
-relation with API classes defined by $L_2$, one API method defined by $L_1$ can have more than one 1-to-1 mapping relation with API methods defined by $L_2$.
-
-\textbf{Many-to-many mapping relation of API methods.} For a set of API methods
-$M_1$ defined by $L_1$ and a set of API methods $M_2$ defined by
-$L_2$, a many-to-many mapping relation of API methods is a triple
-$\langle M_1, M_2, t \rangle$, where $t$ denotes the $t$ behavior.
-
-For example, Section~\ref{sec:introduction} shows a many-to-many mapping relation between $\{m_3\}$ of Java and $\{m_4, m_5\}$ of C\#. 
+functionalities. We refer to this behavior as the \emph{t} behavior. For example, Section~\ref{sec:introduction} shows a one-to-many mapping relation between $\{m_3\}$ of Java and $\{m_4, m_5\}$ of C\#. 

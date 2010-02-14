@@ -9,11 +9,11 @@
 
 \documentclass{sig-alternate}
 \usepackage{url}
-\usepackage{times}
-\usepackage{diagrams}
-\usepackage[all]{xy}
+%\usepackage{times}
+%\usepackage{diagrams}
+%\usepackage[all]{xy}
 \usepackage[ruled,vlined]{algorithm2e}
-\usepackage{float}
+%\usepackage{float}
 \input{macros}
 %\documentstyle[times,art10,twocolumn,latex8]{article}
 
@@ -24,13 +24,15 @@
 %-------------------------------------------------------------------------
 \begin{document}
 
-\conferenceinfo{ICSE}{'2010 Cape Town, South Africa}
-\CopyrightYear{2010} % Allows default copyright year (200X) to be over-ridden - IF NEED BE.
+\conferenceinfo{ICSE}{'10, May 2-8 2010, Cape Town, South Africa}
+\CopyrightYear{2010}
+\crdata{978-1-60558-719-6/10/05}
+
 
 \title{Mining API Mapping for Language Migration}
 
 \author{
-Hao Zhong$^{1}$, Suresh Thummalapenta$^4$, Tao Xie$^4$, Lu Zhang$^{2,3}$, Qing Wang$^{1}$\\
+Hao Zhong$^{1,2}$\thanks{Corresponding authors}, Suresh Thummalapenta$^4$, Tao Xie$^{4*}$, Lu Zhang$^{2,3*}$, Qing Wang$^{1}$\\
 \small{$^1$Laboratory for Internet Software Technologies, Institute of Software, Chinese Academy of Sciences, Beijing, 100190, China}\\
 \small{$^2$Key Laboratory of High Confidence Software Technologies (Peking University), Ministry of Education, China}\\
 \small{$^3$Institute of Software, School of Electronics Engineering and Computer Science, Peking University, China} \\
@@ -42,22 +44,20 @@ zhanglu@sei.pku.edu.cn, wq@itechs.iscas.ac.cn}}
 \thispagestyle{empty}
 
 \begin{abstract}
-Since the inception of programming languages, researchers and
-practitioners developed various languages such as Java and C\#. To
-address business requirements and to survive in competing markets,
+To address business requirements and to survive in competing markets,
 companies or open source organizations often have to release different versions of their projects
-in different languages. Migrating projects from one language to
-another language (such as from Java to C\#) manually is a tedious
+in different languages. Manually migrating projects from one language to
+another (such as from Java to C\#) is a tedious
 and error-prone task. To reduce manual effort or human errors, tools
 can be developed for automatic translation of projects from one
-language to another, but these tools require the knowledge of how
+language to another. However, these tools require the knowledge of how
 Application Programming Interfaces (APIs) of one language are mapped
-to the APIs of the other language, referred to as API mapping
+to APIs of the other language, referred to as API mapping
 relations. In this paper, we propose a novel approach,
 called MAM (\textbf{M}ining \textbf{A}PI
 \textbf{M}apping), that mines API
 mapping relations from one language to another using API client
-code. MAM accepts a set of projects with versions in
+code. MAM accepts a set of projects each with two versions in
 two languages and mines API mapping relations between those two
 languages based on how APIs are used by the two versions. These
 mined API mapping relations assist in translation of projects from
@@ -65,13 +65,17 @@ one language to another. We implemented a tool and
 conducted two evaluations to show the effectiveness of MAM. The
 results show that our tool mines 25,805 unique mapping relations of
 APIs between Java and C\# with more than 80\% accuracy. The results
-also show that mined API mapping relations reduce 54.4\% compilation
+also show that mined API mapping relations help reduce 54.4\% compilation
 errors and 43.0\% defects during translation of projects with an
 existing translation tool, called Java2CSharp. The reduction in
 compilation errors and defects is due to our new mined mapping
 relations that are not available with the existing translation
-tools.
-\end{abstract}
+tool.
+\end{abstract}\vspace*{-2ex}
+% A category with the (minimum) three required fields
+\category{D.2.13 Reusable Software}{Reusable Software}{Reusable libraries}\vspace*{-2ex}
+%A category including the fourth, optional field follows...
+\terms{API mapping relation, Language migration}\vspace*{-2ex}
 
 \input{body/introduction}
 \input{body/mapping}
@@ -82,6 +86,9 @@ tools.
 \input{body/related}\vspace*{-1ex}
 \input{body/conclusion}\vspace*{-1ex}
 
+\section*{Acknowledgments}
+Hao Zhong is grateful to his advisor, Prof. Hong Mei, for the insightful advice on research during 
+his PhD program in Peking University. The authors from Chinese Academy of Sciences are sponsored by the National Basic Research Program of China (973) No. 2007CB310802, the Hi-Tech Research and Development Plan of China (863) No. 2007AA010303, and the National Natural Science Foundation of China No. 90718042. The authors from NCSU are supported in part by NSF grant CCF-0725190, NSF grant CCF-0845272, ARO grant W911NF-08-1-0443, and ARO grant W911NF-08-1-0105 managed by NCSU Secure Open Systems Initiative (SOSI). Lu Zhang is sponsored by the National Basic Research Program of China (973) No. 2009CB320703, the High-Tech Research and Development Program of China (863) No. 2007AA010301, the Science Fund for Creative Research Groups of China No. 60821003, and the National Science Foundation of China No. 90718016.
 %
 % The following two commands are all you need in the
 % initial runs of your .tex file to

@@ -1,13 +1,7 @@
 \section{Introduction}
 \label{sec:introduction}
 
-A programming language serves as a means for instructing computers
-to achieve a programming task at hand. Since their inception,
-various programming languages came into existence due to several
-factors such as existence of many platforms or requirements for
-different programming styles. For example, the
-HOPL\footnote{\url{http://hopl.murdoch.edu.au}} website lists 8,512
-different programming languages. To address business requirements
+To address business requirements
 and to survive in competing markets, companies or open source
 organizations often have to release different versions of their
 projects in different languages. For example, many well-known
@@ -21,8 +15,8 @@ in different languages. For example, the WordNet team does not
 provide a C\# version, but Simpson and Crowe developed a C\# version
 of
 WordNet.Net\footnote{\url{http://opensource.ebswift.com/WordNet.Net/}}.
-Totally, as described by Jones~\cite{jones1998estimating}, about
-one-third of the existing projects have multiple versions in
+As described by Jones~\cite{jones1998estimating}, about
+one third of the existing projects have multiple versions in
 different languages.
 
 %For some open source projects, although companies do not officially
@@ -38,36 +32,26 @@ different languages.
 
 Translating projects from one language to another language
 (\emph{e.g.}, from Java to C\#) manually is a tedious and
-error-prone task. Some companies have suffered from huge losses because
-of failures in language translation. For example, Terekhov and
-Verhoef~\cite{terekhov2000realities} stated that at least three
-companies went bankrupt and another company lost 50 million dollars
-due to failed language translation projects. A natural way to
-address this issue is to develop a translation tool that can
-automatically translate projects from one language to another.
-However, it is challenging to develop such a translation tool since the
-translation tool should have knowledge of how Application
-Programming Interfaces (APIs) in one programming
-language are mapped to APIs in the other language. In the literature, there exist
-approaches~\cite{mossienko2003automated, yasumatsu1995spice} that address the problem of language
-translation partially. These approaches expect programmers to
-describe how APIs of one language are mapped to APIs of another
+error-prone task. In the literature, there exist
+approaches~\cite{mossienko2003automated, yasumatsu1995spice} and tools (\emph{e.g.}, Java2CSharp\footnote{\url{http://j2cstranslator.wiki.sourceforge.net}}) that address the problem of language
+translation partially, since these approaches and tools expect programmers to
+describe how Application Programming Interfaces (APIs) of one language are mapped to APIs of another
 language. \Comment{Based on the mappings provided as input, these
 existing approaches translate projects from one language to
-another.} As programming languages provide a large number of APIs,
+another.} Since there are a large number of APIs provided in different languages,
 writing mappings manually for all APIs is tedious and error-prone.
-As a result, existing approaches~\cite{mossienko2003automated,yasumatsu1995spice}
+As a result, these approaches and tools
 support only a subset of APIs for translation. Such a limitation
 results in many compilation errors in translated projects and limits
-these approaches' usage in practice.
+these approaches' usage in practice (See Section~\ref{sec:evaluation:migration} for details).
 
 In this paper, we propose a novel approach, called MAM
 (\textbf{M}ining \textbf{A}PI \textbf{M}apping), that automatically mines
 how APIs of one language are mapped to APIs of another language. We
 refer to this mapping as \emph{API mapping relations}
 (in short as relations in the rest of the paper). MAM mines relations based on API usages in
-client code rather based on API implementations with three major
-reasons. (1) API libraries often do not come with source files
+client code rather than based on API implementations for three major
+reasons. (1) API libraries often do not come with source files,
 especially for those C\# libraries. (2) Relations mined based on API
 implementations often have lower confidence than relations mined
 based on API usages. The reason is that API implementations have
@@ -99,12 +83,12 @@ $m_3$ in Java: E java.util.LinkedList.removeLast()\\
 
 Although the method names of $m_3$ and $m_4$ are the same, $m_3$ in Java
 cannot be directly mapped with $m_4$ in C\#. The reason is that $m_3$ in Java
-returns the last element removed from the list, whereas $m_4$ does not return any
+returns the last element removed from the list (represented as \CodeIn{E}), whereas $m_4$ does not return any
 element. Therefore, $m_3$ is mapped to two API methods $m_4$ and $m_5$ (shown below) in C\#.
-The API method $m_5$ returns the last element and should be invoked before calling $m_4$.
+The API method $m_5$ returns the last element and should be invoked before invoking $m_4$.
 
 \begin{CodeOut}
-$m_5$ in C\#: void System.Collections.Generic.LinkedList.Last()
+$m_5$ in C\#: E System.Collections.Generic.LinkedList.Last()
 \end{CodeOut}
 
 To deal with the complexity of mining API mapping, we construct a
@@ -116,24 +100,25 @@ complex mapping relations of API methods.
 This paper makes the following major contributions:
 
 \begin{itemize}\vspace*{-1.5ex}
-\item The first approach, called MAM, that mines API mapping between
+\item The first approach, called MAM, that mines API mapping relations between
 different languages using API client code. MAM
 addresses an important and yet challenging problem that is not
 addressed by previous work on language translation.\vspace*{-1.5ex}
 \item API transformation graphs (ATGs) proposed to capture inputs
 and outputs of API methods, and a technique for building ATGs and
-comparing built ATGs for mining API mapping relations. As ATGs describe data
+comparing built ATGs for mining API mapping relations. Since ATGs describe data
 dependencies among inputs and outputs of API methods, MAM is able to
 mine complex mapping relations between API methods of the two
 languages.\vspace*{-1.5ex}
 \item A tool implemented for MAM and two
 evaluations on 15 projects that include 18,568 classes and 109,850
 methods with both Java and C\# versions. The results show that our
-tool mines 6,695 mapping relations of API classes with accuracy of
+tool mines 25,805 unique mapping relations (with more than 80\% accuracy), 
+including 6,695 mapping relations of API classes with accuracy of
 86.7\% and 19,110 mapping relations of API methods with accuracy of
 90.0\%. The results also show that the mined relations
 reduce 55.4\% of compilation errors and 43.0\% defects during
-translation of projects from Java to C\# using Java2CSharp.
+translation of projects from Java to C\# using Java2CSharp, an existing translation tool.
 \end{itemize}\vspace*{-1.5ex}
 
 The rest of this paper is organized as follows.

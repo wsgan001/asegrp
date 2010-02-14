@@ -17,14 +17,14 @@ the \CodeIn{exists} method.
 To translate this code example into C\#, a translation tool needs to
 know mapping relations of API classes, so that it can translate inputs,
 outputs, and variables into C\#. For example, the translation tool
-needs to know the mapped API class for \CodeIn{java.io.File} in C\#
+needs to know the mapped API class in C\# for \CodeIn{java.io.File}
 to translate the variable \CodeIn{file} to C\#. In addition, the
-translation tool needs to know the mapped API methods, so it can
-add code for invoking proper API methods that use translated inputs and variables to
+translation tool needs to know the mapped API methods, so that it can
+add code for invoking proper API methods that take translated inputs and variables to
 produce desirable outputs. For this example, the translation tool
 adds code for invoking the \CodeIn{Exists} method and the
 \CodeIn{FullName} method to achieve the functionality.
-Here, we consider field accesses as special type of method calls.
+Here, we consider field accesses as special types of method invocations.
 
 To mine these mapping relations, MAM uses projects such as Lucene
 that have both Java and C\# versions. MAM includes three major steps
@@ -36,30 +36,26 @@ to mine the preceding two types of mapping relations of APIs from these projects
 \textbf{Java code}:
 1  File file = \textbf{new} File("test");
 2  Boolean b = file.exists();
-
 \textbf{Translated C\# code}:
 3  FileInfo file = \textbf{new} FileInfo("test");
-4  Boolean b = System.IO.File.Exist(file.FullName)||
+4  Boolean b = System.IO.File.Exists(file.FullName)||
            System.IO.Directory.Exists(file.FullName);
 \end{alltt}
-\end{CodeOut}\vspace*{-4ex}
-\caption{\label{fig:challenge}Java code and its translated C\# code.}\vspace*{-1ex}
+\end{CodeOut}\vspace*{-5ex}
+\caption{\label{fig:challenge}Java code and its translated C\# code.}\vspace*{-2ex}
 \end{figure}
 \begin{figure}[t]
 \begin{CodeOut}\vspace*{-1ex}
 \begin{alltt}
-  \textbf{IndexFiles.java:}
+\textbf{IndexFiles.java:}
 5 public class IndexFiles \{
 6   static final File INDEX_DIR = new File("index");
 7   public static void main(String[] args) \{
       ...
 8     if (INDEX_DIR.exists()) \{...\}
       ...
-9       INDEX_DIR.delete();
-    \}
-  \}
-
-  \textbf{IndexFiles.cs:}
+9       INDEX_DIR.delete(); \} \}
+\textbf{IndexFiles.cs:}
 10 class IndexFiles\{
 11   internal static readonly System.IO.FileInfo INDEX_DIR
           = new System.IO.FileInfo("index");
@@ -71,30 +67,29 @@ to mine the preceding two types of mapping relations of APIs from these projects
 16    else
 17       tmpBool = System.IO.Directory
                          .Exists(INDEX_DIR.FullName);
-      ...
-    \}
- \}
+      ... \} \}
 \end{alltt}
 \end{CodeOut}\vspace*{-4ex}
 \caption{\label{fig:clientcode} Two versions (Java and C\#) of
-client code.}\vspace*{-4ex}
+client code.}\vspace*{-5ex}
 \end{figure}
 
 \textbf{Aligning client code.} First, MAM aligns classes and methods
-between the two versions of each project. As two code examples with
+between the two versions of each project. Since two code examples with
 the same functionality of two languages may exhibit mapping
 relations of APIs, this step aligns classes and methods by their
 functionalities. To achieve this goal, MAM uses a mapping algorithm
-based on similarities in the names of classes and methods.
+based on similarities in the names of classes and methods defined
+in the two versions of each project.
 
-Aligning client code based on names of classes and methods is based
-on our observation that many existing projects such as
+Aligning client code based on the names of classes and methods is based
+on an observation on many existing projects such as
 rasp\footnote{\url{http://sourceforge.net/projects/r-asp/}} are
 migrated from one language to another. We observed that while
 migrating the rasp project from C\# to Java, programmers first
 renamed source files from C\# to Java and systematically addressed
 the compilation errors by replacing C\# APIs with Java APIs. During
-this procedure, names of classes, methods, fields of classes, or
+this procedure, the names of classes, methods, fields of classes, or
 local variables in methods often remain the same or similar between
 the two versions. Therefore, we use name similarities for aligning
 client code of the two versions. For example, MAM aligns
@@ -110,35 +105,35 @@ methods are similar.
 %\end{figure}
 
 \textbf{Mining API mapping of classes.} Next, MAM mines mapping
-relations of API classes by comparing entities such as names of
-fields in aligned classes, or variable names, or constants in aligned
-methods. MAM uses a text-based similarity metric for comparing these
-entities and considers the entities as similar if the metric is
-greater than a given threshold. For
-example, MAM identifies the constant value ``\CodeIn{index}'' in
-Lines 6 (Java) and 11 (C\#) (Figure~\ref{fig:clientcode}) and maps
-the API classes associated with these constants. Based on this
-constant value, MAM maps the API class \CodeIn{java.io.File} of Java
-to \CodeIn{System.IO.FileInfo} of C\#.
+relations of API classes by comparing the names of data entities such as the names of
+fields in aligned classes, variables, or parameters in aligned
+methods. MAM uses name similarities for comparing the names of these
+entities. For example, MAM identifies the \CodeIn{args} parameters in
+Lines 7 (Java) and 12 (C\#) (Figure~\ref{fig:clientcode}) and maps
+the API classes that are the types of the two parameters. Based on this
+parameter, MAM maps the API class \CodeIn{java.lang.String} of Java
+to \CodeIn{System.String} of C\#.
 
 \textbf{Mining API mapping of methods.} After mapping API classes
 between the two languages, MAM maps API methods. Mapping API methods
 is challenging since often an API method of one language can be
 mapped to multiple API methods of the other language. Furthermore,
 mapping relations of API methods should also describe how parameters
-and returns are mapped between them. To address these challenges,
+and returns are mapped among these API methods. To address these challenges,
 MAM constructs a graph, referred to as \emph{API Transformation
 Graph} (ATG), for each aligned method of the client code in both
 languages. These ATGs precisely capture inputs and outputs of API
 methods, and help mine mapping relations of API methods.
-Figure~\ref{fig:example} shows a mapping relation from the \CodeIn{java.io.File.Exists} method in Java to the \CodeIn{System.IO.File. Exist} method and the \CodeIn{System.IO.Directory.Exists} method in C\#. By a closer look at the API document for these API methods, we can find that the Java method can check whether a file or directory exists, and this functionality is fulfilled by two C\# API methods: the \CodeIn{System.IO.File.Exist} method for checking whether a file exists and the \CodeIn{System.IO.Directory.Exists} method for checking whether a directory exists. Section~\ref{sec:approach:mappingtypes} presents more details on how
+For example, MAM mines a mapping relation from \CodeIn{java.io.File.Exists} in Java to 
+\CodeIn{System.IO.File. Exists} and \CodeIn{System.IO.Directory.Exists} in C\#. 
+By a close look at the API document for these API methods, we can find that the Java method can check whether a file or directory exists, and this functionality is fulfilled by two C\# API methods: \CodeIn{System.IO. File.Exists} for checking whether a file exists and \CodeIn{System.IO. Directory.Exists} for checking whether a directory exists. Section~\ref{sec:approach:mappingtypes} presents more details on how
 we mine these mapping relations of API methods.
 
-\begin{figure}[t]
-\centering %\hfill
-\includegraphics[scale=0.95,clip]{figure/sample.eps}\vspace*{-3ex}
- \caption{\label{fig:example}API mapping}\vspace*{-3ex}
-\end{figure}
+%\begin{figure}[t]
+%\centering %\hfill
+%\includegraphics[scale=0.95,clip]{figure/sample.eps}\vspace*{-3ex}
+% \caption{\label{fig:example}API mapping}\vspace*{-4ex}
+%\end{figure}
 
 %Based on the mapping relations, a translation tool can migrate the
 %preceding code snippet automatically. To learn the mapping

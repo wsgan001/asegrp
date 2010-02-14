@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{acharya09:mining}
+M.~Acharya and T.~Xie.
+\newblock Mining {API} error-handling specifications from source code.
+\newblock In {\em Proc. FASE}, pages 370--384, 2009.
+
 \bibitem{balaban2005refactoring}
 I.~Balaban, F.~Tip, and R.~Fuhrer.
 \newblock {Refactoring support for class library migration}.
@@ -53,22 +58,27 @@ H.~Samet.
 \newblock {Experience with software conversion}.
 \newblock {\em Software: Practice and Experience}, 11(10), 1981.
 
-\bibitem{terekhov2000realities}
-A.~Terekhov and C.~Verhoef.
-\newblock {The realities of language conversions}.
-\newblock {\em IEEE Software}, pages 111--124, 2000.
-
 \bibitem{thummalapenta07parseweb}
 S.~Thummalapenta and T.~Xie.
 \newblock {PARSEWeb}: A programmer assistant for reusing open source code on
   the web.
 \newblock In {\em Proc. 22nd ASE}, pages 204--213, 2007.
 
-\bibitem{thummalapentaase08spotweb}
+\bibitem{thummalapenta09:mining}
 S.~Thummalapenta and T.~Xie.
-\newblock {SpotWeb}: Detecting framework hotspots and coldspots via mining open
-  source code on the web.
-\newblock In {\em Proc. 23rd ASE}, pages 109--112, 2008.
+\newblock Mining exception-handling rules as sequence association rules.
+\newblock In {\em Proc. 31th ICSE}, pages 496--506, May 2009.
+
+\bibitem{thummalapenta09:mseqgen}
+S.~Thummalapenta, T.~Xie, N.~Tillmann, P.~de~Halleux, and W.~Schulte.
+\newblock {MSeqGen}: Object-oriented unit-test generation via mining source
+  code.
+\newblock In {\em Proc. 7th ESEC/FSE}, pages 193--202, 2009.
+
+\bibitem{tip1995survey}
+F.~Tip.
+\newblock {A survey of program slicing techniques}.
+\newblock {\em Journal of programming languages}, 3(3):121--189, 1995.
 
 \bibitem{van1999identifying}
 A.~Van~Deursen, T.~Kuipers, and A.~CWI.
@@ -93,5 +103,16 @@ K.~Yasumatsu and N.~Doi.
   environment}.
 \newblock {\em IEEE Transactions on Software Engineering}, 21(11):902--912,
   1995.
+
+\bibitem{zhong09:mapo}
+H.~Zhong, T.~Xie, L.~Zhang, J.~Pei, and H.~Mei.
+\newblock {MAPO}: Mining and recommending {API} usage patterns.
+\newblock In {\em Proc. the 23rd ECOOP}, pages 318--343, 2009.
+
+\bibitem{zhong09:inferring}
+H.~Zhong, L.~Zhang, T.~Xie, and H.~Mei.
+\newblock Inferring resource specifications from natural language {API}
+  documentation.
+\newblock In {\em Proc. 24th ASE}, pages 307--318, November 2009.
 
 \end{thebibliography}

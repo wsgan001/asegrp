@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.1)  7 SEP 2009 01:11
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2010.2.12)  14 FEB 2010 00:03
 entering extended mode
-**MaM.tex
-(G:\GoogleSVN\papers\LanguageMigration\MaM.tex
+**MAM.tex
+(D:\GoogleSVN\papers\LanguageMigration\MAM.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
-(G:\GoogleSVN\papers\LanguageMigration\sig-alternate.cls
+(D:\GoogleSVN\papers\LanguageMigration\sig-alternate.cls
 ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
@@ -182,216 +182,9 @@ File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\times.sty"
-Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
-)
-(G:\GoogleSVN\papers\LanguageMigration\diagrams.sty
-<Paul Taylor's commutative diagrams, version 3.90, 11 April 2004>
-##===============================================================##
-........PostScript mode (dvips) is now the default...............
-(DVI mode has not been supported since 1992 and produces inferior
-results which are completely unsuitable for publication. However,
-if you really still need it, read the manual for how to get it.)
-##===============================================================##
-Package: diagrams 2004/04/11 v3.90 Paul Taylor's commutative diagrams
-\CD@uA=\count108
-\CD@vA=\count109
-\CD@wA=\count110
-\CD@xA=\count111
-\CD@OA=\dimen123
-\CD@PA=\dimen124
-\CD@RA=\dimen125
-\CD@SA=\dimen126
-\CD@yA=\count112
-\CD@zA=\count113
-\CD@QA=\dimen127
-\CD@DA=\box30
-\CD@LH=\count114
-\CD@TC=\count115
-\CD@XH=\dimen128
-\CD@zC=\dimen129
-\CD@@I=\dimen130
-\CD@LF=\dimen131
-\CD@oI=\dimen132
-\CD@DC=\dimen133
-\CD@eJ=\dimen134
-\PileSpacing=\dimen135
-\CD@nA=\dimen136
-\CD@YB=\dimen137
-\DiagramCellHeight=\dimen138
-\DiagramCellWidth=\dimen139
-\MapShortFall=\dimen140
-\CD@iA=\dimen141
-\rh+:>=\box31
-\rt+:<=\box32
-\dh+:>=\box33
-\dt+:<=\box34
-\rt+:>=\box35
-\rh+:<=\box36
-\dt+:>=\box37
-\dh+:<=\box38
-\CD@VE=\toks36
-\CD@SE=\toks37
-\CD@VA=\count116
-\CD@ME=\toks38
-\CD@XE=\toks39
-\CD@RE=\toks40
-\CD@TE=\toks41
-\CD@QE=\toks42
-\CD@WE=\toks43
-\CD@OE=\toks44
-\CD@PE=\toks45
-\CD@NE=\toks46
-\CD@UE=\toks47
-\CD@CA=\count117
-\CD@XB=\count118
-\CD@NB=\count119
-\CD@FA=\count120
-\CD@lA=\count121
-\CD@MB=\count122
-\CD@GB=\count123
-\CD@KG=\box39
-\CD@IG=\box40
-\DiagonalChoice=\count124
-\objectheight=\dimen142
-\objectwidth=\dimen143
-\CD@NA=\toks48
-\CD@xI=\toks49
-\CD@lH=\toks50
-\CD@hD=\toks51
-\CD@hH=\toks52
-LaTeX Font Info:    Try loading font information for U+msa on input line 1881.
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 1881.
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for U+lasy on input line 1881.
-
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\ulasy.fd"
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-))
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xy.sty"
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xy.tex" Bootstrap'ing:
-catcodes, docmode, ("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyrecat.tex"
-) ("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyidioms.tex")
-
- Xy-pic version 3.7 <1999/02/16>
- Copyright (c) 1991-1998 by Kristoffer H. Rose <krisrose@ens-lyon.fr>
- Xy-pic is free software: see the User's Guide for details.
-
-Loading kernel: messages; fonts; allocations: state,
-\X@c=\dimen144
-\Y@c=\dimen145
-\U@c=\dimen146
-\D@c=\dimen147
-\L@c=\dimen148
-\R@c=\dimen149
-\Edge@c=\toks53
-\X@p=\dimen150
-\Y@p=\dimen151
-\U@p=\dimen152
-\D@p=\dimen153
-\L@p=\dimen154
-\R@p=\dimen155
-\Edge@p=\toks54
-\X@origin=\dimen156
-\Y@origin=\dimen157
-\X@xbase=\dimen158
-\Y@xbase=\dimen159
-\X@ybase=\dimen160
-\Y@ybase=\dimen161
-\X@min=\dimen162
-\Y@min=\dimen163
-\X@max=\dimen164
-\Y@max=\dimen165
-\lastobjectbox@=\box41
-\zerodotbox@=\box42
-\almostz@=\dimen166
- direction,
-\d@X=\dimen167
-\d@Y=\dimen168
-\K@=\count125
-\KK@=\count126
-\Direction=\count127
-\K@dXdY=\dimen169
-\K@dYdX=\dimen170
-\xyread@=\read1
-\xywrite@=\write3
-\csp@=\count128
-\quotPTK@=\dimen171
-
-utility macros; pictures: \xy, positions,
-\swaptoks@@=\toks55
-\connectobjectbox@@=\box43
- objects,
-
-Xy-pic Warning: `\objectstyle' redefined.
-
-
-Xy-pic Warning: `\objectwidth' redefined.
-
-
-Xy-pic Warning: `\objectheight' redefined.
-
-\styletoks@=\toks56
-decorations; kernel objects: directionals, circles, text; options;
-algorithms: directions, edges, connections;  Xy-pic loaded)
-Package: xy 1999/02/16 Xy-pic version 3.7
-
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyall.tex"
- Xy-pic option: All features v.3.3
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xycurve.tex"
- Xy-pic option: Curve and Spline extension v.3.7 curve,
-\crv@cnt@=\count129
-\crvpts@=\toks57
-\splinebox@=\box44
-\splineval@=\dimen172
-\splinedepth@=\dimen173
-\splinetol@=\dimen174
-\splinelength@=\dimen175
- circles,
-\L@=\dimen176
- loaded)
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyframe.tex"
- Xy-pic option: Frame and Bracket extension v.3.7 loaded)
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xycmtip.tex"
- Xy-pic option: Computer Modern tip extension v.3.3
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xytips.tex"
- Xy-pic option: More Tips extension v.3.3 loaded) loaded)
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyline.tex"
- Xy-pic option: Line styles extension v.3.6
-\xylinethick@=\dimen177
- loaded)
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyrotate.tex"
- Xy-pic option: Rotate and Scale extension v.3.3 loaded)
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xycolor.tex"
- Xy-pic option: Colour extension v.3.3 loaded)
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xymatrix.tex"
- Xy-pic option: Matrix feature v.3.4
-\Row=\count130
-\Col=\count131
-\queue@=\toks58
-\queue@@=\toks59
-\qcount@=\count132
-\qcount@@=\count133
-\matrixsize@=\count134
- loaded)
-("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xyarrow.tex"
- Xy-pic option: Arrow and Path feature v.3.5 path,
-
-Xy-pic Warning: `\labelstyle' redefined.
-
-\ar, loaded) ("C:\Program Files\MiKTeX 2.8\tex\generic\xypic\xygraph.tex"
- Xy-pic option: Graph feature v.3.7 loaded) loaded))
-(G:\GoogleSVN\papers\LanguageMigration\algorithm2e.sty
+(D:\GoogleSVN\papers\LanguageMigration\algorithm2e.sty
 Package: algorithm2e 2005/10/04 v3.9 algorithms environments
-\c@AlgoLine=\count135
+\c@AlgoLine=\count108
 
 ("C:\Program Files\MiKTeX 2.8\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
@@ -413,49 +206,44 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \skiplength=\skip48
 \algomargin=\skip49
 \skipalgocfslide=\skip50
-\algowidth=\dimen178
-\inoutsize=\dimen179
-\inoutline=\dimen180
-\algocf@inoutbox=\box45
-\algocf@inputbox=\box46
+\algowidth=\dimen123
+\inoutsize=\dimen124
+\inoutline=\dimen125
+\algocf@inoutbox=\box30
+\algocf@inputbox=\box31
 \AlCapSkip=\skip51
 \AlCapHSkip=\skip52
-\algocf@capbox=\box47
-\c@algocfline=\count136
-\c@algocf=\count137
-\algocf@algoframe=\box48
-\algocf@algobox=\box49
-) ("C:\Program Files\MiKTeX 2.8\tex\latex\float\float.sty"
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count138
-\float@exts=\toks60
-\float@box=\box50
-\@float@everytoks=\toks61
-\@floatcapt=\box51
+\algocf@capbox=\box32
+\c@algocfline=\count109
+\c@algocf=\count110
+\algocf@algoframe=\box33
+\algocf@algobox=\box34
+) (D:\GoogleSVN\papers\LanguageMigration\macros.tex
+("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\times.sty"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(G:\GoogleSVN\papers\LanguageMigration\macros.tex
-(C:\Users\Suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\epsf\epsf.sty
+(C:\Users\suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\epsf\epsf.sty
 This is `epsf.tex' v2.7.3 <23 July 2005>
-\epsffilein=\read2
-\epsfframemargin=\dimen181
-\epsfframethickness=\dimen182
-\epsfrsize=\dimen183
-\epsftmp=\dimen184
-\epsftsize=\dimen185
-\epsfxsize=\dimen186
-\epsfysize=\dimen187
-\pspoints=\dimen188
+\epsffilein=\read1
+\epsfframemargin=\dimen126
+\epsfframethickness=\dimen127
+\epsfrsize=\dimen128
+\epsftmp=\dimen129
+\epsftsize=\dimen130
+\epsfxsize=\dimen131
+\epsfysize=\dimen132
+\pspoints=\dimen133
 ) ("C:\Program Files\MiKTeX 2.8\tex\latex\tools\verbatim.sty"
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks62
-\verbatim@line=\toks63
-\verbatim@in@stream=\read3
+\every@verbatim=\toks36
+\verbatim@line=\toks37
+\verbatim@in@stream=\read2
 )
-(G:\GoogleSVN\papers\LanguageMigration\psfig.sty)
-(C:\Users\Suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\cite\cite.sty
-LaTeX Info: Redefining \cite on input line 242.
-LaTeX Info: Redefining \nocite on input line 313.
-Package: cite 2009/04/29  v 5.1
+(D:\GoogleSVN\papers\LanguageMigration\psfig.sty)
+(C:\Users\suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\cite\cite.sty
+LaTeX Info: Redefining \cite on input line 285.
+LaTeX Info: Redefining \nocite on input line 356.
+Package: cite 2009/08/29  v 5.2
 )
 ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
@@ -477,54 +265,54 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTright=\skip54
 \LTpre=\skip55
 \LTpost=\skip56
-\LTchunksize=\count139
-\LTcapwidth=\dimen189
-\LT@head=\box52
-\LT@firsthead=\box53
-\LT@foot=\box54
-\LT@lastfoot=\box55
-\LT@cols=\count140
-\LT@rows=\count141
-\c@LT@tables=\count142
-\c@LT@chunks=\count143
-\LT@p@ftn=\toks64
+\LTchunksize=\count111
+\LTcapwidth=\dimen134
+\LT@head=\box35
+\LT@firsthead=\box36
+\LT@foot=\box37
+\LT@lastfoot=\box38
+\LT@cols=\count112
+\LT@rows=\count113
+\c@LT@tables=\count114
+\c@LT@chunks=\count115
+\LT@p@ftn=\toks38
 )
 ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-(C:\Users\Suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\slashbox\slashbox.sty
+(C:\Users\suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\slashbox\slashbox.sty
 slashbox style by K.Yasuoka, May 1993.
-\@slashboxa=\box56
-\@slashboxb=\box57
-\@slashboxc=\box58
-\@slashboxwd=\count144
-\@slashboxht=\count145
-\@slashsepl=\dimen190
-\@slashsepr=\dimen191
+\@slashboxa=\box39
+\@slashboxb=\box40
+\@slashboxc=\box41
+\@slashboxwd=\count116
+\@slashboxht=\count117
+\@slashsepl=\dimen135
+\@slashsepr=\dimen136
 ) ("C:\Program Files\MiKTeX 2.8\tex\latex\multirow\multirow.sty"
-\bigstrutjot=\dimen192
+\bigstrutjot=\dimen137
 )
-(C:\Users\Suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\colortbl\colortbl.sty
+(C:\Users\suresh\AppData\Roaming\MiKTeX\2.8\tex\latex\colortbl\colortbl.sty
 Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
 
 ("C:\Program Files\MiKTeX 2.8\tex\latex\tools\array.sty"
 Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
-\col@sep=\dimen193
-\extrarowheight=\dimen194
-\NC@list=\toks65
+\col@sep=\dimen138
+\extrarowheight=\dimen139
+\NC@list=\toks39
 \extratabsurround=\skip57
 \backup@length=\skip58
 )
-\everycr=\toks66
+\everycr=\toks40
 \minrowclearance=\skip59
 )
 ("C:\Program Files\MiKTeX 2.8\tex\latex\jknappen\mathrsfs.sty"
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup7
 )
-\c@definition=\count146
+\c@definition=\count118
 )
-(G:\GoogleSVN\papers\LanguageMigration\MaM.aux)
+(D:\GoogleSVN\papers\LanguageMigration\MAM.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
@@ -542,7 +330,22 @@ LaTeX Font Info:    Try loading font information for T1+ptm on input line 25.
 ("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 41.
+LaTeX Font Info:    Try loading font information for U+msa on input line 43.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 43.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 43.
 
 ("C:\Program Files\MiKTeX 2.8\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -550,191 +353,187 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 57.
 
-(G:\GoogleSVN\papers\LanguageMigration\body/introduction.tex
+Overfull \hbox (1.2694pt too wide) in paragraph at lines 76--78
+[]\T1/ptm/m/n/9 D.2.13 Reusable Soft-ware [\T1/ptm/b/n/9 Reusable Soft-ware\T1/
+ptm/m/n/9 ]: Reusable li-braries 
+ []
+
+(D:\GoogleSVN\papers\LanguageMigration\body/introduction.tex
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 9.
 
 ("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Overfull \hbox (4.5003pt too wide) in paragraph at lines 4--27
-\T1/ptm/m/n/9 ter-nal pro-gram-mers of-ten cre-ate their ver-sions in dif-fer-e
-nt lan-guages.
- []
-
-
-Overfull \hbox (3.59215pt too wide) in paragraph at lines 39--63
-\T1/ptm/m/n/9 lan-guage trans-la-tion. For ex-am-ple, Terekhov and Ver-hoef [11
-] stated
+Overfull \hbox (8.04587pt too wide) in paragraph at lines 33--47
+\T1/ptm/m/n/9 lit-er-a-ture, there ex-ist ap-proaches [9, 19] and tools (\T1/pt
+m/m/it/9 e.g.\T1/ptm/m/n/9 , Java2CSharp[])
  []
 
 [1
 
 
-]) (G:\GoogleSVN\papers\LanguageMigration\body/mapping.tex
-Overfull \hbox (2.31613pt too wide) in paragraph at lines 38--44
-\T1/pcr/m/n/8 Collections.ArrayList \T1/ptm/b/n/9 or \T1/pcr/m/n/8 System.Colle
-ctions.Generic.
+]
+Overfull \hbox (3.57379pt too wide) in paragraph at lines 107--113
+\T1/ptm/m/n/9 ping re-la-tions. Since ATGs de-scribe data de-pen-den-cies among
+
  []
 
-
-Overfull \hbox (2.96603pt too wide) in paragraph at lines 50--55
-\T1/ptm/m/n/9 set-tings in \T1/pcr/m/n/8 java.lang.System \T1/ptm/m/n/9 is stor
-ed in \T1/pcr/m/n/8 System.Environment
+) (D:\GoogleSVN\papers\LanguageMigration\body/mapping.tex
+Overfull \hbox (3.56905pt too wide) in paragraph at lines 43--51
+\T1/ptm/m/n/9 time in \T1/pcr/m/n/8 java.lang.System \T1/ptm/m/n/9 of Java is s
+tored in \T1/pcr/m/n/8 System.DateTime
  []
 
-) (G:\GoogleSVN\papers\LanguageMigration\body/example.tex [2]
+) (D:\GoogleSVN\papers\LanguageMigration\body/example.tex
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <7> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 36.
 
-Overfull \hbox (3.59982pt too wide) in paragraph at lines 64--64
+Overfull \hbox (3.59982pt too wide) in paragraph at lines 60--60
 [][]\T1/pcr/m/n/7 11   internal static readonly System.IO.FileInfo INDEX_DIR[] 
 
  []
 
-
-Overfull \hbox (1.04947pt too wide) in paragraph at lines 124--136
-\T1/pcr/m/n/8 java.io.File.Exists \T1/ptm/m/n/9 method in Java to the \T1/pcr/m
-/n/8 System.IO.File.
+[2]
+Overfull \hbox (1.04936pt too wide) in paragraph at lines 117--131
+\T1/ptm/m/n/9 la-tion from \T1/pcr/m/n/8 java.io.File.Exists \T1/ptm/m/n/9 in J
+ava to \T1/pcr/m/n/8 System.IO.File.
  []
 
-File: figure/sample.eps Graphic file (type eps)
-<figure/sample.eps>
-Overfull \hbox (2.20409pt too wide) in paragraph at lines 139--140
+) (D:\GoogleSVN\papers\LanguageMigration\body/approach.tex
+Overfull \hbox (7.10965pt too wide) in paragraph at lines 48--58
+[][]\T1/ptm/m/n/9 We next de-scribe how MAM aligns client-code classes (i.e., c
+lasses
+ []
+
+File: figure/approach.eps Graphic file (type eps)
+<figure/approach.eps>
+Overfull \hbox (2.17741pt too wide) in paragraph at lines 82--96
+[][]\T1/ptm/m/n/9 In the sec-ond step, MAM mines map-ping re-la-tions of API cl
+asses.
+ []
+
+[3]
+File: figure/graph.eps Graphic file (type eps)
+ <figure/graph.eps>
+Overfull \hbox (13.8375pt too wide) in paragraph at lines 145--148
  [][][] 
  []
 
-) (G:\GoogleSVN\papers\LanguageMigration\body/approach.tex
-File: figure/approach.eps Graphic file (type eps)
 
-<figure/approach.eps> [3]
-Overfull \hbox (2.33162pt too wide) in paragraph at lines 52--62
-\T1/ptm/m/n/9 sim-i-lar-ity greater than a given thresh-old, re-ferred to as \T
-1/ptm/m/it/9 SIM_THRES-
+Overfull \hbox (14.98125pt too wide) in paragraph at lines 251--256
+[][]\T1/ptm/m/n/9 For each API method in the form ``$\OML/cmm/m/it/9 T[] T:AM\O
+T1/cmr/m/n/9 (\OML/cmm/m/it/9 T[] p[]; [] ; T[] p[]\OT1/cmr/m/n/9 )$\T1/ptm/m/n
+/9 ''
  []
 
-
-Overfull \hbox (1.84451pt too wide) in paragraph at lines 77--91
-\T1/ptm/m/n/9 MAM mines map-ping re-la-tions of API classes based on how aligne
-d
- []
-
-File: figure/graph.eps Graphic file (type eps)
-<figure/graph.eps>
 File: figure/rule2.eps Graphic file (type eps)
- <figure/rule2.eps>
+<figure/rule2.eps>
 File: figure/rule3.eps Graphic file (type eps)
  <figure/rule3.eps>
 File: figure/rule4.eps Graphic file (type eps)
  <figure/rule4.eps>
-[4]
 File: figure/rule5.eps Graphic file (type eps)
  <figure/rule5.eps>
 File: figure/rule6.eps Graphic file (type eps)
- <figure/rule6.eps>
+
+<figure/rule6.eps>
 File: figure/rule7.eps Graphic file (type eps)
  <figure/rule7.eps>
 File: figure/rule8.eps Graphic file (type eps)
-
-<figure/rule8.eps>
-Overfull \hbox (7.79436pt too wide) in paragraph at lines 315--322
-[][]$\OMS/cmsy/m/n/9 8$ \T1/ptm/m/n/9 state-ments in the form $\OML/cmm/m/it/9 
-x \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 y op z op  [] ; op \OMS/cmsy/m/n/9 2 f\OT1/c
-mr/m/n/9 +\OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9  \OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9 
-\OML/cmm/m/it/9 ; =\OMS/cmsy/m/n/9 g$\T1/ptm/m/n/9 ,
+ <figure/rule8.eps>
+File: figure/rule9.eps Graphic file (type eps)
+ <figure/rule9.eps>
+Overfull \hbox (3.49721pt too wide) in paragraph at lines 326--332
+\T1/ptm/m/n/9 rules for each state-ment from the be-gin-ning to the end of $\OM
+L/cmm/m/it/9 m$\T1/ptm/m/n/9 's method
  []
 
-File: figure/rule9.eps Graphic file (type eps)
-<figure/rule9.eps>
+[4]
 File: figure/algorithm2.eps Graphic file (type eps)
  <figure/algorithm2.eps>
-Overfull \hbox (1.90375pt too wide) in paragraph at lines 380--382
+Overfull \hbox (3.91125pt too wide) in paragraph at lines 378--380
  [][][] 
  []
 
-[5]
-Overfull \hbox (1.41614pt too wide) in paragraph at lines 411--415
+
+Overfull \hbox (1.41614pt too wide) in paragraph at lines 409--413
 \T1/ptm/m/n/9 name of $\OML/cmm/m/it/9 jm$ \T1/ptm/m/n/9 and the name of $\OML/
 cmm/m/it/9 sm$ \T1/ptm/m/n/9 is greater than \T1/ptm/m/it/9 SIM_THRESHOLD\T1/pt
 m/m/n/9 . 
  []
 
 
-Overfull \hbox (4.5809pt too wide) in paragraph at lines 437--442
+Underfull \vbox (badness 7540) has occurred while \output is active []
+
+ [5]
+Overfull \hbox (4.5809pt too wide) in paragraph at lines 439--444
 [][]\T1/ptm/m/n/9 Our al-go-rithm merges meth-ods $\OML/cmm/m/it/9 m[]$ \T1/ptm
 /m/n/9 and $\OML/cmm/m/it/9 m[]$ \T1/ptm/m/n/9 to cre-ate a new \T1/ptm/m/it/9 
 merged
  []
 
 
-Overfull \hbox (7.79982pt too wide) in paragraph at lines 451--451
-[][]\T1/pcr/m/n/7 cm_2:Boolean {FileInfo,getFullFile,Directory.Exist}(String)[]
- 
+Overfull \hbox (3.59982pt too wide) in paragraph at lines 456--456
+[][]\T1/pcr/m/n/7 cm2:Boolean {FileInfo,getFullName,Directory.Exist}(String)[] 
+
  []
 
-) (G:\GoogleSVN\papers\LanguageMigration\body/experiment.tex
+) (D:\GoogleSVN\papers\LanguageMigration\body/experiment.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 22.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 24.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 26.
  [6]
-Overfull \hbox (14.97722pt too wide) in paragraph at lines 87--90
-\T1/ptm/m/n/9 of our eval-u-a-tion re-sults are avail-able at $\T1/pcr/m/n/9 ht
-tps : / / sites . google .
- []
-
-
-Overfull \hbox (5.86871pt too wide) in paragraph at lines 94--96
-[][]\T1/ptm/m/n/9 To in-ves-ti-gate the first re-search ques-tion, we use the t
-op 10 projects
- []
-
-
-Overfull \hbox (2.85942pt too wide) in paragraph at lines 148--177
+Overfull \hbox (2.85942pt too wide) in paragraph at lines 96--125
  [][][] 
  []
 
 
-Overfull \hbox (7.209pt too wide) in paragraph at lines 103--181
-\T1/ptm/m/n/9 Sub-column ``\T1/ptm/m/it/9 %M\T1/ptm/m/n/9 '' lists the per-cent
--age of the aligned meth-ods among
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[7]
-Overfull \hbox (4.55125pt too wide) in paragraph at lines 282--289
-[][]\T1/ptm/m/n/9 This item de-scribes API map-ping re-la-tions be-tween the \T
-1/pcr/m/n/8 multiply
+ [7]
+Overfull \hbox (4.05142pt too wide) in paragraph at lines 285--312
+ [][][] 
  []
 
 
-Overfull \hbox (1.27888pt too wide) in paragraph at lines 302--313
+Overfull \hbox (13.2434pt too wide) in paragraph at lines 316--323
+\T1/ptm/m/n/9 scribes the map-ping re-la-tion be-tween \T1/pcr/m/n/8 multiply \
+T1/ptm/m/n/9 of Java and \T1/pcr/m/n/8 Multiply
+ []
+
+
+Overfull \hbox (10.50703pt too wide) in paragraph at lines 316--323
+\T1/ptm/m/n/9 map-ping re-la-tion of in-puts: ``\T1/pcr/m/n/8 @0\T1/ptm/m/n/9 '
+' de-notes the re-ceiver of the \T1/pcr/m/n/8 multiply
+ []
+
+
+Overfull \hbox (1.27888pt too wide) in paragraph at lines 336--347
 [][]\T1/ptm/m/n/9 To com-pare with man-u-ally writ-ten map-ping files of Java2C
 Sharp,
  []
 
 
-Overfull \hbox (4.05142pt too wide) in paragraph at lines 339--366
- [][][] 
+Overfull \hbox (8.09898pt too wide) in paragraph at lines 386--396
+\T1/pcr/m/n/8 System.Xml.XmlAttribute\T1/ptm/m/n/9 , and the map-ping files of 
+Java2CSharp
  []
 
 
-Overfull \hbox (3.83032pt too wide) in paragraph at lines 396--410
+Overfull \hbox (3.83032pt too wide) in paragraph at lines 397--410
 \T1/ptm/m/n/9 ping re-la-tion be-tween \T1/pcr/m/n/8 java.util.ResourceBundle \
 T1/ptm/m/n/9 and \T1/pcr/m/n/8 System.
  []
 
 
-Overfull \hbox (7.06027pt too wide) in paragraph at lines 396--410
-\T1/ptm/m/n/9 fails to mine the map-ping re-la-tions be-tween \T1/pcr/m/n/8 jav
-a.util.getTime()
- []
-
-[8]
-Overfull \hbox (6.6586pt too wide) in paragraph at lines 430--430
-[]|[]\T1/ptm/m/n/8 simmetrics| 
+Overfull \hbox (6.26788pt too wide) in paragraph at lines 397--410
+\T1/ptm/m/n/9 proach also fails to mine the map-ping re-la-tions be-tween \T1/p
+cr/m/n/8 java.util.
  []
 
 
-Overfull \hbox (17.48058pt too wide) in paragraph at lines 421--438
+Overfull \hbox (4.15263pt too wide) in paragraph at lines 421--438
  [][][] 
  []
 
@@ -744,24 +543,34 @@ Overfull \hbox (11.91614pt too wide) in paragraph at lines 446--453
 te whether
  []
 
-
+[8]
 Overfull \hbox (7.79982pt too wide) in paragraph at lines 470--470
 [][] \T1/pcr/m/n/7 totalDistance = (float)Java.Lang.Math.Sqrt(totalDistance);[]
  
  []
 
-) (G:\GoogleSVN\papers\LanguageMigration\body/discussion.tex [9])
-(G:\GoogleSVN\papers\LanguageMigration\body/related.tex)
-(G:\GoogleSVN\papers\LanguageMigration\body/conclusion.tex)
-(G:\GoogleSVN\papers\LanguageMigration\MaM.bbl) [10]
-(G:\GoogleSVN\papers\LanguageMigration\MaM.aux) ) 
-Here is how much of TeX's memory you used:
- 7988 strings out of 495286
- 89033 string characters out of 3180415
- 229768 words of memory out of 3000000
- 11002 multiletter control sequences out of 15000+200000
- 52239 words of font info for 82 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 39i,13n,26p,718b,331s stack positions out of 5000i,500n,10000p,200000b,50000s
+) (D:\GoogleSVN\papers\LanguageMigration\body/discussion.tex)
+(D:\GoogleSVN\papers\LanguageMigration\body/related.tex [9])
+(D:\GoogleSVN\papers\LanguageMigration\body/conclusion.tex)
+(D:\GoogleSVN\papers\LanguageMigration\MAM.bbl
+Overfull \hbox (5.9321pt too wide) in paragraph at lines 90--1
+\T1/ptm/m/n/9 0845272, ARO grant W911NF-08-1-0443, and ARO grant W911NF-
+ []
 
-Output written on MaM.dvi (10 pages, 120512 bytes).
+
+Overfull \hbox (10.53943pt too wide) in paragraph at lines 90--1
+\T1/ptm/m/n/9 08-1-0105 man-aged by NCSU Se-cure Open Sys-tems Ini-tia-tive (SO
+SI).
+ []
+
+) [10] (D:\GoogleSVN\papers\LanguageMigration\MAM.aux) ) 
+Here is how much of TeX's memory you used:
+ 3828 strings out of 495286
+ 47660 string characters out of 3180414
+ 139673 words of memory out of 3000000
+ 6900 multiletter control sequences out of 15000+200000
+ 51096 words of font info for 75 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 39i,13n,26p,830b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on MAM.dvi (10 pages, 121388 bytes).

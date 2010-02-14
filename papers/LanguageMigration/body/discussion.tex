@@ -24,11 +24,9 @@ functionalities through developing or adapting dynamic approaches~\cite{jiang200
 that our approach still has space to improve recalls. Although we
 use 10 large projects as subjects, these projects still do not
 provide sufficient code examples for mining mapping relations of all
-APIs in J2SE. Our previous
-work~\cite{thummalapenta07parseweb,thummalapentaase08spotweb} show
+APIs in J2SE. Our previous work~\cite{thummalapenta07parseweb} shows
 that it is feasible to use large-scale repositories available on the
-web as subjects with the help of code search engines such as Google
-code search\footnote{\url{http://www.google.com/codesearch}}. In
+web as subjects with the help of code search engines. In
 future work, we plan to leverage these code search engines to mine
 richer API mapping.
 
@@ -65,8 +63,8 @@ A mined many-to-many mapping relation of API methods can have multiple outputs
 and complex internal data processes. Although our ATGs
 help identify all API methods, our implementation is not complete
 for supporting automatic translation. For example, we need to manually add an
-\emph{or} operator for the two outputs of the API mapping shown in
-Figure~\ref{fig:example}. In future work, we plan to enhance our implementation to help
+\emph{or} operator for the two outputs of the API mapping presented
+in Section~\ref{sec:example}. In future work, we plan to enhance our implementation to help
 automate migration with many-to-many mapping relations.
 
 \textbf{Migrating unmapped APIs.} Our approach mines API mapping of

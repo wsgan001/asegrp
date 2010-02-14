@@ -4,7 +4,7 @@
 MAM accepts a set of projects as data sources for mining API
 mapping relations between two languages $L_1$ and $L_2$.
 For each project used as a data source,
-MAM requires at least two versions of the project (one
+MAM requires two versions of the project (one
 version in $L_1$ and the other version in $L_2$).
 Figure~\ref{fig:approach} shows the overview of MAM.
 
@@ -15,50 +15,49 @@ Figure~\ref{fig:approach} shows the overview of MAM.
 %Finally, MAM mines mapping relations of API
 %methods (Section~\ref{sec:approach:mappingmethods}) defined by the mapped
 %API classes.
+
+
+
 %-------------------------------------------------------------------
-\subsection{Aligning API Client Code}
+\subsection{Aligning Client Code}
 \label{sec:approach:acc}
 
 Initially, MAM accepts two versions of a project (one version in
 $L_1$ and the other version in $L_2$) and aligns classes and methods
-of the two versions. Aligned classes or methods
-between the two versions implement a similar functionality. As they
-implement a similar functionality, APIs used by these classes or methods can be
+defined in the two versions. Aligned classes or methods
+between the two versions implement a similar functionality. Since these two versions
+implement a similar functionality, APIs used by these classes or methods could be
 replaceable.
 
-To align classes and methods of the two versions, MAM uses
+To align classes and methods defined in the two versions, MAM uses
 name similarities between entities (such as class names or method
 names) defined by the two versions of the project. In MAM,
 we have two different kinds of entity names: entity names defined by
 the two versions of the project and entity names of third-party
 libraries used by the two versions of the project. The first kind
 often comes from the same programmer or the same team, or
-programmers may refer to existing versions for naming entities such
+programmers may refer to existing versions when naming entities such
 as classes, methods, and variables. Therefore, name similarity of
-the first kind is often reliable to distinguish functionalities
-compared to the second kind. MAM uses
-simmetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
+the first kind is often helpful to distinguish functionalities
+compared to the second kind. MAM uses the Levenstein
+measure provided by
+SimMetrics\footnote{\url{http://sourceforge.net/projects/simmetrics/}}
 to calculate name similarities.
-\begin{figure}[t]
-\centering
-\includegraphics[scale=0.9,clip]{figure/approach.eps}\vspace*{-3ex}
- \caption{Overview of MAM}\vspace*{-4ex}
- \label{fig:approach}
-\end{figure}
 
-We next describe how MAM aligns client-code classes.
-The first step is to find candidate class pairs by names. For two sets
-of classes $c$ and $c'$, MAM returns candidate class
-pairs $M$ with a similarity greater than a given threshold,
-referred to as \emph{SIM\_THRES- HOLD}. As some projects may have more
-than one class with the same name, $M$ may contain more than one
-mapping pair for a class in a version. To align those classes, MAM uses package names of these classes to refine $M$ and
-returns only one mapping pair with the maximum
-similarity\footnote{For C\#, we refer to namespace names for package
-names.}.
+
+We next describe how MAM aligns client-code classes (i.e., classes defined in client code).
+The first step is to find candidate class pairs based on similarities of class names. For two sets
+of classes $c$ and $c'$ from two versions, MAM returns candidate class
+pairs $M$ with name similarity greater than a given threshold,
+referred to as \emph{SIM\_THRESHOLD}. Since some projects may have more
+than one class with the same or similar name, $M$ may contain more than one
+pair for a class in a version. To align these classes, MAM uses package names of these classes to refine $M$ and
+returns only one pair with the maximum
+similarity for each class. For C\#, we refer to namespace names for package
+names.
 
 In each aligned class pair, MAM further aligns methods
-within the class pair. The algorithm for methods is similar to the
+within the class pair. The alignment algorithm for methods is similar to the
 algorithm for classes and also may return more than one candidate
 method pair due to overloading. Here, the algorithm for methods
 relies on criteria such as the number of parameters and names of
@@ -66,30 +65,39 @@ parameters to refine candidate method pairs. For the example shown
 in Section~\ref{sec:example}, MAM correctly aligns the
 class \CodeIn{IndexFiles} and the method \CodeIn{main} in Java to
 the class \CodeIn{IndexFiles} and the method \CodeIn{Main} in C\#,
-respectively, as their names are quite similar.
+respectively, since their names are quite similar. Since MAM returns pairs, MAM may 
+sometimes fail to map some classes or methods (See Section~\ref{sec:discuss} for details).
+%-----------------------------------------------------------------
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.9,clip]{figure/approach.eps}\vspace*{-3ex}
+ \caption{Overview of MAM}\vspace*{-4ex}
+ \label{fig:approach}
+\end{figure}
+
 %-----------------------------------------------------------------
 \subsection{Mapping API classes}
 \label{sec:approach:mappingtypes}
 
-In this step, MAM mines mapping relations of
+In the second step, MAM mines mapping relations of
 API classes. As mapping relations of API classes are used
-to translate variables, MAM mines mapping
+to translate variables in language migration, MAM mines mapping
 relations of API classes based on how aligned client code declares
-variables such as fields of aligned classes, parameters, and local variables of aligned methods. For each aligned class pair $\Pair{c_1} {c_2}$, MAM analyzes each field pair $\Pair{f_1}{f_2}$ and considers
+variables such as fields of aligned classes, and parameters and local variables of aligned methods. For each aligned class pair $\Pair{c_1} {c_2}$, MAM analyzes each field pair $\Pair{f_1}{f_2}$ and considers
 $\Pair{f_1.type} {f_2.type}$ as a relation, if the similarity between $f_1.name$ and $f_2.name$ is
 greater than \emph{SIM\_THRESHOLD}. Similarly, for each aligned method pair
 $\Pair{m_1} {m_2}$, MAM analyzes each local variable pair
 $\Pair{v_1} {v_2}$ and considers $\langle v_1.type,$ $
 v_2.type\rangle$ as a relation, if the similarity between
 $v_1.name$ and $v_2.name$ is greater than
-\emph{SIM\_THRESHOLD}. Also, MAM analyzes each parameter pair
-$\langle p_1, p_2\rangle$ of $m_1$ and $m_2$, and MAM considers $\langle p_1.type, p_2.type\rangle$ as
+\emph{SIM\_THRESHOLD}. MAM also analyzes each parameter pair
+$\langle p_1, p_2\rangle$ of $m_1$ and $m_2$, and considers $\langle p_1.type, p_2.type\rangle$ as
 a relation when the similarity between $p_1.name$ and $p_2.name$ is greater than \emph{SIM\_THRESHOLD}.
 
 For the example shown in Figure~\ref{fig:clientcode}, MAM
-mines the mapping relation between \CodeIn{java.io.File} and
-\CodeIn{System.IO.FileInfo} based on the mapped fields of Lines 6
-and 11. The mapping relation of API
+mines the mapping relation between \CodeIn{java.lang.String} and
+\CodeIn{System.String} based on the mapped parameters of Lines 7
+and 12. The mapping relation of API
 classes helps translate the variable declared in Line 1
 (Figure~\ref{fig:challenge}) to the variable declared in Line 3
 (Figure~\ref{fig:challenge}).
@@ -128,10 +136,8 @@ classes helps translate the variable declared in Line 1
 \subsection{Mapping API methods}
 \label{sec:approach:mappingmethods}
 
-In this step, MAM mines mapping relations of API methods.
-This step has two major sub-steps. First, MAM builds a graph, referred
-to as API transformation graph, for each client code
-method. Second, MAM compares the two graphs of each pair of
+In the third step, MAM first builds a graph for each client code
+method, and then compares the two graphs of each pair of
 client-code methods for mining mapping relations of API methods.
 
 \begin{figure*}[t]
@@ -145,22 +151,20 @@ ATGs}\vspace*{-3ex}
 %-------------------------------------------------------------
 \subsubsection{API Transformation Graph}
 \label{sec:approach:mappingmethods:graph}
-We propose API Transformation Graphs (ATGs) to help deal with two
-major challenges. First, mapping inputs of an API method in one language with
-inputs of an API method in the other language can be complex. Second, an API
-method of one language can be mapped to more than one API method in the
-other language.
+We propose API Transformation Graphs (ATGs) to capture API usages of client-code methods. Using ATGs has two main benefits for mining. First, an ATG describes inputs, outputs, and names of API methods and helps compare API methods from various dimensions. Second, an ATG describes data dependencies among API methods and helps mine mapping relations of multiple API methods.
 
 An ATG of a client-code method $m$ is a directed graph $G\langle N_{data},$ $ N_m, E\rangle$.
 $N_{data}$ is a set of the fields $F$ of $m$'s declaring class, local variables $V$ of
 $m$, parameters $P_1$ of $m$, parameters $P_2$ of API methods invoked
-by $m$, and returns $R$ of all methods. $N_{m}$ is a set of
-methods invoked by $m$. $E$ is a set of directed edges. An edge
+by $m$, and returns $R$ of all invoked methods. $N_{m}$ is a set of 
+all methods (both API methods and client-code methods) invoked by $m$. $E$ is a set of directed edges. An edge
 $d_1\rightarrow d_2$ from a datum $d_1 \in N_{data}$ to a datum $d_2
 \in N_{data}$ denotes that $d_2$ is data-dependent on $d_1$, referred to as
-data dependency from $d_1$ to $d_2$. An edge $d_1 \rightarrow m_1$ from a datum $d_1 \in N_{data}$ to a
+data dependency from $d_1$ to $d_2$. In our representation, a data-dependency
+edge is shown as a dotted line. For example, 
+an edge $d_1 \rightarrow m_1$ from a datum $d_1 \in N_{data}$ to a
 method $ m_1 \in N_{m}$ denotes that $d_1$ is a parameter or receiver
-of $m_1$. An edge $m_1 \rightarrow d_1$ from a method $m_1
+of $m_1$. Similarly, an edge $m_1 \rightarrow d_1$ from a method $m_1
 \in N_{m}$ to a datum $d_1 \in N_{data}$ denotes that $d_1$ is the return
 of $m_1$.
 
@@ -191,23 +195,20 @@ of $m_1$.
 %------------------------------------------------------------------
 \subsubsection{Building API Transformation Graphs}
 
-MAM builds an ATG for each method $m$ in the client code.
+MAM builds an ATG for each method $m$ defined in the client code, called a client-code method.
 ATG includes information such as inputs
 and outputs for each client-code method. In particular, for
-each method $m$, MAM first builds subgraphs for its variables,
-API methods, and field accesses. MAM adds additional edges
-to the built ATG (and sub-graphs inside ATG) and these additional edges
+each client-code method $m$, MAM first builds subgraphs for its local variables,
+invoked API methods, and field accesses. MAM adds additional edges
+to the built ATG (and sub-graphs inside the ATG) and these additional edges
 represent data dependencies among built sub-graphs.
 We use two notations for representing nodes in the ATG. A rectangle
 represents a method labeled with the method name, whereas an ellipse
 represents a datum such as fields, local variables, and parameters.
 An ellipse is labeled as ``\emph{n:t}'', where \emph{n} is the name
-of the variable and \emph{t} is its type. We use the
+of the variable, \emph{t} is its type, and ``\emph{null:t}'' denotes return values, which have no names. We use the
 following rules for adding nodes and edges to the ATG.
 
-\Comment{In particular, MAM analyzes source files of a
-client code method statement by statement and adds edges according
-to the rules as follows:}
 
 %First, programming languages typically provide a huge set of APIs,
 %and it is difficult to build mapping relations for all APIs
@@ -239,7 +240,7 @@ to the rules as follows:}
 %preceding problem,
 
 \begin{enumerate}\vspace*{-2ex}
-\item $\forall$ $f \in F \cup V \cup P_1$, MAM adds a node to the built ATG.
+\item For each $f \in F \cup V \cup P_1$, MAM adds a node to the built ATG.
 The reason for considering these variables such as fields in
 the declaring class or local variables in method $m$ used in client code
 is that these variables are useful to analyze data dependencies
@@ -247,25 +248,26 @@ among API methods. Section~\ref{sec:approach:mappingmethods:graph} defines $F$, 
 %\begin{center}
 %\includegraphics[scale=0.7,clip]{figure/rule1.eps}
 %\end{center}
-\item $\forall$ API methods in the form ``$T_0\ T.AM (T_1 p_1, \ldots, T_n p_n)$''
-invoked by method $m$, MAM adds a receiver node (of type $T$) and
+\item For each API method in the form ``$T_0\ T.AM (T_1\ p_1, \ldots, T_n\ p_n)$''
+invoked by method $m$, MAM adds a receiver node (of type $T$), a return node, and
 parameter nodes to the built ATG as shown below. MAM does
-not add a receiver node for static API methods. \vspace*{-2ex}
+not add a receiver node for static API methods. Note that $T_0 \in R$ and $p_i \in P_2$.
+\vspace*{-2ex}
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule2.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-3ex}
 
-\item $\forall$ $f\in F \cup V$, if $f$ is a non-primitive variable
-of type $T_1$ and a field $x$ of $T_1$ is accessed as $f.x$, MAM adds nodes to the built ATG as shown below. As Java often
-uses getters and setters whereas C\# often use field accesses, MAM treats field accesses as a special type of method
-calls. \vspace*{-2ex}
+\item For each $f\in F \cup V$, if $f$ is a non-primitive variable
+of type $T_1$ and a field $x$ of $T_1$ is accessed as $f.x$, MAM adds nodes to the built ATG as shown below. Since Java often
+uses getters and setters whereas C\# often uses field accesses, MAM treats field accesses as special types of method
+invocations. \vspace*{-2ex}
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule3.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-4ex}
 
-\item $\forall$ statements in the form $x = y$, where $x \in F \cup V \wedge y \in F \cup V$,
+\item For each statement in the form $x = y$, where $x \in F \cup V \wedge y \in F \cup V$,
 MAM adds an edge from $y$ to $x$. This edge represents that
 $x$ is data-dependent on $y$.\vspace*{-1.5ex}
 
@@ -273,8 +275,8 @@ $x$ is data-dependent on $y$.\vspace*{-1.5ex}
 \includegraphics[scale=0.7,clip]{figure/rule4.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-4ex}
 
-\item $\forall$ statements in the form $x = AM()$, where $x \in F \cup V$, MAM
-adds an edge from $AM$ to $x$ if the return of $AM$ is
+\item For each statement in the form $x = AM()$, where $x \in F \cup V$, MAM
+adds an edge from $AM$ to $x$ to indicate that the return of $AM$ is
 assigned to $x$. This edge represents that $x$ is data-dependent on
 the return of $AM$. \vspace*{-2ex}
 
@@ -282,7 +284,7 @@ the return of $AM$. \vspace*{-2ex}
 \includegraphics[scale=0.7,clip]{figure/rule5.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-4ex}
 
-\item $\forall$ API methods $AM(x)$ invoked by method $m$, MAM
+\item For each API method $AM(x)$ invoked by method $m$, MAM
 adds an edge from $x$ to the parameter node of $AM$. This edge
 represents that the parameter of $AM$ is data-dependent on
 $x$.\vspace*{-3ex}
@@ -291,51 +293,50 @@ $x$.\vspace*{-3ex}
 \includegraphics[scale=0.7,clip]{figure/rule6.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-4ex}
 
-\item $\forall$ statements in the form $m_2(m_1(x))$, MAM
+\item For each statement in the form $m_2(m_1(x))$, MAM
 adds an edge from the return node of $m_1$ to the parameter
-node of $m_2$ parameter node. This edge represents that the
-parameter of $m_2$ is data-dependent on the return of $m_1$.\vspace*{-1.5ex}
+node of $m_2$. This edge represents that the
+parameter of $m_2$ is data-dependent on the return of $m_1$.\vspace*{-2.5ex}
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule7.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-1.5ex}
 
-\item $\forall$ statements in the form $x.m()$, MAM adds
+\item For each statement in the form $x.m()$, MAM adds
 an edge from $x$ to $m$ since $x$ is the receiver of $m$. This
 edge represents that the receiver of $m$ is data-dependent on
 $x$.\vspace*{-1.5ex}
 
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule8.eps}%\vspace*{-1.5ex}
-\end{center}\vspace*{-1.5ex}
+\end{center}\vspace*{-3.5ex}
 
-\item $\forall$ statements in the form $ x = y\ op\ z\ op\ \ldots, op \in \{+,-,*,/\}$,
+\item For each statement in the form $ x = y\ op\ z\ op\ \ldots, op \in \{+,-,*,/\}$,
 MAM adds edges from $y$, $z$, and others to $x$, since these
 variables are connected by binary operations and the return is
 assigned to $x$. The edge denotes the data dependency from $y$, $z$,
 and other variables to $x$. For simplicity, MAM ignores
-\emph{op} info. We discuss the issue in
+\emph{op} info. We discuss this issue in
 Section~\ref{sec:discuss}.\vspace*{-1.5ex}
 \begin{center}
 \includegraphics[scale=0.7,clip]{figure/rule9.eps}%\vspace*{-1.5ex}
 \end{center}\vspace*{-2ex}
-\end{enumerate}
+\end{enumerate}\vspace*{-2ex}
 
-For each method $m$ in the client code, MAM applies the preceding
-rules for each statement from the beginning to the end of $m$.
+For each client-code method $m$, MAM applies the preceding
+rules for each statement from the beginning to the end of $m$'s method body.
 Within each statement, MAM applies these rules based on
 their nesting depth in the abstract syntax tree. For example,
 for the statements of the form $m_2(m_1(x))$, MAM first applies
-these rules on $m_1$ and then on $m_2$.
+these rules on $m_1$ and then on $m_2$. Our construction is similar to static slicing~\cite{tip1995survey} with emphasis on API call sites.
 
-Figures~\ref{fig:graph}a and ~\ref{fig:graph}b show partial ATGs for
-C\# (\CodeIn{IndexFiles.cs}) and Java (\CodeIn{IndexFiles.java})
-code examples shown in Figure~\ref{fig:clientcode}, respectively.
+Figures~\ref{fig:graph}a and ~\ref{fig:graph}b show partial ATGs for the two \CodeIn{main} methods of \CodeIn{IndexFiles.cs} and \CodeIn{IndexFiles.java} shown in Figure~\ref{fig:clientcode}, respectively.
 Figure~\ref{fig:graph} also shows corresponding line numbers of each
 sub-graph. MAM applies Rules 2 and 8 for Lines 6 and 9
 (Figure~\ref{fig:clientcode}) to build corresponding sub-graphs in
 the ATG. MAM applies Rules 2, 3, and 6 to build corresponding
-sub-graphs for Lines 11 and 14 (Figure~\ref{fig:clientcode}).
+sub-graphs for Lines 11 and 14 (Figure~\ref{fig:clientcode}). For simplicity,
+we do not show the nodes for the local variable \CodeIn{tmpBool} in the built ATGs in Figure~\ref{fig:graph}.
 
 %\begin{algorithm}[t]
 %\begin{SmallOut}
@@ -397,7 +398,7 @@ mapping relations of API methods. For each pair of aligned methods $m$ and $m'$,
 \CodeIn{findVarPairs} maps $v$ and $v'$, if the similarity metric value on their names is greater
 than \emph{SIM\_THRESHOLD}. For constants in $m$ and $m'$, \CodeIn{findVarPairs}
 maps those two constants, if they have exactly the same
-value. From mapped variables and constants, our algorithm uses the following criteria to find mapping relations between two API methods $jm$ and $sm$.
+value. From mapped variables and constants, our algorithm uses the following criteria to find mapping relations between the two API methods $jm$ and $sm$.
 
 \emph{Mapped inputs}: The first criterion is based on the inputs
 of $jm$ and $sm$. We map $jm$ with $sm$, if there is a 1-to-1
@@ -416,20 +417,24 @@ with $sm$, if the type of $r_1$ is mapped with the type of $r_2$ in
 mapping relations of API classes.
 
 Our algorithm first attempts to map the first API method $jm$ in $m$
-with the first API method $sm$ in $m'$. Our algorithm uses the \CodeIn{nextMethods}
-function to get these $jm$ and $sm$ API methods. If our algorithm successfully maps $jm$ with
-$sm$, our algorithm moves to the next available API methods in $m$
-and $m'$ of the client code. If our algorithm is not able to map $jm$
+with the first API method $sm$ invoked in $m'$. Our algorithm uses the \CodeIn{nextMethods}
+function to get these $jm$ and $sm$ API methods. In each iteration, this function merges an API method with its directly next API method to produce a merged API method. If our algorithm successfully maps $jm$ with
+$sm$, our algorithm moves to the next available API methods invoked in client-code methods $m$
+and $m'$. If our algorithm is not able to map $jm$
 with $sm$, our algorithm merges $sm$ and $jm$ with their next available API methods
 in the corresponding ATGs, respectively, and attempts to map merged API methods. Note that merged API methods are just synthesized intermediate representations for correlated API methods invoked in client code, and are used internally by our algorithm to construct many-to-many mapping relations of API methods. A merged API method $cm$ is a sequence of API
 methods $M$ combined by inputs and outputs, so the $t$ behavior of
-$cm$ is the combination of $M$. For $L_1$, consider an API method $m_1$ defined in classes $c_1$ and an API method $m_2$ defined in $c_2$ with the following signatures:
+$cm$ is the combination of $M$. In the simplest case, a merged API method could include
+only one API method. For $L_1$, consider an API method $m_1$ defined in the class $c_1$ and an API method $m_2$ defined in $c_2$ with the following signatures:
+
 
 \CodeIn{$m_1$ signature: $o_1$ $c_1$.$m_1$($inp_1^1$, $inp_2^1$,
-..., $inp_m^1$)}
+..., $inp_k^1$)}
+
 
 \CodeIn{$m_2$ signature: $o_2$ $c_2$.$m_2$($inp_1^2$, $inp_2^2$,
-..., $inp_n^2$)}
+..., $inp_l^2$)}
+
 
 Our algorithm merges methods $m_1$ and $m_2$ to create a new \emph{merged API
 method} $m_{new}$ if the output $o_1$ of $m_1$ is used either as a
@@ -437,29 +442,32 @@ receiver or as a parameter for $m_2$ (\emph{i.e.}, $o_1$ == $c_2$ or $o_1$
 == $inp_i^2$) in client code. The signature of the new merged API
 method $m_{new}$ is shown below:
 
+
 \CodeIn{$m_{new}$ signature: $o_2$ $m_{new}$($inp_1^1$, $inp_2^1$,
-..., $inp_m^1$, \\ $inp_1^2$, $inp_2^2$, ..., $inp_n^2$)}
+..., $inp_k^1$, \\ $inp_1^2$, $inp_2^2$, ..., $inp_l^2$)}
+
 
 For example, our algorithm merges the API methods shown in Figure~\ref{fig:graph}a to two merged API methods as follows.
+\vspace*{-2ex}
 
-\begin{CodeOut}\vspace*{-1.5ex}
+\begin{CodeOut}
 \begin{alltt}
-cm_1:Boolean \{FileInfo,getFullFile,File.Exist\}(String)
-cm_2:Boolean \{FileInfo,getFullFile,Directory.Exist\}(String)
+cm1:Boolean \{FileInfo,getFullName,File.Exist\}(String)
+cm2:Boolean \{FileInfo,getFullName,Directory.Exist\}(String)
 \end{alltt}
-\end{CodeOut}\vspace*{-1.5ex}
+\end{CodeOut}\vspace*{-2ex}
 
 Similarly, our algorithm merges the API methods shown in Figure~\ref{fig:graph}b to two merged API methods as follows.
+\vspace*{-2ex}
 
-\begin{CodeOut}\vspace*{-1.5ex}
+\begin{CodeOut}
 \begin{alltt}
-cm_3:boolean \{File,exist\}(String)
-cm_4:boolean \{File,delete\}(String)
+cm3:boolean \{File,exist\}(String)
+cm4:boolean \{File,delete\}(String)
 \end{alltt}
-\end{CodeOut}\vspace*{-1.5ex}
+\end{CodeOut}\vspace*{-2ex}
 
-Our algorithm merges these API methods so that it is able to mine many-to-many mapping relations of API methods as shown in Figure~\ref{fig:graph}. After merging API methods, our algorithm uses the \CodeIn{replace} function for merging an API method with its
-next available API method. For two merged API methods, our algorithm uses the
+Our algorithm merges these API methods so that it is able to mine many-to-many mapping relations of API methods as shown in Figure~\ref{fig:graph}. After merging API methods, our algorithm uses the \CodeIn{replace} function for merging an API method with its next available API method. For two merged API methods, our algorithm uses the
 maximum similarity of method names between $jm$ and $sm$ as a
 similarity metric value for mapping their functionalities.
 With each iteration, $sm$ or $jm$ or the mapping relation (represented as $S$)
@@ -467,7 +475,7 @@ in the algorithm may change. Therefore, we repeat our algorithm
 till $S$, $sm$, and $jm$ do not change anymore.
 
 We next explain our algorithm using the illustrative example shown
-in Figure~\ref{fig:graph}. The numbers shown in circles
+in Figure~\ref{fig:graph}. The numbers shown in rounded rectangles (such as \emph{Step 1})
 represent the major steps in our algorithm for mining mapping
 relations of API methods. We next explain each step in detail.
 
@@ -483,16 +491,12 @@ relations of API methods using variable and constant mapping relations.
 Initially, this step identifies the first API methods in the two ATGs and tries to
 map their receiver and parameters of the two API methods.
 In our current example, this step maps the parameter \CodeIn{filename}
-to the parameter \CodeIn{arg0} as these parameters
-are of the same type and their associated constants are mapped.
+to the parameter \CodeIn{arg0} since these parameters
+are of the mapped types and their associated constants are mapped.
 
-\emph{Step 3: mapping outputs of API methods.} In contrast to Step 2
-that maps parameters, Step 3 maps returns of API methods. In
-this step, if MAM is not able to map returns, MAM merges the next API method (Section~\ref{sec:mapping}) and
-then attempts to map returns of merged API methods. In our current example shown in
-Figure~\ref{fig:graph}, the return of \CodeIn{System.IO.FileInfo.FileInfo()}
-cannot be mapped to the return of \CodeIn{java.io.File.File()}. Therefore, 
-MAM merges subsequent API methods in the ATG till the \CodeIn{Exists}
+\emph{Step 3: mapping outputs of API methods.} Step 3 maps returns of API methods. If MAM is not able to map returns, MAM merges the next API method and
+then attempts to map returns of merged API methods. In the example shown in
+Figure~\ref{fig:graph}, MAM merges subsequent API methods in the ATG till the \CodeIn{Exists}
 API method, since the returns (shown as \CodeIn{Boolean}) can be mapped
 only after the \CodeIn{Exists} API method. Figure~\ref{fig:graph}
 shows Step 3 along with the mapped returns.
@@ -504,12 +508,11 @@ mapped parameters and returns, this step uses the similarity
 metric value based on their method names as a criterion for mapping
 their functionalities. In the preceding example, this step maps the
 two merged API methods shown in Figure~\ref{fig:graph}a to the
-merged API methods of the \CodeIn{java.io.File.exists()} as all
+API method of \CodeIn{java.io.File. exists} since all
 three merged API methods include the method named \CodeIn{exists}.
 
-MAM applies the preceding steps on ATGs (as shown in
-Figures~\ref{fig:graph}a and~\ref{fig:graph}b). After finding out
+After finding out
 the mapped pair of API methods as shown in Figure~\ref{fig:graph},
-MAM merges all variables and outputs to corresponding
-parameters and receivers and produces the mapping relation of API
-method as shown in Figure~\ref{fig:example}.
+MAM merges all variables and returns to corresponding
+parameters and receivers, and produces the mapping relation of API
+methods from \CodeIn{java.io.File.Exists} in Java to \CodeIn{System.IO. File.Exists} and \CodeIn{System.IO.Directory.Exists} in C\# (See Section~\ref{sec:evaluation:migration} for how mined mapping relations help language migration).
