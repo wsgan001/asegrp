@@ -30,19 +30,19 @@ different languages.
 %Java version only. Kazuya developed a C\# version of
 %iText.Net\footnote{\url{http://www.ujihara.jp/iTextdotNET/en/}}.
 
-Translating projects from one language to another language
+Migrating projects from one language to another language
 (\emph{e.g.}, from Java to C\#) manually is a tedious and
 error-prone task. In the literature, there exist
 approaches~\cite{mossienko2003automated, yasumatsu1995spice} and tools (\emph{e.g.}, Java2CSharp\footnote{\url{http://j2cstranslator.wiki.sourceforge.net}}) that address the problem of language
-translation partially, since these approaches and tools expect programmers to
+migration partially, since these approaches and tools expect programmers to
 describe how Application Programming Interfaces (APIs) of one language are mapped to APIs of another
 language. \Comment{Based on the mappings provided as input, these
-existing approaches translate projects from one language to
+existing approaches migrate projects from one language to
 another.} Since there are a large number of APIs provided in different languages,
 writing mappings manually for all APIs is tedious and error-prone.
 As a result, these approaches and tools
-support only a subset of APIs for translation. Such a limitation
-results in many compilation errors in translated projects and limits
+support only a subset of APIs for migration. Such a limitation
+results in many compilation errors in migrated projects and limits
 these approaches' usage in practice (See Section~\ref{sec:evaluation:migration} for details).
 
 In this paper, we propose a novel approach, called MAM
@@ -103,7 +103,7 @@ This paper makes the following major contributions:
 \item The first approach, called MAM, that mines API mapping relations between
 different languages using API client code. MAM
 addresses an important and yet challenging problem that is not
-addressed by previous work on language translation.\vspace*{-1.5ex}
+addressed by previous work on language migration.\vspace*{-1.5ex}
 \item API transformation graphs (ATGs) proposed to capture inputs
 and outputs of API methods, and a technique for building ATGs and
 comparing built ATGs for mining API mapping relations. Since ATGs describe data
@@ -118,7 +118,7 @@ including 6,695 mapping relations of API classes with accuracy of
 86.7\% and 19,110 mapping relations of API methods with accuracy of
 90.0\%. The results also show that the mined relations
 reduce 55.4\% of compilation errors and 43.0\% defects during
-translation of projects from Java to C\# using Java2CSharp, an existing translation tool.
+migration of projects from Java to C\# using Java2CSharp, an existing migration tool.
 \end{itemize}\vspace*{-1.5ex}
 
 The rest of this paper is organized as follows.

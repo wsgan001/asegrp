@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2010.2.12)  14 FEB 2010 00:03
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2010.2.12)  14 FEB 2010 00:29
 entering extended mode
 **MAM.tex
 (D:\GoogleSVN\papers\LanguageMigration\MAM.tex
@@ -365,7 +365,7 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 9.
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 Overfull \hbox (8.04587pt too wide) in paragraph at lines 33--47
-\T1/ptm/m/n/9 lit-er-a-ture, there ex-ist ap-proaches [9, 19] and tools (\T1/pt
+\T1/ptm/m/n/9 lit-er-a-ture, there ex-ist ap-proaches [8, 18] and tools (\T1/pt
 m/m/it/9 e.g.\T1/ptm/m/n/9 , Java2CSharp[])
  []
 
@@ -410,6 +410,35 @@ File: figure/approach.eps Graphic file (type eps)
 Overfull \hbox (2.17741pt too wide) in paragraph at lines 82--96
 [][]\T1/ptm/m/n/9 In the sec-ond step, MAM mines map-ping re-la-tions of API cl
 asses.
+ []
+
+
+Overfull \hbox (13.1505pt too wide) in paragraph at lines 82--96
+\T1/ptm/m/it/9 SIM_THRESHOLD\T1/ptm/m/n/9 . Sim-i-larly, for each aligned metho
+d pair $\OMS/cmsy/m/n/9 h\OML/cmm/m/it/9 m[]; m[]\OMS/cmsy/m/n/9 i$\T1/ptm/m/n/
+9 ,
+ []
+
+
+Overfull \hbox (15.78926pt too wide) in paragraph at lines 82--96
+\T1/ptm/m/n/9 MAM an-a-lyzes each lo-cal vari-able pair $\OMS/cmsy/m/n/9 h\OML/
+cmm/m/it/9 v[]; v[]\OMS/cmsy/m/n/9 i$ \T1/ptm/m/n/9 and con-sid-ers $\OMS/cmsy/
+m/n/9 h\OML/cmm/m/it/9 v[]:type;$
+ []
+
+
+Overfull \hbox (12.73743pt too wide) in paragraph at lines 82--96
+\OML/cmm/m/it/9 v[]:type\OMS/cmsy/m/n/9 i$ \T1/ptm/m/n/9 as a re-la-tion, if th
+e sim-i-lar-ity be-tween $\OML/cmm/m/it/9 v[]:name$ \T1/ptm/m/n/9 and $\OML/cmm
+/m/it/9 v[]:name$
+ []
+
+
+Overfull \hbox (8.6563pt too wide) in paragraph at lines 82--96
+\T1/ptm/m/n/9 ram-e-ter pair $\OMS/cmsy/m/n/9 h\OML/cmm/m/it/9 p[]; p[]\OMS/cms
+y/m/n/9 i$ \T1/ptm/m/n/9 of $\OML/cmm/m/it/9 m[]$ \T1/ptm/m/n/9 and $\OML/cmm/m
+/it/9 m[]$\T1/ptm/m/n/9 , and con-sid-ers $\OMS/cmsy/m/n/9 h\OML/cmm/m/it/9 p[]
+:type; p[]:type\OMS/cmsy/m/n/9 i$
  []
 
 [3]
@@ -565,12 +594,12 @@ SI).
 
 ) [10] (D:\GoogleSVN\papers\LanguageMigration\MAM.aux) ) 
 Here is how much of TeX's memory you used:
- 3828 strings out of 495286
- 47660 string characters out of 3180414
- 139673 words of memory out of 3000000
- 6900 multiletter control sequences out of 15000+200000
+ 3827 strings out of 495286
+ 47640 string characters out of 3180414
+ 139650 words of memory out of 3000000
+ 6899 multiletter control sequences out of 15000+200000
  51096 words of font info for 75 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,13n,26p,830b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on MAM.dvi (10 pages, 121388 bytes).
+Output written on MAM.dvi (10 pages, 120744 bytes).

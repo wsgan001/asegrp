@@ -3,7 +3,7 @@
 
 We next use an example to illustrate challenges in mining
 API mapping relations. Figure~\ref{fig:challenge} shows a
-Java code example and its translated C\# code. This Java code
+Java code example and its migrated C\# code. This Java code
 example accepts a \CodeIn{string} input that represents the name of a
 file or directory and returns a \CodeIn{boolean} value that
 describes whether the file or directory exists. To achieve this functionality, the
@@ -14,14 +14,14 @@ inputs and produces the desirable \CodeIn{boolean} value. Here, we
 consider \CodeIn{file} (a receiver) as a special input for
 the \CodeIn{exists} method.
 
-To translate this code example into C\#, a translation tool needs to
-know mapping relations of API classes, so that it can translate inputs,
-outputs, and variables into C\#. For example, the translation tool
+To migrate this code example into C\#, a translation tool needs to
+know mapping relations of API classes, so that it can migrate inputs,
+outputs, and variables into C\#. For example, the  migration tool
 needs to know the mapped API class in C\# for \CodeIn{java.io.File}
-to translate the variable \CodeIn{file} to C\#. In addition, the
-translation tool needs to know the mapped API methods, so that it can
-add code for invoking proper API methods that take translated inputs and variables to
-produce desirable outputs. For this example, the translation tool
+to migrate the variable \CodeIn{file} to C\#. In addition, the
+migration tool needs to know the mapped API methods, so that it can
+add code for invoking proper API methods that take migrated inputs and variables to
+produce desirable outputs. For this example, the migration tool
 adds code for invoking the \CodeIn{Exists} method and the
 \CodeIn{FullName} method to achieve the functionality.
 Here, we consider field accesses as special types of method invocations.
@@ -36,13 +36,13 @@ to mine the preceding two types of mapping relations of APIs from these projects
 \textbf{Java code}:
 1  File file = \textbf{new} File("test");
 2  Boolean b = file.exists();
-\textbf{Translated C\# code}:
+\textbf{Migrated C\# code}:
 3  FileInfo file = \textbf{new} FileInfo("test");
 4  Boolean b = System.IO.File.Exists(file.FullName)||
            System.IO.Directory.Exists(file.FullName);
 \end{alltt}
 \end{CodeOut}\vspace*{-5ex}
-\caption{\label{fig:challenge}Java code and its translated C\# code.}\vspace*{-2ex}
+\caption{\label{fig:challenge}Java code and its migrated C\# code.}\vspace*{-2ex}
 \end{figure}
 \begin{figure}[t]
 \begin{CodeOut}\vspace*{-1ex}
@@ -135,7 +135,7 @@ we mine these mapping relations of API methods.
 % \caption{\label{fig:example}API mapping}\vspace*{-4ex}
 %\end{figure}
 
-%Based on the mapping relations, a translation tool can migrate the
+%Based on the mapping relations, a migration tool can migrate the
 %preceding code snippet automatically. To learn the mapping
 %relations,
 %

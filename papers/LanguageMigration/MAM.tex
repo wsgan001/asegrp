@@ -49,7 +49,7 @@ companies or open source organizations often have to release different versions 
 in different languages. Manually migrating projects from one language to
 another (such as from Java to C\#) is a tedious
 and error-prone task. To reduce manual effort or human errors, tools
-can be developed for automatic translation of projects from one
+can be developed for automatic migration of projects from one
 language to another. However, these tools require the knowledge of how
 Application Programming Interfaces (APIs) of one language are mapped
 to APIs of the other language, referred to as API mapping
@@ -60,16 +60,16 @@ mapping relations from one language to another using API client
 code. MAM accepts a set of projects each with two versions in
 two languages and mines API mapping relations between those two
 languages based on how APIs are used by the two versions. These
-mined API mapping relations assist in translation of projects from
+mined API mapping relations assist in migration of projects from
 one language to another. We implemented a tool and
 conducted two evaluations to show the effectiveness of MAM. The
 results show that our tool mines 25,805 unique mapping relations of
 APIs between Java and C\# with more than 80\% accuracy. The results
 also show that mined API mapping relations help reduce 54.4\% compilation
-errors and 43.0\% defects during translation of projects with an
-existing translation tool, called Java2CSharp. The reduction in
+errors and 43.0\% defects during migration of projects with an
+existing migration tool, called Java2CSharp. The reduction in
 compilation errors and defects is due to our new mined mapping
-relations that are not available with the existing translation
+relations that are not available with the existing migration
 tool.
 \end{abstract}\vspace*{-2ex}
 % A category with the (minimum) three required fields

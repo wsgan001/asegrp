@@ -11,7 +11,7 @@ two research questions:
 \item How effectively can our approach mine various API mapping relations
 (Section~\ref{sec:evaluation:mining})? \vspace*{-1.8ex}
 \item How much benefit can the mined API mapping relations offer in aiding language
-translation (Section~\ref{sec:evaluation:migration})?\vspace*{-1.6ex}
+migration (Section~\ref{sec:evaluation:migration})?\vspace*{-1.6ex}
 
 \end{enumerate}%\vspace*{-1.5ex}
 
@@ -77,12 +77,12 @@ for all subjects. We found two major factors for such
 a difference. First, Java versions of some of the
 projects are more up-to-date. For example, the latest Java
 version of \emph{numericas4j} is 1.3, whereas the latest C\# version
-is 1.2. Second, for some projects, translation from Java to C\# is still in
+is 1.2. Second, for some projects, migration from Java to C\# is still in
 progress. For example, the
 website\footnote{\url{http://wiki.neodatis.org/}} of \emph{neodatis}
 states that \emph{neodatis} is a project in Java and is being ported
 to C\#. This observation further confirms the usefulness of our
-approach since our approach aids translating projects from one language to other
+approach since our approach aids migrating projects from one language to other
 languages. In total, all these projects include 18,568 classes and 109,850
 methods.
 
@@ -162,7 +162,7 @@ have many getters and setters and these getters and setters often do
 not have corresponding methods in C\# versions.}. The second
 category includes \emph{neodatis}, \emph{numerics4j}, and
 \emph{lucene}. In this category, our approach aligns C\# versions well but does
-not align Java versions so well. We find that the translation of \emph{neodatis} and
+not align Java versions so well. We find that the migration of \emph{neodatis} and
 \emph{lucene} from Java to C\# is in progress, and the
 Java version of \emph{numerics4j} is more up to date than its
 C\# version. As a result, some Java classes or methods do not have
@@ -170,7 +170,7 @@ corresponding implementations in C\# versions in these projects and
 hence are not aligned. The third category includes \emph{logging}
 and \emph{hibernate}. In this category, our approach does not align classes and
 methods of the two projects well. Although both of the two projects
-seem to be translated from existing Java versions, the programmers of
+seem to be migrated from existing Java versions, the programmers of
 the two projects often do not refer to names of existing Java
 versions for naming entities. For these two projects, the
 percentages of aligned classes are relatively high, and the percentages
@@ -265,7 +265,7 @@ accurate and associated with various libraries.
 %Section~\ref{sec:discuss}.
 
 
-\textbf{Comparing with manually written API mapping relations.} Some translation
+\textbf{Comparing with manually written API mapping relations.} Some migration
 tools such as Java2CSharp include manually written API mapping relations of APIs.
 For example, one item from the mapping files of Java2CSharp is as follows:
 
@@ -318,7 +318,7 @@ of Java and \CodeIn{Multiply} of C\#. For the two API methods, the pattern
 string describes the mapping relation of inputs:
 ``\CodeIn{@0}'' denotes the receiver of the \CodeIn{multiply}
 method, and ``\CodeIn{@1}'' denotes the first parameter of the
-\CodeIn{multiply} method. Based on this item, Java2CSharp translates
+\CodeIn{multiply} method. Based on this item, Java2CSharp migrates
 the following code snippet from Java to C\# as follows:
 
 \begin{CodeOut}\vspace*{-2ex}
@@ -334,9 +334,9 @@ the following code snippet from Java to C\# as follows:
 \end{CodeOut}\vspace*{-2ex}
 
 To compare with manually written mapping files of Java2CSharp, we
-translate our mined API mapping relations using the following strategy. First,
-for each Java class, we translate its mapping relations of classes
-with the highest support values. Here, the support value of a mapping relation is the frequency that the mapping relation is mined from the subjects listed in Table~\ref{table:minedresults}. Second, for each Java method, we translate its
+migrate our mined API mapping relations using the following strategy. First,
+for each Java class, we migrate its mapping relations of classes
+with the highest support values. Here, the support value of a mapping relation is the frequency that the mapping relation is mined from the subjects listed in Table~\ref{table:minedresults}. Second, for each Java method, we migrate its
 mapping relations of methods with the highest support values into mapping
 files as relations of methods with pattern strings. For 1-to-1
 mapping relations of API methods, this step is automatic since mined
@@ -440,7 +440,7 @@ further improvements.
 \end{table}
 
 %-----------------------------------------------------------------
-\subsection{Aiding Language Translation}
+\subsection{Aiding Language Migration}
 \label{sec:evaluation:migration}
 
 To investigate the second research question, we feed the
@@ -451,19 +451,19 @@ mature project at ILOG\footnote{\url{http://www.ilog.com/}} (now
 part of IBM) and supports the extension of user-defined mapping
 relations of APIs.
 
-We use Java2CSharp to translate the last five projects listed in
+We use Java2CSharp to migrate the last five projects listed in
 Table~\ref{table:subjects} from Java to C\#, and
-Table~\ref{table:errors} shows the results. For each translated C\#
+Table~\ref{table:errors} shows the results. For each migrated C\#
 project, Column ``No MF'' lists results without mapping files.
 Column ``MF'' lists results with only the mapping files of Java2CSharp.
 Column ``Ext. MF'' lists results with mapping files that combine
 our mined API mapping relations with the existing mapping files of Java2CSharp.
 Sub-columns ``\emph{E}'' and ``\emph{D}'' list the number of
-compilation errors and API related defects found, respectively. Compilation errors provide an overview for qualities of translated projects, but some compilation errors are not related to APIs.
-To find out the effectiveness of reducing API related defects, we manually inspect some translated C\# files. In particular, for each project,
-we first select those overlapping files between translated files and existing C\# files
+compilation errors and API related defects found, respectively. Compilation errors provide an overview for qualities of migrated projects, but some compilation errors are not related to APIs.
+To find out the effectiveness of reducing API related defects, we manually inspect some migrated C\# files. In particular, for each project,
+we first select those overlapping files between migrated files and existing C\# files
 from the C\# version of the five projects. After that, we manually compare
-the top five largest files among these overlapping files with existing C\# files and analyze those differences for detecting API related defects. For example, a translated C\# statement of \emph{SimMetrics} in ``No MF'' is as follows.
+the top five largest files among these overlapping files with existing C\# files and analyze those differences for detecting API related defects. For example, a migrated C\# statement of \emph{SimMetrics} in ``No MF'' is as follows.
 
 \begin{CodeOut}\vspace*{-1.8ex}
 \begin{alltt}
@@ -471,25 +471,25 @@ the top five largest files among these overlapping files with existing C\# files
 \end{alltt}
 \end{CodeOut}\vspace*{-1.8ex}
 
-This statement contains an API related defect since Java2CSharp does not translate the \CodeIn{sqrt} method of Java to its corresponding API method of C\#. Sub-columns ``\emph{\%E}'' and ``\emph{\%D}'' list
+This statement contains an API related defect since Java2CSharp does not migrate the \CodeIn{sqrt} method of Java to its corresponding API method of C\#. Sub-columns ``\emph{\%E}'' and ``\emph{\%D}'' list
 percentages of improvements over the results of ``MF''. On average,
 mined API mapping relations help further reduce 54.4\% compilation errors
 and 43.0\% API related defects. Since the five projects use different libraries,
-compilation errors and defects in translated projects are different. In particular,
+compilation errors and defects in migrated projects are different. In particular,
 \emph{SimMetrics} and \emph{fit} use API classes of J2SE that are
-covered by mapping files. Consequently, the translated projects of
+covered by mapping files. Consequently, the migrated projects of
 \emph{SimMetrics} and \emph{fit} have only a few errors and defects. The
 \emph{aligner} project also mainly uses J2SE, but it uses many API
 classes and methods from \CodeIn{java.awt} for its GUI. The mapping
 files of Java2CSharp do not cover any classes of \CodeIn{java.awt},
-so the translated project has many compilation errors. Since the existing C\#
+so the migrated project has many compilation errors. Since the existing C\#
 version of \emph{aligner} does not have GUI, we do not compare those
-defective translated GUI files, and we do not find any API related defects in the compared five files. The mined
+defective migrated GUI files, and we do not find any API related defects in the compared five files. The mined
 files map \CodeIn{java.awt} to \CodeIn{System.Windows.Forms} and
 thus reduce compilation errors. However, the result is not
 significant since many classes of the two packages are still not
 mapped. For \emph{rasp} and \emph{llrp}, they both use various
-libraries besides J2SE. Consequently, the translated projects have
+libraries besides J2SE. Consequently, the migrated projects have
 both many errors and API related defects. In particular, \emph{llrp} uses
 log4j\footnote{\url{http://logging.apache.org/log4j/}} and
 jdom\footnote{\url{http://www.jdom.org/}}, and the mined mapping
@@ -499,28 +499,28 @@ API related defects significantly. \emph{rasp} uses some libraries such as
 Neethi\footnote{\url{http://ws.apache.org/commons/neethi/}}\Comment{ and
 WSS4J\footnote{\url{http://ws.apache.org/wss4j/}}}. Since the used
 subjects for mining and thus our mined API mapping relations do not cover the
-two libraries, the translated project of \emph{rasp} contains many
+two libraries, the migrated project of \emph{rasp} contains many
 compilation errors and API related defects.
 
 In summary, the mined API mapping relations help improve existing language
-translation tools such as Java2CSharp. In particular, the mined API
+migration tools such as Java2CSharp. In particular, the mined API
 mapping relations help effectively reduce compilation errors and
-API related defects in the translated projects.
+API related defects in the migrated projects.
 
 %--------------------------------------------------------------------------
 \subsection{Threats to Validity}
 \label{sec:evaluation:threats} The threats to external validity
 include the representativeness of the subjects and
-the used translation tool. Although we applied
+the used migration tool. Although we applied
 our approach on 10 projects for mining API mapping relations and on additional
-5 projects for helping language translation, our approach is
+5 projects for helping language migration, our approach is
 evaluated only on these limited projects. Although Java2CSharp is
-the best translation tool within our knowledge, other tools may perform
+the best migration tool within our knowledge, other tools may perform
 better than Java2CSharp. This threat could be reduced by more
-evaluations on more subjects and more translation tools in future
+evaluations on more subjects and more migration tools in future
 work. The threats to internal validity include human factors for
 determining correct mined API mapping relations and for determining API related defects in
-translated projects. To reduce these threats, we inspected mined
+migrated projects. To reduce these threats, we inspected mined
 mapping relations and API related defects carefully, and we referred to existing
 mapping relations and existing C\# files for determining correct API
 mapping relations and API related defects, respectively. The former threat could be further

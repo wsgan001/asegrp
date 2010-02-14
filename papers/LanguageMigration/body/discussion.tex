@@ -62,19 +62,19 @@ richer API mapping.
 A mined many-to-many mapping relation of API methods can have multiple outputs
 and complex internal data processes. Although our ATGs
 help identify all API methods, our implementation is not complete
-for supporting automatic translation. For example, we need to manually add an
+for supporting automatic migration. For example, we need to manually add an
 \emph{or} operator for the two outputs of the API mapping presented
 in Section~\ref{sec:example}. In future work, we plan to enhance our implementation to help
 automate migration with many-to-many mapping relations.
 
 \textbf{Migrating unmapped APIs.} Our approach mines API mapping of
 methods along with the mappings of their inputs and outputs. These
-mappings are useful for translating API methods of one language to
+mappings are useful for migrating API methods of one language to
 another. Sometimes, our approach may not be able to map inputs and
 outputs of mapped API methods. If our approach is not able to map
 outputs, our approach currently simply ignores those outputs that are not used
 in the client code. However, since inputs cannot be ignored, the
-translated code has compilation errors. In future work, we
+migrated code has compilation errors. In future work, we
 plan to address this issue by analyzing how two versions of a
 project deal with a similar unmapped API problem for some other code
 examples. 

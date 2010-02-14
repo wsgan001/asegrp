@@ -2,20 +2,20 @@
 \label{sec:related}
 
 Our approach is related to previous work on two areas:
-language translation and library migration.
+language migration and library migration.
 
-\textbf{Language translation.} To reduce manual efforts of language
-translation~\cite{samet1981experience}, researchers proposed various
+\textbf{Language migration.} To reduce manual efforts of language
+migration~\cite{samet1981experience}, researchers proposed various
 approaches~\cite{hassan2005lightweight,van1999identifying,waters1988program,mossienko2003automated,yasumatsu1995spice} to automate the process.
 However, all these approaches focus on the syntax or structural differences between
 languages. Deursen \emph{et al.}~\cite{van1999identifying} proposed an approach to identify
 objects in legacy code. Their approach uses these objects to deal with the
 differences between object-oriented and procedural languages. As
 shown in El-Ramly \emph{et al.}~\cite{el2006experiment}'s experience
-report, existing approaches support only a subset of APIs for language translation,
-making the task of language translation a challenging problem.
+report, existing approaches support only a subset of APIs for language migration,
+making the task of language migration a challenging problem.
 In contrast to previous approaches, our approach automatically mines API mapping between
-languages to aid language translation, addressing a significant
+languages to aid language migration, addressing a significant
 problem not addressed by the previous approaches and complementing
 these approaches.
 
@@ -26,7 +26,7 @@ and replays API refactoring actions to update the client code.
 Xing and Stroulia~\cite{xing2007api} proposed an approach that
 recognizes the changes of APIs by comparing the differences between two
 versions of libraries. Balaban \emph{et al.}~\cite{balaban2005refactoring} proposed
-an approach to translate client code when mapping relations of libraries are
+an approach to migrate client code when mapping relations of libraries are
 available. In contrast to these approaches, our approach focuses on
 mapping relations of APIs across different languages. In addition, since
 our approach uses ATGs to mine API mapping relations, our approach can also

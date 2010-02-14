@@ -81,7 +81,7 @@ sometimes fail to map some classes or methods (See Section~\ref{sec:discuss} for
 
 In the second step, MAM mines mapping relations of
 API classes. As mapping relations of API classes are used
-to translate variables in language migration, MAM mines mapping
+to migrate variables in language migration, MAM mines mapping
 relations of API classes based on how aligned client code declares
 variables such as fields of aligned classes, and parameters and local variables of aligned methods. For each aligned class pair $\Pair{c_1} {c_2}$, MAM analyzes each field pair $\Pair{f_1}{f_2}$ and considers
 $\Pair{f_1.type} {f_2.type}$ as a relation, if the similarity between $f_1.name$ and $f_2.name$ is
@@ -98,7 +98,7 @@ For the example shown in Figure~\ref{fig:clientcode}, MAM
 mines the mapping relation between \CodeIn{java.lang.String} and
 \CodeIn{System.String} based on the mapped parameters of Lines 7
 and 12. The mapping relation of API
-classes helps translate the variable declared in Line 1
+classes helps migrate the variable declared in Line 1
 (Figure~\ref{fig:challenge}) to the variable declared in Line 3
 (Figure~\ref{fig:challenge}).
 
@@ -390,7 +390,7 @@ parameters and receivers of mapped API methods. (3) The mapping relation
 describes the relation between returns of mapped API methods.
 The two mapped API methods in two different languages satisfying the
 preceding three criteria are replaceable in the client code.
-Therefore, these mapped API methods assist for translating client
+Therefore, these mapped API methods assist for migrating client
 code from one language to another.
 
 Algorithm 1 presents major steps of comparing ATGs for mining
