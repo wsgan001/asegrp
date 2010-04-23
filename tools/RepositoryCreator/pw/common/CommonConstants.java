@@ -69,8 +69,8 @@ public class CommonConstants {
 	 * Parameters for Google Code Downloader
 	 */
     //Parameter for tuning the number of threads. Modify this if more threads are required
-    public static int MAX_THREAD_CNT = 1;
-    public static int MAX_FILES_TO_DOWNLOAD = 5;
+    public static int MAX_THREAD_CNT = 20;
+    public static int MAX_FILES_TO_DOWNLOAD = 500;
 
     
     /**

@@ -1,19 +1,15 @@
 package pw.code.downloader;
 
-import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.InetSocketAddress;
 import java.net.MalformedURLException;
-import java.net.Proxy;
 import java.net.URL;
-import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -24,21 +20,21 @@ import org.xml.sax.SAXParseException;
 
 import pw.common.CommonConstants;
 
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlDivision;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.google.gdata.client.codesearch.CodeSearchService;
 import com.google.gdata.data.codesearch.CodeSearchEntry;
 import com.google.gdata.data.codesearch.CodeSearchFeed;
 import com.google.gdata.data.codesearch.Package;
 
-
-
-/**
- * Class that downloads the source files matching a given pattern
- * @author suresh_thummalapenta
- *
+/*
+ * Downloads source files from Google using HTMLUnit plugin
  */
-public class GCodeDownloader {
 
-	public static Logger logger = Logger.getLogger("GCodeDownloader");
+public class GCodeDownloaderHTMLUnit {
+
+public static Logger logger = Logger.getLogger("GCodeDownloader");
 	
 	String searchTerm, targetDir, language;
 	String relatedClsName = "";
@@ -56,11 +52,14 @@ public class GCodeDownloader {
     
     public int fileCnt = 0;
     public List<String> returningFileNameList = new ArrayList<String>();
-    Object lockObj = new Object();
+    Object lockObj = new Object(); 
     
+        
+    BufferedWriter bwPackageNamesWriter = null;
+    BufferedWriter bwURLNameWriter = null;
     private HashSet<String> alreadyDownloadedURLs = new HashSet<String>();
-    
-	public GCodeDownloader(String searchTerm, String targetDir, String language)
+	
+	public GCodeDownloaderHTMLUnit(String searchTerm, String targetDir, String language)
 	{
 		this.searchTerm = searchTerm.trim();
 		
@@ -73,25 +72,33 @@ public class GCodeDownloader {
 		}
 	
 		this.targetDir = targetDir;
-		relatedClsName = targetDir.substring(targetDir.lastIndexOf("/") + 1, targetDir.length());
+		this.relatedClsName = targetDir.substring(targetDir.lastIndexOf("/") + 1, targetDir.length());
 		this.language = language;
 		
 		codesearchService = new CodeSearchService("gdata-sample-codesearch");
 	}
-		
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		if(args.length == 0)
-		{
-			logger.info("Incorrect usage");
-			logger.info("Parameters needed <SearchTerm> <TargetDir> <Language>");
-			return;
-		}
-
-		new GCodeDownloader(args[0], args[1], args[2]).downLoadURLs(); 
-	}
+	
+	private String createURL() throws UnsupportedEncodingException {
+        String query = "";
+        query = URLEncoder.encode("lang:" + language + " " + searchTerm, "UTF-8");
+        //query = "lang:" + language + "&" + searchTerm;
+        String urlF = url + "?start-index=" + startIndex + "&q=" + query;
+        
+       	urlF += "&hl=en";
+       
+        return urlF;
+    }
+    
+    private String createURL(String packageName) throws UnsupportedEncodingException {
+        String query = "";
+        query = URLEncoder.encode("lang:" + language + " " + searchTerm, "UTF-8");
+        
+        //query = "lang:xml&" + searchTerm;
+        String urlF = url + "?start-index=1&q=" + query;
+       	urlF += "+package:%22" + packageName + "%22&as_pkgcrowd=n&sa=N&cd=3&ct=rm&hl=en";
+       
+        return urlF;
+    }
 	
 	/**
 	 * Download URLs work with multiple threads. This can be enhanced by distributing the job to threads and then
@@ -99,9 +106,7 @@ public class GCodeDownloader {
 	 * @return
 	 */
 	public List downLoadURLs()
-	{
-		//CommonConstants.MAX_THREAD_CNT = 1;
-		
+	{	
     	try
     	{
 	    	int threadCnt = 0, activeCount = 0;
@@ -147,23 +152,19 @@ public class GCodeDownloader {
 		    		{
 			            startIndex = startIndex + 10;
 			            if(startIndex > resultFeed.getTotalResults() || startIndex > CommonConstants.MAX_FILES_TO_DOWNLOAD)
-			            	break;
-			            
+			            	break;			            
 			            continue;
 		    		}
 		    	}
-		        entries = resultFeed.getEntries();
-		  	
-		    	Object cseObjArr[] = entries.toArray();
-	
+		        entries = resultFeed.getEntries();		  	
+		    	Object cseObjArr[] = entries.toArray();	
 		    	List<String> URLLinkList = new LinkedList<String>();
 		    	List<String> FileNameList = new LinkedList<String>();
 		    	for(int cnt = 0; cnt < cseObjArr.length; cnt ++)
 		    	{
 		    		if(cseObjArr[cnt] instanceof CodeSearchEntry)
 		    		{
-		    			CodeSearchEntry cseObj = (CodeSearchEntry)cseObjArr[cnt];
-		    			
+		    			CodeSearchEntry cseObj = (CodeSearchEntry)cseObjArr[cnt];		    			
 		    			if(CommonConstants.bUsePackageNames)
 		    			{	
 		    				//Extract the package name and check back to get additional files
@@ -202,8 +203,7 @@ public class GCodeDownloader {
 		    				addToLists(cseObj, URLLinkList, FileNameList, cseObj.getPackage().getName());
 		    			}	
 		    		}
-		    	}
-		    	
+		    	}	    	
 		    	
 		    	
 		    	Downloader dwnLoadObj = new Downloader(directoryName, URLLinkList, FileNameList);
@@ -218,7 +218,7 @@ public class GCodeDownloader {
     				try
     				{
     					
-    					dwnLoadThr[threadCnt % CommonConstants.MAX_THREAD_CNT].join(1000);
+    					dwnLoadThr[threadCnt % CommonConstants.MAX_THREAD_CNT].join();
     					dwnLoadThr[threadCnt % CommonConstants.MAX_THREAD_CNT] = null;
     					activeCount --;
     				}
@@ -233,7 +233,7 @@ public class GCodeDownloader {
 	            	break;
 	            
 	            retryCount++;
-		    }	
+		    }
 		    
 	    	//Just wait if any pending threads left before proceeding
 	    	for(int tcnt = 0; tcnt < CommonConstants.MAX_THREAD_CNT; tcnt ++)
@@ -245,8 +245,7 @@ public class GCodeDownloader {
 	    				dwnLoadThr[tcnt].join();
 	    			}
 	    			catch(InterruptedException e)
-	    			{
-	    				
+	    			{	    				
 	    			}
 	    		}
 	    	}
@@ -255,6 +254,7 @@ public class GCodeDownloader {
     	catch(Exception e)
     	{
     		logger.error("Error " + e);
+    		e.printStackTrace();
     		if(e instanceof SAXParseException)
     		{
     			SAXParseException spe = (SAXParseException) e;
@@ -270,8 +270,8 @@ public class GCodeDownloader {
     	return returningFileNameList;
 	}
 	
-	
-	private synchronized void addToLists(CodeSearchEntry cseObj, List<String> URLLinkList, List<String> localFileNameList, String objPackageName)
+	private synchronized void addToLists(CodeSearchEntry cseObj, List<String> URLLinkList, 
+			List<String> localFileNameList, String objPackageName)
 	{
 		String URLlink = cseObj.getHtmlLink().getHref();
 		
@@ -282,17 +282,12 @@ public class GCodeDownloader {
 		}
 		
 		try
-		{
-			alreadyDownloadedURLs.add(URLlink);
+		{  				    		
+			alreadyDownloadedURLs.add(URLlink);			
 			URLLinkList.add(URLlink);
-			
-			//if(bwPackageDetails != null)
-			//	bwPackageDetails.write(URLlink + "\n");
-			
 			//Getting the actual name of the file
 			int startPos = URLlink.lastIndexOf("/");
-			int endPos = URLlink.lastIndexOf(".");
-			
+			int endPos = URLlink.lastIndexOf(".");			
 			
 			String tempFilename = URLlink.substring(startPos + 1, endPos);
 			if(tempFilename.indexOf("=") != -1)
@@ -301,8 +296,7 @@ public class GCodeDownloader {
 				startPos = URLlink.lastIndexOf("=");
 			}
 			
-			String fileName = "";
-			
+			String fileName = "";			
 			fileName = fileCnt + "_" + URLlink.substring(startPos + 1, endPos);
 			String fileNameWithLang = fileName + "." + language;
 			returningFileNameList.add(fileNameWithLang);
@@ -315,43 +309,24 @@ public class GCodeDownloader {
 		}
 		catch(StringIndexOutOfBoundsException ex)
 		{
-			logger.error("IndexOutOfBounds : " + URLlink);
+			//logger.error("IndexOutOfBounds : " + URLlink);
+			String fileName = "";			
+			fileName = fileCnt + "";
+			String fileNameWithLang = fileName + "." + language;
+			returningFileNameList.add(fileNameWithLang);
+			localFileNameList.add(fileName);
+			fileCnt++;
 		}
 		catch(IOException ex)
 		{
 			logger.error("Exception " + ex);
 		}
 	}
-	
-    private String createURL() throws UnsupportedEncodingException {
-        String query = "";
-        query = URLEncoder.encode("lang:" + language + " " + searchTerm, "UTF-8");
-        //query = "lang:" + language + "&" + searchTerm;
-        String urlF = url + "?start-index=" + startIndex + "&q=" + query;
-        
-       	urlF += "&hl=en";
-       
-        return urlF;
-    }
     
-    private String createURL(String packageName) throws UnsupportedEncodingException {
-        String query = "";
-        query = URLEncoder.encode("lang:" + language + " " + searchTerm, "UTF-8");
-        
-        //query = "lang:xml&" + searchTerm;
-        String urlF = url + "?start-index=1&q=" + query;
-       	urlF += "+package:%22" + packageName + "%22&as_pkgcrowd=n&sa=N&cd=3&ct=rm&hl=en";
-       
-        return urlF;
-    }
-
-
-
     class Downloader implements Runnable 
     {
     	String URLlink, outFileName, directoryName;
-    	Object cseObjArr[];
-    	
+    	Object cseObjArr[];    	
     	List URLLinkList, FileNameList;
     	
     	public Downloader(String directoryName, Object cseObjArr[])
@@ -382,59 +357,77 @@ public class GCodeDownloader {
 			{
 	    		Iterator urlIt = URLLinkList.iterator();
 	    		Iterator fileIt = FileNameList.iterator();
+    		
 			    for(;urlIt.hasNext();)
 		    	{
 		    		try
 					{
 		    			URLlink = (String)urlIt.next();
 		    			String fileName = (String)fileIt.next();
-		    			outFileName = directoryName + "//" +  fileName +  ".html";	
-			    		URL url = new URL(URLlink);
-
-			    		URLConnection connection;
-			    		if(CommonConstants.bUseProxy == 0)
-						{	
-							connection = url.openConnection();
-						}
-						else
-						{
-							InetSocketAddress isa = new InetSocketAddress(CommonConstants.pHostname, CommonConstants.pPort);
-							Proxy prox = new Proxy(Proxy.Type.HTTP, isa);
-							connection = url.openConnection(prox);
-						}
-							
-						InputStream in = connection.getInputStream();
-						FileOutputStream fos = new FileOutputStream(new File(outFileName));
-						BufferedOutputStream bos = new BufferedOutputStream(fos);
-							
-						byte byteArr[] = new byte[1024];
-						int numRead;
-						long numWritten = 0;
-						
-						while ((numRead = in.read(byteArr)) != -1) {
-							bos.write(byteArr, 0, numRead);
-							numWritten += numRead;
-						}		    				
-						in.close();
-						bos.close();
-						
-						System.out.print(".");						
-					}
+		    			outFileName = directoryName + "//" +  fileName +  ".java";		    					    		
+		        		
+		    			WebClient webClient = new WebClient();		    			
+		                HtmlPage page = webClient.getPage(URLlink);
+		                
+		                //it is very important to wait
+		                int retValue = webClient.waitForBackgroundJavaScript(10000);
+		                if(retValue > 0)
+		                {
+		                	logger.warn("A javascript terminated prematurely!!!");
+		                }
+		                
+		                
+		                // DIV
+		                HtmlDivision div = (HtmlDivision) page
+		                                   .getByXPath("//html/body/div[2]/div[2]/div/div[4]/div/div[4]/div/div[1]/div/div/div/div/div[2]/div/div/div[2]")
+		                                   .get(0);
+		                                   
+		                String xmlContent = div.asXml();         
+		                		                
+		                BufferedWriter bw = new BufferedWriter(new FileWriter(outFileName));
+		                String[] xmlContentArr = xmlContent.split("\n");
+		                int contentlen = xmlContentArr.length;
+		                for(int cnt = 0; cnt < contentlen; cnt++)
+		                {
+		                	String tempStr = xmlContentArr[cnt].trim();
+		                	if(tempStr.startsWith("<"))
+		                		continue;              
+		                	tempStr = tempStr.replaceAll("&lt;", "<");
+		                	tempStr = tempStr.replaceAll("&gt;", ">");
+		                	tempStr = tempStr.replaceAll("&nbsp;", " ");
+		                	tempStr = tempStr.replaceAll("&quot;", "\"");
+		                	tempStr = tempStr.replaceAll("&amp;", "&");
+		                	tempStr = tempStr.replaceAll("&divide;", "/");
+		                	tempStr = tempStr.replaceAll("&ndash;", "-");
+		                	
+		                	bw.write(tempStr);
+		                	if(tempStr.contains(";") || tempStr.contains("//"))
+		                	{
+		                		bw.write("\n");
+		                	} 
+		                	else
+		                	{
+		                		bw.write(" ");
+		                	}		                	
+		                }		                		                
+		                bw.close();
+		            }
 					catch(MalformedURLException e)
 					{
 						logger.info("Exception occurred " + e);
 					}
-					catch(IOException e)
+					catch(Exception e)
 					{
 						logger.info("Exception occurred " + e);
 					}
-		    	}
-		
+					
+					System.out.print(".");
+		    	}		
 			}
     	    catch(Exception ex) {
-    			logger.error("Exception at global level " + ex);
+    			logger.error("Exception at global level " + ex.getMessage());
+    			ex.printStackTrace();
     		}
     	}
-    }
-    	
+    }	
 }

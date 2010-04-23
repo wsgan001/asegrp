@@ -4,7 +4,6 @@ import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -15,22 +14,21 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.TreeMap;
 
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.HtmlDivision;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.google.gdata.data.codesearch.CodeSearchFeed;
-import com.google.gdata.data.codesearch.CodeSearchEntry;
-import com.google.gdata.data.codesearch.Package;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXParseException;
+
 import pw.common.CommonConstants;
+
 import com.google.gdata.client.codesearch.CodeSearchService;
+import com.google.gdata.data.codesearch.CodeSearchEntry;
+import com.google.gdata.data.codesearch.CodeSearchFeed;
+import com.google.gdata.data.codesearch.Package;
+
 
 
 /**
@@ -38,7 +36,7 @@ import com.google.gdata.client.codesearch.CodeSearchService;
  * @author suresh_thummalapenta
  *
  */
-public class GCodeDownloader {
+public class GCodeDownloaderOld {
 
 	public static Logger logger = Logger.getLogger("GCodeDownloader");
 	
@@ -60,11 +58,9 @@ public class GCodeDownloader {
     public List<String> returningFileNameList = new ArrayList<String>();
     Object lockObj = new Object();
     
-    private HashSet<String> packagesToDownload = new HashSet<String>();   
-    int FILE_DOWNLOAD_LIMIT = 10 * 1024 * 1024;	//A limit of 5MB is used
-    private HashSet<String> downloadedURLLinks = new HashSet<String>();
-        
-	public GCodeDownloader(String searchTerm, String targetDir, String language)
+    private HashSet<String> alreadyDownloadedURLs = new HashSet<String>();
+    
+	public GCodeDownloaderOld(String searchTerm, String targetDir, String language)
 	{
 		this.searchTerm = searchTerm.trim();
 		
@@ -94,7 +90,7 @@ public class GCodeDownloader {
 			return;
 		}
 
-		new GCodeDownloader(args[0], args[1], args[2]).downLoadURLs(); 
+		new GCodeDownloaderOld(args[0], args[1], args[2]).downLoadURLs(); 
 	}
 	
 	/**
@@ -103,10 +99,14 @@ public class GCodeDownloader {
 	 * @return
 	 */
 	public List downLoadURLs()
-	{	
+	{
+		//CommonConstants.MAX_THREAD_CNT = 1;
+		
     	try
     	{
-	    	//Using multiple threads for download to gain performance.
+	    	int threadCnt = 0, activeCount = 0;
+	    	Thread dwnLoadThr[] = new Thread[CommonConstants.MAX_THREAD_CNT];
+			//Using multiple threads for download to gain performance.
 			String directoryName = targetDir;
 			
 			boolean success = (new File(directoryName)).mkdirs();
@@ -114,9 +114,6 @@ public class GCodeDownloader {
 		      logger.info("Directories: " + directoryName + " already present, Skipping downloading files for this class");	      
 		    }
 	    	
-		    bwPackageNamesWriter = new BufferedWriter(new FileWriter("Packages_Files.txt"));
-		    bwURLNameWriter = new BufferedWriter(new FileWriter("AllURLsList.txt"));
-		    
 		    int retryCount = 0;
 		    while(true)
 		    {
@@ -157,104 +154,118 @@ public class GCodeDownloader {
 		    	}
 		        entries = resultFeed.getEntries();
 		  	
-		    	Object cseObjArr[] = entries.toArray();	
+		    	Object cseObjArr[] = entries.toArray();
+	
+		    	List<String> URLLinkList = new LinkedList<String>();
+		    	List<String> FileNameList = new LinkedList<String>();
 		    	for(int cnt = 0; cnt < cseObjArr.length; cnt ++)
 		    	{
 		    		if(cseObjArr[cnt] instanceof CodeSearchEntry)
 		    		{
 		    			CodeSearchEntry cseObj = (CodeSearchEntry)cseObjArr[cnt];
 		    			
-	    				//Extract the package name and check back to get additional files
-	    				Package objPackage = cseObj.getPackage();
-		    			String urlOfPackage = objPackage.getUri();
-		    			URL feedUrlPackage = new URL(createURL(urlOfPackage));			    			
-		    			CodeSearchFeed resultFeedInternal = null;
+		    			String content = cseObj.getTextContent().getContent().getPlainText();
+		    			String htmllink = cseObj.getHtmlLink().getHref();
+		    			com.google.gdata.data.codesearch.File file = cseObj.getFile();
+		    			
+		    			
+		    			if(CommonConstants.bUsePackageNames)
+		    			{	
+		    				//Extract the package name and check back to get additional files
+		    				Package objPackage = cseObj.getPackage();
+			    			String urlOfPackage = objPackage.getUri();
+			    			URL feedUrlPackage = new URL(createURL(urlOfPackage));
 			    			
-		    			String packageURL = cseObj.getPackage().getUri();
-		    			if(!(packageURL.endsWith(".zip") || packageURL.endsWith(".gz") || packageURL.endsWith(".tar"))) {
-		    				continue;
-		    			}
-		    			
-		    			if(downloadedURLLinks.contains(packageURL)) {
-		    				continue;
-		    			}
-		    			downloadedURLLinks.add(packageURL);
-		    			
-		    			try
-				    	{
-				    		resultFeedInternal = codesearchService.getFeed(feedUrlPackage,CodeSearchFeed.class);
-				    	}
-				    	catch(Exception ex)
-				    	{
-				    		logger.debug("Exception with Google code search service with package name. Results need analysis: "  + searchTerm);
-				    		logger.debug(feedUrlPackage);
-				    	}    	
-				    	
-				    	List<CodeSearchEntry> sub_entries = resultFeedInternal.getEntries();					    	
-				    	if(sub_entries.size() == 0)
-				    	{
-				    		//String URLlink = cseObj.getHtmlLink().getHref();
-				    		//bwURLNameWriter.write(URLlink + "\n");
-				    		packageURL = cseObj.getPackage().getUri(); 
-			    			com.google.gdata.data.codesearch.File fObj = cseObj.getFile();
-			    			gatherZipFileEntries(packageURL, directoryName, fObj.getName());
-				    	}
-				    	else
-				    	{	
-					    	for(CodeSearchEntry subcseObj : sub_entries)
+			    			CodeSearchFeed resultFeedInternal = null;
+			    			
+			    			try
 					    	{
-					    		//String URLlink = subcseObj.getHtmlLink().getHref();
-					    		//bwURLNameWriter.write(URLlink + "\n");
-					    		packageURL = subcseObj.getPackage().getUri(); 
-				    			com.google.gdata.data.codesearch.File fObj = subcseObj.getFile();
-				    			gatherZipFileEntries(packageURL, directoryName, fObj.getName());
+					    		resultFeedInternal = codesearchService.getFeed(feedUrlPackage,CodeSearchFeed.class);
 					    	}
-				    	}	
-		    		}		    		
-		    	}		    	
+					    	catch(Exception ex)
+					    	{
+					    		logger.debug("Exception with Google code search service with package name. Results need analysis: "  + searchTerm);
+					    		logger.debug(feedUrlPackage);
+					    	}
+			    			
+					    	List<CodeSearchEntry> sub_entries = resultFeedInternal.getEntries();
+					    	
+					    	if(sub_entries.size() == 0)
+					    	{
+					    		addToLists(cseObj, URLLinkList, FileNameList, objPackage.getName());
+					    	}
+					    	else
+					    	{	
+						    	for(CodeSearchEntry subcseObj : sub_entries)
+						    	{
+						    		addToLists(subcseObj, URLLinkList, FileNameList, objPackage.getName());
+						    	}
+					    	}	
+		    			}
+		    			else
+		    			{	
+		    				addToLists(cseObj, URLLinkList, FileNameList, cseObj.getPackage().getName());
+		    			}	
+		    		}
+		    	}
+		    	
+		    	
+		    	
+		    	Downloader dwnLoadObj = new Downloader(directoryName, URLLinkList, FileNameList);
+		    	
+    			dwnLoadThr[threadCnt % CommonConstants.MAX_THREAD_CNT] = new Thread(dwnLoadObj);
+    			dwnLoadThr[threadCnt % CommonConstants.MAX_THREAD_CNT].start();
+    			++threadCnt;
+    			++activeCount;
+    			
+    			if(activeCount == CommonConstants.MAX_THREAD_CNT)
+    			{
+    				try
+    				{
+    					
+    					dwnLoadThr[threadCnt % CommonConstants.MAX_THREAD_CNT].join(1000);
+    					dwnLoadThr[threadCnt % CommonConstants.MAX_THREAD_CNT] = null;
+    					activeCount --;
+    				}
+    				catch(Exception e)
+    				{
+    					logger.info("Interrupted exception " + e);
+    				}
+    			}
 
 	            startIndex = startIndex + 10;
 	            if(startIndex > resultFeed.getTotalResults() || startIndex > CommonConstants.MAX_FILES_TO_DOWNLOAD)
 	            	break;
 	            
 	            retryCount++;
-		    }
+		    }	
 		    
-		    for(String key : downloadedPackages.keySet()) {
-		    	ZipFileStore zfsObj = downloadedPackages.get(key);
-		    	if(zfsObj == null || zfsObj.fileNameSet.size() == 0)
-		    		continue;
-		    	
-		    	for(String fileName : zfsObj.fileNameSet) {
-		    		bwPackageNamesWriter.write(key + "###" + fileName + "\n");
-		    	}		    	
-		    }		    
-			
-			bwPackageNamesWriter.close();
-			bwURLNameWriter.close();
-			
-			//All zip files are downloaded
-			downloadZipFiles(directoryName);
-			
-			//Extract the actual source filename from the zip file
-			for(String key : downloadedPackages.keySet()) {
-		    	ZipFileStore zfsObj = downloadedPackages.get(key);
-		    	if(zfsObj == null || zfsObj.fileNameSet.size() == 0)
-		    		continue;
-		    	
-		    	ZipFileHandler.extractCompressedFile(targetDir + "//" + zfsObj.shortZipEntry, zfsObj.fileNameSet, targetDir);
-		    }  
-		}
+	    	//Just wait if any pending threads left before proceeding
+	    	for(int tcnt = 0; tcnt < CommonConstants.MAX_THREAD_CNT; tcnt ++)
+	    	{
+	    		if(dwnLoadThr[tcnt] != null)
+	    		{
+	    			try
+	    			{
+	    				dwnLoadThr[tcnt].join();
+	    			}
+	    			catch(InterruptedException e)
+	    			{
+	    				
+	    			}
+	    		}
+	    	}
+
+    	}
     	catch(Exception e)
     	{
     		logger.error("Error " + e);
-    		e.printStackTrace();
     		if(e instanceof SAXParseException)
     		{
     			SAXParseException spe = (SAXParseException) e;
     			String err = spe.toString() +
-    		       "\n Line number: " + spe.getLineNumber() +
-    		       "\n Column number: " + spe.getColumnNumber()+
+    		       "\n  Line number: " + spe.getLineNumber() +
+    		       "\nColumn number: " + spe.getColumnNumber()+
     		       "\n Public ID: " + spe.getPublicId() +
     		       "\n System ID: " + spe.getSystemId() ;
     		    logger.info( err );
@@ -269,7 +280,7 @@ public class GCodeDownloader {
 	{
 		String URLlink = cseObj.getHtmlLink().getHref();
 		
-		if(packagesToDownload.contains(URLlink))
+		if(alreadyDownloadedURLs.contains(URLlink))
 		{
 			//File already downloaded
 			return;
@@ -277,7 +288,7 @@ public class GCodeDownloader {
 		
 		try
 		{
-			packagesToDownload.add(URLlink);
+			alreadyDownloadedURLs.add(URLlink);
 			URLLinkList.add(URLlink);
 			
 			//if(bwPackageDetails != null)
@@ -338,125 +349,8 @@ public class GCodeDownloader {
        
         return urlF;
     }
-    
-    
-    HashMap<String, ZipFileStore> downloadedPackages = new HashMap<String, ZipFileStore>();
-    BufferedWriter bwPackageNamesWriter = null;
-    BufferedWriter bwURLNameWriter = null;
 
-    public void gatherZipFileEntries(String urllink, String directoryName, String fileName)
-    {
-    	try {
-    		logger.debug("Gathering zip file entries for: " + urllink);   		
-    		
-    		//Get output filename from input filename
-			int lastIndex = urllink.lastIndexOf("/");
-			String zipFileName = urllink.substring(lastIndex + 1, urllink.length());
-			if(!(zipFileName.endsWith(".zip") || zipFileName.endsWith(".gz") || zipFileName.endsWith(".tar"))) {
-				return;
-			}
-			//End of getting output filename
-						
-			//Package already downloaded
-			ZipFileStore zfsObj = downloadedPackages.get(zipFileName);			
-			if(zfsObj == null) {
-				HashSet<String> fileNameSet = new HashSet<String>();
-				zfsObj = new ZipFileStore(urllink, zipFileName, fileNameSet); 
-				fileNameSet.add(fileName);
-				downloadedPackages.put(zipFileName, zfsObj);
-			} else {
-				zfsObj.fileNameSet.add(fileName);
-			}
-			System.out.print(".");
-    	} catch(Exception ex) {
-    		ex.printStackTrace();
-    	}
-    }
-   
-    public void downloadZipFiles(String directoryName)
-    {
-    	try {    		
-    		TreeMap<String, ZipFileStore> tmapObj = new TreeMap<String, ZipFileStore>();
-    		
-    		for(String key : downloadedPackages.keySet()) {
-		    	ZipFileStore zfsObj = downloadedPackages.get(key);
-		    	if(zfsObj == null || zfsObj.fileNameSet.size() == 0)
-		    		continue;
-		    	tmapObj.put(key, zfsObj);
-		    }    		
-    		
-    		//Download top 25 zip files now
-    		int downloadCnt = 0;
-    		for(String key : tmapObj.keySet()) {    			
-    			try {
-	    			if(downloadCnt > CommonConstants.NUM_PROJECTS_TO_DOWNLOAD) {
-	    				break;
-	    			}
-	    			
-	    			downloadCnt++;
-	    			ZipFileStore zfsObj = downloadedPackages.get(key);
-	    			if(zfsObj == null)
-	    				continue;
-	    			
-	    			//Check whether the file is already existing. useful when the process is
-	    			//killed in the middle and re-started again
-	    			File fObj = new File(directoryName + "//" + zfsObj.shortZipEntry);
-	    			if(fObj.exists()) {
-	    				logger.debug("Skipping download of " + fObj.getName() + ", which is already existing!!!");
-	    				continue;
-	    			}
-    				    			    			
-	    			URL url = new URL(zfsObj.urlLink);
-	    			URLConnection connection;
-	    			if(CommonConstants.bUseProxy == 0)
-	    			{	
-	    				connection = url.openConnection();
-	    			}
-					else
-					{
-						InetSocketAddress isa = new InetSocketAddress(CommonConstants.pHostname, CommonConstants.pPort);
-						Proxy prox = new Proxy(Proxy.Type.HTTP, isa);
-						connection = url.openConnection(prox);
-					}
-						
-					connection.connect();
-					//If the file size is greater than 5MB, skip downloading the file
-					if(connection.getContentLength() >  FILE_DOWNLOAD_LIMIT)  {
-						logger.debug("Skipping file of size " + connection.getContentLength() + ":" + zfsObj.shortZipEntry);
-						continue;
-					}					
-							
-					InputStream in = connection.getInputStream();
-					if(in.available() > FILE_DOWNLOAD_LIMIT) {
-						in.close();
-						logger.debug("Skipping file of size " + in.available());
-						continue;
-					}
-					
-					logger.debug("Downloading file: " + zfsObj.shortZipEntry);
-					
-					FileOutputStream fos = new FileOutputStream(new File(directoryName + "//" + zfsObj.shortZipEntry));
-					BufferedOutputStream bos = new BufferedOutputStream(fos);				
-					byte byteArr[] = new byte[1024];
-					int numRead;
-					long numWritten = 0;			
-					while ((numRead = in.read(byteArr)) != -1) {
-						bos.write(byteArr, 0, numRead);
-						numWritten += numRead;
-					}		    				
-					in.close();
-					bos.close();
-					System.out.print(".");
-    			} catch(Exception ex) {	
-    				logger.warn(ex.getMessage());
-    				ex.printStackTrace();
-    			}
-    		}		
-    	} catch(Exception ex) {
-    		logger.warn(ex.getMessage());
-    		ex.printStackTrace();
-    	}
-    }
+
 
     class Downloader implements Runnable 
     {
@@ -496,7 +390,7 @@ public class GCodeDownloader {
 			    for(;urlIt.hasNext();)
 		    	{
 		    		try
-					{    			
+					{
 		    			URLlink = (String)urlIt.next();
 		    			String fileName = (String)fileIt.next();
 		    			outFileName = directoryName + "//" +  fileName +  ".html";	
@@ -527,7 +421,8 @@ public class GCodeDownloader {
 							numWritten += numRead;
 						}		    				
 						in.close();
-						bos.close();						
+						bos.close();
+						
 						System.out.print(".");						
 					}
 					catch(MalformedURLException e)
@@ -545,5 +440,6 @@ public class GCodeDownloader {
     			logger.error("Exception at global level " + ex);
     		}
     	}
-    }    	
+    }
+    	
 }

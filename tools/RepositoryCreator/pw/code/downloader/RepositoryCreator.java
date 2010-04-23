@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
-import pw.code.downloader.GCodeDownloader;
+import pw.code.downloader.GCodeDownloaderOld;
 import pw.common.CommonConstants;
 
 public class RepositoryCreator {
@@ -33,30 +33,14 @@ public class RepositoryCreator {
 				loc_dir = loc_dir.replace(".", "_");
 				
 				@SuppressWarnings("unused")
-				GCodeDownloader gdc =new GCodeDownloader(input + " " + input, loc_dir, language); 
+				GCodeDownloaderHTMLUnit gdc =new GCodeDownloaderHTMLUnit(input, loc_dir, language); 
 				gdc.downLoadURLs();
-				
-				try
-				{
-					//@SuppressWarnings("unused")
-					//Runtime javaRuntime = Runtime.getRuntime();
-					//@SuppressWarnings("unused")
-					//String cmdToExec = "perl  " + CommonConstants.baseDirectoryName + CommonConstants.FILE_SEP + perlFileName + " " + language + " " + loc_dir + "";
-				
-					//Process perlProcess = javaRuntime.exec(cmdToExec);
-					//perlProcess.waitFor();  //NOTE: This method hangs if the process initiated produce any console output and it is not consumed
-				}
-				catch(Exception ex)
-				{
-					logger.error("Error in executing perl process. Please check your Perl installation!!!" + ex);
-				}
 			}
 		}
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
-		}
-		
+		}		
 	}
 	
 	/**
@@ -83,7 +67,7 @@ public class RepositoryCreator {
 			
 		try
 		{
-			GCodeDownloader.bwPackageDetails = new BufferedWriter(new FileWriter("PackageMappings.csv" + System.currentTimeMillis())); 
+			GCodeDownloaderOld.bwPackageDetails = new BufferedWriter(new FileWriter("PackageMappings.csv" + System.currentTimeMillis())); 
 			
 			Scanner inpScan = new Scanner(new File(args[0]));			
 			while(inpScan.hasNextLine())
@@ -112,7 +96,7 @@ public class RepositoryCreator {
 			logger.info("TIMING: Start time of the download " + System.currentTimeMillis());
 			new RepositoryCreator().createLocalRepos(args[1], args[2]);
 			logger.info("TIMING: End time of the download " + System.currentTimeMillis());
-			GCodeDownloader.bwPackageDetails.close();
+			GCodeDownloaderOld.bwPackageDetails.close();
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
