@@ -162,13 +162,7 @@ public class GCodeDownloaderOld {
 		    	{
 		    		if(cseObjArr[cnt] instanceof CodeSearchEntry)
 		    		{
-		    			CodeSearchEntry cseObj = (CodeSearchEntry)cseObjArr[cnt];
-		    			
-		    			String content = cseObj.getTextContent().getContent().getPlainText();
-		    			String htmllink = cseObj.getHtmlLink().getHref();
-		    			com.google.gdata.data.codesearch.File file = cseObj.getFile();
-		    			
-		    			
+		    			CodeSearchEntry cseObj = (CodeSearchEntry)cseObjArr[cnt];    				    			
 		    			if(CommonConstants.bUsePackageNames)
 		    			{	
 		    				//Extract the package name and check back to get additional files
