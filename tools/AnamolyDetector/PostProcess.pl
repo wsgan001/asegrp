@@ -39,7 +39,7 @@ print "Processing: ".$input_filename."\n";
 while ($line = <INPUT>) {
 	
 	#Each line is of the format: 12.70777.0 12.70778.0 12.70779.1
-	chop($line);
+	chomp($line);
 	chomp($line);
 	@parts = split(" ", $line);
 	$numParts = @parts;
@@ -112,8 +112,8 @@ close INPUT;
 @sortedFreqItemSets = ();
 $totalFrequency = 0;
 foreach $freqElem (@freqItemsets) {
-	chop($freqElem);
-	chop($freqElem);
+	chomp($freqElem);
+	chomp($freqElem);
 	if($MINER_TYPE == 1) {
 		#Each entry is of the form "14 13 3 1 2 : 1"
 		@parts = split(" : ", $freqElem);	

@@ -1,0 +1,36 @@
+
+**********************
+MethodInvocation : java.util.Iterator:next() (1) 
+
+Count 0  1.java,validate
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 1  1.java,validate
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 2  6.java,somethingStrangeHappened
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 3  8.java,addPackage
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 4  8.java,deletePackage
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+Count 5  8.java,listAllPackages
+Before:
+	java.util.Iterator,hasNext()#RETURN_PATTERNS#TRUE_FALSE_CHECK#(1)
+
+After:
+
+**********************

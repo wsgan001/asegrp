@@ -141,7 +141,7 @@ public class CommonConstants {
 	static public final int DETECT_BUGS_IN_CODESAMPLES = 1;
 	static public final int DETECT_BUGS_IN_LIBRARY = 2;
 	static public int OPERATION_MODE = MINE_PATTERNS;
-	static public int userConfiguredMode = 2;
+	static public int userConfiguredMode = 1;
 	static public String inputPatternFile = "";
 	
 	//Threshold values

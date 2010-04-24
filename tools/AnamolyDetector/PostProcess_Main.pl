@@ -24,7 +24,7 @@ $glob_ImbalancedPattern = 0;
 
 open(METHODIDS, "<AssocMethodIds.txt");
 while($line = <METHODIDS>) {
-	chop($line);
+	chomp($line);
 	#Each line is of the format "5 : java.sql.PreparedStatement:close():void"
 	if($line =~ /([^ ]+)( : )(.*)$/) {
 		$keyElem = $1;	
@@ -54,7 +54,7 @@ while($line = <METHODIDS>) {
 
 		open(SUBMETHODIDS, "<AssocMiner_IDs/$keyElem.txt");		
 		while($innerM = <SUBMETHODIDS>) {			
-			chop($innerM);
+			chomp($innerM);
 			chomp($innerM);
 			if($innerM  =~ /([^ ]+)( : )(.*)$/) {
 				$assocMethodName_temp = $3;
@@ -106,7 +106,7 @@ sub postProcess
 			next;
 		}
 
-		chop($pattern);		
+		chomp($pattern);		
 		@parts = split(" : ", $pattern);
 		@allElemArr = split(" ", $parts[0]);
 
@@ -128,7 +128,7 @@ sub postProcess
 				$before_after = $5;
 				
 				$t_mname = $assocMethodIdMapper{$MIId}{$SubMIId}{"mname"};
-				chop($t_mname); #UNIX
+				chomp($t_mname); #UNIX
 
 				if($t_mname eq "DUMMY_MINING_ENTR" || $t_mname eq "DUMMY_MINING_ENTRY") {
 					$bDummyMethodInvocation = 1;
@@ -155,7 +155,7 @@ sub postProcess
 
 		#Printing to consolidated output mainly to compare with previous results
 		$t_name = $assocMethodIdMapper{$keyElem}{"mname"};
-		chop($t_name); #UNIX
+		chomp($t_name); #UNIX
 		$t_name =~ s/,/:/g;
 		$endPrintStr = $keyElem.",".$t_name.",".$before_after.","."0".",".$totalStringOutput.",".$globalTransactionCount.",".$mainPatternSupport.",0,".$supportForSortingPurpose."\n";
 		$endPrintStr =~ s/\#MULTICURRTYPES\#/MULTICURRTYPES/g;
@@ -285,7 +285,7 @@ sub postProcess
 						$SubMIId = $3;	
 						$before_after = $5;
 						$t_name = $assocMethodIdMapper{$MIId}{$SubMIId}{"mname"};
-						chop($t_name);	#UNIX
+						chomp($t_name);	#UNIX
 
 						$t_name =~ s/,/:/g;
 						print FINALOUTPUT "\t\t(".$glob_pat_elem.") ".$t_name."\n";
@@ -295,7 +295,7 @@ sub postProcess
 
 				#Printing to total output from here
 				$t_name = $assocMethodIdMapper{$keyElem}{"mname"};
-				chop($t_name);	  #UNIX
+				chomp($t_name);	  #UNIX
 				$t_name =~ s/,/:/g;
 				$endPrintStr = $keyElem.",".$t_name.",".$before_after.","."1,".$totalStringOutput.",".$globalTransactionCount.",".$globalSupport_negPattern.",".$absoluteSupport.",".$supportForSortingPurpose."\n";
 				$endPrintStr =~ s/\#MULTICURRTYPES\#/MULTICURRTYPES/g;

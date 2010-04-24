@@ -100,7 +100,7 @@ public class ParseSrcFiles {
 	                    		ASTParser parser= ASTParser.newParser(AST.JLS3);
 	                    		parser.setProject(ires);
 	                    		parser.setResolveBindings(true);
-	                    		parser.setStatementsRecovery(true);
+	                    		//parser.setStatementsRecovery(true);
 
 	                    		parser.setSource(icu);
 	                    		CompilationUnit cu_java = (CompilationUnit) parser.createAST(null);
@@ -173,7 +173,7 @@ public class ParseSrcFiles {
 					
 					parser.setSource(source);
 					parser.setResolveBindings(true);
-					parser.setStatementsRecovery(true);
+					//parser.setStatementsRecovery(true);
 
 					CompilationUnit root = (CompilationUnit) parser.createAST(null);
 					

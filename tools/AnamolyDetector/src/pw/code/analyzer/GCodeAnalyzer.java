@@ -149,7 +149,7 @@ public class GCodeAnalyzer {
 				
 		        ASTParser parser= ASTParser.newParser(AST.JLS3);
 				parser.setResolveBindings(true);
-				parser.setStatementsRecovery(true);
+				//parser.setStatementsRecovery(true);
 				parser.setSource(source);
 				parser.setProject(RepositoryAnalyzer.getInstance().getLibProject());			
 				
@@ -218,7 +218,7 @@ public class GCodeAnalyzer {
 	                    		ASTParser parser= ASTParser.newParser(AST.JLS3);
 	                    		parser.setProject(libProject);
 	                    		parser.setResolveBindings(true);
-	                    		parser.setStatementsRecovery(true);
+	                    		//parser.setStatementsRecovery(true);
 
 	                    		parser.setSource(icu);
 	                    		CompilationUnit cu_java = (CompilationUnit) parser.createAST(null);
