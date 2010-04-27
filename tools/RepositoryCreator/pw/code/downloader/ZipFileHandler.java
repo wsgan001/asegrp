@@ -91,7 +91,7 @@ public class ZipFileHandler {
 			ioex.printStackTrace();
 		} catch(Exception ex) {
 			ex.printStackTrace();
-		}		
+		}
 	}
 	
 	public static void extractSpecificFile(InputStream inpStream, String outputFile)

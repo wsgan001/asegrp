@@ -142,6 +142,8 @@ public static Logger logger = Logger.getLogger("GCodeDownloader");
 		    		logger.debug("Exception with Google code search service. Results need analysis: "  + searchTerm);
 		    		logger.debug(feedUrl);
 		    		
+		    		Thread.sleep(20000);
+		    		
 		    		//Try again in case of exceptions
 		    		if(retryCount == 0 || retryCount == 1)
 		    		{
@@ -357,6 +359,8 @@ public static Logger logger = Logger.getLogger("GCodeDownloader");
 			{
 	    		Iterator urlIt = URLLinkList.iterator();
 	    		Iterator fileIt = FileNameList.iterator();
+	    		
+	    		int count = 0;
     		
 			    for(;urlIt.hasNext();)
 		    	{
@@ -411,6 +415,7 @@ public static Logger logger = Logger.getLogger("GCodeDownloader");
 		                	}		                	
 		                }		                		                
 		                bw.close();
+		                
 		            }
 					catch(MalformedURLException e)
 					{
@@ -422,6 +427,12 @@ public static Logger logger = Logger.getLogger("GCodeDownloader");
 					}
 					
 					System.out.print(".");
+					count++;	                
+	                if(count == 20)
+	                {
+	                	count = 0;
+	                	Thread.sleep(20000);
+	                }
 		    	}		
 			}
     	    catch(Exception ex) {
