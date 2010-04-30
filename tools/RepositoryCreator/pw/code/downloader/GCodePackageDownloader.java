@@ -95,6 +95,7 @@ public class GCodePackageDownloader {
 		    while(true)
 		    {
 		    	System.out.print(".");
+		    	Thread.sleep(20000);
 		    	feedUrl = new URL(createURL());
 
 		    	if(CommonConstants.bUseProxy == 1)
@@ -115,7 +116,7 @@ public class GCodePackageDownloader {
 		    		logger.error("Exception with Google code search service. Results need analysis: "  + searchTerm);
 		    		logger.error(feedUrl);
 		    		
-		    		Thread.sleep(60000);
+		    		Thread.sleep(150000);
 		    		
 		    		//Try again in case of exceptions
 		    		if(retryCount == 0 || retryCount == 1)
