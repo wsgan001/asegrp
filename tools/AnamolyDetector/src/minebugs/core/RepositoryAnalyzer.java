@@ -111,59 +111,59 @@ public class RepositoryAnalyzer {
 				gdc.analyze(parentDir,"","",false);
 			} else {
 				//Code related to Association rule miner data collection
-				if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS && CommonConstants.B_COLLECT_MINER_DATA) {
+				if((CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES || 
+						CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_LIBRARY)  
+						&& CommonConstants.B_COLLECT_MINER_DATA) {
 					bwAssocMiner = new BufferedWriter(new FileWriter("AssocMinerData.txt"));
-					bwAssocMethodIDs = new BufferedWriter(new FileWriter("AssocMethodIds.txt"));
-					
+					bwAssocMethodIDs = new BufferedWriter(new FileWriter("AssocMethodIds.txt"));					
 					//Creating required dummy directories
 					(new File("AssocMiner_Data")).mkdirs();
 					(new File("AssocMiner_IDs")).mkdirs();
 				}			
 				
-		        File inputFile = new File(parentDir);
-		        String[] candidates = inputFile.list();
-		        for (String file : candidates) {
-		        	File fcand = new File(parentDir + CommonConstants.FILE_SEP + file);
-		        	if (!fcand.isDirectory()) {
-		        		logger.debug("ERROR: Only directories can exist in Parent directory");
-		        		continue;
-		        	}
-		        	
-		        	logger.warn("Analyzing directory " + file);
-		        	
-		        	currentLibClass = file.replace("_", ".");
-		        	gdc.analyze(parentDir + CommonConstants.FILE_SEP + file, currentLibClass, "", false);
-		        			        	
-		        	//A new directory indicates a new object and whole new parsing. 
-		        	//Therefore all caches related to these code samples must be cleared 
-		        	visitedCodeSamples.clear();
-		        	
-			    	ExternalObject eeObj = externalObjects.get(currentLibClass);
-			    	if(eeObj != null) {
-			    		for(MethodInvocationHolder eeMIH : eeObj.getMiList()) { 
-			    			if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS && CommonConstants.B_COLLECT_MINER_DATA) {
-			    				emitToAssocFile(eeMIH);
-			    			}	
-			    			eeMIH.clearStorageElements();
-			    		}	
-			    	} else {
-			    		logger.error("Problem!!! Check this out");
-			    	}
-			    	
-			    	MethodInvocationHolder.MINER_ID_GEN = 0;   	       	
-				}
+				switch(CommonConstants.OPERATION_MODE)
+				{
+					case CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES:
+						File inputFile = new File(parentDir);
+				        String[] candidates = inputFile.list();
+				        for (String file : candidates) {
+				        	File fcand = new File(parentDir + CommonConstants.FILE_SEP + file);
+				        	if (!fcand.isDirectory()) {
+				        		logger.debug("ERROR: Only directories can exist in Parent directory");
+				        		continue;
+				        	}
+				        	
+				        	logger.warn("Analyzing directory " + file);
+				        	
+				        	currentLibClass = file.replace("_", ".");
+				        	gdc.analyze(parentDir + CommonConstants.FILE_SEP + file, currentLibClass, "", false);
+				        			        	
+				        	//A new directory indicates a new object and whole new parsing. 
+				        	//Therefore all caches related to these code samples must be cleared 
+				        	visitedCodeSamples.clear();
+				        	
+					    	this.emitExternalObjectDetails();			    	
+					    	MethodInvocationHolder.MINER_ID_GEN = 0;   	       	
+						}
+						break;
+					case CommonConstants.MINE_PATTERNS_FROM_LIBRARY:
+						
+						break;
+					default:
+						logger.error("Invalid option for operation mode!!!");			
+				}		
 			} 
 					
 			gdc.clearAstc();			
 	        
-			if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS && CommonConstants.B_COLLECT_MINER_DATA) {
+			if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES && CommonConstants.B_COLLECT_MINER_DATA) {
 				bwAssocMiner.close();
 				bwAssocMethodIDs.close();
 			}		
 			
 	        //The second section depends on the mode of operation
 	        switch(CommonConstants.OPERATION_MODE) {
-	        case CommonConstants.MINE_PATTERNS:
+	        case CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES:
 	        	//minePatterns(); break;	//Deprecated: Mining is done externally using another algorithm
 	        case CommonConstants.DETECT_BUGS_IN_CODESAMPLES:
 	        case CommonConstants.DETECT_BUGS_IN_LIBRARY:	
@@ -175,6 +175,20 @@ public class RepositoryAnalyzer {
 		}
 		catch(Exception ex) {
 			ex.printStackTrace();
+		}
+	}
+
+	private void emitExternalObjectDetails() {
+		ExternalObject eeObj = externalObjects.get(currentLibClass);
+		if(eeObj != null) {
+			for(MethodInvocationHolder eeMIH : eeObj.getMiList()) { 
+				if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES && CommonConstants.B_COLLECT_MINER_DATA) {
+					emitToAssocFile(eeMIH);
+				}	
+				eeMIH.clearStorageElements();
+			}	
+		} else {
+			logger.error("Problem!!! Check this out");
 		}
 	}
 	

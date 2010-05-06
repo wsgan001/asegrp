@@ -4,6 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashSet;
 import java.util.Properties;
+import java.util.logging.LogManager;
+
+import org.apache.log4j.Logger;
+
 
 public class CommonConstants {
 
@@ -17,7 +21,8 @@ public class CommonConstants {
 	 */
 	public static boolean bAlternateMethodArgumentSeq = true;
 	
-	public static String baseDirectoryName = System.getenv("PARSEWeb_Path");
+	public static String baseDirectoryName = System.getenv("ALATTIN_PATH");
+	public static Logger logger = Logger.getLogger("CommonConstants");
 	
 	public static boolean bStartAction = false;	
 	public static final String FILE_SEP = "/";
@@ -137,10 +142,11 @@ public class CommonConstants {
 	static public final int SUCCEEDING_RECEIVER_PATTERNS = 6;	//A case where receiver variable is passed to a method invocation for conditional checks
 	
 	//A mode for deciding type of process to be conducted.
-	static public final int MINE_PATTERNS = 0;
-	static public final int DETECT_BUGS_IN_CODESAMPLES = 1;
-	static public final int DETECT_BUGS_IN_LIBRARY = 2;
-	static public int OPERATION_MODE = MINE_PATTERNS;
+	static public final int MINE_PATTERNS_FROM_CODESAMPLES = 0;
+	static public final int MINE_PATTERNS_FROM_LIBRARY = 1;
+	static public final int DETECT_BUGS_IN_CODESAMPLES = 2;
+	static public final int DETECT_BUGS_IN_LIBRARY = 3;
+	static public int OPERATION_MODE = MINE_PATTERNS_FROM_CODESAMPLES;
 	static public int userConfiguredMode = 1;
 	static public String inputPatternFile = "";
 	
@@ -191,7 +197,7 @@ public class CommonConstants {
     	//In that case the default values will be overridden
     	try
     	{
-	    	File propertyfile = new File (baseDirectoryName + FILE_SEP + "PARSEWeb.properties");
+	    	File propertyfile = new File (baseDirectoryName + FILE_SEP + "AlattinProperties.txt");
 	    	if(propertyfile != null)
 	    	{
 				FileInputStream fIStream = new FileInputStream (propertyfile);
@@ -252,10 +258,15 @@ public class CommonConstants {
 					BUG_DETECTION_MODE = Integer.parseInt(props.getProperty("BugDetectionMode"));
 				}
 	    	}
+	    	else
+	    	{
+	    		System.err.println("Properties file missing!!!");
+	    		logger.error("Properties file AlattinProperties.txt missing!!!");
+	    	}
     	}
     	catch(Exception ex)
     	{
-    		
+    		ex.printStackTrace();
     	}
     }
     

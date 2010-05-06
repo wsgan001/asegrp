@@ -47,7 +47,7 @@ public class AnamolyDetector implements IObjectActionDelegate {
 	static String localPackageDataFile = "";
 	
 
-    private String codesamples_dir = System.getenv("MINEBUGS_PATH");
+    private String codesamples_dir = System.getenv("ALATTIN_PATH");
 	
 	/**
 	 * Constructor for Action1.
@@ -160,7 +160,7 @@ public class AnamolyDetector implements IObjectActionDelegate {
 		    		/*End of Debug Section*/
 		    		
 		    		//User can set the operation mode to mine patterns or detect defects
-		    		if(CommonConstants.userConfiguredMode == CommonConstants.MINE_PATTERNS) {
+		    		if(CommonConstants.userConfiguredMode == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES) {
 		    			startProcess(codesamples_dir_local);
 		    		} else {
 		    			detectDefects("", CommonConstants.inputPatternFile);
@@ -187,7 +187,7 @@ public class AnamolyDetector implements IObjectActionDelegate {
 		//Common initialization stuff
 		RepositoryAnalyzer.numDownloadedCodeSamples = 0;
 		RepositoryAnalyzer.numAnalyzedCodeSamples = 0;
-		CommonConstants.OPERATION_MODE = CommonConstants.MINE_PATTERNS;
+		CommonConstants.OPERATION_MODE = CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES;
 		GCodeDownloader.bwPackageDetails = new BufferedWriter(new FileWriter("PackageMappings.csv")); 
 		RepositoryAnalyzer.resetMIIdGen();
 		loadPackageInfoToMemory();
@@ -212,19 +212,19 @@ public class AnamolyDetector implements IObjectActionDelegate {
 		logger.warn("TIMING: End of finding violations: " + System.currentTimeMillis());*/
 				
 		//Freeing the memory and post processing conditions
-		CommonConstants.OPERATION_MODE = CommonConstants.MINE_PATTERNS;
+		CommonConstants.OPERATION_MODE = CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES;
 		RepositoryAnalyzer.clearInstance();
 		GCodeDownloader.bwPackageDetails.close();
 		GCodeDownloader.bwPackageDetails = null;
 		localPackageDataFile = "";
 	}
 	
-	public static void detectDefects(String codesamples_dir_local, String inpPatternFile) throws IOException
+	public static void detectDefects(String codesamples_dir_local, String inpPatternFile) throws IOException, Exception
 	{
 		//Common initialization stuff
 		RepositoryAnalyzer.numDownloadedCodeSamples = 0;
 		RepositoryAnalyzer.numAnalyzedCodeSamples = 0;
-		CommonConstants.OPERATION_MODE = CommonConstants.MINE_PATTERNS;
+		CommonConstants.OPERATION_MODE = CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES;
 		GCodeDownloader.bwPackageDetails = new BufferedWriter(new FileWriter("PackageMappings.csv")); 
 		RepositoryAnalyzer.resetMIIdGen();
 		loadPackageInfoToMemory();
@@ -270,21 +270,30 @@ public class AnamolyDetector implements IObjectActionDelegate {
 			String[] conditionChkArr = actualPatternPart.split("&&");			
 			Set<Holder> prePath = new HashSet<Holder>();
 			Set<Holder> postPath = new HashSet<Holder>();
-			for(String conditionChk : conditionChkArr) {				
-				//Extracting the position (before or after) from the pattern
-				int lastOpenBrace = conditionChk.lastIndexOf("(");
-				int lastCloseBrace = conditionChk.lastIndexOf(")");
-				String positionStr = conditionChk.substring(lastOpenBrace + 1, lastCloseBrace);
-				int positionOfPattern = Integer.parseInt(positionStr);				
-				
-				conditionChk = conditionChk.substring(0, lastOpenBrace);
-				
-				CondVarHolder_Typeholder cvh_thObj = CondVarHolder_Typeholder.parseFromString(conditionChk);				
-				if(positionOfPattern == 0) {
-					prePath.add(cvh_thObj);
-				} else {
-					postPath.add(cvh_thObj);
+			try
+			{
+				for(String conditionChk : conditionChkArr) {				
+					//Extracting the position (before or after) from the pattern
+					int lastOpenBrace = conditionChk.lastIndexOf("(");
+					int lastCloseBrace = conditionChk.lastIndexOf(")");
+					String positionStr = conditionChk.substring(lastOpenBrace + 1, lastCloseBrace);
+					int positionOfPattern = Integer.parseInt(positionStr);				
+					
+					conditionChk = conditionChk.substring(0, lastOpenBrace);
+					
+					CondVarHolder_Typeholder cvh_thObj = CondVarHolder_Typeholder.parseFromString(conditionChk);				
+					if(positionOfPattern == 0) {
+						prePath.add(cvh_thObj);
+					} else {
+						postPath.add(cvh_thObj);
+					}
 				}
+			}
+			catch(Exception ex)
+			{
+				ex.printStackTrace();	
+				System.out.println(inpPattern);
+				throw ex;
 			}
 			
 			//Read the entire pattern from the input file. Load the pattern into MethodinvocationHolder
@@ -307,8 +316,7 @@ public class AnamolyDetector implements IObjectActionDelegate {
 			pppHObj.globalSupport = globalSupport;
 			pppHObj.localSupport = localSupport;			
 			eeMIH.addToPrePostList(pppHObj);		
-		}
-		
+		}		
 		
 		//Classifying the patterns into three categories: Mainly for collecting statistics
 		//SingleCheck, Balanced, Imbalanced... Also computing the support value for sorting

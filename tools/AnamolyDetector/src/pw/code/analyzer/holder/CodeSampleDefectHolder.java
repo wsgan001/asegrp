@@ -29,8 +29,7 @@ public class CodeSampleDefectHolder implements Comparator{
 		this.methodName = methodName;
 		this.violatedAPI = violatedAPI;
 		this.violatedPattern = violatedPattern;
-		this.violatedHolderObj = violatedHolderObj;
-		
+		this.violatedHolderObj = violatedHolderObj;		
 		this.support = this.violatedPattern.globalSupport;
 		this.balanced = this.violatedPattern.balanced;
 	}

@@ -32,7 +32,7 @@ public class APIAnalyzer {
 		RepositoryAnalyzer raObj = RepositoryAnalyzer.getInstance();
 		try
 		{
-    		CommonConstants.OPERATION_MODE = CommonConstants.MINE_PATTERNS;
+    		CommonConstants.OPERATION_MODE = CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES;
     		RepositoryAnalyzer.resetMIIdGen();
 
 			Scanner inpScan = new Scanner(new File(fileName));
@@ -77,9 +77,9 @@ public class APIAnalyzer {
 			System.err.println("Usage: RepositoryCreater <APIList> <DirLocation> <PackageFlag> <OptionalLocalPackageInfoFile> <OperationMode> <PatternsFile> <DetectionMode>");
 			System.err.println("OperationMode 0 : Mine Patterns");
 			System.err.println("OperationMode 1 : Detect Defects");
-			System.err.println("DetectionMode 0 : Ignore Balanced Patterns/Treat each pattern of MIH inidividually");
-			System.err.println("DetectionMode 1 : Ignore Balanced Patterns/Treat all patterns of MIH together");
-			System.err.println("DetectionMode 2 : Consider Balanced Patterns and Treat all patterns of MIH together");
+			System.err.println("DetectionMode 0 : Ignore ImBalanced Patterns/Treat each pattern of MIH inidividually");
+			System.err.println("DetectionMode 1 : Ignore ImBalanced Patterns/Treat all patterns of MIH together");
+			System.err.println("DetectionMode 2 : Consider ImBalanced Patterns and Treat all patterns of MIH together");
 			System.exit(1);
 		}
 		

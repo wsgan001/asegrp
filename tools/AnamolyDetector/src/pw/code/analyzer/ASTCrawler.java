@@ -1404,7 +1404,7 @@ public class ASTCrawler extends ASTVisitor {
 					} else
 						detectDefects_CombinedPatterns(assocLibMIH, recTypObj, retStmtVariables);										
 				} else {
-					if(CommonConstants.B_COLLECT_MINER_DATA && CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS) {
+					if(CommonConstants.B_COLLECT_MINER_DATA && CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES) {
 						//Ignore pattern mining, where the receiver object is an argument, class member						
 						if(bckTraceStoreArr.size() == 0 && fwdTraceStoreArr.size() == 0 && 
 								(currMethodDeclParams.contains(recTypObj.var) || currFieldDeclarations.contains(recTypObj.var))) {
@@ -1628,15 +1628,19 @@ public class ASTCrawler extends ASTVisitor {
 					if(thToRemove != null)
 						mihElemList.remove(thToRemove);
 					
-					/*TypeHolder recObj = mihCasted.getReceiverClass();
+					TypeHolder recObj = mihCasted.getReceiverClass();
 					recObj.setElemType(CommonConstants.RECEIVER_PATTERNS);
 					recObj.setAssocHolderObj(mihCasted);
-					mihElemList.add(recObj);
+					if(!mihElemList.contains(recObj))
+						mihElemList.add(recObj);
 					for(TypeHolder thObjTemp : mihCasted.getArgumentArr())	{
-						mihElemList.add(thObjTemp);
-						thObjTemp.setAssocHolderObj(mihCasted);
-						thObjTemp.setElemType(CommonConstants.ARGUMENT_PATTERNS);
-					}*/						
+						if(!mihElemList.contains(thObjTemp))
+						{
+							mihElemList.add(thObjTemp);
+							thObjTemp.setAssocHolderObj(mihCasted);
+							thObjTemp.setElemType(CommonConstants.ARGUMENT_PATTERNS);
+						}
+					}						
 				}
 				
 				//Looking up for condition checks on return types

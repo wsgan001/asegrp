@@ -84,7 +84,6 @@ public class GCodeAnalyzer {
         	}    
         }
         return dataSources;
-
 	}
 	
 	/**
@@ -179,6 +178,7 @@ public class GCodeAnalyzer {
 			{
 				logger.error("Error occurred while reading the file " + ex);
 				logger.error(ex.getStackTrace().toString());
+				ex.printStackTrace();
 			}
 		}
 		
@@ -257,8 +257,6 @@ public class GCodeAnalyzer {
 		
 		return astC.postProcess();
 	}
-	
-	
 	
 	/**
 	 * Main function that starts the execution.
