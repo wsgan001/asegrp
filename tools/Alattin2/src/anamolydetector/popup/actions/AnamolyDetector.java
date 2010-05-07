@@ -188,7 +188,7 @@ public class AnamolyDetector implements IObjectActionDelegate {
 		//Common initialization stuff
 		RepositoryAnalyzer.numDownloadedCodeSamples = 0;
 		RepositoryAnalyzer.numAnalyzedCodeSamples = 0;
-		
+		CommonConstants.OPERATION_MODE = CommonConstants.userConfiguredMode;
 		GCodeDownloader.bwPackageDetails = new BufferedWriter(new FileWriter("PackageMappings.csv")); 
 		RepositoryAnalyzer.resetMIIdGen();
 		loadPackageInfoToMemory();
@@ -223,7 +223,8 @@ public class AnamolyDetector implements IObjectActionDelegate {
 	{
 		//Common initialization stuff
 		RepositoryAnalyzer.numDownloadedCodeSamples = 0;
-		RepositoryAnalyzer.numAnalyzedCodeSamples = 0;		
+		RepositoryAnalyzer.numAnalyzedCodeSamples = 0;	
+		CommonConstants.OPERATION_MODE = CommonConstants.userConfiguredMode;
 		GCodeDownloader.bwPackageDetails = new BufferedWriter(new FileWriter("PackageMappings.csv")); 
 		RepositoryAnalyzer.resetMIIdGen();
 		loadPackageInfoToMemory();

@@ -129,6 +129,9 @@ public class ASTCrawler extends ASTVisitor {
     HashSet<String> currMethodDeclParams = new HashSet<String>();
     HashSet<String> currFieldDeclarations = new HashSet<String>();
     
+    HashMap<Integer, MethodInvocationHolder> IdToSamplesMethodHolder = new HashMap<Integer, MethodInvocationHolder>();
+	//Given an ID, this Hashmap provides the method-invocation holders that are formed while parsing the code samples and local files in the input application
+    
     /** Additional variables for Method Inlining **/
     HashSet<MethodDeclaration> visitedMethodsInInling;
     /** End of additional variables for Method Inlining **/
@@ -454,12 +457,9 @@ public class ASTCrawler extends ASTVisitor {
 		try {
 			if(astNode instanceof MethodDeclaration)
 			{
-				//If the required source object appeared in the given 
-				//method body, then traverse the graph to prepare object models
-				if(bSourceObjectFound)
-				{
-					generatePatterns(currentHolderForEdge);
-				}			
+				//Control flow graph for the entire method is ready. Do
+				//depth first traversal for generating patterns
+				generatePatterns(currentHolderForEdge);				
 				
 				currentMethodDeclaration = null;
 				methodDeclGraph = null;
@@ -760,6 +760,8 @@ public class ASTCrawler extends ASTVisitor {
 		destHolder = null;
 		sourceHolder = null;
 		sourceHolderList.clear();
+		IdToSamplesMethodHolder.clear();
+		visitedTraces.clear();
 		return localVisit(md, false);
 	} 
 	
@@ -820,7 +822,9 @@ public class ASTCrawler extends ASTVisitor {
 	 * Function to handle the creation of MethodInvocationHolder object
 	 */
 	public boolean handleMethodInvocationHolder(MethodInvocationHolder mihObj, TypeHolder refType, TypeHolder returnType)
-	{
+	{		
+		IdToSamplesMethodHolder.put(new Integer(mihObj.getKey()), mihObj);		
+			
 		try{
 			methodDeclGraph.addVertex(mihObj);
 			methodDeclGraph.addEdge(new DirectedSparseEdge(currentHolderForEdge, mihObj));
@@ -1320,528 +1324,64 @@ public class ASTCrawler extends ASTVisitor {
 		}
     }
 	
-    /*************** SPECIFIC CODE OF ANAMOLY DETECTOR *****************/
-        
+    /*************** SPECIFIC CODE OF ALATTIN2 for mining object usage models *****************/
+       
+    HashSet<String> visitedTraces = new HashSet<String>(); 
+    
 	/**
-	 * Main function that traverses the DAG to identify the patterns
-	 * related to method-condition and condition-method checks for each source 
-	 * node identified in the DAG.
-	 * In Anamoly detector, the destination object is simply the end node
-	 * of the current method declaration. The paths are computed till
-	 * the last node of the method declaration.
-	 * 
+	 * Main function that traverses the DAG to identify the sequences of patterns 
 	 * This function minimizes the current graph by removing the 
 	 * redundant nodes.
 	 */
 	public void generatePatterns(Holder destMIObj)
 	{
-		destHolder = destMIObj; //The end node of the constructed DAG.
+		String IDTraceStr = "";
+		this.depthFirstTraversal(this.mihRoot, IDTraceStr);
 		
-		try {
-			Iterator srcHolderIter = sourceHolderList.iterator();
-			while(srcHolderIter.hasNext()) {
-				MethodInvocationHolder srcMINode = (MethodInvocationHolder) srcHolderIter.next();
-				MethodInvocationHolder assocLibMIH = srcMINode.getAssociatedLibMIH();
-				
-				if((CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_CODESAMPLES
-						|| CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY) 
-						&& assocLibMIH.getPrePostList() == null) {
-					continue;	//If there are no patterns, there is no need to proceed further during bug finding.
-				}
-				 
-				//Collect all possible patterns for the current method invocation holder
-				//Preparing for backward traversal
-				List<TypeHolder> mihHolderList = new ArrayList<TypeHolder>();
-				TypeHolder recTypObj = ((MethodInvocationHolder)srcMINode).getReceiverClass();
-				recTypObj.setElemType(CommonConstants.RECEIVER_PATTERNS);
-				recTypObj.setAssocHolderObj(srcMINode);
-				mihHolderList.add(recTypObj);						
-				for(TypeHolder argHolderList : ((MethodInvocationHolder)srcMINode).getArgumentArr()) {
-					argHolderList.setElemType(CommonConstants.ARGUMENT_PATTERNS);
-					argHolderList.setAssocHolderObj(srcMINode);
-					mihHolderList.add(argHolderList);
-				}				
-				
-				//Gathering backward elements
-				visitedVertices.clear();
-				bckTraceStoreArr.clear();
-				traversalHolderQ.clear();
-				lookUpVarSet.clear();
-				gatherBackwardTraces(srcMINode, mihHolderList, assocLibMIH);
-								
-				//Making preparations for the forward traversal. Captures condition 
-				//direct checks only on the return variable or receiver
-				mihHolderList = new ArrayList<TypeHolder>();
-				mihHolderList.add(recTypObj); 
-				TypeHolder retTypeObj = srcMINode.getReturnType();
-				retTypeObj.setElemType(CommonConstants.RETURN_PATTERNS);
-				retTypeObj.setAssocHolderObj(srcMINode);
-				mihHolderList.add(retTypeObj);
-				
-				//Gathering forward elements
-				visitedVertices.clear();					
-				fwdTraceStoreArr.clear();
-				traversalHolderQ.clear();
-				lookUpVarSet.clear();
-				retStmtVariables.clear();
-				gatherForwardTraces(srcMINode, mihHolderList, assocLibMIH, retStmtVariables);
-								
-				if(CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_CODESAMPLES
-						|| CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY) {
-										
-					//Dividing further the detection of defects phase, based on the requirements
-					//of balanced/imbalanced patterns
-					if(CommonConstants.BUG_DETECTION_MODE == CommonConstants.INDIVIDUAL_PATTERNS) {
-						List<PrePostPathHolder> prePostList = assocLibMIH.getPrePostList();	
-						List<CodeSampleDefectHolder> defectsToBeRegistered = new ArrayList<CodeSampleDefectHolder>();
-						for(PrePostPathHolder pppHObj : prePostList) {
-							detectDefects_IndividualPatterns(assocLibMIH, pppHObj, defectsToBeRegistered, recTypObj, retStmtVariables);
-						}
-						
-						//Register all the defects 
-						for(CodeSampleDefectHolder csdfObj : defectsToBeRegistered)
-							RepositoryAnalyzer.getInstance().getCodeSampleDefects().add(csdfObj);												
-					} else
-						detectDefects_CombinedPatterns(assocLibMIH, recTypObj, retStmtVariables);										
-				} else {
-					if(CommonConstants.B_COLLECT_MINER_DATA && CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES) {
-						//Ignore pattern mining, where the receiver object is an argument, class member						
-						if(bckTraceStoreArr.size() == 0 && fwdTraceStoreArr.size() == 0 && 
-								(currMethodDeclParams.contains(recTypObj.var) || currFieldDeclarations.contains(recTypObj.var))) {
-							//This part is primarily to prevent the increase in the numEmptyCallSites, as we ignore the similar 
-							//patterns during bug detection
-						} else {
-							//Storing elements of backward and forward traversal						
-							assocLibMIH.addToPrePostList(bckTraceStoreArr, fwdTraceStoreArr, currentFileName, ((currentMethodDeclaration != null) ? currentMethodDeclaration.getName().toString() : ""));
-						}	
-					}	
-				}	
-			}
-		}
-		catch(Exception ex) {
-			logger.error("Exception occurred" + ex);
-		}
-	}	
-	
-	//Function that detects defects by treating each pattern of the method invocation holder
-	//individually
-	public void detectDefects_IndividualPatterns(MethodInvocationHolder assocLibMIH, PrePostPathHolder pppHObj, 
-			List<CodeSampleDefectHolder> defectsToBeRegistered, TypeHolder receiverObj, HashSet<String> retStmtVariables)
-	{		
-		//Check whether the bckTraceStoreArr and fwdTraceStoreArr contains the required
-		//patterns. Any missing patterns are reported as violations		
-		Set<Holder> prePatterns = pppHObj.getPrePath();
-		Set<Holder> postPatterns = pppHObj.getPostPath();
-		
-		boolean bObjFound = true;
-		for(Holder preHolderObj : prePatterns) {							
-			bObjFound = false;
-			for(Holder collectedHolder : bckTraceStoreArr) {
-				if(preHolderObj.equals(collectedHolder)) {
-					bObjFound = true;
-					break;
-				}
-			}
-			
-			if(!bObjFound) {
-				if(!isDefectCanbeIgnored(PRE_DEFECT_VALUE, receiverObj, retStmtVariables)) {
-					//Log defect here
-					CodeSampleDefectHolder csdfObj = new CodeSampleDefectHolder(currentFileName,
-						currentMethodDeclaration != null ? currentMethodDeclaration.getName().toString() : "",
-						assocLibMIH, pppHObj, preHolderObj);				
-					defectsToBeRegistered.add(csdfObj);
-				}
-				break;				
-			}	
-		}
-		
-		if(bObjFound) { //Check for post patterns only no defect is detected with respect to pre patterns.
-			for(Holder postHolderObj : postPatterns) {
-				bObjFound = false;
-				for(Holder collectedHolder : fwdTraceStoreArr) {
-					if(postHolderObj.equals(collectedHolder)) {
-						bObjFound = true;
-						break;
-					}
-				}
-							
-				if(!bObjFound) {	
-					if(!isDefectCanbeIgnored(POST_DEFECT_VALUE, receiverObj, retStmtVariables)) {
-						//Log defect here
-						CodeSampleDefectHolder csdfObj = new CodeSampleDefectHolder(currentFileName,
-							currentMethodDeclaration != null ? currentMethodDeclaration.getName().toString() : "",
-							assocLibMIH, pppHObj, postHolderObj);		
-					
-						defectsToBeRegistered.add(csdfObj);
-					}
-					break;
-				}	
-			}
-		}		
-	}
-	
-	//Function that detects defects by treating each pattern of the method invocation holder
-	//individually. Means, if the code sample satifies atleast one pattern, it is fine.
-	public void detectDefects_CombinedPatterns(MethodInvocationHolder assocLibMIH, TypeHolder receiverObj, HashSet<String> retStmtVariables)
-	{
-		List<PrePostPathHolder> prePostList = assocLibMIH.getPrePostList();	
-		List<CodeSampleDefectHolder> defectsToBeRegistered = new ArrayList<CodeSampleDefectHolder>();
-		
-		for(PrePostPathHolder pppHObj : prePostList) {
-			int prevSize = defectsToBeRegistered.size();
-			detectDefects_IndividualPatterns(assocLibMIH, pppHObj, defectsToBeRegistered, receiverObj, retStmtVariables);			
-			if(prevSize == defectsToBeRegistered.size()) {
-				//The code sample satisfied the pattern
-				return;
-			}			
-		}
-		
-		//Register all the defects 
-		for(CodeSampleDefectHolder csdfObj : defectsToBeRegistered) {
-			//Never register the defects from imbalanced patterns. These
-			//patterns only help to reduce false positives
-			if(csdfObj.balanced == 0)
-				RepositoryAnalyzer.getInstance().getCodeSampleDefects().add(csdfObj);
-		}	
-	}
-	
-	//A set of heuristics used to ignore logging a defect. Below are the two heuristics
-	//1. Any defect related to the precondition is ignored if the receiver object is an argument of the method declaration
-	//2. Any defect related to the postcondition is ignored
-	final static int PRE_DEFECT_VALUE = 0;
-	final static int POST_DEFECT_VALUE = 1;
-	private boolean isDefectCanbeIgnored(int defectpos, TypeHolder receiverObj, HashSet<String> retStmtVariables)
-	{
-		if(currFieldDeclarations.contains(receiverObj.var))
-			return true;
-		
-		if(defectpos == PRE_DEFECT_VALUE) {
-			return currMethodDeclParams.contains(receiverObj.var);		
-		} else {
-			return retStmtVariables.contains(receiverObj.var);
-		}	
-	}
-	
-	/***********************************************************************************/
-	/******************    FUNCTIONS FOR TRACE COLLECTION    ***************************/	
-	/***********************************************************************************/
-	
-	private Set<Holder> bckTraceStoreArr = new HashSet<Holder>();
-	private Set<Holder> fwdTraceStoreArr = new HashSet<Holder>();
-	//Common Variable declarations used by all methods
-	HashSet<Holder> visitedVertices = new HashSet<Holder>();
-	HashSet<CondVarHolder> lookUpVarSet = new HashSet<CondVarHolder>();
-	private Queue<Holder> traversalHolderQ = new LinkedList<Holder>();	
-	private HashSet<String> retStmtVariables = new HashSet<String>();	
-		
-	/**
-	 * Function that identifies a conditional node that contains the given
-	 * variable by traversing back from the given position in the DAG.
-	 * 
-	 * THE IMPLEMENTATION IS THE SAME AS THE PRECEEDING FUNCTION EXCEPT
-	 * THIS FUNCTION LOGS THE DATA TO THE FILE
-	 * 
-	 * The flag "bOnlyMIs" if true, collects only nodes that are associated with method invocations
-	 * 
-	 */
-	public void gatherBackwardTraces(Holder srcMINode, List<TypeHolder> mihElemList, MethodInvocationHolder assocLibMIH) throws IOException
-	{
-		if(visitedVertices.contains(srcMINode)) {
+		if(this.visitedTraces.size() == 0)
 			return;
-		}
 		
-		if(srcMINode == mihRoot) {
-			return;
-		}
-				
-		//To identify exact dominators, always avoid entering IF/ELSE, FOR, WHILE blocks
-		//Also avoid considering any conditions of that IF/FOR/WHILE.. One catch with this
-		//is that, if there is a RETURN statement, such blocks may induce control dependency
-		boolean bSkipFurtherProcessing = false;
-		if(srcMINode instanceof ThenEndHolder || srcMINode instanceof ElseEndHolder || srcMINode instanceof ForEndHolder
-				|| srcMINode instanceof WhileEndHolder || srcMINode instanceof DoWhileEndConditionHolder) {
-			srcMINode = srcMINode.getLoopStart();
-			//bSkipFurtherProcessing = true;		
-		}
+		RepositoryAnalyzer raobj = RepositoryAnalyzer.getInstance();
 		
-		if(srcMINode instanceof BlockEndHolder) {
-			BlockEndHolder behObj = (BlockEndHolder) srcMINode;
-			Holder loopBegin = behObj.getLoopStart();			
-			if(loopBegin != null) {
-				srcMINode = loopBegin;
-				if(behObj.bHasReturnStatement) {
-					//Check whether there are any conditions on receiver or arguments over here
-					for(TypeHolder thObj : mihElemList)
-						handleNonMethodInvocationNode(assocLibMIH, srcMINode, thObj);
-				}				
-				//else					
-				//	bSkipFurtherProcessing = true;			
-			}			
-		}
-				
-		if(bSkipFurtherProcessing) {
-			for(Iterator iter = srcMINode.getInEdges().iterator(); iter.hasNext();) {
-				Holder srcVertex = (Holder)((DirectedSparseEdge)iter.next()).getSource();
-				traversalHolderQ.add(srcVertex);
+		try
+		{
+			raobj.bwAssocMiner.write("*******************\n");			
+			raobj.bwAssocMiner.write("Filename: " + currentFileName + ", Methodname: " + currentMethodDeclaration.getName().toString() + "\n");			
+			for(String trace : this.visitedTraces)
+			{			
+				String idArr[] = trace.split(" ");			
+				for(int tCnt = 1; tCnt < idArr.length; tCnt++) {
+					MethodInvocationHolder mihobj = IdToSamplesMethodHolder.get(new Integer(idArr[tCnt]));			
+					raobj.bwAssocMiner.write("\t" + mihobj.toString() + "(" + mihobj.getKey() + ")\n");											
+				}
+				raobj.bwAssocMiner.write("\n");				
 			}
-			
-			visitedVertices.add(srcMINode);
-			if(traversalHolderQ.size() != 0) {
-				gatherBackwardTraces(traversalHolderQ.poll(), mihElemList, assocLibMIH);
-			}
-			return;
-		}	
-		
-		visitedVertices.add(srcMINode);
-		Set inEdgeSet = srcMINode.getInEdges();
-		for(Iterator iter = inEdgeSet.iterator(); iter.hasNext();) {
-			Holder srcVertex = (Holder)((DirectedSparseEdge)iter.next()).getSource();
-			if(!(srcVertex instanceof MethodInvocationHolder)) {				
-				//Check whether there are any conditions on receiver or arguments over here:
-				for(TypeHolder thObj : mihElemList) {
-					handleNonMethodInvocationNode(assocLibMIH, srcVertex, thObj);
-				}
-			} else {
-				MethodInvocationHolder mihCasted = (MethodInvocationHolder) srcVertex;
-				
-				//Stop verifying backward when an assignment is encountered for the
-				//variable we are interested in. Because the prior assignment conditions
-				//may not affect anything to the variable.
-				TypeHolder thToRemove = null;
-				boolean bDependencyExists = false;
-				for(TypeHolder thObjTemp : mihElemList) {
-					if(thObjTemp.var.equals(mihCasted.getReturnType().var)) {
-						thToRemove = thObjTemp;	
-						bDependencyExists = true;
-					}					
-					if(thObjTemp.var.equals(mihCasted.getReceiverClass().var)) {						
-						bDependencyExists = true;
-					}
-				}
-				
-				if(bDependencyExists && !ASTCrawlerUtil.ignoreHolderObject(mihCasted, assocLibMIH) && !bckTraceStoreArr.contains(mihCasted)) {
-					//bckTraceStoreArr.add(mihCasted);					
-				}
-								
-				//As a transitive dependency found, add the elements of current mihCasted to the list
-				if(thToRemove != null || bDependencyExists) {
-					if(thToRemove != null)
-						mihElemList.remove(thToRemove);
-					
-					TypeHolder recObj = mihCasted.getReceiverClass();
-					recObj.setElemType(CommonConstants.RECEIVER_PATTERNS);
-					recObj.setAssocHolderObj(mihCasted);
-					if(!mihElemList.contains(recObj))
-						mihElemList.add(recObj);
-					for(TypeHolder thObjTemp : mihCasted.getArgumentArr())	{
-						if(!mihElemList.contains(thObjTemp))
-						{
-							mihElemList.add(thObjTemp);
-							thObjTemp.setAssocHolderObj(mihCasted);
-							thObjTemp.setElemType(CommonConstants.ARGUMENT_PATTERNS);
-						}
-					}						
-				}
-				
-				//Looking up for condition checks on return types
-				if(!mihCasted.equals(assocLibMIH)) {	//This is a guarding condition to avoid the 
-														//traps in the code where the same methodinvocation is found to be a guard.
-					Iterator iterLookup = lookUpVarSet.iterator();
-					while(iterLookup.hasNext()) {
-						CondVarHolder cvhForLookup = (CondVarHolder) iterLookup.next();
-						if(cvhForLookup.getVarName().equals(mihCasted.getReturnType().var))
-						{
-							CondVarHolder mcvh = new CondVarHolder();
-				        	mcvh.setVarName(mihCasted.getReturnType().var);
-				        	mcvh.setCondType(cvhForLookup.getCondType());
-				        	mcvh.setAssociatedMIH(mihCasted);
-				        	mcvh.setCodeSampleName(cvhForLookup.getCodeSampleName());
-				        	mcvh.setCodeSampleMethodName(cvhForLookup.getCodeSampleMethodName());
-				        			        	
-				        	CondVarHolder_Typeholder cvh_thObj = new CondVarHolder_Typeholder();
-				        	cvh_thObj.cvhObj = mcvh;
-				        	cvh_thObj.thObj = mihCasted.getReturnType().clone();
-				        	cvh_thObj.thObj.setElemType(CommonConstants.RETURN_PATTERNS);
-				        	
-				        	if(!ASTCrawlerUtil.ignoreHolderObject(cvh_thObj, assocLibMIH) && !bckTraceStoreArr.contains(cvh_thObj)) {			        	
-				        		bckTraceStoreArr.add(cvh_thObj);
-				        	}	
-				        	/*bckTraceStoreArr.add("\t" + mihCasted.toString() 
-				        			+ "#" + ASTCrawlerUtil.getElementType(CommonConstants.RETURN_PATTERNS) 
-				        			+ "#" + ASTCrawlerUtil.getConditionType(cvhForLookup.getCondType())
-				        			+ "#" + cvhForLookup.getAdditionalInfo()
-				        			+ "(" + mihCasted.getKey() + ")"
-				        			+ "\n");*/
-						}					
-					}
-				}
-			}
-			traversalHolderQ.add(srcVertex);
-			//gatherBackwardTraces(srcVertex, mihElemList);
+			raobj.bwAssocMiner.write("*******************\n");
 		}
-		
-		if(traversalHolderQ.size() != 0) {
-			gatherBackwardTraces(traversalHolderQ.poll(), mihElemList, assocLibMIH);
-		}		
-	}
-
-	private void handleNonMethodInvocationNode(MethodInvocationHolder assocLibMIH, Holder srcVertex, TypeHolder thObj) {
-		List<CondVarHolder> listToBeAdded = null;
-		listToBeAdded = srcVertex.contains(thObj);
-						
-		if(listToBeAdded != null && listToBeAdded.size() > 0) {
-			for(CondVarHolder cvhTest : listToBeAdded){
-				CondVarHolder_Typeholder cvh_thObj = new CondVarHolder_Typeholder();
-				cvh_thObj.cvhObj = cvhTest.clone();
-				if(thObj.getAssocHolderObj() instanceof MethodInvocationHolder)
-					cvh_thObj.cvhObj.setAssociatedMIH((MethodInvocationHolder)thObj.getAssocHolderObj());
-				else
-					logger.error("ERROR: Associated object of a typeholder should be of type MethodInvocationHolder");
-				
-				cvh_thObj.thObj = thObj.clone();
-				if(!ASTCrawlerUtil.ignoreHolderObject(cvh_thObj, assocLibMIH) && !bckTraceStoreArr.contains(cvh_thObj)) {
-					bckTraceStoreArr.add(cvh_thObj);
-				}	
-				/*bckTraceStoreArr.add("\t" + thObj.getAssocHolderObj().toString()
-						+ "#" + ASTCrawlerUtil.getElementType(thObj.getElemType())
-						+ "#" + ASTCrawlerUtil.getConditionType(cvhTest.getCondType())
-						+ "#" + cvhTest.getAdditionalInfo()							
-						+ "\n");*/							
-			}
-		}
-		
-		//Add those conditions that are already not added to cvhList
-		//These conditions are helpful later to gather return condition checks
-		for(CondVarHolder lookUpCVH : srcVertex.getCondVarList()) {
-			if(!listToBeAdded.contains(lookUpCVH))
-				lookUpVarSet.add(lookUpCVH);
+		catch(IOException ex)
+		{
+			logger.error("IOException occurred while writing contents ");
 		}
 	}
 	
-	public void gatherForwardTraces(Holder srcMINode, List<TypeHolder> mihElemList, MethodInvocationHolder assocLibMIH, HashSet<String> retStmtVariables) throws IOException
-	{
-		if(visitedVertices.contains(srcMINode) || (srcMINode == mihRoot) || mihElemList.size() == 0) {
-			return;
-		}			
+	private void depthFirstTraversal(Holder srcObj, String IDTraceStr) {			
 		
-		visitedVertices.add(srcMINode);
-		Set outEdgeSet = srcMINode.getOutEdges();
-		for(Iterator iter = outEdgeSet.iterator(); iter.hasNext();) {
-			Holder destVertex = (Holder)((DirectedSparseEdge)iter.next()).getDest();			
-			if(destVertex instanceof ReturnStatementHolder) {
-				//Return statement reached. get the actual variable returned and
-				//see whether it is the same as the receiver object of the actual method call
-				String retVar = ((ReturnStatementHolder)destVertex).retVarName;
-				if(!retVar.equals(""))
-					retStmtVariables.add(retVar);				
-				continue;
-			}
-			
-			//When end of WHILE or FOR is reached, then we need to verify the beginning
-			//conditions again. So temporarily replace with its beginning part and restore back
-			Holder replacedHolder = null;
-			if(destVertex instanceof WhileEndHolder) {
-				replacedHolder = destVertex;
-				destVertex = ((WhileEndHolder) destVertex).getLoopStart();  
-			} else if (destVertex instanceof ForEndHolder) {
-				replacedHolder = destVertex;
-				destVertex = ((ForEndHolder) destVertex).getLoopStart();
-			}
-			
-			if(!(destVertex instanceof MethodInvocationHolder))	{
-				//Found a condition node				
-				for(TypeHolder thObj : mihElemList) {
-					List<CondVarHolder> listToBeAdded = null;
-					listToBeAdded = destVertex.contains(thObj);
-										
-					if(listToBeAdded != null) {
-						for(CondVarHolder cvhTest : listToBeAdded){
-							CondVarHolder_Typeholder cvh_thObj = new CondVarHolder_Typeholder();
-							cvh_thObj.cvhObj = cvhTest.clone();
-							if(thObj.getAssocHolderObj() instanceof MethodInvocationHolder) 
-								cvh_thObj.cvhObj.setAssociatedMIH((MethodInvocationHolder)thObj.getAssocHolderObj());
-							else	
-								logger.error("ERROR: Associated object of a typeholder should be of type MethodInvocationHolder");
-								
-							cvh_thObj.thObj = thObj.clone();
-							
-							if(!ASTCrawlerUtil.ignoreHolderObject(cvh_thObj, assocLibMIH) && !fwdTraceStoreArr.contains(cvh_thObj)) {
-								fwdTraceStoreArr.add(cvh_thObj);
-							}	
-							/*bwPatternsForMining.write("\t" + thObj.getAssocHolderObj().toString()
-									+ "#" + ASTCrawlerUtil.getElementType(thObj.getElemType())
-									+ "#" + ASTCrawlerUtil.getConditionType(cvhTest.getCondType()) 
-									+ "#" + cvhTest.getAdditionalInfo()									
-									+ "\n");*/
-						}
-					}					
-				}				
-			} else {
-				MethodInvocationHolder mihCasted = (MethodInvocationHolder) destVertex;
-				
-				//Stop verifying forward when an assignment is encountered for the
-				//variable we are interested in. Because the next assignment conditions
-				//may not affect anything to the variable.
-				TypeHolder thToRemove = null;
-				boolean bDependencyExists = false;
-				boolean bReceiverExists = false;
-				for(TypeHolder thObjTemp : mihElemList) {
-					if(thObjTemp.var.equals(mihCasted.getReturnType().var)) {
-						thToRemove = thObjTemp;	
-						bDependencyExists = true;
-					}					
-					if(thObjTemp.var.equals(mihCasted.getReceiverClass().var)) {						
-						bReceiverExists = true;
-						bDependencyExists = true;
-					}
-					
-					for(TypeHolder argObj : mihCasted.getArgumentArr()) {
-						if(argObj.var.equals(thObjTemp.var)){
-							bDependencyExists = true;
-							break;
-						}
-					}					
-				}
-				
-				//Time being, ignoring forward patterns on any other dependent method invocations also...			
-				//if(bDependencyExists && !ASTCrawlerUtil.ignoreHolderObject(mihCasted, assocLibMIH) && !fwdTraceStoreArr.contains(mihCasted)) {
-				//	TypeHolder thObj_temp = mihCasted.getReturnType().clone();
-				//	thObj_temp.setAssocHolderObj(mihCasted);
-				//	thObj_temp.setElemType(CommonConstants.RETURN_PATTERNS);
-				//	mihElemList.add(thObj_temp);
-				//	fwdTraceStoreArr.add(mihCasted);
-				//}
-				
-				if(thToRemove != null || bDependencyExists) {
-					if(thToRemove != null)
-						mihElemList.remove(thToRemove);
-					
-					/*if(!bReceiverExists) {
-						TypeHolder recObj = mihCasted.getReceiverClass();
-						recObj.setElemType(CommonConstants.RECEIVER_PATTERNS);
-						recObj.setAssocHolderObj(mihCasted);
-						mihElemList.add(recObj);
-					}
-					
-					TypeHolder retTypObj = mihCasted.getReturnType();
-					retTypObj.setAssocHolderObj(mihCasted);
-					retTypObj.setElemType(CommonConstants.RETURN_PATTERNS);
-					mihElemList.add(retTypObj);	*/									
-				}			
-			}
-			
-			//Restoring back the vertex
-			if(replacedHolder != null) {
-				destVertex = replacedHolder;
-			}
-			
-			//gatherForwardTraces(destVertex, mihElemList);			
-			traversalHolderQ.add(destVertex);
-		}		
-		
-		if(traversalHolderQ.size() != 0) {
-			gatherForwardTraces(traversalHolderQ.poll(), mihElemList, assocLibMIH, retStmtVariables);
+		if(srcObj instanceof MethodInvocationHolder) {
+			IDTraceStr += ((MethodInvocationHolder)srcObj).getKey() + " ";			
 		}
+		
+		boolean bHasOutGoingEdges = false;
+		for(Iterator iter = srcObj.getOutEdges().iterator(); iter.hasNext();) {
+			bHasOutGoingEdges = true;
+			DirectedSparseEdge dseObj = (DirectedSparseEdge) iter.next();
+			depthFirstTraversal((Holder)dseObj.getDest(), IDTraceStr);						
+		}
+		
+		//We are interested only in longest sequences starting from method begining to the method end
+		if(bHasOutGoingEdges)
+			return;
+		
+		visitedTraces.add(IDTraceStr);
 	}
 	
 	/******** Begin of Misc functions for debugging ************/

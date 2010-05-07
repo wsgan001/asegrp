@@ -15,6 +15,8 @@ import minebugs.srclibhandlers.LibClassHolder;
 import minebugs.srclibhandlers.LibMethodHolder;
 import org.apache.log4j.Logger;
 import org.eclipse.jdt.core.IJavaProject;
+
+import pw.code.analyzer.ASTCrawler;
 import pw.code.analyzer.CodeExampleStore;
 import pw.code.analyzer.GCodeAnalyzer;
 import pw.code.analyzer.TypeHolder;
@@ -43,8 +45,8 @@ public class RepositoryAnalyzer {
 	static public int numDownloadedCodeSamples = 0;
 	static public int numAnalyzedCodeSamples = 0;
 	
-	BufferedWriter bwAssocMiner = null;    			//Entire information. Mainly useful for logging and debugging
-	BufferedWriter bwAssocMethodIDs = null;			//Writes method Ids for external methods
+	public BufferedWriter bwAssocMiner = null;    			//Entire information. Mainly useful for logging and debugging
+	public BufferedWriter bwAssocMethodIDs = null;			//Writes method Ids for external methods
 	
 	BufferedWriter bwAssocSubMinerData = null;			//Writes all Data for mining into different files specific for each method "AssocMiner_Data"
 	BufferedWriter bwAssocSubMethodIDs = null;		//Writes all IDs specific to that Method invocation in a separate folder "AssocMiner_IDs"
@@ -119,7 +121,7 @@ public class RepositoryAnalyzer {
 					//Creating required dummy directories
 					(new File("AssocMiner_Data")).mkdirs();
 					(new File("AssocMiner_IDs")).mkdirs();
-				}			
+				}
 				
 				switch(CommonConstants.OPERATION_MODE)
 				{
@@ -145,11 +147,14 @@ public class RepositoryAnalyzer {
 						}
 						break;
 					case CommonConstants.MINE_PATTERNS_FROM_LIBRARY:
-						
+						ASTCrawler astC = new ASTCrawler(parentDir);
+						astC.sourceObj = "temp";
+						astC.destObj = "";
+						gdc.analyzeLibraryCode(astC);
 						break;
 					default:
 						logger.error("Invalid option for operation mode!!!");			
-				}		
+				}
 			} 
 					
 			gdc.clearAstc();			
