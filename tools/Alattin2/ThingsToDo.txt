@@ -1,0 +1,2 @@
+
+1. For time being, loops are ignored in the sequences. For example, BufferedReader.readLine() can be invoked multiple times in a loop, it is considered only once.
