@@ -74,7 +74,6 @@ public class CommonConstants {
     //Parameter for tuning the number of threads. Modify this if more threads are required
     public static int MAX_THREAD_CNT = 1;
     public static int MAX_FILES_TO_DOWNLOAD = 5000;
-
     
     /**
      * Variables for PROXY Server
@@ -87,8 +86,6 @@ public class CommonConstants {
 	 * bUseMode2
 	 */
 	public static int bUseMode2 = 0;
-	
-	
 	public static int uniqueMIHolderId = 0;
 	public static int unknownIdGen = 0;
 	
@@ -108,9 +105,7 @@ public class CommonConstants {
 	 */
 	static public int API_Freq_Threshold = 10;
 	static public int Method_Type_Threshold = 5;
-	
-	
-	
+
 	/**
 	 * An additional setting for Google Code Downloader for getting more results
 	 */
@@ -125,14 +120,13 @@ public class CommonConstants {
 	static public boolean bExtendInterfacesToClasses = true;
 	
 	/**
-	 * AWeb specific constants
+	 * Alattin specific constants
 	 */
 		
 	//A mode for deciding type of process to be conducted.
 	static public final int MINE_PATTERNS_FROM_INPUTPROJECT = 0;	//Mining patterns from the input project itself
 	static public final int MINE_PATTERNS_CODE_SAMPLES = 1;			//Mining patterns from code samples
-	static public final int DETECT_BUGS_IN_INPUTPROJECT = 2;		//Detecting bugs using mined patterns
-	
+	static public final int DETECT_BUGS_IN_INPUTPROJECT = 2;		//Detecting bugs using mined patterns	
 	static public int OPERATION_MODE = MINE_PATTERNS_FROM_INPUTPROJECT;	
 	
 	//Miner types
@@ -144,18 +138,29 @@ public class CommonConstants {
 	//Cut-off percentage for identifying the frequent patterns
 	static public final double LOWER_THRESHOLD = 0.06; 
 	static public final double UPPER_THRESHOLD = 0.90;
-	
-	static public final int AVERAGE_TO_HIGH_DIFF = 2;
-	
+	static public final int AVERAGE_TO_HIGH_DIFF = 2;	
 	
 	//A global variable for controlling the data for association rule miner
-	static public final boolean bEnableAssocMiner = true;
+	static public final boolean ENABLE_ASSOC_MINER = true;
 	
 	//A flag to turn off results with Jex exceptions. This is because,
 	//sometimes Jex exceptions might not be available due to the problem of OUT OF MEMORY given by Jex
 	//The results may be imprecise when this flag is turned on.
-	static public final boolean bIgnoreJex = false;
+	static public final boolean IGNORE_JEX = false;
 			
+	//Ignores the addition of exception edges. This would be required if the exception
+	//paths also need to be taken into consideration. If not considering the
+	//exception edges would add noise to the static traces.
+	static public boolean IGNORE_EXCEPTION_PATHS = false;
+	
+	//Describes whether the patterns include single-object or multi-object	
+	static public final int SINGLE_OBJECT_PATTERN_MODE = 0;
+	static public final int MULTI_OBJECT_PATTERN_MODE = 1;
+	static public int OBJECT_PATTERN_MODE = 0;
+		
+	//Describes whether function overloading should be used or not	
+	static public boolean FUNCTION_OVERLOADING = true;
+	
     static
     {
     	//User can optionally mention values for above parameters.
@@ -213,6 +218,18 @@ public class CommonConstants {
 				
 				if (props.containsKey("OperationMode")) {
 					APIUsageActions.MODE_RUNNING =  Integer.parseInt(props.getProperty("OperationMode"));
+				}
+				
+				if (props.containsKey("IgnoreExceptionPaths")) {
+					IGNORE_EXCEPTION_PATHS =  Boolean.parseBoolean(props.getProperty("IgnoreExceptionPaths"));
+				}
+				
+				if (props.containsKey("ObjectPatternMode")) {
+					OBJECT_PATTERN_MODE =  Integer.parseInt(props.getProperty("ObjectPatternMode"));
+				}
+				
+				if (props.containsKey("FunctionOverloading")) {
+					FUNCTION_OVERLOADING =  Boolean.parseBoolean(props.getProperty("FunctionOverloading"));
 				}
 	    	}
     	}

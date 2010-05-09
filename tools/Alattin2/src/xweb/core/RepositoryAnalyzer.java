@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -13,6 +15,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
+
+import xweb.assocminer.AssocMinerGroupDataHolder;
 import xweb.core.ExternalObject;
 import xweb.core.LibClassHolder;
 import xweb.core.LibMethodHolder;
@@ -30,15 +34,12 @@ import xweb.code.analyzer.holder.MethodInvocationHolder;
 import xweb.common.CommonConstants;
 import java.io.File;
 
-public class RepositoryAnalyzer {
-	
-	static private Logger logger = Logger.getLogger("RepositoryAnalyzer");
-	
+public class RepositoryAnalyzer {	
+	static private Logger logger = Logger.getLogger("RepositoryAnalyzer");	
 	HashMap<String, LibClassHolder> libClassMap = new HashMap<String, LibClassHolder>();
 	HashSet<String> libPackageList = new HashSet<String>();
 	HashMap<String, String> libClassToPackageMapper = new HashMap<String, String>();
 	HashMap<Integer, LibMethodHolder> IdToLibMethod = new HashMap<Integer, LibMethodHolder>();
-	
 	HashMap<String, ExternalObject> externalObjects = new HashMap<String, ExternalObject>();		
 	HashMap<String, String> codeSampleIDToPackageMapper = new HashMap<String, String>();
 	HashSet<String> visitedCodeSamples = new HashSet<String>();
@@ -47,9 +48,14 @@ public class RepositoryAnalyzer {
 	HashSet<String> impStatementList = new HashSet<String>();
 	
 	/** Variables specific to Association Rule Miner data collection **/
-	Map<String, List<MethodInvocationHolder>> MihIDMap = null;	 
+	
+	/**
+	 * This map helps to assign unique IDs to method-invocation holders at runtime. If the method-invocation
+	 * is seen for the first time, it is assigned a new unique ID. The related functionality is in ASTCrawlerUtil.assignKeyToMethodInvocations
+	 */
+	private Map<String, List<MethodInvocationHolder>> MihIDMap = null;	 
     { 
-    	if(CommonConstants.bEnableAssocMiner) {
+    	if(CommonConstants.ENABLE_ASSOC_MINER) {
     		MihIDMap = new HashMap<String, List<MethodInvocationHolder>>();
     	}
     }
@@ -57,7 +63,7 @@ public class RepositoryAnalyzer {
 	BufferedWriter bwAssocMinerNum = null;			//Writes all Data for mining into different files specific for each method "AssocMiner_Data"
 	BufferedWriter bwAssocMethodIDs = null;			//Writes method Ids for external methods
 	BufferedWriter bwAssocSubMethodIDs = null;		//Writes all IDs specific to that Method invocation in a separate folder "AssocMiner_IDs"
-		
+	BufferedWriter bwAssocMinerGroupKeys = null;	//Writes keys for each representative element
     /** End of code section for Association Rule Miner **/
     
 	//Associated IJavaProject
@@ -67,8 +73,7 @@ public class RepositoryAnalyzer {
 	Set<DefectHolder> defectSet = new TreeSet<DefectHolder>(new DefectHolder());
 	
 	//Collects the entire list of final method-call sequences
-	public List<MIHList> finalMihList = new ArrayList<MIHList>();	
-	
+	private Map<String, AssocMinerGroupDataHolder> finalEncodedMihList = new HashMap<String, AssocMinerGroupDataHolder>();
 	
 	//Ignore set while collecting patterns
 	public Set<String> ignoreClassSet = new HashSet<String>();
@@ -101,9 +106,10 @@ public class RepositoryAnalyzer {
 			GCodeAnalyzer gdc = new GCodeAnalyzer();
 			if(APIUsageActions.MODE_RUNNING != CommonConstants.DETECT_BUGS_IN_INPUTPROJECT) {
 				//Code related to Association rule miner data collection
-				if(CommonConstants.bEnableAssocMiner) {
+				if(CommonConstants.ENABLE_ASSOC_MINER) {
 					bwAssocMiner = new BufferedWriter(new FileWriter("AssocMinerData.txt"));
 					bwAssocMethodIDs = new BufferedWriter(new FileWriter("AssocMethodIds.txt"));
+					bwAssocMinerGroupKeys = new BufferedWriter(new FileWriter("AssocMinerGroupKeys.txt"));
 					
 					//Creating required dummy directories
 					(new File("AssocMiner_Data")).mkdirs();
@@ -115,17 +121,7 @@ public class RepositoryAnalyzer {
 				switch(CommonConstants.OPERATION_MODE)
 				{
 				case CommonConstants.MINE_PATTERNS_FROM_INPUTPROJECT:
-					long beginAnalyzeAppl = System.currentTimeMillis();
-					gdc.analyzeLibraryCode(parentDir, "", "", false);			        
-			        //debugging - dumping the minimized set of individual sequences				
-					bwAssocMiner.write("Complete list of minimized sequences\n");						
-					for(MIHList mihlist : finalMihList)
-					{					
-						bwAssocMiner.write(mihlist.toString() + "\n");				
-					}			
-					//end of debugging code		
-					long endAnalyzeAppl = System.currentTimeMillis();
-					logger.warn("Time taken for analyzing input application: " + (endAnalyzeAppl - beginAnalyzeAppl) + " msec");				    
+					minePatternsFromInputProject(parentDir, gdc);				    
 				    break;
 				case CommonConstants.MINE_PATTERNS_CODE_SAMPLES:
 					long beginAnalyzeRepos = System.currentTimeMillis();        	        
@@ -158,7 +154,7 @@ public class RepositoryAnalyzer {
 				       	//Printing the data collected for association rule mining to output files 
 				       	//Code specific to association rule mining, where unique IDs are assigned to each 
 					    //method invocation while printing to the file
-					    if(CommonConstants.bEnableAssocMiner) {
+					    if(CommonConstants.ENABLE_ASSOC_MINER) {
 					    	ExternalObject eeObj = externalObjects.get(currentLibClass);
 					    	if(eeObj != null) {
 					    		for(MethodInvocationHolder eeMIH : eeObj.getMiList()) { 
@@ -174,7 +170,8 @@ public class RepositoryAnalyzer {
 						    	}
 					    	}
 					    	MihIDMap.clear();    	
-					    	MethodInvocationHolder.MIHKEYGEN = 0;
+					    	//The temporary keys are always assigned beyond the keys assigned to library declared methods and used methods.
+					    	MethodInvocationHolder.MIHKEYGEN = MethodInvocationHolder.MIH_LIBKEYGEN + 1;	
 					    }
 					}
 				    long endAnalyzeRepos = System.currentTimeMillis();		    
@@ -187,7 +184,7 @@ public class RepositoryAnalyzer {
 			    gdc.clearAstc();
 			    
 			    //Emitting rest of the data collection for association rule mining
-			    if(CommonConstants.bEnableAssocMiner) {
+			    if(CommonConstants.ENABLE_ASSOC_MINER) {
 			    	for(ExternalObject eeObj : externalObjects.values()) {
 			    		for(MethodInvocationHolder eeMIH : eeObj.getMiList()) { 
 			    			emitToAssocFile(eeMIH);
@@ -204,9 +201,10 @@ public class RepositoryAnalyzer {
 			    }
 			    
 			    //Code related to Association rule miner data collection
-				if(CommonConstants.bEnableAssocMiner) {
+				if(CommonConstants.ENABLE_ASSOC_MINER) {
 					bwAssocMiner.close();				
 					bwAssocMethodIDs.close();
+					bwAssocMinerGroupKeys.close();					
 				}
 		    
 				//Mine traces using statistical methods, which is now obsolete
@@ -264,28 +262,8 @@ public class RepositoryAnalyzer {
 					}
 					
 					//create a mined pattern object and get the equivalent 
-					//method invocation holder and load the pattern back
-					ExternalObject eeObj = externalObjects.get(anchorMIH.getReceiverClass().type);
-					Holder assocLibMIH = null;
-			    	if(eeObj != null) {
-			    		for(MethodInvocationHolder eeMIH : eeObj.getMiList()) { 
-			    			if(eeMIH.equals(anchorMIH)) {
-			    				assocLibMIH = eeMIH;
-			    				break;
-			    			}
-			    		}
-			    	} else {
-			    		//This is a method internally declared by the program
-			    		LibClassHolder lch = libClassMap.get(anchorMIH.getReceiverClass().type);
-			    		if(lch != null && lch.getMethods() != null) {
-				    		for(LibMethodHolder lmh : lch.getMethods()) {
-				    			if(lmh.equals(anchorMIH)) {
-				    				assocLibMIH = lmh;
-				    				break;
-				    			}
-				    		}
-				    	}
-			    	}
+					//method invocation holder and load the pattern back					
+					Holder assocLibMIH = getAssocLibMIH(anchorMIH);
 			    	
 			    	if(assocLibMIH != null) {
 			    		//create a mined patterm
@@ -337,6 +315,92 @@ public class RepositoryAnalyzer {
 		catch(Exception ex) {
 			ex.printStackTrace();
 		}
+	}
+
+	/**
+	 * Looksup a method in external objects and library declarations
+	 * @param anchorMIH
+	 * @return
+	 */
+	public Holder getAssocLibMIH(MethodInvocationHolder anchorMIH) {
+		Holder assocLibMIH = null;
+		ExternalObject eeObj = externalObjects.get(anchorMIH.getReceiverClass().type);
+		if(eeObj != null) {
+			for(MethodInvocationHolder eeMIH : eeObj.getMiList()) { 
+				if(eeMIH.equals(anchorMIH)) {
+					assocLibMIH = eeMIH;
+					break;
+				}
+			}
+		} else {
+			//This is a method internally declared by the program
+			LibClassHolder lch = libClassMap.get(anchorMIH.getReceiverClass().type);
+			if(lch != null && lch.getMethods() != null) {
+				for(LibMethodHolder lmh : lch.getMethods()) {
+					if(lmh.equals(anchorMIH)) {
+						assocLibMIH = lmh;
+						break;
+					}
+				}
+			}
+		}
+		return assocLibMIH;
+	}
+
+	/**
+	 * Mines patterns from input project
+	 * @param parentDir
+	 * @param gdc
+	 * @throws IOException
+	 */
+	private void minePatternsFromInputProject(String parentDir, GCodeAnalyzer gdc) throws IOException {
+		long beginAnalyzeAppl = System.currentTimeMillis();
+		
+		//main function that performs the entire processing
+		gdc.analyzeLibraryCode(parentDir, "", "", false);			        
+				
+		//Print all assoc method Ids (including both methods in declared classes and external classes) into AssocMethodIds.txt file
+		for(LibClassHolder lch : this.libClassMap.values())
+		{
+			for(LibMethodHolder lmh : lch.methods)
+			{
+				bwAssocMethodIDs.write(lmh.getKey() + " : " + lmh.getPrintString() + "\n");
+			}			
+		}
+		
+		for(ExternalObject eo : this.externalObjects.values())
+		{
+			for(MethodInvocationHolder mih : eo.getMiList())
+			{
+				bwAssocMethodIDs.write(mih.getKey() + " : " + mih.getPrintString() + "\n");
+			}
+		}
+		//End of printing all ids of methods in declared classes and external classes
+		
+		//Dump all contents into AssocMiner data separated by various keys		
+		for(AssocMinerGroupDataHolder agdhObj : finalEncodedMihList.values())
+		{
+			bwAssocMinerGroupKeys.write(agdhObj.getID() + " : " + agdhObj.getRepresentativeKey() + "\n");
+			try
+			{
+				BufferedWriter bwAssocMinerNum = new BufferedWriter(new FileWriter("AssocMiner_Data/" + agdhObj.getID() + ".txt"));
+				for(String content : agdhObj.getPatternCandidates())
+				{
+					bwAssocMinerNum.write(content + "\n");
+				}
+				bwAssocMinerNum.close();
+			}
+			catch(IOException ex)
+			{
+				ex.printStackTrace();
+			}
+		}
+		//End of dumping the data for applying miners.
+		
+		
+		
+		long endAnalyzeAppl = System.currentTimeMillis();
+		logger.warn("Time taken for analyzing input application: " + (endAnalyzeAppl - beginAnalyzeAppl) + " msec");
 	}
 	
 	/**
@@ -669,21 +733,18 @@ public class RepositoryAnalyzer {
 			if(nepList == null)
 				return;
 			
-			bwAssocMethodIDs.write(eeMIH.getKey() + " : " + eeMIH.getPrintString() + "\n");
-			    			
+			bwAssocMethodIDs.write(eeMIH.getKey() + " : " + eeMIH.getPrintString() + "\n");			    			
 			bwAssocMiner.write("\n**********************\n");
 			bwAssocMiner.write("MethodInvocation : " + eeMIH.getPrintString() + " (" + eeMIH.getKey() + ") " + "\n\n");
 			
 			int tcnt = 0;
 			Set<Integer> sub_methodList = new HashSet<Integer>();
 			bwAssocSubMethodIDs = new BufferedWriter(new FileWriter("AssocMiner_IDs/" + eeMIH.getKey() + ".txt"));
-			bwAssocMinerNum = new BufferedWriter(new FileWriter("AssocMiner_Data/" + eeMIH.getKey() + ".txt"));
-			
+			bwAssocMinerNum = new BufferedWriter(new FileWriter("AssocMiner_Data/" + eeMIH.getKey() + ".txt"));			
 			Iterator<CodeExampleStore> cesIter = eeMIH.getCodeExamples().iterator();
 			
 			for(NormalErrorPath nepObj : nepList) {
-				CodeExampleStore cesObj = cesIter.next();
-				
+				CodeExampleStore cesObj = cesIter.next();				
 				bwAssocMiner.write("Count " + (tcnt++) + "  " + cesObj.javaFileName + "," + cesObj.methodName + "\n");
 				bwAssocMiner.write("Normal:\n");
 				for(MethodInvocationHolder normalpathMIH : nepObj.getNormalPath()) {
@@ -698,8 +759,7 @@ public class RepositoryAnalyzer {
 					}
 				}		
 				
-				bwAssocMiner.write("\nError:\n");
-				
+				bwAssocMiner.write("\nError:\n");				
 				for(MethodInvocationHolder errorMIH : nepObj.getErrorPath()) {
 					if(ASTCrawlerUtil.ignoreErrorMIH(eeMIH, errorMIH)) {
 						continue;
@@ -728,12 +788,72 @@ public class RepositoryAnalyzer {
 	
 	/**
 	 * Initializes the class set that can be ignored while mining patterns
-	 *
 	 */
 	private void initializeIgnoreClassSet()
 	{
 		this.ignoreClassSet.add("String");
-		this.ignoreClassSet.add("java.lang.String");	
+		this.ignoreClassSet.add("java.lang.String");
+		this.ignoreClassSet.add("java.lang.StringBuffer");
+		this.ignoreClassSet.add("java.io.IOException");
+		this.ignoreClassSet.add("java.lang.Exception");		
+		this.ignoreClassSet.add("java.lang.ClassNotFoundException");
+		this.ignoreClassSet.add("java.lang.InterruptedException");
+		this.ignoreClassSet.add("java.lang.ArrayIndexOutOfBoundsException");
+		this.ignoreClassSet.add("java.lang.IndexOutOfBoundsException");
+		this.ignoreClassSet.add("java.lang.RuntimeException");
+		this.ignoreClassSet.add("java.lang.ArithmeticException");
+		this.ignoreClassSet.add("java.lang.ClassCastException");
+		this.ignoreClassSet.add("java.lang.NullPointerException");	
+		this.ignoreClassSet.add("java.io.PrintStream");
+		this.ignoreClassSet.add("java.io.PrintWriter");
+		this.ignoreClassSet.add("java.lang.Object");
+		this.ignoreClassSet.add("long");
+		this.ignoreClassSet.add("float");
+		this.ignoreClassSet.add("int");
+	}
+	
+	/**
+	 * Adds elements into final MIH List. Here only IDs are added to final MIH List
+	 * Also, the finalMIHList includes a representative key so that the lists are again separated 
+	 * For examples, the representative key for SINGLE-OBJECT mode is the receiver object type itself.
+	 * @param finalMihSetForMethod
+	 */
+	public void addToFinalMIHList(Collection<MIHList> finalMihSetForMethod)
+	{		
+		//Traverse each mihlist
+		for(MIHList ml : finalMihSetForMethod)
+		{
+			List<MethodInvocationHolder> mlist = ml.getMihList(); 
+			if(mlist.size() == 0)
+				continue;
+			
+			//Identify the representative element and encoded sequence from the MIHList.
+			String representativeKey = "";			
+			if(CommonConstants.OPERATION_MODE == CommonConstants.SINGLE_OBJECT_PATTERN_MODE)
+			{
+				//For Single object method, any method-invocation's receiver object type will do
+				representativeKey = mlist.get(0).getReceiverClass().type;
+			} 
+			else
+			{
+				//TODO: for multi-object mode
+			}
+			
+			AssocMinerGroupDataHolder agdhObj = finalEncodedMihList.get(representativeKey);
+			if(agdhObj == null)
+			{
+				agdhObj = new AssocMinerGroupDataHolder(representativeKey);				
+				finalEncodedMihList.put(representativeKey, agdhObj);
+			}
+			
+			StringBuffer sb = new StringBuffer();
+			for(MethodInvocationHolder tmih : mlist)
+			{
+				sb.append(tmih.getKey() + " ");
+			}
+			
+			agdhObj.addPatternCandidate(sb.toString());			
+		}
 	}
 	
 	//Function for running Apriori association rule miner
@@ -805,14 +925,8 @@ public class RepositoryAnalyzer {
 			logger.error("Error in reading the generated association rules" + ex);
 		}
 	}*/
-	
-	
 
 	public HashSet<String> getImpStatementList() {
 		return impStatementList;
-	}
-	
-	
-	
-	
+	}	
 }

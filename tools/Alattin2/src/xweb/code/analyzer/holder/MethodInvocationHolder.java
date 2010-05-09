@@ -45,10 +45,8 @@ public class MethodInvocationHolder extends Holder {
 	public static int MIHKEYGEN = 0;
 	public static int MIH_LIBKEYGEN = 1;
 	int key = -1;
-	public boolean bDowncast = false;
-	
-	String descriptor = "";
-	
+	public boolean bDowncast = false;	
+	String descriptor = "";	
 	Holder associatedLibMIH = null;		//Associated object
 		
 	HashSet<String> dependentVarSet = new HashSet<String>(3,3);		//A set that stores the set of associated variables for this method invocation
@@ -196,11 +194,21 @@ public class MethodInvocationHolder extends Holder {
 				ITypeBinding exprTypeBinding = expr.resolveTypeBinding();				
 				if(exprTypeBinding != null) {
 					thObj.setType(exprTypeBinding.getQualifiedName());
-					if(expr instanceof SimpleName) {
+					if(expr instanceof SimpleName) 
+					{
 		    			thObj.var = ((SimpleName)expr).getIdentifier();
+		    		} 
+					else 
+		    		{
+		    			TypeHolder tempthobj = ASTCrawlerUtil.unknownIDMapper.get(expr);
+		    	    	if(tempthobj != null)
+		    	    	{
+		    	    		thObj.var = tempthobj.var;
+		    	    	}
 		    		}
 				}					
-				else {
+				else 
+				{
 					thObj = (ASTCrawlerUtil.getRefClassName(expr));
 				}
 			}	
@@ -300,8 +308,7 @@ public class MethodInvocationHolder extends Holder {
 	 * @return
 	 */
 	public boolean heuristicEquals(Object obj)
-	{
-		
+	{		
 		if(obj instanceof MethodInvocationHolder) {
 			MethodInvocationHolder mihObj = (MethodInvocationHolder) obj;
 			String receiverType1 = mihObj.receiverClass.type;
@@ -333,9 +340,10 @@ public class MethodInvocationHolder extends Holder {
 					return false;
 			
 			if(this.receiverClass.equals(mihObj.receiverClass) && this.methodName.equals(mihObj.methodName)) {
-				//TODO: Ignoring arguments for time being (Making the approach similar to Weimer)
-				//if(bTrue)
-				//	return true;
+				if(!CommonConstants.FUNCTION_OVERLOADING)
+				{
+					return true;
+				}
 				
 				if(this.noOfArguments != mihObj.noOfArguments)
 					return false;
@@ -438,7 +446,7 @@ public class MethodInvocationHolder extends Holder {
 				tempStr = tempStr + " ReturnType:";
 			}
 			return tempStr + getReturnType();
-		}	
+		}
 	}
 	
 	public String formattedPrintString()

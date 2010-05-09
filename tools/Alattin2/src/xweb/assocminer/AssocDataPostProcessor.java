@@ -16,7 +16,6 @@ import xweb.code.analyzer.holder.MethodInvocationHolder;
  *
  */
 public class AssocDataPostProcessor {
-
 	
 	public static void main(String args[]) {
 		try {

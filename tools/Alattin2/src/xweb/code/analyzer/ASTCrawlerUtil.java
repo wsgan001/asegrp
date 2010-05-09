@@ -76,7 +76,7 @@ public class ASTCrawlerUtil {
     static public HashMap<String, String> fullPackageNamesForClasses = new HashMap<String, String>();
     static protected ArrayList<TypeDeclaration> listOfClassDecl = new ArrayList<TypeDeclaration>();
     static protected ArrayList<MethodDeclaration> listOfMethodDecl = new ArrayList<MethodDeclaration>();
-    static protected HashMap<Expression, TypeHolder> unknownIDMapper = new HashMap<Expression, TypeHolder>(); 
+    static public HashMap<Expression, TypeHolder> unknownIDMapper = new HashMap<Expression, TypeHolder>(); 
     static protected HashMap<String, Boolean> runtimeExceptionMap = new HashMap<String, Boolean>();	//A map that stores whether a given exception is run-time or not
     
 	//Variables for storing the scope of the variable
@@ -89,12 +89,18 @@ public class ASTCrawlerUtil {
     {
     	try
     	{
+    		if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_INPUTPROJECT ||
+    				CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_INPUTPROJECT)
+    		{
+    			return typeObjP.resolveBinding().getQualifiedName();
+    		} 		
+    		    		
     		String fullClassName = CommonConstants.getUniqueIDForUnknown();
     		if(typeObjP instanceof SimpleType)
     		{	
     			SimpleType typeObj =  (SimpleType) typeObjP;
 				String typeName = typeObj.getName().getFullyQualifiedName(); 
-					//TODO: To check this, there can be a problem here
+				//TODO: To check this, there can be a problem here
 				
 				if(!typeName.contains("."))	{
 					fullClassName = (String) ASTCrawlerUtil.fullPackageNamesForClasses.get(typeName);
@@ -194,7 +200,7 @@ public class ASTCrawlerUtil {
 			thObj.var = "this";
 			thObj.type = "this";
 			return thObj;
-		}		
+		}
 		
 		//exprNode is NULL if the method invocation is not associated with any object
 		if(exprNode instanceof SimpleName)
@@ -549,7 +555,8 @@ public class ASTCrawlerUtil {
     	}
     	
     	return thObj;
-    }
+    }  
+    
     
     /**
      * Function for getting the run-time type of a variable.
@@ -1055,7 +1062,7 @@ public class ASTCrawlerUtil {
     		return;
     	}
     	
-    	if(!CommonConstants.bEnableAssocMiner) {
+    	if(!CommonConstants.ENABLE_ASSOC_MINER) {
 	    	//A previous strategy where the approach is based on simple counting
     		//Check whether it is alread existing
 			Iterator freqIter = errorMIFrequency.iterator();

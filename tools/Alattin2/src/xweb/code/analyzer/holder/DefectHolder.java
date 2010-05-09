@@ -31,7 +31,7 @@ public class DefectHolder implements Comparator {
 		MinedPattern m1Obj = ((DefectHolder) arg0).mpObj;
 		MinedPattern m2Obj = ((DefectHolder) arg1).mpObj;
 		
-		if(!CommonConstants.bEnableAssocMiner) {
+		if(!CommonConstants.ENABLE_ASSOC_MINER) {
 			if(m1Obj.getSupport_category() < m2Obj.getSupport_category()) {
 				return -1;
 			} else if(m1Obj.getSupport_category() > m2Obj.getSupport_category()) {

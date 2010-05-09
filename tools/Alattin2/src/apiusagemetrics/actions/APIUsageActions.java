@@ -85,7 +85,7 @@ public class APIUsageActions extends ActionDelegate implements IObjectActionDele
 	        	
 	        	String jexComplFileName = codesamples_dir + CommonConstants.FILE_SEP  + project.getElementName().toString() + CommonConstants.FILE_SEP + jexExceptionFile;
 	        	//Check the jex exceptions file. If not present throw error and stop
-	        	if(!CommonConstants.bIgnoreJex && !(MODE_RUNNING == CommonConstants.DETECT_BUGS_IN_INPUTPROJECT)) {
+	        	if(!CommonConstants.IGNORE_JEX && !(MODE_RUNNING == CommonConstants.DETECT_BUGS_IN_INPUTPROJECT)) {
 		        	try {
 		        		File fObj = new File(jexComplFileName);
 		        		FileReader frObj = new FileReader(fObj);
@@ -103,7 +103,7 @@ public class APIUsageActions extends ActionDelegate implements IObjectActionDele
 	        	
 	        	loadPackageInfoToMemory(project);
 	        	
-	        	if(!CommonConstants.bIgnoreJex && !(MODE_RUNNING == CommonConstants.DETECT_BUGS_IN_INPUTPROJECT)) {
+	        	if(!CommonConstants.IGNORE_JEX && !(MODE_RUNNING == CommonConstants.DETECT_BUGS_IN_INPUTPROJECT)) {
 	        		loadJexExceptions(jexComplFileName);
 	        	}
 	        	       	
@@ -182,6 +182,8 @@ public class APIUsageActions extends ActionDelegate implements IObjectActionDele
 	    		
 	    		logger.warn("Time taken for creating the repository " + (endReposCreation - beginReposCreation) + " msec");
 	    			    		
+	    		//Initialize keys after parsing library code to avoid conflicts
+	    		MethodInvocationHolder.MIHKEYGEN = MethodInvocationHolder.MIH_LIBKEYGEN + 1;
 	    		logger.debug("Finished downloading files...");
 	    		ra.analyzeRepository(codesamples_dir_local);
 
@@ -242,8 +244,9 @@ public class APIUsageActions extends ActionDelegate implements IObjectActionDele
 	    			
 	    		//Freeing the memory
 	    		RepositoryAnalyzer.clearInstance();
-	    		MethodInvocationHolder.MIHKEYGEN = 0;
 	    		
+	    		//The temporary keys are always assigned beyond the keys assigned to library declared methods and used methods.
+	    		MethodInvocationHolder.MIHKEYGEN = MethodInvocationHolder.MIH_LIBKEYGEN + 1;	    		
 	    	}
         	catch(Throwable th)
         	{

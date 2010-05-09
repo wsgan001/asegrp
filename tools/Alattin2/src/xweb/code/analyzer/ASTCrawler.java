@@ -48,7 +48,6 @@ import org.eclipse.jdt.core.dom.VariableDeclarationExpression;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 import org.eclipse.jdt.core.dom.WhileStatement;
-import org.eclipse.jdt.internal.compiler.codegen.MethodNameAndTypeCache;
 
 import xweb.code.analyzer.holder.CatchBlockBeginHolder;
 import xweb.code.analyzer.holder.DefectHolder;
@@ -546,27 +545,32 @@ public class ASTCrawler extends ASTVisitor {
 			List<MIHList> mihListLists = new ArrayList<MIHList>();
 			for(String trace : this.visitedTraces)
 			{			
+				trace = trace.trim();
+				if(trace.length() == 0)
+					continue;
+				
 				String idArr[] = trace.split(" ");
 				List<MethodInvocationHolder> mihList = new ArrayList<MethodInvocationHolder>();  				
 				for(int tCnt = 0; tCnt < idArr.length; tCnt++) {
 					MethodInvocationHolder mihobj = IdToSamplesMethodHolder.get(new Integer(idArr[tCnt]));			
 					mihList.add(mihobj);
-					raobj.bwAssocMiner.write("\t" + mihobj.toString() + "(" + mihobj.getKey() + ")\n");											
+					raobj.bwAssocMiner.write("\t" + mihobj.getCompleteString() + " (" + mihobj.getKey() + ")\n");					
 				}
-				raobj.bwAssocMiner.write("\n");				
+				raobj.bwAssocMiner.write("\n");
 				
 				MIHList ml = new MIHList(mihList);
 				mihListLists.add(ml);			
-			}			
+			}
 			
-			SequenceAnalyzer.sliceMultiObjectSequences(mihListLists);
+			SequenceAnalyzer.sliceObjectSequences(mihListLists);
 			
-			raobj.bwAssocMiner.write("*******************\n");
-			raobj.bwAssocMiner.flush();			
+			//raobj.bwAssocMiner.write("*******************\n");
+			//raobj.bwAssocMiner.flush();			
 		}
-		catch(IOException ex)
+		catch(Exception ex)
 		{
-			logger.error("IOException occurred while writing contents ");
+			logger.error("IOException occurred while writing contents " + ex.getMessage());
+			ex.printStackTrace();
 		}
     }  
         
@@ -621,8 +625,7 @@ public class ASTCrawler extends ASTVisitor {
 	}
 
 	@SuppressWarnings("unchecked")
-	private void depthFirstTraversal(Holder srcObj, String IDTraceStr) {
-		
+	private void depthFirstTraversal(Holder srcObj, String IDTraceStr) {		
 		if(srcObj instanceof MethodInvocationHolder) {
 			IDTraceStr += ((MethodInvocationHolder)srcObj).getKey() + " ";			
 		}
@@ -639,7 +642,7 @@ public class ASTCrawler extends ASTVisitor {
 		}
 		
 		this.visitedTraces.add(IDTraceStr);					
-	}	
+	}
 	
 	//Function that matches context by treating the function calls as a sequence
 	public boolean matchPatternContextSeqMode(MethodInvocationHolder srcMIH, List<MethodInvocationHolder> pcContextList) 
@@ -760,84 +763,7 @@ public class ASTCrawler extends ASTVisitor {
 		
 		return false;
 	}
-	
-	
-	/*
-	 * Main function resposible for extracting the minimal sequence in a method list that can take input
-	 * and give output
-	 */
-	private List<MethodInvocationHolder> constructMinimalSeqForAllErrorAPI(Stack<MethodInvocationHolder> llPathStack, Set<String> errMIHVar)
-	{
-		//This set is used to keep track of types found in the path to extract the sequence
-		HashSet<String> typeSet = new HashSet<String>();
-		HashSet<Integer> keySet = new HashSet<Integer>();
-		
-		List<MethodInvocationHolder> minimizedList = new ArrayList<MethodInvocationHolder>();
-		typeSet.addAll(errMIHVar);	
-		
-		try
-		{
-			/*if(!llPathStack.isEmpty())
-			{
-				//First token contains the destination object we are looking for
-				MethodInvocationHolder mihObj = (MethodInvocationHolder) llPathStack.pop();
-				addToTypeSet(mihObj, typeSet);
-				keySet.add(new Integer(mihObj.getKey()));		
-				minimizedList.add(mihObj);
-			}*/		
-			
-			//Gathering the least path from the extracted path from destination to source
-			boolean bFirstOne = true;
-			while(!llPathStack.isEmpty() && typeSet.size() != 0)
-			{
-				MethodInvocationHolder mihObj = (MethodInvocationHolder) llPathStack.pop();
-				//if(isVariableExistsInMethodInvocationHolder(mihObj, errMIH.getReceiverClass().var)) {
-				//	minimizedList.add(mihObj);
-				//	return minimizedList;
-				//}
-				
-				boolean bTypeSetContains = false;
-				if(typeSet.contains(mihObj.getReturnType().var)) 
-				{
-					bTypeSetContains = true;
-					typeSet.remove(mihObj.getReturnType().var);
-				}
-				
-				if(typeSet.contains(mihObj.getReceiverClass().var))
-				{
-					bTypeSetContains = true;
-					typeSet.remove(mihObj.getReceiverClass().var);
-				}
-				
-				//Breaking in the middle where the typeset got empty.
-				if(typeSet.size() == 0 ) {
-					if(!keySet.contains(new Integer(mihObj.getKey())))
-							minimizedList.add(mihObj);	
-					break;
-				}				
-									
-				if(bTypeSetContains || bFirstOne)
-				{	
-					bFirstOne = false;
-					if(!keySet.contains(new Integer(mihObj.getKey())))
-					{						
-						SequenceAnalyzer.addToTypeSet(mihObj, typeSet);
-						keySet.add(new Integer(mihObj.getKey()));
-						minimizedList.add(mihObj);	
-					}	
-				}			
-			}			
-		}
-		catch(Exception ex)
-		{
-			logger.info(ex.getStackTrace().toString());
-		}
-		
-		Collections.reverse(minimizedList);
-		return minimizedList;
-	}	
-	
-    
+   
     /**
      * Function for closing the Trace file at the end
      */
@@ -1672,8 +1598,7 @@ public class ASTCrawler extends ASTVisitor {
 		//Add error edges for each method invocation. Here we go through the CATCH stack 
 		//and try to add edges till either we get the catch that handles "Exception" or
 		//reaches "finally". 
-		if(tryHolderStack.size() > 0) {
-			
+		if(tryHolderStack.size() > 0) {			
 			//This code below applies only when the Method is inside a try block that is OUTER one or is inside another try block
 			if(exceptionBlkStack.peek() instanceof TryBlockBeginHolder && errorEdgeStack.peek() instanceof TryBlockBeginHolder) {								
 				if(bSearchForRefType) {
@@ -1690,16 +1615,20 @@ public class ASTCrawler extends ASTVisitor {
 						String exceptionStr = ((CatchBlockBeginHolder)echObj).getExceptionStr();
 						//Additional code for making sure whether the exception block is possible or not
 						//This is controlled with a flag as sometimes the information is not available
-						if(!CommonConstants.bIgnoreJex) {
+						if(!CommonConstants.IGNORE_JEX) {
 							if(bSearchForRefType && !(exceptionStr.equals("Exception") || exceptionStr.equals("java.lang.Exception"))) {
 								if(!possibleExceptionSet.contains(exceptionStr)) {
 									continue;
 								}
 							}
 						}	
-												
-						ErrorEdgeHolder eeh = new ErrorEdgeHolder(mihObj, echObj);
-						methodDeclGraph.addEdge(eeh);						
+						
+						if(!CommonConstants.IGNORE_EXCEPTION_PATHS)
+						{
+							ErrorEdgeHolder eeh = new ErrorEdgeHolder(mihObj, echObj);						
+							methodDeclGraph.addEdge(eeh);
+						}
+						
 						if(exceptionStr.equals("java.lang.Exception") || exceptionStr.equals("Exception")) {
 							break;
 						}					
@@ -1707,7 +1636,7 @@ public class ASTCrawler extends ASTVisitor {
 						ErrorEdgeHolder eeh = new ErrorEdgeHolder(mihObj, echObj);
 						methodDeclGraph.addEdge(eeh);
 						break;				
-					}			
+					}
 				}				
 			} else if (exceptionBlkStack.peek() instanceof TryBlockBeginHolder && !(errorEdgeStack.peek() instanceof TryBlockBeginHolder)) {
 				//A case where we are currently in a try block but this TRY block is again inside some catch or finally block
@@ -1738,8 +1667,7 @@ public class ASTCrawler extends ASTVisitor {
 				}	
 				
 			} else if(exceptionBlkStack.peek() instanceof CatchBlockBeginHolder) {
-				//When the method is in a catch block
-				
+				//When the method is in a catch block				
 				//Check whether the current try block has finally, if yes add an error edge to that
 				//If not, advance to the other catch blocks in the stack
 				FinallyBlockBeginHolder fbbObj = tryHolderStack.peek().getFbhObj();

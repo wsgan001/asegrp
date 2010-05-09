@@ -31,7 +31,6 @@ import xweb.core.RepositoryAnalyzer;
  * TODO: To replace this visitor with a full fledged visitor that can automatically
  * handle type resolutions.
  * @author suresh_thummalapenta
- *
  */
 public class ParseSrcVisitor extends ASTVisitor  {
 
@@ -212,10 +211,7 @@ public class ParseSrcVisitor extends ASTVisitor  {
 				{
 					logger.debug("ERROR : TO DEAL WITH THIS...");
 				}
-			}
-			
-			
-			
+			}		
 			
 			//If this reference class name belong to the classes in the current library, then add this to
 			//the invoked methods list
@@ -227,9 +223,7 @@ public class ParseSrcVisitor extends ASTVisitor  {
 			String retType = "";
 			if(exprTypeBinding != null) {
 				retType = exprTypeBinding.getQualifiedName();
-			}					
-			
-			
+			}	
 			
 			if(libClsCollection.contains(refClassName))
 			{	
@@ -262,7 +256,7 @@ public class ParseSrcVisitor extends ASTVisitor  {
 				if(relObj.containsMI(mihForMi) == null) {
 					relObj.getMiList().add(mihForMi);
 					mihForMi.setKey(MethodInvocationHolder.MIH_LIBKEYGEN++);
-				}			 
+				} 
 				
 				//If the actual class containing the method-declaration is different,
 				//then the current class is a child of the actual class
@@ -339,8 +333,7 @@ public class ParseSrcVisitor extends ASTVisitor  {
 			//If it is already in the current classes, ignore it.
 			if(raObj.getLibClassMap().get(typeName) != null) {
 				return null;
-			}
-			
+			}	
 
 			if(raObj.getExternalObjects().get(typeName) == null) {
 				ExternalObject eoObj = new ExternalObject();

@@ -16,8 +16,11 @@
 # 1 : Frequent Subsequence Miner
 $MINER_TYPE = 0;
 
-$input_mid = $ARGV[0];
-$input_filename = "AssocMiner_Data/".$input_mid.".txt";
+$input_filename = $ARGV[0];
+$output_filename = $ARGV[1];
+$support_value = $ARGV[2];
+
+$input_filename = "AssocMiner_Data/".$input_filename;
 open(INPUT, "<$input_filename");
 open(OUTPUT, ">AssocMinerDataNum_Transformed.txt");
 
@@ -31,12 +34,12 @@ $numSequences = 0;
 $maxLengthSeq = 0;
 $totalSeqLen = 0;
 
-print "Processing: ".$input_mid."\n";
+print "Processing: ".$input_filename."\n";
 
 while ($line = <INPUT>) {
 	
 	#Each line is of the format: 12.70777.0 12.70778.0 12.70779.1
-	chop($line);
+	chomp($line);
 	chomp($line);
 	@parts = split(" ", $line);
 	$numParts = @parts;
@@ -94,7 +97,8 @@ if($MINER_TYPE == 1) {
 } else {
 	#Mafia is run with frequent closed itemsets here.
 	#This option is very important for computing back the support values for each element
-	system("mafia.exe -fci .2 -ascii AssocMinerDataNum_Transformed.txt frequent.dat");
+	$command = "mafia.exe -fci $support_value -ascii AssocMinerDataNum_Transformed.txt frequent.dat";
+	system($command);
 }
 
 open(INPUT, "<frequent.dat");
@@ -108,8 +112,8 @@ close INPUT;
 @sortedFreqItemSets = ();
 $totalFrequency = 0;
 foreach $freqElem (@freqItemsets) {
-	chop($freqElem);
-	chop($freqElem);
+	chomp($freqElem);
+	chomp($freqElem);
 	if($MINER_TYPE == 1) {
 		#Each entry is of the form "14 13 3 1 2 : 1"
 		@parts = split(" : ", $freqElem);	
@@ -125,7 +129,8 @@ foreach $freqElem (@freqItemsets) {
 
 	if($MINER_TYPE == 0) {
 		#As frequent itemset miner does not preserve any order among elements
-		@subparts = sort @subparts;	
+		@subparts_temp = sort { $b <=> $a } @subparts;	
+		@subparts = @subparts_temp;
 	}
 
 	$formattedStr = "";
@@ -142,8 +147,7 @@ foreach $freqElem (@freqItemsets) {
 }
 
 
-$output_file = "AssocMiner_Data/".$input_mid."_output.txt";
-#open(OUTPUT, ">$output_file");
+$output_file = "AssocMiner_Data/".$output_filename;
 
 #Reading the out from BIDE and storing frequencies
 %FreqMapper = ();									# Captures frequency for each itemset
@@ -192,22 +196,18 @@ foreach $line (@sortedFreqItemSets) {
 
 	#$leftPart = trim($leftPart);
 	#$rightPart = trim($rightPart);
-	#print OUTPUT $leftPart." -> ".$rightPart." : ".$parts[1]."\n";	
+	#print OUTPUT_TEMP $leftPart." -> ".$rightPart." : ".$parts[1]."\n";	
 	
 	#Ignore those elements with no left parts
-	if($leftPart eq "") {
-		next;	
-	}		
+	#if($leftPart eq "") {
+	#	next;	
+	#}		
 
 	$leftPartArr[$minePatternCnt] = $leftPart;
 	$rightPartArr[$minePatternCnt] = $rightPart;
 	$minePatternCnt++;	
 
-	if($rightPart ne "") {
-		$FreqMapper{$leftPart." ".$rightPart}{"frequency"} = $parts[1];
-	} else {	
-		$FreqMapper{$leftPart}{"frequency"} = $parts[1];
-	}
+	$FreqMapper{$leftPart." ".$rightPart}{"frequency"} = $parts[1];
 
 	$existingVal = $aloneLeftPartFreqMapper{$leftPart}{"frequency"};
 	if($existingVal < $parts[1]) {
@@ -215,172 +215,37 @@ foreach $line (@sortedFreqItemSets) {
 	}
 }
 
-
-#Computing support values for each transaction
-
-
 #Transforming back into patterns using ID information
+open(OUTPUT_TEMP, ">$output_file");
+for($tcnt = $minePatternCnt - 1; $tcnt >= 0 ; $tcnt--) 
+{
+	$freq = $FreqMapper{$leftPartArr[$tcnt]." ".$rightPartArr[$tcnt]}{"frequency"};		
 
-open(METHODIDS, "<AssocMethodIds.txt");
-%assocMethodIdMapper = ();
-@midArr = ();
-while($line = <METHODIDS>) {
-	chop($line);
-	chop($line);
-	#Each line is of the format "5 : java.sql.PreparedStatement:close():void"
-	if($line =~ /([^ ]+)( : )(.*)$/) {
-		$keyElem = $1;	
-		$assocMethodIdMapper{$1}{"mname"} = $3;
-			
-		#As we are doing method by method mining, we only need submethod ids of this particular method-invocation
-		if($keyElem != $input_mid) {
-			next;
-		}
-
-		open(SUBMETHODIDS, "<AssocMiner_IDs/$keyElem.txt");
-		
-		push @midArr,$keyElem;
-		while($innerM = <SUBMETHODIDS>) {
-			chop($innerM);
-			chop($innerM);
-			if($innerM  =~ /([^ ]+)( : )(.*)$/) {
-				$assocMethodIdMapper{$keyElem}{$1}{"mname"} = $3;
-			}
-		}
-		close SUBMETHODIDS;
-	}	
-}
-close METHODIDS;
-
-$anchor_method = $assocMethodIdMapper{$input_mid}{"mname"};
-$numPatterns = 0;
-%result_mapper = ();			#Stores the end results
-for($tcnt = 0; $tcnt < $minePatternCnt; $tcnt++) {
-	#As we interested in association rules, ignore sequences / itemsets with no right side
-	if($rightPartArr[$tcnt] eq "") {
-		next;
-	}			
-
-	$freq = $FreqMapper{$leftPartArr[$tcnt]." ".$rightPartArr[$tcnt]}{"frequency"};	
-	if($freq == 1) {
-		next;		# No need to consider patterns of frequency as such patterns won't help for bug-finding.
+	if($leftPartArr[$tcnt] ne "") {
+		print OUTPUT_TEMP $leftPartArr[$tcnt]." ".$rightPartArr[$tcnt];
+	} else {
+		print OUTPUT_TEMP $rightPartArr[$tcnt];
 	}
 
-
-	$pattern = "";
-	
 	if($MINER_TYPE == 1) {
-		#For frequent subsequence mining, the last element in the left part should be anchor	
-		@leftPartArrSub = split(" ", $leftPartArr[$tcnt]);
-		$leftPartArrSub_Cnt = @leftPartArrSub;
-		foreach ($left_cnt = 0; $left_cnt < ($leftPartArrSub_Cnt - 1); $left_cnt ++) {
-			$leftElem = $leftPartArrSub[$left_cnt];
-			if($leftElem =~ /^([0-9]+)(\.)([0-9]+)(\.)([0-9]+)$/) {
-				$MIId = $1;
-				$SubMIId = $3;	
-				$pattern = $pattern.$assocMethodIdMapper{$MIId}{$SubMIId}{"mname"}."#";
-			}
-		}
-
-		if($leftPartArrSub_Cnt == 1) {
-			$pattern = $pattern." ";
-		}
-
-		#Check whether the last element in the left element is same as the anchor method.
-		#If not that pattern is of no use for us.
-		$leftElem = $leftPartArrSub[$leftPartArrSub_Cnt - 1];
-		if($leftElem =~ /^([0-9]+)(\.)([0-9]+)(\.)([0-9]+)$/) {
-			$MIId = $1;
-			$SubMIId = $3;	
-			$lastMethod = $assocMethodIdMapper{$MIId}{$SubMIId}{"mname"};
-		}
-
-		$retVal = compareMethodInvocations($lastMethod, $anchor_method);
-		if($retVal == 0) {
-			next;
-		}	
+		#Each entry is of the form "14 13 3 1 2 (1)"
+		print OUTPUT_TEMP " (".$freq.")";
 	} else {
-		#For itemset mining, anchor can present anywhere in the left part
-		@leftPartArrSub = split(" ", $leftPartArr[$tcnt]);
-		$leftPartArrSub_Cnt = @leftPartArrSub;
-		$bAnchor_found = 0;
-		foreach ($left_cnt = 0; $left_cnt < ($leftPartArrSub_Cnt); $left_cnt ++) {
-			$leftElem = $leftPartArrSub[$left_cnt];
-			if($leftElem =~ /^([0-9]+)(\.)([0-9]+)(\.)([0-9]+)$/) {
-				$MIId = $1;
-				$SubMIId = $3;	
-				
-				#Checking whether this is an anchor method
-				$curr_method = $assocMethodIdMapper{$MIId}{$SubMIId}{"mname"};	
-				$retVal = compareMethodInvocations($curr_method, $anchor_method);
-				if($retVal == 0) {
-					#Current method not an anchor method, so append to the pattern
-					$pattern = $pattern.$curr_method."#";
-				} else {
-					#Current method is an anchor method. So no need to append to the pattern
-					$bAnchor_found = 1;
-				}		
-			}
-		}
+		#Each entry is of the form "14 13 3 1 2 : 1"
+		print OUTPUT_TEMP " : ".$freq;
 
-		if($leftPartArrSub_Cnt == 1) {
-			$pattern = $pattern." ";
-		}
-
-		if($bAnchor_found == 0) {
-			#Ignore this pattern, if anchor is not found.
-			next;
-		}
 	}
-
-	$pattern = $pattern.",".$anchor_method.",";
-
-	@rightPartArrSub = split(" ", $rightPartArr[$tcnt]);
-	$numRightElem = @rightPartArrSub;
-	$t_right_elem = 0;
-	foreach $rightElem (@rightPartArrSub) {
-		if($rightElem =~ /^([0-9]+)(\.)([0-9]+)(\.)([0-9]+)$/) {
-			$t_right_elem++;
-			$MIId = $1;
-			$SubMIId = $3;
-			if($t_right_elem == $numRightElem) {
-				$pattern = $pattern.$assocMethodIdMapper{$MIId}{$SubMIId}{"mname"};
-			} else {
-				$pattern = $pattern.$assocMethodIdMapper{$MIId}{$SubMIId}{"mname"}."#";
-			}
-		}
-	}
-	
-	$pattern = $pattern.",".$leftPartArr[$tcnt]." -> ".$rightPartArr[$tcnt].",".$freq." ";		
-
-	$leftPartSupport = $FreqMapper{$leftPartArr[$tcnt]}{"frequency"};
-	if($leftPartSupport == 0) {
-		$leftPartSupport = $aloneLeftPartFreqMapper{$leftPartArr[$tcnt]}{"frequency"};
-	}
-	
-	if($leftPartSupport != 0) {
-		$supportVal = $freq / $leftPartSupport;
-	} else {
-		$supportVal = 1;
-	}		
-
-	$pattern = $pattern.",".$supportVal;
-
-	#Decide whether to consider this pattern. Ignore those patterns with lowest relative frequency
-	$relative_support = $freq / $totalFrequency;
-	if($relative_support >= $LOWER_THRESHOLD) {	
-		$result_mapper{$numPatterns}{"PatternList"} = $pattern.",".$relative_support;
-		$result_mapper{$numPatterns}{"frequency"} = $freq;
-		$numPatterns = $numPatterns + 1;
- 	}
+	print OUTPUT_TEMP "\n";
 }
+
+close OUTPUT_TEMP;
 
 #Printing the final output as patterns to a file
-open(CONSOLIDATED, ">>AssocMinerData_MinedConsolidated.csv");
-for ($tcnt = 0; $tcnt < $numPatterns; $tcnt++) {
-	print CONSOLIDATED ($tcnt + 1).",".$result_mapper{$tcnt}{"PatternList"}."\n";		 
-}
-close CONSOLIDATED;
+#open(CONSOLIDATED, ">>AssocMinerData_MinedConsolidated.csv");
+#for ($tcnt = 0; $tcnt < $numPatterns; $tcnt++) {
+#	print CONSOLIDATED ($tcnt + 1).",".$result_mapper{$tcnt}{"PatternList"}."\n";		 
+#}
+#close CONSOLIDATED;
 
 # ********************* Assisting Subroutines ***********************
 sub trim() {

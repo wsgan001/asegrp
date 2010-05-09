@@ -1,2 +1,23 @@
 
 1. For time being, loops are ignored in the sequences. For example, BufferedReader.readLine() can be invoked multiple times in a loop, it is considered only once.
+	-> What happens if loops are also considered!!!
+
+2. For each method-declaration, currently I collect all sequences including sequences that represent exception-handling behavior. Therefore, there are many partial sequences that do not represent the complete behavior. For example, consider the two sequences..
+
+	java.io.FileReader:CONSTRUCTOR(java.lang.String::):java.io.FileReader#::#java.io.BufferedReader:CONSTRUCTOR(java.io.FileReader::):java.io.BufferedReader#::#java.io.BufferedReader:readLine():java.lang.String#::#java.io.BufferedReader:close():void#::#
+	java.io.FileReader:CONSTRUCTOR(java.lang.String::):java.io.FileReader#::#java.io.BufferedReader:CONSTRUCTOR(java.io.FileReader::):java.io.BufferedReader#::#
+
+	The second sequence is a subsequence of the first one. Currently, we eliminate only the duplicate sequences. If the patterns are not decent, we can eliminate subsequences and keep the longest ones. This could reduce the noise among sequences and help mine better sequences.
+	-> Currently, controlled via a flag to turn this on and off.
+
+3. Single object patterns vs Multi-object patterns -- Which ones are more interesting?
+4. Will it be interesting if we ignore function overloading. For example, now the following two method calls are treated as different
+	11 : java.io.BufferedReader:CONSTRUCTOR(java.io.FileReader::):java.io.BufferedReader
+	17 : java.io.BufferedReader:CONSTRUCTOR(java.io.InputStreamReader::):java.io.BufferedReader
+
+        -> This may reduce the support values of patterns mined  
+
+5. Hibernate -> Analyze all patterns with complete debug data and see whether any additional bug-fixes need to be done in generating the data.
+	-> One this to fix is to avoid "UNKNOWN" and "this" types. Check the code in ParseSrcVisitor.java for more details on this.
+
+6. Sequence miner vs Itemset miner -> check which one would be more appropriate
