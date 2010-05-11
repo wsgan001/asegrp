@@ -22,10 +22,10 @@ $glob_SingleChkCnt = 0;
 $glob_BalancedPattern = 0;
 $glob_ImbalancedPattern = 0;
 
-open(METHODIDS, "<AssocMethodIds.txt");
-while($line = <METHODIDS>) {
+open(GRPKEYS, "<AssocMinerGroupKeys.txt");
+while($line = <GRPKEYS>) {
 	chomp($line);
-	#Each line is of the format "5 : java.sql.PreparedStatement:close():void"
+	#Each line is of the format "1 : java.util.regex.Matcher"
 	if($line =~ /([^ ]+)( : )(.*)$/) {
 		$keyElem = $1;	
 		%assocMethodIdMapper = ();
@@ -41,38 +41,18 @@ while($line = <METHODIDS>) {
 		#Skipping the patterns with only one element
 		if($globalTransactionCount == 1) {
 			next;
-		}		
-
+		}
 				
 		#Run PostProcess.pl for each method ID. It generates a file called "$keyElem_output.txt"
 		$command = "perl PostProcess.pl $keyElem.txt $keyElem"."_output.txt ".$MIN_SUP;
 		system($command);
-
-		
-		#Capturing the dummy method id in the elements of this method invocation	
-		$dummy_method_invocation_id = 0;
-
-		open(SUBMETHODIDS, "<AssocMiner_IDs/$keyElem.txt");		
-		while($innerM = <SUBMETHODIDS>) {			
-			chomp($innerM);
-			chomp($innerM);
-			if($innerM  =~ /([^ ]+)( : )(.*)$/) {
-				$assocMethodName_temp = $3;
-				$assocMethodID_temp = $1;
-				$assocMethodIdMapper{$keyElem}{$assocMethodID_temp}{"mname"} = $assocMethodName_temp;
-				
-				if($assocMethodName_temp =~ /DUMMY_MINING_ENTRY/) {
-					$dummy_method_invocation_id = $assocMethodID_temp;
-				}
-			}
-		}
-		close SUBMETHODIDS;		
+	
 		
 		#Post process the key element
 		postProcess($keyElem);
 	}
 }
-close METHODIDS;
+close GRPKEYS;
 close FINALOUTPUT;
 close TOTALOUTPUT;
 

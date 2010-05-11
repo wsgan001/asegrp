@@ -14,7 +14,7 @@
 # Types of miner: 
 # 0 : Frequent Itemset Miner
 # 1 : Frequent Subsequence Miner
-$MINER_TYPE = 0;
+$MINER_TYPE = 1;
 
 $input_filename = $ARGV[0];
 $output_filename = $ARGV[1];
