@@ -11,9 +11,11 @@ import java.util.Set;
 import xweb.code.analyzer.ASTCrawlerUtil;
 import xweb.code.analyzer.CodeExampleStore;
 import xweb.code.analyzer.MinedPattern;
+import xweb.code.analyzer.TypeHolder;
 import xweb.code.analyzer.holder.Holder;
 import xweb.code.analyzer.holder.IntHolder;
 import xweb.code.analyzer.holder.MethodInvocationHolder;
+import xweb.common.CommonConstants;
 
 public class LibMethodHolder extends Holder implements Comparator, Cloneable {
 
@@ -49,6 +51,8 @@ public class LibMethodHolder extends Holder implements Comparator, Cloneable {
 	public LibMethodHolder()
 	{
 		ID = RepositoryAnalyzer.getUniqueIDForMI();
+		argTypes = new String[0];
+		printArgumentStr = "()";
 	}
 	
 	public LibMethodHolder(String methodSig)
@@ -309,4 +313,80 @@ public class LibMethodHolder extends Holder implements Comparator, Cloneable {
 	public int getKey() {
 		return ID;
 	}
+	
+	/**
+	 * Compares with another LibMethodHolder instance
+	 */	
+	public boolean equals(Object obj)
+	{
+		if(obj instanceof MethodInvocationHolder)
+			return this.equals((MethodInvocationHolder)obj);
+		
+		if(!(obj instanceof LibMethodHolder))
+			return false;
+		
+		LibMethodHolder other = (LibMethodHolder) obj;
+		if(isDummyHolder(this) || isDummyHolder(other))
+			return false;
+			
+		if(this.containingClass.equals(other.containingClass) && this.name.equals(other.name)) {
+			if(this.argTypes.length != other.argTypes.length)
+				return false;
+				
+    		boolean bSame = true;
+    			
+    		//A heuristic for avoiding the type failures to identify more interesting patterns.
+    		for(int tcnt = 0; tcnt < this.argTypes.length; tcnt++) {
+    			String arg1 = this.argTypes[tcnt];
+    			String arg2 = other.argTypes[tcnt];		
+
+    			if(arg1.equals(arg2))
+    				continue;
+    				
+    			bSame = false;
+    			break;    					
+    		}
+    			
+    		if(bSame)
+    			return true;			
+		}	
+		return false;
+	}
+
+	/**
+	 * Compares with another MethodInvocationHolder instance
+	 */
+	public boolean equals(MethodInvocationHolder other)
+	{			
+		if(isDummyHolder(this) || isDummyHolder(other))
+			return false;
+			
+		if(this.containingClass.name.equals(other.getReceiverClass().type) && this.name.equals(other.getMethodName())) {
+			TypeHolder[] otherTypes = other.getArgumentArr();
+			if(this.argTypes.length != otherTypes.length)
+				return false;
+			
+    		//A heuristic for avoiding the type failures to identify more interesting patterns.
+    		if(!CommonConstants.FUNCTION_OVERLOADING)
+			{
+				return true;
+			}
+    		
+    		boolean bSame = true;    		
+    		for(int tcnt = 0; tcnt < this.argTypes.length; tcnt++) {
+    			String arg1 = this.argTypes[tcnt];
+    			String arg2 = otherTypes[tcnt].type;		
+
+    			if(arg1.equals(arg2))
+    				continue;
+    				
+    			bSame = false;
+    			break;    					
+    		}
+    			
+    		if(bSame)
+    			return true;			
+		}	
+		return false;
+	}	
 }

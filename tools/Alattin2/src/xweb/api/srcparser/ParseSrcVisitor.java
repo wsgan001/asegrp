@@ -85,8 +85,7 @@ public class ParseSrcVisitor extends ASTVisitor  {
 	{
 		try
 		{
-			currentClsName = td.resolveBinding().getQualifiedName();
-			
+			currentClsName = td.resolveBinding().getQualifiedName();		
 			int indexOfBrace;
 			if((indexOfBrace = currentClsName.indexOf("<")) != -1)
 			{
@@ -115,7 +114,7 @@ public class ParseSrcVisitor extends ASTVisitor  {
 			{
 				retType = mdNode.getReturnType2().toString();
 			}
-			
+						
 			MethodInvocationHolder mihObj = new MethodInvocationHolder(new TypeHolder(currentClsName), new TypeHolder(retType), mdNode, false);
 			currentLmh = RepositoryAnalyzer.getInstance().getEqviMethodDeclaration(currentClsName, mihObj);
 		
@@ -140,7 +139,8 @@ public class ParseSrcVisitor extends ASTVisitor  {
 		if(astNode instanceof MethodDeclaration)
 		{
 			currentLmh = null;			
-		}
+		} 
+		
 		super.postVisit(astNode);
 	}
 	
@@ -158,10 +158,7 @@ public class ParseSrcVisitor extends ASTVisitor  {
 			ASTCrawlerUtil.fullPackageNamesForClasses.put(className, refClassName);
 		//End of adding to ASTCrawlerUtil packages
 		
-		if(libClsCollection.contains(refClassName))
-		{	
-		}
-		else 
+		if(!libClsCollection.contains(refClassName))
 		{
 			//This API belongs to external objects				
 			ExternalObject relObj = raObj.getExternalObjects().get(refClassName);
@@ -188,7 +185,8 @@ public class ParseSrcVisitor extends ASTVisitor  {
 		try
 		{
 			Expression expr = miNode.getExpression();
-			String refClassName = "";
+			String refClassName = "";		
+					
 			if(expr == null || expr instanceof ThisExpression)
 			{
 				refClassName = currentClsName;

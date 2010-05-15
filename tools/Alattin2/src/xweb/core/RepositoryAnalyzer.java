@@ -22,6 +22,8 @@ import xweb.core.LibClassHolder;
 import xweb.core.LibMethodHolder;
 import org.apache.log4j.Logger;
 import org.eclipse.jdt.core.IJavaProject;
+import org.omg.CORBA.Current;
+
 import apiusagemetrics.actions.APIUsageActions;
 import xweb.code.analyzer.ASTCrawlerUtil;
 import xweb.code.analyzer.CodeExampleStore;
@@ -73,7 +75,7 @@ public class RepositoryAnalyzer {
 	Set<DefectHolder> defectSet = new TreeSet<DefectHolder>(new DefectHolder());
 	
 	//Collects the entire list of final method-call sequences
-	private Map<String, AssocMinerGroupDataHolder> finalEncodedMihList = new HashMap<String, AssocMinerGroupDataHolder>();
+	private Map<String, AssocMinerGroupDataHolder> finalEncodedMihList = new HashMap<String, AssocMinerGroupDataHolder>();	
 	
 	//Ignore set while collecting patterns
 	public Set<String> ignoreClassSet = new HashSet<String>();
@@ -224,21 +226,21 @@ public class RepositoryAnalyzer {
 					inpLine = inpLine.replace("#UNKNOWN#", "UNKNOWN");	
 					
 					StringTokenizer stObj = new StringTokenizer(inpLine, ",");
-					int Id = Integer.parseInt(stObj.nextToken().trim());		//reading the ID
+					@SuppressWarnings("unused") int Id = Integer.parseInt(stObj.nextToken().trim());		//reading the ID
 					String patternContext = stObj.nextToken().trim();					
 					String anchorMethod = stObj.nextToken();
 					
 					String errorMethods = stObj.nextToken(); 
 				
-					String idRep = stObj.nextToken();
+					@SuppressWarnings("unused") String idRep = stObj.nextToken();
 					int frequency = 0; 
 					try {	
 						frequency = Integer.parseInt(stObj.nextToken().trim());
 					} catch(java.lang.NumberFormatException nef) {
-						int i = 0;
+						
 					}
 					double confidence = Double.parseDouble(stObj.nextToken().trim());
-					double relativeSupport = Double.parseDouble(stObj.nextToken().trim());
+					@SuppressWarnings("unused") double relativeSupport = Double.parseDouble(stObj.nextToken().trim());
 					
 					//Load the information into patterns.
 					MethodInvocationHolder anchorMIH = getMethodInvocationHolder(anchorMethod);
@@ -322,9 +324,11 @@ public class RepositoryAnalyzer {
 	 * @param anchorMIH
 	 * @return
 	 */
-	public Holder getAssocLibMIH(MethodInvocationHolder anchorMIH) {
+	public Holder getAssocLibMIH(MethodInvocationHolder anchorMIH) {		
+		String receiverType = anchorMIH.getReceiverClass().type;	
+		
 		Holder assocLibMIH = null;
-		ExternalObject eeObj = externalObjects.get(anchorMIH.getReceiverClass().type);
+		ExternalObject eeObj = externalObjects.get(receiverType);
 		if(eeObj != null) {
 			for(MethodInvocationHolder eeMIH : eeObj.getMiList()) { 
 				if(eeMIH.equals(anchorMIH)) {
@@ -334,7 +338,7 @@ public class RepositoryAnalyzer {
 			}
 		} else {
 			//This is a method internally declared by the program
-			LibClassHolder lch = libClassMap.get(anchorMIH.getReceiverClass().type);
+			LibClassHolder lch = libClassMap.get(receiverType);
 			if(lch != null && lch.getMethods() != null) {
 				for(LibMethodHolder lmh : lch.getMethods()) {
 					if(lmh.equals(anchorMIH)) {
@@ -375,12 +379,31 @@ public class RepositoryAnalyzer {
 				bwAssocMethodIDs.write(mih.getKey() + " : " + mih.getPrintString() + "\n");
 			}
 		}
+		
+		for(List<MethodInvocationHolder> tmihlist : this.MihIDMap.values())
+		{
+			for(MethodInvocationHolder mih : tmihlist)
+			{
+				bwAssocMethodIDs.write(mih.getKey() + " : " + mih.getPrintString() + "\n");
+			}
+		}
+		
 		//End of printing all ids of methods in declared classes and external classes
 		
 		//Dump all contents into AssocMiner data separated by various keys		
 		for(AssocMinerGroupDataHolder agdhObj : finalEncodedMihList.values())
 		{
-			bwAssocMinerGroupKeys.write(agdhObj.getID() + " : " + agdhObj.getRepresentativeKey() + "\n");
+			String representativeKey = agdhObj.getRepresentativeKey();
+			
+			//In case of multi-object mode the representative key itself is in the form
+			//of simple ID, which needs to be decoded back
+			if(CommonConstants.OBJECT_PATTERN_MODE == CommonConstants.MULTI_OBJECT_PATTERN_MODE)
+			{			
+				Set<String> recTypes = reverseMultiObjectKeys.get(representativeKey);
+				representativeKey = recTypes.toString();
+			}
+			
+			bwAssocMinerGroupKeys.write(agdhObj.getID() + " : " + representativeKey + "\n");
 			try
 			{
 				BufferedWriter bwAssocMinerNum = new BufferedWriter(new FileWriter("AssocMiner_Data/" + agdhObj.getID() + ".txt"));
@@ -395,9 +418,7 @@ public class RepositoryAnalyzer {
 				ex.printStackTrace();
 			}
 		}
-		//End of dumping the data for applying miners.
-		
-		
+		//End of dumping the data for applying miners.	
 		
 		long endAnalyzeAppl = System.currentTimeMillis();
 		logger.warn("Time taken for analyzing input application: " + (endAnalyzeAppl - beginAnalyzeAppl) + " msec");
@@ -829,14 +850,14 @@ public class RepositoryAnalyzer {
 			
 			//Identify the representative element and encoded sequence from the MIHList.
 			String representativeKey = "";			
-			if(CommonConstants.OPERATION_MODE == CommonConstants.SINGLE_OBJECT_PATTERN_MODE)
+			if(CommonConstants.OBJECT_PATTERN_MODE == CommonConstants.SINGLE_OBJECT_PATTERN_MODE)
 			{
 				//For Single object method, any method-invocation's receiver object type will do
 				representativeKey = mlist.get(0).getReceiverClass().type;
-			} 
+			}
 			else
 			{
-				//TODO: for multi-object mode
+				representativeKey = getRepresentativeKeyForMultiObject(mlist);
 			}
 			
 			AssocMinerGroupDataHolder agdhObj = finalEncodedMihList.get(representativeKey);
@@ -853,6 +874,85 @@ public class RepositoryAnalyzer {
 			}
 			
 			agdhObj.addPatternCandidate(sb.toString());			
+		}
+	}
+	
+	
+	static int MULTI_OBJECT_KEY_GENERATOR = 1;
+	//Maps a receiver object with its multi-object key value
+	private Map<String, String> multiObjectKeys = new HashMap<String, String>();
+	private Map<String, HashSet<String>> reverseMultiObjectKeys = new HashMap<String, HashSet<String>>();
+	
+	/**
+	 * Returns the representative key for the multi-object patterns
+	 * @param ml
+	 * @return
+	 */
+	private String getRepresentativeKeyForMultiObject(List<MethodInvocationHolder> mlist)
+	{
+		Set<String> currentIDSet = new HashSet<String>();
+		Set<String> receiverTypeSet = new HashSet<String>();		
+		
+		for(MethodInvocationHolder mih : mlist)
+		{
+			String receiverType = mih.getReceiverClass().type;
+			receiverTypeSet.add(receiverType);
+			
+			String currentID = multiObjectKeys.get(receiverType);
+			if(currentID != null)
+				currentIDSet.add(currentID);			
+		}	
+		
+		String representativeKey = "";
+		
+		//no representative key exists for any object type. Create a new representative key and 
+		//assign to all object types
+		if(currentIDSet.size() == 0)
+		{
+			representativeKey = "" + MULTI_OBJECT_KEY_GENERATOR++;
+			updateRepresentativKeys(receiverTypeSet, representativeKey);
+			return representativeKey;
+		}
+		
+		//One representative element exists. Return this element
+		//assign this as a key to those elements that do not have earlier representative element
+		if(currentIDSet.size() == 1)
+		{
+			representativeKey = currentIDSet.iterator().next();
+			updateRepresentativKeys(receiverTypeSet, representativeKey);
+			return representativeKey;
+		}
+		
+		//there are more than one representative element. A tricky
+		//situation where the records of all elements need to be merged together
+		Iterator<String> currentIDIter = currentIDSet.iterator(); 
+		representativeKey = currentIDIter.next();
+		AssocMinerGroupDataHolder representativeAgdh = finalEncodedMihList.get(representativeKey);
+		while(currentIDIter.hasNext())
+		{
+			String newID = currentIDIter.next();
+			AssocMinerGroupDataHolder other = finalEncodedMihList.get(newID);
+			representativeAgdh.mergePatternCandidates(other);			
+			finalEncodedMihList.remove(newID);			
+			HashSet<String> reverseSet = reverseMultiObjectKeys.get(newID);
+			updateRepresentativKeys(reverseSet, representativeKey);			
+			reverseMultiObjectKeys.remove(newID);			
+		}
+		return representativeKey;
+	}	
+
+	private void updateRepresentativKeys(Set<String> receiverTypeSet, String representativeKey) 
+	{
+		for(String recType : receiverTypeSet)
+		{
+			multiObjectKeys.put(recType, representativeKey);
+			HashSet<String> reverseSet = reverseMultiObjectKeys.get(representativeKey);
+			if(reverseSet == null)
+			{
+				reverseSet = new HashSet<String>();
+				reverseMultiObjectKeys.put(representativeKey, reverseSet);
+			}			
+			reverseSet.add(recType);		
 		}
 	}
 	

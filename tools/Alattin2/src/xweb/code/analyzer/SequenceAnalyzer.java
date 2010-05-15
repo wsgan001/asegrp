@@ -3,11 +3,7 @@ package xweb.code.analyzer;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import org.apache.log4j.Logger;
-
-import com.sun.org.apache.bcel.internal.generic.MULTIANEWARRAY;
-
 import xweb.code.analyzer.holder.Holder;
 import xweb.code.analyzer.holder.MethodInvocationHolder;
 import xweb.common.CommonConstants;
@@ -67,13 +63,16 @@ public class SequenceAnalyzer {
 			extractIndividualSequences(raobj, lMihList, finalMihSetForMethod);
 			
 			//debugging - dumping the minimized set of individual sequences				
-			raobj.bwAssocMiner.write("Minimized list of sequences\n");						
-			for(MIHList mihlist : finalMihSetForMethod)
-			{					
-				for(MethodInvocationHolder tmih : mihlist.getMihList())
-					raobj.bwAssocMiner.write("\t" + tmih.toString() + "(" + tmih.getKey() +  ")\n");			
-				
-				raobj.bwAssocMiner.write("\n");
+			if(CommonConstants.MINER_LOGGING_MODE == CommonConstants.MAXIMAL_LOGGING_MODE)
+			{
+				raobj.bwAssocMiner.write("Minimized list of sequences\n");						
+				for(MIHList mihlist : finalMihSetForMethod)
+				{					
+					for(MethodInvocationHolder tmih : mihlist.getMihList())
+						raobj.bwAssocMiner.write("\t" + tmih.toString() + "(" + tmih.getKey() +  ")\n");			
+					
+					raobj.bwAssocMiner.write("\n");
+				}
 			}
 			//end of debugging code
 			
@@ -87,12 +86,18 @@ public class SequenceAnalyzer {
 		}
 	}
 
+	/**
+	 * Includes code for splitting the traces for both single-object and multi-object patterns
+	 * @param raobj
+	 * @param lMihList
+	 * @param finalMihSet
+	 */
 	private static void extractIndividualSequences(RepositoryAnalyzer raobj, List<MIHList> lMihList, Set<MIHList> finalMihSet) 
 	{
 		//This set is used to keep track of types found in the path to extract the sequence
 		HashSet<String> typeVarSet = new HashSet<String>();
 		//HashSet<Integer> keySet = new HashSet<Integer>();		
-				
+			
 		//Processing each mihlist independently. Each list itself includes
 		//various different independet method invocation sequences
 		for(MIHList ml : lMihList) {
@@ -133,13 +138,15 @@ public class SequenceAnalyzer {
 				
 				//Sequence is processed in the reverse order and a part of the sequence
 				//is extracted. Each sequence is traversed multiple times.
-				MethodInvocationHolder keyedMIH = getKeyedMethodInvocationHolder(raobj, miarr[milen - 1]);
+				MethodInvocationHolder keyedMIH = getKeyedMethodInvocationHolder(raobj, miarr[0]);
 				if(keyedMIH != null)
 					minimizedList.AddMethodInvocationHolder(keyedMIH);
 				
-				addToTypeVarSet(miarr[milen - 1], typeVarSet);
-				//keySet.add(new Integer(miarr[milen - 1].getKey()));
-				int tcnt;
+				//Initialize the typevar ahead to identify all dependent types.
+				//Without such scenario of parsing for two types, several bugs can happen				
+				addToTypeVarSet(miarr[0], typeVarSet);
+				int tcnt;				
+							
 				for(tcnt = milen - 2 ; tcnt >= 0; tcnt--)
 				{
 					MethodInvocationHolder mihObj = miarr[tcnt];
@@ -212,7 +219,7 @@ public class SequenceAnalyzer {
 				
 				//Iterate through the remaining list again
 				remainingList.reverseList();
-				localml = remainingList;				
+				localml = remainingList;
 			}
 		}
 	}
@@ -229,13 +236,13 @@ public class SequenceAnalyzer {
 		String receiverType = mihObj.getReceiverClass().type;
 		if(receiverType.equals("this") || raobj.ignoreClassSet.contains(receiverType))
 		{
-			logger.warn("Ignored the method invocation: " + mihObj.toString());
+			//logger.warn("Ignored the method invocation: " + mihObj.toString());
 			return null;
 		}
 		
 		if(receiverType.contains(CommonConstants.unknownType))
 		{
-			logger.warn("Ignored the method invocation: " + mihObj.toString());
+			//logger.warn("Ignored the method invocation: " + mihObj.toString());
 			return null;
 		}
 		
@@ -247,8 +254,8 @@ public class SequenceAnalyzer {
 			return mihObj;
 		}
 		
-		if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_INPUTPROJECT ||
-				CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_INPUTPROJECT)
+		if((CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_INPUTPROJECT ||
+				CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_INPUTPROJECT) && !mihObj.getMethodName().equals("DOWNCAST"))
 		{
 			logger.warn("Could not find equivalent method declaration (needs to fix this)" + mihObj.toString());
 		}
@@ -275,10 +282,10 @@ public class SequenceAnalyzer {
 	 * This is mainly used for checking
 	 */
 	public static void addToTypeVarSet(MethodInvocationHolder mihObj, HashSet<String> typeSet)
-	{
-		if(!mihObj.getMethodName().equals("CONSTRUCTOR")) {
-			String searchType = mihObj.getReceiverClass().var;
-			typeSet.add(searchType);
+	{		
+		if(!mihObj.getMethodName().equals("CONSTRUCTOR"))
+		{
+			typeSet.add(mihObj.getReceiverClass().var);
 		}
 				
 		if(CommonConstants.OBJECT_PATTERN_MODE == CommonConstants.MULTI_OBJECT_PATTERN_MODE) {

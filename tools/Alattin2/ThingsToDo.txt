@@ -21,3 +21,16 @@
 	-> One this to fix is to avoid "UNKNOWN" and "this" types. Check the code in ParseSrcVisitor.java for more details on this.
 
 6. Sequence miner vs Itemset miner -> check which one would be more appropriate
+
+
+Implementation Fixes:
+=====================
+1. In the case of multi-object patterns, the dependency information and collection of method-calls are done at the same time. This could cause loss of information in a few scenarios when the actual method-invocation in the following scenarios, where we miss the "fr.someMethod()".
+
+	FileReader fr = new ..;
+	BufferedReader br = new BufferedReader(fr);
+	fr.someMethod();
+	br.close();
+
+
+2. The technical details of multi-object patterns can go into the paper, which is quite important for splitting without which the alternative patterns might not popup.

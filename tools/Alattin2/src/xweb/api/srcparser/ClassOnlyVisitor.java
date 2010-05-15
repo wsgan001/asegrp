@@ -102,10 +102,14 @@ public class ClassOnlyVisitor extends ASTVisitor {
 	    	MethodDeclaration mdArr[] = td.getMethods();	    	
 	    	for(int i = 0; i < mdArr.length; i++)
 	    	{
-	    		if((mdArr[i].getModifiers() & Modifier.ModifierKeyword.PUBLIC_KEYWORD.toFlagValue()) == 0  &&
-	    				(mdArr[i].getModifiers() & Modifier.ModifierKeyword.PROTECTED_KEYWORD.toFlagValue()) == 0 )
+	    		if(CommonConstants.OPERATION_MODE != CommonConstants.MINE_PATTERNS_FROM_INPUTPROJECT
+	    				&& CommonConstants.OPERATION_MODE != CommonConstants.DETECT_BUGS_IN_INPUTPROJECT)    		
 	    		{
-	    			continue;
+		    		if((mdArr[i].getModifiers() & Modifier.ModifierKeyword.PUBLIC_KEYWORD.toFlagValue()) == 0  &&
+		    				(mdArr[i].getModifiers() & Modifier.ModifierKeyword.PROTECTED_KEYWORD.toFlagValue()) == 0 )
+		    		{
+		    			continue;
+		    		}
 	    		}
 	    		
 	    		LibMethodHolder lmh = new LibMethodHolder();
@@ -218,8 +222,28 @@ public class ClassOnlyVisitor extends ASTVisitor {
 	    		}
 	    		
 	    		lmhList.add(lmh);
-	    	}
-	    	    	
+	    	}	    	   	
+	    	
+			//Check whether there is atleast one constructor. If not add a default constructor			
+			boolean bNoConstructor = true;
+			for(LibMethodHolder lmh : lmhList)
+			{
+				if(lmh.getName().equals("CONSTRUCTOR"))
+				{
+					bNoConstructor = false;
+					break;
+				}
+			}
+			
+			if(bNoConstructor)
+			{
+				LibMethodHolder lmh = new LibMethodHolder();
+				lmh.setName("CONSTRUCTOR");
+				lmh.setContainingClass(lch);
+	    		raObj.getIdToLibMethod().put(new Integer(lmh.getID()), lmh);				
+				lmhList.add(lmh);
+			}
+	    	
 	    	lch.setMethods(lmhList);
 		}
 		catch(Exception ex)

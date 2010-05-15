@@ -539,8 +539,11 @@ public class ASTCrawler extends ASTVisitor {
     	RepositoryAnalyzer raobj = RepositoryAnalyzer.getInstance();		
 		try
 		{
-			raobj.bwAssocMiner.write("*******************\n");
-			raobj.bwAssocMiner.write("Filename: " + currentFileName + ", Methodname: " + currentMethodDeclaration.getName().toString() + "\n");
+			if(CommonConstants.MINER_LOGGING_MODE == CommonConstants.MAXIMAL_LOGGING_MODE)
+			{
+				raobj.bwAssocMiner.write("*******************\n");			
+				raobj.bwAssocMiner.write("Filename: " + currentFileName + ", Methodname: " + currentMethodDeclaration.getName().toString() + "\n");
+			}
 			
 			List<MIHList> mihListLists = new ArrayList<MIHList>();
 			for(String trace : this.visitedTraces)
@@ -554,18 +557,27 @@ public class ASTCrawler extends ASTVisitor {
 				for(int tCnt = 0; tCnt < idArr.length; tCnt++) {
 					MethodInvocationHolder mihobj = IdToSamplesMethodHolder.get(new Integer(idArr[tCnt]));			
 					mihList.add(mihobj);
-					raobj.bwAssocMiner.write("\t" + mihobj.getCompleteString() + " (" + mihobj.getKey() + ")\n");					
+					if(CommonConstants.MINER_LOGGING_MODE == CommonConstants.MAXIMAL_LOGGING_MODE)
+					{
+						raobj.bwAssocMiner.write("\t" + mihobj.getCompleteString() + " (" + mihobj.getKey() + ")\n");
+					}
 				}
-				raobj.bwAssocMiner.write("\n");
+				
+				if(CommonConstants.MINER_LOGGING_MODE == CommonConstants.MAXIMAL_LOGGING_MODE)
+				{
+					raobj.bwAssocMiner.write("\n");
+				}
 				
 				MIHList ml = new MIHList(mihList);
 				mihListLists.add(ml);			
 			}
 			
-			SequenceAnalyzer.sliceObjectSequences(mihListLists);
-			
-			//raobj.bwAssocMiner.write("*******************\n");
-			//raobj.bwAssocMiner.flush();			
+			SequenceAnalyzer.sliceObjectSequences(mihListLists);			
+			if(CommonConstants.MINER_LOGGING_MODE == CommonConstants.MAXIMAL_LOGGING_MODE)
+			{
+				raobj.bwAssocMiner.write("*******************\n");
+				raobj.bwAssocMiner.flush();
+			}
 		}
 		catch(Exception ex)
 		{

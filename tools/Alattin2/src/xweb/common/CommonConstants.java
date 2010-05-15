@@ -158,6 +158,11 @@ public class CommonConstants {
 	static public final int MULTI_OBJECT_PATTERN_MODE = 1;
 	static public int OBJECT_PATTERN_MODE = 0;
 		
+	//Describes the logging mode
+	static public final int MINIMAL_LOGGING_MODE = 0;
+	static public final int MAXIMAL_LOGGING_MODE = 1;
+	static public int MINER_LOGGING_MODE = MAXIMAL_LOGGING_MODE;
+		
 	//Describes whether function overloading should be used or not	
 	static public boolean FUNCTION_OVERLOADING = true;
 	
@@ -230,6 +235,10 @@ public class CommonConstants {
 				
 				if (props.containsKey("FunctionOverloading")) {
 					FUNCTION_OVERLOADING =  Boolean.parseBoolean(props.getProperty("FunctionOverloading"));
+				}
+				
+				if (props.containsKey("AssocMinerDataLoggingMode")) {
+					MINER_LOGGING_MODE = Integer.parseInt(props.getProperty("AssocMinerDataLoggingMode"));
 				}
 	    	}
     	}

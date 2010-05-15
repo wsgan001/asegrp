@@ -30,6 +30,11 @@ public class AssocMinerGroupDataHolder {
 	{
 		this.patternCandidates.add(candidate);
 	}
+	
+	public void mergePatternCandidates(AssocMinerGroupDataHolder other)
+	{
+		this.patternCandidates.addAll(other.patternCandidates);
+	}
 
 	public int getID() {
 		return ID;
