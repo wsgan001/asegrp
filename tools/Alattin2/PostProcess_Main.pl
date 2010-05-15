@@ -22,15 +22,28 @@ $glob_SingleChkCnt = 0;
 $glob_BalancedPattern = 0;
 $glob_ImbalancedPattern = 0;
 
+%assocMethodIdMapper = ();
+
+open(METHODIDS, "<AssocMethodIds.txt");		
+while($innerM = <METHODIDS>) {			
+	chomp($innerM);
+	chomp($innerM);
+	if($innerM  =~ /([^ ]+)( : )(.*)$/) {
+		$assocMethodName_temp = $3;
+		$assocMethodID_temp = $1;
+		$assocMethodIdMapper{$assocMethodID_temp}{"mname"} = $assocMethodName_temp;				
+	}
+}
+close SUBMETHODIDS;
+
 open(GRPKEYS, "<AssocMinerGroupKeys.txt");
+$currentClassName  = "";
 while($line = <GRPKEYS>) {
 	chomp($line);
 	#Each line is of the format "1 : java.util.regex.Matcher"
 	if($line =~ /([^ ]+)( : )(.*)$/) {
-		$keyElem = $1;	
-		%assocMethodIdMapper = ();
-		$assocMethodIdMapper{$1}{"mname"} = $3;
-
+		$keyElem = $1;
+		$currentClassName  = $3;
 		#Computing the total number of elements used for mining for each method invocation
 		open(LINECOUNT, "<AssocMiner_Data/".$keyElem.".txt");
 		@lineCountArr = <LINECOUNT>;
@@ -40,11 +53,12 @@ while($line = <GRPKEYS>) {
 
 		#Skipping the patterns with only one element
 		if($globalTransactionCount == 1) {
+			print "Skiping processing of AssocMiner_Data/".$keyElem.".txt, since there is only one record in the data\n";
 			next;
 		}
 				
 		#Run PostProcess.pl for each method ID. It generates a file called "$keyElem_output.txt"
-		$command = "perl PostProcess.pl $keyElem.txt $keyElem"."_output.txt ".$MIN_SUP;
+		$command = "perl PostProcess.pl $keyElem.txt $keyElem"."_output.txt ".$MIN_SUP. " 0";
 		system($command);
 	
 		
@@ -74,7 +88,7 @@ sub postProcess
 	close MINEDPATTERNS;
 	
 	print FINALOUTPUT "*****************************\n";	
-	print FINALOUTPUT "All patterns of ".$assocMethodIdMapper{$keyElem}{"mname"}."\n";
+	print FINALOUTPUT "All patterns of ".$currentClassName."\n";
 
 	$bPrev_glob_ImbalancedPattern = $glob_ImbalancedPattern;
 	$numberOfMinedPatterns = 0;
@@ -98,32 +112,16 @@ sub postProcess
 		}
 
 		#printing to the output
-		$totalStringOutput = "";
-		$bDummyMethodInvocation = 0;
+		$totalStringOutput = "";		
 		
 		foreach $allElemContent (@allElemArr) {
-			if($allElemContent =~ /^([0-9]+)(\.)([0-9]+)(\.)([0-9]+)$/) {
-				$MIId = $1;
-				$SubMIId = $3;	
-				$before_after = $5;
-				
-				$t_mname = $assocMethodIdMapper{$MIId}{$SubMIId}{"mname"};
-				chomp($t_mname); #UNIX
+			$t_mname = $assocMethodIdMapper{$allElemContent}{"mname"};
+			chomp($t_mname); #UNIX
 
-				if($t_mname eq "DUMMY_MINING_ENTR" || $t_mname eq "DUMMY_MINING_ENTRY") {
-					$bDummyMethodInvocation = 1;
-					last;
-				}
+			print FINALOUTPUT "(".$allElemContent.") ".$t_mname."\n";
 
-				print FINALOUTPUT "(".$allElemContent.") ".$t_mname."\n";
-
-				$t_mname =~ s/,/:/g;
-				$totalStringOutput = $totalStringOutput.$t_mname."(".$before_after.")"."&&";
-			}
-		}
-
-		if($bDummyMethodInvocation == 1) {
-			next;
+			$t_mname =~ s/,/:/g;
+			$totalStringOutput = $totalStringOutput.$t_mname."(".$before_after.")"."&&";
 		}
 		
 		print FINALOUTPUT $pattern." (".$mainPatternSupport.")\n";
@@ -134,12 +132,10 @@ sub postProcess
 		$numberOfMinedPatterns++;
 
 		#Printing to consolidated output mainly to compare with previous results
-		$t_name = $assocMethodIdMapper{$keyElem}{"mname"};
+		$t_name = $currentClassName;
 		chomp($t_name); #UNIX
 		$t_name =~ s/,/:/g;
-		$endPrintStr = $keyElem.",".$t_name.",".$before_after.","."0".",".$totalStringOutput.",".$globalTransactionCount.",".$mainPatternSupport.",0,".$supportForSortingPurpose."\n";
-		$endPrintStr =~ s/\#MULTICURRTYPES\#/MULTICURRTYPES/g;
-		$endPrintStr =~ s/\#UNKNOWN\#/UNKNOWN/g;
+		$endPrintStr = $keyElem.",".$t_name.",".$before_after.","."0".",".$totalStringOutput.",".$globalTransactionCount.",".$mainPatternSupport.",0,".$supportForSortingPurpose."\n";		
 		print TOTALOUTPUT $endPrintStr;
 
 		#Read all elements and populate into different arrays
@@ -150,12 +146,6 @@ sub postProcess
 
 		open(INPUT, "<AssocMiner_Data/".$keyElem.".txt");
 		while ($line = <INPUT>) {
-			#Ignoring the dummy elements while classifying the elements into negatives or positives. As
-			#patterns are very sensitive, these dummys are making a lot of difference
-			if($line =~ /$dummy_method_invocation_id/) {
-				next;
-			}
-
 			$bAllElementsExist = 1;
 			$bNoneElemExists = 0;
 
@@ -167,14 +157,19 @@ sub postProcess
 				}
 			}
 
-			if($bAllElementsExist == 1) {
+			#if($bAllElementsExist == 1) {
 				#Every element of the rule is available in the data. So this can be classified as a positive element
-				push(@positiveElem, $line);
-			} 
+			#	push(@positiveElem, $line);
+			#} 
 			
-			if($bNoneElemExists == 0) {
+			if($bAllElementsExist == 0) {
 				#None of the elements in the rule exists. So, this can be treated as a negative example
 				push(@negativeElem, $line);
+			} 
+			else
+			{
+				#This condition check is different from the condition check used for neglected conditions. 
+				push(@positiveElem, $line);
 			}
 		}
 		close INPUT;
@@ -192,7 +187,7 @@ sub postProcess
 		close TEMPOUTPUT;
 
 		#Mining the negative examples
-		$command = "perl PostProcess.pl $keyElem"."_negatives.txt $keyElem"."_negatives_output.txt 0.01";
+		$command = "perl PostProcess.pl $keyElem"."_negatives.txt $keyElem"."_negatives_output.txt 0.01 1";
 		system($command);
 
 		#patterns among the negative entries				
@@ -260,21 +255,16 @@ sub postProcess
 
 				$totalStringOutput = "";
 				foreach $glob_pat_elem (@glob_pat) {
-					if($glob_pat_elem =~ /^([0-9]+)(\.)([0-9]+)(\.)([0-9]+)$/) {
-						$MIId = $1;
-						$SubMIId = $3;	
-						$before_after = $5;
-						$t_name = $assocMethodIdMapper{$MIId}{$SubMIId}{"mname"};
-						chomp($t_name);	#UNIX
+					$t_name = $assocMethodIdMapper{$glob_pat_elem}{"mname"};
+					chomp($t_name);	#UNIX
 
-						$t_name =~ s/,/:/g;
-						print FINALOUTPUT "\t\t(".$glob_pat_elem.") ".$t_name."\n";
-						$totalStringOutput = $totalStringOutput.$t_name."(".$before_after.")"."&&";
-					}
+					$t_name =~ s/,/:/g;
+					print FINALOUTPUT "\t\t(".$glob_pat_elem.") ".$t_name."\n";
+					$totalStringOutput = $totalStringOutput.$t_name."(".$before_after.")"."&&";					
 				}
 
 				#Printing to total output from here
-				$t_name = $assocMethodIdMapper{$keyElem}{"mname"};
+				$t_name = $currentClassName;
 				chomp($t_name);	  #UNIX
 				$t_name =~ s/,/:/g;
 				$endPrintStr = $keyElem.",".$t_name.",".$before_after.","."1,".$totalStringOutput.",".$globalTransactionCount.",".$globalSupport_negPattern.",".$absoluteSupport.",".$supportForSortingPurpose."\n";
