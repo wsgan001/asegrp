@@ -97,7 +97,7 @@ public class SequenceAnalyzer {
 		//This set is used to keep track of types found in the path to extract the sequence
 		HashSet<String> typeVarSet = new HashSet<String>();
 		//HashSet<Integer> keySet = new HashSet<Integer>();		
-			
+				
 		//Processing each mihlist independently. Each list itself includes
 		//various different independet method invocation sequences
 		for(MIHList ml : lMihList) {
@@ -138,68 +138,86 @@ public class SequenceAnalyzer {
 				
 				//Sequence is processed in the reverse order and a part of the sequence
 				//is extracted. Each sequence is traversed multiple times.
-				MethodInvocationHolder keyedMIH = getKeyedMethodInvocationHolder(raobj, miarr[0]);
-				if(keyedMIH != null)
-					minimizedList.AddMethodInvocationHolder(keyedMIH);
+				//MethodInvocationHolder keyedMIH = getKeyedMethodInvocationHolder(raobj, miarr[milen - 1]);
+				//if(keyedMIH != null)
+				//	minimizedList.AddMethodInvocationHolder(keyedMIH);
+				MethodInvocationHolder keyedMIH = null;
+				addToTypeVarSet(miarr[0], typeVarSet, true);
+				int tcnt = milen - 1;
 				
-				//Initialize the typevar ahead to identify all dependent types.
-				//Without such scenario of parsing for two types, several bugs can happen				
-				addToTypeVarSet(miarr[0], typeVarSet);
-				int tcnt;				
-							
-				for(tcnt = milen - 2 ; tcnt >= 0; tcnt--)
+				//For multi-object mode, initialize the entire typevarset ahead with all
+				//dependent variables. Similaly, for single object mode, only receiver of the
+				//current method-invocation is chosen.
+				if(CommonConstants.OBJECT_PATTERN_MODE == CommonConstants.MULTI_OBJECT_PATTERN_MODE)
 				{
-					MethodInvocationHolder mihObj = miarr[tcnt];
-					boolean bTypeSetContains = false;
-															
-					if(typeVarSet.contains(mihObj.getReturnType().var)) 
+					for(tcnt = 1 ; tcnt < milen; tcnt++)
 					{
-						if(CommonConstants.OBJECT_PATTERN_MODE == CommonConstants.MULTI_OBJECT_PATTERN_MODE)
+						MethodInvocationHolder mihObj = miarr[tcnt];
+						boolean bTypeSetContains = false;
+						
+						for(TypeHolder th : mihObj.getArgumentArr())
 						{
-							//In case of multi-object mode, we continue traversing the rest of the sequences, due to transitive dependency						
-							bTypeSetContains = true;
-							typeVarSet.remove(mihObj.getReturnType().var);
-						} 
-						else 
-						{
-							if(mihObj.getMethodName().equals("CONSTRUCTOR"))
+							if(typeVarSet.contains(th.var))
 							{
-								//In case of single-object mode, we can break at this point, since the variable
-								//re-defined at this point using an assignment statement. Include the current
-								//method into this subsequence only if it is a constructor.
-								//Don't consider the current method, if it is not a constructor
-								keyedMIH = getKeyedMethodInvocationHolder(raobj, mihObj);
-								if(keyedMIH != null)
-									minimizedList.AddMethodInvocationHolder(keyedMIH);
-								tcnt--;
+								bTypeSetContains = true;
+								break;
 							}
-							break;
 						}
-					}
-					
-					if(typeVarSet.contains(mihObj.getReceiverClass().var))
-					{
-						bTypeSetContains = true;
-						typeVarSet.remove(mihObj.getReceiverClass().var);
-					}
 						
-					if(bTypeSetContains)
-					{	
-						//if(!keySet.contains(new Integer(mihObj.getKey())))
-						//{						
-						
-						addToTypeVarSet(mihObj, typeVarSet);
-						
-						//keySet.add(new Integer(mihObj.getKey()));
+						if(typeVarSet.contains(mihObj.getReceiverClass().var))
+							bTypeSetContains = true;
 							
-						keyedMIH = getKeyedMethodInvocationHolder(raobj, mihObj);
-						if(keyedMIH != null)
-							minimizedList.AddMethodInvocationHolder(keyedMIH);
-						//}
+						if(bTypeSetContains)
+							addToTypeVarSet(mihObj, typeVarSet, true);
 					}
-					else
+				}				
+				
+				if(typeVarSet.size() != 0)
+				{
+					for(tcnt = milen - 1 ; tcnt >= 0; tcnt--)
 					{
-						remainingList.AddMethodInvocationHolder(mihObj);
+						MethodInvocationHolder mihObj = miarr[tcnt];
+						boolean bTypeSetContains = false;
+																
+						if(typeVarSet.contains(mihObj.getReturnType().var)) 
+						{
+							if(CommonConstants.OBJECT_PATTERN_MODE == CommonConstants.MULTI_OBJECT_PATTERN_MODE)
+							{
+								//In case of multi-object mode, we continue traversing the rest of the sequences, due to transitive dependency						
+								bTypeSetContains = true;
+								typeVarSet.remove(mihObj.getReturnType().var);
+							} 
+							else 
+							{
+								if(mihObj.getMethodName().equals("CONSTRUCTOR"))
+								{
+									//In case of single-object mode, we can break at this point, since the variable
+									//re-defined at this point using an assignment statement. Include the current
+									//method into this subsequence only if it is a constructor.
+									//Don't consider the current method, if it is not a constructor
+									keyedMIH = getKeyedMethodInvocationHolder(raobj, mihObj);
+									if(keyedMIH != null)
+										minimizedList.AddMethodInvocationHolder(keyedMIH);
+									tcnt--;
+								}
+								break;
+							}
+						}
+						
+						if(typeVarSet.contains(mihObj.getReceiverClass().var))
+							bTypeSetContains = true;
+							
+						if(bTypeSetContains)
+						{								
+							addToTypeVarSet(mihObj, typeVarSet, false);
+							keyedMIH = getKeyedMethodInvocationHolder(raobj, mihObj);
+							if(keyedMIH != null)
+								minimizedList.AddMethodInvocationHolder(keyedMIH);
+						}
+						else
+						{
+							remainingList.AddMethodInvocationHolder(mihObj);
+						}
 					}
 				}
 				
@@ -219,7 +237,7 @@ public class SequenceAnalyzer {
 				
 				//Iterate through the remaining list again
 				remainingList.reverseList();
-				localml = remainingList;
+				localml = remainingList;				
 			}
 		}
 	}
@@ -279,22 +297,25 @@ public class SequenceAnalyzer {
 	
 	/**
 	 * Function that adds reference class and arguments to type set
-	 * This is mainly used for checking
+	 * This is mainly used for checking. The return variable is added only
+	 * during the forward analysis
 	 */
-	public static void addToTypeVarSet(MethodInvocationHolder mihObj, HashSet<String> typeSet)
+	public static void addToTypeVarSet(MethodInvocationHolder mihObj, HashSet<String> typeSet, boolean forward)
 	{		
-		if(!mihObj.getMethodName().equals("CONSTRUCTOR"))
-		{
-			typeSet.add(mihObj.getReceiverClass().var);
+		if(!mihObj.getMethodName().equals("CONSTRUCTOR")) {
+			String searchType = mihObj.getReceiverClass().var;
+			typeSet.add(searchType);
 		}
-				
+		
+		String returnVar = mihObj.getReturnType().var;
+		if(forward && !returnVar.equals("void"))
+			typeSet.add(returnVar);
+		
 		if(CommonConstants.OBJECT_PATTERN_MODE == CommonConstants.MULTI_OBJECT_PATTERN_MODE) {
 			TypeHolder argArr[] =  mihObj.getArgumentArr();
 			for(int count = 0; count < argArr.length; count++) {
 				if(argArr[count].type.contains(".") && !argArr[count].type.equals("java.lang.String"))
-				{
 					typeSet.add(argArr[count].var);
-				}
 			}
 		}
 	}	
