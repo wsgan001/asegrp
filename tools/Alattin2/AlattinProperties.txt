@@ -1,0 +1,48 @@
+
+#Properties file for PARSEWeb for overriding the default parameters
+
+#PROXY Details
+#Specify PROXY details when PARSEWeb is running behind a proxy server and needs its address to interact with GoogleCodeSearch Engine.
+UseProxy=0
+ProxyAddress=192.168.65.246
+ProxyPort=3128
+
+
+##### Parameters for Code Downloader #####
+#Number of threads. The threads are used for downloading multiple files simultaneously from Internet
+#Default: 15
+NumberOfThreads=15
+
+
+#Maximum number of files to download
+#Default: 200
+MaximumNumberOfFiles = 200
+
+
+
+##### Properties for Alattin modes with the following options #####
+#"Usage: RepositoryCreater <APIList> <DirLocation> <PackageFlag> <OptionalLocalPackageInfoFile> <OperationMode> <PatternsFile> <DetectionMode>"
+#"OperationMode 0 : Mine Patterns from library code"
+#"OperationMode 1 : Mine Patterns from code examples"
+#"OperationMode 2 : Detect Defects in library under test"
+#"DetectionMode 0 : Ignore ImBalanced Patterns/Treat each pattern of MIH inidividually"
+#"DetectionMode 1 : Ignore ImBalanced Patterns/Treat all patterns of MIH together"
+#"DetectionMode 2 : Consider ImBalanced Patterns and Treat all patterns of MIH together"
+
+OperationMode = 0
+InputPatternFile = C:\\AlattinCodeExamples\\JBossPatterns.txt
+BugDetectionMode = 0
+IgnoreExceptionPaths = true
+
+#Describes whether function overloading can be ignored. Patterns can be more descriptive if overloading is ignored
+FunctionOverloading = false
+
+#Mode: single-object or multi-object sequences
+#0 : single-object
+#1 : multi-object
+ObjectPatternMode = 1
+
+#A flag that controls the logging in AssocMinerData.txt
+#0 : Minimal logging
+#1 : Maximal logging
+AssocMinerDataLoggingMode = 1;
