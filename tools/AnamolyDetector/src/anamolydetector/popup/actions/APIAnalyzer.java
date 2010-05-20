@@ -74,7 +74,7 @@ public class APIAnalyzer {
 	public static void main(String args[]) throws IOException 
 	{
 		if(args.length == 0 || args.length != 7) {
-			System.err.println("Usage: RepositoryCreater <APIList> <DirLocation> <PackageFlag> <OptionalLocalPackageInfoFile> <OperationMode> <PatternsFile> <DetectionMode>");
+			System.err.println("Usage: APIAnalyzer <APIList> <DirLocation> <PackageFlag> <OptionalLocalPackageInfoFile> <OperationMode> <PatternsFile> <DetectionMode>");
 			System.err.println("OperationMode 0 : Mine Patterns");
 			System.err.println("OperationMode 1 : Detect Defects");
 			System.err.println("DetectionMode 0 : Ignore ImBalanced Patterns/Treat each pattern of MIH inidividually");

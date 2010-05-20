@@ -419,5 +419,4 @@ public class AnamolyDetector implements IObjectActionDelegate {
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 	}
-
 }
