@@ -21,10 +21,16 @@ public class IMMiner {
 		}	
 						
 		IMMiner imm = new IMMiner();
-		imm.startProcess(args[0]);		
+		imm.startProcess(args[0]);	
+	}
+	
+	public MinerStorage minePatterns(String parentDir)
+	{
+		IMMiner imm = new IMMiner();
+		return imm.startProcess(parentDir);	
 	}
 		
-	public void startProcess(String parentDir)
+	public MinerStorage startProcess(String parentDir)
 	{
 		MinerStorage ms = MinerStorage.getInstance();
 		ms.initialize(parentDir);
@@ -47,10 +53,12 @@ public class IMMiner {
 				
 				String methodId = lineparts[0].trim();
 				String methodName = lineparts[1].trim();
+				ms.addToRootMapper(methodId, methodName);				
 				MethodMiner mm = new MethodMiner(methodId, methodName);
 				mm.generateLattice();
 			}
 			sc.close();
+			ms.dumpPatterns();
 		}
 		catch(Exception ex)
 		{
@@ -58,5 +66,6 @@ public class IMMiner {
 		}
 		
 		ms.cleanUp();
+		return ms;
 	}
 }

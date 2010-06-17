@@ -1,10 +1,11 @@
 package imminer.analyzer;
 
+import imminer.pattern.ItemSet;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import pattern.ItemSet;
 
 /**
  * Generates lattice of elements such as for the set {a, b, c}, this generates all

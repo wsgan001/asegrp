@@ -12,9 +12,14 @@ public class AllConstants {
 	public static final String DUMMY_MINING_ENTRY = "DUMMY_MINING_ENTRY";
 	
 	public static final double MIN_SUP = 0.4;
-	public static double NEXT_LEVEL_SUPPORT = MIN_SUP / 4;  
+	public static double NEXT_LEVEL_SUPPORT = MIN_SUP / 4;
 	public static final double MAX_SUP = 0.8;
 	
-	public static boolean ENABLE_GREEDY_APPROACH = false;
+	/**
+	 * Enabling the greedy approach helps to reduce the number of patterns choosen
+	 * in the next level of the lattice. 
+	 */
+	public static boolean ENABLE_GREEDY_APPROACH = true;
+	public static int NUMBER_OF_PATTERNS_TO_CHOOSE = 1;
 		
 }
