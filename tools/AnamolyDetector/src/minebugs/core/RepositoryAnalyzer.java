@@ -1,5 +1,7 @@
 package minebugs.core;
 
+import imminer.core.PatternType;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -9,6 +11,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.TreeSet;
 import minebugs.srclibhandlers.ExternalObject;
 import minebugs.srclibhandlers.LibClassHolder;
@@ -119,7 +122,7 @@ public class RepositoryAnalyzer {
 					//Creating required dummy directories
 					(new File("AssocMiner_Data")).mkdirs();
 					(new File("AssocMiner_IDs")).mkdirs();
-				}			
+				}
 				
 				switch(CommonConstants.OPERATION_MODE)
 				{
@@ -147,6 +150,13 @@ public class RepositoryAnalyzer {
 						}
 						break;
 					case CommonConstants.MINE_PATTERNS_FROM_LIBRARY:
+						gdc.analyze(parentDir,"","",false);	//Invokes the main function in GCodeAnalyer that analyzes entire library code
+						
+						for(String externalObject : externalObjects.keySet())
+						{
+							currentLibClass = externalObject;
+							this.emitExternalObjectDetails();							
+						}
 						
 						break;
 					default:
@@ -154,9 +164,11 @@ public class RepositoryAnalyzer {
 				}		
 			} 
 					
-			gdc.clearAstc();			
+			gdc.clearAstc();
 	        
-			if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES && CommonConstants.B_COLLECT_MINER_DATA) {
+			if((CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES || 
+					CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_LIBRARY) 
+					&& CommonConstants.B_COLLECT_MINER_DATA) {
 				bwAssocMiner.close();
 				bwAssocMethodIDs.close();
 			}		
@@ -164,7 +176,9 @@ public class RepositoryAnalyzer {
 	        //The second section depends on the mode of operation
 	        switch(CommonConstants.OPERATION_MODE) {
 	        case CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES:
+	        case CommonConstants.MINE_PATTERNS_FROM_LIBRARY:	        	
 	        	//minePatterns(); break;	//Deprecated: Mining is done externally using another algorithm
+	        	break;
 	        case CommonConstants.DETECT_BUGS_IN_CODESAMPLES:
 	        case CommonConstants.DETECT_BUGS_IN_LIBRARY:	
 	        	dumpDetectedBugs(); break;
@@ -182,7 +196,9 @@ public class RepositoryAnalyzer {
 		ExternalObject eeObj = externalObjects.get(currentLibClass);
 		if(eeObj != null) {
 			for(MethodInvocationHolder eeMIH : eeObj.getMiList()) { 
-				if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES && CommonConstants.B_COLLECT_MINER_DATA) {
+				if((CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES
+						|| CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_LIBRARY)
+						&& CommonConstants.B_COLLECT_MINER_DATA) {
 					emitToAssocFile(eeMIH);
 				}	
 				eeMIH.clearStorageElements();
@@ -276,18 +292,67 @@ public class RepositoryAnalyzer {
 		TreeSet<CodeSampleDefectHolder> sortedBugs = new TreeSet<CodeSampleDefectHolder>(new CodeSampleDefectHolder());
 		for(CodeSampleDefectHolder csdhObj : detectedBugsSet) {
 			sortedBugs.add(csdhObj);
-		}	
+		}
 		
 		try {
-			BufferedWriter bwBugs = new BufferedWriter(new FileWriter("MinedBugs.csv"));
-			bwBugs.write("Filename,Method,Violated API,Violation Pattern,Missing condition,Support,Balanced,SpecialFlg, SortingSupport, MID\n");
-			for(CodeSampleDefectHolder csdhObj : sortedBugs) {
-				bwBugs.write(csdhObj.toString() + "\n");									
-			}			
-			bwBugs.close();			
+			if(!CommonConstants.inputPatternFile.equals(""))
+			{
+				BufferedWriter bwBugs = new BufferedWriter(new FileWriter("MinedBugs.csv"));
+				bwBugs.write("Filename, Method, Violated API, Violation Pattern, Pattern Type, Support");
+				bwBugs.write(", Balanced, SpecialFlg, SortingSupport, MID\n");
+				for(CodeSampleDefectHolder csdhObj : sortedBugs) {
+					bwBugs.write(csdhObj.toString() + "\n");									
+				}
+				bwBugs.close();
+			}
+			else
+			{
+				//dumping all related defects
+				dumpDefectsOfType(PatternType.AND_PATTERN, sortedBugs);
+				dumpDefectsOfType(PatternType.OR_PATTERN, sortedBugs);
+				dumpDefectsOfType(PatternType.XOR_PATTERN, sortedBugs);
+				dumpDefectsOfType(PatternType.COMBO_PATTERN, sortedBugs);	
+				
+				//Dump all defects into one file for a consolidated analysis
+				//to form the base line for number of real defects among all
+				//violations
+				CommonConstants.DUPLICATE_BUG_MODE = CommonConstants.DUPLICATE_BUG_MINIMUM;				
+				HashSet<CodeSampleDefectHolder> minimalSetOfBugs = new HashSet<CodeSampleDefectHolder>();
+				for(CodeSampleDefectHolder csdhObj : detectedBugsSet) {
+					minimalSetOfBugs.add(csdhObj);
+				}
+				BufferedWriter bwBugs = new BufferedWriter(new FileWriter("MinedBugs_Consolidated.csv"));
+				bwBugs.write("Filename, Method, Violated API, Violation Pattern, Pattern Type, Support, HasAndPattern, UsedForDefectDetection\n");								
+				for(CodeSampleDefectHolder csdhObj : minimalSetOfBugs) {
+					bwBugs.write(csdhObj.toString() + "\n");									
+				}
+				bwBugs.close();
+				CommonConstants.DUPLICATE_BUG_MODE = CommonConstants.DUPLICATE_BUG_NORMAL;
+				//End of consolidated list
+			}
 		} catch (IOException e) {
 			logger.error("Exception occurred" + e);
 		}		
+	}
+	
+	private void dumpDefectsOfType(PatternType ptype, Set<CodeSampleDefectHolder> sortedBugs)
+	{
+		try
+		{
+			BufferedWriter bwBugs = new BufferedWriter(new FileWriter("MinedBugs_" + ptype.toString() + ".csv"));
+			bwBugs.write("Filename, Method, Violated API, Violation Pattern, Pattern Type, Support, HasAndPattern, UsedForDefectDetection\n");
+							
+			for(CodeSampleDefectHolder csdhObj : sortedBugs) {				
+				if(csdhObj.getPtype() != ptype)
+					continue;	
+				bwBugs.write(csdhObj.toString() + "\n");									
+			}
+			bwBugs.close();
+		}
+		catch(Exception ex)
+		{
+			logger.error("Error occurred while writing patterns to file " + ex.getMessage());
+		}
 	}
 	
 	/**

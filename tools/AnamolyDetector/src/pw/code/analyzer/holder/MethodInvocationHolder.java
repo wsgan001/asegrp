@@ -1,5 +1,10 @@
 package pw.code.analyzer.holder;
 
+import imminer.migrator.ADAndPattern;
+import imminer.migrator.ADComboPattern;
+import imminer.migrator.ADMinedPattern;
+import imminer.migrator.ADSinglePattern;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -66,6 +71,16 @@ public class MethodInvocationHolder extends Holder {
 	
 	public double dominatingSupport = 0; //A support especially used for sorting the final set of defects
 								  //Mainly used during printing.	
+	
+	/*******************************************/
+	//New variables specific for Alattin Journal version
+	public List<ADMinedPattern> singlePatternList = new ArrayList<ADMinedPattern>(1);
+	public List<ADMinedPattern> andPatternList = new ArrayList<ADMinedPattern>(1);
+	public List<ADMinedPattern> orPatternList = new ArrayList<ADMinedPattern>();
+	public List<ADMinedPattern> xorPatternList = new ArrayList<ADMinedPattern>();
+	public List<ADMinedPattern> comboPatternList = new ArrayList<ADMinedPattern>();
+	public boolean hasSamePatternFormats = false;
+	/*******************************************/
 	
 	public MethodInvocationHolder()
 	{
@@ -275,9 +290,15 @@ public class MethodInvocationHolder extends Holder {
 		
 		newObj.setReceiverClass(receiverClass);
 		newObj.setReturnType(new TypeHolder());
-		newObj.setArgumentString(input.substring(positionOfLeftBrace, positionOfRightBrace + 1));
-		newObj.methodName = input.substring(0, positionOfLeftBrace);
-		
+		try
+		{
+			newObj.setArgumentString(input.substring(positionOfLeftBrace, positionOfRightBrace + 1));
+			newObj.methodName = input.substring(0, positionOfLeftBrace);
+		}
+		catch(StringIndexOutOfBoundsException sb)
+		{
+			int i = 0;
+		}
 		
 		if(!newObj.getArgumentString().equals("()")) {
 			String argSplits[] = input.substring(positionOfLeftBrace + 1, positionOfRightBrace).split(",");

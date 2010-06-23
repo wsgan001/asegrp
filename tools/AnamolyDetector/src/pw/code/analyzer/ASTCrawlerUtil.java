@@ -83,6 +83,11 @@ public class ASTCrawlerUtil {
     {
     	try
     	{
+			if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_LIBRARY ||
+    				CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY)
+    		{
+    			return typeObjP.resolveBinding().getQualifiedName();
+    		} 
     		String fullClassName = CommonConstants.getUniqueIDForUnknown();
     		if(typeObjP instanceof SimpleType)
     		{	
@@ -167,7 +172,8 @@ public class ASTCrawlerUtil {
     	
     	//If the mode of operation i.e., CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY
     	//Resolve directly, because all this information would be available
-    	if(CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY) {
+    	if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_LIBRARY
+    			|| CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY) {
     		if(exprNode == null) {
     			thObj.setType("this");
     		} else {
@@ -180,9 +186,7 @@ public class ASTCrawlerUtil {
     		}
     		
     		return thObj;   		
-    	}
-    	
-    	
+    	}   	
     	
 		if(exprNode == null || exprNode instanceof ThisExpression)
 		{
@@ -525,7 +529,8 @@ public class ASTCrawlerUtil {
     	//If the mode of operation i.e., CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY
     	//Resolve directly, because all this information would be available
     	//However "variable name" is still extracted from earlier approaches
-    	if(CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY) {
+    	if(CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY
+    			|| CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_LIBRARY) {
     		MethodInvocation miCastedObj = (MethodInvocation) miObj;
     		ITypeBinding typeBinding = miCastedObj.resolveTypeBinding();
     		thObj.setType(typeBinding.getQualifiedName());
@@ -1001,7 +1006,7 @@ public class ASTCrawlerUtil {
     			cvh.setCondType(CondVarHolder.TRUE_FALSE_CHECK);
     			cvh.setConstValue(((BooleanLiteral)otherOperand).toString());
     		} else if(otherOperand instanceof MethodInvocation) {
-    			cvh.setCondType(CondVarHolder.RETVAL_EQUALITY_CHECK);
+    			cvh.setCondType(CondVarHolder.GEN_EQUALITY_CHECK);
     			cvh.setOtherMIiObj((MethodInvocation)otherOperand);
     		} else if(otherOperand instanceof CharacterLiteral || 
     				otherOperand instanceof StringLiteral || otherOperand instanceof NumberLiteral) {
@@ -1093,7 +1098,7 @@ public class ASTCrawlerUtil {
     	case CondVarHolder.GEN_EQUALITY_CHECK: return "GEN_EQUALITY_CHECK";
     	case CondVarHolder.TRUE_FALSE_CHECK: return "TRUE_FALSE_CHECK";
     	case CondVarHolder.CONSTANT_EQUALITY_CHECK: return "CONSTANT_EQUALITY_CHECK";
-    	case CondVarHolder.RETVAL_EQUALITY_CHECK: return "RETVAL_EQUALITY_CHECK";
+    	//case CondVarHolder.RETVAL_EQUALITY_CHECK: return "RETVAL_EQUALITY_CHECK";
     	case CondVarHolder.CLASS_EQUIVALENCE_CHECK: return "CLASS_EQUIVALENCE_CHECK";
     	case CondVarHolder.METHODARG_NULL_CHECK: return "METHODARG_NULL_CHECK";
     	case CondVarHolder.METHODARG_TRUE_FALSE_CHECK: return "METHODARG_TRUE_FALSE_CHECK";
@@ -1125,9 +1130,9 @@ public class ASTCrawlerUtil {
     		return CondVarHolder.CONSTANT_EQUALITY_CHECK; 
     	}
     	
-    	if(condType.equals("RETVAL_EQUALITY_CHECK")) {
-    		return CondVarHolder.RETVAL_EQUALITY_CHECK; 
-    	}
+    	//if(condType.equals("RETVAL_EQUALITY_CHECK")) {
+    	//	return CondVarHolder.RETVAL_EQUALITY_CHECK; 
+    	//}
     	
     	if(condType.equals("CLASS_EQUIVALENCE_CHECK")) {
     		return CondVarHolder.CLASS_EQUIVALENCE_CHECK; 
@@ -1169,6 +1174,7 @@ public class ASTCrawlerUtil {
     /**
      * Function related to gathering traces for mining
      * Function for ignoring a "method invocation holder" or "condition var holder"
+     * Includes various heuristics for improving the results
      * @return
      */
     public static boolean ignoreHolderObject(Holder hObj, MethodInvocationHolder assocLibMIH) {
@@ -1177,7 +1183,8 @@ public class ASTCrawlerUtil {
     		String receiverType = mihObj.getReceiverClass().getType();
     		if(receiverType.contains(CommonConstants.unknownType) || receiverType.equals("this")
     				|| receiverType.contains(CommonConstants.multipleCurrTypes) || receiverType.equals("java.lang.String")
-    				|| receiverType.equals("java.lang.Boolean") || receiverType.equals("java.lang.Integer")) {    			
+    				|| receiverType.equals("java.lang.Boolean") || receiverType.equals("java.lang.Integer")
+    				|| receiverType.equals("java.lang.StringBuffer")) {    			
     			return true;
     		}
     		
@@ -1186,42 +1193,56 @@ public class ASTCrawlerUtil {
     		} 		
     	} else if(hObj instanceof CondVarHolder_Typeholder) {
     		CondVarHolder_Typeholder cvh_thObj = (CondVarHolder_Typeholder) hObj; 
+    		MethodInvocationHolder cvhAssocMIH = cvh_thObj.cvhObj.getAssociatedMIH();
     		
     		//Ignore the condition patterns related to null check on the receiver of the same method invocation   		
     		if(cvh_thObj.thObj.getElemType() == CommonConstants.RECEIVER_PATTERNS && cvh_thObj.cvhObj.getCondType() == CondVarHolder.NULL_CHECK
-    				&& cvh_thObj.cvhObj.getAssociatedMIH().equals(assocLibMIH)) {
+    				&& cvhAssocMIH.equals(assocLibMIH)) {
     			return true;
     		}
     		
     		//Ignore the condition patterns on the return of a method invocation (same as associatedLibMIH) that are boolean with
-    		//true_false_check
+    		//true_false_check. Since every boolean return value can have this check and it is trivial to generate such a condition check
     		if(cvh_thObj.thObj.getElemType() == CommonConstants.RETURN_PATTERNS && cvh_thObj.cvhObj.getCondType() == CondVarHolder.TRUE_FALSE_CHECK
-    				&& cvh_thObj.cvhObj.getAssociatedMIH().equals(assocLibMIH)) {
+    				&& cvhAssocMIH.equals(assocLibMIH)) {
     			return true;
     		}
     		
     		//Ignore the case of having null check on a constructor call
     		if(cvh_thObj.thObj.getElemType() == CommonConstants.RETURN_PATTERNS && cvh_thObj.cvhObj.getCondType() == CondVarHolder.NULL_CHECK
-    				&& cvh_thObj.cvhObj.getAssociatedMIH().getMethodName().equals("CONSTRUCTOR")) {
+    				&& cvhAssocMIH.getMethodName().equals("CONSTRUCTOR")) {
+    			return true;
+    		}
+    		
+    		//Ignore the case of having constant equality check without specific constant
+    		if((cvh_thObj.thObj.getElemType() == CommonConstants.RETURN_PATTERNS || cvh_thObj.thObj.getElemType() == CommonConstants.RECEIVER_PATTERNS) 
+    				&& cvh_thObj.cvhObj.getCondType() == CondVarHolder.GEN_EQUALITY_CHECK
+    				&& cvhAssocMIH.equals(assocLibMIH)) {
     			return true;
     		}
     		
     		//Heuristic: May need to be deleted if not working fine
-    		String cvh_rec_type = cvh_thObj.cvhObj.getAssociatedMIH().getReceiverClass().getType();
+    		String cvh_rec_type = cvhAssocMIH.getReceiverClass().getType();
     		String assoc_lib_mih_rec_type = assocLibMIH.getReceiverClass().getType();
     		
     		int cvh_rec_type_id = cvh_rec_type.lastIndexOf(".");
     		int assoc_lib_mih_rec_type_id = assoc_lib_mih_rec_type.lastIndexOf(".");
     		
-    		cvh_rec_type = cvh_rec_type.substring(0, cvh_rec_type_id);
-    		assoc_lib_mih_rec_type = assoc_lib_mih_rec_type.substring(0, assoc_lib_mih_rec_type_id);
-    		if(!cvh_rec_type.equals(assoc_lib_mih_rec_type)) {
-    			return true;
-    		}   		
+    		if(cvh_rec_type_id != -1 && assoc_lib_mih_rec_type_id != -1)
+    		{
+    			//This heuristic restricts based on the name of the package. 
+    			//For example java.util.Iterator.next() can have condition checks from APIs within
+    			//the package of java.util
+	    		cvh_rec_type = cvh_rec_type.substring(0, cvh_rec_type_id);
+	    		assoc_lib_mih_rec_type = assoc_lib_mih_rec_type.substring(0, assoc_lib_mih_rec_type_id);
+	    		if(!cvh_rec_type.equals(assoc_lib_mih_rec_type)) {
+	    			return true;
+	    		}
+    		}
     		
-    		if(ignoreHolderObject(cvh_thObj.cvhObj.getAssociatedMIH(), assocLibMIH)) {
+    		if(ignoreHolderObject(cvhAssocMIH, assocLibMIH)) {
     			return true;
-    		}   		
+    		}
     	}    	
     	return false;
     }    

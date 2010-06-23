@@ -36,6 +36,10 @@ public class CondVarHolder implements Comparator{
 		
 	private String codeSampleFileName = "";
 	private String codeSampleMethodName = "";
+	
+	//Describes the position (0: Before, 1: After) for the condition
+	//check with respect to the API call site
+	private int position = 0;
 		
 	public CondVarHolder () {
 	}
@@ -66,7 +70,10 @@ public class CondVarHolder implements Comparator{
 				retStr += ":" + constValue;
 		} 
 		
-		if (condType == RETVAL_EQUALITY_CHECK || condType == METHODARG_RETVAL_EQUALITY_CHECK) {
+		//if (condType == RETVAL_EQUALITY_CHECK || condType == METHODARG_RETVAL_EQUALITY_CHECK) {
+		//	retStr += ":" + otherMIiObj;
+		//}
+		if (condType == METHODARG_RETVAL_EQUALITY_CHECK) {
 			retStr += ":" + otherMIiObj;
 		}
 		
@@ -98,7 +105,11 @@ public class CondVarHolder implements Comparator{
 			retStr += ":" + constValue;
 		} 
 		
-		if ((condType == RETVAL_EQUALITY_CHECK || condType == METHODARG_RETVAL_EQUALITY_CHECK)) {
+		//if ((condType == RETVAL_EQUALITY_CHECK || condType == METHODARG_RETVAL_EQUALITY_CHECK)) {
+		//	retStr += ":" + otherMIiObj;
+		//}
+		
+		if (condType == METHODARG_RETVAL_EQUALITY_CHECK) {
 			retStr += ":" + otherMIiObj;
 		}
 		
@@ -155,7 +166,7 @@ public class CondVarHolder implements Comparator{
 	public static final int NULL_CHECK = 1; //Handles == NULL or != NULL    
     public static final int TRUE_FALSE_CHECK = 2; //Handles verification checks with true or false
     public static final int CONSTANT_EQUALITY_CHECK = 3; //A specific case of equality check where the other operand is a constant
-    public static final int RETVAL_EQUALITY_CHECK = 4; //An equality check with the return value of another method
+    //public static final int RETVAL_EQUALITY_CHECK = 4; //An equality check with the return value of another method
     public static final int CLASS_EQUIVALENCE_CHECK = 5;	//For comparisons like if ((method.getReturnType() == double.class))
     
     public static final int METHODARG = 10;
@@ -190,6 +201,9 @@ public class CondVarHolder implements Comparator{
 		CondVarHolder cvh = (CondVarHolder) otherObj;
 		if(this.condType != cvh.condType)
 			return false;	
+		
+		if(this.position != cvh.position)
+			return false;
 		
 		//If both variable names exist, both should be equal
 		//if(!(this.varName.equals("")) && !(cvh.varName.equals("")) && !(this.varName.equals(cvh.varName))) {
@@ -374,5 +388,13 @@ public class CondVarHolder implements Comparator{
 
 	public void setCodeSampleMethodName(String codeSampleMethodName) {
 		this.codeSampleMethodName = codeSampleMethodName;
+	}
+
+	public int getPosition() {
+		return position;
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
 	}
 }

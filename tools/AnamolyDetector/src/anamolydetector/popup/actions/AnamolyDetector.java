@@ -1,5 +1,7 @@
 package anamolydetector.popup.actions;
 
+import imminer.migrator.PatternMigrator;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -41,12 +43,9 @@ public class AnamolyDetector implements IObjectActionDelegate {
 	static private Logger logger = Logger.getLogger("AnamolyDetector");
 	private IWorkbenchPart _part;
 	
-	
 	//A workaround for storing package names locally and reusing them. This
 	//variable must be set to "" during final release.
 	static String localPackageDataFile = "";
-	
-
     private String codesamples_dir = System.getenv("ALATTIN_PATH");
 	
 	/**
@@ -81,13 +80,32 @@ public class AnamolyDetector implements IObjectActionDelegate {
 	        	logger.error("ERROR: This should be run only on one item");
 	        }
 	        
+	        //Check for mistakes in properties file
+	        if(CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY)
+	        {
+	        	//In this case only one attribute InputPatternFile and InputPatternDirs should be given
+	        	if(!CommonConstants.inputPatternFile.equals("") && CommonConstants.inputPatternDirs != null)
+	        	{
+	        		logger.error("Only one attribute between inputPatternFile and inputPatternDirs should be given!!!");
+	        		return;
+	        	}
+	        }
+	        
 	        if(items[0] instanceof IJavaProject)
 	        {
 	        	try
 	        	{
 	        		IJavaProject project = (IJavaProject) items[0];
 		        	
-		        	String codesamples_dir_local = codesamples_dir + "/" + project.getElementName().toString(); 
+		        	String codesamples_dir_local = codesamples_dir + "/" + project.getElementName().toString();
+		        			        	
+		        	try
+		        	{
+		        		(new File(codesamples_dir_local)).mkdirs();
+		        	} catch(Exception ex)
+		        	{
+		        		
+		        	}
 		        	
 		        	logger.warn("TIMING: Start of library scanner: " + System.currentTimeMillis());
 		        	ra.setLibProject(project);
@@ -160,11 +178,12 @@ public class AnamolyDetector implements IObjectActionDelegate {
 		    		/*End of Debug Section*/
 		    		
 		    		//User can set the operation mode to mine patterns or detect defects
-		    		if(CommonConstants.userConfiguredMode == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES) {
+		    		if(CommonConstants.userConfiguredMode == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES
+		    				|| CommonConstants.userConfiguredMode == CommonConstants.MINE_PATTERNS_FROM_LIBRARY) {
 		    			startProcess(codesamples_dir_local);
 		    		} else {
 		    			detectDefects("", CommonConstants.inputPatternFile);
-		    		}	    		
+		    		}
 	        	}
 	        	catch(Throwable th) {
 	        		th.printStackTrace();
@@ -173,7 +192,16 @@ public class AnamolyDetector implements IObjectActionDelegate {
 	        else {
 	        	logger.error("ERROR: This should be run only on a Java project");
 	        }	        
-	        logger.warn("TIMING: End of complete process: " + System.currentTimeMillis());      
+	        logger.warn("TIMING: End of complete process: " + System.currentTimeMillis()); 
+	        
+	        //When we do mine patterns from library, detect defects automatically, by loading the
+	        //mined patterns back into the memory and applying mining techniques
+	        if(CommonConstants.userConfiguredMode == CommonConstants.MINE_PATTERNS_FROM_LIBRARY)
+	        {
+	        	CommonConstants.userConfiguredMode = CommonConstants.DETECT_BUGS_IN_LIBRARY;
+	        	CommonConstants.OPERATION_MODE = CommonConstants.userConfiguredMode;
+	        	run(action);
+	        }
 		}
 		catch(Exception ex)
 		{			
@@ -187,7 +215,7 @@ public class AnamolyDetector implements IObjectActionDelegate {
 		//Common initialization stuff
 		RepositoryAnalyzer.numDownloadedCodeSamples = 0;
 		RepositoryAnalyzer.numAnalyzedCodeSamples = 0;
-		CommonConstants.OPERATION_MODE = CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES;
+		CommonConstants.OPERATION_MODE = CommonConstants.userConfiguredMode;
 		GCodeDownloader.bwPackageDetails = new BufferedWriter(new FileWriter("PackageMappings.csv")); 
 		RepositoryAnalyzer.resetMIIdGen();
 		loadPackageInfoToMemory();
@@ -200,9 +228,12 @@ public class AnamolyDetector implements IObjectActionDelegate {
 		logger.warn("TIMING: End of CodeDownloader: " + System.currentTimeMillis());
 		logger.warn("TIMING: Total number of samples downloaded: " + RepositoryAnalyzer.numDownloadedCodeSamples);
 		
-		logger.warn("TIMING: Start of Mine Patters: " + System.currentTimeMillis());
+		long beginDataCollection = System.currentTimeMillis();
+		logger.warn("TIMING: Start of Data Collection: " + beginDataCollection);
 		ra.analyzeRepository(codesamples_dir_local);
-		logger.warn("TIMING: End of Mine Patterns: " + System.currentTimeMillis());
+		long endDataCollection = System.currentTimeMillis();
+		logger.warn("TIMING: End of Data Collection: " + endDataCollection);
+		logger.warn("TIMING: Time taken for data collection: " + (endDataCollection - beginDataCollection)/1000 + " sec");
 		logger.warn("TIMING: Total number of samples analyzed for mining: " + RepositoryAnalyzer.numAnalyzedCodeSamples);
 		
 		//TODO: For time being commented out the defect detection portion
@@ -212,7 +243,7 @@ public class AnamolyDetector implements IObjectActionDelegate {
 		logger.warn("TIMING: End of finding violations: " + System.currentTimeMillis());*/
 				
 		//Freeing the memory and post processing conditions
-		CommonConstants.OPERATION_MODE = CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES;
+		CommonConstants.OPERATION_MODE = CommonConstants.userConfiguredMode;
 		RepositoryAnalyzer.clearInstance();
 		GCodeDownloader.bwPackageDetails.close();
 		GCodeDownloader.bwPackageDetails = null;
@@ -228,168 +259,190 @@ public class AnamolyDetector implements IObjectActionDelegate {
 		GCodeDownloader.bwPackageDetails = new BufferedWriter(new FileWriter("PackageMappings.csv")); 
 		RepositoryAnalyzer.resetMIIdGen();
 		loadPackageInfoToMemory();
-		
-		//Load the patterns from the input file. Assuming the pattern file name as ConsolidatedOutput.csv
-		File patternFile = new File(inpPatternFile);
-		if(!patternFile.exists()) {
-			System.err.println("Pattern file does not exist");
-			logger.error("Pattern file does not exist");
-			return;
-		}
-		
+				
 		RepositoryAnalyzer raObj = RepositoryAnalyzer.getInstance();
-		
-		//All input patterns are loaded into PrePostLists 
-		Scanner patternScanner = new Scanner(patternFile);
-		patternScanner.nextLine(); //removing the header		
-		
-		while(patternScanner.hasNextLine()) {
-			String inpPattern = patternScanner.nextLine();
-			
-			String[] inpPatternParts = inpPattern.split(",");
-			String libMIHStr = inpPatternParts[1];	 
-			int firstColon = libMIHStr.indexOf(':');
-			String receiverObj = libMIHStr.substring(0, firstColon);
-			String argumentStr = libMIHStr.substring(firstColon + 1);
-			argumentStr = argumentStr.replaceAll("::", ":");
-			argumentStr = argumentStr.replaceAll(":", ",");			
-			MethodInvocationHolder inpLibMIH = MethodInvocationHolder.parseFromString(argumentStr, new TypeHolder(receiverObj));
-					
-			int position = Integer.parseInt(inpPatternParts[2]); // 0: Backward, 1: Forward
-			int balanced = Integer.parseInt(inpPatternParts[3]); // 0: Balanced, 1: Imbalanced
-			
-			//No need to load imbalance patterns, if the bug detection mode is not imbalanced patterns			
-			if(balanced == 1 && CommonConstants.BUG_DETECTION_MODE != CommonConstants.IMBALANCED_PATTERNS) {
-				continue;
-			}			
-			
-			String actualPatternPart = inpPatternParts[4]; 
-			float globalSupport = Float.parseFloat(inpPatternParts[6]);
-			float localSupport = Float.parseFloat(inpPatternParts[7]);
-			
-			String[] conditionChkArr = actualPatternPart.split("&&");			
-			Set<Holder> prePath = new HashSet<Holder>();
-			Set<Holder> postPath = new HashSet<Holder>();
-			try
-			{
-				for(String conditionChk : conditionChkArr) {				
-					//Extracting the position (before or after) from the pattern
-					int lastOpenBrace = conditionChk.lastIndexOf("(");
-					int lastCloseBrace = conditionChk.lastIndexOf(")");
-					String positionStr = conditionChk.substring(lastOpenBrace + 1, lastCloseBrace);
-					int positionOfPattern = Integer.parseInt(positionStr);				
-					
-					conditionChk = conditionChk.substring(0, lastOpenBrace);
-					
-					CondVarHolder_Typeholder cvh_thObj = CondVarHolder_Typeholder.parseFromString(conditionChk);				
-					if(positionOfPattern == 0) {
-						prePath.add(cvh_thObj);
-					} else {
-						postPath.add(cvh_thObj);
-					}
-				}
-			}
-			catch(Exception ex)
-			{
-				ex.printStackTrace();	
-				System.out.println(inpPattern);
-				throw ex;
-			}
-			
-			//Read the entire pattern from the input file. Load the pattern into MethodinvocationHolder
-			HashMap<String, ExternalObject> externalObjectSet = RepositoryAnalyzer.getInstance().getExternalObjects(); 
-			ExternalObject eeObj = externalObjectSet.get(receiverObj);
-			
-			if(eeObj == null) {
-				logger.error("Could not find object: " + receiverObj + ", IGNORING !!!");
-				continue;
-			}
-			
-			MethodInvocationHolder eeMIH = eeObj.containsMI(inpLibMIH);	
-			if(eeMIH == null) {
-				logger.error("Could not find methodinvocation: " + inpLibMIH + ", IGNORING !!!");
-				continue;
-			}		
-			
-			PrePostPathHolder pppHObj = new PrePostPathHolder(prePath, postPath);
-			pppHObj.balanced = balanced;
-			pppHObj.globalSupport = globalSupport;
-			pppHObj.localSupport = localSupport;			
-			eeMIH.addToPrePostList(pppHObj);		
-		}		
-		
-		//Classifying the patterns into three categories: Mainly for collecting statistics
-		//SingleCheck, Balanced, Imbalanced... Also computing the support value for sorting
-		//detected defects
-		int bTotalNumPattern = 0, bTotalSingleCheck = 0, bTotalBalanced = 0, bTotalImbalanced = 0;
-		for(ExternalObject eeObj : RepositoryAnalyzer.getInstance().getExternalObjects().values()) {
-			for(MethodInvocationHolder eeMIH : eeObj.getMiList()) {
-				List<PrePostPathHolder> pppHList = eeMIH.getPrePostList();
-				if(pppHList == null || pppHList.size() == 0) {
-					continue;
-				}
-				
-				bTotalNumPattern++;
-				
-				boolean bNoImbalance = true;
-				for(PrePostPathHolder pppHObj : pppHList) {
-					if(pppHObj.balanced == 1) {
-						bNoImbalance = false;
-						break;
-					}				
-				}
-				
-				if(!bNoImbalance) {
-					//Mark the special flag as all a result of imbalance patterns
-					bTotalImbalanced++;
-					for(PrePostPathHolder pppHObj : pppHList) {
-						pppHObj.special_balance_flag = CommonConstants.DFC_IMBALANCED_PATTERNS;
-					}
-				} else {
-					//Not an imbalance. Check whether there is only one possibility
-					//In this case, mark this pattern as SINGLE_CHECK pattern
-					if(pppHList.size() == 1) {
-						bTotalSingleCheck++;
-						for(PrePostPathHolder pppHObj : pppHList) {
-							pppHObj.special_balance_flag = CommonConstants.DFC_SINGLE_CHECK_PATTERNS;
-						}	
-					} 
-				}				
-					
-				if(pppHList.size() > 1) {
-					//Set them as balanced, only when there are more than one subpattern for this MI
-					//atleast two of them should be registered as balanced. TODO: This part is not correct
-					bTotalBalanced++;
-					for(PrePostPathHolder pppHObj : pppHList) {
-						if(bNoImbalance)
-							pppHObj.special_balance_flag = CommonConstants.DFC_BALANCED_PATTERNS;
-					}				
-				}
-				
-				double maxGlobalSupport = 0.0;
-				for(PrePostPathHolder pppHObj : pppHList) {
-					if(maxGlobalSupport < pppHObj.globalSupport) {
-						maxGlobalSupport = pppHObj.globalSupport;
-					}				
-				}
-				
-				eeMIH.dominatingSupport = maxGlobalSupport; 
-			}		
+		if(!CommonConstants.inputPatternFile.equals(""))
+			loadPatternsFromFile(inpPatternFile);
+		else
+		{
+			PatternMigrator pm = new PatternMigrator();
+			pm.startProcess();
 		}
 		
-				
 		//Downloading code samples collected from Google code search engine		
 		CommonConstants.OPERATION_MODE = CommonConstants.userConfiguredMode;
-		logger.warn("TIMING: Start of finding violations: " + System.currentTimeMillis());
+		long beginFindViolations = System.currentTimeMillis();
+		logger.warn("TIMING: Start of finding violations: " + beginFindViolations);
 		raObj.analyzeRepository(codesamples_dir_local);
-		logger.warn("TIMING: End of finding violations: " + System.currentTimeMillis());
+		long endFindViolations = System.currentTimeMillis();
+		logger.warn("TIMING: End of finding violations: " + endFindViolations); 
+		logger.warn("TIMING: Time taken for finding violations: " + (endFindViolations - beginFindViolations) / 1000 + " sec");
 				
 		//Freeing the memory and post processing conditions
 		RepositoryAnalyzer.clearInstance();
 		GCodeDownloader.bwPackageDetails.close();
 		GCodeDownloader.bwPackageDetails = null;
 		localPackageDataFile = "";
-	}	
+	}
+	
+	private static void loadPatternsFromFile(String inpPatternFile)
+	{
+		try
+		{
+			//Load the patterns from the input file. Assuming the pattern file name as ConsolidatedOutput.csv
+			File patternFile = new File(inpPatternFile);
+			if(!patternFile.exists()) {
+				System.err.println("Pattern file does not exist");
+				logger.error("Pattern file does not exist");
+				return;
+			}
+			
+			RepositoryAnalyzer raObj = RepositoryAnalyzer.getInstance();
+			
+			//All input patterns are loaded into PrePostLists 
+			Scanner patternScanner = new Scanner(patternFile);
+			patternScanner.nextLine(); //removing the header		
+			
+			while(patternScanner.hasNextLine()) {
+				String inpPattern = patternScanner.nextLine();
+				
+				String[] inpPatternParts = inpPattern.split(",");
+				String libMIHStr = inpPatternParts[1];	 
+				int firstColon = libMIHStr.indexOf(':');
+				String receiverObj = libMIHStr.substring(0, firstColon);
+				String argumentStr = libMIHStr.substring(firstColon + 1);
+				argumentStr = argumentStr.replaceAll("::", ":");
+				argumentStr = argumentStr.replaceAll(":", ",");			
+				MethodInvocationHolder inpLibMIH = MethodInvocationHolder.parseFromString(argumentStr, new TypeHolder(receiverObj));
+						
+				int position = Integer.parseInt(inpPatternParts[2]); // 0: Backward, 1: Forward
+				int balanced = Integer.parseInt(inpPatternParts[3]); // 0: Balanced, 1: Imbalanced
+				
+				//No need to load imbalance patterns, if the bug detection mode is not imbalanced patterns			
+				if(balanced == 1 && CommonConstants.BUG_DETECTION_MODE != CommonConstants.IMBALANCED_PATTERNS) {
+					continue;
+				}			
+				
+				String actualPatternPart = inpPatternParts[4]; 
+				float globalSupport = Float.parseFloat(inpPatternParts[6]);
+				float localSupport = Float.parseFloat(inpPatternParts[7]);
+				
+				String[] conditionChkArr = actualPatternPart.split("&&");			
+				Set<Holder> prePath = new HashSet<Holder>();
+				Set<Holder> postPath = new HashSet<Holder>();
+				try
+				{
+					for(String conditionChk : conditionChkArr) {				
+						//Extracting the position (before or after) from the pattern
+						int lastOpenBrace = conditionChk.lastIndexOf("(");
+						int lastCloseBrace = conditionChk.lastIndexOf(")");
+						String positionStr = conditionChk.substring(lastOpenBrace + 1, lastCloseBrace);
+						int positionOfPattern = Integer.parseInt(positionStr);				
+						
+						conditionChk = conditionChk.substring(0, lastOpenBrace);
+						
+						CondVarHolder_Typeholder cvh_thObj = CondVarHolder_Typeholder.parseFromString(conditionChk);				
+						if(positionOfPattern == 0) {
+							prePath.add(cvh_thObj);
+						} else {
+							postPath.add(cvh_thObj);
+						}
+					}
+				}
+				catch(Exception ex)
+				{
+					ex.printStackTrace();	
+					System.out.println(inpPattern);
+					throw ex;
+				}
+				
+				//Read the entire pattern from the input file. Load the pattern into MethodinvocationHolder
+				HashMap<String, ExternalObject> externalObjectSet = RepositoryAnalyzer.getInstance().getExternalObjects(); 
+				ExternalObject eeObj = externalObjectSet.get(receiverObj);
+				
+				if(eeObj == null) {
+					logger.error("Could not find object: " + receiverObj + ", IGNORING !!!");
+					continue;
+				}
+				
+				MethodInvocationHolder eeMIH = eeObj.containsMI(inpLibMIH);	
+				if(eeMIH == null) {
+					logger.error("Could not find methodinvocation: " + inpLibMIH + ", IGNORING !!!");
+					continue;
+				}		
+				
+				PrePostPathHolder pppHObj = new PrePostPathHolder(prePath, postPath);
+				pppHObj.balanced = balanced;
+				pppHObj.globalSupport = globalSupport;
+				pppHObj.localSupport = localSupport;			
+				eeMIH.addToPrePostList(pppHObj);		
+			}		
+			
+			
+			//Classifying the patterns into three categories: Mainly for collecting statistics
+			//SingleCheck, Balanced, Imbalanced... Also computing the support value for sorting
+			//detected defects
+			int bTotalNumPattern = 0, bTotalSingleCheck = 0, bTotalBalanced = 0, bTotalImbalanced = 0;
+			for(ExternalObject eeObj : RepositoryAnalyzer.getInstance().getExternalObjects().values()) {
+				for(MethodInvocationHolder eeMIH : eeObj.getMiList()) {
+					List<PrePostPathHolder> pppHList = eeMIH.getPrePostList();
+					if(pppHList == null || pppHList.size() == 0) {
+						continue;
+					}
+					
+					bTotalNumPattern++;
+					
+					boolean bNoImbalance = true;
+					for(PrePostPathHolder pppHObj : pppHList) {
+						if(pppHObj.balanced == 1) {
+							bNoImbalance = false;
+							break;
+						}				
+					}
+					
+					if(!bNoImbalance) {
+						//Mark the special flag as all a result of imbalance patterns
+						bTotalImbalanced++;
+						for(PrePostPathHolder pppHObj : pppHList) {
+							pppHObj.special_balance_flag = CommonConstants.DFC_IMBALANCED_PATTERNS;
+						}
+					} else {
+						//Not an imbalance. Check whether there is only one possibility
+						//In this case, mark this pattern as SINGLE_CHECK pattern
+						if(pppHList.size() == 1) {
+							bTotalSingleCheck++;
+							for(PrePostPathHolder pppHObj : pppHList) {
+								pppHObj.special_balance_flag = CommonConstants.DFC_SINGLE_CHECK_PATTERNS;
+							}	
+						} 
+					}				
+						
+					if(pppHList.size() > 1) {
+						//Set them as balanced, only when there are more than one subpattern for this MI
+						//atleast two of them should be registered as balanced. TODO: This part is not correct
+						bTotalBalanced++;
+						for(PrePostPathHolder pppHObj : pppHList) {
+							if(bNoImbalance)
+								pppHObj.special_balance_flag = CommonConstants.DFC_BALANCED_PATTERNS;
+						}				
+					}
+					
+					double maxGlobalSupport = 0.0;
+					for(PrePostPathHolder pppHObj : pppHList) {
+						if(maxGlobalSupport < pppHObj.globalSupport) {
+							maxGlobalSupport = pppHObj.globalSupport;
+						}				
+					}
+					
+					eeMIH.dominatingSupport = maxGlobalSupport; 
+				}		
+			}	
+		}
+		catch(Exception ex)
+		{
+			logger.error("Error occurred while loading patterns from file " + ex.getLocalizedMessage());
+		}
+	}
 	
 	public static void loadPackageInfoToMemory() 
 	{

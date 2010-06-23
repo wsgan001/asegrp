@@ -100,7 +100,8 @@ public class GCodeAnalyzer {
 		astC.destObj = destinationObject;
 		//astC.setDirectoryName(directoryPath);
 		
-		if(CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY) {
+		if(CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY
+				|| CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_LIBRARY) {
 			return analyzeLibraryCode(astC);
 		}
 		

@@ -1,5 +1,8 @@
 package pw.code.analyzer;
 
+import imminer.core.PatternType;
+import imminer.migrator.ADMinedPattern;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -652,8 +655,10 @@ public class ASTCrawler extends ASTVisitor {
      */
     public boolean visit(TypeDeclaration typeNode)
     {
-    	//APIUsage metrics: Ignore the classes that belong to current package, when not in CommonConstants.DETECT_BUGS_IN_LIBRARY
-    	if(RepositoryAnalyzer.getInstance().getLibPackageList().contains(currPackageName) && CommonConstants.OPERATION_MODE != CommonConstants.DETECT_BUGS_IN_LIBRARY)
+    	//Ignore the classes that belong to current package, when not in CommonConstants.DETECT_BUGS_IN_LIBRARY or MINE_PATTERNS_FROM_LIBRARY
+    	if(RepositoryAnalyzer.getInstance().getLibPackageList().contains(currPackageName) 
+    			&& CommonConstants.OPERATION_MODE != CommonConstants.DETECT_BUGS_IN_LIBRARY 
+    			&& CommonConstants.OPERATION_MODE != CommonConstants.MINE_PATTERNS_FROM_LIBRARY)
     	{
     		return false;
     	}
@@ -829,39 +834,55 @@ public class ASTCrawler extends ASTVisitor {
 		}
 		currentHolderForEdge = mihObj;
 		
-    	if(refType.getType().equals(sourceObj) || returnType.getType().equals(sourceObj) || mihObj.isPresentInArgumentArr(sourceObj)
-				|| (refType.getType().equals(CommonConstants.multipleCurrTypes) && currentSources.contains(sourceObj)) 
-				|| CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY) 
+		if(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_LIBRARY)
 		{
-			//Get the external object associated with this source and see whether
-			//such API is of interest for the current library.
-			ExternalObject eeObj = null;
+			ExternalObject eeObj = RepositoryAnalyzer.getInstance().getExternalObjects().get(mihObj.getReceiverClass().getType());
 			MethodInvocationHolder equiLibMIH = null;
-			
-			if(CommonConstants.OPERATION_MODE != CommonConstants.DETECT_BUGS_IN_LIBRARY) {
-				eeObj = RepositoryAnalyzer.getInstance().getExternalObjects().get(sourceObj);
-			} else {
-				HashMap<String, ExternalObject> externalMap = RepositoryAnalyzer.getInstance().getExternalObjects();
-				eeObj = externalMap.get(refType.getType());
-			}
-			
 			if(eeObj != null)
 			{	
-				if(CommonConstants.ALL_METHODS_OF_CLASS || (equiLibMIH = eeObj.containsMI(mihObj)) != null) {
+				if((equiLibMIH = eeObj.containsMI(mihObj)) != null) {
 					bSourceObjectFound = true;
 					sourceHolderList.add(mihObj);
-					mihObj.setAssociatedLibMIH(equiLibMIH);
+					mihObj.setAssociatedLibMIH(equiLibMIH);					
+				}
+		    }
+		}
+		else
+		{
+	    	if(refType.getType().equals(sourceObj) || returnType.getType().equals(sourceObj) || mihObj.isPresentInArgumentArr(sourceObj)
+					|| (refType.getType().equals(CommonConstants.multipleCurrTypes) && currentSources.contains(sourceObj)) 
+					|| CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY) 
+			{
+				//Get the external object associated with this source and see whether
+				//such API is of interest for the current library.
+				ExternalObject eeObj = null;
+				MethodInvocationHolder equiLibMIH = null;
+				
+				if(CommonConstants.OPERATION_MODE != CommonConstants.DETECT_BUGS_IN_LIBRARY) {
+					eeObj = RepositoryAnalyzer.getInstance().getExternalObjects().get(sourceObj);
+				} else {
+					HashMap<String, ExternalObject> externalMap = RepositoryAnalyzer.getInstance().getExternalObjects();
+					eeObj = externalMap.get(refType.getType());
 				}
 				
-				//Create an associated library during runtime if one does not exist
-				if(CommonConstants.ALL_METHODS_OF_CLASS) {
-					if(eeObj.containsMI(mihObj) == null) {
-						mihObj.initializeCondVarMaps();	
-						eeObj.getMiList().add(mihObj);
+				if(eeObj != null)
+				{	
+					if(CommonConstants.ALL_METHODS_OF_CLASS || (equiLibMIH = eeObj.containsMI(mihObj)) != null) {
+						bSourceObjectFound = true;
+						sourceHolderList.add(mihObj);
+						mihObj.setAssociatedLibMIH(equiLibMIH);
 					}
-					mihObj.setAssociatedLibMIH(mihObj);
-				}				
-			}	
+					
+					//Create an associated library during runtime if one does not exist
+					if(CommonConstants.ALL_METHODS_OF_CLASS) {
+						if(eeObj.containsMI(mihObj) == null) {
+							mihObj.initializeCondVarMaps();	
+							eeObj.getMiList().add(mihObj);
+						}
+						mihObj.setAssociatedLibMIH(mihObj);
+					}
+				}	
+			}
 		}
     	
     	//handling System.exit in a special manner as this can be an equivalent of existence of return statement
@@ -1335,6 +1356,7 @@ public class ASTCrawler extends ASTVisitor {
 	 */
 	public void generatePatterns(Holder destMIObj)
 	{
+		
 		destHolder = destMIObj; //The end node of the constructed DAG.
 		
 		try {
@@ -1343,10 +1365,31 @@ public class ASTCrawler extends ASTVisitor {
 				MethodInvocationHolder srcMINode = (MethodInvocationHolder) srcHolderIter.next();
 				MethodInvocationHolder assocLibMIH = srcMINode.getAssociatedLibMIH();
 				
-				if((CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_CODESAMPLES
-						|| CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY) 
-						&& assocLibMIH.getPrePostList() == null) {
-					continue;	//If there are no patterns, there is no need to proceed further during bug finding.
+				if(this.currentMethodDeclaration.getName().toString().equals("rollbackToSavepoint")
+						&& assocLibMIH.getMethodName().contains("elementAt"))
+				{
+					int i = 0;
+				}
+				
+				
+				if(CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_CODESAMPLES
+					 || CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY)
+				{	
+					 if(!CommonConstants.inputPatternFile.equals(""))
+					 {
+						 if(assocLibMIH.getPrePostList() == null) {
+							 continue;	//If there are no patterns, there is no need to proceed further during bug finding.
+					     }
+					 }
+					 else
+					 {
+						 if(assocLibMIH.singlePatternList.isEmpty() && assocLibMIH.orPatternList.isEmpty()
+								 && assocLibMIH.xorPatternList.isEmpty() && assocLibMIH.andPatternList.isEmpty()
+								 && assocLibMIH.comboPatternList.isEmpty())
+						 {
+							 continue;
+						 }
+					 }
 				}
 				 
 				//Collect all possible patterns for the current method invocation holder
@@ -1385,26 +1428,35 @@ public class ASTCrawler extends ASTVisitor {
 				lookUpVarSet.clear();
 				retStmtVariables.clear();
 				gatherForwardTraces(srcMINode, mihHolderList, assocLibMIH, retStmtVariables);
-								
+																
 				if(CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_CODESAMPLES
 						|| CommonConstants.OPERATION_MODE == CommonConstants.DETECT_BUGS_IN_LIBRARY) {
-										
-					//Dividing further the detection of defects phase, based on the requirements
-					//of balanced/imbalanced patterns
-					if(CommonConstants.BUG_DETECTION_MODE == CommonConstants.INDIVIDUAL_PATTERNS) {
-						List<PrePostPathHolder> prePostList = assocLibMIH.getPrePostList();	
-						List<CodeSampleDefectHolder> defectsToBeRegistered = new ArrayList<CodeSampleDefectHolder>();
-						for(PrePostPathHolder pppHObj : prePostList) {
-							detectDefects_IndividualPatterns(assocLibMIH, pppHObj, defectsToBeRegistered, recTypObj, retStmtVariables);
-						}
-						
-						//Register all the defects 
-						for(CodeSampleDefectHolder csdfObj : defectsToBeRegistered)
-							RepositoryAnalyzer.getInstance().getCodeSampleDefects().add(csdfObj);												
+					if(!CommonConstants.inputPatternFile.equals(""))
+					{
+						//ASE 2009 paper style of checking for defects
+						//Dividing further the detection of defects phase, based on the requirements
+						//of balanced/imbalanced patterns
+						if(CommonConstants.BUG_DETECTION_MODE == CommonConstants.INDIVIDUAL_PATTERNS) {
+							List<PrePostPathHolder> prePostList = assocLibMIH.getPrePostList();	
+							List<CodeSampleDefectHolder> defectsToBeRegistered = new ArrayList<CodeSampleDefectHolder>();
+							for(PrePostPathHolder pppHObj : prePostList) {
+								detectDefects_IndividualPatterns(assocLibMIH, pppHObj, defectsToBeRegistered, recTypObj, retStmtVariables);
+							}
+							
+							//Register all the defects 
+							for(CodeSampleDefectHolder csdfObj : defectsToBeRegistered)
+								RepositoryAnalyzer.getInstance().getCodeSampleDefects().add(csdfObj);												
+						} else
+							detectDefects_CombinedPatterns(assocLibMIH, recTypObj, retStmtVariables);
 					} else
-						detectDefects_CombinedPatterns(assocLibMIH, recTypObj, retStmtVariables);										
+					{
+						//ASE Journal style checking of defects based on the IMMiner algorithm
+						detectDefects_ComplexPatterns(assocLibMIH, recTypObj, retStmtVariables);			
+					}
 				} else {
-					if(CommonConstants.B_COLLECT_MINER_DATA && CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES) {
+					if(CommonConstants.B_COLLECT_MINER_DATA && 
+							(CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_CODESAMPLES
+							|| CommonConstants.OPERATION_MODE == CommonConstants.MINE_PATTERNS_FROM_LIBRARY)) {
 						//Ignore pattern mining, where the receiver object is an argument, class member						
 						if(bckTraceStoreArr.size() == 0 && fwdTraceStoreArr.size() == 0 && 
 								(currMethodDeclParams.contains(recTypObj.var) || currFieldDeclarations.contains(recTypObj.var))) {
@@ -1414,12 +1466,13 @@ public class ASTCrawler extends ASTVisitor {
 							//Storing elements of backward and forward traversal						
 							assocLibMIH.addToPrePostList(bckTraceStoreArr, fwdTraceStoreArr, currentFileName, ((currentMethodDeclaration != null) ? currentMethodDeclaration.getName().toString() : ""));
 						}	
-					}	
-				}	
+					}
+				}
 			}
 		}
 		catch(Exception ex) {
 			logger.error("Exception occurred" + ex);
+			ex.printStackTrace();
 		}
 	}	
 	
@@ -1505,15 +1558,96 @@ public class ASTCrawler extends ASTVisitor {
 		}	
 	}
 	
+	//New function added for ASE Journal version for detecting defects using patterns
+	//mined by IMMiner algorithm
+	public void detectDefects_ComplexPatterns(MethodInvocationHolder assocLibMIH, TypeHolder receiverObj, HashSet<String> retStmtVariables)
+	{
+		Set<Holder> allItems = new HashSet<Holder>();		
+		for(Holder bholder : this.bckTraceStoreArr)
+		{
+			CondVarHolder_Typeholder cvh = (CondVarHolder_Typeholder) bholder;
+			cvh.cvhObj.setPosition(0);
+			allItems.add(cvh);
+		}
+		
+		for(Holder fholder : this.fwdTraceStoreArr)
+		{
+			CondVarHolder_Typeholder cvh = (CondVarHolder_Typeholder) fholder;
+			cvh.cvhObj.setPosition(1);
+			allItems.add(cvh);
+		}
+		
+		//Check whether allItems satisfy the patterns for each type
+		
+		//Checking for And patterns
+		detectDefectsWithComplexPatterns(assocLibMIH, assocLibMIH.andPatternList, PatternType.AND_PATTERN, allItems, receiverObj, retStmtVariables);
+		detectDefectsWithComplexPatterns(assocLibMIH, assocLibMIH.orPatternList, PatternType.OR_PATTERN, allItems, receiverObj, retStmtVariables);
+		detectDefectsWithComplexPatterns(assocLibMIH, assocLibMIH.xorPatternList, PatternType.XOR_PATTERN, allItems, receiverObj, retStmtVariables);
+		detectDefectsWithComplexPatterns(assocLibMIH, assocLibMIH.comboPatternList, PatternType.COMBO_PATTERN, allItems, receiverObj, retStmtVariables);		
+	}
+	
+	/**
+	 * If there are multiple patterns, it is sufficient enough if only one of them is satisfied. 
+	 * @param assocLibMIH
+	 * @param patternlist
+	 * @param ptype
+	 * @param allItems
+	 */
+	private void detectDefectsWithComplexPatterns(MethodInvocationHolder assocLibMIH, 
+			List<ADMinedPattern> patternlist, PatternType ptype, Set<Holder> allItems, TypeHolder receiverObj, HashSet<String> retStmtVariables)
+	{
+		try
+		{
+			List<CodeSampleDefectHolder> csdhList = new ArrayList<CodeSampleDefectHolder>();
+			boolean bSatisfiedByAtleastOne = false;
+			for(ADMinedPattern mpattern : patternlist)
+			{
+				if(!mpattern.isSupportedBy(allItems)) {
+					if(!this.isDefectCanbeIgnored(PRE_OR_POST_DEFECT_VALUE, receiverObj, retStmtVariables))
+					{
+						CodeSampleDefectHolder csdfObj = new CodeSampleDefectHolder(currentFileName,
+								currentMethodDeclaration != null ? currentMethodDeclaration.getName().toString() : "",
+								assocLibMIH, mpattern, ptype);
+						csdhList.add(csdfObj);
+					}
+				}
+				else {
+					bSatisfiedByAtleastOne = true;
+				}
+			}
+			
+			//Report all the defects found. rather than reporting if they are satisfied
+			//by a single pattern
+			for(CodeSampleDefectHolder csdfObj : csdhList)
+			{
+				RepositoryAnalyzer.getInstance().getCodeSampleDefects().add(csdfObj);
+			}		
+		}
+		catch(Exception ex)
+		{
+			logger.error("Error occurred while detecting defects " + ex.getMessage() + ", method: " 
+					+ assocLibMIH.toString());
+		}
+	}
+	
 	//A set of heuristics used to ignore logging a defect. Below are the two heuristics
 	//1. Any defect related to the precondition is ignored if the receiver object is an argument of the method declaration
 	//2. Any defect related to the postcondition is ignored
 	final static int PRE_DEFECT_VALUE = 0;
 	final static int POST_DEFECT_VALUE = 1;
+	final static int PRE_OR_POST_DEFECT_VALUE = 2;
 	private boolean isDefectCanbeIgnored(int defectpos, TypeHolder receiverObj, HashSet<String> retStmtVariables)
 	{
 		if(currFieldDeclarations.contains(receiverObj.var))
 			return true;
+		
+		if(defectpos == PRE_OR_POST_DEFECT_VALUE)
+		{
+			boolean bmethodDecl = currMethodDeclParams.contains(receiverObj.var);
+			if(bmethodDecl)
+				return bmethodDecl;
+			return retStmtVariables.contains(receiverObj.var);
+		}
 		
 		if(defectpos == PRE_DEFECT_VALUE) {
 			return currMethodDeclParams.contains(receiverObj.var);		
@@ -1663,7 +1797,7 @@ public class ASTCrawler extends ASTVisitor {
 				        	cvh_thObj.thObj = mihCasted.getReturnType().clone();
 				        	cvh_thObj.thObj.setElemType(CommonConstants.RETURN_PATTERNS);
 				        	
-				        	if(!ASTCrawlerUtil.ignoreHolderObject(cvh_thObj, assocLibMIH) && !bckTraceStoreArr.contains(cvh_thObj)) {			        	
+				        	if(!ASTCrawlerUtil.ignoreHolderObject(cvh_thObj, assocLibMIH) && !bckTraceStoreArr.contains(cvh_thObj)) {	        	
 				        		bckTraceStoreArr.add(cvh_thObj);
 				        	}	
 				        	/*bckTraceStoreArr.add("\t" + mihCasted.toString() 

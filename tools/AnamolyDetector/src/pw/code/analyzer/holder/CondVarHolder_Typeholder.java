@@ -51,6 +51,7 @@ public class CondVarHolder_Typeholder extends Holder {
 		String retString = ((cvhObj.getAssociatedMIH() != null)? cvhObj.getAssociatedMIH().toString() : "TOFIX") 
 		+ "#" + ASTCrawlerUtil.getElementTypeStr(thObj.getElemType()) 
 		+ "#" + ASTCrawlerUtil.getConditionTypeStr(cvhObj.getCondType())
+		+ "#" + cvhObj.getPosition()
 		+ "#" + cvhObj.getAdditionalInfo();
 		 
 		return retString;
@@ -64,6 +65,11 @@ public class CondVarHolder_Typeholder extends Holder {
 		//Gathering the method invocation from "java.util.Stack:push(java.lang.Integer::)"
 		String mihStr = inpParts[0];
 		int firstColon = mihStr.indexOf(':');
+		if(firstColon == -1)
+		{
+			firstColon = mihStr.indexOf(',');
+		}
+		
 		String receiverObj = mihStr.substring(0, firstColon);
 		String argumentStr = mihStr.substring(firstColon + 1);
 		argumentStr = argumentStr.replaceAll("::", ":");
@@ -102,14 +108,9 @@ public class CondVarHolder_Typeholder extends Holder {
 	/**
 	 * Hashcode is computed based on the method name
 	 */
-	/*public int hashCode()
-	{
-		int retVal = 0;
-		String methodName = this.cvhObj.getAssociatedMIH().methodName;
-		for(char ch : methodName.toCharArray()) {
-			retVal = retVal + ch;
-		}
-		
-		return retVal;	
-	}*/
+	public int hashCode()
+	{		
+		String methodName = this.cvhObj.getAssociatedMIH().methodName;				
+		return methodName.hashCode();	
+	}
 }

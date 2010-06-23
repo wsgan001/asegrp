@@ -4,10 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashSet;
 import java.util.Properties;
-import java.util.logging.LogManager;
-
 import org.apache.log4j.Logger;
-
 
 public class CommonConstants {
 
@@ -149,7 +146,8 @@ public class CommonConstants {
 	static public int OPERATION_MODE = MINE_PATTERNS_FROM_CODESAMPLES;
 	static public int userConfiguredMode = 1;
 	static public String inputPatternFile = "";
-	
+	static public String[] inputPatternDirs = null;
+		
 	//Threshold values
 	static public double UPPER_THRESHOLD = 0.75;
 	static public double LOWER_THRESHOLD = 0.1;
@@ -185,6 +183,12 @@ public class CommonConstants {
 	static public final int COMBINED_PATTERNS = 1;		//Ignore Balanced Patterns/Treat all patterns of MIH together
 	static public final int IMBALANCED_PATTERNS = 2;	//Consider Balanced Patterns and Treat all patterns of MIH together
 	static public int BUG_DETECTION_MODE = INDIVIDUAL_PATTERNS;
+	
+	//Decides how to decide a duplicate bug especially when used with the 
+	//patterns mined by IMMiner
+	static public final int DUPLICATE_BUG_NORMAL = 1; //uses normal criteria by comparing all fields for detecting duplicate defects
+	static public final int DUPLICATE_BUG_MINIMUM = 2; //uses very minimal criteria by comparing few fields for detecting duplicate defects  
+	static public int DUPLICATE_BUG_MODE = DUPLICATE_BUG_NORMAL;
 		
 	//A classification 
 	static public final int DFC_SINGLE_CHECK_PATTERNS = 0;
@@ -248,6 +252,7 @@ public class CommonConstants {
 				
 				if (props.containsKey("OperationMode")) {
 					userConfiguredMode =  Integer.parseInt(props.getProperty("OperationMode"));
+					OPERATION_MODE = userConfiguredMode;					
 				}
 				
 				if(props.containsKey("InputPatternFile")) {
@@ -256,6 +261,10 @@ public class CommonConstants {
 				
 				if(props.containsKey("BugDetectionMode")) {
 					BUG_DETECTION_MODE = Integer.parseInt(props.getProperty("BugDetectionMode"));
+				}
+				
+				if(props.containsKey("InputPatternDirs")) {
+					inputPatternDirs = props.getProperty("InputPatternDirs").split(";");
 				}
 	    	}
 	    	else
