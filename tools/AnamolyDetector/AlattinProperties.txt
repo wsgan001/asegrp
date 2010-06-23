@@ -1,0 +1,55 @@
+
+#Properties file for PARSEWeb for overriding the default parameters
+
+#PROXY Details
+#Specify PROXY details when PARSEWeb is running behind a proxy server and needs its address to interact with GoogleCodeSearch Engine.
+UseProxy=0
+ProxyAddress=192.168.65.246
+ProxyPort=3128
+
+
+##### Parameters for Code Downloader #####
+#Number of threads. The threads are used for downloading multiple files simultaneously from Internet
+#Default: 15
+NumberOfThreads=15
+
+
+#Maximum number of files to download
+#Default: 200
+MaximumNumberOfFiles = 200
+
+##### Properties for Alattin modes with the following options #####
+#"Usage: RepositoryCreater <APIList> <DirLocation> <PackageFlag> <OptionalLocalPackageInfoFile> <OperationMode> <PatternsFile> <DetectionMode>"
+#"OperationMode 0 : Mine Patterns from code examples"
+#"OperationMode 1 : Mine Patterns from library code" (This mode automatically re-starts the proces with OperationMode 3 after collecting data)
+#"OperationMode 2 : Detect Defects in code examples"
+#"OperationMode 3 : Detect Defects in library under test"
+#"DetectionMode 0 : Ignore ImBalanced Patterns/Treat each pattern of MIH inidividually"
+#"DetectionMode 1 : Ignore ImBalanced Patterns/Treat all patterns of MIH together"
+#"DetectionMode 2 : Consider ImBalanced Patterns and Treat all patterns of MIH together"
+
+OperationMode = 3
+
+#Only one flag among InputPatternFile and InputPatternDir should be given. If not the process is terminated with error
+#InputPatternFile = D:\\GoogleSVN\\tools\\AnamolyDetector\\Java_Util_ConsolidatedOutput.csv
+#A semicolon separated string to provide multiple directories
+#InputPatternDirs = D:\\NCSUASE\\MyPublicationMaterials\\Alattin_ASEJ2010\\NegExampleLearner\\JavaUtil_WithOldData;
+InputPatternDirs = D:\\NCSUASE\\MyPublicationMaterials\\Alattin_ASEJ2010\\NegExampleLearner\\Java_Sql_WithOldData;
+#InputPatternDirs = D:\\NCSUASE\\MyPublicationMaterials\\Alattin_ASEJ2010\\NegExampleLearner\\Java_JTA_WithOldData;
+#Use this option with OperationMode = 1, since the output of mining is placed over here
+#InputPatternDirs = D:\\eclipse-SDK-3.1.2-win32\\eclipse;
+BugDetectionMode = 2
+IgnoreExceptionPaths = true
+
+#Describes whether function overloading can be ignored. Patterns can be more descriptive if overloading is ignored
+FunctionOverloading = false
+
+#Mode: single-object or multi-object sequences
+#0 : single-object
+#1 : multi-object
+ObjectPatternMode = 1
+
+#A flag that controls the logging in AssocMinerData.txt
+#0 : Minimal logging
+#1 : Maximal logging
+AssocMinerDataLoggingMode = 1;
