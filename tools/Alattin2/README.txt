@@ -1,4 +1,12 @@
 
+IMPORTANT NOTE:
+===============
+This project is started as an extension for ASE 2009 Alattin paper to extend the concept of alternative patterns to sequences.
+The code base is copied from XWeb (CARMiner) tool and is partially extended to output in the format suitable for applying alternative
+pattern mining. However, this has been stopped in the middle and focus for ASE Journal extension has been changed. The actual code
+base of ASE Journal version is available in the folder "AnamolyDetector"
+
+
 Basic information for re-running XWeb (CARMiner) tool:
 ======================================================
 1. The tool operates in two modes:
