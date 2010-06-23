@@ -13,7 +13,7 @@ open(TOTALOUTPUT, ">ConsolidatedOutput.csv");
 print TOTALOUTPUT "ID, APIName, Position, Balanced(0:yes#1:no), Pattern, GTransactionCnt, GlobSupport, LocSupport, SortingSupport\n";
 
 #Two cut-off threshold values used in the evaluation.
-$MIN_SUP = 0.4;
+$MIN_SUP = 0.1;
 $ALT_SUP = 0.2;
 
 #Additional Counters for summarizing results
@@ -69,7 +69,7 @@ while($line = <METHODIDS>) {
 		close SUBMETHODIDS;		
 		
 		#Post process the key element
-		postProcess($keyElem);
+		#postProcess($keyElem);
 	}
 }
 close METHODIDS;
