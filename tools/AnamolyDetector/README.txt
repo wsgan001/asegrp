@@ -7,9 +7,8 @@ This file describes how to execute the code and the necessary inputs.
 
 1. The entire tool is controlled by the properties file "AlattinProperties.txt". A sample file is available in the root folder of the code base. This file should exist in the directory described by the environment variable "ALATTIN_PATH".
 
-2. Anamoly Detector can be used in two different modes: 
-   
-   2.1 As an eclipse plugin: This works only with the Eclipse version: 3.1.2. In this mode, run the AnamolyDetector project and give the following values in the properties file. This mode automatically mines patterns and detects violations of these patterns. The output of the entire process is places in the directory set using "InputPatternDirs" as follows.
+2. Anamoly Detector should be used as an eclipse plugin. This works only with the Eclipse version: 3.1.2.
+   2.1 Mine patterns from an input project and detect defects: In this mode, run the AnamolyDetector project by selecting the option "Detect Anomolies" and give the following values in the properties file. This mode automatically mines patterns and detects violations of these patterns. The output of the entire process is places in the directory set using "InputPatternDirs" as follows.
 	
 	OperationMode = 1
 	InputPatternDirs = D:\\eclipse-SDK-3.1.2-win32\\eclipse;
@@ -18,9 +17,9 @@ This file describes how to execute the code and the necessary inputs.
 	a. In this mode, first the entire data required for mining patterns is generated. The data is placed in folders: AssocMiner_IDs and AssocMiner_Data
 	b. The outputs are mined patterns and detected defects. For example: "OR_PATTERN_Patterns.csv" shows the patterns mined in OR pattern format and "MinedBugs_OR_PATTERN.csv" shows the defects detected by those patterns in the application.
 
-   2.2 As a console application: This mode is primarily used to mine patterns offline from the data already collected from code examples. The parameter values that need to be set for this mode are as follows:
+   2.2 Mine Patterns from code examples: This mode is primarily used to mine patterns offline from the data already collected from code examples. The parameter values that need to be set for this mode are as follows:
 
-	OperationMode = 0
+	OperationMode = 2
 	InputPatternDirs = D:\\NCSUASE\\MyPublicationMaterials\\Alattin_ASEJ2010\\NegExampleLearner\\JavaUtil_WithOldData;
 
 	Below are the steps:
@@ -31,3 +30,5 @@ This file describes how to execute the code and the necessary inputs.
 		AssocMinerData.txt: The names of those methods
 		AssocMiner_Data/  : Data corresponding to each API method
 		AssocMiner_IDs/   : IDs of each element used in the data folder
+
+	c. Patterns in all four pattern formats are automatically mined and placed in the "InputPatternDirs".
