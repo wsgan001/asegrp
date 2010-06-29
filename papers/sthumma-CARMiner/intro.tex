@@ -1,6 +1,7 @@
 \section{Introduction}
 \label{sec:intro}
 \vspace*{-3ex}
+
 Programming languages such as Java and C++ provide exception-handling 
 constructs such as \CodeIn{try-catch} to handle exception conditions that arise
 during program execution. Under these exception conditions, programs follow paths
@@ -110,7 +111,8 @@ gathered from a CSE by capturing the most frequent patterns through mining.
 
 \Comment{In particular, CAR-Miner accepts an input application and tries to detect
 exception-handling defects in that application. Initially, CAR-Miner gathers function calls, referred as
-$FC_a$, used by  the input application. CAR-Miner interacts with a code search engine (CSE) such as Google code search~\cite{GCSE} to gather related code examples that are already reusing $FC_a$. 
+$FC_a$, used by  the input application. CAR-Miner interacts with a code search engine (CSE) 
+such as Google code search~\cite{GCSE} to gather related code examples that are already reusing $FC_a$. 
 CAR-Miner constructs an Exception Flow Graph (EFG) for each code example gathered from 
 the CSE. EFG is an extended form of control flow graph that captures flow of control in both
 normal and exception conditions. While constructing EFG, we add only those exception
