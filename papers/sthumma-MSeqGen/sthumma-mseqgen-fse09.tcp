@@ -6,7 +6,7 @@ Version=4
 MainFile=sthumma-mseqgen-fse09.tex
 UseBibTeX=0
 UseMakeIndex=0
-ActiveProfile=LaTeX => PS => PDF
+ActiveProfile=LaTeX => DVI
 ProjectLanguage=
 ProjectDialect=
 
