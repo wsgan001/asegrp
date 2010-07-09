@@ -134,6 +134,20 @@ public final class Sequence implements Serializable, WeightedElement {
       inputsAsVariables.add(getVariableForInput(statementIndex, relIndex));
     return inputsAsVariables;
   }
+  
+  /** Suresh : gets all the dependent statements of a given statement. Used for backward slicing*/
+  public List<Integer> getDependentStatements(int statementIndex) {
+    List<Integer> dependentStatements = new ArrayList<Integer>();
+    
+    for (RelativeNegativeIndex relIndex : this.statements.get(statementIndex).inputs)
+    {
+    	int absoluteIndex = statementIndex + relIndex.index;
+        if (absoluteIndex < 0)
+          continue;
+        dependentStatements.add(new Integer(absoluteIndex));
+    }
+    return dependentStatements;
+  }
 
   /** A Java source code representation of this sequence. */
   public String toCodeString() {
@@ -774,6 +788,21 @@ public final class Sequence implements Serializable, WeightedElement {
     // Get strings representing the inputs to this statement.
     // Example: { "var2", "(int)3" }
     getStatementKind(index).appendCode(getVariable(index), getInputs(index), b);
+  }
+  
+  /**
+   * Suresh: Function that returns associated variable
+   * @param b
+   * @param index
+   */
+  public void getVariableDeclaration(StringBuilder b, int index) {
+	// Get variable declaration of this statement to promote as a parameter
+	StatementKind sk = getStatementKind(index);
+	if(sk instanceof PrimitiveOrStringOrNullDecl)
+	{
+		PrimitiveOrStringOrNullDecl psn = (PrimitiveOrStringOrNullDecl) sk;
+		psn.getVariableDeclaration(getVariable(index), getInputs(index), b);
+	}
   }
 
   public Sequence repeatLast(int times) {

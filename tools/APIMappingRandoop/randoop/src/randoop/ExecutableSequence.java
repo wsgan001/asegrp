@@ -7,6 +7,8 @@ import java.io.PrintStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.StringTokenizer;
 
 import randoop.main.GenInputsAbstract;
 import randoop.util.ProgressDisplay;
@@ -187,6 +189,8 @@ public class ExecutableSequence implements Serializable {
     }
     return b.toString();
   }
+  
+  
 
   /**
    * Output this sequence as code. In addition to printing out the statements,
@@ -207,8 +211,8 @@ public class ExecutableSequence implements Serializable {
       if (!GenInputsAbstract.long_format
           && sequence.getStatementKind(i) instanceof PrimitiveOrStringOrNullDecl) {
         continue;
-      }
-      
+      }      
+            
       StringBuilder oneStatement = new StringBuilder();
       sequence.printStatement(oneStatement, i);
 
@@ -234,6 +238,198 @@ public class ExecutableSequence implements Serializable {
     }
     return b.toString();// + "/*" + sequence.toParseableString() + "*/";
   }
+  
+  /**
+   * Returns the returntype of the PUT based on the last method call
+   * (1) If the last call is a constructor, return the type of the returnvariable of the method call
+   * (2) If the last call is a methodcall, return the receiver variable
+   */
+  public void getReturnType(StringBuilder sbReturnType, StringBuilder sbReturnStatement)
+  {
+	  	  
+	  int lastStmtIndex = sequence.size() - 1;
+	  StatementKind sk = sequence.getStatementKind(lastStmtIndex);
+	  if(sk instanceof RMethod)
+	  {		
+		  List<Integer> dependentVars = sequence.getDependentStatements(lastStmtIndex);			
+		  if(dependentVars.size() > 0)
+		  {
+			  Variable var = new Variable(sequence, dependentVars.get(0));
+			  sbReturnStatement.append("return " + var.getName() + ";");
+			  sbReturnType.append(var.getType().getName());
+			  return;
+		  }
+	  } else if(sk instanceof RConstructor)
+	  {
+		  Variable var = new Variable(sequence, lastStmtIndex);
+		  sbReturnStatement.append("return " + var.getName() + ";");
+		  sbReturnType.append(var.getType().getName());
+		  return;
+	  }
+	  
+	//Set the return type as void
+	sbReturnType.append("void");
+	sbReturnStatement.append("");
+  }
+  
+  /**
+   * Suresh: Slices the entire sequences based on the last statement
+   * and captures the slice, since we are interested only in the sliced
+   * statement
+   * @param slidedStatements
+   */
+  public void sliceSequence(Set<Integer> slicedStatements)
+  {
+	  int size = sequence.size();
+	  slicedStatements.add(new Integer(size - 1));
+	  for (int i = size - 1 ; i >= 0 ; i--) {		  
+			  
+		//Ignore the primitive type statements
+		if ((sequence.getStatementKind(i) instanceof PrimitiveOrStringOrNullDecl)) {
+		  continue;
+		}
+		  
+		//The slicedStatements keeps getting updated during the backward
+		//slicing, and only related statements are chosen for further analysis
+		if(slicedStatements.contains(new Integer(i)))
+		{
+			//the return of the current statement is used by some of the
+			//statements already added to the slice
+			slicedStatements.addAll(sequence.getDependentStatements(i));		  
+		}
+		else
+		{
+			if(sequence.getStatementKind(i) instanceof RMethod)
+			{
+				//Check for the receiver object
+				List<Integer> dependentVars = sequence.getDependentStatements(i);
+				if(dependentVars.size() > 0)
+				{				
+					if(slicedStatements.contains(dependentVars.get(0)))
+					{
+						slicedStatements.add(new Integer(i));
+						slicedStatements.addAll(dependentVars);
+					}
+				}
+			}
+		}		
+	  }
+  }
+  
+  /**
+   * Suresh: Returns all the parameters to be appended to the PUT
+   * @return: number of parameters
+   */
+  public int getAllPUTParameters(StringBuilder sb, Set<Integer> slicedStatements)
+  {	 	 
+	 int size = sequence.size(); 
+	 for (int i = 0 ; i < size ; i++) {
+		 if(!slicedStatements.contains(new Integer(i)))
+		 	 continue;
+		 
+		 //not a primitive type assignment statement.
+	     if (!(sequence.getStatementKind(i) instanceof PrimitiveOrStringOrNullDecl)) {
+	        continue;
+	     }
+	     
+	     StringBuilder oneStatement = new StringBuilder();
+	     sequence.getVariableDeclaration(oneStatement, i);
+	     
+	     sb.append(oneStatement.toString() + ",");  	
+	 }
+
+	 int numParameters = 0;
+	 if(sb.length() > 0)
+	 {
+		 //remove if ending with comma
+		 if(sb.charAt(sb.length() - 1) == ',')
+		 {
+			 sb.deleteCharAt(sb.length() - 1);
+		 }
+		 
+		 //count the number of commas
+ 		 StringTokenizer st = new StringTokenizer(sb.toString(), ",");
+		 numParameters = st.countTokens();		
+	 }	  
+	 return numParameters;  
+  }
+  
+  /**
+   * Suresh: Function that outputs PUTs instead of JUnit tests
+   * Output this sequence as PUT code. In addition to printing out the statements,
+   * this method prints the checks.
+   *
+   * If for a given statement there is an check of type
+   * StatementThrowsException, that check's pre-statement code is printed
+   * immediately before the statement, and its post-statement code is printed
+   * immediately after the statement.
+   */
+  public String toPUTCodeString(Set<Integer> slicedStmts) {
+    StringBuilder b = new StringBuilder();
+    for (int i = 0 ; i < sequence.size() ; i++) {
+      
+      if(!slicedStmts.contains(new Integer(i)))
+      	  continue;
+    	
+      // If short format, don't print out primitive declarations
+      // because primitive values will be directly added to methods
+      // (e.g. "foo(3)" instead of "int x = 3 ; foo(x)".
+      if (sequence.getStatementKind(i) instanceof PrimitiveOrStringOrNullDecl) {
+    	  //ignore the primitive declaration statements, since they are handled
+    	  //by getAllPUTParameters by promoting them as parameters
+    	  continue;
+      }
+            
+      StringBuilder oneStatement = new StringBuilder();
+      sequence.printStatement(oneStatement, i);
+
+      // Print exception check first, if present.
+      List<Check> exObs = getChecks(i, ExpectedExceptionChecker.class);
+      if (!exObs.isEmpty()) {
+        assert exObs.size() == 1 : toString();
+        Check o = exObs.get(0);
+        oneStatement.insert(0, o.toCodeStringPreStatement());
+        oneStatement.append(o.toCodeStringPostStatement());
+        oneStatement.append(Globals.lineSep);
+      }
+
+      /*// Print the rest of the checks.
+      for (Check d : getChecks(i)) {
+        if (d instanceof ExpectedExceptionChecker)
+          continue;
+        oneStatement.insert(0, d.toCodeStringPreStatement());
+        oneStatement.append(d.toCodeStringPostStatement());
+        oneStatement.append(Globals.lineSep);
+      }*/
+      b.append(oneStatement);
+    }
+    return b.toString();// + "/*" + sequence.toParseableString() + "*/";
+  }
+
+  /**
+   * Returns true if there are any expected exception 
+   * @return
+   */
+  public boolean hasExpectedExceptions(Set<Integer> slicedStmts)
+  {	  	  
+	  for (int i = 0 ; i < sequence.size() ; i++) {	      
+	      if(!slicedStmts.contains(new Integer(i)))
+	      	  continue;
+	    	
+	      if (sequence.getStatementKind(i) instanceof PrimitiveOrStringOrNullDecl) {
+	    	  continue;
+	      }
+	            
+	      // Print exception check first, if present.
+	      List<Check> exObs = getChecks(i, ExpectedExceptionChecker.class);
+	      if (!exObs.isEmpty()) {
+	        assert exObs.size() == 1 : toString();
+	        return true;
+	      }      
+	  } 
+	  return false;
+  }
+  
 
   /**
    * Executes sequence, stopping on exceptions

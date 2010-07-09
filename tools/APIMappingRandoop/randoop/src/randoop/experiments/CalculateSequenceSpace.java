@@ -55,7 +55,7 @@ public class CalculateSequenceSpace {
       randoop.add("gentests");
       randoop.add("--noprogressdisplay");
       randoop.add("--calc-sequence-space=" + length);
-      randoop.add("--output-sequence-space=" + expName + "_" + length + ".sequencespace");
+      randoop.add("--output-sequence-space=" + expName + "_" + length + ".sequencespace");           
       randoop.add("--classlist=" + exp.targetClassListFile);
       
       ExperimentBase.printCommand(randoop, false, true);

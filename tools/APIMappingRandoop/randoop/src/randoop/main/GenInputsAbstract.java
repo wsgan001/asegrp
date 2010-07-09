@@ -76,7 +76,7 @@ public abstract class GenInputsAbstract extends CommandHandler {
   @Unpublicized @Option("Use long format for outputting JUnit tests. The long format" +
   "emits exactly one line per statement, including primitive declarations, and" +
   "uses boxed primitives. This option is used in the branch-directed generation project.")
-  public static boolean long_format = false; 
+  public static boolean long_format = true; //Suresh: Changed from false to true 
 
   @Unpublicized
   @Option("Has to do with experiments...")

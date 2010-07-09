@@ -4,6 +4,7 @@ public class TestMethodFilter {
 
 	public static void main(String args[])
 	{
-		MethodFilter.loadFilterInformation("G:\\NCSUASE\\MyPublicationMaterials\\HaoTestingAPIMapping\\randoop.1.3.1\\randoop\\MethodFilter.txt");		
+		String fileName = System.getenv(APIMappingConstants.API_MAPPING_ENV_VAR);
+		MethodFilter.loadFilterInformation(fileName);		
 	}	
 }

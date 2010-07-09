@@ -110,6 +110,28 @@ public final class PrimitiveOrStringOrNullDecl implements StatementKind, Seriali
   public List<Class<?>> getInputTypes() {
     return Collections.emptyList();
   }
+  
+  /**
+   * Suresh: Gets the variable declaration of this statement
+   * @param newVar
+   * @param inputVars
+   * @param b
+   */
+  public void getVariableDeclaration(Variable newVar, List<Variable> inputVars, StringBuilder b)
+  {
+	 if(type.isPrimitive())
+	 {
+		 b.append(PrimitiveTypes.boxedType(type).getName());
+	     b.append(" ");
+	     b.append(newVar.getName());
+	 }
+	 else
+	 {
+		 b.append(Reflection.getCompilableName(type));
+	     b.append(" ");
+	     b.append(newVar.getName());
+	 }
+  }
 
   public void appendCode(Variable newVar, List<Variable> inputVars, StringBuilder b){
 

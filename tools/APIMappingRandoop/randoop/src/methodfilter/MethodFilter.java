@@ -17,11 +17,9 @@ public class MethodFilter {
 	
 	public static boolean isFilterInfoLoaded = false;
 	public static boolean isEnvVariableSet = true;
-	
 	//Stores all allowed methods grouped by their declaring class name
 	public static HashMap<String, HashSet<String>> allowedMethods = new HashMap<String, HashSet<String>>();
-	
-	
+		
 	public static String getType(Class<?> type)
 	{
 		if(type.isArray())
@@ -93,23 +91,54 @@ public class MethodFilter {
 			Scanner sc = new Scanner(new File(fileName));				
 			while(sc.hasNextLine())
 			{
+				//general format: java.lang.StringBuilder.insert(int,char[],int,int)
 				String line = sc.nextLine();
 				
-				String[] tokens = line.split("#");
-				if(tokens == null || tokens.length == 0)
-					continue;
+				String className = null, methodSignature = null;
 				
-				String className = tokens[0];
+				if(line.contains("<get>"))
+				{
+					//It could be a field. General format: java.lang.Float.<get>POSITIVE_INFINITY
+					int lastDotIndex = line.lastIndexOf(".");
+					if(lastDotIndex == -1)
+					{
+						System.err.println("Invalid field name: " + line);
+						continue;
+					}
+					
+					className = line.substring(0, lastDotIndex);
+					methodSignature = line.substring(line.indexOf(">") + 1, line.length());
+				}
+				else
+				{
+					int openBIndex = line.indexOf("(");
+					if(openBIndex == -1)
+					{
+						System.err.println("Invalid method name: " + line);
+						continue;
+					}
+					
+					String firstPart = line.substring(0, openBIndex);
+					
+					int lastDotIndex = firstPart.lastIndexOf(".");
+					if(lastDotIndex == -1)
+					{
+						System.err.println("Invalid method name: " + line);
+						continue;
+					}
+					
+					className = firstPart.substring(0, lastDotIndex);
+					String methodName = firstPart.substring(lastDotIndex + 1, firstPart.length());
+					methodSignature = methodName + line.substring(openBIndex, line.length());
+				}
+				
 				HashSet<String> methods = allowedMethods.get(className);
 				if(methods == null)
 				{
 					methods = new HashSet<String>();
 					allowedMethods.put(className, methods);
 				}
-				for(int count = 1; count < tokens.length; count++)
-				{
-					methods.add(tokens[count]);
-				}
+				methods.add(methodSignature);
 			}		
 		}
 		catch(FileNotFoundException ex)
@@ -153,17 +182,17 @@ public class MethodFilter {
 		if(!isEnvVariableSet)
 			return true;
 		
-		String methodFilterFileName = System.getenv("RANDOOP_METHOD_FILTER");
-		
-		//If there is no filter, this method returns true for all the methods
-		if(methodFilterFileName == null) {
-			isEnvVariableSet = false;
-			return true;
-		}
-		
 		if(!isFilterInfoLoaded) {
-			isFilterInfoLoaded = true;
+			String methodFilterFileName = System.getenv(APIMappingConstants.API_MAPPING_ENV_VAR);
+		
+			//If there is no filter, this method returns true for all the methods
+			if(methodFilterFileName == null) {
+				isEnvVariableSet = false;
+				return true;
+			}
+		
 			loadFilterInformation(methodFilterFileName);
+			isFilterInfoLoaded = true;
 		}
 		
 		HashSet<String> methods = allowedMethods.get(c.getName());		
@@ -172,4 +201,24 @@ public class MethodFilter {
 		
 		return methods.contains(mname);
 	}		
+	
+	public static boolean isAPIMappingEnvVariableSet()
+	{
+		String methodFilterFileName = System.getenv(APIMappingConstants.API_MAPPING_ENV_VAR);
+		if(methodFilterFileName == null) {
+			return false;
+		}
+		else
+			return true;
+	}
+	
+	public static boolean isGetPUTEnvVariableSet()
+	{
+		String methodFilterFileName = System.getenv(APIMappingConstants.GENERATE_PUTS);
+		if(methodFilterFileName == null) {
+			return false;
+		}
+		else
+			return true;
+	}
 }

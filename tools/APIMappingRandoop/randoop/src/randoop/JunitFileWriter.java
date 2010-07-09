@@ -5,9 +5,14 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
+import methodfilter.APIMappingConstants;
+import methodfilter.MethodFilter;
 
 import randoop.util.CollectionsExt;
 import randoop.util.Log;
@@ -98,6 +103,7 @@ public class JunitFileWriter {
     File file = new File(getDir(), className + ".java");
     PrintStream out = createTextOutputStream(file);
 
+    boolean bAPIEnvVarSet = MethodFilter.isGetPUTEnvVariableSet();    
     try{
       outputPackageName(out);
       out.println();
@@ -114,11 +120,62 @@ public class JunitFileWriter {
           out.println(fault.sequence.toString());
           out.println("*/");
         }
-        out.println("  public void test" + testCounter++ + "() throws Throwable {");
-        out.println();
-        out.println(indent(fault.toCodeString()));
-        out.println("  }");
-        out.println();
+        
+        if(!bAPIEnvVarSet)
+        {
+        	//generates unit tests.
+        	out.println("  public void test" + testCounter++ + "() throws Throwable {");
+        	out.println();
+        	out.println(indent(fault.toCodeString()));
+        	out.println("  }");
+        	out.println();
+        }
+        else
+        {
+        	//generates PUTs instead of unit tests
+        	
+        	//Get the sliced set of statements using a backward slicing from the last
+        	//statement. The primary reason is that only such slicing is useful
+        	//in generating return type for regression testing.
+        	Set<Integer> slicedStmts = new HashSet<Integer>();
+        	fault.sliceSequence(slicedStmts);
+        	
+        	//Ignore the tests with expected exceptions due to compilation
+        	//errors caused while writing PUTs
+        	if(fault.hasExpectedExceptions(slicedStmts))
+        	{
+        		continue;
+        	}
+        	
+        	//Begin: debugging code
+        	//List<Integer> tempStmts = new ArrayList<Integer>(slicedStmts);
+        	//Collections.sort(tempStmts);        	
+        	//System.out.println("Test case " + testCounter + ", sliced list " + tempStmts.toString());
+        	//End: debugging code        	
+        	
+        	StringBuilder argString = new StringBuilder();
+        	int numParameters = fault.getAllPUTParameters(argString, slicedStmts);
+        	if(numParameters <= APIMappingConstants.NUM_PARAMETERS)
+        	{        	
+        		StringBuilder sbReturnType = new StringBuilder(); 
+        		StringBuilder sbReturnStatement = new StringBuilder();
+        		fault.getReturnType(sbReturnType, sbReturnStatement);
+        		
+	        	out.print("  public " + sbReturnType.toString() + " test" + testCounter++ + "(");
+	        	out.print(argString);       	
+	        	out.println(") throws Throwable {");
+	        	out.println();
+	        	out.println(indent(fault.toPUTCodeString(slicedStmts)));	        	
+	        	out.print(indent(sbReturnStatement.toString()));	        	
+	        	out.println("  }");
+	        	out.println();
+        	}
+        	else
+        	{
+        		System.out.println("Ignoring the test " + testCounter++ + ", since number of parameters more" +
+        				" than given limit");
+        	}
+        }
       }
       out.println("}");
     } finally {
@@ -127,7 +184,7 @@ public class JunitFileWriter {
     }
 
     return file;
-  }
+  } 
 
   private String indent(String codeString) {
     StringBuilder indented = new StringBuilder();
