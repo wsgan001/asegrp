@@ -1,0 +1,91 @@
+\section{Example}
+\label{sec:example}
+
+We next illustrate the basic steps to detect different behaviors of the API mapping relation as discussed in Section~\ref{sec:introduction}.
+
+\textbf{Generating client code.} First, TeMaAPI generates a client code method for each API method an each API field. For example, the generate clinet code for \CodeIn{java.lang.String.valueOf(Object)} is as follows:
+
+\begin{CodeOut}%\vspace*{-2ex}
+\begin{alltt}
+  public java.lang.String testvalueOf57(Object m0)\{
+    return java.lang.String.valueOf(m0);\}
+\end{alltt}
+\end{CodeOut}
+
+After that, we use a migration tool to translate generated client code from Java to C\#. In this example, the translated C\# client code is as follows:
+\begin{CodeOut}%\vspace*{-2ex}
+\begin{alltt}
+public System.String TestvalueOf57(Object m0) \{
+			return m0.ToString();\}
+\end{alltt}
+\end{CodeOut}
+
+The migration tool translate the client-code method in Java into a client-code method in C\#, and the translation introduces no compilation errors.
+
+\textbf{Removing translated client-code methods with compilation errors.} 
+A migration tool typically cannot cover all APIs, so some translated client-code methods can have compilation errors if their used API methods or API fields are not covered. TeMaAPI parses translated code, and removes all client-code methods with compilation errors. The remaining client-code methods are testable since no compilation errors are left.
+
+\textbf{Generating and executing test cases to reveal different behaviors.} We leverage various techniques to generate test cases for remaining client-code methods. TeMaAPI targets at generate test cases that can satisfy the round-trip criterion, and comparing outputs of generated test cases for different behaviors given the same inputs. In this example, TeMaAPI detects that when an object is assigned to a null value, a boolean value, or a double value, the outputs are different. 
+
+After the preceding steps, TeMaAPI detects the different behaviors between \CodeIn{java.lang.String.valueOf(Object)} in Java and its mapped C\# API. 
+We next present details of preceding steps.
+
+
+
+%\begin{figure}[t]
+%\centering %\hfill
+%\includegraphics[scale=0.95,clip]{figure/sample.eps}\vspace*{-3ex}
+% \caption{\label{fig:example}API mapping}\vspace*{-4ex}
+%\end{figure}
+
+%Based on the mapping relations, a migration tool can migrate the
+%preceding code snippet automatically. To learn the mapping
+%relations,
+%
+%%\begin{figure}[t]
+%%\centering
+%%\includegraphics[scale=0.86,clip]{figure/openfile.eps}\vspace*{-1.5ex}
+%% \caption
+%%{\label{fig:openfile}Aligned client code}\vspace*{-2ex}
+%%\end{figure}
+%
+%In this section, we illustrate the main steps of MAM to
+%mine the API mapping in Java for \CodeIn{System.IO.Directory.
+%Exists()} in C\# from the HypoLog
+%project\footnote{\url{http://sourceforge.net/projects/twlog/}}.
+%
+%The first step of MAM is to align classes and methods of
+%client code by names. This step finds class pairs and method pairs
+%that implement similar functionalities, and each pair may use
+%API mapping since it implements a similar functionality. Our
+%approach chooses names to align classes and methods because these
+%classes and methods are from the same project. In this example, our
+%approach aligns the two methods as shown in
+%Figure~\ref{fig:openfile} because the two method have similar names
+%and their declaring classes also have similar names (see
+%Section~\ref{sec:approach:alignclientcode} for details).
+%
+%The second step of MAM is to mine mapping relations of API
+%classes based on the names of corresponding fields, parameters,
+%returned types, and local variables. This step also relies on names
+%for the same consideration of the first step. For example, our
+%approach maps the two parameters with the same name as shown by the
+%red arrow of Figure~\ref{fig:openfile}. From the types of the two
+%parameters, MAM mines the mapping relation between two API
+%classes: \CodeIn{System.String} $\leftrightarrow$
+%\CodeIn{java.lang.String} (see
+%Section~\ref{sec:approach:mappingtypes} for details).
+%
+%
+%The final step of MAM is to mine mapping relations of API
+%methods. Besides the factors listed in
+%Section~\ref{sec:introduction}, another factor is that API calls in
+%client code are often not carefully aligned. To deal with those
+%challenges, MAM first builds an API Transformation Graph
+%(ATG) for each method. After that, MAM compares built
+%graphs to mine mapping relations of API methods (see
+%Section~\ref{sec:approach:mappingtypes} and
+%Figure~\ref{fig:approach1} for details). Figure~\ref{fig:example}
+%shows the mined mapping relation between
+%\CodeIn{System.IO.Directory.Exists()} and its API mapping in
+%Java.

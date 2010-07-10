@@ -1,0 +1,110 @@
+
+%
+%  $Description: Author guidelines and sample document in LaTeX 2.09$
+%
+%  $Author: ienne $
+%  $Date: 1995/09/15 15:20:59 $
+%  $Revision: 1.4 $
+%
+
+\documentclass{sig-alternate}
+\usepackage{url}
+%\usepackage{times}
+%\usepackage{diagrams}
+%\usepackage[all]{xy}
+\usepackage[ruled,vlined]{algorithm2e}
+%\usepackage{float}
+\input{macros}
+%\documentstyle[times,art10,twocolumn,latex8]{article}
+
+%-------------------------------------------------------------------------
+% take the % away on next line to produce the final camera-ready version
+\pagestyle{empty}
+
+%-------------------------------------------------------------------------
+\begin{document}
+
+%\conferenceinfo{ICSE}{'10, May 2-8 2010, Cape Town, South Africa}
+%\CopyrightYear{2010}
+%\crdata{978-1-60558-719-6/10/05}
+
+
+\title{Automated Testing of API Mapping Relations}
+
+%\author{
+%Hao Zhong$^{1,2}$\thanks{Corresponding authors}, Suresh Thummalapenta$^4$, Tao Xie$^{4*}$\\
+%\small{$^1$Laboratory for Internet Software Technologies, Institute of Software, Chinese Academy of Sciences, Beijing, 100190, China}\\
+%\small{$^2$Key Laboratory of High Confidence Software Technologies (Peking University), Ministry of Education, China}\\
+%\small{$^3$Institute of Software, School of Electronics Engineering and Computer Science, Peking University, China} \\
+%\small{$^4$Department of Computer Science, North Carolina State University, Raleigh, NC 27695-8206, USA}\\
+%\small{zhonghao@itechs.iscas.ac.cn, \{sthumma,txie\}@ncsu.edu}}
+\numberofauthors{2}
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Hao Zhong\\
+       \affaddr{Laboratory for Internet Software Technologies}\\
+       \affaddr{Institute of Software}\\
+       \affaddr{Chinese Academy of Sciences, China}\\
+       \email{zhonghao@nfs.iscas.ac.cn}
+% 2nd. author
+\alignauthor
+Suresh Thummalapenta, Tao Xie\\
+       \affaddr{Department of Computer Science}\\
+       \affaddr{North Carolina State University}\\
+       \affaddr{Raleigh, NC 27695-8206, USA}\\
+       \email{\{sthumma,txie\}@ncsu.edu}
+}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+Application Programming Interface (API) mapping describes mapping relations of APIs provided by two languages. With API mapping, migration tools are able to translate client code that uses APIs from one language into another language. However, given the same inputs, two mapped APIs can produce different outputs. The different behaviors introduces defects in translated code silently since translated code may have no complication errors. In this paper, we propose an approach, called TeMaAPI (\textbf{Te}sting \textbf{Ma}pping relations of \textbf{API}s), that detects different behaviors of mapped APIs via testing. To detect different behaviors, the test oracle of TeMaAPI is that two mapped APIs should produce the same outputs given the same inputs. Based on our approach, we implement a tool and conduct evaluations on migration tools such as Java2CSharp and Tangible C\# to Java convertor. The results show that TeMaAPI detects ?? different behaviors between mapped APIs of Java2CSharp and ?? different behaviors between mapped APIs of Tangible C\# to Java convertor.
+\end{abstract}\vspace*{-2ex}
+%% A category with the (minimum) three required fields
+%\category{D.2.13 Reusable Software}{Reusable Software}{Reusable libraries}\vspace*{-2ex}
+%%A category including the fourth, optional field follows...
+%\terms{API mapping relation, Language migration}\vspace*{-2ex}
+
+\input{body/introduction}
+\input{body/mapping}
+\input{body/example}\vspace*{-1ex}
+\input{body/approach}\vspace*{-1ex}
+\input{body/experiment}\vspace*{-1ex}
+\input{body/discussion}\vspace*{-1ex}
+\input{body/related}\vspace*{-1ex}
+\input{body/conclusion}\vspace*{-1ex}
+
+%\section*{Acknowledgments}
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{latex8}  % sigproc.bib is the name of the Bibliography in this case
+
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+
+%\balancecolumns % GM June 2007
+% That's all folks!
+
+\end{document}
+

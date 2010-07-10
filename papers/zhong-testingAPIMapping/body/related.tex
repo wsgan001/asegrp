@@ -1,0 +1,36 @@
+\section{Related Work}
+\label{sec:related}
+
+Our approach is related to previous work on two areas:
+language migration and library migration.
+
+\textbf{Language migration.} To reduce manual efforts of language
+migration~\cite{samet1981experience}, researchers proposed various
+approaches~\cite{hassan2005lightweight,van1999identifying,waters1988program,mossienko2003automated,yasumatsu1995spice} to automate the process.
+However, all these approaches focus on the syntax or structural differences between
+languages. Deursen \emph{et al.}~\cite{van1999identifying} proposed an approach to identify
+objects in legacy code. Their approach uses these objects to deal with the
+differences between object-oriented and procedural languages. As
+shown in El-Ramly \emph{et al.}~\cite{el2006experiment}'s experience
+report, existing approaches support only a subset of APIs for language migration,
+making the task of language migration a challenging problem.
+In contrast to previous approaches, our approach automatically mines API mapping between
+languages to aid language migration, addressing a significant
+problem not addressed by the previous approaches and complementing
+these approaches.
+
+\textbf{Library migration.} With evolution of libraries, some APIs
+may become incompatible across library versions. To address this
+problem, Henkel and Diwan~\cite{henkel2005catchup} proposed an approach that captures
+and replays API refactoring actions to update the client code.
+Xing and Stroulia~\cite{xing2007api} proposed an approach that
+recognizes the changes of APIs by comparing the differences between two
+versions of libraries. Balaban \emph{et al.}~\cite{balaban2005refactoring} proposed
+an approach to migrate client code when mapping relations of libraries are
+available. In contrast to these approaches, our approach focuses on
+mapping relations of APIs across different languages. In addition, since
+our approach uses ATGs to mine API mapping relations, our approach can also
+mine mapping relations between API methods with different parameters or between
+API methods whose functionalities are split among several API methods in the other language.
+
+\textbf{Mining specifications.} Some of our previous approaches~\cite{zhong09:inferring,zhong09:mapo,thummalapenta09:mining,thummalapenta09:mseqgen,acharya09:mining} focus on mining specifications. MAM mines API mapping relations across different languages for language migration, whereas the previous approaches mine API properties of a single language to detect defects or to assist programming.
