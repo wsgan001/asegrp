@@ -1,7 +1,10 @@
 \section{Introduction}
 \label{sec:introduction}
+As stated by Sebesta~\cite{sebesta2002concepts}, modern programming languages start around 1958 to 1960 with the development of Algol, Cobol, Fortran and Lisp. Ever since then, thousands of programming languages came into existence as shown by HOPL website\footnote{\url{http://hopl.murdoch.edu.au}}. For various considerations, programmers often need to translate projects from one language into another language. For example, as stated by Spenkelink~\cite{spenkelink2007porting}, to provide the language and platform independence, he translates Compose*~\cite{garcia-compose} in C\# into Compose*/J in Java. To relief the efforts of translating, programmers may use existing migration tools or even implement their own migration tools. For example, Salem \emph{et al.}~\cite{AgtashAEMBS06} report their experience of translating the BLUE financial system of the ICT company from Java to C\# by the JLCA\footnote{\url{http://tinyurl.com/2c4coln}} tool. For another example, to translate db4o\footnote{\url{http://www.db4o.com}} from Java to C\#, its programmers develop their own migration tool named sharpen\footnote{\url{http://tinyurl.com/22rsnsk}}.
 
-Migration tools can help translate projects from one language into another language. For example, as stated by Patrick Roemer\footnote{\url{http://tinyurl.com/29kw78e}}, a migration tool named sharpen translates most of db4o\footnote{\url{http://www.db4o.com/}} engine core code and its unit test suites from Java into C\#. As existing projects typically use many Application Programming Interfaces (APIs), a migration tool should know the mapping relations of APIs between two languages, so that it can translate projects with API callsites correctly. However, two mapped APIs may have different behaviors, and thus can introduce defects in translated client code silently. For example, in Java2CSharp\footnote{\url{http://j2cstranslator.sourceforge.net/}}, one mapping relation of APIs is described in its mapping files as follows:
+To translate a source file, a migration tool needs to its structures and its used APIs. As a project typically use thousands of APIs, it is often more difficult to translate used APIs especially for those languages whose structures are similar. In particular, El-Ramly \emph{et al.}~\cite{el2006experiment} conduct an experiment to translate Java programs to C\#. One of their learnt lessons is ``it
+becomes very important to develop methods for
+automatic API transformation''. Barry compares C\# with Java\footnote{\url{http://tinyurl.com/26d8xcp}}, and claims ``although coding in C\# is easy for a Java programmer..., the biggest challenge in moving from Java to the .Net Framework is learning the details of another set of class libraries''. If not knowing API mapping relations, a migration tool or a programmer cannot translate used APIs correctly. Even when such mapping relations are available, a migration process may introduce defects in translated code since mapped APIs can have different behaviors. As reported by Panesar\footnote{\url{http://tinyurl.com/3xpsdtx}}, even most common methods such as \CodeIn{String.subString(int, int)} can have different behaviors between Java and C\#. We investigate the mapping relations of existing migration tools, and we confirm that the different behaviors of mapped APIs can cause defects in translated code. In particular, in Java2CSharp\footnote{\url{http://j2cstranslator.sourceforge.net/}}, one item of mapping files is described in its mapping files as follows:
 
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
@@ -12,7 +15,7 @@ Migration tools can help translate projects from one language into another langu
 \end{alltt}
 \end{CodeOut}
 
-Based on Line 3 of the preceding mapping relation, Java2CSharp translates a Java code snippet (Lines 5 and 6) into a C\# code snippet (Lines 7 and 8) as follows.
+Line 2 of this item describes that the \CodeIn{java.lang.String} class in Java is mapped to the \CodeIn{System.String} class in C\#. Line 3 of this item describes that the \CodeIn{java.lang.String.valueOf(Object)} method is mapped to the \CodeIn{System.String.ToString()} method in C\#, and \CodeIn{@1} denotes the first parameter of the \CodeIn{valueOf(Object)} method. Based on the preceding mapping relation, Java2CSharp translates a Java code snippet (Lines 5 and 6) into a C\# code snippet (Lines 7 and 8) as follows.
 
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
@@ -27,7 +30,7 @@ Based on Line 3 of the preceding mapping relation, Java2CSharp translates a Java
 
 The translated code snippet compile well, but it has different behaviors with the original Java code snippet. For example, if Line 5 assigns null to \CodeIn{obj}, \CodeIn{value} of Line 6 will be ``null''. If Line 7 assigns null to \CodeIn{obj}, \CodeIn{value} of Line 8 will not be set to ``null'' since it throws \CodeIn{NullReferenceException}.
 
-The developers of sharpen are aware of the differences, and the mapping relation in sharpen is defined as follows:
+As it throw exceptions, the preceding difference of API mapping relation is relatively easy to detect since programmers often use extreme inputs such as null values as test cases. In particular, sharpen is aware of the differences, and the mapping relation in sharpen is defined as follows:
 
 \begin{CodeOut}
 \begin{alltt}
@@ -39,7 +42,7 @@ The developers of sharpen are aware of the differences, and the mapping relation
 \end{alltt}
 \end{CodeOut}
 
-Based on Line 11 of the preceding mapping relation, Java2CSharp translates the Java code snippet (Lines 5 and 6) into a C\# code snippet (Lines 7 and 8) as follows.
+Based on Line 11 of the preceding mapping relation, sharpen translates the Java code snippet (Lines 5 and 6) into a C\# code snippet (Lines 7 and 8) as follows.
 
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
@@ -49,7 +52,7 @@ Based on Line 11 of the preceding mapping relation, Java2CSharp translates the J
 \end{alltt}
 \end{CodeOut}
 
-In sharpen, the \CodeIn{getStringValueOf(object)} is implemented as follows:
+In sharpen, the \CodeIn{getStringValueOf(object)} method is implemented as follows:
 
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
@@ -59,13 +62,16 @@ In sharpen, the \CodeIn{getStringValueOf(object)} is implemented as follows:
 \end{alltt}
 \end{CodeOut}
 
-If Line 13 assigns null to \CodeIn{obj}, \CodeIn{value} will also be ``null''. Still, we find that the mapping relation defined by sharpen does not hide all differences between the \CodeIn{java.lang.String.valueOf(Object)} method and its mapped C\# API. For example, if Line 5 assign a \CodeIn{false} boolean value to \CodeIn{obj}, \CodeIn{value} of Line 6 will be ``false'', but if Lines 7 and 13 assign a \CodeIn{false} boolean value to \CodeIn{obj}, \CodeIn{value} of Line 8 and \CodeIn{value} of Line 14 will both be ``False''. This difference will potentially introduce defects into client code since it produces different outputs given the same inputs.
+If Line 13 assigns a null value to \CodeIn{obj}, \CodeIn{value} in Line 14 will also be ``null'' as expected. By implementing its own mapped C\# method, sharpen hides the preceding difference, but it still fails to hide all differences. For example, we find that if Line 5 assigns a \CodeIn{false} boolean value to \CodeIn{obj}, \CodeIn{value} in Line 6 will be ``false'', but if Lines 7 and 13 assign a \CodeIn{false} boolean value to \CodeIn{obj}, \CodeIn{value} of Line 8 and \CodeIn{value} in Line 14 will both be ``False''. This difference is relatively difficult to detect, since a programmer typically does not know the internal logic of the method to construct appropriate test cases.
 
-It is challenging to detect different behaviors of API mapping relations via testing for two factors: (1) as shown in our previous work~\cite{zhong2010mining}, translated code often cannot be tested directly since it typically contains compilation errors; (2) it requires techniques to generate adequate test cases for APIs whose code is often not available. In this paper, we propose an approach, called TeMaAPI (\textbf{Te}sting \textbf{Ma}pping relations of \textbf{API}s), that detects different behaviors of mapped APIs via testing. TeMaAPI generates various test cases and compares testing results of mapped APIs for their different behaviors. This paper makes the following major contributions:
+
+It is desirable to detect differences of API mapping relations since the differences will potentially introduce defects into client codek, the same inputs, but it is challenging to detect different behaviors of API mapping relations via testing for three factors: (1) APIs are typically quite large in size, so it takes great efforts to write test cases manually for APIs and their mapping relations; (2) Other types of migrations such as library migrations~\cite{nita2010using} can use existing test cases to ensure the quality of migrated code, but for language migration, translated test cases may also have defects at the first place; (3) It requires many test cases to reveal all behaviors of APIs, and simply generating extreme values such as null values are not sufficient to reveal all API behaviors.
+
+In this paper, we propose an approach, called TeMaAPI (\textbf{Te}sting \textbf{Ma}pping relations of \textbf{API}s), that detects different behaviors of API mapping relations via testing. TeMaAPI generates various test cases and compares testing results of mapped APIs for their different behaviors. This paper makes the following major contributions:
 
 \begin{itemize}\vspace*{-1.5ex}
-\item A novel approach, called TeMaAPI, that detect different behaviors of mapped APIs via testing. The different behaviors can introduce defects in translated code silently.\vspace*{-1.5ex}
-\item Test adequacy criteria proposed for generating sufficient test cases to test API mapping. For the testing criteria, TeMaAPI introduces a feedback loop when it generates test cases .\vspace*{-1.5ex}
+\item A novel approach, called TeMaAPI, that detect different behaviors of mapped APIs via testing. Given a migration tool, TeMaAPI detects different behaviors of its all API mapping relations automatically. It is important to detect these different behaviors since they can introduce defects in translated code silently.\vspace*{-1.5ex}
+\item Test adequacy criteria proposed for generating sufficient test cases to test API mapping. TeMaAPI targets at generating adequate test cases that can reveal all behaviors of APIs to test their mapping relations.\vspace*{-1.5ex}
 \item A tool implemented for TeMaAPI and two
 evaluations on ?? projects that include ?? mapping relations from Java to C\#, and ?? mapping relations from C\# to Java. The results show that our tool detects ?? unique defects of mapping relations...
 \end{itemize}\vspace*{-1.5ex}

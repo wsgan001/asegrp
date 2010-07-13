@@ -5,6 +5,12 @@ M.~Acharya and T.~Xie.
 \newblock Mining {API} error-handling specifications from source code.
 \newblock In {\em Proc. FASE}, pages 370--384, 2009.
 
+\bibitem{AgtashAEMBS06}
+S.~Y. Al-Agtash, T.~Al-Dwairy, A.~El-Nasan, B.~Mull, M.~Barakat, and A.~Shqair.
+\newblock Re-engineering {BLUE} financial system using round-trip engineering
+  and {Java} language conversion assistant.
+\newblock In {\em SERP}, pages 657--663, 2006.
+
 \bibitem{andrews2003test}
 A.~Andrews, R.~France, S.~Ghosh, and G.~Craig.
 \newblock Test adequacy criteria for uml design models.
@@ -21,6 +27,11 @@ M.~El-Ramly, R.~Eltayeb, and H.~Alla.
 \newblock An experiment in automatic conversion of legacy {Java} programs to
   {C\#}.
 \newblock In {\em Proc. AICCSA}, pages 1037--1045, 2006.
+
+\bibitem{garcia-compose}
+C.~Garcia.
+\newblock {\em {Compose* A Runtime for the. Net Platform}}.
+\newblock PhD thesis, University of Twente, 2003.
 
 \bibitem{hassan2005lightweight}
 A.~Hassan and R.~Holt.
@@ -43,6 +54,11 @@ M.~Mossienko.
 \newblock {Automated COBOL to Java recycling}.
 \newblock In {\em Proc. 7th CSMR}, pages 40--50, 2003.
 
+\bibitem{nita2010using}
+M.~Nita and D.~Notkin.
+\newblock {Using twinning to adapt programs to alternative APIs}.
+\newblock In {\em Proc. 32nd ICSE}, pages 205--214, 2010.
+
 \bibitem{pacheco2007feedback}
 C.~Pacheco, S.~Lahiri, M.~Ernst, and T.~Ball.
 \newblock {Feedback-directed random test generation}.
@@ -52,6 +68,16 @@ C.~Pacheco, S.~Lahiri, M.~Ernst, and T.~Ball.
 H.~Samet.
 \newblock {Experience with software conversion}.
 \newblock {\em Software: Practice and Experience}, 11(10), 1981.
+
+\bibitem{sebesta2002concepts}
+R.~Sebesta.
+\newblock {\em {Concepts of programming languages}}.
+\newblock Addison-Wesley New York, 2002.
+
+\bibitem{spenkelink2007porting}
+R.~Spenkelink.
+\newblock {Porting Compose* to the Java Platform}.
+\newblock Master's thesis, University of Twente, 2007.
 
 \bibitem{thummalapenta09:mining}
 S.~Thummalapenta and T.~Xie.
@@ -92,11 +118,6 @@ K.~Yasumatsu and N.~Doi.
   environment}.
 \newblock {\em IEEE Transactions on Software Engineering}, 21(11):902--912,
   1995.
-
-\bibitem{zhong2010mining}
-H.~Zhong, S.~Thummalapenta, T.~Xie, L.~Zhang, and Q.~Wang.
-\newblock {Mining API mapping for language migration}.
-\newblock In {\em Proc. 32nd ICSE}, pages 195--204, 2010.
 
 \bibitem{zhong09:mapo}
 H.~Zhong, T.~Xie, L.~Zhang, J.~Pei, and H.~Mei.

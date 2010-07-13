@@ -8,18 +8,37 @@ two research questions:
 
 %\vspace*{-1.5ex}
 \begin{enumerate}
-\item How effectively can our approach detect different behaviors of API mapping relations for migration tools that translate code from Java to CSharp(Section~\ref{sec:evaluation:java2csharp})? \vspace*{-1.8ex}
-\item How effectively can our approach detect different behaviors of API mapping relations for migration tools that translate code from CSharp to Java (Section~\ref{sec:evaluation:csharp2java})? %\vspace*{-1.8ex}
+\item How effectively can our approach detect different behaviors of API mapping relations for migration tools that translate code from Java to CSharp (Section~\ref{sec:evaluation:behavior})? \vspace*{-1.8ex}
+\item What are the impacts of found different behaviors on migration tools (Section~\ref{sec:evaluation:result})? %\vspace*{-1.8ex}
 \end{enumerate}%\vspace*{-1.5ex}
 
-In our evaluations, we introduce Java2CSharp and C\# to Java converter\footnote{\url{http://tinyurl.com/24o6jpc}} as subjects. We choose Java2Charp since it is a relatively mature tool developed by ILOG\footnote{\url{http://www.ilog.com/}} (now part of IBM). We choose C\# to Java converter since it is a commercial tool developed by Tangible Software\footnote{\url{http://www.tangiblesoftwaresolutions.com}}.
-\subsection{From Java to CSharp}\
-\label{sec:evaluation:java2csharp}
-\subsubsection{Generating client code}
-\subsubsection{Analyzing client code}
-\subsubsection{Detecting different behaviors}
-\subsection{From CSharp to Java}
-\label{sec:evaluation:csharp2java}
-\subsubsection{Generating client code}
-\subsubsection{Analyzing client code}
-\subsubsection{Detecting different behaviors}
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c|l|c|c|c|c|c|c|}
+ \hline
+\textbf{Tool}& \textbf{Version}& \textbf{Source} &\textbf{Description}\\
+\hline
+Java2CSharp  &  1.3.4 & IBM (ILOG) & Java to C\# \\
+\hline
+JLCA         &  3.0   & Microsoft  & Java to C\# \\
+\hline
+sharpen      &  1.4.6 & db4o       & Java to C\# \\
+\hline
+Net2Java     &  1.0   & NetBean    &  C\# to Java\\
+\hline
+VB \& C\# to Java Converter    &  1.6   & Tangible   &  C\# to Java\\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Subjects} \label{table:subjects}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
+
+Table~\ref{table:subjects} shows the migration tools used as subjects in our evaluation. Among these tools, JLCA and VB \& C\# to Java Converter are commercial tools, and other three tools are all open source tools. All evaluations were conducted on a PC with Intel Qual CPU @
+2.83GHz and 1.98M memory running Windows XP.
+
+\subsection{Detecting different behaviors}
+\label{sec:evaluation:behavior}
+\subsection{Analyzing results}
+\label{sec:evaluation:result}
+
