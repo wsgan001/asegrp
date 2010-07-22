@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.StringTokenizer;
 
+import methodfilter.MethodFilter;
+
 import randoop.main.GenInputsAbstract;
 import randoop.util.ProgressDisplay;
 import randoop.util.Reflection;
@@ -245,8 +247,7 @@ public class ExecutableSequence implements Serializable {
    * (2) If the last call is a methodcall, return the receiver variable
    */
   public void getReturnType(StringBuilder sbReturnType, StringBuilder sbReturnStatement)
-  {
-	  	  
+  {	  	  
 	  int lastStmtIndex = sequence.size() - 1;
 	  StatementKind sk = sequence.getStatementKind(lastStmtIndex);
 	  if(sk instanceof RMethod)
@@ -256,14 +257,14 @@ public class ExecutableSequence implements Serializable {
 		  {
 			  Variable var = new Variable(sequence, dependentVars.get(0));
 			  sbReturnStatement.append("return " + var.getName() + ";");
-			  sbReturnType.append(var.getType().getName());
+			  sbReturnType.append(MethodFilter.getType(var.getType()));
 			  return;
 		  }
 	  } else if(sk instanceof RConstructor)
 	  {
 		  Variable var = new Variable(sequence, lastStmtIndex);
 		  sbReturnStatement.append("return " + var.getName() + ";");
-		  sbReturnType.append(var.getType().getName());
+		  sbReturnType.append(MethodFilter.getType(var.getType()));
 		  return;
 	  }
 	  
