@@ -28,6 +28,11 @@ M.~El-Ramly, R.~Eltayeb, and H.~Alla.
   {C\#}.
 \newblock In {\em Proc. AICCSA}, pages 1037--1045, 2006.
 
+\bibitem{robert07difference}
+R.~B. Evans and A.~Savoia.
+\newblock Differential testing: a new approach to change detection.
+\newblock In {\em Proc. 6th ESEC/FSE}, pages 549--552, 2007.
+
 \bibitem{garcia-compose}
 C.~Garcia.
 \newblock {\em {Compose* A Runtime for the. Net Platform}}.
@@ -43,6 +48,11 @@ J.~Henkel and A.~Diwan.
 \newblock {CatchUp!: capturing and replaying refactorings to support API
   evolution}.
 \newblock In {\em Proc. 27th ICSE}, pages 274--283, 2005.
+
+\bibitem{jones1998estimating}
+T.~Jones.
+\newblock {\em {Estimating software costs}}.
+\newblock McGraw-Hill, Inc. Hightstown, NJ, USA, 1998.
 
 \bibitem{maes1987concepts}
 P.~Maes.
@@ -69,15 +79,15 @@ H.~Samet.
 \newblock {Experience with software conversion}.
 \newblock {\em Software: Practice and Experience}, 11(10), 1981.
 
-\bibitem{sebesta2002concepts}
-R.~Sebesta.
-\newblock {\em {Concepts of programming languages}}.
-\newblock Addison-Wesley New York, 2002.
-
 \bibitem{spenkelink2007porting}
 R.~Spenkelink.
 \newblock {Porting Compose* to the Java Platform}.
 \newblock Master's thesis, University of Twente, 2007.
+
+\bibitem{taneja08diffgen}
+K.~Taneja and T.~Xie.
+\newblock Diffgen: Automated regression unit-test generation.
+\newblock In {\em Proc. 23rd ASE}, pages 407--410, 2008.
 
 \bibitem{thummalapenta09:mining}
 S.~Thummalapenta and T.~Xie.
