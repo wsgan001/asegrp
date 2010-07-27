@@ -2,14 +2,14 @@
 \label{sec:evaluation}
 
 We implemented a tool for TeMaAPI and
-conducted two evaluations using our tool to show the effectiveness
-of our approach. In our evaluations, we address the following
-two research questions:
+conducted evaluations using our tool to address the following
+research questions:
 
 %\vspace*{-1.5ex}
 \begin{enumerate}
-\item How effectively can our approach detect different behaviors of API mapping relations for migration tools that translate code from Java to CSharp (Section~\ref{sec:evaluation:java2csharp})? \vspace*{-1.8ex}
-\item How effectively can our approach detect different behaviors of API mapping relations for migration tools that translate code from CSharp to Java(Section~\ref{sec:evaluation:csharp2java})? %\vspace*{-1.8ex}
+\item How effectively can existing migration tool translate API invocations (Section~\ref{sec:evaluation:invocation})? \vspace*{-1.8ex}
+\item How effectively can our approach detect different behaviors of single API invocations (Section~\ref{sec:evaluation:single})? \vspace*{-1.8ex}
+\item How effectively can our approach detect different behaviors of API invocation sequences (Section~\ref{sec:evaluation:sequence})? 
 \end{enumerate}%\vspace*{-1.5ex}
 
 \begin{table}[t]
@@ -17,7 +17,7 @@ two research questions:
 \begin{SmallOut}
 \begin {tabular} {|c|l|c|c|c|c|c|c|}
  \hline
-\textbf{Tool}& \textbf{Version}& \textbf{Source} &\textbf{Description}\\
+\textbf{Name}& \textbf{Version}& \textbf{Source} &\textbf{Description}\\
 \hline
 Java2CSharp  &  1.3.4 & IBM (ILOG) & Java to C\# \\
 \hline
@@ -27,26 +27,82 @@ sharpen      &  1.4.6 & db4o       & Java to C\# \\
 \hline
 Net2Java     &  1.0   & NetBean    &  C\# to Java\\
 \hline
-VB \& C\# to Java Converter    &  1.6   & Tangible   &  C\# to Java\\
+VB \& C\# to Java converter    &  1.6   & Tangible   &  C\# to Java\\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Subjects} \label{table:subjects}
+\Caption{Subject tools} \label{table:subjects}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
-Table~\ref{table:subjects} shows the migration tools used as subjects in our evaluation. Among these tools, JLCA and VB \& C\# to Java Converter are commercial tools, and other three tools are all open source tools. All evaluations were conducted on a PC with Intel Qual CPU @
+Table~\ref{table:subjects} shows the subject tools in our evaluation. Column ``Name'' lists the names of subject tools. Column ``Source'' lists their companies. Although all these tools are developed by commercial companies, Java2CSharp, sharpen, and Net2Java are all open source. Column ``Description'' lists the main functionalities of subject tools. We choose these tools as subjects since we find that many programmer recommend these tools in various forums.
+
+All evaluations were conducted on a PC with Intel Qual CPU @
 2.83GHz and 1.98M memory running Windows XP.
 
-\subsection{Different Behaviors from Java to C\#}
-\label{sec:evaluation:java2csharp}
-\subsubsection{Translating client code}
-\subsubsection{Generating test cases}
-\subsubsection{Translating existing test cases}
-\subsubsection{Detecting difference behaviors}
-\subsection{Different Behaviors from C\# to Java}
-\label{sec:evaluation:csharp2java}
-\subsubsection{Translating client code}
-\subsubsection{Generating test cases}
-\subsubsection{Detecting difference behaviors}
+\subsection{Translating Generated Client Code}
+\label{sec:evaluation:invocation}
 
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c|r|r|r|r|r|c|c|}
+ \hline
+\multirow{2}*[-2pt]{\textbf{Type}}&
+\multirow{2}*[-2pt]{\textbf{Number}}
+& \multicolumn{2}{|c|}{\textbf{Java2CSharp}} & \multicolumn{2}{|c|}{\textbf{JLCA}}& \multicolumn{2}{|c|}{\textbf{sharpen}} \\\cline{3-8} &  &  \emph{M}& \emph{\%} &  \emph{M}& \emph{\%}&  \emph{M}& \emph{\%}\\
+\hline
+sfg  &  16962 & 237 & 1.4\% & 3744 & 22.1\% & 47 & 0.3\%\\
+\hline
+sfs  &  0    & 0    & n/a   & 0    & n/a    & 0  & n/a  \\
+\hline
+nfg  &  832  & 0    & 0.0\% & 121  & 14.5\% & 26 & 2.2\%\\
+\hline
+nfs  &  823  & 0    & 0.0\% & 79   & 9.6\%  & 0   & 0.0\%\\
+\hline
+sm   &1175   & 97   & 8.3\% & 198  & 16.9\% & 26  & 2.2\%\\
+\hline
+nm   &175400 & 3589 & 2.0\% & 39536& 22.5\% & 1113& 0.6\%  \\
+\hline
+Total &195192& 3923 &  2.0\% & 43678 & 22.4\% & 1186 & 0.6\%\\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Translated results of Java to C\# tools} \label{table:java2csharp}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
+
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c|r|r|r|r|r|c|c|}
+ \hline
+\multirow{2}*[-2pt]{\textbf{Type}}&
+\multirow{2}*[-2pt]{\textbf{Number}}
+& \multicolumn{2}{|c|}{\textbf{Net2Java}} & \multicolumn{2}{|c|}{\textbf{VB \& C\# to Java converter}}\\\cline{3-6} &  &  \emph{M}& \emph{\%} &  \emph{M}& \emph{\%}\\
+\hline
+sfg  &  3223 & 1    & 0.0\% & 3    & 0.1\% \\
+\hline
+sfs  &  8    & 0    & 0.0\% & 0    & 0.0\%   \\
+\hline
+nfg  &  117  & 0    & 0.0\% & 0    & 0.0\%\\
+\hline
+nfs  &  115  & 0    & 0.0\% & 0    & 0.0\%\\
+\hline
+sm   &996    & 22   & 2.2\% & 387  & 38.9\% \\
+\hline
+nm   &190376 & 4    & 0.0\% & 6    & 0.0\% \\
+\hline
+Total &194835& 27   &  0.0\% & 396 & 0.2\%\\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Translated results of C\# to Java tools} \label{table:csharp2java}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
+
+\subsection{Different Behaviors of Single API Invocations}
+\label{sec:evaluation:single}
+\subsubsection{Translating client code}
+\subsubsection{Generating test cases}
+\subsubsection{Detecting difference behaviors}
+\subsection{Different Behaviors of API Invocation Sequences}
+\label{sec:evaluation:sequence}
 
