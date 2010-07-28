@@ -137,7 +137,30 @@ For C\# to Java migration tools, we use TeMaAPI to generate client-code methods 
 In summary, we find that APIs are quite large in size, and migration tools typically cover only a small set of API invocations. Existing migration tools already notice the differences between mapped APIs, but many differences are left unsolved.
 \subsection{Testing Single Invocations}
 \label{sec:evaluation:single}
-
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c|r|r|r|r|r|c|c|}
+ \hline
+\multirow{2}*[-2pt]{\textbf{Tool}}
+& \multicolumn{2}{|c|}{\textbf{Passed}} & \multicolumn{2}{|c|}{\textbf{Failed}}& \multicolumn{2}{|c|}{\textbf{Error}} \\\cline{2-7}  &  \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}&  \textbf{M}& {\%}\\
+\hline
+Java2CSharp  &   7094  & 45.9\% & 3124 & 20.2\% & 5246 & 33.9\% \\
+\hline
+JLCA         &   17189 & 52.0\% & 8901 & 26.9\% & 6944 & 21.0\% \\
+\hline
+sharpen      &  1617  & 59.2\% & 662  & 24.2\% & 451  & 16.5\%\\
+\hline
+net2java     &   51    & 14.5\% & 40   & 11.4\%  & 261   & 74.1\%\\
+\hline
+converter    &  278    &  36.4\% & 302  & 39.6\% & 183   & 24.0\%\\
+\hline
+Total        &  26229  & 50.1\%  & 13029 & 50.1\% &13085 & 25.0\%  \\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Results of testing single invocations} \label{table:singleinvoc}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
 \subsection{Testing Invocation Sequences}
 \label{sec:evaluation:sequence}
 
