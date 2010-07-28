@@ -66,7 +66,7 @@ nm   &175400 & 3589 & 2.0\% & 39536& 22.5\% & 1113& 0.6\%  \\
 Total &195192& 3923 &  2.0\% & 43678 & 22.4\% & 1186 & 0.6\%\\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Translated results of Java to C\# tools} \label{table:java2csharp}
+\Caption{Translation results of Java to C\# tools} \label{table:java2csharp}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
@@ -128,7 +128,7 @@ nm   &190376 & 4    & 0.0\% & 6    & 0.0\% \\
 Total &194835& 27   &  0.0\% & 396 & 0.2\%\\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Translated results of C\# to Java tools} \label{table:csharp2java}
+\Caption{Translation results of C\# to Java tools} \label{table:csharp2java}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
@@ -137,13 +137,22 @@ For C\# to Java migration tools, we use TeMaAPI to generate client-code methods 
 In summary, we find that APIs are quite large in size, and migration tools typically cover only a small set of API invocations. Existing migration tools already notice the differences between mapped APIs, but many differences are left unsolved.
 \subsection{Testing Single Invocations}
 \label{sec:evaluation:single}
+
+
+To test different behaviors of single invocations, TeMaAPI leverages Pex to search internal paths for C\# client-code methods. These methods include the translated C\# methods without compilation errors as shown in Table~\ref{table:java2csharp} and the generated C\# methods that can be translated into Java without compilation errors as shown in Table~\ref{table:csharp2java}. When Pex searches those paths, TeMaAPI records the inputs and output of each iteration. Based on these inputs and outputs, TeMaAPI generates JUnit test cases to ensure that the generated methods and the translated methods produce the same outputs given the same inputs. As it requires human interactions to test GUI related APIs, we filter out GUI related APIs such as awt and swing although some migration tools such as JLCA are able to translate some GUI related APIs. In addition, when Pex searches methods without return values, we ignore those paths that do not throw any exceptions since we cannot generate JUnit test cases for them.
+
+We run the generated JUnit test cases, and Table~\ref{table:singleinvoc} shows the results. Column ``Name'' lists the name of migration tools. Columns ``Pass'', ``Failure'', and ``Error'' list passes, failures, and errors after running JUnit test cases, respectively. Sub-column ``M'' numbers of test cases. Sub-column ``\%'' list percentages from the numbers of corresponding test cases to the numbers of total generated test cases. From the results of Table~\ref{table:singleinvoc}, we find that different behaviors between mapped APIs are quite common since only half of generated JUnit test cases get passed. However, even if a JUnit test case fails, we do not have fully confidence that it is caused by different behaviors of mapped APIs. For example, some API methods such as \CodeIn{java.util.Random.nextDouble()} generate random values. As a result, we find that its corresponding JUnit test case fails, but we cannot conclude that these methods have different behaviors. 
+
+To better understand different behaviors of mapped APIs, we manually inspect failures and errors of JUnit test cases. Tools such as Java2CSharp, JLCA, and sharpen have too many test cases to inspect manually, so we limit our scope within the \CodeIn{java.lang} package for these tools. 
+
+
 \begin{table}[t]
 \centering
 \begin{SmallOut}
 \begin {tabular} {|c|r|r|r|r|r|c|c|}
  \hline
-\multirow{2}*[-2pt]{\textbf{Tool}}
-& \multicolumn{2}{|c|}{\textbf{Passed}} & \multicolumn{2}{|c|}{\textbf{Failed}}& \multicolumn{2}{|c|}{\textbf{Error}} \\\cline{2-7}  &  \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}&  \textbf{M}& {\%}\\
+\multirow{2}*[-2pt]{\textbf{Name}}
+& \multicolumn{2}{|c|}{\textbf{Pass}} & \multicolumn{2}{|c|}{\textbf{Failure}}& \multicolumn{2}{|c|}{\textbf{Error}} \\\cline{2-7}  &  \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}&  \textbf{M}& {\%}\\
 \hline
 Java2CSharp  &   7094  & 45.9\% & 3124 & 20.2\% & 5246 & 33.9\% \\
 \hline
@@ -155,7 +164,7 @@ net2java     &   51    & 14.5\% & 40   & 11.4\%  & 261   & 74.1\%\\
 \hline
 converter    &  278    &  36.4\% & 302  & 39.6\% & 183   & 24.0\%\\
 \hline
-Total        &  26229  & 50.1\%  & 13029 & 50.1\% &13085 & 25.0\%  \\
+Total        &  26229  & 50.1\%  & 13029 & 24.9\% &13085 & 25.0\%  \\
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{Results of testing single invocations} \label{table:singleinvoc}
