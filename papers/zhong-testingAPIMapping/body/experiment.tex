@@ -132,7 +132,9 @@ Total &194835& 27   &  0.0\% & 396 & 0.2\%\\
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
-For C\# to Java migration tools, we use TeMaAPI to generate client-code methods for the .Net framework client profile\footnote{\url{http://tinyurl.com/252t2ax}}. As described in Section~\ref{sec:approach:generating}, besides generic methods, TeMaAPI also ignores methods whose parameters are marked with \CodeIn{out} or \CodeIn{ref}. Table~\ref{table:csharp2java} shows the translation results. Columns of Table~\ref{table:csharp2java} are of the same meanings with the columns of Table~\ref{table:java2csharp}. 
+For C\# to Java migration tools, we use TeMaAPI to generate client-code methods for the .Net framework client profile\footnote{\url{http://tinyurl.com/252t2ax}}. As described in Section~\ref{sec:approach:generating}, besides generic methods, TeMaAPI also ignores methods whose parameters are marked with \CodeIn{out} or \CodeIn{ref}. Table~\ref{table:csharp2java} shows the translation results. Columns of Table~\ref{table:csharp2java} are of the same meanings with the columns of Table~\ref{table:java2csharp}. From the results of Table~\ref{table:java2csharp}, we find that TeMaAPI generates almost the same size of methods as it generates for J2SE 6.0, and both the two tool translate only quite a small size of API invocations. As described in the wikipedia\footnote{\url{http://tinyurl.com/yj4v2m2}}, C\# provides many features that Java does not have (\emph{e.g.}, partial class, reference parameters, output parameters, and named arguments). We suspect that a C\# to Java migration tool needs to deal with these differences, so many mapping relations of APIs are not addressed yet. 
+
+In summary, we find that APIs are quite large in size, and migration tools typically cover only a small set of API invocations. Existing migration tools already notice the differences between mapped APIs, but many differences are left unsolved.
 \subsection{Testing Single Invocations}
 \label{sec:evaluation:single}
 
