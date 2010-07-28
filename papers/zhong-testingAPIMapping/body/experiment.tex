@@ -9,7 +9,7 @@ research questions:
 \begin{enumerate}
 \item How effectively can existing migration tool translate API invocations (Section~\ref{sec:evaluation:invocation})? \vspace*{-1.8ex}
 \item How effectively can our approach detect different behaviors of single API invocations (Section~\ref{sec:evaluation:single})? \vspace*{-1.8ex}
-\item How effectively can our approach detect different behaviors of API invocation sequences (Section~\ref{sec:evaluation:sequence})? 
+\item How effectively can our approach detect different behaviors of API invocation sequences (Section~\ref{sec:evaluation:sequence})?
 \end{enumerate}%\vspace*{-1.5ex}
 
 \begin{table}[t]
@@ -34,14 +34,14 @@ VB \& C\# to Java converter    &  1.6   & Tangible   &  C\# to Java\\
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
-Table~\ref{table:subjects} shows the subject tools in our evaluation. Column ``Name'' lists the names of subject tools. Column ``Source'' lists their companies. Although all these tools are developed by commercial companies, Java2CSharp, sharpen, and Net2Java are all open source. Column ``Description'' lists the main functionalities of subject tools. We choose these tools as subjects since we find that many programmer recommend these tools in various forums.
+Table~\ref{table:subjects} shows the subject tools in our evaluation. Column ``Name'' lists the names of subject tools. In the rest of the paper, we call ``VB \& C\# to Java converter'' as converter for short. Column ``Source'' lists their companies. Although all these tools are developed by commercial companies, Java2CSharp, sharpen, and Net2Java are all open source. Column ``Description'' lists the main functionalities of subject tools. We choose these tools as subjects since we find that many programmer recommend these tools in various forums.
 
 All evaluations were conducted on a PC with Intel Qual CPU @
 2.83GHz and 1.98M memory running Windows XP.
 
 \subsection{Translating Generated Client Code}
 \label{sec:evaluation:invocation}
-
+For Java to C\# tools, we use TeMaAPI to generate client-code methods for J2SE 6.0\footnote{\url{http://java.sun.com/javase/6/docs/api/}}. As described in Section~\ref{sec:approach:generating}, TeMaAPI ignores all generic API methods. Table~\ref{table:java2csharp} shows the translation results. Column ``Type'' lists the types of generated methods. In particular, ``sfg'' denotes getters of static fields; ``sfs'' denotes setters of static fields; ``nfg'' denotes getters of non-static fields; ``nfs'' denotes setters of non-static fields; ``sm'' denotes static methods; ``nm'' denotes non-static methods; and ``Total'' denotes the sums of all methods. Column ``Number'' lists numbers of corresponding types of methods. Columns ``Java2CSharp'', ``JLCA'', and ``sharpen'' list the translation results of corresponding migration tools. For these columns, sub-column ``M'' lists the number of translated methods without compilation errors, and sub-column ``\%'' lists the percentage from translated method without compilation errors to corresponding generated methods.
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -49,7 +49,7 @@ All evaluations were conducted on a PC with Intel Qual CPU @
  \hline
 \multirow{2}*[-2pt]{\textbf{Type}}&
 \multirow{2}*[-2pt]{\textbf{Number}}
-& \multicolumn{2}{|c|}{\textbf{Java2CSharp}} & \multicolumn{2}{|c|}{\textbf{JLCA}}& \multicolumn{2}{|c|}{\textbf{sharpen}} \\\cline{3-8} &  &  \emph{M}& \emph{\%} &  \emph{M}& \emph{\%}&  \emph{M}& \emph{\%}\\
+& \multicolumn{2}{|c|}{\textbf{Java2CSharp}} & \multicolumn{2}{|c|}{\textbf{JLCA}}& \multicolumn{2}{|c|}{\textbf{sharpen}} \\\cline{3-8} &  &  \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}&  \textbf{M}& {\%}\\
 \hline
 sfg  &  16962 & 237 & 1.4\% & 3744 & 22.1\% & 47 & 0.3\%\\
 \hline
@@ -70,6 +70,40 @@ Total &195192& 3923 &  2.0\% & 43678 & 22.4\% & 1186 & 0.6\%\\
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
+From the results of Table~\ref{table:java2csharp}, we find that it is quite challenging for a migration tool to cover all API invocations. One challenge lies in that APIs are quite large in size. Although JLCA can translate 43678 generated methods, it covers only 22.4\% of total generated methods. The other challenge lies in that many API invocations of different languages cannot be accurately mapped. For example, as pointed out by our previous work~\cite{zhong2010mining}, one API method in one language may be mapped to several API methods in another language. We find that all the three migration tools have techniques to deal with the differences. In particular, Java2CSharp and sharpen develop their own assemblies and map some API invocations to their implemented assemblies instead of standard C\# API invocations. For example, Java2CSharp maps the \CodeIn{java.lang.Class.forName (String)} method in Java to the \CodeIn{ILOG.J2CsMapping.Reflect. Helper.GetNativeType(String)} method in C\#, and the latter method is provided by Java2CSharp. JLCA does not implement additional assemblies, but generate additional source code to hide different behaviors. For example, TeMaAPI generates one method for \CodeIn{java.awt.Dialog.add(Component m0,int m1,} \CodeIn{Frame c0)}:
+
+\begin{CodeOut}%\vspace*{-2ex}
+\begin{alltt}
+public Component testadd79nm(Component m0,int m1,Frame c0)\{
+  java.awt.Dialog obj = new java.awt.Dialog(c0);
+  return obj.add(m0,m1);
+\}
+\end{alltt}
+\end{CodeOut}
+
+JLCA translates the preceding method as follows:
+
+\begin{CodeOut}%\vspace*{-2ex}
+\begin{alltt}
+@Test
+public virtual Control testadd79nm(Control m0, int m1, 
+                                              Form c0)\{
+  Form obj = SupportClass.DialogSupport.CreateDialog(c0);
+  Control temp_Control;
+  temp_Control = m0;
+  obj.Controls.Add(temp_Control);
+  if (m1 != -1)
+    obj.Controls.SetChildIndex(temp_Control, m1);
+  return temp_Control;
+\}
+\end{alltt}
+\end{CodeOut}
+
+JLCA maps the API method in Java into many API methods in C\#. Besides adding a temporary variable named \CodeIn{tmp\_Control}, JLCA generates a class named \CodeIn{SupprtClass} where more API invocations are introduced.
+
+Although all the three migration tools take the different behaviors of mapped APIs seriously, they do not cover all differences of API mapping relations. For example, when JLCA translates generated code, it generates a report with 1265 warning messages for different behaviors of API mapping relations. One warning message is ``Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception''. Still, the report does not tell programmers when such an exceptions will be thrown, and the rest of our evaluation targets at the problem. 
+
+
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -77,7 +111,7 @@ Total &195192& 3923 &  2.0\% & 43678 & 22.4\% & 1186 & 0.6\%\\
  \hline
 \multirow{2}*[-2pt]{\textbf{Type}}&
 \multirow{2}*[-2pt]{\textbf{Number}}
-& \multicolumn{2}{|c|}{\textbf{Net2Java}} & \multicolumn{2}{|c|}{\textbf{VB \& C\# to Java converter}}\\\cline{3-6} &  &  \emph{M}& \emph{\%} &  \emph{M}& \emph{\%}\\
+& \multicolumn{2}{|c|}{\textbf{Net2Java}} & \multicolumn{2}{|c|}{\textbf{converter}}\\\cline{3-6} &  &  \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}\\
 \hline
 sfg  &  3223 & 1    & 0.0\% & 3    & 0.1\% \\
 \hline
@@ -98,11 +132,10 @@ Total &194835& 27   &  0.0\% & 396 & 0.2\%\\
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
-\subsection{Different Behaviors of Single API Invocations}
+For C\# to Java migration tools, we use TeMaAPI to generate client-code methods for the .Net framework client profile\footnote{\url{http://tinyurl.com/252t2ax}}. As described in Section~\ref{sec:approach:generating}, besides generic methods, TeMaAPI also ignores methods whose parameters are marked with \CodeIn{out} or \CodeIn{ref}. Table~\ref{table:csharp2java} shows the translation results. Columns of Table~\ref{table:csharp2java} are of the same meanings with the columns of Table~\ref{table:java2csharp}. 
+\subsection{Testing Single Invocations}
 \label{sec:evaluation:single}
-\subsubsection{Translating client code}
-\subsubsection{Generating test cases}
-\subsubsection{Detecting difference behaviors}
-\subsection{Different Behaviors of API Invocation Sequences}
+
+\subsection{Testing Invocation Sequences}
 \label{sec:evaluation:sequence}
 
