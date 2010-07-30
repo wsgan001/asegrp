@@ -152,13 +152,13 @@ lang &  \hfill 5221   & 1494  &  28.6\% & 2377   &  45.5\%  & 791  & 15.2\%\\
 \hline
 math &  \hfill 1584   & 101   &  6.4\%  & 232    &  14.6\%  & 0    & 0.0\%\\
 \hline
-net  &  \hfill 1990   & 52    &  2.6\%  & 482    &  24.2\%  & 10   & 0.5\%  \\
+java.net  &  \hfill 1990   & 52    &  2.6\%  & 482    &  24.2\%  & 10   & 0.5\%  \\
 \hline
 nio  &  \hfill 536    & 30    &  5.6\%  & 0      &  0.0\%  &  0    & 0.0\%  \\
 \hline
 java.rmi  &  \hfill 1252   & 0     &  0.0\%  &  707   &  56.5\%  &  0   & 0.0\%\\
 \hline
-security &  \hfill 2797   & 50    &  1.8\%  &  702    &  25.1\%   &  0   & 0.0\% \\
+java.sec. &  \hfill 2797   & 50    &  1.8\%  &  702    &  25.1\%   &  0   & 0.0\% \\
 \hline
 java.sql   &  \hfill 3495   & 20   &  0.6\% & 183   &  5.2\%  & 0   & 0.0\%\\
 \hline
@@ -184,7 +184,7 @@ man.   &  \hfill 5380   & 2    &   0.0\%  & 0     &  0.0\%  & 0    & 0.0\%  \\
 \hline
 naming       &  \hfill 3565   & 0    &   0.0\%  & 1365   &  38.3\%  &  0    & 0.0\%  \\
 \hline
-net           &  \hfill 285    & 0     &  0.0\%  &  0     &  0.0\%   &  0   & 0.0\%\\
+javax.net           &  \hfill 285    & 0     &  0.0\%  &  0     &  0.0\%   &  0   & 0.0\%\\
 \hline
 print         &  \hfill 1534   & 0     &  0.0\%  &  0    &  0.0\%   &  0   & 0.0\% \\
 \hline
@@ -192,7 +192,7 @@ javax.rmi           &  \hfill 45     &  0    &  0.0\%  & 0     &  0.0\%   & 0   
 \hline
 script         &  \hfill 195   & 0     &  0.0\% &  0     &  0.0\%  & 0  & 0.0\%\\
 \hline
-security       &  \hfill 1435  & 0     &  0.0\%  & 0     &  0.0\%  & 0    & 0.0\%\\
+javax.sec.       &  \hfill 1435  & 0     &  0.0\%  & 619     &  43.1\%  & 0    & 0.0\%\\
 \hline
 sound          &  \hfill 515   & 0    &  0.0\%  & 56    &  10.9\%  & 0   & 0.0\%  \\
 \hline
@@ -215,11 +215,11 @@ w3c.dom          &  \hfill 83     & 0    &  0.0\%  & 14     &  16.9\%   & 0   & 
 org.xml             &   \hfill 897    & 49   &  5.5\%  & 473    & 52.7\%    & 0   & 0.0\%\\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Package level results} \label{table:package}
+\Caption{Translation results of package level} \label{table:package}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
-Comparing the translation results between Java-to-C\# tools and C\#-to-Java tools, we find that Java-to-C\# tools cover much more API invocations. To fully explore the translation results of Java-to-C\# tools, we present the results of the package level in Table~\ref{table:package}. Column ``Name'' lists the names of Java packages. To save space, we omit the prefixes such as ``java.'', ``javax.'', and ``org.'' if it does not introduce ambiguity. We also use short names for some packages. In particular, `we use ``acc.'' to denote the \CodeIn{javax.accessibility} package, and ``man.'' to denote the \CodeIn{javax.management} package. Other columns of Table~\ref{table:package} are of the same meanings with the columns of Table~\ref{table:java2csharp}. From the results of Table~\ref{table:package}, we find that all the three migration tools cover the \CodeIn{java.io} package, the \CodeIn{java.lang} package, and the \CodeIn{java.util} package. The three packages may be quite important for most Java programs. Almost for all packages, JLCA covers more API invocations. In particular, JLCA covers GUI-related packages such as the \CodeIn{java.awt} package and the \CodeIn{javax.swing} package. As a result, JLCA can translate some Java programs with GUI interfaces whereas the other two tools cannot. Still, we find that all the three tools do not cover 15 packages. As most of these packages are related to networks, all the three tools will fail to translate a program that use network APIs.
+Comparing the translation results between Java-to-C\# tools and C\#-to-Java tools, we find that Java-to-C\# tools cover much more API invocations. To fully explore the translation results of Java-to-C\# tools, we present the results of the package level in Table~\ref{table:package}. Column ``Name'' lists the names of Java packages. To save space, we omit the prefixes such as ``java.'', ``javax.'', and ``org.'' if it does not introduce ambiguity. We also use short names for some packages. In particular, we use ``acc.'' to denote the \CodeIn{javax.accessibility} package, ``man.'' to denote the \CodeIn{javax.management} package, ``java. sec.'' to denote the \CodeIn{java.security} package, and ``javax.sec.'' to denote the \CodeIn{javax.security} package. Other columns of Table~\ref{table:package} are of the same meanings with the columns of Table~\ref{table:java2csharp}. From the results of Table~\ref{table:package}, we find that all the three migration tools cover the \CodeIn{java.io} package, the \CodeIn{java.lang} package, and the \CodeIn{java.util} package. The three packages may be quite important for most Java programs. Almost for all packages, JLCA covers more API invocations. In particular, JLCA covers GUI-related packages such as the \CodeIn{java.awt} package and the \CodeIn{javax.swing} package. As a result, JLCA can translate some Java programs with GUI interfaces whereas the other two tools cannot. Still, we find that all the three tools do not cover 15 packages. As most of these packages are related to networks, all the three tools will fail to translate a program that use network APIs.
 
 
 In summary, we find that APIs are quite large in size, and migration tools typically cover only a small set of API invocations. Existing migration tools already notice the differences between mapped APIs, but many differences are left unsolved.
@@ -229,10 +229,8 @@ In summary, we find that APIs are quite large in size, and migration tools typic
 
 To test different behaviors of single invocations, TeMaAPI leverages Pex to search internal paths for C\# client-code methods. These methods include the translated C\# methods without compilation errors as shown in Table~\ref{table:java2csharp} and the generated C\# methods that can be translated into Java without compilation errors as shown in Table~\ref{table:csharp2java}. When Pex searches those paths, TeMaAPI records the inputs and output of each iteration. Based on these inputs and outputs, TeMaAPI generates JUnit test cases to ensure that the generated methods and the translated methods produce the same outputs given the same inputs. As it requires human interactions to test GUI related APIs, we filter out GUI related APIs such as awt and swing although some migration tools such as JLCA are able to translate some GUI related APIs. In addition, when Pex searches methods without return values, we ignore those paths that do not throw any exceptions since we cannot generate JUnit test cases for them.
 
-We run the generated JUnit test cases, and Table~\ref{table:singleinvoc} shows the results. Column ``Name'' lists the name of migration tools. Columns ``Pass'', ``Failure'', and ``Error'' list passes, failures, and errors after running JUnit test cases, respectively. Sub-column ``M'' numbers of test cases. Sub-column ``\%'' list percentages from the numbers of corresponding test cases to the numbers of total generated test cases. From the results of Table~\ref{table:singleinvoc}, we find that different behaviors between mapped APIs are quite common since only half of generated JUnit test cases get passed. However, even if a JUnit test case does not get passed, we do not have fully confidence that it is caused by different behaviors of mapped APIs. For example, some API methods such as \CodeIn{java.util.Random.nextDouble()} generate random values. As a result, we find that its corresponding JUnit test case fails, but we cannot conclude that these methods have different behaviors.
 
-To better understand different behaviors of mapped APIs, we manually inspect failures and errors of JUnit test cases. Tools such as Java2CSharp, JLCA, and sharpen have too many test cases to inspect manually, so we limit our scope within the \CodeIn{java.lang} package for these tools. We choose to investigate the \CodeIn{java.lang} package since as shown in Table~\ref{table:package} all the three migration tools covers many API invocations of this package. 
-
+We run the generated JUnit test cases, and Table~\ref{table:singleinvoc} shows the results. Column ``Name'' lists the name of migration tools. Columns ``Pass'', ``Error'', and ``Failure'' list passes, errors, and failures after running JUnit test cases, respectively. Sub-column ``M'' lists numbers of test cases. Sub-column ``\%'' lists percentages from the numbers of corresponding test cases to the numbers of total generated test cases. From the results of Table~\ref{table:singleinvoc}, we find that totally only about half the generated JUnit test cases get passed. It turns out that TeMaAPI is quite effective to detect different behaviors of mapped API invocations since it searches every paths of methods under test. The results also reflect that the API mapping relations defined in JLCA and sharpen are more reliable than other tools since more test cases of the two tools get passed than other four tools. 
 
 \begin{table}[t]
 \centering
@@ -240,9 +238,9 @@ To better understand different behaviors of mapped APIs, we manually inspect fai
 \begin {tabular} {|c|r|r|r|r|r|c|c|}
  \hline
 \multirow{2}*[-2pt]{\textbf{Name}}
-& \multicolumn{2}{|c|}{\textbf{Pass}} & \multicolumn{2}{|c|}{\textbf{Failure}}& \multicolumn{2}{|c|}{\textbf{Error}} \\\cline{2-7}  &  \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}&  \textbf{M}& {\%}\\
+& \multicolumn{2}{|c|}{\textbf{Pass}} & \multicolumn{2}{|c|}{\textbf{Error}}& \multicolumn{2}{|c|}{\textbf{Failure}} \\\cline{2-7}  &  \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}&  \textbf{M}& {\%}\\
 \hline
-Java2CSharp  &   7094  & 45.9\% & 3124 & 20.2\% & 5246 & 33.9\% \\
+Java2CSharp  &   6949  & 45.9\% & 5248 & 34.0\% & 3261 & 21.1\% \\
 \hline
 JLCA         &   17189 & 52.0\% & 8901 & 26.9\% & 6944 & 21.0\% \\
 \hline
@@ -250,14 +248,91 @@ sharpen      &  1617  & 59.2\% & 662  & 24.2\% & 451  & 16.5\%\\
 \hline
 net2java     &   51    & 14.5\% & 40   & 11.4\%  & 261   & 74.1\%\\
 \hline
-converter    &  278    &  36.4\% & 302  & 39.6\% & 183   & 24.0\%\\
+converter    &  278    &  36.4\% & 302  & 39.6\% & 182   & 23.9\%\\
 \hline
-Total        &  26229  & 50.1\%  & 13029 & 24.9\% &13085 & 25.0\%  \\
+Total        &  26084  & 49.8\%  & 15153 & 29.0\% &11099 & 21.2\%  \\
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{Results of testing single invocations} \label{table:singleinvoc}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
+
+For tools such as Java2CSharp, JLCA, and sharpen, we further present their testing results of the package level in Table~\ref{table:packagetest}. Column ``Name'' lists names of J2SE packages. For columns ``Java2CSharp'', ``JLCA'', and ``sharpen'', sub-column ``R'' lists numbers of generated JUnit test cases, and sub-column ``\%'' lists percentages from the test cases end with errors or failures to the total test cases. From the results of Table~\ref{table:packagetest}, we find that for the \CodeIn{java.sql} package and the \CodeIn{java.util} package, all the tools suffer relatively high error/failure percentages, and for the \CodeIn{java.lang} package and the \CodeIn{java.math} package, all the tools achieve relatively low error/failure percentages. The results may reflect that some packages between Java and C\# are more similar than others, so that they can more easily mapped. We also find that for package the \CodeIn{java.text} package, the \CodeIn{javax.xml} package, and the \CodeIn{org.xml} package, JLCA achieve lower error/failure percentages than other tools. The results indicate that a migration tool can achieve better translation results if they carefully prepare the mapping relations of APIs.
+
+
+Table~\ref{table:singleinvoc} and Table~\ref{table:packagetest} show that many generated JUnit tests do not get passed. Still, we notice that even if a JUnit test case does not get passed, we do not have fully confidence that it is caused by different behaviors of mapped APIs. For example, some API methods such as \CodeIn{java.util.Random.nextDouble()} generate random values. As a result, we find that its corresponding JUnit test case fails, but we cannot conclude that these methods have different behaviors.
+
+To better understand different behaviors of mapped API invocations, we manually inspected 3759 JUnit test cases that end with errors or failures. In particular, for tools such as Java2CSharp, JLCA, and sharpen, we investigate the test cases for the \CodeIn{java.lang} package since TeMaAPI generates many test cases for the package as shown in Table~\ref{table:package}. For tools such as Net2Java and converter, we inspect all their test cases since TeMaAPI test cases in small sizes for them. Our findings are as follows:
+
+\textbf{Finding 1:} 37.2\% test cases show the different behaviors caused by null inputs or outputs.
+
+We find that Java API invocations and their mapped C\# API invocations can have different behaviors when inputs are null values. In some cases, a Java API method can accept null values, but its mapped C\# API method will throw exceptions given a null value. One such example is shown in Section~\ref{sec:introduction}. In other cases, a Java API method will throw exceptions given a null value, but its mapped C\# API method can accept null values. For example, JLCA maps the \CodeIn{java.lang.Integer.parseInt(String,int)} method in Java to the \CodeIn{System.Convert.ToInt32(string,int)} in C\#. TeMaAPI detects that when the inputs of the C\# method are null and 10, its output is 0. Given the same inputs, the Java method throws a \CodeIn{NumberFormatException}. We also find that given the same inputs, a method may produce null outputs, whereas its mapped method will not. For example, converter maps the \CodeIn{Sys- tem.Collections.Queue.ToArray()} in C\# to the \CodeIn{java.util. LinkedList.toArray()} method in Java. Given an empty list, the C\# method produce a null value, whereas the Java method produce an empty array.
+
+
+\textbf{Implication 1:} Although programmers may come to agreements on functionalities of API invocations, the behaviors for null values are typically controversial. Programmers should check whether different behaviors of null values will affect the behaviors of project under development. It is also desirable that a migration tool can hide the differences by analyzing the behaviors of mapped API methods given null values.
+
+
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|p{3.4em}|r|r|r|r|r|r|r|r|r|r|}
+ \hline
+\multicolumn{1}{|c}{\multirow{2}*[-2pt]{\textbf{Name}}}
+& \multicolumn{2}{|c|}{\textbf{Java2CSharp}} & \multicolumn{2}{|c|}{\textbf{JLCA}}& \multicolumn{2}{|c|}{\textbf{sharpen}} \\\cline{2-7} &  \textbf{R}&  \textbf{\%} &   \textbf{R}& \textbf{\%} & \textbf{R}&   \textbf{\%}\\
+\hline
+bean &  \hfill 17     &    82.4\%  &  18        &  33.3\%   &  0      & n/a \\
+\hline
+io   &  \hfill 4155   &  67.8\%  &  6981       &  58.0\%   &   33    & 1.4\%\\
+\hline
+lang &  \hfill 3480   &   37.5\%  &  4431      &  26.1\%   &   1753 & 29.3\%\\
+\hline
+math &  \hfill 561    &   4.3\%  &   1629     &   1.5\%   &  0      & n/a\\
+\hline
+java.net  &   438     &   25.1\% &   3941     &   47.8\%  & 9       & 44.4\%  \\
+\hline
+nio  &  \hfill 27     &  48.1\% &    0        &   n/a     &  0     &  n/a \\
+\hline
+java.rmi  &  \hfill 0   &   n/a   &   884     &   32.6\%  &  0     & n/a\\
+\hline
+java.sec. &  \hfill 45  &   55.6\%  &  828    &  35.6\%   &  0    & n/a \\
+\hline
+java.sql   &  \hfill 260&   88.1\%  & 1465    &  91.0\%   &   0     & n/a\\
+\hline
+text  &  \hfill 566   &   61.5\%  & 374      &  18.2\%   & 0      & n/a\\
+\hline
+util  &  \hfill 5519  &   60.8\%  & 6177     & 70.2\%  & 935      & 62.4\%\\
+\hline
+acc.  &  \hfill 1    &   0.0\%   & 0         & n/a    & 0          & n/a \\
+\hline
+activation  &  0     &    n/a    & 694      & 53.9\% & 0           & n/a  \\
+\hline
+crypto      &  0     &     n/a    & 298     & 24.2\% &  0        & n/a\\
+\hline
+man.        &  2     &    0.0\%  & 0        & n/a    &  0          & n/a  \\
+\hline
+naming      &  0     &    n/a     & 1569    & 40.6\%  &  0         & n/a  \\
+\hline
+javax.sec.  &  0     &   n/a     & 683     & 45.9\%  &  0        & n/a\\
+\hline
+sound       &  0     &   n/a     & 66       & 36.4\%  &   0        &n/a  \\
+\hline
+javax.xml   &  110   &    71.8\%  &  628    & 45.9\%  &   0         & n/a\\
+\hline
+org.omg     &  0     &   n/a     & 1842    & 45.9\%  & 0           & n/a  \\
+\hline
+w3c.dom     &  0     &   n/a     & 18      & 33.3\%  &  0         & n/a  \\
+\hline
+org.xml     &   277  &   70.0\%  & 483     & 27.3\%  & 0         & n/a\\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Testing results of package level } \label{table:packagetest}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
+
+\textbf{Finding 2:} 22.2\% test cases show the different behaviors caused by stored string values.
+
+Each Java class has a \CodeIn{toString()} method inherited from the \CodeIn{java.lang.Object} class, and each C\# class also has a \CodeIn{ToString()} method inherited from the \CodeIn{System.Object} class. 
+
 \subsection{Testing Invocation Sequences}
 \label{sec:evaluation:sequence}
 
