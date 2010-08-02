@@ -351,7 +351,7 @@ We find that Java methods and their mapped C\# methods may have different ranges
 
 We find that mapped static fields may have different values. For example, the \CodeIn{java.lang.reflect.Modifier} class has many static fields to represent modifiers (\emph{e.g.}, FINAL, PRIVATE and PROTECTED). Java2CSharp maps these fields to the fields of the \CodeIn{ILOG. J2CsMapping.Reflect} class. Although many mapped fields of the two class are of the same values, we find that fields such as VOLATILE and TRANSIENT are of different values. In addition, we find that different values sometimes reveal different ranges of data types. For example, \CodeIn{java.lang.Double.MAX\_VALUE} in Java is 1.7976931348623157E+308, and \CodeIn{System.Double.MaxValue} in C\# is 1.79769313486232E+308. Although the difference is not quite large, it can cause serious defects if a program needs highly accurate calculation results.
 
-\textbf{Implication 5:} Programmers should be aware of that static fields may have different values even if they has the same names. As these differences reveal that Java and C\# may define different bounds for data types, programmers should also be aware of these different bounds if they need highly accurate results of extremely large or small calculation results. 
+\textbf{Implication 5:} Programmers should be aware of that static fields may have different values even if they has the same names. As these differences reveal that Java and C\# may define different bounds for data types, programmers should also be aware of these different bounds if they need highly accurate results of extremely large or small calculation results.
 
 \textbf{Finding 6:} 17.1\% test cases show the different behaviors caused by different understanding or implementation.
 
@@ -359,12 +359,32 @@ We find that Java developers and C\# developers may have different understanding
 
 \textbf{Implication 5:} Although programmers can come to agreement on functionalities of many API methods, they may have different understanding on some methods. In some cases, such differences may indicate defects in mapped API methods.
 
-\textbf{Finding 6:} 8.0\% test cases end with failures since corresponding API methods produce random values. 
+\textbf{Finding 6:} 8.0\% test cases end with failures since corresponding API methods produce random values.
 
 Besides the preceding mentioned methods whose functionalities are to generate random values, we find that other methods can also generate values. For example, each Java class has a \CodeIn{hashCode()} method inherited from the \CodeIn{java.lang.Object} class, and each C\# class has a \CodeIn{GetHashCode()} inherited from the \CodeIn{System.Object} class. Both the two methods return a hash code for the current object, so migration tools such as JLCA map the two methods. As such code is generated randomly, we cannot conclude they have different behaviors although corresponding JUnit test cases all fail. To test such mapped API methods, we plan to introduce other test oracles in future work. For example, we can generate many test cases and check whether mapped methods generate random values of the same ranges.
 
-In summary, TeMaAPI effectively detects many different behaviors of mapped single API invocations between Java and C\#. We inspect some detected differences, and we find that various factors such as null values, string values, exception handling, ranges of parameters, static values, and different understanding can cause differences of mapped single API invocations. 
+In summary, TeMaAPI effectively detects many different behaviors of mapped single API invocations between Java and C\#. We inspect some detected differences, and we find that various factors such as null values, string values, exception handling, ranges of parameters, static values, and different understanding can cause differences of mapped single API invocations.
 \subsection{Testing Invocation Sequences}
 \label{sec:evaluation:sequence}
 
-
+To test different behaviors of API invocation sequences, TeMaAPI leverage Randoop to generate test cases that involve multiple API invocations. For each Java-to-C\# tools, TeMaAPI first analyzes the translation results as shown in Table~\ref{table:java2csharp} for the list of translatable APIs in Java. When generating test cases, TeMaAPI extends Randoop, so that each generated test case use only translatable APIs. We find that Randoop can generate failure test cases or even test cases with compilation errors. TeMaAPI removes those test cases, so that the remaining test cases all get passed. After that, we use the corresponding migration tool to translate the remaining test cases from Java to C\#. As the remaining JUnit test cases all get passed, translated NUnit test cases should also get passed. Table~\ref{table:invocsequence} shows the results. 
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c|r|r|r|r|r|c|c|}
+ \hline
+\multirow{2}*[-2pt]{\textbf{Name}}
+& \multicolumn{2}{|c|}{\textbf{Pass}} & \multicolumn{2}{|c|}{\textbf{Error}}& \multicolumn{2}{|c|}{\textbf{Failure}} \\\cline{2-7}  &  \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}&  \textbf{M}& {\%}\\
+\hline
+Java2CSharp  &   6949  & 45.9\% & 5248 & 34.0\% & 3261 & 21.1\% \\
+\hline
+JLCA         &   17189 & 52.0\% & 8901 & 26.9\% & 6944 & 21.0\% \\
+\hline
+sharpen      &  1617  & 59.2\% & 662  & 24.2\% & 451  & 16.5\%\\
+\hline
+Total        &  26084  & 49.8\%  & 15153 & 29.0\% &11099 & 21.2\%  \\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Results of testing invocation sequences} \label{table:invocsequence}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
