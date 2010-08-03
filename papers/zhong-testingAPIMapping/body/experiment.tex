@@ -230,7 +230,7 @@ In summary, we find that APIs are quite large in size, and migration tools typic
 To test different behaviors of single invocations, TeMaAPI leverages Pex to search internal paths for C\# client-code methods. These methods include the translated C\# methods without compilation errors as shown in Table~\ref{table:java2csharp} and the generated C\# methods that can be translated into Java without compilation errors as shown in Table~\ref{table:csharp2java}. When Pex searches those paths, TeMaAPI records the inputs and output of each iteration. Based on these inputs and outputs, TeMaAPI generates JUnit test cases to ensure that the generated methods and the translated methods produce the same outputs given the same inputs. As it requires human interactions to test GUI related APIs, we filter out GUI related APIs such as awt and swing although some migration tools such as JLCA are able to translate some GUI related APIs. In addition, when Pex searches methods without return values, we ignore those paths that do not throw any exceptions since we cannot generate JUnit test cases for them.
 
 
-We run the generated JUnit test cases, and Table~\ref{table:singleinvoc} shows the results. Column ``Name'' lists the name of migration tools. Columns ``Pass'', ``Error'', and ``Failure'' list passes, errors, and failures after running JUnit test cases, respectively. Sub-column ``M'' lists numbers of test cases. Sub-column ``\%'' lists percentages from the numbers of corresponding test cases to the numbers of total generated test cases. From the results of Table~\ref{table:singleinvoc}, we find that totally only about half the generated JUnit test cases get passed. It turns out that TeMaAPI is quite effective to detect different behaviors of mapped API invocations since it searches every paths of methods under test. The results also reflect that the API mapping relations defined in JLCA and sharpen are more reliable than other tools since more test cases of the two tools get passed than other four tools.
+We run the generated JUnit test cases, and Table~\ref{table:singleinvoc} shows the results. Column ``Name'' lists the name of migration tools. Column ``JUnit'' lists numbers of generated JUnit test cases. Columns ``Error'' and ``Failure'' list number of test cases that end with errors and failures, respectively. Sub-column ``M'' lists numbers of test cases. Sub-column ``\%'' lists percentages from the numbers of corresponding test cases to the numbers of total generated test cases. From the results of Table~\ref{table:singleinvoc}, we find that totally only about half the generated JUnit test cases get passed. It turns out that TeMaAPI is quite effective to detect different behaviors of mapped API invocations since it searches every paths of methods under test. The results also reflect that the API mapping relations defined in JLCA and sharpen are more reliable than other tools since more test cases of the two tools get passed than other four tools.
 
 \begin{table}[t]
 \centering
@@ -238,19 +238,19 @@ We run the generated JUnit test cases, and Table~\ref{table:singleinvoc} shows t
 \begin {tabular} {|c|r|r|r|r|r|c|c|}
  \hline
 \multirow{2}*[-2pt]{\textbf{Name}}
-& \multicolumn{2}{|c|}{\textbf{Pass}} & \multicolumn{2}{|c|}{\textbf{Error}}& \multicolumn{2}{|c|}{\textbf{Failure}} \\\cline{2-7}  &  \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}&  \textbf{M}& {\%}\\
+& \multirow{2}*[-2pt]{\textbf{JUnit}} & \multicolumn{2}{|c|}{\textbf{Error}}& \multicolumn{2}{|c|}{\textbf{Failure}} \\\cline{3-6}  &  & \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}\\
 \hline
-Java2CSharp  &   6949  & 45.9\% & 5248 & 34.0\% & 3261 & 21.1\% \\
+Java2CSharp  &   15458 & 5248 & 34.0\% & 3261 & 21.1\% \\
 \hline
-JLCA         &   17189 & 52.0\% & 8901 & 26.9\% & 6944 & 21.0\% \\
+JLCA         &   33034 & 8901 & 26.9\% & 6944 & 21.0\% \\
 \hline
-sharpen      &  1617  & 59.2\% & 662  & 24.2\% & 451  & 16.5\%\\
+sharpen      &  2730 & 662  & 24.2\% & 451  & 16.5\%\\
 \hline
-net2java     &   51    & 14.5\% & 40   & 11.4\%  & 261   & 74.1\%\\
+net2java     &   352 & 40   & 11.4\%  & 261   & 74.1\%\\
 \hline
-converter    &  278    &  36.4\% & 302  & 39.6\% & 182   & 23.9\%\\
+converter    &  762 & 302  & 39.6\% & 182   & 23.9\%\\
 \hline
-Total        &  26084  & 49.8\%  & 15153 & 29.0\% &11099 & 21.2\%  \\
+Total        &  52336  &  15153 & 29.0\% &11099 & 21.2\%  \\
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{Results of testing single invocations} \label{table:singleinvoc}
@@ -343,7 +343,7 @@ We find that two mapped API methods can throw exceptions that are not mapped. Fo
 
 \textbf{Finding 4:} 3.9\% test cases show the different behaviors caused by ranges of parameters.
 
-We find that Java methods and their mapped C\# methods may have different ranges for parameters. In particular, we find that Java API methods often do not check whether values are out of ranges. For example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than short values, but its mapped C\# methods such as the \CodeIn{Convert.ToInt16(double)} method throw \CodeIn{OverflowException} when values are larger than short values.
+We find that Java methods and their mapped C\# methods may have different ranges for parameters. In particular, we find that Java API methods often do not check whether values are out of ranges. For example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than short values, but its mapped C\# methods such as the \CodeIn{Convert.ToInt16(double)} method throw \CodeIn{OverflowException} when values are larger than short values. For another example, Java2CSharp maps the \CodeIn{java. lang.Boolean.parseBoolean(String)} method in Java to the \CodeIn{System.Boolean.Parse(String)} method in C\#. Given a string whose value is ``test'', the Java method return false without checking its format, but the C\# method throws \CodeIn{FormatException}.
 
 \textbf{Implication 4:} Programmers should be aware of the different input ranges of API methods between Java and C\#. As C\# API methods typically check ranges of input, C\# programmers may not check ranges of inputs themselves, and thus introduce potential defects in translated Java code.
 
@@ -357,34 +357,111 @@ We find that mapped static fields may have different values. For example, the \C
 
 We find that Java developers and C\# developers may have different understanding or implementation for mapped API methods. For example, according to their documents, the \CodeIn{java.lang.String- Buffer.capacity()} method in Java returns ``the current capacity of the String buffer'', and the \CodeIn{System.Text.StringBuilder. Capacity} field in C\# can return ``the maximum number of characters that can be contained in the memory allocated by the current instance''. JLCA maps the method in Java to the field in C\#, and we find that in many cases they are of different values. For sample, given a string whose value is ``0'', the \CodeIn{capacity()} in Java returns 0, but the \CodeIn{Capacity} field in C\# is 16. We notice that some such differences may indicate defects in mapped methods. For example, Java2CSharp maps the \CodeIn{java.lang.Integer.toHexString(int)} method in Java to the \CodeIn{ILOG.J2CsMapping.Util.IlNumber.To- String(int,16)} method in C\#. Given a integer whose value is -2147483648, the Java method returns ``80000000'', but the C\# method returns ``\textbackslash080000000''. We suspect that the mapped C\# method may have some defects to deal with the value.
 
-\textbf{Implication 5:} Although programmers can come to agreement on functionalities of many API methods, they may have different understanding on some methods. In some cases, such differences may indicate defects in mapped API methods.
+\textbf{Implication 6:} Although programmers can come to agreement on functionalities of many API methods, they may have different understanding on some methods. In some cases, such differences may indicate defects in mapped API methods.
 
-\textbf{Finding 6:} 8.0\% test cases end with failures since corresponding API methods produce random values.
+\textbf{Finding 7:} 8.0\% test cases end with failures since corresponding API methods produce random values.
 
 Besides the preceding mentioned methods whose functionalities are to generate random values, we find that other methods can also generate values. For example, each Java class has a \CodeIn{hashCode()} method inherited from the \CodeIn{java.lang.Object} class, and each C\# class has a \CodeIn{GetHashCode()} inherited from the \CodeIn{System.Object} class. Both the two methods return a hash code for the current object, so migration tools such as JLCA map the two methods. As such code is generated randomly, we cannot conclude they have different behaviors although corresponding JUnit test cases all fail. To test such mapped API methods, we plan to introduce other test oracles in future work. For example, we can generate many test cases and check whether mapped methods generate random values of the same ranges.
 
 In summary, TeMaAPI effectively detects many different behaviors of mapped single API invocations between Java and C\#. We inspect some detected differences, and we find that various factors such as null values, string values, exception handling, ranges of parameters, static values, and different understanding can cause differences of mapped single API invocations.
 \subsection{Testing Invocation Sequences}
 \label{sec:evaluation:sequence}
-
-To test different behaviors of API invocation sequences, TeMaAPI leverage Randoop to generate test cases that involve multiple API invocations. For each Java-to-C\# tools, TeMaAPI first analyzes the translation results as shown in Table~\ref{table:java2csharp} for the list of translatable APIs in Java. When generating test cases, TeMaAPI extends Randoop, so that each generated test case use only translatable APIs. We find that Randoop can generate failure test cases or even test cases with compilation errors. TeMaAPI removes those test cases, so that the remaining test cases all get passed. After that, we use the corresponding migration tool to translate the remaining test cases from Java to C\#. As the remaining JUnit test cases all get passed, translated NUnit test cases should also get passed. Table~\ref{table:invocsequence} shows the results. 
 \begin{table}[t]
 \centering
 \begin{SmallOut}
 \begin {tabular} {|c|r|r|r|r|r|c|c|}
  \hline
 \multirow{2}*[-2pt]{\textbf{Name}}
-& \multicolumn{2}{|c|}{\textbf{Pass}} & \multicolumn{2}{|c|}{\textbf{Error}}& \multicolumn{2}{|c|}{\textbf{Failure}} \\\cline{2-7}  &  \textbf{M}& \textbf{\%} &  \textbf{M}& \textbf{\%}&  \textbf{M}& {\%}\\
+& \multirow{2}*[-2pt]{\textbf{NUnit}} & \multicolumn{2}{|c|}{\textbf{Failure}} \\\cline{3-4}  &  & \textbf{M}& \textbf{\%} \\
 \hline
-Java2CSharp  &   6949  & 45.9\% & 5248 & 34.0\% & 3261 & 21.1\% \\
+Java2CSharp  &   2971 & 2151 & 72.4\%\\
 \hline
-JLCA         &   17189 & 52.0\% & 8901 & 26.9\% & 6944 & 21.0\% \\
+JLCA         &   1067 & 295  & 27.6\%  \\
 \hline
-sharpen      &  1617  & 59.2\% & 662  & 24.2\% & 451  & 16.5\%\\
+sharpen      &   936  & 456  & 48.7\% \\
 \hline
-Total        &  26084  & 49.8\%  & 15153 & 29.0\% &11099 & 21.2\%  \\
+Total        &  4504  &  2813 & 62.5\% \\
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{Results of testing invocation sequences} \label{table:invocsequence}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
+
+To test different behaviors of API invocation sequences, TeMaAPI leverage Randoop to generate test cases that involve multiple API invocations. For each Java-to-C\# tools, TeMaAPI first analyzes the translation results as shown in Table~\ref{table:java2csharp} for the list of translatable APIs in Java. When generating test cases, TeMaAPI extends Randoop, so that each generated test case use only translatable APIs. We find that Randoop can generate failure test cases or even test cases with compilation errors. TeMaAPI removes those test cases, so that the remaining test cases all get passed. After that, we use the corresponding migration tool to translate the remaining test cases from Java to C\#. As the remaining JUnit test cases all get passed, translated NUnit test cases should also get passed.
+
+Table~\ref{table:invocsequence} shows the results. Column ``NUnit'' lists numbers of NUnit test cases. Column ``Failure'' lists failed NUnit test cases. We do not list numbers of test cases with errors since NUnit does not separate errors from failures as JUnit does. Sub-column ``M'' lists numbers of test cases, and sub-column ``\%'' lists percentages from failed test cases to total test cases. We find that JLCA achieves better results than other tools since its percentage is the lowest. For each tool, we further investigate the first 100 failed test cases, and we find that 93.3\% failed test cases are accumulated by the found factors as shown in Section~\ref{sec:evaluation:single}. In particular, 45.0\% for ranges of parameters, 34.0 for string values, 5.3\% for different understanding, 4.0\% for exception handling, 3.0\% for null values, 2.0\% for values of static fields, and 0.3\% for random values. We find that the search strategy of Randoop for building invocation sequences affect the distribution. For example, as Randoop generates invocation sequences randomly, many values are out of range or illegal. Java API methods typically do not check inputs, so generated JUnit run successfully. However, as C\# API methods typically check inputs, so corresponding NUnit test cases fail with various exceptions. Besides those found factors that cause different behaviors of mapped APIs as follows:
+
+\textbf{Finding 8:} 3.3\% test cases fail because of invocation sequences.
+
+We find that Java methods often do not check invocation sequences, whereas C\# methods often do. As a result, a NUnit test case may fail because of illegal invocation sequences. For example, a generated JUnit test case is as follows:
+
+\begin{CodeOut}%\vspace*{-2ex}
+\begin{alltt}
+public void test413() throws Throwable\{
+  ...
+  ByteArrayInputStream var2=new ByteArrayInputStream(...);
+  var2.close();
+  int var5=var2.available();
+  assertTrue(var5 == 1);
+\}
+\end{alltt}
+\end{CodeOut}
+
+JLCA translates the preceding JUnit test case into a NUnit test case as follows:
+
+\begin{CodeOut}%\vspace*{-2ex}
+\begin{alltt}
+public void test413() throws Throwable\{
+  ...
+  MemoryStream var2 = new MemoryStream(...);
+  var2.close();
+  long available = var2.Length - var2.Position;
+  int var5 = (int) available;
+  UnitTool.assertTrue(var5 == 1);
+\}
+\end{alltt}
+\end{CodeOut}
+
+Java allows programmers to access a stream even if the stream is closed, so the preceding JUnit test case run successfully. C\# does not allow such accesses, so the preceding NUnit test case fails with \CodeIn{ObjectDisposedException}.
+
+We also find that in some cases, single invocations get passed but their invocation sequences can fail. For example, a generated JUnit test case is as follows:
+
+\begin{CodeOut}%\vspace*{-2ex}
+\begin{alltt}
+public void test423() throws Throwable\{
+  ...
+  DateFormatSymbols var0=new DateFormatSymbols();
+  String[] var16=new String[]{...};
+  var0.setShortMonths(var16);
+\}
+\end{alltt}
+\end{CodeOut}
+
+JLCA translates the JUnit test case into a NUnit test case as follows:
+
+\begin{CodeOut}%\vspace*{-2ex}
+\begin{alltt}
+public void test423() throws Throwable\{
+  ...
+  DateTimeFormatInfo var0 =
+  System.Globalization.DateTimeFormatInfo.CurrentInfo;
+  String[] var16=new String[]{...};
+  var0.AbbreviatedMonthNames = var16;
+\}
+\end{alltt}
+\end{CodeOut}
+
+The \CodeIn{var0.AbbreviatedMonthNames = var16} statement fails with \CodeIn{InvalidOperationException} since \CodeIn{var0} is assigned to a constant value.
+
+\textbf{Implication 8:} When translating from Java to C\#, programmers should check carefully whether they violate speculations of libraries. One such specification describes that closed streams should not be manipulated. When translating from C\# to Java, programmers should be careful since Java often does not check illegal invocation sequences as C\# does.
+
+
+\textbf{Finding 9:} 3.0\% test cases end with failures since mapped API methods are not implemented.
+
+We find that some migration tools such as Java2CSharp maps APIs in Java to C\# APIs that are not implemented yet. For example, Java2CSharp maps the \CodeIn{java.io.ObjectOutputStream} class in Java to \CodeIn{ILOG.J2CsMapping.IO.IlObjectOutputStream} in C\#, and the C\# class is not implemented yet. As as result, corresponding NUnit test cases fail with \CodeIn{NotImplementException}. As the Java exception for the C\# exception is not defined in Java2CSharp, TeMaAPI cannot generate JUnit test cases for them based on the technique as described in Section~\ref{sec:approach:single}.
+
+\textbf{Implication 9:} As this difference introduces no compilation errors, programmers should test translated projects carefully to ensure each API method is called.
+
+In summary, besides the factors listed in Section~\ref{sec:evaluation:single}, we find more factors based on the results of testing invocation sequences. The results confirm that even if single invocations have no different behaviors, invocation sequences can have different behaviors. 
+
+
