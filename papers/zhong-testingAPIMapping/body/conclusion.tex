@@ -1,12 +1,4 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-Mapping relations of APIs are quite useful for the migration
-of projects from one language to another language, and
-it is difficult to mine these mapping relations due to various
-challenges. In this paper, we propose a novel approach that mines mapping
-relations of APIs from existing projects with multiple versions in
-different languages. We conducted two evaluations to show the effectiveness
-of our approach. The results show that our approach mines many API mapping
-relations between Java and C\#, and these relations improve existing language
-migration tools such as Java2CSharp.
+Mapping relations of APIs are quite useful for the migration tools, but these mapping relations also can introduce defects to translated code since mapped API invocations may have different behaviors. In this paper, we propose an approach, called TeMaAPI, that detects different behaviors of mapped API invocations via testing. TeMaAPI targets at generating test cases that covers all feasible paths and invocation sequences to reveal different behaviors of both single invocations and invocation sequences. We implemented a tool and conducted three evaluations on five migration tools to show the effectiveness of our approach. The results show that our approach detects various differences between mapped API invocations. We further analyze these differences and their implications. The results can help improve existing migration tools and help programmers better understand differences of Java and C\#.

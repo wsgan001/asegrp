@@ -264,7 +264,7 @@ Table~\ref{table:singleinvoc} and Table~\ref{table:packagetest} show that many g
 
 To better understand different behaviors of mapped API invocations, we manually inspected 3759 JUnit test cases that end with errors or failures. In particular, for tools such as Java2CSharp, JLCA, and sharpen, we investigate the test cases for the \CodeIn{java.lang} package since TeMaAPI generates many test cases for the package as shown in Table~\ref{table:package}. For tools such as Net2Java and converter, we inspect all their test cases since TeMaAPI test cases in small sizes for them. Our findings are as follows:
 
-\textbf{Finding 1:} 36.8\% test cases show the different behaviors caused by null inputs or outputs.
+\textbf{Finding 1:} 36.8\% test cases show the different behaviors caused by null inputs.
 
 We find that Java API invocations and their mapped C\# API invocations can have different behaviors when inputs are null values. In some cases, a Java API method can accept null values, but its mapped C\# API method will throw exceptions given a null value. One such example is shown in Section~\ref{sec:introduction}. In other cases, a Java API method will throw exceptions given a null value, but its mapped C\# API method can accept null values. For example, JLCA maps the \CodeIn{java.lang.Integer.parseInt(String,int)} method in Java to the \CodeIn{System.Convert.ToInt32(string,int)} in C\#. TeMaAPI detects that when the inputs of the C\# method are null and 10, its output is 0. Given the same inputs, the Java method throws a \CodeIn{NumberFormatException}.
 
@@ -501,3 +501,9 @@ The rest 3.0\% test cases fail since mapped API methods are not implemented. In 
 In summary, besides the factors listed in Section~\ref{sec:evaluation:single}, we find more factors based on the results of testing invocation sequences. The results confirm that even if single invocations have no different behaviors, invocation sequences can have different behaviors.
 
 
+\subsection{Threats to Validity}
+\label{sec:evaluation:threat}
+The threats to external validity include the representativeness of the subject tools. Although we applied
+our approach on 5 widely used migration tools, our approach is evaluated only on these limited tools. Other tools may perform
+better in API migration. This threat could be reduced by more subject tools in future work. The threats to internal validity include human factors for determining factors of different behaviors. To reduce these threats, we inspected detected differences carefully. The threat could be further
+reduced by introducing more researchers to inspect detected differences.
