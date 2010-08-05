@@ -13,9 +13,9 @@ We next illustrate the basic steps to detect the different behaviors of the API 
 \end{CodeOut}
 
 
-After that, we use a migration tool such as Java2CSharp to translate generated client code from Java to C\#. 
+After that, we use a migration tool such as Java2CSharp to translate generated client code from Java to C\#.
 
-\textbf{Removing translated client-code methods with compilation errors.} A migration tool typically cannot cover all API mapping relations, so some translated client-code methods can have compilation errors if their used API methods or API fields are not covered. TeMaAPI parses translated code, and removes all client-code methods with compilation errors. The remaining client-code methods are testable since no compilation errors are left.
+\textbf{Removing translated client-code methods with compilation errors.} A migration tool typically cannot cover all API mapping relations, so some translated client-code methods can have compilation errors if their API invocations are not covered. TeMaAPI parses translated code, and removes all client-code methods with compilation errors. The remaining client-code methods are testable since no compilation errors are left.
 
 In this example, the translated C\# \CodeIn{testvalueOf64sm} method is as follows:
 \begin{CodeOut}%\vspace*{-2ex}
@@ -27,21 +27,20 @@ In this example, the translated C\# \CodeIn{testvalueOf64sm} method is as follow
 
 This method contains no compilation errors since Java2CSharp covers the mapping relation of the \CodeIn{valueOf(Object)}method in Java as shown in Figure~\ref{fig:mapping}.
 
-\textbf{Generating and executing test cases to reveal different behaviors.} TeMaAPI leverages various techniques to generate test cases for remaining client-code methods. For example, TeMaAPI extends Pex~\cite{tillmann2008pex}, so that it records all inputs and output of each execution. In this example, for the \CodeIn{TestvalueOf64sm} method in C\#, one recorded input is a boolean value, and the corresponding output is "False". Based on the input and output, TeMaAPI generates a JUnit test case as follows:
+\textbf{Generating and executing test cases to reveal different behaviors.} TeMaAPI leverages various techniques to generate test cases for remaining client-code methods. For example, TeMaAPI extends Pex~\cite{tillmann2008pex}, so that it records all inputs and output of each searched path. In this example, for the \CodeIn{TestvalueOf64sm} method in C\#, one recorded input is a boolean value, and the corresponding output is "False". Based on the input and output, TeMaAPI generates a JUnit test case as follows:
 
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
-  @Test
   public void testvalueOf64sm0()\{
-    sketch.Test_java_lang_String obj = 
+    sketch.Test_java_lang_String obj =
           new sketch.Test_java_lang_String();
     boolean m0 = false;
     Assert.assertEquals("False", obj.testvalueOf64sm(m0));
-  \} 
+  \}
 \end{alltt}
 \end{CodeOut}
 
-This JUnit test case fails since the \CodeIn{testvalueOf64sm} method in Java returns ``false'' instead of ``False''. Thus, TeMaAPI detects a different behavior between the \CodeIn{valueOf(Object)} method in Java and its mapped C\# API methods in Java2CSharp.
+This JUnit test case fails since the \CodeIn{testvalueOf64sm} method in Java returns ``false'' instead of ``False''. Thus, TeMaAPI detects a different behavior between the \CodeIn{valueOf(Object)} method in Java and its mapped C\# API methods defined by Java2CSharp.
 
 %\begin{figure}[t]
 %\centering %\hfill
