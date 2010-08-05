@@ -9,7 +9,7 @@ research questions:
 \begin{enumerate}
 \item How effectively can existing migration tool translate API invocations (Section~\ref{sec:evaluation:invocation})? \vspace*{-1.8ex}
 \item How effectively can our approach detect different behaviors of single API invocations (Section~\ref{sec:evaluation:single})? \vspace*{-1.8ex}
-\item How effectively can our approach detect different behaviors of API invocation sequences (Section~\ref{sec:evaluation:sequence})?
+\item How effectively can our approach detect different behaviors of multiple API invocations (Section~\ref{sec:evaluation:sequence})?
 \end{enumerate}%\vspace*{-1.5ex}
 
 \begin{table}[t]
@@ -70,7 +70,7 @@ Total &195192& 3923 &  2.0\% & 43678 & 22.4\% & 1185 & 0.6\%\\
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
-From the results of Table~\ref{table:java2csharp}, we find that it is quite challenging for a migration tool to cover all API invocations. One challenge lies in that APIs are quite large in size. Although JLCA can translate 43678 generated methods, it covers only 22.4\% of total generated methods. The other challenge lies in that many API invocations of different languages cannot be accurately mapped. For example, as pointed out by our previous work~\cite{zhong2010mining}, one API method in one language may be mapped to several API methods in another language. We find that all the three migration tools have techniques to deal with many-to-many mapping relations. In particular, Java2CSharp and sharpen develop their own assemblies and map some API invocations to their implemented assemblies instead of standard C\# API invocations. For example, Java2CSharp maps the \CodeIn{java.lang.Class.forName(String)} method in Java to the \CodeIn{ILOG.J2CsMapping.Reflect.Helper.GetNativeType(String)} method in C\#, and the latter method is provided by Java2CSharp. JLCA does not implement additional assemblies, but generate additional source code to hide different behaviors. For example, TeMaAPI generates one method for the \CodeIn{java.awt.Dialog.add(Component, int,} \CodeIn{Frame)} method:
+From the results of Table~\ref{table:java2csharp}, we find that it is quite challenging for a migration tool to cover all API invocations. One challenge lies in that API invocations are quite large in size. Although JLCA can translate 43678 generated methods, it covers only 22.4\% of total generated methods. The other challenge lies in that many API invocations of different languages cannot be accurately mapped. For example, as pointed out by our previous work~\cite{zhong2010mining}, one API method in one language may be mapped to several API methods in another language. We find that all the three migration tools have techniques to deal with many-to-many mapping relations. In particular, Java2CSharp and sharpen develop their own assemblies and map some API invocations to their implemented assemblies instead of standard C\# API invocations. For example, Java2CSharp maps the \CodeIn{java.lang.Class.forName(String)} method in Java to the \CodeIn{ILOG.J2CsMapping.Reflect.Helper.GetNativeType(String)} method in C\#, and the latter method is provided by Java2CSharp. JLCA does not implement additional assemblies, but generate additional source code to hide different behaviors. For example, TeMaAPI generates one method for the \CodeIn{java.awt.Dialog.add(Component, int,} \CodeIn{Frame)} method:
 
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
@@ -98,9 +98,9 @@ public virtual Control testadd79nm(Control m0, int m1,
 \end{alltt}
 \end{CodeOut}
 
-JLCA maps the API method in Java into many API methods in C\#. Besides adding a temporary variable named \CodeIn{tmp\_Control}, JLCA generates a class named \CodeIn{SupprtClass} where more API invocations are introduced.
+To translate one API invocation from Java to C\#, JLCA adds the \CodeIn{tmp\_Control} local variable and generates the \CodeIn{SupprtClass} class where more API invocations are introduced.
 
-Although all the three migration tools take the different behaviors of mapped API invocations seriously, they do not cover all differences of API mapping relations. For example, when JLCA translates generated code, it generates a report with 1265 warning messages for different behaviors of API mapping relations. One warning message is ``Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception''. Still, the report does not tell programmers when such an exceptions will be thrown, and the rest of our evaluation targets at the problem.
+Although all the three migration tools take the different behaviors of mapped API invocations seriously, they do not cover all differences of API mapping relations. For example, when JLCA translates generated code, it generates a report with 1265 warning messages for different behaviors of API mapping relations. One warning message is ``Method 'java.lang.String.indexOf' was converted to 'System.String.IndexOf' which may throw an exception''. Still, JLCA leaves these differences to programmers, and the report does not tell programmers when such an exceptions is thrown.
 
 
 \begin{table}[t]
@@ -131,7 +131,7 @@ Total &194835& 27   &  0.0\% & 396 & 0.2\%\\
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
-For C\# to Java migration tools, we use TeMaAPI to generate client-code methods for the .Net framework client profile\footnote{\url{http://tinyurl.com/252t2ax}}. As described in Section~\ref{sec:approach:generating}, besides generic methods, TeMaAPI also ignores methods whose parameters are marked with \CodeIn{out} or \CodeIn{ref}. Table~\ref{table:csharp2java} shows the translation results. Columns of Table~\ref{table:csharp2java} are of the same meanings with the columns of Table~\ref{table:java2csharp}. From the results of Table~\ref{table:java2csharp}, we find that TeMaAPI generates almost the same size of methods as it generates for J2SE 6.0, and both the two tool translate only quite a small portion of API invocations. As described in the wikipedia\footnote{\url{http://tinyurl.com/yj4v2m2}}, C\# provides many features that Java does not have (\emph{e.g.}, partial class, reference parameters, output parameters, and named arguments). We suspect that a C\# to Java migration tool needs take more effects on these issues, so many mapping relations of API invocations are not addressed yet.
+For C\# to Java migration tools, we use TeMaAPI to generate client-code methods for the .Net framework client profile\footnote{\url{http://tinyurl.com/252t2ax}}. As described in Section~\ref{sec:approach:generating}, besides generic methods, TeMaAPI also ignores methods whose parameters are marked with \CodeIn{out} or \CodeIn{ref}. Table~\ref{table:csharp2java} shows the translation results. Columns of Table~\ref{table:csharp2java} are of the same meanings with the columns of Table~\ref{table:java2csharp}. TeMaAPI generates almost the same size of methods as it generates for J2SE 6.0. From the results of Table~\ref{table:java2csharp}, we find that both the two tool translate only quite a small portion of API invocations. As described in the wikipedia\footnote{\url{http://tinyurl.com/yj4v2m2}}, C\# provides many features that Java does not have (\emph{e.g.}, partial class, reference parameters, output parameters, and named arguments). We suspect that a C\# to Java migration tool needs take more effects on these issues, so many mapping relations of API invocations are not addressed yet.
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -169,43 +169,19 @@ acc.  &  \hfill 237   & 1    &  0.4\%  & 25    &  10.5\%  & 0   & 0.0\%  \\
 \hline
 activation     &  \hfill 538   & 0    &  0.0\%  & 165   &  30.7\%  & 0   & 0.0\%  \\
 \hline
-activity      &   \hfill 252   & 0    &  0.0\%  &  0    &  0.0\%   &  0   & 0.0\%\\
-\hline
-annotation    &  \hfill 19    &  0    &  0.0\%  &  0    &  0.0\%   &  0   & 0.0\% \\
-\hline
 crypto        &  \hfill 625   &  0    &  0.0\%  &  263  &  42.1\%  &  0    & 0.0\%\\
-\hline
-imageio      &  \hfill 1261   &  0    &  0.0\%  &  0    &  0.0\%  & 0      & 0.0\%\\
-\hline
-model       &  \hfill 103    & 0     &  0.0\%  & 0     &  0.0\%  & 0    & 0.0\%\\
 \hline
 man.   &  \hfill 5380   & 2    &   0.0\%  & 0     &  0.0\%  & 0    & 0.0\%  \\
 \hline
 naming       &  \hfill 3565   & 0    &   0.0\%  & 1365   &  38.3\%  &  0    & 0.0\%  \\
 \hline
-javax.net           &  \hfill 285    & 0     &  0.0\%  &  0     &  0.0\%   &  0   & 0.0\%\\
-\hline
-print         &  \hfill 1534   & 0     &  0.0\%  &  0    &  0.0\%   &  0   & 0.0\% \\
-\hline
-javax.rmi           &  \hfill 45     &  0    &  0.0\%  & 0     &  0.0\%   & 0   & 0.0\%\\
-\hline
-script         &  \hfill 195   & 0     &  0.0\% &  0     &  0.0\%  & 0  & 0.0\%\\
-\hline
 javax.sec.       &  \hfill 1435  & 0     &  0.0\%  & 619     &  43.1\%  & 0    & 0.0\%\\
 \hline
 sound          &  \hfill 515   & 0    &  0.0\%  & 56    &  10.9\%  & 0   & 0.0\%  \\
 \hline
-javax.sql            &  \hfill 640   & 0    &  0.0\%  & 0     &  0.0\%   & 0   & 0.0\%  \\
-\hline
 swing          &  102389& 10   &  0.0\%  &  21364 &  20.9\%   &  0   & 0.0\%\\
 \hline
-tools          &  \hfill 11    & 0     &  0.0\%  &  0    &  0.0\%   &  0   & 0.0\% \\
-\hline
-transaction    &  \hfill 264   &  0    &  0.0\%  & 0     &  0.0\%   & 0   & 0.0\%\\
-\hline
 javax.xml            &  \hfill 4188  &  34   &  0.8\% &  580   &  13.8\%  & 0  & 0.0\%\\
-\hline
-ietf        & \hfill  189   & 0     &  0.0\%  & 0     &  0.0\%  & 0    & 0.0\%\\
 \hline
 org.omg              &  \hfill 8937   & 0    &  0.0\%  & 1578  &  17.7\%  & 0   & 0.0\%  \\
 \hline
@@ -218,13 +194,13 @@ org.xml             &   \hfill 897    & 49   &  5.5\%  & 473    & 52.7\%    & 0 
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
-Comparing the translation results between Java-to-C\# tools and C\#-to-Java tools, we find that Java-to-C\# tools cover much more API invocations. To fully explore the translation results of Java-to-C\# tools, we present the results of the package level in Table~\ref{table:package}. Column ``Name'' lists the names of Java packages. To save space, we omit the prefixes such as ``java.'', ``javax.'', and ``org.'' if it does not introduce ambiguity. We also use short names for some packages. In particular, we use ``acc.'' to denote the \CodeIn{javax.accessibility} package, ``man.'' to denote the \CodeIn{javax.management} package, ``java. sec.'' to denote the \CodeIn{java.security} package, and ``javax.sec.'' to denote the \CodeIn{javax.security} package. Other columns of Table~\ref{table:package} are of the same meanings with the columns of Table~\ref{table:java2csharp}. From the results of Table~\ref{table:package}, we find that all the three migration tools cover the \CodeIn{java.io} package, the \CodeIn{java.lang} package, the \CodeIn{java.util} package, and the \CodeIn{java.net} package. The four packages may be quite important for most Java programs. Almost for all packages, JLCA covers more API invocations. In particular, JLCA covers GUI-related packages such as the \CodeIn{java.awt} package and the \CodeIn{javax.swing} package. As a result, JLCA can translate some Java programs with GUI interfaces whereas the other two tools cannot. Still, we find that all the three tools do not cover 15 packages. As most of these packages are related to networks, all the three tools may have difficulties to translate network programs.
+Comparing the translation results between Java-to-C\# tools and C\#-to-Java tools, we find that Java-to-C\# tools cover much more API invocations. To fully explore the translation results of Java-to-C\# tools, we present the results of the package level in Table~\ref{table:package}. Column ``Name'' lists the names of Java packages. To save space, we omit the prefixes such as ``java.'', ``javax.'', and ``org.'' if it does not introduce ambiguity. We also use short names for some packages. In particular, we use ``acc.'' to denote the \CodeIn{javax.accessibility} package, ``man.'' to denote the \CodeIn{javax.management} package, ``java. sec.'' to denote the \CodeIn{java.security} package, and ``javax.sec.'' to denote the \CodeIn{javax.security} package. We also omits 12 packages that are not covered by all the three tools (\emph{e.g.}, the \CodeIn{javax.rmi} package). Other columns of Table~\ref{table:package} are of the same meanings with the columns of Table~\ref{table:java2csharp}. From the results of Table~\ref{table:package}, we find that all the three migration tools cover the \CodeIn{java.io} package, the \CodeIn{java.lang} package, the \CodeIn{java.util} package, and the \CodeIn{java.net} package. The four packages may be quite important for most Java programs. Almost for all packages, JLCA covers more API invocations. In particular, JLCA covers GUI-related packages such as the \CodeIn{java.awt} package and the \CodeIn{javax.swing} package. As a result, JLCA can translate some Java programs with GUI interfaces whereas the other two tools cannot.
 
 \subsection{Testing Single Invocations}
 \label{sec:evaluation:single}
 
 
-To test different behaviors of single invocations, TeMaAPI leverages Pex to search internal paths for C\# client-code methods. These methods include the translated C\# methods without compilation errors as shown in Table~\ref{table:java2csharp} and the generated C\# methods that can be translated into Java without compilation errors as shown in Table~\ref{table:csharp2java}. When Pex searches those paths, TeMaAPI records the inputs and output of each iteration. Based on these inputs and outputs, TeMaAPI generates JUnit test cases to ensure that the generated methods and the translated methods produce the same outputs given the same inputs. As it requires human interactions to test GUI related APIs, we filter out GUI related APIs such as awt and swing although some migration tools such as JLCA are able to translate some GUI related APIs. In addition, when Pex searches methods without return values, we ignore those paths that do not throw any exceptions since we cannot generate JUnit test cases for them. We discuss this issue in Section~\ref{sec:discuss}.
+To test different behaviors of single invocations, TeMaAPI leverages Pex to search internal paths for C\# client-code methods. These methods include the translated C\# methods without compilation errors as shown in Table~\ref{table:java2csharp} and the generated C\# methods that can be translated into Java without compilation errors as shown in Table~\ref{table:csharp2java}. When Pex searches those paths, TeMaAPI records the inputs and output of each iteration. Based on these inputs and outputs, TeMaAPI generates JUnit test cases to ensure that the generated methods and the translated methods produce the same outputs given the same inputs. As it requires human interactions to test GUI related API invocations, we filter out GUI related API invocations under the \CodeIn{awt} package and the \CodeIn{swing} package although JLCA is able to translate some GUI related API invocations. In addition, when Pex searches methods without return values, we ignore those paths that do not throw any exceptions since we cannot generate JUnit test cases for them. We discuss this issue in Section~\ref{sec:discuss}.
 
 
 We run the generated JUnit test cases, and Table~\ref{table:singleinvoc} shows the results. Column ``Name'' lists the name of migration tools. Column ``JUnit'' lists numbers of generated JUnit test cases. Columns ``Error'' and ``Failure'' list number of test cases that end with errors and failures, respectively. Sub-column ``M'' lists numbers of test cases. Sub-column ``\%'' lists percentages from the numbers of corresponding test cases to the numbers of total generated test cases. From the results of Table~\ref{table:singleinvoc}, we find that totally only about half the generated JUnit test cases get passed. It turns out that TeMaAPI is quite effective to detect different behaviors of mapped API invocations since it searches every paths of methods under test. The results also reflect that the API mapping relations defined in JLCA and sharpen are more reliable than other tools since more test cases of the two tools get passed than other four tools.
@@ -254,7 +230,7 @@ Total        &  52336  &  15153 & 29.0\% &11099 & 21.2\%  \\
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
-For tools such as Java2CSharp, JLCA, and sharpen, we further present their testing results of the package level in Table~\ref{table:packagetest}. Column ``Name'' lists names of J2SE packages. For columns ``Java2CSharp'', ``JLCA'', and ``sharpen'', sub-column ``R'' lists numbers of generated JUnit test cases, and sub-column ``\%'' lists percentages from the test cases end with errors or failures to the total test cases. From the results of Table~\ref{table:packagetest}, we find that for the \CodeIn{java.sql} package and the \CodeIn{java.util} package, all the tools suffer relatively high error/failure percentages, and for the \CodeIn{java.lang} package and the \CodeIn{java.math} package, all the tools achieve relatively low error/failure percentages. The results may reflect that some packages between Java and C\# are more similar than others, so that they can more easily mapped. We also find that for package the \CodeIn{java.text} package, the \CodeIn{javax.xml} package, and the \CodeIn{org.xml} package, JLCA achieve lower error/failure percentages than other tools. The results indicate that a migration tool can achieve better translation results if they carefully prepare the mapping relations of APIs.
+For tools such as Java2CSharp, JLCA, and sharpen, we further present their testing results of the package level in Table~\ref{table:packagetest}. Column ``Name'' lists names of J2SE packages. For columns ``Java2CSharp'', ``JLCA'', and ``sharpen'', sub-column ``R'' lists numbers of generated JUnit test cases, and sub-column ``\%'' lists percentages from the test cases end with errors or failures to the total test cases. From the results of Table~\ref{table:packagetest}, we find that for the \CodeIn{java.sql} package and the \CodeIn{java.util} package, all the tools suffer relatively high error/failure percentages, and for the \CodeIn{java.lang} package and the \CodeIn{java.math} package, all the tools achieve relatively low error/failure percentages. The results may reflect that some packages between Java and C\# are more similar than others, so that they can more easily mapped. We also find that for package the \CodeIn{java.text} package, the \CodeIn{javax.xml} package, and the \CodeIn{org.xml} package, JLCA achieve lower error/failure percentages than other tools. The results indicate that a migration tool can achieve better translation results if they carefully prepare the mapping relations of API invocations.
 
 
 Table~\ref{table:singleinvoc} and Table~\ref{table:packagetest} show that many generated JUnit tests do not get passed. To better understand different behaviors of mapped API invocations, we manually inspected 3759 JUnit test cases that end with errors or failures. In particular, for tools such as Java2CSharp, JLCA, and sharpen, we investigate the test cases for the \CodeIn{java.lang} package since TeMaAPI generates many test cases for the package as shown in Table~\ref{table:package}. For tools such as Net2Java and converter, we inspect all their test cases since TeMaAPI test cases in small sizes for them. Our findings are as follows:
@@ -328,13 +304,13 @@ org.xml     &   277  &   70.0\%  & 483     & 27.3\%  & 0         & n/a\\
 
 \textbf{Finding 2:} 22.3\% test cases show the different behaviors caused by stored string values.
 
-We find that string values between Java APIs and their mapped C\# APIs are typically different. For example, each Java class has a \CodeIn{toString()} method inherited from the \CodeIn{java.lang.Object} class, and each C\# class also has a \CodeIn{ToString()} method inherited from the \CodeIn{System.Object} class. Many migration tools map the two API methods, and the return values of the two methods are quite different in many cases. For another example, many API classes declare methods like \CodeIn{getName} or \CodeIn{getMessage}. These methods also return string values that can be quite different. In particular, we find that the \CodeIn{Message} fields of exceptions in C\# often return detailed string messages. One such message is ``Index was outside the bounds of the array'' provided by the \CodeIn{System.IndexOutOfRan- geException.Message} field. On the other hand, exceptions in Java often provide only null messages.
+We find that string values between Java API invocations and their mapped C\# API invocations are typically different. For example, each Java class has a \CodeIn{toString()} method inherited from the \CodeIn{java.lang.Object} class, and each C\# class also has a \CodeIn{ToString()} method inherited from the \CodeIn{System.Object} class. Many migration tools map the two API methods, but the return values of the two methods are quite different in many cases. For another example, many API classes declare methods like \CodeIn{getName} or \CodeIn{getMessage}. These methods also return string values that can be quite different. In particular, we find that the \CodeIn{Message} fields of exceptions in C\# often return informative messages. One such message is ``Index was outside the bounds of the array'' provided by the \CodeIn{System.Index- OutOfRangeException.Message} field. On the other hand, exceptions in Java often provide only null messages.
 
-\textbf{Implication 2:} String values including names are typically different between Java APIs and their mapped C\# APIs. Programmers should not rely on these string values unless migration tools can hide the differences.
+\textbf{Implication 2:} String values including names are typically different between Java API invocations and their mapped C\# API invocations. Programmers should not rely on these string values unless migration tools can hide the differences.
 
 \textbf{Finding 3:} 11.5\% test cases show the different behaviors caused by illegal inputs or inputs out of ranges.
 
-We find that Java methods often do not check whether their inputs are legal or out of range, whereas C\# methods typically do. For example, Java2CSharp maps the \CodeIn{java.lang.Boolean.parseBoo- lean(String)} method in Java to the \CodeIn{System.Boolean.Parse( String)} method in C\#. Given a string whose value is ``test'', the Java method return false without checking whether its format is legal, whereas the C\# method throws \CodeIn{FormatException}. For another example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than 32767, but its mapped C\# methods such as the \CodeIn{Convert.ToInt16(double)} method throw \CodeIn{OverflowException} when values are larger than 32767.
+We find that Java methods often do not check whether their inputs are legal or out of range, whereas C\# methods typically do. For example, Java2CSharp maps the \CodeIn{java.lang.Boolean.parseBoo- lean(String)} method in Java to the \CodeIn{System.Boolean.Parse( String)} method in C\#. Given a string whose value is ``test'', the Java method return false without checking its format, whereas the C\# method throws \CodeIn{FormatException} since it considers ``test'' as illegal inputs. For another example, the \CodeIn{java.lang.Double. shortValue()} method in Java accepts values that are larger than \CodeIn{Short.MAX\_VALUE} (32767). JLCA maps the Java method to the \CodeIn{Convert.ToInt16(double)} method in C\#, but the C\# method throw \CodeIn{OverflowException} when values are larger than 32767.
 
 \textbf{Implication 3:} Programmers should be aware of the different input ranges of API methods between Java and C\#. As C\# API methods typically check ranges of input, C\# programmers may not check ranges of inputs themselves, and thus introduce potential defects in translated Java code.
 
@@ -342,7 +318,7 @@ We find that Java methods often do not check whether their inputs are legal or o
 
 We find that Java developers and C\# developers may have different understanding or implementation for mapped API methods. For example, according to their documents, the \CodeIn{java.lang.String- Buffer.capacity()} method in Java returns ``the current capacity of the String buffer'', and the \CodeIn{System.Text.StringBuilder. Capacity} field in C\# can return ``the maximum number of characters that can be contained in the memory allocated by the current instance''. JLCA maps the method in Java to the field in C\#, and we find that in many cases they are of different values. For sample, given a string whose value is ``0'', the \CodeIn{capacity()} in Java returns 0, but the \CodeIn{Capacity} field in C\# is 16. We notice that some such differences may indicate defects in mapped methods. For example, Java2CSharp maps the \CodeIn{java.lang.Integer.toHexString(int)} method in Java to the \CodeIn{ILOG.J2CsMapping.Util.IlNumber.To- String(int,16)} method in C\#. Given a integer whose value is -2147483648, the Java method returns ``80000000'', but the C\# method returns ``\textbackslash080000000''. As the result of the Java method seems to be right, we suspect that the mapped C\# method may have some defects to deal with the value.
 
-\textbf{Implication 4:} Although programmers can come to agreement on functionalities of many API methods, they may have different understanding on some methods. In some cases, such differences may indicate defects in mapped API methods.
+\textbf{Implication 4:} Although programmers can come to agreement on functionalities of many API methods, they may have different understanding on functionalities of specific methods. Such differences may indicate defects in mapped API methods.
 
 
 \textbf{Finding 5:} 7.9\% test cases show the different behaviors caused by exception handling.
@@ -355,13 +331,13 @@ We find that two mapped API methods can throw exceptions that are not mapped. Fo
 
 \textbf{Finding 6:} 2.8\% test cases show the different behaviors caused by static values.
 
-We find that mapped static fields may have different values. For example, the \CodeIn{java.lang.reflect.Modifier} class has many static fields to represent modifiers (\emph{e.g.}, FINAL, PRIVATE and PROTECTED). Java2CSharp maps these fields to the fields of the \CodeIn{ILOG. J2CsMapping.Reflect} class. Although many mapped fields of the two class are of the same values, we find that fields such as VOLATILE and TRANSIENT are of different values. In addition, we find that different values sometimes reveal different ranges of data types. For example, \CodeIn{java.lang.Double.MAX\_VALUE} in Java is 1.7976931348623157E+308, and \CodeIn{System.Double.MaxValue} in C\# is 1.79769313486232E+308. Although the difference is not quite large, it can cause serious defects if a program needs highly accurate calculation results.
+We find that mapped static fields may have different values. For example, the \CodeIn{java.lang.reflect.Modifier} class has many static fields to represent modifiers (\emph{e.g.}, FINAL, PRIVATE and PROTECTED). Java2CSharp maps these fields to the fields of the \CodeIn{ILOG. J2CsMapping.Reflect} class. Although most mapped fields of the two class are of the same values, we find that fields such as VOLATILE and TRANSIENT are of different values. In addition, we find that different values sometimes reveal different ranges of data types. For example, \CodeIn{java.lang.Double.MAX\_VALUE} in Java is 1.7976931348623157E+308, and \CodeIn{System.Double.MaxValue} in C\# is 1.79769313486232E+308. Although the difference is not quite large, it can cause serious defects if a program needs highly accurate calculation results.
 
 \textbf{Implication 6:} Programmers should be aware of that static fields may have different values even if they has the same names. As these differences reveal that Java and C\# may define different bounds for data types, programmers should also be aware of these different bounds if they need highly accurate results of extremely large or small calculation results.
 
 The rest 7.9\% test cases fail since API methods can produce random values. For example, the \CodeIn{java.util.Random.nextDouble()} method in Java generates random double values. For another example, each Java class has a \CodeIn{hashCode()} method inherited from the \CodeIn{java.lang.Object} class, and each C\# class has a \CodeIn{GetHashCode()} inherited from the \CodeIn{System.Object} class. Both the two methods return a hash code for the current object, so migration tools such as JLCA map the two methods. For these methods, TeMaAPI can find their different behaviors of inputs. For example, converter maps the \CodeIn{System.Random. Next(int)} method in C\# to the \CodeIn{java.util.Random.nextInt(int)} method in Java. Given a integer whose value is 0, the C\# method return 0, but the Java method throws \CodeIn{IllegalArgumentException} with a message: ``n must be positive''. However, as these methods generate outputs randomly, we cannot conclude they have different behaviors even if corresponding JUnit test cases all fail, and we discuss this issue in Section~\ref{sec:discuss}.
 
-\subsection{Testing Invocation Sequences}
+\subsection{Testing Multiple Invocations}
 \label{sec:evaluation:sequence}
 \begin{table}[t]
 \centering
@@ -380,17 +356,17 @@ sharpen      &  586  & 13532& 936  & 456  & 48.7\% \\
 Total        &  9642 & 45547& 4504  &  2813 & 62.5\% \\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Results of testing invocation sequences} \label{table:invocsequence}
+\Caption{Results of testing multiple invocations} \label{table:invocsequence}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
 
-To test different behaviors of API invocation sequences, TeMaAPI leverage Randoop to generate test cases that involve multiple API invocations. For each Java-to-C\# tools, TeMaAPI first analyzes the translation results as shown in Table~\ref{table:java2csharp} for the list of translatable APIs in Java. When generating test cases, TeMaAPI extends Randoop, so that each generated test case use only translatable APIs. Randomly generated invocation sequences may not reflect API usages in true practice. We discuss this issue in Section~\ref{sec:discuss}. We find that Randoop can generate failure test cases or even test cases with compilation errors. TeMaAPI removes those test cases, so that the remaining test cases all get passed. After that, we use the corresponding migration tool to translate the remaining test cases from Java to C\#. As the remaining JUnit test cases all get passed, translated NUnit test cases should also get passed.
+To test different behaviors of API invocation sequences, TeMaAPI leverage Randoop to generate test cases that involve multiple API invocations. For each Java-to-C\# tools, TeMaAPI first analyzes the translation results as shown in Table~\ref{table:java2csharp} for the list of translatable API invocations in Java. When generating test cases, TeMaAPI extends Randoop, so that each generated test case use only translatable API invocations. Randomly generated invocation sequences may not reflect API usages in true practice. We discuss this issue in Section~\ref{sec:discuss}. We find that Randoop can generate failure test cases or even test cases with compilation errors. TeMaAPI removes those test cases, so that the remaining test cases all get passed. After that, we use the corresponding migration tool to translate the remaining test cases from Java to C\#. As the remaining JUnit test cases all get passed, translated NUnit test cases should also get passed.
 
 Table~\ref{table:invocsequence} shows the results. Column ``API'' lists sizes of translatable API invocations. Column ``JUnit'' lists numbers of JUnit test cases that run successfully. Column ``NUnit'' lists numbers of NUnit test cases. We notice that many JUnit test cases are not successfully translated into NUnit test cases. We find that two factors that are not general or not related with API migration: (1) some generated JUnit test cases use classes defined by Randoop; (2) some code structures are complicated to translate, and we further discuss this issue in Section~\ref{sec:discuss}. Besides the two factors, we find one general factors for API translation.
 
 \textbf{Finding 7:} Many translated test cases have compilation errors since Java classes and their mapped C\# classes have different inheritance relations.
 
-We find that Java API classes can have quite different inheritance relations with their mapped C\# API classes, and thus introduce compilation errors. For example, a JUnit test case is as follows:
+We find that Java API classes can have quite different inheritance relations with their mapped C\# API classes, and thus introduce compilation errors in cast statements. For example, a JUnit test case is as follows:
 
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
@@ -484,12 +460,11 @@ public void test423() throws Throwable\{
 \end{alltt}
 \end{CodeOut}
 
-The \CodeIn{var0.AbbreviatedMonthNames = var16} statement fails with \CodeIn{InvalidOperationException} since \CodeIn{var0} is assigned to a constant value.
+The \CodeIn{var0.AbbreviatedMonthNames = var16} statement fails with \CodeIn{InvalidOperationException} since a constant value is assigned to \CodeIn{var0}.
 
-\textbf{Implication 8:} When translating from Java to C\#, programmers should check carefully whether they violate speculations of libraries. One such specification describes that closed streams should not be manipulated. When translating from C\# to Java, programmers should be careful since Java often does not check illegal invocation sequences as C\# does.
+\textbf{Implication 8:} When translating, programmers should check carefully whether they violate speculations of libraries and whether invocation sequences affect accessibility of fields. 
 
-
-The rest 3.0\% test cases fail since mapped API methods are not implemented. In particular, we find that Java2CSharp maps APIs in Java to C\# APIs that are not implemented yet. For example, Java2CSharp maps the \CodeIn{java.io.ObjectOutputStream} class in Java to \CodeIn{ILOG.J2CsMapping.IO.IlObjectOutputStream} in C\#, and the C\# class is not implemented yet. As as result, corresponding NUnit test cases fail with \CodeIn{NotImplementException}. As the Java exception for the C\# exception is not defined in Java2CSharp, TeMaAPI cannot generate JUnit test cases for them based on the technique as described in Section~\ref{sec:approach:single}. As this difference introduces no compilation errors, programmers should test translated projects carefully to ensure each API method is called.
+The rest 3.0\% test cases fail since mapped methods are not implemented. In particular, Java2CSharp maps API invocations in Java to C\# API invocations that are not implemented yet. For example, Java2CSharp maps the \CodeIn{java.io.ObjectOutputStream} class in Java to the \CodeIn{ILOG.J2CsMapping.IO.IlObjectOutput- Stream} class in C\# that is not implemented yet, and such mapping relations lead to \CodeIn{NotImplementException}. As this difference introduces no compilation errors, programmers should test translated projects carefully to ensure each API method is called.
 
 \subsection{Summary}
 \label{sec:evaluation:summary}

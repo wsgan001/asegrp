@@ -13,7 +13,7 @@ Figure~\ref{fig:approach} shows the overview of TeMaAPI. It is able to test not 
 %-------------------------------------------------------------------
 \subsection{Translating Generated client code}
 \label{sec:approach:generating}
-Given a migration tool, TeMaAPI first extracts its translatable API invocations. It is challenging to extract such invocations directly from migration tools for two factors: (1) different migration tools may follow different styles to describe API mapping relations. For example, as shown in Section~\ref{sec:introduction}, the API mapping relations of Java2CSharp are described in its mapping files, but the API mapping relations of sharpen are hard-coded in its source files. (2) commercial migration tools typically hide their API mapping relations in binary files. Due to the two factors, TeMaAPI does not extract API mapping relations directly from migration tools, but chooses to analyze translated code of migration tools. In particular, TeMaAPI generates a client-code method for each API invocation and analyzes translated results for translatable API invocations. We do not use migration tools to translate existing projects for two considerations: (1) Existing projects typically contain quite a small set of API invocations, so many API mapping relations may be not covered; (2) a single method of an existing project may invoke multiple API methods, so it may be difficult to analyze which methods are not mapped. TeMaAPI relies on the reflection technique~\cite{maes1987concepts} provided by both Java and C\# to generate client code for translation.
+Given a migration tool, TeMaAPI first extracts its translatable API invocations. It is challenging to extract such invocations directly from migration tools for two factors: (1) different migration tools may follow different styles to describe API mapping relations. For example, as shown in Section~\ref{sec:introduction}, the API mapping relations of Java2CSharp are described in its mapping files, but the API mapping relations of sharpen are hard-coded in its source files. (2) commercial migration tools typically hide their API mapping relations in binary files. Due to the two factors, TeMaAPI does not extract API mapping relations directly from migration tools, but chooses to analyze translated code of migration tools. In particular, TeMaAPI generates a client-code method for each API invocation and analyzes translated results for translatable API invocations. We do not use migration tools to translate existing projects for two considerations: (1) existing projects typically contain quite a small set of API invocations, so many API mapping relations may be not covered; (2) a single method of an existing project may invoke multiple API methods, so it may be difficult to analyze which methods are not mapped. TeMaAPI relies on the reflection technique~\cite{maes1987concepts} provided by both Java and C\# to generate client code for translation.
 
 \textbf{Static fields.} Given a public static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMaAPI generates a getter as follows:
 \begin{CodeOut}%\vspace*{-2ex}
@@ -69,9 +69,9 @@ In the preceding code, ``\CodeIn{|f.name|}'' denotes the name of \CodeIn{f}, and
 
 In the preceding code, ``\CodeIn{|m.name|}'' denotes the name of \CodeIn{m(T1\ p1,\ldots,Tn\ pn)}.
 
-TeMaAPI ignores generic methods for simplicity, and organizes all generated client code methods by the corresponding class $C$. For a migration tool that translates from Java to C\#, TeMaAPI generates client code in Java as shown by the solid line of Figure~\ref{fig:approach}, and for a migration tool that translates from C\# to Java, TeMaAPI generates client code in C\# as shown by the dotted line of Figure~\ref{fig:approach}. When TeMaAPI generates client code in C\#, it ignores \CodeIn{unsafe} and \CodeIn{delegate} methods and methods whose parameters are marked as \CodeIn{out} or \CodeIn{ref}. These methods may produce more than one output, and our generated client code has only one output. In addition, Java does not have corresponding keywords, so there are typically no mapped methods in Java for these C\# methods. After TeMaAPI generate client-code methods, we translate them using a migration tool under experiments.
+TeMaAPI put all generated client code methods for one API class $C$ into one generated class. For a Java-to-C\# tools, TeMaAPI generates client code in Java as shown by the solid line in Figure~\ref{fig:approach}, and for a C\#-to-Java tools, TeMaAPI generates client code in C\# as shown by the dotted line in Figure~\ref{fig:approach}. When generating methods, TeMaAPI ignores generic API methods for simplicity. Besides, it ignores \CodeIn{unsafe} and \CodeIn{delegate} API methods and API methods whose parameters are marked as \CodeIn{out} or \CodeIn{ref} when generating C\# methods. Java does not have corresponding keywords, so there are typically not mapped. After TeMaAPI generate client-code methods, we translate them using a migration tool under experiments.
 
-After generated code is translated, TeMaAPI parses translated code and removes translated methods with compilation errors. For Java code, TeMaAPI extends Eclipse's Java compiler to find out methods with compilation errors. For C\# code, TeMaAPI extracts the list of compilation errors from the ``Error List'' view of Visual Studio via the automation and extensibility interfaces of Visual Studio. Based on remaining methods, TeMaAPI tests single API invocations (Section~\ref{sec:approach:single}). From remaining methods, TeMaAPI also analyzes the list of translatable API invocations for a given migration tool. Based on the list, TeMaAPI further tests API invocation sequences (Section~\ref{sec:approach:sequence}).
+After generated code is translated, TeMaAPI parses translated code and removes translated methods with compilation errors. For Java code, TeMaAPI extends Eclipse's Java compiler to extract methods with compilation errors. For C\# code, TeMaAPI extracts the list of compilation errors through the automation and extensibility interfaces of Visual Studio. Using remained methods, TeMaAPI tests single API invocations (Section~\ref{sec:approach:single}). From remained methods, TeMaAPI also analyzes the list of translatable API invocations for a given migration tool. Using the list, TeMaAPI further tests API invocation sequences (Section~\ref{sec:approach:sequence}).
 
 
 %for validate API mapping relations of the migration tool. To achieve this, TeMaAPI first remove all translated methods with compilation errors. For translated methods in Java, TeMaAPI implements a Eclipse plug-in that uses on Eclipse JDT compiler\footnote{\url{http://www.eclipse.org/jdt/}} for the list of compilation errors. For translated methods in C\#, TeMaAPI implements a Visual Studio.Net add-in to retrieve the list of compilation errors from the error-list view of Visual Studio.Net. Both Eclipse JDT compiler and Visual Studio.Net cannot list all methods with compilation errors in a single build. After each iteration of removing methods, TeMaAPI re-build these methods until it removes all methods with compilation errors.
@@ -94,8 +94,7 @@ public void testvalueOf57sm7()\{
   sketch.Test_java_lang_String obj =
       new sketch.Test_java_lang_String();
   int m0 = 0;
-  Assert.assertEquals("0", obj.testvalueOf57sm7(m0));
-\}
+  Assert.assertEquals("0", obj.testvalueOf57sm7(m0));\}
 \end{alltt}
 \end{CodeOut}
 
@@ -117,8 +116,7 @@ For example, TeMaAPI records that if the input of the \CodeIn{TestvalueOf61sm} m
      Assert.assertTrue(true);
      return;
    \}
-   Assert.assertTrue(false);
- \}
+   Assert.assertTrue(false); \}
 \end{alltt}
 \end{CodeOut}
 

@@ -1,7 +1,7 @@
 \section{Example}
 \label{sec:example}
 
-We next illustrate the basic steps to detect the different behaviors of the API mapping relation as discussed in Section~\ref{sec:introduction}.
+We next illustrate the basic steps to detect the different behaviors of a mapping relation in Java2CSharp as discussed in Section~\ref{sec:introduction}.
 
 \textbf{Translating Generated client code.} First, TeMaAPI generates a client code method for each API method an each API field of the \CodeIn{java.lang.String} class. For example, the generate clinet code for the \CodeIn{valueOf(Object)} method is as follows:
 
@@ -13,9 +13,9 @@ We next illustrate the basic steps to detect the different behaviors of the API 
 \end{CodeOut}
 
 
-After that, we use a migration tool such as Java2CSharp to translate generated client code from Java to C\#.
+After that, we use Java2CSharp to translate generated client code from Java to C\#.
 
-\textbf{Removing translated client-code methods with compilation errors.} A migration tool typically cannot cover all API mapping relations, so some translated client-code methods can have compilation errors if their API invocations are not covered. TeMaAPI parses translated code, and removes all client-code methods with compilation errors. The remaining client-code methods are testable since no compilation errors are left.
+\textbf{Removing translated client-code methods with compilation errors.} A migration tool typically cannot deal with all API invocations, so some translated client-code methods can have compilation errors. TeMaAPI parses translated code, and removes all client-code methods with compilation errors. The remaining client-code methods are testable since no compilation errors are left.
 
 In this example, the translated C\# \CodeIn{testvalueOf64sm} method is as follows:
 \begin{CodeOut}%\vspace*{-2ex}
