@@ -1,9 +1,9 @@
 \section{Example}
 \label{sec:example}
 
-We next present major steps in our approach for detecting behavioral differences among API invocations described in mapping relations. We use the \CodeIn{java.lang.String} class and the Java2CSharp translation tool as illustrative examples. 
+We next present major steps in our approach for detecting behavioral differences among API methods described in mapping relations. We use the \CodeIn{java.lang.String} class and the Java2CSharp translation tool as illustrative examples. 
 
-\textbf{Translating generated client code.} TeMaAPI first generates a client code method for each API invocation and each API field of the \CodeIn{java.lang.String} class. For example, TeMaAPI generates the following client code for the \CodeIn{valueOf(Object)} method:
+\textbf{Translating generated client code.} TeMaAPI first generates a client code method for each API method and each API field of the \CodeIn{java.lang.String} class. For example, TeMaAPI generates the following client code for the \CodeIn{valueOf(Object)} method:
 
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
@@ -14,7 +14,7 @@ We next present major steps in our approach for detecting behavioral differences
 
 TeMaAPI next uses Java2CSharp and translates generated client code from Java to C\#.
 
-\textbf{Handling compilation errors.} In general, a translation tool may not include mapping relations for all API invocations of a language. Therefore, translated client-code methods can have compilation errors. To address this issue, TeMaAPI parses translated code and removes all client-code methods with compilation errors. For example, following is the translated C\# \CodeIn{testvalueOf64sm} method:
+\textbf{Handling compilation errors.} In general, a translation tool may not include mapping relations for all API methods of a language. Therefore, translated client-code methods can have compilation errors. To address this issue, TeMaAPI parses translated code and removes all client-code methods with compilation errors. For example, following is the translated C\# \CodeIn{testvalueOf64sm} method:
 
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
