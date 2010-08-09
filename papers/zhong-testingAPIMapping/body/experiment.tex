@@ -437,7 +437,7 @@ The \CodeIn{var0.AbbreviatedMonthNames = var16} statement fails with \CodeIn{Inv
 The rest 3.0\% test cases fail since mapped methods are not implemented. In particular, Java2CSharp maps API invocations in Java to C\# API invocations that are not implemented yet. For example, Java2CSharp maps the \CodeIn{java.io.ObjectOutputStream} class in Java to the \CodeIn{ILOG.J2CsMapping.IO.IlObjectOutput- Stream} class in C\# that is not implemented yet, and such mapping relations lead to \CodeIn{NotImplementException}. As this difference introduces no compilation errors, programmers should test translated projects carefully to ensure each API method is called.
 \subsection{Coverage}
 \label{sec:evaluation:coverage}
-Test coverage is a common criterion to measure the adequacy of test cases~\cite{zhu1997software}. To investigate whether our combination strategy helps achieve better coverage, we conduct an additional experiment on several selected classes. 
+
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -445,7 +445,7 @@ Test coverage is a common criterion to measure the adequacy of test cases~\cite{
  \hline
 \textbf{Class}& \textbf{Pex} & \textbf{Randoop}
 & \textbf{TeMAPI} \\
-\hline
+\hline\hline
 ManagerNotRecognizedException  &  100\% & 100\% &  100\%\\
 \hline
 ManagerNotSupportedException   &  100\% & 100\% &  100\%  \\
@@ -475,8 +475,8 @@ Stack                          &  5\%   & 55\%  &  55\%\\
 \Caption{Results of testing coverage} \label{table:coverage}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
+Test coverage is a common criterion to measure the adequacy of test cases~\cite{zhu1997software}. To investigate whether our combination strategy helps achieve better coverage, we conduct an additional experiment on several selected classes, and Table~\ref{table:coverage} shows the results. Column ``Class'' shows names of classes. We select only several classes as subjects since it is quite trick to extract coverage of API methods, especially in our context where most mapping relations are between J2SE and \CodeIn{mscorlib.dll}. For example, coverage tools such as PartCover\footnote{\url{http://partcover.blogspot.com/ }} rely on the \CodeIn{JITCompilationStarted} method\footnote{\url{http://tinyurl.com/2gy2nqk}} for notifications of called methods, and thus fail to extract coverage info for many methods in \CodeIn{mscorlib.dll} since usually no notifications are received when these method are called.
 
-It is quite tricky to extract coverage information of API methods especially in our context where Java API methods are declared by J2SE and most C\# methods are declared by \CodeIn{mscorlib.dll}.
 \subsection{Summary}
 \label{sec:evaluation:summary}
 In summary, we find that API invocations are quite large in size, and migration tools typically cover only a small set of API invocations. Although existing migration tools already notice different behaviors of mapped API invocations, many differences are left unsolved. In particular, TeMaAPI detects that various factors such as null values, string values, ranges of inputs, different understanding, exception handling, and static values can lead to different behaviors for single API invocations. The preceding factors can accumulate to different behaviors of multiple API invocations. Besides, TeMaAPI detects that other factors such as cast statements and invocation sequences can also lead to different behaviors of multiple API invocations.
