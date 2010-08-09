@@ -8,8 +8,9 @@ research questions:
 %\vspace*{-1.5ex}
 \begin{enumerate}
 \item How effectively can existing migration tool translate API invocations (Section~\ref{sec:evaluation:invocation})? \vspace*{-1.8ex}
-\item How effectively can our approach detect different behaviors of single API invocations (Section~\ref{sec:evaluation:single})? \vspace*{-1.8ex}
-\item How effectively can our approach detect different behaviors of multiple API invocations (Section~\ref{sec:evaluation:sequence})?
+\item How effectively can our approach detect different behaviors of single API invocations (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
+\item How effectively can our approach detect different behaviors of multiple API invocations (Section~\ref{sec:evaluation:sequence})?\vspace*{-1.8ex}
+\item Can the our combination strategy helps achieve better coverage (Section~\ref{sec:evaluation:coverage})?
 \end{enumerate}%\vspace*{-1.5ex}
 
 \begin{table}[t]
@@ -402,38 +403,7 @@ From the results of Table~\ref{table:invocsequence}, we find that JLCA achieves 
 
 \textbf{Finding 8:} 3.3\% test cases fail because of invocation sequences.
 
-We find that random invocation sequences can violate specifications of API libraries. One type of such specification is described in our previous work~\cite{zhong09:inferring}: closed resources should not be manipulated. Java sometimes allow programmers to violate such specifications although the return values can be meaningless. For example, a generated JUnit test case is as follows:
-
-\begin{CodeOut}%\vspace*{-2ex}
-\begin{alltt}
-public void test413() throws Throwable\{
-  ...
-  ByteArrayInputStream var2=new ByteArrayInputStream(...);
-  var2.close();
-  int var5=var2.available();
-  assertTrue(var5 == 1);
-\}
-\end{alltt}
-\end{CodeOut}
-
-JLCA translates the preceding JUnit test case into a NUnit test case as follows:
-
-\begin{CodeOut}%\vspace*{-2ex}
-\begin{alltt}
-public void test413() throws Throwable\{
-  ...
-  MemoryStream var2 = new MemoryStream(...);
-  var2.close();
-  long available = var2.Length - var2.Position;
-  int var5 = (int) available;
-  UnitTool.assertTrue(var5 == 1);
-\}
-\end{alltt}
-\end{CodeOut}
-
-In this example, Java allows programmers to access a stream even if the stream is closed, so the preceding JUnit test case run successfully. C\# does not allow such accesses, so the preceding NUnit test case fails with \CodeIn{ObjectDisposedException}.
-
-We also find that in some cases, single invocations get passed but their invocation sequences can fail. For example, a generated JUnit test case is as follows:
+We find that random invocation sequences can violate specifications of API libraries. One type of such specification is described in our previous work~\cite{zhong09:inferring}: closed resources should not be manipulated. Java sometimes allow programmers to violate such specifications although the return values can be meaningless. One such example is shown in Section~\ref{sec:example}. Besides invocation sequences that are related to specifications, we find that field accessibility also leads to failures of test cases. For example, a generated JUnit test case is as follows:
 
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
@@ -462,10 +432,51 @@ public void test423() throws Throwable\{
 
 The \CodeIn{var0.AbbreviatedMonthNames = var16} statement fails with \CodeIn{InvalidOperationException} since a constant value is assigned to \CodeIn{var0}.
 
-\textbf{Implication 8:} When translating, programmers should check carefully whether they violate speculations of libraries and whether invocation sequences affect accessibility of fields. 
+\textbf{Implication 8:} When translating, programmers should check carefully whether they violate speculations of libraries and whether invocation sequences affect accessibility of fields.
 
 The rest 3.0\% test cases fail since mapped methods are not implemented. In particular, Java2CSharp maps API invocations in Java to C\# API invocations that are not implemented yet. For example, Java2CSharp maps the \CodeIn{java.io.ObjectOutputStream} class in Java to the \CodeIn{ILOG.J2CsMapping.IO.IlObjectOutput- Stream} class in C\# that is not implemented yet, and such mapping relations lead to \CodeIn{NotImplementException}. As this difference introduces no compilation errors, programmers should test translated projects carefully to ensure each API method is called.
+\subsection{Coverage}
+\label{sec:evaluation:coverage}
+Test coverage is a common criterion to measure the adequacy of test cases~\cite{zhu1997software}. To investigate whether our combination strategy helps achieve better coverage, we conduct an additional experiment on several selected classes. 
+\begin{table}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|c|r|r|r|r|r|c|c|}
+ \hline
+\textbf{Class}& \textbf{Pex} & \textbf{Randoop}
+& \textbf{TeMAPI} \\
+\hline
+ManagerNotRecognizedException  &  100\% & 100\% &  100\%\\
+\hline
+ManagerNotSupportedException   &  100\% & 100\% &  100\%  \\
+\hline
+SaxAttributesSupport           &  78\%  & 74\%  &  80\%\\
+\hline
+XmlSaxDefaultHandler           &  100\% & 94\%  &  100\%\\
+\hline
+XmlSAXDocumentManager          &  10\%  & 17\%  &  18\%\\
+\hline
+XmlSaxLocatorImpl              &  83\%  & 100\%  &  100\%\\
+\hline
+XmlSaxParserAdapter            &  100\%  & 100\%  &  100\%\\
+\hline
+XmlSourceSupport               &  100\%  & 56 \%  &  100\%\\
+\hline
+\hline
+HashTable                      &  15\%  & 15\%  &  19\%\\
+\hline
+LinkedList                     &  16\%  & 26\%  &  27\%\\
+\hline
+ArrayList                      &  18\%  & 25\%  &  31\%\\
+\hline
+Stack                          &  5\%   & 55\%  &  55\%\\
+\hline
+\end{tabular}\vspace*{-2ex}
+\Caption{Results of testing coverage} \label{table:coverage}
+\end{SmallOut}\vspace*{-2ex}
+\end{table}
 
+It is quite tricky to extract coverage information of API methods especially in our context where Java API methods are declared by J2SE and most C\# methods are declared by \CodeIn{mscorlib.dll}.
 \subsection{Summary}
 \label{sec:evaluation:summary}
 In summary, we find that API invocations are quite large in size, and migration tools typically cover only a small set of API invocations. Although existing migration tools already notice different behaviors of mapped API invocations, many differences are left unsolved. In particular, TeMaAPI detects that various factors such as null values, string values, ranges of inputs, different understanding, exception handling, and static values can lead to different behaviors for single API invocations. The preceding factors can accumulate to different behaviors of multiple API invocations. Besides, TeMaAPI detects that other factors such as cast statements and invocation sequences can also lead to different behaviors of multiple API invocations.
