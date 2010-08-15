@@ -40,7 +40,7 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 \end{alltt}
 \end{CodeOut}\vspace*{-1ex}
 
-When TeMAPI synthesizes wrapper methods for non-static fields or methods, it takes constructor into considerations:
+When TeMAPI synthesizes wrapper methods for non-static fields or methods, it takes constructors into considerations:
 
 \textbf{Non-static fields.} Given a public non-static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMAPI synthesizes a getter for each constructor \CodeIn{C(T1\ p1,\ldots, Tn\ pn)} of \CodeIn{C} as follows:
 
@@ -132,6 +132,10 @@ For example, during exploring the \CodeIn{TestvalueOf61sm} wrapper method, TeMAP
 
 This test case fails since the \CodeIn{testvalueOf61sm} method does not throw any exceptions given a null input.
 From this failed Java test case, TeMAPI detects the behavior difference between the \CodeIn{java. lang.String.valueOf(Object)} method in Java and the \CodeIn{System. Object.ToString()} method in C\#, since the preceding two wrapper methods are for the two API methods only.
+
+%-----------------------------------------------------------
+\subsection{Testing Multiple Classes}
+\label{sec:approach:sequence}
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -151,12 +155,9 @@ converter    &  1.6   & Tangible   &  C\# to Java\\
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{Subject tools} \label{table:subjects}
-\end{SmallOut}\vspace*{-2ex}
+\end{SmallOut}\vspace*{-4ex}
 \end{table}
-%-----------------------------------------------------------
-\subsection{Testing Multiple Classes}
-\label{sec:approach:sequence}
-As shown in Figure~\ref{fig:javacode} and Figure~\ref{fig:codeJLCA}, translation tools can translate one invocation to invocation sequences that involve multiple classes. As each wrapper method uses only one field or one method of a given API class, it loses some behavior differences that involve multiple classes. To detect such differences, TeMAPI first extracts a list of translatable API methods for the translation tool under analysis. In particular, if a translation tool translates a wrapper method into the other language, TeMAPI considers all API methods within the wapper method as translatable API methods if the migration tool. For example, as shown in Section~\ref{sec:example}, JLCA translates the \CodeIn{testskip24nm} wrapper method into the other language, so TeMAPI its wrapped \CodeIn{BufferedInputStream(InputStream)} constructor and the \CodeIn{BufferedInputStream.skip(long)} method into translatable API methods of JLCA.
+As shown in Figure~\ref{fig:javacode} and Figure~\ref{fig:codeJLCA}, translation tools can translate one invocation to invocation sequences that involve multiple classes. As each wrapper method uses only one field or one method of a given API class, it loses some behavior differences that involve multiple classes. To detect such differences, TeMAPI first extracts a list of translatable API methods for the translation tool under analysis. In particular, if a translation tool translates a wrapper method into the other language, TeMAPI considers all API methods within the wapper method as translatable API methods of the migration tool. For example, as shown in Section~\ref{sec:example}, JLCA translates the \CodeIn{testskip24nm} wrapper method into the other language, so TeMAPI its wrapped \CodeIn{BufferedInputStream(InputStream)} constructor and the \CodeIn{BufferedInputStream.skip(long)} method into translatable API methods of JLCA.
 
 After translatable API methods of a translation tool are extracted, TeMAPI extends Randoop~\cite{pacheco2007feedback} to generate invocations sequences of API methods. Randoop randomly generates test cases based on already generated test cases in a feedback-directed manner, and it has both a Java version and a C\# version. When generating test cases, TeMAPI limits its search scope within translatable API methods only. After test cases are generated, TeMAPI runs these test cases, and removes all failed test cases. We translate the remaining test case into the other language using the translation tool under analysis. If translated code has the same behaviors, translated test cases should also get passed. If not, TeMAPI detects a behavior difference. As invocation sequences typically use multiple classes, such difference can involve multiple classes. Section~\ref{sec:example} shows a detected behavior difference through the \CodeIn{test413} test case.
 
