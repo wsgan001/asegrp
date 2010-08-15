@@ -1,29 +1,3 @@
-
-\section{Evaluations}
-\label{sec:evaluation}
-
-We implemented a tool for TeMAPI and conducted evaluations using our tool to address the following research questions:
-
-\vspace*{-1.5ex}
-\begin{enumerate}
-%\item How effectively can existing translation tool translate API elements (Section~\ref{sec:evaluation:element})? \vspace*{-1.8ex}
-\item How many API elements are effectively translated by existing translation tools (Section~\ref{sec:evaluation:element})? \vspace*{-1.8ex}
-%\item How effectively can our approach detect behavior differences of single API classes (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
-\item How many behavior differences of single API classes are effectively detected by our approach (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
-%\item How effectively can our approach detect behavior differences of multiple API classes (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
-\item How many behavior differences of multiple API classes are effectively detected by our approach (Section~\ref{sec:evaluation:sequence})?\vspace*{-1.8ex}
-%\item Can the our combination strategy helps achieve better coverage (Section~\ref{sec:evaluation:coverage})?
-\item How much statement coverage is achieved by our approach with its internal techniques on and off (Section~\ref{sec:evaluation:coverage})?
-\end{enumerate}\vspace*{-1.5ex}
-
-Table~\ref{table:subjects} shows the subject tools in our evaluation. Column ``Name'' lists names of subject tools. We use \emph{converter} to denote the ``VB \& C\# to Java converter'' for short. Column ``Version'' lists versions of subject tools. Column ``Provider'' lists companies of subject tools. Although all these tools are from commercial companies, Java2CSharp, sharpen, and Net2Java are open source tools. Column ``Description'' lists main functionalities of subject tools. We choose these tools as subjects, since they are popular and many programmers recommend these tools in various forums.
-
-All evaluations were conducted on a PC with Intel Qual CPU @ 2.83GHz and 2G memory running Windows XP.
-
-\subsection{Translating Synthesized Wrappers}
-\label{sec:evaluation:element}
-This evaluation focuses on the effectiveness of our approach to extract API mapping relations from both open source tools and closed source tools. The results are useful to follow-up steps, and also reveal to what extents existing translation tools can support API translation. For Java-to-C\# tools, TeMAPI first synthesized wrapper methods for all classes of J2SE 6.0\footnote{\url{http://java.sun.com/javase/6/docs/api/}}. During synthesizing,  TeMAPI ignored all generic API methods as described in Section~\ref{sec:approach:generating}, and Table~\ref{table:java2csharp} shows the translation results. Column ``Type'' lists types of synthesized methods: ``sfg'' denotes getters of static fields; ``sfs'' denotes setters of static fields; ``nfg'' denotes getters of non-static fields; ``nfs'' denotes setters of non-static fields; ``sm'' denotes static methods; ``nm'' denotes non-static methods; and ``Total'' denotes the sum of all methods. Column ``Num'' lists numbers of corresponding types of methods. Columns ``Java2CSharp'', ``JLCA'', and ``sharpen'' list the translation results of corresponding translation tools, respectively. For these columns, sub-columns ``M'' and ``\%'' list the number and percentage of translated wrapper methods without compilation errors, respectively.
-
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -51,6 +25,32 @@ Total &195192& 3923 &  2.0\% & 43678 & 22.4\% & 1185 & 0.6\%\\
 \Caption{Translation results of Java-to-C\# tools} \label{table:java2csharp}
 \end{SmallOut}\vspace*{-2ex}
 \end{table}
+\section{Evaluations}
+\label{sec:evaluation}
+
+We implemented a tool for TeMAPI and conducted evaluations using our tool to address the following research questions:
+
+\vspace*{-1.5ex}
+\begin{enumerate}
+%\item How effectively can existing translation tool translate API elements (Section~\ref{sec:evaluation:element})? \vspace*{-1.8ex}
+\item How many API elements are effectively translated by existing translation tools (Section~\ref{sec:evaluation:element})? \vspace*{-1.8ex}
+%\item How effectively can our approach detect behavior differences of single API classes (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
+\item How many behavior differences of single API classes are effectively detected by our approach (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
+%\item How effectively can our approach detect behavior differences of multiple API classes (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
+\item How many behavior differences of multiple API classes are effectively detected by our approach (Section~\ref{sec:evaluation:sequence})?\vspace*{-1.8ex}
+%\item Can the our combination strategy helps achieve better coverage (Section~\ref{sec:evaluation:coverage})?
+\item How many behavior differences are detected with TeMAPI's internal techniques on and off (Section~\ref{sec:evaluation:techniques})?
+\end{enumerate}\vspace*{-1.5ex}
+
+Table~\ref{table:subjects} shows the subject tools in our evaluation. Column ``Name'' lists names of subject tools. We use \emph{converter} to denote the ``VB \& C\# to Java converter'' for short. Column ``Version'' lists versions of subject tools. Column ``Provider'' lists companies of subject tools. Although all these tools are from commercial companies, Java2CSharp, sharpen, and Net2Java are open source tools. Column ``Description'' lists main functionalities of subject tools. We choose these tools as subjects, since they are popular and many programmers recommend these tools in various forums.
+
+All evaluations were conducted on a PC with Intel Qual CPU @ 2.83GHz and 2G memory running Windows XP.
+
+\subsection{Translating Synthesized Wrappers}
+\label{sec:evaluation:element}
+This evaluation focuses on the effectiveness of our approach to extract API mapping relations from both open source tools and closed source tools. The results are useful to follow-up steps, and also reveal to what extents existing translation tools can support API translation. For Java-to-C\# tools, TeMAPI first synthesized wrapper methods for all classes of J2SE 6.0\footnote{\url{http://java.sun.com/javase/6/docs/api/}}. During synthesizing,  TeMAPI ignored all generic API methods as described in Section~\ref{sec:approach:generating}, and Table~\ref{table:java2csharp} shows the translation results. Column ``Type'' lists types of synthesized methods: ``sfg'' denotes getters of static fields; ``sfs'' denotes setters of static fields; ``nfg'' denotes getters of non-static fields; ``nfs'' denotes setters of non-static fields; ``sm'' denotes static methods; ``nm'' denotes non-static methods; and ``Total'' denotes the sum of all methods. Column ``Num'' lists numbers of corresponding types of methods. Columns ``Java2CSharp'', ``JLCA'', and ``sharpen'' list the translation results of corresponding translation tools, respectively. For these columns, sub-columns ``M'' and ``\%'' list the number and percentage of translated wrapper methods without compilation errors, respectively.
+
+
 
 Our results show that it is quite challenging for a translation tool to cover all API elements, since API elements are quite large in size. Although JLCA can translate 43,678 wrapper methods, these methods cover only 22.4\% of total number of wrapper methods. Furthermore, even if an API element is translated, it can be translated to an API element with a different behavior. We observe that programmers of translation tools may already aware of these behavior differences. For example, after JLCA translated synthesized code, it generated a report with many warning messages regarding behavior differences of translated API elements. For example, a warning message is ``Method \CodeIn{java.lang.String.indexOf} was converted to \CodeIn{System.String.IndexOf}, which may throw an exception'', but the report does not tell programmers when such an exception is thrown or how to deal with that exception. TeMAPI complements the problem. For example, TeMAPI detects that given an empty string \CodeIn{str}, the \CodeIn{str.lastIndexOf("", 1)} statement in Java returns 0, whereas the \CodeIn{str.LastIndexOf("", 1)} statement in C\# throws \CodeIn{ArgumentOutOfRangeExcpetion}.
 
@@ -87,15 +87,6 @@ For C\#-to-Java translation tools, TeMAPI first synthesized wrapper methods for 
 TeMAPI synthesized almost the same size of wrapper methods as synthesized for J2SE 6.0. Table~\ref{table:csharp2java} shows that both tools translate only a small number of API elements. One primary reason could be that C\# provides many features such as partial class, reference parameters, output parameters, and named arguments, that are not provided by Java\footnote{\url{http://tinyurl.com/yj4v2m2}}. We suspect that a C\#-to-Java translation tool needs take these issues into consideration, so many mapping relations of API elements are not addressed yet.
 
 Tables~\ref{table:java2csharp} and~\ref{table:csharp2java} show that Java-to-C\# tools cover much more API elements compared to C\#-to-Java tools. To give more insights, we next present more details at the package level regarding the translation results of Java-to-C\# tools in Table~\ref{table:package}. Column ``Name'' lists names of Java packages. To save space, we omit the prefixes such as ``java.'', ``javax.'', and ``org.''. We also use short names ``acc.'', ``man.'', ``java. sec.'', and ``javax.sec.'' to represent \CodeIn{javax.accessibility}, \CodeIn{javax.management}, \CodeIn{java.security}, and \CodeIn{javax.security} packages, respectively. Besides, we omit 12 packages that are not covered by all the three tools (\emph{e.g.}, the \CodeIn{javax.rmi} package). Table~\ref{table:package} shows that all the three translation tools cover four packages: \CodeIn{java.io}, \CodeIn{java.lang}, \CodeIn{java.util}, and \CodeIn{java.net}. These four packages seem to be quite important for most Java programs. Almost for all these packages, JLCA covers more API elements than the other two tools. JLCA even covers GUI-related packages such as the \CodeIn{java.awt} package and the \CodeIn{javax.swing} package. As a result, JLCA can translate some Java programs with GUI interfaces whereas the other two tools cannot.
-
-%------------------------------------------------------------
-\subsection{Testing Single Classes}
-\label{sec:evaluation:single}
-
-To detect behavior differences of single classes, TeMAPI leverages Pex to explore safe wrapper methods. These methods include both the translated C\# wrapper methods without compilation errors (as shown in Table~\ref{table:java2csharp}) and the synthesized C\# wrapper methods that can be translated into Java without compilation errors (as shown in Table~\ref{table:csharp2java}). During exploration, when Pex generates inputs that exercise a feasible path in the wrapper method, TeMAPI records the inputs and resulting outputs of that path. Based on these inputs and outputs, TeMAPI generates Java test cases to ensure that synthesized wrapper methods and translated wrapper methods produce the same outputs given the same inputs. Since testing GUI related API elements requires human interactions, we filter out GUI related API elements (\emph{i.e.}, the \CodeIn{awt} package and the \CodeIn{swing} package). In addition, when Pex explores methods without return values, we ignore paths that do not throw any exceptions, since we cannot generate Java related test cases. We discuss this issue in Section~\ref{sec:discuss}.
-
-Table~\ref{table:singleinvoc} shows the results of executing generated Java test cases. Column ``Name'' lists names of translation tools. Column ``Num'' lists the number of generated Java test cases. Columns ``E-Tests'' and ``A-Tests'' list the number of exception-causing and assertion-failing test cases. These test cases reflect defects related to behavior differences. Among these two columns, sub-columns ``M'' and ``\%'' list the number and percentages of these test cases. Table~\ref{table:singleinvoc} shows that only about half of the generated Java test cases are passed. Among the five tools, sharpen includes the lowest number of ``E-Tests'' and ``A-Tests''. It seems that programmers of sharpen put great efforts to fix behavior differences. The percentage of JLCA is also relatively low. The results are comparable, since JLCA translates much more API elements than the other tools. In total, about 50\% of test cases are failed. These results show the effectiveness of TeMAPI, since these test cases represent behavior differences.
-
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -157,6 +148,15 @@ org.xml             &   \hfill 897    & 49   &  5.5\%  & 473    & 52.7\%    & 0 
 \Caption{Translation results at package level} \label{table:package}
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
+%------------------------------------------------------------
+\subsection{Testing Single Classes}
+\label{sec:evaluation:single}
+
+To detect behavior differences of single classes, TeMAPI leverages Pex to explore safe wrapper methods. These methods include both the translated C\# wrapper methods without compilation errors (as shown in Table~\ref{table:java2csharp}) and the synthesized C\# wrapper methods that can be translated into Java without compilation errors (as shown in Table~\ref{table:csharp2java}). During exploration, when Pex generates inputs that exercise a feasible path in the wrapper method, TeMAPI records the inputs and resulting outputs of that path. Based on these inputs and outputs, TeMAPI generates Java test cases to ensure that synthesized wrapper methods and translated wrapper methods produce the same outputs given the same inputs. Since testing GUI related API elements requires human interactions, we filter out GUI related API elements (\emph{i.e.}, the \CodeIn{awt} package and the \CodeIn{swing} package). In addition, when Pex explores methods without return values, we ignore paths that do not throw any exceptions, since we cannot generate Java related test cases. We discuss this issue in Section~\ref{sec:discuss}.
+
+Table~\ref{table:singleinvoc} shows the results of executing generated Java test cases. Column ``Name'' lists names of translation tools. Column ``Num'' lists the number of generated Java test cases. Columns ``E-Tests'' and ``A-Tests'' list the number of exception-causing and assertion-failing test cases. These test cases reflect defects related to behavior differences. Among these two columns, sub-columns ``M'' and ``\%'' list the number and percentages of these test cases. Table~\ref{table:singleinvoc} shows that only about half of the generated Java test cases are passed. Among the five tools, sharpen includes the lowest number of ``E-Tests'' and ``A-Tests''. It seems that programmers of sharpen put great efforts to fix behavior differences. The percentage of JLCA is also relatively low. The results are comparable, since JLCA translates much more API elements than the other tools. In total, about 50\% of test cases are failed. These results show the effectiveness of TeMAPI, since these test cases represent behavior differences.
+
+
 
 For Java2CSharp, JLCA, and sharpen, we further present their testing results at the package level in Table~\ref{table:packagetest}. Column ``Name'' lists names of J2SE packages. For columns ``Java2CSharp'', ``JLCA'', and ``sharpen'', sub-column ``R'' lists numbers of generated Java test cases, and sub-column ``\%'' lists percentages of failing test cases (including exception-causing and assertion-failing). Table~\ref{table:packagetest} shows that for the \CodeIn{java.sql} and \CodeIn{java.util} packages, all tools suffer from relatively high percentages of failing test cases, and for the \CodeIn{java.lang} and \CodeIn{java.math} packages, all tools include relatively low percentage of failing test cases. These results may reflect that some packages between Java and C\# are more similar than the others, so they can be more easily mapped. We also find that for the \CodeIn{java.text}, \CodeIn{javax.xml}, and \CodeIn{org.xml} packages, JLCA includes the lowest percentage of failing test cases among the five tools. The results indicate that a translation tool can achieve better translation results if the programmers carefully prepare mapping relations of API elements.
 
@@ -194,21 +194,6 @@ Total        &  52336  &  15153 & 29.0\% &11099 & 21.2\%  \\
 \Caption{Results of testing single classes} \label{table:singleinvoc}
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
-
-
-\textbf{Finding 2:} 22.3\% test cases show the behavior differences caused by stored string values.
-
-We find that string values stored in fields between Java classes and their translated C\# classes are typically different. This difference ranks as the second, since each Java class has a \CodeIn{toString()} method and each C\# class also has a \CodeIn{ToString()} method. Many translation tools map the two API methods, but the return values of the two methods are quite different in many cases. Besides, many API classes declare methods like \CodeIn{getName} or \CodeIn{getMessage}. These methods also return string values that can be quite different. In particular, we find that the \CodeIn{Message} fields of exceptions in C\# often return informative messages. One such message is ``Index was outside the bounds of the array'' provided by the \CodeIn{System.Index- OutOfRangeException.Message} field in C\#. On the other hand, exceptions in Java often provide only \CodeIn{null} messages. Overall, we find that all the five tools do not fix this difference.
-
-\textbf{Implication 2:} String fields of mapped classes in different languages typically store different values, but existing translation tools do not fix those differences. Programmers should not rely on these values, since they are typically different across languages.
-
-\textbf{Finding 3:} 11.5\% test cases show the behavior differences caused by illegal inputs or inputs out of ranges.
-
-We find that API methods in Java seldom check whether their inputs are illegal or out of range, whereas API methods in C\# often do. For example, the \CodeIn{java.lang.Boolean.parseBoolean (String)} method in Java does not check for illegal inputs, and returns \CodeIn{false} given an illegal input such as ``\CodeIn{test}''. Java2CSharp translates it into the \CodeIn{System.Boolean.Parse(String)} method in C\#. The C\# method throws \CodeIn{FormatException} given the same input since it checks for illegal inputs. As another example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than 32767. JLCA maps the Java method to the \CodeIn{Convert.ToInt16(double)} method in C\#. The C\# method throws \CodeIn{OverflowException} when values are larger than 32767 since it checks whether inputs are too large.
-
-\textbf{Implication 3:} API methods across languages may follow different standards to check their inputs for different considerations. If a tool translates code from a low standard to a high standard (\emph{e.g.}, Java to C\#), it can add extra code to satisfy the high standard. When programmers migrate from one language to another, they should check whether the new language follow a high standard or not.
-
-\textbf{Finding 4:} 10.7\% test cases show the behavior differences caused by different understanding.
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -266,7 +251,22 @@ org.xml     &   277  &   70.0\%  & 483     & 27.3\%  & 0         & n/a\\
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
 
-We find that Java programmers and C\# programmers may have different understanding for mapped API methods. Two such examples are shown in Section~\ref{sec:approach:single} (\emph{i.e.}, the \CodeIn{capacity()} method and the \CodeIn{length()} method). In some cases, such differences reflect different natures between languages. For example, we find that Java considers ``\CodeIn{\textbackslash}'' as existing directories, but  C\# considers it not. In some other cases, we find that such differences can indicate defects in translation tools. For example, Java2CSharp translates the \CodeIn{java.lang.Integer.toHexString(int)} method in Java to the \CodeIn{ILOG.J2CsMapping.Util.IlNumber.ToString(int,16)} method in C\#. 
+\textbf{Finding 2:} 22.3\% test cases show the behavior differences caused by stored string values.
+
+We find that string values stored in fields between Java classes and their translated C\# classes are typically different. This difference ranks as the second, since each Java class has a \CodeIn{toString()} method and each C\# class also has a \CodeIn{ToString()} method. Many translation tools map the two API methods, but the return values of the two methods are quite different in many cases. Besides, many API classes declare methods like \CodeIn{getName} or \CodeIn{getMessage}. These methods also return string values that can be quite different. In particular, we find that the \CodeIn{Message} fields of exceptions in C\# often return informative messages. One such message is ``Index was outside the bounds of the array'' provided by the \CodeIn{System.Index- OutOfRangeException.Message} field in C\#. On the other hand, exceptions in Java often provide only \CodeIn{null} messages. Overall, we find that all the five tools do not fix this difference.
+
+\textbf{Implication 2:} String fields of mapped classes in different languages typically store different values, but existing translation tools do not fix those differences. Programmers should not rely on these values, since they are typically different across languages.
+
+\textbf{Finding 3:} 11.5\% test cases show the behavior differences caused by illegal inputs or inputs out of ranges.
+
+We find that API methods in Java seldom check whether their inputs are illegal or out of range, whereas API methods in C\# often do. For example, the \CodeIn{java.lang.Boolean.parseBoolean (String)} method in Java does not check for illegal inputs, and returns \CodeIn{false} given an illegal input such as ``\CodeIn{test}''. Java2CSharp translates it into the \CodeIn{System.Boolean.Parse(String)} method in C\#. The C\# method throws \CodeIn{FormatException} given the same input since it checks for illegal inputs. As another example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than 32767. JLCA maps the Java method to the \CodeIn{Convert.ToInt16(double)} method in C\#. The C\# method throws \CodeIn{OverflowException} when values are larger than 32767 since it checks whether inputs are too large.
+
+\textbf{Implication 3:} API methods across languages may follow different standards to check their inputs for different considerations. If a tool translates code from a low standard to a high standard (\emph{e.g.}, Java to C\#), it can add extra code to satisfy the high standard. When programmers migrate from one language to another, they should check whether the new language follow a high standard or not.
+
+\textbf{Finding 4:} 10.7\% test cases show the behavior differences caused by different understanding.
+
+
+We find that Java programmers and C\# programmers may have different understanding for mapped API methods. Two such examples are shown in Section~\ref{sec:approach:single} (\emph{i.e.}, the \CodeIn{capacity()} method and the \CodeIn{length()} method). In some cases, such differences reflect different natures between languages. For example, we find that Java considers ``\CodeIn{\textbackslash}'' as existing directories, but  C\# considers it not. In some other cases, we find that such differences can indicate defects in translation tools. For example, Java2CSharp translates the \CodeIn{java.lang.Integer.toHexString(int)} method in Java to the \CodeIn{ILOG.J2CsMapping.Util.IlNumber.ToString(int,16)} method in C\#.
 Given an integer -2147483648, the Java method returns ``80000000'', but the C\# method returns ``\textbackslash080000000''. As another example, Java2CSharp translates the \CodeIn{Character.isJava- IdentifierPart(char)} method in Java into the \CodeIn{ILOG.J2Cs- Mapping.Util.Character.IsCSharpIdentifierPart(char)} method in C\#. Given a input ``\CodeIn{\textbackslash0}'', the Java method returns \CodeIn{true}, but the C\# method returns \CodeIn{false}. These two behavior differences were confirmed as defects by programmers of Java2CSharp.
 
 \textbf{Implication 4:} Although implementers can come to agreement on functionalities of many API methods, they may have different understanding on functionalities of specific methods. Some differences of this type are confirmed as defects in translation tools. Programmers should test their translated code carefully since this type of differences are difficult to figure out.
@@ -386,18 +386,8 @@ The \CodeIn{var0.AbbreviatedMonthNames = var16} statement fails with \CodeIn{Inv
 
 The rest 3.0\% of failing test cases since translation tools such as Java2CSharp translate API elements in Java to C\# API elements that are not implemented yet. For example, Java2CSharp maps the \CodeIn{java.io.ObjectOutputStream} class in Java to the \CodeIn{ILOG. J2CsMapping.IO.IlObjectOutputStream} class in C\# that is not yet implemented, and such translations lead to \CodeIn{NotImplement- Exception}. The evaluation in Section~\ref{sec:evaluation:single} does not detect this difference since the specific exception is not mapped.
 
-%---------------------------------------------------------------
-\subsection{Coverage}
-\label{sec:evaluation:coverage}
-
-
-%especially in our context where most mapping relations are between J2SE and .NET Framework. For example, we find that coverage tools such as PartCover\footnote{\url{http://partcover.blogspot.com/ }} rely on the \CodeIn{JITCompilationStarted} method\footnote{\url{http://tinyurl.com/2gy2nqk}} for notifications of called methods, and thus fail to extract coverage for many methods in .NET Framework since usually no notifications are received when these method are called.
-Test coverage is a common criterion to measure the adequacy of test cases~\cite{zhu1997software}. To investigate coverage achieved by our approach with its internal techniques on and off for Java-to-C\# tools, we conduct an evaluation on JLCA. Table~\ref{table:coverageJLCA} shows the results. Column ``Class'' shows names of the subject C\# classes. JLCA generates the eight classes, and translates some classes of the \CodeIn{org.xml} package in Java to the eight C\# classes. We choose only the \CodeIn{org.xml} package in Java as the subject since it is tricky to extract coverage for internal classes of J2SE and .NET. Column ``Pex'' lists achieved coverage if TeMAPI uses only Pex to generate test cases. Column ``Randoop'' lists  achieved coverage if TeMAPI uses only Randoop to generate test cases. As Pex explores feasible paths in a systematic manner and Randoop uses random strategy, Pex achieves better coverage than Randoop except for the \CodeIn{XmlSaxLocatorImpl} class. We find that Pex can fail to generate \CodeIn{non-null} values for some interfaces. For example, the parameter of the \CodeIn{XmlSaxLocatorImpl (XmlSaxLocator)} constructor is an interface. Pex generates only \CodeIn{null} inputs for the constructor, but Randoop casts a value to the interface. As a result, Randoop achieves better coverage on this class than Pex. Still, both Pex and Randoop do not achieve high coverage for some classes (\emph{e.g.}, the \CodeIn{XmlSAXDocumentManager} class), since covering some methods requires file interactions. As both Pex and Randoop generate filenames randomly, these methods are not covered by either tool. Column ``TeMAPI'' lists the coverage achieved by combining Pex and Randoop. We find that the combination achieves the best results for all classes.
-
-To investigate coverage achieved by our approach with its internal techniques on and off for C\# to Java tools, we conduct an evaluation on converter, and Table~\ref{table:coverageconverter} shows the results.  For similar consideration, we select four classes (\emph{i.e.}, the \CodeIn{System.Collections. ArrayList} class, the \CodeIn{System.Collections.Hashtable} class, the \CodeIn{System.Collections.Queue} class, and the \CodeIn{System.Collec- tions.Stack} class). Table~\ref{table:coverageconverter} shows coverage of their translated classes in Java. The four Java classes are decompiled by JAD\footnote{\url{http://www.varaneckas.com/jad}}. We fixed compilation errors introduced during decompiling, and changed their package names. Column ``Class'' shows the names of the four Java classes. Column ``Pex'' lists achieved coverage if leveraging only Pex. We use TeMAPI to generate Java test cases when Pex explores feasible paths. Column ``Randoop'' lists  achieved coverage if leveraging only Randoop.
-%From the perspective of the four Java classes, Pex also generates test cases randomly since it does not search their feasible paths. As a result, the achieved coverage shown in Table~\ref{table:coverageconverter} are also half to half.
-Column ``TeMAPI'' lists the coverage achieved by combining Pex and  Randoop. We also find that the combination achieves the best results.
-
+\subsection{Significance of Internal Techniques}
+\label{sec:evaluation:techniques}
 \begin{table}[t]
 \centering
 \begin{SmallOut}
@@ -406,52 +396,119 @@ Column ``TeMAPI'' lists the coverage achieved by combining Pex and  Randoop. We 
 \textbf{Class}& \textbf{Pex} & \textbf{Randoop}
 & \textbf{TeMAPI} \\
 \hline
-ManagerNotRecognizedException  &  100\% & 100\% &  100\%\\
+ParserAdapter                  &  8   & 2    &  9\\
 \hline
-ManagerNotSupportedException   &  100\% & 100\% &  100\%  \\
+AttributeListImpl              &  7   & 3    & 7\\
 \hline
-SaxAttributesSupport           &  78\%  & 74\%  &  80\%\\
+AttributesImpl                 &  15  & 11   &  18\\
 \hline
-XmlSaxDefaultHandler           &  100\% & 94\%  &  100\%\\
+XMLReaderAdapter               &  5   & 2    &  5\\
 \hline
-XmlSAXDocumentManager          &  29\%  & 17\%  &  29\%\\
+LocatorImpl                    &  4   & 0    &  4\\
 \hline
-XmlSaxLocatorImpl              &  83\%  & 100\%  &  100\%\\
+DefaultHandler                 &  4   & 0    &  4\\
 \hline
-XmlSaxParserAdapter            &  100\%  & 100\%  &  100\%\\
+SAXException                   &  5   & 1    &  5\\
 \hline
-XmlSourceSupport               &  100\%  & 56 \%  &  100\%\\
+HandlerBase                    &  4   & 1    &  5\\
+\hline
+NamespaceSupport               &  5   & 2    &  6\\
+\hline
+SAXParseException              &  6   & 1    &  6\\
+\hline
+SAXNotSupportedException       &  5   & 1    &  5\\
+\hline
+SAXNotRecognizedException      &  5   & 1    &  5\\
+\hline
+InputSource                    &  4   & 0    &  4\\
+\hline
+Total                          &  77  & 25   &  83\\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Results of testing coverage} \label{table:coverageJLCA}
+\Caption{Results with internal techniques on and off} \label{table:techniques}
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
+To investigate the significance of TeMAPI's internal techniques, we use JLCA as the subject tool, and the \CodeIn{org.xml} package in Java as the subject package for detecting behavior differences. For each class of the package, we compare numbers of found distinct methods with behavior differences when we turn on and off TeMAPI's internal techniques, and Table~\ref{table:techniques} shows the results. Column ``Class'' shows names of classes in Java that can be translated into C\# by JLCA. Column ``Pex'' lists number of found distinct methods with behavior differences when TeMAPI uses only Pex. With only Pex, 483 test cases are generated, and 132 test cases failed. Column ``Randoop'' lists number of found distinct methods with behavior differences when TeMAPI uses only Randoop. With only Randoop, 1200 test cases were generated, and 1168 test cases failed. Column ``TeMAPI'' lists number of found distinct methods with behavior differences when TeMAPI uses both Pex and Randoop.
+
+From the results of Table~\ref{table:techniques}, we find that test cases generated by Pex are more effective to reveal behavior differences than test cases generated by Randoop, since to generate test cases, Pex explores feasible paths whereas Randoop generates randomly. Although more test cases generated by Randoop fail than by Pex, these fail test cases does not reveal any new methods with behavior differences since they are redundant. Randoop's feedback-directed manner may cause these redundancy. For example, we find 1151 test cases generated by Randoop all have the same invocation sub-sequence like follows:
+
+\begin{CodeOut}\vspace*{-1ex}
+\begin{alltt}
+SaxAttributesSupport var25 = new SaxAttributesSupport();
+System.Int32 var26 = 1;
+System.String var27 = var25.GetLocalName((int) var26);
+Assert.IsTrue(var27 == null);
+\end{alltt}
+\end{CodeOut}\vspace*{-2ex}
+
+In this sub-sequence, JLCA translates the \CodeIn{AttributeListImpl. getName(int)} method in Java into the \CodeIn{SaxAttributesSupport. GetLocalName(int)} method in C\#. The translation makes the assertion fail since the C\# method does not return \CodeIn{null} given a empty attribute as the Java method does. Besides redundancy, each test case generated by Randoop use many API elements, but each test case generated by Pex focuses on only one field or method within a synthesized wrapper method. As a result, it takes much more efforts to locate a method with different behaviors from failed test cases generated by Randoop than by Pex. However, the combination of the two techniques helps TeMAPI detect more methods with behavior difference. Besides the behavior differences that involve multiple classes, we also find that Pex can fail to explore specific paths if such path is complicated. Randoop complements Pex to generate test cases for detecting some behavior differences of these methods since it generates test cases randomly.
+
+%---------------------------------------------------------------
+%\subsection{Coverage}
+%\label{sec:evaluation:coverage}
+%
+%
+%%especially in our context where most mapping relations are between J2SE and .NET Framework. For example, we find that coverage tools such as PartCover\footnote{\url{http://partcover.blogspot.com/ }} rely on the \CodeIn{JITCompilationStarted} method\footnote{\url{http://tinyurl.com/2gy2nqk}} for notifications of called methods, and thus fail to extract coverage for many methods in .NET Framework since usually no notifications are received when these method are called.
+%Test coverage is a common criterion to measure the adequacy of test cases~\cite{zhu1997software}. To investigate coverage achieved by our approach with its internal techniques on and off for Java-to-C\# tools, we conduct an evaluation on JLCA. Table~\ref{table:coverageJLCA} shows the results. Column ``Class'' shows names of the subject C\# classes. JLCA generates the eight classes, and translates some classes of the \CodeIn{org.xml} package in Java to the eight C\# classes. We choose only the \CodeIn{org.xml} package in Java as the subject since it is tricky to extract coverage for internal classes of J2SE and .NET. Column ``Pex'' lists achieved coverage if TeMAPI uses only Pex to generate test cases. Column ``Randoop'' lists  achieved coverage if TeMAPI uses only Randoop to generate test cases. As Pex explores feasible paths in a systematic manner and Randoop uses random strategy, Pex achieves better coverage than Randoop except for the \CodeIn{XmlSaxLocatorImpl} class. We find that Pex can fail to generate \CodeIn{non-null} values for some interfaces. For example, the parameter of the \CodeIn{XmlSaxLocatorImpl (XmlSaxLocator)} constructor is an interface. Pex generates only \CodeIn{null} inputs for the constructor, but Randoop casts a value to the interface. As a result, Randoop achieves better coverage on this class than Pex. Still, both Pex and Randoop do not achieve high coverage for some classes (\emph{e.g.}, the \CodeIn{XmlSAXDocumentManager} class), since covering some methods requires file interactions. As both Pex and Randoop generate filenames randomly, these methods are not covered by either tool. Column ``TeMAPI'' lists the coverage achieved by combining Pex and Randoop. We find that the combination achieves the best results for all classes.
+%
+%To investigate coverage achieved by our approach with its internal techniques on and off for C\# to Java tools, we conduct an evaluation on converter, and Table~\ref{table:coverageconverter} shows the results.  For similar consideration, we select four classes (\emph{i.e.}, the \CodeIn{System.Collections. ArrayList} class, the \CodeIn{System.Collections.Hashtable} class, the \CodeIn{System.Collections.Queue} class, and the \CodeIn{System.Collec- tions.Stack} class). Table~\ref{table:coverageconverter} shows coverage of their translated classes in Java. The four Java classes are decompiled by JAD\footnote{\url{http://www.varaneckas.com/jad}}. We fixed compilation errors introduced during decompiling, and changed their package names. Column ``Class'' shows the names of the four Java classes. Column ``Pex'' lists achieved coverage if leveraging only Pex. We use TeMAPI to generate Java test cases when Pex explores feasible paths. Column ``Randoop'' lists  achieved coverage if leveraging only Randoop.
+%%From the perspective of the four Java classes, Pex also generates test cases randomly since it does not search their feasible paths. As a result, the achieved coverage shown in Table~\ref{table:coverageconverter} are also half to half.
+%Column ``TeMAPI'' lists the coverage achieved by combining Pex and  Randoop. We also find that the combination achieves the best results.
+%
+%\begin{table}[t]
+%\centering
+%\begin{SmallOut}
+%\begin {tabular} {|c|r|r|r|r|r|c|c|}
+% \hline
+%\textbf{Class}& \textbf{Pex} & \textbf{Randoop}
+%& \textbf{TeMAPI} \\
+%\hline
+%ManagerNotRecognizedException  &  100\% & 100\% &  100\%\\
+%\hline
+%ManagerNotSupportedException   &  100\% & 100\% &  100\%  \\
+%\hline
+%SaxAttributesSupport           &  78\%  & 74\%  &  80\%\\
+%\hline
+%XmlSaxDefaultHandler           &  100\% & 94\%  &  100\%\\
+%\hline
+%XmlSAXDocumentManager          &  29\%  & 17\%  &  29\%\\
+%\hline
+%XmlSaxLocatorImpl              &  83\%  & 100\%  &  100\%\\
+%\hline
+%XmlSaxParserAdapter            &  100\%  & 100\%  &  100\%\\
+%\hline
+%XmlSourceSupport               &  100\%  & 56 \%  &  100\%\\
+%\hline
+%\end{tabular}\vspace*{-2ex}
+%\Caption{Results of testing coverage} \label{table:coverageJLCA}
+%\end{SmallOut}\vspace*{-4ex}
+%\end{table}
 
 \subsection{Summary}
 \label{sec:evaluation:summary}
-In summary, we find that API elements are quite large in size, and translation tools typically cover only a small set of API elements. Although existing translation tools already notice behavior differences of mapped API elements, many differences are not fixed. To detect behavior differences, our approach combines random testing with dynamic-symbolic-execution-based testing, and achieves higher coverage than using only one technique. Therefore, our approach enables us to find that various factors such as \CodeIn{null} inputs, \CodeIn{string} values, ranges of inputs, different understanding, exception handling, and static values that could lead to behavior differences for single API classes. The preceding factors can accumulate to behavior differences of multiple API elements. Besides, TeMAPI detects that other factors such as type cast statements and invocation sequences can also lead to behavior differences of multiple API classes.
+In summary, we find that API elements are quite large in size, and translation tools typically cover only a small set of API elements. Although existing translation tools already notice behavior differences of mapped API elements, many differences are not fixed. To detect behavior differences, our approach combines random testing with dynamic-symbolic-execution-based testing, and achieves to detect more behavior differences than with single techniques. Our approach further enables us to present an empirical study on behavior differences of API mapping relations between Java and C\#. We find that various factors such as \CodeIn{null} inputs, \CodeIn{string} values, ranges of inputs, different understanding, exception handling, and static values that could lead to behavior differences for single API classes. The preceding factors can accumulate to behavior differences of multiple API elements. Besides, TeMAPI detects that other factors such as type cast statements and invocation sequences can also lead to behavior differences of multiple API classes.
 \subsection{Threats to Validity}
 \label{sec:evaluation:threat}
 The threats to external validity include the representativeness of the subject tools. Although we applied
 our approach on five widely used translation tools, our approach is evaluated only on these limited tools. This threat could be reduced by introducing more subject tools in future work. The threats to internal validity include human factors for inspecting behavior differences from failing test cases. To reduce these threats, we inspected those test cases carefully. The threat could be further
 reduced by introducing more researchers to inspect detected differences.
-\begin{table}[t]
-\centering
-\begin{SmallOut}
-\begin {tabular} {|c|r|r|r|r|r|c|c|}
- \hline
-\textbf{Class}& \textbf{Pex} & \textbf{Randoop}
-& \textbf{TeMAPI} \\
-\hline
-HashTable                      &  23\%  & 15\%  &  26\%\\
-\hline
-LinkedList                     &  32\%  & 26\%  & 37\%\\
-\hline
-ArrayList                      &  18\%  & 25\%  &  31\%\\
-\hline
-Stack                          &  21\%   & 55\%  &  55\%\\
-\hline
-\end{tabular}\vspace*{-2ex}
-\Caption{Results of testing coverage} \label{table:coverageconverter}
-\end{SmallOut}\vspace*{-4ex}
-\end{table}
+%\begin{table}[t]
+%\centering
+%\begin{SmallOut}
+%\begin {tabular} {|c|r|r|r|r|r|c|c|}
+% \hline
+%\textbf{Class}& \textbf{Pex} & \textbf{Randoop}
+%& \textbf{TeMAPI} \\
+%\hline
+%HashTable                      &  23\%  & 15\%  &  26\%\\
+%\hline
+%LinkedList                     &  32\%  & 26\%  & 37\%\\
+%\hline
+%ArrayList                      &  18\%  & 25\%  &  31\%\\
+%\hline
+%Stack                          &  21\%   & 55\%  &  55\%\\
+%\hline
+%\end{tabular}\vspace*{-2ex}
+%\Caption{Results of testing coverage} \label{table:coverageconverter}
+%\end{SmallOut}\vspace*{-4ex}
+%\end{table} 
