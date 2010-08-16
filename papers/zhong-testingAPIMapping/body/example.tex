@@ -1,12 +1,12 @@
 \section{Example}
 \label{sec:example}
 
-We next present major steps in our approach for detecting the behavioral differences of mapped API elements. In particular, we use JLCA translation tool as an example translation tool, and TeMAPI extracts mapping relations of API elements defined in JLCA. Consider the \CodeIn{java.io.BufferedInputStream} class in Java as an example API element. TeMAPI generates test cases for the preceding API element in one language and translates those test cases into the other language to detect behavioral differences. TeMAPI includes two major techniques for testing single API classes and multiple API classes.
+We next present major steps in our approach for detecting the behavioral differences of mapped API elements. In particular, we use JLCA translation tool as an example translation tool, and the \CodeIn{java.io.BufferedInputStream} class in Java as an example API element. TeMAPI extracts mapping relations of API elements defined in JLCA, and generates test cases for each API element in one language and translates those test cases into the other language to detect behavioral differences. TeMAPI includes two major techniques for testing single API classes and multiple API classes.
 
 %----------------------------------------------------
 \textbf{Testing Single API Classes.} To test single API class, TeMAPI leverages a state-of-the-art test-generation tool, called Pex~\cite{tillmann2008pex}. Since Pex generates test cases for C\# code, TeMAPI generates test inputs and outputs on C\# code and translates them to Java. We next describe these steps in detail.
 
-As described by its documentation\footnote{\url{http://tinyurl.com/2bca7vh}}, the \CodeIn{BufferedInputStream} class in Java has five fields, two constructors, and eight methods. To fully explore the behaviors of the class, TeMAPI synthesizes a wrapper method for each field and each method using each constructor. For example, given the \CodeIn{BufferedInputStream(Input- Stream)} constructor, TeMAPI synthesizes the wrapper method as follows for the \CodeIn{skip(long)} method:
+As described by its documentation\footnote{\url{http://tinyurl.com/2bca7vh}}, besides inherited elements, the \CodeIn{BufferedInputStream} class in Java has five fields, two constructors, and eight methods. To fully explore the behaviors of the class, TeMAPI synthesizes a wrapper method for each field and each method using each constructor. For example, given the \CodeIn{BufferedInputStream(InputStream)} constructor, TeMAPI synthesizes the wrapper method as follows for the \CodeIn{skip(long)} method:
 
 \begin{CodeOut}\vspace*{-1ex}
 \begin{alltt}
