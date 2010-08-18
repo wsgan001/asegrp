@@ -7,7 +7,7 @@
  \label{fig:approach}
 \end{figure}
 
-Given a translation tool between Java and C\#, TeMAPI generates various test cases to reveal behavioral differences of API mapping relations defined by the tool. Figure~\ref{fig:approach} shows the overview of TeMAPI. TeMAPI generates test cases to test mapping relations both for a single API class (Section~\ref{sec:approach:single}) and for multiple API classes (Section~\ref{sec:approach:sequence}).
+Given a translation tool between Java and C\#, TeMAPI generates various test cases to reveal behavioral differences of API mapping relations defined by the tool. TeMAPI generates test cases to test mapping relations for a single API class (Section~\ref{sec:approach:single}) and multiple API classes (Section~\ref{sec:approach:sequence}). Figure~\ref{fig:approach} shows the overview of TeMAPI. 
 
 
 %-------------------------------------------------------------------
@@ -19,7 +19,7 @@ Given a translation tool, TeMAPI first extracts its API mapping relations. To de
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public T TestGet|f.name||no|()\{ return C.f; \}
+ public T testGet|f.name||no|()\{ return C.f; \}
 \end{alltt}
 \end{CodeOut}\vspace*{-1.5ex}
 
@@ -27,26 +27,26 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public void TestSet|f.name||no|(T v)\{ C.f = v; \}
+ public void testSet|f.name||no|(T v)\{ C.f = v; \}
 \end{alltt}
 \end{CodeOut}\vspace*{-1.5ex}
 
-\textbf{Static methods.} Given a public static method \CodeIn{m(T1\ p1,\ldots,Tn\ pn)} of a class \CodeIn{C} whose return type is \CodeIn{Tm}, TeMAPI synthesizes a wrapper method as follows:
+\textbf{Static methods.} Given a public static method \CodeIn{m(T1\ m1,\ldots,Tn\ mn)} of a class \CodeIn{C} whose return type is \CodeIn{Tm}, TeMAPI synthesizes a wrapper method as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public Tm Test|m.name||no|(T1\ m1,\ldots, Tn\ mn)\{
+ public Tm test|m.name||no|(T1\ m1,\ldots, Tn\ mn)\{
    return C.m(m1,\ldots, mn); \}
 \end{alltt}
 \end{CodeOut}\vspace*{-1.5ex}
 
 When TeMAPI synthesizes wrapper methods for non-static fields or methods, it takes constructors into considerations:
 
-\textbf{Non-static fields.} Given a public non-static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMAPI synthesizes a getter for each constructor \CodeIn{C(T1\ p1,\ldots, Tn\ pn)} of \CodeIn{C} as follows:
+\textbf{Non-static fields.} Given a public non-static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMAPI synthesizes a getter for each constructor \CodeIn{C(T1\ c1,\ldots, Tn\ cn)} of \CodeIn{C} as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public T TestGet|f.name||no|(T1\ c1,\ldots, Tn\ cn)\{
+ public T testGet|f.name||no|(T1\ c1,\ldots, Tn\ cn)\{
     C obj = new C(c1,\ldots, cn);
     return obj.f; \}
 \end{alltt}
@@ -56,7 +56,7 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public void TestSet|f.name||no|(T1\ c1,\ldots, Tn\ cn)\{
+ public void testSet|f.name||no|(T1\ c1,\ldots, Tn\ cn)\{
    C obj = new C(c1,\ldots, cn);
    obj.f = v; \}
 \end{alltt}
@@ -64,11 +64,11 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 Here, ``\CodeIn{|f.name|}'' denotes the name of \CodeIn{f}, and ``\CodeIn{|no|}'' denotes the corresponding number of synthesized wrapper method.
 
-\textbf{Non-static methods.} Given a public non-static method \CodeIn{m(T1\ p1,\ldots,Tn\ pn)} of a class \CodeIn{C} whose return type is \CodeIn{Tm}, TeMAPI synthesizes a wrapper method for each constructor \CodeIn{C(Tv\ pv,\ldots, Tt\ pt)} of \CodeIn{C} as follows:
+\textbf{Non-static methods.} Given a public non-static method \CodeIn{m(T1\ m1,\ldots,Tn\ mn)} of a class \CodeIn{C} whose return type is \CodeIn{Tm}, TeMAPI synthesizes a wrapper method for each constructor \CodeIn{C(Tv\ cv,\ldots, Tt\ ct)} of \CodeIn{C} as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public Tm Test|m.name||no|(T1\ m1,\ldots, Tn\ mn,
+ public Tm test|m.name||no|(T1\ m1,\ldots, Tn\ mn,
                             Tv cv, \ldots, Tt ct)\{
    C obj = new C(cv,\ldots, ct);
    return obj.m(m1,\ldots, mn); \}
@@ -93,7 +93,7 @@ Since wrappers reveal behaviors of a given class at the finest level and expose 
 
 As shown in Figures~\ref{fig:db4ojava} and~\ref{fig:db40net}, translation tools can translate one API class in one language into one class in another language. To detect behavioral differences that involve single classes, TeMAPI extends Pex~\cite{tillmann2008pex}, so that it generates test cases for safe wrapper methods for each API class in C\#. Pex~\cite{tillmann2008pex} is a white-box test generation tool for .NET based on dynamic symbolic execution. Basically, Pex repeatedly executes a method under test, so that it explores all feasible paths of the method.
 %To reduce the efforts to explore paths, Pex leverage various exploration strategies. For example, Xie \emph{et al.}~\cite{xie09:fitness} propose a search strategy called Fitnex that uses state-dependent fitness values to guide path exploration of Pex.
-For each API class, TeMAPI leverages Pex to explore paths of each its safe wrapper, and records the inputs and the corresponding output when exploring. Based on recorded inputs and outputs, TeMAPI generates Java test cases to ensure each wrapper method produces the same output give the same inputs. To check equivalence of  outputs, TeMAPI checks whether their values are equal for primitive types and arrays, and checks whether each mapped fields are equal for objects. For example, TeMAPI records that given an empty object, the \CodeIn{testappend175nm} wrapper method in C\# returns a \CodeIn{StringBuilder} object whose \CodeIn{Capacity} field is 16 and \CodeIn{Length} field is 13, so TeMAPI generates a test case for the corresponding Java wrapper method as follows:
+For each API class, TeMAPI leverages Pex to explore paths of each its safe wrapper, and records the inputs and the corresponding output when exploring. Based on recorded inputs and outputs, TeMAPI generates Java test cases to ensure each pair of wrapper methods produce the same output give the same inputs. To check equivalence of  outputs, TeMAPI checks whether their values are equal for primitive types and arrays, and checks whether each mapped fields are equal for objects. For example, TeMAPI records that given an empty object, the \CodeIn{testappend175nm} wrapper method in C\# returns a \CodeIn{StringBuilder} object whose \CodeIn{Capacity} field is 16 and \CodeIn{Length} field is 13, so TeMAPI generates a test case for the corresponding Java wrapper method as follows:
 
 \begin{CodeOut}\vspace*{-1ex}
 \begin{alltt}
@@ -130,7 +130,7 @@ For example, during exploring the \CodeIn{TestvalueOf61sm} wrapper method, TeMAP
 \end{alltt}
 \end{CodeOut}\vspace*{-1ex}
 
-This test case fails since the \CodeIn{testvalueOf61sm} method does not throw any exceptions given a null input.
+This test case gets failed since the \CodeIn{testvalueOf61sm} method does not throw any exceptions given a null input.
 From this failing test case, TeMAPI detects the behavioral difference between the \CodeIn{java.lang.String.valueOf(Object)} method in Java and the \CodeIn{System.Object.ToString()} method in C\#, since the preceding two wrapper methods are for the two API methods only.
 
 %-----------------------------------------------------------
