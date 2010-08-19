@@ -19,7 +19,7 @@ Given a translation tool, TeMAPI first extracts its API mapping relations. To de
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public T testGet|f.name||no|()\{ return C.f; \}
+ public T testGet|f.name||no|sfg()\{ return C.f; \}
 \end{alltt}
 \end{CodeOut}\vspace*{-1.5ex}
 
@@ -27,7 +27,7 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public void testSet|f.name||no|(T v)\{ C.f = v; \}
+ public void testSet|f.name||no|sfs(T v)\{ C.f = v; \}
 \end{alltt}
 \end{CodeOut}\vspace*{-1.5ex}
 
@@ -35,7 +35,7 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public Tm test|m.name||no|(T1\ m1,\ldots, Tn\ mn)\{
+ public Tm test|m.name||no|sm(T1\ m1,\ldots, Tn\ mn)\{
    return C.m(m1,\ldots, mn); \}
 \end{alltt}
 \end{CodeOut}\vspace*{-1.5ex}
@@ -46,7 +46,7 @@ When TeMAPI synthesizes wrapper methods for non-static fields or methods, it tak
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public T testGet|f.name||no|(T1\ c1,\ldots, Tn\ cn)\{
+ public T testGet|f.name||no|nfg(T1\ c1,\ldots, Tn\ cn)\{
     C obj = new C(c1,\ldots, cn);
     return obj.f; \}
 \end{alltt}
@@ -56,7 +56,7 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public void testSet|f.name||no|(T1\ c1,\ldots, Tn\ cn)\{
+ public void testSet|f.name||no|nfs(T1\ c1,\ldots, Tn\ cn)\{
    C obj = new C(c1,\ldots, cn);
    obj.f = v; \}
 \end{alltt}
@@ -68,7 +68,7 @@ Here, ``\CodeIn{|f.name|}'' denotes the name of \CodeIn{f}, and ``\CodeIn{|no|}'
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
- public Tm test|m.name||no|(T1\ m1,\ldots, Tn\ mn,
+ public Tm test|m.name||no|nm(T1\ m1,\ldots, Tn\ mn,
                             Tv cv, \ldots, Tt ct)\{
    C obj = new C(cv,\ldots, ct);
    return obj.m(m1,\ldots, mn); \}
@@ -112,7 +112,7 @@ This test case fails, since here the \CodeIn{capacity()} method returns 34 and t
 
 
 We notice that when Pex explores a path with some specific inputs, the method under exploration throws exceptions.
-For example, during exploring the \CodeIn{TestvalueOf61sm} wrapper method, TeMAPI records that given a \CodeIn{null} input, the method throws \CodeIn{Null- ReferenceException}, so it generates a test case to ensure the corresponding Java wrapper method also throws a mapped exception. To generate the test case, TeMAPI first finds the corresponding exceptions in Java by analyzing translated wrapper methods with synthesized ones. In this example, TeMAPI finds that the \CodeIn{NullReferenceException} class in C\# is mapped to the \CodeIn{Null- PointerException} class in Java with respect to the API mapping relations of Java2CSharp, so it generates a Java test case as follows:
+For example, during exploring the \CodeIn{testvalueOf61sm} wrapper method, TeMAPI records that given a \CodeIn{null} input, the method throws \CodeIn{Null- ReferenceException}, so it generates a test case to ensure the corresponding Java wrapper method also throws a mapped exception. To generate the test case, TeMAPI first finds the corresponding exceptions in Java by analyzing translated wrapper methods with synthesized ones. In this example, TeMAPI finds that the \CodeIn{NullReferenceException} class in C\# is mapped to the \CodeIn{Null- PointerException} class in Java with respect to the API mapping relations of Java2CSharp, so it generates a Java test case as follows:
 
 \begin{CodeOut}\vspace*{-1ex}
 \begin{alltt}
