@@ -6,7 +6,7 @@ To illustrate major steps of our approach, we use JLCA (a Java-to-C\# translatio
 %----------------------------------------------------
 \textbf{Testing Single API Classes.} To test single API class, TeMAPI leverages a state-of-the-art test-generation tool, called Pex~\cite{tillmann2008pex}. Since Pex generates test cases for C\# code, TeMAPI generates test inputs and outputs on C\# code and translates them to Java. We next describe these steps in details.
 
-As shown by its documentation\footnote{\url{http://tinyurl.com/2dsgftv}}, the \CodeIn{ByteArrayInputStream} class in Java has five fields, two constructors, and eight methods besides inherited ones. To fully explore the behaviors of the class, TeMAPI synthesizes a wrapper method for each field and each method using each constructor. For example, given the \CodeIn{ByteArray- InputStream(byte[])} constructor, TeMAPI synthesizes the wrapper method as follows for the \CodeIn{skip(long)} method:
+As shown in its documentation\footnote{\url{http://tinyurl.com/2dsgftv}}, the \CodeIn{ByteArrayInputStream} class in Java has five fields, two constructors, and eight methods besides inherited ones. To fully explore the behaviors of the class, TeMAPI synthesizes a wrapper method for each field and each method using each constructor. For example, given the \CodeIn{ByteArray- InputStream(byte[])} constructor, TeMAPI synthesizes the wrapper method as follows for the \CodeIn{skip(long)} method:
 
 \begin{CodeOut}\vspace*{-1ex}
 \begin{alltt}
@@ -40,8 +40,8 @@ As each wrapper method checks the output of one API element (\emph{i.e.}, the re
 \begin{alltt}
 public void testskip24nm36()\{
   try\{
-     sketch.Test_java_io_BufferedInputStream obj =
-        new sketch.Test_java_io_BufferedInputStream();
+     sketch.Test_java_io_ByteArrayInputStream obj =
+        new sketch.Test_java_io_ByteArrayInputStream();
      long m0 = java.lang.Long.valueOf(
                   "2147483648").longValue();
      byte[] c0 = new byte[0];
