@@ -51,7 +51,7 @@ All evaluations were conducted on a PC with Intel Qual CPU @ 2.83GHz and 2G memo
 This evaluation focuses on the effectiveness of our approach to extract API mapping relations from both open source tools and closed source tools. The results are useful to follow-up steps, and also reveal to what extents existing translation tools can support API translation. For Java-to-C\# tools, TeMAPI first synthesized wrapper methods for all classes of J2SE 6.0\footnote{\url{http://java.sun.com/javase/6/docs/api/}}. During synthesizing,  TeMAPI ignored all generic API methods as described in Section~\ref{sec:approach:single}, and Table~\ref{table:java2csharp} shows the translation results. Column ``Type'' lists types of synthesized methods: ``sfg'' denotes getters of static fields; ``sfs'' denotes setters of static fields; ``nfg'' denotes getters of non-static fields; ``nfs'' denotes setters of non-static fields; ``sm'' denotes static methods; ``nm'' denotes non-static methods; and ``Total'' denotes the sum of all methods. Column ``Num'' lists numbers of corresponding types of methods. Columns ``Java2CSharp'', ``JLCA'', and ``sharpen'' list the translation results of corresponding translation tools, respectively. For these columns, sub-columns ``M'' and ``\%'' list numbers and percentages of translated wrapper methods without compilation errors, respectively.
 
 
-Our results show that it is quite challenging for a translation tool to cover all API elements, since API elements are quite large in size. Although JLCA is able to translate 43,678 wrapper methods, these methods cover only 22.4\% of total synthesized methods. Furthermore, even if an API element is translated, it can be translated to API elements with behavioral differences. We observe that developers of translation tools may already aware of some behavioral differences. For example, after JLCA translated synthesized code, it generated a report with many warning messages regarding behavioral differences of translated API elements. For example, a warning message was ``Method \CodeIn{java.lang.String.indexOf} was converted to \CodeIn{System.String.IndexOf}, which may throw an exception'', but the report does not tell programmers when such an exception is thrown or how to deal with that exception. TeMAPI complements the problem, and detects that the Java method does not check whether inputs are out of ranges as the C\# method does. For example, given an empty string \CodeIn{str}, the \CodeIn{str.indexOf("", -1)} statement in Java returns 0, whereas the \CodeIn{str.IndexOf("", -1)} statement in C\# throws \CodeIn{ArgumentOutOfRangeExcpetion}.
+Our results show that it is quite challenging for a translation tool to translate all API elements, since API elements are quite large in size. Although JLCA is able to translate 43,678 wrapper methods, these methods cover only 22.4\% of total synthesized methods. Furthermore, even if an API element is translated, it can be translated to API elements with behavioral differences. We observe that developers of translation tools may already aware of some behavioral differences. For example, after JLCA translated synthesized code, it generated a report with many warning messages regarding behavioral differences of translated API elements. For example, a warning message was ``Method \CodeIn{java.lang.String.indexOf} was converted to \CodeIn{System.String.IndexOf}, which may throw an exception'', but the report does not tell programmers when such an exception is thrown or how to deal with that exception. TeMAPI complements the problem, and detects that the Java method does not check whether inputs are out of ranges as the C\# method does. For example, given an empty string \CodeIn{str}, the \CodeIn{str.indexOf("", -1)} statement in Java returns 0, whereas the \CodeIn{str.IndexOf("", -1)} statement in C\# throws \CodeIn{ArgumentOutOfRangeExcpetion}.
 
 \begin{table}[t]
 \centering
@@ -78,7 +78,7 @@ Total &194835& 99   &  0.1\% & 396 & 0.2\%\\
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{Translation results of C\#-to-Java tools} \label{table:csharp2java}
-\end{SmallOut}\vspace*{-5ex}
+\end{SmallOut}\vspace*{-4.5ex}
 \end{table}
 
 For C\#-to-Java translation tools, TeMAPI first synthesized wrapper methods for all classes of the .NET framework client profile\footnote{\url{http://tinyurl.com/252t2ax}}. As described in Section~\ref{sec:approach:single}, besides generic methods, TeMAPI also ignored \CodeIn{unsafe} methods, \CodeIn{delegate} methods, and methods whose parameters are marked with \CodeIn{out} or \CodeIn{ref}. TeMAPI synthesized almost the same size of wrapper methods as it synthesized for J2SE. Table~\ref{table:csharp2java} shows the translation results. We find that both tools translate only a small number of API elements. One primary reason could be that C\# provides many features such as partial classes, reference parameters, output parameters, and named arguments, that are not provided by Java\footnote{\url{http://tinyurl.com/yj4v2m2}}. We suspect that a C\#-to-Java translation tool needs take these issues into consideration, so many mapping relations of API elements are not addressed yet.
@@ -149,7 +149,7 @@ org.xml             &   \hfill 897    & 49   &  5.5\%  & 473    & 52.7\%    & 0 
 \subsection{Testing Single Classes}
 \label{sec:evaluation:single}
 
-To detect behavioral differences of single classes, TeMAPI leverages Pex to explore safe wrapper methods. These methods include both the translated C\# wrapper methods without compilation errors (as shown in Table~\ref{table:java2csharp}) and the synthesized C\# wrapper methods that can be translated into Java without compilation errors (as shown in Table~\ref{table:csharp2java}). During exploration, when Pex generates inputs that exercise a feasible path in the wrapper method, TeMAPI records the inputs and resulting outputs of that path. Based on these inputs and outputs, TeMAPI generates Java test cases to ensure that synthesized wrapper methods and translated wrapper methods return the same outputs given the same inputs. Since testing GUI related API elements requires human interactions, we filter out these elements (\emph{i.e.}, the \CodeIn{awt} package and the \CodeIn{swing} package). In addition, when Pex explores methods without return values, we ignore paths that do not throw any exceptions, since we cannot generate Java related test cases. We discuss this issue in Section~\ref{sec:discuss}.
+To detect behavioral differences of single classes, TeMAPI leverages Pex to explore safe wrapper methods. These methods include both the translated C\# wrapper methods without compilation errors (as shown in Table~\ref{table:java2csharp}) and the synthesized C\# wrapper methods that can be translated to Java without compilation errors (as shown in Table~\ref{table:csharp2java}). During exploration, when Pex generates inputs that exercise a feasible path in the wrapper method, TeMAPI records the inputs and resulting outputs of that path. Based on these inputs and outputs, TeMAPI generates Java test cases to ensure that synthesized wrapper methods and translated wrapper methods return the same outputs given the same inputs. Since testing GUI related API elements requires human interactions, we filter out these elements (\emph{i.e.}, the \CodeIn{awt} package and the \CodeIn{swing} package). In addition, when Pex explores methods without return values, we ignore paths that do not throw any exceptions, since we cannot generate Java related test cases. We discuss this issue in Section~\ref{sec:discuss}.
 
 Table~\ref{table:singleinvoc} shows the results of executing generated Java test cases. Column ``Name'' lists names of translation tools. Column ``Num'' lists numbers of generated Java test cases. Columns ``E-Tests'' and ``A-Tests'' list numbers of exception-causing and assertion-failing test cases. These test cases reflect behavioral differences between mapped API elements. Among these two columns, sub-columns ``M'' and ``\%'' list the number and percentages of these test cases. Table~\ref{table:singleinvoc} shows that only about half of the generated Java test cases are passed. Among the five tools, sharpen includes the lowest number of ``E-Tests'' and ``A-Tests''. It seems that programmers of sharpen put great efforts to fix behavioral differences. The percentage of JLCA is also relatively low. The results are comparable, since JLCA translates much more API elements than the other tools. In total, about 50\% of test cases are failed. These results show the effectiveness of TeMAPI, since these test cases represent behavioral differences.
 
@@ -255,7 +255,7 @@ We find that \CodeIn{string} values stored in fields between Java classes and th
 
 \textbf{Finding 3:} 11.5\% test cases show the behavioral differences caused by illegal inputs or inputs out of ranges.
 
-We find that API methods in Java seldom check whether their inputs are illegal or out of range, whereas API methods in C\# often do. For example, the \CodeIn{java.lang.Boolean.parseBoolean (String)} method in Java does not check for illegal inputs, and returns \CodeIn{false} given an illegal input such as ``\CodeIn{test}''. Java2CSharp translates it into the \CodeIn{System.Boolean.Parse(String)} method in C\#. The C\# method throws \CodeIn{FormatException} given the same input since it checks for illegal inputs. As another example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than 32,767. JLCA translates the Java method to the \CodeIn{Convert.ToInt16(double)} method in C\#. The C\# method throws \CodeIn{OverflowException} when values are larger than 32,767 since it checks whether inputs are too large.
+We find that API methods in Java seldom check whether their inputs are illegal or out of range, whereas API methods in C\# often do. For example, the \CodeIn{java.lang.Boolean.parseBoolean (String)} method in Java does not check for illegal inputs, and returns \CodeIn{false} given an illegal input such as ``\CodeIn{test}''. Java2CSharp translates it to the \CodeIn{System.Boolean.Parse(String)} method in C\#. The C\# method throws \CodeIn{FormatException} given the same input since it checks for illegal inputs. As another example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than 32,767. JLCA translates the Java method to the \CodeIn{Convert.ToInt16(double)} method in C\#. The C\# method throws \CodeIn{OverflowException} when values are larger than 32,767 since it checks whether inputs are too large.
 
 \textbf{Implication 3:} API methods across languages may follow different standards to check their inputs for different considerations. If a tool translates code from a low standard to a high standard (\emph{e.g.}, Java to C\#), it can add extra code to satisfy the high standard. When programmers migrate from one language to another, they should check whether the new language follow a high standard or not.
 
@@ -263,7 +263,7 @@ We find that API methods in Java seldom check whether their inputs are illegal o
 
 
 We find that implementers of API libraries may have different understanding for mapped API methods in different languages. Two such examples are shown in Section~\ref{sec:approach:single} (\emph{i.e.}, the \CodeIn{capacity()} method and the \CodeIn{length()} method). In some cases, such differences reflect different natures between languages. For example, we find that Java considers ``\CodeIn{\textbackslash}'' as existing directories, but  C\# considers it not. In some other cases, we find that such differences can indicate defects in translation tools. For example, Java2CSharp translates the \CodeIn{java.lang.Integer.toHexString(int)} method in Java to the \CodeIn{ILOG.J2CsMapping.Util.IlNumber.ToString(int, 16)} method in C\#.
-Given an integer -2147483648, the Java method returns ``80000000'', but the C\# method returns ``\textbackslash080000000''. As another example, Java2CSharp translates the \CodeIn{Character.isJava- IdentifierPart(char)} method in Java into the \CodeIn{ILOG.J2Cs- Mapping.Util.Character.IsCSharpIdentifierPart(char)} method in C\#. Given a input ``\CodeIn{\textbackslash0}'', the Java method returns \CodeIn{true}, but the C\# method returns \CodeIn{false}. These two behavioral differences were confirmed as defects by programmers of Java2CSharp.
+Given an integer -2147483648, the Java method returns ``80000000'', but the C\# method returns ``\textbackslash080000000''. As another example, Java2CSharp translates the \CodeIn{Character.isJava- IdentifierPart(char)} method in Java to the \CodeIn{ILOG.J2CsMapping. Util.Character.IsCSharpIdentifierPart(char)} method in C\#. Given a input ``\CodeIn{\textbackslash0}'', the Java method returns \CodeIn{true}, but the C\# method returns \CodeIn{false}. These two behavioral differences were confirmed as defects by programmers of Java2CSharp.
 
 \textbf{Implication 4:} Implementers can have different understanding on functionalities of specific methods. Some such differences reflect different natures of different languages, and some other differences indicate  defects in translation tools. Programmers should test their translated code carefully since this type of differences are difficult to figure out.
 
@@ -307,7 +307,7 @@ Total        &  9642 & 45547& 4504  &  2813 & 62.5\% \\
 \end{table}
 To test behavioral differences involving multiple classes, TeMAPI leverages Randoop to generate test cases, given the list of translatable API methods. In this evaluation, we focus on Java-to-C\# tools only, since C\#-to-Java tools translate only a few API elements as shown in Table~\ref{table:java2csharp}. For each Java-to-C\# tool, TeMAPI first extracted the list of translatable API methods using the technique as described in Section~\ref{sec:approach:sequence}. When generating test cases, TeMAPI extends Randoop, so that each generated test case use only translatable API methods. Randomly generated invocation sequences may not reflect API usages in true practice, and we discuss this issue in Section~\ref{sec:discuss}. Among generated test cases, TeMAPI translates only passing test cases from Java to C\#.
 
-Table~\ref{table:invocsequence} shows the results. Column ``Method'' lists sizes of translatable API methods in Java. Column ``Java'' lists numbers of passing test cases in Java. Column ``C\#'' lists numbers of translated test cases in C\#. We notice that many Java test cases are not successfully translated into C\# for three factors that are not general or not related with API migration: (1) to prepare inputs of translatable API methods, Randoop introduces API methods that are not translatable; (2) some code structures are complicated to translate, and we further discuss this issue in Section~\ref{sec:discuss}; (3) compilation errors can be magnified since Randoop's feedback-directed manner causes redundancies (Section~\ref{sec:evaluation:techniques} shows an example of caused redundancies). Besides, our finding is as follows:
+Table~\ref{table:invocsequence} shows the results. Column ``Method'' lists sizes of translatable API methods in Java. Column ``Java'' lists numbers of passing test cases in Java. Column ``C\#'' lists numbers of translated test cases in C\#. We notice that many Java test cases are not successfully translated to C\# for three factors that are not general or not related with API migration: (1) to prepare inputs of translatable API methods, Randoop introduces API methods that are not translatable; (2) some code structures are complicated to translate, and we further discuss this issue in Section~\ref{sec:discuss}; (3) compilation errors can be magnified since Randoop's feedback-directed manner causes redundancies (Section~\ref{sec:evaluation:techniques} shows an example of caused redundancies). Besides, our finding is as follows:
 
 \textbf{Finding 7:} Many translated test cases have compilation errors, since Java API classes and their mapped C\# classes have different inheritance hierarchies.
 
@@ -319,12 +319,11 @@ public void test87() throws Throwable\{
   ...
   StringBufferInputStream var4=...;
   InputStreamReader var10=
-    new InputStreamReader((InputStream)var4, var8);
-\}
+    new InputStreamReader((InputStream)var4, var8);\}
 \end{alltt}
 \end{CodeOut}\vspace*{-2ex}
 
-Since the preceding two Java API classes are related through inheritance, the test case gets passed. JLCA translates the Java test case into a C\# test case as follows:
+Since the preceding two Java API classes are related through inheritance, the test case gets passed. JLCA translates the Java test case to a C\# test case as follows:
 
 \begin{CodeOut}\vspace*{-1ex}
 \begin{alltt}
@@ -332,8 +331,7 @@ public void test87() throws Throwable\{
   ...
   StringReader var4=...;
   StreamReader var10=
-    new StreamReader((Stream)var4, var8);
-\}
+    new StreamReader((Stream)var4, var8);\}
 \end{alltt}
 \end{CodeOut}\vspace*{-2ex}
 
@@ -357,12 +355,11 @@ public void test423() throws Throwable\{
   ...
   DateFormatSymbols var0=new DateFormatSymbols();
   String[] var16=new String[]{...};
-  var0.setShortMonths(var16);
-\}
+  var0.setShortMonths(var16);\}
 \end{alltt}
 \end{CodeOut}\vspace*{-2ex}
 
-JLCA translates the Java test case into a C\# test case as follows:
+JLCA translates the Java test case to a C\# test case as follows:
 
 \begin{CodeOut}\vspace*{-1ex}
 \begin{alltt}
@@ -371,8 +368,7 @@ public void test423() throws Throwable\{
   DateTimeFormatInfo var0 =
   System.Globalization.DateTimeFormatInfo.CurrentInfo;
   String[] var16=new String[]{...};
-  var0.AbbreviatedMonthNames = var16;
-\}
+  var0.AbbreviatedMonthNames = var16;\}
 \end{alltt}
 \end{CodeOut}\vspace*{-2ex}
 
@@ -424,7 +420,7 @@ Total                          &  256& 80  & 25   &  87 & 34.0\%\\
 \Caption{Results with internal techniques on and off} \label{table:techniques}
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
-To investigate the significance of TeMAPI's internal techniques, we use JLCA as the subject tool, and the \CodeIn{org.xml} package in Java as the subject package for detecting behavioral differences. For each class of the package, we compare numbers of found distinct translatable methods with behavioral differences when we turn on and off TeMAPI's internal techniques, and Table~\ref{table:techniques} shows the results. Column ``Class'' shows names of classes in Java that can be translated into C\# by JLCA. Column ``M'' lists numbers of translatable methods of each class. These methods include inherited ones. Columns ``P'', ``R'', and ``T'' list numbers of found distinct translatable methods with behavioral differences when TeMAPI uses only Pex, only Randoop, and both Pex and Randoop, respectively. With only Pex, 483 test cases were generated, and 132 test cases failed. With only Randoop, 1200 test cases were generated in Java, and all these test cases got passed. After translation, all translated test cases in C\# had no compilation errors, and 1168 C\# test cases got failed. We manually inspected these failing test cases, and we find that test cases generated by Pex are more effective to reveal behavioral differences than test cases generated by Randoop, since for test cases, Pex explores feasible paths whereas Randoop generates randomly. Although more test cases generated by Randoop fail than by Pex, these failing test cases does not reveal any new methods with behavioral differences since they are redundant. For example, we find 1151 test cases generated by Randoop all have the same invocation sub-sequence like follows:
+To investigate the significance of TeMAPI's internal techniques, we use JLCA as the subject tool, and the \CodeIn{org.xml} package in Java as the subject package for detecting behavioral differences. For each class of the package, we compare numbers of found distinct translatable methods with behavioral differences when we turn on and off TeMAPI's internal techniques, and Table~\ref{table:techniques} shows the results. Column ``Class'' shows names of classes in Java that can be translated to C\# by JLCA. Column ``M'' lists numbers of translatable methods of each class. These methods include inherited ones. Columns ``P'', ``R'', and ``T'' list numbers of found distinct translatable methods with behavioral differences when TeMAPI uses only Pex, only Randoop, and both Pex and Randoop, respectively. With only Pex, 483 test cases were generated, and 132 test cases failed. With only Randoop, 1200 test cases were generated in Java, and all these test cases got passed. After translation, all translated test cases in C\# had no compilation errors, and 1168 C\# test cases got failed. We manually inspected these failing test cases, and we find that test cases generated by Pex are more effective to reveal behavioral differences than test cases generated by Randoop, since for test cases, Pex explores feasible paths whereas Randoop generates randomly. Although more test cases generated by Randoop fail than by Pex, these failing test cases does not reveal any new methods with behavioral differences since they are redundant. For example, we find 1151 test cases generated by Randoop all have the same invocation sub-sequence like follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
@@ -435,7 +431,7 @@ Assert.IsTrue(var27 == null);
 \end{alltt}
 \end{CodeOut}\vspace*{-1.5ex}
 
-In this sub-sequence, JLCA translates the \CodeIn{AttributeListImpl. getName(int)} method in Java into the \CodeIn{SaxAttributesSupport. GetLocalName(int)} method in C\#. The translation makes the assertion fail since the C\# method does not return \CodeIn{null} given an empty attribute as the Java method does. Besides redundancy, each test case generated by Randoop uses many API elements, and each test case generated by Pex focuses on only one field or method within a synthesized wrapper method. As a result, it takes much more efforts to locate a method with behavioral differences from failing test cases generated by Randoop than by Pex. However, the combination of the two techniques helps TeMAPI detect more methods with behavioral difference. Besides the behavioral differences that involve multiple classes, we also find that Pex can fail to explore paths that are too complicated. Randoop complements Pex to generate test cases for detecting behavioral differences of such methods since it generates test cases randomly. Column ``\%'' lists percentages from ``T'' to ``M''. We find that behavioral differences of mapped API methods are quite common since about one third methods have such differences.
+In this sub-sequence, JLCA translates the \CodeIn{AttributeListImpl. getName(int)} method in Java to the \CodeIn{SaxAttributesSupport. GetLocalName(int)} method in C\#. The translation makes the assertion fail since the C\# method does not return \CodeIn{null} given an empty attribute as the Java method does. Besides redundancy, each test case generated by Randoop uses many API elements, and each test case generated by Pex focuses on only one field or method within a synthesized wrapper method. As a result, it takes much more efforts to locate a method with behavioral differences from failing test cases generated by Randoop than by Pex. However, the combination of the two techniques helps TeMAPI detect more methods with behavioral difference. Besides the behavioral differences that involve multiple classes, we also find that Pex can fail to explore paths that are too complicated. Randoop complements Pex to generate test cases for detecting behavioral differences of such methods since it generates test cases randomly. Column ``\%'' lists percentages from ``T'' to ``M''. We find that behavioral differences of mapped API methods are quite common since about one third methods have such differences.
 
 %---------------------------------------------------------------
 %\subsection{Coverage}
