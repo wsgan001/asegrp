@@ -78,7 +78,7 @@ Total &194835& 99   &  0.1\% & 396 & 0.2\%\\
 \hline
 \end{tabular}\vspace*{-2ex}
 \Caption{Translation results of C\#-to-Java tools} \label{table:csharp2java}
-\end{SmallOut}\vspace*{-4ex}
+\end{SmallOut}\vspace*{-5ex}
 \end{table}
 
 For C\#-to-Java translation tools, TeMAPI first synthesized wrapper methods for all classes of the .NET framework client profile\footnote{\url{http://tinyurl.com/252t2ax}}. As described in Section~\ref{sec:approach:single}, besides generic methods, TeMAPI also ignored \CodeIn{unsafe} methods, \CodeIn{delegate} methods, and methods whose parameters are marked with \CodeIn{out} or \CodeIn{ref}. TeMAPI synthesized almost the same size of wrapper methods as it synthesized for J2SE. Table~\ref{table:csharp2java} shows the translation results. We find that both tools translate only a small number of API elements. One primary reason could be that C\# provides many features such as partial classes, reference parameters, output parameters, and named arguments, that are not provided by Java\footnote{\url{http://tinyurl.com/yj4v2m2}}. We suspect that a C\#-to-Java translation tool needs take these issues into consideration, so many mapping relations of API elements are not addressed yet.
