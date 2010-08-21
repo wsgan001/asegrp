@@ -4,7 +4,7 @@
 To illustrate major steps of our approach, we use JLCA (a Java-to-C\# translation tool) as an example translation tool, and the \CodeIn{java. io.ByteArrayInputStream} class in Java as an example API element. TeMAPI includes three major steps to detect behavioral differences that are related to the example class from the mapping relations defined in the example tool.
 
 %----------------------------------------------------
-\textbf{Translating Synthesized wrappers.} TeMAPI first synthesizes a Java wrapper class for the example class. After that, we use the translation tool under analysis, JLCA, to translate it to C\#. TeMAPI compares source code of the synthesized wrapper class with source code of the translated one for translatable API elements of the example class. In particular, as described by its documentation\footnote{\url{http://tinyurl.com/2dsgftv}}, the example class in Java has five fields, two constructors, and eight methods besides inherited ones. A class can have more than one constructor, and a translation tool may not translate all its constructors. To extract API elements at the finest level, TeMAPI takes constructors into consideration when it synthesizes a wrapper method for each field/method of the example class. For example, given the \CodeIn{ByteArrayInputStream(byte[])} constructor, TeMAPI synthesizes the wrapper method as follows for the \CodeIn{skip(long)} method:
+\textbf{Translating Synthesized wrappers.} TeMAPI first synthesizes the \CodeIn{Test\_java\_io\_ByteArrayInputStream} Java wrapper class for the example class. After that, we use JLCA to translate the wrapper class to C\#. TeMAPI compares source code of the synthesized wrapper class with source code of the translated one for translatable API elements of the example class. In particular, as described by its documentation\footnote{\url{http://tinyurl.com/2dsgftv}}, the example class in Java has five fields, two constructors, and eight methods besides inherited ones. A class can have more than one constructor, and a translation tool may not translate all its constructors. To extract API elements at the finest level, TeMAPI takes constructors into consideration when it synthesizes a wrapper method for each field/method of the example class. For example, given the \CodeIn{ByteArrayInputStream(byte[])} constructor, TeMAPI synthesizes the wrapper method as follows for the \CodeIn{skip(long)} method:
 
 \begin{CodeOut}\vspace*{-1ex}
 \begin{alltt}
@@ -39,8 +39,8 @@ TeMAPI does not remove this method, since it does not result in compilation erro
 \begin{alltt}
 public void testskip24nm36()\{
   try\{
-     sketch.Test_java_io_ByteArrayInputStream obj =
-        new sketch.Test_java_io_ByteArrayInputStream();
+     Test_java_io_ByteArrayInputStream obj =
+        new Test_java_io_ByteArrayInputStream();
      long m0 = java.lang.Long.valueOf(
                   "2147483648").longValue();
      byte[] c0 = new byte[0];
