@@ -350,7 +350,7 @@ Column ``A-Tests'' lists the number and percentage of failing C\# test cases. Ta
 
 We find that random invocation sequences can violate specifications of API libraries. One type of such specifications is described in our previous work~\cite{zhong09:inferring}: closed resources should not be manipulated. Java sometimes allows programmers to violate such specifications although return values can be meaningless. One such example is shown in Section~\ref{sec:example} (\emph{i.e.}, the \CodeIn{test413} test case). Besides invocation sequences that are related to specifications, we find that field accessibility also leads to failures of test cases. For example, a generated Java test case is as follows:
 
-\begin{CodeOut}\vspace*{-1ex}
+\begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
 public void test423() throws Throwable\{
   ...
@@ -362,7 +362,7 @@ public void test423() throws Throwable\{
 
 JLCA translates the Java test case to a C\# test case as follows:
 
-\begin{CodeOut}\vspace*{-1ex}
+\begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
 public void test423() throws Throwable\{
   ...
