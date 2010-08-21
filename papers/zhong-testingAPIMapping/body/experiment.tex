@@ -45,7 +45,7 @@ We implemented a tool for TeMAPI and conducted evaluations using our tool to add
 Table~\ref{table:subjects} shows subject tools in our evaluations. Column ``Name'' lists names of these tools. We use \emph{converter} to denote the ``VB \& C\# to Java converter'' for short. Java2CSharp, sharpen, and Net2Java are open source tools, and JLCA and converter are closed source tools. Column ``Version'' lists versions of subject tools. Column ``Provider'' lists companies of these tools. Column ``Description'' lists main functionalities of these tools. We choose these tools as subjects, since they are popular and many programmers recommend these tools in various forums.
 
 All evaluations were conducted on a PC with Intel Qual CPU @ 2.83GHz and 2G memory running Windows XP. More details
-of our evaluation results are available at %\url{https://sites.google.com/site/asergrp/projects/temapi}.
+of our evaluation results are available at \url{https://sites.google.com/site/asergrp/projects/temapi}.
 
 \subsection{Translating Synthesized Wrappers}
 \label{sec:evaluation:element}
@@ -147,7 +147,7 @@ org.xml             &   \hfill 897    & 49   &  5.5\%  & 473    & 52.7\%    & 0 
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
 %------------------------------------------------------------
-\subsection{Testing Wrappers}
+\subsection{Generating C\# Test Cases for Java Code}
 \label{sec:evaluation:single}
 
 To detect behavioral differences through wrappers, TeMAPI leverages Pex to explore safe wrapper methods. These methods include both the translated C\# wrapper methods without compilation errors (as shown in Table~\ref{table:java2csharp}) and the synthesized C\# wrapper methods that can be translated to Java without compilation errors (as shown in Table~\ref{table:csharp2java}). During exploration, when Pex generates inputs that exercise a feasible path in the wrapper method, TeMAPI records the inputs and resulting outputs of that path. Based on these inputs and outputs, TeMAPI generates Java test cases to ensure that synthesized wrapper methods and translated wrapper methods return the same outputs given the same inputs. Since testing GUI related API elements requires human interactions, we filter out these elements (\emph{i.e.}, the \CodeIn{awt} package and the \CodeIn{swing} package). In addition, when Pex explores methods without return values, TeMAPI ignores paths that do not throw any exceptions, since it cannot generate Java related test cases. We discuss this issue in Section~\ref{sec:discuss}.
@@ -284,7 +284,7 @@ We find that mapped static fields may have different values. For example, the \C
 The rest 7.9\% failing test cases are related to the API methods that can return random values or values that depend on time. For example, the \CodeIn{java.util.Random.nextInt()} method returns random values, and the \CodeIn{java.util.Date.getTime()} method returns the number of milliseconds since Jan. 1st, 1970, 00:00:00 GMT. As another example, each Java class has a \CodeIn{hashCode()} method, and each C\# class has also a \CodeIn{GetHashCode()} method. Both the methods return a hash code for the current object, so translation tools such as JLCA map the two methods. Since a hash code is randomly generated, the two methods typically return different values. For these methods, TeMAPI can detect behavioral differences of their inputs. For example, converter translates the \CodeIn{System.Random.Next(int)} method in C\# to the \CodeIn{java.util. Random.nextInt(int)} method in Java. Given an integer value 0, the C\# method returns 0, but the Java method throws \CodeIn{IllegalArgu- mentException} with a message: ``n must be positive''. However, since these methods return values randomly, we cannot conclude that they have behavioral differences even if their outputs are different. We discuss this issue further in Section~\ref{sec:discuss}.
 
 %--------------------------------------------------------------
-\subsection{Testing Invocation Sequence}
+\subsection{Generating Java Test Cases for C\# Code}
 \label{sec:evaluation:sequence}
 \begin{table}[t]
 \centering
