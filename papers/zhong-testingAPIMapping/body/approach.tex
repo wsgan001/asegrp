@@ -2,7 +2,7 @@
 \label{sec:approach}
 \begin{figure}[t]
 \centering
-\includegraphics[scale=1,clip]{figure/approach.eps}\vspace*{-3ex}
+\includegraphics[scale=0.9,clip]{figure/approach.eps}\vspace*{-3ex}
  \caption{Overview of TeMAPI}\vspace*{-4ex}
  \label{fig:approach}
 \end{figure}
@@ -13,7 +13,7 @@ Given a translation tool between Java and C\#, TeMAPI generates various test cas
 %-------------------------------------------------------------------
 \subsection{Testing Single API Classes}
 \label{sec:approach:single}
-Given a translation tool, TeMAPI first extracts its API mapping relations. To deal with different formats of translation tools as described in Section~\ref{sec:introduction}, TeMAPI does not extract API mapping relations directly from translation tools, but analyzes translated code for such relations. In particular, TeMAPI synthesizes one wrapper method for each field and each method given each constructor for all API classes based on the reflection technique~\cite{maes1987concepts}. For static fields and static methods, TeMAPI uses the following rules to synthesize wrapper methods:
+Given a translation tool, TeMAPI first extracts its API mapping relations. To deal with different formats of translation tools as described in Section~\ref{sec:introduction}, TeMAPI does not extract API mapping relations directly from translation tools, but analyzes translated code for such relations. In particular, TeMAPI synthesizes one wrapper method for each field/method using each constructor for each API class based on the reflection technique~\cite{maes1987concepts}. For static fields and static methods, TeMAPI uses the following rules to synthesize wrapper methods:
 
 \textbf{Static fields.} Given a public static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMAPI synthesizes a getter as follows:
 
@@ -42,7 +42,7 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 When TeMAPI synthesizes wrapper methods for non-static fields or methods, it takes constructors into considerations:
 
-\textbf{Non-static fields.} Given a public non-static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMAPI synthesizes a getter for each constructor \CodeIn{C(T1\ c1,\ldots, Tn\ cn)} of \CodeIn{C} as follows:
+\textbf{Non-static fields.} Given a public non-static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMAPI synthesizes a getter using each constructor \CodeIn{C(T1\ c1,\ldots, Tn\ cn)} of \CodeIn{C} as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
@@ -62,7 +62,7 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 \end{alltt}
 \end{CodeOut}\vspace*{-1.5ex}
 
-\textbf{Non-static methods.} Given a public non-static method \CodeIn{m(T1\ m1,\ldots,Tn\ mn)} of a class \CodeIn{C} whose return type is \CodeIn{Tm}, TeMAPI synthesizes a wrapper method for each constructor \CodeIn{C(Tv\ cv,\ldots, Tt\ ct)} of \CodeIn{C} as follows:
+\textbf{Non-static methods.} Given a public non-static method \CodeIn{m(T1\ m1,\ldots,Tn\ mn)} of a class \CodeIn{C} whose return type is \CodeIn{Tm}, TeMAPI synthesizes a wrapper method using each constructor \CodeIn{C(Tv\ cv,\ldots, Tt\ ct)} of \CodeIn{C} as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
@@ -101,8 +101,7 @@ public void testappend175nm122()\{
   Object m0 = new Object();
   StringBuffer out = obj.testappend175nm(m0);
   Assert.assertEquals(16, out.capacity());	
-  Assert.assertEquals(13, out.length());
-\}
+  Assert.assertEquals(13, out.length());\}
 \end{alltt}
 \end{CodeOut}\vspace*{-2ex}
 
