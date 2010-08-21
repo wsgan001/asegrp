@@ -7,13 +7,13 @@
  \label{fig:approach}
 \end{figure}
 
-Given a translation tool between Java and C\#, TeMAPI generates various test cases to reveal behavioral differences of API mapping relations defined by the tool. TeMAPI generates test cases to test mapping relations for a single API class (Section~\ref{sec:approach:single}) and multiple API classes (Section~\ref{sec:approach:sequence}). Figure~\ref{fig:approach} shows the overview of TeMAPI.
+As shown in Figure~\ref{fig:approach}, given a translation tool between Java and C\#, TeMAPI generates various test cases to reveal behavioral differences of API mapping relations defined by the tool.
 
 
 %-------------------------------------------------------------------
-\subsection{Testing Single API Classes}
-\label{sec:approach:single}
-Given a translation tool, TeMAPI first extracts its API mapping relations. To deal with different formats of translation tools as described in Section~\ref{sec:introduction}, TeMAPI does not extract API mapping relations directly from translation tools, but analyzes translated code for such relations. In particular, TeMAPI synthesizes one wrapper method for each field/method using each constructor for each API class based on the reflection technique~\cite{maes1987concepts}. For static fields and static methods, TeMAPI uses the following rules to synthesize wrapper methods:
+\subsection{Synthesizing and Analyzing Wrappers}
+\label{sec:approach:wrapper}
+Given a translation tool, TeMAPI first extracts its API mapping relations. To deal with different formats of translation tools as described in Section~\ref{sec:introduction}, TeMAPI does not extract API mapping relations directly from translation tools, but analyzes translated code for such relations. As shown in Figure~\ref{fig:approach}, TeMAPI has a Java wrapper generater for Java-to-C\# tools and a C\# wrapper generater for C\#-to-Java tools. For static fields and static methods, the two wrapper generater of TeMAPI uses the following rules to synthesize wrapper methods:
 
 \textbf{Static fields.} Given a public static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMAPI synthesizes a getter as follows:
 
@@ -75,18 +75,17 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 In the preceding synthesized code, ``\CodeIn{|f.name|}'' denotes the name of a field \CodeIn{f}; ``\CodeIn{|m.name|}'' denotes the name of a method \CodeIn{m}; and ``\CodeIn{|no|}'' denotes the number of synthesized wrapper method.
 
-TeMAPI puts all synthesized wrapper methods for one API class $C$ to one synthesized class. For Java-to-C\# tools, TeMAPI synthesizes wrapper methods in Java as shown by the solid line in Figure~\ref{fig:approach}, and for C\#-to-Java tools, TeMAPI synthesizes wrapper methods in C\# as shown by the dotted line in Figure~\ref{fig:approach}. When synthesizing, TeMAPI ignores generic methods, and when synthesizing for C\# API classes, TeMAPI ignores \CodeIn{unsafe} methods, \CodeIn{delegate} methods, and methods whose parameters are marked as \CodeIn{out} or \CodeIn{ref} besides generic methods. Java does not have corresponding keywords, so existing translation tools typically do not translate the preceding methods. After wrappers are synthesized, we translate them using a translation tool under analysis.
+TeMAPI puts all synthesized wrapper methods for one API class $C$ to one synthesized class. When synthesizing, TeMAPI ignores generic methods, and when synthesizing for C\# API classes, it ignores \CodeIn{unsafe} methods, \CodeIn{delegate} methods, and methods whose parameters are marked as \CodeIn{out} or \CodeIn{ref} besides generic methods. Java does not have corresponding keywords, so existing translation tools typically do not translate the preceding methods. After wrappers are synthesized, we using the translation tool under analysis to translate them to the other language.
 
-After synthesized code is translated, TeMAPI parses translated code and filters out wrapper methods with compilation errors. We use \emph{safe wrappers} to refer to the remaining wrapper methods. To identify wrapper methods with compilation errors, TeMAPI extends Visual Studio and Eclipse's Java compiler for C\# and Java code, respectively.
-%For Java-to-C\# tools, TeMAPI extends Visual Studio through its automation and extensibility interfaces to parse translated C\# wrapper methods and removes those translated methods with compilation errors. We refer to the remaining C\# wrapper methods as safe wrappers. For C\#-to-Java tools, TeMAPI extends the Eclipse's Java compiler to parse translated Java wrapper methods and removes those translated methods with compilation errors. We refer to the synthesized C\# wrapper methods that can be translated to Java without compilation errors as safe wrappers.
-Since wrappers reveal behaviors of a given class at the finest level and expose interfaces for inputs and outputs, TeMAPI further uses safe wrappers to test behavioral differences for single API classes. Comparing safe wrappers with synthesized wrappers, TeMAPI can extract the list of translatable API elements for a given translation tool. Using the list, TeMAPI further tests behavioral difference for multiple API classes (Section~\ref{sec:approach:sequence}).
+After synthesized code is translated, TeMAPI parses translated code and filters out wrapper methods with compilation errors. We use \emph{safe wrappers} to refer to the remaining wrapper methods. To identify wrapper methods with compilation errors, TeMAPI extends Visual Studio and Eclipse's Java compiler for C\# and Java code, respectively. Comparing source code of safe wrappers with source code of synthesized wrappers, TeMAPI extracts the list of all translatable API elements for the translation tool under analysis. For example, as shown in Section~\ref{sec:example}, JLCA translates the \CodeIn{testskip24nm} wrapper method in Java to C\# without introducing complication errors, so TeMAPI adds its wrapped \CodeIn{BufferedInput- Stream(InputStream)} constructor and the \CodeIn{skip(long)} method in Java to translatable API methods of JLCA. Using the list of translatable method, TeMAPI further tests behavioral difference for multiple API classes (Section~\ref{sec:approach:sequence}).
 
 
 %for validate API mapping relations of the translation tool. To achieve this, TeMAPI first remove all translated methods with compilation errors. For translated methods in Java, TeMAPI implements a Eclipse plug-in that uses on Eclipse JDT compiler\footnote{\url{http://www.eclipse.org/jdt/}} for the list of compilation errors. For translated methods in C\#, TeMAPI implements a Visual Studio.Net add-in to retrieve the list of compilation errors from the error-list view of Visual Studio.Net. Both Eclipse JDT compiler and Visual Studio.Net cannot list all methods with compilation errors in a single build. After each iteration of removing methods, TeMAPI re-build these methods until it removes all methods with compilation errors.
 %
 %After methods with compilation errors are removed, TeMAPI compares synthesized code with translated code for the validate API mapping relations of a translation tool. Based on translated code and validate API mapping, TeMAPI removes synthesized methods whose corresponding translated methods have compilation errors. We refer to those removing wrapper methods as safe methods.
-
-
+\subsection{Testing Wrappers}
+\label{sec:approach:single}
+Since wrappers reveal behaviors of a given class at the finest level and expose interfaces for inputs and outputs, TeMAPI further test these wrappers to reveal behavioral differences. In addition,
 %-----------------------------------------------------------------
 
 As shown in Figures~\ref{fig:db4ojava} and~\ref{fig:db40net}, translation tools can translate one API class in one language to one class in another language. To detect behavioral differences that involve single classes, TeMAPI extends Pex~\cite{tillmann2008pex} to generate test cases for safe wrapper methods for each API class in C\#. Pex~\cite{tillmann2008pex} is a white-box test generation tool for .NET based on dynamic symbolic execution. Basically, Pex repeatedly executes a method under test, so that it explores all feasible paths of the method.
@@ -131,7 +130,7 @@ This test case gets failed since the \CodeIn{testvalueOf61sm} method in Java doe
 From this failing test case, TeMAPI detects the behavioral difference between the \CodeIn{java.lang.String.valueOf(Object)} method in Java and the \CodeIn{System.Object.ToString()} method in C\#, since the preceding two wrapper methods are for the two API methods only.
 
 %-----------------------------------------------------------
-\subsection{Testing Multiple Classes}
+\subsection{Testing Invocation Sequences}
 \label{sec:approach:sequence}
 \begin{table}[t]
 \centering
@@ -155,7 +154,7 @@ converter    &  1.6   & Tangible   &  C\# to Java\\
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
 
-As shown in Figures~\ref{fig:javacode} and \ref{fig:codeJLCA}, translation tools can translate one invocation that involves one class to invocation sequences that involve multiple classes. To detect such differences of a given migration tool, TeMAPI first extracts all the translatable API methods of the tool. In particular, if a translation tool translates a wrapper method to the other language without introducing compilation errors, TeMAPI considers all API methods within the wapper method as translatable API methods of the migration tool. For example, as shown in Section~\ref{sec:example}, JLCA translates the \CodeIn{testskip24nm} wrapper method to the other language, so TeMAPI adds its wrapped \CodeIn{BufferedInputStream(InputStream)} constructor and the \CodeIn{skip (long)} method in Java to translatable API methods of JLCA.
+As shown in Figures~\ref{fig:javacode} and \ref{fig:codeJLCA}, translation tools can translate one invocation that involves one class to invocation sequences that involve multiple classes. To detect such differences of a given migration tool, TeMAPI first extracts all the translatable API methods of the tool. In particular, if a translation tool translates a wrapper method to the other language without introducing compilation errors, TeMAPI considers all API methods within the wapper method as translatable API methods of the migration tool. 
 
 After extracting translatable API methods of translation tools, TeMAPI extends Randoop~\cite{pacheco2007feedback} to generate invocations sequences of API methods. Randoop randomly generates test cases based on already generated test cases in a feedback-directed manner, and it has both a Java version and a C\# version. When it generates test cases, TeMAPI limits its search scope within translatable API methods only. After that, TeMAPI runs generated test cases, and removes all failing test cases. We then use translation tools under analysis to translate remaining test cases to the other language. If translated code has the same behaviors, translated test cases should also get passed. If not, TeMAPI detects behavioral differences. As invocation sequences typically use multiple classes, such difference can involve multiple classes. Section~\ref{sec:evaluation:sequence} shows such two behavioral differences (\emph{i.e.}, the \CodeIn{test87} and \CodeIn{test423} test cases).
 
