@@ -41,7 +41,7 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 \end{alltt}
 \end{CodeOut}\vspace*{-1.5ex}
 
-When TeMAPI synthesizes wrapper methods for non-static fields or methods, it uses translatable constructors. The reason is that a translation tool may not be able to translate all constructors, resulting in wrapper methods that cannot be compiled. Therefore, to address this issue, we identify translatable constructors and use them with non-static fields or methods.
+When TeMAPI synthesizes wrapper methods for non-static fields or methods, TeMAPI takes constructors into considerations. 
 
 \textbf{Non-static fields.} Given a public non-static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMAPI synthesizes a getter using each constructor \CodeIn{C(T1\ c1,\ldots, Tn\ cn)} of \CodeIn{C} as follows:
 
