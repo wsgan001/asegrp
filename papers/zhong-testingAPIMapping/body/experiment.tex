@@ -35,9 +35,9 @@ We implemented a tool for TeMAPI and conducted evaluations using our tool to add
 %\item How effectively can existing translation tool translate API elements (Section~\ref{sec:evaluation:element})? \vspace*{-1.8ex}
 \item How many API elements can be translated by existing translation tools (Section~\ref{sec:evaluation:element})? \vspace*{-1.8ex}
 %\item How effectively can our approach detect behavioral differences of single API classes (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
-\item How many behavioral differences of single API classes are effectively detected by our approach (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
+\item How many behavioral differences are effectively detected by generating C\# test cases for testing Java code (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
 %\item How effectively can our approach detect behavioral differences of multiple API classes (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
-\item How many behavioral differences of multiple API classes are effectively detected by our approach (Section~\ref{sec:evaluation:sequence})?\vspace*{-1.8ex}
+\item How many behavioral differences are effectively detected by  by generating C\# test cases for testing Java code (Section~\ref{sec:evaluation:sequence})?\vspace*{-1.8ex}
 %\item Can the our combination strategy helps achieve better coverage (Section~\ref{sec:evaluation:coverage})?
 \item How many behavioral differences are detected with and without TeMAPI's internal techniques (Section~\ref{sec:evaluation:techniques})?
 \end{enumerate}\vspace*{-1.5ex}
@@ -188,7 +188,7 @@ converter    &  762 & 302  & 39.6\% & 182   & 23.9\%\\
 Total        &  52336  &  15153 & 29.0\% &11099 & 21.2\%  \\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Results of testing single classes} \label{table:singleinvoc}
+\Caption{Results of generating C\# test cases for Java code} \label{table:singleinvoc}
 \end{SmallOut}\vspace*{-6ex}
 \end{table}
 \begin{table}[t]
@@ -244,7 +244,7 @@ w3c.dom     &  0     &   n/a     & 18      & 33.3\%  &  0         & n/a  \\
 org.xml     &   277  &   70.0\%  & 483     & 27.3\%  & 0         & n/a\\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Java-to-C\# testing results of package level } \label{table:packagetest}
+\Caption{Results of Table~\ref{table:singleinvoc} at package level (three tools)} \label{table:packagetest}
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
 
@@ -303,7 +303,7 @@ sharpen      &  586  & 13532& 936  & 456  & 48.7\% \\
 Total        &  9642 & 45547& 4974  &  2902 & 58.3\% \\
 \hline
 \end{tabular}\vspace*{-2ex}
-\Caption{Results of testing invocation sequences} \label{table:invocsequence}
+\Caption{Results of generating Java test cases for C\# code} \label{table:invocsequence}
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
 To test behavioral differences involving invocation sequences, TeMAPI leverages Randoop to generate test cases, given the list of translatable API methods. In this evaluation, we focus on the Java-to-C\# tools only, since the C\#-to-Java tools translate only a few API elements as shown in Table~\ref{table:java2csharp}. For each Java-to-C\# tool, TeMAPI first extracted the list of translatable API methods using the technique as described in Section~\ref{sec:approach:sequence}. When generating test cases, TeMAPI extends Randoop, so that each generated test case use only translatable API methods. Randomly generated invocation sequences may not reflect API usages in true practice, and we discuss this issue in Section~\ref{sec:discuss}. Among generated test cases, we translate only passing test cases from Java to C\#.
@@ -477,7 +477,7 @@ In this sub-sequence, JLCA translates the \CodeIn{AttributeListImpl. getName(int
 
 \subsection{Summary}
 \label{sec:evaluation:summary}
-In summary, we find that API elements are quite large in size, and translation tools typically can translate only a small portion of API elements. Although existing translation tools already notice behavioral differences of mapped API elements, many differences are not fixed. To detect behavioral differences, our approach combines random testing with dynamic-symbolic-execution-based testing, and achieves to detect more behavioral differences than with single techniques. Our approach enables us to present the first empirical comparison on behavioral differences of API mapping relations between Java and C\#. We find that various factors such as \CodeIn{null} inputs, \CodeIn{string} values, ranges of inputs, different understanding, exception handling, and static values that could lead to behavioral differences for single API classes. The preceding factors can accumulate to behavioral differences of multiple API elements. Besides, TeMAPI detects that other factors such as type cast statements and invocation sequences can also lead to behavioral differences of multiple API classes.
+In summary, we find that API elements are quite large in size, and translation tools typically can translate only a small portion of API elements. Although existing translation tools already notice behavioral differences of mapped API elements, many differences are not fixed. To detect behavioral differences, our approach combines random testing with dynamic-symbolic-execution-based testing, and achieves to detect more behavioral differences than with single techniques. Our approach enables us to present the first empirical comparison on behavioral differences of API mapping relations between Java and C\#. We find that various factors (\emph{i.e.}, \CodeIn{null} inputs, \CodeIn{string} values, ranges of inputs, different understanding, exception handling, static values, type cast statements and invocation sequences) could lead to behavioral differences of mapped API elements between different languages.
 \subsection{Threats to Validity}
 \label{sec:evaluation:threat}
 The threats to external validity include the representativeness of the subject tools. Although we applied
