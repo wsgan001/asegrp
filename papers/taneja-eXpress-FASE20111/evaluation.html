@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+           "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<meta name="GENERATOR" content="TtH 3.87">
+ <style type="text/css"> div.p { margin-top: 7pt;}</style>
+ <style type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></style>
+
+<title> Experiments</title>
+
+
+
+<div class="p"><!----></div>
+We conducted experiments on four programs and their 67 versions (in total) collected from three different sources. In our experiments, we try to address the following research questions:
+
+<br /><b>RQ1.</b> How many fewer DSE runs does Pex require to execute the changed regions between the two versions of a program with the assistance of ?
+	<br /><b>RQ2.</b> How many fewer DSE runs does Pex require to infect the program states with the assistance of ?
+	<br /><b>RQ3.</b> How many fewer DSE runs and how much fewer amount of time does Pex require to find behavioral differences with the assistance of ?
+	<br /><b>RQ4.</b> How many fewer DSE runs and how much fewer amount of time does Pex require to find behavior differences when the program exploration is seeded with the existing test suite?
+
+<div class="p"><!----></div>
+			
+<div class="p"><!----></div>
+To answer the research questions, we conducted experiments on four subjects.
+Table&nbsp; shows the details about the subjects. Column 1 shows the subject name. Column 2 shows the number of classes in the subject. Column 3 shows the number of classes that are covered by tests generated in our experiments. Column 4 shows the number of versions (not including the original version) used in our experiments. Column 5 shows the number of lines of code in the subject.
+
+
+<div class="p"><!----></div>
+ and  are programs available from the Subject Infrastructure Repository (SIR)&nbsp;.  and  are written in C and Java, respectively.  is a text-processing program, while  is an Internet-scale event notification program. We chose these two subjects (among the others available at the SIR) in our experiments we could convert these subjects into C# using the Java 2 CSharp Translator<a href="#tthFtNtAAB" name="tthFrefAAB"><a href="http://sourceforge.net/projects/j2cstranslator/"><tt>http://sourceforge.net/projects/j2cstranslator/</tt></a></a> We could not convert other subjects available at the SIR (with the exception of ) because of extensive use of C or Java library APIs in these subjects. The experimental results on  are presented in a previous version of this work&nbsp; and show similar conclusions as the results from the subjects used in the experiments here. We seeded all the 32 faults available for  at the SIR one by one to generate 32 new versions of . For , SIR contains 8 different sequentially released versions of  (versions 1.8 through 1.15). Each version provides enhanced functionalities or corrections with respect to the preceding version. We use these 8 versions in our experiments. In addition to these 8 versions, there are 9 seeded faults available at SIR. We seeded all the 9 faults available at SIR one by one to synthesize 9 new versions of . 
+In total, we conduct experiments on these 17 versions of . For , we use the  method as a PUT for generating tests. We capture the concrete value of the string sub at the end of the PUT using  statement. This statement captures the current value of v in a particular run
+(i.e., an explored path) of DSE. In particular, this statement
+results in an assertion  in a generated test, where cv is the concrete value of v in the test during the time of exploration. 
+This assertion is used to find behavioral differences when the tests generated for a new version are executed on the original version.
+
+<div class="p"><!----></div>
+For , we use the methods  (for changes that are transitively reachable from ) and  (for changes that are transitively reachable from ) in the class  as PUTs for generating tests. We capture the return values of these methods using the  statement 
+in the PUTs.
+
+<div class="p"><!----></div>
+The method  requires non-primitive arguments. Existing Pex cannot handle non-primitive argument types effectively but provides support for using factory methods for non-primitive types. Hence, we manually wrote factory methods for the non-primitive types in . In particular, we wrote factory methods for classes ,  and . Each factory method invokes a sequence (of length up to three) of the public state-modifying methods in the corresponding class. The parameters for these methods, and the length of the sequence (up to three) are passed as inputs to the factory methods. During exploration, Pex generates concrete values for these inputs to cover various parts of the program under test.
+
+<div class="p"><!----></div>
+STPG<a href="#tthFtNtAAC" name="tthFrefAAC"><a href="http://stringtopathgeometry.codeplex.com/"><tt>http://stringtopathgeometry.codeplex.com/</tt></a></a>s an open source program hosted by the codeplex website, Microsoft's open source project hosting website. The codeplex website contains snapshots of check-ins in the code repositories for STPG. We collect three different versions of the subject STPG from the three most recent check-ins. We use the  method as the PUT for generating tests since  is the main conversion method that converts a string path data definition to a  object.
+We capture the return value of  using the  statement in the PUTs.
+
+<div class="p"><!----></div>
+<a href="#tthFtNtAAD" name="tthFrefAAD"><a href="http://code.google.com/p/structorian/"><tt>http://code.google.com/p/structorian/</tt></a></a>s an open source binary data viewing and reverse engineering tool.  is hosted by Google's open source project hosting website. The website also contains snapshots of check-ins in the code repositories for . We collected all the versions of snapshots for the classes  and . We chose these classes in our experiments due to three factors. First, these classes have several revisions available in the repository. Second, these classes are of non-trivial size and complexity. Third, these classes have corresponding tests available in the repository. For the classes  and  , we generalized one of the available concrete test methods by promoting primitive types to arguments of the test methods. 
+Furthermore, we convert the assertions in the concrete test methods to  statements.
+Foe example if an assertion  exist in a concrete test, we convert the assertion to
+.
+We use these generalized test methods as PUTs for our experiments.  contains a manually written test suite. We use this test suite for seeding the exploration for addressing the question RQ4.
+
+<div class="p"><!----></div>
+To address questions RQ1-RQ3, we use all the four subjects, while to address question RQ4, we use  because of two major factors. First,  has a manually written test suite that can be used to seed the exploration. Second, revisions of  contains non-trivial changes that cannot be covered by the existing test suite. Hence, our technique of seeding the existing test suite in the program exploration is useful for covering these changes.  contains changes to one statement due to which most of the changes can be covered by the existing test suite.
+Hence, our Incremental Exploration technique is not beneficial for the version pairs under test.
+  and  do not have an existing test suite to use.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+<a name="tth_tAb1">
+</a> 
+<center> Experimental subjects
+
+<table border="1">
+<tr><td align="left">Project</td><td align="right"></td><td align="right"></td><td align="right"></td><td align="right"></td></tr><tr><td></td></tr>
+<tr><td align="left">replace </td><td align="right">1</td><td align="right">1</td><td align="right">32</td><td align="right">625</td></tr>
+<tr><td align="left">STPG </td><td align="right">1</td><td align="right">1</td><td align="right">2</td><td align="right">684</td></tr>
+<tr><td align="left">siena </td><td align="right">6</td><td align="right">6</td><td align="right">17</td><td align="right">1529</td></tr>
+<tr><td align="left">structorian </td><td align="right">70</td><td align="right">8</td><td align="right">21</td><td align="right">6561</td></tr></table>
+
+</center>
+
+
+
+<div class="p"><!----></div>
+For  and , we conduct regression test generation between the original version and each version v2 synthesized from the available faults in the SIR. We use  and the default search strategy in Pex&nbsp; to conduct regression test generation. In addition to the versions synthesized by seeding faults, we also conduct regression test generation between each successive versions of  (versions 1.8 through 1.15) available in SIR, using  and the default search strategy in Pex&nbsp;. For STPG and , we conduct regression test generation between two successive version pairs that we collected. 
+
+<div class="p"><!----></div>
+ To address RQ1, we compare the number of runs of DSE required by the default search strategy in Pex (in short as Pex) with the number of runs required by Pex enhanced with  (in short as Pex+eXpress) to execute a changed region. To address RQ2, we compare the number of runs required by Pex with the number of runs required by Pex+eXpress to infect the program states. 
+
+
+To address RQ3, we compare the number of runs and the amount of time required by Pex with the number of runs required by Pex+eXpress to find behavioral differences between two versions of a program under test.
+To address RQ4, we compare the number of DSE runs and the amount of time required by Pex (and Pex+eXpress) to find behavioral differences with and without seeding the program exploration (with the existing test suite).
+
+<div class="p"><!----></div>
+Currently, we have not automated the Instrumenter component of . To find out whether the program state has been infected after the execution of a changed region, we manually add statements to the 
+code under test that send a callback to the Dynamic Test Generator 
+whenever the program state is infected after the execution of a changed region.  
+The rest of the approach is fully automated and is implemented in a tool as an extension<a href="#tthFtNtAAE" name="tthFrefAAE"><a href="http://pexase.codeplex.com/"><tt>http://pexase.codeplex.com/</tt></a></a>o Pex&nbsp;. We developed its components to statically find irrelevant branches as a .NET Reflector<a href="#tthFtNtAAF" name="tthFrefAAF"><a href="http://www.red-gate.com/products/reflector/"><tt>http://www.red-gate.com/products/reflector/</tt></a></a>ddIn.
+In future, we plan to automate the Instrumenter component.
+
+<div class="p"><!----></div>
+To find behavioral differences between two versions, we execute the tests generated for a new version on the original version.
+Behavioral differences are detected by a test if an assertion in the test fails. 
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+<a name="tth_tAb1">
+</a> 
+<center> <font size="-3">Experimental results</font>
+
+<table border="1">
+<tr><td align="left"></td><td align="center"></td><td colspan="3" align="center">Execution</td><td colspan="3" align="center">Infection</td><td colspan="6" align="center">Propagation</td></tr>
+<tr><td align="left">S </td><td align="center"> </td><td align="center"></td><td align="center">
+</td><td align="center">
+</td><td align="center"></td><td align="center">
+</td><td align="center">
+</td><td align="center"></td><td align="center">
+</td><td align="center">
+</td><td align="center"></td><td align="center"></td><td align="center">
+</td></tr>
+<tr><td align="left">replace	</td><td align="center">32		</td><td align="center">1668	</td><td align="center">49		</td><td align="center">0	 </td><td align="center">2740	</td><td align="center">42		  </td><td align="center">34			</td><td align="center">10312	</td><td align="center">75	</td><td align="center">49		</td><td align="center">711	</td><td align="center">235	</td><td align="center">67	 </td></tr>
+<tr><td align="left">siena		</td><td align="center">17		</td><td align="center">286		</td><td align="center">42			</td><td align="center">13 </td><td align="center">284	</td><td align="center">39.4		</td><td align="center">13				</td><td align="center">7301	</td><td align="center">42	</td><td align="center">15	</td><td align="center">1011	</td><td align="center">628</td><td align="center">38			</td></tr>
+<tr><td align="left">STPG		</td><td align="center">2		</td><td align="center">341		</td><td align="center">26			</td><td align="center">26		 </td><td align="center">378	</td><td align="center">32			</td><td align="center"></td><td align="center">378		</td><td align="center">32	</td><td align="center">32		</td><td align="center">353	</td><td align="center">255	</td><td align="center">28</td></tr>
+<tr><td align="left">Total		</td><td align="center">51		</td><td align="center">2573		</td><td align="center">49		 </td><td align="center"></td><td align="center">3402	</td><td align="center">41		</td><td align="center"></td><td align="center">17613	</td><td align="center">62		</td><td align="center"></td><td align="center">1722	</td><td align="center">863	</td><td align="center">50</td></tr>
+<tr><td colspan="13" align="center">----------structorian----------</td><td align="center"></td></tr>
+<tr><td align="left">SL</td><td align="center">2-9		</td><td align="center">102			</td><td align="center">26.5				</td><td align="center">-			</td><td align="center">102				</td><td align="center">26.5					</td><td align="center">-			</td><td align="center">-		</td><td align="center">-	</td><td align="center">-		</td><td align="center">-	</td><td align="center">-	</td><td align="center">-</td></tr>
+<tr><td align="left">SL</td><td align="center">9-139	</td><td align="center">102			</td><td align="center">26.5				</td><td align="center">-			</td><td align="center">102				</td><td align="center">26.5		  		</td><td align="center">-			</td><td align="center">2988		</td><td align="center">66		</td><td align="center">-		</td><td align="center">99	</td><td align="center">69.3	</td><td align="center">68</td></tr>
+<tr><td align="left">SL</td><td align="center">139-150</td><td align="center">102			</td><td align="center">26.5				</td><td align="center"></td><td align="center">102				</td><td align="center">26.5					</td><td align="center">-			</td><td align="center">761   	</td><td align="center">69   </td><td align="center">-		</td><td align="center">26  </td><td align="center">7.5		</td><td align="center">71</td></tr>
+<tr><td align="left">SL</td><td align="center">150-169</td><td align="center">53				</td><td align="center">13.2				</td><td align="center">-				</td><td align="center">53					</td><td align="center">13.2					</td><td align="center">-			</td><td align="center">299			</td><td align="center">52		</td><td align="center">-			</td><td align="center">7.4	</td><td align="center">3.9		</td><td align="center">47</td></tr>
+<tr><td align="left">SL</td><td align="center">169-174</td><td align="center">55				</td><td align="center">12.7				</td><td align="center">-				</td><td align="center">55					</td><td align="center">12.7					</td><td align="center">-			</td><td align="center">478			</td><td align="center">32.2	</td><td align="center">-			</td><td align="center">14.2</td><td align="center">8.4		</td><td align="center">41</td></tr>
+<tr><td align="left">SL</td><td align="center">174-175</td><td align="center">102			</td><td align="center">26.5				</td><td align="center">-				</td><td align="center">102				</td><td align="center">26.5					</td><td align="center">-			</td><td align="center">-		</td><td align="center">-		</td><td align="center">-			</td><td align="center">-		</td><td align="center">-			</td><td align="center">-	</td></tr>
+<tr><td align="left">Total(SL)</td><td align="center"></td><td align="center">516			</td><td align="center">24					</td><td align="center">26.5 		</td><td align="center">516				</td><td align="center">26.5						</td><td align="center">24		</td><td align="center">4526			</td><td align="center">62		</td><td align="center">52			</td><td align="center">146.6</td><td align="center">89.1	</td><td align="center">39</td></tr><tr><td></td></tr>
+<tr><td align="left">SP</td><td align="center">2-5		</td><td align="center">10000*		</td><td align="center">81					</td><td align="center">-				</td><td align="center">10000*			</td><td align="center">74						</td><td align="center">-			</td><td align="center">10000*		</td><td align="center">74		</td><td align="center">-			</td><td align="center">1hr	</td><td align="center">35min	 </td><td align="center">41.7</td></tr>
+<tr><td align="left">SP</td><td align="center">5-6		</td><td align="center">10000*		</td><td align="center">74					</td><td align="center">-				</td><td align="center">10000*			</td><td align="center">74						</td><td align="center">-			</td><td align="center">10000*		</td><td align="center">74		</td><td align="center">-			</td><td align="center">1hr	</td><td align="center">32min  </td><td align="center">47</td></tr>
+<tr><td align="left">SP</td><td align="center">9-13		</td><td align="center">10000*		</td><td align="center">81				</td><td align="center">-				 </td><td align="center">10000*			</td><td align="center">81						</td><td align="center">-			</td><td align="center">10000*		</td><td align="center">81 	</td><td align="center">-			</td><td align="center">1hr	</td><td align="center">27min  </td><td align="center">55</td></tr>
+<tr><td align="left">SP</td><td align="center">37-39	</td><td align="center">6				</td><td align="center">0					</td><td align="center">-				</td><td align="center">3699				</td><td align="center">77						</td><td align="center">-				</td><td align="center">3699			</td><td align="center">77		</td><td align="center">-			</td><td align="center">26min</td><td align="center">22min	 </td><td align="center">15</td></tr>
+<tr><td align="left">SP</td><td align="center">39-40	</td><td align="center">2				</td><td align="center">0					</td><td align="center">-				</td><td align="center">-					</td><td align="center">-						</td><td align="center">-				</td><td align="center">-				</td><td align="center">-		</td><td align="center">-			</td><td align="center">-		</td><td align="center">-			 </td><td align="center">-	</td></tr>
+<tr><td align="left">SP</td><td align="center">50-62	</td><td align="center">6188			</td><td align="center">82.9				</td><td align="center"></td><td align="center">6188				</td><td align="center">82.9					</td><td align="center">-					</td><td align="center">6188			</td><td align="center">82.9	</td><td align="center">-		  </td><td align="center">35 min		</td><td align="center">21	 </td><td align="center">40</td></tr>
+<tr><td align="left">
+SP</td><td align="center">45-47	</td><td align="center">-				</td><td align="center">-					</td><td align="center">-				</td><td align="center">-					</td><td align="center">-						</td><td align="center">-					</td><td align="center">-				</td><td align="center">-		</td><td align="center">-			</td><td align="center">-				</td><td align="center">-		</td><td align="center">-</td></tr>
+<tr><td align="left">SP</td><td align="center">47-50	</td><td align="center">2				</td><td align="center">0					</td><td align="center">-				</td><td align="center">2					</td><td align="center">0						</td><td align="center">-					</td><td align="center">-				</td><td align="center">-		</td><td align="center">-			</td><td align="center">-				</td><td align="center">-		</td><td align="center">-</td></tr>
+<tr><td align="left">SP</td><td align="center">62-124	</td><td align="center">6				</td><td align="center">0					</td><td align="center">-				</td><td align="center">10000*			</td><td align="center">28						</td><td align="center">-					</td><td align="center">10000*		</td><td align="center">28		</td><td align="center">-			</td><td align="center">1hr*			</td><td align="center">58min</td><td align="center">2</td></tr>
+<tr><td align="left">SP</td><td align="center">40-45	</td><td align="center">-				</td><td align="center">-					</td><td align="center">-				</td><td align="center">-					</td><td align="center">-						</td><td align="center">-					</td><td align="center">-				</td><td align="center">-		</td><td align="center">-			</td><td align="center">-				</td><td align="center">-		</td><td align="center">-</td></tr>
+<tr><td align="left">Total(SL)</td><td align="center"></td><td align="center">36206		</td><td align="center">79					</td><td align="center">74 			</td><td align="center">49889			</td><td align="center">68					  </td><td align="center">77					</td><td align="center">49889		</td><td align="center">68		</td><td align="center">77			</td><td align="center">5hr			</td><td align="center">3.25hr	</td><td align="center">35</td></tr></table>
+
+</center>
+
+
+
+<div class="p"><!----></div>
+Table&nbsp; shows the experimental results. Due to space limit, we provide only  the total, average, and median values for the subjects , , and . The detailed results for experiments on all the versions of these subjects are available on our project web<a href="#tthFtNtAAG" name="tthFrefAAG"><a href="https://sites.google.com/site/asergrp/projects/express/"><tt>https://sites.google.com/site/asergrp/projects/express/</tt></a></a>
+However, we provide detailed results for  in this paper. 
+
+<div class="p"><!----></div>
+Column S shows the name of the subject. For , the column shows the class name. The class  is denoted by SL and the class  is denoted by SP. Column V shows the number of version pairs for which we conducted experiments for the subject. For , the column shows the version numbers on which the experiments were conducted. These version numbers are the revision numbers in the google code repository of . 
+Column E<sub>Pex</sub> shows the total number of DSE runs required by Pex for satisfying E. 
+Column E<sub>Red</sub> shows the average percentage reduction in the number of DSE runs by Pex+eXpress for achieving E. 
+Column M<sub>e</sub> shows the median percentage reduction in the number of DSE runs by Pex+eXpress for achieving E. 
+Column I<sub>Pex</sub> shows the total number of DSE runs required by Pex for satisfying I. 
+Column I<sub>Red</sub> shows the average percentage reduction in the number of DSE runs by Pex+eXpress for achieving I. 
+Column M<sub>i</sub> shows the median percentage reduction in the number of DSE runs by Pex+eXpress for achieving I.
+Column P<sub>Pex</sub> shows the total number of DSE runs required by Pex for satisfying P. 
+Column p<sub>Red</sub> shows the average percentage reduction in the number of DSE runs by Pex+eXpress for achieving P (i.e., finding behavioral differences). 
+Column M<sub>p</sub> shows the median percentage reduction in the number of DSE runs by Pex+eXpress for achieving P.
+Column T<sub>Ppex</sub> shows the time taken by Pex for satisfying P.
+Column T<sub>s</sub> +T<sub>d</sub> shows the time taken Pex+eXpress for satisfying P. This time includes the time taken to statically find irrelevant branches. 
+Column T<sub>PRed</sub> shows the average percentage reduction in amount of time taken by Pex+eXpress for achieving P. 
+
+<div class="p"><!----></div>
+Table&nbsp; shows the time taken for finding the irrelevant branches and the number of irrelevant branches found. Column S shows the subject. Column T<sub>static</sub> shows the average time taken by  to find irrelevant branches that cannot help in satisfying E of the PIE model. Column B<sub>E+I</sub> shows the 
+average number of branches found in the set B<sub>E+I</sub>. In general, irrelevant branches are more if changes are towards the beginning of the PUT since there are likely to be more branches in the program that do not have a path to any changed regions. These branches also include the branches whose branching conditions are not dependent on the inputs of the program and therefore do not correspond to branching conditions during path exploration. Hence, pruning these branches is not helpful in making DSE efficient. Column B<sub>P</sub> shows the 
+average number of branches found in the set B<sub>P</sub>.
+Column B<sub>Tot</sub> shows the total number of branches in the CFG.
+<br /><b>Results of replace. </b>For the  subject, among the 32 pairs of versions, the changed regions cannot be executed for 4 of theses version pairs (version pairs 14, 18, 27, and 31) by Pex or by Pex+eXpress in 1000 DSE runs. We do not include these version pairs while calculating the sum of DSE runs for satisfying I and E of the PIE model. For 3 of the version pairs (version pairs 12, 13, and 21), the changes are in the fields due to which there are no benefits of using Pex+eXpress. We exclude these three version pairs from the experimental results shown in Table&nbsp;, which includes the results of 32 version pairs.
+For 3 of the version pairs (version pairs 3, 22 and 32), a changed region was executed but the program state is not infected (both by Pex and Pex+eXpress)
+in a bound of 5 minutes. We do not include these version pairs while calculating the sum of DSE runs for satisfying I of the PIE model. 
+In addition, for 6 of the version pairs, the state infection was not propagated to observable output within a bound of 5 minutes.  We do not include these version pairs while calculating the sum of DSE runs for satisfying P of the PIE model. 
+
+<div class="p"><!----></div>
+  In total, Pex+eXpress took 49% fewer runs in executing the changes with a maximum of 77.6% for versions pairs 23 and 24. For these version pairs, Pex+eXpress takes 95 DSE runs in contrast to 425 runs taken by Pex to execute the changed locations. 
+For many version pairs, there was no benefit of using Pex+eXpress in terms of satisfying E of the PIE model.
+As a result, median reduction in the number of runs is 0% for satisfying E of the PIE model.
+
+<div class="p"><!----></div>
+Pex+eXpress took 46% fewer runs, in infecting the program state, with a maximum of 73.8% for version pair 6. For this version, eXpress takes 83 DSE runs in contrast to 317 runs taken by Pex to infect the program state after the execution of changed regions. We observe that Pex+eXpress took 75% fewer runs (median 49%) and 67% fewer amount of time in finding behavioral differences. This difference is substantially larger than the reduction in runs to achieve I. This phenomenon is due to a large number of 
+exception paths (i.e., paths that lead to an exception statement such as ) in replace. As a result, state infections often do not propagated 
+to an assertion violation in the PUT due to exceptions thrown in the program .  helps in pruning these irrelevant paths that lead to an exception.   
+
+<br /><b>Results of siena. </b>We observe that the behavioral differences between five of the version pairs of  are found within ten runs by Pex and Pex+eXpress. For these version pairs, there is no reduction in the number of runs . The reason for the preceding phenomenon is that changes in these version pairs are close to the entry vertex in the CFG. Hence, these changes can be covered in a relatively small number of runs.  In two of the version pairs, changed regions were not covered by either Pex+eXpress or Pex. An exception is thrown by the program before these changes could be executed. Pex and  Pex+eXpress were unable to generate a test input to avoid the exception. Changes between two of the version pairs were refactorings due to which the program state is never infected.
+
+<div class="p"><!----></div>
+For two of the changes, behavioral differences could not be detected by Pex within a bound of 5 minutes but they were detected by Pex+eXpress. We use 5 minutes for calculating the total values in the column Tp<sub>p</sub>ex and the number of DSE runs performed during five minutes in the column P<sub>P</sub>ex.  
+
+<div class="p"><!----></div>
+In summary, Pex+eXpress executed the changed region in 42% fewer runs (median 13%), infected the program state in 39.4% (median 13%) fewer runs, and found behavioral differences in 42% fewer runs(median 15%) and 38% fewer amount of time than Pex. In addition, Pex+eXpress detected  behavioral differences for two changes that were not detected by Pex within a bound of 5 minutes.
+
+<br /><b>Results of structorian.</b> The six rows with SL in column S of Table&nbsp; show the experimental results for changes in the class , 
+ while the last 10 rows (with SP in column S) show the experimental results on versions of the class . For the versions of , Pex+eXpress takes 24% fewer runs (median 26.5%) to execute a changed region than Pex. In addition, Pex+eXpress infects the program state in 24% fewer runs(median 26.5%). Neither Pex nor Pex+eXpress were able to find behavioral differences for two versions. Pex+eXpress takes 62% fewer runs (median 52%) and 39% fewer amount of time to find behavioral differences. 
+
+<div class="p"><!----></div>
+ 	Neither Pex+eXpress nor Pex was able to find behavioral differences between some version pairs of class  in 5 minutes (a bound that we use in our experiments for all subjects). For these version pairs, we increased the bound to 1 hour (or 10000 runs). Pex was not able to find behavioral differences for 4 version pairs even in 1 hour, while Pex+eXpress found behavioral differences for all these version pairs. If Pex was unable to detect behavioral differences within the bound of 1 hour, we put the time in the column T<sub>pex</sub> as 1 hour 
+ 	and the number of runs as 10000 (the bound on the number of runs) to calculate the total in the last row of Table&nbsp;. Similarly, for the columns E<sub>Pex</sub> and I<sub>Pex</sub>, we take the number of runs as 10000 if conditions E and I, respectively, are not satisfied within 10000 runs.
+
+<div class="p"><!----></div>
+  Pex+eXpress takes non-trivial average time of 700 seconds to find irrelevant branches for the class  due to a large number of method invocations. However, considering that most of the changes cannot be covered in 1 hour, the time taken to find irrelevant branches is substantially less. 
+
+<div class="p"><!----></div>
+  Changes between two version pairs (40-45 and 40-47) could not be covered by either Pex nor Pex+eXpress. One of the changes (between version pairs 47-50) was a refactoring. For this version pair, program state was infected but no behavioral differences were detected by either Pex or Pex+eXpress.
+
+<div class="p"><!----></div>
+  In summary, Pex+eXpress was able to detect behavioral differences for four of the version pairs that could not be detected by Pex. On average, Pex was able to find behavioral differences in 68% fewer runs (median 77%) and 35% fewer amount of time. 
+  The reduction in number of runs is substantially larger than reduction in amount of time due to non-trivial time taken by 
+  eXpress in finding irrelevant branches.
+
+<div class="p"><!----></div>
+<a name="tth_tAb1">
+</a> 
+<center> <font size="-3">Time and irrelevant branches</font>
+
+<table border="1">
+<tr><td align="left">S </td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="left">replace		</td><td align="center">4.5							</td><td align="center">90			</td><td align="center">57	</td><td align="center">181</td></tr>
+<tr><td align="left">siena			</td><td align="center">4.1							</td><td align="center">34			</td><td align="center">16	</td><td align="center">185</td></tr>
+<tr><td align="left">STPG			</td><td align="center">35								</td><td align="center">16			</td><td align="center">10	</td><td align="center">272</td></tr>
+<tr><td align="left">SL				</td><td align="center">0.4							</td><td align="center">33			</td><td align="center">11	</td><td align="center">383</td></tr>
+<tr><td align="left">SP				</td><td align="center">703							</td><td align="center">49			</td><td align="center">21	</td><td align="center">447</td></tr></table>
+
+</center>
+
+
+
+<div class="p"><!----></div>
+<br /><b>Seeding program exploration with existing tests.</b> Table&nbsp; shows the results obtained by using the existing test suite to seed the program exploration. Column C shows the class name. Column V shows the pair of version numbers. The next four columns show the number of runs and time taken by the four techniques: Pex, Pex with seeding, Pex+eXpress, and Pex+eXpress with seeding, respectively, for  finding behavioral differences. 
+Note that DSE runs required by our Incremental Exploration also includes the seeded test runs.
+
+<div class="p"><!----></div>
+In Table&nbsp;, if all the changed blocks are not covered, we take the 
+number of runs as 10,000 (the maximum number of runs that we ran our experiments with).
+For 9 of the version pairs of  (out of 16 that we used in our experiments), the existing test suite of  could not find behavioral differences. Therefore, we consider these 9 version pairs for our experiments. 
+Pex could not find behavioral differences for 5 of the 9 version pairs in 10,000 runs. Seeding the program exploration with the existing test suite helps Pex in finding behavioral differences for 3 of these version pairs under test.
+Pex+eXpress could not find behavioral differences for 3 of the 9 version pairs in 10,000 runs. Seeding the program exploration with the existing test suite helps Pex+eXpress in finding behavioral differences for 2 of these version pairs under test.
+
+<div class="p"><!----></div>
+In summary, Pex requires around 67.5% of the original runs and 67% less time (required by Pex without test seeding) 
+and Pex+eXpress requires around 74% of the original runs and 70% less time (required by Pex+eXpress without test seeding).
+In terms of time, Pex with seeding marginally wins over Pex+eXpress 
+with seeding due to time taken by Pex+eXpress in finding irrelevant branches.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+<a name="tth_tAb1">
+</a> 
+<center> <font size="-3">Results obtained by seeding existing test suite for structorian</font>
+
+<table border="1">
+<tr><td align="left">C </td><td align="center"> </td><td align="center"></td><td align="center"> </td><td align="center"> </td><td align="center"></td></tr>
+<tr><td align="left">SP</td><td align="center">2-5</td><td align="center">10000/1hr<sup>*</sup></td><td align="center">10000/1hr<sup>*</sup></td><td align="center">2381/35min</td><td align="center">181/17min</td></tr>
+<tr><td align="left">SP</td><td align="center">37-39		</td><td align="center">3699/26m			</td><td align="center">60/1m			</td><td align="center">851/22m				</td><td align="center">47/11m</td></tr>
+<tr><td align="left">SP</td><td align="center">39-40		</td><td align="center">10000/1hr<sup>*</sup>	</td><td align="center">304/2m			</td><td align="center">10000/1hr<sup>*</sup>		</td><td align="center">251/12m</td></tr>
+<tr><td align="left">SP</td><td align="center">45-47</td><td align="center">10000/1hr<sup>*</sup>		</td><td align="center">10000/1hr<sup>*</sup></td><td align="center">10000/1hr<sup>*</sup>		</td><td align="center">10000/1hr<sup>*</sup></td></tr>
+<tr><td align="left">SP</td><td align="center">47-50</td><td align="center">10000/1hr<sup>*</sup>		</td><td align="center">81/1m			</td><td align="center">10000/1hr<sup>*</sup>		</td><td align="center">64/10m</td></tr>
+<tr><td align="left">SP</td><td align="center">62-124</td><td align="center">10000/1hr<sup>*</sup>		</td><td align="center">59/1m			</td><td align="center">7228/58m				</td><td align="center">41/10m</td></tr>
+<tr><td align="left">SL</td><td align="center">169-174	</td><td align="center">478/1m				</td><td align="center">324/1m			</td><td align="center">34/1m					</td><td align="center">18/1m</td></tr>
+<tr><td align="left">SL</td><td align="center">150-169	</td><td align="center">299/1m				</td><td align="center">37/1m			</td><td align="center">52/1m					</td><td align="center">29/1m</td></tr>
+<tr><td align="left">SL</td><td align="center">9-139		</td><td align="center">2988/2m			</td><td align="center">69/1m			</td><td align="center">1002/1m				</td><td align="center">52/1m</td></tr>
+<tr><td align="left">Total</td><td align="center"></td><td align="center">64476/6.5hr		</td><td align="center">20934/2hr8m				</td><td align="center">41568/5hr9m					</td><td align="center">10683/2hr3m</td></tr></table>
+<br />
+<sup>*</sup> 
+
+</center>
+
+
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+ <hr /><h3>Footnotes:</h3>
+
+<div class="p"><!----></div>
+<a name="tthFtNtAAB"></a><a href="#tthFrefAAB"><a href="http://sourceforge.net/projects/j2cstranslator/"><tt>http://sourceforge.net/projects/j2cstranslator/</tt></a></a>.
+<div class="p"><!----></div>
+<a name="tthFtNtAAC"></a><a href="#tthFrefAAC"><a href="http://stringtopathgeometry.codeplex.com/"><tt>http://stringtopathgeometry.codeplex.com/</tt></a></a>i
+<div class="p"><!----></div>
+<a name="tthFtNtAAD"></a><a href="#tthFrefAAD"><a href="http://code.google.com/p/structorian/"><tt>http://code.google.com/p/structorian/</tt></a></a>i
+<div class="p"><!----></div>
+<a name="tthFtNtAAE"></a><a href="#tthFrefAAE"><a href="http://pexase.codeplex.com/"><tt>http://pexase.codeplex.com/</tt></a></a>t
+<div class="p"><!----></div>
+<a name="tthFtNtAAF"></a><a href="#tthFrefAAF"><a href="http://www.red-gate.com/products/reflector/"><tt>http://www.red-gate.com/products/reflector/</tt></a></a>A
+<div class="p"><!----></div>
+<a name="tthFtNtAAG"></a><a href="#tthFrefAAG"><a href="https://sites.google.com/site/asergrp/projects/express/"><tt>https://sites.google.com/site/asergrp/projects/express/</tt></a></a>.
+<br /><br /><hr /><small>File translated from
+T<sub><font size="-1">E</font></sub>X
+by <a href="http://hutchinson.belmont.ma.us/tth/">
+T<sub><font size="-1">T</font></sub>H</a>,
+version 3.87.<br />On 08 Feb 2010, 00:03.</small>
+</html>

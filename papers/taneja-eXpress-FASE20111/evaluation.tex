@@ -1,0 +1,676 @@
+\section{Experiments}
+\label{sec:evaluation}
+
+We conducted experiments on four programs and their 67 versions (in total) collected from three different sources. In our experiments, we try to address the following research questions:
+%\begin{itemize}
+\Comment{
+\\ \textbf{RQ1.} How much fewer DSE runs does Pex require to execute the changed regions between the two versions of a program with the assistance of \CodeIn{eXpress}?
+	\\ \textbf{RQ2.} Can \CodeIn{eXpress} more efficiently infect the program states after the execution of changed regions than without using \CodeIn{eXpress}?	
+	\\ \textbf{RQ3.} Can \CodeIn{eXpress} effectively help generate tests that execute changed regions between the two versions of a program than without using \CodeIn{eXpress}?
+	\\ \textbf{RQ4.} Can \CodeIn{eXpress} effectively help generate tests that infect the program states after the execution of changed regions than without using \CodeIn{eXpress}?
+	\\ \textbf{RQ5.} Can \CodeIn{eXpress} effectively help generate tests that find behavioral differences than without using \CodeIn{eXpress}?
+	\\ \textbf{RQ6.} Can our approach of seeding the exploration with existing unit-tests efficiently help covering the changed regions and infect program states?
+}
+\\ \textbf{RQ1.} How many fewer DSE runs does Pex require to execute the changed regions between the two versions of a program with the assistance of \CodeIn{eXpress}?
+	\\ \textbf{RQ2.} How many fewer DSE runs does Pex require to infect the program states with the assistance of \CodeIn{eXpress}?
+	\\ \textbf{RQ3.} How many fewer DSE runs and how much fewer amount of time does Pex require to find behavioral differences with the assistance of \CodeIn{eXpress}?
+%	\\ \textbf{RQ4.} How many more tests does Pex, with the assistance of \CodeIn{eXpress}, generate that execute changed regions between the two versions of a program?
+%	\\ \textbf{RQ5.} How many more tests does Pex, with the assistance of \CodeIn{eXpress}, generate that infect the program states?
+%	\\ \textbf{RQ6.} How many more tests does Pex, with the assistance of \CodeIn{eXpress}, generate that find behavioral differences?
+	\\ \textbf{RQ4.} How many fewer DSE runs and how much fewer amount of time does Pex require to find behavior differences when the program exploration is seeded with the existing test suite?
+
+		\Comment{
+	\\ \textbf{RQ6.} Can the optimizations used in \CodeIn{Graph Builder} and \CodeIn{Graph Traverser} components of \CodeIn{eXpress} efficiently reduce the time to find irrelevant branches that cannot help in satisfying E of the PIE model?
+	
+
+	\item \textbf{RQ3.} Can \CodeIn{eXpress} more efficiently propagate the program state infection to some observable output?
+	
+	}	
+%\end{itemize}
+
+\Comment{
+\begin{table*}
+\begin{CodeOut}
+\begin{center}
+\caption {\label{table:siena_results}Experimental Results for Siena}
+\begin {tabular} {|l|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{4}{|c|}{}&\multicolumn{2}{|c|}{Reused}&\multicolumn{2}{|c|}{TUT 2 PUT}\\ 
+\hline
+MUMs&\CenterCell{Methods Implemented
+} &\CenterCell{Methods Reused
+}&\CenterCell{    Increase in LOC
+}&\CenterCell{   Increase in Max. CC  
+}&\CenterCell{  Increase in LOC
+}&\CenterCell{   Increase in Max. CC
+}&\CenterCell{}\\
+\hline												
+												
+
+%Total&&301&214&28.9&488&944&93.4&&&&&&&\\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\end{table*}
+}
+
+\subsection{Subjects}
+\label{sec:subjects}
+To answer the research questions, we conducted experiments on four subjects.
+Table~\ref{table:subjects} shows the details about the subjects. Column 1 shows the subject name. Column 2 shows the number of classes in the subject. Column 3 shows the number of classes that are covered by tests generated in our experiments. Column 4 shows the number of versions (not including the original version) used in our experiments. Column 5 shows the number of lines of code in the subject.
+\Comment{
+The experimental subjects and results can be downloaded from our our project web\footnote{\url{http://ase.csc.ncsu.edu/projects/express}}. 
+}
+
+\CodeIn{replace} and \CodeIn{siena} are programs available from the Subject Infrastructure Repository (SIR)~\cite{doESE05}. \CodeIn{replace} and \CodeIn{siena} are written in $C$ and $Java$, respectively. \CodeIn{replace} is a text-processing program, while \CodeIn{siena} is an Internet-scale event notification program. We chose these two subjects (among the others available at the SIR) in our experiments we could convert these subjects into C\# using the Java 2 CSharp Translator\footnote{\url{http://sourceforge.net/projects/j2cstranslator/}}. We could not convert other subjects available at the SIR (with the exception of \CodeIn{tcas}) because of extensive use of $C$ or $Java$ library APIs in these subjects. The experimental results on \CodeIn{tcas} are presented in a previous version of this work~\cite{taneja09:guided} and show similar conclusions as the results from the subjects used in the experiments here. We seeded all the 32 faults available for \CodeIn{replace} at the SIR one by one to generate 32 new versions of \CodeIn{replace}. For \CodeIn{siena}, SIR contains 8 different sequentially released versions of \CodeIn{siena} (versions 1.8 through 1.15). Each version provides enhanced functionalities or corrections with respect to the preceding version. We use these 8 versions in our experiments. In addition to these 8 versions, there are 9 seeded faults available at SIR. We seeded all the 9 faults available at SIR one by one to synthesize 9 new versions of \CodeIn{siena}. 
+In total, we conduct experiments on these 17 versions of \CodeIn{siena}. For \CodeIn{replace}, we use the \CodeIn{main} method as a PUT for generating tests. We capture the concrete value of the string $sub$ at the end of the $PUT$ using \CodeIn{PexStore.ValueForValidation("v", v)} statement. This statement captures the current value of $v$ in a particular run
+(i.e., an explored path) of DSE. In particular, this statement
+results in an assertion \CodeIn{Assert.AreEqual(v, cv)} in a generated test, where $cv$ is the concrete value of $v$ in the test during the time of exploration. 
+This assertion is used to find behavioral differences when the tests generated for a new version are executed on the original version.
+
+For \CodeIn{siena}, we use the methods \CodeIn{encode} (for changes that are transitively reachable from \CodeIn{encode}) and \CodeIn{decode} (for changes that are transitively reachable from \CodeIn{decode}) in the class \CodeIn{SENP} as PUTs for generating tests. We capture the return values of these methods using the \CodeIn{PexStore} statement 
+in the PUTs.
+
+The method \CodeIn{encode} requires non-primitive arguments. Existing Pex cannot handle non-primitive argument types effectively but provides support for using factory methods for non-primitive types. Hence, we manually wrote factory methods for the non-primitive types in \CodeIn{SENP}. In particular, we wrote factory methods for classes \CodeIn{SENPPacket}, \CodeIn{Event} and \CodeIn{Filter}. Each factory method invokes a sequence (of length up to three) of the public state-modifying methods in the corresponding class. The parameters for these methods, and the length of the sequence (up to three) are passed as inputs to the factory methods. During exploration, Pex generates concrete values for these inputs to cover various parts of the program under test.
+
+STPG\footnote{\url{http://stringtopathgeometry.codeplex.com/}} is an open source program hosted by the codeplex website, Microsoft's open source project hosting website. The codeplex website contains snapshots of check-ins in the code repositories for STPG. We collect three different versions of the subject STPG from the three most recent check-ins. We use the \CodeIn{Convert(string path)} method as the PUT for generating tests since \CodeIn{Convert} is the main conversion method that converts a string path data definition to a \CodeIn{PathGeometry} object.
+We capture the return value of \CodeIn{Convert} using the \CodeIn{PexStore} statement in the PUTs.
+
+
+\CodeIn{structorian}\footnote{\url{http://code.google.com/p/structorian/}} is an open source binary data viewing and reverse engineering tool. \CodeIn{structorian} is hosted by Google's open source project hosting website. The website also contains snapshots of check-ins in the code repositories for \CodeIn{structorian}. We collected all the versions of snapshots for the classes \CodeIn{StructLexer} and \CodeIn{StructParser}. We chose these classes in our experiments due to three factors. First, these classes have several revisions available in the repository. Second, these classes are of non-trivial size and complexity. Third, these classes have corresponding tests available in the repository. For the classes \CodeIn{StructLexer} and \CodeIn{StructParser} , we generalized one of the available concrete test methods by promoting primitive types to arguments of the test methods. 
+Furthermore, we convert the assertions in the concrete test methods to \CodeIn{PexStore} statements.
+Foe example if an assertion \CodeIn{Assert.IsEqual(v, 0)} exist in a concrete test, we convert the assertion to
+\CodeIn{PexStore.ValueForValidation("v", v)}.
+We use these generalized test methods as PUTs for our experiments. \CodeIn{structorian} contains a manually written test suite. We use this test suite for seeding the exploration for addressing the question RQ4.
+
+To address questions RQ1-RQ3, we use all the four subjects, while to address question RQ4, we use \CodeIn{structorian} because of two major factors. First, \CodeIn{structorian} has a manually written test suite that can be used to seed the exploration. Second, revisions of \CodeIn{structorian} contains non-trivial changes that cannot be covered by the existing test suite. Hence, our technique of seeding the existing test suite in the program exploration is useful for covering these changes. \CodeIn{replace} contains changes to one statement due to which most of the changes can be covered by the existing test suite.
+Hence, our Incremental Exploration technique is not beneficial for the version pairs under test.
+ \CodeIn{siena} and \CodeIn{STPG} do not have an existing test suite to use.
+
+\setlength{\tabcolsep}{6pt}
+%\tabcap{6cm}
+\begin{table}
+\begin{CodeOut}
+\begin{center}
+\caption {\label{table:subjects}Experimental subjects}
+\begin {tabular} {|l|r|r|r|r|r|}
+\hline
+Project&\CenterCell{Classes}&\CenterCell{Classes Covered}&\CenterCell{Versions}&\CenterCell{LOC}\\
+
+\hline
+\hline replace &1&1&32&625\\
+\hline STPG &1&1&2&684\\
+\hline siena &6&6&17&1529\\
+\hline structorian &70&8&21&6561\\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\vspace{- 0.3 in}
+\end{table}
+
+
+
+\subsection{Experimental Setup}
+For \CodeIn{replace} and \CodeIn{siena}, we conduct regression test generation between the original version and each version $v2$ synthesized from the available faults in the SIR. We use \CodeIn{eXpress} and the default search strategy in Pex~\cite{Pex,fitnex} to conduct regression test generation. In addition to the versions synthesized by seeding faults, we also conduct regression test generation between each successive versions of \CodeIn{siena} (versions 1.8 through 1.15) available in SIR, using \CodeIn{eXpress} and the default search strategy in Pex~\cite{Pex,fitnex}. For STPG and \CodeIn{structorian}, we conduct regression test generation between two successive version pairs that we collected. \Comment{
+In our experiments, we set max number of runs as 1000 for both Pex and \CodeIn{eXpress}. However, if the changes (or seeded faults) are not executed in 1000 test runs, we increase the bound to 10,000. 
+}
+
+ To address RQ1, we compare the number of runs of DSE required by the default search strategy in Pex (in short as Pex) with the number of runs required by Pex enhanced with \CodeIn{eXpress} (in short as Pex+eXpress) to execute a changed region. To address RQ2, we compare the number of runs required by Pex with the number of runs required by Pex+eXpress to infect the program states. 
+\Comment{To check infection propagation (behavioral difference between original and new program version), we store the return value of method under test (MUT) and the resulting values of visible fields (in the class containing the method under test) by inserting \CodeIn{PexStore} statements after the execution of MUT. Tests in the test suite generated for the new version of program contains assertions on the return value and fields. We execute the test suite on the original program version. A failing assertion indicates a behavioral difference between the two versions.}
+\Comment{
+To address RQ3, we compare the number of tests that cover a changed region generated by Pex with the number of such tests generated by Pex+eXpress. If more tests are generated that cover a changed region, it is easier for developers (or testers) to debug the program under test (if the changes are faulty) and gives more confidence to developers that the changes they made do not introduce any unintended side effects.
+To address RQ3, we compare the number of tests that infect the program state after the execution of changed region generated by Pex with the number of such tests generated by Pex+eXpress.}
+To address RQ3, we compare the number of runs and the amount of time required by Pex with the number of runs required by Pex+eXpress to find behavioral differences between two versions of a program under test.
+To address RQ4, we compare the number of DSE runs and the amount of time required by Pex (and Pex+eXpress) to find behavioral differences with and without seeding the program exploration (with the existing test suite).
+
+\Comment{we compare the number of runs required by the default search strategy in Pex with the number of runs required by \CodeIn{eXpress} to propagate the state infection to an observable output. To address RQ4 we compare the time taken to find irrelevant branches using \CodeIn{eXpress} with and without optimizations. }
+
+Currently, we have not automated the Instrumenter component of \CodeIn{eXpress}. To find out whether the program state has been infected after the execution of a changed region, we manually add statements to the 
+code under test that send a callback to the Dynamic Test Generator 
+whenever the program state is infected after the execution of a changed region.  
+The rest of the approach is fully automated and is implemented in a tool as an extension\footnote{\url{http://pexase.codeplex.com/}} to Pex~\cite{Pex}. We developed its components to statically find irrelevant branches as a .NET Reflector\footnote{\url{http://www.red-gate.com/products/reflector/}} AddIn.
+In future, we plan to automate the Instrumenter component.
+
+To find behavioral differences between two versions, we execute the tests generated for a new version on the original version.
+Behavioral differences are detected by a test if an assertion in the test fails. 
+  
+
+\begin{table*}
+\begin{CodeOut}
+\begin{center}
+\caption {\label{table:all_results}\scriptsize{Experimental results}}
+\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+&&\multicolumn{3}{|c|}{Execution}&\multicolumn{3}{|c|}{Infection}&\multicolumn{6}{|c|}{Propagation}\\ 
+\hline
+S &\CenterCell{V} &\CenterCell{$E_{\CodeIn{Pex}}$}&\CenterCell{$E_{Red}(\%)$}
+&\CenterCell{$M_i$}
+&\CenterCell{$I_{\CodeIn{Pex}}$}&\CenterCell{$I_{Red}(\%)$}
+&\CenterCell{$M_e$}
+&\CenterCell{$P_{\CodeIn{Pex}}$}&\CenterCell{$P_{Red}(\%)$}
+&\CenterCell{$M_p$}
+&\CenterCell{$Tp_{\CodeIn{Pex}}$}&\CenterCell{$Ts$+ $T_d$}&\CenterCell{$Tp_{Red}(\%)$}
+%&\CenterCell{$M/A$}
+\\
+
+\hline
+replace	&32		&	1668	&	49		&		0	 &2740	&42		  &34			&		10312	&	75	&	49		&		711	& 235	&		67	 \\ \hline
+siena		&17		&286		&42			&		13 &284	&39.4		&13				&		7301	&	42	&	15	&		1011	& 628&	38			\\ \hline
+STPG		&2		&341		&26			&	26		 &378	&32			&					&		378		&	32	&	32		&		353	&	255	& 28\\ \hline
+Total		&51		&2573		&49		 &			 &3402	&41		&					&		17613	&	62		&			&		1722	&		863	& 50\\
+\hline
+\multicolumn{13}{|c|}{-----------------------------structorian-----------------------------}&\\
+\hline
+SL&2-9		&102			&26.5				&		-			&	102				&26.5					&			-			&			-		&		-	&		-		&	-	&	-	&-\\
+\hline
+SL&9-139	&102			&26.5				&		-			&	102				&26.5		  		&			-			&	2988		&66		&		-		&	99	&	69.3	& 68\\
+\hline
+SL&139-150&102			&26.5				&					& 102				&26.5					&			-			& 761   	&69   &	  -		&	26  &	7.5		&	71\\
+\hline
+SL&150-169&53				&13.2				&-				&53					&13.2					&			-			& 299			&52		&	-			&	7.4	& 3.9		&	47\\
+\hline
+SL&169-174&55				&12.7				&-				&55					&12.7					&			-			&	478			&32.2	&	-			&	14.2&	8.4		&	41\\
+\hline
+SL&174-175&102			&26.5				&-				&102				&26.5					&			-			&			-		&-		&-			&-		&-			&-	\\
+\hline
+Total(SL)&&516			&24					&26.5 		&516				&26.5						&			24		&4526			&62		&52			&146.6&	89.1	&39\\
+\hline
+\hline
+
+SP&2-5		&10000*		&81					&-				&10000*			&74						&			-			&10000*		&74		&-			&1hr	& 35min	 &41.7\\
+\hline
+SP&5-6		&10000*		&74					&-				&10000*			&74						&			-			&10000*		&74		&-			&1hr	&	32min  &47\\
+\hline
+SP&9-13		&10000*		&81				&-				 &10000*			&81						&			-			&10000*		&81 	&-			&1hr	& 27min  &55\\
+\hline
+SP&37-39	&6				&0					&-				&3699				&77						&		-				&3699			&77		&-			&26min&	22min	 &15\\
+\hline
+SP&39-40	&2				&0					&-				&-					&-						&		-				&-				&-		&-			&-		&-			 &-	\\
+\hline
+SP&50-62	&6188			&82.9				&					&6188				&82.9					&-					&6188			&82.9	&-		  &35 min		&21	 &40\\
+\hline
+\Comment{SP&r37-r39(LoadStructs)&2&2&0&-&-&-&&&&&&\\
+\hline}
+SP&45-47	&-				&-					&-				&-					&-						&-					&-				&-		&-			&-				&-		&-\\
+\hline
+SP&47-50	&2				&0					&-				&2					&0						&-					&-				&-		&-			&-				&-		&-\\
+\hline
+SP&62-124	&6				&0					&-				&10000*			&28						&-					&10000*		&28		&-			&1hr*			&58min&2\\
+\hline
+SP&40-45	&-				&-					&-				&-					&-						&-					&-				&-		&-			&-				&-		&-\\
+\hline
+Total(SL)&&36206		&79					&74 			&49889			&68					  &77					&49889		&68		&77			&5hr			&3.25hr	&35\\
+\hline
+
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\vspace{- 0.35 in}
+\end{table*}
+
+
+\Comment{
+
+\begin{table*}
+\begin{CodeOut}
+\begin{center}
+\caption {\label{table:all_results}\scriptsize{Experimental results}}
+\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+&&\multicolumn{6}{|c|}{Execution}&\multicolumn{6}{|c|}{Infection}\\ 
+\hline
+S &\CenterCell{V} &\CenterCell{$E_{\CodeIn{Pex}}$}&\CenterCell{$E_{\CodeIn{eXpress}}$}&\CenterCell{$E_{Red}(\%)$ }&\CenterCell{$Ne_{\CodeIn{Pex}}$}&\CenterCell{$Ne_{\CodeIn{eXpress}}$}&\CenterCell{$Ne_{Inc}(\%)$}&\CenterCell{$I_{\CodeIn{Pex}}$}&\CenterCell{$I_{\CodeIn{eXpress}}$}&\CenterCell{$I_{Red}(\%)$}&\CenterCell{$Ni_{\CodeIn{Pex}}$}&\CenterCell{$Ni_{\CodeIn{eXpress}}$}&\CenterCell{$Ni_{Inc}(\%)$}\\
+
+\hline
+replace&32&1946&789&59.4&1183&2249&90&3203&1716&46.4&358&579&62\\
+\hline
+siena&17&286&166&42&549&1214&121.1&284&172&39.4&336&908&170.2\\
+\hline
+STPG&2&341&250&26.1&38&48&26.3&378&255&32.4&10&13&30\\
+\hline
+Total&51&2573&1205&53.1&1770&3511&98.4&3865&2143&44.6&704&1500&113.1\\
+\hline
+\multicolumn{13}{|c|}{-----------------------------structorian-----------------------------}&\\
+\hline
+SL&2-9&102&75&26.5&24&38&58.3&102&75&26.5&24&38&58.3\\
+\hline
+SL&9-139&102&75&26.5&24&38&58.3&152&107&29.6&8&11&37.5\\
+\hline
+SL&139-150&102&75&26.5&24&38&58.3&102&75&26.5&13&18&38.5\\
+\hline
+SL&150-169&53&46&13.2&20&25&25&53&46&13.2&20&25&25\\
+\hline
+SL&169-174&55&48&12.7&323&411&21.4&55&48&12.7&230&281&22.2\\
+\hline
+SL&174-175&102&75&26.5&24&38&58.3&-&-&-&-&-&-\\
+\hline
+SL&175-184&19&15&21.1&41&48&17.1&21&21&0&13&17&30.8\\
+\hline
+Total(SL)&&535&396&26&480&636&24.5&485&372&23.3&308&390&26.6\\
+\hline
+BL&45-174&2&2&0&999&999&0&3&3&0&243&265&9.1\\
+\hline
+BL&174-175&2&2&0&999&999&0&3&3&0&243&265&9.1\\
+\hline
+
+\hline
+SP&2-5&-&1866&-&-&-&-&-&2587&-&-&-&-\\
+\hline
+SP&5-6&-&2614&-&-&-&-&-&2614&-&-&-&-\\
+\hline
+SP&9-13&-&1866&-&-&-&-&-&1866&-&-&-&-\\
+\hline
+SP&37-39&6&6&0&128&165&28.9&-&851&-&-&5&-\\
+\hline
+SP&39-40&2&2&0&150&167&11.3&-&-&-&-&-&-\\
+\hline
+SP&50-62&6188&1053&82.9&-&-&-&6188&1053&82.9&-&-&\\
+\hline
+\Comment{SP&r37-r39(LoadStructs)&2&2&0&-&-&-&&&&&&\\
+\hline}
+SP&45-47&2&2&0&43&53&23.3&2&2&0&43&53&23.3\\
+\hline
+SP&47-50&2&2&0&43&53&23.3&2&2&0&43&53&23.3\\
+\hline
+SP&62-124&2&2&0&43&53&23.3&2&2&0&43&53&23.3\\
+\hline
+SP&124-125&2&2&0&43&53&23.3&2&2&0&43&53&23.3\\
+\hline
+SP&125-166&-&7452&-&-&-&-&-&7452&-&-&&-\\
+\hline
+SP&40-45&-&8214&-&-&-&-&-&8276&-&-&-&-\\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\vspace{- 0.35 in}
+\end{table*}
+}
+
+
+\subsection{Experimental Results}
+Table~\ref{table:all_results} shows the experimental results. Due to space limit, we provide only  the total, average, and median values for the subjects \CodeIn{replace}, \CodeIn{siena}, and \CodeIn{STPG}. The detailed results for experiments on all the versions of these subjects are available on our project web\footnote{\url{https://sites.google.com/site/asergrp/projects/express/}}.
+However, we provide detailed results for \CodeIn{structorian} in this paper. \Comment{Some of the changes in \CodeIn{structorian} could not be executed by Pex but were executed by \CodeIn{eXpress} due to which we do not include }
+
+Column $S$ shows the name of the subject. For \CodeIn{structorian}, the column shows the class name. The class \CodeIn{StructLexer} is denoted by SL and the class \CodeIn{StructParser} is denoted by SP. Column $V$ shows the number of version pairs for which we conducted experiments for the subject. For \CodeIn{structorian}, the column shows the version numbers on which the experiments were conducted. These version numbers are the revision numbers in the google code repository of \CodeIn{structorian}. 
+Column $E_{Pex}$ shows the total number of DSE runs required by Pex for satisfying E. 
+Column $E_{Red}$ shows the average percentage reduction in the number of DSE runs by Pex+eXpress for achieving E. 
+Column $M_e$ shows the median percentage reduction in the number of DSE runs by Pex+eXpress for achieving E. 
+Column $I_{Pex}$ shows the total number of DSE runs required by Pex for satisfying I. 
+Column $I_{Red}$ shows the average percentage reduction in the number of DSE runs by Pex+eXpress for achieving I. 
+Column $M_i$ shows the median percentage reduction in the number of DSE runs by Pex+eXpress for achieving I.
+Column $P_{Pex}$ shows the total number of DSE runs required by Pex for satisfying P. 
+Column $p_{Red}$ shows the average percentage reduction in the number of DSE runs by Pex+eXpress for achieving P (i.e., finding behavioral differences). 
+Column $M_p$ shows the median percentage reduction in the number of DSE runs by Pex+eXpress for achieving P.
+Column $T_{Ppex}$ shows the time taken by $Pex$ for satisfying P.
+Column $T_s$ +$T_d$ shows the time taken $Pex+eXpress$ for satisfying P. This time includes the time taken to statically find irrelevant branches. 
+Column $T_{PRed}$ shows the average percentage reduction in amount of time taken by Pex+eXpress for achieving P. 
+
+Table~\ref{table:all_time} shows the time taken for finding the irrelevant branches and the number of irrelevant branches found. Column $S$ shows the subject. Column $T_{static}$ shows the average time taken by \CodeIn{eXpress} to find irrelevant branches that cannot help in satisfying E of the PIE model. Column $B_{E+I}$ shows the 
+average number of branches found in the set $B_{E+I}$. In general, irrelevant branches are more if changes are towards the beginning of the PUT since there are likely to be more branches in the program that do not have a path to any changed regions. These branches also include the branches whose branching conditions are not dependent on the inputs of the program and therefore do not correspond to branching conditions during path exploration. Hence, pruning these branches is not helpful in making DSE efficient. Column $B_{P}$ shows the 
+average number of branches found in the set $B_{P}$.
+Column $B_{Tot}$ shows the total number of branches in the CFG.
+\\ \textbf{Results of replace. }For the \CodeIn{replace} subject, among the 32 pairs of versions, the changed regions cannot be executed for 4 of theses version pairs (version pairs 14, 18, 27, and 31) by Pex or by Pex+eXpress in 1000 DSE runs. We do not include these version pairs while calculating the sum of DSE runs for satisfying I and E of the PIE model. For 3 of the version pairs (version pairs 12, 13, and 21), the changes are in the fields due to which there are no benefits of using Pex+eXpress. We exclude these three version pairs from the experimental results shown in Table~\ref{table:all_results}, which includes the results of 32 version pairs.
+For 3 of the version pairs (version pairs 3, 22 and 32), a changed region was executed but the program state is not infected (both by Pex and Pex+eXpress)
+in a bound of 5 minutes. We do not include these version pairs while calculating the sum of DSE runs for satisfying I of the PIE model. 
+In addition, for 6 of the version pairs, the state infection was not propagated to observable output within a bound of 5 minutes.  We do not include these version pairs while calculating the sum of DSE runs for satisfying P of the PIE model. 
+
+ \Comment{The  Version 19 could not be translated to C\# due to an invocation of native method in C. We also exclude this version from the experimental results shown in Table~\ref{table:results}}
+ 
+In total, Pex+eXpress took 49\% fewer runs in executing the changes with a maximum of 77.6\% for versions pairs 23 and 24. For these version pairs, Pex+eXpress takes 95 DSE runs in contrast to 425 runs taken by Pex to execute the changed locations. 
+For many version pairs, there was no benefit of using Pex+eXpress in terms of satisfying E of the PIE model.
+As a result, median reduction in the number of runs is 0\% for satisfying E of the PIE model.
+
+Pex+eXpress took 46\% fewer runs, in infecting the program state, with a maximum of 73.8\% for version pair 6. For this version, eXpress takes 83 DSE runs in contrast to 317 runs taken by Pex to infect the program state after the execution of changed regions. We observe that Pex+eXpress took 75\% fewer runs (median 49\%) and 67\% fewer amount of time in finding behavioral differences. This difference is substantially larger than the reduction in runs to achieve I. This phenomenon is due to a large number of 
+exception paths (i.e., paths that lead to an exception statement such as \CodeIn{throw}) in $replace$. As a result, state infections often do not propagated 
+to an assertion violation in the PUT due to exceptions thrown in the program \CodeIn{replace}. \CodeIn{eXpress} helps in pruning these irrelevant paths that lead to an exception.   
+%%Need to mention the median values
+\Comment{ 
+We have two rows for the results between versions $v_3$ and $v_4$ because some of the changes between the two versions are reachable from the PUT for \CodeIn{decode}, while the other changes are reachable from the PUT for \CodeIn{encode}. The row $v_3$ and $v_4$(d) shows the results obtained while generating tests for the PUT \CodeIn{decode}, while the row $v_3$ and $v_4$(e) shows the results obtained while generating tests for the PUT \CodeIn{encode}.
+}
+\\ \textbf{Results of siena. }We observe that the behavioral differences between five of the version pairs of \CodeIn{siena} are found within ten runs by Pex and Pex+eXpress. For these version pairs, there is no reduction in the number of runs . The reason for the preceding phenomenon is that changes in these version pairs are close to the entry vertex in the CFG. Hence, these changes can be covered in a relatively small number of runs.  In two of the version pairs, changed regions were not covered by either Pex+eXpress or Pex. An exception is thrown by the program before these changes could be executed. Pex and  Pex+eXpress were unable to generate a test input to avoid the exception. Changes between two of the version pairs were refactorings due to which the program state is never infected.
+
+For two of the changes, behavioral differences could not be detected by Pex within a bound of 5 minutes but they were detected by Pex+eXpress. We use 5 minutes for calculating the total values in the column $Tp_pex$ and the number of DSE runs performed during five minutes in the column $P_Pex$.  
+
+In summary, Pex+eXpress executed the changed region in 42\% fewer runs (median 13\%), infected the program state in 39.4\% (median 13\%) fewer runs, and found behavioral differences in 42\% fewer runs(median 15\%) and 38\% fewer amount of time than Pex. In addition, Pex+eXpress detected  behavioral differences for two changes that were not detected by Pex within a bound of 5 minutes.
+\Comment{
+We also observe that the total number of branches in the control flow graph change from version to version. The preceding phenomenon is because our \CodeIn{InterProceduralCFG} algorithm (Algorithm~\ref{alg:factorial}) results in a different CFG based on the location of the changes. In our experiments, we used two PUTs: one invoking \CodeIn{decode} and the other invoking \CodeIn{encode} as some of the changes are transitively reachable from \CodeIn{decode}, while the others are transitively reachable from \CodeIn{encode}. The CFGs with \CodeIn{encode} as starting method are significantly smaller in size in comparison with the CFGs with \CodeIn{decode} as starting method.
+}
+\\ \textbf{Results of structorian.} The six rows with $SL$ in column $S$ of Table~\ref{table:all_results} show the experimental results for changes in the class \CodeIn{StructLexer}, 
+ while the last 10 rows (with $SP$ in column $S$) show the experimental results on versions of the class \CodeIn{StructParser}. For the versions of \CodeIn{StructLexer}, Pex+eXpress takes 24\% fewer runs (median 26.5\%) to execute a changed region than Pex. In addition, Pex+eXpress infects the program state in 24\% fewer runs(median 26.5\%). Neither Pex nor Pex+eXpress were able to find behavioral differences for two versions. Pex+eXpress takes 62\% fewer runs (median 52\%) and 39\% fewer amount of time to find behavioral differences. 
+ 
+ 	Neither Pex+eXpress nor Pex was able to find behavioral differences between some version pairs of class \CodeIn{StructParser} in 5 minutes (a bound that we use in our experiments for all subjects). For these version pairs, we increased the bound to 1 hour (or 10000 runs). Pex was not able to find behavioral differences for 4 version pairs even in 1 hour, while Pex+eXpress found behavioral differences for all these version pairs. If Pex was unable to detect behavioral differences within the bound of 1 hour, we put the time in the column $T_{pex}$ as 1 hour 
+ 	and the number of runs as 10000 (the bound on the number of runs) to calculate the total in the last row of Table~\ref{table:all_results}. Similarly, for the columns $E_{Pex}$ and $I_{Pex}$, we take the number of runs as 10000 if conditions E and I, respectively, are not satisfied within 10000 runs.
+ 	
+  $Pex+eXpress$ takes non-trivial average time of 700 seconds to find irrelevant branches for the class \CodeIn{StructParser} due to a large number of method invocations. However, considering that most of the changes cannot be covered in 1 hour, the time taken to find irrelevant branches is substantially less. 
+  
+  Changes between two version pairs (40-45 and 40-47) could not be covered by either $Pex$ nor $Pex+eXpress$. One of the changes (between version pairs 47-50) was a refactoring. For this version pair, program state was infected but no behavioral differences were detected by either $Pex$ or $Pex+eXpress$.
+   
+  In summary, $Pex+eXpress$ was able to detect behavioral differences for four of the version pairs that could not be detected by Pex. On average, Pex was able to find behavioral differences in 68\% fewer runs (median 77\%) and 35\% fewer amount of time. 
+  The reduction in number of runs is substantially larger than reduction in amount of time due to non-trivial time taken by 
+  $eXpress$ in finding irrelevant branches.
+\begin{table}
+\begin{CodeOut}
+\begin{center}
+\caption {\label{table:all_time}\scriptsize{Time and irrelevant branches}}
+\begin {tabular} {|l|c|c|c|c|}
+\hline
+S &\CenterCell{$T_{static}(s)$}&\CenterCell{$B_{E+I}$}&\CenterCell{$B_{P}$}&\CenterCell{$B_{Tot}$}\\
+\hline
+replace		&4.5							&90			&	57	&181\\
+\hline
+siena			&4.1							&34			&	16	&185\\
+\hline
+STPG			&35								&16			&	10	&272\\
+\hline
+SL				&0.4							&33			&	11	&383\\
+\hline
+SP				&703							&49			&	21	&447\\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\vspace{-0.5in}
+\end{table}
+\\ \textbf{Seeding program exploration with existing tests.} Table~\ref{table:rq5} shows the results obtained by using the existing test suite to seed the program exploration. Column $C$ shows the class name. Column $V$ shows the pair of version numbers. \Comment{Column $N_{Pex}$ shows the number of DSE runs required by Pex to find behavioral differences. Column $Np_{seed}$ shows the number of DSE runs required by Pex to find behavioral differences using our approach of seeding the exploration with the existing test suite. Column $N_{e}$ shows the number of DSE runs required by Pex to find behavioral differences. Column $Ne_{seed}$ shows the number of DSE runs required by Pex+eXpress to cover all the blocks in all the changed regions by using our approach of seeding the exploration with the existing test suite.}The next four columns show the number of runs and time taken by the four techniques: Pex, Pex with seeding, Pex+eXpress, and Pex+eXpress with seeding, respectively, for  finding behavioral differences. 
+Note that DSE runs required by our Incremental Exploration also includes the seeded test runs.
+ 
+In Table~\ref{table:rq5}, if all the changed blocks are not covered, we take the 
+number of runs as 10,000 (the maximum number of runs that we ran our experiments with).
+For 9 of the version pairs of \CodeIn{structorian} (out of 16 that we used in our experiments), the existing test suite of \CodeIn{structorian} could not find behavioral differences. Therefore, we consider these 9 version pairs for our experiments. 
+Pex could not find behavioral differences for 5 of the 9 version pairs in 10,000 runs. Seeding the program exploration with the existing test suite helps Pex in finding behavioral differences for 3 of these version pairs under test.
+Pex+eXpress could not find behavioral differences for 3 of the 9 version pairs in 10,000 runs. Seeding the program exploration with the existing test suite helps Pex+eXpress in finding behavioral differences for 2 of these version pairs under test.
+
+In summary, Pex requires around 67.5\% of the original runs and 67\% less time (required by Pex without test seeding) 
+and Pex+eXpress requires around 74\% of the original runs and 70\% less time (required by Pex+eXpress without test seeding).
+In terms of time, Pex with seeding marginally wins over Pex+eXpress 
+with seeding due to time taken by Pex+eXpress in finding irrelevant branches.
+
+
+\begin{table}
+\begin{CodeOut}
+\begin{center}
+\begin{tiny}
+\caption {\label{table:rq5}\scriptsize{Results obtained by seeding existing test suite for structorian}}
+\begin {tabular} {|l|c|c|c|c|c|c|}
+\hline
+C & \CenterCell{V} &\CenterCell{$N_{Pex}/T$}&\CenterCell{$Np_{seed}/T$} &\CenterCell{$N_{eXpress}/T$} &\CenterCell{$Ne_{seed}$/T}\\
+
+\hline
+SP&2-5&$10000/1hr^*$&$10000/1hr^*$&2381/35min&181/17min\\
+\hline
+SP&37-39		&3699/26m			&60/1m			&851/22m				&47/11m\\
+\hline
+SP&39-40		&$10000/1hr^*$	&304/2m			&$10000/1hr^*$		&251/12m\\
+\hline
+SP&45-47&		$10000/1hr^*$		&$10000/1hr^*$&$10000/1hr^*$		&$10000/1hr^*$\\
+\hline
+SP&47-50&		$10000/1hr^*$		&81/1m			&$10000/1hr^*$		&64/10m\\
+\hline
+SP&62-124&	$10000/1hr^*$		&59/1m			&7228/58m				&41/10m\\
+\hline
+SL&169-174	&478/1m				&324/1m			&34/1m					&18/1m\\
+\hline
+SL&150-169	&299/1m				&37/1m			&52/1m					&29/1m\\
+\hline
+SL&9-139		&2988/2m			&69/1m			&1002/1m				&52/1m\\
+\hline
+Total&			&64476/6.5hr		&20934/2hr8m				&41568/5hr9m					&10683/2hr3m\\
+\hline
+\end{tabular}\\
+$^*$\CodeIn{If behavior differences are not detected, we take the number of runs as 10,000 (the maximum number of runs that we ran our experiments with)} 
+\end{tiny}
+\end{center}
+\end{CodeOut}
+\vspace{- 0.4 in}
+\end{table}
+
+
+\Comment{
+In summary, our evaluation of \CodeIn{eXpress} answers the following questions that we mentioned at the beginning of this section:
+%\begin{itemize}
+\\ \textbf{RQ1. }On average, \CodeIn{eXpress} requires 51.6\% fewer runs (i.e., explored paths)
+on average than the existing search strategy in Pex to execute the changed regions of the 51 versions (in total) of our three subjects. For the fourth subject, \CodeIn{eXpress} was able to  execute the changed regions of five versions that cannot be executed by default search strategy in \CodeIn{Pex} 
+\\ \textbf{RQ2. }On average, \CodeIn{eXpress} requires 45\% fewer
+runs on average than the existing search strategy in Pex to infect the program states after the execution of changed regions of the 51 versions (in total) of our three subjects. For the fourth subject, \CodeIn{eXpress} was able to  infect the program state for five versions for which the program state could not be infected by the default search strategy in \CodeIn{Pex}.
+\\ \textbf{RQ3. }
+\\ \textbf{RQ4. } \CodeIn{eXpress} generates 121.1\% more tests that execute the changed regions than the default search strategy in Pex.
+\\ \textbf{RQ5. }\CodeIn{eXpress} generates 170.2\% more tests that execute the changed regions than the default search strategy in Pex.
+\\ \textbf{RQ6. }
+\\ \textbf{RQ7. }Seeding the program exploration with the existing suite helps reduce the DSE runs to cover all the blocks in all the changed regions by **
+}
+%\end{itemize}
+
+\Comment{
+\section{Threats To Validity}
+\label{sec:validity}
+The threats to external validity primarily include the degree to which the subject programs, faults, or program
+changes are representative of true practice.
+One of our subject \CodeIn{replace} is taken from the SIR~\cite{doESE05}.  Most of the faulty
+versions available for \CodeIn{replace} at the SIR involve manually seeded
+faults including one or two lines. The subject has also been used for experiments by evaluating various approaches~\cite{burnim, xie06:augmenting}.
+The other subject STPG is an open source software program taken codeplex website. The three versions used in our experiments are the three most recent snapshots in the code repository for STPG. The two versions contain changes on regions involving 10 and 15 lines, respectively. These threats could be further
+reduced by experiments on more subjects. The main threats to internal validity include faults in our tool implementation, faults in Pex that we use to generate tests, and the instrumentation effects that can bias our
+results. 
+To reduce these threats, we have manually inspected the artifacts (such as control flow graphs, irrelevant branches, and generated tests) for some versions. 
+}
+
+
+ \Comment{
+\begin{table*}
+\begin{CodeOut}
+\begin{center}
+\caption {\label{table:results}Experimental Results}
+\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|}
+\hline
+&&\multicolumn{3}{|c|}{Execution}&\multicolumn{3}{|c|}{Infection}&\multicolumn{3}{|c|}{Optimization for Finding Irrelevant Branches }\\ 
+\hline
+Subject&\CenterCell{Version} &\CenterCell{$E_{\CodeIn{Pex}}$}&\CenterCell{$E_{\CodeIn{eXpress}}$}&\CenterCell{$E_{Reduction}(\%)$}&\CenterCell{$I_{\CodeIn{Pex}}$}&\CenterCell{$I_{\CodeIn{eXpress}}$}&\CenterCell{$I_{Reduction}(\%)$}&\CenterCell{$T_{optimized}(s)$}&\CenterCell{$T_{unoptimized}(s)$} &\CenterCell{Irrelevant}\\
+
+\hline
+\hline replace &1&7&7&0&16&14&12.5&4&21.2&137\\
+\hline replace &2&7&7&0&79&65&17.7&4&23.5&137\\
+\hline replace &3&28&28&0&-&-&-&0.3&25.6&15\\
+\hline replace &4&28&28&0&133&133&0&0.3&24.3&15\\
+\hline replace &5&240&150&37.5&240&158&34.2&12.9&18.6&137\\
+\hline replace &6&317&83&73.8&317&83&73.8&0.3&21.3&17\\
+\hline replace &7&60&32&46.7&128&58&54.7&11.7&25.6&137\\
+\hline replace &8&60&32&46.7&133&133&0&6.4&25.5&137\\
+\hline replace &9&13&13&0&243&102&58&7&22.2&140\\
+\hline replace &10&13&13&0&152&111&27&7&22.2&140\\
+\hline replace &11&13&13&0&224&138&38.4&7.5&23.5&140\\
+%\hline replace &12&F&F&F&F&F&&&&\\
+%\hline replace &13&F&F&F&F&F&&&&\\
+\hline replace &14&-&-&-&-&-&-&-&-&-\\
+\hline replace &15&4&4&0&4&4&0&3.4&18.9&15\\
+\hline replace &16&60&32&46.7&126&123&2.4&3.6&19.9&137\\
+\hline replace &17&15&15&0&15&15&0&6.3&26.3&137\\
+\hline replace &18&-&-&-&-&-&-&-&-&-\\
+\hline replace &20&15&15&0&15&15&0&6.3&26.5&137\\
+%\hline replace &21&F&F&F&F&F&&&&\\
+\hline replace &22&6&6&0&-&-&-&21.3&29.4&138\\
+\hline replace &23&6&6&0&6&6&0&21.4&29.5&112\\
+\hline replace &24&6&6&0&15&15&0&21.4&29.5&112\\
+\hline replace &25&425&95&77.6&465&132&71.6&0.5&19.1&18\\
+\hline replace &26&425&95&77.6&469&133&71.6&0.5&19.1&18\\
+\hline replace &27&-&-&-&-&-&-&-&-&-\\
+\hline replace &28&60&32&46.7&182&123&32.42&3.6&27.3&137\\
+\hline replace &29&60&32&46.7&182&123&32.42&3.6&27.3&137\\
+\hline replace &30&60&32&46.7&60&32&46.7&3.6&27.1&137\\
+\hline replace &31&-&-&-&-&-&-&-&-&-\\
+\hline replace &32&13&13&0&-&-&-&6.5&20.5&140\\
+\hline
+\hline STPG &1&141&125&11.3&178&127&28.7&0.7&-&16\\
+\hline STPG &2&200&125&37.5&200&128&36&0.7&-&16\\
+\hline Total &&2287&1039&54.6&3581&1971&45&164.8&-&2559\\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\end{table*}
+}
+
+
+
+\Comment{
+\begin{table*}
+\begin{CodeOut}
+\begin{center}
+\caption {\label{table:siena_results}Experimental Results for replace, siena, and STPG}
+\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+&\multicolumn{6}{|c|}{Execution}&\multicolumn{6}{|c|}{Infection}&\multicolumn{4}{|c|}{Optimization for Finding Irrelevant Branches}\\ 
+\hline
+V &\CenterCell{$E_{\CodeIn{Pex}}$}&\CenterCell{$E_{\CodeIn{eXpress}}$}&\CenterCell{$E_{Red}(\%)$ }&\CenterCell{$Te_{\CodeIn{Pex}}$}&\CenterCell{$Te_{\CodeIn{eXpress}}$}&\CenterCell{$Te_{Inc}(\%)$}&\CenterCell{$I_{\CodeIn{Pex}}$}&\CenterCell{$I_{\CodeIn{eXpress}}$}&\CenterCell{$I_{Red}(\%)$}&\CenterCell{$Ti_{\CodeIn{Pex}}$}&\CenterCell{$Ti_{\CodeIn{eXpress}}$}&\CenterCell{$Ti_{Inc}(\%)$}&\CenterCell{$T_{opt}(s)$}&\CenterCell{$T_{unopt}(s)$} &\CenterCell{$B_{Irr}$} &\CenterCell{$B_{Tot}$}\\
+\hline
+$v_1-v_2$&5&5&0&19&43&111.1&30&27&10&12&18&50&0.93&&133&178\\
+\hline
+$v_2-v_3$&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&1.1&&15&248\\
+\hline
+$v_3-v_4$(d)&50&12&76&121&316&161.2&50&12&76&115&292&153.9&1.1&&15&248\\
+$v_3-v_4$(e)&3&3&0&36&98&172.2&3&3&0&28&88&214.3&1.1&&19&46\\
+\hline
+$v_4-v_5$&8&8&0&113&116&2.7&NR&NR&-&-&-&-&16.2&&24&256\\
+\hline
+$v_5-v_6$&23&17&26.1&25&81&224&33&24&27.3&12&23&91.67&1.37&&29&268\\
+\hline
+$v_6-v_7$&-&-&-&-&-&-&-&-&-&-&-&-&2.1&-&0&254\\
+\hline
+
+$v_7-v_8$&21&3&85.7&13&45&246.2&21&3&85.7&13&45&246.2&1.23&&24&50\\
+\hline \hline
+
+$v_0-v_9$&60&35&41.7&3&10&233&60&35&41.7&3&10&233&17.8&&145&242\\
+\hline
+$v_0-v_{10}$&33&27&18.2&11&18&63.6&NA&NA&-&-&-&-&1.1&&27&242\\
+\hline
+$v_0-v_{11}$&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&1.1&&15&248\\
+\hline
+$v_0-v_{12}$&20&7&65&5&8&60&20&7&65&5&5&60&1.3&&24&46\\
+\hline
+$v_0-v_{13}$&8&8&0&113&116&2.65&8&8&0&113&116&2.65&18.7&&24&242\\
+\hline
+$v_0-v_{14}$&17&17&0&56&60&5.3&21&19&9.5&20&25&25&1.17&&24&242\\
+\hline
+$v_0-v_{15}$&8&8&0&30&30&0&8&8&0&3&3&0&1.17&&24&242\\
+\hline
+$v_0-v_{16}$&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&1.1&&15&248\\
+\hline
+$v_0-v_{17}$&30&26&13.3&10&283&2730&30&26&13.3&10&283&2730&1.3&&19&46\\
+\hline
+\Comment{
+siena&3&5&5&0&18&38&111.1&&&&&&&0.93&&133&178\\
+\hline
+siena&4&33&27&18.2&11&18&63.6&&&&&&&1.1&&157&240\\
+\hline
+siena&5&NR&NR&NR&NR&NR&NR&&&&&&&1.1&&15&248\\
+\hline
+siena&6&47&12&74.5&12&35&191.7&&&&&&&1.1&&119&246\\
+\hline
+siena&7&20&7&65&5&8&60&&&&&&&1.3&&24&46\\
+\hline
+siena&8&3&3&0&36&98&172&&&&&&&1.21&&25&48\\
+\hline
+siena&9&8&8&0&113&116&2.65&&&&&&&18.7&&24&242\\
+\hline
+siena&10&8&8&0&28&73&161&&&&&&&1.05&&24&242\\
+\hline
+siena&11&3&3&0&36&98&172&&&&&&&1.21&&25&48\\
+\hline
+siena&12&23&17&26.1&3&44&1367&&&&&&&1.25&&22&48\\
+\hline
+siena&13&21&21&0&4&4&0&&&&&&&1.45&&32&46\\
+\hline
+siena&14&NR&NR&NR&NR&NR&NR&&&&&&&1.1&&15&248\\
+\hline
+siena&15&30&26&13.33&8&21&162.5&&&&&&&1.18&&159&242\\
+\hline
+siena&16&20&7&65&5&8&60&&&&&&&1.3&&24&46\\
+\hline
+siena&17&8&8&0&113&116&2.65&&&&&&&18.7&&24&242\\
+\hline
+siena&18&8&8&0&28&73&161&&&&&&&1.05&&24&242\\
+\hline
+siena&19&23&17&26.1&3&44&1367&&&&&&&1.25&&22&48\\
+\hline
+siena&20&3&3&0&36&98&172&&&&&&&1.21&&25&48\\
+\hline
+}
+\hline
+Total&286&166&42&549&1214&121.1&284&172&39.4&336&908&170.2&&576&3146&\\
+\hline
+\end{tabular}
+\end{center}
+\end{CodeOut}
+\end{table*}
+}
+
+\Comment{
+\begin{table*}
+\begin{tiny}
+\begin{center}
+\caption {\label{table:structorian_results}Experimental Results for structorian}
+\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+&&\multicolumn{6}{|c|}{Execution}&\multicolumn{6}{|c|}{Infection}&\multicolumn{5}{|c|}{}\\ 
+\hline
+C&\CenterCell{V} &\CenterCell{$E_{\CodeIn{Pex}}$}&\CenterCell{$E_{\CodeIn{eXp}}$}&\CenterCell{$R(\%)$ }&\CenterCell{$Ne_{\CodeIn{1}}$}&\CenterCell{$Ne_{\CodeIn{2}}$}&\CenterCell{$I(\%)$}&\CenterCell{$I_{\CodeIn{Pex}}$}&\CenterCell{$I_{\CodeIn{eXp}}$}&\CenterCell{$R(\%)$}&\CenterCell{$Ni_{\CodeIn{1}}$}&\CenterCell{$Ni_{\CodeIn{2}}$}&\CenterCell{$I(\%)$}&\CenterCell{$T_{s}(s)$}&\CenterCell{$T_{d1}(s)$}&\CenterCell{$T_{d2}(s)$} &\CenterCell{$B_{I}$} &\CenterCell{$B_{T}$}\\
+\hline
+SL&2-9&102&75&26.5&24&38&58.3&102&75&26.5&24&38&58.3&632&&&42&442\\
+\hline
+SL&9-139&102&75&26.5&24&38&58.3&152&107&29.6&8&11&37.5&692&&&42&442\\
+\hline
+SL&139-150&102&75&26.5&24&38&58.3&102&75&26.5&13&18&38.5&657&&&42&442\\
+\hline
+SL&150-169&53&46&13.2&20&25&25&53&46&13.2&20&25&25&0.43&&&21&66\\
+\hline
+SL&174-175&102&75&26.5&24&38&58.3&-&-&-&-&-&-&678&&&42&442\\
+\hline
+SL&175-184&19&15&21.1&41&48&17.1&21&21&0&13&17&30.8&0.51&&&7&83\\
+\hline
+BL&r45-174&2&2&0&999&999&0&3&3&0&243&265&9.1&0.5&&&9&75\\
+\hline
+BL&174-175&2&2&0&999&999&0&3&3&0&243&265&9.1&0.5&&&9&75\\
+\hline
+
+\hline
+SP&2-5&NR&1866&-&-&-&-&-&2587&-&-&-&-&679&&&52&455\\
+\hline
+SP&5-6&NR&2587&-&-&-&-&-&2587&-&-&-&-&663&&&41&428\\
+\hline
+SP&9-13&NR&1866&0&-&-&-&-&-&-&-&1866&-&739&&&52&455\\
+\hline
+SP&39-40&X&X&0&X&X&X&X&X&X&X&X&X&739&&&52&455\\
+\hline
+SP&50-62&6188&1053&&-&-&-&&&&&&&532&&&52&455\\
+\hline
+\Comment{SP&r37-r39(LoadStructs)&2&2&0&-&-&-&&&&&&&683&&&52&455\\
+\hline}
+SP&45-47&2&2&0&43&53&23.3&2&2&0&43&53&23.3&715&&&52&455\\
+\hline
+SP&47-50&2&2&0&43&53&23.3&2&2&0&43&53&23.3&715&&&52&455\\
+\hline
+SP&62-124&2&2&0&43&53&23.3&2&2&0&43&53&23.3&715&&&52&455\\
+\hline
+SP&124-125&2&2&0&43&53&23.3&2&2&0&43&53&23.3&715&&&52&455\\
+\hline
+SP&125-166&NR&7452&-&-&-&-&-&7452&-&-&&-&751&&&44&431\\
+\hline
+SP&40-45&NR&8214&-&-&-&-&-&8276&-&-&-&-&810&&&38&430\\
+\hline
+
+\end{tabular}
+\end{center}
+\end{tiny}
+\end{table*}
+}
+\Comment{
+\subsection{Summary}
+Over the evaluations address the seven research questions that we posed at the beginning of these section.
+\\ \textbf{RQ1.}
+\\ \textbf{RQ2.}
+\\ \textbf{RQ3.}
+\\ \textbf{RQ4.}
+}

@@ -1,0 +1,246 @@
+\section{Problem Definition}
+
+In this section, we present formal definitions of terms that we use throughout this paper.
+In addition, we formally define the regression test generation problem that 
+we address in this paper. 
+
+We use concrete-state representation from our previous work~\cite{xie04:rostra} 
+to represent the state of an object. The formal definitions of 
+ Object State and Object State Equivalence  can be found 
+in our previous work~\cite{xie04:rostra}. 
+
+\Comment{
+We also call each part a \Intro{heap}
+and view it as a graph: nodes represent objects, and edges represent
+fields. Let $P$ be the set consisting of all primitive values,
+including \CodeIn{null}, integers, etc. Let $O$ be a set of objects
+whose fields form a set $F$. (Each object has a field that
+represents its class, and array elements are considered
+index-labeled fields of the array objects.)
+\define{Heap.}
+{
+%When a variable (such as the return or receiver of a method
+%invocation) is a non-primitive-type object, we use concrete-state
+%representation from our previous work~\cite{xie04:rostra} to
+%represent the variable's value or state. 
+%A program executes on the
+%program state that includes a program heap. 
+%The concrete-state representation of an object considers only parts of the heap that
+%are reachable from the object. 
+%We also call each part a \Intro{heap}
+%and view it as a graph: nodes represent objects, and edges represent
+%fields. Let $P$ be the set consisting of all primitive values,
+%including \CodeIn{null}, integers, etc. Let $O$ be a set of objects
+%whose fields form a set $F$. (Each object has a field that
+%represents its class, and array elements are considered
+%index-labelled fields of the array objects.)\\\\
+A \emph{heap} is an edge-labeled graph $\Pair{O}{E}$, where
+$E=\SetSuch{\Triple{o}{f}{o'}}{o \in O, f \in F, o' \in O \cup
+P}$.
+}
+Heap isomorphism is defined as graph isomorphism based on node
+bijection~\cite{boyapata02-korat}.
+%\vspace*{-0.5ex}
+\define{Heap Isomorphism.}{
+Two heaps $\Pair{O_1}{E_1}$ and $\Pair{O_2}{E_2}$ are
+\emph{isomorphic} iff there is a bijection $\rho: O_1 \to O_2$
+such that:
+\begin{eqnarray}
+E_2 & = & \SetSuch{\Triple{\rho(o)}{f}{\rho(o')}}{\Triple{o}{f}{o'} \in E_1, o' \in O_1} \cup \nonumber\\
+    &   & \SetSuch{\Triple{\rho(o)}{f}{o'}}{\Triple{o}{f}{o'} \in E_1, o' \in P}. \nonumber
+\end{eqnarray}
+}
+%\vspace*{-1ex}
+ The definition allows only object identities to vary:
+two isomorphic heaps have the same fields for all objects and the
+same values for all primitive fields.
+\define{Object State.}
+{
+The state of an object $r$ is represented with a \emph{rooted} heap:
+%\vspace*{-0.5ex}
+A \emph{rooted heap} is a pair $\Pair{r}{h}$ of the root object $r$ and a
+heap $h$ whose all nodes are reachable from $r$.
+}
+
+\define{Object State Equivalence.}
+{
+Two object states $s_1=\Pair{r_1}{h_1}$ and $s_2=\Pair{r_2}{h_2}$ are equivalent ($s_1 \equiv s_2$)
+iff heap $h_1$ is isomorphic with heap $h_2$.
+}
+}
+
+\vspace{-0.3cm}
+\define {Program Execution Point.}{
+Let $S= ( s_1, s_2,...,s_n)$ be the sequence of statements executed during a 
+program execution $V(I)$ (i.e., when program $V$ is executed with a list of argument values $I$). 
+Since a statement $s$ can be executed multiple times, multiple instances of $s$ 
+can be present in $S$. A program execution point (in short an execution point) for a program execution $V(I)$
+is a statement $s_i \in S$ such that statements $(s_1, s_2..., s_{i})$ have already been executed
+but statements $s_{i+1}, s_{i+1},.. s_{n}$ are yet to be executed.
+}
+\vspace{-0.6cm}
+\define{Program State.}
+{
+Let $M = \{m_1, m_2, m_3,..., m_n\}$ be the set of methods in 
+the program call stack at an execution point $e$. 
+Let $R = \{o_1, o_2, o_3,..., o_l\}$ be the set of objects such that $o_i$ is the 
+receiver object of $m_i$, $A = \{ a_1, a_2,..., a_m\}$ be the set of all the arguments 
+(primitive or non primitive) to methods in $M$, and 
+$L= \{l_1, l_2, l_3,..., l_x\}$ be the set of all the in-scope local and global variables (primitive or non-primitive) 
+at the statements  
+$P = \{p_1, p_2, p_3,..., p_y, s_e\}$, where $p_i$ is the statement at which method $m_i$ is invoked and the 
+$s_e$ is the statement corresponding to the execution point $e$.
+The program state at an execution point $e$ is the set of object states $S_R \cup S_A \cup S_L$, where 
+ $S_R = \{S_{o1}, S_{o2}, S_{o3}..., S_{ol}\}$ ($S_{oi}$
+is the object state for object $o_i$ at $e$), 
+ $S_A = \{S_{a1}, S_{a2}, S_{a3}..., S_{an}\}$ 
+($S_{ai}$ is the object state for $a_i$ if $a_i$ is non-primitive otherwise 
+$S_{ai}$ is the value of $a_i$), and $S_L = \{S_{l1}, S_{l2}, S_{l3}..., S_{lx}\}$ 
+($S_{li}$ is the object state for $l_i$ at $s_e$ if $l_i$ is non-primitive otherwise 
+$S_{li}$ is the value of $l_i$). 
+}
+
+%An object oriented program $P$ consists of a set 
+%of classes $C = \{c_1, c_2, ..., c_l\}$. Each class $c_i$ contains a set of methods 
+%$M_i = \{m_{i1}, m_{i2},..., m_{im}\}$ and a set of fields $F_i = \{f_{i1}, f_{i2},..., f_{in}\}$. 
+%A method $m$ takes a set of arguments $I= \{i_1, i_2,...,\ i_o\}$ and the receiver object state $S_{R0}$ and produces as output $\Omega$ and a resulting receiver object state $S_{R1}$.
+%An input $i \in I$ can be of a primitive type 
+
+\Comment{
+\define{Object State.}
+{
+State $S_o$ of an object $O$ (instantiated from class $C$) at a point $p$ in 
+method $M$ in class $C$ is
+defined by the values of fields $F$ in $C$ and the set of in-scope local variables $L$ at point $p$.
+%\begin{center}
+\\ \\
+$S_o = \{<V(f_1), V(f_2),..., V(f_n), V(l_1), V(l_2), ..., V(l_m)>|f_i\in F,$ $V(x)$ is the 
+value of $x,$ $l_i\in L\}$ 
+%\end{center}
+ \\ \\ 
+Two program states $S_{o1}$ and $S_{o2}$ of the object $O$ at point $p$  
+are equivalent ($S_{o1} \equiv S_{o2}$) if all fields 
+$f_{i}\in F$ and all in-scope variables $L_j \in L$ 
+of Program $P$ have equal values\footnote{
+If a field $f_i$ (or an in-scope variable $l_i$) is of non-primitive type $V_1(f_i)$ (or $V_1(l_i)$) should be a deep clone of $V_2(f_i)$ (or $V_2(l_i)$).}
+, i.e., $V_1(f_i) = V_2(f_i)$ (and $V_1(l_i) = V_2(l_i)$), 
+where $V_1(x)$ is the value of field (or variable) x in $S_{o1}$ and 
+$V_2(x)$ is the value of field (or variable) x in $S_{o2}$. 
+%\footnote{Value of a non primitive type field is define by graph}.   
+}
+
+\define{Program State.}
+{
+Let $M = \{m_1, m_2, m_3,..., m_n\}$ be the set of methods in 
+the program call stack at an execution point $e$. 
+Let $R = \{o_1, o_2, o_3,..., o_n\}$ be the set of objects such that $o_i$ is the 
+receiver object of $m_i$. 
+Program state at an execution point $e$ is the set of object states of 
+all the receiver objects $S_P = \{S_{o1}, S_{o2}, S_{o3}..., S_{on}\}$, where $S_{oi}$
+is the object state for object $o_i$ at point of invocation of method $m_i$.  
+}
+}
+\vspace{-0.2cm}
+Let a program version $V$ be modified to incorporate a set of changes 
+$\Delta$.
+We assume that signatures of methods in $V$ are not changed and no new fields are added, modified, or deleted in $V$. 
+$\Delta$ also includes the new statements added to $V$ and statements deleted from $V$.
+The program version $V'$ is the resulting program version after   
+$\Delta$ is applied to the program version $V$. A method $M$ in $V$
+corresponds to a method $M'$ (denoted as $M \leftrightarrow M'$) in $V'$ if $M$ and $M'$ have the same signatures.
+Assume that some dummy statements
+are added to 
+the two program versions for matching added/deleted statements between the two versions (as done by Santelices et al.~\cite{santelices}). 
+These dummy statements make sure that 
+a statement $s$ in $V$ can be mapped to a corresponding statement $s'$ in $V'$. 
+
+\define{Execution Index~\cite{xin-pldi08}.}
+{
+An execution Index $E_{V(I)}$ of a program execution $V(I)$ is the function of execution points in 
+$V(I)$ that satisfies the following property:
+for any two execution points $x \in V(I)$ and $y \in V(I)$ $:$ if $x \neq y \Rightarrow E_{V(I)}(x) \neq E_{V(I)}(y) $
+}
+\vspace{-0.3cm}
+\define{Corresponding Execution Points~\cite{xin-pldi08}.}
+{
+An execution point $e$ in the execution $V(I)$ corresponds to an
+execution point $e'$ (denoted as $e \leftrightarrow e'$) in the execution $V'(I)$ 
+($V'$ is a modified version of $V$) when $E_{V(I)}(e) = E_{V'(I)}(e')$.
+For an execution point $e$ in the execution $V(I)$, there may or may not be a
+corresponding execution point $e'$ in the execution $V'(I)$.
+}
+\vspace{-0.3cm}
+\define{Parameterized Unit Test (PUT).}
+{
+In our formal model, we assume that a program is invoked through a 
+Parametrized Unit Test (PUT)~\cite{tillmann05:parameterized}. 
+A PUT $P_V =  <A, S, \lambda> $ is a method with a list of arguments $A$
+and a list of statements $S=(s_1, s_2, ..s_n)$
+such that $s_i \in S$ is a statement other than an assertion statement and $\lambda$ is a list of assertion statements. 
+}
+\vspace{-0.3cm}
+\define{Corresponding PUTs.}
+{
+In our formal model, we assume that a program is invoked through a 
+Parametrized Unit Test (PUT)~\cite{tillmann05:parameterized}. 
+A PUT $P_V = <A, S, \lambda>$ in a program version $V$, corresponds to a PUT $P_{V'} = <A', S', \lambda'>$ (denoted as $P_V \leftrightarrow P_V'$), in program version $V'$ if
+$V$ and $V'$ are different versions of a same program, $A = A'$, $S = S'$, and $\lambda = \lambda'$.
+}
+
+
+%\define{Parameterized Unit Test (PUT).}
+%{
+%In our formal model, we assume that a program is invoked through a 
+%Parametrized Unit Test (PUT)~\cite{tillmann05:parameterized}. 
+%A PUT $P_V = <V, I, M, \lambda> $ takes as input a list of arguments $A =(a_1, a_2,..., a_k)$, where $a_i$
+%is a primitive or a non-primitive argument. 
+%$P_V$ invokes the list of methods $M = (m_1, m_2, m_3,..., m_n)$ 
+%in program version $V$  
+%%with list of arguments $I_M = (I_1, I_2, I_3,..., I_n)$ such that if $i\in I_i \Rightarrow i \in I$ 
+%and 
+%asserts the behavior of $V$ using a list of assertions $\lambda$. We consider $I$ as inputs to the program version $V$.
+%}
+%\vspace{-0.5cm}
+%\define{Corresponding PUTs.}
+%{
+%Two PUTs $P_V = <V, I, M, \lambda>$ and $P_{V'} = <V', I, M', \lambda>$ are corresponding (denoted as $P_V \leftrightarrow P_V'$) if
+%$V$ and $V'$ are two versions of the same program, all the methods 
+%$M = \{m_1, m_2, m_3,..., m_n\}$ invoked in $P_V$ are replaced with invocations to corresponding methods
+% $M' = \{m'_1, m'_2, m'_3,..., m'_n\}$ in $V'$, respectively. 
+%}
+\vspace{-0.5cm}
+%\define{Program State Infection.}
+%{
+%Two corresponding PUTs $P_V$ and $P_{V'}$ are invoked with a list of arguments (input) $I =(a_1, a_2,..., a_k)$.
+%The input $I$ causes program state infection if the program state at some execution point 
+%$e \in V(I)$ is $S$ and the program state at the corresponding program point
+%$e' \in V'(I)$ is $S'$ such that $\neg (S \equiv S')$. If a corresponding point $e'$ does not exist,
+% program state at $e \in P_V(I)$ is considered to be infected.
+%}
+\define{Infected Program State.}
+{
+The program state  of a program version $V'$ (invoked from PUT $P_{V'}$) is infected with respect to a 
+program version $V$ (invoked by PUT $P_{V}$: $P_V \leftrightarrow P_V'$) 
+at an execution point $e'\in V'(I)$, if 
+$\exists e \in V(I): e \leftrightarrow e' $, program state of $V'$ at $e'$ is $S'$ and program state of $V$ at
+$e \in V(I)$ is $S$, and $S$ is not equivalent to $S'$ (definition of equivalent states can be found in our previous work~\cite{xie04:rostra}).
+}
+
+\vspace{-0.5cm}
+\define{Behavioral Difference.} 
+{
+Two corresponding PUTs $P_V$ and $P_{V'}$ are invoked with a list of argument values (input) $I =(a_1, a_2,..., a_k)$.
+There is a behavioral difference between $V$ and $V'$ if there exists an input $I$ such that 
+when $P_V$ and $P_{V'}$ are invoked with input $I$, $\exists \lambda_i \in \lambda$ such that $\lambda_i$ passes
+for $P_V$ but fails for $P_V'$ or $\lambda_i$ fails
+for $P_V$ but passes for $P_V'$. $I$ is referred to as an input detecting behavioral difference.
+}
+\vspace{-0.5cm}
+\define{Problem Definition.} 
+{
+Regression test generation for a PUT $P_{V'}$ in program version $V'$
+is the problem of generating an input $I$ for $P_{V'}$  
+that detects behavioral difference 
+between $V$ and $V'$.
+This paper focuses on efficiently generating inputs detecting behavioral differences.
+}

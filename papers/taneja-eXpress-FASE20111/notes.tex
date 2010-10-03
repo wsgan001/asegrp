@@ -1,0 +1,21 @@
+the first application of multi-implementation testing for finding security based bugs in input validators..
+
+
+issues in testing of input validators-:
+
+-: string...most of test generation tools cannot deals with strings..
+-: even pex cannot deal with complex regular expressions so we refactor those
+-: In multi-implementation testing all the implementations have the same requirements, however, validators have different formats.
+
+Scenarios when our tool is useful
+
+-:when you have your validator and and want to test it
+-: when we collect validators and want to see which one satisfy requirement
+
+
+---------------------------------------------------------
+Confidence about our test results
+(path coverage : statement coverage)
+How much regexs we simplified
+the simplification changes the semantic of regex, but make sure the generated strings satisfy the original regex.
+Guideline: manual bug identification

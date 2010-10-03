@@ -1,0 +1,436 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.14)  30 SEP 2010 17:39
+entering extended mode
+**eXpress.tex
+(C:\Kunal\svn\papers\taneja-eXpress\eXpress.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
+(C:\Kunal\svn\papers\taneja-eXpress\sig-alternate.cls
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+\epsfxsize=\dimen104
+\epsfysize=\dimen105
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip41
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen106
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen107
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks17
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks18
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks19
+\multlinegap=\skip42
+\multlinetaggap=\skip43
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+Document Class 'sig-alternate' <7th. June '07>. Modified by G.K.M. Tobin/Gerry 
+Murray
+Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
+shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
+Excerpts were taken from (Journal Style) 'esub2acm.cls'.
+****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.ac
+m.org ******
+Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
+
+\footheight=\dimen115
+\@maxsep=\dimen116
+\@dblmaxsep=\dimen117
+\aucount=\count91
+\originalaucount=\count92
+\auwidth=\dimen118
+\auskip=\dimen119
+\auskipcount=\count93
+\auskip=\dimen120
+\allauboxes=\dimen121
+\addauthors=\toks21
+\addauflag=\count94
+\subtitletext=\toks22
+\savesection=\count95
+\sectioncntr=\count96
+\c@figure=\count97
+\c@table=\count98
+\titleboxnotes=\toks23
+\titleboxnoteflag=\count99
+Document Class: sig-alternate 2007/06/07 - V2.3 - based on acmproc.cls V1.3 <No
+v. 30 '99>
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+\@acmtitlebox=\box28
+\titlenotecount=\count100
+\tntoks=\toks24
+\tntokstwo=\toks25
+\tntoksthree=\toks26
+\tntoksfour=\toks27
+\tntoksfive=\toks28
+\catcount=\count101
+\copyrightnotice=\toks29
+\conf=\toks30
+\confinfo=\toks31
+\c@part=\count102
+\c@section=\count103
+\c@subsection=\count104
+\c@subsubsection=\count105
+\c@paragraph=\count106
+
+Using 'Abbrev' bibliography style
+\bibindent=\dimen122
+\colcntr=\count107
+\savebox=\box29
+\copyrtyr=\toks32
+\acmcopyr=\toks33
+\boilerplate=\toks34
+\copyrightetc=\toks35
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\ae\t1aer.fd"
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))
+("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\times.sty"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(C:\Kunal\svn\papers\taneja-eXpress\algorithm.sty
+Package: algorithm 
+
+Document Style `algorithm' - floating environment
+("C:\Program Files\MiKTeX 2.8\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count108
+\float@exts=\toks36
+\float@box=\box30
+\@float@everytoks=\toks37
+\@floatcapt=\box31
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks38
+\c@algorithm=\count109
+)
+(C:\Kunal\svn\papers\taneja-eXpress\algorithmic.sty
+Package: algorithmic 2006/06/02
+
+Document Style `algorithmic' - environment
+("C:\Program Files\MiKTeX 2.8\tex\latex\tools\calc.sty"
+Package: calc 2005/08/06 v4.2 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count110
+\calc@Bcount=\count111
+\calc@Adimen=\dimen123
+\calc@Bdimen=\dimen124
+\calc@Askip=\skip44
+\calc@Bskip=\skip45
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count112
+\calc@Cskip=\skip46
+)
+\c@ALC@line=\count113
+\c@ALC@rem=\count114
+\c@ALC@depth=\count115
+\ALC@tlm=\skip47
+\algorithmicindent=\skip48
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(C:\Kunal\svn\papers\taneja-eXpress\macros.tex
+("C:\Program Files\MiKTeX 2.8\tex\latex\epsf\epsf.sty"
+This is `epsf.tex' v2.7.3 <23 July 2005>
+\epsffilein=\read1
+\epsfframemargin=\dimen125
+\epsfframethickness=\dimen126
+\epsfrsize=\dimen127
+\epsftmp=\dimen128
+\epsftsize=\dimen129
+\epsfxsize=\dimen130
+\epsfysize=\dimen131
+\pspoints=\dimen132
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks39
+\verbatim@line=\toks40
+\verbatim@in@stream=\read2
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\dvipsnam.def"
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\alltt.sty"
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+\c@definition=\count116
+\c@problem=\count117
+)
+(C:\Kunal\svn\papers\taneja-eXpress\eXpress.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 17.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\t1ptm.fd"
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 27.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+(C:\Kunal\svn\papers\taneja-eXpress\abstract.tex)
+(C:\Kunal\svn\papers\taneja-eXpress\Introduction.tex
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 26.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 36.
+)
+(C:\Kunal\svn\papers\taneja-eXpress\background.tex [1
+
+
+])
+(C:\Kunal\svn\papers\taneja-eXpress\example----.tex
+Underfull \hbox (badness 1953) in paragraph at lines 3--4
+[][]\T1/ptm/m/n/9 In this sec-tion, we il-lus-trate dif-fer-ent com-po-nents of
+ the
+ []
+
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <7> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 9.
+File: Figures/ExecutionTreeEPS.eps Graphic file (type eps)
+<Figures/ExecutionTreeEPS.eps>
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 65.
+ [2]
+File: Figures/cfg3.eps Graphic file (type eps)
+ <Figures/cfg3.eps>)
+(C:\Kunal\svn\papers\taneja-eXpress\problem.tex
+Underfull \vbox (badness 2478) has occurred while \output is active []
+
+
+Underfull \hbox (badness 6445) in paragraph at lines 7--11
+[][]\T1/ptm/m/n/9 We use concrete-state rep-re-sen-ta-tion from our pre-vi-ous
+ []
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <9> not available
+(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 80.
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[][]\T1/ptm/b/n/9 Program State.  \T1/ptm/m/n/9 Let $\OML/cmm/m/it/9 M \OT1/cmr
+/m/n/9 =
+ []
+
+[3]
+Underfull \hbox (badness 4060) in paragraph at lines 171--171
+[][]\T1/ptm/b/n/9 Corresponding Ex-e-cu-tion Points [37].
+ []
+
+
+Underfull \hbox (badness 1715) in paragraph at lines 188--188
+[][]\T1/ptm/b/n/9 Corresponding PUTs.  \T1/ptm/m/n/9 In our for-
+ []
+
+) (C:\Kunal\svn\papers\taneja-eXpress\approach.tex
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 97.
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <8> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 97.
+
+Underfull \hbox (badness 4048) in paragraph at lines 33--99
+\OML/cmm/m/it/9 c$ \T1/ptm/b/n/9 is in call stack. \T1/ptm/m/n/9 If $\OML/cmm/m
+/it/9 c$ \T1/ptm/m/n/9 is al-ready in the call stack,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--99
+\OML/cmm/m/it/9 c$ \T1/ptm/b/n/9 is in \T1/pcr/b/n/8 ReachableToChangedRegion\T
+1/ptm/b/n/9 . \T1/ptm/m/n/9 The set
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--99
+\T1/pcr/m/n/8 ReachableToChanged Region \T1/ptm/m/n/9 is pop-u-lated when-ever 
+a
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4]
+Underfull \hbox (badness 1728) in paragraph at lines 105--107
+[][]\T1/ptm/m/n/9 The Graph Tra-verser com-po-nent takes as in-put the inter-
+ []
+
+[5]) (C:\Kunal\svn\papers\taneja-eXpress\implementation.tex)
+(C:\Kunal\svn\papers\taneja-eXpress\evaluation.tex
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
+[][]$\T1/pcr/m/n/9 http : / / sourceforge . net / projects /
+ []
+
+[6]
+Underfull \vbox (badness 1521) has occurred while \output is active []
+
+ [7]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 148.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 150.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 152.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 154.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
+[][]$\T1/pcr/m/n/9 https : / / sites . google . com / site / asergrp /
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+Overfull \hbox (7.89514pt too wide) in paragraph at lines 397--422
+ [][] 
+ []
+
+) (C:\Kunal\svn\papers\taneja-eXpress\discussion.tex)
+(C:\Kunal\svn\papers\taneja-eXpress\related.tex [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(C:\Kunal\svn\papers\taneja-eXpress\conclusions.tex [10]) [11]
+(C:\Kunal\svn\papers\taneja-eXpress\eXpress.aux) ) 
+Here is how much of TeX's memory you used:
+ 2800 strings out of 495286
+ 33917 string characters out of 3180417
+ 113343 words of memory out of 3000000
+ 5903 multiletter control sequences out of 15000+200000
+ 64311 words of font info for 77 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 39i,14n,26p,2276b,802s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on eXpress.dvi (11 pages, 142004 bytes).
