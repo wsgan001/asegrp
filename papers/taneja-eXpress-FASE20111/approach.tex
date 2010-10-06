@@ -23,7 +23,8 @@ When an existing test suite is available for the original version, \CodeIn{eXpre
 %\end{figure}
 %}
 \subsection{Finding Differences Between Versions}
-The Difference Finder component takes the two versions $v1$ and $v2$ as input and analyzes the two versions to find pairs $<$$M_{i1}, M_{i2}$$>$ of corresponding methods in $v1$ and $v2$, where $M_{i1}$ is a method in $v1$ and $M_{i2}$ is a method in $v2$. A method $M$ is defined as a triple $<$$FQN, Sig, I$$>$, where $FQN$ is the fully qualified name\footnote{\scriptsize{The fully qualified name of a method $m$ is a combination of the method's name, the name of the class $c$ declaring $m$, and the name of the namespace containing $c$.}} of the method, $Sig$ is the signature\footnote{\scriptsize{Signature of a method $m$ is the combination of parameter types of $m$ and the return type of $m$.}} of the method, and $I$ is the list of assembly instructions in the method body. Two methods $<$$M_{i1}, M_{i2}$$>$ form a  corresponding pair if the two methods $M_{i1}$ and $M_{i2}$ have the same $FQN$ and $Sig$. Currently our approach considers as different methods the methods that have undergone Rename Method or Change Method Signature refactoring. A refactoring detection tool~\cite{Dig'06:ECOOP} can be used to find such corresponding methods. For each pair $<$$M_{i1}, M_{i2}$$>$ of corresponding methods, the Difference Finder finds a set of  differences $\Delta_i$ between the list of instructions $I_{M_{i1}}$ and $I_{M_{i2}}$ in the body of Methods $M_{i1}$ and $M_{i2}$, respectively. $\Delta_i$ is a set of instructions such that each instruction $\iota$ in $\Delta_i$ is an instruction in $I_{M_{i2}}$ (or in $I_{M_{i1}}$ for a deleted instruction), and $\iota$ is added, modified, or deleted from list $I_{M_{i1}}$ to form $I_{M_{i2}}$.
+\CodeIn{eXpress} analyzes the two versions $v1$ and $v2$ to find pairs $<$$M_{i1}, M_{i2}$$>$ of corresponding methods in $v1$ and $v2$, where $M_{i1}$ is a method in $v1$ and $M_{i2}$ is a method in $v2$. A method $M$ is defined as a triple $<$$FQN, Sig, I$$>$, where $FQN$ is the fully qualified name\footnote{\scriptsize{The fully qualified name of a method $m$ is a combination of the method's name, the name of the class $c$ declaring $m$, and the name of the namespace containing $c$.}} of the method, $Sig$ is the signature\footnote{\scriptsize{Signature of a method $m$ is the combination of parameter types of $m$ and the return type of $m$.}} of the method, and $I$ is the list of assembly instructions in the method body. Two methods $<$$M_{i1}, M_{i2}$$>$ form a  corresponding pair if the two methods $M_{i1}$ and $M_{i2}$ have the same $FQN$ and $Sig$. Currently our approach considers as different methods the methods that have undergone Rename Method or Change Method Signature refactoring. A refactoring detection tool~\cite{Dig'06:ECOOP} can be used to find such corresponding methods. For each pair $<$$M_{i1}, M_{i2}$$>$ of corresponding methods, the Difference Finder finds a set of  differences $\Delta_i$ between the list of instructions $I_{M_{i1}}$ and $I_{M_{i2}}$ in the body of Methods $M_{i1}$ and $M_{i2}$, respectively. $\Delta_i$ is a set of instructions such that each instruction $\iota$ in $\Delta_i$ is an instruction in $I_{M_{i2}}$ (or in $I_{M_{i1}}$ for a deleted instruction), and $\iota$ is added, modified, or deleted from list $I_{M_{i1}}$ to form $I_{M_{i2}}$. 
+We denote the set of all added, modified, or deleted instructions as $\Delta$. 
 %\subsection{Graph Builder}
 %   
 %The Graph Builder component makes an inter-procedural control flow graph (CFG) of the program version $v_2$. The Graph Builder component starts the construction of the inter-procedural CFG from the Parametrized Unit Test (PUT) $\tau$ provided as input. The inter-procedural CFG is used by the Graph Traverser component to find branches (in the graph) via which the execution cannot reach any vertex containing a changed instruction in the graph.
@@ -99,20 +100,21 @@ The Difference Finder component takes the two versions $v1$ and $v2$ as input an
 
 \subsection{Finding Irrelavant Branches.}
 \CodeIn{eXpress} efficiently constructs the inter-procedural CFG $g<$$V,E$$>$ of 
-the new version of the program under test such that each vertex $v_i \in V$ 
-corresponds to an instruction $\iota \in M$, where $M$ is some method in the new version.  
-Let $C$ be the set of changed vertices in the CFG $g$ such that  . The Graph Traverser traverses the graph to find a set of branches $B_{E+I}$ via which the execution cannot reach any of the branches in $V$ and a set of branches $B_{P}$ via which a state infection cannot propagate to any observable output. A branch $b$ in CFG $g$ is an edge $e = <$$v_i, v_j$$>: e \in E$ , $v_i \in V$ with an outgoing degree of more that one. The vertex $v_i$ is referred to as a branching node. 
+the new version of the program under test such that each vertex $v \in V$ 
+corresponds to an instruction $\iota \in M$ (denoted as $v \leftrightarrow \iota$), where $M$ is some method in $v_2$.  
+\CodeIn{eXpress} traverses the graph $g$ to find a set of branches $B_{E+I}$ via which the execution cannot reach any of the branches in $V$ and a set of branches $B_{P}$ via which a state infection cannot propagate to any observable output. A branch $b$ in CFG $g$ is an edge $e = <$$v_i, v_j$$>: e \in E$ , $v_i \in V$ with an outgoing degree of more that one. The vertex $v_i$ is referred to as a branching node. 
 We next describe the sets $B_{E+I}$ and $B_P$.
 
-Let $V=\{v_1,v_2,..,v_l\}$ be the set of all vertices in CFG $g<V, E>$ such that $ v_i \in V$ and $v_i.degree >1$ . Let $E_i = \{e_{i1}, e_{i2},...,e_{im}\}$ be the set of outgoing edges (branches) from $v_i$. Let $C$ be the set of changed vertices in $g$, $\rho(v_i, v_j, e_{ij})$ denotes a path between a source vertex $v_i$ to a destination vertex $v_j$ that takes the branch $e_{ij}$ (if $\rho(v_i, v_j, e_{ij}) =\phi$, there is no such path from $v_i$ to $v_j$), $\rho(v_i, v_j)$ denotes a path from a source vertex $v_i$ to a 
+Let $V=\{v_1,v_2,..,v_l\}$ be the set of all vertices in CFG $g$$<V, E$$>$ such that $ v_i \in V$ and $v_i.degree >1$ . Let $E_i = \{e_{i1}, e_{i2},...,e_{im}\}$ be the set of outgoing edges (branches) from $v_i$. Let $C$ be the set of vertices in the CFG $g$ 
+such that $\forall v \in C, \exists \iota \in \Delta : v \leftrightarrow \iota$.  $\rho(v_i, v_j, e_{ij})$ denotes a path between a source vertex $v_i$ to a destination vertex $v_j$ that takes the branch $e_{ij}$ (if $\rho(v_i, v_j, e_{ij}) =\phi$, there is no such path from $v_i$ to $v_j$), $\rho(v_i, v_j)$ denotes a path from a source vertex $v_i$ to a 
 destination vertex $v_j$(if $\rho(v_i, v_j)=\phi$, there is no such path from $v_i$ to $v_j$).
-\\ \textbf{Branches $B_{E+I}$.} 
-$B_{E+I} \subseteq E$ is a set of branches such that $\forall e_{ij} = <v_i, v_j> \in B_{E+I} 
+\\ \textbf{Branches $B_{E+I}$. } 
+$B_{E+I} \subseteq E$ is a set of branches such that $\forall e_{ij} = $$<v_i, v_j$$> \in B_{E+I} 
 \wedge \forall c_k\in C: \rho(v_i, c_k, e_{ij}) = \phi$. 
 Since $\rho(v_i, c_k, e_{ij}) = \phi$, after taking a branch $e_{ij} \in  B_{E+I}$, the
 program execution cannot reach a changed region. Hence, the program state cannot be infected. 
 \\ \textbf{Branches $B_P$. }
-$B_{P} \subseteq E$ is a set of branches such that $\forall e_{ij} = <v_i, v_j> \in B_{P} 
+$B_{P} \subseteq E$ is a set of branches such that $\forall e_{ij} = $$<v_i, v_j$$> \in B_{P} 
 \wedge \forall c_k\in C: \rho(v_i, c_k, e_{ij}) = \phi \wedge \rho(c_k, v_i) = \phi$. 
 Since $\rho(c_k, v_i) = \phi$, a state infection after a changed vertex $c_k$ cannot reach $v_i$. 
 Hence, the state infection cannot propagate through $e_{ij}$.
@@ -229,7 +231,7 @@ Hence, the state infection cannot propagate through $e_{ij}$.
 %
 %If a path $\rho$ is found by the DFS, there may still be a branch $b_i = <v, v_i>$ that cannot reach any vertex $c \in V$. To find such a branch, we remove each edge $e_j=<v, v_j>: e_j \in \rho$ one at a time from the graph and perform DFS again starting from $v$ (Lines 23-38). We repeat the preceding steps until we either find no path $\rho$ or all the edges from $v$ are removed from the graph. If no path is found, the remaining edges (branches) from v are added to the set $B_{E+I}$ (Lines 29-30) and to the set $B_{P}$ is there is no path from all vertices $c \in V$ to $v$ (Lines 31-32).
 
-The Graph Traversal component uses Depth First Search on the Graph $g$ to efficiently find the sets $B_{E+I}$ and $B_P$.
+%The Graph Traversal component uses Depth First Search on the Graph $g$ to efficiently find the sets $B_{E+I}$ and $B_P$.
  
 \subsection{Code Instrumentation}
 %The Instrumenter component uses Sets $\Delta_i$ (differences between method $M_{i1}$ and $M_{i2}$) produced by the Difference Finder. For each changed method pair $<M_{i1}, M_{i2}>$ for which $\Delta_i \neq \phi$, the Instrumenter component finds a region $\delta_i$ containing all the changed instructions in the program. $\delta_i$ is a minimal list of continuous instructions such that all the changed instructions in the method $M_i$ are in the region $\delta_i$. Hence, there can be a maximum of one changed region in one method. At the end of each changed region $\delta_i$, the Instrumenter component inserts instructions to save the program state. In particular, the Instrumenter inserts the corresponding instructions for \CodeIn{PexStore} statements for each variable (and field) defined in the changed region.
@@ -241,15 +243,14 @@ The Graph Traversal component uses Depth First Search on the Graph $g$ to effici
 %with the ones captured in the execution of Version $v2$. The instrumentation enables us to perform only one instance of DSE on the new version instead of performing two instances of DSE: one on the original and the other on the new program version. Performing two instances of DSE can be technically challenging since we have to perform the two DSE instances in a controlled manner such that both versions are executed  with the same input and the execution trace is monitored for both the versions by a common exploration strategy to decide which branching node to flip next in the two versions.
 
 \subsection{Test Generation}
-The Dynamic Test Generator component performs Dynamic Symbolic Execution (DSE)~\cite{Clarke:symbolic,king:symex,dart,cute,exe} to 
+\CodeIn{eXpress} performs Dynamic Symbolic Execution (DSE)~\cite{Clarke:symbolic,king:symex,dart,cute,exe} to 
 generate regression tests for the two given versions of a program. DSE iteratively generates test inputs to cover various feasible paths in the program under test (the new version in our approach). In particular, DSE flips some branching node discovered in previous executions to generate a test input for covering a new path. The branching node to be flipped is decided by a search strategy such as depth-first search. 
 The exploration is quite expensive since there are an exponential 
 number of paths with respect to the number of branches in a program.
  However, the execution of many branches often cannot help in detecting behavioral differences. 
  In other words, covering these branches does not help in satisfying any of the condition E or I in the PIE model described in Section~\ref{sec:intro}. 
  Therefore, we do not flip such branching nodes in our new search strategy for generating test inputs that detect 
- behavioral differences between the two given versions of a program. Recall that, we refer to such branches as irrelevant branches. These branches are found using the Graph Traverser component.
- We next describe the two categories of paths that our approach avoids exploring. We then describe our incremental exploration technique when an existing test suite is available for the original version.
+ behavioral differences between the two given versions of a program. Recall that, we refer to such branches as irrelevant branches. We next describe the two categories of paths that our approach avoids exploring. We then describe our incremental exploration technique when an existing test suite is available for the original version.
  
  \subsubsection{Path Pruning}
  Our approach avoids exploring the following categories of paths:
@@ -270,8 +271,9 @@ after the first execution of $\delta$, the value of \CodeIn{x} is 3 in both vers
 %\end{itemize}
 \subsubsection{Branching Nodes being Pruned}
 In DSE, path exploration is realized by flipping branching nodes. We next describe two categories of branching nodes that we avoid flipping corresponding to the preceding two categories of paths that we intend to avoid exploring.
-}%\begin{itemize}
-\\ \textbf{Category E+I.} \CodeIn{eXpress} does not explore these paths until a test 
+}
+\begin{itemize}
+\item \textbf{Category E+I.} \CodeIn{eXpress} does not explore these paths until a test 
 is generated that infects the program state. Our approach avoids exploring all the branches in $B_{E+I}$. In other words, if a branching node $v_i$ is in the built dynamic execution tree\footnote{\scriptsize{A dynamic execution tree is the tree formed from the paths executed in the previous executions. Multiple instances $c_{i1}, c_{i2}, ..., c_{in}$ of a node $c_i$ in CFG can be present in a dynamic execution tree due to loops in a program.}}, such that the branch $e_{ij} \in B_{E+I}$ is not explored yet, our approach does not flip $v_i$ to make program execution take branch $e_{ij}$.
 As an effect, our approach helps reduce the number of paths to be explored by avoiding the paths $P \in g : e_{ij} \in P$ until a test is generated that infects the program state.
 \Comment{
@@ -279,28 +281,18 @@ As an effect, our approach helps reduce the number of paths to be explored by av
 Let $C \in g$ be the set of nodes in all the changed regions.
 Let some $c_i \in C$ be executed, i.e., at least one instance $c_{ij}$ of $c_i$ is present in the dynamic execution tree $T$. Consider that the program state is not infected after the execution of the changed region containing $c_i$. Our approach prunes all the branching nodes $B \in T$, such that for all $b_i \in B: \rho(c_{ij}, b_i) \neq \phi , b_i \notin C $, where $\rho(c_i, b_i)$ is the path between the vertices $c_i$ and $b_i$ (if the path exists) in $T$. As an effect of pruning $B$, our approach does not explore the subpaths after a changed region's execution that does not cause any state infection.
 }
-\\ \textbf{Category P. }
+\item \textbf{Category P. }
 \CodeIn{eXpress} does not explore these paths after a test is generated that infects the program state.
 Our approach avoids exploring all the branches 
 $e_{ij}\in B_p$. In other words, if a branching node $v_i$ is in the built dynamic execution tree such that one of its branch $e_{ij}$ is not explored yet, our approach does not flip $v_i$ to make program execution take branch $e_{ij}$.
 As an effect, our approach helps reduce the number of paths to be explored by avoiding the paths $P \in g : e_{ij} \in P$.
 These paths cannot help in propagating a state infection to an observable output.
-\Comment{ because there is no 
-path between a changed region to the pruned branch.}
+\end{itemize}
 
-\Comment{
-\\ \textbf{Category E.} This category contains all the branching nodes whose the other unexplored branch cannot lead to any changed region. These branches are obtained from the \CodeIn{Graph Traversal} component, which traverses the inter-procedural CFG constructed by the Graph Builder component.
-\\
-\textbf{Category I.} If a changed region is executed but the program state is not infected after the execution of the changed region, all the branching nodes after the changed region $\delta$ in the current execution path are included in this category. These branches are obtained by inspecting the path $P$ followed in the previous DSE run. Let $P = <b_1, b_2,.., b_c...b_n>$, where $b_i$ are the branching nodes in the Path $P$, while $b_c$ is the last instance of branching node containing $\delta$. We do not flip the branching nodes from $b_c$ to $b_n$ in $P$ if the program state is not infected.
-%\Comment{
-\item \textbf{Category P.} Consider that a changed region is executed and the program state is infected after the execution of the changed region; However, the infection is not propagated to any observable output. Let $\chi$ be the last location in the execution path such that the program state is infected before the execution of $\chi$ but not infected after its execution. $\chi$ can be determined by comparing the value spectra~\cite{xie05:spectra} obtained by executing the test on both versions of the program. This category contains all the branching nodes after the execution of $\chi$. These branches are obtained by inspecting the path $P$ followed in the previous DSE run. Let $P = <b_1, b_2,.., b_\chi...b_n>$, where $b_i$ are the branching nodes in the Path $P$, while $b_\chi$ is the last instance of the branching node containing $\chi$. We do not flip the branching nodes from $b_\chi$ to $b_n$ in $P$ until the program state.	 
-}
+\subsubsection{Path Prioritization to Achieve Infection.}
+
 %\end{itemize}
-\Comment{
-\subsubsection{Branching Nodes being Prioritized}
-In addition to avoiding flipping the preceding categories of branching nodes, we prioritize branching nodes to be flipped after each run of DSE based on the distance of the branching node to a changed region in the CFG. The distance $d(n1, n2)$ between any two nodes $n1$ and $n2$  in a CFG $g$ is the number of nodes with degree > 1 between $n1$ and $n2$ in the shortest path between $n1$ and $n2$. Hence, the distance between a node $b$ and $\delta$ is the number of nodes with degree more than one between $b$ and the node representing the first instruction in $\delta$   The intuition behind this prioritization is that lesser the distance between the branching node and $\delta$, it is likely to be easier to generate inputs to cause the execution of the changed region $\delta$. This kind of branch prioritization is also used by Burnim and Sen~\cite{burnim}.
-}
-\subsubsection{Incremental Exploration}
+\subsection{Incremental Exploration}
 \label{sec:incremental}
 A regression test suite achieving high code coverage may be available along with the original version of  a program. This test suite may be manually written or generated by an automated test generation tool for the original version. However, the existing test suite might not be able to cover all the changed regions of the new version of the program. Our approach can reuses the existing test suite so that changed regions of the program can be executed efficiently due to which test generation is likely to find behavior differences earlier in path exploration. Our approach executes the existing test suite to build an execution
 tree for the tests in the test suite. Our approach then starts the program
@@ -310,7 +302,8 @@ tree. Our approach of seeding test inputs can help efficiently cover the changed
 program has more likelihood of covering the changed regions of the program~\cite{burnim}. Although, our approach currently does not specifically prioritize flipping of branching nodes near the changed regions, our approach can help these branching nodes to get discovered (by executing the existing test suite), which might take large number of DSE runs as shown in the example in Section~\ref{sec:example}.
 \\ \textbf{Priority of DSE to cover not-covered regions of the program.} DSE techniques employ branch prioritization so that a high coverage can be achieved faster due to which DSE techniques choose a branch from the execution tree (built thus far) that have a high likelihood of covering changed regions (that are not covered by existing test suite for the original version). By seeding the existing test suite to program exploration, the DSE techniques do not waste time on covering the regions of the program already covered by the existing test suite. Instead, the DSE techniques give high priority to branching nodes that can cover not-covered regions of the program, which include the changed parts. Hence, the changed parts are likely to be covered earlier in path exploration.
  
- \Comment{
+ 
+\Comment{
 Pex then focuses on flipping the unexplored branches to effectively cover the changed parts of the program.
 Even seeding a single test that covers portions of the program neared in CFG to the changed parts  can help the program exploration in effectively covering the changed parts of the program because various branches are discovered in the execution tree that are, which otherwise might take a number of runs in .
 Hence choosing the number of tests in the test suite to seed is an optimization problem. In section, ??? we conduct experiments by increasing the number of seeds. by seeding (1)one closest pest to the changes (2) seeding tests that achieve a high block coverage (3) seeding tests that achieve a higher path coverage, to assess whether seeding more tests helps the path exploration.

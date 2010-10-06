@@ -1,71 +1,138 @@
 \section{Example}
 \label{sec:example}
-In this section, we illustrate different components of the \CodeIn{eXpress} approach with an example. \CodeIn{eXpress} takes as input two versions of a program and produces as output a regression test suite, with the objective of detecting behavioral differences (if any exist) between the two versions of program under test. Although \CodeIn{eXpress} analyzes assembly code of C\# programs, in this section, we illustrate the \CodeIn{eXpress} approach using program source code. 
+In this section, we illustrate our \CodeIn{eXpress} approach with an example. \CodeIn{eXpress} takes as input two versions of a program and produces as output a regression test suite, with the objective of detecting behavioral differences (if any exist) between the two versions of program under test. Although \CodeIn{eXpress} analyzes assembly code of C\# programs, in this section, we illustrate the \CodeIn{eXpress} approach using program source code. 
 
-\begin{figure}[t]
-\begin{CodeOut}
-\begin{alltt}
+    \begin{figure}[t]
+    \centering
+        %\includegraphics[width=6cm, keepaspectratio]{Figures/cfg3}
+         \subfigure{\includegraphics[width=12.5cm, keepaspectratio]{Figures/example}}
+         
+    \vspace{-0.6cm}
+    \caption{\scriptsize{An example program on the left side and the instrumented program on the right.}}
+    \label{fig:example}
+     \vspace{-0.7cm}
+    \end{figure}
+    
+%\begin{figure}[t]
+%
+%%\begin{subfigure}
+%\begin{CodeOut}
+%\begin{alltt}
+%
+%  \hspace{0.25cm}\textbf{static public int} TestMe(\textbf{char[] }c, \textbf{int} n)\{
+%1 \hspace{0.5cm} \textbf{int} state = 0;
+%2 \hspace{0.5cm} \textbf{if}(c == \textbf{null} || c.Length == 0) 
+%3 \hspace{0.75cm} \textbf{return -1;}   
+%4 \hspace{0.5cm} \textbf{for}(\textbf{int} i=0; i< c.Length; i++)\{
+%5 \hspace{1.0cm} \textbf{if}(c[i] == "[") state =1;
+%6 \hspace{1.0cm} \textbf{else if}(state == 1 && c[i] == "\{") state =2;
+%7 \hspace{1.0cm} \textbf{else if}(state == 2 &&  c[i] == "<") state =3;
+%8 \hspace{1.0cm} \textbf{else if}(state == 3 && c[i] == "*")\{ 
+%9 \hspace{1.25cm} state =4;
+%10\hspace{1.25cm} \textbf{if}(c.Length==15) 
+%11\hspace{1.5cm} state = state + n;//Added in new version
+%	\hspace{1.0cm}   \}
+%12\hspace{1.0cm} \textbf{if}(c[i]==' ') 
+%13\hspace{1.25cm} \textbf{return};
+%14\hspace{1.0cm} \textbf{if}(!(c[i] >= 'a' && c[i] <= 'z')\{
+%15\hspace{1.25cm} state=-1; \textbf{return};
+%  \hspace{1.0cm} \}
+%  \hspace{.75cm} \}
+%  \hspace{.50cm} \}
+%16\hspace{.50cm} \textbf{if}(c[15] == '\}')
+%17\hspace{.70cm} \textbf{return} state;
+%18\hspace{.5cm} \textbf{return} -1;
+%  \hspace{0.25cm}\}
+%  
+%\end{alltt}
+%\end{CodeOut}
+%\vspace{-0.9 cm}
+%\caption{An example program}
+%\label{fig:example}
+%%\end{subfigure}
+%
+%\end{figure}
+%
+%\begin{figure}[t]
+%\begin{CodeOut}
+%\begin{alltt}
+%
+%  \hspace{0.25cm}\textbf{static public int} fOld(\textbf{int }state, 
+%  \hspace{0.5cm}\textbf{int} length, \textbf{int} n)\{
+%1 \hspace{0.5cm} \textbf{return} state;
+%  \hspace{0.25cm}\}
+%  
+%  \hspace{0.25cm}\textbf{static public int} fNew(\textbf{int }state,
+%  \hspace{0.5cm}\textbf{int} length, \textbf{int} n)\{
+%1 \hspace{0.5cm} \textbf{if}(c.Length==15) state = state + n;
+%2	\hspace{0.5cm} \textbf{return} state;
+%  \hspace{0.25cm}\}
+%  
+%  \hspace{0.25cm}\textbf{static public int} TestMe(\textbf{char[] }c, \textbf{int} n)\{
+%  \hspace{0.5cm} ...
+%10\hspace{0.5cm} \textbf{int} stateCopy = state;
+%11\hspace{0.5cm} state = fNew(state, c.Length, n);
+%12\hspace{0.5cm} stateCopy = fOld(stateCopy, c.Length, n);
+%13\hspace{0.5cm} if(state != stateCopy);   //Infection Condition
+%  \hspace{0.5cm} ...
+%  \hspace{0.25cm}\}
+%\end{alltt}
+%\end{CodeOut}
+%\caption{Instrumentation to efficiently and effectively achieve I of the PIE model.}
+%\vspace{-0.7 cm}
+%\label{fig:example}
+%\end{figure}
 
-  \hspace{0.25cm}\textbf{static public int} TestMe(\textbf{char[] }c)\{
-1 \hspace{0.5cm} \textbf{int} state = 0;
-2 \hspace{0.5cm} \textbf{if}(c == \textbf{null} || c.Length == 0) 
-3 \hspace{0.75cm} \textbf{return -1;}   
-4 \hspace{0.5cm} \textbf{for}(\textbf{int} i=0; i< c.Length; i++)\{
-5 \hspace{1.0cm} \textbf{if}(c[i] == "[")
-6 \hspace{1.25cm} state =1;
-7 \hspace{1.0cm} \textbf{else if}(state == 1 && c[i] == "\{")
-8 \hspace{1.25cm} state =2;
-9 \hspace{1.0cm} \textbf{else if}(state == 2 &&  c[i] == "<") 
-10\hspace{1.25cm} state =3;
-11\hspace{1.0cm} \textbf{else if}(state == 3 && c[i] == "*")\{ 
-12\hspace{1.25cm} state =4;
-13\hspace{1.25cm} \textbf{if}(c.Length==15) \textbf{break};//Added in new version
-	\hspace{1.0cm}   \}
-14\hspace{1.0cm} \textbf{if}(c[i]==' ') 
-15\hspace{1.25cm} \textbf{return};
-16\hspace{1.0cm} \textbf{if}(!(c[i] >= 'a' && c[i] <= 'z')\{
-17\hspace{1.25cm} state=-1; \textbf{return};
-  \hspace{1.0cm} \}
-  \hspace{.75cm} \}
-  \hspace{.50cm} \}
-18\hspace{.50cm} \textbf{if}(c[15] == '\}')
-19\hspace{.70cm} \textbf{return} state;
-20\hspace{.5cm} \textbf{return} -1;
-  \hspace{0.25cm}\}
-  
-\end{alltt}
-\end{CodeOut}
-\vspace{-0.9 cm}
-\caption{An example program}
-\vspace{-0.7 cm}
-\label{fig:example}
-\end{figure}
 
-Consider the example in Figure~\ref{fig:example}. Suppose that the statements at Line 13 of \CodeIn{TestMe} are added in the new version. We next describe \CodeIn{eXpress} using the example.
+Consider the example in Figure~\ref{fig:example}. 
+The left side of the figure shows a program \CodeIn{TestMe}. Lines 10 and 11 of the program are added in a new version.
 \\ \textbf{Finding Irrelavant Branches.} 
 %\CodeIn{eXpress} first compares the two program versions to find that Line 13 is added in the new version. \CodeIn{eXpress} then builds a Control-Flow Graph (CFG) of new version of  the program under test and marks the changed vertices in the graph.
-The left side of Figure~\ref{fig:Tree} shows the CFG of the program in Figure~\ref{fig:example}. The labels of vertices in the CFG denote the corresponding line numbers in Figure~\ref{fig:example}. The black vertex denotes the newly added statements at Line 13. The gray vertices denote the branching nodes (for the branching statements in the program), while the white vertices denote the other statements in the program. From the CFG \CodeIn{eXpress} finds the following categories of branches.
+The left side of Figure~\ref{fig:Tree} shows the CFG of the program in Figure~\ref{fig:example}. The labels of vertices in the CFG denote the corresponding line numbers in Figure~\ref{fig:example}. The black vertex denotes the newly added statements at Lines 10 and 11. The gray vertices denote the branching nodes (for the branching statements in the program), while the white vertices denote the other statements in the program. From the CFG, \CodeIn{eXpress} finds the following categories of branches.
 %\\ \textbf{Difference Finder.} The Difference Finder component compares the original and the new versions of the program under test to find differences between each corresponding method of the two program versions. For the program in Figure~\ref{fig:example}, Difference Finder detects that the statements at Line 13 are added in the new version. 
 %\\ \textbf{Graph Builder. }The Graph Builder component then builds a Control-Flow Graph (CFG) of the new version of  the program under test and marks the changed vertices in the graph. Figure~\ref{fig:CFG} shows the CFG of the program in Figure~\ref{fig:example}. The labels of vertices in the CFG denote the corresponding line numbers in Figure~\ref{fig:example}. The black vertex denotes the newly added statements at Line 13. The gray vertices denote the branching nodes (for the branching statements in the program), while the white vertices denote the other statements in the program.
 %\\ \textbf{Graph Traverser.} The Graph Traverser component traverses the CFG to find each branch\footnote{\scriptsize{A branch is an outgoing edge of a branching node.}} $b$ in a program such that if $b$ is taken, the program execution cannot help in finding behavioral differences between the original and the new program versions. These branches are used by the Dynamic Test Generator component to efficiently find behavioral differences between the original and new program version.
 %In particular, the Graph Traverser finds two categories of branches.
 \begin{itemize}
-\item \textbf{Category $B_{E+I}$.} On traversing the CFG in Figure~\ref{fig:Tree}, the Graph Traverser detects that taking the branches $<2, 3>$, $<4, 18>$, $<16, 17>$, $<18, 19>$, and $<18, 20>$ (dotted edges in Figure~\ref{fig:Tree}), where $<x,y>$ represents a branch from source vertex $x$ to destination vertex $y$, the program execution cannot reach the black vertex. Since, after taking these five branches, the execution cannot reach the changed statements at Line 13, the execution of these branches cannot help in executing the changed statements or infecting the program state. \\ 
-\item \textbf{Category $B_{P}$.} In addition, the Graph Traverser component finds out that 
-among the source vertices of the five branches in Category $B_{I+E}$, there is no path between the 
-black vertex and the vertex 3. Hence, a state infection after the execution of the black vertex 
+\vspace{-1ex}
+\item \textbf{Category $B_{E+I}$.} On traversing the CFG in Figure~\ref{fig:Tree}, \CodeIn{eXpress} detects that taking the branches $<$$2, 3$$>$\footnote{$<$$x,y$$>$ represents a branch from source vertex $x$ to destination vertex $y$}, $<$$4, 16$$>$, $<$$16, 17$$>$, $<$$16, 18$$>$, $<$$12, 13$$>$ and $<$$14, 15$$>$ (dotted edges in Figure~\ref{fig:Tree}), the program execution cannot reach any of the black vertices. Hence, the execution of these branches cannot help in executing the changed statements or infecting the program state. \\ 
+\vspace{-1ex} 
+\item \textbf{Category $B_{P}$.} In addition, \CodeIn{eXpress} finds out that 
+among the source vertices of the six branches in Category $B_{I+E}$, there is no path from any of the 
+black vertices to vertex 3. Hence, a state infection after the execution of the black vertex 
 cannot propagate through the branch $<2,3>$.
 \end{itemize}
+\vspace{-0.2cm}
 \textbf{Instrumentation for State Infection.}
+\CodeIn{eXpress} instruments the new program version to guide test generation to achieve condition I of the PIE model.
+In particular, \CodeIn{eXpress} invokes the changed regions from the two program versions (with same inputs) and 
+compares the outputs of the changed regions. 
+\CodeIn{eXpress} inserts branches in the new program version that are executed only 
+when the output of the executions of the changed regions differ, i.e., when program
+state is infected after the execution of the changed regions.
+The right side of Figure~\ref{fig:example} shows the instrumented version of \CodeIn{TestMe} on the left side of 
+Figure~\ref{fig:example}. For the changed regions (Lines 10 and 11) of the two versions, \CodeIn{eXpress} extracts the
+changed regions in separate method bodies. The method \CodeIn{fOld} shows the method extracted for the old program version,
+while the method \CodeIn{fNew} shows the method extracted for the new program version.
+Note that input and output types of the two methods are the same. 
+Since lines 10 and 11 on left side of Figure~\ref{fig:example} do not exist in the old program version, the method \CodeIn{fOld} just returns a current parameter $state$,
+while the method \CodeIn{fNew} contains Lines 10 and 11 and returns the resulting value of $state$.
+\CodeIn{TestMe} invokes the methods \CodeIn{fOld} and \CodeIn{fNew} (Lines 11 and 12). 
+Note that the parameter $stateOld$ passed to 
+\CodeIn{fOld} is a copy of the parameter $state$ passed to \CodeIn{fNew} (Line 10), since $state$ is an output of $fNew$, hence it may be updated by the invocation to $fNew$. 
+For the method corresponding to the old changed region, the parameters are the copies of the original.
+\CodeIn{eXpress} then inserts branches in the program representing outputs of the two methods.
+If the outputs of the two methods are different if and only if the program state is infected.
+During test generation, \CodeIn{eXpress} tries to flip these inserted branches to infect the program state.
 \begin{figure}[t]
     \centering
         %\includegraphics[width=6cm, keepaspectratio]{Figures/cfg3}
-         \includegraphics[width=4.5cm, keepaspectratio]{Figures/cfg3}
+         \subfigure{\includegraphics[width=4.5cm, keepaspectratio]{Figures/cfg}}
          \hspace{2cm}
-         \includegraphics[width=4.5cm, keepaspectratio]{Figures/ExecutionTreeEPS}
-    \vspace{-0.2cm}
+         \subfigure{\includegraphics[width=4.5cm, keepaspectratio]{Figures/ExecutionTreeEPS}}
+    \vspace{-0.4cm}
     \caption{\scriptsize{The left side of the figure shows the part of execution tree of the program for c = \{"[", "\{", "$<$", "*" \}, while the right side shows the Control-Flow Graph for the program in Figure~\ref{fig:example}.}}
-    \vspace{-1cm}
+    \vspace{-1.1cm}
     \label{fig:Tree}
     \end{figure}
 %    \begin{figure}[t]
