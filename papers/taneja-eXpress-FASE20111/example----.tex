@@ -95,7 +95,7 @@ The left side of Figure~\ref{fig:Tree} shows the CFG of the program in Figure~\r
 %In particular, the Graph Traverser finds two categories of branches.
 \begin{itemize}
 \vspace{-1ex}
-\item \textbf{Category $B_{E+I}$.} On traversing the CFG in Figure~\ref{fig:Tree}, \CodeIn{eXpress} detects that taking the branches $<$$2, 3$$>$\footnote{$<$$x,y$$>$ represents a branch from source vertex $x$ to destination vertex $y$}, $<$$4, 16$$>$, $<$$16, 17$$>$, $<$$16, 18$$>$, $<$$12, 13$$>$ and $<$$14, 15$$>$ (dotted edges in Figure~\ref{fig:Tree}), the program execution cannot reach any of the black vertices. Hence, the execution of these branches cannot help in executing the changed statements or infecting the program state. \\ 
+\item \textbf{Category $B_{E+I}$.} On traversing the CFG in Figure~\ref{fig:Tree}, \CodeIn{eXpress} detects that taking the branches $<$$2, 3$$>$\footnote{\scriptsize{$<$$x,y$$>$ represents a branch from source vertex $x$ to destination vertex $y$}}, $<$$4, 16$$>$, $<$$16, 17$$>$, $<$$16, 18$$>$, $<$$12, 13$$>$ and $<$$14, 15$$>$ (dotted edges in Figure~\ref{fig:Tree}), the program execution cannot reach any of the black vertices. Hence, the execution of these branches cannot help in executing the changed statements or infecting the program state. \\ 
 \vspace{-1ex} 
 \item \textbf{Category $B_{P}$.} In addition, \CodeIn{eXpress} finds out that 
 among the source vertices of the six branches in Category $B_{I+E}$, there is no path from any of the 
@@ -104,26 +104,47 @@ cannot propagate through the branch $<2,3>$.
 \end{itemize}
 \vspace{-0.2cm}
 \textbf{Instrumentation for State Infection.}
-\CodeIn{eXpress} instruments the new program version to guide test generation to achieve condition I of the PIE model.
-In particular, \CodeIn{eXpress} invokes the changed regions from the two program versions (with same inputs) and 
-compares the outputs of the changed regions. 
+A DSE-based test generation tool tries to execute all feasible branches in the program. However the execution of 
+all branches is not sufficient for infecting the program state. For example, 
+a test generation tool can 
+cover all the branches of \CodeIn{}TestMe (left side of Figure~\ref{fig:example}) with $n=0$ (a default input used by some tools) but to infect the program state, the tool
+need to generate a nonzero value of $n$.
+To guide the test generation tool to effectively achieve state infection,
+\CodeIn{eXpress} instruments the new program version.
+In particular, \CodeIn{eXpress} invokes the changed regions\footnote{\scriptsize{A changed region (in a new or modified program version) is a minimal set of statements that contains all modified (in new or original program version), added (in new program version), or deleted (in original program version) statements in a method. The changed region for the new program version in \CodeIn{TestMe} on the left side of Figure~\ref{fig:example} is shown in rectangular box, while the changed region of the original program version is empty.}} 
+from the two program versions (with same inputs) and 
+compares the outputs of the two changed regions. 
 \CodeIn{eXpress} inserts branches in the new program version that are executed only 
-when the output of the executions of the changed regions differ, i.e., when program
+when the outputs of the executions of the changed regions differ, i.e., when program
 state is infected after the execution of the changed regions.
+
 The right side of Figure~\ref{fig:example} shows the instrumented version of \CodeIn{TestMe} on the left side of 
-Figure~\ref{fig:example}. For the changed regions (Lines 10 and 11) of the two versions, \CodeIn{eXpress} extracts the
-changed regions in separate method bodies. The method \CodeIn{fOld} shows the method extracted for the old program version,
-while the method \CodeIn{fNew} shows the method extracted for the new program version.
-Note that input and output types of the two methods are the same. 
-Since lines 10 and 11 on left side of Figure~\ref{fig:example} do not exist in the old program version, the method \CodeIn{fOld} just returns a current parameter $state$,
-while the method \CodeIn{fNew} contains Lines 10 and 11 and returns the resulting value of $state$.
-\CodeIn{TestMe} invokes the methods \CodeIn{fOld} and \CodeIn{fNew} (Lines 11 and 12). 
-Note that the parameter $stateOld$ passed to 
-\CodeIn{fOld} is a copy of the parameter $state$ passed to \CodeIn{fNew} (Line 10), since $state$ is an output of $fNew$, hence it may be updated by the invocation to $fNew$. 
-For the method corresponding to the old changed region, the parameters are the copies of the original.
-\CodeIn{eXpress} then inserts branches in the program representing outputs of the two methods.
-If the outputs of the two methods are different if and only if the program state is infected.
-During test generation, \CodeIn{eXpress} tries to flip these inserted branches to infect the program state.
+Figure~\ref{fig:example}. 
+\CodeIn{eXpress} identifies $state$, $length$, and $n$ as the inputs to the two changed regions
+and $state$ as the output to the two changed regions.
+\CodeIn{eXpress} then extracts the
+changed regions in the original and new program versions as separate methods 
+(\CodeIn{fOld} and \CodeIn{fNew}, respectively).
+The parameters of the two methods are same as the identified inputs, while the return values 
+are same as the identified output.
+%The method \CodeIn{fOld} shows the method extracted for the old program version,
+%while the method \CodeIn{fNew} shows the method extracted for the new program version.
+%Since the changed region in the old program version is empty, the method \CodeIn{fOld} just 
+%returns $state$,
+%while the method \CodeIn{fNew} contains Lines 10 and 11 (of \CodeIn{TestMe} on the 
+%left side of Figure~\ref{fig:example}) and returns the resulting value of $state$.
+\CodeIn{eXpress} replaces the changed region of the new version of
+\CodeIn{TestMe} by the invocation of the methods \CodeIn{fOld} and \CodeIn{fNew} 
+(Lines 11 and 12 on the right side of Figure~\ref{fig:example}). 
+Note that the variable $stateOld$ passed to 
+\CodeIn{fOld} is a copy of the variable $state$ passed to \CodeIn{fNew} (Line 10 on the right side of ~\ref{fig:example}) because 
+$state$ may be updated by \CodeIn{fNew} since $state$ is also an output of the changed regions. 
+\CodeIn{eXpress} then inserts an \CodeIn{if} statement (Line 13 on the right side of Figure~\ref{fig:example})
+in the program comparing the outputs of the two methods.
+Note that the outputs of the two methods are different if and only if the program state is infected.
+A DSE-based test generation tool determines that it needs to generate inputs 
+satisfying \CodeIn{c.Length == 15 AND state != state + n} to cover the true branch of the added \CodeIn{if} statement. 
+Hence, the tool generates a nonzero value of $n$ to satisfy the constraint and infect the program state. 
 \begin{figure}[t]
     \centering
         %\includegraphics[width=6cm, keepaspectratio]{Figures/cfg3}
@@ -132,7 +153,7 @@ During test generation, \CodeIn{eXpress} tries to flip these inserted branches t
          \subfigure{\includegraphics[width=4.5cm, keepaspectratio]{Figures/ExecutionTreeEPS}}
     \vspace{-0.4cm}
     \caption{\scriptsize{The left side of the figure shows the part of execution tree of the program for c = \{"[", "\{", "$<$", "*" \}, while the right side shows the Control-Flow Graph for the program in Figure~\ref{fig:example}.}}
-    \vspace{-1.1cm}
+    \vspace{-0.8cm}
     \label{fig:Tree}
     \end{figure}
 %    \begin{figure}[t]
@@ -176,17 +197,18 @@ If there are multiple changed statements in the program, our approach first find
 
 The Dynamic Test Generator component of \CodeIn{eXpress} uses Dynamic Symbolic Execution (DSE) to generate tests for the new version. DSE iteratively generates test inputs to cover various feasible paths in the program under test. In particular, DSE flips some branching node from a previous execution to generate a test input for covering a new path. The node to be flipped is decided by a search strategy (also called exploration starategy) such as depth-first search. Dynamic Test Generator implements a search strategy for Pex~\cite{Pex} to efficiently find behavioral differences between two versions of a program.
 }
-\\ \textbf{Test Generation. }To cover the changed statements at Line 13 and infect the program state, 
- DSE needs at least 6 DSE runs (starting from an empty input array $c$). However, the number of runs depends on the choice of branches that DSE flips in each run. In each run, DSE has the choice of flipping 8 branches in the program. For the program in Figure~\ref{fig:example}, Pex takes 441 DSE runs to cover the true branch of statement at Line 13 (to infect the program state). The number of runs can be much more if the number of branching statements in the program increases. To reduce the search space of DSE, \CodeIn{eXpress} prunes branches in category 
+\\ \textbf{Test Generation. }To cover the changed statements at 
+Lines 10 and 11 (in the left part of Figure~\ref{fig:example}) and infect the program state, 
+ DSE needs at least 6 DSE runs (starting from an empty input array $c$). 
+ However, the number of runs depends on the choice of branches that DSE flips in each run. 
+ In each run, DSE has the choice of flipping 8 branches in the program. 
+ For \CodeIn{TestMe}, Pex takes 441 DSE runs to cover the true branch of statement at Line 10. The number of runs can be much more if the number of branching statements in the program increases. To reduce the search space of DSE, \CodeIn{eXpress} prunes branches in category 
  $B_{E+I}$ until the black vertex is executed and the program state is infected after its execution.
  Once the program state is infected, \CodeIn{eXpress} prunes out the branches in category $B_{P}$ to efficiently propagate the state infection to an observable output.
 \\ \textbf{Incremental Exploration.} \CodeIn{eXpress} can reuse an existing
 test suite for the original version so that changed parts of the program can be explored
 efficiently due to which test generation is likely to find behavior
-differences earlier in path exploration. Assume that there is an existing test suite covering all the statements in the old version of the program in Figure~\ref{fig:example}. Suppose that the test suite has a test input $I$ = \{"[", "\{", "$<$", "*" \}. The input covers all the statements in the new version of \CodeIn{TestMe} except the newly added \CodeIn{break} statement at Line 13. If we start the program exploration from a scratch (i.e., with default inputs), Pex takes 441 runs to cover the \CodeIn{break} statement at Line 13. However, we can reuse the existing test suite for exploration to cover the new statement efficiently. Our approach executes the test suite to build an execution tree for the tests in the test suite. Our approach then starts program exploration using the dynamic execution tree built by executing the existing test suite instead of starting from an empty tree. Some branches in the tree may take many runs for Pex to discover if starting from an empty tree. Figure~\ref{fig:Tree} shows part of the execution tree for the input $I$. A gray edge in the tree indicates the false side of a branching node while a black (horizontal) edge indicates the true side. To generate an input for the next DSE runs, Pex flips a branching node $b$ in the tree whose other side has not yet been explored and generates an input so that program execution takes the unexplored branch of $b$. Pex chooses such branching node for flipping using various heuristics for covering changed regions of the program. It is likely that Pex chooses the branching node 13 (colored black), which on execution covers the \CodeIn{break} statement at Line 13. When starting the program exploration from scratch, Pex takes 420 runs before it reaches (discovers) the black branching node in Figure~\ref{fig:Tree}. Using our approach of seeding the tests from the existing test suite, Pex takes 39 runs to flip the branching node and cover the break statement at Line 13.
-
-
-
+differences earlier in path exploration. Assume that there is an existing test suite covering all the statements in the old version of the program in Figure~\ref{fig:example}. Suppose that the test suite has a test input $I$ = \{"[", "\{", "$<$", "*" \}. The input covers all the statements in the new version of \CodeIn{TestMe} except the newly added statement at Line 11. If we start the program exploration from a scratch (i.e., with default inputs), Pex takes 441 runs to cover the statement at Line 11. However, we can reuse the existing test suite for exploration to cover the new statement efficiently. Our approach executes the test suite to build an execution tree for the tests in the test suite. Our approach then starts program exploration using the dynamic execution tree built by executing the existing test suite instead of starting from an empty tree. Some branches in the tree may take many runs for Pex to discover if starting from an empty tree. Figure~\ref{fig:Tree} shows part of the execution tree for the input $I$. A gray edge in the tree indicates the false side of a branching node while a black (horizontal) edge indicates the true side. To generate an input for the next DSE runs, Pex flips a branching node $b$ in the tree whose other side has not yet been explored and generates an input so that program execution takes the unexplored branch of $b$. Pex chooses such branching node for flipping using various heuristics for covering changed regions of the program. It is likely that Pex chooses the branching node 13 (colored black), which on execution covers the \CodeIn{break} statement at Line 13. When starting the program exploration from scratch, Pex takes 420 runs before it reaches (discovers) the black branching node in Figure~\ref{fig:Tree}. Using our approach of seeding the tests from the existing test suite, Pex takes 39 runs to flip the branching node and cover the statement at Line 11.
 
 
 \Comment{

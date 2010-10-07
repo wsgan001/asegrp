@@ -29,10 +29,8 @@ Fifth, we conduct extensive experiments to evaluate our approach.}} \CodeIn{eXpr
 Our approach first determines all the branches (in the program under test) that cannot help in achieving any of the conditions E, I, and P of the PIE model in terms of the changes in the program. To make test generation efficient, we develop a new search strategy for DSE to avoid exploring these irrelevant branches (including which can lead to an irrelevant path\footnote{\scriptsize{An irrelevant path is a path that cannot help in achieving P, I, and E of the PIE model.}}). In particular, our approach guides DSE to avoid from flipping branching nodes\footnote{\scriptsize{A branching node in the execution tree of a program is an instance of a conditional statement in the source code. A branching node consists of two sides (or more than two sides for a \CodeIn{switch} statement): the true branch and the false branch. Flipping a branching node is flipping the execution of the program from the true (or false) branch to the false (or true) branch. Flipping a branching node for a switch statement is flipping the execution of the current branch to another unexplored branch.}}, which on flipping execute some irrelevant branch. 
 
 \textbf{
-In addition, to achieve I of the PIE model, our approach instruments a program with addition branches, 
+In addition, to effectively achieve condition I of the PIE model, our approach instruments a program with additional branches, 
 such that if any of these branches are executed, program state is infected. 
-Our approach then prioritize these branches when condition E is achieved 
-but condition I is not achieved.
 }
 
 Furthermore, our approach can exploit the existing test suite (if available) for the original version by seeding the tests in the test suite to the program exploration. Our technique of seeding the exploration with the existing test suite efficiently augments an existing test suite so that various changed parts of the program (that are not covered by the existing test suite) are covered by the augmented test suite. 
@@ -44,7 +42,7 @@ This paper makes the following major contributions:
 %\\ \textbf{Problem Definition.} We formally define the problem of regression test generation.
 \\ \textbf{Path Exploration for Regression Test Generation.} We propose an approach called \CodeIn{eXpress} that uses DSE for efficient generation of regression tests. 
 \textbf{\CodeIn{eXpress} prunes paths that cannot help in achieving conditions E, I, and P.
-In addition, \CodeIn{eXpress} prioritizes paths so that condition I can be achieved efficiently and effectively
+In addition, \CodeIn{eXpress} instruments the program such that condition I can be achieved effectively
 after condition E is achieved.} 
 %To the best
 %of our knowledge, ours is the first approach that guides path exploration on the new version specifically for regression test generation.

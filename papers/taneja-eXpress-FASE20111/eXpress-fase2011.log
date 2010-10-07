@@ -1,16 +1,16 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2009.9.14)  6 OCT 2010 15:38
+This is pdfTeX, Version 3.1415926-1.40.8-beta-20080627 (MiKTeX 2.7) (preloaded format=latex 2008.8.31)  6 OCT 2010 20:39
 entering extended mode
 **eXpress-fase2011.tex
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\eXpress-fase2011.tex
+(eXpress-fase2011.tex
 LaTeX2e <2005/12/01>
-Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\llncs.cls
+Babel <v3.8j> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2008-06-18, ngerman-x-2008-06-18, french, loaded.
+(llncs.cls
 Document Class: llncs 2010/07/12 v2.17 
  LaTeX document class for Lecture Notes in Computer Science
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\article.cls"
+("C:\Program Files\MiKTeX 2.7\tex\latex\base\article.cls"
 Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\size10.clo"
+("C:\Program Files\MiKTeX 2.7\tex\latex\base\size10.clo"
 File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -25,7 +25,7 @@ File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\tools\multicol.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\tools\multicol.sty"
 Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
 \c@tracingmulticols=\count87
 \mult@box=\box26
@@ -72,10 +72,10 @@ Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
 \mult@nat@firstbox=\box50
 \colbreak@box=\box51
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\aliascnt.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\oberdiek\aliascnt.sty"
 Package: aliascnt 2006/09/25 v1.2 Alias counter (HO)
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\carlisle\remreset.sty"))
+("C:\Program Files\MiKTeX 2.7\tex\latex\carlisle\remreset.sty"))
 \c@chapter=\count95
 LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
 LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
@@ -126,36 +126,35 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@solution=\count113
 \c@remark=\count114
 \headlineindent=\dimen123
-)
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\macros.tex
-("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\times.sty"
+) (macros.tex
+("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphicx.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks18
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\graphics.sty"
 Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX 2.7\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: dvips.def on input line 90.
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\dvips.def"
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\dvips.def"
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen124
 \Gin@req@width=\dimen125
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\epsf\epsf.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\epsf\epsf.sty"
 This is `epsf.tex' v2.7.3 <23 July 2005>
 \epsffilein=\read1
 \epsfframemargin=\dimen126
@@ -166,35 +165,34 @@ This is `epsf.tex' v2.7.3 <23 July 2005>
 \epsfxsize=\dimen131
 \epsfysize=\dimen132
 \pspoints=\dimen133
-) ("C:\Program Files\MiKTeX 2.8\tex\latex\tools\verbatim.sty"
+) ("C:\Program Files\MiKTeX 2.7\tex\latex\tools\verbatim.sty"
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks19
 \verbatim@line=\toks20
 \verbatim@in@stream=\read2
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\ltxmisc\url.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\color.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\color.cfg"
+("C:\Program Files\MiKTeX 2.7\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: dvips.def on input line 130.
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\dvipsnam.def"
+("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\alltt.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\base\alltt.sty"
 Package: alltt 1997/06/16 v2.0g defines alltt environment
-))
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\algorithm.sty
+)) (algorithm.sty
 Package: algorithm 
 
 Document Style `algorithm' - floating environment
-("C:\Program Files\MiKTeX 2.8\tex\latex\float\float.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count115
 \float@exts=\toks21
@@ -202,17 +200,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks22
 \@floatcapt=\box55
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\ifthen.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks23
 \c@algorithm=\count116
-)
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\algorithmic.sty
+) (algorithmic.sty
 Package: algorithmic 2006/06/02
 
 Document Style `algorithmic' - environment
-("C:\Program Files\MiKTeX 2.8\tex\latex\tools\calc.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\tools\calc.sty"
 Package: calc 2005/08/06 v4.2 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count117
 \calc@Bcount=\count118
@@ -230,8 +227,7 @@ LaTeX Info: Redefining \addtolength on input line 76.
 \c@ALC@depth=\count122
 \ALC@tlm=\skip48
 \algorithmicindent=\skip49
-)
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\subfigure.sty
+) (subfigure.sty
 Package: subfigure 1995/03/06 v2.0 subfigure package
 
 Package: subfigure 1995/03/06 v2.0
@@ -239,15 +235,15 @@ Package: subfigure 1995/03/06 v2.0
 \c@lofdepth=\count124
 \c@subtable=\count125
 \c@lotdepth=\count126
-) ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\epsfig.sty"
+) ("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 \epsfxsize=\dimen136
 \epsfysize=\dimen137
 )
-("C:\Program Files\MiKTeX 2.8\tex\latex\base\makeidx.sty"
+("C:\Program Files\MiKTeX 2.7\tex\latex\base\makeidx.sty"
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\eXpress-fase2011.aux)
+(eXpress-fase2011.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
@@ -261,8 +257,7 @@ LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\ot1ptm.fd"
+ ("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
@@ -272,13 +267,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 56.
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 56.
-
-("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\ot1pcr.fd"
+ ("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Try loading font information for OMS+pcr on input line 56.
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\omspcr.fd"
+("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\omspcr.fd"
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
@@ -287,12 +281,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 56.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 56.
-
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\abstract.tex
+ (abstract.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 )
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\Introduction.tex
+(Introduction.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
  [1
@@ -303,12 +296,10 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 34.
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <9> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 48.
-)
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\background.tex [2])
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\example----.tex [3]
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 46.
+) (background.tex [2]) (example----.tex
 File: Figures/example.eps Graphic file (type eps)
 
 <Figures/example.eps>
@@ -316,27 +307,23 @@ Overfull \hbox (8.5359pt too wide) in paragraph at lines 8--9
  [][][] 
  []
 
+[3] [4]
 File: Figures/cfg.eps Graphic file (type eps)
-<Figures/cfg.eps>
+ <Figures/cfg.eps>
 File: Figures/ExecutionTreeEPS.eps Graphic file (type eps)
  <Figures/ExecutionTreeEPS.eps>
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 134.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 155.
 
 
-("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\omsptm.fd"
+("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
- [4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5])
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\approach.tex [6] [7] [8])
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\implementation.tex)
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\evaluation.tex [9] [10] [11]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 211.
+ [5]) (approach.tex
+[6] [7] [8]) (implementation.tex) (evaluation.tex [9] [10] [11]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 149.
 
@@ -354,27 +341,22 @@ Overfull \hbox (149.69095pt too wide) in paragraph at lines 145--209
  [][] 
  []
 
-[12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
+[12] [13]
 Underfull \vbox (badness 2158) has occurred while \output is active []
 
  [14]
 Underfull \vbox (badness 1472) has occurred while \output is active []
 
  [15])
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\discussion.tex)
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\related.tex [16])
-(C:\Kunal\svn\papers\taneja-eXpress-FASE20111\conclusions.tex [17]) [18]
-[19] (C:\Kunal\svn\papers\taneja-eXpress-FASE20111\eXpress-fase2011.aux) ) 
+(discussion.tex) (related.tex [16]) (conclusions.tex [17]) [18] [19]
+(eXpress-fase2011.aux) ) 
 Here is how much of TeX's memory you used:
- 2029 strings out of 495286
- 27283 string characters out of 3180417
- 103278 words of memory out of 3000000
- 5174 multiletter control sequences out of 15000+200000
- 12587 words of font info for 35 fonts, out of 3000000 for 9000
+ 2020 strings out of 95306
+ 23955 string characters out of 1183079
+ 101260 words of memory out of 1500000
+ 5173 multiletter control sequences out of 110000
+ 12587 words of font info for 35 fonts, out of 1200000 for 2000
  14 hyphenation exceptions out of 8191
- 29i,13n,25p,2285b,469s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,13n,25p,2285b,469s stack positions out of 5000i,500n,10000p,200000b,5000s
 
-Output written on eXpress-fase2011.dvi (19 pages, 108496 bytes).
+Output written on eXpress-fase2011.dvi (19 pages, 104672 bytes).
