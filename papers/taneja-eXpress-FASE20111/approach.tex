@@ -235,71 +235,58 @@ Hence, the state infection cannot propagate through $e_{ij}$.
  
 \subsection{Code Instrumentation}
 For each changed method pair $<$$M_{i1}, M_{i2}$$>$ for which $\Delta_i \neq \phi$, \CodeIn{eXpress} finds changed regions $\delta_{i1}$ and $\delta_{i2}$ containing all the changed instructions in the program. $\delta_i$ is a minimal list of continuous instructions such that all the changed instructions in the method $M_i$ are in the region $\delta_i$. Hence, there can be a maximum of one changed region in one method.
-Inputs $I = \{i_1, i_2...,i_m\}$ to a changed region $\delta$ are variables (or fields) that are used 
+Inputs $I = \{i_1, i_2...,i_n\}$ of a changed region $\delta$ are variables (or fields) that are used 
 in the changed region $\delta$ but are declared outside the changed region, 
-while outputs are variables (or fields) that are defined in a changed region and used outside the changed region.
+while outputs $O = \{o_1, o_2...,o_m\}$ are variables (or fields) 
+that are defined in $\delta$ and used outside the changed region.
 As an example, for the changed region in the new version of \CodeIn{TestMe} in Figure~\ref{fig:example}, $I = {c.Length, n, state}$ and $O = {state}$.
 Let $I_1$ and $O_1$ be the inputs and outputs of $\delta1$, while $I_2$ and $O_2$ be the inputs and outputs of $\delta2$.
 
-\subsubsection{Method Extraction.}
 \CodeIn{eXpress} extracts the instructions in $\delta_{i1}$ and $\delta_{i2}$ as methods $M_{\delta_{i1}}$ and 
-$M_{\delta_{i2}}$, respectively, both having arguments of type and name as $I_1 \bigcup I_2$ and returning outputs 
+$M_{\delta_{i2}}$ (shown in Figure~\ref{fig:instrumented}), respectively, both having arguments of type and name as $I_1 \bigcup I_2$ and returning outputs 
 $O_1 \bigcup O_2$.
-For clarity we refer to the arguments of $M_{\delta_{i1}}$ as $A_{1} = {i_{11}, i_{21},...i_{k1}}$ and the arguments of 
+We refer to the arguments of $M_{\delta_{i1}}$ as $A_{1} = {i_{11}, i_{21},...i_{k1}}$ and the arguments of 
 $M_{\delta_{i2}}$ as $A_{2} = {i_{12}, i_{22},...i_{k2}}$, such that the types of $i_{l1}$ and $i_{l2}$
 are same as the type of $i_l \in I_1 \bigcup I_2$.
 We refer to the variables corresponding to $o_i \in O_1 \bigcup O_2$ in $M_{\delta_{i1}}$ as $o_{i1}$ and in 
 $M_{\delta_{i2}}$ as $o_{i2}$.
-\CodeIn{eXpress} synthesizes a class $C_o$, such that 
+\CodeIn{eXpress} synthesizes a class $C_o$ (show in Figure~\ref{fig:instrumented}), such that 
 for all $o_i \in O_1 \bigcup O_2$, there is a corresponding public field in $C_o$ with 
 types and names same as $o_i$.
-The methods $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$ return an object of type $C_o$.
+The methods $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$ return an object $c_o$ of type $C_o$.
 The class enables the two methods $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$
 to return multiple outputs $O_1 \bigcup O_2$ as fields of $C_o$.
-The method body of $M_{\delta_{i1}}$ (and $M_{\delta_{i2}}$)
-contains the instructions in $\delta_{i1}$, replaces 
-The variables $o_{i1}$ in $M_{\delta_{i1}}$ are copied to the respective filelds of an object of $C_o$ and returned.
+As shown in Figure~\ref{fig:instrumented}, the method $M_{\delta_{i1}}$ (and $M_{\delta_{i2}}$)
+first contains the instructions in $\delta_{i1}$ and later copies all the outputs 
+$o_{i1}$ in $M_{\delta_{i1}}$ ($o_{i2}$ in $M_{\delta_{i2}}$) to the respective fields 
+of $c_o$ and returns the object $c_o$.
 
 
-In each method $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$, after the instructions in $\delta1$ $\delta$,
-\CodeIn{eXpress} instantiates an object $c_o$ of $C_o$ and assigns the resulting value of each variable $o_{i1}$ in $M_{\delta_{i1}}$ (or $o_{i2}$ in $M_{\delta_{i2}}$) to $c_o.o_i$. 
-As a result, the methods 
-$M_{\delta_{i1}}$ and $M_{\delta_{i2}}$ return the variables $O_1 \bigcup O_2$. The synthesized class $C_o$
-enables the methods $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$ to return more than one output.
+Figure~\ref{fig:instrumented} shows the instrumented part of the method $M_{i2}$. 
+The methods $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$ are invoked (Lines 5 and 6 of the Method $M_{i2}$ in Figure~\ref{fig:instrumented}) from the method $M_{i2}$ instead of the changed region.
+The method $M_{\delta_{i2}}$ is passed $i_1,....i_n$ as arguments, while the method $M_{\delta_{i1}}$
+is passed copied values $i_{1c},....i_{nc}$ of $i_1,....i_n$, respectively (Lines 1 to 4). These copies are deep copies for non primitive type variables.
+The outputs of $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$ are stored in objects $c_{o}Old$ and $c_{o}New$, respectively.
+An \CodeIn{if} statement is inserted (Line 7) such that its true branch is executed when the outputs 
+$c_{o}Old$ and $c_{o}New$ are different.    
+To compare the two outputs, \CodeIn{eXpress} changes the modifier 
+of all the fields transitively reachable from objects of the
+two given classes to public and these fields are directly compared to detect difference in outputs.
+Finally, the fields of $c_{o}New$ are assigned to the corresponding output variables (Lines 8 to 10).
 
-\subsubsection{Method Invocation Corresponding to the Changed Regions} 
-The methods $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$ are invoke from the method $M_{i2}$ in place of the changed region.
-The method is passed $o_1,....o_n$ as arguments, while the method $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$ 
-
-\subsection{Branch Insertion.}
 
 
 \begin{figure}[t]
-\begin{CodeOut}
-\begin{alltt}
-  \textbf{public} Class C_{O_i}\{
-  \hspace{0.5cm}\textbf{public T1} o1;
-  \hspace{0.5cm}\textbf{public T2} o2;
-  \hspace{0.5cm}...
-  \hspace{0.5cm}\textbf{public Tn} on; 
-\}
+%  \begin{\begin{center}
+\hspace{0.5cm}
+	\includegraphics[width=11cm, keepaspectratio]{Figures/instrumentation}
   
-\end{alltt}
-\end{CodeOut}
 \vspace{-0.15 in}
-\caption{Program synthesized for the example program}
-\label{fig:Changed}
+\caption{Instrumented Code synthesized by \CodeIn{eXpess}}
+\label{fig:instrumented}
+\vspace{-0.25 in}
+%\end{center}
 \end{figure}
-
-
-
-The methods return an object of type $T$ having pubic fields $o_i \in O1 \bigcup O2$.
-Each field of the object returned from the execution of $M_{\delta_{i2}}$ is assigned 
-to the corresponding variable in Method $M_{\delta_{i2}}$. If a variable is declared in $\delta2$ a corresponding declaration is added in $M_{\delta_{i2}}$
-
-\CodeIn{eXpress} inserts the methods in the new program version.
-The instructions in the changed region $\delta_{i2}$ are replaced by the 
-invocation to these methods and invokes them with current values of the inputs at $I$
 
 
 %The Instrumenter component uses Sets $\Delta_i$ (differences between method $M_{i1}$ and $M_{i2}$) produced by the Difference Finder. For each changed method pair $<M_{i1}, M_{i2}>$ for which $\Delta_i \neq \phi$, the Instrumenter component finds a region $\delta_i$ containing all the changed instructions in the program. $\delta_i$ is a minimal list of continuous instructions such that all the changed instructions in the method $M_i$ are in the region $\delta_i$. Hence, there can be a maximum of one changed region in one method. At the end of each changed region $\delta_i$, the Instrumenter component inserts instructions to save the program state. In particular, the Instrumenter inserts the corresponding instructions for \CodeIn{PexStore} statements for each variable (and field) defined in the changed region.
@@ -356,8 +343,6 @@ $e_{ij}\in B_p$. In other words, if a branching node $v_i$ is in the built dynam
 As an effect, our approach helps reduce the number of paths to be explored by avoiding the paths $P \in g : e_{ij} \in P$.
 These paths cannot help in propagating a state infection to an observable output.
 \end{itemize}
-
-\subsubsection{Path Prioritization to Achieve Infection.}
 
 %\end{itemize}
 \subsection{Incremental Exploration}

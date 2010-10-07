@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.8-beta-20080627 (MiKTeX 2.7) (preloaded format=latex 2008.8.31)  7 OCT 2010 01:30
+This is pdfTeX, Version 3.1415926-1.40.8-beta-20080627 (MiKTeX 2.7) (preloaded format=latex 2008.8.31)  7 OCT 2010 13:15
 entering extended mode
 **eXpress-fase2011.tex
 (eXpress-fase2011.tex
@@ -324,15 +324,12 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 211.
  [5]) (approach.tex
 [6] [7]
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <7> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 280.
-LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 280.
- [8] [9]) (implementation.tex) (evaluation.tex
-Underfull \vbox (badness 5985) has occurred while \output is active []
+File: Figures/instrumentation.eps Graphic file (type eps)
+ <Figures/instrumentation.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
-[11] [12]
+ [8]
+[9]) (implementation.tex) (evaluation.tex [10] [11] [12]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 149.
 
@@ -351,25 +348,25 @@ Overfull \hbox (149.69095pt too wide) in paragraph at lines 145--209
  []
 
 [13] [14]
-Underfull \vbox (badness 5105) has occurred while \output is active []
+Underfull \vbox (badness 2158) has occurred while \output is active []
 
  [15]
-[16]) (discussion.tex) (related.tex [17]) (conclusions.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1472) has occurred while \output is active []
 
- [18])
-[19] [20] [21] (eXpress-fase2011.aux)
+ [16])
+(discussion.tex) (related.tex [17]) (conclusions.tex [18]) [19] [20] [21]
+(eXpress-fase2011.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 2025 strings out of 95306
- 24021 string characters out of 1183079
+ 2023 strings out of 95306
+ 24019 string characters out of 1183079
  105260 words of memory out of 1500000
- 5178 multiletter control sequences out of 110000
- 13019 words of font info for 37 fonts, out of 1200000 for 2000
+ 5175 multiletter control sequences out of 110000
+ 12587 words of font info for 35 fonts, out of 1200000 for 2000
  14 hyphenation exceptions out of 8191
  29i,13n,25p,2285b,469s stack positions out of 5000i,500n,10000p,200000b,5000s
 
-Output written on eXpress-fase2011.dvi (21 pages, 110708 bytes).
+Output written on eXpress-fase2011.dvi (21 pages, 110072 bytes).
