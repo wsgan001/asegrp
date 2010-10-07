@@ -271,7 +271,7 @@ An \CodeIn{if} statement is inserted (Line 7) such that its true branch is execu
 $c_{o}Old$ and $c_{o}New$ are different.    
 To compare the two outputs, \CodeIn{eXpress} changes the modifier 
 of all the fields transitively reachable from objects of the
-two given classes to public and these fields are directly compared to detect difference in outputs.
+two given classes to public and compares these fields directly to detect difference in the outputs.
 Finally, the fields of $c_{o}New$ are assigned to the corresponding output variables (Lines 8 to 10).
 
 
@@ -298,17 +298,17 @@ Finally, the fields of $c_{o}New$ are assigned to the corresponding output varia
 %with the ones captured in the execution of Version $v2$. The instrumentation enables us to perform only one instance of DSE on the new version instead of performing two instances of DSE: one on the original and the other on the new program version. Performing two instances of DSE can be technically challenging since we have to perform the two DSE instances in a controlled manner such that both versions are executed  with the same input and the execution trace is monitored for both the versions by a common exploration strategy to decide which branching node to flip next in the two versions.
 
 \subsection{Test Generation}
-\CodeIn{eXpress} performs Dynamic Symbolic Execution (DSE)~\cite{Clarke:symbolic,king:symex,dart,cute,exe} to 
-generate regression tests for the two given versions of a program. DSE iteratively generates test inputs to cover various feasible paths in the program under test (the new version in our approach). In particular, DSE flips some branching node discovered in previous executions to generate a test input for covering a new path. The branching node to be flipped is decided by a search strategy such as depth-first search. 
-The exploration is quite expensive since there are an exponential 
-number of paths with respect to the number of branches in a program.
- However, the execution of many branches often cannot help in detecting behavioral differences. 
- In other words, covering these branches does not help in satisfying any of the condition E or I in the PIE model described in Section~\ref{sec:intro}. 
- Therefore, we do not flip such branching nodes in our new search strategy for generating test inputs that detect 
- behavioral differences between the two given versions of a program. Recall that, we refer to such branches as irrelevant branches. We next describe the two categories of paths that our approach avoids exploring. We then describe our incremental exploration technique when an existing test suite is available for the original version.
- 
- \subsubsection{Path Pruning}
- Our approach avoids exploring the following categories of paths:
+\CodeIn{eXpress} performs Dynamic Symbolic Execution (DSE)~\cite{dart,cute,exe} to 
+generate regression tests for the two given versions of a program. DSE iteratively generates test inputs to cover various feasible paths in the program under test (the new version in our approach). In particular, DSE flips some branching node discovered in previous executions to generate a test input for covering a new path. 
+%The branching node to be flipped is decided by a search strategy such as depth-first search.
+%The exploration is quite expensive since there are an exponential 
+%number of paths with respect to the number of branches in a program.
+% However, the execution of many branches often cannot help in detecting behavioral differences. 
+% In other words, covering these branches does not help in satisfying any of the condition E or I in the PIE model described in Section~\ref{sec:intro}. 
+% Therefore, we do not flip such branching nodes in our new search strategy for generating test inputs that detect 
+% behavioral differences between the two given versions of a program. Recall that, we refer to such branches as irrelevant branches. We next describe the two categories of paths that our approach avoids exploring. We then describe our incremental exploration technique when an existing test suite is available for the original version.
+To make path exploration efficient in finding behavioral differences, 
+\CodeIn{eXpress} avoids from exploring the following categories of paths:
  \Comment{
 %\begin{itemize}
 \\ \textbf{Rationale E: Paths not leading to any changed region.} Paths that cannot reach any changed region (denoted as $\delta$) need not be 
@@ -327,8 +327,8 @@ after the first execution of $\delta$, the value of \CodeIn{x} is 3 in both vers
 \subsubsection{Branching Nodes being Pruned}
 In DSE, path exploration is realized by flipping branching nodes. We next describe two categories of branching nodes that we avoid flipping corresponding to the preceding two categories of paths that we intend to avoid exploring.
 }
-\begin{itemize}
-\item \textbf{Category E+I.} \CodeIn{eXpress} does not explore these paths until a test 
+%\begin{itemize}
+\\ \textbf{Category E+I.} \CodeIn{eXpress} does not explore these paths until a test 
 is generated that infects the program state. Our approach avoids exploring all the branches in $B_{E+I}$. In other words, if a branching node $v_i$ is in the built dynamic execution tree\footnote{\scriptsize{A dynamic execution tree is the tree formed from the paths executed in the previous executions. Multiple instances $c_{i1}, c_{i2}, ..., c_{in}$ of a node $c_i$ in CFG can be present in a dynamic execution tree due to loops in a program.}}, such that the branch $e_{ij} \in B_{E+I}$ is not explored yet, our approach does not flip $v_i$ to make program execution take branch $e_{ij}$.
 As an effect, our approach helps reduce the number of paths to be explored by avoiding the paths $P \in g : e_{ij} \in P$ until a test is generated that infects the program state.
 \Comment{
@@ -336,18 +336,20 @@ As an effect, our approach helps reduce the number of paths to be explored by av
 Let $C \in g$ be the set of nodes in all the changed regions.
 Let some $c_i \in C$ be executed, i.e., at least one instance $c_{ij}$ of $c_i$ is present in the dynamic execution tree $T$. Consider that the program state is not infected after the execution of the changed region containing $c_i$. Our approach prunes all the branching nodes $B \in T$, such that for all $b_i \in B: \rho(c_{ij}, b_i) \neq \phi , b_i \notin C $, where $\rho(c_i, b_i)$ is the path between the vertices $c_i$ and $b_i$ (if the path exists) in $T$. As an effect of pruning $B$, our approach does not explore the subpaths after a changed region's execution that does not cause any state infection.
 }
-\item \textbf{Category P. }
+\\ \textbf{Category P. }
 \CodeIn{eXpress} does not explore these paths after a test is generated that infects the program state.
 Our approach avoids exploring all the branches 
 $e_{ij}\in B_p$. In other words, if a branching node $v_i$ is in the built dynamic execution tree such that one of its branch $e_{ij}$ is not explored yet, our approach does not flip $v_i$ to make program execution take branch $e_{ij}$.
 As an effect, our approach helps reduce the number of paths to be explored by avoiding the paths $P \in g : e_{ij} \in P$.
 These paths cannot help in propagating a state infection to an observable output.
-\end{itemize}
+%\end{itemize}
 
 %\end{itemize}
 \subsection{Incremental Exploration}
 \label{sec:incremental}
-A regression test suite achieving high code coverage may be available along with the original version of  a program. This test suite may be manually written or generated by an automated test generation tool for the original version. However, the existing test suite might not be able to cover all the changed regions of the new version of the program. Our approach can reuses the existing test suite so that changed regions of the program can be executed efficiently due to which test generation is likely to find behavior differences earlier in path exploration. Our approach executes the existing test suite to build an execution
+A regression test suite achieving high code coverage may be available along with the original version of  a program. 
+%This test suite may be manually written or generated by an automated test generation tool for the original version. 
+However, the existing test suite might not be able to cover all the changed regions of the new version of the program. Our approach can reuses the existing test suite so that changed regions of the program can be executed efficiently due to which test generation is likely to find behavior differences earlier in path exploration. Our approach executes the existing test suite to build an execution
 tree for the tests in the test suite. Our approach then starts the program
 exploration using the dynamic execution tree instead of starting from an empty
 tree. Our approach of seeding test inputs can help efficiently cover the changed regions of the program with two major reasons:

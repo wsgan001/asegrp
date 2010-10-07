@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.8-beta-20080627 (MiKTeX 2.7) (preloaded format=latex 2008.8.31)  7 OCT 2010 13:15
+This is pdfTeX, Version 3.1415926-1.40.8-beta-20080627 (MiKTeX 2.7) (preloaded format=latex 2008.8.31)  7 OCT 2010 17:13
 entering extended mode
 **eXpress-fase2011.tex
 (eXpress-fase2011.tex
@@ -235,52 +235,58 @@ Package: subfigure 1995/03/06 v2.0
 \c@lofdepth=\count124
 \c@subtable=\count125
 \c@lotdepth=\count126
+) (wrapfig.sty
+\WF@wrappedlines=\count127
+\WF@size=\dimen136
+\WF@box=\box56
+\WF@hsep=\dimen137
+\WF@tsep=\dimen138
 ) ("C:\Program Files\MiKTeX 2.7\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
-\epsfxsize=\dimen136
-\epsfysize=\dimen137
+\epsfxsize=\dimen139
+\epsfysize=\dimen140
 )
 ("C:\Program Files\MiKTeX 2.7\tex\latex\base\makeidx.sty"
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
 (eXpress-fase2011.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 26.
  ("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 56.
+(Font)              <7> on input line 57.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 56.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 56.
+(Font)              <5> on input line 57.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 57.
  ("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 56.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 57.
 
 ("C:\Program Files\MiKTeX 2.7\tex\latex\psnfss\omspcr.fd"
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 56.
+(Font)              <9> on input line 57.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 56.
+(Font)              <6> on input line 57.
  (abstract.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
@@ -325,48 +331,33 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
  [5]) (approach.tex
 [6] [7]
 File: Figures/instrumentation.eps Graphic file (type eps)
- <Figures/instrumentation.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ <Figures/instrumentation.eps> [8] [9]) (implementation.tex)
+(evaluation.tex [10] [11]
 
- [8]
-[9]) (implementation.tex) (evaluation.tex [10] [11] [12]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 149.
+LaTeX Font Warning: Command \small invalid in math mode on input line 152.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 151.
+LaTeX Font Warning: Command \small invalid in math mode on input line 154.
 
+[12]
+Underfull \vbox (badness 3428) has occurred while \output is active []
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 153.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 155.
-
-
-Overfull \hbox (149.69095pt too wide) in paragraph at lines 145--209
- [][] 
- []
-
-[13] [14]
+ [13]
 Underfull \vbox (badness 2158) has occurred while \output is active []
 
- [15]
+ [14]
 Underfull \vbox (badness 1472) has occurred while \output is active []
 
- [16])
-(discussion.tex) (related.tex [17]) (conclusions.tex [18]) [19] [20] [21]
-(eXpress-fase2011.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ [15])
+(discussion.tex) (related.tex [16]) (conclusions.tex [17])
+(eXpress-fase2011.bbl [18]) [19] (eXpress-fase2011.aux) ) 
 Here is how much of TeX's memory you used:
- 2023 strings out of 95306
- 24019 string characters out of 1183079
- 105260 words of memory out of 1500000
- 5175 multiletter control sequences out of 110000
+ 2032 strings out of 95306
+ 24064 string characters out of 1183079
+ 90260 words of memory out of 1500000
+ 5178 multiletter control sequences out of 110000
  12587 words of font info for 35 fonts, out of 1200000 for 2000
  14 hyphenation exceptions out of 8191
- 29i,13n,25p,2285b,469s stack positions out of 5000i,500n,10000p,200000b,5000s
+ 29i,13n,25p,2285b,466s stack positions out of 5000i,500n,10000p,200000b,5000s
 
-Output written on eXpress-fase2011.dvi (21 pages, 110072 bytes).
+Output written on eXpress-fase2011.dvi (19 pages, 93588 bytes).
