@@ -1,6 +1,7 @@
-
+\vspace{-5ex}
 \section{Introduction}
 \label{sec:intro}
+\vspace{-1ex}
 Regression test generation aims at generating a test suite that can detect behavioral differences between the original and the new versions of a program. A behavioral difference between two versions of a program can be reflected by the difference between the observable outputs produced by the execution of the same test (referred to as a difference-exposing test) on the two versions. Developers can inspect these behavioral differences to determine whether they are intended or unintended (i.e., regression faults).
 
 Regression test generation can be automated by using Dynamic Symbolic
@@ -28,10 +29,9 @@ Fifth, we conduct extensive experiments to evaluate our approach.}} \CodeIn{eXpr
 
 Our approach first determines all the branches (in the program under test) that cannot help in achieving any of the conditions E, I, and P of the PIE model in terms of the changes in the program. To make test generation efficient, we develop a new search strategy for DSE to avoid exploring these irrelevant branches (including which can lead to an irrelevant path\footnote{\scriptsize{An irrelevant path is a path that cannot help in achieving P, I, and E of the PIE model.}}). In particular, our approach guides DSE to avoid from flipping branching nodes\footnote{\scriptsize{A branching node in the execution tree of a program is an instance of a conditional statement in the source code. A branching node consists of two sides (or more than two sides for a \CodeIn{switch} statement): the true branch and the false branch. Flipping a branching node is flipping the execution of the program from the true (or false) branch to the false (or true) branch. Flipping a branching node for a switch statement is flipping the execution of the current branch to another unexplored branch.}}, which on flipping execute some irrelevant branch. 
 
-\textbf{
-In addition, to effectively achieve condition I of the PIE model, our approach instruments a program with additional branches, 
+
+In addition, to effectively achieve condition I of the PIE model, our approach instruments a program under test with additional branches, 
 such that if any of these branches are executed, program state is infected. 
-}
 
 Furthermore, our approach can exploit the existing test suite (if available) for the original version by seeding the tests in the test suite to the program exploration. Our technique of seeding the exploration with the existing test suite efficiently augments an existing test suite so that various changed parts of the program (that are not covered by the existing test suite) are covered by the augmented test suite. 
 
@@ -41,9 +41,9 @@ Furthermore, our approach can exploit the existing test suite (if available) for
 This paper makes the following major contributions:
 %\\ \textbf{Problem Definition.} We formally define the problem of regression test generation.
 \\ \textbf{Path Exploration for Regression Test Generation.} We propose an approach called \CodeIn{eXpress} that uses DSE for efficient generation of regression tests. 
-\textbf{\CodeIn{eXpress} prunes paths that cannot help in achieving conditions E, I, and P.
+\CodeIn{eXpress} prunes paths that cannot help in achieving conditions E, I, and P.
 In addition, \CodeIn{eXpress} instruments the program such that condition I can be achieved effectively
-after condition E is achieved.} 
+after condition E is achieved. 
 %To the best
 %of our knowledge, ours is the first approach that guides path exploration on the new version specifically for regression test generation.
 \\ \textbf{Incremental Exploration.} We develop a technique for exploiting an existing test suite, so that path exploration focuses on covering the changes rather than starting from scratch. 

@@ -1,5 +1,7 @@
+\vspace{-3ex}
 \section{Example}
 \label{sec:example}
+\vspace{-2ex}
 In this section, we illustrate our \CodeIn{eXpress} approach with an example. \CodeIn{eXpress} takes as input two versions of a program and produces as output a regression test suite, with the objective of detecting behavioral differences (if any exist) between the two versions of program under test. Although \CodeIn{eXpress} analyzes assembly code of C\# programs, in this section, we illustrate the \CodeIn{eXpress} approach using program source code. 
 
     \begin{figure}[t]
@@ -107,8 +109,8 @@ cannot propagate through the branch $<2,3>$.
 A DSE-based test generation tool tries to execute all feasible branches in the program. However the execution of 
 all branches is not sufficient for infecting the program state. For example, 
 a test generation tool can 
-cover all the branches of \CodeIn{}TestMe (left side of Figure~\ref{fig:example}) with $n=0$ (a default input used by some tools) but to infect the program state, the tool
-need to generate a nonzero value of $n$.
+cover all the branches of \CodeIn{}TestMe (left side of Figure~\ref{fig:example}) with $n=0$ (a default test input used by some tools) but to infect the program state, the tool
+need to generate a nonzero value of $n$ (used at Line 11).
 To guide the test generation tool to effectively achieve state infection,
 \CodeIn{eXpress} instruments the new program version.
 In particular, \CodeIn{eXpress} invokes the changed regions\footnote{\scriptsize{A changed region (in a new or modified program version) is a minimal set of statements that contains all modified (in new or original program version), added (in new program version), or deleted (in original program version) statements in a method. The changed region for the new program version in \CodeIn{TestMe} on the left side of Figure~\ref{fig:example} is shown in rectangular box, while the changed region of the original program version is empty.}} 
@@ -136,7 +138,7 @@ are same as the identified output.
 \CodeIn{eXpress} replaces the changed region of the new version of
 \CodeIn{TestMe} by the invocation of the methods \CodeIn{fOld} and \CodeIn{fNew} 
 (Lines 11 and 12 on the right side of Figure~\ref{fig:example}). 
-Note that the variable $stateOld$ passed to 
+Note that the variable \CodeIn{stateCopy} passed to 
 \CodeIn{fOld} is a copy of the variable $state$ passed to \CodeIn{fNew} (Line 10 on the right side of ~\ref{fig:example}) because 
 $state$ may be updated by \CodeIn{fNew} since $state$ is also an output of the changed regions. 
 \CodeIn{eXpress} then inserts an \CodeIn{if} statement (Line 13 on the right side of Figure~\ref{fig:example})

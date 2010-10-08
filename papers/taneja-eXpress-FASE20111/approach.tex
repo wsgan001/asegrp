@@ -1,6 +1,7 @@
+\vspace{-2ex}
 \section{Approach}
 \label{sec:approach}
-
+\vspace{-2ex}
 \CodeIn{eXpress} takes as input the assembly code of two versions $v1$ (original) and $v2$ (new) of the program under test. In addition, \CodeIn{eXpress} takes as input, the name and signature of a parameterized unit test (PUT); such a PUT serves as a test driver for path exploration. 
 When an existing test suite is available for the original version, \CodeIn{eXpress} conducts incremental exploration that exploits the test suite for generating tests for the new version. We next discuss in detail the \CodeIn{eXpress} approach. 
 
@@ -22,7 +23,9 @@ When an existing test suite is available for the original version, \CodeIn{eXpre
 %    \vspace{-0.15 in}
 %\end{figure}
 %}
+\vspace{-2ex}
 \subsection{Finding Differences Between Versions}
+\vspace{-1.5ex}
 \CodeIn{eXpress} analyzes the two versions $v1$ and $v2$ to find pairs $<$$M_{i1}, M_{i2}$$>$ of corresponding methods in $v1$ and $v2$, where $M_{i1}$ is a method in $v1$ and $M_{i2}$ is a method in $v2$. A method $M$ is defined as a triple $<$$FQN, Sig, I$$>$, where $FQN$ is the fully qualified name\footnote{\scriptsize{The fully qualified name of a method $m$ is a combination of the method's name, the name of the class $c$ declaring $m$, and the name of the namespace containing $c$.}} of the method, $Sig$ is the signature\footnote{\scriptsize{Signature of a method $m$ is the combination of parameter types of $m$ and the return type of $m$.}} of the method, and $I$ is the list of assembly instructions in the method body. Two methods $<$$M_{i1}, M_{i2}$$>$ form a  corresponding pair if the two methods $M_{i1}$ and $M_{i2}$ have the same $FQN$ and $Sig$. Currently our approach considers as different methods the methods that have undergone Rename Method or Change Method Signature refactoring. A refactoring detection tool~\cite{Dig'06:ECOOP} can be used to find such corresponding methods. For each pair $<$$M_{i1}, M_{i2}$$>$ of corresponding methods, the Difference Finder finds a set of  differences $\Delta_i$ between the list of instructions $I_{M_{i1}}$ and $I_{M_{i2}}$ in the body of Methods $M_{i1}$ and $M_{i2}$, respectively. $\Delta_i$ is a set of instructions such that each instruction $\iota$ in $\Delta_i$ is an instruction in $I_{M_{i2}}$ (or in $I_{M_{i1}}$ for a deleted instruction), and $\iota$ is added, modified, or deleted from list $I_{M_{i1}}$ to form $I_{M_{i2}}$. 
 We denote the set of all added, modified, or deleted instructions as $\Delta$. 
 %\subsection{Graph Builder}
@@ -98,7 +101,9 @@ We denote the set of all added, modified, or deleted instructions as $\Delta$.
 %If a branching node $b$ can reach a changed region in Inter-Procedural CFG $g1$ built without using the preceding optimization, the branching node $b$ can reach a changed region (maybe a different one) in graph $g2$ built using the preceding optimizations. 
 %Since our aim of building the intra-procedural CFG is to find irrelevant branches, those in the graph via which the execution cannot reach any changed region, the preceding three optimizations help achieve the aim while reducing the cost of building the inter-procedural CFG. In addition, the size of the inter-procedural CFG is reduced resulting in reduction in the cost of finding irrelevant branches.
 
+\vspace{-1ex}
 \subsection{Finding Irrelavant Branches.}
+\vspace{-2ex}
 \CodeIn{eXpress} efficiently constructs the inter-procedural CFG $g<$$V,E$$>$ of 
 the new version of the program under test such that each vertex $v \in V$ 
 corresponds to an instruction $\iota \in M$ (denoted as $v \leftrightarrow \iota$), where $M$ is some method in $v_2$.  
@@ -232,21 +237,27 @@ Hence, the state infection cannot propagate through $e_{ij}$.
 %If a path $\rho$ is found by the DFS, there may still be a branch $b_i = <v, v_i>$ that cannot reach any vertex $c \in V$. To find such a branch, we remove each edge $e_j=<v, v_j>: e_j \in \rho$ one at a time from the graph and perform DFS again starting from $v$ (Lines 23-38). We repeat the preceding steps until we either find no path $\rho$ or all the edges from $v$ are removed from the graph. If no path is found, the remaining edges (branches) from v are added to the set $B_{E+I}$ (Lines 29-30) and to the set $B_{P}$ is there is no path from all vertices $c \in V$ to $v$ (Lines 31-32).
 
 %The Graph Traversal component uses Depth First Search on the Graph $g$ to efficiently find the sets $B_{E+I}$ and $B_P$.
- 
+\vspace{-2ex}
 \subsection{Code Instrumentation}
-For each changed method pair $<$$M_{i1}, M_{i2}$$>$ for which $\Delta_i \neq \phi$, \CodeIn{eXpress} finds changed regions $\delta_{i1}$ and $\delta_{i2}$ containing all the changed instructions in the program. $\delta_i$ is a minimal list of continuous instructions such that all the changed instructions in the method $M_i$ are in the region $\delta_i$. Hence, there can be a maximum of one changed region in one method.
+\vspace{-2ex}
+For each changed method pair $<$$M_{i1}, M_{i2}$$>$ for which $\Delta_i \neq \phi$, \CodeIn{eXpress} finds changed regions $\delta_{i1}$ and $\delta_{i2}$ (for original and new program version, respectively) 
+containing all the changed instructions in the program. 
+A changed region $\delta_i$ is a minimal list of continuous instructions 
+such that all the changed instructions in the method $M_i$ are in the 
+region $\delta_i$. Hence, there can be a maximum of one changed region in one method.
 Inputs $I = \{i_1, i_2...,i_n\}$ of a changed region $\delta$ are variables (or fields) that are used 
 in the changed region $\delta$ but are declared outside the changed region, 
 while outputs $O = \{o_1, o_2...,o_m\}$ are variables (or fields) 
 that are defined in $\delta$ and used outside the changed region.
-As an example, for the changed region in the new version of \CodeIn{TestMe} in Figure~\ref{fig:example}, $I = {c.Length, n, state}$ and $O = {state}$.
-Let $I_1$ and $O_1$ be the inputs and outputs of $\delta1$, while $I_2$ and $O_2$ be the inputs and outputs of $\delta2$.
+As an example, for the changed region in the new version of \CodeIn{TestMe} in Figure~\ref{fig:example}, $I = \{c.Length, n, state\}$ and $O = \{state\}$.
+Let $I_1$ and $O_1$ be the inputs and outputs of $\delta1$, while $I_2$ and $O_2$ be 
+the inputs and outputs of $\delta2$, respectively.
 
 \CodeIn{eXpress} extracts the instructions in $\delta_{i1}$ and $\delta_{i2}$ as methods $M_{\delta_{i1}}$ and 
 $M_{\delta_{i2}}$ (shown in Figure~\ref{fig:instrumented}), respectively, both having arguments of type and name as $I_1 \bigcup I_2$ and returning outputs 
 $O_1 \bigcup O_2$.
-We refer to the arguments of $M_{\delta_{i1}}$ as $A_{1} = {i_{11}, i_{21},...i_{k1}}$ and the arguments of 
-$M_{\delta_{i2}}$ as $A_{2} = {i_{12}, i_{22},...i_{k2}}$, such that the types of $i_{l1}$ and $i_{l2}$
+We refer to the arguments of $M_{\delta_{i1}}$ as $A_{1} = {i_{11}, i_{21},...,i_{n1}}$ and the arguments of 
+$M_{\delta_{i2}}$ as $A_{2} = {i_{12}, i_{22},...i_{n2}}$, such that the types of $i_{l1}$ and $i_{l2}$
 are same as the type of $i_l \in I_1 \bigcup I_2$.
 We refer to the variables corresponding to $o_i \in O_1 \bigcup O_2$ in $M_{\delta_{i1}}$ as $o_{i1}$ and in 
 $M_{\delta_{i2}}$ as $o_{i2}$.
@@ -264,14 +275,14 @@ of $c_o$ and returns the object $c_o$.
 
 Figure~\ref{fig:instrumented} shows the instrumented part of the method $M_{i2}$. 
 The methods $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$ are invoked (Lines 5 and 6 of the Method $M_{i2}$ in Figure~\ref{fig:instrumented}) from the method $M_{i2}$ instead of the changed region.
-The method $M_{\delta_{i2}}$ is passed $i_1,....i_n$ as arguments, while the method $M_{\delta_{i1}}$
-is passed copied values $i_{1c},....i_{nc}$ of $i_1,....i_n$, respectively (Lines 1 to 4). These copies are deep copies for non primitive type variables.
+For the method $M_{\delta_{i2}}$, $i_1,....i_n$ are passed as arguments, while for the method $M_{\delta_{i1}}$
+copied values $i_{1c},....i_{nc}$ of $i_1,....i_n$ are passed as arguments (Lines 1 to 4). These copies are deep copies for non primitive type variables.
 The outputs of $M_{\delta_{i1}}$ and $M_{\delta_{i2}}$ are stored in objects $c_{o}Old$ and $c_{o}New$, respectively.
-An \CodeIn{if} statement is inserted (Line 7) such that its true branch is executed when the outputs 
+An \CodeIn{if} statement is inserted (Line 7) such that its \CodeIn{true} branch is executed when the outputs 
 $c_{o}Old$ and $c_{o}New$ are different.    
-To compare the two outputs, \CodeIn{eXpress} changes the modifier 
-of all the fields transitively reachable from objects of the
-two given classes to public and compares these fields directly to detect difference in the outputs.
+To compare the two outputs, \CodeIn{eXpress} changes modifiers 
+of all fields transitively reachable from objects of the
+two given classes to \CodeIn{public} and compares these fields directly to detect difference in the outputs.
 Finally, the fields of $c_{o}New$ are assigned to the corresponding output variables (Lines 8 to 10).
 
 
@@ -296,8 +307,9 @@ Finally, the fields of $c_{o}New$ are assigned to the corresponding output varia
 %the component executes the test on Version $v1$ 
 %to compare program states after the execution of the changed region
 %with the ones captured in the execution of Version $v2$. The instrumentation enables us to perform only one instance of DSE on the new version instead of performing two instances of DSE: one on the original and the other on the new program version. Performing two instances of DSE can be technically challenging since we have to perform the two DSE instances in a controlled manner such that both versions are executed  with the same input and the execution trace is monitored for both the versions by a common exploration strategy to decide which branching node to flip next in the two versions.
-
+\vspace{-3ex}
 \subsection{Test Generation}
+\vspace{-2ex}
 \CodeIn{eXpress} performs Dynamic Symbolic Execution (DSE)~\cite{dart,cute,exe} to 
 generate regression tests for the two given versions of a program. DSE iteratively generates test inputs to cover various feasible paths in the program under test (the new version in our approach). In particular, DSE flips some branching node discovered in previous executions to generate a test input for covering a new path. 
 %The branching node to be flipped is decided by a search strategy such as depth-first search.
@@ -345,7 +357,9 @@ These paths cannot help in propagating a state infection to an observable output
 %\end{itemize}
 
 %\end{itemize}
+\vspace{-2ex}
 \subsection{Incremental Exploration}
+\vspace{-2ex}
 \label{sec:incremental}
 A regression test suite achieving high code coverage may be available along with the original version of  a program. 
 %This test suite may be manually written or generated by an automated test generation tool for the original version. 
