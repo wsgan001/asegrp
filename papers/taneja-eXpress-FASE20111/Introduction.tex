@@ -5,7 +5,7 @@
 Regression test generation aims at generating a test suite that can detect behavioral differences between the original and the new versions of a program. A behavioral difference between two versions of a program can be reflected by the difference between the observable outputs produced by the execution of the same test (referred to as a difference-exposing test) on the two versions. Developers can inspect these behavioral differences to determine whether they are intended or unintended (i.e., regression faults).
 
 Regression test generation can be automated by using Dynamic Symbolic
-Execution (DSE)~\cite{dart,cute,exe}, a state-of-the-art test generation
+Execution (DSE)~\cite{dart,cute}, a state-of-the-art test generation
 technique, to generate a test suite achieving high
 structural coverage. DSE explores paths in a program to
 achieve high structural coverage, and exploration of all
@@ -20,19 +20,15 @@ Propagation, Infection, and Execution (PIE) model~\cite{voas} of error propagati
 
 In this paper, we present an approach{\footnote{\scriptsize{An earlier version~\cite{taneja09:guided} of this work is described in a four-page paper that appears in the NIER track of ICSE 2009. This
 work significantly extends the previous work in the following major ways.
-First, in this paper, we develop techniques for efficiently finding irrelevant branches 
-that cannot execute any change. 
-Second, we develop techniques for exploiting the existing test suite for efficiently generating regression tests.
-\textbf{Third, we develop techniques for efficiently achieving state infection after a change is executed.}
-Fourth, we automate our approach by developing a tool.
-Fifth, we conduct extensive experiments to evaluate our approach.}} \CodeIn{eXpress} and its implementation that uses DSE to detect behavioral differences based on the notion of the PIE model.
-
+%First, in this paper, we develop techniques for efficiently finding irrelevant branches 
+%that cannot execute any change. 
+First, we develop techniques for exploiting the existing test suite for efficiently generating regression tests.
+Second, we develop techniques for efficiently achieving state infection after a change is executed.
+Third, we automate our approach by developing a tool.
+Fourth, we conduct extensive experiments to evaluate our approach.}} \CodeIn{eXpress} and its implementation that uses DSE to detect behavioral differences based on the notion of the PIE model.
 Our approach first determines all the branches (in the program under test) that cannot help in achieving any of the conditions E, I, and P of the PIE model in terms of the changes in the program. To make test generation efficient, we develop a new search strategy for DSE to avoid exploring these irrelevant branches (including which can lead to an irrelevant path\footnote{\scriptsize{An irrelevant path is a path that cannot help in achieving P, I, and E of the PIE model.}}). In particular, our approach guides DSE to avoid from flipping branching nodes\footnote{\scriptsize{A branching node in the execution tree of a program is an instance of a conditional statement in the source code. A branching node consists of two sides (or more than two sides for a \CodeIn{switch} statement): the true branch and the false branch. Flipping a branching node is flipping the execution of the program from the true (or false) branch to the false (or true) branch. Flipping a branching node for a switch statement is flipping the execution of the current branch to another unexplored branch.}}, which on flipping execute some irrelevant branch. 
-
-
 In addition, to effectively achieve condition I of the PIE model, our approach instruments a program under test with additional branches, 
 such that if any of these branches are executed, program state is infected. 
-
 Furthermore, our approach can exploit the existing test suite (if available) for the original version by seeding the tests in the test suite to the program exploration. Our technique of seeding the exploration with the existing test suite efficiently augments an existing test suite so that various changed parts of the program (that are not covered by the existing test suite) are covered by the augmented test suite. 
 
 \Comment{In addition, our approach prioritizes the flipping of branching nodes\footnote{A branching node in the execution tree of a program is an instance of a conditional statement in the source code. A branching node consists of two sides (or more than two sides for a \CodeIn{switch} statement): the true branch and the false branch. Flipping a branching node is flipping the execution of the program from the true (or false) branch of the branching node to the false (or true) branch.  Flipping a branching node representing a switch statement is flipping the execution of current branch to some unexplored branch.} in such a manner that behavioral differences are more likely to be detected earlier in path exploration.

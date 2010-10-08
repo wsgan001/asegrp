@@ -1,14 +1,18 @@
-
+\vspace{-0.2cm}
 \section{Related Work}
+\vspace{-0.5cm}
 \label{sec:related}
 Previous approaches~\cite{evans:DiffTest07,taneja08:diffgen,jin10:automated} generate regression unit tests achieving high structural coverage on both versions of the class under test. However, these approaches explore all the irrelevant paths, which cannot help in achieving any of the conditions I or E in the PIE model~\cite{voas}. In contrast, we have developed a new search strategy for DSE to avoid exploring these irrelevant paths. 
 
+%Some existing search strategies~\cite{burnim,fitnex} guide DSE to efficiently achieve high structural coverage in a program under test. However, 
+%these techniques do not specifically target covering a changed region. In contrast, our approach guides DSE to avoid exploring paths that cannot help in satisfying any of the conditions P, I, or E of the PIE model.
+
 Santelices et al.~\cite{santelices08sep} use data and control dependence information along with state information gathered through symbolic execution, and provide guidelines for testers to augment an existing regression test suite. Unlike our approach, their approach does not automatically generate tests but provides guidelines for testers to augment an existing test suite. 
-
-Some existing search strategies~\cite{burnim,fitnex} guide DSE to efficiently achieve high structural coverage in a program under test. However,
-these techniques do not specifically target covering a changed region. In contrast, our approach guides DSE to avoid exploring paths that cannot help in satisfying any of the conditions P, I, or E of the PIE model.
-
 Differential symbolic execution~\cite{DSE} determines behavioral differences between two versions of a method (or a program) by comparing their symbolic summaries~\cite{CSE}. Summaries can be computed only for methods amenable to symbolic execution. However, summaries cannot be computed for methods whose behavior is defined in external libraries not amenable to symbolic execution. Our approach still works in practice when these external library methods are present since our approach does not require summaries. In addition, both approaches can be combined using demand-driven-computed summaries~\cite{demandDriven}, which we plan to investigate in future work.
+Qi et al.~\cite{qi-ase10} propose an approach for guided test generation for evolving programs.
+The approach guides path exploration towards executing a change and propagating a state infection to observable output.
+However, the approach cannot deal with multiple interacting changes in the program in contrast to our approach.
+In addition, our approach provides techniques for effectively infecting program state.
 
 %Our previous Orstra approach~\cite{xie06:ecoop} automatically augments an automatically generated test suite with extra assertions for guarding against regression faults. Orstra first runs the given test suite and collects the return values and receiver-object states after the execution of the methods under test. Based on the collected information, Orstra synthesizes and inserts new assertions in the test suite for asserting against the collected method-return values and receiver object states. However, this approach observes the behavior of the original version to insert assertions in the test suite generated for only the original version. Therefore, the  test suite might not include test inputs for which the behavior of a new version differs from the original version.
 
@@ -28,7 +32,6 @@ Differential symbolic execution~\cite{DSE} determines behavioral differences bet
 
 
 %Joshi et al.~\cite{joshi:pretext} use the path constraints of the paths followed by the tests in an existing test suite to generate inputs that violate the assertions in the test suite. The generated test inputs follow the same paths already covered by the existing test suite and do not explore any new paths. In contrast, our approach exploits the existing test suite to explore new paths. Majumdar and Sen~\cite{majumdar:hybrid} propose the concept of hybrid concolic testing. Hybrid concolic testing seeds the program with random inputs so that the program exploration does not get stuck at a particular program location. In contrast, our approach exploits the existing test suite to seed the program exploration. Since the existing test suite is expected to achieve a higher structural coverage, the existing test suite is expected to discover more hard-to-discover branching nodes in comparison with random inputs. 
-Godefroid et al.~\cite{godefroid:fuzz} propose a DSE based approach for fuzz testing of large applications. Their approach uses a single seed for program exploration. In contrast, our approach  seeds multiple tests to program exploration. Seeding multiple tests can help program exploration in covering the changes more efficiently as discussed in Section~\ref{sec:incremental}. 
 
 %Law and Rothermel~\cite{Law-icse03} propose an impact analysis technique, called PathImpact. 
 %PathImpact uses method execution traces to find out impacted 
@@ -46,6 +49,7 @@ Godefroid et al.~\cite{godefroid:fuzz} propose a DSE based approach for fuzz tes
 %However, our approach also finds irrelevant branches that cannot help in propagating 
 %a state infection to observable output.
 
+Godefroid et al.~\cite{godefroid:fuzz} propose a DSE based approach for fuzz testing of large applications. Their approach uses a single seed for program exploration. In contrast, our approach  seeds multiple tests to program exploration. Seeding multiple tests can help program exploration in covering the changes more efficiently as discussed in Section~\ref{sec:incremental}.
 Xu and Rothermel~\cite{xu-directed} propose a directed test generation technique that uses 
 the existing test suite to cover parts of the program that are not covered by 
 the existing test suite. In particular, the approach first collects 
@@ -61,6 +65,14 @@ In contrast, our incremental exploration technique can still generate a test to 
 In addition, the approach focuses only on satisfying condition E of the PIE model, while our approach
 helps in satisfying E, I, and P of the PIE model to find behavioral differences.
 
+Our previous approach~\cite{taneja08:diffgen}, called DiffGen, instruments the program to add branches such that 
+behavioral differences can be found effectively. However, a test generation tool needs to explore branches in 
+both the original and new version of the program to detect behavioral differences. 
+In contrast, our approach adds branches for causing state infection effectively.  
+As a result, a test generation tool
+needs to explore only the changed regions of the original program version (in addition of the 
+new program version).
+In addition, \CodeIn{eXpress} prunes irrelavant branches to find behavioral differences efficiently. 
 %
 %Jin et al.~\cite{jin10:automated} propose an approach, called BERT, for behavioral regression testing.
 %BERT finds all the classes in a program that are modified and generates tests for these classes 

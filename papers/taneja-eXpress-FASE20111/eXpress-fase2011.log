@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.8-beta-20080627 (MiKTeX 2.7) (preloaded format=latex 2008.8.31)  7 OCT 2010 20:35
+This is pdfTeX, Version 3.1415926-1.40.8-beta-20080627 (MiKTeX 2.7) (preloaded format=latex 2008.8.31)  8 OCT 2010 00:14
 entering extended mode
 **eXpress-fase2011.tex
 (eXpress-fase2011.tex
@@ -299,10 +299,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 
 
 ]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
 ) (background.tex [2]) (example----.tex
 File: Figures/example.eps Graphic file (type eps)
 
@@ -311,7 +309,7 @@ Overfull \hbox (8.5359pt too wide) in paragraph at lines 10--11
  [][][] 
  []
 
-[3] [4]
+[3]
 File: Figures/cfg.eps Graphic file (type eps)
  <Figures/cfg.eps>
 File: Figures/ExecutionTreeEPS.eps Graphic file (type eps)
@@ -326,35 +324,28 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 157.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 213.
- [5]) (approach.tex
-[6] [7]
+ [4] [5])
+(approach.tex [6] [7]
 File: Figures/instrumentation.eps Graphic file (type eps)
- <Figures/instrumentation.eps> [8]) (implementation.tex) (evaluation.tex [9] [1
-0] [11]
+ <Figures/instrumentation.eps> [8]) (implementation.tex)
+(evaluation.tex [9] [10] [11] [12]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 147.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 149.
+LaTeX Font Warning: Command \small invalid in math mode on input line 391.
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 340--352
-\OT1/ptm/b/n/10 Results of struc-to-rian. \OT1/ptm/m/n/10 For two ver-sions of 
-\OT1/pcr/m/n/9 StructLexer\OT1/ptm/m/n/10 , nei-ther Pex nor
- []
+LaTeX Font Warning: Command \small invalid in math mode on input line 394.
 
-[12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13])
-(related.tex [14]) (conclusions.tex) [15] [16] (eXpress-fase2011.aux) ) 
+LaTeX Font Warning: Command \small invalid in math mode on input line 395.
+
+) (related.tex [13] [14]) (conclusions.tex) [15] (eXpress-fase2011.aux) ) 
 Here is how much of TeX's memory you used:
- 2017 strings out of 95306
- 23852 string characters out of 1183079
- 86260 words of memory out of 1500000
- 5170 multiletter control sequences out of 110000
- 12371 words of font info for 34 fonts, out of 1200000 for 2000
+ 2016 strings out of 95306
+ 23843 string characters out of 1183079
+ 87260 words of memory out of 1500000
+ 5169 multiletter control sequences out of 110000
+ 12068 words of font info for 34 fonts, out of 1200000 for 2000
  14 hyphenation exceptions out of 8191
- 29i,14n,25p,2285b,468s stack positions out of 5000i,500n,10000p,200000b,5000s
+ 29i,11n,25p,2285b,462s stack positions out of 5000i,500n,10000p,200000b,5000s
 
-Output written on eXpress-fase2011.dvi (16 pages, 79564 bytes).
+Output written on eXpress-fase2011.dvi (15 pages, 80076 bytes).

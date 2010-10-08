@@ -310,7 +310,7 @@ Finally, the fields of $c_{o}New$ are assigned to the corresponding output varia
 \vspace{-3ex}
 \subsection{Test Generation}
 \vspace{-2ex}
-\CodeIn{eXpress} performs Dynamic Symbolic Execution (DSE)~\cite{dart,cute,exe} to 
+\CodeIn{eXpress} performs Dynamic Symbolic Execution (DSE)~\cite{dart,cute} to 
 generate regression tests for the two given versions of a program. DSE iteratively generates test inputs to cover various feasible paths in the program under test (the new version in our approach). In particular, DSE flips some branching node discovered in previous executions to generate a test input for covering a new path. 
 %The branching node to be flipped is decided by a search strategy such as depth-first search.
 %The exploration is quite expensive since there are an exponential 
@@ -342,18 +342,19 @@ In DSE, path exploration is realized by flipping branching nodes. We next descri
 %\begin{itemize}
 \\ \textbf{Category E+I.} \CodeIn{eXpress} does not explore these paths until a test 
 is generated that infects the program state. Our approach avoids exploring all the branches in $B_{E+I}$. In other words, if a branching node $v_i$ is in the built dynamic execution tree\footnote{\scriptsize{A dynamic execution tree is the tree formed from the paths executed in the previous executions. Multiple instances $c_{i1}, c_{i2}, ..., c_{in}$ of a node $c_i$ in CFG can be present in a dynamic execution tree due to loops in a program.}}, such that the branch $e_{ij} \in B_{E+I}$ is not explored yet, our approach does not flip $v_i$ to make program execution take branch $e_{ij}$.
-As an effect, our approach helps reduce the number of paths to be explored by avoiding the paths $P \in g : e_{ij} \in P$ until a test is generated that infects the program state.
+%As an effect, our approach helps reduce the number of paths to be explored by avoiding the paths $P \in g : e_{ij} \in P$ until a test is generated that infects the program state.
 \Comment{
 \textbf{Category EI. }
 Let $C \in g$ be the set of nodes in all the changed regions.
-Let some $c_i \in C$ be executed, i.e., at least one instance $c_{ij}$ of $c_i$ is present in the dynamic execution tree $T$. Consider that the program state is not infected after the execution of the changed region containing $c_i$. Our approach prunes all the branching nodes $B \in T$, such that for all $b_i \in B: \rho(c_{ij}, b_i) \neq \phi , b_i \notin C $, where $\rho(c_i, b_i)$ is the path between the vertices $c_i$ and $b_i$ (if the path exists) in $T$. As an effect of pruning $B$, our approach does not explore the subpaths after a changed region's execution that does not cause any state infection.
+Let some $c_i \in C$ be executed, i.e., at least one instance $c_{ij}$ of $c_i$ is present in the dynamic execution tree $T$. Consider that the program state is not infected after the execution of the changed region containing $c_i$. Our approach prunes all the branching nodes $B \in T$, such that for all $b_i \in B: \rho(c_{ij}, b_i) \neq \phi , b_i \notin C $, where $\rho(c_i, b_i)$ is the path between the vertices $c_i$ and $b_i$ (if the path exists) in $T$. 
+%As an effect of pruning $B$, our approach does not explore the subpaths after a changed region's execution that does not cause any state infection.
 }
 \\ \textbf{Category P. }
 \CodeIn{eXpress} does not explore these paths after a test is generated that infects the program state.
 Our approach avoids exploring all the branches 
 $e_{ij}\in B_p$. In other words, if a branching node $v_i$ is in the built dynamic execution tree such that one of its branch $e_{ij}$ is not explored yet, our approach does not flip $v_i$ to make program execution take branch $e_{ij}$.
-As an effect, our approach helps reduce the number of paths to be explored by avoiding the paths $P \in g : e_{ij} \in P$.
-These paths cannot help in propagating a state infection to an observable output.
+%As an effect, our approach helps reduce the number of paths to be explored by avoiding the paths $P \in g : e_{ij} \in P$.
+%These paths cannot help in propagating a state infection to an observable output.
 %\end{itemize}
 
 %\end{itemize}

@@ -18,7 +18,7 @@ We conducted experiments on four programs and their 67 versions (in total) colle
 %	\\ \textbf{RQ4.} How many more tests does Pex, with the assistance of \CodeIn{eXpress}, generate that execute changed regions between the two versions of a program?
 %	\\ \textbf{RQ5.} How many more tests does Pex, with the assistance of \CodeIn{eXpress}, generate that infect the program states?
 %	\\ \textbf{RQ6.} How many more tests does Pex, with the assistance of \CodeIn{eXpress}, generate that find behavioral differences?
-		\\ \textbf{RQ2.} How many fewer DSE runs and how much fewer amount of time does \CodeIn{eXpress} require to infect the program state using our code instrumentation technique than without using the technique?
+		\\ \textbf{RQ2.} How many fewer DSE runsdoes \CodeIn{eXpress} require to infect the program state using our code instrumentation technique than without using the technique?
 	\\ \textbf{RQ3.} How many fewer DSE runs and how much fewer amount of time does Pex require to find behavior differences when the program exploration is seeded with the existing test suite?
 %		\Comment{
 %	\\ \textbf{RQ6.} Can the optimizations used in \CodeIn{Graph Builder} and \CodeIn{Graph Traverser} components of \CodeIn{eXpress} efficiently reduce the time to find irrelevant branches that cannot help in satisfying E of the PIE model?
@@ -125,8 +125,8 @@ To address RQ3, we compare the number of DSE runs and the amount of time require
 
 \Comment{we compare the number of runs required by the default search strategy in Pex with the number of runs required by \CodeIn{eXpress} to propagate the state infection to an observable output. To address RQ4 we compare the time taken to find irrelevant branches using \CodeIn{eXpress} with and without optimizations. }
 
-Currently, we have not automated our Code-Instrumentation technique. In future, we plan to automate the technique.  
-The rest of the approach is fully automated and is implemented in a tool as an extension\footnote{\url{http://pexase.codeplex.com/}} to Pex~\cite{Pex}. We developed its components to statically find irrelevant branches as a .NET Reflector\footnote{\url{http://www.red-gate.com/products/reflector/}} AddIn.
+Currently, we have not automated our code-instrumentation technique. In future, we plan to automate the technique.  
+The rest of the approach is fully automated and is implemented in a tool as an extension\footnote{\scriptsize\url{http://pexase.codeplex.com/}} to Pex~\cite{Pex}. We developed its components to statically find irrelevant branches as a .NET Reflector\footnote{\scriptsize\url{http://www.red-gate.com/products/reflector/}} AddIn.
 
 To find behavioral differences between two versions, we execute the tests generated for a new version on the original version.
 Behavioral differences are detected by a test if an assertion in the test fails. 
@@ -136,7 +136,7 @@ Behavioral differences are detected by a test if an assertion in the test fails.
 \begin{center}
 \vspace{-1cm}
 \caption {\label{table:all_results}\scriptsize{Experimental results}}
-\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|c|c|}
+\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
 %&&\multicolumn{3}{|c|}{Execution}&\multicolumn{3}{|c|}{Infection}&\multicolumn{6}{|c|}{Propagation}\\ 
 %\hline
@@ -144,17 +144,18 @@ S &\CenterCell{V} %&\CenterCell{$E_{\CodeIn{Pex}}$}&\CenterCell{$E_{Red}(\%)$}
 %&\CenterCell{$M_i$}
 %&\CenterCell{$I_{\CodeIn{Pex}}$}&\CenterCell{$I_{Red}(\%)$}
 %&\CenterCell{$M_e$}
-&\CenterCell{$P_{\CodeIn{Pex}}$}&\CenterCell{$P_{Red}(\%)$}
+&\CenterCell{$P_{Pex}$}&\CenterCell{$P_{Red}(\%)$}
 &\CenterCell{$M_p$}
-&\CenterCell{$Tp_{\CodeIn{Pex}}$}&\CenterCell{$Ts$+ $T_d$}&\CenterCell{$Tp_{Red}(\%)$}
+&\CenterCell{$Tp_{Pex}$}&\CenterCell{$Ts$+ $T_d$}&\CenterCell{$Tp_{Red}(\%)$}
+&\CenterCell{$I_{i}$}&\CenterCell{$I_{wi}$}
 %&\CenterCell{$M/A$}
 \\
 
 \hline
-replace	&32		&		10312	&	75	&	49		&		711	& 235	&		67	 \\ \hline
-siena		&17		&		7301	&	42	&	15	&		1011	& 628&	38			\\ \hline
-STPG		&2		&		378		&	32	&	32		&		353	&	255	& 28\\ \hline
-Total		&51		&		17613	&	62		&			&		1722	&		863	& 50\\
+replace	&32		&		10312	&	75	&	49		&		711	& 235	&		67	& 2511& 2235\\ \hline
+siena		&17		&		7301	&	42	&	15	&		1011	& 628&	38	&&		\\ \hline
+STPG		&2		&		378		&	32	&	32		&		353	&	255	& 28 &&\\ \hline
+Total		&51		&		17613	&	62		&			&		1722	&		863	& 50 &&\\
 \hline
 %\multicolumn{7}{|c|}{-----------------------------structorian-----------------------------}&\\
 %\hline
@@ -170,8 +171,8 @@ Total		&51		&		17613	&	62		&			&		1722	&		863	& 50\\
 %\hline
 %SL&174-175&102			&26.5				&-				&102				&26.5					&			-			&			-		&-		&-			&-		&-			&-	\\
 %\hline
-Total(SL)&		6		&4526			&62		&52			&146.6&	89.1	&39\\
-%\hline
+Total(SL)&		6		&4526			&62		&52			&146.6&	89.1	&39&&\\
+\hline
 %\hline
 
 %SP&2-5		&10000*		&81					&-				&10000*			&74						&			-			&10000*		&74		&-			&1hr	& 35min	 &41.7\\
@@ -196,7 +197,7 @@ Total(SL)&		6		&4526			&62		&52			&146.6&	89.1	&39\\
 %\hline
 %SP&40-45	&-				&-					&-				&-					&-						&-					&-				&-		&-			&-				&-		&-\\
 %\hline
-Total(SP)&    10      &49889		&68		&77			&5hr			&3.25hr	&35\\
+Total(SP)&    10      &49889		&68		&77			&5hr			&3.25hr	&35&&\\
 \hline
 
 \end{tabular}
@@ -286,7 +287,7 @@ Total(SP)&    10      &49889		&68		&77			&5hr			&3.25hr	&35\\
 \\ \textbf{Experimental Results.} 
 Table~\ref{table:all_results} shows the experimental results. Due to space limit, we provide only  the total, average, and median values.
 %for the subjects \CodeIn{replace}, \CodeIn{siena}, and \CodeIn{STPG}. 
-The detailed results for experiments on all the versions of these subjects are available on our project web\footnote{\url{https://sites.google.com/site/asergrp/projects/express/}}.
+The detailed results for experiments on all the versions of these subjects are available on our project web\footnote{\scriptsize\url{https://sites.google.com/site/asergrp/projects/express/}}.
 %However, we provide detailed results for \CodeIn{structorian} in this paper. \Comment{Some of the changes in \CodeIn{structorian} could not be executed by Pex but were executed by \CodeIn{eXpress} due to which we do not include }
 
 Column $S$ shows the name of the subject. For \CodeIn{structorian}, the column shows the class name. The class \CodeIn{StructLexer} is denoted by SL and the class \CodeIn{StructParser} is denoted by SP. 
@@ -337,27 +338,27 @@ Column $T_{PRed}$ shows the average percentage reduction in amount of time taken
 %}
 %\\ \textbf{Results of siena. }We observe that the behavioral differences between five of the version pairs of \CodeIn{siena} are found within ten runs by Pex and Pex+eXpress. For these version pairs, there is no reduction in the number of runs . The reason for the preceding phenomenon is that changes in these version pairs are close to the entry vertex in the CFG. Hence, these changes can be covered in a relatively small number of runs.  In two of the version pairs, changed regions were not covered by either Pex+eXpress or Pex. An exception is thrown by the program before these changes could be executed. Pex and  Pex+eXpress were unable to generate a test input to avoid the exception. Changes between two of the version pairs were refactorings due to which the program state is never infected.
 
-We observe that, for replace, Pex+eXpress took 75\% fewer runs (median 49\%) and 67\% fewer amount of time in finding behavioral differences. 
+We observe that, for replace, Pex+eXpress took 75\% fewer runs (median 49\%) and 67\% fewer amount of time in finding behavioral differences.
+For siena, Pex+eXpress found behavioral differences in 42\% fewer runs(median 15\%) and 38\% fewer amount of time than Pex. In addition, Pex+eXpress detected  behavioral differences for two changes that were not detected by Pex within a bound of 5 minutes.
 %For two of the changes in siena, behavioral differences could not be detected by Pex within a bound of 5 minutes but they were detected by Pex+eXpress. 
 %We use 5 minutes for calculating the total values in the column $Tp_pex$ and the number of DSE runs performed during five minutes in the column $P_Pex$.  
-For siena, Pex+eXpress found behavioral differences in 42\% fewer runs(median 15\%) and 38\% fewer amount of time than Pex. In addition, Pex+eXpress detected  behavioral differences for two changes that were not detected by Pex within a bound of 5 minutes.
+
 %\Comment{
 %We also observe that the total number of branches in the control flow graph change from version to version. The preceding phenomenon is because our \CodeIn{InterProceduralCFG} algorithm (Algorithm~\ref{alg:factorial}) results in a different CFG based on the location of the changes. In our experiments, we used two PUTs: one invoking \CodeIn{decode} and the other invoking \CodeIn{encode} as some of the changes are transitively reachable from \CodeIn{decode}, while the others are transitively reachable from \CodeIn{encode}. The CFGs with \CodeIn{encode} as starting method are significantly smaller in size in comparison with the CFGs with \CodeIn{decode} as starting method.
 %}
-\\ \textbf{Results of structorian.} 
+%\\ \textbf{Results of structorian.} 
 %The six rows with $SL$ in column $S$ of Table~\ref{table:all_results} show the experimental results for changes in the class \CodeIn{StructLexer}, 
 % while the last 10 rows (with $SP$ in column $S$) show the experimental results on versions of the class \CodeIn{StructParser}. 
  For two versions of \CodeIn{StructLexer}, neither Pex nor Pex+eXpress were able to find behavioral differences. 
  For others, Pex+eXpress takes 62\% fewer runs (median 52\%) and 39\% fewer amount of time to find behavioral differences. 
  
  	Neither Pex+eXpress nor Pex was able to find behavioral differences between some version pairs of class \CodeIn{StructParser} in 5 minutes (a bound that we use in our experiments for all subjects). For these version pairs, we increased the bound to 1 hour (or 10000 runs). Pex was not able to find behavioral differences for 4 version pairs even in 1 hour, while Pex+eXpress found behavioral differences for all these version pairs. If Pex was unable to detect behavioral differences within the bound of 1 hour, we put the time in the column $T_{pex}$ as 1 hour 
- 	and the number of runs as 10000 (the bound on the number of runs) to calculate the total in the last row of Table~\ref{table:all_results}. Similarly, for the columns $E_{Pex}$ and $I_{Pex}$, we take the number of runs as 10000 if conditions E and I, respectively, are not satisfied within 10000 runs.
+ 	and the number of runs as 10000 (the bound on the number of runs) to calculate the total in the last row of Table~\ref{table:all_results}.
  	
-  $Pex+eXpress$ takes non-trivial average time of 700 seconds to find irrelevant branches for the class \CodeIn{StructParser} due to a large number of method invocations. However, considering that most of the changes cannot be covered in 1 hour, the time taken to find irrelevant branches is substantially less. 
-  
+%  $Pex+eXpress$ takes non-trivial average time of 700 seconds to find irrelevant branches for the class \CodeIn{StructParser} due to a large number of method invocations. However, considering that most of the changes cannot be covered in 1 hour, the time taken to find irrelevant branches is substantially less. 
   Changes between two version pairs (40-45 and 40-47) could not be covered by either $Pex$ nor $Pex+eXpress$. One of the changes (between version pairs 47-50) was a refactoring. For this version pair, program state was infected but no behavioral differences were detected by either $Pex$ or $Pex+eXpress$.
    
-  In summary, $Pex+eXpress$ was able to detect behavioral differences for four of the version pairs that could not be detected by Pex. On average, Pex was able to find behavioral differences in 68\% fewer runs (median 77\%) and 35\% fewer amount of time. 
+  In summary, for structorian, $Pex+eXpress$ was able to detect behavioral differences for four of the version pairs that could not be detected by Pex. On average, Pex was able to find behavioral differences in 68\% fewer runs (median 77\%) and 35\% fewer amount of time. 
   The reduction in number of runs is substantially larger than reduction in amount of time due to non-trivial time taken by 
   $eXpress$ in finding irrelevant branches.
 %\begin{table}
@@ -383,6 +384,17 @@ For siena, Pex+eXpress found behavioral differences in 42\% fewer runs(median 15
 %\end{CodeOut}
 %\vspace{-0.5in}
 %\end{table}
+\\ \textbf{Code Instrumentation  Technique.} Column $I_i$ in Table~\ref{table:all_results} shows the DSE runs taken 
+to achieve
+state infection by \CodeIn{eXpress}, while Column $I_{wi}$ shows the DSE runs taken to achieve
+state infection by \CodeIn{eXpress} without the
+code-instrumentation technique (referred to as $\CodeIn{eXpress}_{wi}$). 
+For $replace$, \CodeIn{eXpress} infects the program state in 11\% fewer DSE runs. 
+In addition, the added branches in the code,
+help in infecting the program state for 3 versions of $replace$ for which $\CodeIn{eXpress}_{wi}$ did not infect the 
+program state in a bound of 5 minutes. For 3 versions, $\CodeIn{eXpress}_{wi}$ 
+takes more DSE runs to infect the program state. We suspect the preceding phenomenon
+is due to extra branches (in the changed region of original version) added to the source code.
 \\ \textbf{Seeding program exploration with existing tests.} Table~\ref{table:rq5} shows the results obtained by using the existing test suite to seed the program exploration. Column $C$ shows the class name. Column $V$ shows the pair of version numbers. \Comment{Column $N_{Pex}$ shows the number of DSE runs required by Pex to find behavioral differences. Column $Np_{seed}$ shows the number of DSE runs required by Pex to find behavioral differences using our approach of seeding the exploration with the existing test suite. Column $N_{e}$ shows the number of DSE runs required by Pex to find behavioral differences. Column $Ne_{seed}$ shows the number of DSE runs required by Pex+eXpress to cover all the blocks in all the changed regions by using our approach of seeding the exploration with the existing test suite.}The next four columns show the number of runs and time taken by the four techniques: Pex, Pex with seeding, Pex+eXpress, and Pex+eXpress with seeding, respectively, for  finding behavioral differences. 
 Note that DSE runs required by our Incremental Exploration also includes the seeded test runs.
  
@@ -402,7 +414,9 @@ with seeding due to time taken by Pex+eXpress in finding irrelevant branches.
 \begin{CodeOut}
 \begin{center}
 \begin{tiny}
-\caption {\label{table:rq5}\scriptsize{Results obtained by seeding existing test suite for structorian}}
+\vspace{-0.7cm}
+\caption {\label{table:rq5}\scriptsize{Results obtained by seeding existing test suite for structorian.}}
+\vspace{-0.3cm}
 \begin {tabular} {|l|c|c|c|c|c|c|}
 \hline
 C & \CenterCell{V} &\CenterCell{$N_{Pex}/T$}&\CenterCell{$Np_{seed}/T$} &\CenterCell{$N_{eXpress}/T$} &\CenterCell{$Ne_{seed}$/T}\\
@@ -429,7 +443,7 @@ SL&9-139		&2988/2m			&69/1m			&1002/1m				&52/1m\\
 Total&			&64476/6.5hr		&20934/2hr8m				&41568/5hr9m					&10683/2hr3m\\
 \hline
 \end{tabular}\\
-$^*$\CodeIn{If behavior differences are not detected, we take the number of runs as 10,000 (the maximum number of runs that we ran our experiments with)} 
+$^*$\scriptsize{If behavior differences are not detected, we take the number of runs as 10,000 (the maximum number of runs that we ran our experiments with)} 
 \end{tiny}
 \end{center}
 \end{CodeOut}
@@ -452,169 +466,169 @@ runs on average than the existing search strategy in Pex to infect the program s
 }
 %\end{itemize}
 
-\Comment{
-\section{Threats To Validity}
-\label{sec:validity}
-The threats to external validity primarily include the degree to which the subject programs, faults, or program
-changes are representative of true practice.
-One of our subject \CodeIn{replace} is taken from the SIR~\cite{doESE05}.  Most of the faulty
-versions available for \CodeIn{replace} at the SIR involve manually seeded
-faults including one or two lines. The subject has also been used for experiments by evaluating various approaches~\cite{burnim, xie06:augmenting}.
-The other subject STPG is an open source software program taken codeplex website. The three versions used in our experiments are the three most recent snapshots in the code repository for STPG. The two versions contain changes on regions involving 10 and 15 lines, respectively. These threats could be further
-reduced by experiments on more subjects. The main threats to internal validity include faults in our tool implementation, faults in Pex that we use to generate tests, and the instrumentation effects that can bias our
-results. 
-To reduce these threats, we have manually inspected the artifacts (such as control flow graphs, irrelevant branches, and generated tests) for some versions. 
-}
+%\Comment{
+%\section{Threats To Validity}
+%\label{sec:validity}
+%The threats to external validity primarily include the degree to which the subject programs, faults, or program
+%changes are representative of true practice.
+%One of our subject \CodeIn{replace} is taken from the SIR~\cite{doESE05}.  Most of the faulty
+%versions available for \CodeIn{replace} at the SIR involve manually seeded
+%faults including one or two lines. The subject has also been used for experiments by evaluating various approaches~\cite{burnim, xie06:augmenting}.
+%The other subject STPG is an open source software program taken codeplex website. The three versions used in our experiments are the three most recent snapshots in the code repository for STPG. The two versions contain changes on regions involving 10 and 15 lines, respectively. These threats could be further
+%reduced by experiments on more subjects. The main threats to internal validity include faults in our tool implementation, faults in Pex that we use to generate tests, and the instrumentation effects that can bias our
+%results. 
+%To reduce these threats, we have manually inspected the artifacts (such as control flow graphs, irrelevant branches, and generated tests) for some versions. 
+%}
 
 
- \Comment{
-\begin{table*}
-\begin{CodeOut}
-\begin{center}
-\caption {\label{table:results}Experimental Results}
-\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|}
-\hline
-&&\multicolumn{3}{|c|}{Execution}&\multicolumn{3}{|c|}{Infection}&\multicolumn{3}{|c|}{Optimization for Finding Irrelevant Branches }\\ 
-\hline
-Subject&\CenterCell{Version} &\CenterCell{$E_{\CodeIn{Pex}}$}&\CenterCell{$E_{\CodeIn{eXpress}}$}&\CenterCell{$E_{Reduction}(\%)$}&\CenterCell{$I_{\CodeIn{Pex}}$}&\CenterCell{$I_{\CodeIn{eXpress}}$}&\CenterCell{$I_{Reduction}(\%)$}&\CenterCell{$T_{optimized}(s)$}&\CenterCell{$T_{unoptimized}(s)$} &\CenterCell{Irrelevant}\\
+% \Comment{
+%\begin{table*}
+%\begin{CodeOut}
+%\begin{center}
+%\caption {\label{table:results}Experimental Results}
+%\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|}
+%\hline
+%&&\multicolumn{3}{|c|}{Execution}&\multicolumn{3}{|c|}{Infection}&\multicolumn{3}{|c|}{Optimization for Finding Irrelevant Branches }\\ 
+%\hline
+%Subject&\CenterCell{Version} &\CenterCell{$E_{\CodeIn{Pex}}$}&\CenterCell{$E_{\CodeIn{eXpress}}$}&\CenterCell{$E_{Reduction}(\%)$}&\CenterCell{$I_{\CodeIn{Pex}}$}&\CenterCell{$I_{\CodeIn{eXpress}}$}&\CenterCell{$I_{Reduction}(\%)$}&\CenterCell{$T_{optimized}(s)$}&\CenterCell{$T_{unoptimized}(s)$} &\CenterCell{Irrelevant}\\
+%
+%\hline
+%\hline replace &1&7&7&0&16&14&12.5&4&21.2&137\\
+%\hline replace &2&7&7&0&79&65&17.7&4&23.5&137\\
+%\hline replace &3&28&28&0&-&-&-&0.3&25.6&15\\
+%\hline replace &4&28&28&0&133&133&0&0.3&24.3&15\\
+%\hline replace &5&240&150&37.5&240&158&34.2&12.9&18.6&137\\
+%\hline replace &6&317&83&73.8&317&83&73.8&0.3&21.3&17\\
+%\hline replace &7&60&32&46.7&128&58&54.7&11.7&25.6&137\\
+%\hline replace &8&60&32&46.7&133&133&0&6.4&25.5&137\\
+%\hline replace &9&13&13&0&243&102&58&7&22.2&140\\
+%\hline replace &10&13&13&0&152&111&27&7&22.2&140\\
+%\hline replace &11&13&13&0&224&138&38.4&7.5&23.5&140\\
+%%\hline replace &12&F&F&F&F&F&&&&\\
+%%\hline replace &13&F&F&F&F&F&&&&\\
+%\hline replace &14&-&-&-&-&-&-&-&-&-\\
+%\hline replace &15&4&4&0&4&4&0&3.4&18.9&15\\
+%\hline replace &16&60&32&46.7&126&123&2.4&3.6&19.9&137\\
+%\hline replace &17&15&15&0&15&15&0&6.3&26.3&137\\
+%\hline replace &18&-&-&-&-&-&-&-&-&-\\
+%\hline replace &20&15&15&0&15&15&0&6.3&26.5&137\\
+%%\hline replace &21&F&F&F&F&F&&&&\\
+%\hline replace &22&6&6&0&-&-&-&21.3&29.4&138\\
+%\hline replace &23&6&6&0&6&6&0&21.4&29.5&112\\
+%\hline replace &24&6&6&0&15&15&0&21.4&29.5&112\\
+%\hline replace &25&425&95&77.6&465&132&71.6&0.5&19.1&18\\
+%\hline replace &26&425&95&77.6&469&133&71.6&0.5&19.1&18\\
+%\hline replace &27&-&-&-&-&-&-&-&-&-\\
+%\hline replace &28&60&32&46.7&182&123&32.42&3.6&27.3&137\\
+%\hline replace &29&60&32&46.7&182&123&32.42&3.6&27.3&137\\
+%\hline replace &30&60&32&46.7&60&32&46.7&3.6&27.1&137\\
+%\hline replace &31&-&-&-&-&-&-&-&-&-\\
+%\hline replace &32&13&13&0&-&-&-&6.5&20.5&140\\
+%\hline
+%\hline STPG &1&141&125&11.3&178&127&28.7&0.7&-&16\\
+%\hline STPG &2&200&125&37.5&200&128&36&0.7&-&16\\
+%\hline Total &&2287&1039&54.6&3581&1971&45&164.8&-&2559\\
+%\hline
+%\end{tabular}
+%\end{center}
+%\end{CodeOut}
+%\end{table*}
+%}
 
-\hline
-\hline replace &1&7&7&0&16&14&12.5&4&21.2&137\\
-\hline replace &2&7&7&0&79&65&17.7&4&23.5&137\\
-\hline replace &3&28&28&0&-&-&-&0.3&25.6&15\\
-\hline replace &4&28&28&0&133&133&0&0.3&24.3&15\\
-\hline replace &5&240&150&37.5&240&158&34.2&12.9&18.6&137\\
-\hline replace &6&317&83&73.8&317&83&73.8&0.3&21.3&17\\
-\hline replace &7&60&32&46.7&128&58&54.7&11.7&25.6&137\\
-\hline replace &8&60&32&46.7&133&133&0&6.4&25.5&137\\
-\hline replace &9&13&13&0&243&102&58&7&22.2&140\\
-\hline replace &10&13&13&0&152&111&27&7&22.2&140\\
-\hline replace &11&13&13&0&224&138&38.4&7.5&23.5&140\\
-%\hline replace &12&F&F&F&F&F&&&&\\
-%\hline replace &13&F&F&F&F&F&&&&\\
-\hline replace &14&-&-&-&-&-&-&-&-&-\\
-\hline replace &15&4&4&0&4&4&0&3.4&18.9&15\\
-\hline replace &16&60&32&46.7&126&123&2.4&3.6&19.9&137\\
-\hline replace &17&15&15&0&15&15&0&6.3&26.3&137\\
-\hline replace &18&-&-&-&-&-&-&-&-&-\\
-\hline replace &20&15&15&0&15&15&0&6.3&26.5&137\\
-%\hline replace &21&F&F&F&F&F&&&&\\
-\hline replace &22&6&6&0&-&-&-&21.3&29.4&138\\
-\hline replace &23&6&6&0&6&6&0&21.4&29.5&112\\
-\hline replace &24&6&6&0&15&15&0&21.4&29.5&112\\
-\hline replace &25&425&95&77.6&465&132&71.6&0.5&19.1&18\\
-\hline replace &26&425&95&77.6&469&133&71.6&0.5&19.1&18\\
-\hline replace &27&-&-&-&-&-&-&-&-&-\\
-\hline replace &28&60&32&46.7&182&123&32.42&3.6&27.3&137\\
-\hline replace &29&60&32&46.7&182&123&32.42&3.6&27.3&137\\
-\hline replace &30&60&32&46.7&60&32&46.7&3.6&27.1&137\\
-\hline replace &31&-&-&-&-&-&-&-&-&-\\
-\hline replace &32&13&13&0&-&-&-&6.5&20.5&140\\
-\hline
-\hline STPG &1&141&125&11.3&178&127&28.7&0.7&-&16\\
-\hline STPG &2&200&125&37.5&200&128&36&0.7&-&16\\
-\hline Total &&2287&1039&54.6&3581&1971&45&164.8&-&2559\\
-\hline
-\end{tabular}
-\end{center}
-\end{CodeOut}
-\end{table*}
-}
 
 
-
-\Comment{
-\begin{table*}
-\begin{CodeOut}
-\begin{center}
-\caption {\label{table:siena_results}Experimental Results for replace, siena, and STPG}
-\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-&\multicolumn{6}{|c|}{Execution}&\multicolumn{6}{|c|}{Infection}&\multicolumn{4}{|c|}{Optimization for Finding Irrelevant Branches}\\ 
-\hline
-V &\CenterCell{$E_{\CodeIn{Pex}}$}&\CenterCell{$E_{\CodeIn{eXpress}}$}&\CenterCell{$E_{Red}(\%)$ }&\CenterCell{$Te_{\CodeIn{Pex}}$}&\CenterCell{$Te_{\CodeIn{eXpress}}$}&\CenterCell{$Te_{Inc}(\%)$}&\CenterCell{$I_{\CodeIn{Pex}}$}&\CenterCell{$I_{\CodeIn{eXpress}}$}&\CenterCell{$I_{Red}(\%)$}&\CenterCell{$Ti_{\CodeIn{Pex}}$}&\CenterCell{$Ti_{\CodeIn{eXpress}}$}&\CenterCell{$Ti_{Inc}(\%)$}&\CenterCell{$T_{opt}(s)$}&\CenterCell{$T_{unopt}(s)$} &\CenterCell{$B_{Irr}$} &\CenterCell{$B_{Tot}$}\\
-\hline
-$v_1-v_2$&5&5&0&19&43&111.1&30&27&10&12&18&50&0.93&&133&178\\
-\hline
-$v_2-v_3$&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&1.1&&15&248\\
-\hline
-$v_3-v_4$(d)&50&12&76&121&316&161.2&50&12&76&115&292&153.9&1.1&&15&248\\
-$v_3-v_4$(e)&3&3&0&36&98&172.2&3&3&0&28&88&214.3&1.1&&19&46\\
-\hline
-$v_4-v_5$&8&8&0&113&116&2.7&NR&NR&-&-&-&-&16.2&&24&256\\
-\hline
-$v_5-v_6$&23&17&26.1&25&81&224&33&24&27.3&12&23&91.67&1.37&&29&268\\
-\hline
-$v_6-v_7$&-&-&-&-&-&-&-&-&-&-&-&-&2.1&-&0&254\\
-\hline
-
-$v_7-v_8$&21&3&85.7&13&45&246.2&21&3&85.7&13&45&246.2&1.23&&24&50\\
-\hline \hline
-
-$v_0-v_9$&60&35&41.7&3&10&233&60&35&41.7&3&10&233&17.8&&145&242\\
-\hline
-$v_0-v_{10}$&33&27&18.2&11&18&63.6&NA&NA&-&-&-&-&1.1&&27&242\\
-\hline
-$v_0-v_{11}$&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&1.1&&15&248\\
-\hline
-$v_0-v_{12}$&20&7&65&5&8&60&20&7&65&5&5&60&1.3&&24&46\\
-\hline
-$v_0-v_{13}$&8&8&0&113&116&2.65&8&8&0&113&116&2.65&18.7&&24&242\\
-\hline
-$v_0-v_{14}$&17&17&0&56&60&5.3&21&19&9.5&20&25&25&1.17&&24&242\\
-\hline
-$v_0-v_{15}$&8&8&0&30&30&0&8&8&0&3&3&0&1.17&&24&242\\
-\hline
-$v_0-v_{16}$&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&1.1&&15&248\\
-\hline
-$v_0-v_{17}$&30&26&13.3&10&283&2730&30&26&13.3&10&283&2730&1.3&&19&46\\
-\hline
-\Comment{
-siena&3&5&5&0&18&38&111.1&&&&&&&0.93&&133&178\\
-\hline
-siena&4&33&27&18.2&11&18&63.6&&&&&&&1.1&&157&240\\
-\hline
-siena&5&NR&NR&NR&NR&NR&NR&&&&&&&1.1&&15&248\\
-\hline
-siena&6&47&12&74.5&12&35&191.7&&&&&&&1.1&&119&246\\
-\hline
-siena&7&20&7&65&5&8&60&&&&&&&1.3&&24&46\\
-\hline
-siena&8&3&3&0&36&98&172&&&&&&&1.21&&25&48\\
-\hline
-siena&9&8&8&0&113&116&2.65&&&&&&&18.7&&24&242\\
-\hline
-siena&10&8&8&0&28&73&161&&&&&&&1.05&&24&242\\
-\hline
-siena&11&3&3&0&36&98&172&&&&&&&1.21&&25&48\\
-\hline
-siena&12&23&17&26.1&3&44&1367&&&&&&&1.25&&22&48\\
-\hline
-siena&13&21&21&0&4&4&0&&&&&&&1.45&&32&46\\
-\hline
-siena&14&NR&NR&NR&NR&NR&NR&&&&&&&1.1&&15&248\\
-\hline
-siena&15&30&26&13.33&8&21&162.5&&&&&&&1.18&&159&242\\
-\hline
-siena&16&20&7&65&5&8&60&&&&&&&1.3&&24&46\\
-\hline
-siena&17&8&8&0&113&116&2.65&&&&&&&18.7&&24&242\\
-\hline
-siena&18&8&8&0&28&73&161&&&&&&&1.05&&24&242\\
-\hline
-siena&19&23&17&26.1&3&44&1367&&&&&&&1.25&&22&48\\
-\hline
-siena&20&3&3&0&36&98&172&&&&&&&1.21&&25&48\\
-\hline
-}
-\hline
-Total&286&166&42&549&1214&121.1&284&172&39.4&336&908&170.2&&576&3146&\\
-\hline
-\end{tabular}
-\end{center}
-\end{CodeOut}
-\end{table*}
-}
+%\Comment{
+%\begin{table*}
+%\begin{CodeOut}
+%\begin{center}
+%\caption {\label{table:siena_results}Experimental Results for replace, siena, and STPG}
+%\begin {tabular} {|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+%\hline
+%&\multicolumn{6}{|c|}{Execution}&\multicolumn{6}{|c|}{Infection}&\multicolumn{4}{|c|}{Optimization for Finding Irrelevant Branches}\\ 
+%\hline
+%V &\CenterCell{$E_{\CodeIn{Pex}}$}&\CenterCell{$E_{\CodeIn{eXpress}}$}&\CenterCell{$E_{Red}(\%)$ }&\CenterCell{$Te_{\CodeIn{Pex}}$}&\CenterCell{$Te_{\CodeIn{eXpress}}$}&\CenterCell{$Te_{Inc}(\%)$}&\CenterCell{$I_{\CodeIn{Pex}}$}&\CenterCell{$I_{\CodeIn{eXpress}}$}&\CenterCell{$I_{Red}(\%)$}&\CenterCell{$Ti_{\CodeIn{Pex}}$}&\CenterCell{$Ti_{\CodeIn{eXpress}}$}&\CenterCell{$Ti_{Inc}(\%)$}&\CenterCell{$T_{opt}(s)$}&\CenterCell{$T_{unopt}(s)$} &\CenterCell{$B_{Irr}$} &\CenterCell{$B_{Tot}$}\\
+%\hline
+%$v_1-v_2$&5&5&0&19&43&111.1&30&27&10&12&18&50&0.93&&133&178\\
+%\hline
+%$v_2-v_3$&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&1.1&&15&248\\
+%\hline
+%$v_3-v_4$(d)&50&12&76&121&316&161.2&50&12&76&115&292&153.9&1.1&&15&248\\
+%$v_3-v_4$(e)&3&3&0&36&98&172.2&3&3&0&28&88&214.3&1.1&&19&46\\
+%\hline
+%$v_4-v_5$&8&8&0&113&116&2.7&NR&NR&-&-&-&-&16.2&&24&256\\
+%\hline
+%$v_5-v_6$&23&17&26.1&25&81&224&33&24&27.3&12&23&91.67&1.37&&29&268\\
+%\hline
+%$v_6-v_7$&-&-&-&-&-&-&-&-&-&-&-&-&2.1&-&0&254\\
+%\hline
+%
+%$v_7-v_8$&21&3&85.7&13&45&246.2&21&3&85.7&13&45&246.2&1.23&&24&50\\
+%\hline \hline
+%
+%$v_0-v_9$&60&35&41.7&3&10&233&60&35&41.7&3&10&233&17.8&&145&242\\
+%\hline
+%$v_0-v_{10}$&33&27&18.2&11&18&63.6&NA&NA&-&-&-&-&1.1&&27&242\\
+%\hline
+%$v_0-v_{11}$&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&1.1&&15&248\\
+%\hline
+%$v_0-v_{12}$&20&7&65&5&8&60&20&7&65&5&5&60&1.3&&24&46\\
+%\hline
+%$v_0-v_{13}$&8&8&0&113&116&2.65&8&8&0&113&116&2.65&18.7&&24&242\\
+%\hline
+%$v_0-v_{14}$&17&17&0&56&60&5.3&21&19&9.5&20&25&25&1.17&&24&242\\
+%\hline
+%$v_0-v_{15}$&8&8&0&30&30&0&8&8&0&3&3&0&1.17&&24&242\\
+%\hline
+%$v_0-v_{16}$&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&NR&1.1&&15&248\\
+%\hline
+%$v_0-v_{17}$&30&26&13.3&10&283&2730&30&26&13.3&10&283&2730&1.3&&19&46\\
+%\hline
+%\Comment{
+%siena&3&5&5&0&18&38&111.1&&&&&&&0.93&&133&178\\
+%\hline
+%siena&4&33&27&18.2&11&18&63.6&&&&&&&1.1&&157&240\\
+%\hline
+%siena&5&NR&NR&NR&NR&NR&NR&&&&&&&1.1&&15&248\\
+%\hline
+%siena&6&47&12&74.5&12&35&191.7&&&&&&&1.1&&119&246\\
+%\hline
+%siena&7&20&7&65&5&8&60&&&&&&&1.3&&24&46\\
+%\hline
+%siena&8&3&3&0&36&98&172&&&&&&&1.21&&25&48\\
+%\hline
+%siena&9&8&8&0&113&116&2.65&&&&&&&18.7&&24&242\\
+%\hline
+%siena&10&8&8&0&28&73&161&&&&&&&1.05&&24&242\\
+%\hline
+%siena&11&3&3&0&36&98&172&&&&&&&1.21&&25&48\\
+%\hline
+%siena&12&23&17&26.1&3&44&1367&&&&&&&1.25&&22&48\\
+%\hline
+%siena&13&21&21&0&4&4&0&&&&&&&1.45&&32&46\\
+%\hline
+%siena&14&NR&NR&NR&NR&NR&NR&&&&&&&1.1&&15&248\\
+%\hline
+%siena&15&30&26&13.33&8&21&162.5&&&&&&&1.18&&159&242\\
+%\hline
+%siena&16&20&7&65&5&8&60&&&&&&&1.3&&24&46\\
+%\hline
+%siena&17&8&8&0&113&116&2.65&&&&&&&18.7&&24&242\\
+%\hline
+%siena&18&8&8&0&28&73&161&&&&&&&1.05&&24&242\\
+%\hline
+%siena&19&23&17&26.1&3&44&1367&&&&&&&1.25&&22&48\\
+%\hline
+%siena&20&3&3&0&36&98&172&&&&&&&1.21&&25&48\\
+%\hline
+%}
+%\hline
+%Total&286&166&42&549&1214&121.1&284&172&39.4&336&908&170.2&&576&3146&\\
+%\hline
+%\end{tabular}
+%\end{center}
+%\end{CodeOut}
+%\end{table*}
+%}
 
 \Comment{
 \begin{table*}
@@ -675,11 +689,11 @@ SP&40-45&NR&8214&-&-&-&-&-&8276&-&-&-&-&810&&&38&430\\
 \end{tiny}
 \end{table*}
 }
-\Comment{
-\subsection{Summary}
-Over the evaluations address the seven research questions that we posed at the beginning of these section.
-\\ \textbf{RQ1.}
-\\ \textbf{RQ2.}
-\\ \textbf{RQ3.}
-\\ \textbf{RQ4.}
-}
+%\Comment{
+%\subsection{Summary}
+%Over the evaluations address the seven research questions that we posed at the beginning of these section.
+%\\ \textbf{RQ1.}
+%\\ \textbf{RQ2.}
+%\\ \textbf{RQ3.}
+%\\ \textbf{RQ4.}
+%}
