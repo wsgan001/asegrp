@@ -1,0 +1,155 @@
+\begin{thebibliography}{10}
+
+\bibitem{ancona2007provenly}
+D.~Ancona, C.~Anderson, F.~Damiani, S.~Drossopoulou, P.~Giannini, and E.~Zucca.
+\newblock {A provenly correct translation of Fickle into Java}.
+\newblock {\em ACM Transactions on Programming Languages and Systems},
+  29(2):13, 2007.
+
+\bibitem{appeltauer2009comparison}
+M.~Appeltauer, R.~Hirschfeld, M.~Haupt, J.~Lincke, and M.~Perscheid.
+\newblock {A comparison of context-oriented programming languages}.
+\newblock In {\em Proc. COP co-located with ECOOP 2009}, pages 1--6, 2009.
+
+\bibitem{balaban2005refactoring}
+I.~Balaban, F.~Tip, and R.~Fuhrer.
+\newblock {Refactoring support for class library migration}.
+\newblock In {\em Proc. 20th OOPSLA}, pages 265--279, 2005.
+
+\bibitem{cabral2007exception}
+B.~Cabral and P.~Marques.
+\newblock Exception handling: A field study in {Java and. Net}.
+\newblock {\em Proc. 21st ECOOP}, pages 151--175, 2007.
+
+\bibitem{CanforaFFT08}
+G.~Canfora, A.~R. Fasolino, G.~Frattolillo, and P.~Tramontana.
+\newblock A wrapping approach for migrating legacy system interactive
+  functionalities to service oriented architectures.
+\newblock {\em Journal of Systems and Software}, 81(4):463--480, 2008.
+
+\bibitem{daniel2007automated}
+B.~Daniel, D.~Dig, K.~Garcia, and D.~Marinov.
+\newblock Automated testing of refactoring engines.
+\newblock In {\em Proc. 6th ESEC/FSE}, pages 185--194, 2007.
+
+\bibitem{dig2009refactoring}
+D.~Dig, J.~Marrero, and M.~Ernst.
+\newblock {Refactoring sequential Java code for concurrency via concurrent
+  libraries}.
+\newblock In {\em Proc 31st ICSE}, pages 397--407, 2009.
+
+\bibitem{el2006experiment}
+M.~El-Ramly, R.~Eltayeb, and H.~Alla.
+\newblock An experiment in automatic conversion of legacy {Java} programs to
+  {C\#}.
+\newblock In {\em Proc. AICCSA}, pages 1037--1045, 2006.
+
+\bibitem{Garcia2003}
+R.~Garcia, J.~Jarvi, A.~Lumsdaine, J.~G. Siek, and J.~Willcock.
+\newblock A comparative study of language support for generic programming.
+\newblock In {\em Proc. 18th OOPSLA}, pages 115--134, 2003.
+
+\bibitem{godefroid:dart}
+P.~Godefroid, N.~Klarlund, and K.~Sen.
+\newblock {DART}: {D}irected automated random testing.
+\newblock In {\em Proc. PLDI}, pages 213--223, 2005.
+
+\bibitem{hassan2005lightweight}
+A.~Hassan and R.~Holt.
+\newblock {A lightweight approach for migrating Web frameworks}.
+\newblock {\em Information and Software Technology}, 47(8):521--532, 2005.
+
+\bibitem{henkel2005catchup}
+J.~Henkel and A.~Diwan.
+\newblock {CatchUp!: capturing and replaying refactorings to support API
+  evolution}.
+\newblock In {\em Proce. 27th ICSE}, pages 274--283, 2005.
+
+\bibitem{jin2010automated}
+W.~Jin, A.~Orso, and T.~Xie.
+\newblock Automated behavioral regression testing.
+\newblock In {\em Proc. 3rd ICST}, pages 137--146, 2010.
+
+\bibitem{jones1998estimating}
+T.~Jones.
+\newblock {\em {Estimating software costs}}.
+\newblock McGraw-Hill, Inc. Hightstown, NJ, USA, 1998.
+
+\bibitem{koushik:cute}
+S.~Koushik, M.~Darko, and A.~Gul.
+\newblock {CUTE: a concolic unit testing engine for C}.
+\newblock In {\em Proc. ESEC/FSE}, pages 263--272, 2005.
+
+\bibitem{mossienko2003automated}
+M.~Mossienko.
+\newblock {Automated COBOL to Java recycling}.
+\newblock In {\em Proc. 7th CSMR}, pages 40--50, 2003.
+
+\bibitem{nita2010using}
+M.~Nita and D.~Notkin.
+\newblock {Using twinning to adapt programs to alternative APIs}.
+\newblock In {\em Proc, 32nd ICSE}, pages 205--214, 2010.
+
+\bibitem{orso1using}
+A.~Orso, M.~Harrold, D.~Rosenblum, G.~Rothermel, M.~Soffa, and H.~Do.
+\newblock Using component metacontent to support the regression testing of
+  component-based software.
+\newblock In {\em Proc. ICSM}, pages 716--725, 2001.
+
+\bibitem{pacheco2007feedback}
+C.~Pacheco, S.~Lahiri, M.~Ernst, and T.~Ball.
+\newblock {Feedback-directed random test generation}.
+\newblock In {\em Proc. 29th ICSE}, pages 75--84, 2007.
+
+\bibitem{robillard2009makes}
+M.~Robillard.
+\newblock What makes {APIs} hard to learn? answers from developers.
+\newblock {\em IEEE Software}, pages 27--34, 2009.
+
+\bibitem{thummalapenta09:mseqgen}
+S.~Thummalapenta, T.~Xie, N.~Tillmann, P.~de~Halleux, and W.~Schulte.
+\newblock {MSeqGen}: Object-oriented unit-test generation via mining source
+  code.
+\newblock In {\em Proc. 7th ESEC/FSE}, pages 193--202, 2009.
+
+\bibitem{tillmann2008pex}
+N.~Tillmann and J.~De~Halleux.
+\newblock {Pex: white box test generation for. NET}.
+\newblock In {\em Proc. 2nd TAP}, pages 134--153, 2008.
+
+\bibitem{visser2003mcp}
+W.~Visser, K.~Havelund, G.~Brat, S.~Park, and F.~Lerda.
+\newblock {Model Checking Programs}.
+\newblock {\em Automated Software Engineering}, 10(2):203--232, 2003.
+
+\bibitem{waters1988program}
+R.~Waters.
+\newblock {Program translation via abstraction and reimplementation}.
+\newblock {\em IEEE Transactions on Software Engineering}, 14(8):1207--1228,
+  1988.
+
+\bibitem{xing2007api}
+Z.~Xing and E.~Stroulia.
+\newblock {API-evolution support with Diff-CatchUp}.
+\newblock {\em IEEE Transactions on Software Engineering}, 33(12):818--836,
+  2007.
+
+\bibitem{yasumatsu1995spice}
+K.~Yasumatsu and N.~Doi.
+\newblock {SPiCE: a system for translating Smalltalk programs into a C
+  environment}.
+\newblock {\em IEEE Transactions on Software Engineering}, 21(11):902--912,
+  1995.
+
+\bibitem{zhong2010mining}
+H.~Zhong, S.~Thummalapenta, T.~Xie, L.~Zhang, and Q.~Wang.
+\newblock {Mining API mapping for language migration}.
+\newblock In {\em Proc. 32nd ICSE}, pages 195--204, 2010.
+
+\bibitem{zhong09:inferring}
+H.~Zhong, L.~Zhang, T.~Xie, and H.~Mei.
+\newblock Inferring resource specifications from natural language {API}
+  documentation.
+\newblock In {\em Proc. 24th ASE}, pages 307--318, 2009.
+
+\end{thebibliography}

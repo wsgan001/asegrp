@@ -1,0 +1,114 @@
+
+%
+%  $Description: Author guidelines and sample document in LaTeX 2.09$
+%
+%  $Author: ienne $
+%  $Date: 1995/09/15 15:20:59 $
+%  $Revision: 1.4 $
+%
+
+\documentclass[oribibl]{llncs}
+\usepackage{url}
+%\usepackage{times}
+%\usepackage{diagrams}
+%\usepackage[all]{xy}
+\usepackage[ruled,vlined]{algorithm2e}
+%\usepackage{float}
+\input{macros}
+%\documentstyle[times,art10,twocolumn,latex8]{article}
+
+%-------------------------------------------------------------------------
+% take the % away on next line to produce the final camera-ready version
+\pagestyle{empty}
+
+%-------------------------------------------------------------------------
+\begin{document}
+
+%\conferenceinfo{ICSE}{'11, May 21-28 2011, Waikiki, Honolulu, Hawaii}
+%\CopyrightYear{2011}
+%\crdata{978-1-60558-719-6/10/05}
+
+
+\title{Automated Testing of API Mapping Relations}
+
+\author{
+Hao Zhong\inst{1}\and
+Suresh Thummalapenta\inst{2} \and
+Tao Xie\inst{2}}
+\institute{Laboratory for Internet Software Technologies, Institute of Software, Chinese Academy of Sciences, Beijing, 100190, China \email{zhonghao@nfs.iscas.ac.cn} \and
+Department of Computer Science, North Carolina State University, Raleigh, NC 27695-8206, USA \email{\{sthumma,txie\}@ncsu.edu}
+}
+
+%\numberofauthors{2}
+%\author{
+%% You can go ahead and credit any number of authors here,
+%% e.g. one 'row of three' or two rows (consisting of one row of three
+%% and a second row of one, two or three).
+%%
+%% The command \alignauthor (no curly braces needed) should
+%% precede each author name, affiliation/snail-mail address and
+%% e-mail address. Additionally, tag each line of
+%% affiliation/address with \affaddr, and tag the
+%% e-mail address with \email.
+%%
+%% 1st. author
+%\alignauthor
+%Hao Zhong\\
+%       \affaddr{Laboratory for Internet Software Technologies}\\
+%       \affaddr{Institute of Software}\\
+%       \affaddr{Chinese Academy of Sciences, China}\\
+%       \email{zhonghao@nfs.iscas.ac.cn}
+%% 2nd. author
+%\alignauthor
+%Suresh Thummalapenta and Tao Xie\\
+%       \affaddr{Department of Computer Science}\\
+%       \affaddr{North Carolina State University}\\
+%       \affaddr{Raleigh, NC 27695-8206, USA}\\
+%       \email{\{sthumma,txie\}@ncsu.edu}
+%}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+
+Software companies or open source organizations often release their applications in different languages to address business requirements such as platform independence. To produce the same applications in different languages, existing applications already in one language such as Java are translated to applications in a different language such as C\#. To translate applications from one language ($L_1$) to another language ($L_2$), programmers often use automatic translation tools. These translation tools use Application Programming Interface (API) mapping relations from $L_1$ to $L_2$ as a basis for translation. It is essential that API elements (\emph{i.e.}, classes, methods, and fields) of $L_1$ and their mapped API elements of $L_2$ (as described by API mapping relations) exhibit the same behavior, since any inconsistencies among these mapping relations could result in behavioral differences and defects in translated applications. Therefore, to detect behavioral differences between mapped API elements described in mapping relations, and thereby to effectively translate applications, we propose the first novel approach, called \emph{TeMAPI} (\textbf{Te}sting \textbf{M}apping relations of \textbf{API}s). In particular, given a translation tool, TeMAPI automatically generates test cases that expose behavioral differences between mapped API elements from mapping relations described in the tool. To show the effectiveness of our approach, we applied our approach on five popular translation tools. The results show that TeMAPI effectively detects various behavioral differences between mapped API elements. We summarize detected differences as eight findings and their implications. Our approach enables us to produce these findings that can improve effectiveness of translation tools, and also assist programmers in understanding the differences between mapped API elements of different languages.
+\end{abstract}\vspace*{-2ex} %% A category with the (minimum) three required fields
+%\category{D.2.13 Reusable Software}{Reusable Software}{Reusable libraries}\vspace*{-2ex}
+%%A category including the fourth, optional field follows...
+%\terms{API mapping relation, Language migration}\vspace*{-2ex}
+
+\input{body/introduction}
+%\input{body/background}
+%\input{body/mapping}
+\input{body/example}\vspace*{-1ex}
+\input{body/approach}\vspace*{-1ex}
+\input{body/experiment}\vspace*{-1ex}
+\input{body/discussion}\vspace*{-2ex}
+\input{body/related}\vspace*{-2ex}
+\input{body/conclusion}\vspace*{-1ex}
+
+%\section*{Acknowledgments}
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{latex8}  % sigproc.bib is the name of the Bibliography in this case
+
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+
+%\balancecolumns % GM June 2007
+% That's all folks!
+
+\end{document}
+
+
+
