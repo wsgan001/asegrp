@@ -1,9 +1,0 @@
-\section{Test Adequacy Criteria}
-\label{sec:mapping}
-As stated by Andrews \emph{et al.}~\cite{andrews2003test}, a test adequacy criterion is a predict, and a test suite is adequate with respect to a criterion only if all defined properties of the criterion are satisfied by the test suite. In this paper, we define two test adequacy criteria for API mapping relations as follows.
-
-\textbf{Path criterion.} Given an API invocation $inv$ in a language $L_1$, and its mapped API invocations $\psi(inv)$ in a language $L_2$, a adequate test suite should cover all internal paths of $inv$. This criterion ensures that  $\psi(inv)$ in $L_2$ return the same values with $inv$ in $L_1$ with respect to all paths of $inv$.
-
-\textbf{Sequence criterion.} Given API invocations $inv_{1},\ldots,inv_{m}$ in a language $L_1$ and its mapped API invocations $\psi(inv_{1},$ $\ldots,inv_{m})$ in a language $L_2$, a adequate test suite should cover all states of $obj$ with respect to the field criterion. This criterion ensures that  $\psi(inv_{1},$ $\ldots,inv_{m})$ in $L_2$ return the same values with $inv_{1},\ldots,inv_{m}$ in $L_1$ with respect to all call sequences of $inv_{1},\ldots,inv_{m}$.
-
-TeMaAPI targets at generating test cases that satisfy both the path criterion and the sequence criterion for testing API mapping relations.
