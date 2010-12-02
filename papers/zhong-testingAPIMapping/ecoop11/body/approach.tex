@@ -7,7 +7,7 @@
  \label{fig:approach}
 \end{figure}
 
-As shown in Figure~\ref{fig:approach}, given a translation tool between Java and C\#, TeMAPI generates various test cases to reveal behavioral differences of API mapping relations defined by the tool.
+As shown in Figure~\ref{fig:approach}, given a translation tool between Java and C\#, TeMAPI generates various test cases in Java and C\# to reveal behavioral differences of API mapping relations defined by the tool.
 
 
 %-------------------------------------------------------------------
@@ -70,8 +70,7 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
- public Tm test|m.name||no|nm(T1\ m1,\ldots, Tn\ mn,
-                            Tv cv, \ldots, Tt ct)\{
+ public Tm test|m.name||no|nm(T1\ m1,\ldots, Tn\ mn, Tv cv, \ldots, Tt ct)\{
    C obj = new C(cv,\ldots, ct);
    return obj.m(m1,\ldots, mn);
  \}
@@ -81,7 +80,7 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 TeMAPI groups all synthesized wrapper methods for one API class $C$ to one synthesized class. When synthesizing, TeMAPI ignores generic methods, since the translation tools cannot handle generics. Furthermore, when synthesizing wrappers for C\# API classes, TeMAPI ignores \CodeIn{unsafe} methods, \CodeIn{delegate} methods, and methods whose parameters are marked as \CodeIn{out} or \CodeIn{ref} besides generic methods. Java does not have these corresponding keywords, so existing translation tools typically do not translate the preceding methods. After wrapper methods are synthesized, TeMAPI uses the translation tool under analysis to translate wrapper methods to the other language.
 
-Our synthesized wrappers are quite simple in their structures, so existing translation tools are typically able to translate their structures correctly. Still, some translated wrappers can have compilation errors, since existing translation tools cannot translate some API elements. We use \emph{safe wrappers} to refer to those translated wrapper methods without compilation errors. To identify safe wrappers, TeMAPI extends Visual Studio and Eclipse's Java compiler for C\# and Java code, respectively. Comparing source code of safe wrappers with source code of synthesized wrappers, TeMAPI extracts one-to-one mapping relations of API classes for the tool under analysis. For example, by comparing the first statements of the \CodeIn{testskip24nm} method in Java and in C\# as shown in Section~\ref{sec:example}, TeMAPI extracts the mapping relation between the \CodeIn{ByteArrayInputStream} class in Java and the \CodeIn{MemoryStream} class in C\#. In addition, TeMAPI extracts translatable API methods for the tool under analysis. In the preceding example, TeMAPI adds \CodeIn{BufferedInputStream(InputStream)} constructor and the \CodeIn{skip (long)} method in Java to translatable API methods of JLCA, since their belonging wrapper method is translated from Java to C\# without compilation errors.
+Our synthesized wrappers are quite simple in their structures, so existing translation tools are typically able to translate their structures correctly. Still, some translated wrappers can have compilation errors, since existing translation tools cannot translate some API elements. We use \emph{safe wrappers} to refer to those translated wrapper methods without compilation errors. To identify safe wrappers, TeMAPI extends Visual Studio and Eclipse's Java compiler for C\# and Java code, respectively. Comparing source code of safe wrappers with source code of synthesized wrappers, TeMAPI extracts one-to-one mapping relations of API classes for the tool under analysis. For example, by comparing the first statements of the \CodeIn{testskip24nm} method in Java and in C\# as shown in Section~\ref{sec:example}, TeMAPI extracts the mapping relation between the \CodeIn{ByteArrayInputStream} class in Java and the \CodeIn{MemoryStream} class in C\# defined by JLCA. Through analysis, TeMAPI also extracts translatable API methods for the tool under analysis. In the preceding example, TeMAPI adds \CodeIn{BufferedInputStream(InputStream)} constructor and the \CodeIn{skip(long)} method in Java to translatable API methods of JLCA, since their belonging wrapper method is translated from Java to C\# without compilation errors.
 
 %--------------------------------------------------------
 \subsection{Generating C\# Test Cases for Java Code}
@@ -92,8 +91,7 @@ Wrappers are beneficial to detect behavioral differences for two factors. (1) Wr
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
 public void testappend175nm122()\{
-  Test_java_lang_StringBuffer obj =
-      new Test_java_lang_StringBuffer();
+  Test_java_lang_StringBuffer obj = new Test_java_lang_StringBuffer();
   Object m0 = new Object();
   StringBuffer out = obj.testappend175nm(m0);
   Assert.assertEquals(16, out.capacity());	
@@ -105,14 +103,13 @@ public void testappend175nm122()\{
 This test case fails, since here the \CodeIn{capacity()} method returns 34 and the \CodeIn{length()} method returns 24. Thus, TeMAPI detects two behavioral differences between the \CodeIn{java. lang.StringBuffer} class in Java and the \CodeIn{System.Text.StringBuilder} class in C\#. Since our wrapper methods use fixed invocation sequences, they also help in addressing the issue of generating sequences with Pex~\cite{thummalapenta09:mseqgen}.
 
 We notice that when Pex explores a path with some specific inputs, the method under exploration throws exceptions.
-For example, during exploring the \CodeIn{testvalueOf61sm} wrapper method in C\#, TeMAPI records that given a \CodeIn{null} input, the method throws \CodeIn{NullReferenceException}, so TeMAPI derives a test case to ensure that the corresponding Java wrapper method also throws a mapped exception. To derive the test case, TeMAPI first finds the corresponding exceptions in Java by analyzing translated wrapper methods with synthesized ones. In this example, TeMAPI finds that the \CodeIn{NullReference- Exception} class in C\# is mapped to the \CodeIn{NullPointerException} class in Java with respect to the API mapping relations of Java2CSharp, so TeMAPI derives a Java test case as follows:
+For example, during exploring the \CodeIn{testvalueOf61sm} wrapper method in C\#, TeMAPI records that given a \CodeIn{null} input, the method throws \CodeIn{NullReferenceException}, so TeMAPI derives a test case to ensure that the corresponding Java wrapper method also throws a mapped exception. To derive the test case, TeMAPI finds the corresponding exceptions in Java by analyzing translated wrapper methods with synthesized ones. In this example, TeMAPI finds that the \CodeIn{NullReference- Exception} class in C\# is mapped to the \CodeIn{NullPointerException} class in Java with respect to the API mapping relations of Java2CSharp, so TeMAPI derives a Java test case as follows:
 
 \begin{CodeOut}\vspace*{-1.5ex}
 \begin{alltt}
  public void testvalueOf61sm3()\{
    try\{
-     Test_java_lang_String obj =
-           new Test_java_lang_String();
+     Test_java_lang_String obj = new Test_java_lang_String();
      java.lang.Object m0 = null;
      obj.testvalueOf61sm(m0);
    \}catch(java.lang.NullPointerException e)\{
@@ -138,22 +135,22 @@ From this failing test case, TeMAPI detects the behavioral difference between th
 \hline
 \textbf{Name}& \textbf{Version}& \textbf{Provider} &\textbf{Description}\\
 \hline
-Java2CSharp  &  1.3.4 & IBM (ILOG) & a Java-to-C\# translator\\
+Java2CSharp  &  1.3.4 & IBM (ILOG) & a Java-to-C\# translation tool\\
 \hline
-JLCA         &  3.0   & Microsoft  & a Java-to-C\# translator\\
+JLCA         &  3.0   & Microsoft  & a Java-to-C\# translation tool\\
 \hline
-sharpen      &  1.4.6 & db4o       & a Java-to-C\# translator \\
+sharpen      &  1.4.6 & db4o       & a Java-to-C\# translation tool \\
 \hline
-Net2Java     &  1.0   & NetBean    & a C\#-to-Java translator\\
+Net2Java     &  1.0   & NetBean    & a C\#-to-Java translation tool\\
 \hline
-converter    &  1.6   & Tangible   & a C\#-to-Java translator\\
+converter    &  1.6   & Tangible   & a C\#-to-Java translation tool\\
 \hline
 \end{tabular}%\vspace*{-2ex}
 \Caption{Subject tools} \label{table:subjects}
 \end{SmallOut}\vspace*{-4ex}
 \end{table}
 
-Despite of its benefits to detect behavioral differences, a wrapper method cannot help effectively generate test invocation sequences, since it has fixed invocation sequences (\emph{e.g.}, a constructor first and then the public method). To address this issue, TeMAPI extends Randoop~\cite{pacheco2007feedback} for Java to generate invocations sequences in Java for all translatable API methods of the tool under analysis. Randoop randomly generates test cases based on already generated test cases in a feedback-directed manner. 
+Despite of its benefits to detect behavioral differences, a wrapper method cannot help effectively generate test invocation sequences, since it has fixed invocation sequences (\emph{e.g.}, a constructor first and then the public method). To address this issue, TeMAPI extends Randoop~\cite{pacheco2007feedback} for Java to generate invocations sequences in Java for all translatable API methods of the tool under analysis. Randoop randomly generates test cases based on already generated test cases in a feedback-directed manner.
 As the inputs and outputs between Randoop and Pex are both different, TeMAPI is asymmetric when generating test cases in Java and in C\# as shown in Figure~\ref{fig:approach}. In particular, when using Randoop generates test cases, TeMAPI limits its search scope to translatable API methods. TeMAPI runs generated test cases, and removes all failing test cases. TeMAPI next uses the translation tool under analysis to translate generated Java test cases to the other language C\#. If translated code has the same behaviors, translated test cases should also get passed. If not, TeMAPI detects behavioral differences. Randoop-generated Java test cases also include \CodeIn{assert} statements to assert behaviors of Java code. Thus, TeMAPI does not need to generate assertion statements as it does with Pex. Section~\ref{sec:evaluation:sequence} shows such detected behavioral differences that are related to invocation sequences (\emph{e.g.}, the \CodeIn{test423} test cases).
 
 %NOTE: TeMAPI filters out failing tests of Randoop but not the failing tests of Pex, which is inconsistence. The next version should fix this issue 

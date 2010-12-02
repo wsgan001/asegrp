@@ -156,7 +156,7 @@ To detect behavioral differences through wrappers, TeMAPI leverages Pex to explo
 Table~\ref{table:singleinvoc} shows the results of executing generated Java test cases. Column ``Name'' lists names of translation tools. Column ``Number'' lists numbers of generated Java test cases. Columns ``E-Tests'' and ``A-Tests'' list numbers of exception-causing and assertion-failing test cases. For the two columns, sub-columns ``M'' and ``\%'' list the number and percentages of these test cases. Table~\ref{table:singleinvoc} shows that only about half of the generated Java test cases are passed. Among the five tools, sharpen includes the lowest number of ``E-Tests'' and ``A-Tests''. It seems that programmers of sharpen put great efforts to fix behavioral differences. The percentage of JLCA is also relatively low. The results are comparable, since JLCA translates much more API elements than the other tools. In total, about 50\% of test cases are failed. These results show the effectiveness of TeMAPI, since these test cases represent behavioral differences.
 
 
-For Java2CSharp, JLCA, and sharpen, we further present their testing results at the package level in Table~\ref{table:packagetest}. Column ``Name'' lists names of J2SE packages. For columns ``Java2CSharp'', ``JLCA'', and ``sharpen'', sub-column ``R'' lists numbers of generated Java test cases, and sub-column ``\%'' lists percentages of failing test cases (including exception-causing and assertion-failing). Table~\ref{table:packagetest} shows that for the \CodeIn{java.sql} and \CodeIn{java.util} packages, all tools suffer from relatively high percentages of failing test cases, and for the \CodeIn{java.lang} and \CodeIn{java.math} packages, all tools include relatively low percentage of failing test cases. This result may reflect that some packages between Java and C\# are more similar than the others, so they can be more easily translated. We also find that for the \CodeIn{java.text}, \CodeIn{javax.xml}, and \CodeIn{org.xml} packages, JLCA includes the lowest percentage of failing test cases among the five tools. The result indicates that a translation tool can achieve better translation results if its developers carefully prepare API mapping relations.
+For Java2CSharp, JLCA, and sharpen, we further present their testing results at the package level in Table~\ref{table:packagetest}. Column ``Name'' lists names of J2SE packages. For columns ``Java2CSharp'', ``JLCA'', and ``sharpen'', sub-column ``R'' lists numbers of generated Java test cases, and sub-column ``\%'' lists percentages of failing test cases (including exception-causing and assertion-failing). Table~\ref{table:packagetest} shows that for the \CodeIn{java.sql} and \CodeIn{java.util} packages, all tools suffer from relatively high percentages of failing test cases, and for the \CodeIn{java.lang} and \CodeIn{java.math} packages, all tools include relatively low percentages of failing test cases. This result may reflect that some packages between Java and C\# are more similar than the others, so they can be more easily translated. We also find that for the \CodeIn{java.text}, \CodeIn{javax.xml}, and \CodeIn{org.xml} packages, JLCA includes the lowest percentage of failing test cases among the five tools. The result indicates that a translation tool can achieve better translation results if its developers carefully prepare API mapping relations.
 
 
 Tables~\ref{table:singleinvoc} and~\ref{table:packagetest} show that a high percentage of generated Java test cases are failed. To better understand behavioral differences between mapped API elements, we inspected 3,759 failing Java test cases. For Net2Java and converter, we inspect all failing test cases, whereas for Java2CSharp, JLCA, and sharpen, we inspect test cases generated for the \CodeIn{java.lang} package, due to a large number of failing test cases. Each failing test case reflects one unique behavioral difference, and Figure~\ref{fig:pex-percent} shows the distribution of found unique behavior differences. We next present our findings ranked by percentages of failing test cases.
@@ -187,7 +187,7 @@ Total        &  52,336  &  15,153 & 29.0\% &11,099 & 21.2\%  \\
 
 \textbf{Finding 1:} 36.8\% test cases show the behavioral differences caused by \CodeIn{null} inputs.
 
-We find that many Java API methods and their translated C\# API methods have behavioral differences when \CodeIn{null} values are passed as inputs. In some cases, a Java API method can accept \CodeIn{null} values, but its translated C\# API method throws exceptions. One such example is shown in Section~\ref{sec:example} (\emph{i.e.}, the \CodeIn{skip(long)} method). In other cases, a Java API method throws exceptions given a \CodeIn{null} input, but its translated C\# API method can accept \CodeIn{null} values. For example, JLCA translates the \CodeIn{java.lang.Integer. parseInt(String,int)} method in Java to the \CodeIn{System.Convert.ToInt32(string, int)} in C\#. If the inputs of the Java method are \CodeIn{null} and $10$, it throws \CodeIn{NumberFormat- Exception}, but given the same inputs, the output of the C\# method is 0. We notice that translation tools can fix some differences caused by \CodeIn{null} inputs. For example, to fix the behavioral difference of \CodeIn{null} inputs for the \CodeIn{valueOf(Object)} method as shown in Section~\ref{sec:approach:single}, sharpen translates the method to its own method, and thus fixes the difference.
+We find that many Java API methods and their translated C\# API methods have behavioral differences when \CodeIn{null} values are passed as inputs. In some cases, a Java API method can accept \CodeIn{null} values, but its translated C\# API method throws exceptions. One such example is shown in Section~\ref{sec:example} (\emph{i.e.}, the \CodeIn{skip(long)} method). In other cases, a Java API method throws exceptions given a \CodeIn{null} input, but its translated C\# API method can accept \CodeIn{null} values. For example, JLCA translates the \CodeIn{java.lang.Integer. parseInt(String,int)} method in Java to the \CodeIn{System.Convert.ToInt32(string, int)} in C\#. If the inputs of the Java method are \CodeIn{null} and $10$, it throws \CodeIn{NumberFormat- Exception}, but given the same inputs, the C\# method returns 0. We notice that translation tools can fix some differences caused by \CodeIn{null} inputs. For example, to fix the behavioral difference of \CodeIn{null} inputs for the \CodeIn{valueOf(Object)} method as shown in Section~\ref{sec:approach:single}, sharpen translates the method to its own method, and fixes the difference.
 
 \Comment{We also find that given the same inputs, a method may produce null outputs, whereas its mapped method will not. For example, converter maps the \CodeIn{Sys- tem.Collections.Queue.ToArray()} in C\# to the \CodeIn{java.util. LinkedList.toArray()} method in Java. Given an empty list, the C\# method produce a null value, whereas the Java method produce an empty array.}
 
@@ -254,7 +254,7 @@ org.xml     &   277  &   70.0\%  & 483     & 27.3\%  & 0         & n/a\\
 
 We find that \CodeIn{string} values stored in fields between Java classes and their mapped C\# classes are typically different. This difference ranks as the second, since each Java class has a \CodeIn{toString()} method and each C\# class also has a \CodeIn{ToString()} method. Many translation tools map the two API methods, but the return values of the two methods are quite different in many cases. In addition, many API classes declare methods like \CodeIn{getName} or \CodeIn{getMessage}. These methods also return \CodeIn{string} values that can be quite different. In particular, we find that the \CodeIn{Message} fields of exceptions in C\# often return informative messages. One such message is ``Index was outside the bounds of the array'' provided by the \CodeIn{System.IndexOutOfRangeException.Message} field in C\#. On the other hand, exceptions in Java often provide only \CodeIn{null} messages. Overall, we find that none of the five tools fixes this difference.
 
-\textbf{Implication 2:} \CodeIn{String} fields of mapped classes in different languages typically store different values, but existing translation tools do not fix those differences. Programmers should not rely on these values, since they are typically different across languages.
+\textbf{Implication 2:} Mapped \CodeIn{String} fields in different languages typically store different values, but existing translation tools do not fix those differences. Programmers should not rely on these values, since they are typically different across languages.
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.4,clip]{figure/pex-percent.eps}\vspace*{-2ex}
@@ -277,14 +277,13 @@ Given an integer -2147483648, the Java method returns ``80000000'', but the C\# 
 
 \textbf{Finding 5:} 7.9\% test cases show the behavioral differences caused by exception handling.
 
-We find that two mapped API methods can throw exceptions that are not mapped. For example, when indexes are out of bounds, the \CodeIn{java.lang.StringBuffer.insert (int,char)} method in Java throws \CodeIn{ArrayIndexOutofBoundsException}. Java2CSharp translates the method to the \CodeIn{StringBuilder.Insert(int,char)} method in C\# that throws \CodeIn{ArgumentOutOfRangeException} when indexes are out of bounds. As Java2CSharp maps \CodeIn{ArrayIndexOutofBoundsException} in Java to \CodeIn{IndexOutOfRangeException} in C\#, the mapped C\# method fails to catch exceptions when indexes are out of bounds.
+We find that two mapped API methods can throw exceptions that are not mapped. For example, the \CodeIn{java.lang.StringBuffer.insert(int,char)} method in Java throws \CodeIn{ArrayIndexOutofBoundsException} when indexes are out of bounds, and Java2CSharp translates the method to the \CodeIn{System.Text.StringBuilder.Insert (int,char)} method in C\# that throws \CodeIn{ArgumentOutOfRangeException} when indexes are out of bounds. As Java2CSharp maps \CodeIn{ArrayIndexOutofBoundsException} in Java to \CodeIn{IndexOutOfRangeException} in C\#, the mapped C\# method fails to catch exceptions when indexes are out of bounds.
 
 \textbf{Implication 5:} Implementers of API libraries may design quite different exception handling mechanisms. This type of differences is quite challenging to fix for translation tools. Even if two methods are of the same functionality, programmers should notice that these methods may produce exceptions that are not mapped.
 
 \textbf{Finding 6:} 2.9\% test cases show the behavioral differences caused by static values.
 
-
-We find that mapped static fields may have different values. For example, the \CodeIn{java. lang.reflect.Modifier} class in Java has many static fields to represent modifiers (\emph{e.g.}, FINAL, PRIVATE and PROTECTED). Java2CSharp translates these fields to the fields of the \CodeIn{ILOG.J2CsMapping.Reflect} class in C\#. Although most values of the mapped fields are the same, we find that fields such as VOLATILE and TRANSIENT are of different values. In addition, we find that different values sometimes reveal different ranges of data types. For example, \CodeIn{java.lang.Double.MAX\_VALUE} in Java is 1.7976931348623157E+308, and \CodeIn{System.Double.MaxValue} in C\# is 1.7976931348- 6232E+308.  Although the difference is not quite large, it can cause serious defects if a program needs highly accurate calculation results.
+We find that mapped static fields may have different values. For example, the \CodeIn{java. lang.reflect.Modifier} class in Java has many static fields to represent modifiers (\emph{e.g.}, \CodeIn{FINAL}, \CodeIn{PRIVATE}, and \CodeIn{PROTECTED}). Java2CSharp translates these fields to the fields of the \CodeIn{ILOG.J2CsMapping.Reflect} class in C\#. Although most values of the mapped fields are the same, we find that fields such as \CodeIn{VOLATILE} and \CodeIn{TRANSIENT} are of different values. In addition, we find that different values sometimes reveal different ranges of data types. For example, the \CodeIn{java.lang.Double.MAX\_VALUE} field in Java is 1.7976931348623157E+308, but the \CodeIn{System.Double.MaxValue} field in C\# is 1.79769313486232E+308.  Although the difference is not quite large, it can cause serious defects if a program needs highly accurate calculation results.
 
 \textbf{Implication 6:} Implementers of API libraries may store different values in static fields. Even if two static fields have the same names, programmers should be aware of that these fields can have different values. The results also reveal that data types between Java and C\# can have different bounds. Programmers should be aware of this situation if they need highly accurate results.
 
@@ -298,8 +297,8 @@ The remaining 7.9\% failing test cases are related to the API methods that can r
 \begin{SmallOut}
 \begin {tabular} {|c|r|r|r|r|r|c|c|}
  \hline
-\multirow{2}*[-2pt]{\textbf{Name}}& \multirow{2}*[-2pt]{\textbf{Method}} & \multirow{2}*[-2pt]{\textbf{Java}}
-& \multirow{2}*[-2pt]{\textbf{C\#}} & \multicolumn{2}{|c|}{\textbf{A-Tests}} \\\cline{5-6} & &  & & \textbf{M}& \textbf{\%} \\
+\multirow{2}*[-2pt]{\textbf{Name}}& \multirow{2}*[-2pt]{\textbf{Method}} & \multicolumn{1}{c|}{\multirow{2}*[-2pt]{\textbf{Java}}}
+& \multicolumn{1}{c|}{\multirow{2}*[-2pt]{\textbf{C\#}}} & \multicolumn{2}{|c|}{\textbf{A-Tests}} \\\cline{5-6} & &  & & \textbf{M}& \textbf{\%} \\
 \hline
 Java2CSharp  &  1,996 & 15,385&  2,971 & 2,151 & 72.4\%\\
 \hline
@@ -315,7 +314,7 @@ Total        &  9,642 & 45,547& 4,974  &  2,902 & 58.3\% \\
 \end{table}
 To test behavioral differences involving invocation sequences, TeMAPI leverages Randoop to generate test cases, given the list of translatable API methods. In this evaluation, we focus on the Java-to-C\# tools only, since the C\#-to-Java tools translate only a few API elements as shown in Table~\ref{table:java2csharp}. For each Java-to-C\# tool, TeMAPI first extracted the list of translatable API methods using the technique as described in Section~\ref{sec:approach:sequence}. When generating test cases, TeMAPI extends Randoop, so that each generated test case uses only translatable API methods. Randomly generated invocation sequences may not reflect API usages in true practice, and we discuss this issue in Section~\ref{sec:discuss}. Among generated test cases, we translate only passing test cases from Java to C\#.
 
-Table~\ref{table:invocsequence} shows the results. Column ``Method'' lists sizes of translatable API methods for the three tools. Column ``Java'' lists the numbers of passing test cases in Java. Column ``C\#'' lists the numbers of translated test cases in C\#. We notice that many Java test cases are not successfully translated to C\# for three factors that are not general or not related with API migration: (1) to prepare inputs of translatable API methods, Randoop introduces API methods that are not translatable; (2) some code structures are too complicated to translate, and we further discuss this issue in Section~\ref{sec:discuss}; (3) the numbers of compilation errors can be magnified since Randoop produces many redundancies (Section~\ref{sec:evaluation:techniques} shows an example of produced redundancies). Our findings are as follows:
+Table~\ref{table:invocsequence} shows the results. Column ``Method'' lists sizes of translatable API methods for the three tools. Column ``Java'' lists the numbers of passing test cases in Java. Column ``C\#'' lists the numbers of translated test cases in C\#. We notice that many Java test cases are not successfully translated to C\# for two factors that are not general or not related with API migration: (1) to prepare inputs of translatable API methods, Randoop introduces API methods that are not translatable; \Comment{(2) some code structures are too complicated to translate, and we further discuss this issue in Section~\ref{sec:discuss}; }(2) the numbers of compilation errors can be magnified since Randoop produces many redundancies (Section~\ref{sec:evaluation:techniques} shows an example of produced redundancies). Our findings are as follows:
 
 \textbf{Finding 7:} Many translated test cases have compilation errors, since Java API classes and their mapped C\# classes have different inheritance hierarchies.
 
@@ -325,9 +324,8 @@ We find that Java API classes can have different inheritance hierarchies with th
 \begin{alltt}
 public void test87() throws Throwable\{
   ...
-  StringBufferInputStream var4=...;
-  InputStreamReader var10=
-    new InputStreamReader((InputStream)var4, var8);
+  StringBufferInputStream var4 = ...;
+  InputStreamReader var10 = new InputStreamReader((InputStream)var4, var8);
 \}
 \end{alltt}
 \end{CodeOut}%\vspace*{-2ex}
@@ -338,9 +336,8 @@ Since the preceding two Java API classes are related through inheritance, the te
 \begin{alltt}
 public void test87() throws Throwable\{
   ...
-  StringReader var4=...;
-  StreamReader var10=
-    new StreamReader((Stream)var4, var8);
+  StringReader var4 = ...;
+  StreamReader var10 = new StreamReader((Stream)var4, var8);
 \}
 \end{alltt}
 \end{CodeOut}%\vspace*{-2ex}
@@ -357,7 +354,7 @@ Since the two translated C\# classes have no inheritance relations, the translat
 
 %We do not list numbers of test cases end with errors since C\# does not separate errors from failures as Java does. Sub-column ``M'' lists numbers of test cases, and sub-column ``\%'' lists percentages from failed test cases to total test cases.
 
-Column ``A-Tests'' of Table~\ref{table:invocsequence} lists the number and percentage of failing C\# test cases. We find that JLCA achieves the lowest percentages among the five tools. For each tool, we further investigated its first 100 failing test cases. Figure~\ref{fig:randoop-percent} shows the distribution of found behavioral differences with Randoop. We find that 93.6\% failing test cases are due to the same factors described in Section~\ref{sec:evaluation:single}: 45.0\% for ranges of parameters, 34.0\% for \CodeIn{string} values, 5.3\% for different understanding, 4.0\% for exception handling, 3.0\% for \CodeIn{null} inputs, 2.0\% for values of static fields, and 0.3\% for random values. When generating test cases, Pex explores feasible paths, whereas Randoop uses a feed-back random strategy. As a result, the distribution of Figure~\ref{fig:pex-percent} is different from the distribution of Figure~\ref{fig:randoop-percent}. The distribution of Figure~\ref{fig:pex-percent} is more reasonable since each feasible path reflects a unique behavior, and each failing test case reflects a unique behavioral difference, whereas the distribution of Figure~\ref{fig:randoop-percent} is affected by redundancies in test cases generated by Randoop. Still, Randoop's random strategy helps find an additional behavioral difference as follows:
+Column ``A-Tests'' of Table~\ref{table:invocsequence} lists numbers and percentages of failing C\# test cases. We find that JLCA achieves the lowest percentages among the five tools. For each tool, we further investigated its first 100 failing test cases. Figure~\ref{fig:randoop-percent} shows the distribution of found behavioral differences with Randoop. We find that 93.6\% failing test cases are due to the same factors described in Section~\ref{sec:evaluation:single}: 45.0\% for ranges of parameters, 34.0\% for \CodeIn{string} values, 5.3\% for different understanding, 4.0\% for exception handling, 3.0\% for \CodeIn{null} inputs, 2.0\% for values of static fields, and 0.3\% for random values. When generating test cases, Pex explores feasible paths, whereas Randoop uses a feed-back random strategy. As a result, the distribution of Figure~\ref{fig:pex-percent} is different from the distribution of Figure~\ref{fig:randoop-percent}. The distribution of Figure~\ref{fig:pex-percent} is more reasonable since each feasible path reflects a unique behavior, and each failing test case reflects a unique behavioral difference, whereas the distribution of Figure~\ref{fig:randoop-percent} is affected by redundancies in test cases generated by Randoop. Still, Randoop's random strategy helps find an additional behavioral difference as follows:
 
 \textbf{Finding 8:} 3.4\% test cases fail because of invocation sequences.
 
@@ -367,8 +364,8 @@ We find that random invocation sequences can violate specifications of API libra
 \begin{alltt}
 public void test423() throws Throwable\{
   ...
-  DateFormatSymbols var0=new DateFormatSymbols();
-  String[] var16=new String[]{...};
+  DateFormatSymbols var0 = new DateFormatSymbols();
+  String[] var16 = new String[]{...};
   var0.setShortMonths(var16);
 \}
 \end{alltt}
@@ -380,15 +377,14 @@ JLCA translates the Java test case to a C\# test case as follows:
 \begin{alltt}
 public void test423() throws Throwable\{
   ...
-  DateTimeFormatInfo var0 =
-  System.Globalization.DateTimeFormatInfo.CurrentInfo;
-  String[] var16=new String[]{...};
+  DateTimeFormatInfo var0 = System.Globalization.DateTimeFormatInfo.CurrentInfo;
+  String[] var16 = new String[]{...};
   var0.AbbreviatedMonthNames = var16;
 \}
 \end{alltt}
 \end{CodeOut}%\vspace*{-2ex}
 
-The \CodeIn{var0.AbbreviatedMonthNames=var16} statement throws \CodeIn{InvalidOperation- Exception} since a constant value is assigned to \CodeIn{var0}.
+In the preceding translated test case, the last statement throws \CodeIn{InvalidOperation- Exception} since a constant value is assigned to \CodeIn{var0}.
 
 \textbf{Implication 8:} Legal invocation sequences can become illegal after translation. The target language may be more strict to check invocation sequences, and other factors such as field accessibility can also cause behavioral differences. In most cases, programmers should deal with the difference themselves.
 
@@ -493,7 +489,7 @@ In this sub-sequence, JLCA translates the \CodeIn{AttributeListImpl.getName(int)
 
 \subsection{Summary}
 \label{sec:evaluation:summary}
-In summary, we find that API elements are quite large in size, and translation tools typically can translate only a small portion of API elements. Although existing translation tools already notice behavioral differences of mapped API elements, many differences are not fixed. To detect behavioral differences, our approach combines random testing with dynamic-symbolic-execution-based testing, and achieves to detect more behavioral differences than with single techniques. Our approach enables us to present the first empirical comparison on behavioral differences of API mapping relations between Java and C\#. We find that various factors (\emph{i.e.}, \CodeIn{null} inputs, \CodeIn{string} values, ranges of inputs, different understanding, exception handling, static values, type cast statements and invocation sequences) could lead to behavioral differences of mapped API elements between different languages.
+In summary, we find that API elements are quite large in size, and translation tools typically can translate only a small portion of API elements. Although existing translation tools already notice behavioral differences of mapped API elements, many differences are not fixed. To detect behavioral differences, our approach combines random testing with dynamic-symbolic-execution-based testing, and achieves to detect more behavioral differences than with single techniques. Our approach enables us to present the first empirical comparison on behavioral differences of API mapping relations between Java and C\#. We find that various factors (\emph{i.e.}, \CodeIn{null} inputs, \CodeIn{string} values, ranges of inputs, different understanding, exception handling, static values, type cast statements, and invocation sequences) could lead to behavioral differences of mapped API elements between different languages.
 
 \subsection{Threats to Validity}
 \label{sec:evaluation:threat}

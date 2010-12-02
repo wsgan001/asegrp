@@ -11,10 +11,10 @@ Since existing applications typically use API libraries, it is essential to unde
 01: private long readLong(ByteArrayInputStream is)\{
 02:  ...
 03:  l += ((long) (is.read())) << i;
-04: ...\}
+04:  ...\}
 \end{alltt}
 \end{CodeOut}\vspace*{-4ex}
-\caption{A method in the Java version of db4o.}\vspace*{-2ex}
+\caption{A method in the Java version of db4o.}%\vspace*{-2ex}
 \label{fig:db4ojava}
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
@@ -38,7 +38,7 @@ In practice, as pointed out by Keyvan Nayyeri\footnote{\url{http://dotnet.dzone.
 11: socket.receive(package);
 \end{alltt}
 \end{CodeOut}\vspace*{-5ex}
-\caption{Sample code in Java.}\vspace*{-2ex}
+\caption{Sample code in Java.}%\vspace*{-2ex}
 \label{fig:javacode}
 \begin{CodeOut}%\vspace*{-2ex}
 \begin{alltt}
@@ -46,8 +46,7 @@ In practice, as pointed out by Keyvan Nayyeri\footnote{\url{http://dotnet.dzone.
 13: IPEndPoint remoteIpEndPoint = ...;
 14: try\{
 15:  byte[] data_in = socket.Receive(ref remoteIpEndPoint);
-16:  PacketSupport tempPacket =
-          new PacketSupport(data_in, data_in.Length);
+16:  PacketSupport tempPacket = new PacketSupport(data_in, data_in.Length);
 17:   tempPacket.IPEndPoint = remoteIpEndPoint;
 18: \} catch (System.Exception e)\{...\}
 19: PacketSupport package = tempPacket;
@@ -63,13 +62,13 @@ TeMAPI addresses three major technical challenges in effectively detecting behav
 
 This paper makes the following major contributions:
 
-\begin{itemize}\vspace*{-1.5ex}
+\begin{itemize}%\vspace*{-1.5ex}
 \item A novel approach, called TeMAPI, that automatically generates test cases to detect behavioral differences among API mapping relations. Given a translation tool, TeMAPI detects behavioral differences of all its API mapping relations automatically. It is important to detect such differences, since they can introduce defects in translated applications silently.%\vspace*{-1.5ex}
 \item A tool implemented for TeMAPI and three evaluations on five popular translation tools. The results show the effectiveness of our approach in detecting behavioral differences of mapped API elements between different languages.
 %Our tool can handle both mapping relations from one API element to another API element and also from many API elements to many other API elements.
 %\vspace*{-1.5ex}
 \item The first empirical comparison on behavioral differences of mapped API elements between the J2SE and .NET frameworks. TeMAPI enables us to produce such a comparison. The results show that various factors such as \CodeIn{null} inputs, \CodeIn{string} values, input ranges, different understanding, exception handling, static values, inheritance relations, and invocation sequences can lead to behavioral differences of mapped API elements. Based on the results, we further analyze their implications from various perspectives.
-\end{itemize}\vspace*{-1.5ex}
+\end{itemize}%\vspace*{-1.5ex}
 
 The rest of this paper is organized as follows.
 %Section~\ref{sec:mapping} presents our test adequacy criteria.
