@@ -23,28 +23,28 @@ of our evaluation results are available at \url{https://sites.google.com/site/as
 
 \subsection{Translating Synthesized Wrappers}
 \label{sec:evaluation:element}
-This evaluation focuses on the effectiveness of our approach to extract API mapping relations from both open source tools and closed source tools. The results are useful for subsequence steps, and also to show the effectiveness of existing translation tools. For Java-to-C\# tools, TeMAPI first synthesized wrapper methods for all classes of J2SE 6.0\footnote{\url{http://java.sun.com/javase/6/docs/api/}}. Most classes in J2SE support both generic programming and non-generic programming (\emph{e.g.}, \CodeIn{java.util.ArrayList}). During synthesizing, our approach focuses on only non-generic programming as described in Section~\ref{sec:approach:wrapper}. Table~\ref{table:java2csharp} shows the translation results. Column ``Type'' lists types of synthesized methods, and Row ``Total'' denotes the sum of all methods. Columns ``Java2CSharp'', ``JLCA'', and ``sharpen'' list the translation numbers of translated wrapper methods without compilation errors for each tool, respectively.
+This evaluation focuses on the effectiveness of our approach to extract API mapping relations from both open source tools and closed source tools. The results are useful for subsequence steps, and also to show the effectiveness of existing translation tools. For Java-to-C\# tools, TeMAPI first synthesized wrapper methods for all classes of J2SE 6.0\footnote{\url{http://java.sun.com/javase/6/docs/api/}}. Most classes in J2SE support both generic programming and non-generic programming (\emph{e.g.}, \CodeIn{java.util.ArrayList}). During synthesizing, our approach focuses on only non-generic programming as described in Section~\ref{sec:approach:wrapper}. Table~\ref{table:java2csharp} shows the translation results. Column ``Type'' lists types of synthesized methods, and Row ``Total'' denotes the sum of all methods. Column ``Number'' lists numbers of corresponding types of methods. Columns ``Java2CSharp'', ``JLCA'', and ``sharpen'' list the translation numbers of translated wrapper methods without compilation errors for each tool, respectively. Although these tools support mapping for only some APIs, these supported APIs are the most commonly used, and these tools' significant utility/popularity are reflected by their high download counts.
 \begin{table}[t]
 \centering
 \begin{SmallOut}
 \begin {tabular} {|l|r|r|r|r|r|r|r|}
  \hline
-\multicolumn{1}{|c}{\textbf{Type}}
+\multicolumn{1}{|c}{\textbf{Type}}& \multicolumn{1}{|c|}{\textbf{Number}}
 & \multicolumn{1}{|c|}{\textbf{Java2CSharp}} & \multicolumn{1}{|c|}{\textbf{JLCA}}& \multicolumn{1}{|c|}{\textbf{sharpen}} \\
 \hline
-getters of static fields      &   237 &  3,744 &  47 \\
+getters of static fields      & 16,962 &   237 &  3,744 &  47 \\
 \hline
-setters of static fields      & 0     & 0      & 0  \\
+setters of static fields      & 0      & 0     & 0      & 0  \\
 \hline
-getters of non-static fields  &  0    &   121  &  0  \\
+getters of non-static fields  & 832    & 0    &   121  &  0  \\
 \hline
-setters of non-static fields  &  0    &   79   &  0   \\
+setters of non-static fields  & 823    & 0    &   79   &  0   \\
 \hline
-static methods                &  97   &  198  &  26  \\
+static methods                & 1,175   & 97   &  198  &  26  \\
 \hline
-non-static methods            & 3,589 &  39,536& 1,112  \\
+non-static methods            & 175,400 &3,589 &  39,536& 1,112  \\
 \hline
-\multicolumn{1}{|c|}{Total}   & 3,923 & 43,678 & 1,185\\
+\multicolumn{1}{|c|}{Total}   & 195,192 & 3,923 & 43,678 & 1,185\\
 \hline
 \end{tabular}%\vspace*{-2ex}
 \Caption{Translation results of Java-to-C\# tools} \label{table:java2csharp}
@@ -62,22 +62,22 @@ For C\#-to-Java translation tools, TeMAPI first synthesized wrapper methods for 
 \begin{SmallOut}
 \begin {tabular} {|l|r|r|r|r|r|c|c|}
  \hline
-\multicolumn{1}{|c}{\textbf{Type}}
+\multicolumn{1}{|c}{\textbf{Type}} & \multicolumn{1}{|c}{\textbf{Number}}
 & \multicolumn{1}{|c|}{\textbf{Net2Java}} & \multicolumn{1}{|c|}{\textbf{converter}}\\
 \hline
-getters of static fields      &  1    &  3     \\
+getters of static fields      &  3,223 & 1    &  3     \\
 \hline
-setters of static fields      &   0    &  0       \\
+setters of static fields      &  8    & 0    &  0       \\
 \hline
-getters of non-static fields  &   0    &  0    \\
+getters of non-static fields  &   177 & 0    &  0    \\
 \hline
-setters of non-static fields  &   0    &  0    \\
+setters of non-static fields  &   115 & 0    &  0    \\
 \hline
-static methods                &   4    &  6  \\
+static methods                &   996 & 0    &  6  \\
 \hline
-non-static methods            &  94    &  387     \\
+non-static methods            &190,376& 94    &  387     \\
 \hline
-\multicolumn{1}{|c|}{Total}   & 99     &  396 \\
+\multicolumn{1}{|c|}{Total}   &194,835& 99     &  396 \\
 \hline
 \end{tabular}%\vspace*{-2ex}
 \Caption{Translation results of C\#-to-Java tools} \label{table:csharp2java}
@@ -444,7 +444,11 @@ Assert.IsTrue(var27 == null);
 \end{alltt}
 \end{CodeOut}%\vspace*{-1.5ex}
 
-In this sub-sequence, JLCA translates the \CodeIn{AttributeListImpl.getName(int)} method in Java to the \CodeIn{SaxAttributesSupport.GetLocalName(int)} method in C\#. The translation makes the assertion fail since the C\# method does not return \CodeIn{null} given an empty attribute as the Java method does. Besides redundancies, each test case generated by Randoop uses many API elements, and each test case generated by Pex focuses on only one field or method within a synthesized wrapper method. As a result, it takes much more efforts to locate a method with behavioral differences from failing test cases generated by Randoop than by Pex. However, the combination of the two techniques helps TeMAPI detect more methods with behavioral difference. Besides the behavioral differences that involve invocation sequences, we also find that Pex can fail to explore paths that are too complicated. Randoop complements Pex to generate test cases for detecting behavioral differences of such methods since Randoop generates test cases randomly. Column ``\%'' lists percentages from ``T'' to ``M''. We find that behavioral differences of mapped API methods are quite common since about one third methods have such differences.
+In this sub-sequence, JLCA translates the \CodeIn{AttributeListImpl.getName(int)} method in Java to the \CodeIn{SaxAttributesSupport.GetLocalName(int)} method in C\#. The translation makes the assertion fail since the C\# method does not return \CodeIn{null} given an empty attribute as the Java method does. Besides redundancies, each test case generated by Randoop uses many API elements, and each test case generated by Pex focuses on only one field or method within a synthesized wrapper method. As a result, it takes much more efforts to locate a method with behavioral differences from failing test cases generated by Randoop than by Pex. 
+
+From the results of Table~\ref{table:techniques}, we find that Pex alone can detect most behavior differences.
+
+However, the combination of the two techniques helps TeMAPI detect more methods with behavioral difference. Besides the behavioral differences that involve invocation sequences, we also find that Pex can fail to explore paths that are too complicated. Randoop complements Pex to generate test cases for detecting behavioral differences of such methods since Randoop generates test cases randomly. Column ``\%'' lists percentages from ``T'' to ``M''. We find that behavioral differences of mapped API methods are quite common since about one third methods have such differences.
 
 %---------------------------------------------------------------
 %\subsection{Coverage}
