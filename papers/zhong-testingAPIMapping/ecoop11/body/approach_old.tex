@@ -1,11 +1,5 @@
 \section{Approach}
 \label{sec:approach}
-
-We next describe our approach, called TeMAPI, that accepts two tools as inputs: a translation tool under analysis and a test-generation tool. TeMAPI effectively leverages the test-generation tool to generate test cases that detect behavioral differences of API mapping relations defined by the translation tool. TeMAPI addresses two major issues in detecting behavioral differences of API mapping relations. First, it is challenging to extract API mapping relations defined by the translation tool. The primary reason is that often translation tools either use different formats for specifying API mapping relations or do not explicitly describe these mapping relations. In the later case, API mapping relations are hard coded within the source code of translation tools such as Sharpen. To address this issue and to be independent of the translation tool under analysis, TeMAPI does not extract API mapping relations directly from translation tools, rather analyzes translated code for extracting those relations. In particular, TeMAPI constructs \emph{wrapper} methods for each API method in a language and translates those wrapper methods to another language to extract the API mapping relations. Section~\ref{sec:approach:wrapper} presents more details on how wrapper methods are constructed from API methods. These wrapper methods also help identify the API classes and methods that can be translated by the translation tool under analysis, since often translation tools translate only a limited set of API classes and methods~\cite{zhong2010mining}.
-
-Second, exposing behavioral differences among API methods that are defined by API mapping relations poses testability issues. For example, interface of an API method in one language could be different from the interface of its mapped API method or an API method can be mapped to multiple API methods, resulting in controllability issues. On the other hand, generating test oracles is also challenging, resulting in observability issues. TeMAPI addresses these issues by using wrapper methods as an abstraction. In particular, these wrapper methods expose a common interface for API methods that are defined by API mapping relations, thereby addressing controllability issues. Furthermore, to address observability issues, TeMAPI uses return values of wrapper methods or exceptions being thrown as test oracles.
-
-\Comment{
 \begin{figure}[t]
 \centering
 \includegraphics[scale=1,clip]{figure/approach.eps}\vspace*{-2ex}
@@ -13,7 +7,8 @@ Second, exposing behavioral differences among API methods that are defined by AP
  \label{fig:approach}
 \end{figure}
 
-As shown in Figure~\ref{fig:approach}, given a translation tool between Java and C\#, TeMAPI generates various test cases in Java and C\# to reveal behavioral differences of API mapping relations defined by the tool.}
+As shown in Figure~\ref{fig:approach}, given a translation tool between Java and C\#, TeMAPI generates various test cases in Java and C\# to reveal behavioral differences of API mapping relations defined by the tool.
+
 
 %-------------------------------------------------------------------
 \subsection{Synthesizing and Analyzing Wrappers}
