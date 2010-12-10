@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{DBLP:conf/tacas/AnandPV07}
+S.~Anand, C.~S. Pasareanu, and W.~Visser.
+\newblock {JPF-SE}: A symbolic execution extension to java pathfinder.
+\newblock In {\em Proc. TACAS}, pages 134--138, 2007.
+
 \bibitem{ancona2007provenly}
 D.~Ancona, C.~Anderson, F.~Damiani, S.~Drossopoulou, P.~Giannini, and E.~Zucca.
 \newblock {A provenly correct translation of Fickle into Java}.
