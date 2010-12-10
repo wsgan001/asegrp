@@ -147,7 +147,7 @@ org.xml             &    49   &   473    &  0   \\
 \end{SmallOut}\vspace*{-6ex}
 \end{table}
 %------------------------------------------------------------
-\subsection{Generating C\# Test Cases for Java Code}
+\subsection{Generating and Translating Test Cases with Pex}
 \label{sec:evaluation:single}
 
 
@@ -290,7 +290,7 @@ We find that mapped static fields may have different values. For example, the \C
 The remaining 7.9\% failing test cases are related to the API methods that can return random values or values that depend on time. For example, the \CodeIn{java.util.Random. nextInt()} method returns random values, and the \CodeIn{java.util.Date.getTime()} method returns the number of milliseconds since Jan. 1st, 1970, 00:00:00 GMT. As another example, each Java class has a \CodeIn{hashCode()} method, and each C\# class has also a \CodeIn{GetHashCode()} method. Both the methods return a hash code for the current object, so translation tools such as JLCA map the two methods. Since a hash code is randomly generated, the two methods typically return different values. For these methods, TeMAPI can detect behavioral differences of their inputs. For example, converter translates the \CodeIn{System.Random.Next(int)} method in C\# to the \CodeIn{java.util. Random.nextInt(int)} method in Java. Given an integer value 0, the C\# method returns 0, but the Java method throws \CodeIn{IllegalArgumentException} with a message: ``n must be positive''. However, since these methods return values randomly, we cannot conclude that they have behavioral differences even if their outputs are different. We discuss this issue further in Section~\ref{sec:discuss}.
 
 %--------------------------------------------------------------
-\subsection{Generating Java Test Cases for C\# Code}
+\subsection{Generating and Translating Test Cases with Randoop}
 \label{sec:evaluation:sequence}
 \begin{table}[t]
 \centering
