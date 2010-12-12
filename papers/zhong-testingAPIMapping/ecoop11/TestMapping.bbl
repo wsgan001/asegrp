@@ -32,6 +32,11 @@ G.~Canfora, A.~R. Fasolino, G.~Frattolillo, and P.~Tramontana.
   functionalities to service oriented architectures.
 \newblock {\em Journal of Systems and Software}, 81(4):463--480, 2008.
 
+\bibitem{cook1999highly}
+J.~Cook and J.~Dage.
+\newblock Highly reliable upgrading of components.
+\newblock In {\em Proc. 21st ICSE}, pages 203--212, 1999.
+
 \bibitem{daniel2007automated}
 B.~Daniel, D.~Dig, K.~Garcia, and D.~Marinov.
 \newblock Automated testing of refactoring engines.
