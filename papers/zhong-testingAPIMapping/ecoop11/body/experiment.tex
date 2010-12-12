@@ -9,9 +9,9 @@ We implemented a tool for TeMAPI and conducted evaluations using our tool to add
 %\item How effectively can existing translation tool translate API elements (Section~\ref{sec:evaluation:element})? \vspace*{-1.8ex}
 \item How many API elements can be translated by existing translation tools (Section~\ref{sec:evaluation:element})? %\vspace*{-1.8ex}
 %\item How effectively can our approach detect behavioral differences of single API classes (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
-\item How many behavioral differences are effectively detected by generating C\# test cases for testing Java code (Section~\ref{sec:evaluation:single})?%\vspace*{-1.8ex}
+\item How many behavioral differences are effectively detected with Pex (Section~\ref{sec:evaluation:single})?%\vspace*{-1.8ex}
 %\item How effectively can our approach detect behavioral differences of multiple API classes (Section~\ref{sec:evaluation:single})?\vspace*{-1.8ex}
-\item How many behavioral differences are effectively detected by  by generating Java test cases for testing C\# code (Section~\ref{sec:evaluation:sequence})?%\vspace*{-1.8ex}
+\item How many behavioral differences are effectively detected with Randoop (Section~\ref{sec:evaluation:sequence})?%\vspace*{-1.8ex}
 %\item Can the our combination strategy helps achieve better coverage (Section~\ref{sec:evaluation:coverage})?
 \item How many behavioral differences are detected with and without TeMAPI's internal techniques (Section~\ref{sec:evaluation:techniques})?
 \end{enumerate}%\vspace*{-1.5ex}
@@ -262,7 +262,7 @@ We find that \CodeIn{string} values stored in fields between Java classes and th
 
 \textbf{Finding 3:} 11.5\% test cases show the behavioral differences caused by different input domains.
 
-We find that API methods in Java and API methods in C\# can have different input domains, and some legal inputs in one language can become illegal in another language. For example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than 32,767. JLCA translates the Java method to the \CodeIn{Convert.ToInt16 (double)} method in C\#. The C\# method throws \CodeIn{OverflowException} when values are larger than 32,767 since it checks whether inputs are too large.
+We find that API methods in Java and API methods in C\# can have different input domains, and some legal inputs in one language can become illegal after translation. For example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than 32,767. JLCA translates the Java method to the \CodeIn{Convert.ToInt16 (double)} method in C\#. The C\# method throws \CodeIn{OverflowException} when values are larger than 32,767 since it checks whether inputs are too large.
 As another example, the \CodeIn{java.lang.Boolean.parseBoolean(String)} method in Java does not check for illegal inputs, and returns \CodeIn{false} given an illegal input such as ``\CodeIn{test}''. Java2CSharp translates it to the \CodeIn{System.Boolean.Parse(String)} method in C\#. The C\# method throws \CodeIn{FormatException} given the same input since it checks for illegal inputs.
 
 \textbf{Implication 3:} Mapped API methods across languages may have different input domains, and a legal input can become illegal after translation. As pointed by Cook and Dage~\cite{cook1999highly}, API translation within a single programming language also has similar problems, and a updated API method can have different input ranges with an original one. Adopting their approach may help deal with different input domains across languages.
