@@ -33,25 +33,25 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
- public void testSet|f.name||no|sfs(T v)\{ C.f = v; \}
+ public void testSet|f.name||no|sfs(T p)\{ C.f = p; \}
 \end{alltt}
 \end{CodeOut}%\vspace*{-1.5ex}
 
-\textbf{Static methods.} Given a public static method \CodeIn{m(T1\ m1,\ldots,Tn\ mn)} of a class \CodeIn{C} whose return type is \CodeIn{Tm}, TeMAPI synthesizes a wrapper method as follows:
+\textbf{Static methods.} Given a public static method \CodeIn{m(T1\ p1,\ldots,Tn\ pn)} of a class \CodeIn{C} whose return type is \CodeIn{Tm}, TeMAPI synthesizes a wrapper method as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
- public Tm test|m.name||no|sm(T1\ m1,\ldots, Tn\ mn)\{ return C.m(m1,\ldots, mn); \}
+ public Tm test|m.name||no|sm(T1\ p1,\ldots, Tn\ pn)\{ return C.m(p1,\ldots, pn); \}
 \end{alltt}
 \end{CodeOut}%\vspace*{-1.5ex}
 
 When TeMAPI synthesizes wrapper methods for non-static fields or methods, TeMAPI takes constructors into considerations.
 
-\textbf{Non-static fields.} Given a public non-static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMAPI synthesizes a getter using each constructor \CodeIn{C(T1\ c1,\ldots, Tn\ cn)} of \CodeIn{C} as follows:
+\textbf{Non-static fields.} Given a public non-static field \CodeIn{f} of a class \CodeIn{C} whose type is \CodeIn{T}, TeMAPI synthesizes a getter using each constructor \CodeIn{C(C1\ c1,\ldots, Cn\ cn)} of \CodeIn{C} as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
- public T testGet|f.name||no|nfg(T1\ c1,\ldots, Tn\ cn)\{
+ public T testGet|f.name||no|nfg(C1\ c1,\ldots, Cn\ cn)\{
     C obj = new C(c1,\ldots, cn);
     return obj.f;
  \}
@@ -62,20 +62,20 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
- public void testSet|f.name||no|nfs(T v, T1\ c1,\ldots, Tn\ cn)\{
+ public void testSet|f.name||no|nfs(T p, C1\ c1,\ldots, Cn\ cn)\{
    C obj = new C(c1,\ldots, cn);
-   obj.f = v;
+   obj.f = p;
  \}
 \end{alltt}
 \end{CodeOut}%\vspace*{-1.5ex}
 
-\textbf{Non-static methods.} Given a public non-static method \CodeIn{m(T1\ m1,\ldots,Tn\ mn)} of a class \CodeIn{C} whose return type is \CodeIn{Tm}, TeMAPI synthesizes a wrapper method using each constructor \CodeIn{C(Tv\ cv,\ldots, Tt\ ct)} of \CodeIn{C} as follows:
+\textbf{Non-static methods.} Given a public non-static method \CodeIn{m(T1\ p1,\ldots,Tn\ pn)} of a class \CodeIn{C} whose return type is \CodeIn{Tr}, TeMAPI synthesizes a wrapper method using each constructor \CodeIn{C(C1\ c1,\ldots, Cn\ cn)} of \CodeIn{C} as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
- public Tm test|m.name||no|nm(T1\ m1,\ldots, Tn\ mn, Tv cv, \ldots, Tt ct)\{
-   C obj = new C(cv,\ldots, ct);
-   return obj.m(m1,\ldots, mn);
+ public Tr test|m.name||no|nm(T1\ p1,\ldots, Tn\ pn, C1 c1, \ldots, Cn cn)\{
+   C obj = new C(c1,\ldots, cn);
+   return obj.m(p1,\ldots, pn);
  \}
 \end{alltt}
 \end{CodeOut}%\vspace*{-1.5ex}
@@ -83,12 +83,12 @@ If \CodeIn{f} is not a constant, TeMAPI synthesizes a setter as follows:
 
 TeMAPI groups all synthesized wrapper methods for one API class $C$ to one synthesized class. When synthesis, TeMAPI ignores generic methods, since many translation tools cannot handle generics. Furthermore, when synthesizing wrappers for C\# API classes, TeMAPI ignores \CodeIn{unsafe} methods, \CodeIn{delegate} methods, and methods whose parameters are marked as \CodeIn{out} or \CodeIn{ref} besides generic methods. Java does not have these corresponding keywords, so existing translation tools typically do not translate the preceding methods. After wrapper methods are synthesized, TeMAPI uses the translation tool under analysis to translate wrapper methods to the other language.
 
-Our synthesized wrappers are quite simple in their structures. Therefore, existing translation tools are typically able to translate their structures correctly when two languages are not fundamental different. We further discuss the translation between those languages with fundamental differences in Section~\ref{sec:discuss}. Still, even when two languages are not fundamental different, some translated wrappers can have compilation errors, since existing translation tools cannot translate some API elements. We use \emph{safe wrappers} to refer to the wrappers that are translated without compilation errors. To identify safe wrappers, TeMAPI extends Visual Studio and Eclipse's Java compiler for C\# and Java code, respectively. Comparing source code of safe wrappers with source code of synthesized wrappers, TeMAPI extracts one-to-one mapping relations of API classes for the tool under analysis. For example, by comparing the first statements of the \CodeIn{testskip24nm} method in Java and in C\# as shown in Section~\ref{sec:example}, TeMAPI extracts the mapping relation between the \CodeIn{ByteArrayInputStream} class in Java and the \CodeIn{MemoryStream} class in C\# defined by JLCA. Through analysis, TeMAPI also extracts translatable API methods for the translation tool under analysis. In the preceding example, TeMAPI adds \CodeIn{BufferedInput- Stream(InputStream)} constructor and the \CodeIn{skip(long)} method in Java to translatable API methods of JLCA, since their belonging wrapper method is translated from Java to C\# without compilation errors.
+Our synthesized wrappers are quite simple in their structures. Therefore, existing translation tools are typically able to translate their structures correctly when two languages are not fundamental different. We further discuss the translation between those languages with fundamental differences in Section~\ref{sec:discuss}. Still, even when two languages are not fundamental different, some translated wrappers can have compilation errors, since existing translation tools cannot translate some API elements. We use \emph{safe wrappers} to refer to the wrappers that are translated without compilation errors. To identify safe wrappers, TeMAPI extends Visual Studio and Eclipse's Java compiler for C\# and Java code, respectively. Comparing source code of safe wrappers with source code of synthesized wrappers, TeMAPI extracts one-to-one mapping relations of API classes for the tool under analysis. For example, by comparing the first statements of the \CodeIn{testskip24nm} method in Java and in C\# as shown in Section~\ref{sec:example}, TeMAPI extracts the mapping relation between the \CodeIn{ByteArrayInputStream} class in Java and the \CodeIn{MemoryStream} class in C\# defined by JLCA. Through analysis, TeMAPI also extracts translatable API methods for the translation tool under analysis. In the preceding example, TeMAPI adds \CodeIn{BufferedInputStream(InputStream)} constructor and the \CodeIn{skip(long)} method in Java to translatable API methods of JLCA, since their belonging wrapper method is translated from Java to C\# without compilation errors.
 
 %--------------------------------------------------------
 \subsection{Generating and Translating Test Cases}
 \label{sec:approach:single}
-TeMAPI leverages two state-of-the-art test generation tools (Pex and Randoop) to generate test cases. The two tools complement each other, since Pex explores feasible paths and Randoop generates various call sequences.
+TeMAPI leverages two state-of-the-art test generation tools (Pex and Randoop) to generate test cases.
 
 \textbf{Using Pex.} We next describe how TeMAPI generates test cases that detect behavioral differences using Pex. Pex uses a technique, called dynamic symbolic execution~\cite{koushik:cute, godefroid:dart}, for systematically exploring the code under test and generates test cases that exercise various paths in the code under test. In particular, TeMAPI applies Pex on safe wrappers in C\# language, since Pex handles .NET code.
 
