@@ -2,7 +2,7 @@
 
 \bibitem{DBLP:conf/tacas/AnandPV07}
 S.~Anand, C.~S. Pasareanu, and W.~Visser.
-\newblock {JPF-SE}: A symbolic execution extension to java pathfinder.
+\newblock {JPF-SE}: A symbolic execution extension to {Java} pathfinder.
 \newblock In {\em Proc. TACAS}, pages 134--138, 2007.
 
 \bibitem{ancona2007provenly}
@@ -87,7 +87,7 @@ T.~Jones.
 
 \bibitem{Kawrykow:2009}
 D.~Kawrykow and M.~P. Robillard.
-\newblock Improving api usage through automatic detection of redundant code.
+\newblock Improving {API} usage through automatic detection of redundant code.
 \newblock In {\em Proc. ASE}, pages 111--122, 2009.
 
 \bibitem{koushik:cute}
@@ -99,11 +99,6 @@ S.~Koushik, M.~Darko, and A.~Gul.
 M.~Mossienko.
 \newblock {Automated COBOL to Java recycling}.
 \newblock In {\em Proc. 7th CSMR}, pages 40--50, 2003.
-
-\bibitem{Nita:2010}
-M.~Nita and D.~Notkin.
-\newblock Using twinning to adapt programs to alternative apis.
-\newblock In {\em Proc. ICSE}, pages 205--214, 2010.
 
 \bibitem{nita2010using}
 M.~Nita and D.~Notkin.
