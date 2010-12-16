@@ -5,7 +5,7 @@ We next explain our TeMAPI approach with an illustrative example. In particular,
 
 %----------------------------------------------------
 
-\textbf{Synthesizing and analyzing wrappers.} TeMAPI first synthesizes Java wrapper methods for public methods and fields of the example class, and then uses JLCA to translate the wrapper methods to C\#. TeMAPI next compares source code of the synthesized wrapper methods with the compilation-error-free translated wrapper methods to extract translatable API elements of the example class. In particular, our example class in Java has five fields, two constructors, and eight methods besides inherited ones\footnote{\url{http://download.oracle.com/javase/6/docs/api/java/io/ByteArrayInputStream.html}}. A class can have more than one constructor, and a translation tool may not translate all its constructors. Therefore, to address this issue, TeMAPI includes different constructors in its synthesized wrapper methods instead of simply pushing the receiver object as a parameter of wrapper methods. For example, TeMAPI first identifies \CodeIn{ByteArrayInputStream(byte[])} constructor as translatable, and synthesizes the wrapper method for the \CodeIn{skip(long)} method as follows:
+\textbf{Synthesizing and analyzing wrappers.} TeMAPI first synthesizes Java wrapper methods for public methods and fields of the example class, and then uses JLCA to translate synthesized wrapper methods to C\#. TeMAPI next compares source code of the synthesized wrapper methods with the compilation-error-free translated wrapper methods to extract translatable API elements of the example class. In particular, our example class in Java has five fields, two constructors, and eight methods besides inherited ones\footnote{\url{http://download.oracle.com/javase/6/docs/api/java/io/ByteArrayInputStream.html}}. A class can have more than one constructor, and a translation tool may not translate all its constructors. Therefore, to address this issue, TeMAPI includes different constructors in its synthesized wrapper methods instead of simply pushing the receiver object as a parameter of wrapper methods. For example, TeMAPI first identifies \CodeIn{ByteArrayInputStream(byte[])} constructor as translatable, and synthesizes the wrapper method for the \CodeIn{skip(long)} method as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
@@ -71,7 +71,7 @@ public void test413() throws Throwable \{
 \end{CodeOut}%\vspace*{-1ex}
 
 
-The test case gets passed, since Java allows access to the stream even if the stream is closed. TeMAPI next uses JLCA to translate the generated Java test case from Java to C\#. Since the Java test case uses only translatable API elements, JLCA translates the test case to a C\# test case as follows:
+The test case gets passed, since Java allows access to a stream even if the stream is closed. TeMAPI next uses JLCA to translate the generated Java test case from Java to C\#. Since the Java test case uses only translatable API elements, JLCA translates the test case to a C\# test case as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}

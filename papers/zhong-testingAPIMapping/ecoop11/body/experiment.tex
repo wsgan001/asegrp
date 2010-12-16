@@ -82,63 +82,63 @@ non-static methods            &190,376& 94    &  387     \\
 
 For C\#-to-Java translation tools, TeMAPI first synthesized wrapper methods for all the classes of .NET framework client profile\footnote{\url{http://msdn.microsoft.com/en-us/library/ff462634.aspx}}. As described in Section~\ref{sec:approach:single}, besides generic methods, TeMAPI also ignored \CodeIn{unsafe} methods, \CodeIn{delegate} methods, and methods whose parameters are marked with \CodeIn{out} or \CodeIn{ref}. TeMAPI synthesized almost the same size of wrapper methods as it synthesized for J2SE. Table~\ref{table:csharp2java} shows the translation results. We find that both tools translate only a small number of API elements. One primary reason could be that C\# provides many features such as partial classes, reference parameters, output parameters, and named arguments, that are not provided by Java\footnote{\url{http://en.wikipedia.org/wiki/Comparison_of_Java_and_C_Sharp}}. We suspect that a C\#-to-Java translation tool needs to deal with these issues, so many mapping relations of API elements are not addressed yet.
 
-Tables~\ref{table:java2csharp} and~\ref{table:csharp2java} show that the Java-to-C\# tools are able to translate much more API elements compared to the C\#-to-Java tools. To give more insights, we next present more details at the package level regarding the translation results of Java-to-C\# tools in Table~\ref{table:package}. Column ``Name'' lists names of Java packages. To save space, we omit 12 packages that are not translated by all the three tools (\emph{e.g.}, the \CodeIn{javax.rmi} package). Table~\ref{table:package} shows that all the three translation tools can translate the \CodeIn{java.io}, \CodeIn{java.lang}, \CodeIn{java.util}, and \CodeIn{java.net} packages. These four packages seem to be quite important for most Java programs. Almost for all these packages, JLCA translates more API elements than the other two tools. JLCA can also handle GUI-related packages such as the \CodeIn{java.awt} package and the \CodeIn{javax.swing} package, and can translate some Java programs with GUI interfaces whereas the other two tools cannot translate such programs.
+Tables~\ref{table:java2csharp} and~\ref{table:csharp2java} show that the Java-to-C\# tools are able to translate much more API elements compared to the C\#-to-Java tools. To give more insights, we next present more details at the package level regarding the translation results of Java-to-C\# tools in Table~\ref{table:package}. Column ``Name'' lists names of Java packages. To save space, we omit 12 packages that are not translated by all the three tools (\emph{e.g.}, the \CodeIn{javax.rmi} package). Table~\ref{table:package} shows that all the three translation tools can translate the \CodeIn{java.io}, \CodeIn{java.lang}, \CodeIn{java.util}, and \CodeIn{java.net} packages. These four packages seem to be quite important for most Java programs. Column ``Number'' lists numbers of synthesized wrapper methods. Columns ``Java2CSharp'', ``JLCA'', and ``sharpen'' list translated wrapper methods without compilation errors. Almost for all these packages, JLCA translates more API elements than the other two tools. 
 
 \begin{table}[t]
 \centering
 \begin{SmallOut}
 \begin {tabular} {|l|r|r|r|r|r|r|r|}
  \hline
-\multicolumn{1}{|c}{\textbf{Name}}
-& \multicolumn{1}{|c|}{\textbf{Java2CSharp}} & \multicolumn{1}{|c|}{\textbf{JLCA}}& \multicolumn{1}{|c|}{\textbf{sharpen}} \\
+\multicolumn{1}{|c}{\textbf{Name}} &
+\multicolumn{1}{|c|}{\textbf{Number}} & \multicolumn{1}{|c|}{\textbf{Java2CSharp}} & \multicolumn{1}{|c|}{\textbf{JLCA}}& \multicolumn{1}{|c|}{\textbf{sharpen}} \\
 \hline
-java.awt  &   0     &    8,637  &    0   \\
+java.awt  &  29,199 &  0     &    8,637  &    0   \\
 \hline
-java.bean &   20    &    14     &    0    \\
+java.bean &  1,768  &  20    &    14     &    0    \\
 \hline
-java.io   &   592   &   1,642   &   43   \\
+java.io   &  3,109  & 592   &   1,642   &   43   \\
 \hline
-java.lang &   1,494  &   2,377   &   791  \\
+java.lang &  5,221  & 1,494  &   2,377   &   791  \\
 \hline
-java.math &    101   &    232    &   0    \\
+java.math &  1,584  & 101   &    232    &   0    \\
 \hline
-java.net  &    52    &   482     &   10    \\
+java.net  &  1,990  & 52    &   482     &   10    \\
 \hline
-java.nio  &    30    &    0      &   0    \\
+java.nio  &  536    &  30    &    0      &   0    \\
 \hline
-java.rmi  &    0     &    707   &    0   \\
+java.rmi  &  1,252   &  0     &    707   &    0   \\
 \hline
-java.security &  50  &    702    &  0    \\
+java.security & 2,797& 50  &    702    &  0    \\
 \hline
-java.sql   &   20   &     183   &   0   \\
+java.sql   &  3,495 & 20   &     183   &   0   \\
 \hline
-java.text  &   96   &   321   &   0  \\
+java.text  &  1,068 & 96   &   321   &   0  \\
 \hline
-java.util  & 1,372  &   1,879   &   341   \\
+java.util  & 9,586  & 1,372  &   1,879   &   341   \\
 \hline
-javax.accesibility  &   1    &   25    &   0    \\
+javax.accesibility  & 237 &  1    &   25    &   0    \\
 \hline
-javax.activation     &  0    &   165   &   0     \\
+javax.activation    & 538 & 0    &   165   &   0     \\
 \hline
-javax.crypto        &   0    &    263  &    0    \\
+javax.crypto        & 625 &  0    &    263  &    0    \\
 \hline
-javax.management   &   2    &    0     &   0     \\
+javax.management   &  5,380 & 2    &    0     &   0     \\
 \hline
-javax.naming       &   0    &   1,365   &   0      \\
+javax.naming       &  3,565 & 0    &   1,365   &   0      \\
 \hline
-javax.security     &   0     &  619     &   0    \\
+javax.security     &  1,435 & 0     &  619     &   0    \\
 \hline
-javax.sound          &   0    &   56    & 0     \\
+javax.sound        &  515   & 0    &   56    & 0     \\
 \hline
-javax.swing          &   10   &  21,364 &   0   \\
+javax.swing        & 102,389& 10   &  21,364 &   0   \\
 \hline
-javax.xml            &   34   &   580   &   0  \\
+javax.xml          &  4,188 & 34   &   580   &   0  \\
 \hline
-org.omg              &   0    &  1,578  &   0    \\
+org.omg            &  8,937 & 0    &  1,578  &   0    \\
 \hline
-w3c.dom              &   0    &   14    & 0   \\
+w3c.dom            &  83 & 0    &   14    & 0   \\
 \hline
-org.xml             &    49   &   473    &  0   \\
+org.xml            &  897 &  49   &   473    &  0   \\
 \hline
 \end{tabular}%\vspace*{-3ex}
 \Caption{Java-to-C\# translation results of package level} \label{table:package}
@@ -180,7 +180,7 @@ Total        &  52,336  &  15,153 & 29.0\% &11,099 & 21.2\%  \\
 For Java2CSharp, JLCA, and sharpen, we further present their testing results at the package level in Table~\ref{table:packagetest}. Column ``Name'' lists names of J2SE packages. For columns ``Java2CSharp'', ``JLCA'', and ``sharpen'', sub-column ``R'' lists numbers of generated Java test cases, and sub-column ``\%'' lists percentages of failing test cases (including exception-causing and assertion-failing). Table~\ref{table:packagetest} shows that for the \CodeIn{java.sql} and \CodeIn{java.util} packages, all tools suffer from relatively high percentages of failing test cases, and for the \CodeIn{java.lang} and \CodeIn{java.math} packages, all tools include relatively low percentages of failing test cases. This result may reflect that some packages between Java and C\# are more similar than the others, so they can be more easily translated. We also find that for the \CodeIn{java.text}, \CodeIn{javax.xml}, and \CodeIn{org.xml} packages, JLCA includes the lowest percentage of failing test cases among the five tools. The result indicates that a translation tool can achieve better translation results if its developers carefully prepare API mapping relations.
 
 
-Tables~\ref{table:singleinvoc} and~\ref{table:packagetest} show that a high percentage of generated Java test cases are failed. To better understand behavioral differences between mapped API elements, we inspected 3,759 failing Java test cases. For Net2Java and converter, we inspect all failing test cases, whereas for Java2CSharp, JLCA, and sharpen, we inspect test cases generated for the \CodeIn{java.lang} package, due to a large number of failing test cases. As each input generated by Pex explores an unique path, each failing test case reflects one unique behavioral difference, and Figure~\ref{fig:pex-percent} shows the results. We next present our findings ranked by percentages of failing test cases.
+Tables~\ref{table:singleinvoc} and~\ref{table:packagetest} show that a high percentage of generated Java test cases are failed. To better understand behavioral differences between mapped API elements, we inspected 3,759 failing Java test cases. For Net2Java and converter, we inspect all failing test cases, whereas for Java2CSharp, JLCA, and sharpen, we inspect test cases generated for the \CodeIn{java.lang} package, due to a large number of failing test cases. As each input generated by Pex explores a unique path, each failing test case likely reflects one unique behavioral difference, and Figure~\ref{fig:pex-percent} shows the results. We next present our findings ranked by percentages of failing test cases.
 
 
 \textbf{Finding 1:} 36.8\% test cases show the behavioral differences caused by \CodeIn{null} inputs.
@@ -446,7 +446,7 @@ Assert.IsTrue(var27 == null);
 
 In this sub-sequence, JLCA translates the \CodeIn{AttributeListImpl.getName(int)} method in Java to the \CodeIn{SaxAttributesSupport.GetLocalName(int)} method in C\#. The translation makes the assertion fail since the C\# method does not return \CodeIn{null} given an empty attribute as the Java method does. Besides redundancies, each test case generated by Randoop uses many API elements, and each test case generated by Pex focuses on only one field or method within a synthesized wrapper method. As a result, it takes much more efforts to locate a method with behavioral differences from failing test cases generated by Randoop than by Pex.
 
-From the results of Table~\ref{table:techniques}, we find that Pex alone can detect most behavior differences. However, the combination of the two techniques helps TeMAPI detect more methods with behavioral difference. Besides the behavioral differences that involve invocation sequences, we also find that Pex can fail to explore paths that are too complicated. Randoop complements Pex to generate test cases for detecting behavioral differences of such methods since Randoop generates test cases randomly. Column ``\%'' lists percentages from ``T'' to ``M''. We find that behavioral differences of mapped API methods are quite common since about one third methods have such differences.
+From the results of Table~\ref{table:techniques}, we find that Pex alone can detect most behavior differences. However, the combination of the two techniques helps TeMAPI detect more methods with behavioral difference. Besides the behavioral differences that involve invocation sequences, we also find that Pex can fail to explore paths that are too complicated. Randoop complements Pex to generate test cases for detecting behavioral differences of such methods since Randoop generates test cases randomly. Column ``\%'' lists percentages from ``Combination'' to ``Method''. We find that behavioral differences of mapped API methods are quite common since about one third methods have such differences.
 
 %---------------------------------------------------------------
 %\subsection{Coverage}
