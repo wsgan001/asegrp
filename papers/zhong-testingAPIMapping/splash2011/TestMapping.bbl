@@ -1,0 +1,232 @@
+\begin{thebibliography}{38}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Anand et~al.(2007)Anand, Pasareanu, and
+  Visser]{DBLP:conf/tacas/AnandPV07}
+S.~Anand, C.~S. Pasareanu, and W.~Visser.
+\newblock {JPF-SE}: A symbolic execution extension to {Java} pathfinder.
+\newblock In \emph{Proc. TACAS}, pages 134--138, 2007.
+
+\bibitem[Ancona et~al.(2007)Ancona, Anderson, Damiani, Drossopoulou, Giannini,
+  and Zucca]{ancona2007provenly}
+D.~Ancona, C.~Anderson, F.~Damiani, S.~Drossopoulou, P.~Giannini, and E.~Zucca.
+\newblock {A provenly correct translation of Fickle into Java}.
+\newblock \emph{ACM Transactions on Programming Languages and Systems},
+  29\penalty0 (2):\penalty0 13, 2007.
+\newblock ISSN 0164-0925.
+
+\bibitem[Appeltauer et~al.(2009)Appeltauer, Hirschfeld, Haupt, Lincke, and
+  Perscheid]{appeltauer2009comparison}
+M.~Appeltauer, R.~Hirschfeld, M.~Haupt, J.~Lincke, and M.~Perscheid.
+\newblock {A comparison of context-oriented programming languages}.
+\newblock In \emph{Proc. COP co-located with 23rd ECOOP}, pages 1--6, 2009.
+
+\bibitem[Balaban et~al.(2005)Balaban, Tip, and Fuhrer]{balaban2005refactoring}
+I.~Balaban, F.~Tip, and R.~Fuhrer.
+\newblock {Refactoring support for class library migration}.
+\newblock In \emph{Proc. 20th OOPSLA}, pages 265--279, 2005.
+
+\bibitem[Cabral and Marques(2007)]{cabral2007exception}
+B.~Cabral and P.~Marques.
+\newblock Exception handling: A field study in {Java and. Net}.
+\newblock \emph{Proc. 21st ECOOP}, pages 151--175, 2007.
+
+\bibitem[Cook and Dage(1999)]{cook1999highly}
+J.~Cook and J.~Dage.
+\newblock Highly reliable upgrading of components.
+\newblock In \emph{Proc. 21st ICSE}, pages 203--212, 1999.
+
+\bibitem[Daniel et~al.(2007)Daniel, Dig, Garcia, and
+  Marinov]{daniel2007automated}
+B.~Daniel, D.~Dig, K.~Garcia, and D.~Marinov.
+\newblock Automated testing of refactoring engines.
+\newblock In \emph{Proc. 6th ESEC/FSE}, pages 185--194, 2007.
+
+\bibitem[Dig et~al.(2009)Dig, Marrero, and Ernst]{dig2009refactoring}
+D.~Dig, J.~Marrero, and M.~Ernst.
+\newblock {Refactoring sequential Java code for concurrency via concurrent
+  libraries}.
+\newblock In \emph{Proc 31st ICSE}, pages 397--407, 2009.
+
+\bibitem[El-Ramly et~al.(2006)El-Ramly, Eltayeb, and Alla]{el2006experiment}
+M.~El-Ramly, R.~Eltayeb, and H.~Alla.
+\newblock An experiment in automatic conversion of legacy {Java} programs to
+  {C\#}.
+\newblock In \emph{Proc. AICCSA}, pages 1037--1045, 2006.
+
+\bibitem[Garcia et~al.(2003)Garcia, Jarvi, Lumsdaine, Siek, and
+  Willcock]{Garcia2003}
+R.~Garcia, J.~Jarvi, A.~Lumsdaine, J.~G. Siek, and J.~Willcock.
+\newblock A comparative study of language support for generic programming.
+\newblock In \emph{Proc. 18th OOPSLA}, pages 115--134, 2003.
+
+\bibitem[Godefroid et~al.(2005)Godefroid, Klarlund, and Sen]{godefroid:dart}
+P.~Godefroid, N.~Klarlund, and K.~Sen.
+\newblock {DART}: {D}irected automated random testing.
+\newblock In \emph{Proc. PLDI}, pages 213--223, 2005.
+
+\bibitem[Hassan and Holt(2005)]{hassan2005lightweight}
+A.~Hassan and R.~Holt.
+\newblock {A lightweight approach for migrating Web frameworks}.
+\newblock \emph{Information and Software Technology}, 47\penalty0 (8):\penalty0
+  521--532, 2005.
+
+\bibitem[Henkel and Diwan(2005)]{henkel2005catchup}
+J.~Henkel and A.~Diwan.
+\newblock {CatchUp!: capturing and replaying refactorings to support API
+  evolution}.
+\newblock In \emph{Proce. 27th ICSE}, pages 274--283, 2005.
+
+\bibitem[Jiang and Su(2009)]{jiang2009automatic}
+L.~Jiang and Z.~Su.
+\newblock {Automatic mining of functionally equivalent code fragments via
+  random testing}.
+\newblock In \emph{Proc. 18th ISSTA}, pages 81--92, 2009.
+
+\bibitem[Jin et~al.(2010)Jin, Orso, and Xie]{jin2010automated}
+W.~Jin, A.~Orso, and T.~Xie.
+\newblock Automated behavioral regression testing.
+\newblock In \emph{Proc. 3rd ICST}, pages 137--146, 2010.
+
+\bibitem[Jones(1998)]{jones1998estimating}
+T.~Jones.
+\newblock \emph{{Estimating software costs}}.
+\newblock McGraw-Hill, Inc. Hightstown, NJ, USA, 1998.
+
+\bibitem[Kapur et~al.(2010)Kapur, Cossette, and Walker]{kapur2010refactoring}
+P.~Kapur, B.~Cossette, and R.~Walker.
+\newblock {Refactoring references for library migration}.
+\newblock In \emph{Proc. OOPSLA}, pages 726--738, 2010.
+
+\bibitem[Kawrykow and Robillard(2009)]{Kawrykow:2009}
+D.~Kawrykow and M.~P. Robillard.
+\newblock Improving {API} usage through automatic detection of redundant code.
+\newblock In \emph{Proc. ASE}, pages 111--122, 2009.
+
+\bibitem[Koushik et~al.(2005)Koushik, Darko, and Gul]{koushik:cute}
+S.~Koushik, M.~Darko, and A.~Gul.
+\newblock {CUTE: a concolic unit testing engine for C}.
+\newblock In \emph{Proc. ESEC/FSE}, pages 263--272, 2005.
+
+\bibitem[Mossienko(2003)]{mossienko2003automated}
+M.~Mossienko.
+\newblock {Automated COBOL to Java recycling}.
+\newblock In \emph{Proc. 7th CSMR}, pages 40--50, 2003.
+
+\bibitem[Nita and Notkin(2010)]{nita2010using}
+M.~Nita and D.~Notkin.
+\newblock {Using twinning to adapt programs to alternative APIs}.
+\newblock In \emph{Proc, 32nd ICSE}, pages 205--214, 2010.
+
+\bibitem[Orso et~al.(2001)Orso, Harrold, Rosenblum, Rothermel, Soffa, and
+  Do]{orso1using}
+A.~Orso, M.~Harrold, D.~Rosenblum, G.~Rothermel, M.~Soffa, and H.~Do.
+\newblock Using component metacontent to support the regression testing of
+  component-based software.
+\newblock In \emph{Proc. ICSM}, pages 716--725, 2001.
+
+\bibitem[Pacheco et~al.(2007)Pacheco, Lahiri, Ernst, and
+  Ball]{pacheco2007feedback}
+C.~Pacheco, S.~Lahiri, M.~Ernst, and T.~Ball.
+\newblock {Feedback-directed random test generation}.
+\newblock In \emph{Proc. 29th ICSE}, pages 75--84, 2007.
+
+\bibitem[Ravitch et~al.(2009)Ravitch, Jackson, Aderhold, and
+  Liblit]{RavitchJAL09}
+T.~Ravitch, S.~Jackson, E.~Aderhold, and B.~Liblit.
+\newblock Automatic generation of library bindings using static analysis.
+\newblock In \emph{Proc. PLDI}, pages 352--362, 2009.
+
+\bibitem[Robillard(2009)]{robillard2009makes}
+M.~Robillard.
+\newblock What makes {APIs} hard to learn? answers from developers.
+\newblock \emph{IEEE Software}, pages 27--34, 2009.
+
+\bibitem[Rodriguez et~al.(to appear)Rodriguez, Jeuring, Jansson, Gerdes,
+  Kiselyov, and d.~S.~Oliveira]{yakushevcomparing}
+A.~Rodriguez, J.~Jeuring, P.~Jansson, A.~Gerdes, O.~Kiselyov, and B.~C.
+  d.~S.~Oliveira.
+\newblock Comparing datatype generic libraries in {Haskell}.
+\newblock \emph{Journal of Functional Programming}, to appear.
+
+\bibitem[Song and Tilevich(2009)]{song2009enhancing}
+M.~Song and E.~Tilevich.
+\newblock {Enhancing source-level programming tools with an awareness of
+  transparent program transformations}.
+\newblock In \emph{Proc. 24th OOPSLA}, pages 301--320, 2009.
+
+\bibitem[Thomas(2006)]{thomas2006api}
+D.~Thomas.
+\newblock The {API} field of dreams--too much stuff! it¡¯s time to reduce and
+  simplify {APIs!}
+\newblock \emph{Journal of Object Technology}, 5\penalty0 (6):\penalty0 23--27,
+  2006.
+
+\bibitem[Thummalapenta and Xie(2008)]{thummalapentaase08spotweb}
+S.~Thummalapenta and T.~Xie.
+\newblock {SpotWeb}: Detecting framework hotspots and coldspots via mining open
+  source code on the web.
+\newblock In \emph{Proc. 23rd ASE}, pages 109--112, 2008.
+
+\bibitem[Thummalapenta et~al.(2009)Thummalapenta, Xie, Tillmann, de~Halleux,
+  and Schulte]{thummalapenta09:mseqgen}
+S.~Thummalapenta, T.~Xie, N.~Tillmann, P.~de~Halleux, and W.~Schulte.
+\newblock {MSeqGen}: Object-oriented unit-test generation via mining source
+  code.
+\newblock In \emph{Proc. 7th ESEC/FSE}, pages 193--202, 2009.
+
+\bibitem[Tillmann and De~Halleux(2008)]{tillmann2008pex}
+N.~Tillmann and J.~De~Halleux.
+\newblock {Pex: white box test generation for. NET}.
+\newblock In \emph{Proc. 2nd TAP}, pages 134--153, 2008.
+
+\bibitem[Trent et~al.(2008)Trent, Tatsubori, Suzumura, Tozawa, and
+  Onodera]{trent2008performance}
+S.~Trent, M.~Tatsubori, T.~Suzumura, A.~Tozawa, and T.~Onodera.
+\newblock {Performance comparison of PHP and JSP as server-side scripting
+  languages}.
+\newblock In \emph{Proc. 9th Middleware}, pages 164--182, 2008.
+
+\bibitem[Visser et~al.(2003)Visser, Havelund, Brat, Park, and
+  Lerda]{visser2003mcp}
+W.~Visser, K.~Havelund, G.~Brat, S.~Park, and F.~Lerda.
+\newblock {Model Checking Programs}.
+\newblock \emph{Automated Software Engineering}, 10\penalty0 (2):\penalty0
+  203--232, 2003.
+
+\bibitem[Waters(1988)]{waters1988program}
+R.~Waters.
+\newblock {Program translation via abstraction and reimplementation}.
+\newblock \emph{IEEE Transactions on Software Engineering}, 14\penalty0
+  (8):\penalty0 1207--1228, 1988.
+
+\bibitem[Xing and Stroulia(2007)]{xing2007api}
+Z.~Xing and E.~Stroulia.
+\newblock {API-evolution support with Diff-CatchUp}.
+\newblock \emph{IEEE Transactions on Software Engineering}, 33\penalty0
+  (12):\penalty0 818--836, 2007.
+
+\bibitem[Yasumatsu and Doi(1995)]{yasumatsu1995spice}
+K.~Yasumatsu and N.~Doi.
+\newblock {SPiCE: a system for translating Smalltalk programs into a C
+  environment}.
+\newblock \emph{IEEE Transactions on Software Engineering}, 21\penalty0
+  (11):\penalty0 902--912, 1995.
+
+\bibitem[Zhong et~al.(2009)Zhong, Zhang, Xie, and Mei]{zhong09:inferring}
+H.~Zhong, L.~Zhang, T.~Xie, and H.~Mei.
+\newblock Inferring resource specifications from natural language {API}
+  documentation.
+\newblock In \emph{Proc. 24th ASE}, pages 307--318, 2009.
+
+\bibitem[Zhong et~al.(2010)Zhong, Thummalapenta, Xie, Zhang, and
+  Wang]{zhong2010mining}
+H.~Zhong, S.~Thummalapenta, T.~Xie, L.~Zhang, and Q.~Wang.
+\newblock {Mining API mapping for language migration}.
+\newblock In \emph{Proc. 32nd ICSE}, pages 195--204, 2010.
+
+\end{thebibliography}
