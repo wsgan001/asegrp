@@ -61,7 +61,7 @@ public void testskip24nm36()\{
 This Java test case fails, since given the preceding inputs, the \CodeIn{skip(long)} method in Java does not throw any exceptions, whereas the translated C\# code does. Thus, TeMAPI detects a behavioral difference between the \CodeIn{skip(long)} method in Java and its translated C\# API elements by JLCA.
 
 %-----------------------------------
-When using Randoop~\citep{pacheco2007feedback} to generate test cases, TeMAPI does not generate invocation sequences from wrappers directly, since each wrapper method includes a fixed simple invocation sequence. Instead, TeMAPI limits the scope of Randoop to only translatable methods while generating invocation sequences. For example, a generated Java test case is as follows:
+When using Randoop~\citep{pacheco2007feedback} to generate test cases, TeMAPI does not generate invocation sequences from wrappers directly. The reason is that each wrapper method includes a fixed invocation sequence, thereby limiting the ability of Randoop that can generate complex sequences. To address this issue, TeMAPI limits the scope of Randoop to only translatable methods and lets Randoop generate test cases with complex sequences. For example, a generated Java test case is as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
