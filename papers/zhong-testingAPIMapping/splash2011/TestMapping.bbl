@@ -1,4 +1,4 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{39}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -111,6 +111,11 @@ D.~Kawrykow and M.~P. Robillard.
 S.~Koushik, M.~Darko, and A.~Gul.
 \newblock {CUTE: a concolic unit testing engine for C}.
 \newblock In \emph{Proc. ESEC/FSE}, pages 263--272, 2005.
+
+\bibitem[Lindig(2005)]{lindigaadebug2005}
+C.~Lindig.
+\newblock Random testing of c calling conventions.
+\newblock In \emph{Proc. 6th AADEBUG}, pages 3--11, 2005.
 
 \bibitem[Mossienko(2003)]{mossienko2003automated}
 M.~Mossienko.
