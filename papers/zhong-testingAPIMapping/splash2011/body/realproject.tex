@@ -1,0 +1,291 @@
+\begin{table*}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|l|l|r|l|c|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Name}}& \multicolumn{1}{c|}{\textbf{Type}}& \multicolumn{1}{|c|}{\textbf{LOC} } &\multicolumn{1}{c|}{\textbf{Description}}\\
+\hline\hline
+numerics4j      &  libraries & 8,920   & a numeric library for root finding, statistical distribution, and \emph{etc}. \\
+\hline
+PDFClown    &  libraries  & 24,285   & a library for manipulating PDF files.\\
+\hline
+SimMetric & libraries & 4,177 & a library for calculating similarities between strings.\\
+\hline
+binaryNotes  &  toolkits & 10,917 &  a toolkit for manipulating abstract syntax notations.\\
+\hline
+FpML         &  toolkits   & 17,339  & a toolkit for manipulating FpML documents. \\
+\hline
+OpenFiniteStateMachine &  toolkits   & 1,192 & a toolkit for building finite state machines.\\
+\hline
+\end{tabular}%\vspace*{-2ex}
+\Caption{Subject projects for translation} \label{table:subjects2}
+\end{SmallOut}%\vspace*{-6ex}
+\end{table*}
+\section{Capabilities for Translating Real Projects}
+\label{sec:real}
+In Section~\ref{sec:evaluation}, our results show the effectiveness of TeMAPI to detect behavioral differences of API mapping relations for existing translation tools. Still, the significance of our results can be reduced if existing translation tools cannot translate many code structures. In addition, our results also show that existing translation tools cover a small portion of API elements. Given such a small portion of covered API elements, existing tools may not cover adequate API mapping relations. The significance of TeMAPI can thus be further reduced in that it detects behavioral differences of only those translatable API elements. However, some existing programming languages (\emph{e.g.}, Java and C\#) are quite similar in their structures, and our previous work~\citep{thummalapentaase08spotweb} shows that programmers also typically use only a small portion of API elements in real projects. Considering the two points, we hypothesize that existing tools can translate most code structures and used API elements although these translation tool typically support only a small portion of API elements. To provide solid evidences to this hypothesis, we conduct more experiments to answer the research questions as follows:
+
+\begin{enumerate}
+\item To what degree can existing translation tools translate code structures in real projects without introducing compilation errors (Section~\ref{sec:real:structure})?
+\item To what degree can existing translation tools translate API elements used in real projects without introducing compilation errors (Section~\ref{sec:real:api})?
+\end{enumerate}%\vspace*{-1.5ex}
+
+
+
+We selected six open source projects as subjects in these experiments. Table~\ref{table:subjects2} lists the six subject projects. Column ``Name'' lists names of subjects. All the subjects have both Java versions and C\# versions, so we can determine introduced defects by comparing translated files of translation tools with existing ones. Column ``Type'' lists types of subjects. To ensure the representativeness, our selected subjects cover two typical types of open source projects (\emph{i.e.}, toolkits and libraries). In particular, toolkit projects have both user interfaces and programming interfaces, and libraries have only programming interfaces. Column ``LOC'' lists lines of code for all the subjects. The six subjects range from small sizes to large sizes. Column ``Description'' lists descriptions of these subjects. These subjects cover various functionalities such as calculating, modeling, and manipulating files.
+
+For the Java version of each subject, we selected the five largest source files, and marked all their code lines with two types. For example, we marked the following code snippet as follows:
+
+\begin{CodeOut}%\vspace*{-1.5ex}
+\begin{alltt}
+public ... decodeTag(InputStream stream) ... \{//1A
+  return null;//2N
+\}//3N
+\end{alltt}
+\end{CodeOut}
+
+In the preceding code snippet, we use numbers to denote line numbers; ``\emph{N}'' to denote lines whose translations need no API mapping relations; and ``\emph{A}'' to denote lines whose translations need API mapping relations. In this example, to translate the first line of the preceding code snippet, a translation tool needs to understand the mapping relation between the \CodeIn{java.io.InputStream} class in Java and the corresponding C\# class, whereas a translation tool does not need to understand API mapping relations to translate the second line and the third line. After we marked all the source files, we used the three Java-to-C\# translation tools (\emph{i.e.}, JLCA, Java2CSharp, and Sharpen) to translate all the subjects from Java to C\#, and compared translated source files with existing C\# files for code lines with defects. We next present our detailed findings.
+
+%\vspace*{-2ex}
+\subsection{Capabilities of Translating Code Structures}
+\label{sec:real:structure}
+\begin{table*}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|l|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
+ \hline
+\multicolumn{1}{|c|}{\multirow{2}*[-2pt]{\textbf{File}}}
+& \multicolumn{1}{c|}{\multirow{2}*[-2pt]{\textbf{NLOC}}}
+&\multicolumn{4}{c|}{\textbf{Java2CSharp}} & \multicolumn{4}{|c|}{\textbf{JLCA}}& \multicolumn{4}{|c|}{\textbf{Sharpen}} \\\cline{3-14}
+& &\multicolumn{1}{c|}{\textbf{B}} &  \multicolumn{1}{|c|}{\textbf{F}}  &   \multicolumn{1}{|c|}{\textbf{S}} & \multicolumn{1}{|c|}{\textbf{\%}}  & \multicolumn{1}{|c|}{\textbf{B}}   &   \multicolumn{1}{|c|}{\textbf{F}}& \multicolumn{1}{|c|}{\textbf{S}}   &  \multicolumn{1}{|c|}{\textbf{\%}} &   \multicolumn{1}{|c|}{\textbf{B}}& \multicolumn{1}{|c|}{\textbf{F}}   & \multicolumn{1}{|c|}{\textbf{S}}  &   \multicolumn{1}{|c|}{\textbf{\%}}\\
+\hline\hline
+Hypergeometric. & 155  & 3  & 0  & 152 & 100.0\%& 19  & 0  & 136 & 100.0\%& 0  & 1 & 154  & 99.4\%\\
+\hline
+NegativeBinomial.& 144 & 5  & 0  & 139 & 100.0\%& 34  & 0  & 110 & 100.0\%& 0  & 0 & 144  & 100.0\%\\
+\hline
+BinomialDistributionTest        & 149 & 4  & 0  & 145 & 100.0\%& 33  & 1  & 115 & 99.1\% & 0  & 1 & 148  & 99.3\%\\
+\hline
+WeibullDistributionTest         & 118 & 5  & 0  & 113 & 100.0\%& 10  & 0  & 108 & 100.0\%& 0  & 0 & 118  & 100.0\%\\
+\hline
+  TrigonometricTest             & 141 & 32 & 0  & 109 & 100.0\%& 62  & 32 & 47  & 59.5\% & 0  & 61& 80   & 56.7\%\\
+\hline\hline
+  OpenTypeFont                 & 960  & 66  & 47 & 847 & 94.7\% & 342& 23 & 595 & 96.3\% & 1  & 46& 913  & 95.2\%\\
+\hline
+  PrimitiveFilter              & 846  & 90  & 20 & 739 & 97.4\% & 326& 30 & 493 & 94.3\% & 0  & 33& 816  & 96.1\%\\
+\hline
+  Parser                       & 670  & 52  & 11 & 607 & 98.2\% & 61 & 40 & 569 & 93.4\% & 0  & 18& 652  & 97.3\%\\
+\hline
+  PdfName                      & 382  & 6   & 2  & 374 & 99.5\% & 16 & 9  & 357 & 97.5\% & 0  & 0 & 382  & 100.0\%\\
+\hline
+  AppearanceCharacteristics    & 438  & 127 & 31 & 280 & 90.0\% & 16 & 26 & 396 & 93.8\% & 4  & 62& 372  & 85.7\%\\
+\hline\hline
+  TagLink                      & 232  & 6   & 0  & 226 & 100.0\%& 27 & 17 & 188 & 91.7\% & 0  & 4 & 228  & 98.3\%\\
+\hline
+SmithWatermanGoto.             & 164 & 7   &  0 & 157 & 100.0\%& 7 & 0  & 157 & 100.0\%& 0  & 3 & 161  & 98.2\%\\
+\hline
+  TagLinkToken                  & 168 & 4   & 0  & 164 & 100.0\%& 3  & 5  & 160 & 97.0\% & 0  & 2 & 166  & 98.8\%\\
+\hline
+  TestMetrics                   & 100 & 22  & 0  & 78  & 100.0\%& 16 & 9  & 75  & 92.6\% & 0  & 0 & 100  & 100.0\%\\
+\hline
+  SmithWaterman                 & 117 & 6   & 0  & 111 & 100.0\%& 11 & 0  & 106 & 100.0\%& 0  & 3 & 114  & 97.4\%\\
+\hline\hline
+  PERAlignedDecoder & 394  & 9  & 26 & 359 & 93.2\% & 51 & 17 & 326 & 95.0\% & 17 & 55 & 322 & 85.4\%\\
+\hline
+  PERAlignedEncoder & 367  & 16 & 10 & 341 & 97.2\% & 15 & 16 & 336 & 95.5\% & 17 & 28 & 322 & 92.0\%\\
+\hline
+  DecoderTest       & 204  & 8  & 32 & 164 & 83.7\% & 37 & 49  & 118& 70.7\% & 14 & 30 & 160 & 84.2\%\\
+\hline
+  Decoder           & 324  & 1  & 34 & 289 & 89.5\% & 17 & 22  & 285& 92.8\% & 8  & 54 & 262 & 82.9\%\\
+\hline
+  BERDecoder        & 297  & 5  & 26 & 266 & 91.1\% & 23 & 42  & 232& 84.7\% & 6  & 61 & 230 & 79.0\%\\
+\hline\hline
+  IrdRules          & 1,300 & 140& 0  & 1,160& 100.0\%& 322 & 0  & 978 & 100.0\%& 65 &7  & 1,228 & 99.4\%\\
+\hline
+  FxRules           & 1,359 & 111& 2  & 1,246& 99.8\% & 362 & 0  & 997 & 100.0\%& 149& 5 & 1,205 & 99.6\%\\
+\hline
+  CdsRules          & 1,229 & 114& 0  & 1,115& 100.0\%& 386 & 1  & 842 & 99.9\% & 55 & 11 & 1,163& 99.1\%\\
+\hline
+  Releases          & 1,223 &1,043& 26 & 154 & 85.6\% & 1,161& 0  & 62  & 100.0\%& 9  & 21 & 1,193& 98.3\%\\
+\hline
+  Conversions       & 491  & 29 & 5  & 457 & 98.9\% & 24  & 1  & 466 & 99.8\% & 7  & 4  & 480 & 99.2\%\\
+\hline\hline
+FileFinite.    & 145  & 7  & 5  & 133 & 96.4\% & 2   & 21 & 122 & 85.3\% & 0  & 10& 135  & 93.1\%\\
+\hline
+FileFiniteState.& 120  & 3  & 2  & 115 & 98.3\% & 0   & 23 & 97  & 80.8\% & 0  & 0 & 120  & 100.0\%\\
+\hline
+  ObjectFactor                 & 39   & 2  & 0  & 37  & 100.0\%& 0   & 16 & 23  & 59.0\% & 1  & 5 & 33   & 86.8\%\\
+\hline
+  FiniteStateMachineBuilder    & 70   & 9  & 3  & 58  & 95.1\% & 0   & 2  & 68  & 97.1\% & 0  & 1 & 69   & 98.6\%\\
+\hline
+  FiniteStateMachine           & 27    & 5  & 0 & 22 & 100.0\%& 0   & 0  & 27  & 100.0\%& 0  & 0 & 27   & 100.0\%\\
+\hline\hline
+\multicolumn{1}{|c|}{Total}     &12,376&1,937& 282&10,157& 97.3\% & 3,386& 399&8,591 & 95.6\% & 353&526&11,497 & 95.6\%\\
+\hline
+\end{tabular}%\vspace*{-3ex}
+\Caption{Translation results for code structure lines} \label{table:codestructure}
+\end{SmallOut}%\vspace*{-6ex}
+\end{table*}
+
+Table~\ref{table:codestructure} shows the results to translate lines whose translations do not need API mapping relations. Column ``File'' lists file names of all selected source files. Each group of files belongs to one individual subject in the same order with Table~\ref{table:subjects2}. For example, all the five files of the first group in Table~\ref{table:codestructure} belongs to the numerics4j library. To save space, we use ``Hypergeometric.'' to denote the \CodeIn{HypergeometricDistributionTest} class; ``NegativeBinomial.'' to denote the \CodeIn{NegativeBinomialDistributionTest} class; ``SmithWatermanGoto.'' to denote the \CodeIn{SmithWatermanGotoh\-WindowedAffine} class; ``FileFinite.'' to denote the \CodeIn{FileFinite\-StateMachineModel} class; and ``FileFiniteState.'' to denote the \CodeIn{FileFiniteStateMachineBaseModel} class. Column ``NLOC'' lists numbers of lines whose translations do not need API mapping relations. Columns ``Java2CSharp'', ``JLCA'', and ``Sharpen'' list results of corresponding translation tools. For the three columns, sub-column ``B'' denotes lines whose marks do not exist in translated code. A translation tool may ignore some comments, so corresponding marks do not exist in translated code. For example, we marked the Releases.java file as follows:
+
+\begin{CodeOut}%\vspace*{-1.5ex}
+\begin{alltt}
+new SchemeDefaults (//25N
+  new String [][] \{//26A
+  ...
+  \}//67N
+  ...
+``weeklyRollConventionSchemeDefault'' \} \}),//116N
+\end{alltt}
+\end{CodeOut}
+
+After translation, we find that all the three translation tools removed all the comments between Line 26 and Line 67. Also, we notice that translation tools sometimes ignore lines when it fails to translate them. For example, we marked the following lines in the PERAlignedDecoder.java file:
+
+\begin{CodeOut}%\vspace*{-1.5ex}
+\begin{alltt}
+public <T> T decode(...) throws Exception \{//19A
+  return super.decode(...);//20A
+\}//21N
+\end{alltt}
+\end{CodeOut}
+
+JLCA translates the three lines as follows:
+\begin{CodeOut}%\vspace*{-1.5ex}
+\begin{alltt}
+//UPGRADE_ISSUE: The following fragment of code could not
+   be parsed and was not converted...
+public < T > T decode(...) throws Exception
+\end{alltt}
+\end{CodeOut}
+
+During translation, JLCA ignores Line 20 and Line 21. Except some rare cases (\emph{e.g.}, the Releases.java file), translation tools typically ignores about 10\% lines during translation. Sub-column ``F'' lists numbers of translated lines with compilation errors. In total, we find that Java2CSharp has the lowest numbers for this column, and JLCA has the highest numbers for this column. As explained by Microsoft\footnote{\url{http://msdn.microsoft.com/en-us/vjsharp/bb188593}}, JLCA is retired with the J\# programming language since 2005. As a result, it cannot translate many up-to-date code structures of Java. For example, as shown in the above code snippet from the PERAlignedDecoder.java file, JLCA cannot translate code structures that are related with generic programming. As another example, JLCA cannot translate the following line of code correctly.
+
+\begin{CodeOut}%\vspace*{-1.5ex}
+\begin{alltt}
+for(Field field : elementInfo.getFields(objectClass))
+\end{alltt}
+\end{CodeOut}
+
+The translated code is as follows:
+
+\begin{CodeOut}%\vspace*{-1.5ex}
+\begin{alltt}
+for(Field field: elementInfo.getFields(objectClass))
+\end{alltt}
+\end{CodeOut}
+
+The line of code is not correctly translated, since JLCA cannot understand the latest code structure for the \CodeIn{for} statement. Sub-column ``S'' lists numbers of translated lines without compilation errors. Sub-column ``\%'' lists percents of translated lines without compilation errors. This column is calculated as follows:
+
+\begin{equation}\label{eq-correctpercent}
+Translation\ percent=\frac{S}{S+F}\times 100\%
+\end{equation}%\vspace*{-2ex}
+
+In this equation, we use ``S'' and ``F'' to denote corresponding sub-columns. In total, our results show that existing translation tools can translate most code structures in real projects in that more than 90\% lines can be translated without introducing compilation errors. Given existing translation tools can translate most code structures from Java to C\#, we further present the results for translating API elements.
+
+\subsection{Capabilities of Translating API elements}
+\label{sec:real:api}
+
+\begin{table*}[t]
+\centering
+\begin{SmallOut}
+\begin {tabular} {|l|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|r|}
+ \hline
+\multicolumn{1}{|c|}{\multirow{2}*[-2pt]{\textbf{File}}}
+& \multicolumn{1}{c|}{\multirow{2}*[-2pt]{\textbf{ALOC}}}
+&\multicolumn{4}{c|}{\textbf{Java2CSharp}} & \multicolumn{4}{|c|}{\textbf{JLCA}}& \multicolumn{4}{|c|}{\textbf{Sharpen}} \\\cline{3-14}
+& &\multicolumn{1}{c|}{\textbf{B}} &  \multicolumn{1}{|c|}{\textbf{F}}  &   \multicolumn{1}{|c|}{\textbf{S}} & \multicolumn{1}{|c|}{\textbf{\%}}  & \multicolumn{1}{|c|}{\textbf{B}}   &   \multicolumn{1}{|c|}{\textbf{F}}& \multicolumn{1}{|c|}{\textbf{S}}   &  \multicolumn{1}{|c|}{\textbf{\%}} &   \multicolumn{1}{|c|}{\textbf{B}}& \multicolumn{1}{|c|}{\textbf{F}}   & \multicolumn{1}{|c|}{\textbf{S}}  &   \multicolumn{1}{|c|}{\textbf{\%}}\\
+\hline\hline
+Hypergeometric.  & 37  & 0  & 0  & 37  & 100.0\%& 0   & 21 & 16  & 43.2\% & 4  & 20& 13   & 39.4\%\\
+\hline
+NegativeBinomial.& 35  & 0  & 0  & 35  & 100.0\%& 0   & 16 & 19  & 54.3\% & 0  & 17& 18   & 51.4\%\\
+\hline
+BinomialDistributionTest        & 34  & 0  & 0  & 34  & 100.0\%& 0   & 15 & 19  & 55.9\% & 0  & 16& 18   & 52.9\%\\
+\hline
+WeibullDistributionTest         & 38  & 0  & 0  & 38  & 100.0\%& 3   & 12 & 23  & 65.7\% & 0  & 12& 26  & 68.4\%\\
+\hline
+  TrigonometricTest             & 12  & 0  & 0  & 12  & 100.0\%& 0   & 0  & 12  & 100.0\% & 0 & 0 & 12   & 100.0\%\\
+\hline\hline
+  OpenTypeFont                 & 105  & 14  & 1  & 90  & 98.9\% & 21  & 29 & 55  & 65.5\% & 0  & 26& 79   & 75.2\%\\
+\hline
+  PrimitiveFilter              & 165  & 8   & 63 & 94  & 59.9\% & 91  & 9  & 65  & 87.8\% & 0  & 49& 116  & 70.3\%\\
+\hline
+  Parser                       & 57  & 4    & 13 & 40  & 75.5\% & 3  & 18 & 36  & 66.7\% & 0   & 16& 41   & 71.9\%\\
+\hline
+  PdfName                      & 40  & 10   & 2  & 28  & 93.3\% & 13 & 5  & 22  & 81.5\% & 0  & 7 & 33    & 82.5\%\\
+\hline
+  AppearanceCharacteristics    & 7   & 2    & 1  & 4   & 80.0\% & 0  & 0  & 7   & 100.0\%& 0  & 0 & 7     & 100.0\%\\
+\hline\hline
+  TagLink                      & 118 & 3    & 0  & 115 & 100.0\%& 15 & 27 & 76  & 73.8\% & 0  & 9 & 109  & 92.4\%\\
+\hline
+SmithWatermanGoto.& 20 & 3    &  0 & 17  & 100.0\%& 6  & 0  &  14 & 100.0\%& 0  & 0 & 20   & 100.0\%\\
+\hline
+  TagLinkToken                  & 71 & 4    & 0  & 67  & 100.0\%& 5  & 11 &  55 & 83.3\% & 0  & 4 & 67   & 94.4\%\\
+\hline
+  TestMetrics                   & 60 & 3    & 0  & 57  & 100.0\%& 1  & 10 & 49  & 83.1\% & 0  & 1 & 59   & 98.3\%\\
+\hline
+  SmithWaterman                 & 11 & 0    & 0  & 11  & 100.0\%& 0  & 0  & 11  & 100.0\%& 0  & 0 & 11  & 97.4\%\\
+\hline\hline
+  PERAlignedDecoder & 87   & 3  & 8  & 76  & 90.5\% & 27 & 17 & 43  & 71.7\% & 12 & 44 & 31  & 41.3\%\\
+\hline
+  PERAlignedEncoder & 86   & 4  & 4  & 78  & 95.1\% & 21 & 12 & 53  & 81.5\% & 9  & 51 & 26  & 33.8\%\\
+\hline
+  DecoderTest       & 191  & 14 &  2 & 175 & 98.9\% & 33 & 87 & 71  & 44.9\% & 9  & 146& 36  & 19.8\%\\
+\hline
+  Decoder           & 66   & 6  & 12 & 48  & 80.0\% & 1  & 25 & 40  & 61.5\% & 2  & 44 & 20  & 31.3\%\\
+\hline
+  BERDecoder        & 86   & 0  & 11 & 75  & 87.2\% & 30 & 14 & 42  & 91.1\% & 5  & 45 & 36  & 44.4\%\\
+\hline\hline
+  IrdRules          & 386  & 10 & 0  & 376 & 100.0\%& 49 & 0  & 337 & 100.0\%& 7  & 264 & 115 & 30.3\%\\
+\hline
+  FxRules           & 290  & 10 & 0  & 280 & 100.0\%& 8  & 0  & 282 & 100.0\%& 7  & 241 & 42  & 14.8\%\\
+\hline
+  CdsRules          & 316  & 12 & 0  & 304 & 100.0\%& 40 & 2  & 274 & 99.3\% & 7  & 227 & 82  & 26.5\%\\
+\hline
+  Releases          & 33   & 24 & 0  & 9   & 100.0\%& 25 & 0  & 8   & 100.0\%& 7  & 4   & 22  & 84.6\%\\
+\hline
+  Conversions       & 438  & 20 & 18 & 400 & 95.7\% & 27 & 0  & 411 & 100.0\%& 11 & 173 & 254 & 59.5\%\\
+\hline\hline
+FileFinite.    & 45   & 14  & 9  & 22  & 71.0\% & 6   & 12 & 27  & 69.2\% & 0  & 11& 34   & 75.6\%\\
+\hline
+FileFiniteState.& 46   & 7  & 1   & 38  & 97.4\% & 1   & 15 & 30  & 66.7\% & 0  & 7 & 39   & 84.8\%\\
+\hline
+  ObjectFactor                 & 29   & 11 & 18  & 0   &  0.0\%& 0   & 20  & 9   & 31.0\% & 0  & 18& 11   & 37.9\%\\
+\hline
+  FiniteStateMachineBuilder    & 17   & 5  & 1   & 11  & 91.7\% & 1   & 6  & 10  & 62.5\% & 0  & 12& 5    & 29.4\%\\
+\hline
+  FiniteStateMachine           & 11   & 10 & 0   & 1   & 100.0\%& 1   & 8  & 2   &  20.0\%& 0  & 0 & 11   & 100.0\%\\
+\hline\hline
+   \multicolumn{1}{|c|}{Total} & 2,937 & 201& 164 &2,572 &  94.0\%& 428 & 391& 2,118&  84.4\%& 80 &1,464&1,393 & 48.8\%\\
+\hline
+\end{tabular}%\vspace*{-3ex}
+\Caption{Translation results for API element lines} \label{table:apielement}
+\end{SmallOut}%\vspace*{-6ex}
+\end{table*}
+
+Table~\ref{table:apielement} shows the results to translate API elements. Column ``ALOC'' denotes numbers of lines whose translations need API mapping relations. Other columns of Table~\ref{table:apielement} are of the same meanings with the columns of Table~\ref{table:codestructure}. From the results shown in Table~\ref{table:apielement}, we find that Sharpen does not have adequate API mapping relations to support translating API elements used in real projects, since the tool can translate only about half of lines. The other two tools such as Java2CSharp and JLCA can translate most API elements used in real projects, since the two tools can translate 94.0\% and 84.4\% lines. The results confirm our hypothesis that existing translation tools can cover the most frequently used API elements, although existing translation tools typically have limited numbers of API mapping relations as shown in Table~\ref{table:java2csharp}. It is a little surprise that Java2CSharp translate more lines than JLCA does, although Java2CSharp has far fewer API mapping relations. We investigate translated code, and find two related factors. One factor is that JLCA does not well support the latest code structures of Java as shown in Section~\ref{sec:real:structure}. The limitation affects API translation. For example, a marked line in the PERAlignedDecoder.java file is as follows:
+
+\begin{CodeOut}%\vspace*{-1.5ex}
+\begin{alltt}
+SortedMap<Integer,Field> fieldOrder =
+        CoderUtils.getSetOrder(objectClass);//230A
+\end{alltt}
+\end{CodeOut}
+
+JLCA translates the line as follows:
+
+\begin{CodeOut}%\vspace*{-1.5ex}
+\begin{alltt}
+SortedMap < Integer, Field > fieldOrder =
+        CoderUtils.getSetOrder(objectClass); //230A
+\end{alltt}
+\end{CodeOut}
+
+Although JLCA has the mapping relation between the \CodeIn{Integer} class in Java and the corresponding mapped class in C\#, the tool fails to translate the line, since it cannot translate generic code. The other factor lies that Java2CSharp covers more frequently used API elements than JLCA, although Java2CSharp does not cover as many API elements as JLCA does. For example, Java2CSharp has the mapping relations for many JUnit\footnote{\url{http://www.junit.org}} APIs, whereas JLCA does not have. The top four files of the first group listed in Table~\ref{table:apielement} all use JUnit APIs. As a result, Java2CSharp translate the four files better than the other two translation tools including JLCA.
+
+\subsection{Summary}
+\label{sec:real:summary}
+In summary, our results confirm that existing translation tools can translate most code structures and API elements used in real projects. Our results also highlight the importance to cover those most frequently used API elements. As shown in our results, Java2CSharp can translate even more API element lines than JLCA, since Java2CSharp has API mapping relations of some most frequently used API elements. Our results also confirm the importance of the results revealed by TeMAPI, since existing translation tools can translate most API elements, and TeMAPI reveals that about one third translated API elements may have behavioral differences with the original ones. These behavioral differences may remain in translated code and cause potential defects. The results revealed by TeMAPI can help detect and fix these defects in translated code.
+
+\subsection{Threats to Validity}
+\label{sec:real:threat}
+The threats to external validity of experiments in this section include the representativeness of the subjects. Although we introduced six open source projects with two typical types, our results are based on only these projects. Other projects may have much more complicated code structures and use much more complicated APIs that are more difficult to translate. This threat could be reduced by introducing more subjects in future work. 
