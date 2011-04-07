@@ -158,7 +158,7 @@ public < T > T decode(...) throws Exception
 \end{alltt}
 \end{CodeOut}
 
-During translation, JLCA ignores Line 20 and Line 21. Except some rare cases (\emph{e.g.}, the Releases.java file), translation tools typically ignores about 10\% lines during translation. Sub-column ``F'' lists numbers of translated lines with compilation errors. In total, we find that Java2CSharp has the lowest numbers for this column, and JLCA has the highest numbers for this column. As explained by Microsoft\footnote{\url{http://msdn.microsoft.com/en-us/vjsharp/bb188593}}, JLCA is retired with the J\# programming language since 2005. As a result, it cannot translate many up-to-date code structures of Java. For example, as shown in the above code snippet from the PERAlignedDecoder.java file, JLCA cannot translate code structures that are related with generic programming. As another example, JLCA cannot translate the following line of code correctly.
+During translation, JLCA ignores Line 20 and Line 21. Except some rare cases (\emph{e.g.}, the Releases.java file), translation tools typically ignores about 10\% lines during translation. Sub-column ``F'' lists numbers of translated lines with compilation errors. In total, we find that Java2CSharp has the lowest numbers for this column, and JLCA has the highest numbers for this column. As explained by Microsoft\footnote{\url{http://msdn.microsoft.com/en-us/vjsharp/bb188593}}, JLCA is retired with the J\# programming language since 2005. As a result, it cannot translate many up-to-date code structures of Java. For example, as shown in the above code snippet from the PERAlignedDecoder.java file, JLCA cannot translate code structures that are related with generic programming. Besides generic programming, JLCA also fails to translate some update-to-date code structures. For example, the PERAlignedDecoder.java file has a line as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
@@ -166,7 +166,7 @@ for(Field field : elementInfo.getFields(objectClass))
 \end{alltt}
 \end{CodeOut}
 
-The translated code is as follows:
+JLCA cannot translate the following line of code correctly, and its translated code is as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
@@ -174,7 +174,17 @@ for(Field field: elementInfo.getFields(objectClass))
 \end{alltt}
 \end{CodeOut}
 
-The line of code is not correctly translated, since JLCA cannot understand the latest code structure for the \CodeIn{for} statement. Sub-column ``S'' lists numbers of translated lines without compilation errors. Sub-column ``\%'' lists percents of translated lines without compilation errors. This column is calculated as follows:
+The line of code is not correctly translated, since JLCA cannot understand the latest code structure for the \CodeIn{for} statement. On the contrary, as Java2CSharp understand the code structure, it translates the line correctly as follows:
+
+\begin{CodeOut}%\vspace*{-1.5ex}
+\begin{alltt}
+foreach(FieldInfo field in elementInfo.GetFields(
+                                         objectClass))
+\end{alltt}
+\end{CodeOut}
+  
+  
+Sub-column ``S'' lists numbers of translated lines without compilation errors. Sub-column ``\%'' lists percents of translated lines without compilation errors. This column is calculated as follows:
 
 \begin{equation}\label{eq-correctpercent}
 Translation\ percent=\frac{S}{S+F}\times 100\%
