@@ -21,7 +21,7 @@ OpenFiniteStateMachine &  toolkits   & 1,192 & a toolkit for building finite sta
 \Caption{Projects for translation} \label{table:subjects2}
 \end{SmallOut}%\vspace*{-6ex}
 \end{table*}
-\section{Capabilities for Translating Real Projects}
+\section{Translating Real Projects}
 \label{sec:real}
 In Section~\ref{sec:evaluation}, our results show the effectiveness of TeMAPI to detect behavioral differences of API mapping relations for existing translation tools. Still, the significance of our results can be reduced if existing translation tools cannot translate real project effectively. In addition, our results show that existing translation tools cover a small portion of API elements. Given such a small portion of covered API elements, existing tools may not cover adequate API mapping relations. The significance of TeMAPI can thus be further reduced in that it detects behavioral differences of only those translatable API elements. However, some existing programming languages (\emph{e.g.}, Java and C\#) are quite similar in their structures, and our previous work~\citep{thummalapentaase08spotweb} shows that programmers also typically use only a small portion of API elements in real projects. Considering the two points, we hypothesize that existing tools can translate real projects including their used API elements, although these translation tool typically support only a small portion of API elements. To provide solid evidences to this hypothesis, we conduct more experiments to answer the research questions as follows:
 
@@ -47,7 +47,7 @@ public ... decodeTag(InputStream stream) ... \{//1A
 In the preceding code snippet, we use numbers to denote line numbers; ``\emph{N}'' to denote lines whose translations need no API mapping relations; and ``\emph{A}'' to denote lines whose translations need API mapping relations. In this example, to translate the first line of the preceding code snippet, a translation tool needs to understand the mapping relation between the \CodeIn{java.io.InputStream} class in Java and the corresponding C\# class, whereas a translation tool does not need to understand API mapping relations to translate the second line and the third line. After we marked all the source files, we used the three Java-to-C\# translation tools (\emph{i.e.}, JLCA, Java2CSharp, and Sharpen) to translate all the subjects from Java to C\#, and compared translated source files with existing C\# files for code lines with defects. We next present our detailed findings.
 
 %\vspace*{-2ex}
-\subsection{Capabilities of Translating Code Structures}
+\subsection{Capabilities of Translating Real Projects}
 \label{sec:real:structure}
 \begin{table*}[t]
 \centering
