@@ -119,7 +119,7 @@ Sharpen      &  1.4.6 & db4o       & a Java-to-C\# translation tool \\
 \hline
 Net2Java     &  1.0   & NetBean    & a C\#-to-Java translation tool\\
 \hline
-converter    &  1.6   & Tangible   & a C\#-to-Java translation tool\\
+Converter    &  1.6   & Tangible   & a C\#-to-Java translation tool\\
 \hline
 \end{tabular}%\vspace*{-2ex}
 \Caption{Subject tools} \label{table:subjects}
@@ -159,8 +159,8 @@ For example, during exploring the \CodeIn{testvalueOf61sm} wrapper method in C\#
 \end{alltt}
 \end{CodeOut}\vspace*{-1ex}
 
-This test case gets failed since the \CodeIn{testvalueOf61sm} method in Java does not throw any exceptions given a null input.
-From this failing test case, TeMAPI detects the behavioral difference between the \CodeIn{java.lang.String.value\-Of(Object)} 
+This test case fails since the \CodeIn{testvalueOf61sm} method in Java does not throw any exceptions given a null input.
+From this failing test case, TeMAPI detects the behavioral difference between the \CodeIn{java.lang.String.value\-Of(Object)}
 method in Java and the \CodeIn{System.Object.To\-String()} method in C\#, since the two wrapper methods invoked by the two preceding test cases are for these two API methods. When the translation tool under analysis is from C\# to Java, wrapper methods generated for C\# are used for deriving C\# test cases for Java code.
 
 %-----------------------------------------------------------
@@ -168,7 +168,7 @@ method in Java and the \CodeIn{System.Object.To\-String()} method in C\#, since 
 \label{sec:approach:sequence}
 
 
-\textbf{Using Randoop.} Despite of its benefits to detect behavioral differences, a wrapper method cannot help effectively generate test invocation sequences, since it has fixed invocation sequences (\emph{e.g.}, a constructor first and then the public method). To address this issue, TeMAPI extends Randoop~\citep{pacheco2007feedback} for Java to generate invocation sequences in Java for all translatable API methods of a translation tool under analysis. Randoop randomly generates test cases based on already generated test cases in a feedback-directed manner. In particular, when using Randoop to generate test cases, TeMAPI limits its search scope to translatable API methods. Each generated test case by Randoop has multiple \CodeIn{assert} statements. TeMAPI runs generated test cases, and removes all failing test cases. TeMAPI next uses the translation tool under analysis to translate generated Java test cases to the other language C\#. If translated code has the same behaviors, translated test cases should also get passed. If not, TeMAPI detects behavioral differences. Randoop-generated Java test cases also include \CodeIn{assert} statements to assert behaviors of Java code. Thus, TeMAPI does not need to generate assertion statements as it does with Pex. Section~\ref{sec:evaluation:sequence} shows such detected behavioral differences that are related to invocation sequences (\emph{e.g.}, the \CodeIn{test423} test cases).
+\textbf{Using Randoop.} Despite of its benefits to detect behavioral differences, a wrapper method cannot help effectively generate test invocation sequences, since it has fixed invocation sequences (\emph{e.g.}, a constructor first and then the public method). To address this issue, TeMAPI extends Randoop~\citep{pacheco2007feedback} for Java to generate invocation sequences in Java for all translatable API methods of a translation tool under analysis. Randoop randomly generates test cases based on already generated test cases in a feedback-directed manner. In particular, when using Randoop to generate test cases, TeMAPI limits its search scope to translatable API methods. Each generated test case by Randoop has multiple \CodeIn{assert} statements. TeMAPI runs generated test cases, and removes all failing test cases. TeMAPI next uses the translation tool under analysis to translate generated Java test cases to the other language C\#. If translated code has the same behaviors, translated test cases should also pass. If not, TeMAPI detects behavioral differences. Randoop-generated Java test cases also include \CodeIn{assert} statements to assert behaviors of Java code. Thus, TeMAPI does not need to generate assertion statements as it does with Pex. Section~\ref{sec:evaluation:sequence} shows such detected behavioral differences that are related to invocation sequences (\emph{e.g.}, the \CodeIn{test423} test cases).
 
 %As the inputs and outputs between Randoop and Pex are both different, TeMAPI is asymmetric when generating test cases in Java and in C\# as shown in Figure~\ref{fig:approach}.
 

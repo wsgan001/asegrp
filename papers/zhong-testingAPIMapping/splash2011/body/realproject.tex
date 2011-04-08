@@ -23,16 +23,16 @@ OpenFiniteStateMachine &  toolkits   & 1,192 & a toolkit for building finite sta
 \end{table*}
 \section{Translating Real Projects}
 \label{sec:real}
-In Section~\ref{sec:evaluation}, our results show the effectiveness of TeMAPI to detect behavioral differences of API mapping relations for existing translation tools. Still, the significance of our results can be reduced if existing translation tools cannot translate real projects effectively. In addition, our results show that existing translation tools cover a small portion of API elements. Given such a small portion of covered API elements, existing tools may not cover adequate API mapping relations. The significance of TeMAPI can thus be further reduced in that it detects behavioral differences of only those translatable API elements. However, some existing programming languages (\emph{e.g.}, Java and C\#) are quite similar in their structures, and our previous work~\citep{thummalapentaase08spotweb} shows that programmers also typically use only a small portion of API elements in real projects. Considering the two points, we hypothesize that existing tools can translate real projects including their used API elements, although these translation tool typically support only a small portion of API elements. To provide solid evidences to this hypothesis, we conduct more experiments to answer the research questions as follows:
+In Section~\ref{sec:evaluation}, our results show the effectiveness of TeMAPI to detect behavioral differences of API mapping relations for existing translation tools. Still, the significance of our results can be limited if existing translation tools cannot translate real projects effectively. In addition, our results show that existing translation tools cover a small portion of API elements. Given such a small portion of covered API elements, existing tools may not cover adequate API mapping relations. The significance of TeMAPI can thus be further limited in that it detects behavioral differences of only those translatable API elements. However, some existing programming languages (\emph{e.g.}, Java and C\#) are quite similar in their structures, and our previous work~\citep{thummalapentaase08spotweb} shows that programmers also typically use only a small portion of API elements in real projects. Considering the two points, we hypothesize that existing tools can translate real projects including their used API elements, although these translation tools typically support only a small portion of API elements. To provide solid evidence to this hypothesis, we conduct more experiments to answer the research questions as follows:
 
 \begin{enumerate}
-\item To what degree can existing translation tools translate real projects without introducing compilation errors (Section~\ref{sec:real:structure})?
-\item To what degree can existing translation tools translate API elements used in real projects without introducing compilation errors (Section~\ref{sec:real:api})?
+\item To what degree can existing translation tools translate real projects without compilation errors (Section~\ref{sec:real:structure})?
+\item To what degree can existing translation tools translate API elements used in real projects without compilation errors (Section~\ref{sec:real:api})?
 \end{enumerate}%\vspace*{-1.5ex}
 
 
 
-We selected six open source projects as subjects in these experiments. Table~\ref{table:subjects2} lists the six subject projects. Column ``Name'' lists names of subjects. All the subjects have both Java versions and C\# versions, so we can determine introduced defects by comparing translated files of translation tools with existing ones. Column ``Type'' lists types of subjects. To ensure the representativeness, our selected subjects cover two typical types of open source projects (\emph{i.e.}, toolkits and libraries). In particular, toolkit projects have both user interfaces and programming interfaces, and libraries have only programming interfaces. Column ``LOC'' lists lines of code for all the subjects. The six subjects range from small sizes to large sizes. Column ``Description'' lists descriptions of these subjects. These subjects cover various functionalities such as calculating, modeling, and manipulating files.
+We selected six open source projects as subjects in these experiments. Table~\ref{table:subjects2} lists the six subject projects. Column ``Name'' lists names of subjects. All the subjects have both Java versions and C\# versions, so we can determine introduced defects by comparing translated files of translation tools with existing ones. Column ``Type'' lists types of subjects. To ensure the representativeness, our selected subjects cover two typical types of open source projects (\emph{i.e.}, toolkits and libraries). In particular, toolkit projects have both user interfaces and programming interfaces, and libraries have only programming interfaces. Column ``LOC'' lists lines of code for all the subjects. The six subjects range from small sizes to large sizes. Column ``Description'' lists descriptions of these subjects. These subjects cover various functionalities such as calculation, modeling, and file manipulation.
 
 For the Java version of each subject, we selected the five largest source files, and marked all their code lines with two types. For example, we marked the following code snippet as follows:
 
@@ -311,7 +311,7 @@ public < T > T decode(...) throws Exception
 \end{alltt}
 \end{CodeOut}
 
-During translation, JLCA ignores Line 20 and Line 21. Except some rare cases (\emph{e.g.}, the Releases.java file), translation tools typically removes or ignores about 10\% lines during translation. Sub-column ``F'' lists numbers of translated lines with compilation errors. In total, we find that Java2CSharp has the lowest numbers for this column, and JLCA has the highest numbers for this column. As explained by Microsoft\footnote{\url{http://msdn.microsoft.com/en-us/vjsharp/bb188593}}, JLCA is retired with the J\# programming language since 2005. As a result, it cannot translate many up-to-date code structures of Java. For example, as shown in the above code snippet from the PERAlignedDecoder.java file, JLCA cannot translate code structures that are related with generic programming. Besides generic programming, JLCA also fails to translate some update-to-date code structures. For example, the PERAlignedDecoder.java file has a line as follows:
+During translation, JLCA ignores Line 20 and Line 21. Except some rare cases (\emph{e.g.}, the Releases.java file), translation tools typically remove or ignore about 10\% marks during translation. Sub-column ``F'' lists numbers of translated lines with compilation errors. In total, we find that Java2CSharp has the lowest numbers for this column, and JLCA has the highest numbers for this column. As explained by Microsoft\footnote{\url{http://msdn.microsoft.com/en-us/vjsharp/bb188593}}, JLCA is retired with the J\# programming language since 2005. As a result, it cannot translate many up-to-date code structures of Java. For example, as shown in the above code snippet from the PERAlignedDecoder.java file, JLCA cannot translate code structures that are related with generic programming. Besides generic programming, JLCA also fails to translate some up-to-date code structures. For example, the PERAlignedDecoder.java file has a line as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
@@ -327,7 +327,7 @@ for(Field field:elementInfo.getFields(objectClass))//204A
 \end{alltt}
 \end{CodeOut}
 
-The line of code is not correctly translated, since JLCA cannot understand the latest code structure for the \CodeIn{for} statement in Java. On the contrary, as Java2CSharp understands the code structure, it translates the line correctly as follows:
+The line of code is not correctly translated, since JLCA cannot understand the latest code structure for the \CodeIn{for} statement in Java. On the other hand, as Java2CSharp understands the code structure, it translates the line correctly as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
@@ -337,20 +337,20 @@ foreach(FieldInfo field in elementInfo.
 \end{CodeOut}
 
 
-Sub-column ``S'' lists numbers of translated lines without compilation errors. Sub-column ``\%'' lists percents of translated lines without compilation errors. This column is calculated as follows:
+Sub-column ``S'' lists numbers of translated lines without compilation errors. Sub-column ``\%'' lists percentages of translated lines without compilation errors. This column is calculated as follows:
 
 \begin{equation}\label{eq-correctpercent}
 Translation\ percent=\frac{S}{S+F}\times 100\%
 \end{equation}%\vspace*{-2ex}
 
-In this equation, we use ``S'' and ``F'' to denote corresponding sub-columns. We find that existing translation tools are still far from perfection. Only 19 out of 90 files are translated from Java to C\# without introducing any compilation errors. However, our results also show that existing translation tools can translate most code lines in real projects. In total, more than 86\% lines of these source files can be translated without introducing compilation errors. In next subsection, we further present the results for translating API elements.
+In this equation, we use ``S'' and ``F'' to denote corresponding sub-columns. We find that existing translation tools are still far from perfection. Only 19 out of 90 files are translated from Java to C\# without introducing any compilation errors. However, our results also show that existing translation tools can translate most code lines in real projects. In total, more than 86\% lines of these source files can be translated without introducing compilation errors. In the next subsection, we further present the results for translating API elements.
 
-\subsection{Capabilities of Translating API elements}
+\subsection{Capabilities of Translating API Elements}
 \label{sec:real:api}
 
 
 
-Table~\ref{table:apielement} shows the results to translate API elements. Column ``ALOC'' denotes numbers of lines whose translations need API mapping relations. Other columns of Table~\ref{table:apielement} are of the same meanings with the columns of Table~\ref{table:codestructure}. From the results shown in Table~\ref{table:apielement}, we find that Sharpen does not have adequate API mapping relations to support translating API elements used in real projects, since the tool can translate only about half of lines. The other two tools such as Java2CSharp and JLCA can translate most API elements used in real projects, since the two tools can translate 94.0\% and 84.4\% lines. The results confirm our hypothesis that existing translation tools can cover the most frequently used API elements, although existing translation tools typically have limited numbers of API mapping relations as shown in Table~\ref{table:java2csharp}. It is a little surprise that Java2CSharp translate more lines than JLCA does, although Java2CSharp has far fewer API mapping relations. We investigate translated code, and find two related factors. One factor is that JLCA does not well support the latest code structures of Java as shown in Section~\ref{sec:real:structure}. The limitation affects API translation. For example, a marked line in the PERAlignedDecoder.java file is as follows:
+Table~\ref{table:apielement} shows the results to translate API elements. Column ``ALOC'' denotes numbers of lines whose translations need API mapping relations. Other columns of Table~\ref{table:apielement} are of the same meanings with the columns of Table~\ref{table:codestructure}. From the results shown in Table~\ref{table:apielement}, we find that Sharpen does not have adequate API mapping relations to support translating API elements used in real projects, since the tool can translate only about half of the lines. The other two tools such as Java2CSharp and JLCA can translate most API elements used in real projects, since the two tools can translate 94.0\% and 84.4\% lines. The results confirm our hypothesis that existing translation tools can cover the most frequently used API elements, although existing translation tools typically have limited numbers of API mapping relations as shown in Table~\ref{table:java2csharp}. It is to our surprise that Java2CSharp translates more lines than JLCA does, although Java2CSharp has far fewer API mapping relations. We investigate translated code, and find two related factors. One factor is that JLCA does not well support the latest code structures of Java as shown in Section~\ref{sec:real:structure}. The limitation affects API translation. For example, a marked line in the PERAlignedDecoder.java file is as follows:
 
 \begin{CodeOut}%\vspace*{-1.5ex}
 \begin{alltt}
@@ -368,7 +368,7 @@ SortedMap < Integer, Field > fieldOrder =
 \end{alltt}
 \end{CodeOut}
 
-Although JLCA has the mapping relation between the \CodeIn{Integer} class in Java and the corresponding mapped class in C\#, the tool fails to translate the line, since it cannot translate generic code. The other factor lies that Java2CSharp covers more frequently used API elements than JLCA, although Java2CSharp does not cover as many API elements as JLCA does. For example, the top four files of the first group listed in Table~\ref{table:apielement} all use JUnit\footnote{\url{http://www.junit.org}} APIs. Java2CSharp has the mapping relations for many JUnit APIs, whereas JLCA does not have. As a result, Java2CSharp translate the four files better than JLCA.
+Although JLCA has the mapping relation between the \CodeIn{Integer} class in Java and the corresponding mapped class in C\#, the tool fails to translate the line, since it cannot translate generic code. The other factor lies in that Java2CSharp covers more frequently used API elements than JLCA, although Java2CSharp does not cover as many API elements as JLCA does. For example, the top four files of the first group listed in Table~\ref{table:apielement} all use JUnit\footnote{\url{http://www.junit.org}} APIs. Java2CSharp has the mapping relations for many JUnit APIs, whereas JLCA does not have. As a result, Java2CSharp translates the four files better than JLCA.
 
 \subsection{Summary}
 \label{sec:real:summary}
@@ -376,4 +376,4 @@ In summary, our results confirm that existing translation tools can translate mo
 
 \subsection{Threats to Validity}
 \label{sec:real:threat}
-The threats to external validity of experiments in this section include the representativeness of the subjects. Although we introduced six open source projects with two typical types, our results are based on only these projects. Other projects may have much more complicated code structures and use much more complicated APIs that are more difficult to translate. This threat could be reduced by introducing more subjects in future work. 
+The threats to external validity of experiments in this section include the representativeness of the subjects. Although we included six open source projects with two typical types, our results are based on only these projects. Other projects may have much more complicated code structures and use much more complicated APIs that are more difficult to translate. This threat could be reduced by including more subjects in future work. 
