@@ -51,7 +51,7 @@ non-static methods   &175,400 & 3,589 & 2.0\% & 39,536& 22.5\% & 1,112& 0.6\%  \
 
 \subsection{Translating Synthesized Wrappers}
 \label{sec:evaluation:element}
-This evaluation focuses on the effectiveness of our approach to extract API mapping relations from both open source tools and closed source tools. The results are useful for subsequent steps, and also to show the effectiveness of existing translation tools. 
+This evaluation focuses on the effectiveness of our approach to extract API mapping relations from both open source tools and closed source tools. The results are useful for subsequent steps, and also to show the effectiveness of existing translation tools.
 
 For Java-to-C\# tools, TeMAPI first synthesized wrapper methods for all classes of J2SE 6.0\footnote{\url{http://java.sun.com/javase/6/docs/api/}}. Most classes in J2SE support both generic programming and non-generic programming (\emph{e.g.}, \CodeIn{java.util.ArrayList}). During synthesis, our approach focuses on only non-generic programming as described in Section~\ref{sec:approach:wrapper}. Table~\ref{table:java2csharp} shows the translation results. Column ``Type'' lists types of synthesized methods, and Row ``Total'' denotes the sum of all methods. Column ``Number'' lists numbers of wrapper methods for each type. Columns ``Java2CSharp'', ``JLCA'', and ``Sharpen'' list translation numbers of translated wrapper methods without compilation errors for each tool, respectively. For these columns, sub-columns ``M'' and ``\%'' list numbers and percentages of translated wrapper methods without compilation errors, respectively. The results show that all translation tools are able to translate many non-static methods, some static methods, and some getters of static fields, but only JLCA is able to translate some getters/setters of non-static fields. Although these tools support mapping relations for only some APIs, these supported APIs are the most commonly used, and these tools' significant utility/popularity are reflected by their high download counts.
 
@@ -183,23 +183,6 @@ We find that \CodeIn{string} values stored in fields between Java classes and th
 \textbf{Implication 2:} Mapped \CodeIn{String} fields in different languages typically store different values, but existing translation tools do not fix those differences. Programmers should not rely on these values, since they are typically different across languages.
 
 \textbf{Finding 3:} 11.5\% test cases show the behavioral differences caused by different input domains.
-
-We find that API methods in Java and API methods in C\# can have different input domains, and some legal inputs in one language can become illegal after translation. For example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than 32,767. JLCA translates the Java method to the \CodeIn{Convert.ToInt16(double)} method in C\#. The C\# method throws \CodeIn{OverflowException} when values are larger than 32,767 since it checks whether inputs are too large.
-As another example, the \CodeIn{java.lang. Boolean.parseBoolean(String)} method in Java does not check for illegal inputs, and returns \CodeIn{false} given an illegal input such as ``\CodeIn{test}''. Java2CSharp translates it to the \CodeIn{System.Boolean.Parse(String)} method in C\#. The C\# method throws \CodeIn{FormatException} given the same input since it checks for illegal inputs.
-
-\textbf{Implication 3:} Mapped API methods across languages may have different input domains, and a legal input can become illegal after translation. As pointed by Cook and Dage~\citep{cook1999highly}, API translation within a single programming language also has similar problems, and an updated API method can have different input ranges with an original one. Adopting their approach may help deal with different input domains across languages.
-
-\textbf{Finding 4:} 10.7\% test cases show the behavioral differences caused by different understandings.
-
-We find that implementers of API libraries may have different understandings for mapped API methods in different languages. Two such examples are shown in Section~\ref{sec:approach:single} (\emph{i.e.}, the \CodeIn{capacity()} method and the \CodeIn{length()} method). In some cases, such differences reflect different natures between languages. For example, we find that Java considers ``\CodeIn{\textbackslash}'' as existing directories, but  C\# considers it not.
-
-In some other cases, such differences can indicate defects in translation tools. For example, Java2CSharp translates the \CodeIn{Character.isJavaIdentifierPart(char)} method in Java to the \CodeIn{ILOG.J2CsMap\-ping.Util.Character.Is\-CSharp\-IdentifierPart(char)} method in C\#. Given an input ``\CodeIn{\textbackslash0}'', the Java method returns \CodeIn{true}, but the C\# method returns \CodeIn{false}. As another example, Java2CSharp translates the \CodeIn{java.lang.Integer.toHexString(int)} method in Java to the \CodeIn{ILOG.J2CsMapping.Util.IlNumber.To\-String(int,16)} method in C\#.
-The two translated C\# methods can return different values. In particular, given an integer whose value is -2147483648, the Java method returns ``80000000'', but the C\# method returns ``\textbackslash080000000''. The preceding two behavioral differences were confirmed as defects by developers of Java2CSharp after we reported them to its developers.
-
-\textbf{Implication 4:} Implementers can have different understanding on functionalities of specific methods. Some such differences reflect different natures of different languages, and some other differences indicate  defects in translation tools. Programmers should test their translated code carefully since this type of differences is difficult to figure out.
-
-\textbf{Finding 5:} 7.9\% test cases show the behavioral differences caused by exception handling.
-
 \begin{table*}[t]
 \centering
 \begin{SmallOut}
@@ -224,6 +207,23 @@ Converter    &  762 & 302  & 39.6\% & 182   & 23.9\%\\
 \Caption{Testing results of generating C\# test cases from Pex and translating them into Java code} \label{table:singleinvoc}
 \end{SmallOut}%\vspace*{-6ex}
 \end{table*}
+
+We find that API methods in Java and API methods in C\# can have different input domains, and some legal inputs in one language can become illegal after translation. For example, the \CodeIn{java.lang.Double.shortValue()} method in Java accepts values that are larger than 32,767. JLCA translates the Java method to the \CodeIn{Convert.ToInt16(double)} method in C\#. The C\# method throws \CodeIn{OverflowException} when values are larger than 32,767 since it checks whether inputs are too large.
+As another example, the \CodeIn{java.lang. Boolean.parseBoolean(String)} method in Java does not check for illegal inputs, and returns \CodeIn{false} given an illegal input such as ``\CodeIn{test}''. Java2CSharp translates it to the \CodeIn{System.Boolean.Parse(String)} method in C\#. The C\# method throws \CodeIn{FormatException} given the same input since it checks for illegal inputs.
+
+\textbf{Implication 3:} Mapped API methods across languages may have different input domains, and a legal input can become illegal after translation. As pointed by Cook and Dage~\citep{cook1999highly}, API translation within a single programming language also has similar problems, and an updated API method can have different input ranges with an original one. Adopting their approach may help deal with different input domains across languages.
+
+\textbf{Finding 4:} 10.7\% test cases show the behavioral differences caused by different understandings.
+
+We find that implementers of API libraries may have different understandings for mapped API methods in different languages. Two such examples are shown in Section~\ref{sec:approach:single} (\emph{i.e.}, the \CodeIn{capacity()} method and the \CodeIn{length()} method). In some cases, such differences reflect different natures between languages. For example, we find that Java considers ``\CodeIn{\textbackslash}'' as existing directories, but  C\# considers it not.
+
+In some other cases, such differences can indicate defects in translation tools. For example, Java2CSharp translates the \CodeIn{Character.isJavaIdentifierPart(char)} method in Java to the \CodeIn{ILOG.J2CsMap\-ping.Util.Character.Is\-CSharp\-IdentifierPart(char)} method in C\#. Given an input ``\CodeIn{\textbackslash0}'', the Java method returns \CodeIn{true}, but the C\# method returns \CodeIn{false}. As another example, Java2CSharp translates the \CodeIn{java.lang.Integer.toHexString(int)} method in Java to the \CodeIn{ILOG.J2CsMapping.Util.IlNumber.To\-String(int,16)} method in C\#.
+The two translated C\# methods can return different values. In particular, given an integer whose value is -2147483648, the Java method returns ``80000000'', but the C\# method returns ``\textbackslash080000000''. The preceding two behavioral differences were confirmed as defects by developers of Java2CSharp after we reported them to its developers.
+
+\textbf{Implication 4:} Implementers can have different understanding on functionalities of specific methods. Some such differences reflect different natures of different languages, and some other differences indicate  defects in translation tools. Programmers should test their translated code carefully since this type of differences is difficult to figure out.
+
+\textbf{Finding 5:} 7.9\% test cases show the behavioral differences caused by exception handling.
+
 
 
 We find that two mapped API methods can throw exceptions that are not mapped. For example, the \CodeIn{java.lang. StringBuffer.insert(int,char)} method in Java throws \CodeIn{ArrayIndexOut\-of\-BoundsException} when indexes are out of bounds. Java2CSharp translates the method in Java to the \CodeIn{System.Text.StringBuilder.Insert(int,char)} method in C\# that throws \CodeIn{ArgumentOut\-Of\-RangeException} when indexes are out of bounds. As Java2CSharp translates \CodeIn{ArrayIndexOutofBoundsExcep\-tion} in Java to \CodeIn{Index\-Out\-Of\-RangeException} in C\#, the mapped C\# method fails to catch exceptions when indexes are out of bounds.
